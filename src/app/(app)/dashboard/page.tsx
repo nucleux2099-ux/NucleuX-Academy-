@@ -38,6 +38,8 @@ import {
 import { useRouter } from "next/navigation";
 import { ATOMStudyCoach } from "@/components/ATOMStudyCoach";
 import { TodaysStudyPlan } from "@/components/TodaysStudyPlan";
+import { ContinueWhereYouLeft } from "@/components/ContinueWhereYouLeft";
+import { LearningAnalytics } from "@/components/LearningAnalytics";
 
 // Dashboard room color - Purple
 const roomColor = '#7C3AED';
@@ -206,6 +208,15 @@ export default function DashboardPage() {
 
           {/* Today's Study Plan - Learning Science Based */}
           <TodaysStudyPlan />
+
+          {/* Two-column layout: Continue + Analytics */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Continue Where You Left - Context Restoration */}
+            <ContinueWhereYouLeft />
+
+            {/* Learning Analytics - Not Vanity Metrics */}
+            <LearningAnalytics />
+          </div>
 
           {/* Time Period Toggle */}
           <div className="flex items-center gap-2">
