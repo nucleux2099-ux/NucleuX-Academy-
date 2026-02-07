@@ -232,10 +232,43 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Default no-op context value for when provider isn't mounted yet
+const defaultValue: AnalyticsContextValue = {
+  analytics: {
+    totalQuestions: 0,
+    correctAnswers: 0,
+    totalStudyMinutes: 0,
+    currentStreak: 0,
+    longestStreak: 0,
+    topicsCompleted: 0,
+    mcqAttempts: [],
+    readingSessions: [],
+    videoSessions: [],
+    topicMemories: [],
+    dailyStats: [],
+    calibration: [
+      { confidence: 'guessing', expected: 25, actual: 0, totalQuestions: 0, correctQuestions: 0 },
+      { confidence: 'unsure', expected: 50, actual: 0, totalQuestions: 0, correctQuestions: 0 },
+      { confidence: 'sure', expected: 75, actual: 0, totalQuestions: 0, correctQuestions: 0 },
+      { confidence: 'very-sure', expected: 95, actual: 0, totalQuestions: 0, correctQuestions: 0 },
+    ],
+  },
+  isLoaded: false,
+  trackMCQAttempt: () => {},
+  trackReadingSession: () => {},
+  trackVideoSession: () => {},
+  getCalibration: () => [],
+  getTopicsForReview: () => [],
+  getWeeklyStats: () => [],
+  getOverallAccuracy: () => 0,
+  getTopicPerformance: () => [],
+  getDifficultyBreakdown: () => [],
+  refreshMemoryStrengths: () => {},
+  resetAnalytics: () => {},
+};
+
 export function useAnalytics() {
   const context = useContext(AnalyticsContext);
-  if (!context) {
-    throw new Error('useAnalytics must be used within AnalyticsProvider');
-  }
-  return context;
+  // Return default no-op context if not within provider (e.g., during SSR)
+  return context || defaultValue;
 }
