@@ -12,7 +12,7 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function SkeletonCard() {
   return (
-    <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-5 space-y-4">
+    <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 space-y-4 shadow-sm">
       <div className="flex items-start justify-between">
         <Skeleton className="w-12 h-12 rounded-lg" />
         <Skeleton className="w-6 h-6 rounded" />
@@ -33,7 +33,7 @@ export function SkeletonCard() {
 
 export function SkeletonStats() {
   return (
-    <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-6">
+    <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
       <div className="flex items-start justify-between">
         <div className="space-y-3 flex-1">
           <Skeleton className="h-4 w-24" />
@@ -48,7 +48,7 @@ export function SkeletonStats() {
 
 export function SkeletonActivity() {
   return (
-    <div className="flex items-center gap-4 p-4 rounded-lg bg-[#0F172A] border border-[#334155]">
+    <div className="flex items-center gap-4 p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0]">
       <Skeleton className="w-11 h-11 rounded-lg shrink-0" />
       <div className="flex-1 space-y-2">
         <Skeleton className="h-4 w-3/4" />
@@ -64,7 +64,7 @@ export function SkeletonActivity() {
 
 export function SkeletonQuestion() {
   return (
-    <div className="bg-[#1E293B] border border-[#334155] rounded-xl p-6 space-y-4">
+    <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-4 shadow-sm">
       <div className="flex gap-2">
         <Skeleton className="h-6 w-24 rounded-full" />
         <Skeleton className="h-6 w-16 rounded-full" />

@@ -21,7 +21,18 @@ import {
   TrendingUp,
   AlertCircle,
   Eye,
+  Sparkles,
+  Atom,
+  MessageSquare,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+// MCQs room color - Sky Blue
+const roomColor = {
+  primary: '#0EA5E9',
+  light: '#F0F9FF',
+  name: 'sky'
+};
 
 const sampleQuestions = [
   {
@@ -214,15 +225,15 @@ export default function MCQsPage() {
   // Results Screen
   if (mode === "results") {
     return (
-      <div className="space-y-6 max-w-3xl mx-auto animate-fade-in">
-        <Card className="bg-[#1E293B] border-[#334155] overflow-hidden">
+      <div className="space-y-6 max-w-3xl mx-auto animate-fade-in page-transition bg-[#F0F9FF]/30 -m-4 sm:-m-6 p-4 sm:p-6 min-h-screen">
+        <Card className="bg-white border-[#E2E8F0] overflow-hidden shadow-xl">
           {/* Header with gradient */}
-          <div className="bg-gradient-to-r from-[#7C3AED]/20 to-[#06B6D4]/20 p-8 text-center">
-            <div className="w-24 h-24 rounded-full bg-[#10B981]/20 flex items-center justify-center mx-auto mb-6 border-4 border-[#10B981]/30">
+          <div className="bg-gradient-to-r from-[#F5F3FF] to-[#F0F9FF] p-8 text-center border-b border-[#E2E8F0]">
+            <div className="w-24 h-24 rounded-full bg-[#DCFCE7] flex items-center justify-center mx-auto mb-6 border-4 border-[#10B981]/30 shadow-lg">
               <Trophy className="w-12 h-12 text-[#10B981]" />
             </div>
-            <h2 className="text-3xl font-bold mb-2">Quiz Complete!</h2>
-            <p className="text-[#94A3B8]">Here's your performance summary</p>
+            <h2 className="text-3xl font-bold text-[#1E293B] mb-2">Quiz Complete!</h2>
+            <p className="text-[#64748B]">Here's your performance summary</p>
           </div>
 
           <CardContent className="p-8">
@@ -234,7 +245,7 @@ export default function MCQsPage() {
                     cx="80"
                     cy="80"
                     r="70"
-                    stroke="#334155"
+                    stroke="#E2E8F0"
                     strokeWidth="12"
                     fill="none"
                   />
@@ -251,49 +262,49 @@ export default function MCQsPage() {
                   />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-4xl font-bold">{percentage}%</span>
-                  <span className="text-sm text-[#94A3B8]">Accuracy</span>
+                  <span className="text-4xl font-bold text-[#1E293B]">{percentage}%</span>
+                  <span className="text-sm text-[#64748B]">Accuracy</span>
                 </div>
               </div>
             </div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-[#334155] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/20 flex items-center justify-center mx-auto mb-2">
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-[#F5F3FF] flex items-center justify-center mx-auto mb-2">
                   <Target className="w-5 h-5 text-[#7C3AED]" />
                 </div>
-                <p className="text-2xl font-bold">{score}/{sampleQuestions.length}</p>
-                <p className="text-xs text-[#94A3B8]">Score</p>
+                <p className="text-2xl font-bold text-[#1E293B]">{score}/{sampleQuestions.length}</p>
+                <p className="text-xs text-[#64748B]">Score</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-[#334155] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[#10B981]/20 flex items-center justify-center mx-auto mb-2">
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-[#DCFCE7] flex items-center justify-center mx-auto mb-2">
                   <CheckCircle className="w-5 h-5 text-[#10B981]" />
                 </div>
                 <p className="text-2xl font-bold text-[#10B981]">{score}</p>
-                <p className="text-xs text-[#94A3B8]">Correct</p>
+                <p className="text-xs text-[#64748B]">Correct</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-[#334155] text-center">
-                <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center mx-auto mb-2">
-                  <XCircle className="w-5 h-5 text-red-400" />
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-[#FEE2E2] flex items-center justify-center mx-auto mb-2">
+                  <XCircle className="w-5 h-5 text-[#EF4444]" />
                 </div>
-                <p className="text-2xl font-bold text-red-400">{incorrect}</p>
-                <p className="text-xs text-[#94A3B8]">Incorrect</p>
+                <p className="text-2xl font-bold text-[#EF4444]">{incorrect}</p>
+                <p className="text-xs text-[#64748B]">Incorrect</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#0F172A] border border-[#334155] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/20 flex items-center justify-center mx-auto mb-2">
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-[#F0F9FF] flex items-center justify-center mx-auto mb-2">
                   <Clock className="w-5 h-5 text-[#06B6D4]" />
                 </div>
                 <p className="text-2xl font-bold text-[#06B6D4]">{formatTime(600 - timeLeft)}</p>
-                <p className="text-xs text-[#94A3B8]">Time Taken</p>
+                <p className="text-xs text-[#64748B]">Time Taken</p>
               </div>
             </div>
 
             {/* Performance Message */}
             <div className={`p-4 rounded-xl mb-8 ${
-              percentage >= 70 ? "bg-[#10B981]/10 border border-[#10B981]/30" :
-              percentage >= 50 ? "bg-[#F59E0B]/10 border border-[#F59E0B]/30" :
-              "bg-red-500/10 border border-red-500/30"
+              percentage >= 70 ? "bg-[#DCFCE7] border border-[#10B981]/30" :
+              percentage >= 50 ? "bg-[#FFFBEB] border border-[#F59E0B]/30" :
+              "bg-[#FEE2E2] border border-[#EF4444]/30"
             }`}>
               <div className="flex items-start gap-3">
                 {percentage >= 70 ? (
@@ -301,7 +312,7 @@ export default function MCQsPage() {
                     <TrendingUp className="w-5 h-5 text-[#10B981] mt-0.5" />
                     <div>
                       <p className="font-medium text-[#10B981]">Excellent Performance! 🎉</p>
-                      <p className="text-sm text-[#94A3B8] mt-1">
+                      <p className="text-sm text-[#64748B] mt-1">
                         You've mastered these concepts. Keep up the great work!
                       </p>
                     </div>
@@ -311,17 +322,17 @@ export default function MCQsPage() {
                     <AlertCircle className="w-5 h-5 text-[#F59E0B] mt-0.5" />
                     <div>
                       <p className="font-medium text-[#F59E0B]">Good Effort! 💪</p>
-                      <p className="text-sm text-[#94A3B8] mt-1">
+                      <p className="text-sm text-[#64748B] mt-1">
                         Review the explanations for incorrect answers to improve.
                       </p>
                     </div>
                   </>
                 ) : (
                   <>
-                    <AlertCircle className="w-5 h-5 text-red-400 mt-0.5" />
+                    <AlertCircle className="w-5 h-5 text-[#EF4444] mt-0.5" />
                     <div>
-                      <p className="font-medium text-red-400">Needs Improvement</p>
-                      <p className="text-sm text-[#94A3B8] mt-1">
+                      <p className="font-medium text-[#EF4444]">Needs Improvement</p>
+                      <p className="text-sm text-[#64748B] mt-1">
                         Don't worry! Review the material and try again.
                       </p>
                     </div>
@@ -333,21 +344,21 @@ export default function MCQsPage() {
             {/* Question Breakdown */}
             {wrongQuestions.length > 0 && (
               <div className="mb-8">
-                <h3 className="font-semibold mb-4 flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-red-400" />
+                <h3 className="font-semibold text-[#1E293B] mb-4 flex items-center gap-2">
+                  <XCircle className="w-5 h-5 text-[#EF4444]" />
                   Questions to Review ({wrongQuestions.length})
                 </h3>
                 <div className="space-y-3">
                   {wrongQuestions.map((q, i) => (
-                    <div key={q.id} className="p-4 rounded-lg bg-[#0F172A] border border-[#334155]">
+                    <div key={q.id} className="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] shadow-sm">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
-                          <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-2">
+                          <Badge className="bg-[#FEE2E2] text-[#EF4444] border-none mb-2">
                             Q{sampleQuestions.findIndex(sq => sq.id === q.id) + 1}
                           </Badge>
-                          <p className="text-sm line-clamp-2">{q.question}</p>
+                          <p className="text-sm text-[#1E293B] line-clamp-2">{q.question}</p>
                         </div>
-                        <Badge className="bg-[#06B6D4]/20 text-[#06B6D4] border-[#06B6D4]/30 shrink-0">
+                        <Badge className="bg-[#F0F9FF] text-[#06B6D4] border-none shrink-0">
                           {q.topic}
                         </Badge>
                       </div>
@@ -359,7 +370,7 @@ export default function MCQsPage() {
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button onClick={handleReset} className="flex-1 bg-[#7C3AED] hover:bg-[#6D28D9]">
+              <Button onClick={handleReset} className="flex-1 bg-[#7C3AED] hover:bg-[#6D28D9] shadow-lg shadow-[#7C3AED]/20">
                 <RotateCcw className="w-4 h-4 mr-2" />
                 Try Again
               </Button>
@@ -367,7 +378,7 @@ export default function MCQsPage() {
                 <Button 
                   onClick={handleReviewMistakes} 
                   variant="outline" 
-                  className="flex-1 border-[#334155] hover:border-[#7C3AED]"
+                  className="flex-1 border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF]"
                 >
                   <Eye className="w-4 h-4 mr-2" />
                   Review Mistakes
@@ -382,31 +393,31 @@ export default function MCQsPage() {
 
   // Quiz / Review Mode
   return (
-    <div className="space-y-6 max-w-4xl mx-auto">
+    <div className="space-y-6 max-w-4xl mx-auto page-transition bg-[#F0F9FF]/30 -m-4 sm:-m-6 p-4 sm:p-6 min-h-screen">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-3xl font-bold">MCQ Practice</h1>
+            <h1 className="text-3xl font-bold text-[#1E293B]">MCQ Practice</h1>
             {mode === "review" && (
-              <Badge className="bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/30">
+              <Badge className="bg-[#FFFBEB] text-[#D97706] border-[#FDE68A]">
                 Review Mode
               </Badge>
             )}
           </div>
-          <p className="text-[#94A3B8]">Surgical GI - Mixed Topics</p>
+          <p className="text-[#64748B]">Surgical GI - Mixed Topics</p>
         </div>
         <div className="flex items-center gap-4">
           {mode === "quiz" && (
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-              timeLeft < 60 ? "bg-red-500/20 text-red-400 animate-pulse" : "bg-[#1E293B]"
+            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all shadow-sm ${
+              timeLeft < 60 ? "bg-[#FEE2E2] text-[#EF4444] animate-pulse" : "bg-white border border-[#E2E8F0] text-[#1E293B]"
             }`}>
               <Clock className="w-4 h-4" />
               <span className="font-mono font-bold">{formatTime(timeLeft)}</span>
             </div>
           )}
           {mode === "review" && (
-            <Button onClick={handleReset} variant="outline" className="border-[#334155]">
+            <Button onClick={handleReset} variant="outline" className="border-[#E2E8F0] hover:bg-[#F8FAFC]">
               <RotateCcw className="w-4 h-4 mr-2" />
               New Quiz
             </Button>
@@ -417,10 +428,10 @@ export default function MCQsPage() {
       {/* Progress */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-[#94A3B8]">
+          <span className="text-[#64748B]">
             {mode === "review" ? "Reviewing" : "Question"} {currentQuestion + 1} of {sampleQuestions.length}
           </span>
-          <span className="text-[#94A3B8]">{Math.round(((currentQuestion + 1) / sampleQuestions.length) * 100)}%</span>
+          <span className="text-[#64748B]">{Math.round(((currentQuestion + 1) / sampleQuestions.length) * 100)}%</span>
         </div>
         <Progress value={((currentQuestion + 1) / sampleQuestions.length) * 100} className="h-2" />
       </div>
@@ -439,14 +450,14 @@ export default function MCQsPage() {
                 setSelectedAnswer(answers[i]);
                 setShowResult(mode === "review" || answers[i] !== null);
               }}
-              className={`w-10 h-10 rounded-lg font-medium transition-all ${
+              className={`w-10 h-10 rounded-lg font-medium transition-all shadow-sm ${
                 i === currentQuestion
                   ? "bg-[#7C3AED] text-white ring-2 ring-[#7C3AED]/50"
                   : isRight
-                  ? "bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30"
+                  ? "bg-[#DCFCE7] text-[#10B981] border border-[#10B981]/30"
                   : isWrong
-                  ? "bg-red-500/20 text-red-400 border border-red-500/30"
-                  : "bg-[#1E293B] text-[#94A3B8] border border-[#334155] hover:border-[#7C3AED]/50"
+                  ? "bg-[#FEE2E2] text-[#EF4444] border border-[#EF4444]/30"
+                  : "bg-white text-[#64748B] border border-[#E2E8F0] hover:border-[#7C3AED]/50"
               } ${flagged[i] ? "ring-2 ring-[#F59E0B]" : ""}`}
             >
               {i + 1}
@@ -456,26 +467,26 @@ export default function MCQsPage() {
       </div>
 
       {/* Question Card */}
-      <Card className="bg-[#1E293B] border-[#334155]">
+      <Card className="bg-white border-[#E2E8F0] shadow-lg">
         <CardHeader className="flex flex-row items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2 flex-wrap">
-              <Badge className="bg-[#06B6D4]/20 text-[#06B6D4] border-[#06B6D4]/30">
+              <Badge className="bg-[#F0F9FF] text-[#06B6D4] border-none">
                 {question.topic}
               </Badge>
               <Badge
                 className={
                   question.difficulty === "Easy"
-                    ? "bg-[#10B981]/20 text-[#10B981] border-[#10B981]/30"
+                    ? "bg-[#DCFCE7] text-[#10B981] border-none"
                     : question.difficulty === "Medium"
-                    ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/30"
-                    : "bg-red-500/20 text-red-400 border-red-500/30"
+                    ? "bg-[#FFFBEB] text-[#D97706] border-none"
+                    : "bg-[#FEE2E2] text-[#EF4444] border-none"
                 }
               >
                 {question.difficulty}
               </Badge>
             </div>
-            <CardTitle className="text-lg font-medium leading-relaxed">
+            <CardTitle className="text-lg font-medium leading-relaxed text-[#1E293B]">
               {question.question}
             </CardTitle>
           </div>
@@ -484,7 +495,7 @@ export default function MCQsPage() {
               variant="ghost"
               size="icon"
               onClick={toggleFlag}
-              className={flagged[currentQuestion] ? "text-[#F59E0B]" : "text-[#94A3B8]"}
+              className={flagged[currentQuestion] ? "text-[#F59E0B]" : "text-[#94A3B8] hover:text-[#F59E0B]"}
             >
               <Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#F59E0B" : "none"} />
             </Button>
@@ -496,17 +507,17 @@ export default function MCQsPage() {
             {question.options.map((option, index) => {
               const isSelected = selectedAnswer === index;
               const isCorrectOption = index === question.correctAnswer;
-              let optionStyle = "bg-[#0F172A] border-[#334155]";
+              let optionStyle = "bg-[#F8FAFC] border-[#E2E8F0]";
               let canHover = !showResult && mode === "quiz";
 
               if (showResult || mode === "review") {
                 if (isCorrectOption) {
-                  optionStyle = "bg-[#10B981]/10 border-[#10B981] ring-2 ring-[#10B981]/30";
+                  optionStyle = "bg-[#DCFCE7] border-[#10B981] ring-2 ring-[#10B981]/30";
                 } else if (isSelected && !isCorrectOption) {
-                  optionStyle = "bg-red-500/10 border-red-500 ring-2 ring-red-500/30";
+                  optionStyle = "bg-[#FEE2E2] border-[#EF4444] ring-2 ring-[#EF4444]/30";
                 }
               } else if (isSelected) {
-                optionStyle = "bg-[#7C3AED]/10 border-[#7C3AED]";
+                optionStyle = "bg-[#F5F3FF] border-[#7C3AED]";
               }
 
               return (
@@ -514,8 +525,8 @@ export default function MCQsPage() {
                   key={index}
                   onClick={() => handleAnswer(index)}
                   disabled={showResult || mode === "review"}
-                  className={`w-full p-4 rounded-lg border text-left transition-all ${optionStyle} ${
-                    canHover ? "hover:border-[#7C3AED] hover:bg-[#7C3AED]/5" : ""
+                  className={`w-full p-4 rounded-lg border text-left transition-all shadow-sm ${optionStyle} ${
+                    canHover ? "hover:border-[#7C3AED] hover:bg-[#F5F3FF]" : ""
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -524,10 +535,10 @@ export default function MCQsPage() {
                         (showResult || mode === "review") && isCorrectOption
                           ? "bg-[#10B981] text-white"
                           : (showResult || mode === "review") && isSelected && !isCorrectOption
-                          ? "bg-red-500 text-white"
+                          ? "bg-[#EF4444] text-white"
                           : isSelected
                           ? "bg-[#7C3AED] text-white"
-                          : "bg-[#334155] text-[#94A3B8]"
+                          : "bg-[#E2E8F0] text-[#64748B]"
                       }`}
                     >
                       {(showResult || mode === "review") && isCorrectOption ? (
@@ -538,9 +549,9 @@ export default function MCQsPage() {
                         String.fromCharCode(65 + index)
                       )}
                     </div>
-                    <span className={
+                    <span className={`text-[#1E293B] ${
                       (showResult || mode === "review") && isCorrectOption ? "text-[#10B981] font-medium" : ""
-                    }>
+                    }`}>
                       {option}
                     </span>
                   </div>
@@ -551,26 +562,26 @@ export default function MCQsPage() {
 
           {/* Explanation */}
           {(showResult || mode === "review") && (
-            <div className="p-4 rounded-xl bg-gradient-to-r from-[#F59E0B]/10 to-[#F59E0B]/5 border border-[#F59E0B]/20 mt-6 animate-slide-in-up">
+            <div className="p-4 rounded-xl bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7] border border-[#FDE68A]/50 mt-6 animate-slide-in-up shadow-sm">
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-[#F59E0B]/20 shrink-0">
-                  <Lightbulb className="w-5 h-5 text-[#F59E0B]" />
+                <div className="p-2 rounded-lg bg-white shrink-0 shadow-sm">
+                  <Lightbulb className="w-5 h-5 text-[#D97706]" />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#F59E0B] mb-2">Explanation</p>
-                  <p className="text-[#94A3B8] leading-relaxed">{question.explanation}</p>
+                  <p className="font-semibold text-[#D97706] mb-2">Explanation</p>
+                  <p className="text-[#64748B] leading-relaxed">{question.explanation}</p>
                 </div>
               </div>
             </div>
           )}
 
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-[#334155]">
+          <div className="flex items-center justify-between pt-4 border-t border-[#E2E8F0]">
             <Button
               variant="outline"
               onClick={handlePrev}
               disabled={currentQuestion === 0}
-              className="border-[#334155] hover:border-[#7C3AED]"
+              className="border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF]"
             >
               <ChevronLeft className="w-4 h-4 mr-2" />
               Previous
@@ -578,12 +589,12 @@ export default function MCQsPage() {
 
             <div className="flex gap-2">
               {mode === "quiz" && !showResult && selectedAnswer !== null && (
-                <Button onClick={handleSubmit} className="bg-[#10B981] hover:bg-[#059669]">
+                <Button onClick={handleSubmit} className="bg-[#10B981] hover:bg-[#059669] shadow-md">
                   <CheckCircle className="w-4 h-4 mr-2" />
                   Submit Answer
                 </Button>
               )}
-              <Button onClick={handleNext} className="bg-[#7C3AED] hover:bg-[#6D28D9]">
+              <Button onClick={handleNext} className="bg-[#7C3AED] hover:bg-[#6D28D9] shadow-md shadow-[#7C3AED]/20">
                 {currentQuestion === sampleQuestions.length - 1 
                   ? (mode === "review" ? "Back to Results" : "Finish Quiz")
                   : "Next"}

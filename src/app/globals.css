@@ -54,40 +54,47 @@
   --color-nucleux-deep-blue: #0F172A;
 }
 
-/* NucleuX Dark Theme - Always Dark */
+/* NucleuX Campus Light Theme - Scholarly & Warm */
 :root {
   --radius: 0.625rem;
-  --background: #0F172A;
-  --foreground: #F8FAFC;
-  --card: #1E293B;
-  --card-foreground: #F8FAFC;
-  --popover: #1E293B;
-  --popover-foreground: #F8FAFC;
+  --background: #FAFAFA;
+  --foreground: #1E293B;
+  --card: #FFFFFF;
+  --card-foreground: #1E293B;
+  --popover: #FFFFFF;
+  --popover-foreground: #1E293B;
   --primary: #7C3AED;
   --primary-foreground: #FFFFFF;
-  --secondary: #1E293B;
-  --secondary-foreground: #F8FAFC;
-  --muted: #334155;
-  --muted-foreground: #94A3B8;
+  --secondary: #F1F5F9;
+  --secondary-foreground: #1E293B;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
   --accent: #7C3AED;
   --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
-  --border: rgba(148, 163, 184, 0.1);
-  --input: rgba(148, 163, 184, 0.15);
+  --destructive: #E11D48;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
   --ring: #7C3AED;
   --chart-1: #7C3AED;
-  --chart-2: #06B6D4;
-  --chart-3: #10B981;
-  --chart-4: #F59E0B;
-  --chart-5: #EF4444;
-  --sidebar: #0F172A;
-  --sidebar-foreground: #F8FAFC;
+  --chart-2: #059669;
+  --chart-3: #0EA5E9;
+  --chart-4: #CA8A04;
+  --chart-5: #E11D48;
+  /* Campus Light Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1E293B;
   --sidebar-primary: #7C3AED;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #1E293B;
-  --sidebar-accent-foreground: #F8FAFC;
-  --sidebar-border: rgba(148, 163, 184, 0.1);
+  --sidebar-accent: #F5F3FF;
+  --sidebar-accent-foreground: #7C3AED;
+  --sidebar-border: #E2E8F0;
   --sidebar-ring: #7C3AED;
+  
+  /* Campus Accent Colors */
+  --campus-forest: #059669;
+  --campus-wood: #B45309;
+  --campus-sky: #0EA5E9;
+  --campus-gold: #CA8A04;
 }
 
 @layer base {
@@ -99,34 +106,53 @@
   }
 }
 
-/* Custom utility classes for NucleuX */
+/* Custom utility classes for NucleuX Campus Light Theme */
 @layer utilities {
-  .glow-purple {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.1);
+  /* Subtle shadows for light theme */
+  .shadow-campus {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
   }
-  .glow-cyan {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  .shadow-campus-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
   }
-  .glow-green {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(16, 185, 129, 0.1);
+  .shadow-campus-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.03);
   }
-  .glow-orange {
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(245, 158, 11, 0.1);
+  .shadow-purple-hover {
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
   }
+  
+  /* Text gradients */
   .text-gradient-purple {
     background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .text-gradient-cyan {
-    background: linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%);
+  .text-gradient-forest {
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .bg-gradient-nucleux {
-    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #CA8A04 0%, #EAB308 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Campus background gradients */
+  .bg-gradient-campus {
+    background: linear-gradient(135deg, #FAFAFA 0%, #F1F5F9 100%);
+  }
+  .bg-gradient-purple-subtle {
+    background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+  }
+  
+  /* Legacy dark theme utilities (kept for compatibility) */
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2), 0 0 40px rgba(124, 58, 237, 0.1);
   }
   .border-glow {
     border: 1px solid rgba(124, 58, 237, 0.3);
@@ -206,9 +232,9 @@ html {
 .skeleton {
   background: linear-gradient(
     90deg,
-    #1E293B 0%,
-    #334155 50%,
-    #1E293B 100%
+    #E2E8F0 0%,
+    #F1F5F9 50%,
+    #E2E8F0 100%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
@@ -281,14 +307,19 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0F172A;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #94A3B8;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  transition: background-color 0.3s ease, color 0.2s ease;
 }

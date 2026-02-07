@@ -2,6 +2,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { Header } from "@/components/Header";
 import { PageTransition } from "@/components/PageTransition";
 import { BottomNav } from "@/components/BottomNav";
+import { AtomWidget } from "@/components/AtomWidget";
 
 export default function AppLayout({
   children,
@@ -9,7 +10,7 @@ export default function AppLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[#0F172A]">
+    <div className="min-h-screen bg-[#F8FAFC]">
       <Sidebar />
       <div className="lg:pl-64">
         <Header />
@@ -18,6 +19,7 @@ export default function AppLayout({
         </main>
       </div>
       <BottomNav />
+      <AtomWidget />
     </div>
   );
 }
