@@ -82,8 +82,8 @@ export default function PathwaysPage() {
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold">Learning Pathways</h1>
-        <p className="text-[#94A3B8] mt-1">
+        <h1 className="text-3xl font-bold text-[#E5E7EB]">Learning Pathways</h1>
+        <p className="text-[#9CA3AF] mt-1">
           Structured learning paths tailored to your goals
         </p>
       </div>
@@ -93,7 +93,7 @@ export default function PathwaysPage() {
         {pathways.map((pathway) => (
           <Card
             key={pathway.id}
-            className={`bg-[#1E293B] border-[#334155] hover:border-[${pathway.color}]/50 transition-all cursor-pointer ${
+            className={`bg-[#0F2233] border-[rgba(255,255,255,0.06)] hover:border-[${pathway.color}]/30 transition-all cursor-pointer ${
               pathway.status === "locked" ? "opacity-60" : ""
             }`}
           >
@@ -101,17 +101,17 @@ export default function PathwaysPage() {
               <div className="flex items-start justify-between mb-4">
                 <div
                   className="p-3 rounded-lg"
-                  style={{ backgroundColor: `${pathway.color}20` }}
+                  style={{ backgroundColor: `${pathway.color}15` }}
                 >
                   <Route className="w-6 h-6" style={{ color: pathway.color }} />
                 </div>
                 <Badge
                   className={
                     pathway.status === "completed"
-                      ? "bg-[#10B981]/20 text-[#10B981] border-[#10B981]/30"
+                      ? "bg-[rgba(16,185,129,0.2)] text-[#10B981] border-[rgba(16,185,129,0.3)]"
                       : pathway.status === "active"
-                      ? "bg-[#7C3AED]/20 text-[#7C3AED] border-[#7C3AED]/30"
-                      : "bg-[#334155] text-[#94A3B8] border-[#334155]"
+                      ? "bg-[rgba(124,58,237,0.2)] text-[#7C3AED] border-[rgba(124,58,237,0.3)]"
+                      : "bg-[#142538] text-[#9CA3AF] border-[rgba(255,255,255,0.06)]"
                   }
                 >
                   {pathway.status === "completed" && <CheckCircle className="w-3 h-3 mr-1" />}
@@ -121,10 +121,10 @@ export default function PathwaysPage() {
                 </Badge>
               </div>
 
-              <h3 className="text-xl font-semibold mb-2">{pathway.title}</h3>
-              <p className="text-[#94A3B8] text-sm mb-4">{pathway.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-[#E5E7EB]">{pathway.title}</h3>
+              <p className="text-[#9CA3AF] text-sm mb-4">{pathway.description}</p>
 
-              <div className="flex items-center gap-4 text-sm text-[#94A3B8] mb-4">
+              <div className="flex items-center gap-4 text-sm text-[#9CA3AF] mb-4">
                 <span className="flex items-center gap-1">
                   <BookOpen className="w-4 h-4" />
                   {pathway.totalTopics} topics
@@ -138,11 +138,11 @@ export default function PathwaysPage() {
               {/* Progress */}
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-[#94A3B8]">
+                  <span className="text-[#9CA3AF]">
                     {pathway.completedTopics}/{pathway.totalTopics} completed
                   </span>
                   <span
-                    className={pathway.progress === 100 ? "text-[#10B981]" : "text-white"}
+                    className={pathway.progress === 100 ? "text-[#10B981]" : "text-[#E5E7EB]"}
                   >
                     {pathway.progress}%
                   </span>
@@ -158,10 +158,10 @@ export default function PathwaysPage() {
       </div>
 
       {/* Active Pathway Details */}
-      <Card className="bg-[#1E293B] border-[#334155]">
+      <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
         <CardHeader>
-          <CardTitle className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-[#7C3AED]/20">
+          <CardTitle className="flex items-center gap-3 text-[#E5E7EB]">
+            <div className="p-2 rounded-lg bg-[rgba(124,58,237,0.15)]">
               <Route className="w-5 h-5 text-[#7C3AED]" />
             </div>
             Surgical GI Mastery - Topic Roadmap
@@ -170,10 +170,10 @@ export default function PathwaysPage() {
         <CardContent>
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-[#334155]" />
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-[rgba(255,255,255,0.06)]" />
 
             <div className="space-y-4">
-              {activePathwayTopics.map((topic, index) => (
+              {activePathwayTopics.map((topic) => (
                 <div key={topic.id} className="flex items-start gap-4 relative">
                   {/* Status dot */}
                   <div
@@ -181,10 +181,10 @@ export default function PathwaysPage() {
                       topic.status === "completed"
                         ? "bg-[#10B981]"
                         : topic.status === "current"
-                        ? "bg-[#7C3AED] glow-purple"
+                        ? "bg-[#7C3AED] glow-dashboard"
                         : topic.status === "upcoming"
-                        ? "bg-[#1E293B] border-2 border-[#334155]"
-                        : "bg-[#1E293B] border-2 border-[#334155]"
+                        ? "bg-[#0F2233] border-2 border-[rgba(255,255,255,0.06)]"
+                        : "bg-[#0F2233] border-2 border-[rgba(255,255,255,0.06)]"
                     }`}
                   >
                     {topic.status === "completed" && (
@@ -194,10 +194,10 @@ export default function PathwaysPage() {
                       <Play className="w-4 h-4 text-white" />
                     )}
                     {topic.status === "locked" && (
-                      <Lock className="w-4 h-4 text-[#94A3B8]" />
+                      <Lock className="w-4 h-4 text-[#9CA3AF]" />
                     )}
                     {topic.status === "upcoming" && (
-                      <span className="w-2 h-2 bg-[#94A3B8] rounded-full" />
+                      <span className="w-2 h-2 bg-[#9CA3AF] rounded-full" />
                     )}
                   </div>
 
@@ -205,28 +205,28 @@ export default function PathwaysPage() {
                   <div
                     className={`flex-1 p-4 rounded-lg border transition-all ${
                       topic.status === "current"
-                        ? "bg-[#7C3AED]/10 border-[#7C3AED]/30"
+                        ? "bg-[rgba(124,58,237,0.1)] border-[rgba(124,58,237,0.3)]"
                         : topic.status === "completed"
-                        ? "bg-[#0F172A] border-[#334155]"
-                        : "bg-[#0F172A]/50 border-[#334155]/50"
+                        ? "bg-[#142538] border-[rgba(255,255,255,0.06)]"
+                        : "bg-[#142538]/50 border-[rgba(255,255,255,0.03)]"
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div>
                         <h4
                           className={`font-medium ${
-                            topic.status === "locked" ? "text-[#94A3B8]" : ""
+                            topic.status === "locked" ? "text-[#9CA3AF]" : "text-[#E5E7EB]"
                           }`}
                         >
                           {topic.title}
                         </h4>
-                        <p className="text-sm text-[#94A3B8] mt-1">
+                        <p className="text-sm text-[#9CA3AF] mt-1">
                           <Clock className="w-3 h-3 inline mr-1" />
                           {topic.duration}
                         </p>
                       </div>
                       {topic.status !== "locked" && (
-                        <ChevronRight className="w-5 h-5 text-[#94A3B8]" />
+                        <ChevronRight className="w-5 h-5 text-[#9CA3AF]" />
                       )}
                     </div>
                   </div>

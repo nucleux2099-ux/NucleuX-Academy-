@@ -5,7 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SkeletonStats, SkeletonActivity } from "@/components/Skeleton";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SkeletonStats } from "@/components/Skeleton";
 import {
   AreaChart,
   Area,
@@ -26,23 +27,18 @@ import {
   ArrowRight,
   Calendar,
   Brain,
-  Sparkles,
   AlertCircle,
   BookMarked,
-  Stethoscope,
-  Pill,
   Activity,
   Atom,
   MessageSquare,
+  Network,
+  Zap,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // Dashboard room color - Purple
-const roomColor = {
-  primary: '#7C3AED',
-  light: '#F5F3FF',
-  name: 'purple'
-};
+const roomColor = '#7C3AED';
 
 // Get current greeting based on time
 function getGreeting() {
@@ -71,108 +67,24 @@ const monthlyData = [
 ];
 
 const weeklyStats = [
-  {
-    title: "Study Hours",
-    value: "24.5",
-    unit: "hrs",
-    change: "+12%",
-    icon: Clock,
-    color: "#7C3AED",
-  },
-  {
-    title: "Topics Completed",
-    value: "48",
-    unit: "",
-    change: "+8",
-    icon: CheckCircle,
-    color: "#10B981",
-  },
-  {
-    title: "Current Streak",
-    value: "12",
-    unit: "days",
-    change: "Personal best!",
-    icon: Flame,
-    color: "#F59E0B",
-  },
-  {
-    title: "MCQ Accuracy",
-    value: "78",
-    unit: "%",
-    change: "+5%",
-    icon: Target,
-    color: "#06B6D4",
-  },
+  { title: "Study Hours", value: "24.5", unit: "hrs", change: "+12%", icon: Clock, color: "#7C3AED" },
+  { title: "Topics Completed", value: "48", unit: "", change: "+8", icon: CheckCircle, color: "#059669" },
+  { title: "Current Streak", value: "12", unit: "days", change: "Personal best!", icon: Flame, color: "#F59E0B" },
+  { title: "MCQ Accuracy", value: "78", unit: "%", change: "+5%", icon: Target, color: "#06B6D4" },
 ];
 
 const monthlyStats = [
-  {
-    title: "Study Hours",
-    value: "85",
-    unit: "hrs",
-    change: "+18%",
-    icon: Clock,
-    color: "#7C3AED",
-  },
-  {
-    title: "Topics Completed",
-    value: "156",
-    unit: "",
-    change: "+24",
-    icon: CheckCircle,
-    color: "#10B981",
-  },
-  {
-    title: "Current Streak",
-    value: "12",
-    unit: "days",
-    change: "Personal best!",
-    icon: Flame,
-    color: "#F59E0B",
-  },
-  {
-    title: "MCQ Accuracy",
-    value: "82",
-    unit: "%",
-    change: "+9%",
-    icon: Target,
-    color: "#06B6D4",
-  },
+  { title: "Study Hours", value: "85", unit: "hrs", change: "+18%", icon: Clock, color: "#7C3AED" },
+  { title: "Topics Completed", value: "156", unit: "", change: "+24", icon: CheckCircle, color: "#059669" },
+  { title: "Current Streak", value: "12", unit: "days", change: "Personal best!", icon: Flame, color: "#F59E0B" },
+  { title: "MCQ Accuracy", value: "82", unit: "%", change: "+9%", icon: Target, color: "#06B6D4" },
 ];
 
 const recentActivity = [
-  {
-    title: "Scored 85% on Appendicitis MCQs",
-    type: "Assessment",
-    time: "2 hours ago",
-    icon: Target,
-    color: "#10B981",
-    detail: "23/27 correct • 18 min",
-  },
-  {
-    title: "Completed: Inguinal Hernia - Anatomy & Classification",
-    type: "Reading",
-    time: "4 hours ago",
-    icon: BookOpen,
-    color: "#7C3AED",
-    detail: "Bailey & Love Ch. 57",
-  },
-  {
-    title: "Started: Hepatobiliary Surgery Module",
-    type: "Pathway",
-    time: "Yesterday",
-    icon: Play,
-    color: "#06B6D4",
-    detail: "12 topics • ~8 hours",
-  },
-  {
-    title: "Reviewed: Portal Hypertension - Weak Area",
-    type: "Revision",
-    time: "2 days ago",
-    icon: TrendingUp,
-    color: "#F59E0B",
-    detail: "Flagged by ATOM for review",
-  },
+  { title: "Scored 85% on Appendicitis MCQs", type: "Assessment", time: "2 hours ago", icon: Target, color: "#059669", detail: "23/27 correct • 18 min" },
+  { title: "Completed: Inguinal Hernia - Anatomy & Classification", type: "Reading", time: "4 hours ago", icon: BookOpen, color: "#7C3AED", detail: "Bailey & Love Ch. 57" },
+  { title: "Started: Hepatobiliary Surgery Module", type: "Pathway", time: "Yesterday", icon: Play, color: "#06B6D4", detail: "12 topics • ~8 hours" },
+  { title: "Reviewed: Portal Hypertension - Weak Area", type: "Revision", time: "2 days ago", icon: TrendingUp, color: "#F59E0B", detail: "Flagged by ATOM for review" },
 ];
 
 const currentPathway = {
@@ -184,43 +96,13 @@ const currentPathway = {
   completedTopics: 16,
 };
 
-// Today's Study Plan - Real medical topics
 const todaysPlan = [
-  { 
-    title: "Complete: Femoral Hernia", 
-    duration: "45 min", 
-    type: "reading",
-    source: "Bailey & Love Ch. 58",
-    status: "current",
-    icon: BookOpen,
-  },
-  { 
-    title: "MCQ Practice: Abdominal Wall Hernias", 
-    duration: "30 min", 
-    type: "mcq",
-    count: "25 questions",
-    status: "upcoming",
-    icon: Target,
-  },
-  { 
-    title: "Review: Inguinal Canal Anatomy", 
-    duration: "20 min", 
-    type: "revision",
-    source: "Gray's Anatomy",
-    status: "upcoming",
-    icon: BookMarked,
-  },
-  { 
-    title: "Quick Quiz: Hernia Complications", 
-    duration: "15 min", 
-    type: "quiz",
-    count: "10 questions",
-    status: "upcoming",
-    icon: Brain,
-  },
+  { title: "Complete: Femoral Hernia", duration: "45 min", type: "reading", source: "Bailey & Love Ch. 58", status: "current", icon: BookOpen },
+  { title: "MCQ Practice: Abdominal Wall Hernias", duration: "30 min", type: "mcq", count: "25 questions", status: "upcoming", icon: Target },
+  { title: "Review: Inguinal Canal Anatomy", duration: "20 min", type: "revision", source: "Gray's Anatomy", status: "upcoming", icon: BookMarked },
+  { title: "Quick Quiz: Hernia Complications", duration: "15 min", type: "quiz", count: "10 questions", status: "upcoming", icon: Brain },
 ];
 
-// ATOM AI Suggestion
 const atomSuggestion = {
   title: "ATOM's Recommendation",
   message: "Based on your performance, you're struggling with Portal Hypertension complications. I recommend spending 30 minutes reviewing Variceal Bleeding management before your next Surgery session.",
@@ -228,29 +110,37 @@ const atomSuggestion = {
   confidence: 94,
 };
 
-// Recent Weak Areas
 const weakAreas = [
   { topic: "Portal Hypertension", accuracy: 52, attempts: 15 },
   { topic: "Thyroid Carcinoma Staging", accuracy: 58, attempts: 12 },
   { topic: "Pancreatic Pseudocyst", accuracy: 61, attempts: 8 },
 ];
 
+// Knowledge Graph data
+const graphNodes = [
+  { id: 1, name: "Hepatobiliary", connections: 12, mastery: 78, status: "current" },
+  { id: 2, name: "Pancreatic Surgery", connections: 8, mastery: 45, status: "upcoming" },
+  { id: 3, name: "Portal Hypertension", connections: 15, mastery: 52, status: "weak" },
+  { id: 4, name: "Hernia Surgery", connections: 10, mastery: 85, status: "strong" },
+  { id: 5, name: "Appendicitis", connections: 6, mastery: 90, status: "strong" },
+];
+
 export default function DashboardPage() {
+  const router = useRouter();
   const [timePeriod, setTimePeriod] = useState<"weekly" | "monthly">("weekly");
   const [isLoading, setIsLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [activeTab, setActiveTab] = useState("overview");
 
   const stats = timePeriod === "weekly" ? weeklyStats : monthlyStats;
   const chartData = timePeriod === "weekly" ? weeklyData : monthlyData;
   const xKey = timePeriod === "weekly" ? "day" : "week";
 
-  // Update time every minute
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => clearInterval(timer);
   }, []);
 
-  // Simulate loading
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 600);
     return () => clearTimeout(timer);
@@ -259,417 +149,425 @@ export default function DashboardPage() {
   const greeting = getGreeting();
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto page-transition">
-      {/* Welcome Header - Personalized */}
+    <div className="space-y-6 max-w-7xl mx-auto">
+      {/* Welcome Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#1E293B]">
+          <h1 className="text-3xl font-bold text-[#E5E7EB]">
             {greeting}, Sarath! 👋
           </h1>
-          <p className="text-[#64748B] mt-1">
+          <p className="text-[#9CA3AF] mt-1">
             Ready to continue your <span className="text-[#7C3AED] font-medium">Surgery</span> pathway? 
-            <span className="text-[#94A3B8]"> • {currentTime.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'short' })}</span>
+            <span className="text-[#6B7280]"> • {currentTime.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'short' })}</span>
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Badge className="bg-[#FFFBEB] text-[#D97706] border-[#FDE68A] px-3 py-1.5 shadow-sm">
+          <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] px-3 py-1.5">
             <Flame className="w-4 h-4 mr-1" />
             12 Day Streak 🔥
           </Badge>
-          <Badge className="bg-[#F0FDF4] text-[#059669] border-[#A7F3D0] px-3 py-1.5 shadow-sm">
+          <Badge className="bg-[rgba(5,150,105,0.15)] text-[#059669] border-[rgba(5,150,105,0.3)] px-3 py-1.5">
             <Activity className="w-4 h-4 mr-1" />
             NEET-PG 2026
           </Badge>
         </div>
       </div>
 
-      {/* ATOM Study Coach Card - Enhanced with room color */}
-      <Card className="bg-gradient-to-r from-[#F5F3FF] via-white to-[#F0F9FF] border-[#E9D5FF] shadow-lg overflow-hidden relative group">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#7C3AED]/5 rounded-full blur-2xl" />
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#06B6D4]/5 rounded-full blur-xl" />
-        <CardContent className="p-5">
-          <div className="flex items-start gap-4">
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] flex items-center justify-center shadow-lg shadow-[#7C3AED]/25 shrink-0">
-                <Atom className="w-6 h-6 text-white" />
-              </div>
-              {/* Online indicator */}
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#10B981] rounded-full border-2 border-white" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1 flex-wrap">
-                <h3 className="font-semibold text-[#1E293B] flex items-center gap-2">
-                  <span>📊</span> ATOM Study Coach
-                </h3>
-                <Badge className="bg-[#7C3AED]/10 text-[#7C3AED] border-none text-xs">
-                  {atomSuggestion.confidence}% confident
-                </Badge>
-              </div>
-              <p className="text-[#64748B] text-sm mb-3">{atomSuggestion.message}</p>
-              <div className="flex items-center gap-2 flex-wrap">
-                {atomSuggestion.topics.map((topic) => (
-                  <Badge key={topic} className="bg-white text-[#64748B] border-[#E2E8F0] text-xs cursor-pointer hover:border-[#7C3AED] hover:text-[#7C3AED] transition-all">
-                    {topic}
-                  </Badge>
-                ))}
-              </div>
-              <div className="flex items-center gap-2 mt-3">
-                <Button size="sm" className="bg-[#7C3AED] hover:bg-[#6D28D9] text-xs h-8 shadow-md shadow-[#7C3AED]/20">
-                  <Target className="w-3 h-3 mr-1" />
-                  Start Review
-                </Button>
-                <Button 
-                  size="sm" 
-                  variant="outline" 
-                  className="border-[#7C3AED]/30 text-[#7C3AED] hover:bg-[#7C3AED]/5 text-xs h-8"
-                  onClick={() => window.location.href = '/chat'}
-                >
-                  <MessageSquare className="w-3 h-3 mr-1" />
-                  Ask ATOM
-                </Button>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Dashboard Tabs - Overview & Graph */}
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+        <TabsList className="bg-[#0F2233] border border-[rgba(6,182,212,0.15)] p-1">
+          <TabsTrigger 
+            value="overview" 
+            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white text-[#9CA3AF]"
+          >
+            <Zap className="w-4 h-4 mr-2" />
+            Overview
+          </TabsTrigger>
+          <TabsTrigger 
+            value="graph" 
+            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white text-[#9CA3AF]"
+          >
+            <Network className="w-4 h-4 mr-2" />
+            Knowledge Graph
+          </TabsTrigger>
+        </TabsList>
 
-      {/* Today's Study Plan */}
-      <Card className="bg-white border-[#E2E8F0] shadow-sm">
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center justify-between text-[#1E293B]">
-            <span className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#7C3AED]" />
-              Today's Study Plan
-            </span>
-            <span className="text-sm font-normal text-[#64748B]">~2 hours total</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {todaysPlan.map((item, idx) => (
-              <div
-                key={idx}
-                className={`flex items-center gap-4 p-3 rounded-xl border transition-all ${
-                  item.status === "current"
-                    ? "bg-gradient-to-r from-[#F5F3FF] to-white border-[#7C3AED]/30 shadow-sm"
-                    : "bg-[#F8FAFC] border-[#E2E8F0] hover:border-[#7C3AED]/20"
-                }`}
-              >
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                  item.status === "current" ? "bg-[#7C3AED] text-white" : "bg-white border border-[#E2E8F0]"
-                }`}>
-                  {item.status === "current" ? (
-                    <Play className="w-4 h-4" />
-                  ) : (
-                    <item.icon className="w-4 h-4 text-[#64748B]" />
-                  )}
+        {/* Overview Tab */}
+        <TabsContent value="overview" className="space-y-6 mt-6">
+          {/* ATOM Study Coach Card */}
+          <Card className="bg-[#0F2233] border-l-4 border-[rgba(6,182,212,0.15)] overflow-hidden relative" style={{ borderLeftColor: roomColor }}>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#7C3AED]/5 rounded-full blur-2xl" />
+            <CardContent className="p-5">
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] flex items-center justify-center shadow-lg shadow-[#7C3AED]/25 shrink-0">
+                    <Atom className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#059669] rounded-full border-2 border-[#0F2233]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className={`font-medium text-sm ${item.status === "current" ? "text-[#7C3AED]" : "text-[#1E293B]"}`}>
-                    {item.title}
-                  </p>
-                  <p className="text-xs text-[#94A3B8]">
-                    {item.source || item.count}
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 shrink-0">
-                  <span className="text-xs text-[#64748B] bg-white px-2 py-1 rounded-full border border-[#E2E8F0]">
-                    <Clock className="w-3 h-3 inline mr-1" />
-                    {item.duration}
-                  </span>
-                  {item.status === "current" && (
-                    <Button size="sm" className="bg-[#7C3AED] hover:bg-[#6D28D9] h-7 text-xs shadow-md">
-                      Continue
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+                      <span>📊</span> ATOM Study Coach
+                    </h3>
+                    <Badge className="bg-[rgba(124,58,237,0.2)] text-[#A78BFA] border-none text-xs">
+                      {atomSuggestion.confidence}% confident
+                    </Badge>
+                  </div>
+                  <p className="text-[#9CA3AF] text-sm mb-3">{atomSuggestion.message}</p>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {atomSuggestion.topics.map((topic) => (
+                      <Badge key={topic} className="bg-[#142538] text-[#9CA3AF] border-[rgba(6,182,212,0.15)] text-xs cursor-pointer hover:border-[#7C3AED] hover:text-[#7C3AED] transition-all">
+                        {topic}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2 mt-3">
+                    <Button size="sm" className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs h-8 shadow-md shadow-[#7C3AED]/20">
+                      <Target className="w-3 h-3 mr-1" />
+                      Start Review
                     </Button>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Time Period Toggle */}
-      <div className="flex items-center gap-2">
-        <Calendar className="w-4 h-4 text-[#64748B]" />
-        <div className="inline-flex bg-white border border-[#E2E8F0] rounded-lg p-1 shadow-sm">
-          <button
-            onClick={() => setTimePeriod("weekly")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-              timePeriod === "weekly"
-                ? "bg-[#7C3AED] text-white shadow-md"
-                : "text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]"
-            }`}
-          >
-            This Week
-          </button>
-          <button
-            onClick={() => setTimePeriod("monthly")}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-              timePeriod === "monthly"
-                ? "bg-[#7C3AED] text-white shadow-md"
-                : "text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]"
-            }`}
-          >
-            This Month
-          </button>
-        </div>
-      </div>
-
-      {/* Stats Grid */}
-      {isLoading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[...Array(4)].map((_, i) => (
-            <SkeletonStats key={i} />
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {stats.map((stat, index) => (
-            <Card 
-              key={stat.title} 
-              className="bg-white border-[#E2E8F0] shadow-sm hover:shadow-lg transition-all"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-sm text-[#64748B]">{stat.title}</p>
-                    <p className="text-3xl font-bold text-[#1E293B] mt-2">
-                      {stat.value}
-                      <span className="text-lg text-[#64748B] ml-1">{stat.unit}</span>
-                    </p>
-                    <p
-                      className="text-sm mt-1 font-medium"
-                      style={{ color: stat.color }}
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="border-[rgba(124,58,237,0.3)] text-[#A78BFA] hover:bg-[rgba(124,58,237,0.1)] text-xs h-8"
+                      onClick={() => router.push('/chat')}
                     >
-                      {stat.change}
-                    </p>
-                  </div>
-                  <div
-                    className="p-3 rounded-lg transition-transform hover:scale-110 shadow-sm"
-                    style={{ backgroundColor: `${stat.color}15` }}
-                  >
-                    <stat.icon className="w-6 h-6" style={{ color: stat.color }} />
+                      <MessageSquare className="w-3 h-3 mr-1" />
+                      Ask ATOM
+                    </Button>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      )}
+              </div>
+            </CardContent>
+          </Card>
 
-      {/* Progress Chart */}
-      <Card className="bg-white border-[#E2E8F0] shadow-sm">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-[#1E293B]">
-            <TrendingUp className="w-5 h-5 text-[#7C3AED]" />
-            Study Progress
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData}>
-                <defs>
-                  <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.2}/>
-                    <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.2}/>
-                    <stop offset="95%" stopColor="#06B6D4" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" />
-                <XAxis 
-                  dataKey={xKey} 
-                  stroke="#64748B" 
-                  fontSize={12}
-                  tickLine={false}
-                />
-                <YAxis 
-                  yAxisId="left"
-                  stroke="#64748B" 
-                  fontSize={12}
-                  tickLine={false}
-                  axisLine={false}
-                />
-                <YAxis 
-                  yAxisId="right"
-                  orientation="right"
-                  stroke="#64748B" 
-                  fontSize={12}
-                  tickLine={false}
-                  axisLine={false}
-                />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#FFFFFF', 
-                    border: '1px solid #E2E8F0',
-                    borderRadius: '8px',
-                    boxShadow: '0 10px 40px rgba(0,0,0,0.1)'
-                  }}
-                  labelStyle={{ color: '#1E293B' }}
-                />
-                <Area
-                  yAxisId="left"
-                  type="monotone"
-                  dataKey="hours"
-                  stroke="#7C3AED"
-                  strokeWidth={2}
-                  fillOpacity={1}
-                  fill="url(#colorHours)"
-                  name="Study Hours"
-                />
-                <Area
-                  yAxisId="right"
-                  type="monotone"
-                  dataKey="questions"
-                  stroke="#06B6D4"
-                  strokeWidth={2}
-                  fillOpacity={1}
-                  fill="url(#colorQuestions)"
-                  name="MCQs Answered"
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="flex items-center justify-center gap-6 mt-4">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#7C3AED]" />
-              <span className="text-sm text-[#64748B]">Study Hours</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#06B6D4]" />
-              <span className="text-sm text-[#64748B]">MCQs Answered</span>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Main Content Grid */}
-      <div className="grid lg:grid-cols-3 gap-6">
-        {/* Current Pathway */}
-        <Card className="lg:col-span-2 bg-white border-[#E2E8F0] shadow-sm">
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between text-[#1E293B]">
-              <span>Current Pathway</span>
-              <Badge className="bg-[#F5F3FF] text-[#7C3AED] border-[#E9D5FF]">
-                In Progress
-              </Badge>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xl font-semibold text-gradient-purple">
-                  {currentPathway.title}
-                </h3>
-                <span className="text-[#64748B]">
-                  {currentPathway.completedTopics}/{currentPathway.totalTopics} topics
+          {/* Today's Study Plan */}
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center justify-between text-[#E5E7EB]">
+                <span className="flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-[#7C3AED]" />
+                  Today&apos;s Study Plan
                 </span>
+                <span className="text-sm font-normal text-[#9CA3AF]">~2 hours total</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {todaysPlan.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex items-center gap-4 p-3 rounded-xl border transition-all ${
+                      item.status === "current"
+                        ? "bg-[rgba(124,58,237,0.1)] border-[rgba(124,58,237,0.3)]"
+                        : "bg-[#142538] border-[rgba(6,182,212,0.1)] hover:border-[rgba(124,58,237,0.2)]"
+                    }`}
+                  >
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+                      item.status === "current" ? "bg-[#7C3AED] text-white" : "bg-[#0F2233] border border-[rgba(6,182,212,0.15)]"
+                    }`}>
+                      {item.status === "current" ? (
+                        <Play className="w-4 h-4" />
+                      ) : (
+                        <item.icon className="w-4 h-4 text-[#9CA3AF]" />
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className={`font-medium text-sm ${item.status === "current" ? "text-[#A78BFA]" : "text-[#E5E7EB]"}`}>
+                        {item.title}
+                      </p>
+                      <p className="text-xs text-[#6B7280]">{item.source || item.count}</p>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="text-xs text-[#9CA3AF] bg-[#0F2233] px-2 py-1 rounded-full border border-[rgba(6,182,212,0.15)]">
+                        <Clock className="w-3 h-3 inline mr-1" />
+                        {item.duration}
+                      </span>
+                      {item.status === "current" && (
+                        <Button size="sm" className="bg-[#7C3AED] hover:bg-[#6D28D9] h-7 text-xs text-white shadow-md">
+                          Continue
+                        </Button>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-              <Progress value={currentPathway.progress} className="h-3" />
-              <p className="text-sm text-[#64748B] mt-2">
-                {currentPathway.progress}% complete
-              </p>
-            </div>
+            </CardContent>
+          </Card>
 
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg bg-[#F5F3FF] border border-[#E9D5FF]">
-                <p className="text-sm text-[#64748B] mb-1">Currently Reading</p>
-                <p className="font-medium text-[#1E293B]">{currentPathway.currentTopic}</p>
-                <p className="text-xs text-[#94A3B8] mt-1">Blumgart's Surgery Ch. 12-18</p>
-              </div>
-              <div className="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0]">
-                <p className="text-sm text-[#64748B] mb-1">Up Next</p>
-                <p className="font-medium text-[#1E293B]">{currentPathway.nextTopic}</p>
-                <p className="text-xs text-[#94A3B8] mt-1">Maingot's Ch. 32-36</p>
-              </div>
-            </div>
-
-            <Button className="w-full py-3 bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg font-medium transition-all shadow-lg shadow-[#7C3AED]/20">
-              Continue Learning
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </CardContent>
-        </Card>
-
-        {/* Weak Areas (ATOM Flagged) */}
-        <Card className="bg-white border-[#E2E8F0] shadow-sm">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-[#1E293B]">
-              <AlertCircle className="w-5 h-5 text-[#F59E0B]" />
-              Focus Areas
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-sm text-[#64748B]">ATOM flagged these topics based on your MCQ performance:</p>
-            {weakAreas.map((area, i) => (
-              <div
-                key={i}
-                className="p-3 rounded-lg bg-[#FFFBEB] border border-[#FDE68A] cursor-pointer hover:shadow-md transition-all"
+          {/* Time Period Toggle */}
+          <div className="flex items-center gap-2">
+            <Calendar className="w-4 h-4 text-[#9CA3AF]" />
+            <div className="inline-flex bg-[#0F2233] border border-[rgba(6,182,212,0.15)] rounded-lg p-1">
+              <button
+                onClick={() => setTimePeriod("weekly")}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                  timePeriod === "weekly"
+                    ? "bg-[#7C3AED] text-white shadow-md"
+                    : "text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#142538]"
+                }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <p className="font-medium text-sm text-[#1E293B]">{area.topic}</p>
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                    area.accuracy < 60 ? "bg-[#FEE2E2] text-[#DC2626]" : "bg-[#FEF3C7] text-[#D97706]"
-                  }`}>
-                    {area.accuracy}%
-                  </span>
-                </div>
-                <Progress value={area.accuracy} className="h-1.5" />
-                <p className="text-xs text-[#94A3B8] mt-1">{area.attempts} attempts</p>
-              </div>
-            ))}
-            <Button variant="outline" className="w-full border-[#FDE68A] text-[#D97706] hover:bg-[#FFFBEB]">
-              <Brain className="w-4 h-4 mr-2" />
-              Practice Weak Areas
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+                This Week
+              </button>
+              <button
+                onClick={() => setTimePeriod("monthly")}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                  timePeriod === "monthly"
+                    ? "bg-[#7C3AED] text-white shadow-md"
+                    : "text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#142538]"
+                }`}
+              >
+                This Month
+              </button>
+            </div>
+          </div>
 
-      {/* Recent Activity */}
-      <Card className="bg-white border-[#E2E8F0] shadow-sm">
-        <CardHeader>
-          <CardTitle className="text-[#1E293B]">Recent Activity</CardTitle>
-        </CardHeader>
-        <CardContent>
+          {/* Stats Grid */}
           {isLoading ? (
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[...Array(4)].map((_, i) => (
-                <SkeletonActivity key={i} />
+                <SkeletonStats key={i} />
               ))}
             </div>
           ) : (
-            <div className="space-y-4">
-              {recentActivity.map((activity, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#7C3AED]/30 hover:shadow-md transition-all cursor-pointer"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {stats.map((stat) => (
+                <Card 
+                  key={stat.title} 
+                  className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] hover:border-[rgba(6,182,212,0.3)] transition-all room-transition"
                 >
-                  <div
-                    className="p-3 rounded-lg shrink-0 transition-transform hover:scale-110 shadow-sm"
-                    style={{ backgroundColor: `${activity.color}15` }}
-                  >
-                    <activity.icon className="w-5 h-5" style={{ color: activity.color }} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-medium text-[#1E293B] truncate">{activity.title}</p>
-                    <p className="text-sm text-[#94A3B8]">{activity.detail}</p>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <p className="text-sm text-[#64748B]">{activity.time}</p>
-                    <p className="text-xs text-[#94A3B8]">{activity.type}</p>
-                  </div>
-                </div>
+                  <CardContent className="p-6">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <p className="text-sm text-[#9CA3AF]">{stat.title}</p>
+                        <p className="text-3xl font-bold text-[#E5E7EB] mt-2">
+                          {stat.value}
+                          <span className="text-lg text-[#6B7280] ml-1">{stat.unit}</span>
+                        </p>
+                        <p className="text-sm mt-1 font-medium" style={{ color: stat.color }}>
+                          {stat.change}
+                        </p>
+                      </div>
+                      <div
+                        className="p-3 rounded-lg transition-transform hover:scale-110"
+                        style={{ backgroundColor: `${stat.color}15` }}
+                      >
+                        <stat.icon className="w-6 h-6" style={{ color: stat.color }} />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           )}
-        </CardContent>
-      </Card>
+
+          {/* Progress Chart */}
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
+                <TrendingUp className="w-5 h-5 text-[#7C3AED]" />
+                Study Progress
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="h-[300px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={chartData}>
+                    <defs>
+                      <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
+                      </linearGradient>
+                      <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#06B6D4" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(6, 182, 212, 0.1)" />
+                    <XAxis dataKey={xKey} stroke="#9CA3AF" fontSize={12} tickLine={false} />
+                    <YAxis yAxisId="left" stroke="#9CA3AF" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis yAxisId="right" orientation="right" stroke="#9CA3AF" fontSize={12} tickLine={false} axisLine={false} />
+                    <Tooltip 
+                      contentStyle={{ 
+                        backgroundColor: '#0F2233', 
+                        border: '1px solid rgba(6, 182, 212, 0.15)',
+                        borderRadius: '8px',
+                        color: '#E5E7EB'
+                      }}
+                      labelStyle={{ color: '#E5E7EB' }}
+                    />
+                    <Area yAxisId="left" type="monotone" dataKey="hours" stroke="#7C3AED" strokeWidth={2} fillOpacity={1} fill="url(#colorHours)" name="Study Hours" />
+                    <Area yAxisId="right" type="monotone" dataKey="questions" stroke="#06B6D4" strokeWidth={2} fillOpacity={1} fill="url(#colorQuestions)" name="MCQs Answered" />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="flex items-center justify-center gap-6 mt-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#7C3AED]" />
+                  <span className="text-sm text-[#9CA3AF]">Study Hours</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#06B6D4]" />
+                  <span className="text-sm text-[#9CA3AF]">MCQs Answered</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* Current Pathway */}
+            <Card className="lg:col-span-2 bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+              <CardHeader>
+                <CardTitle className="flex items-center justify-between text-[#E5E7EB]">
+                  <span>Current Pathway</span>
+                  <Badge className="bg-[rgba(124,58,237,0.2)] text-[#A78BFA] border-none">In Progress</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-xl font-semibold text-[#A78BFA]">{currentPathway.title}</h3>
+                    <span className="text-[#9CA3AF]">{currentPathway.completedTopics}/{currentPathway.totalTopics} topics</span>
+                  </div>
+                  <Progress value={currentPathway.progress} className="h-3" />
+                  <p className="text-sm text-[#9CA3AF] mt-2">{currentPathway.progress}% complete</p>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
+                    <p className="text-sm text-[#9CA3AF] mb-1">Currently Reading</p>
+                    <p className="font-medium text-[#E5E7EB]">{currentPathway.currentTopic}</p>
+                    <p className="text-xs text-[#6B7280] mt-1">Blumgart&apos;s Surgery Ch. 12-18</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)]">
+                    <p className="text-sm text-[#9CA3AF] mb-1">Up Next</p>
+                    <p className="font-medium text-[#E5E7EB]">{currentPathway.nextTopic}</p>
+                    <p className="text-xs text-[#6B7280] mt-1">Maingot&apos;s Ch. 32-36</p>
+                  </div>
+                </div>
+                <Button className="w-full py-3 bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg font-medium transition-all shadow-lg shadow-[#7C3AED]/20 text-white">
+                  Continue Learning
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Weak Areas */}
+            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
+                  <AlertCircle className="w-5 h-5 text-[#F59E0B]" />
+                  Focus Areas
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-[#9CA3AF]">ATOM flagged these topics based on your MCQ performance:</p>
+                {weakAreas.map((area, i) => (
+                  <div key={i} className="p-3 rounded-lg bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)] cursor-pointer hover:border-[rgba(245,158,11,0.4)] transition-all">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="font-medium text-sm text-[#E5E7EB]">{area.topic}</p>
+                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                        area.accuracy < 60 ? "bg-[rgba(239,68,68,0.2)] text-[#EF4444]" : "bg-[rgba(245,158,11,0.2)] text-[#F59E0B]"
+                      }`}>
+                        {area.accuracy}%
+                      </span>
+                    </div>
+                    <Progress value={area.accuracy} className="h-1.5" />
+                    <p className="text-xs text-[#6B7280] mt-1">{area.attempts} attempts</p>
+                  </div>
+                ))}
+                <Button variant="outline" className="w-full border-[rgba(245,158,11,0.3)] text-[#F59E0B] hover:bg-[rgba(245,158,11,0.1)]">
+                  <Brain className="w-4 h-4 mr-2" />
+                  Practice Weak Areas
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Recent Activity */}
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+            <CardHeader>
+              <CardTitle className="text-[#E5E7EB]">Recent Activity</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {recentActivity.map((activity, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)] hover:border-[rgba(124,58,237,0.2)] transition-all cursor-pointer">
+                    <div className="p-3 rounded-lg shrink-0" style={{ backgroundColor: `${activity.color}15` }}>
+                      <activity.icon className="w-5 h-5" style={{ color: activity.color }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium text-[#E5E7EB] truncate">{activity.title}</p>
+                      <p className="text-sm text-[#6B7280]">{activity.detail}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="text-sm text-[#9CA3AF]">{activity.time}</p>
+                      <p className="text-xs text-[#6B7280]">{activity.type}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Knowledge Graph Tab */}
+        <TabsContent value="graph" className="space-y-6 mt-6">
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
+                <Network className="w-5 h-5 text-[#7C3AED]" />
+                Your Knowledge Graph
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-[#9CA3AF] mb-6">Visual map of your learning progress and topic connections.</p>
+              
+              {/* Graph Visualization Placeholder */}
+              <div className="h-[400px] rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] flex items-center justify-center mb-6">
+                <div className="text-center">
+                  <Network className="w-16 h-16 text-[#7C3AED] mx-auto mb-4 opacity-50" />
+                  <p className="text-[#9CA3AF]">Interactive graph visualization</p>
+                  <p className="text-xs text-[#6B7280]">Coming soon with D3.js integration</p>
+                </div>
+              </div>
+
+              {/* Topic Nodes List */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {graphNodes.map((node) => (
+                  <div 
+                    key={node.id} 
+                    className={`p-4 rounded-xl border transition-all cursor-pointer hover:scale-105 ${
+                      node.status === 'current' ? 'bg-[rgba(124,58,237,0.1)] border-[rgba(124,58,237,0.3)]' :
+                      node.status === 'weak' ? 'bg-[rgba(239,68,68,0.1)] border-[rgba(239,68,68,0.2)]' :
+                      node.status === 'strong' ? 'bg-[rgba(5,150,105,0.1)] border-[rgba(5,150,105,0.2)]' :
+                      'bg-[#142538] border-[rgba(6,182,212,0.1)]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="font-medium text-[#E5E7EB]">{node.name}</p>
+                      <Badge className={`text-xs border-none ${
+                        node.status === 'current' ? 'bg-[#7C3AED] text-white' :
+                        node.status === 'weak' ? 'bg-[#EF4444] text-white' :
+                        node.status === 'strong' ? 'bg-[#059669] text-white' :
+                        'bg-[#0EA5E9] text-white'
+                      }`}>
+                        {node.status}
+                      </Badge>
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-[#9CA3AF]">
+                      <span>{node.connections} connections</span>
+                      <span>{node.mastery}% mastery</span>
+                    </div>
+                    <Progress value={node.mastery} className="h-1 mt-2" />
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }

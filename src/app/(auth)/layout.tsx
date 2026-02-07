@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AuthLayout({
   children,
@@ -10,7 +11,7 @@ export default function AuthLayout({
       {/* Left Side - Branding */}
       <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#F5F3FF] via-white to-[#F0F9FF] p-12 flex-col justify-between border-r border-[#E2E8F0]">
         <Link href="/" className="flex items-center gap-3">
-          <img src="/logo.svg" alt="NucleuX" className="w-12 h-12" />
+          <Image src="/logo.svg" alt="NucleuX" width={48} height={48} />
           <span className="text-2xl font-bold text-gradient-purple">
             NucleuX Academy
           </span>
@@ -53,7 +54,7 @@ export default function AuthLayout({
           {/* Mobile Logo */}
           <div className="lg:hidden mb-8 text-center">
             <Link href="/" className="inline-flex items-center gap-3">
-              <img src="/logo.svg" alt="NucleuX" className="w-10 h-10" />
+              <Image src="/logo.svg" alt="NucleuX" width={40} height={40} />
               <span className="text-xl font-bold text-gradient-purple">
                 NucleuX Academy
               </span>

@@ -34,7 +34,7 @@ export default function LoginPage() {
     }, 1500);
   };
 
-  const handleSocialLogin = (provider: string) => {
+  const handleSocialLogin = () => {
     setIsLoading(true);
     // Simulate social login
     setTimeout(() => {
@@ -58,7 +58,7 @@ export default function LoginPage() {
             <Button
               variant="outline"
               className="w-full border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B]"
-              onClick={() => handleSocialLogin("google")}
+              onClick={() => handleSocialLogin()}
               disabled={isLoading}
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ export default function LoginPage() {
             <Button
               variant="outline"
               className="w-full border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B]"
-              onClick={() => handleSocialLogin("apple")}
+              onClick={() => handleSocialLogin()}
               disabled={isLoading}
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">
@@ -183,7 +183,7 @@ export default function LoginPage() {
 
       {/* Sign Up Link */}
       <p className="text-center mt-6 text-[#64748B]">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="/signup" className="text-[#7C3AED] hover:underline font-medium">
           Sign up for free
         </Link>

@@ -54,9 +54,55 @@
   --color-nucleux-deep-blue: #0F172A;
 }
 
-/* NucleuX Campus Light Theme - Scholarly & Warm */
+/* NucleuX Dark Navy Theme - COLOR SYSTEM V2 */
 :root {
   --radius: 0.625rem;
+  --background: #0D1B2A;
+  --foreground: #E5E7EB;
+  --card: #0F2233;
+  --card-foreground: #E5E7EB;
+  --popover: #0F2233;
+  --popover-foreground: #E5E7EB;
+  --primary: #06B6D4;
+  --primary-foreground: #0D1B2A;
+  --secondary: #142538;
+  --secondary-foreground: #E5E7EB;
+  --muted: #152A40;
+  --muted-foreground: #9CA3AF;
+  --accent: #06B6D4;
+  --accent-foreground: #0D1B2A;
+  --destructive: #EF4444;
+  --border: rgba(255, 255, 255, 0.06);
+  --input: #122A40;
+  --ring: #06B6D4;
+  --chart-1: #7C3AED;
+  --chart-2: #059669;
+  --chart-3: #0EA5E9;
+  --chart-4: #CA8A04;
+  --chart-5: #EF4444;
+  
+  /* Room Colors */
+  --room-dashboard: #7C3AED;
+  --room-library: #059669;
+  --room-classroom: #0EA5E9;
+  --room-exam: #0EA5E9;
+  --room-community: #B45309;
+  --room-arena: #CA8A04;
+  --room-atom: #06B6D4;
+  
+  /* Dark Navy Sidebar */
+  --sidebar: #0D1B2A;
+  --sidebar-foreground: #E5E7EB;
+  --sidebar-primary: #06B6D4;
+  --sidebar-primary-foreground: #0D1B2A;
+  --sidebar-accent: rgba(255, 255, 255, 0.04);
+  --sidebar-accent-foreground: #E5E7EB;
+  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-ring: #06B6D4;
+}
+
+/* Light theme for marketing/auth pages */
+.theme-light {
   --background: #FAFAFA;
   --foreground: #1E293B;
   --card: #FFFFFF;
@@ -67,34 +113,14 @@
   --primary-foreground: #FFFFFF;
   --secondary: #F1F5F9;
   --secondary-foreground: #1E293B;
-  --muted: #F1F5F9;
+  --muted: #152A40;
   --muted-foreground: #64748B;
   --accent: #7C3AED;
   --accent-foreground: #FFFFFF;
   --destructive: #E11D48;
-  --border: #E2E8F0;
-  --input: #E2E8F0;
+  --border: rgba(255, 255, 255, 0.06);
+  --input: #122A40;
   --ring: #7C3AED;
-  --chart-1: #7C3AED;
-  --chart-2: #059669;
-  --chart-3: #0EA5E9;
-  --chart-4: #CA8A04;
-  --chart-5: #E11D48;
-  /* Campus Light Sidebar */
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #1E293B;
-  --sidebar-primary: #7C3AED;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #F5F3FF;
-  --sidebar-accent-foreground: #7C3AED;
-  --sidebar-border: #E2E8F0;
-  --sidebar-ring: #7C3AED;
-  
-  /* Campus Accent Colors */
-  --campus-forest: #059669;
-  --campus-wood: #B45309;
-  --campus-sky: #0EA5E9;
-  --campus-gold: #CA8A04;
 }
 
 @layer base {
@@ -106,56 +132,107 @@
   }
 }
 
-/* Custom utility classes for NucleuX Campus Light Theme */
+/* Custom utility classes for NucleuX Dark Navy Theme */
 @layer utilities {
-  /* Subtle shadows for light theme */
-  .shadow-campus {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  /* Dark theme shadows with cyan glow */
+  .shadow-navy {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   }
-  .shadow-campus-md {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+  .shadow-navy-md {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
   }
-  .shadow-campus-lg {
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.03);
+  .shadow-navy-lg {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
   }
-  .shadow-purple-hover {
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+  .shadow-cyan-glow {
+    box-shadow: 0 0 6px rgba(6, 182, 212, 0.08), 0 8px 26px rgba(0, 0, 0, 0.38);
   }
+  
+  /* Room-specific glows */
+  .glow-dashboard { box-shadow: none; outline: 1px solid rgba(124, 58, 237, 0.35); outline-offset: 0px; }
+  .glow-library { box-shadow: none; outline: 1px solid rgba(5, 150, 105, 0.35); outline-offset: 0px; }
+  .glow-classroom { box-shadow: none; outline: 1px solid rgba(14, 165, 233, 0.35); outline-offset: 0px; }
+  .glow-exam { box-shadow: none; outline: 1px solid rgba(14, 165, 233, 0.35); outline-offset: 0px; }
+  .glow-community { box-shadow: none; outline: 1px solid rgba(180, 83, 9, 0.35); outline-offset: 0px; }
+  .glow-arena { box-shadow: none; outline: 1px solid rgba(202, 138, 4, 0.35); outline-offset: 0px; }
   
   /* Text gradients */
   .text-gradient-purple {
-    background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    color: #7C3AED;
+  }
+  .text-gradient-cyan {
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    color: #06B6D4;
   }
   .text-gradient-forest {
-    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    color: #059669;
   }
   .text-gradient-gold {
-    background: linear-gradient(135deg, #CA8A04 0%, #EAB308 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    color: #CA8A04;
   }
   
-  /* Campus background gradients */
-  .bg-gradient-campus {
-    background: linear-gradient(135deg, #FAFAFA 0%, #F1F5F9 100%);
+  /* Dark navy backgrounds */
+  .bg-navy-deep { background: #0D1B2A; }
+  .bg-navy-card { background: #0F2233; }
+  .bg-navy-elevated { background: #122A40; }
+  .bg-navy-muted { background: #152A40; }
+  
+  /* Cyan border utilities */
+  .border-cyan-subtle { border-color: rgba(6, 182, 212, 0.15); }
+  .border-cyan-glow { border-color: rgba(6, 182, 212, 0.3); }
+  
+  
+
+  /* Matte utilities */
+  .border-matte { border-color: rgba(255, 255, 255, 0.06); }
+  .matte-card {
+    background: #0F2233;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+    border-radius: 16px;
   }
-  .bg-gradient-purple-subtle {
-    background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+  .matte-input {
+    background: #122A40;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: none;
+  }
+  .noise-overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("/noise.png");
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+  }
+/* Room transition class */
+  .room-transition {
+    transition: border-color 0.25s ease, 
+                background-color 0.25s ease, 
+                box-shadow 0.3s ease;
   }
   
-  /* Legacy dark theme utilities (kept for compatibility) */
+  /* Legacy support */
   .glow-purple {
     box-shadow: 0 0 20px rgba(124, 58, 237, 0.2), 0 0 40px rgba(124, 58, 237, 0.1);
   }
   .border-glow {
-    border: 1px solid rgba(124, 58, 237, 0.3);
+    border: 1px solid rgba(6, 182, 212, 0.3);
   }
 }
 
@@ -217,24 +294,24 @@ html {
   animation: pulse-subtle 2s ease-in-out infinite;
 }
 
-/* Card Hover Effects */
+/* Card Hover Effects - Dark theme */
 .card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15), 0 0 30px rgba(124, 58, 237, 0.1);
-  border-color: rgba(124, 58, 237, 0.5) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3) !important;
 }
 
-/* Skeleton Loading */
+/* Skeleton Loading - Dark theme */
 .skeleton {
   background: linear-gradient(
     90deg,
-    #E2E8F0 0%,
-    #F1F5F9 50%,
-    #E2E8F0 100%
+    #142538 0%,
+    #1E3A5F 50%,
+    #142538 100%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
@@ -300,23 +377,23 @@ html {
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Dark theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #0D1B2A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #1E3A5F;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: rgba(6, 182, 212, 0.3);
 }
 
 /* Smooth page transitions */

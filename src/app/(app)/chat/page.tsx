@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Send,
-  Sparkles,
   BookOpen,
   Brain,
   Lightbulb,
@@ -16,7 +15,6 @@ import {
   StickyNote,
   RotateCcw,
   Paperclip,
-  Zap,
   FileText,
   Presentation,
   HelpCircle,
@@ -130,9 +128,10 @@ export default function ChatPage() {
     scrollToBottom();
   }, [messages]);
 
-  const simulateATOMResponse = (userMessage: string) => {
+  const simulateATOMResponse = useCallback(() => {
+    const messageId = crypto.randomUUID();
     const thinkingMessage: Message = {
-      id: (Date.now() + 1).toString(),
+      id: messageId,
       role: "assistant",
       content: "Let me check the relevant sources...",
       timestamp: new Date(),
@@ -207,14 +206,14 @@ Based on Shackelford 9th Ed, Ch. 35
       );
       setIsTyping(false);
     }, 3500);
-  };
+  }, []);
 
-  const handleSend = async (text?: string) => {
+  const handleSend = useCallback(async (text?: string) => {
     const messageText = text || input.trim();
     if (!messageText) return;
 
     const userMessage: Message = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       role: "user",
       content: messageText,
       timestamp: new Date(),
@@ -224,8 +223,8 @@ Based on Shackelford 9th Ed, Ch. 35
     setInput("");
     setIsTyping(true);
 
-    simulateATOMResponse(messageText);
-  };
+    simulateATOMResponse();
+  }, [input, simulateATOMResponse]);
 
   const handleQuickAction = (actionId: string) => {
     const prompts: Record<string, string> = {

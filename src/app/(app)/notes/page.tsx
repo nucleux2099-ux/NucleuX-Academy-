@@ -102,7 +102,7 @@ export default function NotesPage() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [isLoading, setIsLoading] = useState(true);
   const [showNewNote, setShowNewNote] = useState(false);
-  const [editingNote, setEditingNote] = useState<Note | null>(null);
+  const [, setEditingNote] = useState<Note | null>(null);
   const [newNote, setNewNote] = useState({ title: "", content: "", tags: "" });
 
   useEffect(() => {
@@ -153,17 +153,17 @@ export default function NotesPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold flex items-center gap-3">
+          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
             <StickyNote className="w-8 h-8 text-[#F59E0B]" />
             My Notes
           </h1>
-          <p className="text-[#94A3B8] mt-1">
+          <p className="text-[#9CA3AF] mt-1">
             {notes.length} notes • Personal study notes and ATOM insights
           </p>
         </div>
         <Button
           onClick={() => setShowNewNote(true)}
-          className="bg-[#7C3AED] hover:bg-[#6D28D9] glow-purple"
+          className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-lg shadow-[#7C3AED]/20"
         >
           <Plus className="w-4 h-4 mr-2" />
           New Note
@@ -173,18 +173,18 @@ export default function NotesPage() {
       {/* Search and Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
           <Input
             placeholder="Search notes..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 bg-[#1E293B] border-[#334155] focus:border-[#7C3AED]"
+            className="pl-10 bg-[#0F2233] border-[rgba(255,255,255,0.06)] focus:border-[#7C3AED] text-[#E5E7EB] placeholder:text-[#9CA3AF]"
           />
         </div>
         <div className="flex gap-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="border-[#334155]">
+              <Button variant="outline" className="border-[rgba(255,255,255,0.06)] bg-[#0F2233] text-[#9CA3AF] hover:bg-[#142538]">
                 <Filter className="w-4 h-4 mr-2" />
                 Tags
                 {selectedTags.length > 0 && (
@@ -194,12 +194,12 @@ export default function NotesPage() {
                 )}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-[#1E293B] border-[#334155] w-48">
+            <DropdownMenuContent className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] w-48">
               {allTags.map((tag) => (
                 <DropdownMenuItem
                   key={tag}
                   onClick={() => toggleTag(tag)}
-                  className={selectedTags.includes(tag) ? "bg-[#7C3AED]/20" : ""}
+                  className={`text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#142538] ${selectedTags.includes(tag) ? "bg-[rgba(124,58,237,0.2)]" : ""}`}
                 >
                   <Tag className="w-4 h-4 mr-2" />
                   {tag}
@@ -207,11 +207,11 @@ export default function NotesPage() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <div className="flex bg-[#1E293B] border border-[#334155] rounded-lg overflow-hidden">
+          <div className="flex bg-[#0F2233] border border-[rgba(255,255,255,0.06)] rounded-lg overflow-hidden">
             <button
               onClick={() => setViewMode("grid")}
               className={`p-2 transition-colors ${
-                viewMode === "grid" ? "bg-[#7C3AED]" : "hover:bg-[#334155]"
+                viewMode === "grid" ? "bg-[#7C3AED] text-white" : "hover:bg-[#142538] text-[#9CA3AF]"
               }`}
             >
               <Grid className="w-4 h-4" />
@@ -219,7 +219,7 @@ export default function NotesPage() {
             <button
               onClick={() => setViewMode("list")}
               className={`p-2 transition-colors ${
-                viewMode === "list" ? "bg-[#7C3AED]" : "hover:bg-[#334155]"
+                viewMode === "list" ? "bg-[#7C3AED] text-white" : "hover:bg-[#142538] text-[#9CA3AF]"
               }`}
             >
               <List className="w-4 h-4" />
@@ -231,11 +231,11 @@ export default function NotesPage() {
       {/* Active Tag Filters */}
       {selectedTags.length > 0 && (
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm text-[#94A3B8]">Filtered by:</span>
+          <span className="text-sm text-[#9CA3AF]">Filtered by:</span>
           {selectedTags.map((tag) => (
             <Badge
               key={tag}
-              className="bg-[#7C3AED]/20 text-[#7C3AED] border-[#7C3AED]/30 cursor-pointer hover:bg-[#7C3AED]/30"
+              className="bg-[rgba(124,58,237,0.2)] text-[#7C3AED] border-[rgba(124,58,237,0.3)] cursor-pointer hover:bg-[rgba(124,58,237,0.3)]"
               onClick={() => toggleTag(tag)}
             >
               {tag}
@@ -246,7 +246,7 @@ export default function NotesPage() {
             variant="ghost"
             size="sm"
             onClick={() => setSelectedTags([])}
-            className="text-[#94A3B8] hover:text-white"
+            className="text-[#9CA3AF] hover:text-[#E5E7EB]"
           >
             Clear all
           </Button>
@@ -271,18 +271,17 @@ export default function NotesPage() {
               : "space-y-4"
           }
         >
-          {filteredNotes.map((note, index) => (
+          {filteredNotes.map((note) => (
             <Card
               key={note.id}
-              className="bg-[#1E293B] border-[#334155] card-hover group overflow-hidden"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] card-hover group overflow-hidden"
             >
               {/* Color bar */}
               <div className="h-1" style={{ backgroundColor: note.color }} />
               
               <CardContent className="p-5">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-semibold text-white group-hover:text-[#7C3AED] transition-colors line-clamp-1 flex-1">
+                  <h3 className="font-semibold text-[#E5E7EB] group-hover:text-[#7C3AED] transition-colors line-clamp-1 flex-1">
                     {note.title}
                   </h3>
                   <DropdownMenu>
@@ -290,19 +289,19 @@ export default function NotesPage() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity text-[#9CA3AF] hover:text-[#E5E7EB]"
                       >
                         <MoreVertical className="w-4 h-4" />
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-[#1E293B] border-[#334155]">
-                      <DropdownMenuItem onClick={() => setEditingNote(note)}>
+                    <DropdownMenuContent className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+                      <DropdownMenuItem onClick={() => setEditingNote(note)} className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#142538]">
                         <Edit className="w-4 h-4 mr-2" />
                         Edit
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         onClick={() => handleDelete(note.id)}
-                        className="text-red-400"
+                        className="text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]"
                       >
                         <Trash2 className="w-4 h-4 mr-2" />
                         Delete
@@ -311,7 +310,7 @@ export default function NotesPage() {
                   </DropdownMenu>
                 </div>
 
-                <p className="text-sm text-[#94A3B8] line-clamp-4 mb-4 whitespace-pre-line">
+                <p className="text-sm text-[#9CA3AF] line-clamp-4 mb-4 whitespace-pre-line">
                   {note.content}
                 </p>
 
@@ -321,7 +320,7 @@ export default function NotesPage() {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="bg-[#0F172A] text-[#94A3B8] border-[#334155] text-xs cursor-pointer hover:border-[#7C3AED]"
+                      className="bg-[#142538] text-[#9CA3AF] border-[rgba(255,255,255,0.06)] text-xs cursor-pointer hover:border-[#7C3AED]"
                       onClick={() => toggleTag(tag)}
                     >
                       {tag}
@@ -331,17 +330,17 @@ export default function NotesPage() {
 
                 {/* Source Link */}
                 {note.sourceTitle && (
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-[#0F172A] border border-[#334155] mb-3">
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-[#142538] border border-[rgba(255,255,255,0.06)] mb-3">
                     <BookOpen className="w-4 h-4 text-[#7C3AED]" />
-                    <span className="text-xs text-[#94A3B8] truncate flex-1">
+                    <span className="text-xs text-[#9CA3AF] truncate flex-1">
                       {note.sourceTitle}
                     </span>
-                    <Link2 className="w-3 h-3 text-[#64748B]" />
+                    <Link2 className="w-3 h-3 text-[#6B7280]" />
                   </div>
                 )}
 
                 {/* Timestamp */}
-                <div className="flex items-center gap-1 text-xs text-[#64748B]">
+                <div className="flex items-center gap-1 text-xs text-[#6B7280]">
                   <Clock className="w-3 h-3" />
                   {note.updatedAt.toLocaleDateString()}
                 </div>
@@ -354,18 +353,18 @@ export default function NotesPage() {
       {/* Empty State */}
       {!isLoading && filteredNotes.length === 0 && (
         <div className="text-center py-16 animate-fade-in">
-          <div className="w-20 h-20 rounded-2xl bg-[#F59E0B]/10 border border-[#F59E0B]/20 flex items-center justify-center mx-auto mb-6">
+          <div className="w-20 h-20 rounded-2xl bg-[rgba(245,158,11,0.15)] border border-[rgba(245,158,11,0.2)] flex items-center justify-center mx-auto mb-6">
             <StickyNote className="w-10 h-10 text-[#F59E0B]" />
           </div>
-          <h3 className="text-xl font-semibold mb-2">No notes found</h3>
-          <p className="text-[#94A3B8] max-w-md mx-auto mb-6">
+          <h3 className="text-xl font-semibold mb-2 text-[#E5E7EB]">No notes found</h3>
+          <p className="text-[#9CA3AF] max-w-md mx-auto mb-6">
             {searchQuery || selectedTags.length > 0
               ? "Try adjusting your search or filters"
               : "Start creating notes to capture your learning insights"}
           </p>
           <Button
             onClick={() => setShowNewNote(true)}
-            className="bg-[#7C3AED] hover:bg-[#6D28D9]"
+            className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white"
           >
             <Plus className="w-4 h-4 mr-2" />
             Create your first note
@@ -376,21 +375,21 @@ export default function NotesPage() {
       {/* New Note Modal */}
       {showNewNote && (
         <div
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={() => setShowNewNote(false)}
         >
           <Card
-            className="bg-[#1E293B] border-[#334155] w-full max-w-lg animate-slide-in-up"
+            className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] w-full max-w-lg animate-slide-in-up shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <CardContent className="p-6">
-              <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+              <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-[#E5E7EB]">
                 <Plus className="w-5 h-5 text-[#7C3AED]" />
                 New Note
               </h2>
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm text-[#94A3B8] mb-1 block">
+                  <label className="text-sm text-[#9CA3AF] mb-1 block">
                     Title
                   </label>
                   <Input
@@ -399,11 +398,11 @@ export default function NotesPage() {
                     onChange={(e) =>
                       setNewNote((prev) => ({ ...prev, title: e.target.value }))
                     }
-                    className="bg-[#0F172A] border-[#334155]"
+                    className="bg-[#142538] border-[rgba(255,255,255,0.06)] text-[#E5E7EB] placeholder:text-[#6B7280]"
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-[#94A3B8] mb-1 block">
+                  <label className="text-sm text-[#9CA3AF] mb-1 block">
                     Content
                   </label>
                   <textarea
@@ -413,11 +412,11 @@ export default function NotesPage() {
                       setNewNote((prev) => ({ ...prev, content: e.target.value }))
                     }
                     rows={6}
-                    className="w-full p-3 bg-[#0F172A] border border-[#334155] rounded-lg resize-none focus:border-[#7C3AED] focus:outline-none"
+                    className="w-full p-3 bg-[#142538] border border-[rgba(255,255,255,0.06)] rounded-lg resize-none focus:border-[#7C3AED] focus:outline-none text-[#E5E7EB] placeholder:text-[#6B7280]"
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-[#94A3B8] mb-1 block">
+                  <label className="text-sm text-[#9CA3AF] mb-1 block">
                     Tags (comma separated)
                   </label>
                   <Input
@@ -426,7 +425,7 @@ export default function NotesPage() {
                     onChange={(e) =>
                       setNewNote((prev) => ({ ...prev, tags: e.target.value }))
                     }
-                    className="bg-[#0F172A] border-[#334155]"
+                    className="bg-[#142538] border-[rgba(255,255,255,0.06)] text-[#E5E7EB] placeholder:text-[#6B7280]"
                   />
                 </div>
               </div>
@@ -434,13 +433,13 @@ export default function NotesPage() {
                 <Button
                   variant="outline"
                   onClick={() => setShowNewNote(false)}
-                  className="flex-1 border-[#334155]"
+                  className="flex-1 border-[rgba(255,255,255,0.06)] text-[#9CA3AF] hover:bg-[#142538]"
                 >
                   Cancel
                 </Button>
                 <Button
                   onClick={handleSaveNote}
-                  className="flex-1 bg-[#7C3AED] hover:bg-[#6D28D9]"
+                  className="flex-1 bg-[#7C3AED] hover:bg-[#6D28D9] text-white"
                 >
                   Save Note
                 </Button>

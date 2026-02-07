@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
+import { useEffect, useState, useRef, useSyncExternalStore } from "react";
 import {
   BookOpen,
   Brain,
@@ -76,7 +77,7 @@ const testimonials = [
     role: "NEET-PG Rank 342",
     college: "AIIMS Delhi",
     avatar: "PS",
-    content: "I was stuck at 450 marks in mocks for months. ATOM identified that I was weak in Hepatobiliary surgery and Nephrology. After 2 months of focused revision with NucleuX, I jumped to 520+. The 'why each option is wrong' explanations are game-changers.",
+    content: "I was stuck at 450 marks in mocks for months. ATOM identified that I was weak in Hepatobiliary surgery and Nephrology. After 2 months of focused revision with NucleuX, I jumped to 520+. The &apos;why each option is wrong&apos; explanations are game-changers.",
     rating: 5,
     badge: "Top Ranker",
   },
@@ -94,7 +95,7 @@ const testimonials = [
     role: "MS Surgery Resident",
     college: "JIPMER",
     avatar: "KM",
-    content: "As a PG resident, I have barely 30 mins/day for study. NucleuX's atomic notes let me learn during OT breaks. The citations to Maingot's and Blumgart's helped me in case presentations. ATOM's daily MCQs kept me consistent even on busy posting days.",
+    content: "As a PG resident, I have barely 30 mins/day for study. NucleuX&apos;s atomic notes let me learn during OT breaks. The citations to Maingot&apos;s and Blumgart&apos;s helped me in case presentations. ATOM&apos;s daily MCQs kept me consistent even on busy posting days.",
     rating: 5,
     badge: "Verified Resident",
   },
@@ -119,7 +120,7 @@ const testimonials = [
     role: "DNB Pediatrics",
     college: "Manipal Hospitals",
     avatar: "MA",
-    content: "NucleuX helped me crack DNB CET for Pediatrics. The subject-wise notes from Nelson's and OP Ghai were perfectly organized. What I loved most: asking ATOM doubts at 2 AM without feeling embarrassed. It explains until I truly understand.",
+    content: "NucleuX helped me crack DNB CET for Pediatrics. The subject-wise notes from Nelson&apos;s and OP Ghai were perfectly organized. What I loved most: asking ATOM doubts at 2 AM without feeling embarrassed. It explains until I truly understand.",
     rating: 5,
     badge: "DNB Success",
   },
@@ -199,11 +200,12 @@ function StatCounter({ value, suffix, label, icon: Icon }: { value: number; suff
 }
 
 export default function LandingPage() {
-  const [mounted, setMounted] = useState(false);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Use useSyncExternalStore for hydration-safe mounting
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
@@ -211,10 +213,12 @@ export default function LandingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E2E8F0] shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <img 
+            <Image 
               src="/logo.svg" 
-              alt="NucleuX" 
-              className="w-10 h-10 transition-transform group-hover:scale-110" 
+              alt="NucleuX"
+              width={40}
+              height={40}
+              className="transition-transform group-hover:scale-110" 
             />
             <span className="text-xl font-bold text-gradient-purple">NucleuX Academy</span>
           </Link>
@@ -244,10 +248,12 @@ export default function LandingPage() {
           <div className="text-center max-w-4xl mx-auto">
             {/* Floating Logo */}
             <div className={`mb-8 ${mounted ? 'animate-fade-in' : 'opacity-0'}`}>
-              <img 
+              <Image 
                 src="/logo.svg" 
-                alt="NucleuX" 
-                className="w-24 h-24 mx-auto animate-float drop-shadow-xl"
+                alt="NucleuX"
+                width={96}
+                height={96}
+                className="mx-auto animate-float drop-shadow-xl"
               />
             </div>
             
@@ -335,7 +341,7 @@ export default function LandingPage() {
                 <div className="flex-1 text-center text-xs text-[#94A3B8]">NucleuX Academy — Your Personal Study Desk</div>
               </div>
               <div className="bg-gradient-to-br from-[#F8FAFC] to-[#F5F3FF] h-[400px] flex items-center justify-center relative overflow-hidden">
-                <img src="/logo.svg" alt="Preview" className="w-32 h-32 opacity-20 animate-float" />
+                <Image src="/logo.svg" alt="Preview" width={128} height={128} className="opacity-20 animate-float" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
                     <p className="text-2xl font-bold text-[#1E293B] mb-2">Your Dashboard Preview</p>
@@ -360,11 +366,10 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div
                 key={feature.title}
                 className="p-6 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#7C3AED]/30 hover:shadow-xl transition-all cursor-pointer group"
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-sm"
@@ -389,12 +394,12 @@ export default function LandingPage() {
             <Badge className="bg-[#FFFBEB] text-[#D97706] border-[#FDE68A] mb-4">Success Stories</Badge>
             <h2 className="text-4xl font-bold text-[#1E293B] mb-4">Real Results from <span className="text-gradient-cyan">Real Doctors</span></h2>
             <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
-              100+ rank holders in NEET-PG 2025. Here's what they have to say.
+              100+ rank holders in NEET-PG 2025. Here&apos;s what they have to say.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
                 key={testimonial.name}
                 className="p-6 rounded-xl bg-white border border-[#E2E8F0] hover:shadow-xl transition-all shadow-sm relative"
@@ -419,7 +424,7 @@ export default function LandingPage() {
                 
                 {/* Content */}
                 <p className="text-[#64748B] mb-6 leading-relaxed text-sm">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
                 
                 {/* Author */}
@@ -451,7 +456,7 @@ export default function LandingPage() {
                   An AI Tutor That <span className="text-gradient-purple">Actually Reaches Out</span>
                 </h2>
                 <p className="text-[#64748B] mb-6">
-                  Most apps wait for you. ATOM doesn't. Get daily MCQs on Telegram, personalized weak area reminders, 
+                  Most apps wait for you. ATOM doesn&apos;t. Get daily MCQs on Telegram, personalized weak area reminders, 
                   and 24/7 doubt solving. Like having a senior who never sleeps.
                 </p>
                 <ul className="space-y-3 mb-6">
@@ -524,7 +529,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <img src="/logo.svg" alt="NucleuX" className="w-8 h-8" />
+              <Image src="/logo.svg" alt="NucleuX" width={32} height={32} />
               <span className="font-semibold text-[#1E293B]">NucleuX Academy</span>
             </div>
             <p className="text-[#64748B] text-sm text-center">

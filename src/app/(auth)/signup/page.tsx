@@ -68,7 +68,7 @@ export default function SignupPage() {
     }, 1500);
   };
 
-  const handleSocialSignup = (provider: string) => {
+  const handleSocialSignup = () => {
     setIsLoading(true);
     setTimeout(() => {
       router.push("/onboarding");
@@ -117,7 +117,7 @@ export default function SignupPage() {
                 <Button
                   variant="outline"
                   className="w-full border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B]"
-                  onClick={() => handleSocialSignup("google")}
+                  onClick={() => handleSocialSignup()}
                   disabled={isLoading}
                 >
                   <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
@@ -143,7 +143,7 @@ export default function SignupPage() {
                 <Button
                   variant="outline"
                   className="w-full border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B]"
-                  onClick={() => handleSocialSignup("apple")}
+                  onClick={() => handleSocialSignup()}
                   disabled={isLoading}
                 >
                   <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">

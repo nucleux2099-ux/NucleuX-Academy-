@@ -10,18 +10,29 @@ import {
   Users,
   Trophy,
   Atom,
-  Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ProfileButton } from "@/components/ProfilePopup";
+
+// Room colors for each navigation item
+const roomColors: Record<string, string> = {
+  '/dashboard': '#7C3AED', // Purple
+  '/library': '#059669',   // Green
+  '/classroom': '#0EA5E9', // Sky blue
+  '/mcqs': '#0EA5E9',      // Sky blue
+  '/community': '#B45309', // Amber
+  '/arena': '#CA8A04',     // Gold
+  '/chat': '#06B6D4',      // Cyan (ATOM)
+};
 
 const navItems = [
-  { href: "/dashboard", icon: LayoutDashboard, label: "My Desk" },
-  { href: "/library", icon: BookOpen, label: "Library" },
-  { href: "/classroom", icon: GraduationCap, label: "Classroom" },
-  { href: "/mcqs", icon: ClipboardCheck, label: "Exam Center" },
-  { href: "/community", icon: Users, label: "Common Room" },
-  { href: "/arena", icon: Trophy, label: "Arena" },
-  { href: "/chat", icon: Atom, label: "ATOM", highlight: true, subtitle: "AI Companion" },
+  { href: "/dashboard", icon: LayoutDashboard, label: "My Desk", description: "Dashboard & Graph" },
+  { href: "/library", icon: BookOpen, label: "Library", description: "Browse & Pathways" },
+  { href: "/classroom", icon: GraduationCap, label: "Classroom", description: "Video Lectures" },
+  { href: "/mcqs", icon: ClipboardCheck, label: "Exam Center", description: "Practice MCQs" },
+  { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
+  { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
+  { href: "/chat", icon: Atom, label: "ATOM", highlight: true, description: "AI Companion" },
 ];
 
 export function Sidebar() {
@@ -30,49 +41,66 @@ export function Sidebar() {
   return (
     <>
       {/* Sidebar - Only visible on desktop (lg and up) */}
-      <aside className="hidden lg:block fixed left-0 top-0 h-full w-64 bg-white border-r border-[#E2E8F0] z-40 shadow-sm">
+      <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#0D1B2A] border-r border-[rgba(6,182,212,0.1)] z-40">
         {/* Logo */}
-        <div className="p-6 border-b border-[#E2E8F0]">
+        <div className="p-6 border-b border-[rgba(6,182,212,0.1)]">
           <Link href="/dashboard" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] flex items-center justify-center shadow-lg shadow-[#7C3AED]/20 transition-transform group-hover:scale-110">
-              <span className="text-white font-bold text-lg">N</span>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-lg shadow-[#06B6D4]/20 transition-transform group-hover:scale-110">
+              <span className="text-[#0D1B2A] font-bold text-lg">N</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-[#1E293B]">NucleuX</h1>
-              <p className="text-xs text-[#64748B]">Academy</p>
+              <h1 className="text-xl font-bold text-[#E5E7EB]">NucleuX</h1>
+              <p className="text-xs text-[#9CA3AF]">Academy</p>
             </div>
           </Link>
         </div>
 
         {/* Navigation - Campus Rooms */}
-        <nav className="p-4 space-y-1.5 max-h-[calc(100vh-220px)] overflow-y-auto scrollbar-hide">
+        <nav className="flex-1 p-4 space-y-1.5 overflow-y-auto scrollbar-hide">
           {navItems.map((item) => {
             const isActive = pathname === item.href || 
               (item.href !== "/" && pathname.startsWith(item.href));
             const isHighlight = "highlight" in item && item.highlight;
+            const roomColor = roomColors[item.href] || '#06B6D4';
             
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200",
+                  "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 room-transition relative",
                   isActive
-                    ? "bg-gradient-to-r from-[#7C3AED]/10 to-[#7C3AED]/5 text-[#7C3AED] border border-[#7C3AED]/20 shadow-sm"
+                    ? "text-[#E5E7EB]"
                     : isHighlight
-                    ? "bg-gradient-to-r from-[#F3E8FF] to-[#E9D5FF] text-[#7C3AED] border border-[#C4B5FD]/30 hover:shadow-md"
-                    : "text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]"
+                    ? "text-[#06B6D4]"
+                    : "text-[#9CA3AF] hover:text-[#E5E7EB]"
                 )}
+                style={isActive ? {
+                  backgroundColor: `${roomColor}15`,
+                  borderLeft: `3px solid ${roomColor}`,
+                  marginLeft: '-3px',
+                  paddingLeft: 'calc(1rem + 3px)',
+                } : {}}
               >
-                <item.icon size={20} className={isHighlight && !isActive ? "text-[#7C3AED]" : ""} />
+                <item.icon 
+                  size={20} 
+                  className={cn(
+                    "transition-colors",
+                    isActive ? "" : isHighlight ? "text-[#06B6D4]" : ""
+                  )}
+                  style={isActive ? { color: roomColor } : {}}
+                />
                 <div className="flex-1">
                   <span className="font-medium">{item.label}</span>
-                  {"subtitle" in item && (
-                    <p className="text-[10px] text-[#94A3B8] -mt-0.5">{item.subtitle}</p>
-                  )}
                 </div>
                 {isHighlight && (
-                  <span className="text-[10px] bg-[#7C3AED] text-white px-2 py-0.5 rounded-full font-medium shadow-sm">
+                  <span 
+                    className="text-[10px] px-2 py-0.5 rounded-full font-medium"
+                    style={{ 
+                      backgroundColor: isActive ? roomColor : '#06B6D4',
+                      color: '#0D1B2A'
+                    }}
+                  >
                     AI
                   </span>
                 )}
@@ -81,20 +109,9 @@ export function Sidebar() {
           })}
         </nav>
 
-        {/* ATOM Philosophy Card */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-[#E2E8F0] bg-[#FAFBFC]">
-          <div className="bg-gradient-to-br from-[#F3E8FF] via-white to-[#E0F2FE] rounded-xl p-4 border border-[#E2E8F0] shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-4 h-4 text-[#7C3AED]" />
-              <p className="text-sm font-semibold text-[#1E293B]">Atomic Learning</p>
-            </div>
-            <p className="text-xs text-[#64748B] mb-3 leading-relaxed">
-              Master medicine one concept at a time. Small steps, lasting knowledge.
-            </p>
-            <button className="w-full py-2.5 bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] hover:from-[#6D28D9] hover:to-[#5B21B6] rounded-lg text-sm font-medium text-white transition-all shadow-md shadow-[#7C3AED]/20 hover:shadow-lg">
-              Upgrade to Pro
-            </button>
-          </div>
+        {/* Profile Button at Bottom */}
+        <div className="p-4 border-t border-[rgba(6,182,212,0.1)]">
+          <ProfileButton />
         </div>
       </aside>
     </>

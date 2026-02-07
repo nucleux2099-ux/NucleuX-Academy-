@@ -37,15 +37,15 @@ const sampleNodes: GraphNode[] = [
 ];
 
 const nodeColors = {
-  topic: { bg: "bg-purple-500", border: "border-purple-400", text: "text-purple-100" },
-  concept: { bg: "bg-cyan-500", border: "border-cyan-400", text: "text-cyan-100" },
-  procedure: { bg: "bg-green-500", border: "border-green-400", text: "text-green-100" },
-  drug: { bg: "bg-orange-500", border: "border-orange-400", text: "text-orange-100" },
+  topic: { bg: "bg-[#7C3AED]", border: "border-[#A78BFA]", text: "text-white" },
+  concept: { bg: "bg-[#06B6D4]", border: "border-[#22D3EE]", text: "text-white" },
+  procedure: { bg: "bg-[#059669]", border: "border-[#10B981]", text: "text-white" },
+  drug: { bg: "bg-[#F59E0B]", border: "border-[#FBBF24]", text: "text-white" },
 };
 
 const statusStyles = {
-  completed: "opacity-100 ring-2 ring-green-400",
-  "in-progress": "opacity-100 ring-2 ring-yellow-400",
+  completed: "opacity-100 ring-2 ring-[#059669]",
+  "in-progress": "opacity-100 ring-2 ring-[#F59E0B]",
   "not-started": "opacity-60",
 };
 
@@ -63,15 +63,15 @@ export default function GraphPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">Knowledge Graph</h1>
-          <p className="text-gray-400">Visualize connections between concepts</p>
+          <h1 className="text-2xl font-bold text-[#E5E7EB]">Knowledge Graph</h1>
+          <p className="text-[#9CA3AF]">Visualize connections between concepts</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="border-gray-700 text-gray-300">
+          <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#0F2233] text-[#9CA3AF] hover:bg-[#142538]">
             <Filter className="w-4 h-4 mr-2" />
             Filter
           </Button>
-          <Button variant="outline" size="sm" className="border-gray-700 text-gray-300">
+          <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#0F2233] text-[#9CA3AF] hover:bg-[#142538]">
             <RefreshCw className="w-4 h-4 mr-2" />
             Reset
           </Button>
@@ -80,12 +80,12 @@ export default function GraphPage() {
 
       {/* Search */}
       <div className="relative max-w-md">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
         <Input
           placeholder="Search topics..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 bg-gray-800/50 border-gray-700 text-white"
+          className="pl-10 bg-[#0F2233] border-[rgba(255,255,255,0.06)] text-[#E5E7EB] placeholder:text-[#6B7280]"
         />
       </div>
 
@@ -94,30 +94,30 @@ export default function GraphPage() {
         {Object.entries(nodeColors).map(([type, colors]) => (
           <div key={type} className="flex items-center gap-2">
             <div className={`w-3 h-3 rounded-full ${colors.bg}`} />
-            <span className="text-gray-400 capitalize">{type}</span>
+            <span className="text-[#9CA3AF] capitalize">{type}</span>
           </div>
         ))}
-        <div className="border-l border-gray-700 pl-4 flex gap-4">
+        <div className="border-l border-[rgba(255,255,255,0.06)] pl-4 flex gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gray-500 ring-2 ring-green-400" />
-            <span className="text-gray-400">Completed</span>
+            <div className="w-3 h-3 rounded-full bg-[#6B7280] ring-2 ring-[#059669]" />
+            <span className="text-[#9CA3AF]">Completed</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-gray-500 ring-2 ring-yellow-400" />
-            <span className="text-gray-400">In Progress</span>
+            <div className="w-3 h-3 rounded-full bg-[#6B7280] ring-2 ring-[#F59E0B]" />
+            <span className="text-[#9CA3AF]">In Progress</span>
           </div>
         </div>
       </div>
 
       <div className="flex gap-6">
         {/* Graph Container */}
-        <Card className="flex-1 bg-gray-800/30 border-gray-700 relative overflow-hidden" style={{ height: "500px" }}>
+        <Card className="flex-1 bg-[#0F2233] border-[rgba(255,255,255,0.06)] relative overflow-hidden" style={{ height: "500px" }}>
           {/* Zoom Controls */}
           <div className="absolute top-4 right-4 flex flex-col gap-2 z-10">
             <Button
               variant="outline"
               size="sm"
-              className="border-gray-600 bg-gray-800/80"
+              className="border-[rgba(255,255,255,0.06)] bg-[#142538]/80 text-[#9CA3AF] hover:bg-[#142538]"
               onClick={() => setZoom((z) => Math.min(z + 0.2, 2))}
             >
               <ZoomIn className="w-4 h-4" />
@@ -125,12 +125,12 @@ export default function GraphPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-gray-600 bg-gray-800/80"
+              className="border-[rgba(255,255,255,0.06)] bg-[#142538]/80 text-[#9CA3AF] hover:bg-[#142538]"
               onClick={() => setZoom((z) => Math.max(z - 0.2, 0.5))}
             >
               <ZoomOut className="w-4 h-4" />
             </Button>
-            <Button variant="outline" size="sm" className="border-gray-600 bg-gray-800/80">
+            <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#142538]/80 text-[#9CA3AF] hover:bg-[#142538]">
               <Maximize2 className="w-4 h-4" />
             </Button>
           </div>
@@ -180,28 +180,28 @@ export default function GraphPage() {
         </Card>
 
         {/* Details Panel */}
-        <Card className="w-80 hidden lg:block bg-gray-800/30 border-gray-700 p-4">
+        <Card className="w-80 hidden lg:block bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4">
           {selectedNode ? (
             <div className="space-y-4">
               <div>
                 <Badge
-                  className={`${nodeColors[selectedNode.type].bg} ${nodeColors[selectedNode.type].text} mb-2`}
+                  className={`${nodeColors[selectedNode.type].bg} ${nodeColors[selectedNode.type].text} mb-2 border-none`}
                 >
                   {selectedNode.type}
                 </Badge>
-                <h3 className="text-xl font-bold text-white">{selectedNode.label}</h3>
+                <h3 className="text-xl font-bold text-[#E5E7EB]">{selectedNode.label}</h3>
               </div>
 
               <div className="space-y-2">
-                <p className="text-sm text-gray-400">Status</p>
+                <p className="text-sm text-[#9CA3AF]">Status</p>
                 <Badge
                   variant="outline"
                   className={
                     selectedNode.status === "completed"
-                      ? "border-green-500 text-green-400"
+                      ? "border-[#059669] text-[#059669]"
                       : selectedNode.status === "in-progress"
-                      ? "border-yellow-500 text-yellow-400"
-                      : "border-gray-500 text-gray-400"
+                      ? "border-[#F59E0B] text-[#F59E0B]"
+                      : "border-[#6B7280] text-[#9CA3AF]"
                   }
                 >
                   {selectedNode.status.replace("-", " ")}
@@ -209,7 +209,7 @@ export default function GraphPage() {
               </div>
 
               <div className="space-y-2">
-                <p className="text-sm text-gray-400">Connected to</p>
+                <p className="text-sm text-[#9CA3AF]">Connected to</p>
                 <div className="flex flex-wrap gap-2">
                   {selectedNode.connections.map((connId) => {
                     const connected = sampleNodes.find((n) => n.id === connId);
@@ -217,7 +217,7 @@ export default function GraphPage() {
                       <Badge
                         key={connId}
                         variant="outline"
-                        className="border-purple-500/30 text-purple-400 cursor-pointer hover:bg-purple-500/20"
+                        className="border-[rgba(124,58,237,0.3)] text-[#A78BFA] cursor-pointer hover:bg-[rgba(124,58,237,0.15)]"
                         onClick={() => setSelectedNode(connected)}
                       >
                         {connected.label}
@@ -228,19 +228,19 @@ export default function GraphPage() {
               </div>
 
               <div className="pt-4 space-y-2">
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                <Button className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-lg shadow-[#7C3AED]/20">
                   Study This Topic
                 </Button>
-                <Button variant="outline" className="w-full border-gray-600 text-gray-300">
+                <Button variant="outline" className="w-full border-[rgba(255,255,255,0.06)] text-[#9CA3AF] hover:bg-[#142538]">
                   View in Library
                 </Button>
               </div>
             </div>
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-center">
-              <Info className="w-12 h-12 text-gray-600 mb-4" />
-              <h3 className="text-lg font-medium text-white mb-2">Select a Node</h3>
-              <p className="text-sm text-gray-400">
+              <Info className="w-12 h-12 text-[#6B7280] mb-4" />
+              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">Select a Node</h3>
+              <p className="text-sm text-[#9CA3AF]">
                 Click on any topic in the graph to see its details and connections
               </p>
             </div>
@@ -250,27 +250,27 @@ export default function GraphPage() {
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="bg-gray-800/30 border-gray-700 p-4 text-center">
-          <p className="text-3xl font-bold text-white">{sampleNodes.length}</p>
-          <p className="text-sm text-gray-400">Total Topics</p>
+        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#E5E7EB]">{sampleNodes.length}</p>
+          <p className="text-sm text-[#9CA3AF]">Total Topics</p>
         </Card>
-        <Card className="bg-gray-800/30 border-gray-700 p-4 text-center">
-          <p className="text-3xl font-bold text-green-400">
+        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#059669]">
             {sampleNodes.filter((n) => n.status === "completed").length}
           </p>
-          <p className="text-sm text-gray-400">Completed</p>
+          <p className="text-sm text-[#9CA3AF]">Completed</p>
         </Card>
-        <Card className="bg-gray-800/30 border-gray-700 p-4 text-center">
-          <p className="text-3xl font-bold text-yellow-400">
+        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#F59E0B]">
             {sampleNodes.filter((n) => n.status === "in-progress").length}
           </p>
-          <p className="text-sm text-gray-400">In Progress</p>
+          <p className="text-sm text-[#9CA3AF]">In Progress</p>
         </Card>
-        <Card className="bg-gray-800/30 border-gray-700 p-4 text-center">
-          <p className="text-3xl font-bold text-cyan-400">
+        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#06B6D4]">
             {sampleNodes.reduce((acc, n) => acc + n.connections.length, 0) / 2}
           </p>
-          <p className="text-sm text-gray-400">Connections</p>
+          <p className="text-sm text-[#9CA3AF]">Connections</p>
         </Card>
       </div>
     </div>

@@ -1,18 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { X, Send, Sparkles, ArrowRight, Minimize2 } from "lucide-react";
+import { X, Send, Sparkles, ArrowRight } from "lucide-react";
 
-// Room-specific ATOM modes
+// Room-specific ATOM modes with dark theme colors
 const atomModes: Record<string, {
   mode: string;
   icon: string;
   greeting: string;
   color: string;
-  lightColor: string;
+  bgColor: string;
   suggestions: string[];
 }> = {
   '/dashboard': {
@@ -20,7 +20,7 @@ const atomModes: Record<string, {
     icon: '📊',
     greeting: "Ready to optimize your study plan?",
     color: '#7C3AED',
-    lightColor: '#F5F3FF',
+    bgColor: 'rgba(124, 58, 237, 0.1)',
     suggestions: ["Review my weak areas", "Plan today's study session", "Check my progress"],
   },
   '/library': {
@@ -28,7 +28,7 @@ const atomModes: Record<string, {
     icon: '📚',
     greeting: "Need help finding connections between topics?",
     color: '#059669',
-    lightColor: '#ECFDF5',
+    bgColor: 'rgba(5, 150, 105, 0.1)',
     suggestions: ["Find related topics", "Explain this chapter", "Cross-reference sources"],
   },
   '/classroom': {
@@ -36,7 +36,7 @@ const atomModes: Record<string, {
     icon: '🎓',
     greeting: "I'm watching with you! Ask about any concept.",
     color: '#0EA5E9',
-    lightColor: '#F0F9FF',
+    bgColor: 'rgba(14, 165, 233, 0.1)',
     suggestions: ["Explain this concept", "Generate mind map", "Take notes for me"],
   },
   '/mcqs': {
@@ -44,7 +44,7 @@ const atomModes: Record<string, {
     icon: '❓',
     greeting: "I'll explain why each answer is right or wrong.",
     color: '#0EA5E9',
-    lightColor: '#F0F9FF',
+    bgColor: 'rgba(14, 165, 233, 0.1)',
     suggestions: ["Why was I wrong?", "Explain this concept", "Similar questions"],
   },
   '/community': {
@@ -52,7 +52,7 @@ const atomModes: Record<string, {
     icon: '👥',
     greeting: "I can add textbook references to any debate!",
     color: '#B45309',
-    lightColor: '#FFFBEB',
+    bgColor: 'rgba(180, 83, 9, 0.1)',
     suggestions: ["Add textbook reference", "Fact-check this", "Summarize thread"],
   },
   '/arena': {
@@ -60,40 +60,8 @@ const atomModes: Record<string, {
     icon: '🏆',
     greeting: "Let's climb that leaderboard together!",
     color: '#CA8A04',
-    lightColor: '#FEFCE8',
+    bgColor: 'rgba(202, 138, 4, 0.1)',
     suggestions: ["How to beat #3?", "My weak areas", "Strategy tips"],
-  },
-  '/notes': {
-    mode: 'Note-Taking Assistant',
-    icon: '📝',
-    greeting: "Let me help organize your thoughts!",
-    color: '#7C3AED',
-    lightColor: '#F5F3FF',
-    suggestions: ["Format my notes", "Add citations", "Create summary"],
-  },
-  '/pathways': {
-    mode: 'Learning Guide',
-    icon: '🗺️',
-    greeting: "Let me guide your learning journey!",
-    color: '#7C3AED',
-    lightColor: '#F5F3FF',
-    suggestions: ["Next topic?", "Review prerequisites", "Optimize my path"],
-  },
-  '/profile': {
-    mode: 'Personal Assistant',
-    icon: '⚙️',
-    greeting: "How can I help you today?",
-    color: '#7C3AED',
-    lightColor: '#F5F3FF',
-    suggestions: ["Analyze my progress", "Set study goals", "Review achievements"],
-  },
-  '/graph': {
-    mode: 'Knowledge Navigator',
-    icon: '🕸️',
-    greeting: "Explore connections in your knowledge!",
-    color: '#7C3AED',
-    lightColor: '#F5F3FF',
-    suggestions: ["Show related topics", "Find gaps", "Suggest connections"],
   },
 };
 
@@ -102,8 +70,8 @@ const defaultMode = {
   mode: 'Assistant',
   icon: '⚛️',
   greeting: "How can I help you today?",
-  color: '#7C3AED',
-  lightColor: '#F5F3FF',
+  color: '#06B6D4',
+  bgColor: 'rgba(6, 182, 212, 0.1)',
   suggestions: ["Ask a question", "Get help", "Explore topics"],
 };
 
@@ -117,7 +85,6 @@ export function AtomWidget() {
   const pathname = usePathname();
   const router = useRouter();
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -193,17 +160,26 @@ export function AtomWidget() {
         }}
       >
         <div 
-          className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 relative overflow-hidden"
+          className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 relative overflow-hidden border"
           style={{ 
-            background: `linear-gradient(135deg, ${currentMode.color}, ${currentMode.color}dd)`,
-            boxShadow: `0 8px 32px ${currentMode.color}40`,
+            background: `linear-gradient(135deg, #0F2233, #142538)`,
+            borderColor: `${currentMode.color}40`,
+            boxShadow: `0 8px 32px ${currentMode.color}30, 0 0 20px ${currentMode.color}20`,
           }}
         >
           {/* Glow effect */}
           <div 
             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
             style={{
-              background: `radial-gradient(circle at center, ${currentMode.color}40 0%, transparent 70%)`,
+              background: `radial-gradient(circle at center, ${currentMode.color}30 0%, transparent 70%)`,
+            }}
+          />
+          
+          {/* Cyan ring */}
+          <div 
+            className="absolute inset-0 rounded-2xl opacity-50"
+            style={{
+              boxShadow: `inset 0 0 10px ${currentMode.color}30`,
             }}
           />
           
@@ -212,15 +188,18 @@ export function AtomWidget() {
           
           {/* Pulse ring */}
           <div 
-            className="absolute inset-0 rounded-2xl animate-ping opacity-20"
+            className="absolute inset-0 rounded-2xl animate-ping opacity-10"
             style={{ backgroundColor: currentMode.color }}
           />
         </div>
         
         {/* Mode badge */}
         <Badge 
-          className="absolute -top-2 -right-2 text-white text-[10px] px-1.5 py-0.5 shadow-lg border-0 whitespace-nowrap"
-          style={{ backgroundColor: currentMode.color }}
+          className="absolute -top-2 -right-2 text-[10px] px-1.5 py-0.5 shadow-lg border-0 whitespace-nowrap"
+          style={{ 
+            backgroundColor: currentMode.color,
+            color: '#0D1B2A'
+          }}
         >
           {currentMode.mode}
         </Badge>
@@ -235,13 +214,13 @@ export function AtomWidget() {
     );
   }
 
-  // Expanded chat panel
+  // Expanded chat panel - Dark Navy theme
   return (
     <div 
       className="fixed bottom-20 lg:bottom-6 right-4 z-50 w-80 sm:w-96 animate-in slide-in-from-bottom-4 duration-300"
     >
       <div 
-        className="bg-white rounded-2xl shadow-2xl overflow-hidden border"
+        className="bg-[#0F2233] rounded-2xl shadow-2xl overflow-hidden border"
         style={{ borderColor: `${currentMode.color}30` }}
       >
         {/* Header */}
@@ -252,17 +231,17 @@ export function AtomWidget() {
           }}
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-[#0D1B2A]/30 backdrop-blur flex items-center justify-center">
               <span className="text-xl">{currentMode.icon}</span>
             </div>
             <div>
-              <h3 className="font-semibold text-white flex items-center gap-2">
+              <h3 className="font-semibold text-[#0D1B2A] flex items-center gap-2">
                 ATOM
-                <Badge className="bg-white/20 text-white border-0 text-[10px]">
+                <Badge className="bg-[#0D1B2A]/20 text-[#0D1B2A] border-0 text-[10px]">
                   {currentMode.mode}
                 </Badge>
               </h3>
-              <p className="text-white/80 text-xs">Online • Ready to help</p>
+              <p className="text-[#0D1B2A]/70 text-xs">Online • Ready to help</p>
             </div>
           </div>
           <div className="flex items-center gap-1">
@@ -270,7 +249,7 @@ export function AtomWidget() {
               variant="ghost"
               size="icon"
               onClick={handleOpenFullChat}
-              className="h-8 w-8 text-white/80 hover:text-white hover:bg-white/20"
+              className="h-8 w-8 text-[#0D1B2A]/70 hover:text-[#0D1B2A] hover:bg-[#0D1B2A]/20"
               title="Open full chat"
             >
               <ArrowRight className="w-4 h-4" />
@@ -279,7 +258,7 @@ export function AtomWidget() {
               variant="ghost"
               size="icon"
               onClick={() => setIsExpanded(false)}
-              className="h-8 w-8 text-white/80 hover:text-white hover:bg-white/20"
+              className="h-8 w-8 text-[#0D1B2A]/70 hover:text-[#0D1B2A] hover:bg-[#0D1B2A]/20"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -290,7 +269,7 @@ export function AtomWidget() {
         <div 
           className="p-4 border-b"
           style={{ 
-            backgroundColor: currentMode.lightColor,
+            backgroundColor: currentMode.bgColor,
             borderColor: `${currentMode.color}20`,
           }}
         >
@@ -301,10 +280,10 @@ export function AtomWidget() {
         </div>
 
         {/* Messages */}
-        <div className="h-48 overflow-y-auto p-4 space-y-3 bg-[#FAFBFC]">
+        <div className="h-48 overflow-y-auto p-4 space-y-3 bg-[#0D1B2A]">
           {messages.length === 0 ? (
             <div className="text-center py-4">
-              <p className="text-sm text-[#94A3B8]">Start a conversation or try a suggestion below</p>
+              <p className="text-sm text-[#9CA3AF]">Start a conversation or try a suggestion below</p>
             </div>
           ) : (
             messages.map((msg) => (
@@ -315,8 +294,8 @@ export function AtomWidget() {
                 <div
                   className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
                     msg.role === 'user'
-                      ? 'text-white rounded-br-md'
-                      : 'bg-white border border-[#E2E8F0] text-[#1E293B] rounded-bl-md'
+                      ? 'text-[#0D1B2A] rounded-br-md'
+                      : 'bg-[#142538] border border-[rgba(6,182,212,0.15)] text-[#E5E7EB] rounded-bl-md'
                   }`}
                   style={msg.role === 'user' ? { backgroundColor: currentMode.color } : {}}
                 >
@@ -328,7 +307,7 @@ export function AtomWidget() {
           
           {isTyping && (
             <div className="flex justify-start">
-              <div className="bg-white border border-[#E2E8F0] rounded-2xl rounded-bl-md px-3 py-2">
+              <div className="bg-[#142538] border border-[rgba(6,182,212,0.15)] rounded-2xl rounded-bl-md px-3 py-2">
                 <div className="flex gap-1">
                   <span 
                     className="w-2 h-2 rounded-full animate-bounce" 
@@ -349,7 +328,7 @@ export function AtomWidget() {
         </div>
 
         {/* Suggestions */}
-        <div className="p-3 border-t border-[#E2E8F0] bg-[#F8FAFC]">
+        <div className="p-3 border-t border-[rgba(6,182,212,0.1)] bg-[#0F2233]">
           <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {currentMode.suggestions.map((suggestion, i) => (
               <button
@@ -359,7 +338,7 @@ export function AtomWidget() {
                 style={{ 
                   borderColor: `${currentMode.color}40`,
                   color: currentMode.color,
-                  backgroundColor: currentMode.lightColor,
+                  backgroundColor: currentMode.bgColor,
                 }}
               >
                 {suggestion}
@@ -369,7 +348,7 @@ export function AtomWidget() {
         </div>
 
         {/* Input */}
-        <div className="p-3 border-t border-[#E2E8F0] bg-white">
+        <div className="p-3 border-t border-[rgba(6,182,212,0.1)] bg-[#0F2233]">
           <div className="flex gap-2">
             <input
               type="text"
@@ -377,7 +356,7 @@ export function AtomWidget() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask ATOM..."
-              className="flex-1 px-3 py-2 text-sm bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl focus:outline-none focus:ring-2 transition-all"
+              className="flex-1 px-3 py-2 text-sm bg-[#142538] border border-[rgba(6,182,212,0.15)] rounded-xl text-[#E5E7EB] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-2 transition-all"
               style={{ 
                 '--tw-ring-color': `${currentMode.color}40`,
               } as React.CSSProperties}
@@ -386,7 +365,7 @@ export function AtomWidget() {
               onClick={handleSend}
               disabled={!input.trim()}
               className="rounded-xl px-3 disabled:opacity-50"
-              style={{ backgroundColor: currentMode.color }}
+              style={{ backgroundColor: currentMode.color, color: '#0D1B2A' }}
             >
               <Send className="w-4 h-4" />
             </Button>

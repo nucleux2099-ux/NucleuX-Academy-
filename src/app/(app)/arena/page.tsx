@@ -6,12 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Trophy,
   Flame,
-  Clock,
   Star,
   Zap,
   Crown,
@@ -23,7 +22,6 @@ import {
   Timer,
   Users,
   TrendingUp,
-  ChevronRight,
   Lock,
   CheckCircle,
   Play,
@@ -31,18 +29,9 @@ import {
   Swords,
   Calendar,
   Shield,
-  GraduationCap,
-  Atom,
-  MessageSquare,
 } from "lucide-react";
-import { useRouter } from "next/navigation";
 
-// Arena room color - Gold/Yellow
-const roomColor = {
-  primary: '#CA8A04',
-  light: '#FEFCE8',
-  name: 'yellow'
-};
+// Arena room color - Gold/Yellow (used in theme)
 
 // Daily Challenge Data
 const dailyChallenge = {
@@ -236,24 +225,24 @@ function CountdownTimer({ hours, minutes, seconds }: { hours: number; minutes: n
   return (
     <div className="flex items-center gap-2">
       <div className="text-center">
-        <div className="bg-white rounded-xl px-3 py-2 min-w-[50px] shadow-md border border-[#E2E8F0]">
+        <div className="bg-[#0F2233] rounded-xl px-3 py-2 min-w-[50px] shadow-lg border border-[rgba(6,182,212,0.15)]">
           <span className="text-2xl font-bold text-[#7C3AED]">{String(time.hours).padStart(2, "0")}</span>
         </div>
-        <span className="text-xs text-[#64748B] mt-1 block">Hours</span>
+        <span className="text-xs text-[#9CA3AF] mt-1 block">Hours</span>
       </div>
       <span className="text-2xl font-bold text-[#94A3B8]">:</span>
       <div className="text-center">
-        <div className="bg-white rounded-xl px-3 py-2 min-w-[50px] shadow-md border border-[#E2E8F0]">
+        <div className="bg-[#0F2233] rounded-xl px-3 py-2 min-w-[50px] shadow-lg border border-[rgba(6,182,212,0.15)]">
           <span className="text-2xl font-bold text-[#7C3AED]">{String(time.minutes).padStart(2, "0")}</span>
         </div>
-        <span className="text-xs text-[#64748B] mt-1 block">Minutes</span>
+        <span className="text-xs text-[#9CA3AF] mt-1 block">Minutes</span>
       </div>
       <span className="text-2xl font-bold text-[#94A3B8]">:</span>
       <div className="text-center">
-        <div className="bg-white rounded-xl px-3 py-2 min-w-[50px] shadow-md border border-[#E2E8F0]">
+        <div className="bg-[#0F2233] rounded-xl px-3 py-2 min-w-[50px] shadow-lg border border-[rgba(6,182,212,0.15)]">
           <span className="text-2xl font-bold text-[#7C3AED]">{String(time.seconds).padStart(2, "0")}</span>
         </div>
-        <span className="text-xs text-[#64748B] mt-1 block">Seconds</span>
+        <span className="text-xs text-[#9CA3AF] mt-1 block">Seconds</span>
       </div>
     </div>
   );
@@ -269,22 +258,22 @@ export default function ArenaPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#1E293B] flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D97706]/10 to-[#7C3AED]/10 flex items-center justify-center shadow-sm">
+          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#D97706]/10 to-[#7C3AED]/10 flex items-center justify-center shadow-md">
               <Trophy className="w-6 h-6 text-[#D97706]" />
             </div>
             The Arena
           </h1>
-          <p className="text-[#64748B] mt-1 ml-15">
+          <p className="text-[#9CA3AF] mt-1 ml-15">
             Compete, climb the ranks, and win amazing rewards
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Badge className="bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7] text-[#D97706] border-[#FDE68A] px-4 py-2 font-semibold shadow-sm">
+          <Badge className="bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7] text-[#D97706] border-[#FDE68A] px-4 py-2 font-semibold shadow-md">
             <Coins className="w-4 h-4 mr-2" />
             {userCoins.toLocaleString()} Coins
           </Badge>
-          <Badge className="bg-gradient-to-r from-[#F3E8FF] to-[#E9D5FF] text-[#7C3AED] border-[#C4B5FD] px-4 py-2 font-semibold shadow-sm">
+          <Badge className="bg-gradient-to-r from-[#F3E8FF] to-[#E9D5FF] text-[#7C3AED] border-[#C4B5FD] px-4 py-2 font-semibold shadow-md">
             <Star className="w-4 h-4 mr-2" />
             Rank #{leaderboardData.userRank.rank}
           </Badge>
@@ -293,31 +282,31 @@ export default function ArenaPage() {
 
       {/* Main Tabs */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="bg-white border border-[#E2E8F0] p-1.5 rounded-xl shadow-sm">
+        <TabsList className="bg-[#0F2233] border border-[rgba(6,182,212,0.15)] p-1.5 rounded-xl shadow-md">
           <TabsTrigger
             value="daily"
-            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-md px-6 rounded-lg text-[#64748B]"
+            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-lg px-6 rounded-lg text-[#9CA3AF]"
           >
             <Flame className="w-4 h-4 mr-2" />
             Daily Challenge
           </TabsTrigger>
           <TabsTrigger
             value="tournament"
-            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-md px-6 rounded-lg text-[#64748B]"
+            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-lg px-6 rounded-lg text-[#9CA3AF]"
           >
             <Swords className="w-4 h-4 mr-2" />
             Tournament
           </TabsTrigger>
           <TabsTrigger
             value="leaderboard"
-            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-md px-6 rounded-lg text-[#64748B]"
+            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-lg px-6 rounded-lg text-[#9CA3AF]"
           >
             <Trophy className="w-4 h-4 mr-2" />
             Leaderboards
           </TabsTrigger>
           <TabsTrigger
             value="rewards"
-            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-md px-6 rounded-lg text-[#64748B]"
+            className="data-[state=active]:bg-[#7C3AED] data-[state=active]:text-white data-[state=active]:shadow-lg px-6 rounded-lg text-[#9CA3AF]"
           >
             <Gift className="w-4 h-4 mr-2" />
             Rewards Shop
@@ -328,18 +317,18 @@ export default function ArenaPage() {
         <TabsContent value="daily" className="space-y-6">
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Main Challenge Card */}
-            <Card className="lg:col-span-2 bg-gradient-to-br from-white via-[#F8FAFC] to-[#F3E8FF] border-[#E2E8F0] shadow-xl overflow-hidden relative">
+            <Card className="lg:col-span-2 bg-gradient-to-br from-white via-[#F8FAFC] to-[#F3E8FF] border-[rgba(6,182,212,0.15)] shadow-xl overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C3AED]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#D97706]/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
               <CardHeader className="relative">
                 <div className="flex items-start justify-between">
                   <div>
-                    <Badge className="bg-[#DC2626] text-white mb-3 shadow-md animate-pulse">🔴 LIVE NOW</Badge>
-                    <CardTitle className="text-2xl text-[#1E293B]">{dailyChallenge.title}</CardTitle>
-                    <p className="text-[#64748B] mt-2">{dailyChallenge.description}</p>
+                    <Badge className="bg-[#DC2626] text-white mb-3 shadow-lg animate-pulse">🔴 LIVE NOW</Badge>
+                    <CardTitle className="text-2xl text-[#E5E7EB]">{dailyChallenge.title}</CardTitle>
+                    <p className="text-[#9CA3AF] mt-2">{dailyChallenge.description}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-[#64748B] mb-2">Ends in</p>
+                    <p className="text-sm text-[#9CA3AF] mb-2">Ends in</p>
                     <CountdownTimer {...dailyChallenge.endsIn} />
                   </div>
                 </div>
@@ -347,25 +336,25 @@ export default function ArenaPage() {
               <CardContent className="relative space-y-6">
                 {/* Challenge Stats */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                  <div className="bg-white rounded-xl p-4 text-center shadow-md border border-[#E2E8F0]">
+                  <div className="bg-[#0F2233] rounded-xl p-4 text-center shadow-lg border border-[rgba(6,182,212,0.15)]">
                     <Target className="w-6 h-6 mx-auto text-[#7C3AED] mb-2" />
-                    <p className="text-2xl font-bold text-[#1E293B]">{dailyChallenge.questionsCount}</p>
-                    <p className="text-xs text-[#64748B]">Questions</p>
+                    <p className="text-2xl font-bold text-[#E5E7EB]">{dailyChallenge.questionsCount}</p>
+                    <p className="text-xs text-[#9CA3AF]">Questions</p>
                   </div>
-                  <div className="bg-white rounded-xl p-4 text-center shadow-md border border-[#E2E8F0]">
+                  <div className="bg-[#0F2233] rounded-xl p-4 text-center shadow-lg border border-[rgba(6,182,212,0.15)]">
                     <Timer className="w-6 h-6 mx-auto text-[#0891B2] mb-2" />
-                    <p className="text-2xl font-bold text-[#1E293B]">{dailyChallenge.timeLimit}</p>
-                    <p className="text-xs text-[#64748B]">Minutes</p>
+                    <p className="text-2xl font-bold text-[#E5E7EB]">{dailyChallenge.timeLimit}</p>
+                    <p className="text-xs text-[#9CA3AF]">Minutes</p>
                   </div>
-                  <div className="bg-white rounded-xl p-4 text-center shadow-md border border-[#E2E8F0]">
+                  <div className="bg-[#0F2233] rounded-xl p-4 text-center shadow-lg border border-[rgba(6,182,212,0.15)]">
                     <Zap className="w-6 h-6 mx-auto text-[#D97706] mb-2" />
-                    <p className="text-2xl font-bold text-[#1E293B]">{dailyChallenge.reward.xp}</p>
-                    <p className="text-xs text-[#64748B]">XP Reward</p>
+                    <p className="text-2xl font-bold text-[#E5E7EB]">{dailyChallenge.reward.xp}</p>
+                    <p className="text-xs text-[#9CA3AF]">XP Reward</p>
                   </div>
-                  <div className="bg-white rounded-xl p-4 text-center shadow-md border border-[#E2E8F0]">
+                  <div className="bg-[#0F2233] rounded-xl p-4 text-center shadow-lg border border-[rgba(6,182,212,0.15)]">
                     <Coins className="w-6 h-6 mx-auto text-[#059669] mb-2" />
-                    <p className="text-2xl font-bold text-[#1E293B]">{dailyChallenge.reward.coins}</p>
-                    <p className="text-xs text-[#64748B]">Coins</p>
+                    <p className="text-2xl font-bold text-[#E5E7EB]">{dailyChallenge.reward.coins}</p>
+                    <p className="text-xs text-[#9CA3AF]">Coins</p>
                   </div>
                 </div>
 
@@ -379,7 +368,7 @@ export default function ArenaPage() {
                       {dailyChallenge.subject}
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-2 text-[#64748B] bg-white px-3 py-1.5 rounded-full border border-[#E2E8F0]">
+                  <div className="flex items-center gap-2 text-[#9CA3AF] bg-[#0F2233] px-3 py-1.5 rounded-full border border-[rgba(6,182,212,0.15)]">
                     <Users className="w-4 h-4" />
                     <span className="font-medium">{dailyChallenge.participants.toLocaleString()} playing</span>
                   </div>
@@ -393,9 +382,9 @@ export default function ArenaPage() {
             </Card>
 
             {/* Top Performers */}
-            <Card className="bg-white border-[#E2E8F0] shadow-lg">
+            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg">
               <CardHeader className="bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7] border-b border-[#FDE68A]/30 rounded-t-xl">
-                <CardTitle className="flex items-center gap-2 text-[#1E293B]">
+                <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
                   <Crown className="w-5 h-5 text-[#D97706]" />
                   Top Performers
                 </CardTitle>
@@ -404,23 +393,23 @@ export default function ArenaPage() {
                 {dailyChallenge.topPerformers.map((performer, idx) => (
                   <div
                     key={performer.rank}
-                    className="flex items-center gap-4 p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:shadow-md transition-all"
+                    className="flex items-center gap-4 p-3 rounded-xl bg-[#F8FAFC] border border-[rgba(6,182,212,0.15)] hover:shadow-lg transition-all"
                   >
                     <span className="text-2xl">
                       {idx === 0 ? "🥇" : idx === 1 ? "🥈" : "🥉"}
                     </span>
-                    <Avatar className="w-10 h-10 shadow-sm">
+                    <Avatar className="w-10 h-10 shadow-md">
                       <AvatarFallback className="bg-gradient-to-br from-[#7C3AED]/20 to-[#0891B2]/20 text-[#7C3AED] font-medium">
                         {performer.avatar}
                       </AvatarFallback>
                     </Avatar>
                     <div className="flex-1">
-                      <p className="font-semibold text-[#1E293B]">{performer.name}</p>
-                      <p className="text-sm text-[#64748B]">{performer.score} • {performer.time}</p>
+                      <p className="font-semibold text-[#E5E7EB]">{performer.name}</p>
+                      <p className="text-sm text-[#9CA3AF]">{performer.score} • {performer.time}</p>
                     </div>
                   </div>
                 ))}
-                <Button variant="outline" className="w-full border-[#E2E8F0] hover:bg-[#F8FAFC] text-[#64748B]">
+                <Button variant="outline" className="w-full border-[rgba(6,182,212,0.15)] hover:bg-[#F8FAFC] text-[#9CA3AF]">
                   View All Rankings
                 </Button>
               </CardContent>
@@ -428,9 +417,9 @@ export default function ArenaPage() {
           </div>
 
           {/* Past Challenges */}
-          <Card className="bg-white border-[#E2E8F0] shadow-lg">
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg">
             <CardHeader>
-              <CardTitle className="text-[#1E293B]">Past Challenges</CardTitle>
+              <CardTitle className="text-[#E5E7EB]">Past Challenges</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -442,13 +431,13 @@ export default function ArenaPage() {
                 ].map((challenge, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#7C3AED]/30 hover:shadow-lg cursor-pointer transition-all"
+                    className="p-4 rounded-xl bg-[#F8FAFC] border border-[rgba(6,182,212,0.15)] hover:border-[#7C3AED]/30 hover:shadow-lg cursor-pointer transition-all"
                   >
                     <p className="text-xs text-[#94A3B8] mb-1">{challenge.day}</p>
-                    <p className="font-semibold text-[#1E293B] mb-2">{challenge.title}</p>
+                    <p className="font-semibold text-[#E5E7EB] mb-2">{challenge.title}</p>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-[#059669] font-medium">{challenge.score}</span>
-                      <span className="text-[#64748B]">Rank #{challenge.rank}</span>
+                      <span className="text-[#9CA3AF]">Rank #{challenge.rank}</span>
                     </div>
                   </div>
                 ))}
@@ -466,15 +455,15 @@ export default function ArenaPage() {
             <CardContent className="p-8 relative">
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div>
-                  <Badge className="bg-[#D97706] text-white mb-3 shadow-md font-medium">{weeklyTournament.week} • {weeklyTournament.phase}</Badge>
-                  <h2 className="text-3xl font-bold text-[#1E293B] mb-2">{weeklyTournament.name}</h2>
-                  <p className="text-[#64748B]">
+                  <Badge className="bg-[#D97706] text-white mb-3 shadow-lg font-medium">{weeklyTournament.week} • {weeklyTournament.phase}</Badge>
+                  <h2 className="text-3xl font-bold text-[#E5E7EB] mb-2">{weeklyTournament.name}</h2>
+                  <p className="text-[#9CA3AF]">
                     {weeklyTournament.totalParticipants.toLocaleString()} participants • Top {weeklyTournament.qualified} qualify
                   </p>
-                  <div className="flex items-center gap-2 mt-4 bg-white/80 backdrop-blur px-4 py-2 rounded-xl w-fit shadow-md border border-[#E2E8F0]">
+                  <div className="flex items-center gap-2 mt-4 bg-[#0F2233]/80 backdrop-blur px-4 py-2 rounded-xl w-fit shadow-lg border border-[rgba(6,182,212,0.15)]">
                     <Trophy className="w-6 h-6 text-[#D97706]" />
                     <span className="text-2xl font-bold text-[#D97706]">{weeklyTournament.prizePool}</span>
-                    <span className="text-[#64748B]">Prize Pool</span>
+                    <span className="text-[#9CA3AF]">Prize Pool</span>
                   </div>
                 </div>
                 <div className="flex flex-col items-center gap-4">
@@ -498,38 +487,38 @@ export default function ArenaPage() {
 
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Your Progress */}
-            <Card className="bg-white border-[#E2E8F0] shadow-lg">
-              <CardHeader className="border-b border-[#E2E8F0]">
-                <CardTitle className="text-[#1E293B]">Your Progress</CardTitle>
+            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg">
+              <CardHeader className="border-b border-[rgba(6,182,212,0.15)]">
+                <CardTitle className="text-[#E5E7EB]">Your Progress</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6 pt-6">
                 <div className="text-center py-4 bg-gradient-to-br from-[#F3E8FF] to-[#E9D5FF] rounded-2xl">
                   <p className="text-6xl font-bold text-[#7C3AED]">
                     #{weeklyTournament.userProgress.rank}
                   </p>
-                  <p className="text-[#64748B] mt-2">Current Ranking</p>
+                  <p className="text-[#9CA3AF] mt-2">Current Ranking</p>
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between p-3 bg-[#F8FAFC] rounded-lg">
-                    <span className="text-[#64748B]">Score</span>
-                    <span className="font-semibold text-[#1E293B]">{weeklyTournament.userProgress.score.toLocaleString()}</span>
+                    <span className="text-[#9CA3AF]">Score</span>
+                    <span className="font-semibold text-[#E5E7EB]">{weeklyTournament.userProgress.score.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between p-3 bg-[#F8FAFC] rounded-lg">
-                    <span className="text-[#64748B]">MCQs Answered</span>
-                    <span className="font-semibold text-[#1E293B]">{weeklyTournament.userProgress.questionsAnswered}</span>
+                    <span className="text-[#9CA3AF]">MCQs Answered</span>
+                    <span className="font-semibold text-[#E5E7EB]">{weeklyTournament.userProgress.questionsAnswered}</span>
                   </div>
                   <div className="flex justify-between p-3 bg-[#F8FAFC] rounded-lg">
-                    <span className="text-[#64748B]">Accuracy</span>
+                    <span className="text-[#9CA3AF]">Accuracy</span>
                     <span className="font-semibold text-[#059669]">{weeklyTournament.userProgress.accuracy}%</span>
                   </div>
                 </div>
                 <div className="p-4 rounded-xl bg-gradient-to-r from-[#F3E8FF]/50 to-[#E9D5FF]/50 border border-[#C4B5FD]/30">
-                  <p className="text-sm text-[#64748B] mb-2">Next Milestone: Rank #{weeklyTournament.userProgress.nextMilestone.rank}</p>
+                  <p className="text-sm text-[#9CA3AF] mb-2">Next Milestone: Rank #{weeklyTournament.userProgress.nextMilestone.rank}</p>
                   <Progress 
                     value={(weeklyTournament.userProgress.score / weeklyTournament.userProgress.nextMilestone.scoreNeeded) * 100} 
                     className="h-2" 
                   />
-                  <p className="text-xs text-[#64748B] mt-2">
+                  <p className="text-xs text-[#9CA3AF] mt-2">
                     {weeklyTournament.userProgress.nextMilestone.scoreNeeded - weeklyTournament.userProgress.score} points to go
                   </p>
                 </div>
@@ -537,22 +526,22 @@ export default function ArenaPage() {
             </Card>
 
             {/* Tournament Schedule */}
-            <Card className="bg-white border-[#E2E8F0] shadow-lg">
-              <CardHeader className="border-b border-[#E2E8F0]">
-                <CardTitle className="text-[#1E293B]">Tournament Schedule</CardTitle>
+            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg">
+              <CardHeader className="border-b border-[rgba(6,182,212,0.15)]">
+                <CardTitle className="text-[#E5E7EB]">Tournament Schedule</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 pt-4">
-                {weeklyTournament.schedule.map((phase, idx) => (
+                {weeklyTournament.schedule.map((phase) => (
                   <div
                     key={phase.phase}
                     className={`flex items-center gap-4 p-4 rounded-xl border ${
                       phase.status === "active"
-                        ? "bg-gradient-to-r from-[#F3E8FF] to-[#E9D5FF] border-[#7C3AED]/30 shadow-md"
-                        : "bg-[#F8FAFC] border-[#E2E8F0]"
+                        ? "bg-gradient-to-r from-[#F3E8FF] to-[#E9D5FF] border-[#7C3AED]/30 shadow-lg"
+                        : "bg-[#F8FAFC] border-[rgba(6,182,212,0.15)]"
                     }`}
                   >
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center shadow-sm ${
+                      className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md ${
                         phase.status === "active" ? "bg-[#7C3AED] text-white" : "bg-[#E2E8F0]"
                       }`}
                     >
@@ -563,12 +552,12 @@ export default function ArenaPage() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-[#1E293B]">{phase.phase}</p>
-                      <p className="text-sm text-[#64748B]">{phase.dates}</p>
+                      <p className="font-semibold text-[#E5E7EB]">{phase.phase}</p>
+                      <p className="text-sm text-[#9CA3AF]">{phase.dates}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-semibold text-[#1E293B]">{phase.participants}</p>
-                      <p className="text-xs text-[#64748B]">players</p>
+                      <p className="text-sm font-semibold text-[#E5E7EB]">{phase.participants}</p>
+                      <p className="text-xs text-[#9CA3AF]">players</p>
                     </div>
                   </div>
                 ))}
@@ -576,9 +565,9 @@ export default function ArenaPage() {
             </Card>
 
             {/* Prizes */}
-            <Card className="bg-white border-[#E2E8F0] shadow-lg">
+            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg">
               <CardHeader className="bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7] border-b border-[#FDE68A]/30 rounded-t-xl">
-                <CardTitle className="flex items-center gap-2 text-[#1E293B]">
+                <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
                   <Gift className="w-5 h-5 text-[#D97706]" />
                   Prizes
                 </CardTitle>
@@ -587,10 +576,10 @@ export default function ArenaPage() {
                 {weeklyTournament.prizes.map((prize, idx) => (
                   <div
                     key={prize.rank}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:shadow-md transition-all"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-[#F8FAFC] border border-[rgba(6,182,212,0.15)] hover:shadow-lg transition-all"
                   >
                     <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm ${
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-md ${
                         idx === 0
                           ? "bg-gradient-to-br from-[#FDE68A] to-[#F59E0B]"
                           : idx === 1
@@ -611,8 +600,8 @@ export default function ArenaPage() {
                       />
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-[#1E293B]">{prize.rank} Place</p>
-                      <p className="text-sm text-[#64748B]">{prize.prize}</p>
+                      <p className="font-bold text-[#E5E7EB]">{prize.rank} Place</p>
+                      <p className="text-sm text-[#9CA3AF]">{prize.prize}</p>
                     </div>
                   </div>
                 ))}
@@ -631,8 +620,8 @@ export default function ArenaPage() {
                 variant={leaderboardTab === tab.id ? "default" : "outline"}
                 className={
                   leaderboardTab === tab.id
-                    ? "bg-[#7C3AED] hover:bg-[#6D28D9] shadow-md"
-                    : "border-[#E2E8F0] hover:bg-[#F8FAFC] text-[#64748B]"
+                    ? "bg-[#7C3AED] hover:bg-[#6D28D9] shadow-lg"
+                    : "border-[rgba(6,182,212,0.15)] hover:bg-[#F8FAFC] text-[#9CA3AF]"
                 }
                 onClick={() => setLeaderboardTab(tab.id)}
               >
@@ -643,10 +632,10 @@ export default function ArenaPage() {
           </div>
 
           {/* Leaderboard Table */}
-          <Card className="bg-white border-[#E2E8F0] shadow-lg overflow-hidden">
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg overflow-hidden">
             <CardContent className="p-0">
               {/* Table Header */}
-              <div className="grid grid-cols-12 gap-4 p-4 border-b border-[#E2E8F0] text-sm text-[#64748B] bg-[#F8FAFC] font-medium">
+              <div className="grid grid-cols-12 gap-4 p-4 border-b border-[rgba(6,182,212,0.15)] text-sm text-[#9CA3AF] bg-[#F8FAFC] font-medium">
                 <div className="col-span-1">Rank</div>
                 <div className="col-span-4">Student</div>
                 <div className="col-span-2 text-center hidden sm:block">MCQs</div>
@@ -657,10 +646,10 @@ export default function ArenaPage() {
 
               {/* Table Rows */}
               <ScrollArea className="h-[500px]">
-                {leaderboardData.allIndia.map((user, idx) => (
+                {leaderboardData.allIndia.map((user) => (
                   <div
                     key={user.rank}
-                    className="grid grid-cols-12 gap-4 p-4 border-b border-[#E2E8F0] hover:bg-[#F8FAFC] transition-colors"
+                    className="grid grid-cols-12 gap-4 p-4 border-b border-[rgba(6,182,212,0.15)] hover:bg-[#F8FAFC] transition-colors"
                   >
                     <div className="col-span-1 flex items-center">
                       {user.rank <= 3 ? (
@@ -668,21 +657,21 @@ export default function ArenaPage() {
                           {user.rank === 1 ? "🥇" : user.rank === 2 ? "🥈" : "🥉"}
                         </span>
                       ) : (
-                        <span className="font-bold text-[#64748B]">#{user.rank}</span>
+                        <span className="font-bold text-[#9CA3AF]">#{user.rank}</span>
                       )}
                     </div>
                     <div className="col-span-4 flex items-center gap-3">
-                      <Avatar className="w-10 h-10 shadow-sm">
+                      <Avatar className="w-10 h-10 shadow-md">
                         <AvatarFallback className="bg-gradient-to-br from-[#7C3AED]/20 to-[#0891B2]/20 text-[#7C3AED] font-medium">
                           {user.avatar}
                         </AvatarFallback>
                       </Avatar>
                       <div>
-                        <p className="font-semibold text-[#1E293B]">{user.name}</p>
-                        <p className="text-xs text-[#64748B]">{user.college}</p>
+                        <p className="font-semibold text-[#E5E7EB]">{user.name}</p>
+                        <p className="text-xs text-[#9CA3AF]">{user.college}</p>
                       </div>
                     </div>
-                    <div className="col-span-2 text-center hidden sm:flex items-center justify-center font-medium text-[#1E293B]">
+                    <div className="col-span-2 text-center hidden sm:flex items-center justify-center font-medium text-[#E5E7EB]">
                       {user.mcqs.toLocaleString()}
                     </div>
                     <div className="col-span-2 text-center hidden md:flex items-center justify-center">
@@ -695,7 +684,7 @@ export default function ArenaPage() {
                       </Badge>
                     </div>
                     <div className="col-span-2 text-right flex items-center justify-end gap-2">
-                      <span className="font-bold text-[#1E293B]">{user.xp.toLocaleString()}</span>
+                      <span className="font-bold text-[#E5E7EB]">{user.xp.toLocaleString()}</span>
                       {user.change !== 0 && (
                         <span className={`text-xs font-medium ${user.change > 0 ? "text-[#059669]" : "text-[#DC2626]"}`}>
                           {user.change > 0 ? `↑${user.change}` : `↓${Math.abs(user.change)}`}
@@ -712,17 +701,17 @@ export default function ArenaPage() {
                   <span className="font-bold text-[#7C3AED]">#{leaderboardData.userRank.rank}</span>
                 </div>
                 <div className="col-span-4 flex items-center gap-3">
-                  <Avatar className="w-10 h-10 ring-2 ring-[#7C3AED] shadow-md">
+                  <Avatar className="w-10 h-10 ring-2 ring-[#7C3AED] shadow-lg">
                     <AvatarFallback className="bg-[#7C3AED] text-white font-medium">
                       {leaderboardData.userRank.avatar}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-semibold text-[#1E293B]">{leaderboardData.userRank.name} (You)</p>
-                    <p className="text-xs text-[#64748B]">{leaderboardData.userRank.college}</p>
+                    <p className="font-semibold text-[#E5E7EB]">{leaderboardData.userRank.name} (You)</p>
+                    <p className="text-xs text-[#9CA3AF]">{leaderboardData.userRank.college}</p>
                   </div>
                 </div>
-                <div className="col-span-2 text-center hidden sm:flex items-center justify-center font-medium text-[#1E293B]">
+                <div className="col-span-2 text-center hidden sm:flex items-center justify-center font-medium text-[#E5E7EB]">
                   {leaderboardData.userRank.mcqs.toLocaleString()}
                 </div>
                 <div className="col-span-2 text-center hidden md:flex items-center justify-center">
@@ -735,7 +724,7 @@ export default function ArenaPage() {
                   </Badge>
                 </div>
                 <div className="col-span-2 text-right flex items-center justify-end gap-2">
-                  <span className="font-bold text-[#1E293B]">{leaderboardData.userRank.xp.toLocaleString()}</span>
+                  <span className="font-bold text-[#E5E7EB]">{leaderboardData.userRank.xp.toLocaleString()}</span>
                   <span className="text-[#059669] text-xs font-medium">↑{leaderboardData.userRank.change}</span>
                 </div>
               </div>
@@ -749,12 +738,12 @@ export default function ArenaPage() {
           <Card className="bg-gradient-to-r from-[#FFFBEB] via-[#FEF3C7] to-[#F3E8FF] border-[#FDE68A]/50 shadow-xl">
             <CardContent className="p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center border border-[#FDE68A]">
+                <div className="w-16 h-16 rounded-2xl bg-[#0F2233] shadow-lg flex items-center justify-center border border-[#FDE68A]">
                   <Coins className="w-8 h-8 text-[#D97706]" />
                 </div>
                 <div>
-                  <p className="text-sm text-[#64748B]">Your Balance</p>
-                  <p className="text-4xl font-bold text-[#1E293B]">{userCoins.toLocaleString()} <span className="text-lg text-[#D97706]">Coins</span></p>
+                  <p className="text-sm text-[#9CA3AF]">Your Balance</p>
+                  <p className="text-4xl font-bold text-[#E5E7EB]">{userCoins.toLocaleString()} <span className="text-lg text-[#D97706]">Coins</span></p>
                 </div>
               </div>
               <div className="flex gap-2">
@@ -774,8 +763,8 @@ export default function ArenaPage() {
                 variant={rewardCategory === cat ? "default" : "outline"}
                 className={
                   rewardCategory === cat
-                    ? "bg-[#7C3AED] hover:bg-[#6D28D9] shadow-md"
-                    : "border-[#E2E8F0] hover:bg-[#F8FAFC] text-[#64748B]"
+                    ? "bg-[#7C3AED] hover:bg-[#6D28D9] shadow-lg"
+                    : "border-[rgba(6,182,212,0.15)] hover:bg-[#F8FAFC] text-[#9CA3AF]"
                 }
                 onClick={() => setRewardCategory(cat)}
               >
@@ -791,11 +780,11 @@ export default function ArenaPage() {
               .map((reward) => (
                 <Card
                   key={reward.id}
-                  className="bg-white border-[#E2E8F0] hover:border-[#7C3AED]/30 hover:shadow-xl transition-all cursor-pointer group relative overflow-hidden"
+                  className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] hover:border-[#7C3AED]/30 hover:shadow-xl transition-all cursor-pointer group relative overflow-hidden"
                 >
                   <CardContent className="p-6 flex flex-col items-center text-center">
                     {reward.popular && (
-                      <Badge className="absolute top-3 right-3 bg-[#DC2626] text-white text-xs shadow-md">
+                      <Badge className="absolute top-3 right-3 bg-[#DC2626] text-white text-xs shadow-lg">
                         Popular
                       </Badge>
                     )}
@@ -805,10 +794,10 @@ export default function ArenaPage() {
                     >
                       <reward.icon className="w-8 h-8" style={{ color: reward.color }} />
                     </div>
-                    <h3 className="font-bold text-[#1E293B] mb-1">{reward.name}</h3>
-                    <p className="text-sm text-[#64748B] mb-4">{reward.description}</p>
+                    <h3 className="font-bold text-[#E5E7EB] mb-1">{reward.name}</h3>
+                    <p className="text-sm text-[#9CA3AF] mb-4">{reward.description}</p>
                     <Button
-                      className={`w-full shadow-md ${
+                      className={`w-full shadow-lg ${
                         userCoins >= reward.price
                           ? "bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] hover:from-[#6D28D9] hover:to-[#5B21B6]"
                           : "bg-[#E2E8F0] text-[#94A3B8] cursor-not-allowed"
@@ -824,9 +813,9 @@ export default function ArenaPage() {
           </div>
 
           {/* How to Earn */}
-          <Card className="bg-white border-[#E2E8F0] shadow-lg">
-            <CardHeader className="border-b border-[#E2E8F0]">
-              <CardTitle className="text-[#1E293B]">How to Earn Coins</CardTitle>
+          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-lg">
+            <CardHeader className="border-b border-[rgba(6,182,212,0.15)]">
+              <CardTitle className="text-[#E5E7EB]">How to Earn Coins</CardTitle>
             </CardHeader>
             <CardContent className="pt-4">
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -838,16 +827,16 @@ export default function ArenaPage() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:shadow-md transition-all"
+                    className="flex items-center gap-3 p-4 rounded-xl bg-[#F8FAFC] border border-[rgba(6,182,212,0.15)] hover:shadow-lg transition-all"
                   >
                     <div 
-                      className="w-10 h-10 rounded-xl shadow-sm flex items-center justify-center"
+                      className="w-10 h-10 rounded-xl shadow-md flex items-center justify-center"
                       style={{ background: `linear-gradient(135deg, ${item.color}20, ${item.color}30)` }}
                     >
                       <item.icon className="w-5 h-5" style={{ color: item.color }} />
                     </div>
                     <div>
-                      <p className="font-medium text-sm text-[#1E293B]">{item.action}</p>
+                      <p className="font-medium text-sm text-[#E5E7EB]">{item.action}</p>
                       <p className="text-[#D97706] text-sm font-semibold">+{item.coins} coins</p>
                     </div>
                   </div>

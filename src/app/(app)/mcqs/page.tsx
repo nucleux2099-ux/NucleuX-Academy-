@@ -5,106 +5,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { SkeletonQuestion } from "@/components/Skeleton";
-import { EmptyMCQs } from "@/components/EmptyState";
-import {
-  Clock,
-  ChevronLeft,
-  ChevronRight,
-  Flag,
-  CheckCircle,
-  XCircle,
-  RotateCcw,
-  Lightbulb,
-  Trophy,
-  Target,
-  TrendingUp,
-  AlertCircle,
-  Eye,
-  Sparkles,
-  Atom,
-  MessageSquare,
-} from "lucide-react";
-import { useRouter } from "next/navigation";
+import { Clock, ChevronLeft, ChevronRight, Flag, CheckCircle, XCircle, RotateCcw, Lightbulb, Trophy, Target, TrendingUp, AlertCircle, Eye } from "lucide-react";
 
 // MCQs room color - Sky Blue
-const roomColor = {
-  primary: '#0EA5E9',
-  light: '#F0F9FF',
-  name: 'sky'
-};
+const roomColor = '#0EA5E9';
 
 const sampleQuestions = [
-  {
-    id: 1,
-    question: "A 45-year-old male presents with progressive dysphagia to solids for 6 months. Endoscopy shows a stricture at 30cm from incisors. Which is the most likely diagnosis?",
-    options: [
-      "Esophageal carcinoma",
-      "Achalasia cardia",
-      "Peptic stricture",
-      "Corrosive stricture",
-    ],
-    correctAnswer: 0,
-    explanation: "Progressive dysphagia to solids in a middle-aged male, with a stricture at 30cm (lower 1/3rd of esophagus), is highly suggestive of esophageal carcinoma. Achalasia typically presents with dysphagia to both solids and liquids from the onset.",
-    topic: "Esophageal Disorders",
-    difficulty: "Medium",
-  },
-  {
-    id: 2,
-    question: "The Triad of Charcot includes all EXCEPT:",
-    options: [
-      "Fever with rigors",
-      "Jaundice",
-      "Right upper quadrant pain",
-      "Hypotension",
-    ],
-    correctAnswer: 3,
-    explanation: "Charcot's triad consists of fever with rigors, jaundice, and right upper quadrant pain - indicative of acute cholangitis. Hypotension along with mental confusion are added in Reynold's pentad, which indicates severe acute cholangitis.",
-    topic: "Hepatobiliary",
-    difficulty: "Easy",
-  },
-  {
-    id: 3,
-    question: "Sister Mary Joseph nodule is associated with metastasis from which of the following malignancies?",
-    options: [
-      "Gastric carcinoma",
-      "Hepatocellular carcinoma",
-      "Rectal carcinoma",
-      "Esophageal carcinoma",
-    ],
-    correctAnswer: 0,
-    explanation: "Sister Mary Joseph nodule is an umbilical metastatic nodule, most commonly seen with gastric carcinoma. It represents advanced disease with peritoneal dissemination.",
-    topic: "Gastric Cancer",
-    difficulty: "Medium",
-  },
-  {
-    id: 4,
-    question: "Which of the following is the most common cause of acute pancreatitis?",
-    options: [
-      "Alcohol",
-      "Gallstones",
-      "Trauma",
-      "Hyperlipidemia",
-    ],
-    correctAnswer: 1,
-    explanation: "Gallstones are the most common cause of acute pancreatitis (40%), followed by alcohol (30%). The mechanism involves gallstone migration and transient obstruction of the pancreatic duct.",
-    topic: "Pancreatic Disorders",
-    difficulty: "Easy",
-  },
-  {
-    id: 5,
-    question: "A 60-year-old patient with cirrhosis presents with massive hematemesis. What is the most likely source of bleeding?",
-    options: [
-      "Gastric ulcer",
-      "Esophageal varices",
-      "Mallory-Weiss tear",
-      "Duodenal ulcer",
-    ],
-    correctAnswer: 1,
-    explanation: "In patients with cirrhosis and portal hypertension, esophageal varices are the most common cause of massive upper GI bleeding. Variceal bleeding accounts for up to 70% of upper GI bleeds in cirrhotics.",
-    topic: "Portal Hypertension",
-    difficulty: "Medium",
-  },
+  { id: 1, question: "A 45-year-old male presents with progressive dysphagia to solids for 6 months. Endoscopy shows a stricture at 30cm from incisors. Which is the most likely diagnosis?", options: ["Esophageal carcinoma", "Achalasia cardia", "Peptic stricture", "Corrosive stricture"], correctAnswer: 0, explanation: "Progressive dysphagia to solids in a middle-aged male, with a stricture at 30cm (lower 1/3rd), is highly suggestive of esophageal carcinoma.", topic: "Esophageal Disorders", difficulty: "Medium" },
+  { id: 2, question: "The Triad of Charcot includes all EXCEPT:", options: ["Fever with rigors", "Jaundice", "Right upper quadrant pain", "Hypotension"], correctAnswer: 3, explanation: "Charcot's triad: fever, jaundice, RUQ pain. Hypotension + confusion = Reynold's pentad.", topic: "Hepatobiliary", difficulty: "Easy" },
+  { id: 3, question: "Sister Mary Joseph nodule is associated with metastasis from which malignancy?", options: ["Gastric carcinoma", "Hepatocellular carcinoma", "Rectal carcinoma", "Esophageal carcinoma"], correctAnswer: 0, explanation: "Sister Mary Joseph nodule is umbilical metastasis, most common with gastric carcinoma.", topic: "Gastric Cancer", difficulty: "Medium" },
+  { id: 4, question: "Which is the most common cause of acute pancreatitis?", options: ["Alcohol", "Gallstones", "Trauma", "Hyperlipidemia"], correctAnswer: 1, explanation: "Gallstones (40%) > Alcohol (30%). Gallstone migration obstructs pancreatic duct.", topic: "Pancreatic Disorders", difficulty: "Easy" },
+  { id: 5, question: "A 60-year-old cirrhotic presents with massive hematemesis. Most likely source?", options: ["Gastric ulcer", "Esophageal varices", "Mallory-Weiss tear", "Duodenal ulcer"], correctAnswer: 1, explanation: "In cirrhosis, esophageal varices cause ~70% of upper GI bleeds.", topic: "Portal Hypertension", difficulty: "Medium" },
 ];
 
 type QuizMode = "quiz" | "results" | "review";
@@ -115,275 +26,94 @@ export default function MCQsPage() {
   const [showResult, setShowResult] = useState(false);
   const [answers, setAnswers] = useState<(number | null)[]>(new Array(sampleQuestions.length).fill(null));
   const [flagged, setFlagged] = useState<boolean[]>(new Array(sampleQuestions.length).fill(false));
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes
+  const [timeLeft, setTimeLeft] = useState(600);
   const [mode, setMode] = useState<QuizMode>("quiz");
   const [isLoading, setIsLoading] = useState(true);
 
   const question = sampleQuestions[currentQuestion];
-  const isCorrect = selectedAnswer === question.correctAnswer;
 
-  // Simulate loading
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 600);
-    return () => clearTimeout(timer);
-  }, []);
+  useEffect(() => { setTimeout(() => setIsLoading(false), 600); }, []);
+  useEffect(() => { if (mode === "quiz" && timeLeft > 0) { const t = setInterval(() => setTimeLeft(p => p - 1), 1000); return () => clearInterval(t); } }, [timeLeft, mode]);
 
-  useEffect(() => {
-    if (mode === "quiz" && timeLeft > 0) {
-      const timer = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-      }, 1000);
-      return () => clearInterval(timer);
-    }
-  }, [timeLeft, mode]);
+  const formatTime = (s: number) => `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, "0")}`;
 
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, "0")}`;
-  };
-
-  const handleAnswer = (index: number) => {
-    if (showResult && mode === "quiz") return;
-    setSelectedAnswer(index);
-    const newAnswers = [...answers];
-    newAnswers[currentQuestion] = index;
-    setAnswers(newAnswers);
-  };
-
-  const handleSubmit = () => {
-    setShowResult(true);
-  };
-
-  const handleNext = () => {
-    if (currentQuestion < sampleQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-      setSelectedAnswer(answers[currentQuestion + 1]);
-      setShowResult(mode === "review" || answers[currentQuestion + 1] !== null);
-    } else if (mode === "quiz") {
-      setMode("results");
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-      setSelectedAnswer(answers[currentQuestion - 1]);
-      setShowResult(mode === "review" || answers[currentQuestion - 1] !== null);
-    }
-  };
-
-  const toggleFlag = () => {
-    const newFlagged = [...flagged];
-    newFlagged[currentQuestion] = !newFlagged[currentQuestion];
-    setFlagged(newFlagged);
-  };
-
-  const handleReset = () => {
-    setCurrentQuestion(0);
-    setSelectedAnswer(null);
-    setShowResult(false);
-    setAnswers(new Array(sampleQuestions.length).fill(null));
-    setFlagged(new Array(sampleQuestions.length).fill(false));
-    setTimeLeft(600);
-    setMode("quiz");
-  };
-
-  const handleReviewMistakes = () => {
-    const firstWrongIndex = answers.findIndex((a, i) => a !== null && a !== sampleQuestions[i].correctAnswer);
-    if (firstWrongIndex !== -1) {
-      setCurrentQuestion(firstWrongIndex);
-      setSelectedAnswer(answers[firstWrongIndex]);
-      setShowResult(true);
-      setMode("review");
-    }
-  };
+  const handleAnswer = (i: number) => { if (showResult && mode === "quiz") return; setSelectedAnswer(i); const na = [...answers]; na[currentQuestion] = i; setAnswers(na); };
+  const handleSubmit = () => setShowResult(true);
+  const handleNext = () => { if (currentQuestion < sampleQuestions.length - 1) { setCurrentQuestion(currentQuestion + 1); setSelectedAnswer(answers[currentQuestion + 1]); setShowResult(mode === "review" || answers[currentQuestion + 1] !== null); } else if (mode === "quiz") setMode("results"); };
+  const handlePrev = () => { if (currentQuestion > 0) { setCurrentQuestion(currentQuestion - 1); setSelectedAnswer(answers[currentQuestion - 1]); setShowResult(mode === "review" || answers[currentQuestion - 1] !== null); } };
+  const toggleFlag = () => { const nf = [...flagged]; nf[currentQuestion] = !nf[currentQuestion]; setFlagged(nf); };
+  const handleReset = () => { setCurrentQuestion(0); setSelectedAnswer(null); setShowResult(false); setAnswers(new Array(sampleQuestions.length).fill(null)); setFlagged(new Array(sampleQuestions.length).fill(false)); setTimeLeft(600); setMode("quiz"); };
+  const handleReviewMistakes = () => { const fi = answers.findIndex((a, i) => a !== null && a !== sampleQuestions[i].correctAnswer); if (fi !== -1) { setCurrentQuestion(fi); setSelectedAnswer(answers[fi]); setShowResult(true); setMode("review"); } };
 
   const score = answers.filter((a, i) => a === sampleQuestions[i].correctAnswer).length;
   const attempted = answers.filter(a => a !== null).length;
   const incorrect = answers.filter((a, i) => a !== null && a !== sampleQuestions[i].correctAnswer).length;
   const percentage = attempted > 0 ? Math.round((score / attempted) * 100) : 0;
-
-  // Get wrong questions for review
   const wrongQuestions = sampleQuestions.filter((q, i) => answers[i] !== null && answers[i] !== q.correctAnswer);
 
-  if (isLoading) {
-    return (
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="space-y-2">
-            <div className="skeleton h-8 w-48" />
-            <div className="skeleton h-4 w-32" />
-          </div>
-          <div className="skeleton h-10 w-24 rounded-lg" />
-        </div>
-        <SkeletonQuestion />
-      </div>
-    );
-  }
+  if (isLoading) return <div className="max-w-4xl mx-auto space-y-6"><div className="skeleton h-8 w-48" /><div className="skeleton h-64 w-full rounded-xl" /></div>;
 
   // Results Screen
   if (mode === "results") {
     return (
-      <div className="space-y-6 max-w-3xl mx-auto animate-fade-in page-transition bg-[#F0F9FF]/30 -m-4 sm:-m-6 p-4 sm:p-6 min-h-screen">
-        <Card className="bg-white border-[#E2E8F0] overflow-hidden shadow-xl">
-          {/* Header with gradient */}
-          <div className="bg-gradient-to-r from-[#F5F3FF] to-[#F0F9FF] p-8 text-center border-b border-[#E2E8F0]">
-            <div className="w-24 h-24 rounded-full bg-[#DCFCE7] flex items-center justify-center mx-auto mb-6 border-4 border-[#10B981]/30 shadow-lg">
-              <Trophy className="w-12 h-12 text-[#10B981]" />
+      <div className="space-y-6 max-w-3xl mx-auto">
+        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] overflow-hidden">
+          <div className="bg-gradient-to-r from-[rgba(14,165,233,0.15)] to-[rgba(6,182,212,0.1)] p-8 text-center border-b border-[rgba(6,182,212,0.1)]">
+            <div className="w-24 h-24 rounded-full bg-[rgba(5,150,105,0.2)] flex items-center justify-center mx-auto mb-6 border-4 border-[#059669]/30">
+              <Trophy className="w-12 h-12 text-[#059669]" />
             </div>
-            <h2 className="text-3xl font-bold text-[#1E293B] mb-2">Quiz Complete!</h2>
-            <p className="text-[#64748B]">Here's your performance summary</p>
+            <h2 className="text-3xl font-bold text-[#E5E7EB] mb-2">Quiz Complete!</h2>
+            <p className="text-[#9CA3AF]">Here&apos;s your performance summary</p>
           </div>
-
           <CardContent className="p-8">
-            {/* Score Circle */}
             <div className="flex justify-center mb-8">
               <div className="relative w-40 h-40">
                 <svg className="w-full h-full transform -rotate-90">
-                  <circle
-                    cx="80"
-                    cy="80"
-                    r="70"
-                    stroke="#E2E8F0"
-                    strokeWidth="12"
-                    fill="none"
-                  />
-                  <circle
-                    cx="80"
-                    cy="80"
-                    r="70"
-                    stroke={percentage >= 70 ? "#10B981" : percentage >= 50 ? "#F59E0B" : "#EF4444"}
-                    strokeWidth="12"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeDasharray={`${(percentage / 100) * 440} 440`}
-                    className="transition-all duration-1000"
-                  />
+                  <circle cx="80" cy="80" r="70" stroke="rgba(6,182,212,0.1)" strokeWidth="12" fill="none" />
+                  <circle cx="80" cy="80" r="70" stroke={percentage >= 70 ? "#059669" : percentage >= 50 ? "#F59E0B" : "#EF4444"} strokeWidth="12" fill="none" strokeLinecap="round" strokeDasharray={`${(percentage / 100) * 440} 440`} className="transition-all duration-1000" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-4xl font-bold text-[#1E293B]">{percentage}%</span>
-                  <span className="text-sm text-[#64748B]">Accuracy</span>
+                  <span className="text-4xl font-bold text-[#E5E7EB]">{percentage}%</span>
+                  <span className="text-sm text-[#9CA3AF]">Accuracy</span>
                 </div>
               </div>
             </div>
-
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
-                <div className="w-10 h-10 rounded-lg bg-[#F5F3FF] flex items-center justify-center mx-auto mb-2">
-                  <Target className="w-5 h-5 text-[#7C3AED]" />
-                </div>
-                <p className="text-2xl font-bold text-[#1E293B]">{score}/{sampleQuestions.length}</p>
-                <p className="text-xs text-[#64748B]">Score</p>
+              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(14,165,233,0.15)] flex items-center justify-center mx-auto mb-2"><Target className="w-5 h-5 text-[#0EA5E9]" /></div>
+                <p className="text-2xl font-bold text-[#E5E7EB]">{score}/{sampleQuestions.length}</p>
+                <p className="text-xs text-[#6B7280]">Score</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
-                <div className="w-10 h-10 rounded-lg bg-[#DCFCE7] flex items-center justify-center mx-auto mb-2">
-                  <CheckCircle className="w-5 h-5 text-[#10B981]" />
-                </div>
-                <p className="text-2xl font-bold text-[#10B981]">{score}</p>
-                <p className="text-xs text-[#64748B]">Correct</p>
+              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(5,150,105,0.15)] flex items-center justify-center mx-auto mb-2"><CheckCircle className="w-5 h-5 text-[#059669]" /></div>
+                <p className="text-2xl font-bold text-[#059669]">{score}</p>
+                <p className="text-xs text-[#6B7280]">Correct</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
-                <div className="w-10 h-10 rounded-lg bg-[#FEE2E2] flex items-center justify-center mx-auto mb-2">
-                  <XCircle className="w-5 h-5 text-[#EF4444]" />
-                </div>
+              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(239,68,68,0.15)] flex items-center justify-center mx-auto mb-2"><XCircle className="w-5 h-5 text-[#EF4444]" /></div>
                 <p className="text-2xl font-bold text-[#EF4444]">{incorrect}</p>
-                <p className="text-xs text-[#64748B]">Incorrect</p>
+                <p className="text-xs text-[#6B7280]">Incorrect</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-center shadow-sm">
-                <div className="w-10 h-10 rounded-lg bg-[#F0F9FF] flex items-center justify-center mx-auto mb-2">
-                  <Clock className="w-5 h-5 text-[#06B6D4]" />
-                </div>
+              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(6,182,212,0.15)] flex items-center justify-center mx-auto mb-2"><Clock className="w-5 h-5 text-[#06B6D4]" /></div>
                 <p className="text-2xl font-bold text-[#06B6D4]">{formatTime(600 - timeLeft)}</p>
-                <p className="text-xs text-[#64748B]">Time Taken</p>
+                <p className="text-xs text-[#6B7280]">Time</p>
               </div>
             </div>
-
-            {/* Performance Message */}
-            <div className={`p-4 rounded-xl mb-8 ${
-              percentage >= 70 ? "bg-[#DCFCE7] border border-[#10B981]/30" :
-              percentage >= 50 ? "bg-[#FFFBEB] border border-[#F59E0B]/30" :
-              "bg-[#FEE2E2] border border-[#EF4444]/30"
-            }`}>
+            <div className={`p-4 rounded-xl mb-8 ${percentage >= 70 ? "bg-[rgba(5,150,105,0.15)] border border-[rgba(5,150,105,0.3)]" : percentage >= 50 ? "bg-[rgba(245,158,11,0.15)] border border-[rgba(245,158,11,0.3)]" : "bg-[rgba(239,68,68,0.15)] border border-[rgba(239,68,68,0.3)]"}`}>
               <div className="flex items-start gap-3">
-                {percentage >= 70 ? (
-                  <>
-                    <TrendingUp className="w-5 h-5 text-[#10B981] mt-0.5" />
-                    <div>
-                      <p className="font-medium text-[#10B981]">Excellent Performance! 🎉</p>
-                      <p className="text-sm text-[#64748B] mt-1">
-                        You've mastered these concepts. Keep up the great work!
-                      </p>
-                    </div>
-                  </>
-                ) : percentage >= 50 ? (
-                  <>
-                    <AlertCircle className="w-5 h-5 text-[#F59E0B] mt-0.5" />
-                    <div>
-                      <p className="font-medium text-[#F59E0B]">Good Effort! 💪</p>
-                      <p className="text-sm text-[#64748B] mt-1">
-                        Review the explanations for incorrect answers to improve.
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <AlertCircle className="w-5 h-5 text-[#EF4444] mt-0.5" />
-                    <div>
-                      <p className="font-medium text-[#EF4444]">Needs Improvement</p>
-                      <p className="text-sm text-[#64748B] mt-1">
-                        Don't worry! Review the material and try again.
-                      </p>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-
-            {/* Question Breakdown */}
-            {wrongQuestions.length > 0 && (
-              <div className="mb-8">
-                <h3 className="font-semibold text-[#1E293B] mb-4 flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-[#EF4444]" />
-                  Questions to Review ({wrongQuestions.length})
-                </h3>
-                <div className="space-y-3">
-                  {wrongQuestions.map((q, i) => (
-                    <div key={q.id} className="p-4 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] shadow-sm">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <Badge className="bg-[#FEE2E2] text-[#EF4444] border-none mb-2">
-                            Q{sampleQuestions.findIndex(sq => sq.id === q.id) + 1}
-                          </Badge>
-                          <p className="text-sm text-[#1E293B] line-clamp-2">{q.question}</p>
-                        </div>
-                        <Badge className="bg-[#F0F9FF] text-[#06B6D4] border-none shrink-0">
-                          {q.topic}
-                        </Badge>
-                      </div>
-                    </div>
-                  ))}
+                {percentage >= 70 ? <TrendingUp className="w-5 h-5 text-[#059669]" /> : <AlertCircle className="w-5 h-5 text-[#F59E0B]" />}
+                <div>
+                  <p className={`font-medium ${percentage >= 70 ? "text-[#059669]" : percentage >= 50 ? "text-[#F59E0B]" : "text-[#EF4444]"}`}>
+                    {percentage >= 70 ? "Excellent Performance! 🎉" : percentage >= 50 ? "Good Effort! 💪" : "Needs Improvement"}
+                  </p>
+                  <p className="text-sm text-[#9CA3AF] mt-1">{percentage >= 70 ? "You've mastered these concepts!" : "Review the explanations to improve."}</p>
                 </div>
               </div>
-            )}
-
-            {/* Actions */}
+            </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button onClick={handleReset} className="flex-1 bg-[#7C3AED] hover:bg-[#6D28D9] shadow-lg shadow-[#7C3AED]/20">
-                <RotateCcw className="w-4 h-4 mr-2" />
-                Try Again
-              </Button>
-              {wrongQuestions.length > 0 && (
-                <Button 
-                  onClick={handleReviewMistakes} 
-                  variant="outline" 
-                  className="flex-1 border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF]"
-                >
-                  <Eye className="w-4 h-4 mr-2" />
-                  Review Mistakes
-                </Button>
-              )}
+              <Button onClick={handleReset} className="flex-1 bg-[#0EA5E9] hover:bg-[#0284C7] text-[#0D1B2A]"><RotateCcw className="w-4 h-4 mr-2" />Try Again</Button>
+              {wrongQuestions.length > 0 && <Button onClick={handleReviewMistakes} variant="outline" className="flex-1 border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"><Eye className="w-4 h-4 mr-2" />Review Mistakes</Button>}
             </div>
           </CardContent>
         </Card>
@@ -393,45 +123,31 @@ export default function MCQsPage() {
 
   // Quiz / Review Mode
   return (
-    <div className="space-y-6 max-w-4xl mx-auto page-transition bg-[#F0F9FF]/30 -m-4 sm:-m-6 p-4 sm:p-6 min-h-screen">
+    <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-3xl font-bold text-[#1E293B]">MCQ Practice</h1>
-            {mode === "review" && (
-              <Badge className="bg-[#FFFBEB] text-[#D97706] border-[#FDE68A]">
-                Review Mode
-              </Badge>
-            )}
+            <h1 className="text-3xl font-bold text-[#E5E7EB]">📝 MCQ Practice</h1>
+            {mode === "review" && <Badge className="bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-none">Review Mode</Badge>}
           </div>
-          <p className="text-[#64748B]">Surgical GI - Mixed Topics</p>
+          <p className="text-[#9CA3AF]">Surgical GI - Mixed Topics</p>
         </div>
         <div className="flex items-center gap-4">
           {mode === "quiz" && (
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all shadow-sm ${
-              timeLeft < 60 ? "bg-[#FEE2E2] text-[#EF4444] animate-pulse" : "bg-white border border-[#E2E8F0] text-[#1E293B]"
-            }`}>
-              <Clock className="w-4 h-4" />
-              <span className="font-mono font-bold">{formatTime(timeLeft)}</span>
+            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${timeLeft < 60 ? "bg-[rgba(239,68,68,0.2)] text-[#EF4444] animate-pulse" : "bg-[#0F2233] border border-[rgba(6,182,212,0.15)] text-[#E5E7EB]"}`}>
+              <Clock className="w-4 h-4" /><span className="font-mono font-bold">{formatTime(timeLeft)}</span>
             </div>
           )}
-          {mode === "review" && (
-            <Button onClick={handleReset} variant="outline" className="border-[#E2E8F0] hover:bg-[#F8FAFC]">
-              <RotateCcw className="w-4 h-4 mr-2" />
-              New Quiz
-            </Button>
-          )}
+          {mode === "review" && <Button onClick={handleReset} variant="outline" className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"><RotateCcw className="w-4 h-4 mr-2" />New Quiz</Button>}
         </div>
       </div>
 
       {/* Progress */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-[#64748B]">
-            {mode === "review" ? "Reviewing" : "Question"} {currentQuestion + 1} of {sampleQuestions.length}
-          </span>
-          <span className="text-[#64748B]">{Math.round(((currentQuestion + 1) / sampleQuestions.length) * 100)}%</span>
+          <span className="text-[#9CA3AF]">{mode === "review" ? "Reviewing" : "Question"} {currentQuestion + 1} of {sampleQuestions.length}</span>
+          <span className="text-[#9CA3AF]">{Math.round(((currentQuestion + 1) / sampleQuestions.length) * 100)}%</span>
         </div>
         <Progress value={((currentQuestion + 1) / sampleQuestions.length) * 100} className="h-2" />
       </div>
@@ -441,65 +157,25 @@ export default function MCQsPage() {
         {sampleQuestions.map((q, i) => {
           const isWrong = answers[i] !== null && answers[i] !== q.correctAnswer;
           const isRight = answers[i] !== null && answers[i] === q.correctAnswer;
-          
           return (
-            <button
-              key={i}
-              onClick={() => {
-                setCurrentQuestion(i);
-                setSelectedAnswer(answers[i]);
-                setShowResult(mode === "review" || answers[i] !== null);
-              }}
-              className={`w-10 h-10 rounded-lg font-medium transition-all shadow-sm ${
-                i === currentQuestion
-                  ? "bg-[#7C3AED] text-white ring-2 ring-[#7C3AED]/50"
-                  : isRight
-                  ? "bg-[#DCFCE7] text-[#10B981] border border-[#10B981]/30"
-                  : isWrong
-                  ? "bg-[#FEE2E2] text-[#EF4444] border border-[#EF4444]/30"
-                  : "bg-white text-[#64748B] border border-[#E2E8F0] hover:border-[#7C3AED]/50"
-              } ${flagged[i] ? "ring-2 ring-[#F59E0B]" : ""}`}
-            >
-              {i + 1}
-            </button>
+            <button key={i} onClick={() => { setCurrentQuestion(i); setSelectedAnswer(answers[i]); setShowResult(mode === "review" || answers[i] !== null); }}
+              className={`w-10 h-10 rounded-lg font-medium transition-all ${i === currentQuestion ? "bg-[#0EA5E9] text-[#0D1B2A] ring-2 ring-[#0EA5E9]/50" : isRight ? "bg-[rgba(5,150,105,0.2)] text-[#059669] border border-[rgba(5,150,105,0.3)]" : isWrong ? "bg-[rgba(239,68,68,0.2)] text-[#EF4444] border border-[rgba(239,68,68,0.3)]" : "bg-[#0F2233] text-[#9CA3AF] border border-[rgba(6,182,212,0.15)] hover:border-[#0EA5E9]"} ${flagged[i] ? "ring-2 ring-[#F59E0B]" : ""}`}
+            >{i + 1}</button>
           );
         })}
       </div>
 
       {/* Question Card */}
-      <Card className="bg-white border-[#E2E8F0] shadow-lg">
+      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
         <CardHeader className="flex flex-row items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2 flex-wrap">
-              <Badge className="bg-[#F0F9FF] text-[#06B6D4] border-none">
-                {question.topic}
-              </Badge>
-              <Badge
-                className={
-                  question.difficulty === "Easy"
-                    ? "bg-[#DCFCE7] text-[#10B981] border-none"
-                    : question.difficulty === "Medium"
-                    ? "bg-[#FFFBEB] text-[#D97706] border-none"
-                    : "bg-[#FEE2E2] text-[#EF4444] border-none"
-                }
-              >
-                {question.difficulty}
-              </Badge>
+              <Badge className="bg-[rgba(14,165,233,0.15)] text-[#0EA5E9] border-none">{question.topic}</Badge>
+              <Badge className={question.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.15)] text-[#059669] border-none" : question.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-none" : "bg-[rgba(239,68,68,0.15)] text-[#EF4444] border-none"}>{question.difficulty}</Badge>
             </div>
-            <CardTitle className="text-lg font-medium leading-relaxed text-[#1E293B]">
-              {question.question}
-            </CardTitle>
+            <CardTitle className="text-lg font-medium leading-relaxed text-[#E5E7EB]">{question.question}</CardTitle>
           </div>
-          {mode === "quiz" && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleFlag}
-              className={flagged[currentQuestion] ? "text-[#F59E0B]" : "text-[#94A3B8] hover:text-[#F59E0B]"}
-            >
-              <Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#F59E0B" : "none"} />
-            </Button>
-          )}
+          {mode === "quiz" && <Button variant="ghost" size="icon" onClick={toggleFlag} className={flagged[currentQuestion] ? "text-[#F59E0B]" : "text-[#6B7280] hover:text-[#F59E0B]"}><Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#F59E0B" : "none"} /></Button>}
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Options */}
@@ -507,53 +183,20 @@ export default function MCQsPage() {
             {question.options.map((option, index) => {
               const isSelected = selectedAnswer === index;
               const isCorrectOption = index === question.correctAnswer;
-              let optionStyle = "bg-[#F8FAFC] border-[#E2E8F0]";
-              let canHover = !showResult && mode === "quiz";
-
+              let optionStyle = "bg-[#142538] border-[rgba(6,182,212,0.1)]";
               if (showResult || mode === "review") {
-                if (isCorrectOption) {
-                  optionStyle = "bg-[#DCFCE7] border-[#10B981] ring-2 ring-[#10B981]/30";
-                } else if (isSelected && !isCorrectOption) {
-                  optionStyle = "bg-[#FEE2E2] border-[#EF4444] ring-2 ring-[#EF4444]/30";
-                }
-              } else if (isSelected) {
-                optionStyle = "bg-[#F5F3FF] border-[#7C3AED]";
-              }
+                if (isCorrectOption) optionStyle = "bg-[rgba(5,150,105,0.15)] border-[#059669] ring-2 ring-[#059669]/30";
+                else if (isSelected && !isCorrectOption) optionStyle = "bg-[rgba(239,68,68,0.15)] border-[#EF4444] ring-2 ring-[#EF4444]/30";
+              } else if (isSelected) optionStyle = "bg-[rgba(14,165,233,0.15)] border-[#0EA5E9]";
 
               return (
-                <button
-                  key={index}
-                  onClick={() => handleAnswer(index)}
-                  disabled={showResult || mode === "review"}
-                  className={`w-full p-4 rounded-lg border text-left transition-all shadow-sm ${optionStyle} ${
-                    canHover ? "hover:border-[#7C3AED] hover:bg-[#F5F3FF]" : ""
-                  }`}
-                >
+                <button key={index} onClick={() => handleAnswer(index)} disabled={showResult || mode === "review"}
+                  className={`w-full p-4 rounded-lg border text-left transition-all ${optionStyle} ${!showResult && mode === "quiz" ? "hover:border-[#0EA5E9] hover:bg-[rgba(14,165,233,0.1)]" : ""}`}>
                   <div className="flex items-center gap-3">
-                    <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all ${
-                        (showResult || mode === "review") && isCorrectOption
-                          ? "bg-[#10B981] text-white"
-                          : (showResult || mode === "review") && isSelected && !isCorrectOption
-                          ? "bg-[#EF4444] text-white"
-                          : isSelected
-                          ? "bg-[#7C3AED] text-white"
-                          : "bg-[#E2E8F0] text-[#64748B]"
-                      }`}
-                    >
-                      {(showResult || mode === "review") && isCorrectOption ? (
-                        <CheckCircle className="w-4 h-4" />
-                      ) : (showResult || mode === "review") && isSelected && !isCorrectOption ? (
-                        <XCircle className="w-4 h-4" />
-                      ) : (
-                        String.fromCharCode(65 + index)
-                      )}
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${(showResult || mode === "review") && isCorrectOption ? "bg-[#059669] text-white" : (showResult || mode === "review") && isSelected && !isCorrectOption ? "bg-[#EF4444] text-white" : isSelected ? "bg-[#0EA5E9] text-[#0D1B2A]" : "bg-[#0F2233] text-[#9CA3AF]"}`}>
+                      {(showResult || mode === "review") && isCorrectOption ? <CheckCircle className="w-4 h-4" /> : (showResult || mode === "review") && isSelected && !isCorrectOption ? <XCircle className="w-4 h-4" /> : String.fromCharCode(65 + index)}
                     </div>
-                    <span className={`text-[#1E293B] ${
-                      (showResult || mode === "review") && isCorrectOption ? "text-[#10B981] font-medium" : ""
-                    }`}>
-                      {option}
-                    </span>
+                    <span className={`text-[#E5E7EB] ${(showResult || mode === "review") && isCorrectOption ? "text-[#059669] font-medium" : ""}`}>{option}</span>
                   </div>
                 </button>
               );
@@ -562,44 +205,23 @@ export default function MCQsPage() {
 
           {/* Explanation */}
           {(showResult || mode === "review") && (
-            <div className="p-4 rounded-xl bg-gradient-to-r from-[#FFFBEB] to-[#FEF3C7] border border-[#FDE68A]/50 mt-6 animate-slide-in-up shadow-sm">
+            <div className="p-4 rounded-xl bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)] mt-6">
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-white shrink-0 shadow-sm">
-                  <Lightbulb className="w-5 h-5 text-[#D97706]" />
-                </div>
+                <div className="p-2 rounded-lg bg-[#0F2233] shrink-0"><Lightbulb className="w-5 h-5 text-[#F59E0B]" /></div>
                 <div>
-                  <p className="font-semibold text-[#D97706] mb-2">Explanation</p>
-                  <p className="text-[#64748B] leading-relaxed">{question.explanation}</p>
+                  <p className="font-semibold text-[#F59E0B] mb-2">Explanation</p>
+                  <p className="text-[#9CA3AF] leading-relaxed">{question.explanation}</p>
                 </div>
               </div>
             </div>
           )}
 
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-[#E2E8F0]">
-            <Button
-              variant="outline"
-              onClick={handlePrev}
-              disabled={currentQuestion === 0}
-              className="border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF]"
-            >
-              <ChevronLeft className="w-4 h-4 mr-2" />
-              Previous
-            </Button>
-
+          <div className="flex items-center justify-between pt-4 border-t border-[rgba(6,182,212,0.1)]">
+            <Button variant="outline" onClick={handlePrev} disabled={currentQuestion === 0} className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"><ChevronLeft className="w-4 h-4 mr-2" />Previous</Button>
             <div className="flex gap-2">
-              {mode === "quiz" && !showResult && selectedAnswer !== null && (
-                <Button onClick={handleSubmit} className="bg-[#10B981] hover:bg-[#059669] shadow-md">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Submit Answer
-                </Button>
-              )}
-              <Button onClick={handleNext} className="bg-[#7C3AED] hover:bg-[#6D28D9] shadow-md shadow-[#7C3AED]/20">
-                {currentQuestion === sampleQuestions.length - 1 
-                  ? (mode === "review" ? "Back to Results" : "Finish Quiz")
-                  : "Next"}
-                <ChevronRight className="w-4 h-4 ml-2" />
-              </Button>
+              {mode === "quiz" && !showResult && selectedAnswer !== null && <Button onClick={handleSubmit} className="bg-[#059669] hover:bg-[#047857] text-white"><CheckCircle className="w-4 h-4 mr-2" />Submit</Button>}
+              <Button onClick={handleNext} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-[#0D1B2A]">{currentQuestion === sampleQuestions.length - 1 ? (mode === "review" ? "Back to Results" : "Finish Quiz") : "Next"}<ChevronRight className="w-4 h-4 ml-2" /></Button>
             </div>
           </div>
         </CardContent>

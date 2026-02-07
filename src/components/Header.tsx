@@ -14,23 +14,23 @@ import {
 
 export function Header() {
   return (
-    <header className="h-14 sm:h-16 border-b border-[#E2E8F0] bg-white/80 backdrop-blur-sm sticky top-0 z-30 shadow-sm">
+    <header className="h-14 sm:h-16 border-b border-[rgba(6,182,212,0.1)] bg-[#0D1B2A]/95 backdrop-blur-sm sticky top-0 z-30">
       <div className="h-full px-4 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
         {/* Logo on mobile */}
         <div className="lg:hidden flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] flex items-center justify-center shadow-md">
-            <span className="text-white font-bold text-sm">N</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-md shadow-[#06B6D4]/20">
+            <span className="text-[#0D1B2A] font-bold text-sm">N</span>
           </div>
-          <span className="font-bold text-[#1E293B] hidden sm:inline">NucleuX</span>
+          <span className="font-bold text-[#E5E7EB] hidden sm:inline">NucleuX</span>
         </div>
 
         {/* Search */}
         <div className="flex-1 max-w-xl">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
             <Input
               placeholder="Search topics, notes, MCQs..."
-              className="pl-10 bg-[#F8FAFC] border-[#E2E8F0] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20 h-9 sm:h-10 text-sm text-[#1E293B] placeholder:text-[#94A3B8]"
+              className="pl-10 bg-[#142538] border-[rgba(6,182,212,0.15)] focus:border-[#06B6D4] focus:ring-[#06B6D4]/20 h-9 sm:h-10 text-sm text-[#E5E7EB] placeholder:text-[#9CA3AF]"
             />
           </div>
         </div>
@@ -38,43 +38,43 @@ export function Header() {
         {/* Actions */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Notifications */}
-          <button className="relative p-2 rounded-xl hover:bg-[#F8FAFC] transition-colors border border-transparent hover:border-[#E2E8F0]">
-            <Bell className="w-5 h-5 text-[#64748B]" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#7C3AED] rounded-full ring-2 ring-white" />
+          <button className="relative p-2 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
+            <Bell className="w-5 h-5 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors" />
+            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#06B6D4] rounded-full ring-2 ring-[#0D1B2A]" />
           </button>
 
           {/* Settings - hide on mobile */}
-          <button className="hidden sm:block p-2 rounded-xl hover:bg-[#F8FAFC] transition-colors border border-transparent hover:border-[#E2E8F0]">
-            <Settings className="w-5 h-5 text-[#64748B]" />
+          <button className="hidden sm:block p-2 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
+            <Settings className="w-5 h-5 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors" />
           </button>
 
           {/* Profile */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-xl hover:bg-[#F8FAFC] transition-colors border border-transparent hover:border-[#E2E8F0]">
-                <Avatar className="w-8 h-8 ring-2 ring-[#7C3AED]/20 shadow-sm">
+              <button className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
+                <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20">
                   <AvatarImage src="/avatar.jpg" />
                   <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-sm font-medium">
                     AC
                   </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block text-left">
-                  <p className="text-sm font-semibold text-[#1E293B]">Aditya</p>
-                  <p className="text-xs text-[#64748B]">Medical Student</p>
+                  <p className="text-sm font-semibold text-[#E5E7EB]">Aditya</p>
+                  <p className="text-xs text-[#9CA3AF]">Medical Student</p>
                 </div>
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="w-56 bg-white border-[#E2E8F0] shadow-xl"
+              className="w-56 bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-2xl"
             >
-              <DropdownMenuLabel className="text-[#1E293B]">My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator className="bg-[#E2E8F0]" />
-              <DropdownMenuItem className="text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]">Profile</DropdownMenuItem>
-              <DropdownMenuItem className="text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]">Settings</DropdownMenuItem>
-              <DropdownMenuItem className="text-[#64748B] hover:text-[#1E293B] hover:bg-[#F8FAFC]">Billing</DropdownMenuItem>
-              <DropdownMenuSeparator className="bg-[#E2E8F0]" />
-              <DropdownMenuItem className="text-[#DC2626] hover:bg-[#FEE2E2]">Log out</DropdownMenuItem>
+              <DropdownMenuLabel className="text-[#E5E7EB]">My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
+              <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Profile</DropdownMenuItem>
+              <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Settings</DropdownMenuItem>
+              <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Billing</DropdownMenuItem>
+              <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
+              <DropdownMenuItem className="text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] focus:bg-[rgba(239,68,68,0.1)] focus:text-[#EF4444]">Log out</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

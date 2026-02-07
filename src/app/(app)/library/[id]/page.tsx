@@ -12,13 +12,11 @@ import {
   ArrowLeft,
   BookOpen,
   FileText,
-  Video,
   Clock,
   Star,
   Share2,
   Bookmark,
   CheckCircle,
-  Play,
   StickyNote,
   MessageCircle,
   List,
@@ -220,7 +218,7 @@ export default function MaterialDetailPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showNotePanel, setShowNotePanel] = useState(false);
-  const [showToc, setShowToc] = useState(true);
+  const [showToc] = useState(true);
   const [activeSection, setActiveSection] = useState("");
   const [scrollProgress, setScrollProgress] = useState(0);
   const [highlightMode, setHighlightMode] = useState(false);
@@ -604,7 +602,7 @@ export default function MaterialDetailPage() {
                     key={i}
                     className="p-3 rounded-lg bg-[#0F172A] border border-[#334155] group hover:border-[#06B6D4]/50 transition-colors"
                   >
-                    <p className="text-sm text-white mb-1">"{citation.text}"</p>
+                    <p className="text-sm text-white mb-1">&quot;{citation.text}&quot;</p>
                     <p className="text-xs text-[#06B6D4]">
                       📚 {citation.source} • {citation.page}
                     </p>

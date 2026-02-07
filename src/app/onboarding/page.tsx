@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -111,7 +112,7 @@ export default function OnboardingPage() {
       <div className="w-full max-w-2xl mb-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <img src="/logo.svg" alt="NucleuX" className="w-10 h-10" />
+            <Image src="/logo.svg" alt="NucleuX" width={40} height={40} />
             <span className="text-xl font-bold text-gradient-purple">NucleuX Academy</span>
           </div>
           <span className="text-sm text-[#64748B]">Step {step} of {totalSteps}</span>
@@ -128,7 +129,7 @@ export default function OnboardingPage() {
                   <Sparkles className="w-10 h-10 text-[#7C3AED]" />
                 </div>
                 <h1 className="text-3xl font-bold text-[#1E293B] mb-2">Welcome to NucleuX! 🎉</h1>
-                <p className="text-[#64748B]">Let's personalize your learning experience</p>
+                <p className="text-[#64748B]">Let&apos;s personalize your learning experience</p>
               </div>
               <div>
                 <label className="text-sm text-[#64748B] block mb-2">What should we call you?</label>
@@ -175,7 +176,7 @@ export default function OnboardingPage() {
           {step === 3 && (
             <div className="animate-fade-in space-y-8">
               <div className="text-center">
-                <h1 className="text-2xl font-bold text-[#1E293B] mb-2">What's your learning goal?</h1>
+                <h1 className="text-2xl font-bold text-[#1E293B] mb-2">What&apos;s your learning goal?</h1>
                 <p className="text-[#64748B]">This helps ATOM tailor content for you</p>
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
