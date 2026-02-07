@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,107 +24,73 @@ import {
   Info,
   LineChart,
   Activity,
+  RefreshCw,
+  Trash2,
 } from "lucide-react";
-
-// Mock data for analytics
-const overviewData = {
-  totalQuestions: 847,
-  correctAnswers: 678,
-  studyHours: 124,
-  currentStreak: 12,
-  longestStreak: 28,
-  topicsCompleted: 34,
-  totalTopics: 50,
-};
-
-const weeklyActivity = [
-  { day: "Mon", questions: 45, hours: 2.5, accuracy: 82 },
-  { day: "Tue", questions: 38, hours: 2.0, accuracy: 78 },
-  { day: "Wed", questions: 52, hours: 3.0, accuracy: 85 },
-  { day: "Thu", questions: 30, hours: 1.5, accuracy: 73 },
-  { day: "Fri", questions: 48, hours: 2.8, accuracy: 88 },
-  { day: "Sat", questions: 65, hours: 4.0, accuracy: 90 },
-  { day: "Sun", questions: 42, hours: 2.2, accuracy: 79 },
-];
-
-const calibrationData = [
-  { confidence: "Guessing", expected: 25, actual: 32, questions: 45 },
-  { confidence: "Unsure", expected: 50, actual: 58, questions: 124 },
-  { confidence: "Sure", expected: 75, actual: 71, questions: 286 },
-  { confidence: "Very Sure", expected: 95, actual: 89, questions: 392 },
-];
-
-const forgettingCurveData = {
-  topics: [
-    {
-      name: "Gastric Cancer",
-      initialStrength: 92,
-      currentStrength: 78,
-      daysSinceReview: 5,
-      optimalReview: 3,
-      status: "overdue",
-    },
-    {
-      name: "Esophageal Surgery",
-      initialStrength: 88,
-      currentStrength: 85,
-      daysSinceReview: 2,
-      optimalReview: 4,
-      status: "good",
-    },
-    {
-      name: "Colon Anatomy",
-      initialStrength: 75,
-      currentStrength: 45,
-      daysSinceReview: 12,
-      optimalReview: 7,
-      status: "critical",
-    },
-    {
-      name: "Liver Physiology",
-      initialStrength: 90,
-      currentStrength: 82,
-      daysSinceReview: 3,
-      optimalReview: 5,
-      status: "good",
-    },
-    {
-      name: "Pancreatic Surgery",
-      initialStrength: 70,
-      currentStrength: 52,
-      daysSinceReview: 8,
-      optimalReview: 5,
-      status: "overdue",
-    },
-  ],
-  retentionCurve: [
-    { day: 0, retention: 100 },
-    { day: 1, retention: 70 },
-    { day: 2, retention: 55 },
-    { day: 4, retention: 42 },
-    { day: 7, retention: 35 },
-    { day: 14, retention: 28 },
-    { day: 30, retention: 22 },
-  ],
-};
-
-const topicPerformance = [
-  { topic: "Surgical Oncology", accuracy: 89, questions: 120, trend: "up" },
-  { topic: "GI Anatomy", accuracy: 82, questions: 95, trend: "up" },
-  { topic: "Hepatobiliary", accuracy: 78, questions: 80, trend: "stable" },
-  { topic: "Colorectal", accuracy: 75, questions: 65, trend: "down" },
-  { topic: "Bariatric Surgery", accuracy: 72, questions: 45, trend: "up" },
-];
-
-const difficultyBreakdown = [
-  { level: "Easy", correct: 245, total: 280, percentage: 88 },
-  { level: "Medium", correct: 312, total: 420, percentage: 74 },
-  { level: "Hard", correct: 121, total: 185, percentage: 65 },
-];
+import { useAnalytics, calculateMemoryStrength } from "@/lib/analytics";
 
 export default function AnalyticsPage() {
   const [selectedPeriod, setSelectedPeriod] = useState("week");
-  const overallAccuracy = Math.round((overviewData.correctAnswers / overviewData.totalQuestions) * 100);
+  
+  const {
+    analytics,
+    isLoaded,
+    getCalibration,
+    getTopicsForReview,
+    getWeeklyStats,
+    getOverallAccuracy,
+    getTopicPerformance,
+    getDifficultyBreakdown,
+    refreshMemoryStrengths,
+    resetAnalytics,
+  } = useAnalytics();
+  
+  // Get computed data
+  const calibrationData = getCalibration();
+  const topicsForReview = getTopicsForReview();
+  const weeklyStats = getWeeklyStats();
+  const overallAccuracy = getOverallAccuracy();
+  const topicPerformance = getTopicPerformance();
+  const difficultyBreakdown = getDifficultyBreakdown();
+  
+  // Calculate memory status for topics
+  const topicMemoryStatus = analytics.topicMemories.map(memory => {
+    const now = new Date();
+    const daysSinceReview = Math.floor(
+      (now.getTime() - new Date(memory.lastReviewed).getTime()) / (1000 * 60 * 60 * 24)
+    );
+    
+    const currentStrength = calculateMemoryStrength(
+      memory.initialStrength,
+      daysSinceReview,
+      memory.reviewCount
+    );
+    
+    let status: 'critical' | 'overdue' | 'good' = 'good';
+    if (currentStrength < 50) status = 'critical';
+    else if (daysSinceReview >= memory.optimalReviewDays) status = 'overdue';
+    
+    return {
+      ...memory,
+      currentStrength,
+      daysSinceReview,
+      status,
+    };
+  }).sort((a, b) => a.currentStrength - b.currentStrength);
+  
+  const criticalTopics = topicMemoryStatus.filter(t => t.status === 'critical' || t.status === 'overdue').length;
+  
+  // Placeholder data for empty states
+  const hasData = analytics.totalQuestions > 0;
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  if (!isLoaded) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <div className="text-[#9CA3AF]">Loading analytics...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-6">
@@ -132,7 +98,11 @@ export default function AnalyticsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-[#E5E7EB]">Analytics</h1>
-          <p className="text-[#9CA3AF] mt-1">Track your learning progress and performance</p>
+          <p className="text-[#9CA3AF] mt-1">
+            {hasData 
+              ? "Track your learning progress and performance" 
+              : "Start practicing MCQs to see your analytics!"}
+          </p>
         </div>
         <div className="flex gap-2">
           {["week", "month", "all"].map((period) => (
@@ -149,6 +119,14 @@ export default function AnalyticsPage() {
               {period.charAt(0).toUpperCase() + period.slice(1)}
             </Button>
           ))}
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={refreshMemoryStrengths}
+            className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"
+          >
+            <RefreshCw className="w-4 h-4" />
+          </Button>
         </div>
       </div>
 
@@ -158,10 +136,11 @@ export default function AnalyticsPage() {
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
               <Target className="w-5 h-5 text-[#06B6D4]" />
-              <Badge className="bg-[rgba(5,150,105,0.2)] text-[#059669] border-none text-xs">
-                <ArrowUp className="w-3 h-3 mr-1" />
-                +5%
-              </Badge>
+              {overallAccuracy >= 80 && (
+                <Badge className="bg-[rgba(5,150,105,0.2)] text-[#059669] border-none text-xs">
+                  🎯 Great!
+                </Badge>
+              )}
             </div>
             <p className="text-2xl font-bold text-[#E5E7EB]">{overallAccuracy}%</p>
             <p className="text-xs text-[#6B7280]">Overall Accuracy</p>
@@ -173,7 +152,7 @@ export default function AnalyticsPage() {
             <div className="flex items-center justify-between mb-2">
               <CheckCircle className="w-5 h-5 text-[#059669]" />
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{overviewData.totalQuestions}</p>
+            <p className="text-2xl font-bold text-[#E5E7EB]">{analytics.totalQuestions}</p>
             <p className="text-xs text-[#6B7280]">Questions Attempted</p>
           </CardContent>
         </Card>
@@ -183,7 +162,7 @@ export default function AnalyticsPage() {
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-5 h-5 text-[#8B5CF6]" />
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{overviewData.studyHours}h</p>
+            <p className="text-2xl font-bold text-[#E5E7EB]">{analytics.totalStudyMinutes}m</p>
             <p className="text-xs text-[#6B7280]">Study Time</p>
           </CardContent>
         </Card>
@@ -193,7 +172,7 @@ export default function AnalyticsPage() {
             <div className="flex items-center justify-between mb-2">
               <Flame className="w-5 h-5 text-[#F59E0B]" />
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{overviewData.currentStreak}</p>
+            <p className="text-2xl font-bold text-[#E5E7EB]">{analytics.currentStreak}</p>
             <p className="text-xs text-[#6B7280]">Day Streak 🔥</p>
           </CardContent>
         </Card>
@@ -217,124 +196,132 @@ export default function AnalyticsPage() {
           </p>
         </CardHeader>
         <CardContent>
-          {/* Calibration Chart */}
-          <div className="relative h-64 mb-6">
-            {/* Y-axis labels */}
-            <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-[#6B7280] w-8">
-              <span>100%</span>
-              <span>75%</span>
-              <span>50%</span>
-              <span>25%</span>
-              <span>0%</span>
+          {!hasData ? (
+            <div className="text-center py-12 text-[#6B7280]">
+              <Brain className="w-12 h-12 mx-auto mb-4 opacity-30" />
+              <p>Complete some MCQs with confidence ratings to see calibration data</p>
             </div>
-            
-            {/* Chart area */}
-            <div className="ml-10 h-full relative">
-              {/* Grid lines */}
-              <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <div key={i} className="border-t border-[rgba(6,182,212,0.1)]" />
-                ))}
+          ) : (
+            <>
+              {/* Calibration Chart */}
+              <div className="relative h-64 mb-6">
+                {/* Y-axis labels */}
+                <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-[#6B7280] w-8">
+                  <span>100%</span>
+                  <span>75%</span>
+                  <span>50%</span>
+                  <span>25%</span>
+                  <span>0%</span>
+                </div>
+                
+                {/* Chart area */}
+                <div className="ml-10 h-full relative">
+                  {/* Grid lines */}
+                  <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <div key={i} className="border-t border-[rgba(6,182,212,0.1)]" />
+                    ))}
+                  </div>
+                  
+                  {/* Perfect calibration line */}
+                  <svg className="absolute inset-0 w-full h-[calc(100%-32px)]" preserveAspectRatio="none">
+                    <line 
+                      x1="0%" y1="100%" x2="100%" y2="0%" 
+                      stroke="rgba(6,182,212,0.3)" 
+                      strokeWidth="2" 
+                      strokeDasharray="5,5"
+                    />
+                  </svg>
+                  
+                  {/* Bars */}
+                  <div className="absolute bottom-8 left-0 right-0 h-[calc(100%-32px)] flex justify-around items-end">
+                    {calibrationData.map((item, i) => {
+                      const isOverconfident = item.actual < item.expected - 10;
+                      const isUnderconfident = item.actual > item.expected + 10;
+                      const isCalibrated = !isOverconfident && !isUnderconfident;
+                      
+                      return (
+                        <div key={i} className="flex flex-col items-center gap-2 w-1/4">
+                          <div className="relative w-full flex justify-center gap-1">
+                            <div 
+                              className="w-8 bg-[rgba(6,182,212,0.3)] rounded-t transition-all"
+                              style={{ height: `${item.expected * 2}px` }}
+                            />
+                            <div 
+                              className={`w-8 rounded-t transition-all ${
+                                item.totalQuestions === 0 ? 'bg-[#374151]' :
+                                isCalibrated ? 'bg-[#059669]' :
+                                isOverconfident ? 'bg-[#EF4444]' : 'bg-[#F59E0B]'
+                              }`}
+                              style={{ height: `${Math.max(item.actual, 5) * 2}px` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* X-axis labels */}
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-around">
+                    {calibrationData.map((item, i) => (
+                      <div key={i} className="text-center">
+                        <p className="text-xs text-[#9CA3AF] capitalize">{item.confidence.replace('-', ' ')}</p>
+                        <p className="text-[10px] text-[#6B7280]">({item.totalQuestions})</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
               
-              {/* Perfect calibration line */}
-              <svg className="absolute inset-0 w-full h-[calc(100%-32px)]" preserveAspectRatio="none">
-                <line 
-                  x1="0%" y1="100%" x2="100%" y2="0%" 
-                  stroke="rgba(6,182,212,0.3)" 
-                  strokeWidth="2" 
-                  strokeDasharray="5,5"
-                />
-              </svg>
+              {/* Legend */}
+              <div className="flex flex-wrap gap-4 mb-4 text-xs">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded bg-[rgba(6,182,212,0.3)]" />
+                  <span className="text-[#9CA3AF]">Expected accuracy</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded bg-[#059669]" />
+                  <span className="text-[#9CA3AF]">Well calibrated</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded bg-[#EF4444]" />
+                  <span className="text-[#9CA3AF]">Overconfident</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded bg-[#F59E0B]" />
+                  <span className="text-[#9CA3AF]">Underconfident</span>
+                </div>
+              </div>
               
-              {/* Bars */}
-              <div className="absolute bottom-8 left-0 right-0 h-[calc(100%-32px)] flex justify-around items-end">
+              {/* Calibration Summary */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {calibrationData.map((item, i) => {
-                  const isOverconfident = item.actual < item.expected;
-                  const isUnderconfident = item.actual > item.expected;
-                  const diff = Math.abs(item.actual - item.expected);
-                  const isCalibrated = diff <= 10;
+                  const diff = item.actual - item.expected;
+                  const isCalibrated = Math.abs(diff) <= 10 || item.totalQuestions === 0;
                   
                   return (
-                    <div key={i} className="flex flex-col items-center gap-2 w-1/4">
-                      {/* Expected vs Actual */}
-                      <div className="relative w-full flex justify-center gap-1">
-                        {/* Expected bar */}
-                        <div 
-                          className="w-8 bg-[rgba(6,182,212,0.3)] rounded-t transition-all"
-                          style={{ height: `${item.expected * 2}px` }}
-                        />
-                        {/* Actual bar */}
-                        <div 
-                          className={`w-8 rounded-t transition-all ${
-                            isCalibrated ? 'bg-[#059669]' :
-                            isOverconfident ? 'bg-[#EF4444]' : 'bg-[#F59E0B]'
-                          }`}
-                          style={{ height: `${item.actual * 2}px` }}
-                        />
+                    <div key={i} className="p-3 rounded-lg bg-[#142538]">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm text-[#E5E7EB] capitalize">{item.confidence.replace('-', ' ')}</span>
+                        {item.totalQuestions > 0 && (
+                          isCalibrated ? (
+                            <CheckCircle className="w-4 h-4 text-[#059669]" />
+                          ) : diff < 0 ? (
+                            <ArrowDown className="w-4 h-4 text-[#EF4444]" />
+                          ) : (
+                            <ArrowUp className="w-4 h-4 text-[#F59E0B]" />
+                          )
+                        )}
                       </div>
+                      <p className="text-xs text-[#6B7280]">
+                        Expected: {item.expected}% → Actual: {item.actual}%
+                      </p>
                     </div>
                   );
                 })}
               </div>
-              
-              {/* X-axis labels */}
-              <div className="absolute bottom-0 left-0 right-0 flex justify-around">
-                {calibrationData.map((item, i) => (
-                  <div key={i} className="text-center">
-                    <p className="text-xs text-[#9CA3AF]">{item.confidence}</p>
-                    <p className="text-[10px] text-[#6B7280]">({item.questions})</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          
-          {/* Legend & Insights */}
-          <div className="flex flex-wrap gap-4 mb-4 text-xs">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded bg-[rgba(6,182,212,0.3)]" />
-              <span className="text-[#9CA3AF]">Expected accuracy</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded bg-[#059669]" />
-              <span className="text-[#9CA3AF]">Well calibrated</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded bg-[#EF4444]" />
-              <span className="text-[#9CA3AF]">Overconfident</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded bg-[#F59E0B]" />
-              <span className="text-[#9CA3AF]">Underconfident</span>
-            </div>
-          </div>
-          
-          {/* Calibration Summary */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {calibrationData.map((item, i) => {
-              const diff = item.actual - item.expected;
-              const isCalibrated = Math.abs(diff) <= 10;
-              
-              return (
-                <div key={i} className="p-3 rounded-lg bg-[#142538]">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm text-[#E5E7EB]">{item.confidence}</span>
-                    {isCalibrated ? (
-                      <CheckCircle className="w-4 h-4 text-[#059669]" />
-                    ) : diff < 0 ? (
-                      <ArrowDown className="w-4 h-4 text-[#EF4444]" />
-                    ) : (
-                      <ArrowUp className="w-4 h-4 text-[#F59E0B]" />
-                    )}
-                  </div>
-                  <p className="text-xs text-[#6B7280]">
-                    Expected: {item.expected}% → Actual: {item.actual}%
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+            </>
+          )}
         </CardContent>
       </Card>
 
@@ -346,9 +333,11 @@ export default function AnalyticsPage() {
               <LineChart className="w-5 h-5 text-[#F59E0B]" />
               Forgetting Curves & Retention
             </CardTitle>
-            <Badge variant="outline" className="border-[rgba(239,68,68,0.3)] text-[#EF4444]">
-              3 topics need review
-            </Badge>
+            {criticalTopics > 0 && (
+              <Badge variant="outline" className="border-[rgba(239,68,68,0.3)] text-[#EF4444]">
+                {criticalTopics} topic{criticalTopics > 1 ? 's' : ''} need review
+              </Badge>
+            )}
           </div>
           <p className="text-sm text-[#6B7280]">
             Spaced repetition tracking based on Ebbinghaus forgetting curve
@@ -436,69 +425,74 @@ export default function AnalyticsPage() {
           
           {/* Topic Retention Status */}
           <h4 className="text-sm font-medium text-[#E5E7EB] mb-3">Topic Retention Status</h4>
-          <div className="space-y-3">
-            {forgettingCurveData.topics.map((topic, i) => (
-              <div 
-                key={i} 
-                className={`p-4 rounded-lg ${
-                  topic.status === 'critical' ? 'bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)]' :
-                  topic.status === 'overdue' ? 'bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)]' :
-                  'bg-[#142538]'
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-3">
-                    <span className="text-[#E5E7EB] font-medium">{topic.name}</span>
-                    <Badge className={
-                      topic.status === 'critical' ? 'bg-[#EF4444]/20 text-[#EF4444] border-none' :
-                      topic.status === 'overdue' ? 'bg-[#F59E0B]/20 text-[#F59E0B] border-none' :
-                      'bg-[#059669]/20 text-[#059669] border-none'
-                    }>
-                      {topic.status === 'critical' ? 'Critical' :
-                       topic.status === 'overdue' ? 'Needs Review' : 'Good'}
-                    </Badge>
+          {topicMemoryStatus.length === 0 ? (
+            <div className="text-center py-8 text-[#6B7280]">
+              <BookOpen className="w-10 h-10 mx-auto mb-3 opacity-30" />
+              <p className="text-sm">Complete MCQs to track topic retention</p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {topicMemoryStatus.map((topic, i) => (
+                <div 
+                  key={i} 
+                  className={`p-4 rounded-lg ${
+                    topic.status === 'critical' ? 'bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)]' :
+                    topic.status === 'overdue' ? 'bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)]' :
+                    'bg-[#142538]'
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[#E5E7EB] font-medium">{topic.topicName}</span>
+                      <Badge className={
+                        topic.status === 'critical' ? 'bg-[#EF4444]/20 text-[#EF4444] border-none' :
+                        topic.status === 'overdue' ? 'bg-[#F59E0B]/20 text-[#F59E0B] border-none' :
+                        'bg-[#059669]/20 text-[#059669] border-none'
+                      }>
+                        {topic.status === 'critical' ? 'Critical' :
+                         topic.status === 'overdue' ? 'Needs Review' : 'Good'}
+                      </Badge>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm text-[#E5E7EB]">{topic.currentStrength}%</p>
+                      <p className="text-xs text-[#6B7280]">
+                        {topic.daysSinceReview}d ago (optimal: {topic.optimalReviewDays}d)
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-[#E5E7EB]">{topic.currentStrength}%</p>
-                    <p className="text-xs text-[#6B7280]">
-                      {topic.daysSinceReview}d ago (optimal: {topic.optimalReview}d)
-                    </p>
+                  
+                  {/* Retention bar */}
+                  <div className="relative h-2 bg-[rgba(6,182,212,0.1)] rounded-full overflow-hidden">
+                    <div 
+                      className="absolute top-0 bottom-0 w-0.5 bg-[#6B7280]"
+                      style={{ left: `${topic.initialStrength}%` }}
+                    />
+                    <div 
+                      className={`h-full rounded-full transition-all ${
+                        topic.status === 'critical' ? 'bg-[#EF4444]' :
+                        topic.status === 'overdue' ? 'bg-[#F59E0B]' :
+                        'bg-[#059669]'
+                      }`}
+                      style={{ width: `${topic.currentStrength}%` }}
+                    />
                   </div>
+                  
+                  {topic.status !== 'good' && (
+                    <div className="mt-3 flex justify-end">
+                      <Button size="sm" className={
+                        topic.status === 'critical' 
+                          ? 'bg-[#EF4444] hover:bg-[#DC2626] text-white' 
+                          : 'bg-[#F59E0B] hover:bg-[#D97706] text-[#0D1B2A]'
+                      }>
+                        <Zap className="w-3 h-3 mr-1" />
+                        Review Now
+                      </Button>
+                    </div>
+                  )}
                 </div>
-                
-                {/* Retention bar */}
-                <div className="relative h-2 bg-[rgba(6,182,212,0.1)] rounded-full overflow-hidden">
-                  {/* Initial strength marker */}
-                  <div 
-                    className="absolute top-0 bottom-0 w-0.5 bg-[#6B7280]"
-                    style={{ left: `${topic.initialStrength}%` }}
-                  />
-                  {/* Current strength */}
-                  <div 
-                    className={`h-full rounded-full transition-all ${
-                      topic.status === 'critical' ? 'bg-[#EF4444]' :
-                      topic.status === 'overdue' ? 'bg-[#F59E0B]' :
-                      'bg-[#059669]'
-                    }`}
-                    style={{ width: `${topic.currentStrength}%` }}
-                  />
-                </div>
-                
-                {topic.status !== 'good' && (
-                  <div className="mt-3 flex justify-end">
-                    <Button size="sm" className={
-                      topic.status === 'critical' 
-                        ? 'bg-[#EF4444] hover:bg-[#DC2626] text-white' 
-                        : 'bg-[#F59E0B] hover:bg-[#D97706] text-[#0D1B2A]'
-                    }>
-                      <Zap className="w-3 h-3 mr-1" />
-                      Review Now
-                    </Button>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </CardContent>
       </Card>
 
@@ -514,25 +508,31 @@ export default function AnalyticsPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {weeklyActivity.map((day, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <span className="w-10 text-sm text-[#9CA3AF]">{day.day}</span>
-                  <div className="flex-1">
-                    <div className="flex gap-1 h-6">
-                      {/* Questions bar */}
-                      <div 
-                        className="bg-[#06B6D4] rounded"
-                        style={{ width: `${(day.questions / 70) * 100}%` }}
-                        title={`${day.questions} questions`}
-                      />
+              {weeklyStats.map((day, i) => {
+                const dayName = days[new Date(day.date).getDay()];
+                const accuracy = day.questionsAttempted > 0 
+                  ? Math.round((day.questionsCorrect / day.questionsAttempted) * 100) 
+                  : 0;
+                
+                return (
+                  <div key={i} className="flex items-center gap-4">
+                    <span className="w-10 text-sm text-[#9CA3AF]">{dayName}</span>
+                    <div className="flex-1">
+                      <div className="flex gap-1 h-6">
+                        <div 
+                          className="bg-[#06B6D4] rounded"
+                          style={{ width: `${Math.min((day.questionsAttempted / 50) * 100, 100)}%` }}
+                          title={`${day.questionsAttempted} questions`}
+                        />
+                      </div>
+                    </div>
+                    <div className="text-right w-20">
+                      <p className="text-sm text-[#E5E7EB]">{accuracy || '-'}%</p>
+                      <p className="text-xs text-[#6B7280]">{day.studyMinutes}m</p>
                     </div>
                   </div>
-                  <div className="text-right w-20">
-                    <p className="text-sm text-[#E5E7EB]">{day.accuracy}%</p>
-                    <p className="text-xs text-[#6B7280]">{day.hours}h</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </CardContent>
         </Card>
@@ -546,22 +546,29 @@ export default function AnalyticsPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              {topicPerformance.map((topic, i) => (
-                <div key={i}>
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm text-[#E5E7EB]">{topic.topic}</span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-[#E5E7EB]">{topic.accuracy}%</span>
-                      {topic.trend === "up" && <TrendingUp className="w-3 h-3 text-[#059669]" />}
-                      {topic.trend === "down" && <TrendingDown className="w-3 h-3 text-[#EF4444]" />}
+            {topicPerformance.length === 0 ? (
+              <div className="text-center py-8 text-[#6B7280]">
+                <Target className="w-10 h-10 mx-auto mb-3 opacity-30" />
+                <p className="text-sm">Complete MCQs to track topic performance</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {topicPerformance.slice(0, 5).map((topic, i) => (
+                  <div key={i}>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-[#E5E7EB]">{topic.topicName}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium text-[#E5E7EB]">{topic.accuracy}%</span>
+                        {topic.trend === "up" && <TrendingUp className="w-3 h-3 text-[#059669]" />}
+                        {topic.trend === "down" && <TrendingDown className="w-3 h-3 text-[#EF4444]" />}
+                      </div>
                     </div>
+                    <Progress value={topic.accuracy} className="h-2" />
+                    <p className="text-xs text-[#6B7280] mt-1">{topic.attempts} questions</p>
                   </div>
-                  <Progress value={topic.accuracy} className="h-2" />
-                  <p className="text-xs text-[#6B7280] mt-1">{topic.questions} questions</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>
@@ -580,13 +587,15 @@ export default function AnalyticsPage() {
               <div key={i} className="p-4 rounded-lg bg-[#142538]">
                 <div className="flex items-center justify-between mb-3">
                   <Badge className={
-                    level.level === "Easy" ? "bg-[rgba(5,150,105,0.2)] text-[#059669] border-none" :
-                    level.level === "Medium" ? "bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-none" :
+                    level.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.2)] text-[#059669] border-none" :
+                    level.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-none" :
                     "bg-[rgba(239,68,68,0.2)] text-[#EF4444] border-none"
                   }>
-                    {level.level}
+                    {level.difficulty}
                   </Badge>
-                  <span className="text-xl font-bold text-[#E5E7EB]">{level.percentage}%</span>
+                  <span className="text-xl font-bold text-[#E5E7EB]">
+                    {level.total > 0 ? level.percentage : '-'}%
+                  </span>
                 </div>
                 <Progress 
                   value={level.percentage} 
@@ -602,44 +611,71 @@ export default function AnalyticsPage() {
       </Card>
 
       {/* Insights */}
-      <Card className="bg-gradient-to-r from-[rgba(139,92,246,0.15)] to-[rgba(6,182,212,0.1)] border-[rgba(139,92,246,0.2)]">
-        <CardContent className="p-6">
-          <h3 className="text-lg font-semibold text-[#E5E7EB] mb-4 flex items-center gap-2">
-            <Brain className="w-5 h-5 text-[#8B5CF6]" />
-            Learning Insights
-          </h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-              <p className="text-sm font-medium text-[#059669] mb-1">💪 Strength</p>
-              <p className="text-sm text-[#9CA3AF]">
-                Your calibration on "Very Sure" questions is excellent (89% actual vs 95% expected). 
-                You know what you know!
-              </p>
+      {hasData && (
+        <Card className="bg-gradient-to-r from-[rgba(139,92,246,0.15)] to-[rgba(6,182,212,0.1)] border-[rgba(139,92,246,0.2)]">
+          <CardContent className="p-6">
+            <h3 className="text-lg font-semibold text-[#E5E7EB] mb-4 flex items-center gap-2">
+              <Brain className="w-5 h-5 text-[#8B5CF6]" />
+              Learning Insights
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {calibrationData.some(c => c.totalQuestions > 0 && Math.abs(c.actual - c.expected) <= 10) && (
+                <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
+                  <p className="text-sm font-medium text-[#059669] mb-1">💪 Strength</p>
+                  <p className="text-sm text-[#9CA3AF]">
+                    Your confidence calibration is improving! You're learning to accurately 
+                    assess what you know.
+                  </p>
+                </div>
+              )}
+              {criticalTopics > 0 && (
+                <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
+                  <p className="text-sm font-medium text-[#F59E0B] mb-1">⚠️ Opportunity</p>
+                  <p className="text-sm text-[#9CA3AF]">
+                    {criticalTopics} topic{criticalTopics > 1 ? 's' : ''} {criticalTopics > 1 ? 'have' : 'has'} retention 
+                    below optimal. Review them today to strengthen long-term memory!
+                  </p>
+                </div>
+              )}
+              <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
+                <p className="text-sm font-medium text-[#06B6D4] mb-1">📊 Stats</p>
+                <p className="text-sm text-[#9CA3AF]">
+                  You've answered {analytics.totalQuestions} questions with {overallAccuracy}% accuracy.
+                  {analytics.currentStreak > 0 && ` Current streak: ${analytics.currentStreak} days!`}
+                </p>
+              </div>
+              <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
+                <p className="text-sm font-medium text-[#8B5CF6] mb-1">🎯 Focus</p>
+                <p className="text-sm text-[#9CA3AF]">
+                  {difficultyBreakdown.find(d => d.difficulty === 'Hard')?.percentage || 0 < 70
+                    ? "Target: Practice more 'Hard' MCQs to build confidence with complex scenarios."
+                    : "Great work on hard questions! Keep challenging yourself."
+                  }
+                </p>
+              </div>
             </div>
-            <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-              <p className="text-sm font-medium text-[#F59E0B] mb-1">⚠️ Opportunity</p>
-              <p className="text-sm text-[#9CA3AF]">
-                Colon Anatomy retention dropped to 45%. Consider reviewing today to strengthen 
-                long-term memory before it fades further.
-              </p>
-            </div>
-            <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-              <p className="text-sm font-medium text-[#06B6D4] mb-1">📊 Pattern</p>
-              <p className="text-sm text-[#9CA3AF]">
-                Your accuracy peaks on Saturdays (90%). Consider scheduling challenging topics 
-                for weekends when you're most focused.
-              </p>
-            </div>
-            <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-              <p className="text-sm font-medium text-[#8B5CF6] mb-1">🎯 Focus</p>
-              <p className="text-sm text-[#9CA3AF]">
-                Hard questions at 65% accuracy. Target: Practice more "Hard" MCQs to build 
-                confidence with complex clinical scenarios.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Debug/Reset (dev only) */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="flex justify-end">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              if (confirm('Reset all analytics data?')) {
+                resetAnalytics();
+              }
+            }}
+            className="border-[rgba(239,68,68,0.2)] text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]"
+          >
+            <Trash2 className="w-4 h-4 mr-2" />
+            Reset Analytics
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

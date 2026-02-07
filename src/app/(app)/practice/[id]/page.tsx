@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -36,6 +36,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
+import { useAnalytics } from "@/lib/analytics";
 
 interface Question {
   id: number;
@@ -206,6 +207,7 @@ type QuizMode = "practice" | "results" | "review";
 export default function MCQPracticePage() {
   const params = useParams();
   const router = useRouter();
+  const { trackMCQAttempt } = useAnalytics();
   
   // Quiz State
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -215,10 +217,12 @@ export default function MCQPracticePage() {
   const [flagged, setFlagged] = useState<boolean[]>(new Array(questions.length).fill(false));
   const [showExplanation, setShowExplanation] = useState(false);
   const [mode, setMode] = useState<QuizMode>("practice");
+  const [trackedQuestions, setTrackedQuestions] = useState<Set<number>>(new Set());
   
   // Timer
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
+  const questionStartTime = useRef(Date.now());
   
   // Settings
   const [showConfidenceSelector, setShowConfidenceSelector] = useState(true);
@@ -258,6 +262,28 @@ export default function MCQPracticePage() {
   const handleSubmitAnswer = () => {
     if (selectedAnswer === null) return;
     setShowExplanation(true);
+    
+    // Track this attempt if not already tracked
+    if (!trackedQuestions.has(currentQuestion)) {
+      const timeSpent = Math.round((Date.now() - questionStartTime.current) / 1000);
+      const confidence = confidences[currentQuestion] || 'unsure';
+      const isCorrect = selectedAnswer === question.correctAnswer;
+      
+      trackMCQAttempt({
+        questionId: question.id.toString(),
+        topicId: question.topic.toLowerCase().replace(/\s+/g, '-'),
+        topicName: question.topic,
+        selectedAnswer,
+        correctAnswer: question.correctAnswer,
+        isCorrect,
+        confidence,
+        difficulty: question.difficulty,
+        timeSpent,
+        isHighYield: question.highYield,
+      });
+      
+      setTrackedQuestions(prev => new Set(prev).add(currentQuestion));
+    }
   };
   
   const handleNextQuestion = () => {
@@ -265,6 +291,7 @@ export default function MCQPracticePage() {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(answers[currentQuestion + 1]);
       setShowExplanation(instantFeedback ? false : answers[currentQuestion + 1] !== null);
+      questionStartTime.current = Date.now(); // Reset timer for next question
     } else {
       setMode("results");
       setIsTimerRunning(false);
@@ -301,6 +328,8 @@ export default function MCQPracticePage() {
     setMode("practice");
     setTimeElapsed(0);
     setIsTimerRunning(true);
+    setTrackedQuestions(new Set());
+    questionStartTime.current = Date.now();
   };
   
   const handleReviewMistakes = () => {
