@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Bell, Search, Settings } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
@@ -38,15 +39,15 @@ export function Header() {
         {/* Actions */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Notifications */}
-          <button className="relative p-2 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
+          <Link href="/notifications" className="relative p-2 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
             <Bell className="w-5 h-5 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#06B6D4] rounded-full ring-2 ring-[#0D1B2A]" />
-          </button>
+          </Link>
 
           {/* Settings - hide on mobile */}
-          <button className="hidden sm:block p-2 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
+          <Link href="/settings" className="hidden sm:block p-2 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
             <Settings className="w-5 h-5 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors" />
-          </button>
+          </Link>
 
           {/* Profile */}
           <DropdownMenu>
@@ -70,9 +71,9 @@ export function Header() {
             >
               <DropdownMenuLabel className="text-[#E5E7EB]">My Account</DropdownMenuLabel>
               <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
-              <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Profile</DropdownMenuItem>
-              <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Settings</DropdownMenuItem>
-              <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Billing</DropdownMenuItem>
+              <Link href="/profile"><DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Profile</DropdownMenuItem></Link>
+              <Link href="/settings"><DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Settings</DropdownMenuItem></Link>
+              <Link href="/achievements"><DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Achievements</DropdownMenuItem></Link>
               <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
               <DropdownMenuItem className="text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] focus:bg-[rgba(239,68,68,0.1)] focus:text-[#EF4444]">Log out</DropdownMenuItem>
             </DropdownMenuContent>
