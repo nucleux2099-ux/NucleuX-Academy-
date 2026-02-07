@@ -36,6 +36,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { ATOMStudyCoach } from "@/components/ATOMStudyCoach";
 
 // Dashboard room color - Purple
 const roomColor = '#7C3AED';
@@ -199,53 +200,8 @@ export default function DashboardPage() {
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6 mt-6">
-          {/* ATOM Study Coach Card */}
-          <Card className="bg-[#0F2233] border-l-4 border-[rgba(6,182,212,0.15)] overflow-hidden relative" style={{ borderLeftColor: roomColor }}>
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#7C3AED]/5 rounded-full blur-2xl" />
-            <CardContent className="p-5">
-              <div className="flex items-start gap-4">
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] flex items-center justify-center shadow-lg shadow-[#7C3AED]/25 shrink-0">
-                    <Atom className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#059669] rounded-full border-2 border-[#0F2233]" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
-                      <span>📊</span> ATOM Study Coach
-                    </h3>
-                    <Badge className="bg-[rgba(124,58,237,0.2)] text-[#A78BFA] border-none text-xs">
-                      {atomSuggestion.confidence}% confident
-                    </Badge>
-                  </div>
-                  <p className="text-[#9CA3AF] text-sm mb-3">{atomSuggestion.message}</p>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    {atomSuggestion.topics.map((topic) => (
-                      <Badge key={topic} className="bg-[#142538] text-[#9CA3AF] border-[rgba(6,182,212,0.15)] text-xs cursor-pointer hover:border-[#7C3AED] hover:text-[#7C3AED] transition-all">
-                        {topic}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-2 mt-3">
-                    <Button size="sm" className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs h-8 shadow-md shadow-[#7C3AED]/20">
-                      <Target className="w-3 h-3 mr-1" />
-                      Start Review
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="border-[rgba(124,58,237,0.3)] text-[#A78BFA] hover:bg-[rgba(124,58,237,0.1)] text-xs h-8"
-                      onClick={() => router.push('/chat')}
-                    >
-                      <MessageSquare className="w-3 h-3 mr-1" />
-                      Ask ATOM
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {/* ATOM Study Coach - Enhanced with Carousel, Coins, Time-Aware */}
+          <ATOMStudyCoach />
 
           {/* Today's Study Plan */}
           <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
