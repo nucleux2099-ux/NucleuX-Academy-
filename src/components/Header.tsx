@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Bell, Search, Settings } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Bell, Search, Settings, LogOut, User, Award } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,8 +13,44 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useUser } from "@/lib/auth/context";
+import { createClient } from "@/lib/supabase/client";
+
+// Get initials from name
+function getInitials(name: string | null): string {
+  if (!name) return "U";
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
+// Get level display
+function getLevelDisplay(level: string | null | undefined): string {
+  const levels: Record<string, string> = {
+    mbbs: "MBBS Student",
+    intern: "Intern",
+    pg: "PG Resident",
+    practicing: "Practicing Doctor",
+    other: "Medical Professional",
+  };
+  return levels[level || ""] || "Medical Student";
+}
 
 export function Header() {
+  const router = useRouter();
+  const { user, profile, isLoading } = useUser();
+
+  const handleLogout = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/login");
+    router.refresh();
+  };
+
+  const displayName = profile?.full_name || user?.user_metadata?.full_name || "User";
+  const initials = getInitials(displayName);
+  const levelDisplay = getLevelDisplay(profile?.level);
+
   return (
     <header className="h-14 sm:h-16 border-b border-[rgba(6,182,212,0.1)] bg-[#0D1B2A]/95 backdrop-blur-sm sticky top-0 z-30">
       <div className="h-full px-4 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
@@ -54,14 +91,16 @@ export function Header() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
                 <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20">
-                  <AvatarImage src="/avatar.svg" />
+                  <AvatarImage src={profile?.avatar_url || undefined} />
                   <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-sm font-medium">
-                    AC
+                    {isLoading ? "..." : initials}
                   </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block text-left">
-                  <p className="text-sm font-semibold text-[#E5E7EB]">Aditya</p>
-                  <p className="text-xs text-[#9CA3AF]">Medical Student</p>
+                  <p className="text-sm font-semibold text-[#E5E7EB]">
+                    {isLoading ? "Loading..." : displayName}
+                  </p>
+                  <p className="text-xs text-[#9CA3AF]">{levelDisplay}</p>
                 </div>
               </button>
             </DropdownMenuTrigger>
@@ -69,13 +108,39 @@ export function Header() {
               align="end"
               className="w-56 bg-[#0F2233] border-[rgba(6,182,212,0.15)] shadow-2xl"
             >
-              <DropdownMenuLabel className="text-[#E5E7EB]">My Account</DropdownMenuLabel>
+              <DropdownMenuLabel className="text-[#E5E7EB]">
+                <div>
+                  <p className="font-medium">{displayName}</p>
+                  <p className="text-xs text-[#9CA3AF] font-normal">{user?.email}</p>
+                </div>
+              </DropdownMenuLabel>
               <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
-              <Link href="/profile"><DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Profile</DropdownMenuItem></Link>
-              <Link href="/settings"><DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Settings</DropdownMenuItem></Link>
-              <Link href="/achievements"><DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB]">Achievements</DropdownMenuItem></Link>
+              <Link href="/profile">
+                <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB] cursor-pointer">
+                  <User className="w-4 h-4 mr-2" />
+                  Profile
+                </DropdownMenuItem>
+              </Link>
+              <Link href="/settings">
+                <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB] cursor-pointer">
+                  <Settings className="w-4 h-4 mr-2" />
+                  Settings
+                </DropdownMenuItem>
+              </Link>
+              <Link href="/achievements">
+                <DropdownMenuItem className="text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] focus:bg-[rgba(6,182,212,0.1)] focus:text-[#E5E7EB] cursor-pointer">
+                  <Award className="w-4 h-4 mr-2" />
+                  Achievements
+                </DropdownMenuItem>
+              </Link>
               <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
-              <DropdownMenuItem className="text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] focus:bg-[rgba(239,68,68,0.1)] focus:text-[#EF4444]">Log out</DropdownMenuItem>
+              <DropdownMenuItem 
+                className="text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] focus:bg-[rgba(239,68,68,0.1)] focus:text-[#EF4444] cursor-pointer"
+                onClick={handleLogout}
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Log out
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

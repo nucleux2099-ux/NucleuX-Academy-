@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import {
   UserAnalytics,
   MCQAttempt,
@@ -24,6 +24,7 @@ import {
 interface AnalyticsContextValue {
   analytics: UserAnalytics;
   isLoaded: boolean;
+  isSyncing: boolean;
   
   // Actions
   trackMCQAttempt: (attempt: Omit<MCQAttempt, 'id' | 'timestamp'>) => void;
@@ -52,21 +53,113 @@ interface AnalyticsContextValue {
   // Admin
   refreshMemoryStrengths: () => void;
   resetAnalytics: () => void;
+  syncToCloud: () => Promise<void>;
 }
 
 const AnalyticsContext = createContext<AnalyticsContextValue | null>(null);
 
+// Debounce sync to avoid excessive API calls
+const SYNC_DEBOUNCE_MS = 5000;
+
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   const [analytics, setAnalytics] = useState<UserAnalytics | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isSyncing, setIsSyncing] = useState(false);
+  const syncTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pendingSyncRef = useRef(false);
   
-  // Load on mount
+  // Sync to Supabase
+  const syncToCloud = useCallback(async () => {
+    if (!analytics || isSyncing) return;
+    
+    setIsSyncing(true);
+    try {
+      const response = await fetch('/api/analytics/sync', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          mcqAttempts: analytics.mcqAttempts.slice(-50), // Only sync recent
+          dailyStats: analytics.dailyStats.slice(-30),
+          currentStreak: analytics.currentStreak,
+          longestStreak: analytics.longestStreak,
+        }),
+      });
+      
+      if (!response.ok) {
+        // Not logged in or error - that's fine, keep using localStorage
+        console.log('Analytics sync skipped (not authenticated or error)');
+      }
+    } catch (error) {
+      console.log('Analytics sync skipped:', error);
+    } finally {
+      setIsSyncing(false);
+      pendingSyncRef.current = false;
+    }
+  }, [analytics, isSyncing]);
+
+  // Debounced sync
+  const debouncedSync = useCallback(() => {
+    if (syncTimeoutRef.current) {
+      clearTimeout(syncTimeoutRef.current);
+    }
+    pendingSyncRef.current = true;
+    syncTimeoutRef.current = setTimeout(() => {
+      syncToCloud();
+    }, SYNC_DEBOUNCE_MS);
+  }, [syncToCloud]);
+
+  // Load on mount + try to merge from cloud
   useEffect(() => {
-    const loaded = loadAnalytics();
-    // Recalculate memory strengths on load
-    const updated = recalculateMemoryStrengths(loaded);
-    setAnalytics(updated);
-    setIsLoaded(true);
+    const loadData = async () => {
+      // Load from localStorage first (fast)
+      const localData = loadAnalytics();
+      const updated = recalculateMemoryStrengths(localData);
+      setAnalytics(updated);
+      setIsLoaded(true);
+
+      // Then try to load from cloud and merge
+      try {
+        const response = await fetch('/api/analytics');
+        if (response.ok) {
+          const cloudData = await response.json();
+          
+          // Merge cloud data with local (cloud takes precedence for streaks)
+          if (cloudData.currentStreak > updated.currentStreak) {
+            updated.currentStreak = cloudData.currentStreak;
+          }
+          if (cloudData.longestStreak > updated.longestStreak) {
+            updated.longestStreak = cloudData.longestStreak;
+          }
+          
+          // Merge daily stats (avoid duplicates)
+          const existingDates = new Set(updated.dailyStats.map(d => d.date));
+          cloudData.dailyStats?.forEach((stat: any) => {
+            if (!existingDates.has(stat.date)) {
+              updated.dailyStats.push(stat);
+            }
+          });
+          
+          saveAnalytics(updated);
+          setAnalytics({ ...updated });
+        }
+      } catch (error) {
+        // Not logged in or network error - continue with localStorage
+        console.log('Cloud analytics not available, using localStorage');
+      }
+    };
+
+    loadData();
+    
+    // Cleanup sync timeout on unmount
+    return () => {
+      if (syncTimeoutRef.current) {
+        clearTimeout(syncTimeoutRef.current);
+      }
+      // Sync any pending changes before unmount
+      if (pendingSyncRef.current) {
+        syncToCloud();
+      }
+    };
   }, []);
   
   // Generate unique ID
@@ -84,7 +177,8 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     
     const updated = logMCQAttempt(analytics, fullAttempt);
     setAnalytics(updated);
-  }, [analytics]);
+    debouncedSync();
+  }, [analytics, debouncedSync]);
   
   // Track reading session
   const trackReadingSession = useCallback((session: Omit<ReadingSession, 'id'>) => {
@@ -97,7 +191,8 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     
     const updated = logReadingSession(analytics, fullSession);
     setAnalytics(updated);
-  }, [analytics]);
+    debouncedSync();
+  }, [analytics, debouncedSync]);
   
   // Track video session
   const trackVideoSession = useCallback((session: Omit<VideoSession, 'id'>) => {
@@ -110,7 +205,8 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     
     const updated = logVideoSession(analytics, fullSession);
     setAnalytics(updated);
-  }, [analytics]);
+    debouncedSync();
+  }, [analytics, debouncedSync]);
   
   // Get calibration data
   const getCalibration = useCallback(() => {
@@ -142,7 +238,6 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     return analytics.topicMemories
       .filter(m => m.mcqAttempts > 0)
       .map(memory => {
-        // Calculate trend from recent attempts
         const recentAttempts = analytics.mcqAttempts
           .filter(a => a.topicId === memory.topicId)
           .slice(-10);
@@ -214,6 +309,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
       value={{
         analytics,
         isLoaded,
+        isSyncing,
         trackMCQAttempt,
         trackReadingSession,
         trackVideoSession,
@@ -225,6 +321,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
         getDifficultyBreakdown,
         refreshMemoryStrengths,
         resetAnalytics,
+        syncToCloud,
       }}
     >
       {children}
@@ -232,7 +329,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Default no-op context value for when provider isn't mounted yet
+// Default no-op context value
 const defaultValue: AnalyticsContextValue = {
   analytics: {
     totalQuestions: 0,
@@ -254,6 +351,7 @@ const defaultValue: AnalyticsContextValue = {
     ],
   },
   isLoaded: false,
+  isSyncing: false,
   trackMCQAttempt: () => {},
   trackReadingSession: () => {},
   trackVideoSession: () => {},
@@ -265,10 +363,10 @@ const defaultValue: AnalyticsContextValue = {
   getDifficultyBreakdown: () => [],
   refreshMemoryStrengths: () => {},
   resetAnalytics: () => {},
+  syncToCloud: async () => {},
 };
 
 export function useAnalytics() {
   const context = useContext(AnalyticsContext);
-  // Return default no-op context if not within provider (e.g., during SSR)
   return context || defaultValue;
 }
