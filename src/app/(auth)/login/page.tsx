@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { createClient } from "@/lib/supabase/client";
 import {
   Eye,
   EyeOff,
@@ -13,12 +14,14 @@ import {
   Lock,
   ArrowRight,
   Loader2,
+  AlertCircle,
 } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,19 +30,42 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      router.push("/dashboard");
-    }, 1500);
+    setError(null);
+
+    const supabase = createClient();
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email: formData.email,
+      password: formData.password,
+    });
+
+    if (error) {
+      setError(error.message);
+      setIsLoading(false);
+      return;
+    }
+
+    router.push("/dashboard");
+    router.refresh();
   };
 
-  const handleSocialLogin = () => {
+  const handleGoogleLogin = async () => {
     setIsLoading(true);
-    // Simulate social login
-    setTimeout(() => {
-      router.push("/dashboard");
-    }, 1500);
+    setError(null);
+
+    const supabase = createClient();
+
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+      },
+    });
+
+    if (error) {
+      setError(error.message);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -53,12 +79,20 @@ export default function LoginPage() {
 
       <Card className="bg-white border-[#E2E8F0] shadow-lg">
         <CardContent className="p-6">
+          {/* Error Alert */}
+          {error && (
+            <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 flex items-center gap-2 text-red-700">
+              <AlertCircle className="w-4 h-4 flex-shrink-0" />
+              <p className="text-sm">{error}</p>
+            </div>
+          )}
+
           {/* Social Login Buttons */}
           <div className="space-y-3 mb-6">
             <Button
               variant="outline"
               className="w-full border-[#CBD5E1] bg-white hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
-              onClick={() => handleSocialLogin()}
+              onClick={handleGoogleLogin}
               disabled={isLoading}
             >
               <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24">
@@ -80,17 +114,6 @@ export default function LoginPage() {
                 />
               </svg>
               Continue with Google
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full border-[#CBD5E1] bg-white hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
-              onClick={() => handleSocialLogin()}
-              disabled={isLoading}
-            >
-              <svg className="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-              </svg>
-              Continue with Apple
             </Button>
           </div>
 
