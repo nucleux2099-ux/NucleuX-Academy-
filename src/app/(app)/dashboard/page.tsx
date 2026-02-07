@@ -131,6 +131,7 @@ export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [activeTab, setActiveTab] = useState("overview");
+  const [chartMounted, setChartMounted] = useState(false);
 
   const stats = timePeriod === "weekly" ? weeklyStats : monthlyStats;
   const chartData = timePeriod === "weekly" ? weeklyData : monthlyData;
@@ -144,6 +145,10 @@ export default function DashboardPage() {
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 600);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    setChartMounted(true);
   }, []);
 
   const greeting = getGreeting();
@@ -372,35 +377,41 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <AreaChart data={chartData}>
-                    <defs>
-                      <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
-                      </linearGradient>
-                      <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.3}/>
-                        <stop offset="95%" stopColor="#06B6D4" stopOpacity={0}/>
-                      </linearGradient>
-                    </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(6, 182, 212, 0.1)" />
-                    <XAxis dataKey={xKey} stroke="#9CA3AF" fontSize={12} tickLine={false} />
-                    <YAxis yAxisId="left" stroke="#9CA3AF" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis yAxisId="right" orientation="right" stroke="#9CA3AF" fontSize={12} tickLine={false} axisLine={false} />
-                    <Tooltip 
-                      contentStyle={{ 
-                        backgroundColor: '#0F2233', 
-                        border: '1px solid rgba(6, 182, 212, 0.15)',
-                        borderRadius: '8px',
-                        color: '#E5E7EB'
-                      }}
-                      labelStyle={{ color: '#E5E7EB' }}
-                    />
-                    <Area yAxisId="left" type="monotone" dataKey="hours" stroke="#7C3AED" strokeWidth={2} fillOpacity={1} fill="url(#colorHours)" name="Study Hours" />
-                    <Area yAxisId="right" type="monotone" dataKey="questions" stroke="#06B6D4" strokeWidth={2} fillOpacity={1} fill="url(#colorQuestions)" name="MCQs Answered" />
-                  </AreaChart>
-                </ResponsiveContainer>
+                {chartMounted ? (
+                  <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart data={chartData}>
+                      <defs>
+                        <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3}/>
+                          <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
+                        </linearGradient>
+                        <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.3}/>
+                          <stop offset="95%" stopColor="#06B6D4" stopOpacity={0}/>
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(6, 182, 212, 0.1)" />
+                      <XAxis dataKey={xKey} stroke="#9CA3AF" fontSize={12} tickLine={false} />
+                      <YAxis yAxisId="left" stroke="#9CA3AF" fontSize={12} tickLine={false} axisLine={false} />
+                      <YAxis yAxisId="right" orientation="right" stroke="#9CA3AF" fontSize={12} tickLine={false} axisLine={false} />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: '#0F2233', 
+                          border: '1px solid rgba(6, 182, 212, 0.15)',
+                          borderRadius: '8px',
+                          color: '#E5E7EB'
+                        }}
+                        labelStyle={{ color: '#E5E7EB' }}
+                      />
+                      <Area yAxisId="left" type="monotone" dataKey="hours" stroke="#7C3AED" strokeWidth={2} fillOpacity={1} fill="url(#colorHours)" name="Study Hours" />
+                      <Area yAxisId="right" type="monotone" dataKey="questions" stroke="#06B6D4" strokeWidth={2} fillOpacity={1} fill="url(#colorQuestions)" name="MCQs Answered" />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="animate-pulse bg-[#142538] rounded-lg w-full h-full" />
+                  </div>
+                )}
               </div>
               <div className="flex items-center justify-center gap-6 mt-4">
                 <div className="flex items-center gap-2">

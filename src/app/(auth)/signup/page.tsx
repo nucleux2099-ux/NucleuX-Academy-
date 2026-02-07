@@ -116,7 +116,7 @@ export default function SignupPage() {
               <div className="space-y-3 mb-6">
                 <Button
                   variant="outline"
-                  className="w-full border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B]"
+                  className="w-full border-[#CBD5E1] bg-white hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
                   onClick={() => handleSocialSignup()}
                   disabled={isLoading}
                 >
@@ -142,7 +142,7 @@ export default function SignupPage() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full border-[#E2E8F0] hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B]"
+                  className="w-full border-[#CBD5E1] bg-white hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
                   onClick={() => handleSocialSignup()}
                   disabled={isLoading}
                 >

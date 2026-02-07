@@ -47,7 +47,7 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
       <div className="p-4 border-b border-[rgba(6,182,212,0.1)]">
         <div className="flex items-center gap-3">
           <Avatar className="w-12 h-12 ring-2 ring-[#06B6D4]/30">
-            <AvatarImage src="/avatar.jpg" />
+            <AvatarImage src="/avatar.svg" />
             <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white font-medium">
               AC
             </AvatarFallback>
@@ -126,7 +126,7 @@ export function ProfileButton() {
         className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all group"
       >
         <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20 group-hover:ring-[#06B6D4]/40 transition-all">
-          <AvatarImage src="/avatar.jpg" />
+          <AvatarImage src="/avatar.svg" />
           <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-xs font-medium">
             AC
           </AvatarFallback>

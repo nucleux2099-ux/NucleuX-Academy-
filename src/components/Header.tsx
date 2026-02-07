@@ -53,7 +53,7 @@ export function Header() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
                 <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20">
-                  <AvatarImage src="/avatar.jpg" />
+                  <AvatarImage src="/avatar.svg" />
                   <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-sm font-medium">
                     AC
                   </AvatarFallback>

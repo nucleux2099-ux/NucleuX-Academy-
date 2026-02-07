@@ -61,7 +61,7 @@ export default function ProfilePage() {
           <div className="absolute -top-16 left-6">
             <div className="relative">
               <Avatar className="w-32 h-32 border-4 border-[#0F2233]">
-                <AvatarImage src="/avatar.jpg" />
+                <AvatarImage src="/avatar.svg" />
                 <AvatarFallback className="bg-[#7C3AED] text-white text-3xl">
                   AC
                 </AvatarFallback>
