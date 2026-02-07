@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
+import { createClient } from "@/lib/supabase/client";
 import {
   ArrowRight,
   ArrowLeft,
@@ -46,33 +47,126 @@ const goals = [
 ];
 
 const studyTimes = [
-  { id: "30min", label: "30 min" },
-  { id: "1hr", label: "1 hour" },
-  { id: "2hr", label: "2 hours" },
-  { id: "more", label: "2+ hrs" },
+  { id: "30", label: "30 min", minutes: 30 },
+  { id: "60", label: "1 hour", minutes: 60 },
+  { id: "120", label: "2 hours", minutes: 120 },
+  { id: "180", label: "2+ hrs", minutes: 180 },
+];
+
+const exams = [
+  { id: "neet_pg", label: "NEET PG" },
+  { id: "inicet", label: "INICET" },
+  { id: "fmge", label: "FMGE" },
+  { id: "usmle", label: "USMLE" },
+  { id: "none", label: "No specific exam" },
 ];
 
 export default function OnboardingPage() {
   const router = useRouter();
+  const supabase = createClient();
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     selectedSpecialties: [] as string[],
     selectedGoals: [] as string[],
     dailyStudyTime: "",
+    targetExam: "",
     telegramConnected: false,
   });
 
   const totalSteps = 4;
   const progress = (step / totalSteps) * 100;
 
-  const handleNext = () => {
+  // Load existing user data
+  useEffect(() => {
+    const loadUserData = async () => {
+      setIsLoading(true);
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        router.push("/login");
+        return;
+      }
+
+      // Check if already completed onboarding
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", user.id)
+        .single();
+
+      if (profile?.onboarding_completed) {
+        router.push("/dashboard");
+        return;
+      }
+
+      // Pre-fill name from profile or auth metadata
+      const name = profile?.full_name || user.user_metadata?.full_name || "";
+      setFormData(prev => ({ ...prev, name }));
+      setIsLoading(false);
+    };
+
+    loadUserData();
+  }, []);
+
+  const handleNext = async () => {
     if (step < totalSteps) {
       setStep(step + 1);
     } else {
-      setIsLoading(true);
-      setTimeout(() => router.push("/dashboard"), 1500);
+      // Final step - save everything to Supabase
+      await saveOnboardingData();
+    }
+  };
+
+  const saveOnboardingData = async () => {
+    setIsSaving(true);
+    
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        router.push("/login");
+        return;
+      }
+
+      // Update profile
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .update({
+          full_name: formData.name,
+          specialty: formData.selectedSpecialties[0] || null, // Primary specialty
+          target_exam: formData.targetExam !== "none" ? formData.targetExam : null,
+          onboarding_completed: true,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", user.id);
+
+      if (profileError) {
+        console.error("Profile update error:", profileError);
+      }
+
+      // Update preferences
+      const studyTimeMinutes = studyTimes.find(t => t.id === formData.dailyStudyTime)?.minutes || 60;
+      
+      const { error: prefsError } = await supabase
+        .from("user_preferences")
+        .update({
+          daily_goal_minutes: studyTimeMinutes,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("user_id", user.id);
+
+      if (prefsError) {
+        console.error("Preferences update error:", prefsError);
+      }
+
+      // Navigate to dashboard
+      router.push("/dashboard");
+      router.refresh();
+    } catch (error) {
+      console.error("Onboarding save error:", error);
+      setIsSaving(false);
     }
   };
 
@@ -102,18 +196,30 @@ export default function OnboardingPage() {
     switch (step) {
       case 1: return formData.name.trim().length > 0;
       case 2: return formData.selectedSpecialties.length > 0;
-      case 3: return formData.selectedGoals.length > 0 && formData.dailyStudyTime;
+      case 3: return formData.selectedGoals.length > 0 && formData.dailyStudyTime && formData.targetExam;
       default: return true;
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-[#F5F3FF] flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-[#7C3AED]" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-[#F5F3FF] flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-2xl mb-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <Image src="/logo.svg" alt="NucleuX" width={40} height={40} />
-            <span className="text-xl font-bold text-gradient-purple">NucleuX Academy</span>
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-md">
+              <span className="text-white font-bold">N</span>
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] bg-clip-text text-transparent">
+              NucleuX Academy
+            </span>
           </div>
           <span className="text-sm text-[#64748B]">Step {step} of {totalSteps}</span>
         </div>
@@ -204,6 +310,28 @@ export default function OnboardingPage() {
                   );
                 })}
               </div>
+              
+              {/* Target Exam */}
+              <div>
+                <label className="text-sm text-[#64748B] mb-3 block">Target exam?</label>
+                <div className="flex flex-wrap gap-2">
+                  {exams.map((exam) => (
+                    <button
+                      key={exam.id}
+                      onClick={() => setFormData((prev) => ({ ...prev, targetExam: exam.id }))}
+                      className={`px-4 py-2 rounded-lg border text-sm transition-all ${
+                        formData.targetExam === exam.id
+                          ? "border-[#7C3AED] bg-[#F5F3FF] text-[#7C3AED] font-medium"
+                          : "border-[#E2E8F0] bg-[#F8FAFC] text-[#64748B] hover:border-[#7C3AED]/50"
+                      }`}
+                    >
+                      {exam.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Daily Study Time */}
               <div>
                 <label className="text-sm text-[#64748B] mb-3 block">Daily study time?</label>
                 <div className="grid grid-cols-4 gap-2">
@@ -268,10 +396,10 @@ export default function OnboardingPage() {
             </Button>
             <Button
               onClick={handleNext}
-              disabled={!canProceed() || isLoading}
+              disabled={!canProceed() || isSaving}
               className="bg-[#7C3AED] hover:bg-[#6D28D9] min-w-[140px] shadow-lg shadow-[#7C3AED]/20"
             >
-              {isLoading ? (
+              {isSaving ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
               ) : step === totalSteps ? (
                 <>Get Started <Sparkles className="w-4 h-4 ml-2" /></>

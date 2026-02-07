@@ -49,6 +49,8 @@ interface Question {
   difficulty: "Easy" | "Medium" | "Hard";
   highYield: boolean;
   image?: string;
+  imageCaption?: string;
+  pyq?: { exam: string; year: number }; // Previous Year Question
 }
 
 const questions: Question[] = [
@@ -81,6 +83,7 @@ For locally advanced gastric/GEJ adenocarcinoma without distant metastasis on im
     topic: "Gastric Cancer",
     difficulty: "Hard",
     highYield: true,
+    pyq: { exam: "NEET-PG", year: 2023 },
   },
   {
     id: 2,
@@ -109,6 +112,7 @@ TNM staging is the most important prognostic factor:
     topic: "Gastric Cancer",
     difficulty: "Easy",
     highYield: true,
+    pyq: { exam: "AIIMS", year: 2022 },
   },
   {
     id: 3,
@@ -198,6 +202,41 @@ Margin requirements based on Lauren classification:
     topic: "Surgical Oncology",
     difficulty: "Medium",
     highYield: true,
+    pyq: { exam: "NEET-PG", year: 2024 },
+  },
+  {
+    id: 6,
+    question: "A 55-year-old male presents with abdominal pain and weight loss. CT scan is shown above. What is the most likely diagnosis?",
+    options: [
+      "Pancreatic adenocarcinoma",
+      "Chronic pancreatitis",
+      "Pancreatic pseudocyst",
+      "Insulinoma"
+    ],
+    correctAnswer: 0,
+    explanation: `**Correct Answer: Pancreatic adenocarcinoma**
+
+The CT image shows classic features of pancreatic head adenocarcinoma:
+
+**Key Imaging Findings:**
+• **Double duct sign** — Dilated CBD + dilated pancreatic duct
+• **Hypodense mass** in pancreatic head
+• **Upstream pancreatic atrophy**
+• **Vascular encasement** (if present)
+
+**Why other options are incorrect:**
+• **Chronic pancreatitis:** Would show calcifications, irregular duct, no mass
+• **Pseudocyst:** Well-defined fluid collection, not solid mass
+• **Insulinoma:** Small, hypervascular tumor (not hypodense)
+
+**Clinical Pearl:** Double duct sign in a patient >50y with painless jaundice = pancreatic cancer until proven otherwise.`,
+    reference: { book: "Blumgart's Surgery of the Liver", chapter: "Ch. 45", page: "712" },
+    topic: "Hepatobiliary",
+    difficulty: "Medium",
+    highYield: true,
+    image: "/images/mcq/ct-pancreas-double-duct.jpg",
+    imageCaption: "CT Abdomen (Axial view) - Note the double duct sign",
+    pyq: { exam: "AIIMS", year: 2023 },
   },
 ];
 
@@ -582,6 +621,11 @@ export default function MCQPracticePage() {
                   High Yield
                 </Badge>
               )}
+              {question.pyq && (
+                <Badge className="bg-[rgba(139,92,246,0.2)] text-[#8B5CF6] border-none">
+                  📋 {question.pyq.exam} {question.pyq.year}
+                </Badge>
+              )}
             </div>
             <Button
               variant="ghost"
@@ -595,6 +639,22 @@ export default function MCQPracticePage() {
         </CardHeader>
         
         <CardContent className="space-y-6">
+          {/* Question Image (if present) */}
+          {question.image && (
+            <div className="rounded-lg overflow-hidden border border-[rgba(6,182,212,0.15)]">
+              <img 
+                src={question.image} 
+                alt={question.imageCaption || "Clinical image"} 
+                className="w-full max-h-80 object-contain bg-[#0D1B2A]"
+              />
+              {question.imageCaption && (
+                <p className="text-xs text-[#6B7280] text-center py-2 bg-[#142538]">
+                  {question.imageCaption}
+                </p>
+              )}
+            </div>
+          )}
+          
           {/* Question Text */}
           <p className="text-lg text-[#E5E7EB] leading-relaxed">{question.question}</p>
           
@@ -679,8 +739,22 @@ export default function MCQPracticePage() {
                 <div className="p-2 rounded-lg bg-[#0F2233] shrink-0">
                   <Lightbulb className="w-5 h-5 text-[#F59E0B]" />
                 </div>
-                <div>
-                  <p className="font-semibold text-[#F59E0B] mb-2">Explanation</p>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="font-semibold text-[#F59E0B]">Explanation</p>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-[#8B5CF6] hover:text-[#A78BFA] hover:bg-[#8B5CF6]/10 gap-1"
+                      onClick={() => {
+                        // TODO: Integrate ElevenLabs TTS
+                        alert("Voice explanation coming soon! 🔊");
+                      }}
+                    >
+                      <Volume2 className="w-4 h-4" />
+                      <span className="text-xs">Listen</span>
+                    </Button>
+                  </div>
                   <div className="text-[#9CA3AF] leading-relaxed whitespace-pre-line text-sm">
                     {question.explanation.split("\n").map((line, i) => {
                       if (line.startsWith("**") && line.endsWith("**")) {

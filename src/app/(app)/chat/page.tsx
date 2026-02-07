@@ -89,9 +89,7 @@ const initialMessages: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: `Welcome back, Sarath! 👋
-
-I'm **ATOM**, your AI companion for mastering medicine.
+    content: `I'm **ATOM**, your AI companion for mastering medicine.
 
 I can help you:
 • **Answer questions** with textbook references
@@ -99,7 +97,7 @@ I can help you:
 • **Create flashcards** for spaced repetition
 • **Explain concepts** atomically
 
-Currently talking to: **📚 Surgery Library**
+Currently talking to: 📚 **Surgery Library**
 
 What would you like to learn today?`,
     timestamp: new Date(),
