@@ -1,28 +1,94 @@
--- NucleuX Academy - Initial Schema
--- Migration: 001_initial_schema
+-- NucleuX Academy - Schema Extension
+-- Migration: 002_extend_schema
 -- Date: 2026-02-07
+-- Purpose: Extend existing basic tables and add missing tables
 
 -- =====================================================
--- 1. USER TABLES
+-- 1. EXTEND PROFILES TABLE
 -- =====================================================
 
--- Profiles (extends Supabase Auth)
-CREATE TABLE IF NOT EXISTS profiles (
-  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
-  username TEXT UNIQUE,
-  full_name TEXT,
-  avatar_url TEXT,
-  specialty TEXT,
-  level TEXT DEFAULT 'student',
-  institution TEXT,
-  target_exam TEXT,
-  target_date DATE,
-  timezone TEXT DEFAULT 'Asia/Kolkata',
-  plan TEXT DEFAULT 'free',
-  onboarding_completed BOOLEAN DEFAULT FALSE,
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
-);
+-- Add missing columns to profiles
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS institution TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS target_exam TEXT;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS target_date DATE;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS timezone TEXT DEFAULT 'Asia/Kolkata';
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS plan TEXT DEFAULT 'free';
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS onboarding_completed BOOLEAN DEFAULT FALSE;
+ALTER TABLE profiles ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW();
+
+-- =====================================================
+-- 2. EXTEND ATOMS TABLE
+-- =====================================================
+
+-- Add missing columns to atoms
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS slug TEXT UNIQUE;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS type TEXT DEFAULT 'note';
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS content JSONB DEFAULT '{}';
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS summary TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS specialty TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS system TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS topic TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS subtopic TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS tags TEXT[];
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS source_type TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS source_textbook TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS source_edition TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS source_chapter TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS source_page TEXT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS difficulty INT DEFAULT 2;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS read_time_minutes INT;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS is_premium BOOLEAN DEFAULT FALSE;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS is_published BOOLEAN DEFAULT TRUE;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS view_count INT DEFAULT 0;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS save_count INT DEFAULT 0;
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS avg_rating DECIMAL(2,1);
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS author_id UUID REFERENCES profiles(id);
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ DEFAULT NOW();
+ALTER TABLE atoms ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW();
+
+-- =====================================================
+-- 3. EXTEND MCQS TABLE
+-- =====================================================
+
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS question_type TEXT DEFAULT 'single';
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS stem TEXT;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS subtopic TEXT;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS tags TEXT[];
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS source TEXT;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS source_exam TEXT;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS atom_id UUID REFERENCES atoms(id);
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS explanation_atom_id UUID REFERENCES atoms(id);
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS attempt_count INT DEFAULT 0;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS correct_rate DECIMAL(4,2);
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS avg_time_seconds INT;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS is_premium BOOLEAN DEFAULT FALSE;
+ALTER TABLE mcqs ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW();
+
+-- =====================================================
+-- 4. EXTEND PATHWAYS TABLE
+-- =====================================================
+
+ALTER TABLE pathways ADD COLUMN IF NOT EXISTS target_exam TEXT;
+ALTER TABLE pathways ADD COLUMN IF NOT EXISTS topic_count INT DEFAULT 0;
+ALTER TABLE pathways ADD COLUMN IF NOT EXISTS author_id UUID REFERENCES profiles(id);
+ALTER TABLE pathways ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW();
+
+-- =====================================================
+-- 5. EXTEND USER_NOTES TABLE
+-- =====================================================
+
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS mcq_id UUID REFERENCES mcqs(id);
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS specialty TEXT;
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS topic TEXT;
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS tags TEXT[];
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS folder TEXT DEFAULT 'inbox';
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS is_pinned BOOLEAN DEFAULT FALSE;
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS color TEXT;
+ALTER TABLE user_notes ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW();
+
+-- =====================================================
+-- 6. CREATE NEW TABLES
+-- =====================================================
 
 -- User Preferences
 CREATE TABLE IF NOT EXISTS user_preferences (
@@ -51,40 +117,6 @@ CREATE TABLE IF NOT EXISTS streaks (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- =====================================================
--- 2. CONTENT TABLES (Atoms)
--- =====================================================
-
--- Atoms - Core knowledge units
-CREATE TABLE IF NOT EXISTS atoms (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  title TEXT NOT NULL,
-  slug TEXT UNIQUE NOT NULL,
-  type TEXT NOT NULL,
-  content JSONB NOT NULL,
-  summary TEXT,
-  specialty TEXT NOT NULL,
-  system TEXT,
-  topic TEXT NOT NULL,
-  subtopic TEXT,
-  tags TEXT[],
-  source_type TEXT,
-  source_textbook TEXT,
-  source_edition TEXT,
-  source_chapter TEXT,
-  source_page TEXT,
-  difficulty INT DEFAULT 2,
-  read_time_minutes INT,
-  is_premium BOOLEAN DEFAULT FALSE,
-  is_published BOOLEAN DEFAULT TRUE,
-  view_count INT DEFAULT 0,
-  save_count INT DEFAULT 0,
-  avg_rating DECIMAL(2,1),
-  author_id UUID REFERENCES profiles(id),
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
 -- Atom Citations
 CREATE TABLE IF NOT EXISTS atom_citations (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -99,7 +131,7 @@ CREATE TABLE IF NOT EXISTS atom_citations (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Atom Connections (Knowledge Graph edges)
+-- Atom Connections (Knowledge Graph)
 CREATE TABLE IF NOT EXISTS atom_connections (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   from_atom_id UUID REFERENCES atoms(id) ON DELETE CASCADE,
@@ -109,10 +141,6 @@ CREATE TABLE IF NOT EXISTS atom_connections (
   created_at TIMESTAMPTZ DEFAULT NOW(),
   UNIQUE(from_atom_id, to_atom_id)
 );
-
--- =====================================================
--- 3. PROGRESS TABLES
--- =====================================================
 
 -- User Atom Progress
 CREATE TABLE IF NOT EXISTS user_atom_progress (
@@ -162,27 +190,6 @@ CREATE TABLE IF NOT EXISTS daily_stats (
   UNIQUE(user_id, date)
 );
 
--- =====================================================
--- 4. PATHWAYS
--- =====================================================
-
--- Pathways
-CREATE TABLE IF NOT EXISTS pathways (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  title TEXT NOT NULL,
-  slug TEXT UNIQUE NOT NULL,
-  description TEXT,
-  specialty TEXT NOT NULL,
-  target_exam TEXT,
-  difficulty INT DEFAULT 2,
-  estimated_hours INT,
-  topic_count INT DEFAULT 0,
-  is_official BOOLEAN DEFAULT TRUE,
-  author_id UUID REFERENCES profiles(id),
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
 -- Pathway Topics
 CREATE TABLE IF NOT EXISTS pathway_topics (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -205,34 +212,6 @@ CREATE TABLE IF NOT EXISTS user_pathways (
   started_at TIMESTAMPTZ DEFAULT NOW(),
   completed_at TIMESTAMPTZ,
   UNIQUE(user_id, pathway_id)
-);
-
--- =====================================================
--- 5. MCQs
--- =====================================================
-
--- MCQs
-CREATE TABLE IF NOT EXISTS mcqs (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  question TEXT NOT NULL,
-  question_type TEXT DEFAULT 'single',
-  stem TEXT,
-  specialty TEXT NOT NULL,
-  topic TEXT NOT NULL,
-  subtopic TEXT,
-  tags TEXT[],
-  difficulty INT DEFAULT 2,
-  source TEXT,
-  source_exam TEXT,
-  atom_id UUID REFERENCES atoms(id),
-  explanation_atom_id UUID REFERENCES atoms(id),
-  attempt_count INT DEFAULT 0,
-  correct_rate DECIMAL(4,2),
-  avg_time_seconds INT,
-  is_premium BOOLEAN DEFAULT FALSE,
-  is_published BOOLEAN DEFAULT TRUE,
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 -- MCQ Options
@@ -258,31 +237,6 @@ CREATE TABLE IF NOT EXISTS mcq_attempts (
   session_id UUID REFERENCES study_sessions(id),
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
-
--- =====================================================
--- 6. USER NOTES
--- =====================================================
-
-CREATE TABLE IF NOT EXISTS user_notes (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
-  title TEXT NOT NULL,
-  content JSONB NOT NULL,
-  atom_id UUID REFERENCES atoms(id),
-  mcq_id UUID REFERENCES mcqs(id),
-  specialty TEXT,
-  topic TEXT,
-  tags TEXT[],
-  folder TEXT DEFAULT 'inbox',
-  is_pinned BOOLEAN DEFAULT FALSE,
-  color TEXT,
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- =====================================================
--- 7. COMMUNITY
--- =====================================================
 
 -- Discussions
 CREATE TABLE IF NOT EXISTS discussions (
@@ -316,10 +270,6 @@ CREATE TABLE IF NOT EXISTS comments (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- =====================================================
--- 8. ATOM INTEGRATION
--- =====================================================
-
 -- ATOM Interactions
 CREATE TABLE IF NOT EXISTS atom_interactions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -347,7 +297,7 @@ CREATE TABLE IF NOT EXISTS atom_recommendations (
 );
 
 -- =====================================================
--- 9. INDEXES
+-- 7. INDEXES
 -- =====================================================
 
 CREATE INDEX IF NOT EXISTS idx_atoms_specialty ON atoms(specialty);
@@ -366,7 +316,7 @@ CREATE INDEX IF NOT EXISTS idx_user_progress_atom ON user_atom_progress(atom_id)
 CREATE INDEX IF NOT EXISTS idx_daily_stats_user_date ON daily_stats(user_id, date);
 
 -- =====================================================
--- 10. FUNCTIONS & TRIGGERS
+-- 8. FUNCTIONS & TRIGGERS
 -- =====================================================
 
 -- Auto-update updated_at
@@ -378,17 +328,25 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Apply to tables
+-- Apply triggers (drop first to avoid conflicts)
+DROP TRIGGER IF EXISTS update_profiles_updated_at ON profiles;
 CREATE TRIGGER update_profiles_updated_at
   BEFORE UPDATE ON profiles
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
+DROP TRIGGER IF EXISTS update_atoms_updated_at ON atoms;
 CREATE TRIGGER update_atoms_updated_at
   BEFORE UPDATE ON atoms
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
+DROP TRIGGER IF EXISTS update_user_notes_updated_at ON user_notes;
 CREATE TRIGGER update_user_notes_updated_at
   BEFORE UPDATE ON user_notes
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at();
+
+DROP TRIGGER IF EXISTS update_mcqs_updated_at ON mcqs;
+CREATE TRIGGER update_mcqs_updated_at
+  BEFORE UPDATE ON mcqs
   FOR EACH ROW EXECUTE FUNCTION update_updated_at();
 
 -- Auto-create profile on signup
@@ -412,22 +370,30 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
 
-CREATE OR REPLACE TRIGGER on_auth_user_created
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION handle_new_user();
 
 -- =====================================================
--- 11. ROW LEVEL SECURITY
+-- 9. ROW LEVEL SECURITY
 -- =====================================================
 
--- Enable RLS
+-- Enable RLS on all tables
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_preferences ENABLE ROW LEVEL SECURITY;
 ALTER TABLE streaks ENABLE ROW LEVEL SECURITY;
+ALTER TABLE atoms ENABLE ROW LEVEL SECURITY;
+ALTER TABLE atom_citations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE atom_connections ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_atom_progress ENABLE ROW LEVEL SECURITY;
 ALTER TABLE study_sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE daily_stats ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pathways ENABLE ROW LEVEL SECURITY;
+ALTER TABLE pathway_topics ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_pathways ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mcqs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mcq_options ENABLE ROW LEVEL SECURITY;
 ALTER TABLE mcq_attempts ENABLE ROW LEVEL SECURITY;
 ALTER TABLE user_notes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE discussions ENABLE ROW LEVEL SECURITY;
@@ -435,20 +401,29 @@ ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
 ALTER TABLE atom_interactions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE atom_recommendations ENABLE ROW LEVEL SECURITY;
 
+-- Drop existing policies to avoid conflicts
+DROP POLICY IF EXISTS "Users can view own profile" ON profiles;
+DROP POLICY IF EXISTS "Users can update own profile" ON profiles;
+DROP POLICY IF EXISTS "Public profiles are viewable" ON profiles;
+
 -- Profiles policies
-CREATE POLICY "Users can view own profile"
+CREATE POLICY "Public profiles are viewable"
   ON profiles FOR SELECT
-  USING (auth.uid() = id);
+  USING (true);
 
 CREATE POLICY "Users can update own profile"
   ON profiles FOR UPDATE
   USING (auth.uid() = id);
 
-CREATE POLICY "Public profiles are viewable"
-  ON profiles FOR SELECT
-  USING (true);
+CREATE POLICY "Users can insert own profile"
+  ON profiles FOR INSERT
+  WITH CHECK (auth.uid() = id);
 
 -- User preferences policies
+DROP POLICY IF EXISTS "Users can view own preferences" ON user_preferences;
+DROP POLICY IF EXISTS "Users can update own preferences" ON user_preferences;
+DROP POLICY IF EXISTS "Users can insert own preferences" ON user_preferences;
+
 CREATE POLICY "Users can view own preferences"
   ON user_preferences FOR SELECT
   USING (auth.uid() = user_id);
@@ -457,32 +432,45 @@ CREATE POLICY "Users can update own preferences"
   ON user_preferences FOR UPDATE
   USING (auth.uid() = user_id);
 
+CREATE POLICY "Users can insert own preferences"
+  ON user_preferences FOR INSERT
+  WITH CHECK (auth.uid() = user_id);
+
 -- Streaks policies
+DROP POLICY IF EXISTS "Users can view own streaks" ON streaks;
+DROP POLICY IF EXISTS "Users can update own streaks" ON streaks;
+
 CREATE POLICY "Users can view own streaks"
   ON streaks FOR SELECT
   USING (auth.uid() = user_id);
 
-CREATE POLICY "Users can update own streaks"
-  ON streaks FOR UPDATE
+CREATE POLICY "Users can manage own streaks"
+  ON streaks FOR ALL
   USING (auth.uid() = user_id);
 
 -- Atoms policies (public read)
-ALTER TABLE atoms ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Published atoms are viewable" ON atoms;
 CREATE POLICY "Published atoms are viewable"
   ON atoms FOR SELECT
   USING (is_published = true);
 
+-- Atom citations (public read)
+CREATE POLICY "Atom citations are viewable"
+  ON atom_citations FOR SELECT
+  USING (true);
+
+-- Atom connections (public read)
+CREATE POLICY "Atom connections are viewable"
+  ON atom_connections FOR SELECT
+  USING (true);
+
 -- User progress policies
-CREATE POLICY "Users can view own progress"
-  ON user_atom_progress FOR SELECT
-  USING (auth.uid() = user_id);
+DROP POLICY IF EXISTS "Users can view own progress" ON user_atom_progress;
+DROP POLICY IF EXISTS "Users can insert own progress" ON user_atom_progress;
+DROP POLICY IF EXISTS "Users can update own progress" ON user_atom_progress;
 
-CREATE POLICY "Users can insert own progress"
-  ON user_atom_progress FOR INSERT
-  WITH CHECK (auth.uid() = user_id);
-
-CREATE POLICY "Users can update own progress"
-  ON user_atom_progress FOR UPDATE
+CREATE POLICY "Users can manage own progress"
+  ON user_atom_progress FOR ALL
   USING (auth.uid() = user_id);
 
 -- Study sessions policies
@@ -491,46 +479,16 @@ CREATE POLICY "Users can manage own sessions"
   USING (auth.uid() = user_id);
 
 -- Daily stats policies
-CREATE POLICY "Users can view own stats"
-  ON daily_stats FOR SELECT
+CREATE POLICY "Users can manage own stats"
+  ON daily_stats FOR ALL
   USING (auth.uid() = user_id);
 
-CREATE POLICY "Users can insert own stats"
-  ON daily_stats FOR INSERT
-  WITH CHECK (auth.uid() = user_id);
-
-CREATE POLICY "Users can update own stats"
-  ON daily_stats FOR UPDATE
-  USING (auth.uid() = user_id);
-
--- User notes policies
-CREATE POLICY "Users can manage own notes"
-  ON user_notes FOR ALL
-  USING (auth.uid() = user_id);
-
--- MCQs public read
-ALTER TABLE mcqs ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "Published MCQs are viewable"
-  ON mcqs FOR SELECT
-  USING (is_published = true);
-
-ALTER TABLE mcq_options ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "MCQ options are viewable"
-  ON mcq_options FOR SELECT
-  USING (true);
-
--- MCQ attempts
-CREATE POLICY "Users can manage own attempts"
-  ON mcq_attempts FOR ALL
-  USING (auth.uid() = user_id);
-
--- Pathways public read
-ALTER TABLE pathways ENABLE ROW LEVEL SECURITY;
+-- Pathways (public read)
 CREATE POLICY "Pathways are viewable"
   ON pathways FOR SELECT
   USING (true);
 
-ALTER TABLE pathway_topics ENABLE ROW LEVEL SECURITY;
+-- Pathway topics (public read)
 CREATE POLICY "Pathway topics are viewable"
   ON pathway_topics FOR SELECT
   USING (true);
@@ -540,12 +498,34 @@ CREATE POLICY "Users can manage own pathways"
   ON user_pathways FOR ALL
   USING (auth.uid() = user_id);
 
--- Discussions
+-- MCQs (public read)
+DROP POLICY IF EXISTS "Published MCQs are viewable" ON mcqs;
+CREATE POLICY "Published MCQs are viewable"
+  ON mcqs FOR SELECT
+  USING (is_published = true);
+
+-- MCQ options (public read)
+CREATE POLICY "MCQ options are viewable"
+  ON mcq_options FOR SELECT
+  USING (true);
+
+-- MCQ attempts
+CREATE POLICY "Users can manage own attempts"
+  ON mcq_attempts FOR ALL
+  USING (auth.uid() = user_id);
+
+-- User notes
+DROP POLICY IF EXISTS "Users can manage own notes" ON user_notes;
+CREATE POLICY "Users can manage own notes"
+  ON user_notes FOR ALL
+  USING (auth.uid() = user_id);
+
+-- Discussions (public read, auth write)
 CREATE POLICY "Discussions are viewable"
   ON discussions FOR SELECT
   USING (true);
 
-CREATE POLICY "Users can create discussions"
+CREATE POLICY "Authenticated users can create discussions"
   ON discussions FOR INSERT
   WITH CHECK (auth.uid() = author_id);
 
@@ -553,12 +533,12 @@ CREATE POLICY "Users can update own discussions"
   ON discussions FOR UPDATE
   USING (auth.uid() = author_id);
 
--- Comments
+-- Comments (public read, auth write)
 CREATE POLICY "Comments are viewable"
   ON comments FOR SELECT
   USING (true);
 
-CREATE POLICY "Users can create comments"
+CREATE POLICY "Authenticated users can create comments"
   ON comments FOR INSERT
   WITH CHECK (auth.uid() = author_id);
 
@@ -576,10 +556,10 @@ CREATE POLICY "Users can view own recommendations"
   ON atom_recommendations FOR SELECT
   USING (auth.uid() = user_id);
 
-CREATE POLICY "Users can dismiss recommendations"
+CREATE POLICY "Users can dismiss own recommendations"
   ON atom_recommendations FOR UPDATE
   USING (auth.uid() = user_id);
 
 -- =====================================================
--- DONE! Schema ready.
+-- DONE! Schema extended.
 -- =====================================================
