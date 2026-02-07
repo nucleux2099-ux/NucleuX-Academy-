@@ -37,6 +37,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { ATOMStudyCoach } from "@/components/ATOMStudyCoach";
+import { TodaysStudyPlan } from "@/components/TodaysStudyPlan";
 
 // Dashboard room color - Purple
 const roomColor = '#7C3AED';
@@ -203,59 +204,8 @@ export default function DashboardPage() {
           {/* ATOM Study Coach - Enhanced with Carousel, Coins, Time-Aware */}
           <ATOMStudyCoach />
 
-          {/* Today's Study Plan */}
-          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center justify-between text-[#E5E7EB]">
-                <span className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-[#7C3AED]" />
-                  Today&apos;s Study Plan
-                </span>
-                <span className="text-sm font-normal text-[#9CA3AF]">~2 hours total</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {todaysPlan.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex items-center gap-4 p-3 rounded-xl border transition-all ${
-                      item.status === "current"
-                        ? "bg-[rgba(124,58,237,0.1)] border-[rgba(124,58,237,0.3)]"
-                        : "bg-[#142538] border-[rgba(6,182,212,0.1)] hover:border-[rgba(124,58,237,0.2)]"
-                    }`}
-                  >
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                      item.status === "current" ? "bg-[#7C3AED] text-white" : "bg-[#0F2233] border border-[rgba(6,182,212,0.15)]"
-                    }`}>
-                      {item.status === "current" ? (
-                        <Play className="w-4 h-4" />
-                      ) : (
-                        <item.icon className="w-4 h-4 text-[#9CA3AF]" />
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className={`font-medium text-sm ${item.status === "current" ? "text-[#A78BFA]" : "text-[#E5E7EB]"}`}>
-                        {item.title}
-                      </p>
-                      <p className="text-xs text-[#6B7280]">{item.source || item.count}</p>
-                    </div>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="text-xs text-[#9CA3AF] bg-[#0F2233] px-2 py-1 rounded-full border border-[rgba(6,182,212,0.15)]">
-                        <Clock className="w-3 h-3 inline mr-1" />
-                        {item.duration}
-                      </span>
-                      {item.status === "current" && (
-                        <Button size="sm" className="bg-[#7C3AED] hover:bg-[#6D28D9] h-7 text-xs text-white shadow-md">
-                          Continue
-                        </Button>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          {/* Today's Study Plan - Learning Science Based */}
+          <TodaysStudyPlan />
 
           {/* Time Period Toggle */}
           <div className="flex items-center gap-2">
