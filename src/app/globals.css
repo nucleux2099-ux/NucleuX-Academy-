@@ -237,6 +237,43 @@ html {
   border-radius: 0.75rem;
 }
 
+/* Mobile safe area for bottom nav */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 640px) {
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Smaller text on mobile */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+  }
+  
+  /* Reduce padding on mobile */
+  .mobile-compact {
+    padding: 0.75rem !important;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

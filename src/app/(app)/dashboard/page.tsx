@@ -1,8 +1,21 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { SkeletonStats, SkeletonActivity } from "@/components/Skeleton";
+import { EmptyPathway } from "@/components/EmptyState";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import {
   BookOpen,
   Clock,
@@ -12,9 +25,27 @@ import {
   Play,
   CheckCircle,
   ArrowRight,
+  Calendar,
 } from "lucide-react";
 
-const stats = [
+const weeklyData = [
+  { day: "Mon", hours: 2.5, questions: 15 },
+  { day: "Tue", hours: 3.2, questions: 22 },
+  { day: "Wed", hours: 1.8, questions: 12 },
+  { day: "Thu", hours: 4.1, questions: 28 },
+  { day: "Fri", hours: 2.9, questions: 20 },
+  { day: "Sat", hours: 5.2, questions: 35 },
+  { day: "Sun", hours: 4.8, questions: 30 },
+];
+
+const monthlyData = [
+  { week: "Week 1", hours: 18, questions: 120 },
+  { week: "Week 2", hours: 22, questions: 145 },
+  { week: "Week 3", hours: 19, questions: 130 },
+  { week: "Week 4", hours: 26, questions: 168 },
+];
+
+const weeklyStats = [
   {
     title: "Study Hours",
     value: "24.5",
@@ -44,6 +75,41 @@ const stats = [
     value: "78",
     unit: "%",
     change: "+5%",
+    icon: Target,
+    color: "#06B6D4",
+  },
+];
+
+const monthlyStats = [
+  {
+    title: "Study Hours",
+    value: "85",
+    unit: "hrs",
+    change: "+18%",
+    icon: Clock,
+    color: "#7C3AED",
+  },
+  {
+    title: "Topics Completed",
+    value: "156",
+    unit: "",
+    change: "+24",
+    icon: CheckCircle,
+    color: "#10B981",
+  },
+  {
+    title: "Current Streak",
+    value: "12",
+    unit: "days",
+    change: "Personal best!",
+    icon: Flame,
+    color: "#F59E0B",
+  },
+  {
+    title: "MCQ Accuracy",
+    value: "82",
+    unit: "%",
+    change: "+9%",
     icon: Target,
     color: "#06B6D4",
   },
@@ -97,6 +163,19 @@ const upcomingTasks = [
 ];
 
 export default function DashboardPage() {
+  const [timePeriod, setTimePeriod] = useState<"weekly" | "monthly">("weekly");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const stats = timePeriod === "weekly" ? weeklyStats : monthlyStats;
+  const chartData = timePeriod === "weekly" ? weeklyData : monthlyData;
+  const xKey = timePeriod === "weekly" ? "day" : "week";
+
+  // Simulate loading
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* Welcome Header */}
@@ -115,36 +194,164 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map((stat) => (
-          <Card key={stat.title} className="bg-[#1E293B] border-[#334155]">
-            <CardContent className="p-6">
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-sm text-[#94A3B8]">{stat.title}</p>
-                  <p className="text-3xl font-bold mt-2">
-                    {stat.value}
-                    <span className="text-lg text-[#94A3B8] ml-1">{stat.unit}</span>
-                  </p>
-                  <p
-                    className="text-sm mt-1"
-                    style={{ color: stat.color }}
-                  >
-                    {stat.change}
-                  </p>
-                </div>
-                <div
-                  className="p-3 rounded-lg"
-                  style={{ backgroundColor: `${stat.color}20` }}
-                >
-                  <stat.icon className="w-6 h-6" style={{ color: stat.color }} />
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+      {/* Time Period Toggle */}
+      <div className="flex items-center gap-2">
+        <Calendar className="w-4 h-4 text-[#94A3B8]" />
+        <div className="inline-flex bg-[#1E293B] border border-[#334155] rounded-lg p-1">
+          <button
+            onClick={() => setTimePeriod("weekly")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+              timePeriod === "weekly"
+                ? "bg-[#7C3AED] text-white"
+                : "text-[#94A3B8] hover:text-white"
+            }`}
+          >
+            This Week
+          </button>
+          <button
+            onClick={() => setTimePeriod("monthly")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+              timePeriod === "monthly"
+                ? "bg-[#7C3AED] text-white"
+                : "text-[#94A3B8] hover:text-white"
+            }`}
+          >
+            This Month
+          </button>
+        </div>
       </div>
+
+      {/* Stats Grid */}
+      {isLoading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[...Array(4)].map((_, i) => (
+            <SkeletonStats key={i} />
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {stats.map((stat, index) => (
+            <Card 
+              key={stat.title} 
+              className="bg-[#1E293B] border-[#334155] card-hover"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <p className="text-sm text-[#94A3B8]">{stat.title}</p>
+                    <p className="text-3xl font-bold mt-2">
+                      {stat.value}
+                      <span className="text-lg text-[#94A3B8] ml-1">{stat.unit}</span>
+                    </p>
+                    <p
+                      className="text-sm mt-1"
+                      style={{ color: stat.color }}
+                    >
+                      {stat.change}
+                    </p>
+                  </div>
+                  <div
+                    className="p-3 rounded-lg transition-transform hover:scale-110"
+                    style={{ backgroundColor: `${stat.color}20` }}
+                  >
+                    <stat.icon className="w-6 h-6" style={{ color: stat.color }} />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
+
+      {/* Progress Chart */}
+      <Card className="bg-[#1E293B] border-[#334155]">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-[#7C3AED]" />
+            Study Progress
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={chartData}>
+                <defs>
+                  <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#7C3AED" stopOpacity={0}/>
+                  </linearGradient>
+                  <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#06B6D4" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#06B6D4" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                <XAxis 
+                  dataKey={xKey} 
+                  stroke="#94A3B8" 
+                  fontSize={12}
+                  tickLine={false}
+                />
+                <YAxis 
+                  yAxisId="left"
+                  stroke="#94A3B8" 
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                />
+                <YAxis 
+                  yAxisId="right"
+                  orientation="right"
+                  stroke="#94A3B8" 
+                  fontSize={12}
+                  tickLine={false}
+                  axisLine={false}
+                />
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: '#1E293B', 
+                    border: '1px solid #334155',
+                    borderRadius: '8px',
+                    boxShadow: '0 10px 40px rgba(0,0,0,0.3)'
+                  }}
+                  labelStyle={{ color: '#F8FAFC' }}
+                />
+                <Area
+                  yAxisId="left"
+                  type="monotone"
+                  dataKey="hours"
+                  stroke="#7C3AED"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorHours)"
+                  name="Study Hours"
+                />
+                <Area
+                  yAxisId="right"
+                  type="monotone"
+                  dataKey="questions"
+                  stroke="#06B6D4"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorQuestions)"
+                  name="MCQs Answered"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+          <div className="flex items-center justify-center gap-6 mt-4">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-[#7C3AED]" />
+              <span className="text-sm text-[#94A3B8]">Study Hours</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-[#06B6D4]" />
+              <span className="text-sm text-[#94A3B8]">MCQs Answered</span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Main Content Grid */}
       <div className="grid lg:grid-cols-3 gap-6">
@@ -185,10 +392,10 @@ export default function DashboardPage() {
               </div>
             </div>
 
-            <button className="w-full py-3 bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+            <Button className="w-full py-3 bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg font-medium transition-all animate-pulse-subtle">
               Continue Learning
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
           </CardContent>
         </Card>
 
@@ -201,7 +408,7 @@ export default function DashboardPage() {
             {upcomingTasks.map((task, i) => (
               <div
                 key={i}
-                className="p-3 rounded-lg bg-[#0F172A] border border-[#334155] flex items-start gap-3"
+                className="p-3 rounded-lg bg-[#0F172A] border border-[#334155] flex items-start gap-3 hover:border-[#7C3AED]/30 transition-colors cursor-pointer"
               >
                 <div
                   className={`w-2 h-2 rounded-full mt-2 ${
@@ -228,31 +435,39 @@ export default function DashboardPage() {
           <CardTitle>Recent Activity</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-4">
-            {recentActivity.map((activity, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 p-4 rounded-lg bg-[#0F172A] border border-[#334155]"
-              >
+          {isLoading ? (
+            <div className="space-y-4">
+              {[...Array(4)].map((_, i) => (
+                <SkeletonActivity key={i} />
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {recentActivity.map((activity, i) => (
                 <div
-                  className="p-3 rounded-lg shrink-0"
-                  style={{ backgroundColor: `${activity.color}20` }}
+                  key={i}
+                  className="flex items-center gap-4 p-4 rounded-lg bg-[#0F172A] border border-[#334155] hover:border-[#7C3AED]/30 transition-all cursor-pointer"
                 >
-                  <activity.icon className="w-5 h-5" style={{ color: activity.color }} />
+                  <div
+                    className="p-3 rounded-lg shrink-0 transition-transform hover:scale-110"
+                    style={{ backgroundColor: `${activity.color}20` }}
+                  >
+                    <activity.icon className="w-5 h-5" style={{ color: activity.color }} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium truncate">{activity.title}</p>
+                    <p className="text-sm text-[#94A3B8]">{activity.type}</p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    {activity.score && (
+                      <p className="font-medium text-[#10B981]">{activity.score}</p>
+                    )}
+                    <p className="text-sm text-[#94A3B8]">{activity.time}</p>
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium truncate">{activity.title}</p>
-                  <p className="text-sm text-[#94A3B8]">{activity.type}</p>
-                </div>
-                <div className="text-right shrink-0">
-                  {activity.score && (
-                    <p className="font-medium text-[#10B981]">{activity.score}</p>
-                  )}
-                  <p className="text-sm text-[#94A3B8]">{activity.time}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

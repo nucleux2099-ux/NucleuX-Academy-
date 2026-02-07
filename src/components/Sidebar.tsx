@@ -9,10 +9,10 @@ import {
   HelpCircle,
   User,
   Home,
-  Menu,
-  X,
+  MessageSquare,
+  Network,
+  FileText,
 } from "lucide-react";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -21,43 +21,27 @@ const navItems = [
   { href: "/library", icon: Library, label: "Library" },
   { href: "/pathways", icon: Route, label: "Pathways" },
   { href: "/mcqs", icon: HelpCircle, label: "MCQs" },
+  { href: "/chat", icon: MessageSquare, label: "ATOM", highlight: true },
+  { href: "/notes", icon: FileText, label: "My Notes" },
+  { href: "/graph", icon: Network, label: "Graph" },
   { href: "/profile", icon: User, label: "Profile" },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
-      {/* Mobile menu button */}
-      <button
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-[#1E293B] border border-[#334155]"
-        onClick={() => setMobileOpen(!mobileOpen)}
-      >
-        {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
-      {/* Overlay */}
-      {mobileOpen && (
-        <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-40"
-          onClick={() => setMobileOpen(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <aside
-        className={cn(
-          "fixed left-0 top-0 h-full w-64 bg-[#0F172A] border-r border-[#1E293B] z-40 transition-transform duration-300",
-          "lg:translate-x-0",
-          mobileOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
+      {/* Sidebar - Only visible on desktop (lg and up) */}
+      <aside className="hidden lg:block fixed left-0 top-0 h-full w-64 bg-[#0F172A] border-r border-[#1E293B] z-40">
         {/* Logo */}
         <div className="p-6 border-b border-[#1E293B]">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.svg" alt="NucleuX" className="w-10 h-10" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <img 
+              src="/logo.svg" 
+              alt="NucleuX" 
+              className="w-10 h-10 transition-transform group-hover:scale-110" 
+            />
             <div>
               <h1 className="text-xl font-bold text-gradient-purple">NucleuX</h1>
               <p className="text-xs text-[#94A3B8]">Academy</p>
@@ -66,23 +50,31 @@ export function Sidebar() {
         </div>
 
         {/* Navigation */}
-        <nav className="p-4 space-y-2">
+        <nav className="p-4 space-y-2 max-h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide">
           {navItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href || 
+              (item.href !== "/" && pathname.startsWith(item.href));
+            
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileOpen(false)}
                 className={cn(
                   "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
                   isActive
                     ? "bg-[#7C3AED]/20 text-[#7C3AED] border border-[#7C3AED]/30 glow-purple"
+                    : "highlight" in item && item.highlight
+                    ? "text-purple-400 hover:text-purple-300 hover:bg-[#7C3AED]/10 border border-purple-500/20"
                     : "text-[#94A3B8] hover:text-white hover:bg-[#1E293B]"
                 )}
               >
                 <item.icon size={20} />
                 <span className="font-medium">{item.label}</span>
+                {"highlight" in item && item.highlight && (
+                  <span className="ml-auto text-xs bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full">
+                    AI
+                  </span>
+                )}
               </Link>
             );
           })}
