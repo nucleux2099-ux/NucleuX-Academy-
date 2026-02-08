@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Bell, Search, Settings, LogOut, User, Award } from "lucide-react";
+import { Bell, Search, Settings, LogOut, User, Award, Shield } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,43 +12,33 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useUser } from "@/lib/auth/context";
-import { createClient } from "@/lib/supabase/client";
+import { useAuth } from "@/lib/auth-context";
 
 // Get initials from name
-function getInitials(name: string | null): string {
-  if (!name) return "U";
+function getInitials(name: string): string {
   const parts = name.trim().split(" ");
   if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
   return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
 }
 
-// Get level display
-function getLevelDisplay(level: string | null | undefined): string {
-  const levels: Record<string, string> = {
-    mbbs: "MBBS Student",
-    intern: "Intern",
-    pg: "PG Resident",
-    practicing: "Practicing Doctor",
-    other: "Medical Professional",
-  };
-  return levels[level || ""] || "Medical Student";
+// Get role display
+function getRoleDisplay(role: string, plan: string): string {
+  if (role === 'admin') return 'Admin';
+  if (role === 'faculty') return 'Faculty';
+  switch (plan) {
+    case 'premium': return 'Premium Member';
+    case 'pro': return 'Pro Member';
+    default: return 'Medical Student';
+  }
 }
 
 export function Header() {
-  const router = useRouter();
-  const { user, profile, isLoading } = useUser();
+  const { user, logout, isLoading } = useAuth();
 
-  const handleLogout = async () => {
-    const supabase = createClient();
-    await supabase.auth.signOut();
-    router.push("/login");
-    router.refresh();
-  };
+  if (!user) return null;
 
-  const displayName = profile?.full_name || user?.user_metadata?.full_name || "User";
-  const initials = getInitials(displayName);
-  const levelDisplay = getLevelDisplay(profile?.level);
+  const initials = getInitials(user.name);
+  const roleDisplay = getRoleDisplay(user.role, user.plan);
 
   return (
     <header className="h-14 sm:h-16 border-b border-[rgba(6,182,212,0.1)] bg-[#0D1B2A]/95 backdrop-blur-sm sticky top-0 z-30">
@@ -91,16 +80,16 @@ export function Header() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
                 <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20">
-                  <AvatarImage src={profile?.avatar_url || undefined} />
+                  <AvatarImage src={user.avatar} />
                   <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-sm font-medium">
                     {isLoading ? "..." : initials}
                   </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block text-left">
                   <p className="text-sm font-semibold text-[#E5E7EB]">
-                    {isLoading ? "Loading..." : displayName}
+                    {isLoading ? "Loading..." : user.name}
                   </p>
-                  <p className="text-xs text-[#9CA3AF]">{levelDisplay}</p>
+                  <p className="text-xs text-[#9CA3AF]">{roleDisplay}</p>
                 </div>
               </button>
             </DropdownMenuTrigger>
@@ -110,8 +99,13 @@ export function Header() {
             >
               <DropdownMenuLabel className="text-[#E5E7EB]">
                 <div>
-                  <p className="font-medium">{displayName}</p>
-                  <p className="text-xs text-[#9CA3AF] font-normal">{user?.email}</p>
+                  <p className="font-medium">{user.name}</p>
+                  <p className="text-xs text-[#9CA3AF] font-normal">{user.email}</p>
+                  {user.role === 'admin' && (
+                    <span className="inline-flex items-center gap-1 mt-1 text-xs text-[#EF4444]">
+                      <Shield className="w-3 h-3" /> Admin
+                    </span>
+                  )}
                 </div>
               </DropdownMenuLabel>
               <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
@@ -136,7 +130,7 @@ export function Header() {
               <DropdownMenuSeparator className="bg-[rgba(6,182,212,0.1)]" />
               <DropdownMenuItem 
                 className="text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] focus:bg-[rgba(239,68,68,0.1)] focus:text-[#EF4444] cursor-pointer"
-                onClick={handleLogout}
+                onClick={logout}
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 Log out

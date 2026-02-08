@@ -2,16 +2,41 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { useAuth } from "@/lib/auth-context";
 import { 
   Settings, 
   CreditCard, 
   HelpCircle, 
   LogOut,
   ChevronUp,
-  Crown
+  Crown,
+  Shield
 } from "lucide-react";
+
+// Get initials from name
+function getInitials(name: string): string {
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+  return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
+// Get plan display info
+function getPlanInfo(plan: string, role: string) {
+  if (role === 'admin') {
+    return { label: 'Admin', color: 'bg-gradient-to-r from-[#EF4444] to-[#DC2626]', icon: Shield };
+  }
+  switch (plan) {
+    case 'premium':
+      return { label: 'Premium', color: 'bg-gradient-to-r from-[#F59E0B] to-[#D97706]', icon: Crown };
+    case 'pro':
+      return { label: 'Pro', color: 'bg-gradient-to-r from-[#7C3AED] to-[#6D28D9]', icon: Crown };
+    default:
+      return { label: 'Free Plan', color: 'bg-gradient-to-r from-[#6B7280] to-[#4B5563]', icon: Crown };
+  }
+}
 
 interface ProfilePopupProps {
   isOpen: boolean;
@@ -20,6 +45,8 @@ interface ProfilePopupProps {
 
 export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
   const popupRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const { user, logout } = useAuth();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -36,7 +63,16 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !user) return null;
+
+  const initials = getInitials(user.name);
+  const planInfo = getPlanInfo(user.plan, user.role);
+  const PlanIcon = planInfo.icon;
+
+  const handleLogout = () => {
+    onClose();
+    logout();
+  };
 
   return (
     <div 
@@ -47,65 +83,69 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
       <div className="p-4 border-b border-[rgba(6,182,212,0.1)]">
         <div className="flex items-center gap-3">
           <Avatar className="w-12 h-12 ring-2 ring-[#06B6D4]/30">
-            <AvatarImage src="/avatar.svg" />
+            <AvatarImage src={user.avatar} />
             <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white font-medium">
-              AC
+              {initials}
             </AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-[#E5E7EB] truncate">Aditya Chandra</p>
-            <p className="text-xs text-[#9CA3AF]">aditya@nucleux.com</p>
+            <p className="font-semibold text-[#E5E7EB] truncate">{user.name}</p>
+            <p className="text-xs text-[#9CA3AF]">{user.email}</p>
           </div>
         </div>
         
         {/* Plan Badge */}
         <div className="mt-3 flex items-center gap-2">
-          <Badge className="bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] text-white border-0 flex items-center gap-1">
-            <Crown className="w-3 h-3" />
-            Free Plan
+          <Badge className={`${planInfo.color} text-white border-0 flex items-center gap-1`}>
+            <PlanIcon className="w-3 h-3" />
+            {planInfo.label}
           </Badge>
-          <span className="text-xs text-[#9CA3AF]">• 5 MCQs left today</span>
+          {user.role === 'admin' && (
+            <span className="text-xs text-[#9CA3AF]">• Full access</span>
+          )}
+          {user.plan === 'free' && (
+            <span className="text-xs text-[#9CA3AF]">• 5 MCQs left today</span>
+          )}
         </div>
       </div>
 
       {/* Menu Items */}
       <div className="p-2">
         <Link
-          href="/settings"
+          href="/profile"
           onClick={onClose}
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
         >
           <Settings className="w-4 h-4" />
-          <span className="text-sm">Settings</span>
+          <span className="text-sm">Profile & Settings</span>
         </Link>
         
-        <Link
-          href="/billing"
-          onClick={onClose}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
-        >
-          <CreditCard className="w-4 h-4" />
-          <span className="text-sm">Billing</span>
-          <Badge className="ml-auto bg-[#059669] text-white text-[10px] border-0">Upgrade</Badge>
-        </Link>
+        {user.plan === 'free' && (
+          <Link
+            href="/billing"
+            onClick={onClose}
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
+          >
+            <CreditCard className="w-4 h-4" />
+            <span className="text-sm">Upgrade Plan</span>
+            <Badge className="ml-auto bg-[#059669] text-white text-[10px] border-0">Pro</Badge>
+          </Link>
+        )}
         
         <Link
-          href="/contact"
+          href="/help"
           onClick={onClose}
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
         >
           <HelpCircle className="w-4 h-4" />
-          <span className="text-sm">Contact Us</span>
+          <span className="text-sm">Help & Support</span>
         </Link>
       </div>
 
       {/* Logout */}
       <div className="p-2 border-t border-[rgba(6,182,212,0.1)]">
         <button
-          onClick={() => {
-            onClose();
-            // Handle logout
-          }}
+          onClick={handleLogout}
           className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] transition-all"
         >
           <LogOut className="w-4 h-4" />
@@ -118,6 +158,12 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
 
 export function ProfileButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuth();
+
+  if (!user) return null;
+
+  const initials = getInitials(user.name);
+  const planInfo = getPlanInfo(user.plan, user.role);
 
   return (
     <div className="relative">
@@ -126,14 +172,14 @@ export function ProfileButton() {
         className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all group"
       >
         <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20 group-hover:ring-[#06B6D4]/40 transition-all">
-          <AvatarImage src="/avatar.svg" />
+          <AvatarImage src={user.avatar} />
           <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-xs font-medium">
-            AC
+            {initials}
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 text-left">
-          <p className="text-sm font-medium text-[#E5E7EB]">Aditya</p>
-          <p className="text-xs text-[#9CA3AF]">Free Plan</p>
+          <p className="text-sm font-medium text-[#E5E7EB]">{user.name}</p>
+          <p className="text-xs text-[#9CA3AF]">{planInfo.label}</p>
         </div>
         <ChevronUp className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>

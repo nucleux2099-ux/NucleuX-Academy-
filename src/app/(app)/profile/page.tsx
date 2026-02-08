@@ -8,10 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { useUser } from "@/lib/auth/context";
+import { useAuth } from "@/lib/auth-context";
 import { useAnalytics } from "@/lib/analytics";
-import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/navigation";
 import {
   User,
   Mail,
@@ -68,10 +66,8 @@ function formatDate(dateString: string | null | undefined): string {
 }
 
 export default function ProfilePage() {
-  const router = useRouter();
-  const { user, profile, streak, isLoading: userLoading, updateProfile } = useUser();
+  const { user, logout, isLoading: userLoading } = useAuth();
   const { analytics } = useAnalytics();
-  const supabase = createClient();
 
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
@@ -82,54 +78,44 @@ export default function ProfilePage() {
     target_exam: "",
   });
 
-  // Initialize form data when profile loads
+  // Initialize form data when user loads
   useEffect(() => {
-    if (profile) {
+    if (user) {
       setFormData({
-        full_name: profile.full_name || "",
-        specialty: profile.specialty || "",
-        institution: profile.institution || "",
-        target_exam: profile.target_exam || "",
+        full_name: user.name || "",
+        specialty: "",
+        institution: "",
+        target_exam: "",
       });
     }
-  }, [profile]);
+  }, [user]);
 
   const handleSave = async () => {
     setIsSaving(true);
     setSaveSuccess(false);
-    try {
-      await updateProfile({
-        full_name: formData.full_name,
-        specialty: formData.specialty,
-        institution: formData.institution,
-        target_exam: formData.target_exam,
-      });
+    // In mock mode, just show success (data doesn't persist)
+    setTimeout(() => {
       setSaveSuccess(true);
-      setTimeout(() => setSaveSuccess(false), 3000);
-    } catch (error) {
-      console.error("Failed to save:", error);
-    } finally {
       setIsSaving(false);
-    }
+      setTimeout(() => setSaveSuccess(false), 3000);
+    }, 500);
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push("/login");
-    router.refresh();
+  const handleLogout = () => {
+    logout();
   };
 
   const stats = [
     { label: "Study Hours", value: Math.round(analytics.totalStudyMinutes / 60).toString(), icon: Clock },
     { label: "Topics Completed", value: analytics.topicsCompleted.toString(), icon: BookOpen },
     { label: "MCQs Attempted", value: analytics.totalQuestions.toLocaleString(), icon: Target },
-    { label: "Current Streak", value: `${streak?.current_streak || analytics.currentStreak} days`, icon: Flame },
+    { label: "Current Streak", value: `${analytics.currentStreak} days`, icon: Flame },
   ];
 
   const checkAchievement = (achievement: typeof achievements[0]): boolean => {
     switch (achievement.type) {
       case "streak":
-        return (streak?.longest_streak || analytics.longestStreak) >= achievement.threshold;
+        return analytics.longestStreak >= achievement.threshold;
       case "topics":
         return analytics.topicsCompleted >= achievement.threshold;
       case "accuracy":
@@ -142,7 +128,7 @@ export default function ProfilePage() {
     }
   };
 
-  if (userLoading) {
+  if (userLoading || !user) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <Loader2 className="w-8 h-8 animate-spin text-[#7C3AED]" />
@@ -150,8 +136,9 @@ export default function ProfilePage() {
     );
   }
 
-  const displayName = profile?.full_name || user?.user_metadata?.full_name || "User";
+  const displayName = user.name;
   const initials = getInitials(displayName);
+  const planLabel = user.role === 'admin' ? 'Admin' : user.plan === 'premium' ? 'Premium' : user.plan === 'pro' ? 'Pro' : 'Free Plan';
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
@@ -170,7 +157,7 @@ export default function ProfilePage() {
           <div className="absolute -top-16 left-6">
             <div className="relative">
               <Avatar className="w-32 h-32 border-4 border-[#0F2233]">
-                <AvatarImage src={profile?.avatar_url || undefined} />
+                <AvatarImage src={user.avatar || undefined} />
                 <AvatarFallback className="bg-[#7C3AED] text-white text-3xl">
                   {initials}
                 </AvatarFallback>
@@ -186,30 +173,34 @@ export default function ProfilePage() {
             <div>
               <h2 className="text-2xl font-bold text-[#E5E7EB]">{displayName}</h2>
               <p className="text-[#9CA3AF]">
-                {getLevelDisplay(profile?.level)} 
-                {profile?.specialty && ` • ${profile.specialty}`}
+                {user.role === 'admin' ? 'Administrator' : user.role === 'faculty' ? 'Faculty' : 'Medical Student'}
               </p>
               <div className="flex items-center gap-4 mt-3 text-sm text-[#9CA3AF]">
-                {profile?.institution && (
-                  <span className="flex items-center gap-1">
-                    <GraduationCap className="w-4 h-4" />
-                    {profile.institution}
-                  </span>
-                )}
+                <span className="flex items-center gap-1">
+                  <Mail className="w-4 h-4" />
+                  {user.email}
+                </span>
                 <span className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
-                  Joined {formatDate(profile?.created_at)}
+                  Joined Recently
                 </span>
               </div>
             </div>
             <div className="flex gap-2">
-              <Badge className="bg-[rgba(124,58,237,0.2)] text-[#7C3AED] border-[rgba(124,58,237,0.3)] px-3 py-1">
-                {profile?.plan === "pro" ? "Pro Member" : "Free Plan"}
+              <Badge className={`px-3 py-1 ${
+                user.role === 'admin' 
+                  ? 'bg-[rgba(239,68,68,0.2)] text-[#EF4444] border-[rgba(239,68,68,0.3)]'
+                  : user.plan === 'premium'
+                  ? 'bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-[rgba(245,158,11,0.3)]'
+                  : 'bg-[rgba(124,58,237,0.2)] text-[#7C3AED] border-[rgba(124,58,237,0.3)]'
+              }`}>
+                {user.role === 'admin' && <Shield className="w-3 h-3 mr-1" />}
+                {planLabel}
               </Badge>
-              {(streak?.current_streak || analytics.currentStreak) > 0 && (
+              {analytics.currentStreak > 0 && (
                 <Badge className="bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] px-3 py-1">
                   <Flame className="w-3 h-3 mr-1" />
-                  {streak?.current_streak || analytics.currentStreak} Day Streak
+                  {analytics.currentStreak} Day Streak
                 </Badge>
               )}
             </div>
@@ -272,7 +263,7 @@ export default function ProfilePage() {
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
                     <Input
-                      value={user?.email || ""}
+                      value={user.email}
                       disabled
                       className="pl-10 bg-[#122A40] border-[rgba(255,255,255,0.06)] text-[#9CA3AF]"
                     />
