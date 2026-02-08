@@ -1,13 +1,63 @@
 "use client";
 
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ImageViewer } from './ImageViewer';
 
 interface MedicalMarkdownProps {
   content: string;
   className?: string;
+}
+
+// Internal clickable image component
+function ClickableImage({ 
+  src, 
+  alt, 
+  layout,
+  layoutClasses 
+}: { 
+  src: string; 
+  alt?: string; 
+  layout: string;
+  layoutClasses: Record<string, string>;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <>
+      <figure className={cn("my-4", layoutClasses[layout as keyof typeof layoutClasses])}>
+        <div 
+          className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#0D1B2A]"
+          onClick={() => setIsOpen(true)}
+        >
+          <img
+            src={src}
+            alt={alt || ""}
+            className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+            <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity drop-shadow-lg" />
+          </div>
+        </div>
+        {alt && (
+          <figcaption className="text-center text-sm text-[#9CA3AF] mt-2 italic">
+            {alt}
+          </figcaption>
+        )}
+      </figure>
+      <ImageViewer
+        src={src}
+        alt={alt}
+        caption={alt}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
+    </>
+  );
 }
 
 export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
@@ -164,21 +214,30 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
             <hr className="my-6 border-t border-[rgba(6,182,212,0.2)]" />
           ),
 
-          // Images
-          img: ({ src, alt }) => (
-            <figure className="my-4">
-              <img 
-                src={src} 
-                alt={alt || ''} 
-                className="rounded-lg border border-[rgba(255,255,255,0.1)] max-w-full"
+          // Images with layout support
+          // Use alt text format: "Caption|layout" e.g., "Appendix anatomy|right"
+          img: ({ src, alt }) => {
+            // Parse alt text for layout: "caption|layout"
+            const parts = (alt || '').split('|');
+            const caption = parts[0]?.trim();
+            const layout = (parts[1]?.trim() || 'full') as 'full' | 'right' | 'left' | 'center';
+            
+            const layoutClasses = {
+              full: "w-full",
+              right: "float-right ml-4 mb-4 w-1/2 max-w-[300px] clear-right",
+              left: "float-left mr-4 mb-4 w-1/2 max-w-[300px] clear-left",
+              center: "mx-auto max-w-[500px]",
+            };
+
+            return (
+              <ClickableImage 
+                src={src || ''} 
+                alt={caption} 
+                layout={layout}
+                layoutClasses={layoutClasses}
               />
-              {alt && (
-                <figcaption className="text-center text-sm text-[#9CA3AF] mt-2 italic">
-                  {alt}
-                </figcaption>
-              )}
-            </figure>
-          ),
+            );
+          },
         }}
       >
         {content}

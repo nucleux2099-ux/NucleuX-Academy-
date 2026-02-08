@@ -27,6 +27,8 @@ The appendix develops from the **midgut** along with the cecum during the **6th 
 
 ## Anatomy
 
+![Appendix anatomy showing position variations|right](https://images.unsplash.com/photo-1559757175-5700dde675bc?w=300&h=200&fit=crop)
+
 The appendix is a **blind-ended tube** arising from the posteromedial wall of the cecum, approximately **2 cm below the ileocecal valve**.
 
 ### Dimensions
@@ -55,6 +57,8 @@ The position of the appendix is highly variable:
 ### Surface Anatomy
 
 **McBurney's Point**: Junction of the **lateral 1/3** and **medial 2/3** of the line joining the **right ASIS to the umbilicus**.
+
+![McBurney's Point - Surface anatomy landmark|center](https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&h=300&fit=crop)
 
 This is the surface marking of the **base** of the appendix (not the tip).
 
@@ -157,6 +161,8 @@ The infection is **polymicrobial**:
       icon: '🩺',
       content: `
 ## Classic Presentation
+
+![Pain migration pattern - Periumbilical to RIF|right](https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=250&h=200&fit=crop)
 
 The **classic triad** of appendicitis (present in ~50% of cases):
 
@@ -338,6 +344,8 @@ The most widely used scoring system:
 
 ### CT Scan (Gold Standard)
 **Most accurate imaging modality**
+
+![CT scan showing acute appendicitis - Note the dilated appendix and periappendiceal fat stranding|full](https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop)
 
 | Finding | Significance |
 |---------|--------------|
