@@ -20,6 +20,7 @@ import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
 import { cn } from "@/lib/utils";
 import type { ViewMode } from "@/lib/types/library";
 import { VIEW_MODE_CONFIG } from "@/lib/types/library";
+import { AtomLibrarian } from "@/components/AtomLibrarian";
 
 export default function LibraryPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -257,6 +258,9 @@ export default function LibraryPage() {
           )}
         </div>
       )}
+
+      {/* ATOM Librarian */}
+      <AtomLibrarian />
     </div>
   );
 }

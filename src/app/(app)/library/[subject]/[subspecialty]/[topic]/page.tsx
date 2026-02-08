@@ -28,6 +28,7 @@ import { cn } from "@/lib/utils";
 import type { ViewMode, LibraryTopic, RetrievalCard } from "@/lib/types/library";
 import { VIEW_MODE_CONFIG } from "@/lib/types/library";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
+import { AtomLibrarian } from "@/components/AtomLibrarian";
 
 // Quiz Card Component
 function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
@@ -540,6 +541,12 @@ export default function TopicPage() {
 
       {/* Content */}
       {renderContent()}
+
+      {/* ATOM Librarian with topic context */}
+      <AtomLibrarian 
+        currentTopic={topic}
+        allTopics={ESOPHAGUS_TOPICS}
+      />
     </div>
   );
 }
