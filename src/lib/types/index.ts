@@ -7,3 +7,6 @@ export * from './content';
 
 // Progress types
 export * from './progress';
+
+// Library types (new dynamic library system)
+export * from './library';
