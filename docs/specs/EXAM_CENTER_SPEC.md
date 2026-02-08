@@ -76,8 +76,20 @@ interface Question {
   }[];
   
   // For Flashcards
+  flashcardType?: 'text' | 'image_occlusion';
   front?: string;
   back?: string;
+  // Image Occlusion specific
+  occlusionImage?: string;          // Base image URL
+  occlusionMasks?: {                // Regions to hide
+    id: string;
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    label: string;                  // What's hidden (the answer)
+  }[];
+  occlusionMode?: 'one' | 'all';    // Hide one at a time or all
   
   // For Essays
   modelAnswer?: string;
@@ -235,7 +247,39 @@ interface ExamAttempt {
 }
 ```
 
-### 7. ClinicalScenario (OSCE/Viva/Mock Patient)
+### 7. VivaSession (One-on-One Discussion)
+
+```typescript
+interface VivaSession {
+  id: string;
+  topicId: string;
+  conceptIds: string[];
+  
+  // Session structure
+  openingQuestion: string;    // First question to start
+  followUpBank: {             // Possible follow-ups based on response
+    triggerKeywords: string[];
+    question: string;
+    expectedPoints: string[];
+  }[];
+  
+  // Grading
+  keyPoints: string[];        // Must mention to score
+  bonusPoints: string[];      // Extra credit
+  commonMistakes: string[];   // To gently correct
+  
+  // Settings
+  difficultyProgression: boolean;  // Start easy, get harder
+  maxQuestions: number;
+  timeMinutes: number;
+  
+  // ATOM integration
+  examinerPersona: string;    // "Friendly senior" vs "Strict examiner"
+  feedbackStyle: 'immediate' | 'end';
+}
+```
+
+### 8. ClinicalScenario (OSCE/Viva/Mock Patient)
 
 ```typescript
 interface ClinicalScenario {
@@ -282,6 +326,50 @@ interface ClinicalScenario {
   createdBy: string;
 }
 ```
+
+### 9. Note (Study Material)
+
+Each topic/concept can have associated notes in various formats.
+
+```typescript
+interface Note {
+  id: string;
+  type: 'text' | 'qa_discussion' | 'summary' | 'diagram' | 'table' | 'mnemonic';
+  
+  // Content
+  title: string;
+  content: string;            // Markdown
+  images?: string[];
+  
+  // For Q&A Discussion format
+  qaFormat?: {
+    question: string;
+    answer: string;
+    followUp?: string;
+  }[];
+  
+  // Connections
+  topicIds: string[];
+  conceptIds: string[];
+  questionIds: string[];      // Related questions
+  
+  // Metadata
+  author: string;
+  source?: string;            // Textbook reference
+  highYield: boolean;
+  
+  createdAt: Date;
+  updatedAt: Date;
+}
+```
+
+**Note Types:**
+- **Text** — Regular markdown notes
+- **Q&A Discussion** — One-on-one discussion format (question → answer → follow-up)
+- **Summary** — Condensed high-yield points
+- **Diagram** — Annotated images/flowcharts
+- **Table** — Comparison tables
+- **Mnemonic** — Memory aids
 
 ---
 
