@@ -1,75 +1,190 @@
-import { createClient } from '@/lib/supabase/server'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@/lib/supabase/server';
 
-// GET - Fetch user analytics from Supabase
-export async function GET() {
+// GET /api/analytics - Get user's learning analytics
+export async function GET(request: NextRequest) {
   try {
-    const supabase = await createClient()
+    const supabase = await createClient();
     
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    // Get authenticated user
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
     
     if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
     }
 
-    // Fetch all analytics data in parallel
-    const [
-      profileResult,
-      streakResult,
-      dailyStatsResult,
-      mcqAttemptsResult,
-    ] = await Promise.all([
-      supabase.from('profiles').select('*').eq('id', user.id).single(),
-      supabase.from('streaks').select('*').eq('user_id', user.id).single(),
-      supabase.from('daily_stats').select('*').eq('user_id', user.id).order('date', { ascending: false }).limit(30),
-      supabase.from('mcq_attempts').select('*').eq('user_id', user.id).order('created_at', { ascending: false }).limit(100),
-    ])
+    // Get date range from query params (default: last 7 days)
+    const { searchParams } = new URL(request.url);
+    const days = parseInt(searchParams.get('days') || '7');
+    const startDate = new Date(Date.now() - days * 86400000).toISOString();
 
-    // Calculate totals from daily stats
-    const dailyStats = dailyStatsResult.data || []
-    const totalQuestions = dailyStats.reduce((sum, d) => sum + (d.mcqs_attempted || 0), 0)
-    const correctAnswers = dailyStats.reduce((sum, d) => sum + (d.mcqs_correct || 0), 0)
-    const totalStudyMinutes = dailyStats.reduce((sum, d) => sum + (d.study_minutes || 0), 0)
+    // Parallel fetch all analytics data
+    const [
+      streakResult,
+      sessionsResult,
+      progressResult,
+      mcqsResult,
+      dailyStatsResult
+    ] = await Promise.all([
+      // Streak data
+      supabase
+        .from('streaks')
+        .select('current_streak, longest_streak, last_study_date')
+        .eq('user_id', user.id)
+        .single(),
+      
+      // Recent study sessions
+      supabase
+        .from('study_sessions')
+        .select('*')
+        .eq('user_id', user.id)
+        .gte('started_at', startDate)
+        .order('started_at', { ascending: false }),
+      
+      // Topic progress
+      supabase
+        .from('user_atom_progress')
+        .select('status, time_spent_seconds, completed_at')
+        .eq('user_id', user.id),
+      
+      // MCQ attempts
+      supabase
+        .from('mcq_attempts')
+        .select('is_correct, time_spent_seconds, created_at')
+        .eq('user_id', user.id)
+        .gte('created_at', startDate),
+      
+      // Daily stats
+      supabase
+        .from('daily_stats')
+        .select('*')
+        .eq('user_id', user.id)
+        .gte('date', startDate.split('T')[0])
+        .order('date', { ascending: false })
+    ]);
+
+    // Calculate aggregated analytics
+    const streak = streakResult.data || { current_streak: 0, longest_streak: 0 };
+    const sessions = sessionsResult.data || [];
+    const progress = progressResult.data || [];
+    const mcqs = mcqsResult.data || [];
+    const dailyStats = dailyStatsResult.data || [];
+
+    // Calculate totals
+    const totalStudyMinutes = sessions.reduce((acc, s) => acc + (s.duration_minutes || 0), 0);
+    const topicsCompleted = progress.filter(p => p.status === 'completed').length;
+    const totalQuestions = mcqs.length;
+    const correctAnswers = mcqs.filter(m => m.is_correct).length;
+    const avgAccuracy = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
+
+    // Weekly study data (for chart)
+    const weeklyStudyMinutes: number[] = [];
+    const weeklyMcqs: number[] = [];
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
+      const dayStats = dailyStats.find(d => d.date === date);
+      weeklyStudyMinutes.push(dayStats?.study_minutes || 0);
+      weeklyMcqs.push(dayStats?.mcqs_attempted || 0);
+    }
 
     const analytics = {
-      profile: profileResult.data,
-      streak: streakResult.data,
+      // Current status
+      currentStreak: streak.current_streak,
+      longestStreak: streak.longest_streak,
+      lastStudyDate: streak.last_study_date,
+      
+      // Totals
+      totalStudyMinutes,
+      topicsCompleted,
       totalQuestions,
       correctAnswers,
-      totalStudyMinutes,
-      currentStreak: streakResult.data?.current_streak || 0,
-      longestStreak: streakResult.data?.longest_streak || 0,
-      dailyStats: dailyStats.map(d => ({
-        date: d.date,
-        questionsAttempted: d.mcqs_attempted,
-        questionsCorrect: d.mcqs_correct,
-        studyMinutes: d.study_minutes,
-        topicsReviewed: [],
-        streak: d.study_minutes > 0 || d.mcqs_attempted > 0,
-      })),
-      mcqAttempts: (mcqAttemptsResult.data || []).map(a => ({
-        id: a.id,
-        questionId: a.mcq_id,
-        isCorrect: a.is_correct,
-        confidence: getConfidenceString(a.confidence),
-        timeSpent: a.time_taken_seconds,
-        timestamp: new Date(a.created_at),
-      })),
-    }
+      avgAccuracy,
+      
+      // Recent activity
+      recentSessions: sessions.slice(0, 5),
+      
+      // Weekly data (for charts)
+      weeklyStudyMinutes,
+      weeklyMcqs,
+      
+      // Daily breakdown
+      dailyStats: dailyStats.slice(0, 7),
+    };
 
-    return NextResponse.json(analytics)
+    return NextResponse.json(analytics);
   } catch (error) {
-    console.error('Analytics fetch error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('Analytics API error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
   }
 }
 
-function getConfidenceString(level: number): string {
-  const strings: Record<number, string> = {
-    1: 'guessing',
-    2: 'unsure',
-    3: 'sure',
-    4: 'very-sure',
+// POST /api/analytics - Log analytics event
+export async function POST(request: NextRequest) {
+  try {
+    const supabase = await createClient();
+    
+    // Get authenticated user
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    
+    if (authError || !user) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    const body = await request.json();
+    const { event, data } = body;
+
+    const today = new Date().toISOString().split('T')[0];
+
+    switch (event) {
+      case 'study_time':
+        // Update daily stats with study time
+        await supabase.rpc('increment_study_time', {
+          p_user_id: user.id,
+          p_date: today,
+          p_minutes: data.minutes
+        });
+        break;
+
+      case 'mcq_attempt':
+        // Update daily MCQ stats
+        await supabase.rpc('increment_mcq_stats', {
+          p_user_id: user.id,
+          p_date: today,
+          p_attempted: 1,
+          p_correct: data.correct ? 1 : 0
+        });
+        break;
+
+      case 'topic_completed':
+        // Update daily topics completed
+        await supabase.rpc('increment_topics_completed', {
+          p_user_id: user.id,
+          p_date: today
+        });
+        break;
+
+      default:
+        return NextResponse.json(
+          { error: 'Unknown event type' },
+          { status: 400 }
+        );
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Analytics POST error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
   }
-  return strings[level] || 'unsure'
 }
