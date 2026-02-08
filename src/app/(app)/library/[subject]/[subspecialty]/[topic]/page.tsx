@@ -157,7 +157,7 @@ export default function TopicPage() {
         return (
           <div className="space-y-6">
             {/* Key Points */}
-            {topic.content.keyPoints.length > 0 && (
+            {(topic.content.keyPoints?.length ?? 0) > 0 && (
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
@@ -165,7 +165,7 @@ export default function TopicPage() {
                     Key Points
                   </h3>
                   <ul className="space-y-2">
-                    {topic.content.keyPoints.map((point, i) => (
+                    {topic.content.keyPoints?.map((point, i) => (
                       <li key={i} className="flex items-start gap-2 text-[#9CA3AF]">
                         <span className="text-[#06B6D4] mt-1">•</span>
                         <span>{point}</span>
@@ -198,18 +198,20 @@ export default function TopicPage() {
         return (
           <div className="space-y-6">
             {/* Summary */}
-            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-              <CardContent className="p-5">
-                <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                  <Target className="w-5 h-5 text-[#F59E0B]" />
-                  Quick Summary
-                </h3>
-                <MedicalMarkdown content={topic.content.examPrep.summary} />
-              </CardContent>
-            </Card>
+            {topic.content.examPrep?.summary && (
+              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+                <CardContent className="p-5">
+                  <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
+                    <Target className="w-5 h-5 text-[#F59E0B]" />
+                    Quick Summary
+                  </h3>
+                  <MedicalMarkdown content={topic.content.examPrep.summary} />
+                </CardContent>
+              </Card>
+            )}
 
             {/* Mnemonics */}
-            {topic.content.examPrep.mnemonics.length > 0 && (
+            {(topic.content.examPrep?.mnemonics?.length ?? 0) > 0 && (
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
@@ -217,7 +219,7 @@ export default function TopicPage() {
                     Mnemonics
                   </h3>
                   <ul className="space-y-2">
-                    {topic.content.examPrep.mnemonics.map((m, i) => (
+                    {topic.content.examPrep?.mnemonics?.map((m, i) => (
                       <li key={i} className="p-3 bg-[#0D1B2A] rounded-lg text-[#E5E7EB] border border-[rgba(236,72,153,0.2)]">
                         {m}
                       </li>
@@ -228,7 +230,7 @@ export default function TopicPage() {
             )}
 
             {/* High Yield Points */}
-            {topic.content.examPrep.highYield.length > 0 && (
+            {(topic.content.examPrep?.highYield?.length ?? 0) > 0 && (
               <Card className="bg-[rgba(245,158,11,0.1)] border-[rgba(245,158,11,0.3)]">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-[#F59E0B] mb-3 flex items-center gap-2">
@@ -236,7 +238,7 @@ export default function TopicPage() {
                     High Yield for Exams
                   </h3>
                   <ul className="space-y-2">
-                    {topic.content.examPrep.highYield.map((point, i) => (
+                    {topic.content.examPrep?.highYield?.map((point, i) => (
                       <li key={i} className="flex items-start gap-2 text-[#E5E7EB]">
                         <span className="text-[#F59E0B] mt-1">★</span>
                         <span>{point}</span>
@@ -248,7 +250,7 @@ export default function TopicPage() {
             )}
 
             {/* Common MCQs */}
-            {topic.content.examPrep.commonMCQs.length > 0 && (
+            {(topic.content.examPrep?.commonMCQs?.length ?? 0) > 0 && (
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
@@ -256,7 +258,7 @@ export default function TopicPage() {
                     Common MCQ Topics
                   </h3>
                   <ul className="space-y-2">
-                    {topic.content.examPrep.commonMCQs.map((mcq, i) => (
+                    {topic.content.examPrep?.commonMCQs?.map((mcq, i) => (
                       <li key={i} className="flex items-start gap-2 text-[#9CA3AF]">
                         <span className="text-[#06B6D4]">{i + 1}.</span>
                         <span>{mcq}</span>
@@ -270,7 +272,7 @@ export default function TopicPage() {
         );
 
       case 'textbook':
-        if (topic.content.textbookRefs.length === 0) {
+        if ((topic.content.textbookRefs?.length ?? 0) === 0) {
           return (
             <div className="text-center py-12">
               <BookOpen className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
@@ -282,7 +284,7 @@ export default function TopicPage() {
         return (
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-[#E5E7EB]">Textbook References</h3>
-            {topic.content.textbookRefs.map((ref, i) => (
+            {topic.content.textbookRefs?.map((ref, i) => (
               <Card key={i} className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <div className="flex items-start gap-4">
@@ -302,7 +304,7 @@ export default function TopicPage() {
         );
 
       case 'quiz':
-        if (topic.content.retrievalCards.length === 0) {
+        if ((topic.content.retrievalCards?.length ?? 0) === 0) {
           return (
             <div className="text-center py-12">
               <Brain className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
@@ -311,19 +313,19 @@ export default function TopicPage() {
             </div>
           );
         }
-        const currentCard = topic.content.retrievalCards[currentCardIndex];
+        const currentCard = topic.content.retrievalCards![currentCardIndex];
         return (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold text-[#E5E7EB]">Quiz Mode</h3>
               <Badge className="bg-[#0D1B2A] text-[#9CA3AF]">
-                Card {currentCardIndex + 1} of {topic.content.retrievalCards.length}
+                Card {currentCardIndex + 1} of {topic.content.retrievalCards!.length}
               </Badge>
             </div>
             <QuizCard 
               card={currentCard}
               onNext={() => setCurrentCardIndex((prev) => 
-                (prev + 1) % topic.content.retrievalCards.length
+                (prev + 1) % topic.content.retrievalCards!.length
               )}
             />
             <div className="flex justify-center">
@@ -340,7 +342,7 @@ export default function TopicPage() {
         );
 
       case 'cases':
-        if (topic.content.cases.length === 0) {
+        if ((topic.content.cases?.length ?? 0) === 0) {
           return (
             <div className="text-center py-12">
               <Stethoscope className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
@@ -351,7 +353,7 @@ export default function TopicPage() {
         }
         return (
           <div className="space-y-6">
-            {topic.content.cases.map((caseItem, i) => (
+            {topic.content.cases?.map((caseItem, i) => (
               <Card key={i} className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <div className="flex items-center gap-2 mb-4">
@@ -364,23 +366,40 @@ export default function TopicPage() {
                   </div>
 
                   <div className="space-y-4">
-                    {caseItem.questions.map((q, qi) => (
-                      <details key={qi} className="group">
-                        <summary className="cursor-pointer text-[#06B6D4] hover:text-[#0891B2] font-medium">
-                          Q{qi + 1}: {q.question}
-                        </summary>
-                        <div className="mt-2 pl-4 border-l-2 border-[rgba(6,182,212,0.3)] text-[#E5E7EB]">
-                          {q.answer}
-                        </div>
-                      </details>
-                    ))}
+                    {caseItem.questions?.map((q, qi) => {
+                      const isString = typeof q === 'string';
+                      return (
+                        <details key={qi} className="group">
+                          <summary className="cursor-pointer text-[#06B6D4] hover:text-[#0891B2] font-medium">
+                            Q{qi + 1}: {isString ? q : q.question}
+                          </summary>
+                          {!isString && q.answer && (
+                            <div className="mt-2 pl-4 border-l-2 border-[rgba(6,182,212,0.3)] text-[#E5E7EB]">
+                              {q.answer}
+                            </div>
+                          )}
+                        </details>
+                      );
+                    })}
+                    {caseItem.analysis && (
+                      <div className="p-3 bg-[#0D1B2A] rounded-lg">
+                        <h5 className="text-sm font-medium text-[#06B6D4] mb-1">Analysis</h5>
+                        <p className="text-[#E5E7EB]">{caseItem.analysis}</p>
+                      </div>
+                    )}
+                    {caseItem.clinicalPearl && (
+                      <div className="p-3 bg-[rgba(245,158,11,0.1)] rounded-lg border border-[rgba(245,158,11,0.2)]">
+                        <h5 className="text-sm font-medium text-[#F59E0B] mb-1">💡 Clinical Pearl</h5>
+                        <p className="text-[#E5E7EB]">{caseItem.clinicalPearl}</p>
+                      </div>
+                    )}
                   </div>
 
-                  {caseItem.keyLearning.length > 0 && (
+                  {(caseItem.keyLearning?.length ?? 0) > 0 && (
                     <div className="mt-4 pt-4 border-t border-[rgba(6,182,212,0.1)]">
                       <h4 className="text-sm font-medium text-[#F59E0B] mb-2">Key Learning Points</h4>
                       <ul className="space-y-1">
-                        {caseItem.keyLearning.map((point, pi) => (
+                        {caseItem.keyLearning?.map((point, pi) => (
                           <li key={pi} className="text-sm text-[#9CA3AF] flex items-start gap-2">
                             <span className="text-[#F59E0B]">•</span>
                             {point}
@@ -399,12 +418,12 @@ export default function TopicPage() {
         return (
           <div className="space-y-6">
             {/* Prerequisites */}
-            {topic.prerequisites.length > 0 && (
+            {(topic.prerequisites?.length ?? 0) > 0 && (
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-[#E5E7EB] mb-3">Prerequisites</h3>
                   <div className="flex flex-wrap gap-2">
-                    {topic.prerequisites.map((prereq) => {
+                    {topic.prerequisites?.map((prereq) => {
                       const prereqTopic = ESOPHAGUS_TOPICS.find(t => t.id === prereq);
                       return (
                         <Link
@@ -435,12 +454,12 @@ export default function TopicPage() {
             </Card>
 
             {/* Related Topics */}
-            {topic.relatedTopics.length > 0 && (
+            {(topic.relatedTopics?.length ?? 0) > 0 && (
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-[#E5E7EB] mb-3">Related Topics</h3>
                   <div className="flex flex-wrap gap-2">
-                    {topic.relatedTopics.map((related) => {
+                    {topic.relatedTopics?.map((related) => {
                       const relatedTopic = ESOPHAGUS_TOPICS.find(t => t.id === related);
                       return (
                         <Link

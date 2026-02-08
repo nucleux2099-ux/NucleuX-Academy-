@@ -1,0 +1,3027 @@
+/**
+ * NucleuX Academy - Cardiovascular Pharmacology Topics
+ * 
+ * Comprehensive content covering antihypertensives, antianginals,
+ * antiarrhythmics, heart failure drugs, anticoagulants, antiplatelets,
+ * and thrombolytics.
+ * 
+ * Quality: KD Tripathi / Goodman & Gilman level
+ */
+
+import type { LibraryTopic } from '../../types/library';
+
+export const CVS_PHARMACOLOGY_TOPICS: LibraryTopic[] = [
+  // =============================================================================
+  // ANTIHYPERTENSIVES
+  // =============================================================================
+  {
+    id: 'antihypertensives',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Antihypertensives',
+    slug: 'antihypertensives',
+    description: 'ACE inhibitors, ARBs, CCBs, beta-blockers, treatment algorithms',
+    content: {
+      concept: `# Antihypertensive Drugs
+
+## Overview
+
+Hypertension is a major modifiable risk factor for cardiovascular disease. Pharmacotherapy targets multiple pathways to reduce blood pressure.
+
+## Classification
+
+| Class | Examples | Primary MOA |
+|-------|----------|-------------|
+| ACE Inhibitors | Enalapril, Lisinopril, Ramipril | Block ACE → ↓ Ang II |
+| ARBs | Losartan, Telmisartan, Valsartan | Block AT1 receptors |
+| CCBs | Amlodipine, Nifedipine, Diltiazem | Block L-type Ca²⁺ channels |
+| Beta-blockers | Metoprolol, Atenolol, Carvedilol | Block β-adrenergic receptors |
+| Diuretics | HCTZ, Furosemide, Spironolactone | ↓ Volume/Na⁺ reabsorption |
+| Alpha-blockers | Prazosin, Terazosin | Block α1 receptors |
+| Central α2-agonists | Clonidine, Methyldopa | ↓ Sympathetic outflow |
+| Direct vasodilators | Hydralazine, Minoxidil | Smooth muscle relaxation |
+
+---
+
+## ACE INHIBITORS (ACEi)
+
+### Mechanism of Action
+\`\`\`
+Angiotensinogen → (Renin) → Angiotensin I → (ACE) → Angiotensin II
+                                              ↑
+                                         ACEi BLOCKS
+
+Also blocks bradykinin degradation → ↑ Bradykinin → Vasodilation (but also cough!)
+\`\`\`
+
+### Drugs & Properties
+| Drug | Prodrug? | Half-life | Renal Excretion |
+|------|----------|-----------|-----------------|
+| Captopril | No | 2 hr | Yes |
+| Enalapril | Yes (→ Enalaprilat) | 11 hr | Yes |
+| Lisinopril | No | 12 hr | Yes |
+| Ramipril | Yes (→ Ramiprilat) | 13-17 hr | Yes |
+| Fosinopril | Yes | 12 hr | Hepatic + Renal |
+| Trandolapril | Yes | 16-24 hr | Hepatic + Renal |
+
+### Clinical Uses
+1. **Hypertension** - First-line, especially with diabetes/CKD
+2. **Heart Failure with Reduced EF** - ↓ Mortality (CONSENSUS, SOLVD trials)
+3. **Post-MI** - ↓ Remodeling, especially anterior MI
+4. **Diabetic Nephropathy** - Renoprotective (↓ proteinuria)
+5. **Chronic Kidney Disease** - Slows progression
+
+### Adverse Effects
+| Effect | Mechanism | Management |
+|--------|-----------|------------|
+| **Dry cough** | ↑ Bradykinin, substance P | Switch to ARB |
+| **Angioedema** | ↑ Bradykinin | STOP! Never rechallenge |
+| **Hyperkalemia** | ↓ Aldosterone | Monitor K⁺ |
+| **Acute kidney injury** | ↓ GFR (efferent dilation) | Avoid if bilateral RAS |
+| **Hypotension** | First-dose effect | Start low, go slow |
+| **Teratogenicity** | Direct toxicity | CONTRAINDICATED in pregnancy |
+
+> 💎 **High Yield**: ACEi cough affects ~10-15% of patients, more common in women and Asians. ARB does NOT cause cough.
+
+### Key Drug Interactions
+- NSAIDs → ↓ Antihypertensive effect
+- K⁺-sparing diuretics → Hyperkalemia
+- Lithium → ↑ Lithium levels
+
+---
+
+## ANGIOTENSIN RECEPTOR BLOCKERS (ARBs)
+
+### Mechanism
+Selectively block **AT1 receptors** → No angiotensin II effects
+- Unlike ACEi, do NOT affect bradykinin → No cough
+
+### Drugs
+| Drug | Unique Features |
+|------|-----------------|
+| Losartan | Uricosuric effect, shortest half-life |
+| Valsartan | No active metabolite |
+| Telmisartan | Longest half-life (24hr), PPAR-γ activity |
+| Irbesartan | Good for diabetic nephropathy |
+| Olmesartan | Enteropathy risk |
+| Candesartan | High AT1 affinity |
+| Azilsartan | Newest, most potent |
+
+### Uses
+- Similar to ACEi
+- **Preferred in ACEi-intolerant patients** (cough, angioedema*)
+
+> ⚠️ **Warning**: ~10% cross-reactivity with ACEi angioedema. Use cautiously.
+
+### ADRs
+- Hyperkalemia
+- Hypotension
+- AKI (same as ACEi)
+- **Teratogenic** (same contraindication)
+- NO cough (key difference!)
+
+---
+
+## CALCIUM CHANNEL BLOCKERS (CCBs)
+
+### Classification
+| Type | Vascular | Cardiac | Drugs |
+|------|----------|---------|-------|
+| **Dihydropyridines (DHP)** | +++ | + | Amlodipine, Nifedipine, Felodipine |
+| **Non-DHP: Phenylalkylamine** | + | +++ | Verapamil |
+| **Non-DHP: Benzothiazepine** | ++ | ++ | Diltiazem |
+
+### Mechanism
+Block **L-type calcium channels** in:
+- Vascular smooth muscle → Vasodilation
+- Cardiac myocytes → ↓ Contractility, HR, conduction
+
+### Dihydropyridines (Vascular Selective)
+
+**Amlodipine**
+- Longest half-life (35-50 hr)
+- Once daily dosing
+- Less reflex tachycardia
+- Drug of choice for elderly, ISH
+
+**Nifedipine**
+- Short-acting: Causes reflex tachycardia
+- **Immediate-release CONTRAINDICATED** in angina/MI
+- Extended-release (Adalat OROS) safe for HTN
+
+**Felodipine, Nicardipine, Isradipine** - Various uses
+
+### Non-Dihydropyridines
+
+**Verapamil**
+- Most cardiodepressant
+- ↓ HR, ↓ AV conduction, ↓ contractility
+- Uses: SVT, HTN, rate control in AF
+- ADR: Constipation (40%), heart block
+
+**Diltiazem**
+- Intermediate effects
+- Uses: Angina, HTN, AF rate control
+- Less constipation than verapamil
+
+### Clinical Uses by Type
+| Indication | DHP | Non-DHP |
+|------------|-----|---------|
+| Hypertension | ✓✓✓ | ✓✓ |
+| Angina | ✓✓ | ✓✓✓ |
+| Arrhythmias | ✗ | ✓✓✓ |
+| Raynaud's | ✓✓✓ | ✓ |
+| Migraine prophylaxis | ✓ | ✓✓ |
+
+### Adverse Effects
+| DHPs | Non-DHPs |
+|------|----------|
+| Ankle edema | Constipation (verapamil) |
+| Headache | Bradycardia |
+| Flushing | Heart block |
+| Reflex tachycardia | ↓ Contractility |
+| Gingival hyperplasia | Gingival hyperplasia |
+
+> 💎 **High Yield**: Ankle edema from DHPs is due to precapillary dilation (not fluid retention) → Diuretics don't help!
+
+### Contraindications
+- **Non-DHPs**: Heart failure with reduced EF, sick sinus, AV block
+- **Avoid combining** verapamil + beta-blocker (severe bradycardia)
+
+---
+
+## BETA-ADRENERGIC BLOCKERS
+
+### Classification
+| Generation | Selectivity | Examples |
+|------------|-------------|----------|
+| 1st Gen (Non-selective) | β1 = β2 | Propranolol, Nadolol, Timolol |
+| 2nd Gen (β1-selective) | β1 > β2 | Metoprolol, Atenolol, Bisoprolol |
+| 3rd Gen (Vasodilating) | Variable + α1 or NO | Carvedilol, Labetalol, Nebivolol |
+
+### Additional Properties
+| Drug | ISA | MSA | Lipophilicity |
+|------|-----|-----|---------------|
+| Propranolol | - | + | High (CNS effects) |
+| Atenolol | - | - | Low (renal excretion) |
+| Metoprolol | - | - | Moderate |
+| Pindolol | +++ | - | Moderate |
+| Carvedilol | - | - | Moderate |
+| Nebivolol | - | - | NO-mediated vasodilation |
+
+- **ISA** = Intrinsic sympathomimetic activity
+- **MSA** = Membrane stabilizing activity
+
+### Mechanism
+\`\`\`
+β1 blockade → ↓ HR, ↓ Contractility, ↓ Renin release
+β2 blockade → Bronchoconstriction, ↓ Glycogenolysis, ↓ Vasodilation
+\`\`\`
+
+### Clinical Uses
+1. **Hypertension** - Second-line (no longer first-line per guidelines)
+2. **Heart Failure** - Carvedilol, Bisoprolol, Metoprolol succinate (↓ mortality)
+3. **Angina** - First-line, ↓ O₂ demand
+4. **Post-MI** - ↓ Mortality, ↓ sudden death
+5. **Arrhythmias** - SVT, AF rate control, VT
+6. **Thyrotoxicosis** - Propranolol (also ↓ T4→T3 conversion)
+7. **Migraine prophylaxis** - Propranolol
+8. **Essential tremor** - Propranolol
+9. **Portal hypertension** - Propranolol, Nadolol
+10. **Glaucoma** - Timolol (topical)
+11. **Pheochromocytoma** - ONLY after α-blockade!
+
+### Adverse Effects
+| Effect | Mechanism | High-Risk Groups |
+|--------|-----------|------------------|
+| Bradycardia | β1 blockade | Elderly, conduction disease |
+| Bronchospasm | β2 blockade | Asthmatics |
+| Cold extremities | β2 blockade (vasoconstriction) | Raynaud's |
+| Fatigue, depression | CNS (lipophilic) | Elderly |
+| Hypoglycemia masking | β2 blockade | Diabetics on insulin |
+| Erectile dysfunction | Multiple | Men |
+| Rebound HTN | Up-regulated receptors | Sudden withdrawal |
+
+> 💎 **High Yield**: In diabetics, cardioselective β-blockers (metoprolol, bisoprolol) are preferred. They still mask hypoglycemia but less so.
+
+### Contraindications
+- **Absolute**: Severe bradycardia, heart block (2nd/3rd degree), acute decompensated HF
+- **Relative**: Asthma, COPD, peripheral vascular disease
+
+---
+
+## TREATMENT ALGORITHMS
+
+### JNC 8 / 2020 ISH Guidelines Simplified
+\`\`\`
+Step 1: Start with one of the "First-line 4"
+        - ACEi/ARB
+        - CCB (DHP)
+        - Thiazide diuretic
+        - (Beta-blocker if compelling indication)
+
+Step 2: Add second agent from different class
+        - ACEi/ARB + CCB
+        - ACEi/ARB + Diuretic
+        - CCB + Diuretic
+
+Step 3: Triple therapy
+        ACEi/ARB + CCB + Thiazide
+
+Step 4 (Resistant HTN): Add spironolactone or other
+\`\`\`
+
+### Compelling Indications
+| Condition | Preferred Agents |
+|-----------|-----------------|
+| Diabetes + proteinuria | ACEi/ARB |
+| CKD | ACEi/ARB |
+| Heart failure | ACEi/ARB + β-blocker + diuretic |
+| Post-MI | ACEi + β-blocker |
+| Stroke prevention | ACEi + Thiazide |
+| Pregnancy | Labetalol, Methyldopa, Nifedipine |
+| Black patients | CCB or Thiazide first (ACEi less effective) |
+
+### Drugs to AVOID
+| Situation | Avoid | Reason |
+|-----------|-------|--------|
+| Pregnancy | ACEi, ARB | Teratogenic |
+| Bilateral RAS | ACEi, ARB | AKI |
+| Asthma | Non-selective β-blockers | Bronchospasm |
+| Gout | Thiazides | Hyperuricemia |
+| Heart block | Verapamil, β-blockers | Worsens block |
+| HFrEF | Non-DHP CCBs | Negative inotropy |`,
+      keyPoints: [
+        'ACEi: Block ACE → ↓ Ang II, ↑ bradykinin; cause dry cough (10-15%), angioedema; contraindicated in pregnancy',
+        'ARBs: Block AT1 receptors; no cough; similar renoprotection to ACEi',
+        'DHP CCBs (amlodipine): Vascular selective; cause ankle edema, reflex tachycardia',
+        'Non-DHP CCBs (verapamil, diltiazem): Cardiac effects; cause bradycardia, constipation',
+        'Beta-blockers: Reduce HR, contractility, renin; use cardioselective in asthmatics/diabetics',
+        'First-line: ACEi/ARB, CCB, or thiazide; compelling indications guide choice',
+        'Never combine ACEi + ARB (ONTARGET trial: more harm, no benefit)'
+      ],
+      examPrep: {
+        summary: `**Antihypertensives - Quick Review**
+
+🔹 **ACE Inhibitors**: -pril drugs. ↓ Ang II, ↑ bradykinin. Cough, angioedema, hyperK, AKI. Renoprotective.
+
+🔹 **ARBs**: -sartan drugs. Block AT1. No cough! Same contraindications.
+
+🔹 **CCBs**: 
+- DHPs (amlodipine): Vasodilation > cardiac. Ankle edema.
+- Non-DHPs (verapamil): Cardiac > vascular. Bradycardia, constipation.
+
+🔹 **Beta-blockers**: 
+- Non-selective: Propranolol (CNS effects, thyroid)
+- Cardioselective: Metoprolol, Bisoprolol (HF)
+- Vasodilating: Carvedilol (α1 + β), Nebivolol (NO)
+
+🔹 **First-line**: ACEi/ARB OR CCB OR Thiazide`,
+        mnemonics: [
+          'ACEi ADRs: "CAPTOPRIL" - Cough, Angioedema, Pregnancy contraindicated, Teratogenic, Orthostatic hypotension, Potassium ↑, Renal failure, Impotence, Leukopenia',
+          'Beta-blocker uses: "ABCDEF" - Angina, BP, CHF (specific agents), Death (post-MI), Esophageal varices, Fast rhythms',
+          'Non-DHPs: "Very Dangerous" = Verapamil (constipation), Diltiazem'
+        ],
+        highYield: [
+          'ACEi cough: 10-15%, more in women/Asians, due to bradykinin',
+          'ACEi angioedema: STOP immediately, 10% cross-react with ARB',
+          'Amlodipine ankle edema: Due to precapillary dilation, not fluid retention',
+          'Never combine Verapamil + Beta-blocker: Severe bradycardia/asystole',
+          'Telmisartan: Longest acting ARB + PPAR-γ activity',
+          'Carvedilol/Bisoprolol/Metoprolol succinate: Only β-blockers proven in HFrEF',
+          'Black patients: CCBs/Thiazides first (low renin HTN)'
+        ],
+        commonMCQs: [
+          'Most common ADR of ACEi: Dry cough (10-15%)',
+          'CCB of choice in elderly with ISH: Amlodipine',
+          'Beta-blocker that releases NO: Nebivolol',
+          'ARB with uricosuric effect: Losartan',
+          'Antihypertensive safe in pregnancy: Labetalol, Methyldopa, Nifedipine ER',
+          'Drug causing constipation: Verapamil'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '40', chapterTitle: 'Antihypertensive Drugs' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '28', chapterTitle: 'Treatment of Hypertension' },
+        { textbook: 'Katzung Basic & Clinical Pharmacology', edition: '15th', chapter: '11', chapterTitle: 'Antihypertensive Agents' }
+      ],
+      retrievalCards: [
+        { id: 'ahtn-1', question: 'What is the mechanism of ACE inhibitor-induced cough?', answer: 'Increased bradykinin and substance P levels (not degraded by ACE)', difficulty: 2 },
+        { id: 'ahtn-2', question: 'Which ARB has a uricosuric effect?', answer: 'Losartan', difficulty: 1 },
+        { id: 'ahtn-3', question: 'Why should non-DHP CCBs be avoided in HFrEF?', answer: 'Negative inotropic effect worsens heart failure', difficulty: 2 },
+        { id: 'ahtn-4', question: 'Which beta-blockers are proven to reduce mortality in HFrEF?', answer: 'Carvedilol, Bisoprolol, and Metoprolol succinate (not tartrate)', difficulty: 2 },
+        { id: 'ahtn-5', question: 'Why are ACEi/ARBs preferred in diabetic nephropathy?', answer: 'Dilate efferent arteriole → reduce intraglomerular pressure → slow proteinuria progression', difficulty: 3 },
+        { id: 'ahtn-6', question: 'What is the MOA of nebivolol-induced vasodilation?', answer: 'Stimulates endothelial NO release (unique among β-blockers)', difficulty: 3 },
+        { id: 'ahtn-7', question: 'Why is immediate-release nifedipine dangerous in angina?', answer: 'Rapid vasodilation → reflex tachycardia → increased O₂ demand → ischemia', difficulty: 3 },
+        { id: 'ahtn-8', question: 'Which CCB causes the most constipation?', answer: 'Verapamil (up to 40% of patients)', difficulty: 1 },
+        { id: 'ahtn-9', question: 'What is the first-line antihypertensive in pregnancy?', answer: 'Labetalol (or methyldopa, nifedipine ER)', difficulty: 2 },
+        { id: 'ahtn-10', question: 'Why do diuretics not help CCB-induced ankle edema?', answer: 'Edema is due to precapillary dilation → capillary leak, not volume overload', difficulty: 3 }
+      ],
+      cases: [
+        {
+          id: 'ahtn-case-1',
+          title: 'Cough After Starting New Medication',
+          presentation: 'A 58-year-old woman with diabetes and hypertension was started on enalapril 6 weeks ago. BP is well controlled at 128/76. She now complains of a persistent dry, tickling cough, worse at night. Chest X-ray is normal.',
+          questions: [
+            { question: 'What is the most likely cause?', answer: 'ACE inhibitor-induced cough (due to bradykinin accumulation)' },
+            { question: 'What is the best management?', answer: 'Switch to an ARB (e.g., losartan or telmisartan) - maintains renoprotection without cough' }
+          ],
+          keyLearning: [
+            'ACEi cough affects 10-15% of patients, more common in women and Asians',
+            'Cough appears 1 week to 6 months after starting therapy',
+            'Mechanism: ACE also degrades bradykinin; ACEi leads to accumulation',
+            'ARBs do not cause cough (do not affect bradykinin)'
+          ],
+          difficulty: 2
+        },
+        {
+          id: 'ahtn-case-2',
+          title: 'Bilateral Renal Artery Stenosis',
+          presentation: 'A 67-year-old smoker with PAD is started on ramipril for hypertension. One week later, his creatinine rises from 1.2 to 2.8 mg/dL. He has bruits heard over both flanks.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'ACEi-induced acute kidney injury in bilateral renal artery stenosis' },
+            { question: 'What is the mechanism?', answer: 'In RAS, GFR depends on Ang II-mediated efferent arteriolar constriction. ACEi blocks this → ↓↓ GFR' },
+            { question: 'What is the management?', answer: 'Stop ACEi immediately. Use CCBs for BP control. Consider renal artery revascularization.' }
+          ],
+          keyLearning: [
+            'ACEi/ARB are CONTRAINDICATED in bilateral RAS or RAS in solitary kidney',
+            'GFR in RAS is maintained by Ang II constricting efferent arteriole',
+            'Up to 30% rise in creatinine acceptable after ACEi; >30% suggests RAS',
+            'Clues: Smoker, peripheral vascular disease, abdominal bruits'
+          ],
+          difficulty: 4
+        }
+      ]
+    },
+    prerequisites: ['general-pharmacology'],
+    relatedTopics: ['diuretics', 'heart-failure-drugs'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // DIURETICS
+  // =============================================================================
+  {
+    id: 'diuretics',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Diuretics',
+    slug: 'diuretics',
+    description: 'Loop, thiazide, K-sparing, osmotic, carbonic anhydrase inhibitors',
+    content: {
+      concept: `# Diuretics
+
+## Overview
+
+Diuretics increase urine output by inhibiting Na⁺ reabsorption at various nephron segments.
+
+## Classification by Site of Action
+
+\`\`\`
+NEPHRON DIAGRAM (simplified):
+
+PCT → Loop of Henle → DCT → Collecting Duct
+ ↓          ↓           ↓          ↓
+CAIs      Loop      Thiazides   K⁺-sparing
+         Diuretics
+\`\`\`
+
+| Class | Site | Efficacy | Examples |
+|-------|------|----------|----------|
+| Loop Diuretics | Thick ascending limb | **High (15-25%)** | Furosemide, Bumetanide, Torsemide |
+| Thiazides | DCT | Moderate (5-10%) | HCTZ, Chlorthalidone, Indapamide |
+| K⁺-Sparing | Collecting duct | Low (2-3%) | Spironolactone, Eplerenone, Amiloride, Triamterene |
+| CAIs | PCT | Low (5%) | Acetazolamide |
+| Osmotic | Multiple | Variable | Mannitol |
+
+---
+
+## LOOP DIURETICS
+
+### Mechanism
+Inhibit **Na⁺-K⁺-2Cl⁻ cotransporter (NKCC2)** in thick ascending limb
+
+\`\`\`
+NKCC2 blocked → 
+  ↓ Na⁺ reabsorption → Diuresis
+  ↓ K⁺ reabsorption → Hypokalemia
+  ↓ Lumen-positive potential → ↓ Ca²⁺, Mg²⁺ reabsorption → Hypocalcemia
+  ↓ Medullary hypertonicity → Impaired concentration
+\`\`\`
+
+### Drugs
+| Drug | Potency | Oral bioavailability | Duration |
+|------|---------|---------------------|----------|
+| Furosemide | 40 mg | 50% (variable) | 4-6 hr |
+| Bumetanide | 1 mg | 80-100% | 4-6 hr |
+| Torsemide | 20 mg | 80-100% | 6-8 hr |
+| Ethacrynic acid | 50 mg | 100% | 6-8 hr |
+
+### Clinical Uses
+1. **Acute pulmonary edema** - IV furosemide (fast onset)
+2. **Heart failure with congestion**
+3. **Renal failure** - Only diuretic that works in low GFR
+4. **Hypercalcemia** - Increases Ca²⁺ excretion
+5. **Hyperkalemia** - Emergency management
+6. **Cerebral edema** - Osmotic effect + diuresis
+7. **Ascites** (with spironolactone)
+
+### Adverse Effects
+| Effect | Mechanism |
+|--------|-----------|
+| **Hypokalemia** | ↑ Na⁺ delivery to CD → ↑ K⁺ secretion |
+| **Hypomagnesemia** | ↓ Paracellular reabsorption |
+| **Hypocalcemia** | ↓ Ca²⁺ reabsorption |
+| **Metabolic alkalosis** | Volume contraction + K⁺ loss |
+| **Ototoxicity** | Especially with aminoglycosides |
+| **Hyperuricemia** | Competes for organic anion transport |
+| **Hyperglycemia** | ↓ Insulin release |
+
+> 💎 **High Yield**: Ethacrynic acid is the only loop diuretic NOT containing a sulfa group → Safe in sulfa allergy
+
+### Resistance
+- Diuretic braking phenomenon
+- Rebound Na⁺ retention between doses
+- Strategy: Increase frequency (not just dose), add thiazide
+
+---
+
+## THIAZIDE DIURETICS
+
+### Mechanism
+Inhibit **Na⁺-Cl⁻ cotransporter (NCC)** in distal convoluted tubule
+
+### Drugs
+| Drug | Duration | Notes |
+|------|----------|-------|
+| Hydrochlorothiazide | 12-18 hr | Most common |
+| Chlorthalidone | 48-72 hr | Longer acting, more potent |
+| Indapamide | 24 hr | Lipophilic, vasodilating |
+| Metolazone | 12-24 hr | Works in renal failure |
+
+### Clinical Uses
+1. **Hypertension** - First-line (low dose)
+2. **Heart failure** - Adjunct to loop
+3. **Nephrolithiasis** - ↓ Calcium excretion (↓ Ca²⁺ stones)
+4. **Nephrogenic DI** - Paradoxical effect
+5. **Osteoporosis** - ↓ Calcium loss
+
+### Adverse Effects
+| Effect | Mechanism |
+|--------|-----------|
+| **Hypokalemia** | ↑ Na⁺ delivery to CD |
+| **Hyponatremia** | ↓ Diluting capacity |
+| **Hypercalcemia** | ↑ Ca²⁺ reabsorption in PCT |
+| **Hyperuricemia** | ↓ Uric acid excretion |
+| **Hyperglycemia** | ↓ Insulin release |
+| **Hyperlipidemia** | ↑ LDL (short-term) |
+| **Metabolic alkalosis** | Volume contraction |
+
+> 💎 **High Yield**: "Hypo" everything EXCEPT calcium & uric acid (and glucose, lipids)
+
+### Loop vs Thiazide: Key Differences
+| Feature | Loop | Thiazide |
+|---------|------|----------|
+| Efficacy | High (15-25%) | Moderate (5-10%) |
+| Works in CKD | Yes | No (GFR <30) |
+| Ca²⁺ effect | ↑ Excretion | ↓ Excretion |
+| Hyponatremia | Rare | **Common** |
+| Use in HTN | Not preferred | First-line |
+
+---
+
+## POTASSIUM-SPARING DIURETICS
+
+### Classification
+| Type | Drugs | Mechanism |
+|------|-------|-----------|
+| **Aldosterone antagonists** | Spironolactone, Eplerenone | Block mineralocorticoid receptor |
+| **ENaC blockers** | Amiloride, Triamterene | Block epithelial sodium channel |
+
+### Aldosterone Antagonists
+
+**Spironolactone**
+\`\`\`
+Blocks MR → ↓ ENaC, Na/K-ATPase synthesis
+         → ↓ Na⁺ reabsorption, ↓ K⁺/H⁺ secretion
+\`\`\`
+
+**Uses:**
+- **Heart failure** - ↓ Mortality (RALES trial)
+- **Primary hyperaldosteronism** (Conn's)
+- **Ascites with cirrhosis** - Drug of choice
+- **Hirsutism in PCOS** - Antiandrogen effect
+- **Resistant hypertension** - Add-on therapy
+
+**ADRs:**
+- **Hyperkalemia** - Main concern
+- **Gynecomastia** - Antiandrogen effect (17%)
+- **Menstrual irregularities**
+- **GI upset**
+
+**Eplerenone:**
+- Selective MR antagonist
+- Less gynecomastia (1-2%)
+- More expensive
+
+### ENaC Blockers
+
+**Amiloride & Triamterene**
+- Directly block ENaC in collecting duct
+- K⁺-sparing without hormonal effects
+- Used in combination with thiazides
+- **Triamterene**: Forms kidney stones
+
+---
+
+## CARBONIC ANHYDRASE INHIBITORS
+
+### Acetazolamide
+
+**Mechanism:**
+\`\`\`
+In PCT: CA catalyzes: CO₂ + H₂O ↔ H₂CO₃ ↔ H⁺ + HCO₃⁻
+
+Acetazolamide inhibits CA → 
+  ↓ H⁺ secretion → ↓ Na⁺ reabsorption
+  ↓ HCO₃⁻ reabsorption → Bicarbonaturia
+  → Metabolic ACIDOSIS
+\`\`\`
+
+**Uses:**
+1. **Glaucoma** - ↓ Aqueous humor production
+2. **Altitude sickness** - Compensates for respiratory alkalosis
+3. **Metabolic alkalosis** - Rarely
+4. **Epilepsy** - Adjunctive
+5. **Idiopathic intracranial hypertension** - ↓ CSF production
+
+**ADRs:**
+- Metabolic acidosis
+- Hypokalemia
+- Paresthesias (characteristic)
+- Kidney stones (calcium phosphate)
+- **Sulfa allergy** cross-reaction
+
+---
+
+## OSMOTIC DIURETICS
+
+### Mannitol
+
+**Mechanism:**
+- Freely filtered, not reabsorbed
+- Retains water in tubules → ↓ Na⁺, H₂O reabsorption
+- Also draws water from cells (osmotic gradient)
+
+**Uses:**
+1. **Cerebral edema** - ↓ ICP
+2. **Acute glaucoma** - ↓ IOP
+3. **Prevent ATN** - During surgery (controversial)
+4. **Drug overdose** - Forced diuresis
+
+**ADRs:**
+- Initial volume expansion (can precipitate CHF)
+- Hyponatremia, then hypernatremia
+- Contraindicated in anuria, pulmonary edema`,
+      keyPoints: [
+        'Loop diuretics: NKCC2 blocker, most efficacious (15-25%), cause hypocalcemia, ototoxicity',
+        'Thiazides: NCC blocker, cause hypercalcemia (useful in stones), severe hyponatremia',
+        'K⁺-sparing: Spironolactone (MR antagonist) vs Amiloride (ENaC blocker)',
+        'Spironolactone: ↓ Mortality in HF (RALES), causes gynecomastia',
+        'Ethacrynic acid: Only non-sulfa loop diuretic (safe in sulfa allergy)',
+        'Metolazone: Only thiazide that works in CKD',
+        'Loop diuretics increase Ca²⁺ excretion; Thiazides decrease it'
+      ],
+      examPrep: {
+        summary: `**Diuretics - Quick Review**
+
+🔹 **Loop** (Furosemide): NKCC2 block, 15-25% efficacy, works in CKD, ↑ Ca excretion, ototoxicity
+
+🔹 **Thiazide** (HCTZ): NCC block, 5-10% efficacy, ↓ Ca excretion, severe hyponatremia
+
+🔹 **K⁺-Sparing**:
+- Spironolactone: MR antagonist, gynecomastia, HF mortality ↓
+- Amiloride: ENaC block, no hormonal ADRs
+
+🔹 **CAIs** (Acetazolamide): Metabolic acidosis, glaucoma, altitude sickness
+
+🔹 **Osmotic** (Mannitol): Cerebral edema, acute glaucoma`,
+        mnemonics: [
+          '"Loops Lose Calcium" - Loop diuretics INCREASE Ca²⁺ excretion',
+          '"Thiazides Take Calcium (back)" - Thiazides DECREASE Ca²⁺ excretion',
+          'ADRs of Thiazides: "HyperGLUC" - Hyperglycemia, Hyperlipidemia, Hyperuricemia, HypercalCemia'
+        ],
+        highYield: [
+          'Furosemide IV for acute pulmonary edema',
+          'Chlorthalidone > HCTZ for BP control (longer acting)',
+          'Spironolactone + Furosemide: Classic ascites regimen',
+          'Thiazides paradoxically help nephrogenic DI',
+          'Acetazolamide: Paresthesias + metabolic acidosis'
+        ],
+        commonMCQs: [
+          'Loop diuretic safe in sulfa allergy: Ethacrynic acid',
+          'Thiazide that works in CKD: Metolazone',
+          'Drug of choice for ascites in cirrhosis: Spironolactone',
+          'Diuretic causing hypercalcemia: Thiazides',
+          'Diuretic for altitude sickness: Acetazolamide'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '41', chapterTitle: 'Diuretics' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '29', chapterTitle: 'Diuretics' }
+      ],
+      retrievalCards: [
+        { id: 'diur-1', question: 'Which transporter do loop diuretics inhibit?', answer: 'Na⁺-K⁺-2Cl⁻ cotransporter (NKCC2) in thick ascending limb', difficulty: 1 },
+        { id: 'diur-2', question: 'Why do thiazides cause hypercalcemia?', answer: 'Increased Ca²⁺ reabsorption in PCT (compensatory) and possibly DCT', difficulty: 3 },
+        { id: 'diur-3', question: 'Which loop diuretic is safe in sulfa allergy?', answer: 'Ethacrynic acid (no sulfa moiety)', difficulty: 1 },
+        { id: 'diur-4', question: 'Why do thiazides cause more hyponatremia than loops?', answer: 'Thiazides impair diluting segment without affecting concentrating ability; preserved ADH action leads to water retention', difficulty: 4 },
+        { id: 'diur-5', question: 'What trial proved spironolactone reduces mortality in HF?', answer: 'RALES trial', difficulty: 2 },
+        { id: 'diur-6', question: 'Why is mannitol contraindicated in anuria?', answer: 'Cannot be excreted → causes volume expansion → pulmonary edema', difficulty: 2 },
+        { id: 'diur-7', question: 'Which diuretic is used for nephrogenic DI?', answer: 'Thiazides (paradoxical effect - reduce urine volume)', difficulty: 2 },
+        { id: 'diur-8', question: 'What is the characteristic ADR of acetazolamide?', answer: 'Paresthesias (especially perioral and in extremities)', difficulty: 1 }
+      ],
+      cases: [
+        {
+          id: 'diur-case-1',
+          title: 'Severe Hyponatremia After Thiazide',
+          presentation: 'A 72-year-old woman was started on HCTZ for hypertension 2 weeks ago. She presents with confusion and lethargy. Na⁺: 118 mEq/L, K⁺: 3.0 mEq/L.',
+          questions: [
+            { question: 'What is the mechanism of thiazide-induced hyponatremia?', answer: 'Thiazides impair diluting capacity but preserve concentrating ability. With continued ADH action, water is retained relative to sodium.' },
+            { question: 'Why are elderly women at highest risk?', answer: 'Lower muscle mass (less water reservoir), often on low-salt diets, higher ADH sensitivity' }
+          ],
+          keyLearning: [
+            'Thiazide-induced hyponatremia is the most common drug cause of severe hyponatremia',
+            'Risk factors: elderly, female, low body weight, low dietary salt',
+            'Can occur within days to weeks of starting therapy',
+            'Treatment: Stop thiazide, fluid restrict, correct slowly (risk of osmotic demyelination)'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['renal-physiology', 'general-pharmacology'],
+    relatedTopics: ['antihypertensives', 'heart-failure-drugs'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 40,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // ANTIANGINAL DRUGS
+  // =============================================================================
+  {
+    id: 'antianginal-drugs',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Antianginal Drugs',
+    slug: 'antianginal-drugs',
+    description: 'Nitrates, beta-blockers, CCBs, ranolazine, mechanism and uses',
+    content: {
+      concept: `# Antianginal Drugs
+
+## Pathophysiology of Angina
+
+\`\`\`
+Angina occurs when: O₂ DEMAND > O₂ SUPPLY
+
+O₂ Demand factors:
+  - Heart rate
+  - Contractility  
+  - Wall tension (preload, afterload)
+
+O₂ Supply factors:
+  - Coronary blood flow
+  - Diastolic time
+  - Hemoglobin/O₂ content
+\`\`\`
+
+## Classification
+
+| Class | Examples | Primary Effect |
+|-------|----------|----------------|
+| Organic Nitrates | NTG, ISDN, ISMN | ↓ Preload >> ↓ Afterload |
+| Beta-blockers | Metoprolol, Atenolol | ↓ HR, ↓ Contractility |
+| CCBs | Amlodipine, Verapamil, Diltiazem | ↓ Afterload, ↓ HR (non-DHP) |
+| Late Na⁺ channel blockers | Ranolazine | ↓ Na⁺/Ca²⁺ overload |
+| If channel blockers | Ivabradine | ↓ HR only |
+| K⁺ channel openers | Nicorandil | Vasodilation + cardioprotection |
+
+---
+
+## ORGANIC NITRATES
+
+### Drugs
+| Drug | Route | Onset | Duration | Use |
+|------|-------|-------|----------|-----|
+| Nitroglycerin (NTG) | Sublingual | 1-3 min | 20-30 min | Acute attack |
+| NTG patch | Transdermal | 30 min | 8-12 hr | Prophylaxis |
+| ISDN | Oral | 30 min | 4-6 hr | Prophylaxis |
+| ISMN | Oral | 30 min | 6-8 hr | Prophylaxis |
+| IV NTG | IV | 1 min | 3-5 min | ACS, HF |
+
+### Mechanism of Action
+\`\`\`
+Nitrates → (in smooth muscle) → Release NO
+                                    ↓
+                              Activate guanylyl cyclase
+                                    ↓
+                              ↑ cGMP
+                                    ↓
+                              ↓ Intracellular Ca²⁺
+                                    ↓
+                              Smooth muscle RELAXATION
+\`\`\`
+
+### Effects on O₂ Balance
+| Effect | Mechanism | Result |
+|--------|-----------|--------|
+| ↓ Preload | Venodilation → ↓ venous return | ↓ Wall tension → ↓ O₂ demand |
+| ↓ Afterload | Arteriolar dilation (high dose) | ↓ Wall tension |
+| ↑ Coronary flow | Epicardial dilation, collateral flow | ↑ O₂ supply |
+| ↓ LVEDP | ↓ Preload | Better subendocardial perfusion |
+
+> 💎 **High Yield**: Nitrates work mainly by reducing PRELOAD (venodilation), not afterload. This is why they're effective even in fixed coronary stenosis.
+
+### Adverse Effects
+| Effect | Mechanism | Management |
+|--------|-----------|------------|
+| **Headache** | Meningeal vasodilation | Common initially, tolerance develops |
+| **Hypotension** | Venodilation | Start low, avoid dehydration |
+| **Reflex tachycardia** | Baroreceptor response | Combine with β-blocker |
+| **Flushing** | Cutaneous vasodilation | Tolerance |
+| **Methemoglobinemia** | NO oxidizes hemoglobin | High doses, rare |
+
+### Nitrate Tolerance
+\`\`\`
+Continuous exposure → ↓ Response within 24-48 hours
+
+Mechanisms:
+1. Depletion of sulfhydryl groups
+2. ↑ Superoxide, ↓ NO bioavailability
+3. Neurohormonal activation
+
+Prevention:
+- "Nitrate-free interval" of 10-12 hours daily
+- Usually overnight (asymmetric dosing)
+\`\`\`
+
+### Drug Interactions
+- **PDE-5 inhibitors (sildenafil, tadalafil)**: CONTRAINDICATED!
+  - Both ↑ cGMP → Severe hypotension, death
+  - Wait 24 hr (sildenafil) or 48 hr (tadalafil) before nitrates
+
+---
+
+## BETA-BLOCKERS IN ANGINA
+
+### Mechanism
+\`\`\`
+β1 blockade →
+  ↓ Heart rate → ↓ O₂ demand + ↑ diastolic perfusion time
+  ↓ Contractility → ↓ O₂ demand
+  ↓ BP → ↓ Afterload → ↓ O₂ demand
+\`\`\`
+
+### Preferred Agents
+- **Metoprolol** - Standard choice
+- **Atenolol** - Renal excretion
+- **Bisoprolol** - Long-acting
+
+### Evidence
+- First-line for chronic stable angina
+- ↓ Mortality post-MI (secondary prevention)
+- Combine with nitrates for synergy (β-blocker prevents reflex tachycardia)
+
+---
+
+## CALCIUM CHANNEL BLOCKERS IN ANGINA
+
+### Dihydropyridines (Amlodipine, Nifedipine ER)
+- Predominantly vasodilate
+- ↓ Afterload → ↓ O₂ demand
+- May cause reflex tachycardia → combine with β-blocker
+- **Amlodipine preferred** (no reflex tachycardia)
+
+### Non-Dihydropyridines (Verapamil, Diltiazem)
+- ↓ HR + ↓ Contractility + ↓ Afterload
+- Direct anti-ischemic effects
+- **Do NOT combine with β-blockers** (severe bradycardia)
+
+### Special Situations
+| Condition | Preferred CCB |
+|-----------|---------------|
+| Vasospastic (Prinzmetal's) angina | CCBs are FIRST-LINE (any type) |
+| Stable angina + hypertension | Amlodipine |
+| Stable angina with β-blocker contraindication | Diltiazem or Verapamil |
+
+---
+
+## NEWER ANTIANGINAL AGENTS
+
+### Ranolazine
+
+**Mechanism:**
+\`\`\`
+Blocks late I_Na (sodium current) →
+  ↓ Na⁺ overload →
+  ↓ Na⁺/Ca²⁺ exchanger activity →
+  ↓ Ca²⁺ overload →
+  ↓ Wall tension, improved relaxation
+\`\`\`
+
+**Key Points:**
+- Does NOT affect HR or BP
+- Add-on therapy for refractory angina
+- Also ↓ HbA1c slightly
+- Prolongs QT interval
+- Contraindicated with CYP3A4 inhibitors
+
+### Ivabradine
+
+**Mechanism:**
+- Blocks If ("funny") current in SA node
+- Pure heart rate reduction
+- No effect on contractility, BP, or conduction
+
+**Uses:**
+- Chronic stable angina with HR >70 bpm
+- HFrEF with HR >70 bpm (SHIFT trial)
+- Inappropriate sinus tachycardia
+
+**ADR:** Visual disturbances (phosphenes) - "luminous phenomena"
+
+### Nicorandil
+
+**Mechanism:**
+- K_ATP channel opener (vasodilation)
+- Also NO donor (nitrate-like effect)
+
+**Uses:**
+- Refractory angina (especially in Europe/Asia)
+- May have cardioprotective (preconditioning) effect
+
+**ADR:** Oral/GI ulceration (unique)
+
+---
+
+## TREATMENT APPROACH
+
+### Acute Anginal Attack
+1. **Sublingual NTG** - 0.4 mg, repeat q5min x 3
+2. If no relief → consider ACS → ER
+
+### Chronic Stable Angina
+\`\`\`
+First-line: β-blocker OR CCB (if β-blocker contraindicated)
+            + Sublingual NTG for breakthrough
+
+Second-line: Add CCB to β-blocker
+            (DHP preferred; avoid non-DHP with β-blocker)
+            OR Add long-acting nitrate
+
+Third-line: Ranolazine, Ivabradine, Nicorandil
+            Consider revascularization
+\`\`\`
+
+### Vasospastic (Prinzmetal's) Angina
+- **CCBs are FIRST-LINE** (DHP or non-DHP)
+- Nitrates (adjunct)
+- **β-blockers may WORSEN** (unopposed α-vasoconstriction)`,
+      keyPoints: [
+        'Nitrates: Release NO → ↑ cGMP → vasodilation, primarily reduce preload (venodilation)',
+        'Nitrate tolerance: Develops in 24-48 hours; prevent with 10-12 hour nitrate-free interval',
+        'Nitrates + PDE-5 inhibitors: CONTRAINDICATED (severe hypotension)',
+        'Beta-blockers: First-line for stable angina; reduce O₂ demand via ↓ HR, contractility',
+        'Vasospastic angina: CCBs first-line; β-blockers may worsen',
+        'Ranolazine: Blocks late Na⁺ current; add-on for refractory angina',
+        'Ivabradine: Pure HR reduction via If channel block; no BP effect'
+      ],
+      examPrep: {
+        summary: `**Antianginal Drugs - Quick Review**
+
+🔹 **Nitrates**: NO → cGMP → Venodilation (↓ preload) > Arteriolar. Tolerance prevented by nitrate-free interval.
+
+🔹 **Beta-blockers**: First-line chronic angina. ↓ HR, contractility, BP. 
+
+🔹 **CCBs**: 
+- DHPs: Afterload reduction
+- Non-DHPs: ↓ HR + afterload
+
+🔹 **Prinzmetal's (Vasospastic)**: CCBs FIRST-LINE! β-blockers may worsen.
+
+🔹 **Ranolazine**: Late I_Na block, add-on, prolongs QT
+
+🔹 **Ivabradine**: If blocker, pure HR ↓, phosphenes`,
+        mnemonics: [
+          '"NO CAMPING" for nitrate tolerance - Nitrate-free interval Overnight prevents tolerance',
+          '"SL for SOS" - SubLingual NTG for acute SOS/attack',
+          '"PVS" for Prinzmetal\'s - Prefer Vasodilators (CCBs), Skip β-blockers'
+        ],
+        highYield: [
+          'SL NTG onset 1-3 min, duration 20-30 min',
+          'Wait 24h (sildenafil) or 48h (tadalafil) before giving nitrates',
+          'Amlodipine: Less reflex tachycardia than nifedipine',
+          'Ivabradine ADR: Phosphenes (visual luminous phenomena)',
+          'Nicorandil ADR: Oral ulceration'
+        ],
+        commonMCQs: [
+          'First-line for vasospastic angina: CCBs',
+          'Nitrate mechanism: ↑ cGMP via NO release',
+          'Drug contraindicated with sildenafil: Nitrates',
+          'Antianginal that blocks late Na+ current: Ranolazine',
+          'Drug causing phosphenes: Ivabradine'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '39', chapterTitle: 'Antianginal and Other Anti-Ischemic Drugs' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '31', chapterTitle: 'Treatment of Myocardial Ischemia' }
+      ],
+      retrievalCards: [
+        { id: 'ang-1', question: 'How do nitrates reduce myocardial O₂ demand?', answer: 'Primarily by venodilation → ↓ preload → ↓ ventricular wall tension', difficulty: 2 },
+        { id: 'ang-2', question: 'Why are nitrates contraindicated with PDE-5 inhibitors?', answer: 'Both increase cGMP → synergistic vasodilation → severe hypotension', difficulty: 2 },
+        { id: 'ang-3', question: 'How is nitrate tolerance prevented?', answer: '10-12 hour nitrate-free interval daily (usually overnight)', difficulty: 1 },
+        { id: 'ang-4', question: 'Why are β-blockers potentially harmful in vasospastic angina?', answer: 'Block β2 vasodilation → unopposed α-mediated coronary vasoconstriction', difficulty: 3 },
+        { id: 'ang-5', question: 'What is the mechanism of ranolazine?', answer: 'Blocks late Na⁺ current → reduces Na⁺/Ca²⁺ overload → improves diastolic relaxation', difficulty: 3 },
+        { id: 'ang-6', question: 'What visual side effect is characteristic of ivabradine?', answer: 'Phosphenes (luminous phenomena) - flashes of light', difficulty: 1 },
+        { id: 'ang-7', question: 'What is the unique ADR of nicorandil?', answer: 'Oral and GI ulceration', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'ang-case-1',
+          title: 'Severe Hypotension After Chest Pain',
+          presentation: 'A 62-year-old man with erectile dysfunction took sildenafil last night. This morning, he developed chest pain and took his wife\'s sublingual NTG. He is now hypotensive (70/40), diaphoretic, and confused.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'Severe hypotension from nitrate + PDE-5 inhibitor interaction' },
+            { question: 'What is the mechanism?', answer: 'Sildenafil inhibits PDE-5 → ↑ cGMP. Nitrates increase cGMP production. Together → profound vasodilation' },
+            { question: 'How should this be managed?', answer: 'IV fluids, Trendelenburg, vasopressors if needed. NO MORE NITRATES. Consider phenylephrine (α-agonist)' }
+          ],
+          keyLearning: [
+            'Nitrates + PDE-5 inhibitors = absolute contraindication',
+            'Wait 24 hours after sildenafil, 48 hours after tadalafil before nitrates',
+            'Profound hypotension can be fatal',
+            'Always ask about erectile dysfunction medications before giving nitrates'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['cvs-physiology', 'general-pharmacology'],
+    relatedTopics: ['antihypertensives', 'heart-failure-drugs', 'antiplatelet-drugs'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 35,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // ANTIARRHYTHMICS
+  // =============================================================================
+  {
+    id: 'antiarrhythmics',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Antiarrhythmics',
+    slug: 'antiarrhythmics',
+    description: 'Vaughan-Williams classification, Class I-IV, mechanisms, uses',
+    content: {
+      concept: `# Antiarrhythmic Drugs
+
+## Vaughan-Williams Classification
+
+| Class | Mechanism | Subclass | Examples |
+|-------|-----------|----------|----------|
+| **I** | Na⁺ channel blockers | Ia, Ib, Ic | Below |
+| **II** | β-blockers | - | Metoprolol, Esmolol |
+| **III** | K⁺ channel blockers | - | Amiodarone, Sotalol, Dofetilide |
+| **IV** | Ca²⁺ channel blockers | - | Verapamil, Diltiazem |
+| **Others** | Miscellaneous | - | Adenosine, Digoxin, Mg²⁺ |
+
+---
+
+## CLASS I: SODIUM CHANNEL BLOCKERS
+
+### Subclassification
+| Subclass | Effect on AP | Kinetics | Drugs |
+|----------|--------------|----------|-------|
+| **Ia** | ↑ Duration | Intermediate | Quinidine, Procainamide, Disopyramide |
+| **Ib** | ↓ Duration | Fast | Lidocaine, Mexiletine, Phenytoin |
+| **Ic** | No change | Slow | Flecainide, Propafenone |
+
+### Class Ia: "Intermediate Kinetics"
+
+**Quinidine**
+\`\`\`
+Na⁺ block + K⁺ block → ↑ APD, ↑ ERP
+                     → Prolongs QT interval
+\`\`\`
+- Uses: AF, WPW with AF
+- ADRs: 
+  - **Torsades de Pointes** (proarrhythmic!)
+  - Cinchonism (tinnitus, headache, nausea)
+  - Diarrhea (30%)
+  - Thrombocytopenia
+  - Anticholinergic effects
+
+**Procainamide**
+- IV use for wide-complex tachycardia
+- ADRs:
+  - **Drug-induced lupus** (30-50% develop ANA, 10-20% clinical lupus)
+  - Agranulocytosis
+  - Hypotension (IV)
+
+**Disopyramide**
+- Strongest **negative inotrope** of Class Ia
+- Strong anticholinergic effects
+- Use: HCM with obstruction (↓ contractility helps)
+- ADRs: Urinary retention, dry mouth, constipation
+
+### Class Ib: "Fast Kinetics"
+
+**Lidocaine**
+\`\`\`
+Blocks Na⁺ channels in depolarized tissue
+Preferentially binds to inactivated channels
+→ More effective in ischemic tissue
+\`\`\`
+- Uses: Ventricular arrhythmias (VT, VF)
+- IV only (high first-pass metabolism)
+- ADRs: CNS toxicity (seizures, confusion), bradycardia
+- Relatively safe in ischemia (does NOT prolong QT)
+
+**Mexiletine**
+- Oral analogue of lidocaine
+- Used for ventricular arrhythmias, neuropathic pain
+
+### Class Ic: "Slow Kinetics"
+
+**Flecainide**
+- Potent Na⁺ channel block
+- Uses: SVT, AF in structurally normal hearts
+- **CONTRAINDICATED post-MI** (CAST trial: ↑ mortality)
+- Also blocks K⁺ channels (some)
+
+**Propafenone**
+- Na⁺ block + weak β-block + Ca²⁺ block
+- Uses: AF, SVT
+- Tastes metallic
+- Same contraindication in structural heart disease
+
+> 💎 **High Yield**: Class Ic drugs are CONTRAINDICATED in structural heart disease and ischemia (proarrhythmic risk per CAST trial)
+
+---
+
+## CLASS II: BETA-BLOCKERS
+
+### Mechanism
+\`\`\`
+β1 blockade →
+  ↓ cAMP →
+  ↓ If current (automaticity) →
+  ↓ Ca²⁺ influx →
+  ↓ HR, ↓ AV conduction
+\`\`\`
+
+### Drugs
+- **Metoprolol, Atenolol** - Oral, long-term use
+- **Esmolol** - IV, ultra-short acting (t½ = 9 min)
+- **Propranolol** - Non-selective, multiple uses
+
+### Uses
+- Rate control in AF, atrial flutter
+- AVNRT, AVRT
+- Post-MI arrhythmia prophylaxis
+- Catecholaminergic polymorphic VT
+
+---
+
+## CLASS III: POTASSIUM CHANNEL BLOCKERS
+
+### Mechanism
+Block K⁺ channels → ↑ APD, ↑ ERP → Prolongs QT
+
+### Amiodarone - "The Kitchen Sink"
+
+**Multiple Mechanisms:**
+\`\`\`
+- K⁺ channel block (Class III)
+- Na⁺ channel block (Class I)
+- Ca²⁺ channel block (Class IV)
+- β-blocker effect (Class II)
+- Anti-thyroid effect (contains iodine)
+\`\`\`
+
+**Pharmacokinetics:**
+- Extremely lipophilic
+- Half-life: **40-55 DAYS**
+- Loading required (weeks to reach steady state)
+- Minimal negative inotropy (safe in HF)
+
+**Uses:**
+- **Most effective antiarrhythmic**
+- AF, atrial flutter
+- VT, VF
+- WPW with AF
+- Safe in heart failure
+
+**Adverse Effects (extensive):**
+| System | Effect | Monitoring |
+|--------|--------|------------|
+| **Thyroid** | Hypo- (more common) or Hyperthyroidism | TFTs q6 months |
+| **Pulmonary** | Fibrosis (fatal!) | CXR, PFTs yearly |
+| **Hepatic** | Transaminitis, cirrhosis | LFTs |
+| **Cornea** | Deposits (>90%), optic neuritis | Ophthalmology |
+| **Skin** | Blue-gray discoloration, photosensitivity | Sun protection |
+| **Cardiac** | Bradycardia, ↑ QT (Torsades rare) | ECG |
+| **Neurologic** | Tremor, ataxia, neuropathy | Clinical |
+
+> 💎 **High Yield**: "Amiodarone touches every organ" - Baseline TFTs, LFTs, PFTs, CXR, eye exam before starting
+
+### Sotalol
+- Non-selective β-blocker + Class III
+- Uses: AF, VT
+- ADR: Torsades de Pointes (dose-dependent)
+- Renally excreted (adjust in CKD)
+
+### Dofetilide
+- Pure K⁺ channel (IKr) blocker
+- Uses: AF/atrial flutter cardioversion/maintenance
+- Must be initiated in hospital (Torsades risk)
+
+### Ibutilide
+- IV only, acute AF/flutter cardioversion
+- High Torsades risk (8%)
+- Must monitor for 4-6 hours post-infusion
+
+---
+
+## CLASS IV: CALCIUM CHANNEL BLOCKERS
+
+### Drugs
+- **Verapamil**
+- **Diltiazem**
+
+### Mechanism
+Block L-type Ca²⁺ channels in SA and AV node
+→ ↓ Automaticity, ↓ AV conduction, ↑ AV nodal ERP
+
+### Uses
+- Rate control in AF
+- AVNRT, AVRT (terminate)
+- Rate control in MAT
+- **CONTRAINDICATED** in WPW with AF (accelerates bypass tract)
+
+---
+
+## OTHER AGENTS
+
+### Adenosine
+**Mechanism:** A1 receptor → ↑ K⁺ efflux → Hyperpolarization → AV block
+
+**Pharmacokinetics:**
+- Half-life: < 10 seconds
+- Must give rapid IV push with flush
+
+**Uses:**
+- **First-line for stable narrow-complex SVT (AVNRT/AVRT)**
+- Diagnostic in wide-complex tachycardia
+
+**ADRs:**
+- Transient: Flushing, chest pain, dyspnea, bronchospasm
+- Effect blocked by methylxanthines (caffeine, theophylline)
+- Effect enhanced by dipyridamole
+
+### Digoxin
+- Vagotonic (↑ ACh at AV node)
+- Uses: Rate control in AF (especially with HF)
+- Narrow therapeutic index
+
+### Magnesium Sulfate
+- First-line for Torsades de Pointes
+- Also useful in digoxin toxicity
+
+---
+
+## ARRHYTHMIA-SPECIFIC THERAPY
+
+| Arrhythmia | First-Line | Alternatives |
+|------------|-----------|--------------|
+| AF rate control | β-blocker or non-DHP CCB | Digoxin (with HF) |
+| AF rhythm control | Flecainide (no HF), Amiodarone (with HF) | Sotalol, Dofetilide |
+| AVNRT/AVRT | Adenosine (acute), β-blocker/CCB (chronic) | Ablation |
+| WPW + AF | Procainamide, Ibutilide | Amiodarone |
+| VT/VF | Amiodarone, Lidocaine | β-blocker |
+| Torsades | IV Magnesium | Isoproterenol, overdrive pacing |
+| Digoxin toxicity | DigiFab | Atropine, Mg, phenytoin |`,
+      keyPoints: [
+        'Class I: Na⁺ block (Ia ↑ APD, Ib ↓ APD, Ic no change)',
+        'Class Ic CONTRAINDICATED in structural heart disease (CAST trial)',
+        'Amiodarone: Multiple mechanisms, t½ 40-55 days, extensive toxicity (thyroid, lung, liver, eyes)',
+        'Adenosine: First-line for AVNRT/AVRT, t½ <10 sec, blocked by caffeine',
+        'WPW with AF: Avoid AV nodal blockers (digoxin, verapamil, adenosine) - use procainamide/amiodarone',
+        'Torsades de Pointes: IV Magnesium first-line',
+        'Sotalol, Dofetilide: Pure Class III, high Torsades risk'
+      ],
+      examPrep: {
+        summary: `**Antiarrhythmics - Quick Review**
+
+🔹 **Class I** (Na⁺ block):
+- Ia: ↑ APD (Quinidine - Torsades, Procainamide - lupus)
+- Ib: ↓ APD (Lidocaine - VT, safe in ischemia)
+- Ic: Flecainide - CONTRAINDICATED post-MI
+
+🔹 **Class II** (β-blockers): Rate control, esmolol ultra-short
+
+🔹 **Class III** (K⁺ block): 
+- Amiodarone: Most effective, t½ 40-55 days, thyroid/lung/liver toxicity
+- Sotalol: β-blocker + Class III
+
+🔹 **Class IV** (Ca²⁺ block): Verapamil/Diltiazem - AV nodal effects
+
+🔹 **Others**: Adenosine (SVT), Digoxin (AF+HF), Mg (Torsades)`,
+        mnemonics: [
+          'Class Ia drugs: "Queens Prefer Disco" - Quinidine, Procainamide, Disopyramide',
+          'Class Ib drugs: "Lame, Mex, Phen" - Lidocaine, Mexiletine, Phenytoin',
+          'Amiodarone toxicity: "CHECK Lips" - Cornea, Hepatic, Endocrine (thyroid), Cardiac, Skin (photosensitivity, blue), Lungs, Neurologic',
+          'Class Ic: "CASTriting" - Contraindicated post-MI per CAST trial'
+        ],
+        highYield: [
+          'Procainamide: Drug-induced lupus (anti-histone antibodies)',
+          'Lidocaine: Safe in ischemia, does not prolong QT',
+          'Amiodarone contains iodine → thyroid toxicity',
+          'Adenosine blocked by caffeine/theophylline',
+          'WPW + AF: AVOID digoxin, verapamil, adenosine',
+          'Torsades: IV Magnesium first-line'
+        ],
+        commonMCQs: [
+          'First-line for Torsades de Pointes: IV Magnesium',
+          'Drug-induced lupus with antiarrhythmic: Procainamide',
+          'Antiarrhythmic with longest half-life: Amiodarone (40-55 days)',
+          'First-line for stable SVT: Adenosine',
+          'Antiarrhythmic contraindicated post-MI: Flecainide (Class Ic)'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '38', chapterTitle: 'Antiarrhythmic Drugs' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '30', chapterTitle: 'Antiarrhythmic Drugs' }
+      ],
+      retrievalCards: [
+        { id: 'arr-1', question: 'Which Class Ia drug causes drug-induced lupus?', answer: 'Procainamide (anti-histone antibodies positive)', difficulty: 1 },
+        { id: 'arr-2', question: 'Why is lidocaine safe in myocardial ischemia?', answer: 'Fast kinetics - preferentially binds inactivated Na⁺ channels in depolarized ischemic tissue; does not prolong QT', difficulty: 3 },
+        { id: 'arr-3', question: 'Why are Class Ic drugs contraindicated post-MI?', answer: 'CAST trial showed increased mortality due to proarrhythmic effect in ischemic/scarred myocardium', difficulty: 2 },
+        { id: 'arr-4', question: 'What is the half-life of amiodarone?', answer: '40-55 days (extremely long due to high lipophilicity)', difficulty: 1 },
+        { id: 'arr-5', question: 'What monitoring is required before starting amiodarone?', answer: 'TFTs, LFTs, PFTs, CXR, ophthalmologic exam', difficulty: 2 },
+        { id: 'arr-6', question: 'What blocks the effect of adenosine?', answer: 'Methylxanthines (caffeine, theophylline) - competitive antagonism at A1 receptors', difficulty: 2 },
+        { id: 'arr-7', question: 'Why avoid verapamil in WPW with AF?', answer: 'Slows AV node but accelerates accessory pathway conduction → can precipitate VF', difficulty: 3 },
+        { id: 'arr-8', question: 'First-line treatment for Torsades de Pointes?', answer: 'IV Magnesium sulfate', difficulty: 1 }
+      ],
+      cases: [
+        {
+          id: 'arr-case-1',
+          title: 'Wide-Complex Tachycardia in MI Patient',
+          presentation: 'A 65-year-old man with recent MI presents with sustained monomorphic VT. He is hemodynamically stable (BP 110/70).',
+          questions: [
+            { question: 'What is the first-line antiarrhythmic?', answer: 'Amiodarone (or Lidocaine) - both safe in ischemic heart disease' },
+            { question: 'What Class I drug is absolutely contraindicated?', answer: 'Class Ic drugs (Flecainide, Propafenone) - increased mortality per CAST trial' }
+          ],
+          keyLearning: [
+            'VT post-MI: Amiodarone or Lidocaine preferred',
+            'Class Ic drugs increase mortality in structural heart disease',
+            'If unstable: Immediate cardioversion',
+            'Long-term: Consider ICD for secondary prevention'
+          ],
+          difficulty: 3
+        },
+        {
+          id: 'arr-case-2',
+          title: 'Blue Man with Thyroid Dysfunction',
+          presentation: 'A 70-year-old man on amiodarone for 3 years for AF presents with fatigue, weight gain, constipation, and blue-gray skin discoloration.',
+          questions: [
+            { question: 'What is the thyroid diagnosis?', answer: 'Amiodarone-induced hypothyroidism (more common than hyperthyroidism)' },
+            { question: 'What causes the skin discoloration?', answer: 'Deposition of amiodarone and its metabolites in skin + photosensitivity' },
+            { question: 'How should you manage?', answer: 'Add levothyroxine. Can often continue amiodarone if needed. Sun protection.' }
+          ],
+          keyLearning: [
+            'Amiodarone contains 37% iodine by weight',
+            'Causes both hypo- and hyperthyroidism (Type 1 and 2)',
+            'Blue-gray skin discoloration is characteristic',
+            'Monitor TFTs every 6 months on amiodarone'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['cvs-physiology', 'general-pharmacology'],
+    relatedTopics: ['antianginal-drugs', 'heart-failure-drugs'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // HEART FAILURE DRUGS
+  // =============================================================================
+  {
+    id: 'heart-failure-drugs',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Heart Failure Drugs',
+    slug: 'heart-failure-drugs',
+    description: 'ACE inhibitors, beta-blockers, digoxin, ARNI, SGLT2i',
+    content: {
+      concept: `# Heart Failure Pharmacotherapy
+
+## Overview
+
+Heart failure treatment has evolved from symptom control to disease-modifying therapy. Modern treatment targets neurohormonal activation.
+
+## HFrEF vs HFpEF
+
+| Parameter | HFrEF | HFpEF |
+|-----------|-------|-------|
+| EF | ≤40% | ≥50% |
+| Primary pathology | Systolic dysfunction | Diastolic dysfunction |
+| Drug evidence | Strong | Limited |
+
+---
+
+## QUADRUPLE THERAPY FOR HFrEF (GDMT)
+
+\`\`\`
+Modern HFrEF Treatment: "Fantastic Four"
+
+1. ACEi/ARB/ARNI
+2. β-blocker (specific ones only!)
+3. MRA (Spironolactone/Eplerenone)
+4. SGLT2 inhibitor
+
+Each reduces mortality independently!
+\`\`\`
+
+---
+
+## ACE INHIBITORS / ARBs IN HF
+
+### Evidence
+- **CONSENSUS** (1987): Enalapril ↓ mortality in severe HF
+- **SOLVD** (1991): Enalapril ↓ mortality and hospitalizations
+
+### Mechanism in HF
+\`\`\`
+HF → ↑ RAAS activation → Vasoconstriction, Na⁺ retention, remodeling
+
+ACEi blocks:
+  ↓ Ang II → Vasodilation, ↓ afterload
+  ↓ Aldosterone → ↓ Na⁺ retention, ↓ K⁺ loss
+  ↑ Bradykinin → Vasodilation
+  ↓ Remodeling → Prevents progression
+\`\`\`
+
+### Key Points
+- Start LOW, go SLOW (avoid hypotension)
+- Target highest tolerated dose
+- Up to 30% creatinine rise acceptable
+- Monitor K⁺
+
+---
+
+## ANGIOTENSIN RECEPTOR-NEPRILYSIN INHIBITOR (ARNI)
+
+### Sacubitril/Valsartan (Entresto)
+
+**Mechanism:**
+\`\`\`
+Sacubitril → Inhibits neprilysin → ↑ Natriuretic peptides (ANP, BNP)
+                                 → ↑ Bradykinin
+                                 → Vasodilation, natriuresis, ↓ remodeling
+
+Valsartan → Blocks AT1 receptor → ↓ Ang II effects
+\`\`\`
+
+**Evidence: PARADIGM-HF Trial**
+- ARNI vs Enalapril in HFrEF
+- 20% ↓ CV death or HF hospitalization
+- 16% ↓ All-cause mortality
+- Now preferred over ACEi/ARB if tolerated
+
+**Key Points:**
+- Wait 36 hours after stopping ACEi (angioedema risk)
+- Can't give with ACEi
+- Causes hypotension (start low dose)
+- ↑ BNP but ↓ NT-proBNP (neprilysin effect)
+
+---
+
+## BETA-BLOCKERS IN HF
+
+### Paradox Explained
+\`\`\`
+Acute HF: β-blockers harmful (↓ contractility)
+Chronic HF: β-blockers LIFE-SAVING
+
+Why? Chronic sympathetic activation is TOXIC:
+  - Myocyte apoptosis
+  - Arrhythmias
+  - Remodeling
+  
+β-blockers block this → ↑ Survival
+\`\`\`
+
+### Approved Agents (ONLY these have mortality data!)
+| Drug | Key Trial | Notes |
+|------|-----------|-------|
+| **Carvedilol** | COPERNICUS, CAPRICORN | α1 + β block, best in NYHA III-IV |
+| **Bisoprolol** | CIBIS-II | β1-selective |
+| **Metoprolol succinate** | MERIT-HF | β1-selective, NOT tartrate |
+
+> 💎 **High Yield**: Metoprolol TARTRATE does NOT have mortality benefit in HF. Only SUCCINATE (extended-release) works.
+
+### Initiation
+- Start LOW (1/10th target dose)
+- Increase every 2 weeks
+- Expect temporary worsening initially
+- Don't start in decompensated HF
+
+---
+
+## MINERALOCORTICOID RECEPTOR ANTAGONISTS (MRA)
+
+### Spironolactone
+
+**Evidence: RALES Trial**
+- Added to standard therapy (ACEi, diuretic, digoxin)
+- 30% ↓ Mortality
+- 35% ↓ Hospitalizations
+
+**Mechanism:**
+\`\`\`
+Aldosterone causes:
+  - Na⁺ retention, K⁺ loss
+  - Myocardial fibrosis
+  - Endothelial dysfunction
+  - Arrhythmias
+
+Spironolactone blocks all these
+\`\`\`
+
+**ADRs:**
+- Hyperkalemia (especially with ACEi)
+- **Gynecomastia** (17% - antiandrogen effect)
+- Menstrual irregularities
+
+### Eplerenone
+- Selective MR antagonist
+- **EPHESUS**: ↓ Mortality post-MI with LV dysfunction
+- Less gynecomastia (1-2%)
+- More expensive
+
+---
+
+## SGLT2 INHIBITORS
+
+### Drugs
+- **Dapagliflozin** (DAPA-HF)
+- **Empagliflozin** (EMPEROR-Reduced)
+
+**Mechanism in HF (not fully understood):**
+\`\`\`
+- Osmotic diuresis, natriuresis
+- ↓ Preload, ↓ afterload
+- ↑ Ketone utilization (efficient fuel)
+- ↓ Cardiac remodeling
+- ↓ Inflammation, oxidative stress
+\`\`\`
+
+**Evidence:**
+- DAPA-HF: 26% ↓ CV death or HF worsening
+- Works equally in diabetics AND non-diabetics!
+
+**Key Points:**
+- Now part of quadruple therapy
+- Works in HFrEF AND HFpEF (EMPEROR-Preserved, DELIVER)
+- ADRs: UTI, genital mycotic infections, euglycemic DKA
+- Avoid if eGFR <20
+
+---
+
+## DIURETICS IN HF
+
+### Loop Diuretics
+- **Symptomatic relief** (congestion)
+- NO mortality benefit
+- Furosemide, bumetanide, torsemide
+
+### Thiazides
+- Add for diuretic resistance
+- Metolazone + Furosemide (synergistic)
+
+> 💎 **High Yield**: Diuretics improve symptoms but NOT survival in HF
+
+---
+
+## DIGOXIN
+
+### Mechanism
+\`\`\`
+Inhibits Na⁺/K⁺-ATPase →
+  ↑ Intracellular Na⁺ →
+  ↓ Na⁺/Ca²⁺ exchange →
+  ↑ Intracellular Ca²⁺ →
+  ↑ Contractility (positive inotropy)
+
+Also: ↑ Vagal tone → ↓ HR, ↓ AV conduction
+\`\`\`
+
+### Evidence: DIG Trial
+- No mortality benefit
+- ↓ Hospitalizations
+- Narrow therapeutic window
+
+### Indications
+- HFrEF with persistent symptoms despite GDMT
+- AF rate control in HF
+
+### Toxicity
+**Risk factors:** Hypokalemia, hypomagnesemia, renal failure, elderly
+
+**Signs:**
+- GI: Nausea, vomiting, anorexia
+- CNS: Confusion, visual changes (yellow-green halos)
+- Cardiac: Any arrhythmia! (classically: accelerated junctional rhythm, bidirectional VT)
+
+**Treatment:** DigiFab (digoxin-specific antibody fragments)
+
+---
+
+## HYDRALAZINE + ISDN (H-ISDN)
+
+### Mechanism
+- Hydralazine: Arteriolar vasodilation (↓ afterload)
+- ISDN: Venodilation (↓ preload)
+
+### Evidence: A-HeFT
+- Added benefit in African Americans with HFrEF
+- 43% ↓ Mortality
+
+### Use
+- Alternative when ACEi/ARB not tolerated
+- Add-on in African American patients
+
+---
+
+## IVABRADINE
+
+### Mechanism
+Blocks If (funny) channel in SA node → ↓ HR only
+
+### Evidence: SHIFT Trial
+- ↓ HF hospitalization
+- HR must be >70 bpm and in sinus rhythm
+- No mortality benefit
+
+### Use
+- Add-on when HR remains >70 despite max β-blocker
+- Must be in sinus rhythm
+
+---
+
+## TREATMENT ALGORITHM
+
+\`\`\`
+HFrEF (EF ≤40%):
+
+Step 1: Start all 4 classes
+        - ARNI (or ACEi/ARB)
+        - β-blocker (carvedilol/bisoprolol/metoprolol succinate)
+        - MRA (spironolactone/eplerenone)
+        - SGLT2i (dapagliflozin/empagliflozin)
+
+Step 2: Titrate to target doses
+
+Step 3: Add-on therapy if symptomatic
+        - Loop diuretic (for congestion)
+        - Digoxin (symptoms + AF)
+        - Ivabradine (HR >70 in sinus)
+        - H-ISDN (African Americans or ACEi intolerant)
+        - Device: ICD/CRT if indicated
+\`\`\``,
+      keyPoints: [
+        'Quadruple therapy: ARNI/ACEi + β-blocker + MRA + SGLT2i (all reduce mortality)',
+        'ARNI (sacubitril/valsartan): Superior to ACEi per PARADIGM-HF; 36-hour washout from ACEi',
+        'Only 3 β-blockers proven in HF: Carvedilol, Bisoprolol, Metoprolol SUCCINATE',
+        'Spironolactone: RALES trial, 30% ↓ mortality, causes gynecomastia',
+        'SGLT2i: Work in diabetics AND non-diabetics; also benefit HFpEF',
+        'Diuretics: Symptoms only, NO mortality benefit',
+        'Digoxin: ↓ Hospitalizations but not mortality; narrow therapeutic index'
+      ],
+      examPrep: {
+        summary: `**Heart Failure Drugs - Quick Review**
+
+🔹 **ARNI** (Sacubitril/Valsartan): Neprilysin + AT1 block, PARADIGM-HF, superior to ACEi
+
+🔹 **β-blockers**: Only carvedilol, bisoprolol, metoprolol succinate! Start low.
+
+🔹 **MRA** (Spironolactone): RALES 30% ↓ mortality, gynecomastia
+
+🔹 **SGLT2i**: DAPA-HF, works in diabetics & non-diabetics, even HFpEF
+
+🔹 **Diuretics**: Symptoms only, no survival benefit
+
+🔹 **Digoxin**: ↓ Hospitalizations, toxicity: K⁺ loss, renal failure
+
+🔹 **H-ISDN**: African Americans (A-HeFT)`,
+        mnemonics: [
+          '"BAND" for HFrEF GDMT: β-blocker, ARNI, Neprilysin inhibitor (SGLT2i), Diuretic (MRA)',
+          'β-blockers in HF: "CBS" - Carvedilol, Bisoprolol, Succinate (metoprolol)',
+          'Digoxin toxicity: "GI-CNS-Cardiac" - GI upset, CNS (confusion, yellow vision), Cardiac (any arrhythmia)'
+        ],
+        highYield: [
+          'PARADIGM-HF: ARNI > ACEi for mortality',
+          'Metoprolol tartrate does NOT reduce mortality (only succinate)',
+          'SGLT2i: First class to benefit both HFrEF and HFpEF',
+          '36-hour washout between ACEi and ARNI',
+          'Spironolactone gynecomastia 17%',
+          'Digoxin: Hypokalemia increases toxicity'
+        ],
+        commonMCQs: [
+          'Which β-blocker formulation has NO mortality benefit in HF: Metoprolol tartrate',
+          'Trial proving ARNI superiority: PARADIGM-HF',
+          'Drug of choice in African Americans with HFrEF: Add H-ISDN',
+          'Treatment of digoxin toxicity: DigiFab',
+          'SGLT2i that benefits non-diabetic HF: Dapagliflozin, Empagliflozin'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '37', chapterTitle: 'Drugs for Heart Failure' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '32', chapterTitle: 'Therapy of Heart Failure' },
+        { textbook: 'Harrison\'s Principles', edition: '21st', chapter: '257', chapterTitle: 'Heart Failure Management' }
+      ],
+      retrievalCards: [
+        { id: 'hf-1', question: 'What is the mechanism of sacubitril?', answer: 'Inhibits neprilysin → ↑ natriuretic peptides (ANP, BNP, CNP) → natriuresis, vasodilation, ↓ remodeling', difficulty: 2 },
+        { id: 'hf-2', question: 'Why wait 36 hours between ACEi and ARNI?', answer: 'Risk of angioedema from combined ACE inhibition + neprilysin inhibition (both increase bradykinin)', difficulty: 3 },
+        { id: 'hf-3', question: 'Which trial proved spironolactone reduces mortality in HF?', answer: 'RALES trial (30% mortality reduction)', difficulty: 1 },
+        { id: 'hf-4', question: 'Why does metoprolol tartrate not work in HF while succinate does?', answer: 'Succinate is extended-release with stable plasma levels; tartrate has peaks/troughs that may be harmful', difficulty: 3 },
+        { id: 'hf-5', question: 'What are the 3 β-blockers proven to reduce mortality in HFrEF?', answer: 'Carvedilol, Bisoprolol, Metoprolol succinate', difficulty: 1 },
+        { id: 'hf-6', question: 'What is the mechanism of digoxin?', answer: 'Inhibits Na⁺/K⁺-ATPase → ↑ intracellular Na⁺ → ↓ Na⁺/Ca²⁺ exchange → ↑ Ca²⁺ → ↑ contractility', difficulty: 2 },
+        { id: 'hf-7', question: 'What arrhythmia is classic for digoxin toxicity?', answer: 'Bidirectional ventricular tachycardia (also: accelerated junctional rhythm, PAT with block)', difficulty: 2 },
+        { id: 'hf-8', question: 'Do SGLT2 inhibitors work in non-diabetic HF patients?', answer: 'Yes! DAPA-HF and EMPEROR-Reduced showed equal benefit in diabetics and non-diabetics', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'hf-case-1',
+          title: 'Gynecomastia in Heart Failure Patient',
+          presentation: 'A 68-year-old man with HFrEF on enalapril, carvedilol, and spironolactone develops bilateral painful breast enlargement.',
+          questions: [
+            { question: 'What is the cause?', answer: 'Spironolactone-induced gynecomastia (antiandrogen effect, occurs in ~17%)' },
+            { question: 'What is the alternative?', answer: 'Eplerenone (selective MR antagonist, <2% gynecomastia)' }
+          ],
+          keyLearning: [
+            'Spironolactone has antiandrogen effects due to progesterone-like structure',
+            'Gynecomastia occurs in up to 17% of men',
+            'Eplerenone is more selective and has minimal antiandrogen effects',
+            'Both have similar efficacy in HF'
+          ],
+          difficulty: 2
+        },
+        {
+          id: 'hf-case-2',
+          title: 'Yellow Vision in CHF Patient',
+          presentation: 'A 75-year-old woman with HFrEF and AF on digoxin, furosemide, and enalapril presents with nausea, confusion, and seeing yellow halos around lights. K⁺: 2.8 mEq/L.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'Digoxin toxicity (precipitated by hypokalemia from furosemide)' },
+            { question: 'What is the mechanism of hypokalemia increasing toxicity?', answer: 'K⁺ and digoxin compete for Na⁺/K⁺-ATPase. Low K⁺ = more digoxin binding = toxicity' },
+            { question: 'What is the treatment?', answer: 'Stop digoxin, correct K⁺ and Mg²⁺, give DigiFab (digoxin-specific Fab antibodies)' }
+          ],
+          keyLearning: [
+            'Hypokalemia and hypomagnesemia increase digoxin toxicity',
+            'Classic symptoms: GI (nausea, anorexia), CNS (confusion, xanthopsia/yellow vision)',
+            'Cardiac: Any arrhythmia, classically bidirectional VT or PAT with block',
+            'Treatment: DigiFab, correct electrolytes, antiarrhythmics if needed'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['cvs-physiology', 'antihypertensives', 'diuretics'],
+    relatedTopics: ['antiarrhythmics', 'diuretics'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // ANTICOAGULANTS
+  // =============================================================================
+  {
+    id: 'anticoagulants',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Anticoagulants',
+    slug: 'anticoagulants',
+    description: 'Heparin, LMWH, warfarin, DOACs, monitoring, reversal',
+    content: {
+      concept: `# Anticoagulants
+
+## Coagulation Cascade Overview
+
+\`\`\`
+Intrinsic Pathway         Extrinsic Pathway
+(XII→XI→IX→VIII)         (VII + Tissue Factor)
+        ↓                         ↓
+        └──────→ X ←──────────────┘
+                 ↓
+              Xa (+ Va)
+                 ↓
+        Prothrombin → Thrombin (IIa)
+                         ↓
+                Fibrinogen → Fibrin
+                               ↓
+                         Fibrin clot
+\`\`\`
+
+---
+
+## CLASSIFICATION
+
+| Class | Examples | Mechanism | Monitoring |
+|-------|----------|-----------|------------|
+| **UFH** | Heparin | Potentiates antithrombin | aPTT |
+| **LMWH** | Enoxaparin, Dalteparin | Potentiates antithrombin | Anti-Xa (if needed) |
+| **Fondaparinux** | - | Factor Xa inhibitor | Anti-Xa |
+| **Warfarin** | - | Vitamin K antagonist | INR |
+| **DOACs** | Rivaroxaban, Apixaban, Dabigatran | Direct factor inhibitors | Usually none |
+
+---
+
+## UNFRACTIONATED HEPARIN (UFH)
+
+### Mechanism
+\`\`\`
+Heparin binds to Antithrombin III (AT-III) →
+  Conformational change →
+  1000x acceleration of AT-III activity →
+  Inactivates thrombin (IIa), Xa, IXa, XIa, XIIa
+\`\`\`
+
+### Pharmacology
+| Property | Value |
+|----------|-------|
+| Route | IV (continuous) or SC |
+| Onset | Immediate (IV) |
+| Half-life | 60-90 min |
+| Monitoring | aPTT (target 1.5-2.5x normal) |
+| Reversal | Protamine sulfate |
+| Excretion | Reticuloendothelial |
+
+### Uses
+1. **Acute VTE** (initial therapy)
+2. **Acute coronary syndromes**
+3. **Cardiopulmonary bypass**
+4. **Hemodialysis**
+5. **Bridge therapy** for procedures
+
+### Adverse Effects
+| ADR | Mechanism | Management |
+|-----|-----------|------------|
+| **Bleeding** | Anticoagulation | Protamine 1 mg per 100 U heparin |
+| **HIT** | Antibodies to PF4-heparin | Stop heparin, use argatroban/bivalirudin |
+| **Osteoporosis** | ↓ Osteoblast activity | Occurs with long-term use |
+| **Hyperkalemia** | ↓ Aldosterone | Monitor K⁺ |
+| **Skin necrosis** | Rare, at injection sites | |
+
+### Heparin-Induced Thrombocytopenia (HIT)
+
+**Type I:** 
+- Non-immune, mild (>100,000)
+- Occurs days 1-4
+- Benign, continue heparin
+
+**Type II (True HIT):**
+\`\`\`
+Heparin + Platelet Factor 4 (PF4) → Neoantigen →
+  IgG antibodies → Platelet activation →
+  THROMBOSIS (paradoxically, not bleeding!)
+  Platelet count drops >50% (usually 30-70,000)
+\`\`\`
+- Occurs days 5-10 (or earlier with prior exposure)
+- Life-threatening (stroke, PE, limb gangrene)
+- Diagnosis: 4T score + PF4 antibodies + functional assay
+- Treatment: STOP ALL HEPARIN + start alternative (argatroban, bivalirudin)
+
+---
+
+## LOW MOLECULAR WEIGHT HEPARIN (LMWH)
+
+### Drugs
+| Drug | Anti-Xa:IIa ratio |
+|------|-------------------|
+| Enoxaparin | 3.8:1 |
+| Dalteparin | 2.7:1 |
+| Tinzaparin | 2:1 |
+
+### Advantages over UFH
+\`\`\`
+- Better bioavailability (90% vs 30%)
+- Predictable response (weight-based dosing)
+- Longer half-life (4-6 hr vs 1-2 hr)
+- SC once or twice daily
+- Less HIT risk
+- Less osteoporosis
+- Usually no monitoring needed
+\`\`\`
+
+### Uses
+- VTE treatment and prophylaxis
+- ACS
+- Bridge therapy
+
+### Reversal
+- Protamine: 60% effective (vs 100% for UFH)
+- Partially neutralizes anti-Xa activity
+
+### Monitoring
+- Usually NOT needed
+- Monitor anti-Xa in: Renal failure, pregnancy, obesity, children
+
+---
+
+## FONDAPARINUX
+
+### Mechanism
+- Synthetic pentasaccharide
+- Binds AT-III → Selective factor Xa inhibition
+- **No effect on thrombin**
+
+### Key Points
+- SC once daily
+- Half-life: 17-21 hours
+- Renal excretion (avoid if CrCl <30)
+- **NO HIT** (does not interact with PF4)
+- No protamine reversal
+
+### Uses
+- VTE prophylaxis/treatment
+- Alternative in HIT (cautiously)
+
+---
+
+## WARFARIN (Vitamin K Antagonist)
+
+### Mechanism
+\`\`\`
+Inhibits Vitamin K Epoxide Reductase (VKORC1) →
+  ↓ γ-carboxylation of vitamin K-dependent factors →
+  ↓ Active factors II, VII, IX, X
+  Also: ↓ Protein C, Protein S (natural anticoagulants)
+\`\`\`
+
+### Pharmacology
+| Property | Value |
+|----------|-------|
+| Route | Oral |
+| Onset | 36-72 hours (full effect 5-7 days) |
+| Half-life | 36-42 hours |
+| Monitoring | INR (target usually 2-3) |
+| Metabolism | CYP2C9 |
+
+### Why Delayed Onset?
+Warfarin doesn't affect circulating factors (already made)
+- Factor VII: 6 hours
+- Factor IX: 24 hours
+- Factor X: 36 hours
+- Factor II: 60-72 hours
+
+### Why Initial Hypercoagulability?
+Protein C (anticoagulant) has shortest half-life (8 hr)
+→ Drops first → Transient hypercoagulable state
+→ Warfarin-induced skin necrosis (rare)
+→ Bridge with heparin initially
+
+### Drug Interactions
+| Effect | Mechanism | Examples |
+|--------|-----------|----------|
+| ↑ INR | CYP2C9 inhibition | Amiodarone, Fluconazole, Metronidazole, Bactrim |
+| ↑ INR | ↓ Vitamin K | Antibiotics (gut flora) |
+| ↑ INR | Protein binding displacement | NSAIDs |
+| ↓ INR | CYP2C9 induction | Rifampin, Phenytoin, Carbamazepine |
+| ↓ INR | ↑ Vitamin K | Vitamin K supplements, green leafy vegetables |
+
+> 💎 **High Yield**: "SICKFACES.COM" - Drugs that increase INR
+
+### Uses
+| Indication | Target INR |
+|------------|------------|
+| DVT/PE | 2-3 |
+| Atrial fibrillation | 2-3 |
+| Mechanical mitral valve | 2.5-3.5 |
+| Mechanical aortic valve | 2-3 |
+
+### Reversal
+| Urgency | Treatment |
+|---------|-----------|
+| Non-urgent | Hold warfarin ± oral vitamin K |
+| Minor bleeding | Vitamin K 1-2.5 mg PO |
+| Serious bleeding | Vitamin K 5-10 mg IV + PCC or FFP |
+| Life-threatening | 4-factor PCC (Kcentra) + Vitamin K 10 mg IV |
+
+---
+
+## DIRECT ORAL ANTICOAGULANTS (DOACs)
+
+### Classification
+| Drug | Target | Half-life | Renal Excretion |
+|------|--------|-----------|-----------------|
+| **Dabigatran** | Thrombin (IIa) | 12-17 hr | 80% |
+| **Rivaroxaban** | Factor Xa | 5-9 hr | 36% |
+| **Apixaban** | Factor Xa | 12 hr | 27% |
+| **Edoxaban** | Factor Xa | 10-14 hr | 50% |
+
+### Advantages over Warfarin
+\`\`\`
+- No routine monitoring
+- Fixed dosing
+- Rapid onset (1-4 hours)
+- Fewer drug/food interactions
+- Shorter half-life (easier to manage for procedures)
+- Lower intracranial hemorrhage risk
+\`\`\`
+
+### Disadvantages
+- More expensive
+- Limited reversal agents
+- Renal dose adjustment needed
+- No routine monitoring (hard to assess compliance)
+- Not for mechanical valves
+
+### Uses
+- AF stroke prevention (preferred over warfarin)
+- VTE treatment/prophylaxis
+- **NOT for mechanical valves** (RE-ALIGN trial: dabigatran worse)
+
+### Reversal Agents
+| Drug | Reversal Agent |
+|------|----------------|
+| Dabigatran | **Idarucizumab** (Praxbind) - monoclonal antibody |
+| Xa inhibitors | **Andexanet alfa** (Andexxa) - recombinant Xa decoy |
+| All DOACs | PCC (4-factor), activated charcoal if recent |
+
+### Dose Adjustments
+- **Dabigatran**: Avoid if CrCl <30, reduce if CrCl 30-50
+- **Apixaban**: Safest in CKD, use with caution if CrCl <25
+- **Rivaroxaban**: Avoid if CrCl <15, take with food
+- **Edoxaban**: Paradoxically LESS effective at CrCl >95 (don't use)`,
+      keyPoints: [
+        'UFH: Potentiates antithrombin, monitor aPTT, reverse with protamine',
+        'HIT Type II: Thrombocytopenia + THROMBOSIS; stop all heparin, use argatroban',
+        'LMWH: Predictable, SC dosing, less HIT, renally excreted',
+        'Warfarin: Inhibits VKORC1, affects II, VII, IX, X; onset 5-7 days; many interactions',
+        'Warfarin bridge: Needed because Protein C drops first (hypercoagulability)',
+        'DOACs: No monitoring, rapid onset, avoid in mechanical valves',
+        'Dabigatran reversal: Idarucizumab; Xa inhibitors: Andexanet alfa'
+      ],
+      examPrep: {
+        summary: `**Anticoagulants - Quick Review**
+
+🔹 **UFH**: AT-III potentiation, aPTT monitoring, protamine reversal, HIT risk
+
+🔹 **LMWH**: Predictable, SC, anti-Xa:IIa >1, less HIT, renally excreted
+
+🔹 **Warfarin**: VKORC1 inhibition, INR 2-3, onset 5-7 days, CYP2C9 interactions, Vitamin K reversal
+
+🔹 **DOACs**: 
+- Dabigatran (IIa) - 80% renal, Idarucizumab reversal
+- Apixaban (Xa) - Safest in CKD
+- All: NO mechanical valves!`,
+        mnemonics: [
+          'Warfarin affects: "1972" = Factors 10, 9, 7, 2',
+          '"SICKFACES.COM" increases INR: Sulfonamides, Isoniazid, Cimetidine, Ketoconazole, Fluconazole, Amiodarone, Ciprofloxacin, Erythromycin, SSRIs, Chloramphenicol, Omeprazole, Metronidazole',
+          'HIT = "Hit by Clots" (paradoxical thrombosis, not bleeding)'
+        ],
+        highYield: [
+          'HIT Type II: Days 5-10, >50% platelet drop, THROMBOSIS risk',
+          'Warfarin skin necrosis: Due to early Protein C drop',
+          'DOACs contraindicated in mechanical valves (RE-ALIGN trial)',
+          'Apixaban: Safest DOAC in CKD',
+          'Dabigatran: 80% renal excretion, dialyzable'
+        ],
+        commonMCQs: [
+          'Reversal agent for dabigatran: Idarucizumab',
+          'Anticoagulant monitoring with aPTT: UFH',
+          'Time to peak warfarin effect: 5-7 days',
+          'HIT Type II treatment: Argatroban or Bivalirudin',
+          'DOAC contraindicated in mechanical valve: All DOACs'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '44', chapterTitle: 'Drugs Affecting Coagulation' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '33', chapterTitle: 'Blood Coagulation and Anticoagulant, Fibrinolytic, and Antiplatelet Drugs' }
+      ],
+      retrievalCards: [
+        { id: 'ac-1', question: 'What is the mechanism of heparin?', answer: 'Binds antithrombin III → 1000x acceleration of thrombin and Xa inactivation', difficulty: 1 },
+        { id: 'ac-2', question: 'What is HIT Type II and its paradoxical presentation?', answer: 'Antibodies to PF4-heparin complex cause platelet activation → thrombosis (not bleeding), despite low platelets', difficulty: 3 },
+        { id: 'ac-3', question: 'Why does warfarin require bridging with heparin?', answer: 'Protein C (anticoagulant) has shortest half-life; drops before clotting factors, causing transient hypercoagulability', difficulty: 3 },
+        { id: 'ac-4', question: 'Which vitamin K-dependent factors does warfarin inhibit?', answer: 'Factors II, VII, IX, X (and Protein C, S)', difficulty: 1 },
+        { id: 'ac-5', question: 'Which DOAC has the highest renal excretion?', answer: 'Dabigatran (80%)', difficulty: 2 },
+        { id: 'ac-6', question: 'What is the reversal agent for apixaban/rivaroxaban?', answer: 'Andexanet alfa (recombinant Xa decoy)', difficulty: 2 },
+        { id: 'ac-7', question: 'Why are DOACs contraindicated in mechanical valves?', answer: 'RE-ALIGN trial showed dabigatran increased thrombosis and bleeding vs warfarin', difficulty: 2 },
+        { id: 'ac-8', question: 'How does rifampin affect warfarin?', answer: 'Induces CYP2C9 → faster warfarin metabolism → decreased INR', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'ac-case-1',
+          title: 'Falling Platelets on Heparin',
+          presentation: 'A 60-year-old man admitted for PE has been on UFH for 7 days. Platelet count was 250,000 on admission, now 80,000. He develops acute dyspnea and swollen right leg.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'HIT Type II (>50% platelet drop on day 7 + new thrombosis)' },
+            { question: 'What is the immediate management?', answer: 'Stop ALL heparin (including flushes), start argatroban or bivalirudin, send PF4 antibodies' },
+            { question: 'Can this patient receive LMWH?', answer: 'NO - cross-reactivity with HIT antibodies. Use non-heparin anticoagulant' }
+          ],
+          keyLearning: [
+            'HIT Type II = Thrombocytopenia + Thrombosis',
+            'Timing: Days 5-10 (or earlier with prior heparin exposure)',
+            'STOP all heparin including flushes/coated catheters',
+            'Treatment: Argatroban (hepatic metabolism) or Bivalirudin',
+            'Never give heparin again to this patient'
+          ],
+          difficulty: 4
+        }
+      ]
+    },
+    prerequisites: ['blood-immunity', 'general-pharmacology'],
+    relatedTopics: ['antiplatelet-drugs', 'thrombolytics'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // ANTIPLATELET DRUGS
+  // =============================================================================
+  {
+    id: 'antiplatelet-drugs',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Antiplatelet Drugs',
+    slug: 'antiplatelet-drugs',
+    description: 'Aspirin, P2Y12 inhibitors, GP IIb/IIIa inhibitors, dual therapy',
+    content: {
+      concept: `# Antiplatelet Drugs
+
+## Platelet Activation Overview
+
+\`\`\`
+Vessel injury →
+  Platelet adhesion (vWF-GP Ib) →
+  Activation (shape change, granule release) →
+    - ADP → P2Y12 receptor → Activation
+    - TxA2 → TP receptor → Activation
+    - Thrombin → PAR-1 receptor → Activation
+  →
+  Aggregation (GP IIb/IIIa binds fibrinogen) →
+  Platelet plug
+\`\`\`
+
+---
+
+## CLASSIFICATION
+
+| Class | Drugs | Mechanism |
+|-------|-------|-----------|
+| **COX inhibitors** | Aspirin | Irreversible COX-1 inhibition |
+| **P2Y12 inhibitors** | Clopidogrel, Prasugrel, Ticagrelor | Block ADP receptor |
+| **GP IIb/IIIa inhibitors** | Abciximab, Tirofiban, Eptifibatide | Block final aggregation |
+| **PDE inhibitors** | Dipyridamole, Cilostazol | ↑ cAMP |
+| **PAR-1 antagonists** | Vorapaxar | Block thrombin receptor |
+
+---
+
+## ASPIRIN
+
+### Mechanism
+\`\`\`
+Aspirin acetylates COX-1 (irreversible) →
+  ↓ TxA2 production →
+  ↓ Platelet aggregation
+
+Duration: Entire platelet lifespan (7-10 days)
+          (platelets cannot synthesize new COX)
+\`\`\`
+
+### Pharmacology
+- Low-dose (75-100 mg): Antiplatelet
+- Medium-dose (300-650 mg): Analgesic
+- High-dose (>3 g/day): Anti-inflammatory
+
+### Uses
+1. **Secondary prevention** - Post-MI, stroke, PAD
+2. **Primary prevention** - Only if high CV risk (controversial)
+3. **ACS** - Immediate 162-325 mg chewable
+4. **PCI** - With P2Y12 inhibitor (DAPT)
+5. **Kawasaki disease** - High dose initially
+
+### Adverse Effects
+| ADR | Mechanism |
+|-----|-----------|
+| **GI bleeding** | ↓ PGE2 (protective) |
+| **Bleeding** | ↓ Platelet function |
+| **Reye's syndrome** | Children with viral illness |
+| **Aspirin-exacerbated respiratory disease** | Shunts arachidonic acid to leukotrienes |
+| **Tinnitus** | High doses |
+
+### Aspirin Resistance
+- 5-40% of patients show poor response
+- Causes: Non-compliance, drug interactions (NSAIDs), genetic
+- Not routinely tested
+
+---
+
+## P2Y12 INHIBITORS
+
+### Clopidogrel
+
+**Mechanism:**
+\`\`\`
+Clopidogrel (prodrug) →
+  CYP2C19 → Active metabolite →
+  Irreversible P2Y12 blockade →
+  ↓ ADP-induced aggregation
+\`\`\`
+
+**Key Points:**
+- Prodrug requiring hepatic activation
+- **CYP2C19 poor metabolizers**: ↓ Response (test if possible)
+- Irreversible binding (7-10 days to recover)
+- **PPI interaction** (omeprazole inhibits CYP2C19) - controversial
+
+**Uses:**
+- DAPT with aspirin post-ACS, post-PCI
+- Alternative to aspirin (aspirin allergy)
+- Stroke/PAD prevention
+
+### Prasugrel
+
+**Mechanism:**
+- Also a prodrug (thienopyridine)
+- More potent, faster onset than clopidogrel
+- Single CYP step (less affected by CYP2C19)
+
+**Key Points:**
+- Irreversible P2Y12 blockade
+- More bleeding than clopidogrel
+- **Contraindicated**: Prior stroke/TIA, age >75, weight <60 kg
+
+**Evidence:** TRITON-TIMI 38 - Superior to clopidogrel in ACS with PCI
+
+### Ticagrelor
+
+**Mechanism:**
+- Direct-acting (NOT a prodrug)
+- **Reversible** P2Y12 blockade
+- Also inhibits adenosine uptake
+
+**Key Points:**
+- Faster onset and offset than clopidogrel
+- Twice daily dosing
+- **Dyspnea** (up to 14%) - adenosine effect
+- Bradyarrhythmias possible
+
+**Evidence:** PLATO trial - Superior to clopidogrel in ACS
+
+### Cangrelor
+
+- IV P2Y12 inhibitor
+- Ultra-short acting (3-6 min half-life)
+- Used during PCI when oral not feasible
+
+### Comparison Table
+| Drug | Prodrug? | Binding | Onset | Duration | Key Issue |
+|------|----------|---------|-------|----------|-----------|
+| Clopidogrel | Yes | Irreversible | 2-6 hr | 7-10 days | CYP2C19 variability |
+| Prasugrel | Yes | Irreversible | 30 min | 7-10 days | More bleeding |
+| Ticagrelor | No | Reversible | 30 min | 3-5 days | Dyspnea, twice daily |
+| Cangrelor | No | Reversible | Immediate | Minutes | IV only |
+
+---
+
+## GP IIb/IIIa INHIBITORS
+
+### Mechanism
+Block the **final common pathway** of platelet aggregation
+(GP IIb/IIIa binds fibrinogen between platelets)
+
+### Drugs
+| Drug | Type | Half-life | Reversibility |
+|------|------|-----------|---------------|
+| **Abciximab** | Chimeric monoclonal Ab | 10-30 min | Slow (days) |
+| **Tirofiban** | Non-peptide mimetic | 2 hr | Rapid (4-8 hr) |
+| **Eptifibatide** | Cyclic peptide | 2.5 hr | Rapid (4-8 hr) |
+
+### Uses
+- High-risk ACS with PCI
+- Bailout during complicated PCI
+
+### Adverse Effects
+- Bleeding (major risk)
+- Thrombocytopenia (especially abciximab)
+
+---
+
+## OTHER ANTIPLATELET AGENTS
+
+### Dipyridamole
+
+**Mechanism:**
+- Inhibits phosphodiesterase → ↑ cAMP
+- Also inhibits adenosine uptake → ↑ local adenosine
+
+**Uses:**
+- Stroke prevention (with aspirin as Aggrenox)
+- Cardiac stress testing (vasodilator)
+
+### Cilostazol
+
+**Mechanism:**
+- PDE-3 inhibitor → ↑ cAMP in platelets and smooth muscle
+- Antiplatelet + vasodilator
+
+**Uses:**
+- Intermittent claudication (↑ walking distance)
+- Contraindicated in heart failure (PDE-3 inhibitor effect)
+
+### Vorapaxar
+
+**Mechanism:**
+- PAR-1 (thrombin receptor) antagonist
+
+**Uses:**
+- Add-on for secondary prevention in MI/PAD
+- **Contraindicated**: Prior stroke/TIA (↑ ICH risk)
+
+---
+
+## DUAL ANTIPLATELET THERAPY (DAPT)
+
+### Indications
+\`\`\`
+Aspirin + P2Y12 inhibitor (usually clopidogrel, prasugrel, or ticagrelor)
+
+Duration:
+- ACS (medically managed): 12 months
+- After bare-metal stent: Minimum 1 month (prefer 6)
+- After drug-eluting stent: Minimum 6 months (prefer 12)
+- May extend to 30 months if high ischemic, low bleed risk
+\`\`\`
+
+### Choosing P2Y12 Inhibitor
+| Setting | Preferred Agent |
+|---------|-----------------|
+| ACS with PCI | Ticagrelor or Prasugrel > Clopidogrel |
+| NSTE-ACS, conservative | Ticagrelor > Clopidogrel |
+| Prior stroke/TIA | Clopidogrel (prasugrel contraindicated) |
+| Fibrinolysis given | Clopidogrel only (others not studied) |
+| Cost concerns | Clopidogrel |`,
+      keyPoints: [
+        'Aspirin: Irreversible COX-1 inhibition, lasts platelet lifespan (7-10 days)',
+        'Clopidogrel: Prodrug, CYP2C19 variability, irreversible P2Y12 block',
+        'Prasugrel: More potent than clopidogrel, more bleeding, contraindicated in prior stroke',
+        'Ticagrelor: Direct-acting, reversible, causes dyspnea, twice daily',
+        'GP IIb/IIIa inhibitors: Block final aggregation pathway, used in high-risk PCI',
+        'DAPT duration: DES minimum 6-12 months; BMS minimum 1-6 months',
+        'Cilostazol: PDE-3 inhibitor, contraindicated in HF'
+      ],
+      examPrep: {
+        summary: `**Antiplatelet Drugs - Quick Review**
+
+🔹 **Aspirin**: Irreversible COX-1, 7-10 days recovery, GI bleeding risk
+
+🔹 **P2Y12 Inhibitors**:
+- Clopidogrel: Prodrug, CYP2C19 variability
+- Prasugrel: More potent, more bleeding, no prior stroke
+- Ticagrelor: Direct-acting, reversible, dyspnea (14%)
+
+🔹 **GP IIb/IIIa**: Abciximab (mAb), Tirofiban/Eptifibatide (small molecules)
+
+🔹 **DAPT**: Aspirin + P2Y12 for ACS/stents (6-12 months minimum for DES)`,
+        mnemonics: [
+          'Aspirin = "Acetyl-ates" (irreversible acetylation of COX-1)',
+          'Ticagrelor: "T" = Twice daily, "T" = Transient dyspnea',
+          'Prasugrel contraindications: "PSW" - Prior stroke, Seventy-five years, Weight <60 kg'
+        ],
+        highYield: [
+          'CYP2C19 poor metabolizers: Clopidogrel less effective',
+          'Ticagrelor causes dyspnea via adenosine',
+          'Prasugrel contraindicated in prior stroke/TIA',
+          'Cilostazol contraindicated in heart failure',
+          'Vorapaxar: Avoid in prior stroke (ICH risk)'
+        ],
+        commonMCQs: [
+          'Antiplatelet causing dyspnea: Ticagrelor',
+          'Antiplatelet contraindicated in prior stroke: Prasugrel, Vorapaxar',
+          'Mechanism of aspirin: Irreversible COX-1 acetylation',
+          'Which P2Y12 inhibitor is reversible: Ticagrelor',
+          'Minimum DAPT duration for DES: 6 months'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '44', chapterTitle: 'Drugs Affecting Coagulation' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '33', chapterTitle: 'Blood Coagulation and Anticoagulant, Fibrinolytic, and Antiplatelet Drugs' }
+      ],
+      retrievalCards: [
+        { id: 'ap-1', question: 'Why does aspirin effect last 7-10 days?', answer: 'Irreversible COX-1 acetylation; platelets cannot synthesize new enzyme (no nucleus)', difficulty: 2 },
+        { id: 'ap-2', question: 'Why is clopidogrel response variable?', answer: 'Prodrug requiring CYP2C19 activation; poor metabolizers have reduced response', difficulty: 2 },
+        { id: 'ap-3', question: 'What causes ticagrelor-induced dyspnea?', answer: 'Inhibition of adenosine uptake → local adenosine accumulation', difficulty: 3 },
+        { id: 'ap-4', question: 'Why is prasugrel contraindicated in prior stroke?', answer: 'Increased intracranial hemorrhage risk in TRITON-TIMI 38', difficulty: 2 },
+        { id: 'ap-5', question: 'Which P2Y12 inhibitor is reversible?', answer: 'Ticagrelor (direct-acting, non-covalent binding)', difficulty: 1 },
+        { id: 'ap-6', question: 'Why is cilostazol contraindicated in heart failure?', answer: 'PDE-3 inhibition causes inotropic effect (like milrinone) → worsens HF', difficulty: 3 },
+        { id: 'ap-7', question: 'What is the mechanism of GP IIb/IIIa inhibitors?', answer: 'Block GP IIb/IIIa receptor-fibrinogen binding, preventing final common pathway of platelet aggregation', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'ap-case-1',
+          title: 'Post-Stent Medication Discussion',
+          presentation: 'A 55-year-old man just received a drug-eluting stent for NSTEMI. The cardiologist wants to start DAPT. He has a history of GI bleeding 3 years ago.',
+          questions: [
+            { question: 'What DAPT regimen should be used?', answer: 'Aspirin 81 mg + Ticagrelor (or Clopidogrel) with PPI for GI protection' },
+            { question: 'What is the minimum DAPT duration?', answer: '6 months for DES (may extend to 12 months if tolerated)' },
+            { question: 'How should GI bleeding risk be managed?', answer: 'Add PPI (preferably pantoprazole, not omeprazole if using clopidogrel). H. pylori testing/treatment.' }
+          ],
+          keyLearning: [
+            'All DES patients need minimum 6 months DAPT',
+            'Ticagrelor or prasugrel preferred over clopidogrel in ACS',
+            'PPI reduces GI bleeding with DAPT',
+            'Omeprazole interaction with clopidogrel (CYP2C19) - prefer pantoprazole'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['blood-immunity', 'general-pharmacology'],
+    relatedTopics: ['anticoagulants', 'thrombolytics'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 35,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // THROMBOLYTICS
+  // =============================================================================
+  {
+    id: 'thrombolytics',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Thrombolytics',
+    slug: 'thrombolytics',
+    description: 'Streptokinase, tPA, tenecteplase, indications, contraindications',
+    content: {
+      concept: `# Thrombolytics (Fibrinolytics)
+
+## Fibrinolysis Overview
+
+\`\`\`
+Plasminogen → (tPA) → Plasmin → Degrades Fibrin → FDPs (D-dimer)
+
+Thrombolytics activate this system to dissolve clots
+\`\`\`
+
+---
+
+## CLASSIFICATION
+
+| Generation | Drug | Fibrin Specificity | Half-life |
+|------------|------|-------------------|-----------|
+| **1st Gen** | Streptokinase | Low | 15-20 min |
+| **2nd Gen** | Alteplase (tPA) | Moderate | 4-6 min |
+| **3rd Gen** | Reteplase, Tenecteplase | High | 15-20 min |
+
+---
+
+## DRUGS
+
+### Streptokinase
+
+**Mechanism:**
+- Protein from β-hemolytic streptococci
+- Forms complex with plasminogen → Exposes active site → Converts other plasminogen to plasmin
+- **Non-fibrin specific** (systemic lytic state)
+
+**Key Points:**
+- Antigenic (antibodies form)
+- Cannot reuse within 6 months-2 years
+- Can cause hypotension, allergic reactions
+- Cheapest thrombolytic
+
+**Uses:**
+- STEMI (if no PCI available)
+- Massive PE
+- Peripheral arterial occlusion
+
+### Alteplase (tPA)
+
+**Mechanism:**
+- Recombinant tissue plasminogen activator
+- Binds fibrin → Activates fibrin-bound plasminogen → Local fibrinolysis
+- More **fibrin-specific** than streptokinase
+
+**Key Points:**
+- Non-antigenic (can reuse)
+- Requires continuous infusion
+- More expensive
+
+**Uses:**
+- STEMI
+- Acute ischemic stroke (within 4.5 hours)
+- Massive PE
+- Catheter-directed thrombolysis
+
+### Reteplase
+
+- Modified tPA (deleted domains)
+- Longer half-life (15 min)
+- Double bolus dosing (easier administration)
+- Slightly less fibrin-specific
+
+### Tenecteplase
+
+- Engineered tPA with mutations
+- **Highest fibrin specificity**
+- **Longest half-life** (20 min)
+- Single bolus weight-based dosing
+- Preferred for STEMI (simplest administration)
+
+---
+
+## COMPARISON
+
+| Feature | Streptokinase | Alteplase | Tenecteplase |
+|---------|--------------|-----------|--------------|
+| **Fibrin specificity** | Low | Moderate | High |
+| **Antigenic** | Yes | No | No |
+| **Administration** | Infusion | Infusion | Single bolus |
+| **Half-life** | 15-20 min | 4-6 min | 20 min |
+| **Cost** | Low | High | High |
+| **Bleeding risk** | Higher (systemic) | Moderate | Lower |
+
+---
+
+## INDICATIONS
+
+### STEMI
+\`\`\`
+Door-to-needle time: <30 minutes
+Window: Up to 12 hours from symptom onset
+        (best within 3 hours)
+
+Use when:
+- PCI not available within 120 minutes
+- Long transport time
+
+Preferred agent: Tenecteplase (single bolus)
+\`\`\`
+
+### Acute Ischemic Stroke
+\`\`\`
+Window: 
+- IV tPA within 4.5 hours of symptom onset
+- Mechanical thrombectomy extends window
+
+ONLY use alteplase (tPA) for stroke - NOT streptokinase!
+
+Dose: 0.9 mg/kg (max 90 mg)
+      10% bolus, 90% infusion over 60 min
+\`\`\`
+
+### Massive Pulmonary Embolism
+- Hemodynamically unstable (hypotension, RV dysfunction)
+- Window: Up to 14 days (thrombus can be lysed)
+- Alteplase 100 mg over 2 hours
+
+### Other Uses
+- Deep vein thrombosis (catheter-directed)
+- Peripheral arterial occlusion
+- Prosthetic valve thrombosis
+- Occluded catheters (low-dose)
+
+---
+
+## CONTRAINDICATIONS
+
+### Absolute
+\`\`\`
+- Active bleeding or bleeding diathesis
+- Prior intracranial hemorrhage (ICH)
+- Ischemic stroke within 3 months
+- Known intracranial neoplasm, AVM, aneurysm
+- Recent intracranial/spinal surgery
+- Active GI bleeding
+- Suspected aortic dissection
+- Severe uncontrolled hypertension
+\`\`\`
+
+### Relative
+\`\`\`
+- Recent major surgery (<3 weeks)
+- Recent internal bleeding (2-4 weeks)
+- Traumatic CPR
+- Pregnancy
+- Puncture of non-compressible vessel
+- Current anticoagulation (INR >1.7)
+- Prior streptokinase use (for streptokinase only)
+- Diabetic retinopathy
+\`\`\`
+
+---
+
+## ADVERSE EFFECTS
+
+| Effect | Management |
+|--------|------------|
+| **Bleeding** (major, 1-2%) | Stop infusion, FFP, cryoprecipitate, tranexamic acid |
+| **Intracranial hemorrhage** (0.5-1%) | Stop immediately, neurosurgery consult, reversal agents |
+| **Reperfusion arrhythmias** | Usually self-limiting (AIVR is good sign) |
+| **Allergic reactions** (streptokinase) | Antihistamines, steroids |
+| **Hypotension** (streptokinase) | Slow infusion, fluids |
+
+---
+
+## MONITORING
+
+- aPTT, PT/INR (baseline and post)
+- Fibrinogen level
+- Signs of reperfusion (STEMI): ST resolution, reperfusion arrhythmias
+- Neurologic status (stroke)
+
+---
+
+## ADJUNCTIVE THERAPY
+
+For STEMI with fibrinolysis:
+- **Aspirin** - Loading dose 162-325 mg
+- **P2Y12 inhibitor** - Clopidogrel (NOT prasugrel/ticagrelor with fibrinolysis)
+- **Anticoagulation** - UFH or Enoxaparin
+- **Early angiography** - Within 3-24 hours (pharmacoinvasive strategy)\`,
+      keyPoints: [
+        'Streptokinase: Non-fibrin specific, antigenic, cannot reuse within 6 months-2 years',
+        'Alteplase: Recombinant tPA, fibrin-specific, drug of choice for acute stroke',
+        'Tenecteplase: Highest fibrin specificity, single bolus, preferred for STEMI',
+        'STEMI: Door-to-needle <30 min, effective up to 12 hours',
+        'Stroke: IV tPA within 4.5 hours, dose 0.9 mg/kg',
+        'Absolute contraindications: Prior ICH, active bleeding, suspected dissection',
+        'Major complication: Intracranial hemorrhage (0.5-1%)'
+      ],
+      examPrep: {
+        summary: \`**Thrombolytics - Quick Review**
+
+🔹 **Streptokinase**: Bacterial, antigenic, systemic lysis, cheapest
+
+🔹 **Alteplase (tPA)**: Fibrin-specific, non-antigenic, stroke drug of choice
+
+🔹 **Tenecteplase**: Most fibrin-specific, single bolus, preferred for STEMI
+
+🔹 **Windows**: 
+- STEMI: <12 hours (best <3 hr)
+- Stroke: <4.5 hours
+- PE: Up to 14 days
+
+🔹 **Absolute CI**: Prior ICH, active bleeding, suspected dissection\`,
+        mnemonics: [
+          '"STEMI - TNK" - Tenecteplase for STEMI (single bolus)',
+          '"Stroke = tPA" - Only alteplase for stroke',
+          'Contraindications: "BASH" - Bleeding, Aortic dissection, Stroke recent, Hemorrhage history'
+        ],
+        highYield: [
+          'Streptokinase: 6-month to 2-year re-use restriction (antibodies)',
+          'tPA stroke dose: 0.9 mg/kg (max 90 mg), 10% bolus',
+          'ICH risk with thrombolytics: 0.5-1%',
+          'Reperfusion arrhythmias (AIVR) = success marker',
+          'With fibrinolysis: Clopidogrel only (not prasugrel/ticagrelor)'
+        ],
+        commonMCQs: [
+          'Thrombolytic contraindicated if prior use: Streptokinase',
+          'Thrombolytic for acute stroke: Alteplase (tPA)',
+          'Most fibrin-specific thrombolytic: Tenecteplase',
+          'Window for stroke thrombolysis: 4.5 hours',
+          'Major complication of thrombolytics: Intracranial hemorrhage'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '44', chapterTitle: 'Drugs Affecting Coagulation' },
+        { textbook: "Goodman & Gilman's", edition: '14th', chapter: '33', chapterTitle: 'Blood Coagulation and Anticoagulant, Fibrinolytic, and Antiplatelet Drugs' }
+      ],
+      retrievalCards: [
+        { id: 'thr-1', question: 'Why can streptokinase not be reused within 6 months?', answer: 'Antigenic - antibodies develop that neutralize the drug and can cause allergic reactions', difficulty: 2 },
+        { id: 'thr-2', question: 'What is the door-to-needle time goal for STEMI fibrinolysis?', answer: '<30 minutes', difficulty: 1 },
+        { id: 'thr-3', question: 'What is the window for IV tPA in acute ischemic stroke?', answer: '4.5 hours from symptom onset', difficulty: 1 },
+        { id: 'thr-4', question: 'What is the dose of alteplase for stroke?', answer: '0.9 mg/kg (max 90 mg); 10% as bolus, 90% infusion over 60 minutes', difficulty: 2 },
+        { id: 'thr-5', question: 'Why is tenecteplase preferred for STEMI?', answer: 'Single weight-based bolus (simplest administration), highest fibrin specificity', difficulty: 2 },
+        { id: 'thr-6', question: 'What reperfusion arrhythmia indicates successful thrombolysis?', answer: 'Accelerated idioventricular rhythm (AIVR)', difficulty: 2 },
+        { id: 'thr-7', question: 'Which P2Y12 inhibitor is used with fibrinolysis for STEMI?', answer: 'Clopidogrel only (prasugrel and ticagrelor not studied with fibrinolysis)', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'thr-case-1',
+          title: 'STEMI Presentation at Rural Hospital',
+          presentation: 'A 55-year-old man presents to a rural hospital with 2 hours of crushing chest pain. ECG shows anterior STEMI. The nearest PCI-capable hospital is 3 hours away.',
+          questions: [
+            { question: 'What is the treatment strategy?', answer: 'Fibrinolysis (door-to-needle <30 min) followed by transfer for angiography within 3-24 hours (pharmacoinvasive strategy)' },
+            { question: 'Which thrombolytic is preferred?', answer: 'Tenecteplase (single weight-based bolus)' },
+            { question: 'What adjunctive therapy is needed?', answer: 'Aspirin 325 mg, Clopidogrel 300 mg, and anticoagulation (enoxaparin or UFH)' }
+          ],
+          keyLearning: [
+            'PCI > Fibrinolysis, but if PCI delay >120 min, give fibrinolysis',
+            'Tenecteplase is preferred (single bolus, weight-based)',
+            'Pharmacoinvasive strategy: Fibrinolysis then angiography in 3-24 hours',
+            'Use clopidogrel (not ticagrelor/prasugrel) with fibrinolysis'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['blood-immunity', 'anticoagulants'],
+    relatedTopics: ['anticoagulants', 'antiplatelet-drugs'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 30,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // LIPID-LOWERING DRUGS (Brief)
+  // =============================================================================
+  {
+    id: 'lipid-lowering-drugs',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Lipid-Lowering Drugs',
+    slug: 'lipid-lowering-drugs',
+    description: 'Statins, ezetimibe, PCSK9 inhibitors, fibrates, niacin',
+    content: {
+      concept: \`# Lipid-Lowering Drugs
+
+## Classification
+
+| Class | Examples | Primary Effect |
+|-------|----------|----------------|
+| **Statins** | Atorvastatin, Rosuvastatin | ↓↓ LDL |
+| **Ezetimibe** | - | ↓ LDL (cholesterol absorption) |
+| **PCSK9 inhibitors** | Evolocumab, Alirocumab | ↓↓↓ LDL |
+| **Fibrates** | Fenofibrate, Gemfibrozil | ↓↓ TG, ↑ HDL |
+| **Niacin** | - | ↑↑ HDL, ↓ TG |
+| **Bile acid sequestrants** | Cholestyramine | ↓ LDL |
+| **Omega-3 fatty acids** | Icosapent ethyl | ↓ TG |
+| **Bempedoic acid** | - | ↓ LDL (ACL inhibitor) |
+
+---
+
+## STATINS (HMG-CoA Reductase Inhibitors)
+
+### Mechanism
+\`\`\`
+Statins inhibit HMG-CoA reductase →
+  ↓ Cholesterol synthesis →
+  ↑ LDL receptor expression →
+  ↓ Plasma LDL (20-55%)
+
+Also: ↓ TG, ↑ HDL slightly
+Pleiotropic effects: Anti-inflammatory, plaque stabilization
+\`\`\`
+
+### Potency Ranking
+High-intensity (↓ LDL >50%):
+- Atorvastatin 40-80 mg
+- Rosuvastatin 20-40 mg
+
+Moderate-intensity (↓ LDL 30-50%):
+- Atorvastatin 10-20 mg
+- Rosuvastatin 5-10 mg
+- Simvastatin 20-40 mg
+
+### Adverse Effects
+| ADR | Mechanism | Notes |
+|-----|-----------|-------|
+| **Myopathy** | ↓ Ubiquinone (CoQ10) | 5-10% muscle symptoms |
+| **Rhabdomyolysis** | Severe myotoxicity | Rare, ↑ with fibrates |
+| **Hepatotoxicity** | Idiosyncratic | Check LFTs baseline |
+| **New-onset DM** | Unclear | Higher with potent statins |
+
+### Drug Interactions
+- CYP3A4 substrates (atorvastatin, simvastatin) - grapefruit, azoles, macrolides
+- Gemfibrozil + Statin = High rhabdomyolysis risk (avoid simvastatin)
+
+---
+
+## EZETIMIBE
+
+### Mechanism
+Blocks NPC1L1 transporter in intestine → ↓ Cholesterol absorption → ↓ LDL 15-20%
+
+### Use
+- Add to statin for additional LDL lowering
+- Statin-intolerant patients
+
+---
+
+## PCSK9 INHIBITORS
+
+### Drugs
+- Evolocumab, Alirocumab (monoclonal antibodies)
+- Inclisiran (siRNA - twice yearly)
+
+### Mechanism
+PCSK9 degrades LDL receptors → Blocking PCSK9 → ↑ LDL receptors → ↓↓ LDL (50-60%)
+
+### Use
+- Familial hypercholesterolemia
+- ASCVD with inadequate LDL control on max statin
+
+---
+
+## FIBRATES
+
+### Mechanism
+PPAR-α agonists → ↑ Lipoprotein lipase → ↓↓ TG (30-50%), ↑ HDL
+
+### ADRs
+- Myopathy (especially with statins)
+- Gallstones
+- GI upset
+
+---
+
+## TREATMENT APPROACH
+
+\`\`\`
+Primary prevention (high risk) → Moderate-intensity statin
+Secondary prevention (ASCVD) → High-intensity statin ± ezetimibe
+LDL still high → Add PCSK9 inhibitor
+High TG (>500) → Fibrate (prevent pancreatitis)
+\`\`\`\`,
+      keyPoints: [
+        'Statins: HMG-CoA reductase inhibitors, most effective for LDL reduction',
+        'High-intensity: Atorvastatin 40-80 mg, Rosuvastatin 20-40 mg',
+        'Statin ADRs: Myopathy, hepatotoxicity, new-onset diabetes',
+        'Ezetimibe: Blocks intestinal cholesterol absorption, add to statin',
+        'PCSK9 inhibitors: For familial hypercholesterolemia, ↓ LDL 50-60%',
+        'Fibrates: PPAR-α agonists, primarily ↓ TG',
+        'Gemfibrozil + simvastatin: Avoid (high rhabdomyolysis risk)'
+      ],
+      examPrep: {
+        summary: \`**Lipid-Lowering Drugs - Quick Review**
+
+🔹 **Statins**: HMG-CoA reductase inhibitors, ↓ LDL 20-55%
+- Myopathy, hepatotoxicity, diabetes risk
+
+🔹 **Ezetimibe**: NPC1L1 block, ↓ absorption, add-on
+
+🔹 **PCSK9i**: Monoclonal antibodies, ↓ LDL 50-60%
+
+🔹 **Fibrates**: PPAR-α, ↓↓ TG, ↑ HDL\`,
+        mnemonics: [
+          'Statin potency: "APLS" - Atorvastatin, Pitavastatin, Lovastatin, Simvastatin (decreasing CYP3A4 interaction)',
+          'Statin ADRs: "MEDS" - Myopathy, Elevated LFTs, Diabetes, Sexual dysfunction'
+        ],
+        highYield: [
+          'Rosuvastatin: Not CYP3A4 metabolized (fewer interactions)',
+          'Simvastatin + Gemfibrozil: Avoid (rhabdomyolysis)',
+          'Statins reduce CV events beyond LDL lowering (pleiotropic effects)'
+        ],
+        commonMCQs: [
+          'Most potent statin: Rosuvastatin',
+          'Statin ADR mechanism: ↓ CoQ10 (ubiquinone)',
+          'Drug for very high TG: Fibrates',
+          'Mechanism of ezetimibe: NPC1L1 inhibition'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '45', chapterTitle: 'Hypolipidemic Drugs' }
+      ],
+      retrievalCards: [
+        { id: 'lip-1', question: 'What is the mechanism of statins?', answer: 'Inhibit HMG-CoA reductase → ↓ hepatic cholesterol synthesis → ↑ LDL receptor expression → ↓ plasma LDL', difficulty: 1 },
+        { id: 'lip-2', question: 'Which statin combination should be avoided?', answer: 'Simvastatin + Gemfibrozil (high rhabdomyolysis risk)', difficulty: 2 },
+        { id: 'lip-3', question: 'What is the mechanism of PCSK9 inhibitors?', answer: 'Block PCSK9 → prevent LDL receptor degradation → ↑ LDL receptors → ↓ LDL', difficulty: 2 }
+      ],
+      cases: []
+    },
+    prerequisites: ['lipid-metabolism'],
+    relatedTopics: ['antihypertensives'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 30,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // VASODILATORS (Brief)
+  // =============================================================================
+  {
+    id: 'vasodilators',
+    subjectId: 'pharmacology',
+    subspecialtyId: 'pharmacology-cvs',
+    name: 'Vasodilators',
+    slug: 'vasodilators',
+    description: 'Hydralazine, nitroprusside, minoxidil, mechanisms and uses',
+    content: {
+      concept: \`# Direct Vasodilators
+
+## Overview
+
+Direct vasodilators act directly on vascular smooth muscle, independent of autonomic receptors.
+
+## HYDRALAZINE
+
+### Mechanism
+- Opens K⁺ channels and/or interferes with Ca²⁺ signaling
+- **Arterial** vasodilation (minimal venous)
+- ↓ Afterload
+
+### Uses
+- Hypertension (especially pregnancy)
+- Heart failure (with nitrates - H-ISDN)
+
+### ADRs
+- Reflex tachycardia (combine with β-blocker)
+- Fluid retention
+- **Drug-induced lupus** (slow acetylators, doses >200 mg/day)
+- Headache
+
+---
+
+## SODIUM NITROPRUSSIDE
+
+### Mechanism
+- Releases NO → activates guanylyl cyclase → ↑ cGMP
+- Both **arterial AND venous** vasodilation
+
+### Uses
+- **Hypertensive emergency** (IV infusion)
+- Acute heart failure (↓ preload and afterload)
+- Controlled hypotension during surgery
+
+### Pharmacokinetics
+- Onset: Seconds
+- Duration: 1-2 minutes after stopping
+- Requires arterial line monitoring
+
+### Toxicity
+\`\`\`
+Nitroprusside → CN⁻ (cyanide) released →
+  - Metabolized by rhodanase (liver) → Thiocyanate
+  - Excreted by kidneys
+
+Cyanide toxicity: 
+  - Metabolic acidosis
+  - ↑ Lactate
+  - Bright red venous blood
+
+Prevention: Limit infusion rate and duration
+Treatment: Thiosulfate, hydroxocobalamin
+\`\`\`
+
+---
+
+## MINOXIDIL
+
+### Mechanism
+- Opens ATP-sensitive K⁺ channels → Hyperpolarization → Arterial vasodilation
+
+### Uses
+- Severe/refractory hypertension (oral)
+- **Topical for hair growth** (androgenetic alopecia)
+
+### ADRs
+- Severe reflex tachycardia (must use with β-blocker)
+- Fluid retention (must use with diuretic)
+- **Hypertrichosis** (hair growth) - therapeutic topically, unwanted orally
+- Pericardial effusion
+
+---
+
+## COMPARISON
+
+| Drug | Vessels | Reflex Tachy | Unique ADR |
+|------|---------|--------------|------------|
+| Hydralazine | Arterial | Yes | Drug-induced lupus |
+| Nitroprusside | Both | Minimal | Cyanide toxicity |
+| Minoxidil | Arterial | Severe | Hypertrichosis |\`,
+      keyPoints: [
+        'Hydralazine: Arterial vasodilator, drug-induced lupus in slow acetylators',
+        'Nitroprusside: Both arterial and venous, cyanide toxicity risk',
+        'Minoxidil: K⁺ channel opener, hypertrichosis (used for hair growth)',
+        'All direct vasodilators cause reflex tachycardia (need β-blocker)',
+        'Nitroprusside: Hypertensive emergency drug of choice'
+      ],
+      examPrep: {
+        summary: \`**Vasodilators - Quick Review**
+
+🔹 **Hydralazine**: Arterial only, drug-induced lupus, safe in pregnancy
+
+🔹 **Nitroprusside**: Both arterial+venous, CN toxicity, hypertensive emergency
+
+🔹 **Minoxidil**: K⁺ channels, hypertrichosis, topical for baldness\`,
+        mnemonics: [
+          'Hydralazine-Induced Lupus: "SHIPP" - Slow acetylators, Hydralazine, Isoniazid, Procainamide, Phenytoin'
+        ],
+        highYield: [
+          'Nitroprusside cyanide toxicity: Metabolic acidosis with normal PaO₂',
+          'Minoxidil: Must combine with β-blocker AND diuretic'
+        ],
+        commonMCQs: [
+          'Drug causing drug-induced lupus: Hydralazine',
+          'Vasodilator with cyanide toxicity: Nitroprusside',
+          'Vasodilator causing hypertrichosis: Minoxidil'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'KD Tripathi Pharmacology', edition: '8th', chapter: '40', chapterTitle: 'Antihypertensive Drugs' }
+      ],
+      retrievalCards: [
+        { id: 'vas-1', question: 'What is the mechanism of nitroprusside?', answer: 'Releases NO → ↑ cGMP → both arterial and venous vasodilation', difficulty: 1 },
+        { id: 'vas-2', question: 'What toxicity is associated with prolonged nitroprusside use?', answer: 'Cyanide toxicity (metabolic acidosis, increased lactate)', difficulty: 2 },
+        { id: 'vas-3', question: 'Why is minoxidil used topically?', answer: 'Causes hypertrichosis (hair growth) - used for androgenetic alopecia', difficulty: 1 }
+      ],
+      cases: []
+    },
+    prerequisites: ['cvs-physiology'],
+    relatedTopics: ['antihypertensives'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE'],
+    estimatedMinutes: 20,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  }
+];

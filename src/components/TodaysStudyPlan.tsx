@@ -217,17 +217,17 @@ export function TodaysStudyPlan() {
   const allCompleted = progress.completedTasks === progress.totalTasks;
 
   return (
-    <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4 border-l-[#7C3AED]">
+    <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] border-l-4 border-l-[#5BB3B3]">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
-            <Calendar className="w-5 h-5 text-[#7C3AED]" />
+          <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
+            <Calendar className="w-5 h-5 text-[#5BB3B3]" />
             Today's Study Plan
           </CardTitle>
           <div className="flex items-center gap-3 text-sm">
-            <span className="text-[#9CA3AF]">~{progress.totalMinutes} min</span>
+            <span className="text-[#A0B0BC]">~{progress.totalMinutes} min</span>
             {progress.streak > 0 && (
-              <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)]">
+              <Badge className="bg-[rgba(245,158,11,0.15)] text-[#C9A86C] border-[rgba(245,158,11,0.3)]">
                 <Flame className="w-3 h-3 mr-1" />
                 {progress.streak} day streak
               </Badge>
@@ -242,7 +242,7 @@ export function TodaysStudyPlan() {
               <span>{progress.completedTasks}/{progress.totalTasks} tasks</span>
               <span>{progress.completedMinutes}/{progress.totalMinutes} min</span>
             </div>
-            <Progress value={completedPercentage} className="h-2 bg-[#142538]" />
+            <Progress value={completedPercentage} className="h-2 bg-[#3A4D5F]" />
           </div>
         )}
       </CardHeader>
@@ -262,17 +262,17 @@ export function TodaysStudyPlan() {
                 "flex items-center gap-4 p-3 rounded-xl border transition-all cursor-pointer group",
                 isCompleted && "opacity-60",
                 isActive 
-                  ? "bg-[rgba(124,58,237,0.1)] border-[rgba(124,58,237,0.3)]"
-                  : "bg-[#0D1B2A] border-[rgba(6,182,212,0.1)] hover:border-[rgba(124,58,237,0.2)]"
+                  ? "bg-[rgba(91,179,179,0.1)] border-[rgba(91,179,179,0.3)]"
+                  : "bg-[#2D3E50] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.2)]"
               )}
             >
               {/* Status/Type Icon */}
               <div className={cn(
                 "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all",
                 isCompleted 
-                  ? "bg-[#059669]/20 text-[#10B981]"
+                  ? "bg-[#7BA69E]/20 text-[#10B981]"
                   : isActive
-                    ? "bg-[#7C3AED] text-white shadow-lg shadow-[#7C3AED]/30"
+                    ? "bg-[#5BB3B3] text-white shadow-lg shadow-[#5BB3B3]/30"
                     : `${colors.bg} ${colors.text}`
               )}>
                 {isCompleted ? (
@@ -289,7 +289,7 @@ export function TodaysStudyPlan() {
                 <div className="flex items-center gap-2 mb-0.5">
                   <p className={cn(
                     "font-medium text-sm",
-                    isCompleted ? "line-through text-[#6B7280]" : "text-[#E5E7EB]"
+                    isCompleted ? "line-through text-[#6B7280]" : "text-[#E8E0D5]"
                   )}>
                     {task.title}
                   </p>
@@ -303,7 +303,7 @@ export function TodaysStudyPlan() {
               {/* Duration & Action */}
               <div className="flex items-center gap-3 shrink-0">
                 <div className="text-right">
-                  <span className="text-xs text-[#9CA3AF] bg-[#142538] px-2 py-1 rounded-full border border-[rgba(6,182,212,0.1)]">
+                  <span className="text-xs text-[#A0B0BC] bg-[#3A4D5F] px-2 py-1 rounded-full border border-[rgba(91,179,179,0.1)]">
                     <Clock className="w-3 h-3 inline mr-1" />
                     {task.duration} min
                   </span>
@@ -314,7 +314,7 @@ export function TodaysStudyPlan() {
                   <Button
                     size="sm"
                     onClick={(e) => handleCompleteTask(task.id, e)}
-                    className="bg-[#059669] hover:bg-[#047857] text-white h-8 text-xs shadow-md"
+                    className="bg-[#7BA69E] hover:bg-[#047857] text-white h-8 text-xs shadow-md"
                   >
                     <CheckCircle className="w-3 h-3 mr-1" />
                     Done
@@ -322,7 +322,7 @@ export function TodaysStudyPlan() {
                 )}
 
                 {!isActive && !isCompleted && (
-                  <ChevronRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#7C3AED] transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#5BB3B3] transition-colors" />
                 )}
               </div>
             </div>
@@ -331,14 +331,14 @@ export function TodaysStudyPlan() {
 
         {/* Completion Bonus Preview */}
         {!allCompleted && (
-          <div className="p-3 rounded-lg bg-gradient-to-r from-[#7C3AED]/10 to-[#06B6D4]/10 border border-[rgba(124,58,237,0.2)]">
+          <div className="p-3 rounded-lg bg-gradient-to-r from-[#5BB3B3]/10 to-[#5BB3B3]/10 border border-[rgba(91,179,179,0.2)]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-[#F59E0B]" />
-                <span className="text-sm text-[#E5E7EB]">Complete all tasks</span>
+                <Trophy className="w-4 h-4 text-[#C9A86C]" />
+                <span className="text-sm text-[#E8E0D5]">Complete all tasks</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
-                <span className="text-[#F59E0B]">+{completionBonus} 🪙 bonus</span>
+                <span className="text-[#C9A86C]">+{completionBonus} 🪙 bonus</span>
                 <span className="text-[#6B7280]">•</span>
                 <span className="text-[#A78BFA]">+{totalXP} XP total</span>
               </div>
@@ -348,17 +348,17 @@ export function TodaysStudyPlan() {
 
         {/* All Completed State */}
         {allCompleted && (
-          <div className="p-4 rounded-lg bg-gradient-to-r from-[#059669]/20 to-[#06B6D4]/20 border border-[#059669]/30 text-center">
+          <div className="p-4 rounded-lg bg-gradient-to-r from-[#7BA69E]/20 to-[#5BB3B3]/20 border border-[#7BA69E]/30 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Sparkles className="w-5 h-5 text-[#F59E0B]" />
-              <span className="font-semibold text-[#E5E7EB]">Day Complete!</span>
-              <Sparkles className="w-5 h-5 text-[#F59E0B]" />
+              <Sparkles className="w-5 h-5 text-[#C9A86C]" />
+              <span className="font-semibold text-[#E8E0D5]">Day Complete!</span>
+              <Sparkles className="w-5 h-5 text-[#C9A86C]" />
             </div>
-            <p className="text-sm text-[#9CA3AF]">
-              You earned <span className="text-[#F59E0B] font-medium">{progress.coinsEarned + completionBonus} coins</span> and 
+            <p className="text-sm text-[#A0B0BC]">
+              You earned <span className="text-[#C9A86C] font-medium">{progress.coinsEarned + completionBonus} coins</span> and 
               <span className="text-[#A78BFA] font-medium"> {totalXP} XP</span> today!
             </p>
-            <p className="text-xs text-[#059669] mt-1">
+            <p className="text-xs text-[#7BA69E] mt-1">
               🔥 Streak extended to {progress.streak + 1} days!
             </p>
           </div>
@@ -368,7 +368,7 @@ export function TodaysStudyPlan() {
         {!isStarted && (
           <Button
             onClick={handleStartDay}
-            className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-medium shadow-lg shadow-[#7C3AED]/20"
+            className="w-full bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium shadow-lg shadow-[#5BB3B3]/20"
           >
             <Play className="w-4 h-4 mr-2" />
             Start Today's Plan
@@ -377,11 +377,11 @@ export function TodaysStudyPlan() {
         )}
 
         {/* Learning Science Note */}
-        <div className="pt-2 border-t border-[rgba(6,182,212,0.1)]">
+        <div className="pt-2 border-t border-[rgba(91,179,179,0.1)]">
           <div className="flex items-start gap-2 text-xs text-[#6B7280]">
             <Shuffle className="w-3 h-3 mt-0.5 shrink-0" />
             <span>
-              <strong className="text-[#9CA3AF]">Interleaved learning:</strong> Tasks mix review, new content, and retrieval for optimal retention
+              <strong className="text-[#A0B0BC]">Interleaved learning:</strong> Tasks mix review, new content, and retrieval for optimal retention
             </span>
           </div>
         </div>

@@ -21,15 +21,15 @@ export function EmptyState({
 }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 animate-fade-in">
-      <div className="w-20 h-20 rounded-2xl bg-[#7C3AED]/10 border border-[#7C3AED]/20 flex items-center justify-center mb-6">
-        <Icon className="w-10 h-10 text-[#7C3AED]" />
+      <div className="w-20 h-20 rounded-2xl bg-[#5BB3B3]/10 border border-[#5BB3B3]/20 flex items-center justify-center mb-6">
+        <Icon className="w-10 h-10 text-[#5BB3B3]" />
       </div>
       <h3 className="text-xl font-semibold mb-2 text-center">{title}</h3>
       <p className="text-[#94A3B8] text-center max-w-md mb-6">{description}</p>
       {action && (
         <Button
           onClick={action.onClick}
-          className="bg-[#7C3AED] hover:bg-[#6D28D9]"
+          className="bg-[#5BB3B3] hover:bg-[#4A9E9E]"
         >
           {action.label}
         </Button>

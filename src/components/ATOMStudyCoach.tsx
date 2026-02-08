@@ -199,12 +199,12 @@ export function ATOMStudyCoach() {
 
   return (
     <Card className={cn(
-      "bg-[#0F2233] border-l-4 border-[rgba(6,182,212,0.15)] overflow-hidden relative",
+      "bg-[#364A5E] border-l-4 border-[rgba(91,179,179,0.15)] overflow-hidden relative",
       getUrgencyColor(currentRec.urgency)
     )}>
       {/* Ambient glow */}
-      <div className="absolute top-0 right-0 w-40 h-40 bg-[#06B6D4]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#7C3AED]/5 rounded-full blur-2xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-40 h-40 bg-[#5BB3B3]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#5BB3B3]/5 rounded-full blur-2xl pointer-events-none" />
 
       <CardContent className="p-5 relative">
         {/* Header Row */}
@@ -212,27 +212,27 @@ export function ATOMStudyCoach() {
           <div className="flex items-center gap-3">
             {/* ATOM Avatar */}
             <div className="relative">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-lg shadow-[#06B6D4]/25">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center shadow-lg shadow-[#5BB3B3]/25">
                 <Atom className="w-6 h-6 text-white animate-pulse" />
               </div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#22C55E] rounded-full border-2 border-[#0F2233]" />
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#22C55E] rounded-full border-2 border-[#364A5E]" />
             </div>
 
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="font-semibold text-[#E5E7EB]">ATOM Study Coach</h3>
+                <h3 className="font-semibold text-[#E8E0D5]">ATOM Study Coach</h3>
                 <Badge className={cn("text-xs border", getTypeColor(currentRec.type))}>
                   {getTypeIcon(currentRec.type)}
                   <span className="ml-1 capitalize">{currentRec.type.replace("_", " ")}</span>
                 </Badge>
               </div>
-              <p className="text-xs text-[#9CA3AF]">Always here to help you learn</p>
+              <p className="text-xs text-[#A0B0BC]">Always here to help you learn</p>
             </div>
           </div>
 
           {/* Carousel indicators + confidence */}
           <div className="flex flex-col items-end gap-2">
-            <Badge className="bg-[rgba(6,182,212,0.15)] text-[#06B6D4] border-[rgba(6,182,212,0.3)] text-xs">
+            <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)] text-xs">
               {currentRec.confidence}% confident
             </Badge>
             <div className="flex items-center gap-1.5">
@@ -243,7 +243,7 @@ export function ATOMStudyCoach() {
                   className={cn(
                     "w-2 h-2 rounded-full transition-all",
                     idx === currentIndex
-                      ? "bg-[#06B6D4] w-4"
+                      ? "bg-[#5BB3B3] w-4"
                       : "bg-[#374151] hover:bg-[#4B5563]"
                   )}
                 />
@@ -254,14 +254,14 @@ export function ATOMStudyCoach() {
 
         {/* Time-Aware Banner (if applicable) */}
         {timeContext.hasUpcomingEvent && timeContext.minutesUntil && timeContext.minutesUntil <= 60 && (
-          <div className="mb-4 p-3 rounded-lg bg-gradient-to-r from-[#7C3AED]/10 to-[#06B6D4]/10 border border-[rgba(124,58,237,0.2)]">
+          <div className="mb-4 p-3 rounded-lg bg-gradient-to-r from-[#5BB3B3]/10 to-[#5BB3B3]/10 border border-[rgba(91,179,179,0.2)]">
             <div className="flex items-center gap-2 text-sm">
               <Calendar className="w-4 h-4 text-[#A78BFA]" />
-              <span className="text-[#E5E7EB]">
+              <span className="text-[#E8E0D5]">
                 <strong>{timeContext.eventName}</strong> in {timeContext.minutesUntil} min
               </span>
-              <span className="text-[#9CA3AF]">—</span>
-              <span className="text-[#9CA3AF]">
+              <span className="text-[#A0B0BC]">—</span>
+              <span className="text-[#A0B0BC]">
                 Perfect time for a {timeContext.availableMinutes}-min review!
               </span>
             </div>
@@ -273,14 +273,14 @@ export function ATOMStudyCoach() {
           "transition-all duration-300",
           isAnimating ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"
         )}>
-          <p className="text-[#E5E7EB] mb-4 leading-relaxed">
+          <p className="text-[#E8E0D5] mb-4 leading-relaxed">
             "{currentRec.message}"
           </p>
 
           {/* Accuracy indicator for weak areas */}
           {currentRec.type === "weak_area" && currentRec.accuracy && (
             <div className="mb-4">
-              <div className="flex items-center justify-between text-xs text-[#9CA3AF] mb-1">
+              <div className="flex items-center justify-between text-xs text-[#A0B0BC] mb-1">
                 <span>Current accuracy</span>
                 <span className="text-red-400">{currentRec.accuracy}%</span>
               </div>
@@ -294,12 +294,12 @@ export function ATOMStudyCoach() {
               <button
                 key={topic.id}
                 onClick={() => router.push(`/library/${topic.id}`)}
-                className="group p-3 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)] hover:border-[#06B6D4]/50 hover:bg-[#1a3048] transition-all text-left"
+                className="group p-3 rounded-lg bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)] hover:border-[#5BB3B3]/50 hover:bg-[#1a3048] transition-all text-left"
               >
-                <p className="text-sm font-medium text-[#E5E7EB] group-hover:text-[#06B6D4] transition-colors line-clamp-2">
+                <p className="text-sm font-medium text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors line-clamp-2">
                   {topic.name}
                 </p>
-                <div className="flex items-center gap-2 mt-2 text-xs text-[#9CA3AF]">
+                <div className="flex items-center gap-2 mt-2 text-xs text-[#A0B0BC]">
                   <Clock className="w-3 h-3" />
                   <span>{topic.readTime} min</span>
                 </div>
@@ -311,18 +311,18 @@ export function ATOMStudyCoach() {
           </div>
 
           {/* Rewards Preview */}
-          <div className="flex items-center gap-4 mb-4 p-3 rounded-lg bg-[#0D1B2A] border border-[rgba(6,182,212,0.1)]">
+          <div className="flex items-center gap-4 mb-4 p-3 rounded-lg bg-[#2D3E50] border border-[rgba(91,179,179,0.1)]">
             <div className="flex items-center gap-2">
               <Coins className="w-4 h-4 text-amber-400" />
-              <span className="text-sm text-[#E5E7EB]">+{currentRec.coins} coins</span>
+              <span className="text-sm text-[#E8E0D5]">+{currentRec.coins} coins</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-purple-400" />
-              <span className="text-sm text-[#E5E7EB]">+{currentRec.xp} XP</span>
+              <span className="text-sm text-[#E8E0D5]">+{currentRec.xp} XP</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-[#9CA3AF]">~{totalTopicTime} min</span>
+              <span className="text-sm text-[#A0B0BC]">~{totalTopicTime} min</span>
             </div>
             {allThreeBonus > 0 && (
               <div className="flex items-center gap-2 ml-auto">
@@ -335,7 +335,7 @@ export function ATOMStudyCoach() {
           {/* Daily Progress */}
           {completedToday > 0 && (
             <div className="mb-4">
-              <div className="flex items-center justify-between text-xs text-[#9CA3AF] mb-1">
+              <div className="flex items-center justify-between text-xs text-[#A0B0BC] mb-1">
                 <span>Today's suggestions completed</span>
                 <span>{completedToday}/3</span>
               </div>
@@ -365,7 +365,7 @@ export function ATOMStudyCoach() {
         <div className="flex items-center gap-2">
           <Button
             onClick={handleStartReview}
-            className="flex-1 bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A] font-medium shadow-lg shadow-[#06B6D4]/20"
+            className="flex-1 bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50] font-medium shadow-lg shadow-[#5BB3B3]/20"
           >
             <Target className="w-4 h-4 mr-2" />
             Start {totalTopicTime}-min Review
@@ -373,7 +373,7 @@ export function ATOMStudyCoach() {
           <Button
             onClick={handleAskWhy}
             variant="outline"
-            className="border-[rgba(6,182,212,0.3)] text-[#06B6D4] hover:bg-[rgba(6,182,212,0.1)]"
+            className="border-[rgba(91,179,179,0.3)] text-[#5BB3B3] hover:bg-[rgba(91,179,179,0.1)]"
           >
             <MessageSquare className="w-4 h-4 mr-1" />
             Ask Why
@@ -382,7 +382,7 @@ export function ATOMStudyCoach() {
             onClick={handleSkip}
             variant="ghost"
             size="icon"
-            className="text-[#6B7280] hover:text-[#9CA3AF] hover:bg-[#1F2937]"
+            className="text-[#6B7280] hover:text-[#A0B0BC] hover:bg-[#1F2937]"
           >
             <SkipForward className="w-4 h-4" />
           </Button>
@@ -391,13 +391,13 @@ export function ATOMStudyCoach() {
         {/* Carousel Navigation Arrows */}
         <button
           onClick={goToPrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-[#0D1B2A]/80 text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#1F2937] transition-all opacity-0 group-hover:opacity-100"
+          className="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-[#2D3E50]/80 text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[#1F2937] transition-all opacity-0 group-hover:opacity-100"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-[#0D1B2A]/80 text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#1F2937] transition-all opacity-0 group-hover:opacity-100"
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-[#2D3E50]/80 text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[#1F2937] transition-all opacity-0 group-hover:opacity-100"
         >
           <ChevronRight className="w-4 h-4" />
         </button>

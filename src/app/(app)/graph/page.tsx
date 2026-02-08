@@ -37,15 +37,15 @@ const sampleNodes: GraphNode[] = [
 ];
 
 const nodeColors = {
-  topic: { bg: "bg-[#7C3AED]", border: "border-[#A78BFA]", text: "text-white" },
-  concept: { bg: "bg-[#06B6D4]", border: "border-[#22D3EE]", text: "text-white" },
-  procedure: { bg: "bg-[#059669]", border: "border-[#10B981]", text: "text-white" },
-  drug: { bg: "bg-[#F59E0B]", border: "border-[#FBBF24]", text: "text-white" },
+  topic: { bg: "bg-[#5BB3B3]", border: "border-[#A78BFA]", text: "text-white" },
+  concept: { bg: "bg-[#5BB3B3]", border: "border-[#22D3EE]", text: "text-white" },
+  procedure: { bg: "bg-[#7BA69E]", border: "border-[#10B981]", text: "text-white" },
+  drug: { bg: "bg-[#C9A86C]", border: "border-[#FBBF24]", text: "text-white" },
 };
 
 const statusStyles = {
-  completed: "opacity-100 ring-2 ring-[#059669]",
-  "in-progress": "opacity-100 ring-2 ring-[#F59E0B]",
+  completed: "opacity-100 ring-2 ring-[#7BA69E]",
+  "in-progress": "opacity-100 ring-2 ring-[#C9A86C]",
   "not-started": "opacity-60",
 };
 
@@ -63,15 +63,15 @@ export default function GraphPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#E5E7EB]">Knowledge Graph</h1>
-          <p className="text-[#9CA3AF]">Visualize connections between concepts</p>
+          <h1 className="text-2xl font-bold text-[#E8E0D5]">Knowledge Graph</h1>
+          <p className="text-[#A0B0BC]">Visualize connections between concepts</p>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#0F2233] text-[#9CA3AF] hover:bg-[#142538]">
+          <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#364A5E] text-[#A0B0BC] hover:bg-[#3A4D5F]">
             <Filter className="w-4 h-4 mr-2" />
             Filter
           </Button>
-          <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#0F2233] text-[#9CA3AF] hover:bg-[#142538]">
+          <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#364A5E] text-[#A0B0BC] hover:bg-[#3A4D5F]">
             <RefreshCw className="w-4 h-4 mr-2" />
             Reset
           </Button>
@@ -80,12 +80,12 @@ export default function GraphPage() {
 
       {/* Search */}
       <div className="relative max-w-md">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
         <Input
           placeholder="Search topics..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 bg-[#0F2233] border-[rgba(255,255,255,0.06)] text-[#E5E7EB] placeholder:text-[#6B7280]"
+          className="pl-10 bg-[#364A5E] border-[rgba(255,255,255,0.06)] text-[#E8E0D5] placeholder:text-[#6B7280]"
         />
       </div>
 
@@ -94,30 +94,30 @@ export default function GraphPage() {
         {Object.entries(nodeColors).map(([type, colors]) => (
           <div key={type} className="flex items-center gap-2">
             <div className={`w-3 h-3 rounded-full ${colors.bg}`} />
-            <span className="text-[#9CA3AF] capitalize">{type}</span>
+            <span className="text-[#A0B0BC] capitalize">{type}</span>
           </div>
         ))}
         <div className="border-l border-[rgba(255,255,255,0.06)] pl-4 flex gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#6B7280] ring-2 ring-[#059669]" />
-            <span className="text-[#9CA3AF]">Completed</span>
+            <div className="w-3 h-3 rounded-full bg-[#6B7280] ring-2 ring-[#7BA69E]" />
+            <span className="text-[#A0B0BC]">Completed</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#6B7280] ring-2 ring-[#F59E0B]" />
-            <span className="text-[#9CA3AF]">In Progress</span>
+            <div className="w-3 h-3 rounded-full bg-[#6B7280] ring-2 ring-[#C9A86C]" />
+            <span className="text-[#A0B0BC]">In Progress</span>
           </div>
         </div>
       </div>
 
       <div className="flex gap-6">
         {/* Graph Container */}
-        <Card className="flex-1 bg-[#0F2233] border-[rgba(255,255,255,0.06)] relative overflow-hidden" style={{ height: "500px" }}>
+        <Card className="flex-1 bg-[#364A5E] border-[rgba(255,255,255,0.06)] relative overflow-hidden" style={{ height: "500px" }}>
           {/* Zoom Controls */}
           <div className="absolute top-4 right-4 flex flex-col gap-2 z-10">
             <Button
               variant="outline"
               size="sm"
-              className="border-[rgba(255,255,255,0.06)] bg-[#142538]/80 text-[#9CA3AF] hover:bg-[#142538]"
+              className="border-[rgba(255,255,255,0.06)] bg-[#3A4D5F]/80 text-[#A0B0BC] hover:bg-[#3A4D5F]"
               onClick={() => setZoom((z) => Math.min(z + 0.2, 2))}
             >
               <ZoomIn className="w-4 h-4" />
@@ -125,12 +125,12 @@ export default function GraphPage() {
             <Button
               variant="outline"
               size="sm"
-              className="border-[rgba(255,255,255,0.06)] bg-[#142538]/80 text-[#9CA3AF] hover:bg-[#142538]"
+              className="border-[rgba(255,255,255,0.06)] bg-[#3A4D5F]/80 text-[#A0B0BC] hover:bg-[#3A4D5F]"
               onClick={() => setZoom((z) => Math.max(z - 0.2, 0.5))}
             >
               <ZoomOut className="w-4 h-4" />
             </Button>
-            <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#142538]/80 text-[#9CA3AF] hover:bg-[#142538]">
+            <Button variant="outline" size="sm" className="border-[rgba(255,255,255,0.06)] bg-[#3A4D5F]/80 text-[#A0B0BC] hover:bg-[#3A4D5F]">
               <Maximize2 className="w-4 h-4" />
             </Button>
           </div>
@@ -180,7 +180,7 @@ export default function GraphPage() {
         </Card>
 
         {/* Details Panel */}
-        <Card className="w-80 hidden lg:block bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4">
+        <Card className="w-80 hidden lg:block bg-[#364A5E] border-[rgba(255,255,255,0.06)] p-4">
           {selectedNode ? (
             <div className="space-y-4">
               <div>
@@ -189,19 +189,19 @@ export default function GraphPage() {
                 >
                   {selectedNode.type}
                 </Badge>
-                <h3 className="text-xl font-bold text-[#E5E7EB]">{selectedNode.label}</h3>
+                <h3 className="text-xl font-bold text-[#E8E0D5]">{selectedNode.label}</h3>
               </div>
 
               <div className="space-y-2">
-                <p className="text-sm text-[#9CA3AF]">Status</p>
+                <p className="text-sm text-[#A0B0BC]">Status</p>
                 <Badge
                   variant="outline"
                   className={
                     selectedNode.status === "completed"
-                      ? "border-[#059669] text-[#059669]"
+                      ? "border-[#7BA69E] text-[#7BA69E]"
                       : selectedNode.status === "in-progress"
-                      ? "border-[#F59E0B] text-[#F59E0B]"
-                      : "border-[#6B7280] text-[#9CA3AF]"
+                      ? "border-[#C9A86C] text-[#C9A86C]"
+                      : "border-[#6B7280] text-[#A0B0BC]"
                   }
                 >
                   {selectedNode.status.replace("-", " ")}
@@ -209,7 +209,7 @@ export default function GraphPage() {
               </div>
 
               <div className="space-y-2">
-                <p className="text-sm text-[#9CA3AF]">Connected to</p>
+                <p className="text-sm text-[#A0B0BC]">Connected to</p>
                 <div className="flex flex-wrap gap-2">
                   {selectedNode.connections.map((connId) => {
                     const connected = sampleNodes.find((n) => n.id === connId);
@@ -217,7 +217,7 @@ export default function GraphPage() {
                       <Badge
                         key={connId}
                         variant="outline"
-                        className="border-[rgba(124,58,237,0.3)] text-[#A78BFA] cursor-pointer hover:bg-[rgba(124,58,237,0.15)]"
+                        className="border-[rgba(91,179,179,0.3)] text-[#A78BFA] cursor-pointer hover:bg-[rgba(91,179,179,0.15)]"
                         onClick={() => setSelectedNode(connected)}
                       >
                         {connected.label}
@@ -228,10 +228,10 @@ export default function GraphPage() {
               </div>
 
               <div className="pt-4 space-y-2">
-                <Button className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-lg shadow-[#7C3AED]/20">
+                <Button className="w-full bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white shadow-lg shadow-[#5BB3B3]/20">
                   Study This Topic
                 </Button>
-                <Button variant="outline" className="w-full border-[rgba(255,255,255,0.06)] text-[#9CA3AF] hover:bg-[#142538]">
+                <Button variant="outline" className="w-full border-[rgba(255,255,255,0.06)] text-[#A0B0BC] hover:bg-[#3A4D5F]">
                   View in Library
                 </Button>
               </div>
@@ -239,8 +239,8 @@ export default function GraphPage() {
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-center">
               <Info className="w-12 h-12 text-[#6B7280] mb-4" />
-              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">Select a Node</h3>
-              <p className="text-sm text-[#9CA3AF]">
+              <h3 className="text-lg font-medium text-[#E8E0D5] mb-2">Select a Node</h3>
+              <p className="text-sm text-[#A0B0BC]">
                 Click on any topic in the graph to see its details and connections
               </p>
             </div>
@@ -250,27 +250,27 @@ export default function GraphPage() {
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
-          <p className="text-3xl font-bold text-[#E5E7EB]">{sampleNodes.length}</p>
-          <p className="text-sm text-[#9CA3AF]">Total Topics</p>
+        <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#E8E0D5]">{sampleNodes.length}</p>
+          <p className="text-sm text-[#A0B0BC]">Total Topics</p>
         </Card>
-        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
-          <p className="text-3xl font-bold text-[#059669]">
+        <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#7BA69E]">
             {sampleNodes.filter((n) => n.status === "completed").length}
           </p>
-          <p className="text-sm text-[#9CA3AF]">Completed</p>
+          <p className="text-sm text-[#A0B0BC]">Completed</p>
         </Card>
-        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
-          <p className="text-3xl font-bold text-[#F59E0B]">
+        <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#C9A86C]">
             {sampleNodes.filter((n) => n.status === "in-progress").length}
           </p>
-          <p className="text-sm text-[#9CA3AF]">In Progress</p>
+          <p className="text-sm text-[#A0B0BC]">In Progress</p>
         </Card>
-        <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] p-4 text-center">
-          <p className="text-3xl font-bold text-[#06B6D4]">
+        <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)] p-4 text-center">
+          <p className="text-3xl font-bold text-[#5BB3B3]">
             {sampleNodes.reduce((acc, n) => acc + n.connections.length, 0) / 2}
           </p>
-          <p className="text-sm text-[#9CA3AF]">Connections</p>
+          <p className="text-sm text-[#A0B0BC]">Connections</p>
         </Card>
       </div>
     </div>

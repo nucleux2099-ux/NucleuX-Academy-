@@ -1,0 +1,3724 @@
+/**
+ * NucleuX Academy - General Pathology Topics
+ * 
+ * Comprehensive pathology topics covering fundamental mechanisms of disease
+ * Sources: Robbins & Cotran Pathologic Basis of Disease 10th Ed
+ */
+
+import type { LibraryTopic } from '../../types/library';
+
+export const GENERAL_PATHOLOGY_TOPICS: LibraryTopic[] = [
+  // =============================================================================
+  // CELL INJURY & ADAPTATION
+  // =============================================================================
+  {
+    id: 'cell-injury-adaptation',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Cell Injury & Adaptation',
+    slug: 'cell-injury-adaptation',
+    description: 'Reversible vs irreversible injury, apoptosis vs necrosis, cellular adaptations',
+    content: {
+      concept: `# Cell Injury & Adaptation
+
+## Overview
+
+> Cell injury results when cells are stressed beyond their adaptive capacity or are exposed to inherently damaging agents. The cellular response depends on the **type, duration, and severity** of the injury, as well as the **adaptability** of the affected cell.
+
+## Causes of Cell Injury
+
+### Hypoxia and Ischemia
+- **Hypoxia**: Reduced O₂ availability
+  - Hypoxemic (↓ arterial pO₂)
+  - Anemic (↓ O₂ carrying capacity)
+  - Histotoxic (cyanide poisoning)
+- **Ischemia**: Reduced blood supply (WORSE than hypoxia - also deprives nutrients, allows metabolite accumulation)
+
+### Other Causes
+| Category | Examples |
+|----------|----------|
+| **Physical agents** | Trauma, temperature extremes, radiation |
+| **Chemical agents** | Poisons, drugs, environmental pollutants |
+| **Infectious agents** | Bacteria, viruses, fungi, parasites |
+| **Immunologic reactions** | Autoimmunity, hypersensitivity |
+| **Genetic defects** | Inborn errors, protein misfolding |
+| **Nutritional imbalances** | Deficiencies, excesses |
+
+## Cellular Adaptations
+
+> Adaptations are **reversible functional and structural changes** in response to physiologic stresses or pathologic stimuli.
+
+### Types of Cellular Adaptation
+
+| Adaptation | Definition | Example |
+|------------|------------|---------|
+| **Hypertrophy** | ↑ cell SIZE | Cardiac hypertrophy in hypertension |
+| **Hyperplasia** | ↑ cell NUMBER | Endometrial hyperplasia (estrogen) |
+| **Atrophy** | ↓ cell SIZE and function | Disuse atrophy of muscle |
+| **Metaplasia** | Change in cell TYPE | Squamous metaplasia in smokers |
+
+### Hypertrophy vs Hyperplasia
+\`\`\`
+HYPERTROPHY (↑ Size):
+├── Permanent cells (cardiac, skeletal muscle)
+├── Mechanisms: ↑ protein synthesis, ↑ organelles
+├── Signals: Mechanical stress, Growth factors
+├── Example: Left ventricular hypertrophy in HTN
+
+HYPERPLASIA (↑ Number):
+├── Labile and stable cells
+├── Mechanisms: Growth factors → cell division
+├── Types: Physiologic (hormonal, compensatory)
+│         Pathologic (excess stimulation)
+├── Example: Prostatic hyperplasia (BPH)
+\`\`\`
+
+### Metaplasia
+- **Reversible** substitution of one differentiated cell type for another
+- Represents **adaptive response** to chronic irritation
+- **Important examples**:
+  - Barrett esophagus: Squamous → Columnar (intestinal)
+  - Respiratory epithelium: Ciliated columnar → Squamous (smoking)
+  - Apocrine metaplasia of breast
+
+> ⚠️ **Metaplasia does NOT involve transformation of existing cells** - arises from reprogramming of stem cells
+
+## Reversible Cell Injury
+
+### Mechanisms of Reversible Injury
+1. **↓ ATP generation** (oxidative phosphorylation)
+2. **Failure of Na⁺/K⁺-ATPase pump**
+3. **↑ Intracellular Na⁺, H₂O → cellular swelling**
+4. **↑ Intracellular Ca²⁺**
+5. **Ribosomal detachment → ↓ protein synthesis**
+
+### Morphologic Changes
+| Feature | Light Microscopy | Electron Microscopy |
+|---------|------------------|---------------------|
+| **Cellular swelling** | Pale cytoplasm, cloudy | ER swelling (hydropic change) |
+| **Fatty change** | Clear vacuoles (liver) | Lipid droplets |
+| **Membrane blebs** | - | Surface blebs, loss of microvilli |
+| **Myelin figures** | - | Phospholipid whorls |
+
+> 💎 **Cellular swelling** (hydropic degeneration) is the FIRST manifestation of almost all forms of cell injury
+
+## Irreversible Cell Injury
+
+### Point of No Return
+The transition from reversible to irreversible injury is marked by:
+1. **Severe mitochondrial damage** - inability to reverse mitochondrial dysfunction
+2. **Profound membrane damage** - loss of membrane integrity
+
+### Markers of Irreversibility
+- Mitochondrial permeability transition (MPT)
+- Loss of membrane phospholipids
+- Cytoskeleton damage
+- DNA damage
+- Lysosomal rupture → release of hydrolytic enzymes
+
+### Morphologic Features of Necrosis
+| Nuclear Change | Description |
+|----------------|-------------|
+| **Pyknosis** | Nuclear shrinkage, increased basophilia |
+| **Karyorrhexis** | Fragmentation of pyknotic nucleus |
+| **Karyolysis** | Fading of basophilia due to DNase activity |
+
+## Mechanisms of Cell Injury
+
+### 1. ATP Depletion
+\`\`\`
+↓ O₂ Supply
+    ↓
+↓ Oxidative Phosphorylation
+    ↓
+↓ ATP
+    ↓
+├── Failure of Na⁺/K⁺-ATPase → Cellular swelling
+├── ↑ Anaerobic glycolysis → Lactic acidosis → ↓ pH
+├── Ribosome detachment → ↓ Protein synthesis
+└── Nuclear chromatin clumping
+\`\`\`
+
+### 2. Mitochondrial Damage
+- Loss of membrane potential
+- **Mitochondrial permeability transition (MPT)**
+- Release of **cytochrome c** → apoptosis
+- ↓ ATP generation
+
+### 3. Calcium Influx
+\`\`\`
+↑ Cytosolic Ca²⁺ (normally 0.1 μM, rises to 1 μM)
+    ↓
+├── Activates phospholipases → Membrane damage
+├── Activates proteases → Cytoskeleton damage
+├── Activates endonucleases → DNA damage
+└── Activates ATPases → ↓ ATP
+\`\`\`
+
+### 4. Oxidative Stress (ROS)
+**Reactive Oxygen Species**:
+- **Superoxide (O₂•⁻)**: Generated in mitochondria
+- **Hydrogen peroxide (H₂O₂)**: From SOD action
+- **Hydroxyl radical (•OH)**: Most reactive, from Fenton reaction
+
+**ROS Damage**:
+- Lipid peroxidation → membrane damage
+- Protein oxidation → fragmentation, cross-linking
+- DNA damage → mutations
+
+**Antioxidant Defenses**:
+| Defense | Function |
+|---------|----------|
+| Superoxide dismutase (SOD) | O₂•⁻ → H₂O₂ |
+| Catalase | H₂O₂ → H₂O + O₂ |
+| Glutathione peroxidase | H₂O₂ → H₂O (uses GSH) |
+| Vitamin E, C, A | Free radical scavengers |
+
+### 5. Membrane Damage
+- ↓ Phospholipid synthesis (↓ ATP)
+- ↑ Phospholipid breakdown (phospholipases from ↑ Ca²⁺)
+- Lipid peroxidation (ROS)
+- Cytoskeletal damage
+
+## Ischemia-Reperfusion Injury
+
+> Paradoxically, restoration of blood flow can **worsen** injury through additional mechanisms.
+
+### Mechanisms
+1. **Oxidative stress**: Burst of ROS from re-oxygenated mitochondria
+2. **Complement activation**: Deposits in reperfused tissue
+3. **Inflammation**: Neutrophil recruitment
+4. **Mitochondrial permeability transition**
+
+### Clinical Relevance
+- Myocardial infarction after thrombolysis
+- Stroke after thrombectomy
+- Organ transplantation`,
+      keyPoints: [
+        'Ischemia is worse than hypoxia because it also deprives nutrients and allows metabolite accumulation',
+        'Cellular swelling (hydropic degeneration) is the FIRST sign of reversible cell injury',
+        'Irreversibility marked by severe mitochondrial damage and membrane breakdown',
+        'Nuclear changes in necrosis: Pyknosis → Karyorrhexis → Karyolysis',
+        'ATP depletion leads to Na⁺/K⁺ pump failure, causing cellular swelling',
+        'Calcium influx activates destructive phospholipases, proteases, and endonucleases',
+        'ROS cause lipid peroxidation, protein oxidation, and DNA damage',
+        'Metaplasia arises from stem cell reprogramming, NOT transformation of existing cells'
+      ],
+      examPrep: {
+        summary: `**Cell Injury - Quick Review**
+
+🔴 **Causes**: Hypoxia/ischemia, physical, chemical, infectious, immune, genetic, nutritional
+
+📊 **Adaptations**:
+- Hypertrophy = ↑ SIZE (permanent cells)
+- Hyperplasia = ↑ NUMBER (labile/stable)
+- Atrophy = ↓ SIZE
+- Metaplasia = Change in TYPE
+
+🟡 **Reversible Injury**:
+- Cellular swelling (FIRST sign)
+- Fatty change
+- ER swelling, ribosome detachment
+
+🔴 **Irreversible Injury**:
+- Mitochondrial damage (MPT)
+- Membrane rupture
+- Nuclear: Pyknosis→Karyorrhexis→Karyolysis
+
+⚡ **Mechanisms**:
+1. ATP depletion → pump failure
+2. Calcium influx → enzyme activation
+3. ROS → lipid peroxidation
+4. Membrane damage`,
+        mnemonics: [
+          'PKK = Pyknosis, Karyorrhexis, Karyolysis (nuclear changes in necrosis)',
+          'ACHE = Adaptations: Atrophy, hypertrophy, hyperplasia, metaplasia (Change in cell)',
+          'Calcium activates PPE: Phospholipases, Proteases, Endonucleases'
+        ],
+        highYield: [
+          'Cellular swelling = FIRST manifestation of cell injury',
+          'Ischemia worse than hypoxia (also ↓ nutrients, ↑ metabolites)',
+          'Metaplasia = stem cell reprogramming (NOT transformation)',
+          'Point of no return = mitochondrial + membrane damage'
+        ],
+        commonMCQs: [
+          'First morphologic sign of reversible injury: Cellular swelling',
+          'Nuclear change in early necrosis: Pyknosis',
+          'Enzyme activated by calcium causing membrane damage: Phospholipase',
+          'Most reactive ROS: Hydroxyl radical'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 2',
+          chapterTitle: 'Cell Injury, Cell Death, and Adaptations',
+          pages: '33-69'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'cell-injury-1',
+          question: 'What is the first morphologic manifestation of reversible cell injury?',
+          answer: 'Cellular swelling (hydropic degeneration) - due to failure of Na⁺/K⁺-ATPase pump and influx of water',
+          difficulty: 1
+        },
+        {
+          id: 'cell-injury-2',
+          question: 'Why is ischemia more damaging than hypoxia alone?',
+          answer: 'Ischemia deprives cells of both oxygen AND nutrients, and allows accumulation of metabolic waste products that cannot be washed away',
+          difficulty: 2
+        },
+        {
+          id: 'cell-injury-3',
+          question: 'What are the two critical markers of irreversible cell injury?',
+          answer: '1) Severe mitochondrial damage (inability to regenerate ATP even with O₂), 2) Profound membrane damage (loss of selective permeability)',
+          difficulty: 2
+        },
+        {
+          id: 'cell-injury-4',
+          question: 'What is the sequence of nuclear changes in necrosis?',
+          answer: 'Pyknosis (shrinkage, hyperchromatism) → Karyorrhexis (fragmentation) → Karyolysis (dissolution by DNase)',
+          difficulty: 1
+        },
+        {
+          id: 'cell-injury-5',
+          question: 'How does metaplasia differ from dysplasia?',
+          answer: 'Metaplasia is REVERSIBLE substitution of one mature cell type for another; Dysplasia is DISORDERED growth with loss of uniformity and architectural orientation (premalignant)',
+          difficulty: 2
+        },
+        {
+          id: 'cell-injury-6',
+          question: 'What enzymes does elevated intracellular calcium activate?',
+          answer: 'Phospholipases (membrane damage), Proteases (cytoskeleton damage), Endonucleases (DNA damage), ATPases (ATP depletion)',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: [],
+    relatedTopics: ['necrosis-types', 'apoptosis', 'inflammation-acute'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // NECROSIS TYPES
+  // =============================================================================
+  {
+    id: 'necrosis-types',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Necrosis - Types & Patterns',
+    slug: 'necrosis-types',
+    description: 'Coagulative, liquefactive, caseous, fat, fibrinoid, and gangrenous necrosis',
+    content: {
+      concept: `# Necrosis - Types & Patterns
+
+## Definition
+
+> **Necrosis** is the morphologic changes that follow cell death in living tissue, largely resulting from the progressive degradative action of enzymes on the lethally injured cell.
+
+## Key Features of Necrosis
+
+- **Always pathologic** (unlike apoptosis)
+- Affects **groups of cells**
+- Provokes **inflammatory response**
+- Enzymatic digestion by:
+  - Autolysis (own enzymes)
+  - Heterolysis (leukocyte enzymes)
+
+## Types of Necrosis
+
+### 1. Coagulative Necrosis
+
+> **Most common type** - characteristic of ischemic/hypoxic injury in all organs EXCEPT brain
+
+**Pathogenesis**:
+- Denaturation of structural and enzymatic proteins
+- Preservation of cell outlines (ghost cells)
+- Protein denaturation > enzymatic digestion
+
+**Gross Appearance**:
+- Firm, pale tissue
+- Preserved tissue architecture initially
+
+**Microscopic Features**:
+- Ghost cells with preserved outlines
+- Loss of nuclei (pyknosis → karyolysis)
+- Increased eosinophilia
+- Architecture preserved for days
+
+**Classic Examples**:
+| Organ | Condition |
+|-------|-----------|
+| Heart | Myocardial infarction |
+| Kidney | Renal infarct |
+| Spleen | Splenic infarct |
+
+> 💎 **"Tombstone" appearance** - cells are dead but maintain their shapes like tombstones in a cemetery
+
+### 2. Liquefactive Necrosis
+
+> Characterized by **complete digestion** of dead cells, resulting in liquid viscous mass
+
+**Pathogenesis**:
+- Enzymatic digestion dominates
+- Rich in hydrolytic enzymes (from leukocytes or lysosomes)
+
+**Occurs in**:
+\`\`\`
+1. BRAIN INFARCTS
+   ├── Brain tissue rich in lipids, low in proteins
+   ├── Few structural proteins to maintain architecture
+   └── Results in cystic cavity
+
+2. BACTERIAL INFECTIONS (Abscesses)
+   ├── Neutrophils release hydrolytic enzymes
+   ├── Creamy yellow pus
+   └── Pyogenic bacteria (Staph, Strep)
+\`\`\`
+
+**Gross Appearance**:
+- Soft, liquefied tissue
+- Pus in abscesses
+
+> 💎 **Brain is the EXCEPTION** - undergoes liquefactive necrosis after infarction (not coagulative)
+
+### 3. Caseous Necrosis
+
+> **"Cheese-like"** necrosis - distinctive form seen in **tuberculosis**
+
+**Pathogenesis**:
+- Combination of coagulative and liquefactive
+- Characteristic of **granulomatous inflammation**
+- Cell-mediated immune response to persistent antigen
+
+**Gross Appearance**:
+- Soft, friable, white-yellow
+- Resembles cottage cheese
+- Enclosed within granuloma
+
+**Microscopic Features**:
+- Amorphous, granular, eosinophilic material
+- NO preserved cell outlines (unlike coagulative)
+- Surrounded by epithelioid macrophages, giant cells
+
+**Associated Conditions**:
+| Condition | Organism |
+|-----------|----------|
+| Tuberculosis | Mycobacterium tuberculosis |
+| Histoplasmosis | Histoplasma capsulatum |
+| Coccidioidomycosis | Coccidioides |
+
+> 💎 Caseous necrosis is **virtually diagnostic of TB** in the appropriate clinical context
+
+### 4. Fat Necrosis
+
+> Destruction of fat tissue by **lipases**
+
+**Two Forms**:
+
+**A. Enzymatic Fat Necrosis (Acute Pancreatitis)**
+\`\`\`
+Pancreatic lipases released
+    ↓
+Digest fat in pancreas and omentum
+    ↓
+Fatty acids + Calcium → Saponification
+    ↓
+Chalky white deposits (calcium soaps)
+\`\`\`
+
+**B. Traumatic Fat Necrosis (Breast)**
+- Follows trauma or surgery
+- Can mimic carcinoma on mammography
+- Foreign body giant cell reaction
+
+**Microscopic Features**:
+- Shadowy outlines of necrotic fat cells
+- Basophilic calcium deposits
+- Surrounding inflammation
+
+> 💎 **Hypocalcemia** in acute pancreatitis is due to calcium saponification in fat necrosis
+
+### 5. Fibrinoid Necrosis
+
+> Deposition of **fibrin-like** material in vessel walls
+
+**Pathogenesis**:
+- Antigen-antibody complexes + fibrin deposited in vessel walls
+- Immune-mediated vascular damage
+
+**Microscopic Features**:
+- Bright pink, homogeneous appearance
+- Smudgy eosinophilic material
+- In vessel walls
+
+**Associated Conditions**:
+| Category | Examples |
+|----------|----------|
+| **Vasculitis** | Polyarteritis nodosa |
+| **Autoimmune** | SLE, Rheumatic heart disease |
+| **Malignant HTN** | Necrotizing arteriolitis |
+| **Transplant rejection** | Hyperacute rejection |
+
+### 6. Gangrenous Necrosis
+
+> **Clinical term** (not a distinct histologic pattern) for necrosis of limbs or viscera
+
+**Types**:
+
+| Type | Features | Cause |
+|------|----------|-------|
+| **Dry Gangrene** | Coagulative necrosis, mummified, black | Arterial occlusion (diabetes, atherosclerosis) |
+| **Wet Gangrene** | Liquefactive superimposed, foul-smelling | Bacterial infection, venous obstruction |
+| **Gas Gangrene** | Crepitus, systemic toxicity | *Clostridium perfringens* (α-toxin) |
+
+**Dry Gangrene**:
+- Clear line of demarcation
+- Mummified, shrunken
+- Common in diabetic foot
+
+**Wet Gangrene**:
+- No clear demarcation
+- Edematous, foul odor
+- Requires urgent debridement
+
+**Gas Gangrene (Clostridial Myonecrosis)**:
+- α-toxin = lecithinase → destroys cell membranes
+- Crepitus on palpation
+- "Drumstick" bacilli on Gram stain
+- Medical emergency
+
+## Summary Table
+
+| Type | Mechanism | Appearance | Classic Location |
+|------|-----------|------------|------------------|
+| **Coagulative** | Protein denaturation | Firm, ghost cells | Heart, kidney, spleen |
+| **Liquefactive** | Enzymatic digestion | Soft, liquid | Brain, abscesses |
+| **Caseous** | Mixed, immune | Cheese-like | TB, fungal |
+| **Fat** | Lipase action | Chalky white | Pancreas, breast |
+| **Fibrinoid** | Immune complexes | Pink, smudgy | Vessel walls |
+| **Gangrenous** | Clinical term | Black, necrotic | Limbs |`,
+      keyPoints: [
+        'Coagulative necrosis = protein denaturation, ghost cells, most organs EXCEPT brain',
+        'Brain undergoes LIQUEFACTIVE necrosis (rich in lipids, poor in structural proteins)',
+        'Caseous necrosis = virtually diagnostic of TB, no preserved cell outlines',
+        'Fat necrosis in pancreatitis → saponification → hypocalcemia',
+        'Fibrinoid necrosis = immune-mediated vessel wall damage',
+        'Dry gangrene = coagulative, Wet gangrene = liquefactive superimposed',
+        'Gas gangrene: Clostridium perfringens α-toxin (lecithinase)'
+      ],
+      examPrep: {
+        summary: `**Necrosis Types - Quick Review**
+
+🔵 **Coagulative**: Protein denaturation
+- Ghost cells, firm
+- All organs EXCEPT brain
+- Example: MI, renal infarct
+
+🟣 **Liquefactive**: Enzymatic digestion
+- Soft, liquid
+- Brain, Abscesses (pus)
+
+⚪ **Caseous**: Mixed
+- Cheese-like, granular
+- TB (virtually diagnostic)
+
+🟡 **Fat Necrosis**: Lipase action
+- Chalky white (saponification)
+- Pancreatitis → hypocalcemia
+
+🔴 **Fibrinoid**: Immune complexes
+- Pink, smudgy in vessel walls
+- Vasculitis, malignant HTN
+
+⚫ **Gangrene**: Clinical term
+- Dry: coagulative
+- Wet: bacterial superinfection
+- Gas: Clostridium (α-toxin)`,
+        mnemonics: [
+          'Brain is LIQUID - Liquefactive necrosis in brain',
+          'CASE of TB - Caseous necrosis in TB',
+          'FAT SOAP - Fat necrosis causes saponification',
+          'Gas gangrene = Clostridium = Crepitus'
+        ],
+        highYield: [
+          'Brain = liquefactive necrosis (EXCEPTION to coagulative)',
+          'Caseous necrosis = TB until proven otherwise',
+          'Fat necrosis causes hypocalcemia (saponification)',
+          'α-toxin (lecithinase) = Clostridium perfringens'
+        ],
+        commonMCQs: [
+          'Necrosis in brain infarct: Liquefactive',
+          'Necrosis associated with TB: Caseous',
+          'Hypocalcemia mechanism in acute pancreatitis: Saponification',
+          'Toxin causing gas gangrene: Alpha toxin (lecithinase)'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 2',
+          chapterTitle: 'Cell Injury, Cell Death, and Adaptations',
+          pages: '41-46'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'necrosis-1',
+          question: 'Why does the brain undergo liquefactive necrosis while other organs undergo coagulative necrosis?',
+          answer: 'Brain tissue is rich in lipids and poor in structural proteins, so enzymatic digestion predominates over protein denaturation',
+          difficulty: 2
+        },
+        {
+          id: 'necrosis-2',
+          question: 'What causes hypocalcemia in acute pancreatitis?',
+          answer: 'Fat necrosis leads to saponification - released fatty acids bind calcium to form calcium soaps, sequestering calcium from blood',
+          difficulty: 2
+        },
+        {
+          id: 'necrosis-3',
+          question: 'What is the classic microscopic appearance of coagulative necrosis?',
+          answer: 'Ghost cells - preserved cell outlines with loss of nuclei and increased cytoplasmic eosinophilia, maintaining tissue architecture',
+          difficulty: 1
+        },
+        {
+          id: 'necrosis-4',
+          question: 'What toxin causes gas gangrene and what is its mechanism?',
+          answer: 'Alpha toxin (lecithinase) from Clostridium perfringens - it destroys cell membranes by degrading lecithin (phosphatidylcholine)',
+          difficulty: 2
+        },
+        {
+          id: 'necrosis-5',
+          question: 'What differentiates caseous necrosis from coagulative necrosis microscopically?',
+          answer: 'Caseous necrosis shows amorphous granular eosinophilic debris with NO preserved cell outlines, surrounded by granulomatous inflammation',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['cell-injury-adaptation'],
+    relatedTopics: ['apoptosis', 'inflammation-acute', 'tuberculosis'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 35,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // APOPTOSIS
+  // =============================================================================
+  {
+    id: 'apoptosis',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Apoptosis',
+    slug: 'apoptosis',
+    description: 'Programmed cell death, intrinsic and extrinsic pathways, regulatory mechanisms',
+    content: {
+      concept: `# Apoptosis - Programmed Cell Death
+
+## Definition
+
+> **Apoptosis** is a pathway of cell death in which cells activate enzymes that degrade their own nuclear DNA and nuclear/cytoplasmic proteins, leading to cell death without eliciting inflammatory response.
+
+## Apoptosis vs Necrosis
+
+| Feature | Apoptosis | Necrosis |
+|---------|-----------|----------|
+| **Trigger** | Physiologic or pathologic | Always pathologic |
+| **Cells affected** | Single cells | Groups of cells |
+| **Cell size** | Shrinkage | Swelling |
+| **Nucleus** | Fragmentation | Pyknosis → karyolysis |
+| **Plasma membrane** | Intact (blebs) | Disrupted |
+| **Cell contents** | Intact | Released |
+| **Inflammation** | None | Present |
+| **Energy** | ATP-dependent | ATP-independent |
+
+## Causes of Apoptosis
+
+### Physiologic Apoptosis
+\`\`\`
+1. EMBRYOGENESIS
+   ├── Removal of interdigital webs
+   ├── Formation of hollow organs
+   └── Deletion of vestigial structures
+
+2. HORMONE WITHDRAWAL
+   ├── Endometrial shedding (progesterone ↓)
+   ├── Prostate after castration (testosterone ↓)
+   └── Breast post-lactation (prolactin ↓)
+
+3. IMMUNE SYSTEM
+   ├── Deletion of autoreactive lymphocytes
+   ├── Elimination of exhausted neutrophils
+   └── CTL killing of virus-infected cells
+
+4. CELL TURNOVER
+   └── Intestinal crypt cells, epidermal cells
+\`\`\`
+
+### Pathologic Apoptosis
+| Stimulus | Examples |
+|----------|----------|
+| **DNA damage** | Radiation, chemotherapy |
+| **Misfolded proteins** | Neurodegenerative diseases |
+| **Viral infection** | CTL-mediated killing |
+| **Graft rejection** | CTL, Fas-mediated |
+
+## Morphology of Apoptosis
+
+### Light Microscopy
+- **Cell shrinkage**
+- Dense eosinophilic cytoplasm
+- **Chromatin condensation**
+- **Apoptotic bodies** (membrane-bound fragments)
+
+### Electron Microscopy
+- Nuclear chromatin condensation at periphery
+- Cytoplasmic blebbing
+- Apoptotic body formation
+- Phagocytosis by macrophages (no inflammation)
+
+> 💎 **Councilman bodies** in viral hepatitis = apoptotic hepatocytes
+
+## Biochemical Features
+
+1. **DNA fragmentation** at internucleosomal linker sites → 180-200 bp fragments → DNA ladder on gel electrophoresis
+2. **Phosphatidylserine exposure** on outer leaflet → "eat me" signal for phagocytes
+3. **Caspase activation** (cysteine aspartases) → execution of apoptosis
+
+## Mechanisms of Apoptosis
+
+### Caspases - The Executioners
+
+\`\`\`
+INITIATOR CASPASES:
+├── Caspase-8 (extrinsic pathway)
+├── Caspase-9 (intrinsic pathway)
+└── Activate executioner caspases
+
+EXECUTIONER CASPASES:
+├── Caspase-3 (most important)
+├── Caspase-6
+├── Caspase-7
+└── Execute cell death program
+\`\`\`
+
+### Intrinsic (Mitochondrial) Pathway
+
+> Triggered by **growth factor withdrawal, DNA damage, misfolded proteins**
+
+**Mechanism**:
+\`\`\`
+Cell stress/DNA damage
+    ↓
+p53 activation
+    ↓
+↑ Pro-apoptotic BCL2 proteins (BAX, BAK)
+↓ Anti-apoptotic BCL2 proteins (BCL-2, BCL-XL)
+    ↓
+BAX/BAK oligomerize in mitochondrial membrane
+    ↓
+Mitochondrial outer membrane permeabilization (MOMP)
+    ↓
+CYTOCHROME C release
+    ↓
+Cytochrome C + Apaf-1 + Caspase-9 → APOPTOSOME
+    ↓
+Caspase-9 activation
+    ↓
+Caspase-3 activation → APOPTOSIS
+\`\`\`
+
+**BCL-2 Family Proteins**:
+| Pro-apoptotic | Anti-apoptotic |
+|---------------|----------------|
+| BAX | BCL-2 |
+| BAK | BCL-XL |
+| BIM, BID, BAD | MCL-1 |
+
+> 💎 **BCL-2** overexpression in follicular lymphoma → t(14;18) → resistance to apoptosis
+
+### Extrinsic (Death Receptor) Pathway
+
+> Triggered by **death receptor engagement** on plasma membrane
+
+**Death Receptors** (TNF receptor family):
+- **Fas (CD95)** - binds Fas ligand
+- **TNFR1** - binds TNF
+- **TRAIL receptors (DR4, DR5)** - binds TRAIL
+
+**Mechanism (Fas pathway)**:
+\`\`\`
+FasL binding to Fas
+    ↓
+Fas trimerization
+    ↓
+Recruitment of FADD (adaptor protein)
+    ↓
+FADD recruits Pro-caspase-8
+    ↓
+DISC formation (Death-Inducing Signaling Complex)
+    ↓
+Caspase-8 activation
+    ↓
+Caspase-3 activation → APOPTOSIS
+\`\`\`
+
+### Cross-talk Between Pathways
+
+Caspase-8 can cleave **BID → tBID** (truncated BID), which then activates BAX/BAK, linking extrinsic to intrinsic pathway.
+
+## Regulators of Apoptosis
+
+### Pro-apoptotic
+| Factor | Function |
+|--------|----------|
+| **p53** | Tumor suppressor, induces BAX |
+| **BAX, BAK** | Mitochondrial pore formation |
+| **BID, BIM, BAD** | BH3-only activators |
+| **Cytochrome c** | Apoptosome formation |
+
+### Anti-apoptotic
+| Factor | Function |
+|--------|----------|
+| **BCL-2, BCL-XL** | Block BAX/BAK |
+| **FLIP** | Blocks caspase-8 activation |
+| **IAPs** | Inhibitors of apoptosis proteins |
+
+## Apoptosis in Disease
+
+### Dysregulated Apoptosis (Too Little)
+| Disease | Mechanism |
+|---------|-----------|
+| **Cancer** | BCL-2 overexpression, p53 mutations |
+| **Autoimmune** | Failure to delete autoreactive lymphocytes |
+| **Viral infections** | Viral proteins inhibit apoptosis (EBV, HPV) |
+
+### Excessive Apoptosis (Too Much)
+| Disease | Mechanism |
+|---------|-----------|
+| **Neurodegenerative** | Alzheimer's, Parkinson's, ALS |
+| **Ischemic injury** | Heart, brain |
+| **HIV/AIDS** | CD4+ T cell depletion |
+
+## Detection Methods
+
+| Method | Detects |
+|--------|---------|
+| **TUNEL** | DNA fragmentation (3'-OH ends) |
+| **Annexin V** | Phosphatidylserine on outer membrane |
+| **Caspase assays** | Activated caspases |
+| **DNA ladder** | 180-200 bp fragments |`,
+      keyPoints: [
+        'Apoptosis = programmed cell death, ATP-dependent, NO inflammation',
+        'Intrinsic pathway: Mitochondria, Cytochrome c, Caspase-9, p53-mediated',
+        'Extrinsic pathway: Death receptors (Fas), DISC, Caspase-8',
+        'Caspase-3 = final common executioner caspase',
+        'BCL-2 family: Pro-apoptotic (BAX, BAK) vs Anti-apoptotic (BCL-2, BCL-XL)',
+        'Phosphatidylserine exposure = "eat me" signal',
+        'DNA ladder = 180-200 bp fragments (internucleosomal cleavage)',
+        'BCL-2 overexpression in follicular lymphoma t(14;18)'
+      ],
+      examPrep: {
+        summary: `**Apoptosis - Quick Review**
+
+⚡ **Features**:
+- Single cells, shrinkage
+- NO inflammation
+- ATP-dependent
+- Membrane intact (blebs)
+
+🔵 **Intrinsic Pathway**:
+DNA damage → p53 → BAX/BAK → MOMP → Cytochrome c → Apoptosome → Caspase-9 → Caspase-3
+
+🔴 **Extrinsic Pathway**:
+FasL + Fas → DISC → Caspase-8 → Caspase-3
+
+🔬 **BCL-2 Family**:
+- Pro-apoptotic: BAX, BAK, BID
+- Anti-apoptotic: BCL-2, BCL-XL
+
+📊 **Detection**:
+- TUNEL: DNA breaks
+- Annexin V: PS exposure
+- DNA ladder: 180-200 bp`,
+        mnemonics: [
+          'Caspase-8 = Extrinsic (8 looks like Death receptor), Caspase-9 = Intrinsic (9 = mitochondria)',
+          'BAX BAK = Bad = Pro-apoptotic, BCL-2 = Better Cell Life = Anti-apoptotic',
+          'Apoptosis = ATP-dependent (both start with A)'
+        ],
+        highYield: [
+          'Intrinsic pathway: Cytochrome c + Apaf-1 + Caspase-9 = Apoptosome',
+          'BCL-2 overexpression: t(14;18) in follicular lymphoma',
+          'Phosphatidylserine flip = "eat me" signal for macrophages',
+          'Councilman bodies = apoptotic hepatocytes in viral hepatitis'
+        ],
+        commonMCQs: [
+          'Initiator caspase in intrinsic pathway: Caspase-9',
+          'Initiator caspase in extrinsic pathway: Caspase-8',
+          'Death receptor activated by FasL: Fas (CD95)',
+          'Translocation in follicular lymphoma: t(14;18) - BCL-2'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 2',
+          chapterTitle: 'Cell Injury, Cell Death, and Adaptations',
+          pages: '46-56'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'apoptosis-1',
+          question: 'What is the apoptosome and what components form it?',
+          answer: 'Apoptosome = Cytochrome c + Apaf-1 + Pro-caspase-9; it forms in the intrinsic pathway after mitochondrial outer membrane permeabilization releases cytochrome c',
+          difficulty: 2
+        },
+        {
+          id: 'apoptosis-2',
+          question: 'How does the extrinsic pathway connect to the intrinsic pathway?',
+          answer: 'Caspase-8 cleaves BID to form tBID (truncated BID), which then activates BAX/BAK to cause mitochondrial outer membrane permeabilization',
+          difficulty: 3
+        },
+        {
+          id: 'apoptosis-3',
+          question: 'What is the significance of phosphatidylserine externalization in apoptosis?',
+          answer: 'Phosphatidylserine (normally on inner leaflet) flips to outer leaflet and serves as an "eat me" signal recognized by macrophages for phagocytosis without inflammation',
+          difficulty: 2
+        },
+        {
+          id: 'apoptosis-4',
+          question: 'What causes the DNA ladder pattern in apoptosis?',
+          answer: 'Caspase-activated DNase (CAD) cleaves DNA at internucleosomal linker regions, producing fragments of 180-200 bp (multiples of nucleosome size)',
+          difficulty: 2
+        },
+        {
+          id: 'apoptosis-5',
+          question: 'Why does BCL-2 overexpression cause cancer?',
+          answer: 'BCL-2 is anti-apoptotic; overexpression prevents normal apoptosis of cells that should die, allowing accumulation of abnormal/mutated cells (e.g., follicular lymphoma)',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['cell-injury-adaptation'],
+    relatedTopics: ['necrosis-types', 'carcinogenesis', 'cell-cycle'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 40,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // ACUTE INFLAMMATION
+  // =============================================================================
+  {
+    id: 'inflammation-acute',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Acute Inflammation',
+    slug: 'inflammation-acute',
+    description: 'Vascular changes, cellular events, chemical mediators, cardinal signs',
+    content: {
+      concept: `# Acute Inflammation
+
+## Definition
+
+> **Acute inflammation** is a rapid, stereotyped response to tissue injury characterized by delivery of leukocytes and plasma proteins to the site of injury, typically resolving in hours to days.
+
+## Cardinal Signs of Inflammation
+
+| Sign | Latin | Cause |
+|------|-------|-------|
+| **Redness** | Rubor | Vasodilation |
+| **Heat** | Calor | Vasodilation, fever |
+| **Swelling** | Tumor | Increased permeability (edema) |
+| **Pain** | Dolor | Mediators (bradykinin, PGs) |
+| **Loss of function** | Functio laesa | Pain, swelling, tissue damage |
+
+> First four described by **Celsus** (1st century AD), fifth added by **Virchow**
+
+## Vascular Changes
+
+### Sequence of Events
+
+\`\`\`
+1. TRANSIENT VASOCONSTRICTION (seconds)
+   └── Neurogenic reflex
+
+2. VASODILATION (minutes)
+   ├── Histamine, NO
+   └── Causes rubor, calor
+
+3. INCREASED PERMEABILITY
+   ├── Histamine, leukotrienes
+   ├── Protein-rich exudate
+   └── Causes tumor (edema)
+
+4. STASIS
+   ├── Loss of fluid → hemoconcentration
+   └── Allows leukocyte margination
+\`\`\`
+
+### Mechanisms of Increased Permeability
+
+| Mechanism | Time Course | Example |
+|-----------|-------------|---------|
+| **Endothelial contraction** | Immediate, transient | Histamine, leukotrienes |
+| **Endothelial injury** | Immediate, sustained | Burns, toxins |
+| **Transcytosis** | Variable | VEGF |
+| **New vessel formation** | Delayed | Angiogenesis in healing |
+
+> 💎 **Endothelial contraction** (venules) = most common mechanism of increased permeability
+
+## Cellular Events
+
+### Leukocyte Extravasation - Steps
+
+\`\`\`
+1. MARGINATION
+   └── Stasis → RBCs stream centrally, WBCs marginate
+
+2. ROLLING
+   ├── Selectins (E, P, L)
+   └── Loose, transient adhesions
+
+3. FIRM ADHESION
+   ├── Integrins (LFA-1, Mac-1, VLA-4)
+   ├── Bind to ICAM-1, VCAM-1
+   └── Triggered by chemokines
+
+4. TRANSMIGRATION (Diapedesis)
+   ├── PECAM-1 (CD31) mediated
+   └── Through venular endothelium
+
+5. CHEMOTAXIS
+   ├── Movement toward chemoattractants
+   └── Bacterial products, C5a, LTB4, IL-8
+\`\`\`
+
+### Selectins and Integrins
+
+**Selectins (Rolling)**:
+| Selectin | Location | Ligand |
+|----------|----------|--------|
+| **E-selectin** | Endothelium | Sialyl-Lewis X |
+| **P-selectin** | Platelets, Endothelium | Sialyl-Lewis X |
+| **L-selectin** | Leukocytes | GlyCAM-1 |
+
+**Integrins (Firm Adhesion)**:
+| Integrin | On | Ligand (Endothelium) |
+|----------|-----|---------------------|
+| **LFA-1** (CD11a/CD18) | Leukocytes | ICAM-1 |
+| **Mac-1** (CD11b/CD18) | Monocytes, neutrophils | ICAM-1 |
+| **VLA-4** | Lymphocytes, monocytes | VCAM-1 |
+
+### Leukocyte Adhesion Deficiency (LAD)
+
+| Type | Defect | Features |
+|------|--------|----------|
+| **LAD-1** | CD18 (β2 integrin) deficiency | Recurrent bacterial infections, NO pus |
+| **LAD-2** | Fucosyl transferase (sialyl-Lewis X) | Recurrent infections, abnormal rolling |
+
+> 💎 **LAD-1**: Delayed umbilical cord separation, recurrent infections without pus formation
+
+### Chemotaxis
+
+**Chemoattractants**:
+\`\`\`
+EXOGENOUS:
+├── N-formyl-methionine peptides (bacteria)
+└── Lipids (from bacteria)
+
+ENDOGENOUS:
+├── C5a (complement)
+├── LTB4 (leukotriene)
+├── IL-8 (CXCL8) (chemokine)
+└── Platelet-activating factor (PAF)
+\`\`\`
+
+## Phagocytosis
+
+### Steps
+
+\`\`\`
+1. RECOGNITION & ATTACHMENT
+   ├── Opsonins: IgG (Fc receptors), C3b (CR1)
+   ├── Mannose receptors
+   └── Scavenger receptors
+
+2. ENGULFMENT
+   └── Pseudopods → Phagosome
+
+3. KILLING & DEGRADATION
+   ├── O₂-dependent (respiratory burst)
+   └── O₂-independent (lysozyme, defensins)
+\`\`\`
+
+### Oxygen-Dependent Killing (Respiratory Burst)
+
+\`\`\`
+NADPH Oxidase activation
+    ↓
+O₂ + NADPH → O₂•⁻ (superoxide) + NADP+ + H+
+    ↓
+Superoxide dismutase
+    ↓
+H₂O₂
+    ↓
+Myeloperoxidase + Cl⁻
+    ↓
+HOCl (hypochlorous acid) ← MOST POTENT BACTERICIDAL
+\`\`\`
+
+**Chronic Granulomatous Disease (CGD)**:
+- Defect in **NADPH oxidase** (usually gp91^phox)
+- Cannot generate respiratory burst
+- Recurrent infections with **catalase-positive** organisms
+- **S. aureus, Aspergillus, Serratia, Nocardia, Burkholderia**
+
+> 💎 **Negative NBT test** (no blue formazan) or abnormal **DHR flow cytometry** = CGD
+
+### Oxygen-Independent Killing
+
+| Mechanism | Example |
+|-----------|---------|
+| **Lysozyme** | Degrades bacterial cell wall |
+| **Lactoferrin** | Iron chelation |
+| **Defensins** | Pore-forming peptides |
+| **BPI** | Bactericidal permeability-increasing protein |
+
+## Chemical Mediators of Inflammation
+
+### Cell-Derived Mediators
+
+**Histamine**:
+- Source: Mast cells, basophils, platelets
+- Actions: Vasodilation, ↑ permeability
+- Triggers: IgE, C3a/C5a, trauma, heat
+
+**Arachidonic Acid Metabolites**:
+\`\`\`
+Membrane Phospholipids
+    │
+    ↓ Phospholipase A₂
+    │
+Arachidonic Acid
+    │
+    ├──────────────────────┐
+    ↓ Cyclooxygenase       ↓ Lipoxygenase
+    │                      │
+Prostaglandins         Leukotrienes
+├── PGI₂: vasodilation,   ├── LTB₄: chemotaxis
+│         anti-platelet   ├── LTC₄, D₄, E₄: 
+├── TXA₂: vasoconstriction,│    vasoconstriction,
+│         platelet aggreg. │    bronchoconstriction,
+├── PGD₂: vasodilation    │    ↑ permeability
+├── PGE₂: vasodilation,   │    (SLOW-REACTING
+│         pain, fever     │     SUBSTANCE)
+└── PGF₂α: vasoconstriction    └── Lipoxins: anti-inflammatory
+\`\`\`
+
+**Cytokines**:
+| Cytokine | Source | Actions |
+|----------|--------|---------|
+| **TNF-α** | Macrophages | Acute phase response, fever, shock |
+| **IL-1** | Macrophages | Fever, acute phase proteins |
+| **IL-6** | Macrophages, T cells | Acute phase proteins |
+| **IL-8** | Macrophages | Neutrophil chemotaxis |
+
+**Platelet-Activating Factor (PAF)**:
+- Platelet aggregation
+- Vasodilation
+- ↑ Permeability
+- Leukocyte adhesion
+
+### Plasma-Derived Mediators
+
+**Complement System**:
+| Component | Function |
+|-----------|----------|
+| **C3a, C5a** | Anaphylatoxins (mast cell degranulation) |
+| **C5a** | Chemotaxis (most potent) |
+| **C3b** | Opsonization |
+| **C5b-9** | Membrane attack complex (MAC) |
+
+**Kinin System**:
+- **Bradykinin**: Pain, vasodilation, ↑ permeability
+- Generated from HMW kininogen by kallikrein
+- Degraded by ACE (angiotensin-converting enzyme)
+
+> 💎 **ACE inhibitors** → ↑ bradykinin → angioedema
+
+**Coagulation System**:
+- Factor XIIa activates kinin system
+- Fibrinopeptides are chemotactic
+- Fibrin degradation products (FDPs) increase permeability
+
+## Outcomes of Acute Inflammation
+
+\`\`\`
+ACUTE INFLAMMATION
+        │
+        ├── RESOLUTION
+        │   └── Complete restoration (labile cells, minimal damage)
+        │
+        ├── ABSCESS FORMATION
+        │   └── Walled-off collection of pus
+        │
+        ├── PROGRESSION TO CHRONIC
+        │   └── Persistent stimulus
+        │
+        └── SCARRING/FIBROSIS
+            └── Substantial tissue destruction
+\`\`\``,
+      keyPoints: [
+        'Cardinal signs: Rubor (redness), Calor (heat), Tumor (swelling), Dolor (pain), Functio laesa',
+        'Endothelial contraction in venules = most common cause of increased permeability',
+        'Leukocyte extravasation: Margination → Rolling (selectins) → Adhesion (integrins) → Transmigration → Chemotaxis',
+        'LAD-1 (CD18 deficiency) = recurrent infections WITHOUT pus',
+        'Respiratory burst: NADPH oxidase → O₂⁻ → H₂O₂ → HOCl (most potent)',
+        'CGD = NADPH oxidase defect, catalase-positive organisms',
+        'C5a = most potent chemotactic factor',
+        'Bradykinin = pain, ACE inhibitors → angioedema'
+      ],
+      examPrep: {
+        summary: `**Acute Inflammation - Quick Review**
+
+🔴 **Cardinal Signs**: RTHPF
+- Rubor (vasodilation)
+- Calor (vasodilation)
+- Tumor (↑ permeability)
+- Dolor (bradykinin, PGs)
+- Functio laesa
+
+📊 **Leukocyte Extravasation**:
+1. Margination
+2. Rolling (Selectins: E, P, L)
+3. Adhesion (Integrins: LFA-1, Mac-1)
+4. Transmigration (PECAM-1)
+5. Chemotaxis (C5a, LTB4, IL-8)
+
+⚡ **Respiratory Burst**:
+NADPH oxidase → O₂⁻ → H₂O₂ → HOCl
+
+🦠 **CGD Organisms**: Catalase +ve
+**SAAN-B**: Staph, Aspergillus, Serratia, Nocardia, Burkholderia`,
+        mnemonics: [
+          'Rolling SELECTS friends, but INTEGRINS make them STICK',
+          'C5a = Chemotaxis supreme (5 = favorite)',
+          'LAD-1 = Leukocytes can\'t LAND (no adhesion)',
+          'CGD: Can\'t Generate O₂ burst (Destroy catalase+ bugs)'
+        ],
+        highYield: [
+          'Venular endothelial contraction = main permeability mechanism',
+          'LAD-1: No pus despite infection',
+          'CGD: NBT negative, DHR abnormal',
+          'ACE inhibitor angioedema = ↑ bradykinin'
+        ],
+        commonMCQs: [
+          'Most potent chemotactic factor: C5a',
+          'Defect in LAD-1: CD18 (β2 integrin)',
+          'Defect in CGD: NADPH oxidase',
+          'Most potent bactericidal oxidant: HOCl (hypochlorous acid)'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 3',
+          chapterTitle: 'Inflammation and Repair',
+          pages: '71-96'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'acute-inflam-1',
+          question: 'What is the sequence of leukocyte extravasation?',
+          answer: 'Margination → Rolling (selectins) → Firm adhesion (integrins) → Transmigration (PECAM-1) → Chemotaxis (toward C5a, LTB4, IL-8)',
+          difficulty: 1
+        },
+        {
+          id: 'acute-inflam-2',
+          question: 'Why do patients with LAD-1 not form pus despite having infections?',
+          answer: 'LAD-1 patients lack CD18 (β2 integrin) so neutrophils cannot firmly adhere to endothelium or transmigrate - they stay in blood and cannot reach infection site to form pus',
+          difficulty: 2
+        },
+        {
+          id: 'acute-inflam-3',
+          question: 'What is the respiratory burst and what enzyme initiates it?',
+          answer: 'Respiratory burst is oxygen-dependent killing: NADPH oxidase converts O₂ to superoxide (O₂⁻), which becomes H₂O₂, then HOCl (most bactericidal) via myeloperoxidase',
+          difficulty: 2
+        },
+        {
+          id: 'acute-inflam-4',
+          question: 'Why do CGD patients get infections with catalase-positive organisms specifically?',
+          answer: 'Catalase-positive organisms (Staph, Aspergillus) destroy their own H₂O₂, so patients cannot use even minimal microbial H₂O₂ for killing. Catalase-negative bacteria produce H₂O₂ that helps kill them.',
+          difficulty: 3
+        },
+        {
+          id: 'acute-inflam-5',
+          question: 'What mediator causes the pain in inflammation and why do ACE inhibitors cause angioedema?',
+          answer: 'Bradykinin causes pain. ACE normally degrades bradykinin; ACE inhibitors cause accumulation of bradykinin leading to increased vascular permeability and angioedema.',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['cell-injury-adaptation'],
+    relatedTopics: ['inflammation-chronic', 'tissue-repair-healing', 'hemodynamic-disorders'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 50,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // CHRONIC INFLAMMATION
+  // =============================================================================
+  {
+    id: 'inflammation-chronic',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Chronic Inflammation',
+    slug: 'inflammation-chronic',
+    description: 'Granulomatous inflammation, macrophages, giant cells, outcomes',
+    content: {
+      concept: `# Chronic Inflammation
+
+## Definition
+
+> **Chronic inflammation** is inflammation of prolonged duration (weeks to years) in which inflammation, tissue injury, and healing proceed simultaneously.
+
+## Causes of Chronic Inflammation
+
+### 1. Persistent Infections
+- **Mycobacteria** (TB, leprosy)
+- **Certain fungi** (Histoplasma)
+- **Parasites** (Schistosoma)
+- **Viruses** (HBV, HCV)
+
+### 2. Immune-Mediated Diseases
+- **Autoimmune**: Rheumatoid arthritis, SLE, IBD
+- **Allergic**: Asthma (eosinophilic)
+
+### 3. Prolonged Toxic Exposure
+- **Silicosis** (silica particles)
+- **Asbestosis** (asbestos fibers)
+- **Atherosclerosis** (lipids)
+
+### 4. Following Acute Inflammation
+- When acute inflammation doesn't resolve
+
+## Characteristics
+
+| Feature | Acute | Chronic |
+|---------|-------|---------|
+| **Duration** | Days | Weeks to years |
+| **Main cells** | Neutrophils | Macrophages, lymphocytes, plasma cells |
+| **Tissue damage** | Usually mild | Often severe |
+| **Fibrosis** | Absent | Present |
+| **Prominent feature** | Edema, exudate | Fibrosis, angiogenesis |
+
+## Cells of Chronic Inflammation
+
+### Macrophages - The Central Cell
+
+**Origin and Activation**:
+\`\`\`
+Bone marrow
+    ↓
+Monocytes (blood) - circulate 1 day
+    ↓
+Tissue macrophages - live months
+    │
+    ├── Kupffer cells (liver)
+    ├── Alveolar macrophages (lung)
+    ├── Microglia (brain)
+    ├── Osteoclasts (bone)
+    └── Histiocytes (connective tissue)
+\`\`\`
+
+**Macrophage Activation - Two Pathways**:
+
+| M1 (Classical) | M2 (Alternative) |
+|----------------|------------------|
+| IFN-γ, microbial products | IL-4, IL-13 |
+| Pro-inflammatory | Anti-inflammatory |
+| Microbicidal, ROS, NO | Tissue repair |
+| TNF, IL-1, IL-6 | TGF-β, VEGF |
+| Kill pathogens | Wound healing, fibrosis |
+
+**Macrophage Functions**:
+1. Phagocytosis and killing
+2. Antigen presentation
+3. Secrete cytokines (IL-1, TNF)
+4. Tissue repair (growth factors)
+5. Fibrosis (TGF-β)
+
+### Lymphocytes
+
+**T Cells**:
+- **CD4+ T cells**: Activate macrophages (IFN-γ), direct immune response
+- **CD8+ T cells**: Cytotoxic, kill infected cells
+- **Th1**: IFN-γ → M1 macrophages
+- **Th2**: IL-4, IL-13 → M2 macrophages, eosinophils, fibrosis
+
+**B Cells / Plasma Cells**:
+- Antibody production
+- Seen in chronic infections, autoimmune diseases
+
+### Other Cells
+
+| Cell | Role |
+|------|------|
+| **Eosinophils** | Parasitic infections, allergies |
+| **Mast cells** | IgE-mediated, anaphylaxis |
+| **Fibroblasts** | Collagen synthesis, fibrosis |
+
+## Granulomatous Inflammation
+
+> A distinctive pattern of chronic inflammation characterized by aggregates of activated macrophages (epithelioid cells) and multinucleated giant cells.
+
+### Components of a Granuloma
+
+\`\`\`
+                    ┌─────────────────────┐
+                    │   CENTRAL NECROSIS  │
+                    │  (caseous in TB)    │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │ EPITHELIOID CELLS   │
+                    │ (activated macrophages)│
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │   GIANT CELLS       │
+                    │ (fused macrophages) │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │  LYMPHOCYTE COLLAR  │
+                    │ (CD4+ T cells)      │
+                    └──────────┬──────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │  FIBROBLASTS        │
+                    │ (peripheral fibrosis)│
+                    └─────────────────────┘
+\`\`\`
+
+### Types of Giant Cells
+
+| Type | Appearance | Associations |
+|------|------------|--------------|
+| **Langhans giant cell** | Nuclei arranged in horseshoe/peripheral ring | TB, sarcoidosis |
+| **Foreign body giant cell** | Nuclei scattered randomly | Foreign material |
+| **Touton giant cell** | Ring of nuclei with foamy cytoplasm | Fat necrosis, xanthomas |
+
+> 💎 **Langhans** (pathologist) ≠ **Langerhans** (dendritic cells)
+
+### Causes of Granulomatous Inflammation
+
+**Infectious**:
+\`\`\`
+CASEATING GRANULOMAS:
+├── Tuberculosis (MC)
+├── Histoplasmosis
+├── Coccidioidomycosis
+├── Blastomycosis
+└── Leprosy (tuberculoid)
+\`\`\`
+
+**Non-Infectious**:
+| Disease | Features |
+|---------|----------|
+| **Sarcoidosis** | Non-caseating, asteroid bodies, Schaumann bodies |
+| **Crohn's disease** | Non-caseating, transmural |
+| **Foreign body reaction** | Sutures, silica, talc |
+| **Cat-scratch disease** | Stellate granulomas with central necrosis |
+
+### Sarcoidosis - Key Points
+
+**Characteristics**:
+- **Non-caseating granulomas**
+- Multiple organs (lung, lymph nodes, skin, eye)
+- **Schaumann bodies** (concentric calcium/protein)
+- **Asteroid bodies** (star-shaped inclusions)
+- **Elevated ACE** (produced by epithelioid cells)
+- **Hypercalcemia** (1,25-vitamin D from macrophages)
+
+> 💎 **ACE levels** in sarcoidosis correlate with disease activity
+
+## Systemic Effects of Inflammation
+
+### Acute Phase Response
+
+**Mediated by**: IL-1, IL-6, TNF-α from macrophages
+
+**Fever**:
+- IL-1, TNF, IL-6 → Hypothalamus → ↑ PGE₂ → ↑ temperature set point
+
+**Acute Phase Proteins** (synthesized in liver):
+| Protein | Function |
+|---------|----------|
+| **CRP** | Opsonization, complement activation |
+| **Fibrinogen** | Causes RBC rouleaux → ↑ ESR |
+| **Serum amyloid A** | Amyloid precursor |
+| **Hepcidin** | ↓ Iron availability |
+| **Ferritin** | Iron storage |
+
+**Negative Acute Phase Proteins** (decrease):
+- Albumin
+- Transferrin
+
+**Leukocytosis**:
+- Bacterial infection → Neutrophilia
+- Viral infection → Lymphocytosis
+- Parasitic, allergic → Eosinophilia
+- Typhoid, brucella → Leukopenia
+
+> 💎 **ESR increases** because fibrinogen coats RBCs, causing rouleaux formation and faster settling
+
+## Outcomes of Chronic Inflammation
+
+1. **Resolution** (rare)
+2. **Fibrosis and scarring** (most common)
+3. **Persistent inflammation** (autoimmune, chronic infection)
+4. **Amyloidosis** (AA amyloid from serum amyloid A)`,
+      keyPoints: [
+        'Chronic inflammation = macrophages, lymphocytes, plasma cells (NOT neutrophils)',
+        'M1 macrophages (IFN-γ) = pro-inflammatory; M2 (IL-4/13) = anti-inflammatory, repair',
+        'Granuloma = epithelioid macrophages + giant cells + lymphocyte collar',
+        'Langhans giant cell = horseshoe nuclei (TB); Foreign body = scattered nuclei',
+        'Caseating granulomas = TB, fungi; Non-caseating = Sarcoidosis, Crohn\'s',
+        'Sarcoidosis: Non-caseating, ↑ACE, asteroid/Schaumann bodies, hypercalcemia',
+        'Acute phase proteins: CRP, fibrinogen, SAA (liver, induced by IL-6)',
+        'ESR elevated due to fibrinogen causing RBC rouleaux'
+      ],
+      examPrep: {
+        summary: `**Chronic Inflammation - Quick Review**
+
+🔵 **Main Cells**: Macrophages, lymphocytes, plasma cells
+
+⚡ **Macrophage Activation**:
+- M1 (IFN-γ): Kill, ROS, cytokines
+- M2 (IL-4/13): Repair, fibrosis
+
+🔴 **Granuloma**:
+- Epithelioid cells + Giant cells + Lymphocytes
+- Caseating: TB, fungi
+- Non-caseating: Sarcoid, Crohn's
+
+**Giant Cells**:
+- Langhans: Horseshoe nuclei (TB)
+- Foreign body: Scattered nuclei
+
+📊 **Sarcoidosis**:
+- Non-caseating
+- ↑ ACE
+- Asteroid, Schaumann bodies
+- Hypercalcemia (1,25-vit D)
+
+🌡️ **Acute Phase Response**:
+↑ CRP, fibrinogen, SAA, ferritin
+↓ Albumin, transferrin`,
+        mnemonics: [
+          'M1 = Murder (kill pathogens), M2 = Mend (repair)',
+          'Langhans = Long horseshoe nuclei',
+          'SARCOID: Skin, ACE↑, Respiratory, Calcium↑, Ocular, Immune (Th1), Diagnosis (non-caseating)',
+          'CFF-HAF: CRP, Fibrinogen, Ferritin, Hepcidin, Amyloid A, (negative: Albumin, transferrin Fall)'
+        ],
+        highYield: [
+          'Sarcoidosis = non-caseating granulomas + elevated ACE',
+          'TB = caseating granulomas with Langhans giant cells',
+          'Hypercalcemia in sarcoidosis from macrophage 1α-hydroxylase',
+          'Fibrinogen → RBC rouleaux → elevated ESR'
+        ],
+        commonMCQs: [
+          'Cell type in chronic inflammation: Macrophage',
+          'Granuloma with caseation: TB (most common)',
+          'Giant cell with horseshoe nuclei: Langhans',
+          'Elevated in sarcoidosis: ACE'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 3',
+          chapterTitle: 'Inflammation and Repair',
+          pages: '96-107'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'chronic-inflam-1',
+          question: 'What are the two pathways of macrophage activation and what triggers each?',
+          answer: 'M1 (classical): triggered by IFN-γ and microbial products → pro-inflammatory, microbicidal. M2 (alternative): triggered by IL-4/IL-13 → anti-inflammatory, tissue repair, fibrosis',
+          difficulty: 2
+        },
+        {
+          id: 'chronic-inflam-2',
+          question: 'How do you differentiate Langhans giant cells from foreign body giant cells?',
+          answer: 'Langhans: nuclei arranged in horseshoe or peripheral ring (TB, sarcoidosis). Foreign body: nuclei scattered randomly throughout cytoplasm (response to inert material)',
+          difficulty: 1
+        },
+        {
+          id: 'chronic-inflam-3',
+          question: 'Why does sarcoidosis cause hypercalcemia?',
+          answer: 'Macrophages in granulomas express 1α-hydroxylase, converting 25-OH vitamin D to active 1,25-OH vitamin D, leading to increased intestinal calcium absorption',
+          difficulty: 2
+        },
+        {
+          id: 'chronic-inflam-4',
+          question: 'What causes the elevated ESR in inflammation?',
+          answer: 'Fibrinogen (acute phase protein) coats RBCs and neutralizes their negative charge, causing RBCs to stack (rouleaux formation) and settle faster',
+          difficulty: 2
+        },
+        {
+          id: 'chronic-inflam-5',
+          question: 'What differentiates granulomas in TB from sarcoidosis histologically?',
+          answer: 'TB: Caseating necrosis (cheesy, acellular center), acid-fast bacilli on special stain. Sarcoidosis: Non-caseating (no central necrosis), may have asteroid bodies and Schaumann bodies',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['inflammation-acute'],
+    relatedTopics: ['tissue-repair-healing', 'tuberculosis', 'sarcoidosis'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 40,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // TISSUE REPAIR & HEALING
+  // =============================================================================
+  {
+    id: 'tissue-repair-healing',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Tissue Repair & Healing',
+    slug: 'tissue-repair-healing',
+    description: 'Regeneration vs repair, wound healing phases, factors affecting healing',
+    content: {
+      concept: `# Tissue Repair & Healing
+
+## Overview
+
+> After injury, tissues can heal by **regeneration** (complete restoration) or **repair** (scar formation). The outcome depends on the tissue's regenerative capacity and the extent of injury.
+
+## Regeneration vs Repair
+
+| Feature | Regeneration | Repair (Scarring) |
+|---------|--------------|-------------------|
+| **Definition** | Complete restitution of tissue | Deposition of connective tissue |
+| **Structure** | Normal architecture restored | Architecture altered |
+| **Function** | Fully restored | May be compromised |
+| **Requirement** | Intact tissue scaffold, labile/stable cells | Extensive damage, permanent cells |
+
+## Cell Populations by Proliferative Capacity
+
+### Labile Cells (Continuously Dividing)
+- Always in cell cycle
+- Examples: **Epidermis, GI epithelium, bone marrow, respiratory epithelium**
+- **Excellent regenerative capacity**
+
+### Stable Cells (Quiescent)
+- In G₀, can enter cell cycle when stimulated
+- Examples: **Hepatocytes, renal tubular cells, fibroblasts, smooth muscle**
+- **Good regenerative capacity**
+
+### Permanent Cells (Non-dividing)
+- Cannot re-enter cell cycle
+- Examples: **Neurons, cardiac myocytes, skeletal muscle**
+- **Minimal regeneration; repair by scarring**
+
+> 💎 **Liver** can regenerate up to 70% of its mass due to stable cells (hepatocytes)
+
+## Wound Healing
+
+### Types of Wound Healing
+
+**Primary Intention (First Intention)**:
+\`\`\`
+├── Clean, surgical wound
+├── Minimal tissue loss
+├── Edges approximated (sutured)
+├── Minimal scarring
+└── Heals in 7-10 days
+\`\`\`
+
+**Secondary Intention (Second Intention)**:
+\`\`\`
+├── Open wound, tissue loss
+├── Edges NOT approximated
+├── Fills with granulation tissue
+├── Significant scarring
+├── Wound contraction (myofibroblasts)
+└── Takes weeks to months
+\`\`\`
+
+### Phases of Wound Healing
+
+\`\`\`
+Day 0: INJURY
+    │
+    ▼
+PHASE 1: HEMOSTASIS & INFLAMMATION (0-3 days)
+    │
+    ├── Immediate: Vasoconstriction, platelet plug
+    ├── Hours: Vasodilation, neutrophil influx
+    ├── Day 1-2: Macrophages arrive
+    └── Key mediators: TGF-β, PDGF, FGF
+    │
+    ▼
+PHASE 2: PROLIFERATION (3-14 days)
+    │
+    ├── Angiogenesis (VEGF, FGF)
+    ├── Fibroblast migration, collagen synthesis
+    ├── Granulation tissue formation
+    └── Re-epithelialization
+    │
+    ▼
+PHASE 3: REMODELING (2 weeks - 1 year)
+    │
+    ├── Collagen cross-linking
+    ├── Type III collagen → Type I collagen
+    ├── ↓ Vascularity, ↓ cellularity
+    └── Maximum strength: 70-80% of original
+\`\`\`
+
+### Key Events by Day
+
+| Timeframe | Events |
+|-----------|--------|
+| **Day 1** | Clot, neutrophils |
+| **Day 2-3** | Macrophages, granulation tissue begins |
+| **Day 3-5** | Peak granulation tissue, re-epithelialization |
+| **Week 1** | Type III collagen predominates |
+| **Week 2** | Collagen accumulation, ↓ vascularity |
+| **Months** | Remodeling, Type I replaces Type III |
+
+### Granulation Tissue
+
+> Vascular, edematous connective tissue rich in vessels and fibroblasts
+
+**Composition**:
+- New capillaries (angiogenesis)
+- Fibroblasts
+- Loose ECM (Type III collagen, proteoglycans)
+- Inflammatory cells
+
+**Gross Appearance**: Pink, granular, bleeds easily
+
+**Microscopic**: Small vessels, plump fibroblasts, loose matrix
+
+> 💎 "Proud flesh" = excessive granulation tissue protruding above wound surface
+
+## Angiogenesis
+
+### Process
+\`\`\`
+1. Vasodilation (NO) + ↑ permeability (VEGF)
+2. Degradation of basement membrane (MMPs)
+3. Migration of endothelial cells
+4. Proliferation of endothelial cells
+5. Vessel maturation and pruning
+\`\`\`
+
+### Key Mediators
+
+| Factor | Function |
+|--------|----------|
+| **VEGF** | Most important, ↑ permeability, EC proliferation |
+| **FGF** | EC proliferation, migration |
+| **Angiopoietin-1** | Vessel stabilization |
+| **Angiopoietin-2** | Vessel destabilization (for sprouting) |
+
+> 💎 **VEGF** is induced by **hypoxia** via HIF-1α
+
+## Fibrosis & Scar Formation
+
+### Collagen Synthesis
+
+\`\`\`
+Fibroblast
+    │
+    ├── TGF-β stimulus
+    │
+    ▼
+Procollagen synthesis (RER)
+    │
+    ├── Hydroxylation of Pro, Lys (requires Vitamin C)
+    │
+    ▼
+Triple helix formation
+    │
+    ▼
+Secretion
+    │
+    ▼
+Cleavage of propeptides
+    │
+    ▼
+Cross-linking (lysyl oxidase, requires Cu)
+    │
+    ▼
+Mature collagen fibers
+\`\`\`
+
+### Collagen Types
+
+| Type | Location | Notes |
+|------|----------|-------|
+| **Type I** | Bone, skin, tendon | Most abundant (90%) |
+| **Type II** | Cartilage | |
+| **Type III** | Granulation tissue, vessels | Early wound healing |
+| **Type IV** | Basement membrane | |
+
+### Remodeling
+- **Matrix metalloproteinases (MMPs)**: Degrade ECM
+- **Tissue inhibitors of MMPs (TIMPs)**: Regulate MMP activity
+- Balance determines net collagen accumulation
+
+## Wound Strength
+
+\`\`\`
+Week 1: 10% of normal (fibrin, Type III collagen)
+Week 3: 20% of normal
+3 months: 70-80% of normal (Type I collagen)
+Maximum: Never exceeds 80% of unwounded skin
+\`\`\`
+
+## Factors Affecting Wound Healing
+
+### Local Factors
+
+| Factor | Effect |
+|--------|--------|
+| **Infection** | Prolongs inflammation, delays healing |
+| **Mechanical factors** | Tension, motion delay healing |
+| **Foreign bodies** | Persistent inflammation |
+| **Size, location** | Larger wounds heal slower |
+| **Blood supply** | Poor perfusion delays healing |
+| **Wound type** | Incised heals better than crush injury |
+
+### Systemic Factors
+
+| Factor | Effect |
+|--------|--------|
+| **Nutrition** | Protein, Vitamin C (collagen), Zinc |
+| **Diabetes** | Impaired healing, infections |
+| **Glucocorticoids** | ↓ Collagen synthesis, ↓ inflammation |
+| **Infection** | Systemic sepsis impairs healing |
+| **Age** | Delayed healing in elderly |
+
+> 💎 **Vitamin C deficiency** → cannot hydroxylate proline/lysine → defective collagen → poor wound healing + scurvy
+
+## Complications of Wound Healing
+
+### Deficient Healing
+- **Wound dehiscence**: Separation of wound edges
+- **Ulceration**: Failure to epithelialize
+- **Incisional hernia**: Weak scar
+
+### Excessive Healing
+| Condition | Features |
+|-----------|----------|
+| **Hypertrophic scar** | Raised, within wound margins, regresses |
+| **Keloid** | Extends BEYOND wound margins, doesn't regress, more common in dark skin |
+| **Proud flesh** | Excessive granulation tissue |
+
+> 💎 **Keloid** = excessive Type I and III collagen extending beyond wound margins
+
+### Contracture
+- Excessive contraction in secondary intention healing
+- Common in burns
+- Can cause functional impairment`,
+      keyPoints: [
+        'Labile cells (skin, GI, marrow) = excellent regeneration; Stable cells (liver) = good; Permanent (neurons, cardiac) = scarring',
+        'Primary intention = approximated edges, minimal scarring; Secondary = open wound, granulation tissue',
+        'Phases: Hemostasis/Inflammation (0-3d) → Proliferation (3-14d) → Remodeling (weeks-year)',
+        'Granulation tissue = new vessels + fibroblasts + Type III collagen',
+        'VEGF = most important angiogenesis factor, induced by hypoxia',
+        'Type III collagen (early) → Type I collagen (mature scar)',
+        'Maximum wound strength = 70-80% of normal',
+        'Vitamin C essential for collagen hydroxylation; Zinc for epithelialization'
+      ],
+      examPrep: {
+        summary: `**Wound Healing - Quick Review**
+
+📊 **Cell Types**:
+- Labile: Skin, GI, marrow (continuous)
+- Stable: Liver, kidney (G₀ → cycle)
+- Permanent: Neurons, cardiac (scar)
+
+🔵 **Primary Intention**: Clean, sutured
+🔴 **Secondary Intention**: Open, granulation
+
+⏱️ **Phases**:
+1. Hemostasis/Inflammation (0-3d)
+2. Proliferation (3-14d)
+3. Remodeling (weeks-year)
+
+⚡ **Key Factors**:
+- VEGF: Angiogenesis
+- TGF-β: Fibrosis
+- Vitamin C: Collagen hydroxylation
+- Zinc: Epithelialization
+
+📈 **Wound Strength**:
+- Week 1: 10%
+- Month 3: 70-80%
+- Never >80%`,
+        mnemonics: [
+          'LSP = Labile (skin), Stable (hepatocytes), Permanent (neurons)',
+          'Type III → Type I (3 becomes 1 = early becomes mature)',
+          'VEGF = Vessels (angiogenesis)',
+          'C for Collagen (Vitamin C for hydroxylation)'
+        ],
+        highYield: [
+          'Liver can regenerate 70% of mass (stable cells)',
+          'Granulation tissue = Type III collagen (early)',
+          'Maximum scar strength = 70-80% (never 100%)',
+          'Keloid extends beyond wound margins; Hypertrophic stays within'
+        ],
+        commonMCQs: [
+          'Cell type in continuous division: Labile',
+          'Most important angiogenesis factor: VEGF',
+          'Early collagen in wound: Type III',
+          'Maximum wound strength: 70-80%'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 3',
+          chapterTitle: 'Inflammation and Repair',
+          pages: '107-120'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'healing-1',
+          question: 'What is the maximum strength a healed wound can achieve and why?',
+          answer: '70-80% of original strength. This is because scar tissue (Type I collagen) never achieves the organized structure of normal dermis with its interlocking collagen bundles',
+          difficulty: 1
+        },
+        {
+          id: 'healing-2',
+          question: 'What is the composition of granulation tissue?',
+          answer: 'New capillaries (angiogenesis), proliferating fibroblasts, loose extracellular matrix (Type III collagen, proteoglycans), and inflammatory cells (macrophages)',
+          difficulty: 1
+        },
+        {
+          id: 'healing-3',
+          question: 'Why does vitamin C deficiency impair wound healing?',
+          answer: 'Vitamin C is a cofactor for prolyl and lysyl hydroxylase, essential for collagen hydroxylation. Without it, collagen cannot form stable triple helices, leading to weak, defective collagen',
+          difficulty: 2
+        },
+        {
+          id: 'healing-4',
+          question: 'How do keloids differ from hypertrophic scars?',
+          answer: 'Keloids extend BEYOND the original wound margins and don\'t regress; Hypertrophic scars stay WITHIN wound margins and often regress over time. Keloids are more common in dark-skinned individuals.',
+          difficulty: 2
+        },
+        {
+          id: 'healing-5',
+          question: 'What induces VEGF expression during wound healing?',
+          answer: 'Hypoxia induces VEGF expression via hypoxia-inducible factor (HIF-1α). The hypoxic wound environment triggers angiogenesis to restore oxygen supply.',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['inflammation-acute', 'inflammation-chronic'],
+    relatedTopics: ['cell-injury-adaptation', 'neoplasia-general'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // HEMODYNAMIC DISORDERS
+  // =============================================================================
+  {
+    id: 'hemodynamic-disorders',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Hemodynamic Disorders',
+    slug: 'hemodynamic-disorders',
+    description: 'Edema, hyperemia, congestion, hemorrhage',
+    content: {
+      concept: `# Hemodynamic Disorders
+
+## Overview
+
+> Hemodynamic disorders involve disturbances in blood flow, fluid distribution, and vascular integrity. Understanding Starling forces is fundamental to these conditions.
+
+## Starling Forces
+
+**Fluid Movement = (Pc - Pi) - (πc - πi)**
+
+| Force | Direction | Normal Value |
+|-------|-----------|--------------|
+| **Pc** (capillary hydrostatic) | Out of vessel | 35 mmHg (arterial), 15 mmHg (venous) |
+| **Pi** (interstitial hydrostatic) | Into vessel | ~0 mmHg |
+| **πc** (plasma oncotic) | Into vessel | 25-28 mmHg (albumin) |
+| **πi** (interstitial oncotic) | Out of vessel | ~8 mmHg |
+
+> 💎 **Albumin** is the major determinant of plasma oncotic pressure
+
+## Edema
+
+> **Edema** = abnormal accumulation of fluid in interstitial spaces or body cavities
+
+### Types of Edema
+
+| Type | Location |
+|------|----------|
+| **Peripheral** | Legs (dependent) |
+| **Ascites** | Peritoneal cavity |
+| **Hydrothorax** | Pleural cavity |
+| **Hydropericardium** | Pericardial cavity |
+| **Anasarca** | Generalized severe edema |
+
+### Pathophysiology of Edema
+
+\`\`\`
+1. ↑ HYDROSTATIC PRESSURE
+   ├── Heart failure (right → peripheral, left → pulmonary)
+   ├── Venous obstruction (DVT)
+   ├── Cirrhosis (portal hypertension → ascites)
+   └── Pregnancy, prolonged standing
+
+2. ↓ ONCOTIC PRESSURE (Hypoalbuminemia)
+   ├── Nephrotic syndrome (protein loss)
+   ├── Liver disease (↓ synthesis)
+   ├── Malnutrition (kwashiorkor)
+   └── Protein-losing enteropathy
+
+3. ↑ VASCULAR PERMEABILITY
+   ├── Inflammation
+   ├── Allergic reactions
+   ├── Burns
+   └── ARDS
+
+4. LYMPHATIC OBSTRUCTION
+   ├── Tumors
+   ├── Surgery (mastectomy → arm lymphedema)
+   ├── Filariasis → Elephantiasis
+   └── Radiation
+
+5. SODIUM RETENTION
+   ├── Renal failure
+   └── Secondary to ↓ renal perfusion (CHF, cirrhosis)
+\`\`\`
+
+### Characteristics of Edema Fluid
+
+| Type | Protein | Specific Gravity | Causes |
+|------|---------|------------------|--------|
+| **Transudate** | <3 g/dL | <1.012 | CHF, cirrhosis, nephrotic |
+| **Exudate** | >3 g/dL | >1.020 | Inflammation, infection |
+
+### Pitting vs Non-Pitting Edema
+
+| Pitting | Non-Pitting |
+|---------|-------------|
+| Indentation persists | Indentation doesn't persist |
+| Low protein (transudate) | High protein (lymphedema) |
+| CHF, venous, renal | Lymphedema, myxedema |
+
+> 💎 **Myxedema** (hypothyroidism) = non-pitting due to mucopolysaccharide (hyaluronic acid) accumulation
+
+## Hyperemia and Congestion
+
+### Hyperemia (Active)
+
+> **Increased blood flow** due to **arteriolar dilation**
+
+| Features | Examples |
+|----------|----------|
+| Active process | Exercise, inflammation |
+| Arterial blood | Erection |
+| Red appearance | Blushing |
+
+### Congestion (Passive)
+
+> **Impaired venous drainage** leading to blood accumulation
+
+| Features | Examples |
+|----------|----------|
+| Passive process | Heart failure |
+| Venous blood | Venous obstruction |
+| Blue-red (cyanotic) | Hepatic congestion |
+
+**Types of Congestion**:
+
+**Acute Pulmonary Congestion**:
+- LV failure → ↑ pressure in pulmonary veins
+- Engorged capillaries
+- Alveolar edema
+- Dyspnea, orthopnea
+
+**Chronic Pulmonary Congestion**:
+- Fibrosis of alveolar walls
+- **Heart failure cells** (hemosiderin-laden macrophages)
+- "Brown induration" of lung
+
+**Acute Hepatic Congestion**:
+- RV failure → ↑ central venous pressure
+- Centrilobular congestion
+- Hepatomegaly, tender liver
+
+**Chronic Hepatic Congestion**:
+- **Nutmeg liver** (mottled red-brown)
+- Central hemorrhagic necrosis
+- Zone 3 (centrilobular) most affected
+- Can progress to cardiac cirrhosis
+
+> 💎 **Nutmeg liver** = alternating pale (portal) and dark (central) areas resembling nutmeg
+
+## Hemorrhage
+
+> **Extravasation of blood** from vessels into tissues or body cavities
+
+### Types by Location
+
+| Term | Location |
+|------|----------|
+| **Hematoma** | Localized collection in tissue |
+| **Hemothorax** | Pleural cavity |
+| **Hemopericardium** | Pericardial cavity |
+| **Hemoperitoneum** | Peritoneal cavity |
+| **Hemarthrosis** | Joint space |
+
+### Types by Size (Skin)
+
+| Type | Size | Features |
+|------|------|----------|
+| **Petechiae** | 1-2 mm | Pinpoint, thrombocytopenia, vasculitis |
+| **Purpura** | 3-10 mm | Trauma, vasculitis, amyloid |
+| **Ecchymoses** | >10 mm | Bruises, trauma, coagulopathy |
+
+### Color Changes in Bruises
+
+\`\`\`
+Fresh: Red-blue (deoxyHb)
+    ↓
+1-3 days: Blue-purple (biliverdin)
+    ↓
+3-7 days: Green (biliverdin)
+    ↓
+7-14 days: Yellow-brown (bilirubin, hemosiderin)
+    ↓
+Resolution
+\`\`\`
+
+## Significance and Clinical Effects
+
+| Volume Loss | Effects |
+|-------------|---------|
+| **<20%** | Minimal, compensated |
+| **20-35%** | Tachycardia, cold extremities |
+| **35-50%** | Shock, oliguria |
+| **>50%** | Often fatal |
+
+### Consequences of Hemorrhage
+1. **Hypovolemic shock** (if rapid, significant)
+2. **Anemia** (if chronic, slow)
+3. **Jaundice** (if hemorrhage in body cavity - reabsorbed bilirubin)
+4. **Compression** (hematoma effect)`,
+      keyPoints: [
+        'Edema: ↑ hydrostatic, ↓ oncotic, ↑ permeability, lymphatic obstruction, Na retention',
+        'Transudate = low protein (<3g/dL); Exudate = high protein (>3g/dL, inflammation)',
+        'Pitting edema = low protein (CHF); Non-pitting = lymphedema, myxedema',
+        'Hyperemia = active (arteriolar dilation); Congestion = passive (venous)',
+        'Heart failure cells = hemosiderin-laden macrophages in chronic pulmonary congestion',
+        'Nutmeg liver = chronic hepatic congestion (zone 3 affected)',
+        'Petechiae (<2mm) = thrombocytopenia; Purpura (3-10mm); Ecchymoses (>10mm)',
+        'Blood loss >35% = shock; >50% often fatal'
+      ],
+      examPrep: {
+        summary: `**Hemodynamic Disorders - Quick Review**
+
+💧 **Edema Causes**:
+1. ↑ Hydrostatic (CHF, venous)
+2. ↓ Oncotic (hypoalbuminemia)
+3. ↑ Permeability (inflammation)
+4. Lymphatic obstruction
+5. Na retention
+
+📊 **Transudate vs Exudate**:
+- Transudate: <3g protein, <1.012 SG
+- Exudate: >3g protein, >1.020 SG
+
+🔴 **Hyperemia**: Active, arterial, red
+🔵 **Congestion**: Passive, venous, blue
+
+🫁 **Chronic Pulmonary Congestion**:
+- Heart failure cells
+- Brown induration
+
+🫀 **Chronic Hepatic Congestion**:
+- Nutmeg liver
+- Zone 3 (centrilobular) affected`,
+        mnemonics: [
+          'Edema HOPLNS: Hydrostatic↑, Oncotic↓, Permeability↑, Lymphatic, Na retention, Starling',
+          'Transudate = Through (passive), Exudate = Exit (active inflammation)',
+          'Heart failure cells = Hearts are in the LUNG (pulmonary congestion)',
+          'Nutmeg = Alternating colors (like nutmeg spice pattern)'
+        ],
+        highYield: [
+          'Nutmeg liver = chronic hepatic congestion',
+          'Heart failure cells = hemosiderin-laden macrophages',
+          'Myxedema = non-pitting (mucopolysaccharide)',
+          'Petechiae = thrombocytopenia/vasculitis'
+        ],
+        commonMCQs: [
+          'Main cause of plasma oncotic pressure: Albumin',
+          'Hemosiderin-laden macrophages in lung: Heart failure cells',
+          'Liver appearance in chronic congestion: Nutmeg liver',
+          'Non-pitting edema mechanism in myxedema: Mucopolysaccharide accumulation'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 4',
+          chapterTitle: 'Hemodynamic Disorders, Thromboembolic Disease, and Shock',
+          pages: '121-128'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'hemodynamic-1',
+          question: 'What are the five mechanisms of edema formation?',
+          answer: '1) ↑ Hydrostatic pressure (CHF, venous obstruction), 2) ↓ Oncotic pressure (hypoalbuminemia), 3) ↑ Vascular permeability (inflammation), 4) Lymphatic obstruction, 5) Sodium retention',
+          difficulty: 1
+        },
+        {
+          id: 'hemodynamic-2',
+          question: 'What is the pathophysiology of nutmeg liver?',
+          answer: 'Chronic right heart failure → ↑ central venous pressure → hepatic congestion → Zone 3 (centrilobular) affected first → alternating pale portal areas and congested central areas creating nutmeg pattern',
+          difficulty: 2
+        },
+        {
+          id: 'hemodynamic-3',
+          question: 'What are heart failure cells and where are they found?',
+          answer: 'Hemosiderin-laden alveolar macrophages found in chronic pulmonary congestion (left heart failure). They phagocytose RBCs that extravasate from congested capillaries.',
+          difficulty: 1
+        },
+        {
+          id: 'hemodynamic-4',
+          question: 'Why is myxedema non-pitting while cardiac edema is pitting?',
+          answer: 'Myxedema: Accumulation of mucopolysaccharides (hyaluronic acid) that trap water tightly. Cardiac edema: Low-protein transudate that flows freely, allowing indentation.',
+          difficulty: 2
+        },
+        {
+          id: 'hemodynamic-5',
+          question: 'How do you differentiate petechiae, purpura, and ecchymoses?',
+          answer: 'Petechiae: 1-2mm (thrombocytopenia, vasculitis). Purpura: 3-10mm (trauma, amyloidosis). Ecchymoses: >10mm (bruises, coagulopathy). All are extravasation of blood into skin.',
+          difficulty: 1
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['inflammation-acute'],
+    relatedTopics: ['thrombosis-embolism', 'shock-pathology'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 35,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // THROMBOSIS & EMBOLISM
+  // =============================================================================
+  {
+    id: 'thrombosis-embolism',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Thrombosis & Embolism',
+    slug: 'thrombosis-embolism',
+    description: 'Virchow triad, types of emboli, DIC, fate of thrombus',
+    content: {
+      concept: `# Thrombosis & Embolism
+
+## Thrombosis
+
+> **Thrombosis** is the formation of a solid mass (thrombus) from blood constituents within the intact vascular system during life.
+
+### Virchow's Triad
+
+The three primary abnormalities leading to thrombus formation:
+
+\`\`\`
+              VIRCHOW'S TRIAD
+                    │
+    ┌───────────────┼───────────────┐
+    │               │               │
+    ▼               ▼               ▼
+ENDOTHELIAL    ABNORMAL      HYPERCOAGULABILITY
+INJURY         BLOOD FLOW    
+                (STASIS/
+                TURBULENCE)
+
+Examples:       Examples:       Examples:
+- Atheroma      - Stasis        - Factor V Leiden
+- Trauma        - Aneurysm      - Pregnancy
+- Vasculitis    - A-fib         - Cancer
+- Catheter      - Bed rest      - Surgery
+\`\`\`
+
+### 1. Endothelial Injury (Most Important in Arterial)
+
+**Normal Endothelial Functions**:
+- Antithrombotic: PGI₂, NO, thrombomodulin, heparin-like molecules
+- Profibrinolytic: t-PA
+
+**Injury Causes**:
+- Atherosclerosis
+- Hypertension
+- Inflammation
+- Hemodynamic stress
+- Smoking, hyperlipidemia
+
+### 2. Abnormal Blood Flow
+
+**Stasis** (Venous thrombosis):
+- Prevents dilution of activated clotting factors
+- Allows platelet contact with endothelium
+- Reduces flow of inhibitors (antithrombin)
+- Promotes hypoxic endothelial injury
+
+**Turbulence** (Arterial thrombosis):
+- Disrupts laminar flow
+- Causes endothelial injury
+- Creates countercurrents and pockets of stasis
+
+### 3. Hypercoagulability
+
+**Primary (Genetic)**:
+| Disorder | Defect | Frequency |
+|----------|--------|-----------|
+| **Factor V Leiden** | Factor V resistant to Protein C | Most common (5%) |
+| **Prothrombin mutation** | G20210A, ↑ prothrombin | Second most common |
+| **Antithrombin deficiency** | ↓ Antithrombin III | Severe, rare |
+| **Protein C deficiency** | ↓ Protein C | Warfarin skin necrosis |
+| **Protein S deficiency** | ↓ Protein S | |
+
+**Secondary (Acquired)**:
+| High Risk | Lower Risk |
+|-----------|------------|
+| Prolonged bed rest | Obesity |
+| Surgery (orthopedic) | Smoking |
+| Malignancy | Pregnancy |
+| Prosthetic heart valves | Oral contraceptives |
+| DIC | Nephrotic syndrome |
+| Antiphospholipid syndrome | |
+
+> 💎 **Factor V Leiden** = most common inherited hypercoagulable state (APC resistance)
+
+### Morphology of Thrombi
+
+**Arterial Thrombi**:
+- Occur at sites of endothelial injury
+- Grow **retrograde** (against flow)
+- Platelet-rich = pale ("white thrombus")
+- Superimposed on atherosclerotic plaques
+
+**Venous Thrombi (Phlebothrombosis)**:
+- Occur at sites of stasis
+- Grow **anterograde** (with flow)
+- RBC-rich = red ("red thrombus")
+- 90% in deep veins of legs
+
+**Lines of Zahn**:
+- Alternating pale (platelet/fibrin) and dark (RBC) layers
+- Indicates **ante-mortem** formation
+- Distinguishes thrombus from post-mortem clot
+
+### Fate of Thrombus
+
+\`\`\`
+THROMBUS
+    │
+    ├── PROPAGATION
+    │   └── Growth along vessel
+    │
+    ├── EMBOLIZATION
+    │   └── Part dislodges and travels
+    │
+    ├── DISSOLUTION
+    │   └── Fibrinolysis (complete resolution)
+    │
+    ├── ORGANIZATION & RECANALIZATION
+    │   └── Granulation tissue → new channels
+    │
+    └── (Rarely) INFECTION
+        └── Septic embolization
+\`\`\`
+
+## Embolism
+
+> **Embolus** = detached intravascular solid, liquid, or gaseous mass carried by blood to a site distant from its origin.
+
+### Types of Emboli
+
+**1. Thromboembolism (99%)**
+
+**Pulmonary Embolism (PE)**:
+\`\`\`
+Origin: 95% from deep leg veins (iliofemoral)
+    ↓
+Right heart → Pulmonary arteries
+    ↓
+├── Small: Silent or transient dyspnea
+├── Medium: Pulmonary infarction (lower lobes)
+├── Large saddle: Sudden death, EMD
+└── Multiple small: Pulmonary hypertension
+\`\`\`
+
+> 💎 **Saddle embolus** = straddles bifurcation of main pulmonary artery → sudden death
+
+**Systemic (Arterial) Embolism**:
+- 80% from intracardiac mural thrombi
+- Distribution: Brain (MCA) > Lower extremities > Viscera
+- Causes infarction of affected organ
+
+**2. Fat Embolism**
+- After fractures of long bones, liposuction
+- **Triad**: Pulmonary (dyspnea), Neurologic (confusion), Petechiae (skin, conjunctiva)
+- Latent period 1-3 days
+- Oil Red O stain confirms fat
+
+**3. Air Embolism**
+- >100 mL air needed for symptoms
+- Causes: Surgery, trauma, IV lines
+- **Decompression sickness** (Caisson disease): Dissolved N₂ forms bubbles
+  - "The bends" (joint pain)
+  - "The chokes" (respiratory distress)
+  - Bone necrosis (avascular necrosis of femoral head)
+
+**4. Amniotic Fluid Embolism**
+- Catastrophic complication of labor
+- Squamous cells, lanugo hair, mucin, fat in pulmonary vessels
+- DIC common
+- High mortality (80%)
+
+**5. Other Emboli**
+- Tumor emboli
+- Septic emboli (infective endocarditis)
+- Foreign body emboli
+- Cholesterol emboli (from ruptured plaques)
+
+## Disseminated Intravascular Coagulation (DIC)
+
+> Widespread activation of coagulation leading to microthrombi and consumption of clotting factors/platelets → bleeding
+
+### Pathophysiology
+\`\`\`
+Trigger (Sepsis, Trauma, Malignancy, Obstetric)
+    ↓
+Tissue factor release → Thrombin activation
+    ↓
+├── Microthrombi formation
+│   └── Organ ischemia (kidney, brain, lung)
+│
+└── Consumption of clotting factors + platelets
+    └── BLEEDING (paradoxically)
+\`\`\`
+
+### Causes of DIC
+
+| Category | Examples |
+|----------|----------|
+| **Obstetric** | Amniotic fluid embolism, placental abruption, eclampsia |
+| **Infection** | Gram-negative sepsis (most common), meningococcemia |
+| **Malignancy** | Acute promyelocytic leukemia, mucin-secreting adenoCA |
+| **Trauma** | Massive tissue destruction, burns, head injury |
+| **Miscellaneous** | Transfusion reaction, snake venom |
+
+### Laboratory Findings
+
+| Test | Finding |
+|------|---------|
+| **Platelets** | ↓↓ (consumed) |
+| **PT/aPTT** | ↑↑ (factor depletion) |
+| **Fibrinogen** | ↓ (consumed) |
+| **D-dimer** | ↑↑↑ (fibrin degradation) |
+| **Fibrin split products** | ↑ |
+| **Peripheral smear** | Schistocytes (microangiopathic hemolytic anemia) |
+
+> 💎 **D-dimer elevation** is most sensitive for DIC; **Schistocytes** indicate microthrombi`,
+      keyPoints: [
+        'Virchow\'s Triad: Endothelial injury, Abnormal flow (stasis/turbulence), Hypercoagulability',
+        'Factor V Leiden = most common inherited hypercoagulable state',
+        'Lines of Zahn = ante-mortem thrombus (alternating layers)',
+        'Arterial thrombi = white (platelet-rich), Venous = red (RBC-rich)',
+        '95% of PE from deep leg veins; Saddle embolus = sudden death',
+        'Fat embolism triad: Pulmonary, Neurologic, Petechiae (1-3 day latent)',
+        'DIC: Consumption of factors → paradoxical bleeding; D-dimer markedly elevated',
+        'Schistocytes = microangiopathic hemolytic anemia in DIC'
+      ],
+      examPrep: {
+        summary: `**Thrombosis & Embolism - Quick Review**
+
+🔺 **Virchow's Triad**:
+1. Endothelial injury (arterial)
+2. Stasis/turbulence (venous)
+3. Hypercoagulability
+
+📊 **Thrombus Types**:
+- Arterial: White, platelet-rich
+- Venous: Red, RBC-rich
+- Lines of Zahn = ante-mortem
+
+⚡ **Emboli Types**:
+1. Thromboembolism (99%)
+2. Fat (fractures): PPP triad
+3. Air (>100 mL)
+4. Amniotic fluid (DIC)
+
+🔴 **DIC**:
+- Microthrombi + Bleeding
+- ↑ PT/aPTT, ↑ D-dimer
+- ↓ Platelets, ↓ Fibrinogen
+- Schistocytes on smear`,
+        mnemonics: [
+          'Virchow = VET: Vessel (endothelium), Eddy (flow), Thrombophilia',
+          'Factor V LEIden = LEading cause of inherited hypercoagulability',
+          'Fat embolism = PPN: Pulmonary, Petechiae, Neurologic',
+          'DIC = Die In Coagulation (bleeding + clotting)'
+        ],
+        highYield: [
+          'Factor V Leiden = most common inherited hypercoagulable state',
+          'Lines of Zahn = thrombus formed during life',
+          '95% PE from deep leg veins',
+          'DIC: D-dimer markedly elevated, schistocytes present'
+        ],
+        commonMCQs: [
+          'Most common inherited hypercoagulable state: Factor V Leiden',
+          'Ante-mortem thrombus indicator: Lines of Zahn',
+          'Fat embolism triad: Pulmonary, Neurologic, Petechiae',
+          'Most sensitive test for DIC: D-dimer'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 4',
+          chapterTitle: 'Hemodynamic Disorders, Thromboembolic Disease, and Shock',
+          pages: '128-145'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'thrombosis-1',
+          question: 'What are the components of Virchow\'s triad?',
+          answer: '1) Endothelial injury (most important for arterial), 2) Abnormal blood flow (stasis/turbulence), 3) Hypercoagulability (inherited or acquired)',
+          difficulty: 1
+        },
+        {
+          id: 'thrombosis-2',
+          question: 'What are Lines of Zahn and what do they indicate?',
+          answer: 'Alternating pale (platelet/fibrin) and dark (RBC) layers in a thrombus. They indicate the thrombus formed ante-mortem (during life), distinguishing it from post-mortem clots.',
+          difficulty: 2
+        },
+        {
+          id: 'thrombosis-3',
+          question: 'What is Factor V Leiden and why does it cause hypercoagulability?',
+          answer: 'Mutation in Factor V making it resistant to inactivation by activated Protein C. Since Protein C normally degrades Factor Va, resistance leads to prolonged clotting cascade activity.',
+          difficulty: 2
+        },
+        {
+          id: 'thrombosis-4',
+          question: 'What is the classic triad of fat embolism syndrome?',
+          answer: 'Pulmonary (dyspnea, hypoxemia), Neurologic (confusion, altered consciousness), Petechiae (skin, conjunctiva). Occurs 1-3 days after fracture (latent period).',
+          difficulty: 2
+        },
+        {
+          id: 'thrombosis-5',
+          question: 'Why does DIC cause BOTH clotting and bleeding?',
+          answer: 'Initial widespread thrombin activation → microthrombi (clotting) → consumption of platelets and clotting factors → depletion leads to inability to form clots → bleeding',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['hemodynamic-disorders'],
+    relatedTopics: ['shock-pathology', 'bleeding-disorders'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // SHOCK
+  // =============================================================================
+  {
+    id: 'shock-pathology',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Shock',
+    slug: 'shock-pathology',
+    description: 'Types of shock, pathogenesis, stages, organ changes',
+    content: {
+      concept: `# Shock
+
+## Definition
+
+> **Shock** is a state of systemic hypoperfusion due to reduced cardiac output or reduced effective circulating blood volume, resulting in cellular hypoxia and organ dysfunction.
+
+## Types of Shock
+
+### Classification
+
+\`\`\`
+SHOCK
+├── CARDIOGENIC (Pump failure)
+│   └── MI, arrhythmia, tamponade
+│
+├── HYPOVOLEMIC (Volume loss)
+│   └── Hemorrhage, fluid loss
+│
+├── DISTRIBUTIVE (Maldistribution)
+│   ├── Septic (most common cause of shock death)
+│   ├── Anaphylactic
+│   └── Neurogenic
+│
+└── OBSTRUCTIVE
+    └── PE, tension pneumothorax
+\`\`\`
+
+### Hemodynamic Profiles
+
+| Type | CO | SVR | CVP/PCWP |
+|------|-----|-----|----------|
+| **Cardiogenic** | ↓ | ↑ | ↑ |
+| **Hypovolemic** | ↓ | ↑ | ↓ |
+| **Septic (early)** | ↑ (warm) | ↓ | ↓ |
+| **Septic (late)** | ↓ (cold) | ↑ | ↓ |
+| **Anaphylactic** | ↓ | ↓ | ↓ |
+| **Neurogenic** | ↓ | ↓ | ↓ |
+
+> 💎 Early septic shock is **hyperdynamic** (warm, ↑CO, ↓SVR) before progressing to cold shock
+
+## Stages of Shock
+
+### Stage 1: Non-progressive (Compensated)
+
+\`\`\`
+↓ Blood pressure detected
+    ↓
+Baroreceptor reflex activation
+    ↓
+├── ↑ Heart rate (sympathetic)
+├── ↑ Peripheral vasoconstriction
+├── ↑ Renin-angiotensin-aldosterone
+└── ↑ ADH secretion
+    ↓
+Maintained perfusion to vital organs
+(Brain, Heart - "redistribution")
+\`\`\`
+
+### Stage 2: Progressive (Decompensated)
+
+\`\`\`
+Prolonged hypoperfusion
+    ↓
+├── Tissue hypoxia → Anaerobic metabolism
+├── Lactic acidosis
+├── Endothelial dysfunction
+├── Capillary leak
+└── DIC may develop
+    ↓
+Worsening organ function
+Refractory to fluid resuscitation
+\`\`\`
+
+### Stage 3: Irreversible
+
+\`\`\`
+Severe cellular injury
+    ↓
+├── Myocardial depression
+├── Vascular paralysis
+├── Multi-organ failure
+├── Lysosomal enzyme release
+└── Complement activation
+    ↓
+Death despite treatment
+\`\`\`
+
+## Septic Shock
+
+> Most common cause of death from shock in hospitals
+
+### Pathophysiology
+
+\`\`\`
+Infection (usually Gram-negative)
+    ↓
+LPS (endotoxin) or Gram+ components
+    ↓
+Toll-like receptors (TLR4)
+    ↓
+Macrophage activation
+    ↓
+Massive cytokine release ("cytokine storm")
+├── TNF-α, IL-1, IL-6
+├── High-mobility group box 1 (HMGB1)
+└── Complement activation
+    ↓
+├── Vasodilation (NO, PGI₂) → ↓ SVR
+├── Endothelial dysfunction → Capillary leak
+├── Myocardial depression (TNF, NO)
+├── Procoagulant state → DIC
+└── Metabolic abnormalities
+    ↓
+Multi-organ dysfunction syndrome (MODS)
+\`\`\`
+
+### Gram-Negative vs Gram-Positive
+
+| Feature | Gram-Negative | Gram-Positive |
+|---------|---------------|---------------|
+| **Trigger** | LPS (endotoxin) | Lipoteichoic acid, peptidoglycan |
+| **Receptor** | TLR4 | TLR2 |
+| **Superantigens** | No | Yes (Toxic shock) |
+| **Examples** | E. coli, Pseudomonas | S. aureus, S. pneumoniae |
+
+### Clinical Features
+
+**Early (Warm) Shock**:
+- Warm, flushed skin
+- ↑ Cardiac output
+- ↓ SVR (vasodilation)
+- Tachycardia, tachypnea
+- Fever or hypothermia
+
+**Late (Cold) Shock**:
+- Cool, clammy skin
+- ↓ Cardiac output
+- ↑ SVR
+- Oliguria, altered mental status
+- Multi-organ failure
+
+## Organ Changes in Shock
+
+### Heart
+- Subendocardial necrosis (watershed area)
+- "Contraction band necrosis" (catecholamine damage)
+
+### Lungs
+- **Shock lung / ARDS (Diffuse alveolar damage)**
+- Hyaline membranes
+- Alveolar edema
+- Later: Type II pneumocyte proliferation
+
+### Kidneys
+- **Acute tubular necrosis (ATN)**
+- Tubular epithelial necrosis (PCT, thick ascending limb)
+- Muddy brown casts
+- Oliguria → Polyuric recovery phase
+
+### Liver
+- Centrilobular necrosis (Zone 3 - furthest from O₂)
+- "Shock liver"
+- ↑ Transaminases
+
+### Brain
+- **Watershed infarcts** (border zones between arterial territories)
+- Laminar necrosis (layers 3, 5, 6 of cortex)
+- "Respirator brain" if prolonged
+
+### GI Tract
+- Mucosal hemorrhage and necrosis
+- Stress ulcers
+- Bacterial translocation
+
+### Adrenals
+- Hemorrhagic necrosis
+- **Waterhouse-Friderichsen syndrome** (meningococcemia)
+
+## Cardiogenic Shock
+
+### Causes
+- **MI** (most common) - >40% LV damage
+- Arrhythmias
+- Cardiomyopathy
+- Mechanical: VSD, papillary muscle rupture, tamponade
+
+### Features
+- ↓ CO, ↑ SVR, ↑ CVP/PCWP
+- Pulmonary edema
+- Cold, clammy extremities
+- Jugular venous distension
+
+## Hypovolemic Shock
+
+### Causes
+- **Hemorrhage** (trauma, GI bleed)
+- Fluid loss (burns, diarrhea, vomiting)
+- Third spacing (pancreatitis, ascites)
+
+### Compensation
+| Blood Loss | Stage | Features |
+|------------|-------|----------|
+| <15% | Class I | Minimal symptoms |
+| 15-30% | Class II | Tachycardia, ↓ pulse pressure |
+| 30-40% | Class III | Tachycardia, hypotension, confusion |
+| >40% | Class IV | Severe shock, altered consciousness |
+
+## Anaphylactic Shock
+
+### Mechanism
+\`\`\`
+Previous sensitization → IgE on mast cells
+    ↓
+Re-exposure to allergen
+    ↓
+Mast cell degranulation
+    ↓
+Histamine, leukotrienes, prostaglandins
+    ↓
+├── Vasodilation
+├── ↑ Vascular permeability
+├── Bronchoconstriction
+└── ↑ Mucus secretion
+    ↓
+Distributive shock
+\`\`\`
+
+### Treatment
+- **Epinephrine** (α1 vasoconstriction, β2 bronchodilation)
+- Airway management
+- Fluids, antihistamines, steroids
+
+## Neurogenic Shock
+
+### Mechanism
+- Loss of sympathetic tone (spinal cord injury, anesthesia)
+- Vasodilation + bradycardia
+- "Warm" shock
+
+### Features
+- Hypotension WITHOUT compensatory tachycardia
+- Warm, dry skin (no sympathetic response)
+- Bradycardia (vagal unopposed)`,
+      keyPoints: [
+        'Septic shock = most common cause of death from shock; cytokine storm (TNF, IL-1, IL-6)',
+        'Early septic shock = warm (↑CO, ↓SVR); Late = cold (↓CO, ↑SVR)',
+        'Cardiogenic: ↓CO, ↑SVR, ↑PCWP; Hypovolemic: ↓CO, ↑SVR, ↓CVP',
+        'Shock stages: Compensated → Progressive → Irreversible',
+        'Shock lung = ARDS/Diffuse alveolar damage (hyaline membranes)',
+        'Shock kidney = ATN (muddy brown casts)',
+        'Shock liver = centrilobular necrosis (Zone 3)',
+        'Waterhouse-Friderichsen = adrenal hemorrhage in meningococcemia'
+      ],
+      examPrep: {
+        summary: `**Shock - Quick Review**
+
+📊 **Types**:
+- Cardiogenic (MI): ↓CO, ↑SVR, ↑PCWP
+- Hypovolemic: ↓CO, ↑SVR, ↓CVP
+- Septic early: ↑CO, ↓SVR (warm)
+- Septic late: ↓CO, ↑SVR (cold)
+
+⚡ **Septic Shock**:
+LPS → TLR4 → TNF, IL-1, IL-6
+- Vasodilation, capillary leak
+- DIC
+- MODS
+
+🔴 **Organ Damage**:
+- Lung: ARDS (hyaline membranes)
+- Kidney: ATN (muddy casts)
+- Liver: Zone 3 necrosis
+- Brain: Watershed infarcts
+
+⏱️ **Stages**:
+1. Compensated (↑HR, ↑SVR)
+2. Progressive (lactic acidosis)
+3. Irreversible (MODS, death)`,
+        mnemonics: [
+          'Early Sepsis = Hot (hyperdynamic, warm), Late = Cold',
+          'CARD = CO↓, All up: SVR↑, PCWP↑ (cardiogenic)',
+          'Shock affects: Lungs (ARDS), Kidneys (ATN), Liver (Zone 3)',
+          'Waterhouse-Friderichsen = Meningococcus Melts Adrenals'
+        ],
+        highYield: [
+          'Septic shock = most common ICU shock death',
+          'Early septic = warm shock (↑CO, ↓SVR)',
+          'Shock kidney = ATN with muddy brown casts',
+          'Zone 3 hepatic necrosis in shock (furthest from O₂)'
+        ],
+        commonMCQs: [
+          'Most common cause of death from shock: Septic',
+          'Hemodynamic profile in early septic shock: ↑CO, ↓SVR',
+          'Kidney finding in shock: Acute tubular necrosis',
+          'Adrenal finding in meningococcemia: Waterhouse-Friderichsen syndrome'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 4',
+          chapterTitle: 'Hemodynamic Disorders, Thromboembolic Disease, and Shock',
+          pages: '145-155'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'shock-1',
+          question: 'What are the hemodynamic differences between cardiogenic and hypovolemic shock?',
+          answer: 'Both have ↓CO and ↑SVR (compensatory vasoconstriction). KEY DIFFERENCE: Cardiogenic has ↑CVP/PCWP (backup of blood), Hypovolemic has ↓CVP/PCWP (volume depleted)',
+          difficulty: 2
+        },
+        {
+          id: 'shock-2',
+          question: 'Why is early septic shock "warm" while late septic shock is "cold"?',
+          answer: 'Early: Massive vasodilation (NO, cytokines) → ↓SVR, compensatory ↑CO → warm, flushed skin. Late: Myocardial depression (TNF) + volume depletion → ↓CO, compensatory vasoconstriction → cold, clammy',
+          difficulty: 2
+        },
+        {
+          id: 'shock-3',
+          question: 'What causes "shock lung" and what are its pathologic features?',
+          answer: 'ARDS/Diffuse alveolar damage from systemic inflammation. Features: Hyaline membranes (fibrin + necrotic cells), pulmonary edema, later Type II pneumocyte proliferation',
+          difficulty: 2
+        },
+        {
+          id: 'shock-4',
+          question: 'Why does Zone 3 of the liver undergo necrosis in shock?',
+          answer: 'Zone 3 (centrilobular, around central vein) is furthest from arterial blood supply (portal triad in Zone 1). In shock/hypoperfusion, Zone 3 hepatocytes receive least oxygen and are most vulnerable.',
+          difficulty: 2
+        },
+        {
+          id: 'shock-5',
+          question: 'What is Waterhouse-Friderichsen syndrome?',
+          answer: 'Acute bilateral adrenal hemorrhage and necrosis, classically associated with meningococcemia (Neisseria meningitidis). Causes acute adrenal insufficiency during septic shock.',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['thrombosis-embolism', 'hemodynamic-disorders'],
+    relatedTopics: ['inflammation-acute', 'cell-injury-adaptation'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // NEOPLASIA - GENERAL CONCEPTS
+  // =============================================================================
+  {
+    id: 'neoplasia-general',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Neoplasia - General Concepts',
+    slug: 'neoplasia-general',
+    description: 'Benign vs malignant, nomenclature, grading, staging',
+    content: {
+      concept: `# Neoplasia - General Concepts
+
+## Definition
+
+> **Neoplasia** literally means "new growth." A **neoplasm** is an abnormal mass of tissue with growth that exceeds and is uncoordinated with normal tissues and persists after cessation of the stimuli that evoked the change.
+
+> "A neoplasm is an abnormal mass of tissue, the growth of which exceeds and is uncoordinated with that of normal tissues, and persists in the same excessive manner after cessation of the stimulus which evoked the change." - Willis
+
+## Nomenclature
+
+### Benign Tumors
+
+| Tissue Type | Benign Tumor |
+|-------------|--------------|
+| **Epithelial** - Squamous | Squamous papilloma |
+| **Epithelial** - Glandular | Adenoma |
+| **Epithelial** - Surface | Papilloma |
+| **Connective** - Fibrous | Fibroma |
+| **Connective** - Cartilage | Chondroma |
+| **Connective** - Bone | Osteoma |
+| **Connective** - Fat | Lipoma |
+| **Connective** - Smooth muscle | Leiomyoma |
+| **Connective** - Skeletal muscle | Rhabdomyoma |
+| **Connective** - Blood vessels | Hemangioma |
+
+### Malignant Tumors
+
+| Tissue Type | Malignant Tumor |
+|-------------|-----------------|
+| **Epithelial** - Squamous | Squamous cell carcinoma |
+| **Epithelial** - Glandular | Adenocarcinoma |
+| **Connective** - Fibrous | Fibrosarcoma |
+| **Connective** - Cartilage | Chondrosarcoma |
+| **Connective** - Bone | Osteosarcoma |
+| **Connective** - Fat | Liposarcoma |
+| **Connective** - Smooth muscle | Leiomyosarcoma |
+| **Connective** - Skeletal muscle | Rhabdomyosarcoma |
+| **Connective** - Blood vessels | Angiosarcoma |
+
+### Exceptions to Nomenclature Rules
+
+\`\`\`
+MALIGNANT but end in "-oma":
+├── Melanoma (melanocyte origin)
+├── Lymphoma (lymphoid origin)
+├── Seminoma (germ cell)
+├── Hepatoma (hepatocellular carcinoma)
+├── Mesothelioma
+└── Glioma (astrocytoma, etc.)
+
+OTHER SPECIAL NAMES:
+├── Blastomas: Embryonal tumors (nephroblastoma, neuroblastoma)
+├── Teratomas: Multiple germ layers (benign or malignant)
+└── Hamartomas: Disorganized normal tissue (not true neoplasm)
+\`\`\`
+
+> 💎 Remember: Lymphoma, Melanoma, Seminoma, Mesothelioma are MALIGNANT despite "-oma" suffix
+
+### Mixed Tumors
+
+| Tumor | Components | Location |
+|-------|------------|----------|
+| **Pleomorphic adenoma** | Epithelial + Myxoid stroma | Salivary gland |
+| **Fibroadenoma** | Epithelial + Fibrous stroma | Breast |
+| **Teratoma** | All 3 germ layers | Gonads, mediastinum |
+| **Wilms tumor** | Blastema + Epithelium + Stroma | Kidney |
+
+## Benign vs Malignant
+
+### Key Differences
+
+| Feature | Benign | Malignant |
+|---------|--------|-----------|
+| **Differentiation** | Well differentiated | Variable (well → anaplastic) |
+| **Growth rate** | Slow | Rapid (usually) |
+| **Local invasion** | Expansile, encapsulated | Infiltrative, destructive |
+| **Metastasis** | Absent | Present |
+| **Necrosis** | Rare | Common (outgrows blood supply) |
+| **Mitoses** | Few, normal | Many, abnormal |
+| **Effect on host** | Local compression | Cachexia, paraneoplastic |
+
+### Differentiation & Anaplasia
+
+**Differentiation** = extent to which tumor cells resemble their normal counterparts
+
+**Anaplasia** = lack of differentiation (hallmark of malignancy)
+
+**Features of Anaplasia**:
+\`\`\`
+├── Pleomorphism (variation in size/shape)
+├── Abnormal nuclear morphology
+│   ├── Hyperchromatism
+│   ├── ↑ Nuclear:Cytoplasmic ratio (1:1 vs normal 1:4-6)
+│   └── Irregular nuclear membrane
+├── Atypical mitoses (tripolar, multipolar)
+├── Loss of polarity (disorganized architecture)
+└── Giant cells (tumor giant cells ≠ foreign body)
+\`\`\`
+
+### Dysplasia
+
+> **Dysplasia** = disordered growth with loss of cellular uniformity and architectural orientation
+
+- Preneoplastic but NOT cancer
+- Does NOT inevitably progress to cancer
+- Confined to epithelium (above basement membrane)
+- **Carcinoma in situ (CIS)** = full-thickness dysplasia
+
+\`\`\`
+Normal → Mild Dysplasia → Moderate → Severe → CIS → Invasive Carcinoma
+                                         ↑
+                                    (Full thickness)
+\`\`\`
+
+## Metastasis
+
+> **Metastasis** = spread of tumor to sites physically discontinuous with primary tumor - DEFINITIVE evidence of malignancy
+
+### Routes of Metastasis
+
+**1. Lymphatic Spread**
+- Most common route for CARCINOMAS
+- Follows natural lymphatic drainage
+- Sentinel lymph node = first node receiving drainage
+- Example: Breast CA → Axillary nodes
+
+**2. Hematogenous Spread**
+- Most common route for SARCOMAS
+- Veins more easily invaded than arteries
+- **Liver and Lungs** most common sites (portal and caval drainage)
+- Common patterns:
+  - GI cancers → Liver (portal)
+  - All others → Lungs (caval)
+  - Lung/Liver → Anywhere
+
+**3. Direct Seeding (Transcoelomic)**
+- Spread within body cavities
+- Ovarian CA → Peritoneum
+- Lung CA → Pleura
+
+### Common Metastatic Patterns
+
+\`\`\`
+PRIMARY TUMOR          →    COMMON METASTATIC SITES
+Prostate               →    Bone (osteoblastic)
+Breast                 →    Bone, Lung, Liver, Brain
+Lung                   →    Brain, Bone, Liver, Adrenal
+Colorectal             →    Liver, Lung
+Kidney (RCC)           →    Lung, Bone
+Melanoma               →    Anywhere (unpredictable)
+Thyroid (follicular)   →    Lung, Bone
+\`\`\`
+
+> 💎 **"Seed and Soil"** hypothesis: Metastasis requires favorable microenvironment
+
+### Exceptions - Benign Tumors That Metastasize
+- Leiomyoma of uterus → Lungs (benign metastasizing leiomyoma)
+- Hydatidiform mole → Lungs
+
+## Grading and Staging
+
+### Grading
+
+> Based on **histologic appearance** (differentiation, mitoses, architecture)
+
+**General Grading**:
+| Grade | Description |
+|-------|-------------|
+| **G1** | Well differentiated |
+| **G2** | Moderately differentiated |
+| **G3** | Poorly differentiated |
+| **G4** | Undifferentiated (anaplastic) |
+
+**Specific Grading Systems**:
+- Gleason score (prostate)
+- Bloom-Richardson (breast)
+- Fuhrman (renal cell carcinoma)
+
+### Staging
+
+> Based on **extent of spread** (size, lymph nodes, metastasis)
+
+**TNM System**:
+\`\`\`
+T = Primary Tumor size/extent
+    T0: No primary
+    Tis: Carcinoma in situ
+    T1-4: Increasing size/local invasion
+
+N = Regional Lymph Nodes
+    N0: No nodal involvement
+    N1-3: Increasing nodal involvement
+
+M = Distant Metastasis
+    M0: No metastasis
+    M1: Distant metastasis present
+\`\`\`
+
+**Stage Grouping**:
+| Stage | Description |
+|-------|-------------|
+| **Stage I** | Localized, small tumor |
+| **Stage II** | Larger tumor, limited spread |
+| **Stage III** | Regional lymph node involvement |
+| **Stage IV** | Distant metastasis |
+
+> 💎 **Staging is more important than grading** for prognosis
+
+## Effects of Tumors on Host
+
+### Local Effects
+- Mass effect, compression
+- Obstruction (bowel, bile duct, ureter)
+- Ulceration and bleeding
+- Functional (hormone-secreting adenomas)
+
+### Systemic Effects - Cancer Cachexia
+- Weight loss, muscle wasting
+- Anorexia, weakness
+- Mediated by TNF-α ("cachectin"), IL-1, IL-6, IFN-γ
+- NOT explained by caloric intake
+
+### Paraneoplastic Syndromes
+
+| Syndrome | Tumor | Mechanism |
+|----------|-------|-----------|
+| **Hypercalcemia** | Squamous lung, breast, renal | PTHrP |
+| **SIADH** | Small cell lung | Ectopic ADH |
+| **Cushing syndrome** | Small cell lung | Ectopic ACTH |
+| **Polycythemia** | RCC, hepatoma, hemangioblastoma | Ectopic EPO |
+| **Acanthosis nigricans** | GI malignancies | ? |
+| **Lambert-Eaton** | Small cell lung | Anti-Ca channel Ab |
+| **Dermatomyositis** | Various | ? |
+
+> 💎 **Small cell lung cancer** = most common cause of paraneoplastic syndromes`,
+      keyPoints: [
+        'Malignant tumors: Carcinoma (epithelial), Sarcoma (mesenchymal)',
+        'Exceptions: Melanoma, Lymphoma, Seminoma are MALIGNANT despite "-oma"',
+        'Anaplasia features: Pleomorphism, ↑N:C ratio, abnormal mitoses, loss of polarity',
+        'Dysplasia = preneoplastic; CIS = full-thickness dysplasia above basement membrane',
+        'Carcinomas spread by lymphatics; Sarcomas by blood',
+        'Liver and Lungs = most common metastatic sites (portal, caval)',
+        'Staging (extent) more important than Grading (histology) for prognosis',
+        'Small cell lung cancer = most common paraneoplastic syndrome cause'
+      ],
+      examPrep: {
+        summary: `**Neoplasia - Quick Review**
+
+📊 **Nomenclature**:
+- Carcinoma = epithelial
+- Sarcoma = mesenchymal
+- Exceptions: Melanoma, Lymphoma, Seminoma are MALIGNANT
+
+🔴 **Anaplasia Features**:
+- Pleomorphism
+- ↑ N:C ratio
+- Abnormal mitoses
+- Loss of polarity
+
+⚡ **Metastasis**:
+- Carcinomas → Lymphatics
+- Sarcomas → Blood
+- Most common sites: Liver, Lung
+
+📈 **Grading vs Staging**:
+- Grading: Histology (differentiation)
+- Staging: TNM (extent of spread)
+- **Staging > Grading** for prognosis
+
+🌡️ **Paraneoplastic**:
+- Hypercalcemia: Squamous lung (PTHrP)
+- SIADH, Cushing: Small cell lung
+- Polycythemia: RCC (EPO)`,
+        mnemonics: [
+          'LLMS are MALIGNANT: Lymphoma, Leukemia, Melanoma, Seminoma',
+          'Carcinoma = CLAMS (Cancer of Lining And Mucosal Surfaces)',
+          'SCLC = Small Cell Loves Crazy paraneoplastic (SIADH, Cushing)',
+          'Staging is KING (more important than grading)'
+        ],
+        highYield: [
+          'Melanoma, Lymphoma = malignant despite "-oma"',
+          'CIS = full thickness dysplasia, above basement membrane',
+          'Staging more important than grading for prognosis',
+          'Small cell lung = SIADH, Cushing (ectopic hormones)'
+        ],
+        commonMCQs: [
+          'Hallmark of malignancy: Metastasis',
+          'Most common route for carcinoma spread: Lymphatic',
+          'Most common paraneoplastic syndrome: Hypercalcemia',
+          'Ectopic ACTH production: Small cell lung cancer'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 7',
+          chapterTitle: 'Neoplasia',
+          pages: '267-298'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'neoplasia-1',
+          question: 'What are the features of anaplasia?',
+          answer: 'Pleomorphism (variation in size/shape), ↑Nuclear:Cytoplasmic ratio, hyperchromatic nuclei, abnormal/atypical mitoses, loss of polarity/architecture, tumor giant cells',
+          difficulty: 1
+        },
+        {
+          id: 'neoplasia-2',
+          question: 'What is the difference between dysplasia and carcinoma in situ?',
+          answer: 'Dysplasia = disordered growth with loss of uniformity (partial thickness). CIS = full-thickness dysplasia confined above basement membrane. Both are preneoplastic; CIS is the most severe dysplasia.',
+          difficulty: 2
+        },
+        {
+          id: 'neoplasia-3',
+          question: 'Why do carcinomas spread by lymphatics while sarcomas spread by blood?',
+          answer: 'Carcinomas arise from epithelium which has rich lymphatic drainage. Sarcomas arise from mesenchymal tissue with fewer lymphatics but abundant blood vessels that are easily invaded.',
+          difficulty: 2
+        },
+        {
+          id: 'neoplasia-4',
+          question: 'What is the most common cause of hypercalcemia in malignancy and its mechanism?',
+          answer: 'Squamous cell lung carcinoma. Mechanism: Secretion of PTHrP (parathyroid hormone-related peptide) which mimics PTH actions on bone and kidney.',
+          difficulty: 2
+        },
+        {
+          id: 'neoplasia-5',
+          question: 'Why is staging more important than grading for prognosis?',
+          answer: 'Staging reflects the actual extent of disease spread (how far cancer has traveled), which directly correlates with survival. Grading reflects cellular differentiation, which is less predictive of outcome than whether metastasis has occurred.',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['cell-injury-adaptation'],
+    relatedTopics: ['carcinogenesis', 'tumor-immunity'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 50,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // CARCINOGENESIS
+  // =============================================================================
+  {
+    id: 'carcinogenesis',
+    subjectId: 'pathology',
+    subspecialtyId: 'pathology-general',
+    name: 'Carcinogenesis',
+    slug: 'carcinogenesis',
+    description: 'Chemical, radiation, viral carcinogens, oncogenes, tumor suppressors',
+    content: {
+      concept: `# Carcinogenesis
+
+## Overview
+
+> **Carcinogenesis** is the multistep process by which normal cells acquire the characteristics of cancer. It involves **accumulation of mutations** in genes controlling cell growth, differentiation, and death.
+
+## Hallmarks of Cancer
+
+\`\`\`
+THE 10 HALLMARKS OF CANCER (Hanahan & Weinberg):
+
+1. SUSTAINING PROLIFERATIVE SIGNALING
+   └── Oncogenes (RAS, MYC, growth factors)
+
+2. EVADING GROWTH SUPPRESSORS
+   └── Inactivate tumor suppressors (RB, p53)
+
+3. RESISTING CELL DEATH
+   └── ↑ BCL-2, ↓ p53
+
+4. ENABLING REPLICATIVE IMMORTALITY
+   └── Telomerase activation
+
+5. INDUCING ANGIOGENESIS
+   └── VEGF, FGF
+
+6. ACTIVATING INVASION & METASTASIS
+   └── E-cadherin loss, MMPs
+
+7. REPROGRAMMING ENERGY METABOLISM
+   └── Warburg effect (aerobic glycolysis)
+
+8. EVADING IMMUNE DESTRUCTION
+   └── PD-L1, immunosuppressive cytokines
+
+9. GENOME INSTABILITY & MUTATION
+   └── DNA repair defects
+
+10. TUMOR-PROMOTING INFLAMMATION
+    └── Cytokines, ROS
+\`\`\`
+
+## Classes of Cancer Genes
+
+### Oncogenes (Proto-oncogenes → Oncogenes)
+
+> **Oncogenes** = mutated/overexpressed versions of normal genes (proto-oncogenes) that promote cell proliferation
+
+**Activation Mechanisms**:
+\`\`\`
+1. POINT MUTATION
+   └── RAS (single nucleotide change)
+
+2. GENE AMPLIFICATION
+   └── MYC, HER2/neu, NMYC
+
+3. CHROMOSOMAL TRANSLOCATION
+   ├── t(9;22) BCR-ABL (CML)
+   ├── t(8;14) MYC (Burkitt)
+   └── t(14;18) BCL-2 (Follicular lymphoma)
+
+4. INSERTIONAL MUTAGENESIS
+   └── Viral integration (HPV, HBV)
+\`\`\`
+
+**Major Oncogenes**:
+
+| Oncogene | Function | Cancer |
+|----------|----------|--------|
+| **RAS** | G-protein (GTPase) | Colon, pancreas, lung (30% of all cancers) |
+| **MYC** | Transcription factor | Burkitt lymphoma t(8;14) |
+| **HER2/ERBB2** | Growth factor receptor | Breast (25%) |
+| **ABL** | Tyrosine kinase | CML t(9;22) |
+| **BCL-2** | Anti-apoptotic | Follicular lymphoma t(14;18) |
+| **BRAF** | Serine/threonine kinase | Melanoma, colon |
+| **RET** | Receptor tyrosine kinase | MEN2, medullary thyroid CA |
+| **KIT** | Receptor tyrosine kinase | GIST |
+
+> 💎 **RAS** is the most commonly mutated oncogene (~30% of all human cancers)
+
+### Tumor Suppressor Genes
+
+> **Tumor suppressor genes** normally inhibit cell proliferation; BOTH alleles must be inactivated ("two-hit hypothesis")
+
+**Two-Hit Hypothesis (Knudson)**:
+\`\`\`
+SPORADIC CANCER:           HEREDITARY CANCER:
+Normal cell                Normal cell
+    ↓ 1st hit (somatic)        ↓ (already has 1 mutant allele)
+Carrier cell               Carrier cell (all cells)
+    ↓ 2nd hit (somatic)        ↓ 2nd hit (somatic)
+Cancer                     Cancer (earlier, multiple)
+\`\`\`
+
+**Major Tumor Suppressors**:
+
+| Gene | Function | Cancer |
+|------|----------|--------|
+| **RB** | Cell cycle control (G1→S) | Retinoblastoma, osteosarcoma |
+| **p53** | "Guardian of genome" | Most common (>50% of cancers) |
+| **APC** | Wnt pathway inhibitor | Familial adenomatous polyposis |
+| **BRCA1/2** | DNA repair (HR) | Breast, ovarian |
+| **WT1** | Transcription factor | Wilms tumor |
+| **NF1** | RAS inhibitor (GAP) | Neurofibromatosis type 1 |
+| **NF2** | Merlin (cytoskeleton) | Neurofibromatosis type 2 |
+| **VHL** | HIF regulation | Renal cell carcinoma |
+
+> 💎 **p53** is the most commonly mutated gene in human cancers
+
+### RB and Cell Cycle Control
+
+\`\`\`
+G1 CHECKPOINT:
+                    CDK4/6
+Mitogens → Cyclin D ────→ RB-P (inactive)
+                              ↓
+                         E2F released
+                              ↓
+                         S phase entry
+
+p53 → p21 ─┤ CDK4/6 (inhibits)
+
+RB mutations → Uncontrolled E2F → Uncontrolled S phase entry
+\`\`\`
+
+### p53 - Guardian of the Genome
+
+**Functions of p53**:
+\`\`\`
+DNA DAMAGE
+    ↓
+p53 activation (stabilization)
+    ↓
+├── G1 ARREST (p21 → inhibits CDKs)
+│   └── Time for DNA repair
+│
+├── DNA REPAIR
+│   └── GADD45 activation
+│
+├── APOPTOSIS (if damage irreparable)
+│   └── BAX, PUMA, NOXA (pro-apoptotic)
+│
+└── SENESCENCE
+    └── Permanent arrest
+\`\`\`
+
+**p53 Inactivation**:
+- Mutation (most common mechanism)
+- MDM2 amplification (inhibits p53)
+- HPV E6 protein (degrades p53)
+
+### APC/β-Catenin Pathway
+
+\`\`\`
+NORMAL:
+Wnt signal absent → APC/Axin complex → β-catenin degradation
+
+APC MUTATED (FAP):
+No APC → β-catenin accumulates → Enters nucleus → MYC, Cyclin D
+→ Proliferation
+\`\`\`
+
+## Chemical Carcinogens
+
+### Types of Chemical Carcinogens
+
+**1. Direct-Acting Carcinogens**:
+- No metabolic activation needed
+- Alkylating agents: Cyclophosphamide, nitrogen mustard
+- Acylating agents
+
+**2. Indirect-Acting (Pro-carcinogens)**:
+- Require metabolic activation (mainly by CYP450)
+
+| Pro-carcinogen | Activated By | Cancer |
+|----------------|--------------|--------|
+| **Aflatoxin B1** | CYP450 | Hepatocellular carcinoma |
+| **Benzo[a]pyrene** | CYP450 | Lung, skin |
+| **Nitrosamines** | Stomach acid | Gastric cancer |
+| **Vinyl chloride** | CYP450 | Angiosarcoma of liver |
+| **Aromatic amines** | CYP450 | Bladder (β-naphthylamine) |
+| **Benzene** | CYP450 | Leukemia |
+
+> 💎 **Aflatoxin B1** (Aspergillus flavus) + HBV = synergistic for hepatocellular carcinoma
+
+### Stages of Chemical Carcinogenesis
+
+\`\`\`
+INITIATION          PROMOTION           PROGRESSION
+(Irreversible)      (Reversible)        (Irreversible)
+    ↓                   ↓                   ↓
+DNA damage         Clonal expansion    Malignant phenotype
+(permanent)        (requires promoter)  (genomic instability)
+    ↓                   ↓                   ↓
+Single cell        Benign neoplasm     Invasive cancer
+\`\`\`
+
+## Radiation Carcinogenesis
+
+### Ionizing Radiation
+
+**Mechanism**: DNA damage (double-strand breaks)
+
+| Radiation Type | Cancer |
+|----------------|--------|
+| **X-rays** | Leukemia, thyroid, breast, lung |
+| **Nuclear fallout** | Thyroid (I-131), Leukemia |
+| **Therapeutic radiation** | Sarcomas, leukemia (secondary) |
+
+### UV Radiation
+
+**Mechanism**: Pyrimidine dimers → if not repaired by NER → mutations
+
+**Spectrum**:
+- UVB (280-320 nm): Most carcinogenic
+- UVA (320-400 nm): Deeper penetration
+
+**Cancers**:
+- Basal cell carcinoma
+- Squamous cell carcinoma
+- Melanoma
+
+**Xeroderma Pigmentosum**:
+- Defective nucleotide excision repair (NER)
+- >1000-fold ↑ skin cancer risk
+- Autosomal recessive
+
+## Viral Carcinogenesis
+
+### DNA Viruses
+
+| Virus | Cancer | Mechanism |
+|-------|--------|-----------|
+| **HPV** (16, 18) | Cervical, anal, oropharyngeal | E6 → p53 degradation, E7 → RB inactivation |
+| **EBV** | Burkitt, nasopharyngeal, Hodgkin | LMP1 (NF-κB), EBNA |
+| **HBV** | Hepatocellular carcinoma | HBx protein, chronic inflammation |
+| **HHV-8** | Kaposi sarcoma, PEL | GPCR, viral cyclins |
+
+### RNA Viruses
+
+| Virus | Cancer | Mechanism |
+|-------|--------|-----------|
+| **HTLV-1** | Adult T-cell leukemia | Tax protein (NF-κB) |
+| **HCV** | Hepatocellular carcinoma | Chronic inflammation, cirrhosis |
+
+### HPV Oncogenic Mechanism
+
+\`\`\`
+HPV 16/18 (High-risk)
+    ↓
+Integration into host genome
+    ↓
+├── E6 protein → Binds p53 → Ubiquitination → Degradation
+│                           (via E6AP)
+│
+└── E7 protein → Binds RB → Releases E2F → Uncontrolled proliferation
+\`\`\`
+
+> 💎 **E6 = p53 killer, E7 = RB killer**
+
+### Helicobacter pylori (Bacterial)
+
+- **Gastric adenocarcinoma** (intestinal type)
+- **MALT lymphoma** (B-cell)
+- Mechanism: Chronic inflammation, CagA protein (oncoprotein)
+- Only bacterial carcinogen definitively linked to cancer
+
+## Hereditary Cancer Syndromes
+
+| Syndrome | Gene | Inheritance | Cancers |
+|----------|------|-------------|---------|
+| **Li-Fraumeni** | p53 | AD | Sarcomas, breast, brain, leukemia |
+| **FAP** | APC | AD | Colorectal (100% by age 40) |
+| **HNPCC (Lynch)** | MSH2, MLH1 | AD | Colorectal, endometrial |
+| **Hereditary Breast** | BRCA1/2 | AD | Breast, ovarian |
+| **Retinoblastoma** | RB | AD | Retinoblastoma, osteosarcoma |
+| **MEN1** | MEN1 | AD | Pituitary, parathyroid, pancreas |
+| **MEN2** | RET | AD | Medullary thyroid, pheo |
+| **VHL** | VHL | AD | RCC, hemangioblastoma, pheo |
+| **Xeroderma Pigmentosum** | NER genes | AR | Skin cancers |
+
+> 💎 **Li-Fraumeni** (p53) = SBLA syndrome: Sarcoma, Breast, Leukemia, Adrenal`,
+      keyPoints: [
+        'RAS = most commonly mutated oncogene (~30% of cancers)',
+        'p53 = most commonly mutated tumor suppressor (>50% of cancers)',
+        'Two-hit hypothesis: Both alleles of tumor suppressor must be inactivated',
+        'HPV E6 degrades p53, E7 inactivates RB',
+        'Aflatoxin B1 + HBV = synergistic for hepatocellular carcinoma',
+        'Chemical carcinogenesis: Initiation (irreversible) → Promotion (reversible) → Progression',
+        'Xeroderma pigmentosum = defective NER, UV sensitivity, >1000x skin cancer risk',
+        'Li-Fraumeni (p53 mutation) = Sarcoma, Breast, Leukemia, Adrenal'
+      ],
+      examPrep: {
+        summary: `**Carcinogenesis - Quick Review**
+
+⚡ **Oncogenes** (gain of function):
+- RAS (30% of cancers) - GTPase
+- MYC - Burkitt t(8;14)
+- BCR-ABL - CML t(9;22)
+- HER2 - Breast
+
+🔴 **Tumor Suppressors** (loss of function):
+- p53 (50%+) - "Guardian"
+- RB - Cell cycle G1/S
+- APC - FAP
+- BRCA1/2 - Breast/ovarian
+
+🦠 **Viral**:
+- HPV: E6→p53, E7→RB
+- EBV: Burkitt, NPC
+- HBV/HCV: HCC
+
+☢️ **Radiation**:
+- UV: Pyrimidine dimers
+- Ionizing: DSB
+
+🧪 **Chemical**:
+- Aflatoxin B1: HCC
+- Benzene: Leukemia
+- Vinyl chloride: Liver angiosarcoma`,
+        mnemonics: [
+          'RAS is RampAnt in cancer (30%)',
+          'p53 = Guardian of Genome (G1 arrest, apoptosis)',
+          'E6 = siX = p53 destroyed, E7 = RB severed (7 looks like a broken R)',
+          'Li-Fraumeni = SBLA: Sarcoma, Breast, Leukemia, Adrenal'
+        ],
+        highYield: [
+          'RAS = most common oncogene mutation',
+          'p53 = most common tumor suppressor mutation',
+          'HPV E6 degrades p53, E7 binds RB',
+          'Aflatoxin causes p53 mutation at codon 249'
+        ],
+        commonMCQs: [
+          'Most commonly mutated oncogene: RAS',
+          'Most commonly mutated tumor suppressor: p53',
+          'HPV protein that degrades p53: E6',
+          'Two-hit hypothesis applies to: Tumor suppressor genes'
+        ]
+      },
+      textbookRefs: [
+        {
+          textbook: "Robbins & Cotran Pathologic Basis of Disease",
+          edition: '10th',
+          chapter: 'Chapter 7',
+          chapterTitle: 'Neoplasia',
+          pages: '298-340'
+        }
+      ],
+      retrievalCards: [
+        {
+          id: 'carcinogenesis-1',
+          question: 'What are the functions of p53 as "guardian of the genome"?',
+          answer: 'G1 cell cycle arrest (via p21), DNA repair activation (GADD45), Apoptosis if damage is irreparable (BAX, PUMA), Senescence. It detects DNA damage and decides cell fate.',
+          difficulty: 2
+        },
+        {
+          id: 'carcinogenesis-2',
+          question: 'How does HPV cause cervical cancer?',
+          answer: 'E6 protein binds and degrades p53 (via E6AP ubiquitin ligase). E7 protein binds and inactivates RB, releasing E2F. This removes two critical checkpoints leading to uncontrolled proliferation.',
+          difficulty: 2
+        },
+        {
+          id: 'carcinogenesis-3',
+          question: 'What is the two-hit hypothesis and to which genes does it apply?',
+          answer: 'Knudson\'s two-hit hypothesis: Both alleles of a tumor suppressor gene must be inactivated for cancer. In hereditary cancer, one hit is inherited (germline) and second is somatic. In sporadic, both are somatic.',
+          difficulty: 2
+        },
+        {
+          id: 'carcinogenesis-4',
+          question: 'What is the mechanism of RAS oncogene activation?',
+          answer: 'RAS is a G-protein that cycles between active (GTP-bound) and inactive (GDP-bound). Mutations lock RAS in permanently active GTP-bound state by impairing intrinsic GTPase activity or blocking GAP interaction.',
+          difficulty: 3
+        },
+        {
+          id: 'carcinogenesis-5',
+          question: 'Why do xeroderma pigmentosum patients have extremely high skin cancer risk?',
+          answer: 'XP patients have defective nucleotide excision repair (NER), which normally repairs UV-induced pyrimidine dimers. Without repair, UV damage accumulates leading to mutations and >1000-fold increased skin cancer risk.',
+          difficulty: 2
+        }
+      ],
+      cases: []
+    },
+    prerequisites: ['neoplasia-general', 'cell-cycle', 'apoptosis'],
+    relatedTopics: ['tumor-immunity', 'neoplasia-general'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'USMLE', 'FMGE'],
+    estimatedMinutes: 55,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  }
+];

@@ -26,13 +26,13 @@ function getInitials(name: string): string {
 // Get plan display info
 function getPlanInfo(plan: string, role: string) {
   if (role === 'admin') {
-    return { label: 'Admin', color: 'bg-gradient-to-r from-[#EF4444] to-[#DC2626]', icon: Shield };
+    return { label: 'Admin', color: 'bg-gradient-to-r from-[#E57373] to-[#DC2626]', icon: Shield };
   }
   switch (plan) {
     case 'premium':
-      return { label: 'Premium', color: 'bg-gradient-to-r from-[#F59E0B] to-[#D97706]', icon: Crown };
+      return { label: 'Premium', color: 'bg-gradient-to-r from-[#C9A86C] to-[#D97706]', icon: Crown };
     case 'pro':
-      return { label: 'Pro', color: 'bg-gradient-to-r from-[#7C3AED] to-[#6D28D9]', icon: Crown };
+      return { label: 'Pro', color: 'bg-gradient-to-r from-[#5BB3B3] to-[#4A9E9E]', icon: Crown };
     default:
       return { label: 'Free Plan', color: 'bg-gradient-to-r from-[#6B7280] to-[#4B5563]', icon: Crown };
   }
@@ -80,20 +80,20 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
   return (
     <div 
       ref={popupRef}
-      className="absolute bottom-full left-0 mb-2 w-64 bg-[#0F2233] border border-[rgba(6,182,212,0.15)] rounded-xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-2 duration-200"
+      className="absolute bottom-full left-0 mb-2 w-64 bg-[#364A5E] border border-[rgba(91,179,179,0.15)] rounded-xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-2 duration-200"
     >
       {/* User Info */}
-      <div className="p-4 border-b border-[rgba(6,182,212,0.1)]">
+      <div className="p-4 border-b border-[rgba(91,179,179,0.1)]">
         <div className="flex items-center gap-3">
-          <Avatar className="w-12 h-12 ring-2 ring-[#06B6D4]/30">
+          <Avatar className="w-12 h-12 ring-2 ring-[#5BB3B3]/30">
             <AvatarImage src={user.user_metadata?.avatar_url} />
-            <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white font-medium">
+            <AvatarFallback className="bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] text-white font-medium">
               {initials}
             </AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-[#E5E7EB] truncate">{displayName}</p>
-            <p className="text-xs text-[#9CA3AF]">{user.email}</p>
+            <p className="font-semibold text-[#E8E0D5] truncate">{displayName}</p>
+            <p className="text-xs text-[#A0B0BC]">{user.email}</p>
           </div>
         </div>
         
@@ -104,10 +104,10 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
             {planInfo.label}
           </Badge>
           {userRole === 'admin' && (
-            <span className="text-xs text-[#9CA3AF]">• Full access</span>
+            <span className="text-xs text-[#A0B0BC]">• Full access</span>
           )}
           {userPlan === 'free' && (
-            <span className="text-xs text-[#9CA3AF]">• 5 MCQs left today</span>
+            <span className="text-xs text-[#A0B0BC]">• 5 MCQs left today</span>
           )}
         </div>
       </div>
@@ -117,7 +117,7 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
         <Link
           href="/profile"
           onClick={onClose}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[rgba(91,179,179,0.1)] transition-all"
         >
           <Settings className="w-4 h-4" />
           <span className="text-sm">Profile & Settings</span>
@@ -127,18 +127,18 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
           <Link
             href="/billing"
             onClick={onClose}
-            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[rgba(91,179,179,0.1)] transition-all"
           >
             <CreditCard className="w-4 h-4" />
             <span className="text-sm">Upgrade Plan</span>
-            <Badge className="ml-auto bg-[#059669] text-white text-[10px] border-0">Pro</Badge>
+            <Badge className="ml-auto bg-[#7BA69E] text-white text-[10px] border-0">Pro</Badge>
           </Link>
         )}
         
         <Link
           href="/help"
           onClick={onClose}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[rgba(91,179,179,0.1)] transition-all"
         >
           <HelpCircle className="w-4 h-4" />
           <span className="text-sm">Help & Support</span>
@@ -146,10 +146,10 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
       </div>
 
       {/* Logout */}
-      <div className="p-2 border-t border-[rgba(6,182,212,0.1)]">
+      <div className="p-2 border-t border-[rgba(91,179,179,0.1)]">
         <button
           onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)] transition-all"
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#E57373] hover:bg-[rgba(239,68,68,0.1)] transition-all"
         >
           <LogOut className="w-4 h-4" />
           <span className="text-sm">Log out</span>
@@ -175,17 +175,17 @@ export function ProfileButton() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all group"
+        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[rgba(91,179,179,0.1)] transition-all group"
       >
-        <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20 group-hover:ring-[#06B6D4]/40 transition-all">
+        <Avatar className="w-8 h-8 ring-2 ring-[#5BB3B3]/20 group-hover:ring-[#5BB3B3]/40 transition-all">
           <AvatarImage src={user.user_metadata?.avatar_url} />
-          <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-xs font-medium">
+          <AvatarFallback className="bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] text-white text-xs font-medium">
             {initials}
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 text-left">
-          <p className="text-sm font-medium text-[#E5E7EB]">{displayName}</p>
-          <p className="text-xs text-[#9CA3AF]">{planInfo.label}</p>
+          <p className="text-sm font-medium text-[#E8E0D5]">{displayName}</p>
+          <p className="text-xs text-[#A0B0BC]">{planInfo.label}</p>
         </div>
         <ChevronUp className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>

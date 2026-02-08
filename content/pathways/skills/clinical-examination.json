@@ -1,0 +1,107 @@
+{
+  "id": "clinical-examination",
+  "title": "Clinical Examination Mastery",
+  "phase": "Phase-1",
+  "subject": "Clinical Skills",
+  "description": "Comprehensive clinical examination skills including patient interaction, history taking, and systematic physical examination techniques essential for all medical practice.",
+  "competencies": ["CM1.1", "CM1.2", "CM1.3", "CM1.4", "CM1.5"],
+  "prerequisites": ["anatomy-general"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Patient Communication & History Taking",
+      "libraryTopic": "clinical-examination",
+      "sections": ["patient-rapport", "history-structure", "communication-skills", "interviewing"],
+      "duration": "60min",
+      "xp": 25
+    },
+    {
+      "order": 2,
+      "type": "skill",
+      "title": "History Taking Practice",
+      "competency": "CM1.1",
+      "xp": 50,
+      "duration": "45min"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "General Physical Examination",
+      "libraryTopic": "clinical-examination",
+      "sections": ["vital-signs", "general-appearance", "hands-examination", "lymph-nodes"],
+      "duration": "55min",
+      "xp": 28
+    },
+    {
+      "order": 4,
+      "type": "skill",
+      "title": "Vital Signs Assessment",
+      "competency": "CM1.2",
+      "xp": 40,
+      "duration": "30min"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Cardiovascular Examination",
+      "libraryTopic": "clinical-examination",
+      "sections": ["cardiac-inspection", "palpation", "auscultation", "peripheral-pulses"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 6,
+      "type": "skill",
+      "title": "Cardiac Auscultation",
+      "competency": "CM1.3",
+      "xp": 55,
+      "duration": "40min"
+    },
+    {
+      "order": 7,
+      "type": "reading",
+      "title": "Respiratory System Examination",
+      "libraryTopic": "clinical-examination",
+      "sections": ["respiratory-inspection", "chest-percussion", "breath-sounds", "vocal-resonance"],
+      "duration": "65min",
+      "xp": 32
+    },
+    {
+      "order": 8,
+      "type": "skill",
+      "title": "Chest Examination Technique",
+      "competency": "CM1.4",
+      "xp": 50,
+      "duration": "40min"
+    },
+    {
+      "order": 9,
+      "type": "reading",
+      "title": "Abdominal & Neurological Examination",
+      "libraryTopic": "clinical-examination",
+      "sections": ["abdominal-exam", "neurological-exam", "reflexes", "cranial-nerves"],
+      "duration": "80min",
+      "xp": 40
+    },
+    {
+      "order": 10,
+      "type": "case",
+      "title": "Complete Clinical Assessment",
+      "competency": "CM1.5",
+      "xp": 70,
+      "duration": "60min"
+    }
+  ],
+  "totalXP": 425,
+  "estimatedTime": "8 hours",
+  "unlocks": ["clinical-procedures", "medicine-fundamentals", "surgery-fundamentals"],
+  "textbooks": [
+    {"title": "Hutchison's Clinical Methods", "chapters": ["History Taking", "Physical Examination"], "edition": "25th"},
+    {"title": "Macleod's Clinical Examination", "chapters": ["General Examination"], "edition": "14th"},
+    {"title": "Talley & O'Connor's Examination Medicine", "chapters": ["Clinical Method"], "edition": "9th"}
+  ],
+  "tags": ["high-yield", "clinical", "procedures", "communication"],
+  "difficulty": 3,
+  "lastUpdated": "2024-02-08"
+}

@@ -1,0 +1,109 @@
+{
+  "id": "physiology-cardiovascular",
+  "title": "Cardiovascular Physiology Mastery",
+  "phase": "Phase-1",
+  "subject": "Physiology",
+  "description": "Comprehensive understanding of cardiovascular system physiology including cardiac electrophysiology, hemodynamics, blood pressure regulation, and integrated cardiovascular responses.",
+  "competencies": ["PY5.1", "PY5.2", "PY5.3", "PY5.4", "PY5.5", "PY5.6"],
+  "prerequisites": ["physiology-general", "anatomy-thorax"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Cardiac Electrophysiology",
+      "libraryTopic": "cvs-physiology",
+      "sections": ["cardiac-action-potential", "conduction-system", "ecg-basics", "arrhythmias"],
+      "duration": "75min",
+      "xp": 35
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Cardiac Electrophysiology Quiz",
+      "mcqCount": 15,
+      "passingScore": 75,
+      "xp": 40,
+      "competency": "PY5.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Cardiac Cycle & Mechanics", 
+      "libraryTopic": "cvs-physiology",
+      "sections": ["cardiac-cycle", "pressure-volume", "heart-sounds", "contractility"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 4,
+      "type": "skill",
+      "title": "ECG Interpretation Basics",
+      "competency": "PY5.2",
+      "xp": 55,
+      "duration": "45min"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Hemodynamics & Vascular Function",
+      "libraryTopic": "cvs-physiology",
+      "sections": ["blood-flow", "vascular-resistance", "compliance", "venous-return"],
+      "duration": "65min", 
+      "xp": 32
+    },
+    {
+      "order": 6,
+      "type": "quiz",
+      "title": "Hemodynamics Assessment",
+      "mcqCount": 18,
+      "passingScore": 72,
+      "xp": 42,
+      "competency": "PY5.3"
+    },
+    {
+      "order": 7,
+      "type": "reading",
+      "title": "Blood Pressure Regulation",
+      "libraryTopic": "cvs-physiology",
+      "sections": ["bp-control", "baroreceptors", "renin-angiotensin", "autonomic-control"],
+      "duration": "60min",
+      "xp": 30
+    },
+    {
+      "order": 8,
+      "type": "reading",
+      "title": "Integrated Cardiovascular Responses",
+      "libraryTopic": "cvs-physiology", 
+      "sections": ["exercise-response", "orthostatic-changes", "pathophysiology", "aging"],
+      "duration": "55min",
+      "xp": 28
+    },
+    {
+      "order": 9,
+      "type": "case",
+      "title": "Cardiovascular Clinical Cases",
+      "competency": "PY5.4",
+      "xp": 60,
+      "duration": "50min"
+    },
+    {
+      "order": 10,
+      "type": "integration",
+      "title": "CV-Respiratory Integration",
+      "competency": "PY5.5",
+      "xp": 45,
+      "duration": "40min"
+    }
+  ],
+  "totalXP": 402,
+  "estimatedTime": "7 hours",
+  "unlocks": ["medicine-cardiology", "physiology-respiratory", "pathology-cardiovascular"],
+  "textbooks": [
+    {"title": "Guyton and Hall Textbook of Medical Physiology", "chapters": ["Heart", "Circulation"], "edition": "14th"},
+    {"title": "Ganong's Review of Medical Physiology", "chapters": ["Cardiovascular System"], "edition": "26th"},
+    {"title": "Cardiovascular Physiology Concepts", "chapters": ["All"], "edition": "3rd"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical", "emergency"],
+  "difficulty": 4,
+  "lastUpdated": "2024-02-08"
+}

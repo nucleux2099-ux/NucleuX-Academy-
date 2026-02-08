@@ -218,7 +218,7 @@ export default function VideoLessonPage() {
       {/* Back Navigation */}
       <button
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors mb-4 p-2"
+        className="flex items-center gap-2 text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors mb-4 p-2"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to Classroom
@@ -235,11 +235,11 @@ export default function VideoLessonPage() {
             onMouseLeave={() => isPlaying && setShowControls(false)}
           >
             {/* Video Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1a3048] to-[#0D1B2A] flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1a3048] to-[#2D3E50] flex items-center justify-center">
               {!isPlaying && (
                 <button
                   onClick={togglePlay}
-                  className="w-20 h-20 rounded-full bg-[#06B6D4]/90 hover:bg-[#06B6D4] flex items-center justify-center transition-all hover:scale-110 shadow-2xl shadow-[#06B6D4]/30"
+                  className="w-20 h-20 rounded-full bg-[#5BB3B3]/90 hover:bg-[#5BB3B3] flex items-center justify-center transition-all hover:scale-110 shadow-2xl shadow-[#5BB3B3]/30"
                 >
                   <Play className="w-8 h-8 text-white ml-1" />
                 </button>
@@ -255,7 +255,7 @@ export default function VideoLessonPage() {
             <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 transition-opacity ${showControls ? 'opacity-100' : 'opacity-0'}`}>
               {/* Top Bar */}
               <div className="absolute top-0 left-0 right-0 p-4 flex items-center justify-between">
-                <Badge className="bg-[#EF4444]/90 text-white border-none">
+                <Badge className="bg-[#E57373]/90 text-white border-none">
                   LIVE LECTURE
                 </Badge>
                 <div className="flex items-center gap-2">
@@ -265,7 +265,7 @@ export default function VideoLessonPage() {
                   <Button 
                     variant="ghost" 
                     size="icon" 
-                    className={`hover:bg-white/10 ${isBookmarked ? 'text-[#F59E0B]' : 'text-white/80 hover:text-white'}`}
+                    className={`hover:bg-white/10 ${isBookmarked ? 'text-[#C9A86C]' : 'text-white/80 hover:text-white'}`}
                     onClick={() => setIsBookmarked(!isBookmarked)}
                   >
                     {isBookmarked ? <BookmarkCheck className="w-5 h-5" /> : <Bookmark className="w-5 h-5" />}
@@ -297,10 +297,10 @@ export default function VideoLessonPage() {
                   onClick={handleSeek}
                 >
                   <div 
-                    className="h-full bg-[#06B6D4] rounded-full relative"
+                    className="h-full bg-[#5BB3B3] rounded-full relative"
                     style={{ width: `${progress}%` }}
                   >
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#06B6D4] rounded-full opacity-0 group-hover/progress:opacity-100 transition-opacity" />
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#5BB3B3] rounded-full opacity-0 group-hover/progress:opacity-100 transition-opacity" />
                   </div>
                   {/* Chapter Markers */}
                   {videoData.chapters.slice(1).map((ch) => (
@@ -345,17 +345,17 @@ export default function VideoLessonPage() {
                     <div className="relative">
                       <button 
                         onClick={() => setShowSettings(!showSettings)}
-                        className="text-sm hover:text-[#06B6D4] transition-colors"
+                        className="text-sm hover:text-[#5BB3B3] transition-colors"
                       >
                         {playbackSpeed}x
                       </button>
                       {showSettings && (
-                        <div className="absolute bottom-8 right-0 bg-[#0F2233] border border-[rgba(6,182,212,0.15)] rounded-lg p-2 min-w-[100px]">
+                        <div className="absolute bottom-8 right-0 bg-[#364A5E] border border-[rgba(91,179,179,0.15)] rounded-lg p-2 min-w-[100px]">
                           {[0.5, 0.75, 1, 1.25, 1.5, 2].map(speed => (
                             <button
                               key={speed}
                               onClick={() => { setPlaybackSpeed(speed); setShowSettings(false); }}
-                              className={`block w-full text-left px-3 py-1.5 text-sm rounded hover:bg-[#142538] ${playbackSpeed === speed ? 'text-[#06B6D4]' : 'text-[#9CA3AF]'}`}
+                              className={`block w-full text-left px-3 py-1.5 text-sm rounded hover:bg-[#3A4D5F] ${playbackSpeed === speed ? 'text-[#5BB3B3]' : 'text-[#A0B0BC]'}`}
                             >
                               {speed}x
                             </button>
@@ -364,11 +364,11 @@ export default function VideoLessonPage() {
                       )}
                     </div>
                     
-                    <button onClick={() => setShowChapters(!showChapters)} className="hover:text-[#06B6D4] lg:hidden">
+                    <button onClick={() => setShowChapters(!showChapters)} className="hover:text-[#5BB3B3] lg:hidden">
                       <List className="w-5 h-5" />
                     </button>
                     
-                    <button className="hover:text-[#06B6D4]">
+                    <button className="hover:text-[#5BB3B3]">
                       <Maximize2 className="w-5 h-5" />
                     </button>
                   </div>
@@ -380,39 +380,39 @@ export default function VideoLessonPage() {
           {/* Video Info */}
           <div className="mb-6">
             <div className="flex items-start gap-2 mb-3 flex-wrap">
-              <Badge className="bg-[#059669]/20 text-[#059669] border-none">{videoData.category}</Badge>
-              <Badge variant="outline" className="border-[rgba(6,182,212,0.2)] text-[#6B7280]">{videoData.difficulty}</Badge>
+              <Badge className="bg-[#7BA69E]/20 text-[#7BA69E] border-none">{videoData.category}</Badge>
+              <Badge variant="outline" className="border-[rgba(91,179,179,0.2)] text-[#6B7280]">{videoData.difficulty}</Badge>
               {isCompleted && (
-                <Badge className="bg-[#059669]/20 text-[#059669] border-none">
+                <Badge className="bg-[#7BA69E]/20 text-[#7BA69E] border-none">
                   <Sparkles className="w-3 h-3 mr-1" />
                   Completed
                 </Badge>
               )}
             </div>
             
-            <h1 className="text-2xl font-bold text-[#E5E7EB] mb-2">{videoData.title}</h1>
+            <h1 className="text-2xl font-bold text-[#E8E0D5] mb-2">{videoData.title}</h1>
             
-            <div className="flex flex-wrap items-center gap-4 text-sm text-[#9CA3AF] mb-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-[#A0B0BC] mb-4">
               <span className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
                 {videoData.duration}
               </span>
               <span>{videoData.views.toLocaleString()} views</span>
               <span className="flex items-center gap-1">
-                <Star className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]" />
+                <Star className="w-4 h-4 text-[#C9A86C] fill-[#C9A86C]" />
                 {videoData.rating} ({videoData.totalRatings})
               </span>
               <span>{videoData.publishedAt}</span>
             </div>
             
             {/* Instructor */}
-            <div className="flex items-center justify-between p-4 bg-[#0F2233] rounded-xl border border-[rgba(6,182,212,0.15)]">
+            <div className="flex items-center justify-between p-4 bg-[#364A5E] rounded-xl border border-[rgba(91,179,179,0.15)]">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] flex items-center justify-center text-white font-semibold">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center text-white font-semibold">
                   {videoData.instructor.avatar}
                 </div>
                 <div>
-                  <p className="font-medium text-[#E5E7EB]">{videoData.instructor.name}</p>
+                  <p className="font-medium text-[#E8E0D5]">{videoData.instructor.name}</p>
                   <p className="text-sm text-[#6B7280]">{videoData.instructor.title}, {videoData.instructor.institution}</p>
                 </div>
               </div>
@@ -421,7 +421,7 @@ export default function VideoLessonPage() {
                   variant={hasLiked === true ? "default" : "outline"}
                   size="sm"
                   onClick={() => setHasLiked(hasLiked === true ? null : true)}
-                  className={hasLiked === true ? "bg-[#059669] text-white" : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"}
+                  className={hasLiked === true ? "bg-[#7BA69E] text-white" : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC]"}
                 >
                   <ThumbsUp className="w-4 h-4 mr-1" />
                   Helpful
@@ -430,7 +430,7 @@ export default function VideoLessonPage() {
                   variant={hasLiked === false ? "default" : "outline"}
                   size="sm"
                   onClick={() => setHasLiked(hasLiked === false ? null : false)}
-                  className={hasLiked === false ? "bg-[#EF4444] text-white" : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"}
+                  className={hasLiked === false ? "bg-[#E57373] text-white" : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC]"}
                 >
                   <ThumbsDown className="w-4 h-4" />
                 </Button>
@@ -439,19 +439,19 @@ export default function VideoLessonPage() {
           </div>
           
           {/* Description */}
-          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] mb-6">
+          <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] mb-6">
             <CardContent className="p-4">
-              <p className="text-[#9CA3AF]">{videoData.description}</p>
+              <p className="text-[#A0B0BC]">{videoData.description}</p>
             </CardContent>
           </Card>
           
           {/* Timestamp Notes */}
-          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] mb-6">
+          <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] mb-6">
             <CardHeader className="pb-3">
-              <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
+              <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
                 <StickyNote className="w-5 h-5 text-[#8B5CF6]" />
                 My Notes
-                <Badge variant="outline" className="ml-auto border-[rgba(6,182,212,0.2)] text-[#6B7280]">
+                <Badge variant="outline" className="ml-auto border-[rgba(91,179,179,0.2)] text-[#6B7280]">
                   {notes.length}
                 </Badge>
               </CardTitle>
@@ -466,13 +466,13 @@ export default function VideoLessonPage() {
                     onChange={(e) => setNewNote(e.target.value)}
                     onKeyDown={(e) => e.key === "Enter" && addNote()}
                     placeholder="Add a note at current timestamp..."
-                    className="w-full px-4 py-2.5 bg-[#142538] border border-[rgba(6,182,212,0.15)] rounded-lg text-[#E5E7EB] placeholder-[#6B7280] focus:border-[#8B5CF6] focus:outline-none"
+                    className="w-full px-4 py-2.5 bg-[#3A4D5F] border border-[rgba(91,179,179,0.15)] rounded-lg text-[#E8E0D5] placeholder-[#6B7280] focus:border-[#8B5CF6] focus:outline-none"
                   />
                   <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-[#6B7280]">
                     @ {formatTime(currentTime)}
                   </span>
                 </div>
-                <Button onClick={addNote} className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white">
+                <Button onClick={addNote} className="bg-[#8B5CF6] hover:bg-[#5BB3B3] text-white">
                   <Plus className="w-4 h-4" />
                 </Button>
               </div>
@@ -483,7 +483,7 @@ export default function VideoLessonPage() {
                   {notes.map((note) => (
                     <div 
                       key={note.id}
-                      className="flex items-start gap-3 p-3 bg-[#142538] rounded-lg group"
+                      className="flex items-start gap-3 p-3 bg-[#3A4D5F] rounded-lg group"
                     >
                       <button
                         onClick={() => setCurrentTime(note.timestamp)}
@@ -491,10 +491,10 @@ export default function VideoLessonPage() {
                       >
                         {formatTime(note.timestamp)}
                       </button>
-                      <p className="text-sm text-[#9CA3AF] flex-1">{note.text}</p>
+                      <p className="text-sm text-[#A0B0BC] flex-1">{note.text}</p>
                       <button
                         onClick={() => deleteNote(note.id)}
-                        className="opacity-0 group-hover:opacity-100 text-[#6B7280] hover:text-[#EF4444] transition-opacity"
+                        className="opacity-0 group-hover:opacity-100 text-[#6B7280] hover:text-[#E57373] transition-opacity"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -510,10 +510,10 @@ export default function VideoLessonPage() {
           </Card>
           
           {/* Resources */}
-          <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+          <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
             <CardHeader className="pb-3">
-              <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-                <FileText className="w-5 h-5 text-[#06B6D4]" />
+              <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+                <FileText className="w-5 h-5 text-[#5BB3B3]" />
                 Resources
               </CardTitle>
             </CardHeader>
@@ -521,11 +521,11 @@ export default function VideoLessonPage() {
               {videoData.resources.map((resource, i) => (
                 <div 
                   key={i}
-                  className="flex items-center justify-between p-3 bg-[#142538] rounded-lg hover:bg-[#1a3048] transition-colors cursor-pointer"
+                  className="flex items-center justify-between p-3 bg-[#3A4D5F] rounded-lg hover:bg-[#1a3048] transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <FileText className="w-4 h-4 text-[#06B6D4]" />
-                    <span className="text-[#E5E7EB] text-sm">{resource.title}</span>
+                    <FileText className="w-4 h-4 text-[#5BB3B3]" />
+                    <span className="text-[#E8E0D5] text-sm">{resource.title}</span>
                     {resource.size && (
                       <span className="text-xs text-[#6B7280]">{resource.size}</span>
                     )}
@@ -541,10 +541,10 @@ export default function VideoLessonPage() {
         {showChapters && (
           <aside className="w-full lg:w-80 shrink-0 space-y-6">
             {/* Chapters */}
-            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+            <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
               <CardHeader className="pb-3">
-                <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-                  <List className="w-5 h-5 text-[#06B6D4]" />
+                <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+                  <List className="w-5 h-5 text-[#5BB3B3]" />
                   Chapters
                 </CardTitle>
               </CardHeader>
@@ -559,14 +559,14 @@ export default function VideoLessonPage() {
                       onClick={() => jumpToChapter(chapter.timestamp)}
                       className={`w-full text-left px-3 py-2.5 rounded-lg transition-all flex items-center gap-3 ${
                         isActive 
-                          ? 'bg-[#06B6D4]/20 text-[#06B6D4]' 
+                          ? 'bg-[#5BB3B3]/20 text-[#5BB3B3]' 
                           : isPast 
-                            ? 'text-[#9CA3AF] hover:bg-[#142538]' 
-                            : 'text-[#6B7280] hover:bg-[#142538] hover:text-[#9CA3AF]'
+                            ? 'text-[#A0B0BC] hover:bg-[#3A4D5F]' 
+                            : 'text-[#6B7280] hover:bg-[#3A4D5F] hover:text-[#A0B0BC]'
                       }`}
                     >
                       <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 ${
-                        isPast ? 'bg-[#059669]/20 text-[#059669]' : 'bg-[#142538] text-[#6B7280]'
+                        isPast ? 'bg-[#7BA69E]/20 text-[#7BA69E]' : 'bg-[#3A4D5F] text-[#6B7280]'
                       }`}>
                         {isPast ? <CheckCircle className="w-3 h-3" /> : i + 1}
                       </div>
@@ -581,22 +581,22 @@ export default function VideoLessonPage() {
             </Card>
             
             {/* Ask ATOM */}
-            <Card className="bg-gradient-to-br from-[rgba(6,182,212,0.15)] to-[rgba(139,92,246,0.1)] border-[rgba(6,182,212,0.2)]">
+            <Card className="bg-gradient-to-br from-[rgba(91,179,179,0.15)] to-[rgba(139,92,246,0.1)] border-[rgba(91,179,179,0.2)]">
               <CardContent className="p-4">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center">
                     <Atom className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-[#E5E7EB]">ATOM Assistant</p>
+                    <p className="font-medium text-[#E8E0D5]">ATOM Assistant</p>
                     <p className="text-xs text-[#6B7280]">Watching with you</p>
                   </div>
                 </div>
-                <p className="text-sm text-[#9CA3AF] mb-3">
+                <p className="text-sm text-[#A0B0BC] mb-3">
                   Ask questions about this lecture anytime. ATOM has the transcript and can help explain concepts.
                 </p>
                 <Link href={`/chat?video=${params.id}&t=${currentTime}`}>
-                  <Button className="w-full bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]">
+                  <Button className="w-full bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Ask about this moment
                   </Button>
@@ -605,22 +605,22 @@ export default function VideoLessonPage() {
             </Card>
             
             {/* Related Videos */}
-            <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+            <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
               <CardHeader className="pb-3">
-                <CardTitle className="text-lg text-[#E5E7EB]">Related Videos</CardTitle>
+                <CardTitle className="text-lg text-[#E8E0D5]">Related Videos</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 p-3">
                 {videoData.relatedVideos.map((video) => (
                   <Link
                     key={video.id}
                     href={`/watch/${video.id}`}
-                    className="flex gap-3 p-2 rounded-lg hover:bg-[#142538] transition-colors"
+                    className="flex gap-3 p-2 rounded-lg hover:bg-[#3A4D5F] transition-colors"
                   >
-                    <div className="w-28 h-16 bg-[#142538] rounded-lg flex items-center justify-center shrink-0">
+                    <div className="w-28 h-16 bg-[#3A4D5F] rounded-lg flex items-center justify-center shrink-0">
                       <Play className="w-6 h-6 text-[#6B7280]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-sm text-[#E5E7EB] line-clamp-2">{video.title}</p>
+                      <p className="font-medium text-sm text-[#E8E0D5] line-clamp-2">{video.title}</p>
                       <p className="text-xs text-[#6B7280] mt-1">{video.instructor}</p>
                       <p className="text-xs text-[#6B7280]">{video.duration}</p>
                     </div>
@@ -634,8 +634,8 @@ export default function VideoLessonPage() {
               onClick={() => setIsCompleted(!isCompleted)}
               className={`w-full ${
                 isCompleted 
-                  ? 'bg-[#059669] hover:bg-[#047857] text-white' 
-                  : 'bg-[#142538] hover:bg-[#1a3048] text-[#9CA3AF] border border-[rgba(6,182,212,0.15)]'
+                  ? 'bg-[#7BA69E] hover:bg-[#047857] text-white' 
+                  : 'bg-[#3A4D5F] hover:bg-[#1a3048] text-[#A0B0BC] border border-[rgba(91,179,179,0.15)]'
               }`}
             >
               {isCompleted ? (

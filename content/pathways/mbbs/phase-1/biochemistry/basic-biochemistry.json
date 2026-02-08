@@ -1,0 +1,82 @@
+{
+  "id": "biochemistry-basics",
+  "title": "Basic Biochemistry & Biomolecules",
+  "phase": "Phase-1",
+  "subject": "Biochemistry",
+  "description": "Foundation course in biochemistry covering biomolecules, chemical bonds, pH, buffers, and basic metabolic principles essential for understanding human biochemistry.",
+  "competencies": ["BI1.1", "BI1.2", "BI1.3", "BI1.4"],
+  "prerequisites": [],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Chemical Foundations",
+      "libraryTopic": "clinical-biochemistry",
+      "sections": ["atomic-structure", "chemical-bonds", "water-properties", "ph-buffers"],
+      "duration": "55min",
+      "xp": 25
+    },
+    {
+      "order": 2,
+      "type": "quiz", 
+      "title": "Chemistry Basics Quiz",
+      "mcqCount": 10,
+      "passingScore": 70,
+      "xp": 25,
+      "competency": "BI1.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Biomolecules Overview",
+      "libraryTopic": "clinical-biochemistry",
+      "sections": ["carbohydrates", "proteins", "lipids", "nucleic-acids"],
+      "duration": "70min",
+      "xp": 30
+    },
+    {
+      "order": 4,
+      "type": "quiz",
+      "title": "Biomolecules Assessment",
+      "mcqCount": 15,
+      "passingScore": 72,
+      "xp": 35,
+      "competency": "BI1.2"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Enzymes & Catalysis",
+      "libraryTopic": "enzymes",
+      "sections": ["enzyme-structure", "kinetics", "inhibition", "regulation"],
+      "duration": "65min",
+      "xp": 32
+    },
+    {
+      "order": 6,
+      "type": "skill",
+      "title": "Enzyme Kinetics Lab",
+      "competency": "BI1.3",
+      "xp": 45,
+      "duration": "40min"
+    },
+    {
+      "order": 7,
+      "type": "integration",
+      "title": "Biochemical Pathways Overview",
+      "competency": "BI1.4", 
+      "xp": 35,
+      "duration": "30min"
+    }
+  ],
+  "totalXP": 227,
+  "estimatedTime": "5 hours",
+  "unlocks": ["biochemistry-carbohydrate", "biochemistry-protein", "biochemistry-lipid"],
+  "textbooks": [
+    {"title": "Harper's Illustrated Biochemistry", "chapters": ["Basic Biochemistry", "Enzymes"], "edition": "32nd"},
+    {"title": "Lippincott's Biochemistry", "chapters": ["Introduction"], "edition": "8th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "basic-science"],
+  "difficulty": 2,
+  "lastUpdated": "2024-02-08"
+}

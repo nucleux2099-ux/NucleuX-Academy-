@@ -52,21 +52,21 @@ export function LinkPreview({
     switch (type) {
       case "citation":
         return {
-          link: "text-[#06B6D4] hover:text-[#22D3EE] border-b border-dashed border-[#06B6D4]/50",
-          preview: "border-l-[#06B6D4]",
-          icon: <BookOpen className="w-4 h-4 text-[#06B6D4]" />,
+          link: "text-[#5BB3B3] hover:text-[#22D3EE] border-b border-dashed border-[#5BB3B3]/50",
+          preview: "border-l-[#5BB3B3]",
+          icon: <BookOpen className="w-4 h-4 text-[#5BB3B3]" />,
         };
       case "external":
         return {
-          link: "text-[#F59E0B] hover:text-[#FBBF24]",
-          preview: "border-l-[#F59E0B]",
-          icon: <ExternalLink className="w-4 h-4 text-[#F59E0B]" />,
+          link: "text-[#C9A86C] hover:text-[#FBBF24]",
+          preview: "border-l-[#C9A86C]",
+          icon: <ExternalLink className="w-4 h-4 text-[#C9A86C]" />,
         };
       default:
         return {
           link: "text-[#A78BFA] hover:text-[#C4B5FD] border-b border-dotted border-[#A78BFA]/50",
-          preview: "border-l-[#7C3AED]",
-          icon: <BookOpen className="w-4 h-4 text-[#7C3AED]" />,
+          preview: "border-l-[#5BB3B3]",
+          icon: <BookOpen className="w-4 h-4 text-[#5BB3B3]" />,
         };
     }
   };
@@ -95,7 +95,7 @@ export function LinkPreview({
           ref={previewRef}
           className={cn(
             "absolute z-50 w-72 p-4 rounded-lg shadow-xl",
-            "bg-[#0F2233] border border-[rgba(6,182,212,0.2)] border-l-4",
+            "bg-[#364A5E] border border-[rgba(91,179,179,0.2)] border-l-4",
             "animate-in fade-in-0 zoom-in-95 duration-200",
             styles.preview,
             position === "top" ? "bottom-full mb-2" : "top-full mt-2",
@@ -107,7 +107,7 @@ export function LinkPreview({
           {/* Arrow */}
           <div
             className={cn(
-              "absolute left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-[#0F2233] border-[rgba(6,182,212,0.2)]",
+              "absolute left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-[#364A5E] border-[rgba(91,179,179,0.2)]",
               position === "top" 
                 ? "bottom-[-7px] border-r border-b" 
                 : "top-[-7px] border-l border-t"
@@ -117,11 +117,11 @@ export function LinkPreview({
           {/* Content */}
           <div className="relative">
             <div className="flex items-start gap-3 mb-2">
-              <div className="p-2 rounded-lg bg-[#142538] shrink-0">
+              <div className="p-2 rounded-lg bg-[#3A4D5F] shrink-0">
                 {styles.icon}
               </div>
               <div className="flex-1 min-w-0">
-                <h4 className="font-semibold text-[#E5E7EB] text-sm line-clamp-2">
+                <h4 className="font-semibold text-[#E8E0D5] text-sm line-clamp-2">
                   {title}
                 </h4>
                 {source && (
@@ -131,7 +131,7 @@ export function LinkPreview({
             </div>
 
             {excerpt && (
-              <p className="text-xs text-[#9CA3AF] line-clamp-3 mb-3">
+              <p className="text-xs text-[#A0B0BC] line-clamp-3 mb-3">
                 {excerpt}
               </p>
             )}
@@ -154,7 +154,7 @@ export function LinkPreview({
             {progress !== undefined && (
               <div className="mt-2 h-1 bg-[#1F2937] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] transition-all"
+                  className="h-full bg-gradient-to-r from-[#5BB3B3] to-[#5BB3B3] transition-all"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -187,7 +187,7 @@ export function CitationPreview({
   return (
     <span className="relative inline">
       <sup
-        className="text-[#06B6D4] cursor-help hover:text-[#22D3EE] transition-colors"
+        className="text-[#5BB3B3] cursor-help hover:text-[#22D3EE] transition-colors"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -198,7 +198,7 @@ export function CitationPreview({
         <div
           className={cn(
             "absolute z-50 w-80 p-4 rounded-lg shadow-xl",
-            "bg-[#0F2233] border border-[rgba(6,182,212,0.2)] border-l-4 border-l-[#06B6D4]",
+            "bg-[#364A5E] border border-[rgba(91,179,179,0.2)] border-l-4 border-l-[#5BB3B3]",
             "animate-in fade-in-0 zoom-in-95 duration-200",
             "bottom-full mb-2 left-0"
           )}
@@ -206,11 +206,11 @@ export function CitationPreview({
           onMouseLeave={() => setIsHovered(false)}
         >
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-[#142538] shrink-0">
-              <BookOpen className="w-4 h-4 text-[#06B6D4]" />
+            <div className="p-2 rounded-lg bg-[#3A4D5F] shrink-0">
+              <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
             </div>
             <div className="flex-1 min-w-0">
-              <h4 className="font-semibold text-[#E5E7EB] text-sm">
+              <h4 className="font-semibold text-[#E8E0D5] text-sm">
                 {source}
               </h4>
               {(chapter || page) && (
@@ -224,7 +224,7 @@ export function CitationPreview({
           </div>
 
           {quote && (
-            <blockquote className="mt-3 pl-3 border-l-2 border-[#06B6D4]/30 text-xs text-[#9CA3AF] italic">
+            <blockquote className="mt-3 pl-3 border-l-2 border-[#5BB3B3]/30 text-xs text-[#A0B0BC] italic">
               "{quote}"
             </blockquote>
           )}

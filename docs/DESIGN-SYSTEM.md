@@ -1,147 +1,273 @@
-# NucleuX Academy — Design System
+# NucleuX Academy Design System
+## ATOM Matte Theme
 
-## 🎨 Campus Light Theme
-
-**Vibe:** Premium university campus — warm, inviting, scholarly
-
----
-
-## Color Palette
-
-### Backgrounds
-| Name | Hex | Usage |
-|------|-----|-------|
-| Campus White | `#FFFFFF` | Main background |
-| Warm Gray | `#F8FAFC` | Secondary background, cards |
-| Soft Cream | `#FAFAF9` | Alternate sections |
-
-### Primary (Purple — Knowledge)
-| Name | Hex | Usage |
-|------|-----|-------|
-| Royal Purple | `#7C3AED` | Primary buttons, links |
-| Purple Light | `#A78BFA` | Hover states |
-| Purple Pale | `#EDE9FE` | Tags, badges background |
-
-### Accents (Campus Colors)
-| Name | Hex | Usage |
-|------|-----|-------|
-| Forest Green | `#059669` | Success, progress |
-| Warm Wood | `#B45309` | Highlights, warmth |
-| Sky Blue | `#0EA5E9` | Information, links |
-| Rose | `#E11D48` | Alerts, errors |
-| Golden | `#CA8A04` | Achievements, rewards |
-
-### Text
-| Name | Hex | Usage |
-|------|-----|-------|
-| Deep Slate | `#1E293B` | Primary text |
-| Gray | `#64748B` | Secondary text |
-| Light Gray | `#94A3B8` | Placeholder, disabled |
-
-### Borders & Shadows
-| Name | Value | Usage |
-|------|-------|-------|
-| Border | `#E2E8F0` | Card borders, dividers |
-| Shadow SM | `0 1px 2px rgba(0,0,0,0.05)` | Cards |
-| Shadow MD | `0 4px 6px rgba(0,0,0,0.07)` | Dropdowns, modals |
-| Shadow LG | `0 10px 15px rgba(0,0,0,0.1)` | Featured cards |
+Inspired by **ATOM Clinics** branding — premium, scientific, and warm.
 
 ---
 
-## Typography
+## 🎨 Color Palette
 
-**Font Family:** Inter (clean, modern, readable)
+### Primary Colors
 
-| Element | Size | Weight | Color |
-|---------|------|--------|-------|
-| H1 | 36px | Bold (700) | Deep Slate |
-| H2 | 28px | Semibold (600) | Deep Slate |
-| H3 | 22px | Semibold (600) | Deep Slate |
-| Body | 16px | Regular (400) | Deep Slate |
-| Small | 14px | Regular (400) | Gray |
-| Caption | 12px | Medium (500) | Light Gray |
+| Name | Hex | CSS Variable | Usage |
+|------|-----|--------------|-------|
+| **Teal** | `#5BB3B3` | `--primary` | Primary actions, links, highlights |
+| **Gold** | `#C9A86C` | `--accent` | Premium features, accents, awards |
+| **Sage** | `#7BA69E` | `--chart-3` | Secondary actions, library |
+
+### Background Colors
+
+| Name | Hex | CSS Variable | Usage |
+|------|-----|--------------|-------|
+| **Deep Slate** | `#2D3E50` | `--background` | Main background |
+| **Slate Light** | `#364A5E` | `--card` | Cards, elevated surfaces |
+| **Slate Dark** | `#253545` | `--sidebar` | Sidebar, footers |
+| **Elevated** | `#3A4D5F` | `--muted` | Input fields, secondary surfaces |
+
+### Text Colors
+
+| Name | Hex | CSS Variable | Usage |
+|------|-----|--------------|-------|
+| **Cream** | `#E8E0D5` | `--foreground` | Primary text |
+| **Muted** | `#A0B0BC` | `--muted-foreground` | Secondary text, labels |
+| **Dark** | `#1E2D3D` | `--primary-foreground` | Text on primary buttons |
+
+### Semantic Colors
+
+| Name | Hex | CSS Variable | Usage |
+|------|-----|--------------|-------|
+| **Destructive** | `#E57373` | `--destructive` | Errors, delete actions |
+| **Success** | `#7BA69E` | - | Success states |
+| **Warning** | `#C9A86C` | - | Warnings |
 
 ---
 
-## Components
+## 🖼️ Visual Style
+
+### Matte Finish
+- No glossy gradients
+- Soft shadows without glow
+- Subtle borders (8% opacity)
+- Noise texture overlay (optional)
+
+### Shadows
+
+```css
+.shadow-matte     /* 0 4px 20px rgba(0, 0, 0, 0.25) */
+.shadow-matte-md  /* 0 8px 30px rgba(0, 0, 0, 0.3) */
+.shadow-matte-lg  /* 0 12px 40px rgba(0, 0, 0, 0.35) */
+```
+
+### Borders
+
+```css
+border-[rgba(232,224,213,0.08)]  /* Standard border */
+border-[rgba(232,224,213,0.12)]  /* Emphasized border */
+border-teal-subtle               /* Teal accent border */
+border-gold-subtle               /* Gold accent border */
+```
+
+---
+
+## 🧱 Components
 
 ### Cards
-```css
-.campus-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: all 0.2s;
-}
 
-.campus-card:hover {
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
-  border-color: #A78BFA;
-}
+```tsx
+<div className="matte-card p-6">
+  {/* Content */}
+</div>
+
+// Or using component
+<Card className="matte-card">
+  <CardContent>...</CardContent>
+</Card>
 ```
 
 ### Buttons
+
+```tsx
+// Primary (Teal)
+<Button variant="default">Action</Button>
+
+// Gold accent (Premium)
+<Button className="bg-[#C9A86C] text-[#1E2D3D] hover:bg-[#B89A5E]">
+  Premium
+</Button>
+
+// Ghost
+<Button variant="ghost">Cancel</Button>
+```
+
+### Inputs
+
+```tsx
+<Input className="matte-input" placeholder="Search..." />
+```
+
+### Metallic Text (for branding)
+
+```tsx
+<h1 className="text-metallic-teal">NucleuX Academy</h1>
+<span className="text-metallic-gold">Premium</span>
+```
+
+---
+
+## 🎭 Room Colors
+
+Each section has a distinct accent color:
+
+| Room | Color | Hex |
+|------|-------|-----|
+| Dashboard | Teal | `#5BB3B3` |
+| Library | Sage | `#7BA69E` |
+| Classroom | Sky Teal | `#6BA8C9` |
+| Exam Center | Teal | `#5BB3B3` |
+| Community | Gold | `#C9A86C` |
+| Arena | Bright Gold | `#D4AF37` |
+| ATOM | Teal | `#5BB3B3` |
+
+---
+
+## 📱 Responsive Breakpoints
+
+| Breakpoint | Width | Usage |
+|------------|-------|-------|
+| `sm` | 640px | Small devices |
+| `md` | 768px | Tablets |
+| `lg` | 1024px | Desktop (sidebar shows) |
+| `xl` | 1280px | Large desktop |
+| `2xl` | 1536px | Extra large |
+
+---
+
+## ✨ Animations
+
+### Standard Transitions
+
 ```css
-.btn-primary {
-  background: #7C3AED;
-  color: white;
-  border-radius: 8px;
-  font-weight: 500;
-}
-
-.btn-primary:hover {
-  background: #6D28D9;
-}
-
-.btn-secondary {
-  background: #F8FAFC;
-  color: #1E293B;
-  border: 1px solid #E2E8F0;
+.room-transition {
+  transition: border-color 0.25s ease, 
+              background-color 0.25s ease, 
+              box-shadow 0.3s ease;
 }
 ```
 
-### Navigation
-- Sidebar: White background with soft shadow
-- Active item: Purple left border + purple text
-- Hover: Light purple background (#EDE9FE)
+### Card Hover
+
+```tsx
+<div className="card-hover">
+  {/* Lifts and shows teal border on hover */}
+</div>
+
+<div className="card-hover-gold">
+  {/* Premium card - gold border on hover */}
+</div>
+```
+
+### Entrance Animations
+
+```css
+.animate-fade-in      /* Fade + slide up */
+.animate-slide-in-up  /* Slide from bottom */
+.animate-float        /* Gentle floating */
+.animate-pulse-teal   /* Subtle teal pulse */
+.animate-glow-gold    /* Gold glow pulse */
+```
 
 ---
 
-## 🤖 ATOM — AI Tutor Identity
+## 🖋️ Typography
 
-### Philosophy
-ATOM embodies:
-1. **Atomic Learning** — Break complex into simple, build understanding from atoms
-2. **Learning Science** — Encoding > review, retrieval > recognition, desirable difficulty
-3. **Advaita Subtle Blend** — Non-judgmental, witness consciousness, "the difficulty IS the learning"
+### Font Stack
 
-### Voice & Tone
-- Wise but approachable
-- Questions before answers
-- Celebrates struggle as growth
-- Never condescending
-- Subtle Sanskrit/Vedantic flavor when appropriate
+```css
+--font-sans: 'Geist Sans', system-ui, sans-serif;
+--font-mono: 'Geist Mono', monospace;
+```
 
-### Visual Identity
-- Avatar: Atomic symbol with warm glow
-- Colors: Purple primary with golden wisdom accent
-- Chat bubbles: Soft, rounded, inviting
+### Hierarchy
 
----
-
-## Campus Room Themes
-
-| Room | Accent Color | Vibe |
-|------|--------------|------|
-| Welcome Center | Purple | Warm welcome |
-| Library | Forest Green | Scholarly, focused |
-| Exam Center | Sky Blue | Clear, precise |
-| AI Tutor | Purple + Gold | Wise, guiding |
-| Dashboard | Purple | Personal, tracking |
-| Common Room | Warm Wood | Community, warmth |
-| Arena | Golden | Achievement, competition |
+| Element | Size | Weight | Color |
+|---------|------|--------|-------|
+| H1 | 2rem | Bold | Cream |
+| H2 | 1.5rem | Semibold | Cream |
+| H3 | 1.25rem | Semibold | Cream |
+| Body | 1rem | Normal | Cream |
+| Small | 0.875rem | Normal | Muted |
+| Caption | 0.75rem | Medium | Muted |
 
 ---
 
-*Design System v1.0 — February 2026*
+## 🎯 Usage Examples
+
+### Dashboard Card
+
+```tsx
+<div className="matte-card p-6 card-hover">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="w-10 h-10 rounded-xl bg-[#5BB3B3]/15 flex items-center justify-center">
+      <BookOpen className="w-5 h-5 text-[#5BB3B3]" />
+    </div>
+    <div>
+      <h3 className="font-semibold text-[#E8E0D5]">Library</h3>
+      <p className="text-sm text-[#A0B0BC]">Browse topics</p>
+    </div>
+  </div>
+</div>
+```
+
+### Premium Badge
+
+```tsx
+<span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#C9A86C]/15 text-[#C9A86C] border border-[#C9A86C]/20">
+  Premium
+</span>
+```
+
+### ATOM Badge
+
+```tsx
+<span className="px-2 py-0.5 rounded-full text-xs font-medium bg-[#5BB3B3] text-[#1E2D3D]">
+  AI
+</span>
+```
+
+---
+
+## 📁 File Structure
+
+```
+src/
+├── app/
+│   └── globals.css        # Theme variables & utilities
+├── components/
+│   ├── ui/                # shadcn components
+│   ├── Sidebar.tsx        # Navigation sidebar
+│   ├── Header.tsx         # Top header
+│   ├── BottomNav.tsx      # Mobile navigation
+│   └── ...
+└── docs/
+    └── DESIGN-SYSTEM.md   # This file
+```
+
+---
+
+## 🔄 Migration from Old Theme
+
+Replace these color values:
+
+| Old (Navy/Cyan) | New (Slate/Teal) |
+|-----------------|------------------|
+| `#0D1B2A` | `#2D3E50` |
+| `#0F2233` | `#364A5E` |
+| `#06B6D4` | `#5BB3B3` |
+| `#7C3AED` | `#5BB3B3` or `#C9A86C` |
+| `#E5E7EB` | `#E8E0D5` |
+| `#9CA3AF` | `#A0B0BC` |
+
+---
+
+*Design System v2.0 — ATOM Matte Theme*
+*Updated: 2026-02-08*

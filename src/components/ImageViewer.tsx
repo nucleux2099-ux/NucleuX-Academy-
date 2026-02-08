@@ -129,7 +129,7 @@ export function MedicalImage({
     <>
       <figure className={cn("my-4 clear-both", layoutClasses[layout], className)}>
         <div 
-          className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#0D1B2A]"
+          className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2D3E50]"
           onClick={() => setIsViewerOpen(true)}
         >
           <img
@@ -148,7 +148,7 @@ export function MedicalImage({
               <span className="text-sm text-[#D1D5DB] block">{caption}</span>
             )}
             {source && (
-              <span className="text-xs text-[#9CA3AF] block mt-0.5">
+              <span className="text-xs text-[#A0B0BC] block mt-0.5">
                 Source: {source}
               </span>
             )}
@@ -187,13 +187,13 @@ export function Diagram({ src, title, caption, layout = "full" }: DiagramProps) 
   return (
     <>
       <div className={cn("my-6", layoutClasses[layout])}>
-        <div className="bg-[#142538] rounded-xl border border-[rgba(6,182,212,0.15)] overflow-hidden">
+        <div className="bg-[#3A4D5F] rounded-xl border border-[rgba(91,179,179,0.15)] overflow-hidden">
           {/* Title bar */}
-          <div className="px-4 py-2 bg-[rgba(6,182,212,0.1)] border-b border-[rgba(6,182,212,0.15)] flex items-center justify-between">
-            <span className="text-sm font-medium text-[#06B6D4]">📊 {title}</span>
+          <div className="px-4 py-2 bg-[rgba(91,179,179,0.1)] border-b border-[rgba(91,179,179,0.15)] flex items-center justify-between">
+            <span className="text-sm font-medium text-[#5BB3B3]">📊 {title}</span>
             <button
               onClick={() => setIsViewerOpen(true)}
-              className="text-xs text-[#9CA3AF] hover:text-[#06B6D4] transition-colors flex items-center gap-1"
+              className="text-xs text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors flex items-center gap-1"
             >
               <ZoomIn className="w-3 h-3" />
               Expand
@@ -213,7 +213,7 @@ export function Diagram({ src, title, caption, layout = "full" }: DiagramProps) 
           {/* Caption */}
           {caption && (
             <div className="px-4 pb-3">
-              <p className="text-xs text-[#9CA3AF] text-center">{caption}</p>
+              <p className="text-xs text-[#A0B0BC] text-center">{caption}</p>
             </div>
           )}
         </div>
@@ -246,7 +246,7 @@ export function ImageComparison({ images, title }: ComparisonProps) {
     <>
       <div className="my-6">
         {title && (
-          <h4 className="text-sm font-medium text-[#E5E7EB] mb-3">{title}</h4>
+          <h4 className="text-sm font-medium text-[#E8E0D5] mb-3">{title}</h4>
         )}
         <div className={cn(
           "grid gap-4",
@@ -257,7 +257,7 @@ export function ImageComparison({ images, title }: ComparisonProps) {
           {images.map((img, i) => (
             <div key={i} className="space-y-2">
               <div 
-                className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#0D1B2A]"
+                className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2D3E50]"
                 onClick={() => setSelectedImage(img.src)}
               >
                 <img
@@ -269,7 +269,7 @@ export function ImageComparison({ images, title }: ComparisonProps) {
                   <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </div>
-              <p className="text-xs text-[#9CA3AF] text-center">{img.label}</p>
+              <p className="text-xs text-[#A0B0BC] text-center">{img.label}</p>
             </div>
           ))}
         </div>

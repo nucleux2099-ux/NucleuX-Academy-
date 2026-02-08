@@ -43,7 +43,7 @@ const mockMetrics: LearningMetric[] = [
     unit: "%",
     trend: "up",
     target: 85,
-    color: "#06B6D4", // cyan
+    color: "#5BB3B3", // cyan
   },
   {
     id: "calibration",
@@ -54,7 +54,7 @@ const mockMetrics: LearningMetric[] = [
     unit: "%",
     trend: "up",
     target: 80,
-    color: "#7C3AED", // purple
+    color: "#5BB3B3", // purple
   },
   {
     id: "mastery",
@@ -64,7 +64,7 @@ const mockMetrics: LearningMetric[] = [
     previous: 12,
     unit: "",
     trend: "up",
-    color: "#059669", // green
+    color: "#7BA69E", // green
   },
   {
     id: "streak",
@@ -74,7 +74,7 @@ const mockMetrics: LearningMetric[] = [
     previous: 12,
     unit: "days",
     trend: "stable",
-    color: "#F59E0B", // amber
+    color: "#C9A86C", // amber
   },
 ];
 
@@ -111,17 +111,17 @@ export function LearningAnalytics() {
   const [showInfo, setShowInfo] = useState<string | null>(null);
 
   return (
-    <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+    <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
-          <CardTitle className="flex items-center gap-2 text-[#E5E7EB] text-base">
-            <BarChart3 className="w-4 h-4 text-[#06B6D4]" />
+          <CardTitle className="flex items-center gap-2 text-[#E8E0D5] text-base">
+            <BarChart3 className="w-4 h-4 text-[#5BB3B3]" />
             Your Learning This Week
           </CardTitle>
           <Button
             variant="ghost"
             size="sm"
-            className="text-[#6B7280] hover:text-[#9CA3AF] text-xs"
+            className="text-[#6B7280] hover:text-[#A0B0BC] text-xs"
           >
             Deep Analytics
             <ChevronRight className="w-3 h-3 ml-1" />
@@ -135,12 +135,12 @@ export function LearningAnalytics() {
           {mockMetrics.map((metric) => (
             <div
               key={metric.id}
-              className="p-3 rounded-xl bg-[#0D1B2A] border border-[rgba(6,182,212,0.1)] relative group"
+              className="p-3 rounded-xl bg-[#2D3E50] border border-[rgba(91,179,179,0.1)] relative group"
             >
               {/* Info button */}
               <button
                 onClick={() => setShowInfo(showInfo === metric.id ? null : metric.id)}
-                className="absolute top-2 right-2 p-1 rounded-full text-[#6B7280] hover:text-[#9CA3AF] opacity-0 group-hover:opacity-100 transition-all"
+                className="absolute top-2 right-2 p-1 rounded-full text-[#6B7280] hover:text-[#A0B0BC] opacity-0 group-hover:opacity-100 transition-all"
               >
                 <Info className="w-3 h-3" />
               </button>
@@ -172,15 +172,15 @@ export function LearningAnalytics() {
                   </div>
                   <Progress 
                     value={(metric.current / metric.target) * 100} 
-                    className="h-1 bg-[#142538]"
+                    className="h-1 bg-[#3A4D5F]"
                   />
                 </div>
               )}
 
               {/* Info tooltip */}
               {showInfo === metric.id && (
-                <div className="absolute z-10 top-full left-0 right-0 mt-2 p-3 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.2)] shadow-xl">
-                  <p className="text-xs text-[#9CA3AF]">{metric.description}</p>
+                <div className="absolute z-10 top-full left-0 right-0 mt-2 p-3 rounded-lg bg-[#3A4D5F] border border-[rgba(91,179,179,0.2)] shadow-xl">
+                  <p className="text-xs text-[#A0B0BC]">{metric.description}</p>
                 </div>
               )}
             </div>
@@ -188,15 +188,15 @@ export function LearningAnalytics() {
         </div>
 
         {/* Key Insight */}
-        <div className="p-3 rounded-lg bg-gradient-to-r from-[#7C3AED]/10 to-[#06B6D4]/10 border border-[rgba(124,58,237,0.2)]">
+        <div className="p-3 rounded-lg bg-gradient-to-r from-[#5BB3B3]/10 to-[#5BB3B3]/10 border border-[rgba(91,179,179,0.2)]">
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-[#7C3AED]/20 shrink-0">
+            <div className="p-2 rounded-lg bg-[#5BB3B3]/20 shrink-0">
               <Sparkles className="w-4 h-4 text-[#A78BFA]" />
             </div>
             <div>
-              <p className="text-sm text-[#E5E7EB] font-medium">Key Insight</p>
-              <p className="text-xs text-[#9CA3AF] mt-1">
-                Your <span className="text-[#7C3AED]">confidence calibration improved 9%</span> this week! 
+              <p className="text-sm text-[#E8E0D5] font-medium">Key Insight</p>
+              <p className="text-xs text-[#A0B0BC] mt-1">
+                Your <span className="text-[#5BB3B3]">confidence calibration improved 9%</span> this week! 
                 You're getting better at knowing what you know. Keep using ATOM's feedback.
               </p>
             </div>
@@ -204,10 +204,10 @@ export function LearningAnalytics() {
         </div>
 
         {/* Learning Science Note */}
-        <div className="flex items-start gap-2 text-xs text-[#6B7280] pt-2 border-t border-[rgba(6,182,212,0.1)]">
+        <div className="flex items-start gap-2 text-xs text-[#6B7280] pt-2 border-t border-[rgba(91,179,179,0.1)]">
           <Brain className="w-3 h-3 mt-0.5 shrink-0" />
           <span>
-            <strong className="text-[#9CA3AF]">Why these metrics?</strong> Retrieval accuracy and confidence calibration predict actual learning better than study hours.
+            <strong className="text-[#A0B0BC]">Why these metrics?</strong> Retrieval accuracy and confidence calibration predict actual learning better than study hours.
           </span>
         </div>
       </CardContent>

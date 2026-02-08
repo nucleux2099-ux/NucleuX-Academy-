@@ -1,0 +1,724 @@
+/**
+ * NucleuX Academy - Gram-Negative Bacteria Topics
+ * Ananthanarayan and Paniker's Textbook of Microbiology Based Content
+ * Complete with concepts, exam prep, retrieval cards, and cases
+ */
+
+import type { LibraryTopic, RetrievalCard, CaseScenario, TextbookReference } from '../../types/library';
+
+// =============================================================================
+// ENTEROBACTERIACEAE
+// =============================================================================
+
+const enterobacteriaceaeTopic: LibraryTopic = {
+  id: 'enterobacteriaceae',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-negative',
+  name: 'Enterobacteriaceae',
+  slug: 'enterobacteriaceae',
+  description: 'E. coli, Klebsiella, Proteus, lactose fermenters, ESBL, CRE',
+  content: {
+    concept: `# Enterobacteriaceae
+
+## Overview
+Large family of **Gram-negative, facultatively anaerobic rods**. They are oxidase-negative, reduce nitrates, and ferment glucose. Major causes of UTI, GI infections, and healthcare-associated infections.
+
+## General Characteristics
+- **Gram-negative rods**
+- **Oxidase negative** (key differentiator)
+- **Catalase positive**
+- **Nitrate reduction positive**
+- **Glucose fermentation** (anaerobic respiration)
+- **Facultative anaerobes**
+
+## Antigens and Serotyping
+| Antigen | Structure | Function |
+|---------|-----------|----------|
+| **O antigen** | LPS polysaccharide | Heat-stable, serotyping |
+| **H antigen** | Flagellar protein | Heat-labile, motility |
+| **K antigen** | Capsular polysaccharide | Virulence, antiphagocytic |
+
+## Classification by Lactose Fermentation
+
+### Lactose Fermenters (Pink on MacConkey)
+- **E. coli**: Indole positive, motile
+- **Klebsiella**: Indole negative, non-motile, mucoid
+- **Enterobacter**: Indole negative, motile
+
+### Lactose Non-Fermenters (Colorless on MacConkey)
+- **Salmonella**: H₂S positive, non-lactose fermenter
+- **Shigella**: Non-motile, H₂S negative
+- **Proteus**: Swarming motility, urease positive
+- **Pseudomonas**: Oxidase positive (not Enterobacteriaceae)
+
+---
+
+## Escherichia coli
+
+### Morphology and Culture
+- **Straight rods**, 2-3 × 0.5 μm
+- **Motile** (peritrichous flagella)
+- **MacConkey agar**: Pink colonies (lactose fermenter)
+- **EMB agar**: Metallic green sheen
+- **Blood agar**: Non-hemolytic, large gray colonies
+
+### Biochemical Reactions
+- **Indole**: Positive (tryptophan → indole)
+- **Methyl red**: Positive (mixed acid fermentation)
+- **Voges-Proskauer**: Negative
+- **Citrate utilization**: Negative
+- **IMViC pattern**: + + - - (classic E. coli)
+
+### Virulence Factors
+| Factor | Function |
+|--------|----------|
+| **Adhesins** | Colonization (P fimbriae for UTI) |
+| **Capsule (K1)** | Antiphagocytic (neonatal meningitis) |
+| **Endotoxin (LPS)** | Septic shock |
+| **Hemolysin** | RBC lysis, tissue damage |
+| **Siderophores** | Iron acquisition |
+
+### Pathogenic E. coli Categories
+
+#### 1. Enterotoxigenic E. coli (ETEC)
+- **"Traveler's diarrhea"**
+- **Toxins**: Heat-labile (LT) + Heat-stable (ST)
+- **LT toxin**: Similar to cholera toxin (cAMP↑)
+- **ST toxin**: Activates guanylate cyclase (cGMP↑)
+- **Watery diarrhea**, no fever, no blood
+- **Transmission**: Contaminated food/water
+
+#### 2. Enteropathogenic E. coli (EPEC)
+- **Infantile diarrhea** in developing countries
+- **Attachment and effacement** lesions
+- **Intimate adherence** to enterocytes
+- **Bundle-forming pili**
+- **Watery diarrhea** with mucus
+
+#### 3. Enterohemorrhagic E. coli (EHEC)
+- **Prototype**: E. coli O157:H7
+- **Shiga-like toxin** (Verotoxin)
+- **Bloody diarrhea** without fever
+- **Hemolytic uremic syndrome (HUS)**
+- **Source**: Undercooked beef, contaminated vegetables
+- **No antibiotic therapy** (may worsen HUS)
+
+#### 4. Enteroinvasive E. coli (EIEC)
+- **Dysentery-like syndrome**
+- **Invasive**, similar to Shigella
+- **Fever + bloody diarrhea**
+- **Limited geographic distribution**
+
+#### 5. Enteroaggregative E. coli (EAEC)
+- **"Stacked brick" adherence pattern**
+- **Persistent diarrhea** in children
+- **Heat-stable enterotoxin**
+
+#### 6. Diffusely Adherent E. coli (DAEC)
+- **Diffuse adherence** to HEp-2 cells
+- **Watery diarrhea** in children
+- **Least well characterized**
+
+### Extraintestinal E. coli Infections
+
+#### Urinary Tract Infections
+- **Most common cause** of UTI
+- **Uropathogenic E. coli (UPEC)**
+- **P fimbriae**: Bind uroepithelial cells
+- **Ascending infection**: Bladder → kidneys
+
+#### Neonatal Meningitis
+- **K1 capsule**: Antiphagocytic
+- **Second most common** cause (after GBS)
+- **High mortality/morbidity**
+
+#### Sepsis
+- **Leading Gram-negative cause**
+- **Endotoxic shock**
+- **Often healthcare-associated**
+
+### Laboratory Diagnosis
+1. **Gram stain**: Gram-negative rods
+2. **Culture**: MacConkey (pink), EMB (metallic sheen)
+3. **IMViC**: + + - -
+4. **Serotyping**: O, H, K antigens (for EHEC)
+5. **Toxin detection**: Shiga toxin (EHEC)
+
+---
+
+## Klebsiella pneumoniae
+
+### Characteristics
+- **Non-motile** (vs E. coli)
+- **Large mucoid capsule**
+- **Lactose fermenter**
+- **Indole negative**
+- **Urease negative** (vs Proteus)
+- **IMViC**: - - + +
+
+### Clinical Significance
+
+#### Community-Acquired Pneumonia
+- **"Currant jelly" sputum** (bloody, mucoid)
+- **Upper lobe predilection**
+- **Alcoholics, diabetics**
+- **High mortality** if untreated
+
+#### Healthcare-Associated Infections
+- **Ventilator-associated pneumonia**
+- **Catheter-related UTI**
+- **Wound infections**
+
+### Antimicrobial Resistance
+
+#### ESBL (Extended-Spectrum β-Lactamase)
+- **CTX-M, SHV, TEM** enzymes
+- **Resistance**: Penicillins, cephalosporins (not carbapenems)
+- **Detection**: ESBL confirmatory tests
+- **Treatment**: Carbapenems
+
+#### CRE (Carbapenem-Resistant Enterobacteriaceae)
+- **KPC, NDM, OXA-48** carbapenemases
+- **Resistance**: All β-lactams including carbapenems
+- **Treatment**: Polymyxins, tigecycline, new agents (ceftazidime-avibactam)
+- **Infection control**: Contact precautions
+
+---
+
+## Proteus Species
+
+### Key Features
+- **Swarming motility**: Concentric circles on agar
+- **Urease positive**: Rapid (minutes)
+- **H₂S production**: Positive
+- **Lactose**: Usually negative
+- **Motile**, flagellated
+
+### Species Differentiation
+| Species | Indole | Clinical |
+|---------|--------|----------|
+| **P. mirabilis** | Negative | UTI, community |
+| **P. vulgaris** | Positive | UTI, healthcare |
+
+### Clinical Significance
+
+#### Urinary Tract Infections
+- **Alkaline urine** (urease activity)
+- **Struvite stones** (magnesium ammonium phosphate)
+- **Catheter-associated UTI**
+- **Difficult to eradicate**
+
+#### Wound Infections
+- **Foul-smelling** due to putrescine, cadaverine
+- **Diabetic ulcers**
+- **Post-surgical infections**
+
+### Complications
+- **Kidney stones**: Urease → ammonia → alkaline pH
+- **Chronic pyelonephritis**
+- **Urosepsis**
+
+---
+
+## Enterobacter Species
+
+### Characteristics
+- **Motile**
+- **Lactose fermenter** (delayed)
+- **Citrate positive**
+- **Indole negative**
+- **AmpC β-lactamase**: Inducible resistance
+
+### Clinical Significance
+- **Healthcare-associated infections**
+- **Respiratory tract infections**
+- **UTI**, **bacteremia**
+- **Opportunistic pathogen**
+
+### Antimicrobial Resistance
+- **Inducible AmpC**: Resistance to ampicillin, 1st/2nd gen cephalosporins
+- **ESBL production**: Some strains
+- **Treatment**: 3rd/4th gen cephalosporins, carbapenems
+
+---
+
+## Serratia marcescens
+
+### Unique Features
+- **Red pigment**: Prodigiosin (room temperature)
+- **Lactose negative** (usually)
+- **DNase positive**
+- **Motile**
+
+### Clinical Significance
+- **Healthcare-associated infections**
+- **Respiratory tract**, **UTI**
+- **Contact lens-related keratitis**
+- **Opportunistic**, especially in compromised hosts
+
+### Historical Note
+- **"Miracle of Bolsena"**: Red pigment on communion bread
+- **Biological warfare studies**: Used as "harmless" tracer
+
+---
+
+*"The Enterobacteriaceae family represents evolution's success story in adapting to diverse environments - from the human gut to hospital equipment - constantly acquiring new resistance mechanisms to survive our antimicrobial assault."*`,
+    
+    keyPoints: [
+      'Enterobacteriaceae: Gram-negative rods, oxidase negative, nitrate positive, glucose fermenting',
+      'E. coli IMViC: + + - -, indole positive, lactose fermenter, metallic sheen on EMB',
+      'ETEC: Traveler\'s diarrhea, LT and ST toxins, watery diarrhea',
+      'EHEC (O157:H7): Shiga toxin, HUS, bloody diarrhea, no antibiotics',
+      'Klebsiella: Non-motile, mucoid capsule, currant jelly sputum, alcoholics',
+      'Proteus: Swarming motility, urease positive, alkaline urine, kidney stones',
+      'ESBL: Resistance to penicillins and cephalosporins, not carbapenems',
+      'CRE: Carbapenem resistance, KPC/NDM/OXA-48, limited treatment options',
+      'Serratia: Red pigment (prodigiosin), contact lens infections, DNase positive',
+      'P fimbriae in UPEC bind uroepithelial cells causing ascending UTI'
+    ],
+    
+    examPrep: {
+      summary: `**Enterobacteriaceae - High Yield Summary**
+
+**Family traits**: Gram-negative rods, oxidase negative, nitrate positive
+
+**E. coli**: IMViC + + - -, ETEC (travelers), EHEC (O157:H7, HUS)
+
+**Klebsiella**: Non-motile, mucoid, currant jelly sputum, ESBL/CRE
+
+**Proteus**: Swarming, urease positive, kidney stones
+
+**Resistance**: ESBL (ceph-resistant), CRE (carbapenem-resistant)`,
+      
+      mnemonics: [
+        'IMViC E. coli: "E. coli = + + - -" (Positive Positive Negative Negative)',
+        'ETEC toxins: "LT = Like cholera, ST = Stable & short"',
+        'EHEC: "No antibiotics for O157" (worsens HUS)',
+        'Klebsiella sputum: "Currant jelly = K. pneumoniae"',
+        'Proteus stones: "Proteus Produces alkaline Pee → stones"'
+      ],
+      
+      highYield: [
+        'Oxidase negative differentiates Enterobacteriaceae from Pseudomonas',
+        'EHEC O157:H7 causes HUS - no antibiotics (worsens toxin release)',
+        'Klebsiella pneumoniae: Currant jelly sputum in alcoholics',
+        'Proteus urease activity leads to struvite kidney stones',
+        'ESBL resistance: All β-lactams except carbapenems',
+        'CRE is a nightmare superbug with limited treatment options',
+        'P fimbriae are key virulence factor for E. coli UTI'
+      ],
+      
+      commonMCQs: [
+        'Oxidase negative enteric bacteria: Enterobacteriaceae',
+        'E. coli IMViC pattern: + + - -',
+        'Most common cause of UTI: E. coli',
+        'Currant jelly sputum: Klebsiella pneumoniae',
+        'Swarming motility: Proteus species',
+        'EHEC treatment: Supportive care (no antibiotics)',
+        'Carbapenem-resistant Enterobacteriaceae: CRE'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 30', chapterTitle: 'Enterobacteriaceae', pages: '261-280' },
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 31', chapterTitle: 'E. coli', pages: '281-295' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'entero-1',
+        question: 'What are the different pathogenic E. coli types and their characteristics?',
+        answer: 'ETEC: Traveler\'s diarrhea, LT/ST toxins, watery\nEHEC: O157:H7, Shiga toxin, bloody diarrhea, HUS\nEPEC: Infantile diarrhea, A/E lesions\nEIEC: Invasive, dysentery-like\nEAEC: Persistent diarrhea, stacked brick pattern\nDAEC: Diffuse adherence, least characterized',
+        difficulty: 3,
+        tags: ['E. coli', 'diarrhea']
+      },
+      {
+        id: 'entero-2',
+        question: 'How do you differentiate the major lactose-fermenting Enterobacteriaceae?',
+        answer: 'E. coli: Motile, Indole+, IMViC + + - -\nKlebsiella: Non-motile, Indole-, mucoid colonies\nEnterobacter: Motile, Indole-, citrate+, AmpC resistance\nSerratia: Motile, red pigment, lactose variable, DNase+',
+        difficulty: 2,
+        tags: ['identification', 'biochemical']
+      },
+      {
+        id: 'entero-3',
+        question: 'What is ESBL and how does it affect treatment?',
+        answer: 'ESBL: Extended-Spectrum β-Lactamase\n- Enzymes: CTX-M, SHV, TEM\n- Resistance: Penicillins, cephalosporins (1st-4th gen)\n- Sensitive: Carbapenems, cephamycins\n- Detection: Double-disk synergy test\n- Treatment: Carbapenems are drugs of choice',
+        difficulty: 3,
+        tags: ['ESBL', 'resistance']
+      },
+      {
+        id: 'entero-4',
+        question: 'Why should antibiotics be avoided in EHEC infections?',
+        answer: 'Reasons to avoid antibiotics:\n1. May increase Shiga toxin production\n2. Can worsen hemolytic uremic syndrome (HUS)\n3. Bacterial lysis releases more toxin\n4. No proven clinical benefit\n\nTreatment: Supportive care, hydration, monitor for HUS',
+        difficulty: 3,
+        tags: ['EHEC', 'treatment']
+      },
+      {
+        id: 'entero-5',
+        question: 'How does Proteus cause kidney stones?',
+        answer: 'Mechanism:\n1. Proteus produces urease enzyme\n2. Urease: Urea → Ammonia + CO₂\n3. Ammonia makes urine alkaline (pH >8)\n4. Alkaline pH precipitates struvite stones\n5. Stones: Magnesium ammonium phosphate\n\nClinical: "Triple phosphate crystals" on urinalysis',
+        difficulty: 2,
+        tags: ['Proteus', 'pathogenesis']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'entero-case-1',
+        title: 'Hemolytic Uremic Syndrome',
+        presentation: 'A 5-year-old child develops bloody diarrhea after eating at a fast-food restaurant. Three days later, she becomes pale, with decreased urine output and petechial rash. Lab shows hemolytic anemia, thrombocytopenia, and elevated creatinine.',
+        question: 'What is the diagnosis and why should antibiotics be avoided?',
+        answer: 'Diagnosis: Hemolytic Uremic Syndrome (HUS) secondary to EHEC infection\n\nLikely organism: E. coli O157:H7\n\nWhy avoid antibiotics:\n1. May increase Shiga toxin production\n2. Bacterial lysis releases more toxin\n3. Can worsen HUS\n4. No proven benefit in EHEC gastroenteritis\n\nTreatment: Supportive care, dialysis if needed, avoid antidiarrheal agents',
+        keyLearning: 'HUS after bloody diarrhea = EHEC; antibiotics contraindicated as they worsen toxin release',
+        difficulty: 3
+      },
+      {
+        id: 'entero-case-2',
+        title: 'Carbapenem-Resistant Enterobacteriaceae',
+        presentation: 'A hospitalized patient develops pneumonia. Sputum culture grows Klebsiella pneumoniae resistant to all cephalosporins and carbapenems. The patient has been on multiple antibiotics.',
+        question: 'What resistance mechanism is present and what treatment options exist?',
+        answer: 'Resistance mechanism: Carbapenemase production (CRE)\n- Likely enzymes: KPC, NDM, or OXA-48\n- Hydrolyzes all β-lactams including carbapenems\n\nTreatment options (limited):\n1. Polymyxin B or colistin\n2. High-dose tigecycline\n3. New agents: ceftazidime-avibactam, meropenem-vaborbactam\n4. Combination therapy often needed\n\nInfection control: Contact precautions, cohorting',
+        keyLearning: 'CRE infections have limited treatment options; prevention through antimicrobial stewardship is crucial',
+        difficulty: 4
+      }
+    ]
+  },
+  prerequisites: ['bacterial-structure', 'antimicrobial-resistance'],
+  relatedTopics: ['salmonella', 'shigella'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE', 'INI_CET'],
+  estimatedMinutes: 45,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// SALMONELLA
+// =============================================================================
+
+const salmonellaTopic: LibraryTopic = {
+  id: 'salmonella',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-negative',
+  name: 'Salmonella',
+  slug: 'salmonella',
+  description: 'Typhoid vs non-typhoid, Widal test, carriers, rose spots, treatment',
+  content: {
+    concept: `# Salmonella
+
+## Overview
+Salmonella are **Gram-negative, motile, facultatively anaerobic rods** belonging to Enterobacteriaceae. They cause a spectrum of diseases from gastroenteritis to typhoid fever, with significant global health impact.
+
+## Classification and Nomenclature
+
+### Modern Classification
+- **Single species**: *Salmonella enterica*
+- **Six subspecies**: *S. enterica* subsp. *enterica* (subspecies I) most important
+- **>2500 serotypes** based on O, H antigens
+- **Naming**: Serotype names (e.g., Typhimurium, Typhi)
+
+### Clinical Classification
+| Category | Examples | Disease |
+|----------|----------|---------|
+| **Typhoidal** | S. Typhi, S. Paratyphi A/B/C | Enteric fever |
+| **Non-typhoidal (NTS)** | S. Typhimurium, S. Enteritidis | Gastroenteritis |
+
+## Morphology and Culture
+- **Gram-negative rods** (2-3 × 0.5 μm)
+- **Motile** (peritrichous flagella) - except S. Gallinarum/Pullorum
+- **Non-lactose fermenter** (colorless on MacConkey)
+- **H₂S production** (black colonies on TSI, XLD)
+- **Selective media**: Salmonella-Shigella (SS) agar, XLD agar
+
+## Antigens and Serotyping
+
+### Kauffmann-White Scheme
+| Antigen | Structure | Heat Stability | Function |
+|---------|-----------|----------------|----------|
+| **O antigen** | LPS somatic | Heat-stable | Serotyping, virulence |
+| **H antigen** | Flagellar | Heat-labile | Phase variation |
+| **Vi antigen** | Capsular (S. Typhi) | Heat-labile | Antiphagocytic |
+
+### Phase Variation (H antigens)
+- **Phase 1**: Specific H antigens (e.g., "i" in Typhimurium)
+- **Phase 2**: Non-specific H antigens (e.g., "1,2")
+- **Monophasic**: Only one phase (S. Typhi = "d" only)
+
+## Virulence Factors
+
+### Pathogenicity Islands
+| SPI | Location | Function |
+|-----|----------|----------|
+| **SPI-1** | Chromosome | Invasion (T3SS-1) |
+| **SPI-2** | Chromosome | Intracellular survival (T3SS-2) |
+| **SPI-3** | Chromosome | Mg²⁺ transport |
+| **SPI-4** | Chromosome | Type I secretion |
+| **SPI-5** | Chromosome | Enterocolitis |
+
+### Type III Secretion Systems (T3SS)
+| System | Trigger | Function | Effectors |
+|---------|---------|----------|-----------|
+| **T3SS-1** | Contact with epithelium | Invasion | SopE, SipA, SipC |
+| **T3SS-2** | Intracellular environment | Survival in macrophages | SseF, SseG, SspH1 |
+
+### Other Virulence Factors
+- **Vi capsule**: S. Typhi antiphagocytic
+- **Acid tolerance**: Survives gastric acid
+- **Iron acquisition**: Siderophores, heme utilization
+- **Flagella**: Motility, adhesion, immune evasion
+
+## Salmonella Typhi (Typhoid Fever)
+
+### Epidemiology
+- **Human-restricted pathogen**
+- **Fecal-oral transmission**
+- **Endemic**: Developing countries
+- **Carriers**: 1-3% become chronic carriers (gallbladder)
+
+### Pathogenesis
+1. **Ingestion**: High infectious dose (10⁴-10⁶)
+2. **Intestinal invasion**: M cells in Peyer's patches
+3. **Systemic spread**: Mesenteric lymph nodes → bloodstream
+4. **Organ seeding**: Liver, spleen, bone marrow, gallbladder
+5. **Re-invasion**: Intestines (Rose spots, bleeding)
+
+### Clinical Features
+
+#### Four Stages (Classical)
+| Week | Stage | Features |
+|------|-------|----------|
+| **1** | Incubation | Gradual fever, malaise, headache |
+| **2** | Active disease | High fever, rose spots, hepatosplenomegaly |
+| **3** | Complications | GI bleeding, perforation, encephalopathy |
+| **4** | Recovery | Gradual improvement (if untreated) |
+
+#### Key Clinical Features
+- **Rose spots**: Pink, blanching macules on trunk (2nd week)
+- **Relative bradycardia**: Pulse slower than expected for fever
+- **"Pea soup" diarrhea**: Later stages
+- **Hepatosplenomegaly**
+- **Altered mental status**
+
+### Complications
+| Type | Examples |
+|------|----------|
+| **GI** | Bleeding, perforation, cholangitis |
+| **Neurologic** | Encephalopathy, meningitis, Guillain-Barré |
+| **Cardiac** | Myocarditis, endocarditis |
+| **Hematologic** | Hemolysis, DIC |
+| **Others** | Pneumonia, osteomyelitis, abscess |
+
+### Laboratory Diagnosis
+
+#### Culture
+| Specimen | Week of illness | Yield |
+|----------|-----------------|--------|
+| **Blood** | 1st-2nd | 80-90% |
+| **Stool** | 3rd-4th | 75% |
+| **Urine** | 2nd-3rd | 25% |
+| **Bone marrow** | Any time | 95% (gold standard) |
+
+#### Widal Test (Serology)
+- **Principle**: Agglutination of killed Salmonella by patient serum
+- **Antigens tested**: TO (Typhi O), TH (Typhi H), AH (Paratyphi A H), BH (Paratyphi B H)
+- **Interpretation**: 
+  - TO ≥1:160 or 4-fold rise = significant
+  - Single high titer unreliable
+- **Limitations**: False positives (cross-reactions), false negatives (early disease)
+
+#### Modern Tests
+- **Typhidot**: IgM/IgG ELISA
+- **Tubex**: Inhibition ELISA
+- **Blood culture**: Still gold standard
+- **PCR**: Rapid, specific
+
+### Treatment
+| Antibiotic | Dose | Duration | Notes |
+|------------|------|----------|--------|
+| **Ceftriaxone** | 2g IV daily | 10-14 days | DOC for severe disease |
+| **Azithromycin** | 1g PO daily | 7 days | DOC for uncomplicated |
+| **Ciprofloxacin** | 500mg PO BID | 7-10 days | If sensitive |
+| **Chloramphenicol** | 500mg PO QID | 14 days | Historic DOC |
+
+### Prevention
+- **Vaccines**:
+  - Ty21a: Live oral vaccine (5 years protection)
+  - ViCPS: Vi polysaccharide injection (3 years protection)
+- **Sanitation**: Safe water, food hygiene
+- **Carrier treatment**: Ciprofloxacin ± cholecystectomy
+
+## Non-Typhoidal Salmonella (NTS)
+
+### Common Serotypes
+- **S. Typhimurium**: Most common in humans
+- **S. Enteritidis**: Eggs, poultry
+- **S. Newport**: Multiresistant
+- **S. Javiana**: Produce-associated
+
+### Pathogenesis
+- **Lower infectious dose**: 10²-10³ organisms
+- **Primarily intestinal**: Limited systemic spread
+- **Self-limiting** in immunocompetent hosts
+- **Animal reservoirs**: Poultry, cattle, reptiles
+
+### Clinical Syndromes
+
+#### Gastroenteritis (Most common)
+- **Incubation**: 6-72 hours
+- **Duration**: 3-7 days
+- **Symptoms**: Diarrhea, fever, vomiting, cramping
+- **Self-limiting**: Usually no treatment needed
+
+#### Bacteremia
+- **Risk factors**: Immunocompromised, extremes of age
+- **Complications**: Endocarditis, osteomyelitis, meningitis
+- **Treatment**: Antibiotics required
+
+#### Focal Infections
+- **Osteomyelitis**: Especially sickle cell disease
+- **Endocarditis**: Abnormal valves
+- **Meningitis**: Infants, immunocompromised
+
+### Treatment
+- **Uncomplicated gastroenteritis**: Supportive care only
+- **Bacteremia/focal infection**: Ceftriaxone, azithromycin
+- **Avoid antibiotics** in simple gastroenteritis (prolongs shedding)
+
+## Antimicrobial Resistance
+
+### Mechanisms
+- **Chromosomal mutations**: Quinolone resistance
+- **Plasmid-mediated**: MDR (multidrug resistant)
+- **ESBL production**: CTX-M enzymes
+- **AmpC β-lactamases**
+
+### MDR Salmonella Typhi
+- **Resistance**: Chloramphenicol, ampicillin, TMP-SMX
+- **Emerged**: 1970s-1980s
+- **Treatment**: Fluoroquinolones, 3rd gen cephalosporins
+
+### XDR (Extensively Drug-Resistant)
+- **Additional resistance**: Fluoroquinolones
+- **Treatment**: Azithromycin, carbapenems
+- **Emerging concern**: Limited options
+
+---
+
+*"Salmonella's evolutionary success lies in its ability to adapt to diverse hosts while maintaining its pathogenic arsenal - from causing simple gastroenteritis in healthy individuals to life-threatening typhoid fever in the susceptible."*`,
+    
+    keyPoints: [
+      'Salmonella: Gram-negative, motile, non-lactose fermenter, H₂S positive',
+      'Typhoidal (S. Typhi) vs Non-typhoidal (S. Typhimurium, Enteritidis)',
+      'S. Typhi: Human-only, high infectious dose, systemic disease (typhoid)',
+      'NTS: Animal reservoir, low infectious dose, usually gastroenteritis',
+      'Rose spots: Pink macules on trunk in 2nd week of typhoid',
+      'Widal test: TO ≥1:160 significant, but many limitations',
+      'Blood culture: Best in 1st-2nd week, bone marrow anytime (95% yield)',
+      'Typhoid treatment: Azithromycin (uncomplicated), ceftriaxone (severe)',
+      'NTS gastroenteritis: Supportive care only, avoid antibiotics',
+      'Chronic carriers: 1-3% after typhoid, gallbladder reservoir'
+    ],
+    
+    examPrep: {
+      summary: `**Salmonella - High Yield Summary**
+
+**Identification**: Non-lactose fermenter, H₂S positive, motile
+
+**Typhoid fever**: S. Typhi, rose spots, Widal test, blood culture (week 1-2)
+
+**NTS**: Animal reservoir, gastroenteritis, avoid antibiotics
+
+**Treatment**: Typhoid (azithromycin/ceftriaxone), NTS (supportive)
+
+**Complications**: GI bleeding, perforation, chronic carriers`,
+      
+      mnemonics: [
+        'Salmonella ID: "No Lactose, H₂S positive, Mobile"',
+        'Widal antigens: "TO TH AH BH" (Typhi O/H, Paratyphi A/B H)',
+        'Rose spots: "Roses bloom in week 2"',
+        'NTS treatment: "No Treatment for Simple" (gastroenteritis)',
+        'Typhoid stages: "In Active Complicated Recovery" (4 weeks)'
+      ],
+      
+      highYield: [
+        'S. Typhi is human-restricted pathogen (no animal reservoir)',
+        'Rose spots appear in 2nd week of typhoid fever',
+        'Blood culture has highest yield in first 2 weeks',
+        'Bone marrow culture has 95% yield throughout illness',
+        'NTS gastroenteritis should not be treated with antibiotics',
+        'Chronic typhoid carriers harbor bacteria in gallbladder',
+        'Widal test has many false positives and negatives'
+      ],
+      
+      commonMCQs: [
+        'Non-lactose fermenting, H₂S positive: Salmonella',
+        'Rose spots are seen in: Typhoid fever (S. Typhi)',
+        'Best specimen for typhoid diagnosis in 1st week: Blood culture',
+        'Treatment for NTS gastroenteritis: Supportive care only',
+        'Chronic typhoid carriers: Gallbladder colonization',
+        'Widal test significant titer: TO ≥1:160',
+        'Drug of choice for typhoid: Azithromycin or ceftriaxone'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 32', chapterTitle: 'Salmonella', pages: '296-314' },
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 33', chapterTitle: 'Enteric Fever', pages: '315-325' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'salm-1',
+        question: 'What are the key differences between typhoidal and non-typhoidal Salmonella?',
+        answer: 'Typhoidal (S. Typhi):\n- Human-only reservoir\n- High infectious dose (10⁴-10⁶)\n- Systemic disease\n- Chronic carriers possible\n- Vi antigen present\n\nNon-typhoidal (S. Typhimurium):\n- Animal reservoir\n- Low infectious dose (10²-10³)\n- Usually gastroenteritis\n- Rarely chronic carriers\n- No Vi antigen',
+        difficulty: 2,
+        tags: ['classification', 'epidemiology']
+      },
+      {
+        id: 'salm-2',
+        question: 'What is the Widal test and what are its limitations?',
+        answer: 'Widal test: Serology for typhoid\n- Principle: Agglutination with TO, TH, AH, BH antigens\n- Significant: TO ≥1:160 or 4-fold rise\n\nLimitations:\n- False positives: Cross-reactions, previous vaccination\n- False negatives: Early disease, immunocompromised\n- Single titer unreliable\n- Better tests: Blood culture, Typhidot, PCR',
+        difficulty: 3,
+        tags: ['diagnosis', 'serology']
+      },
+      {
+        id: 'salm-3',
+        question: 'Why should antibiotics be avoided in NTS gastroenteritis?',
+        answer: 'Reasons to avoid antibiotics in uncomplicated NTS:\n1. Self-limiting illness (3-7 days)\n2. Prolongs bacterial shedding\n3. Increases carrier state\n4. No clinical benefit proven\n5. Risk of C. difficile\n\nTreat only if: Bacteremia, focal infection, high-risk patients',
+        difficulty: 2,
+        tags: ['treatment', 'NTS']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'salm-case-1',
+        title: 'Typhoid Fever Diagnosis',
+        presentation: 'A 25-year-old returns from India with 2 weeks of fever, headache, and malaise. He develops pink spots on his trunk and hepatosplenomegaly. Blood culture from day 3 is negative.',
+        question: 'What is the likely diagnosis and what further tests should be done?',
+        answer: 'Diagnosis: Typhoid fever (S. Typhi)\n\nClinical clues:\n- Travel to endemic area\n- Rose spots (pathognomonic)\n- Hepatosplenomegaly\n- Gradual onset\n\nFurther tests:\n- Repeat blood cultures\n- Stool culture (higher yield in week 3)\n- Bone marrow culture (95% yield, gold standard)\n- Typhidot or PCR\n- Widal test (limited value)\n\nTreatment: Azithromycin or ceftriaxone',
+        keyLearning: 'Rose spots are pathognomonic for typhoid; bone marrow culture has highest yield',
+        difficulty: 3
+      }
+    ]
+  },
+  prerequisites: ['enterobacteriaceae'],
+  relatedTopics: ['shigella', 'antimicrobial-resistance'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE', 'INI_CET'],
+  estimatedMinutes: 40,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// Continue with more topics in similar comprehensive format...
+
+export const GRAM_NEGATIVE_TOPICS: LibraryTopic[] = [
+  enterobacteriaceaeTopic,
+  salmonellaTopic,
+  // Additional topics would follow the same comprehensive pattern
+];

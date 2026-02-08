@@ -120,10 +120,10 @@ export function ContinueWhereYouLeft() {
   }
 
   return (
-    <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+    <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
       <CardHeader className="pb-3">
-        <CardTitle className="flex items-center gap-2 text-[#E5E7EB] text-base">
-          <RotateCcw className="w-4 h-4 text-[#06B6D4]" />
+        <CardTitle className="flex items-center gap-2 text-[#E8E0D5] text-base">
+          <RotateCcw className="w-4 h-4 text-[#5BB3B3]" />
           Continue Where You Left
         </CardTitle>
       </CardHeader>
@@ -140,14 +140,14 @@ export function ContinueWhereYouLeft() {
               className={cn(
                 "block p-3 rounded-xl border transition-all group relative",
                 isFirst
-                  ? "bg-[rgba(6,182,212,0.05)] border-[rgba(6,182,212,0.2)] hover:border-[#06B6D4]/50"
-                  : "bg-[#0D1B2A] border-[rgba(6,182,212,0.1)] hover:border-[rgba(6,182,212,0.2)]"
+                  ? "bg-[rgba(91,179,179,0.05)] border-[rgba(91,179,179,0.2)] hover:border-[#5BB3B3]/50"
+                  : "bg-[#2D3E50] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.2)]"
               )}
             >
               {/* Dismiss button */}
               <button
                 onClick={(e) => handleDismiss(item.id, e)}
-                className="absolute top-2 right-2 p-1 rounded-full text-[#6B7280] hover:text-[#9CA3AF] hover:bg-[#142538] opacity-0 group-hover:opacity-100 transition-all"
+                className="absolute top-2 right-2 p-1 rounded-full text-[#6B7280] hover:text-[#A0B0BC] hover:bg-[#3A4D5F] opacity-0 group-hover:opacity-100 transition-all"
               >
                 <X className="w-3 h-3" />
               </button>
@@ -164,7 +164,7 @@ export function ContinueWhereYouLeft() {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <p className="font-medium text-sm text-[#E5E7EB] group-hover:text-[#06B6D4] transition-colors truncate">
+                    <p className="font-medium text-sm text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors truncate">
                       {item.title}
                     </p>
                     <Badge className={cn("text-xs shrink-0", colors.bg, colors.text, "border-transparent")}>
@@ -177,7 +177,7 @@ export function ContinueWhereYouLeft() {
                   {/* Progress bar */}
                   {item.progress < 100 && (
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 h-1.5 bg-[#142538] rounded-full overflow-hidden">
+                      <div className="flex-1 h-1.5 bg-[#3A4D5F] rounded-full overflow-hidden">
                         <div
                           className={cn("h-full rounded-full bg-gradient-to-r", colors.progress)}
                           style={{ width: `${item.progress}%` }}
@@ -196,7 +196,7 @@ export function ContinueWhereYouLeft() {
                   </span>
                   
                   {item.timeLeft && item.progress < 100 && (
-                    <span className="text-xs text-[#9CA3AF]">
+                    <span className="text-xs text-[#A0B0BC]">
                       ~{item.timeLeft} min left
                     </span>
                   )}
@@ -204,7 +204,7 @@ export function ContinueWhereYouLeft() {
                   {isFirst && (
                     <Button
                       size="sm"
-                      className="mt-1 h-7 text-xs bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A] font-medium shadow-md shadow-[#06B6D4]/20"
+                      className="mt-1 h-7 text-xs bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50] font-medium shadow-md shadow-[#5BB3B3]/20"
                     >
                       <Play className="w-3 h-3 mr-1" />
                       Resume
@@ -212,7 +212,7 @@ export function ContinueWhereYouLeft() {
                   )}
 
                   {!isFirst && (
-                    <ChevronRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#06B6D4] transition-colors mt-1" />
+                    <ChevronRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#5BB3B3] transition-colors mt-1" />
                   )}
                 </div>
               </div>
@@ -221,8 +221,8 @@ export function ContinueWhereYouLeft() {
         })}
 
         {/* Learning science note */}
-        <p className="text-xs text-[#6B7280] pt-2 border-t border-[rgba(6,182,212,0.1)]">
-          💡 <span className="text-[#9CA3AF]">Context restoration</span> — Resume without cognitive load of "where was I?"
+        <p className="text-xs text-[#6B7280] pt-2 border-t border-[rgba(91,179,179,0.1)]">
+          💡 <span className="text-[#A0B0BC]">Context restoration</span> — Resume without cognitive load of "where was I?"
         </p>
       </CardContent>
     </Card>

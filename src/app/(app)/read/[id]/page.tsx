@@ -392,25 +392,25 @@ export default function ReadingPage() {
     return content.split("\n").map((line, i) => {
       // Headers
       if (line.startsWith("## ")) {
-        return <h2 key={i} className="text-xl font-bold text-[#E5E7EB] mt-8 mb-4 pb-2 border-b border-[rgba(6,182,212,0.1)]">{line.slice(3)}</h2>;
+        return <h2 key={i} className="text-xl font-bold text-[#E8E0D5] mt-8 mb-4 pb-2 border-b border-[rgba(91,179,179,0.1)]">{line.slice(3)}</h2>;
       }
       if (line.startsWith("### ")) {
-        return <h3 key={i} className="text-lg font-semibold text-[#E5E7EB] mt-6 mb-3">{line.slice(4)}</h3>;
+        return <h3 key={i} className="text-lg font-semibold text-[#E8E0D5] mt-6 mb-3">{line.slice(4)}</h3>;
       }
       
       // Blockquotes
       if (line.startsWith("> ")) {
         const isAttribution = line.includes("—");
         return (
-          <blockquote key={i} className={`border-l-4 border-[#F59E0B]/50 pl-4 py-3 my-4 ${isAttribution ? 'bg-[#F59E0B]/5' : 'bg-[rgba(6,182,212,0.05)]'} rounded-r-lg italic`}>
-            <span className="text-[#9CA3AF]">{line.slice(2)}</span>
+          <blockquote key={i} className={`border-l-4 border-[#C9A86C]/50 pl-4 py-3 my-4 ${isAttribution ? 'bg-[#C9A86C]/5' : 'bg-[rgba(91,179,179,0.05)]'} rounded-r-lg italic`}>
+            <span className="text-[#A0B0BC]">{line.slice(2)}</span>
           </blockquote>
         );
       }
       
       // Horizontal rule
       if (line.trim() === "---") {
-        return <hr key={i} className="my-8 border-[rgba(6,182,212,0.15)]" />;
+        return <hr key={i} className="my-8 border-[rgba(91,179,179,0.15)]" />;
       }
       
       // Tables
@@ -422,11 +422,11 @@ export default function ReadingPage() {
         const isHeader = i === 0 || (content.split("\n")[i - 1]?.trim() === "" || content.split("\n")[i + 1]?.includes("---"));
         
         return (
-          <tr key={i} className={isHeader ? "bg-[#142538]" : "border-t border-[rgba(6,182,212,0.1)]"}>
+          <tr key={i} className={isHeader ? "bg-[#3A4D5F]" : "border-t border-[rgba(91,179,179,0.1)]"}>
             {cells.map((cell, ci) => {
               const Tag = isHeader ? "th" : "td";
               return (
-                <Tag key={ci} className={`px-4 py-2.5 text-left ${isHeader ? 'font-semibold text-[#E5E7EB] text-sm' : 'text-[#9CA3AF]'}`}>
+                <Tag key={ci} className={`px-4 py-2.5 text-left ${isHeader ? 'font-semibold text-[#E8E0D5] text-sm' : 'text-[#A0B0BC]'}`}>
                   {renderInline(cell.trim())}
                 </Tag>
               );
@@ -438,8 +438,8 @@ export default function ReadingPage() {
       // List items
       if (line.startsWith("• ") || line.startsWith("- ")) {
         return (
-          <li key={i} className="flex items-start gap-2 my-1.5 text-[#9CA3AF]">
-            <span className="text-[#06B6D4] mt-1.5">•</span>
+          <li key={i} className="flex items-start gap-2 my-1.5 text-[#A0B0BC]">
+            <span className="text-[#5BB3B3] mt-1.5">•</span>
             <span>{renderInline(line.slice(2))}</span>
           </li>
         );
@@ -447,8 +447,8 @@ export default function ReadingPage() {
       if (/^\d+\. /.test(line)) {
         const num = line.match(/^(\d+)\./)?.[1];
         return (
-          <li key={i} className="flex items-start gap-3 my-1.5 text-[#9CA3AF]">
-            <span className="text-[#06B6D4] font-semibold min-w-[20px]">{num}.</span>
+          <li key={i} className="flex items-start gap-3 my-1.5 text-[#A0B0BC]">
+            <span className="text-[#5BB3B3] font-semibold min-w-[20px]">{num}.</span>
             <span>{renderInline(line.replace(/^\d+\. /, ""))}</span>
           </li>
         );
@@ -458,7 +458,7 @@ export default function ReadingPage() {
       if (line.trim() === "") return <div key={i} className="h-4" />;
       
       // Regular paragraphs
-      return <p key={i} className="text-[#9CA3AF] my-3 leading-relaxed">{renderInline(line)}</p>;
+      return <p key={i} className="text-[#A0B0BC] my-3 leading-relaxed">{renderInline(line)}</p>;
     });
   };
   
@@ -467,7 +467,7 @@ export default function ReadingPage() {
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith("**") && part.endsWith("**")) {
-        return <strong key={i} className="text-[#E5E7EB] font-semibold">{part.slice(2, -2)}</strong>;
+        return <strong key={i} className="text-[#E8E0D5] font-semibold">{part.slice(2, -2)}</strong>;
       }
       return part;
     });
@@ -489,11 +489,11 @@ export default function ReadingPage() {
         const cells = line.split("|").filter(c => c.trim());
         const isHeader = !inTable || tableRows.length === 0;
         tableRows.push(
-          <tr key={i} className={isHeader ? "bg-[#142538]" : "border-t border-[rgba(6,182,212,0.1)] hover:bg-[#142538]/50"}>
+          <tr key={i} className={isHeader ? "bg-[#3A4D5F]" : "border-t border-[rgba(91,179,179,0.1)] hover:bg-[#3A4D5F]/50"}>
             {cells.map((cell, ci) => {
               const Tag = isHeader ? "th" : "td";
               return (
-                <Tag key={ci} className={`px-4 py-2.5 text-left ${isHeader ? 'font-semibold text-[#E5E7EB] text-sm' : 'text-[#9CA3AF]'}`}>
+                <Tag key={ci} className={`px-4 py-2.5 text-left ${isHeader ? 'font-semibold text-[#E8E0D5] text-sm' : 'text-[#A0B0BC]'}`}>
                   {renderInline(cell.trim())}
                 </Tag>
               );
@@ -506,7 +506,7 @@ export default function ReadingPage() {
         if (inTable && tableRows.length > 0) {
           result.push(
             <div key={`table-${i}`} className="overflow-x-auto my-6">
-              <table className="min-w-full border border-[rgba(6,182,212,0.15)] rounded-lg overflow-hidden">
+              <table className="min-w-full border border-[rgba(91,179,179,0.15)] rounded-lg overflow-hidden">
                 <tbody>{tableRows}</tbody>
               </table>
             </div>
@@ -522,7 +522,7 @@ export default function ReadingPage() {
     if (tableRows.length > 0) {
       result.push(
         <div key="table-end" className="overflow-x-auto my-6">
-          <table className="min-w-full border border-[rgba(6,182,212,0.15)] rounded-lg overflow-hidden">
+          <table className="min-w-full border border-[rgba(91,179,179,0.15)] rounded-lg overflow-hidden">
             <tbody>{tableRows}</tbody>
           </table>
         </div>
@@ -535,9 +535,9 @@ export default function ReadingPage() {
   return (
     <div className={`min-h-screen ${focusMode ? 'bg-[#0a1628]' : ''}`}>
       {/* Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-[#0D1B2A]">
+      <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-[#2D3E50]">
         <div 
-          className="h-full bg-gradient-to-r from-[#059669] to-[#06B6D4] transition-all duration-150"
+          className="h-full bg-gradient-to-r from-[#7BA69E] to-[#5BB3B3] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -548,7 +548,7 @@ export default function ReadingPage() {
           variant="outline"
           size="icon"
           onClick={() => setShowSidebar(!showSidebar)}
-          className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:text-[#E5E7EB] w-10 h-10"
+          className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5] w-10 h-10"
         >
           {showSidebar ? <PanelLeftClose className="w-4 h-4" /> : <PanelLeft className="w-4 h-4" />}
         </Button>
@@ -556,7 +556,7 @@ export default function ReadingPage() {
           variant="outline"
           size="icon"
           onClick={() => setFontSize(Math.max(12, fontSize - 2))}
-          className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:text-[#E5E7EB] w-10 h-10"
+          className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5] w-10 h-10"
         >
           <Minus className="w-4 h-4" />
         </Button>
@@ -564,7 +564,7 @@ export default function ReadingPage() {
           variant="outline"
           size="icon"
           onClick={() => setFontSize(Math.min(24, fontSize + 2))}
-          className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:text-[#E5E7EB] w-10 h-10"
+          className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5] w-10 h-10"
         >
           <Plus className="w-4 h-4" />
         </Button>
@@ -572,7 +572,7 @@ export default function ReadingPage() {
           variant="outline"
           size="icon"
           onClick={() => setFocusMode(!focusMode)}
-          className={`bg-[#0F2233] border-[rgba(6,182,212,0.15)] w-10 h-10 ${focusMode ? 'text-[#06B6D4] border-[#06B6D4]/50' : 'text-[#9CA3AF] hover:text-[#E5E7EB]'}`}
+          className={`bg-[#364A5E] border-[rgba(91,179,179,0.15)] w-10 h-10 ${focusMode ? 'text-[#5BB3B3] border-[#5BB3B3]/50' : 'text-[#A0B0BC] hover:text-[#E8E0D5]'}`}
         >
           {focusMode ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
         </Button>
@@ -580,7 +580,7 @@ export default function ReadingPage() {
           variant="outline"
           size="icon"
           onClick={() => setHighlightMode(!highlightMode)}
-          className={`bg-[#0F2233] border-[rgba(6,182,212,0.15)] w-10 h-10 ${highlightMode ? 'text-[#F59E0B] border-[#F59E0B]/50' : 'text-[#9CA3AF] hover:text-[#E5E7EB]'}`}
+          className={`bg-[#364A5E] border-[rgba(91,179,179,0.15)] w-10 h-10 ${highlightMode ? 'text-[#C9A86C] border-[#C9A86C]/50' : 'text-[#A0B0BC] hover:text-[#E8E0D5]'}`}
         >
           <Highlighter className="w-4 h-4" />
         </Button>
@@ -589,7 +589,7 @@ export default function ReadingPage() {
       {/* ATOM Button */}
       <Link
         href={`/chat?topic=${params.id}`}
-        className="fixed bottom-24 lg:bottom-8 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#06B6D4] to-[#0891B2] hover:from-[#0891B2] hover:to-[#0E7490] rounded-full shadow-lg shadow-[#06B6D4]/30 transition-all hover:scale-105"
+        className="fixed bottom-24 lg:bottom-8 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#5BB3B3] to-[#4A9E9E] hover:from-[#4A9E9E] hover:to-[#0E7490] rounded-full shadow-lg shadow-[#5BB3B3]/30 transition-all hover:scale-105"
       >
         <Atom className="w-5 h-5" />
         <span className="hidden sm:inline font-medium">Ask ATOM</span>
@@ -600,13 +600,13 @@ export default function ReadingPage() {
         {showSidebar && !focusMode && (
           <aside className="hidden lg:block w-72 shrink-0 p-6 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
             {/* Source Info */}
-            <div className="mb-6 p-4 bg-[#0F2233] rounded-xl border border-[rgba(6,182,212,0.15)]">
+            <div className="mb-6 p-4 bg-[#364A5E] rounded-xl border border-[rgba(91,179,179,0.15)]">
               <div className="flex items-start gap-3">
-                <div className="p-2 bg-[#059669]/20 rounded-lg">
-                  <BookOpen className="w-5 h-5 text-[#059669]" />
+                <div className="p-2 bg-[#7BA69E]/20 rounded-lg">
+                  <BookOpen className="w-5 h-5 text-[#7BA69E]" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-[#E5E7EB]">{topicData.source.book}</p>
+                  <p className="text-sm font-medium text-[#E8E0D5]">{topicData.source.book}</p>
                   <p className="text-xs text-[#6B7280] mt-0.5">{topicData.source.chapter} • p. {topicData.source.pages}</p>
                 </div>
               </div>
@@ -615,8 +615,8 @@ export default function ReadingPage() {
             {/* Progress */}
             <div className="mb-6">
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-[#9CA3AF]">Reading Progress</span>
-                <span className="text-[#E5E7EB] font-medium">{Math.round(scrollProgress)}%</span>
+                <span className="text-[#A0B0BC]">Reading Progress</span>
+                <span className="text-[#E8E0D5] font-medium">{Math.round(scrollProgress)}%</span>
               </div>
               <Progress value={scrollProgress} className="h-2" />
               <p className="text-xs text-[#6B7280] mt-2 flex items-center gap-1">
@@ -627,8 +627,8 @@ export default function ReadingPage() {
             
             {/* Table of Contents */}
             <div className="mb-6">
-              <h3 className="text-sm font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                <List className="w-4 h-4 text-[#06B6D4]" />
+              <h3 className="text-sm font-semibold text-[#E8E0D5] mb-3 flex items-center gap-2">
+                <List className="w-4 h-4 text-[#5BB3B3]" />
                 Contents
               </h3>
               <nav className="space-y-1">
@@ -638,8 +638,8 @@ export default function ReadingPage() {
                     onClick={() => scrollToSection(section.id)}
                     className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all ${
                       activeSection === section.id
-                        ? "bg-[#059669]/20 text-[#059669] border-l-2 border-[#059669] font-medium"
-                        : "text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[#142538]"
+                        ? "bg-[#7BA69E]/20 text-[#7BA69E] border-l-2 border-[#7BA69E] font-medium"
+                        : "text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[#3A4D5F]"
                     }`}
                   >
                     {section.title}
@@ -650,14 +650,14 @@ export default function ReadingPage() {
             
             {/* Key Points */}
             <div className="mb-6">
-              <h3 className="text-sm font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                <Target className="w-4 h-4 text-[#F59E0B]" />
+              <h3 className="text-sm font-semibold text-[#E8E0D5] mb-3 flex items-center gap-2">
+                <Target className="w-4 h-4 text-[#C9A86C]" />
                 Key Points
               </h3>
               <ul className="space-y-2">
                 {topicData.keyPoints.map((point, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-[#9CA3AF]">
-                    <CheckCircle className="w-3 h-3 text-[#059669] mt-0.5 shrink-0" />
+                  <li key={i} className="flex items-start gap-2 text-xs text-[#A0B0BC]">
+                    <CheckCircle className="w-3 h-3 text-[#7BA69E] mt-0.5 shrink-0" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -669,7 +669,7 @@ export default function ReadingPage() {
               <Button
                 onClick={() => setIsBookmarked(!isBookmarked)}
                 variant="outline"
-                className={`w-full justify-start border-[rgba(6,182,212,0.15)] ${isBookmarked ? 'text-[#F59E0B] bg-[#F59E0B]/10' : 'text-[#9CA3AF]'}`}
+                className={`w-full justify-start border-[rgba(91,179,179,0.15)] ${isBookmarked ? 'text-[#C9A86C] bg-[#C9A86C]/10' : 'text-[#A0B0BC]'}`}
               >
                 {isBookmarked ? <BookmarkCheck className="w-4 h-4 mr-2" /> : <Bookmark className="w-4 h-4 mr-2" />}
                 {isBookmarked ? "Bookmarked" : "Bookmark"}
@@ -677,14 +677,14 @@ export default function ReadingPage() {
               <Button
                 onClick={() => setShowNotes(!showNotes)}
                 variant="outline"
-                className={`w-full justify-start border-[rgba(6,182,212,0.15)] ${showNotes ? 'text-[#8B5CF6] bg-[#8B5CF6]/10' : 'text-[#9CA3AF]'}`}
+                className={`w-full justify-start border-[rgba(91,179,179,0.15)] ${showNotes ? 'text-[#8B5CF6] bg-[#8B5CF6]/10' : 'text-[#A0B0BC]'}`}
               >
                 <StickyNote className="w-4 h-4 mr-2" />
                 Take Notes
               </Button>
               <Button
                 onClick={() => setIsCompleted(!isCompleted)}
-                className={`w-full justify-start ${isCompleted ? 'bg-[#059669] hover:bg-[#047857] text-white' : 'bg-[#142538] hover:bg-[#1a3048] text-[#9CA3AF]'}`}
+                className={`w-full justify-start ${isCompleted ? 'bg-[#7BA69E] hover:bg-[#047857] text-white' : 'bg-[#3A4D5F] hover:bg-[#1a3048] text-[#A0B0BC]'}`}
               >
                 {isCompleted ? <Sparkles className="w-4 h-4 mr-2" /> : <Target className="w-4 h-4 mr-2" />}
                 {isCompleted ? "Completed!" : "Mark Complete"}
@@ -700,7 +700,7 @@ export default function ReadingPage() {
             {!focusMode && (
               <button
                 onClick={() => router.back()}
-                className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors mb-6"
+                className="flex items-center gap-2 text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors mb-6"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to Library
@@ -710,38 +710,38 @@ export default function ReadingPage() {
             {/* Header */}
             <div className={`mb-8 ${focusMode ? 'text-center' : ''}`}>
               <div className="flex items-center gap-2 mb-3 flex-wrap justify-center lg:justify-start">
-                <Badge className="bg-[#059669]/20 text-[#059669] border-none">
+                <Badge className="bg-[#7BA69E]/20 text-[#7BA69E] border-none">
                   {topicData.category}
                 </Badge>
-                <Badge variant="outline" className="border-[rgba(6,182,212,0.2)] text-[#6B7280]">
+                <Badge variant="outline" className="border-[rgba(91,179,179,0.2)] text-[#6B7280]">
                   {topicData.readTime} min read
                 </Badge>
                 <span className="flex items-center gap-1 text-sm">
-                  <Star className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]" />
-                  <span className="text-[#E5E7EB] font-medium">{topicData.rating}</span>
+                  <Star className="w-4 h-4 text-[#C9A86C] fill-[#C9A86C]" />
+                  <span className="text-[#E8E0D5] font-medium">{topicData.rating}</span>
                   <span className="text-[#6B7280]">({topicData.totalRatings})</span>
                 </span>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-[#E5E7EB] mb-3" style={{ fontSize: `${fontSize + 14}px` }}>
+              <h1 className="text-3xl md:text-4xl font-bold text-[#E8E0D5] mb-3" style={{ fontSize: `${fontSize + 14}px` }}>
                 {topicData.title}
               </h1>
-              <p className="text-lg text-[#9CA3AF]" style={{ fontSize: `${fontSize + 2}px` }}>
+              <p className="text-lg text-[#A0B0BC]" style={{ fontSize: `${fontSize + 2}px` }}>
                 {topicData.subtitle}
               </p>
             </div>
 
             {/* Notes Panel */}
             {showNotes && (
-              <Card className="mb-6 bg-[#0F2233] border-[#8B5CF6]/30 border-l-4 border-l-[#8B5CF6]">
+              <Card className="mb-6 bg-[#364A5E] border-[#8B5CF6]/30 border-l-4 border-l-[#8B5CF6]">
                 <CardContent className="p-4">
                   <textarea
                     placeholder="Add your notes here... Use [[Topic Name]] to link to other topics."
                     value={noteText}
                     onChange={(e) => setNoteText(e.target.value)}
-                    className="w-full h-24 p-3 bg-[#0D1B2A] border border-[rgba(6,182,212,0.15)] rounded-lg resize-none text-sm text-[#E5E7EB] placeholder-[#6B7280] focus:border-[#8B5CF6] focus:outline-none"
+                    className="w-full h-24 p-3 bg-[#2D3E50] border border-[rgba(91,179,179,0.15)] rounded-lg resize-none text-sm text-[#E8E0D5] placeholder-[#6B7280] focus:border-[#8B5CF6] focus:outline-none"
                   />
                   <div className="flex justify-end mt-2">
-                    <Button size="sm" className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white">
+                    <Button size="sm" className="bg-[#8B5CF6] hover:bg-[#5BB3B3] text-white">
                       Save Note
                     </Button>
                   </div>
@@ -753,7 +753,7 @@ export default function ReadingPage() {
             <div className="space-y-8" style={{ fontSize: `${fontSize}px` }}>
               {topicData.sections.map((section) => (
                 <section key={section.id} id={section.id} className="scroll-mt-20">
-                  <h2 className="text-2xl font-bold text-[#E5E7EB] mb-6 pb-3 border-b border-[rgba(6,182,212,0.1)]" style={{ fontSize: `${fontSize + 8}px` }}>
+                  <h2 className="text-2xl font-bold text-[#E8E0D5] mb-6 pb-3 border-b border-[rgba(91,179,179,0.1)]" style={{ fontSize: `${fontSize + 8}px` }}>
                     {section.title}
                   </h2>
                   <div className="prose prose-invert max-w-none leading-relaxed">
@@ -764,19 +764,19 @@ export default function ReadingPage() {
             </div>
 
             {/* Citations */}
-            <Card className="mt-12 bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+            <Card className="mt-12 bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
               <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-                  <Quote className="w-5 h-5 text-[#06B6D4]" />
+                <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+                  <Quote className="w-5 h-5 text-[#5BB3B3]" />
                   References
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 {topicData.citations.map((cite) => (
                   <div key={cite.id} className="flex items-start gap-3 text-sm">
-                    <span className="text-[#06B6D4] font-medium">[{cite.id}]</span>
+                    <span className="text-[#5BB3B3] font-medium">[{cite.id}]</span>
                     <div>
-                      <span className="text-[#9CA3AF]">{cite.text}</span>
+                      <span className="text-[#A0B0BC]">{cite.text}</span>
                       <span className="text-[#6B7280]"> — {cite.source}</span>
                       {cite.page && <span className="text-[#6B7280]">, p. {cite.page}</span>}
                     </div>
@@ -786,12 +786,12 @@ export default function ReadingPage() {
             </Card>
 
             {/* Section Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-[rgba(6,182,212,0.1)]">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-[rgba(91,179,179,0.1)]">
               <Button
                 variant="outline"
                 onClick={() => navigateSection("prev")}
                 disabled={activeSection === topicData.sections[0].id}
-                className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:text-[#E5E7EB]"
+                className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5]"
               >
                 <ChevronLeft className="w-4 h-4 mr-2" />
                 Previous
@@ -800,7 +800,7 @@ export default function ReadingPage() {
                 variant="outline"
                 onClick={() => navigateSection("next")}
                 disabled={activeSection === topicData.sections[topicData.sections.length - 1].id}
-                className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:text-[#E5E7EB]"
+                className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5]"
               >
                 Next
                 <ChevronRight className="w-4 h-4 ml-2" />

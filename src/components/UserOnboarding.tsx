@@ -43,8 +43,8 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
   const dailyGoalOptions = [15, 30, 45, 60, 90];
 
   return (
-    <div className="min-h-screen bg-[#0D1B2A] flex items-center justify-center p-4">
-      <Card className="w-full max-w-lg bg-[#142538] border-[rgba(6,182,212,0.2)]">
+    <div className="min-h-screen bg-[#2D3E50] flex items-center justify-center p-4">
+      <Card className="w-full max-w-lg bg-[#3A4D5F] border-[rgba(91,179,179,0.2)]">
         {/* Progress indicator */}
         <div className="px-6 pt-6">
           <div className="flex items-center gap-2 mb-6">
@@ -53,7 +53,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                 key={s}
                 className={cn(
                   "flex-1 h-1.5 rounded-full transition-colors",
-                  s <= step ? "bg-[#06B6D4]" : "bg-[#374151]"
+                  s <= step ? "bg-[#5BB3B3]" : "bg-[#374151]"
                 )}
               />
             ))}
@@ -64,11 +64,11 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
         {step === 1 && (
           <>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
-                <GraduationCap className="w-6 h-6 text-[#06B6D4]" />
+              <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
+                <GraduationCap className="w-6 h-6 text-[#5BB3B3]" />
                 What's your level?
               </CardTitle>
-              <CardDescription className="text-[#9CA3AF]">
+              <CardDescription className="text-[#A0B0BC]">
                 This helps us tailor content complexity for you
               </CardDescription>
             </CardHeader>
@@ -83,22 +83,22 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                     className={cn(
                       "w-full p-4 rounded-xl flex items-center gap-4 transition-all text-left",
                       isSelected
-                        ? "bg-[rgba(6,182,212,0.15)] border-2 border-[#06B6D4]"
-                        : "bg-[#0D1B2A] border-2 border-transparent hover:border-[rgba(6,182,212,0.2)]"
+                        ? "bg-[rgba(91,179,179,0.15)] border-2 border-[#5BB3B3]"
+                        : "bg-[#2D3E50] border-2 border-transparent hover:border-[rgba(91,179,179,0.2)]"
                     )}
                   >
                     <span className="text-2xl">{config.icon}</span>
                     <div className="flex-1">
                       <p className={cn(
                         "font-semibold",
-                        isSelected ? "text-[#06B6D4]" : "text-[#E5E7EB]"
+                        isSelected ? "text-[#5BB3B3]" : "text-[#E8E0D5]"
                       )}>
                         {config.label}
                       </p>
-                      <p className="text-sm text-[#9CA3AF]">{config.description}</p>
+                      <p className="text-sm text-[#A0B0BC]">{config.description}</p>
                     </div>
                     {isSelected && (
-                      <Check className="w-5 h-5 text-[#06B6D4]" />
+                      <Check className="w-5 h-5 text-[#5BB3B3]" />
                     )}
                   </button>
                 );
@@ -106,7 +106,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
               
               <Button
                 onClick={() => setStep(2)}
-                className="w-full mt-4 bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
+                className="w-full mt-4 bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]"
               >
                 Continue
                 <ChevronRight className="w-4 h-4 ml-2" />
@@ -119,11 +119,11 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
         {step === 2 && (
           <>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
-                <Target className="w-6 h-6 text-[#F59E0B]" />
+              <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
+                <Target className="w-6 h-6 text-[#C9A86C]" />
                 What are you preparing for?
               </CardTitle>
-              <CardDescription className="text-[#9CA3AF]">
+              <CardDescription className="text-[#A0B0BC]">
                 We'll prioritize high-yield content for your exam
               </CardDescription>
             </CardHeader>
@@ -139,14 +139,14 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                       className={cn(
                         "p-3 rounded-xl flex flex-col items-center gap-2 transition-all",
                         isSelected
-                          ? "bg-[rgba(245,158,11,0.15)] border-2 border-[#F59E0B]"
-                          : "bg-[#0D1B2A] border-2 border-transparent hover:border-[rgba(245,158,11,0.2)]"
+                          ? "bg-[rgba(245,158,11,0.15)] border-2 border-[#C9A86C]"
+                          : "bg-[#2D3E50] border-2 border-transparent hover:border-[rgba(245,158,11,0.2)]"
                       )}
                     >
                       <span className="text-lg">{config.country}</span>
                       <p className={cn(
                         "font-medium text-sm text-center",
-                        isSelected ? "text-[#F59E0B]" : "text-[#E5E7EB]"
+                        isSelected ? "text-[#C9A86C]" : "text-[#E8E0D5]"
                       )}>
                         {config.label}
                       </p>
@@ -157,7 +157,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
 
               {selectedExam !== 'none' && (
                 <div className="mt-4">
-                  <label className="text-sm text-[#9CA3AF] mb-2 block">
+                  <label className="text-sm text-[#A0B0BC] mb-2 block">
                     <Calendar className="w-4 h-4 inline mr-2" />
                     Exam Date (optional)
                   </label>
@@ -165,7 +165,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                     type="date"
                     value={examDate}
                     onChange={(e) => setExamDate(e.target.value)}
-                    className="bg-[#0D1B2A] border-[rgba(6,182,212,0.2)] text-[#E5E7EB]"
+                    className="bg-[#2D3E50] border-[rgba(91,179,179,0.2)] text-[#E8E0D5]"
                   />
                 </div>
               )}
@@ -174,13 +174,13 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                 <Button
                   variant="outline"
                   onClick={() => setStep(1)}
-                  className="flex-1 border-[rgba(6,182,212,0.2)] text-[#9CA3AF]"
+                  className="flex-1 border-[rgba(91,179,179,0.2)] text-[#A0B0BC]"
                 >
                   Back
                 </Button>
                 <Button
                   onClick={() => setStep(3)}
-                  className="flex-1 bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
+                  className="flex-1 bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]"
                 >
                   Continue
                   <ChevronRight className="w-4 h-4 ml-2" />
@@ -194,11 +194,11 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
         {step === 3 && (
           <>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
+              <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
                 <Clock className="w-6 h-6 text-[#10B981]" />
                 Set your daily goal
               </CardTitle>
-              <CardDescription className="text-[#9CA3AF]">
+              <CardDescription className="text-[#A0B0BC]">
                 How much time can you dedicate each day?
               </CardDescription>
             </CardHeader>
@@ -214,12 +214,12 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                         "p-3 rounded-xl flex flex-col items-center gap-1 transition-all",
                         isSelected
                           ? "bg-[rgba(16,185,129,0.15)] border-2 border-[#10B981]"
-                          : "bg-[#0D1B2A] border-2 border-transparent hover:border-[rgba(16,185,129,0.2)]"
+                          : "bg-[#2D3E50] border-2 border-transparent hover:border-[rgba(16,185,129,0.2)]"
                       )}
                     >
                       <p className={cn(
                         "font-bold text-lg",
-                        isSelected ? "text-[#10B981]" : "text-[#E5E7EB]"
+                        isSelected ? "text-[#10B981]" : "text-[#E8E0D5]"
                       )}>
                         {mins}
                       </p>
@@ -229,8 +229,8 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                 })}
               </div>
 
-              <div className="p-4 bg-[#0D1B2A] rounded-xl">
-                <p className="text-sm text-[#9CA3AF]">
+              <div className="p-4 bg-[#2D3E50] rounded-xl">
+                <p className="text-sm text-[#A0B0BC]">
                   {dailyGoal <= 15 && "🌱 Perfect for building a habit. Start small!"}
                   {dailyGoal === 30 && "⭐ The sweet spot for consistent learning."}
                   {dailyGoal === 45 && "🔥 Great commitment! You'll see rapid progress."}
@@ -243,13 +243,13 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                 <Button
                   variant="outline"
                   onClick={() => setStep(2)}
-                  className="flex-1 border-[rgba(6,182,212,0.2)] text-[#9CA3AF]"
+                  className="flex-1 border-[rgba(91,179,179,0.2)] text-[#A0B0BC]"
                 >
                   Back
                 </Button>
                 <Button
                   onClick={handleComplete}
-                  className="flex-1 bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6] hover:from-[#0891B2] hover:to-[#7C3AED] text-white"
+                  className="flex-1 bg-gradient-to-r from-[#5BB3B3] to-[#8B5CF6] hover:from-[#4A9E9E] hover:to-[#5BB3B3] text-white"
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
                   Let's Go!
@@ -278,10 +278,10 @@ export function ProfileSettings() {
   return (
     <div className="space-y-6">
       {/* Current Level */}
-      <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+      <Card className="bg-[#3A4D5F] border-[rgba(91,179,179,0.1)]">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB] flex items-center gap-2">
-            <GraduationCap className="w-5 h-5 text-[#06B6D4]" />
+          <CardTitle className="text-[#E8E0D5] flex items-center gap-2">
+            <GraduationCap className="w-5 h-5 text-[#5BB3B3]" />
             Your Level
           </CardTitle>
         </CardHeader>
@@ -297,8 +297,8 @@ export function ProfileSettings() {
                   className={cn(
                     "px-4 py-2 rounded-lg flex items-center gap-2 transition-all",
                     isSelected
-                      ? "bg-[#06B6D4] text-[#0D1B2A]"
-                      : "bg-[#0D1B2A] text-[#9CA3AF] hover:text-[#E5E7EB]"
+                      ? "bg-[#5BB3B3] text-[#2D3E50]"
+                      : "bg-[#2D3E50] text-[#A0B0BC] hover:text-[#E8E0D5]"
                   )}
                 >
                   <span>{config.icon}</span>
@@ -311,10 +311,10 @@ export function ProfileSettings() {
       </Card>
 
       {/* Exam Target */}
-      <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+      <Card className="bg-[#3A4D5F] border-[rgba(91,179,179,0.1)]">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB] flex items-center gap-2">
-            <Target className="w-5 h-5 text-[#F59E0B]" />
+          <CardTitle className="text-[#E8E0D5] flex items-center gap-2">
+            <Target className="w-5 h-5 text-[#C9A86C]" />
             Exam Target
           </CardTitle>
         </CardHeader>
@@ -330,8 +330,8 @@ export function ProfileSettings() {
                   className={cn(
                     "px-3 py-2 rounded-lg flex items-center gap-2 transition-all",
                     isSelected
-                      ? "bg-[#F59E0B] text-[#0D1B2A]"
-                      : "bg-[#0D1B2A] text-[#9CA3AF] hover:text-[#E5E7EB]"
+                      ? "bg-[#C9A86C] text-[#2D3E50]"
+                      : "bg-[#2D3E50] text-[#A0B0BC] hover:text-[#E8E0D5]"
                   )}
                 >
                   <span>{config.country}</span>
@@ -344,30 +344,30 @@ export function ProfileSettings() {
       </Card>
 
       {/* Learning Stats */}
-      <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+      <Card className="bg-[#3A4D5F] border-[rgba(91,179,179,0.1)]">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB] flex items-center gap-2">
+          <CardTitle className="text-[#E8E0D5] flex items-center gap-2">
             <Sparkles className="w-5 h-5 text-[#EC4899]" />
             Your Progress
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="p-4 bg-[#0D1B2A] rounded-xl text-center">
-              <p className="text-2xl font-bold text-[#06B6D4]">{user.streak.currentStreak}</p>
-              <p className="text-xs text-[#9CA3AF]">Day Streak 🔥</p>
+            <div className="p-4 bg-[#2D3E50] rounded-xl text-center">
+              <p className="text-2xl font-bold text-[#5BB3B3]">{user.streak.currentStreak}</p>
+              <p className="text-xs text-[#A0B0BC]">Day Streak 🔥</p>
             </div>
-            <div className="p-4 bg-[#0D1B2A] rounded-xl text-center">
+            <div className="p-4 bg-[#2D3E50] rounded-xl text-center">
               <p className="text-2xl font-bold text-[#10B981]">{user.completedTopicsCount}</p>
-              <p className="text-xs text-[#9CA3AF]">Topics Done</p>
+              <p className="text-xs text-[#A0B0BC]">Topics Done</p>
             </div>
-            <div className="p-4 bg-[#0D1B2A] rounded-xl text-center">
-              <p className="text-2xl font-bold text-[#F59E0B]">{Math.round(user.totalStudyMinutes / 60)}h</p>
-              <p className="text-xs text-[#9CA3AF]">Study Time</p>
+            <div className="p-4 bg-[#2D3E50] rounded-xl text-center">
+              <p className="text-2xl font-bold text-[#C9A86C]">{Math.round(user.totalStudyMinutes / 60)}h</p>
+              <p className="text-xs text-[#A0B0BC]">Study Time</p>
             </div>
-            <div className="p-4 bg-[#0D1B2A] rounded-xl text-center">
+            <div className="p-4 bg-[#2D3E50] rounded-xl text-center">
               <p className="text-2xl font-bold text-[#EC4899]">{user.streak.longestStreak}</p>
-              <p className="text-xs text-[#9CA3AF]">Best Streak</p>
+              <p className="text-xs text-[#A0B0BC]">Best Streak</p>
             </div>
           </div>
         </CardContent>

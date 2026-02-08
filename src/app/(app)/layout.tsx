@@ -14,7 +14,7 @@ export default function AppLayout({
   return (
     <UserProvider>
       <AnalyticsProvider>
-        <div className="min-h-screen bg-[#0D1B2A]">
+        <div className="min-h-screen bg-[#2D3E50]">
           <Sidebar />
           <div className="lg:pl-64">
             <Header />

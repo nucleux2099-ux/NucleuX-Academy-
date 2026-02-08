@@ -29,14 +29,14 @@ import {
 } from "lucide-react";
 
 const specialties = [
-  { id: "surgery", name: "Surgery", icon: Stethoscope, color: "#7C3AED" },
-  { id: "medicine", name: "Internal Medicine", icon: FlaskConical, color: "#06B6D4" },
-  { id: "anatomy", name: "Anatomy", icon: Bone, color: "#F59E0B" },
+  { id: "surgery", name: "Surgery", icon: Stethoscope, color: "#5BB3B3" },
+  { id: "medicine", name: "Internal Medicine", icon: FlaskConical, color: "#5BB3B3" },
+  { id: "anatomy", name: "Anatomy", icon: Bone, color: "#C9A86C" },
   { id: "physiology", name: "Physiology", icon: Brain, color: "#10B981" },
-  { id: "pathology", name: "Pathology", icon: Eye, color: "#EF4444" },
+  { id: "pathology", name: "Pathology", icon: Eye, color: "#E57373" },
   { id: "pharmacology", name: "Pharmacology", icon: Pill, color: "#8B5CF6" },
   { id: "pediatrics", name: "Pediatrics", icon: Baby, color: "#EC4899" },
-  { id: "cardiology", name: "Cardiology", icon: Heart, color: "#EF4444" },
+  { id: "cardiology", name: "Cardiology", icon: Heart, color: "#E57373" },
 ];
 
 const goals = [
@@ -204,7 +204,7 @@ export default function OnboardingPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-[#F5F3FF] flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-[#7C3AED]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#5BB3B3]" />
       </div>
     );
   }
@@ -214,10 +214,10 @@ export default function OnboardingPage() {
       <div className="w-full max-w-2xl mb-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-md">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center shadow-md">
               <span className="text-white font-bold">N</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-[#5BB3B3] to-[#5BB3B3] bg-clip-text text-transparent">
               NucleuX Academy
             </span>
           </div>
@@ -231,8 +231,8 @@ export default function OnboardingPage() {
           {step === 1 && (
             <div className="animate-fade-in space-y-6">
               <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-[#F5F3FF] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#7C3AED]/10">
-                  <Sparkles className="w-10 h-10 text-[#7C3AED]" />
+                <div className="w-20 h-20 rounded-2xl bg-[#F5F3FF] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#5BB3B3]/10">
+                  <Sparkles className="w-10 h-10 text-[#5BB3B3]" />
                 </div>
                 <h1 className="text-3xl font-bold text-[#1E293B] mb-2">Welcome to NucleuX! 🎉</h1>
                 <p className="text-[#64748B]">Let&apos;s personalize your learning experience</p>
@@ -243,7 +243,7 @@ export default function OnboardingPage() {
                   placeholder="Enter your name"
                   value={formData.name}
                   onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                  className="bg-[#F8FAFC] border-[#E2E8F0] h-14 text-lg text-center text-[#1E293B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20"
+                  className="bg-[#F8FAFC] border-[#E2E8F0] h-14 text-lg text-center text-[#1E293B] focus:border-[#5BB3B3] focus:ring-[#5BB3B3]/20"
                   autoFocus
                 />
               </div>
@@ -264,14 +264,14 @@ export default function OnboardingPage() {
                       key={s.id}
                       onClick={() => toggleSpecialty(s.id)}
                       className={`p-4 rounded-xl border-2 transition-all shadow-sm ${
-                        isSelected ? "border-[#7C3AED] bg-[#F5F3FF] shadow-md" : "border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#7C3AED]/50"
+                        isSelected ? "border-[#5BB3B3] bg-[#F5F3FF] shadow-md" : "border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#5BB3B3]/50"
                       }`}
                     >
                       <div className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 shadow-sm" style={{ backgroundColor: `${s.color}15` }}>
                         <s.icon className="w-5 h-5" style={{ color: s.color }} />
                       </div>
                       <p className="text-sm font-medium text-[#1E293B]">{s.name}</p>
-                      {isSelected && <CheckCircle className="w-4 h-4 text-[#7C3AED] mx-auto mt-2" />}
+                      {isSelected && <CheckCircle className="w-4 h-4 text-[#5BB3B3] mx-auto mt-2" />}
                     </button>
                   );
                 })}
@@ -293,18 +293,18 @@ export default function OnboardingPage() {
                       key={g.id}
                       onClick={() => toggleGoal(g.id)}
                       className={`p-4 rounded-xl border-2 text-left transition-all shadow-sm ${
-                        isSelected ? "border-[#7C3AED] bg-[#F5F3FF] shadow-md" : "border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#7C3AED]/50"
+                        isSelected ? "border-[#5BB3B3] bg-[#F5F3FF] shadow-md" : "border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#5BB3B3]/50"
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <div className="w-10 h-10 rounded-lg bg-[#F5F3FF] flex items-center justify-center shrink-0 shadow-sm">
-                          <g.icon className="w-5 h-5 text-[#7C3AED]" />
+                          <g.icon className="w-5 h-5 text-[#5BB3B3]" />
                         </div>
                         <div className="flex-1">
                           <p className="font-medium text-[#1E293B]">{g.title}</p>
                           <p className="text-sm text-[#64748B]">{g.description}</p>
                         </div>
-                        {isSelected && <CheckCircle className="w-5 h-5 text-[#7C3AED]" />}
+                        {isSelected && <CheckCircle className="w-5 h-5 text-[#5BB3B3]" />}
                       </div>
                     </button>
                   );
@@ -321,8 +321,8 @@ export default function OnboardingPage() {
                       onClick={() => setFormData((prev) => ({ ...prev, targetExam: exam.id }))}
                       className={`px-4 py-2 rounded-lg border text-sm transition-all ${
                         formData.targetExam === exam.id
-                          ? "border-[#7C3AED] bg-[#F5F3FF] text-[#7C3AED] font-medium"
-                          : "border-[#E2E8F0] bg-[#F8FAFC] text-[#64748B] hover:border-[#7C3AED]/50"
+                          ? "border-[#5BB3B3] bg-[#F5F3FF] text-[#5BB3B3] font-medium"
+                          : "border-[#E2E8F0] bg-[#F8FAFC] text-[#64748B] hover:border-[#5BB3B3]/50"
                       }`}
                     >
                       {exam.label}
@@ -341,8 +341,8 @@ export default function OnboardingPage() {
                       onClick={() => setFormData((prev) => ({ ...prev, dailyStudyTime: t.id }))}
                       className={`p-3 rounded-lg border text-center transition-all shadow-sm ${
                         formData.dailyStudyTime === t.id
-                          ? "border-[#7C3AED] bg-[#F5F3FF] text-[#7C3AED] font-medium"
-                          : "border-[#E2E8F0] bg-[#F8FAFC] text-[#64748B] hover:border-[#7C3AED]/50"
+                          ? "border-[#5BB3B3] bg-[#F5F3FF] text-[#5BB3B3] font-medium"
+                          : "border-[#E2E8F0] bg-[#F8FAFC] text-[#64748B] hover:border-[#5BB3B3]/50"
                       }`}
                     >
                       {t.label}
@@ -356,8 +356,8 @@ export default function OnboardingPage() {
           {step === 4 && (
             <div className="animate-fade-in space-y-6">
               <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-[#F0F9FF] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#06B6D4]/10">
-                  <MessageCircle className="w-10 h-10 text-[#06B6D4]" />
+                <div className="w-20 h-20 rounded-2xl bg-[#F0F9FF] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#5BB3B3]/10">
+                  <MessageCircle className="w-10 h-10 text-[#5BB3B3]" />
                 </div>
                 <h1 className="text-2xl font-bold text-[#1E293B] mb-2">Connect with ATOM on Telegram</h1>
                 <p className="text-[#64748B] max-w-md mx-auto">
@@ -382,7 +382,7 @@ export default function OnboardingPage() {
                     </div>
                   </div>
                 )}
-                <button onClick={handleNext} className="w-full text-center text-sm text-[#64748B] hover:text-[#7C3AED] py-2">
+                <button onClick={handleNext} className="w-full text-center text-sm text-[#64748B] hover:text-[#5BB3B3] py-2">
                   Skip for now →
                 </button>
               </div>
@@ -397,7 +397,7 @@ export default function OnboardingPage() {
             <Button
               onClick={handleNext}
               disabled={!canProceed() || isSaving}
-              className="bg-[#7C3AED] hover:bg-[#6D28D9] min-w-[140px] shadow-lg shadow-[#7C3AED]/20"
+              className="bg-[#5BB3B3] hover:bg-[#4A9E9E] min-w-[140px] shadow-lg shadow-[#5BB3B3]/20"
             >
               {isSaving ? (
                 <Loader2 className="w-4 h-4 animate-spin" />

@@ -34,11 +34,11 @@ import {
 } from "lucide-react";
 
 const achievements = [
-  { icon: Flame, title: "30 Day Streak", color: "#F59E0B", threshold: 30, type: "streak" },
-  { icon: BookOpen, title: "Bookworm", color: "#7C3AED", threshold: 50, type: "topics" },
+  { icon: Flame, title: "30 Day Streak", color: "#C9A86C", threshold: 30, type: "streak" },
+  { icon: BookOpen, title: "Bookworm", color: "#5BB3B3", threshold: 50, type: "topics" },
   { icon: Target, title: "Sharpshooter", color: "#10B981", threshold: 80, type: "accuracy" },
-  { icon: Trophy, title: "Top Performer", color: "#06B6D4", threshold: 100, type: "topics" },
-  { icon: Zap, title: "Speed Demon", color: "#EF4444", threshold: 500, type: "questions" },
+  { icon: Trophy, title: "Top Performer", color: "#5BB3B3", threshold: 100, type: "topics" },
+  { icon: Zap, title: "Speed Demon", color: "#E57373", threshold: 500, type: "questions" },
 ];
 
 function getInitials(name: string | null): string {
@@ -131,7 +131,7 @@ export default function ProfilePage() {
   if (userLoading || !user) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#7C3AED]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#5BB3B3]" />
       </div>
     );
   }
@@ -146,25 +146,25 @@ export default function ProfilePage() {
     <div className="space-y-6 max-w-5xl mx-auto">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-[#E5E7EB]">Profile</h1>
-        <p className="text-[#9CA3AF] mt-1">Manage your account and preferences</p>
+        <h1 className="text-3xl font-bold text-[#E8E0D5]">Profile</h1>
+        <p className="text-[#A0B0BC] mt-1">Manage your account and preferences</p>
       </div>
 
       {/* Profile Header Card */}
-      <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] overflow-hidden">
+      <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)] overflow-hidden">
         {/* Banner */}
-        <div className="h-32 bg-gradient-to-r from-[#7C3AED] to-[#06B6D4]" />
+        <div className="h-32 bg-gradient-to-r from-[#5BB3B3] to-[#5BB3B3]" />
         <CardContent className="relative pt-0 pb-6 px-6">
           {/* Avatar */}
           <div className="absolute -top-16 left-6">
             <div className="relative">
-              <Avatar className="w-32 h-32 border-4 border-[#0F2233]">
+              <Avatar className="w-32 h-32 border-4 border-[#364A5E]">
                 <AvatarImage src={user.user_metadata?.avatar_url || undefined} />
-                <AvatarFallback className="bg-[#7C3AED] text-white text-3xl">
+                <AvatarFallback className="bg-[#5BB3B3] text-white text-3xl">
                   {initials}
                 </AvatarFallback>
               </Avatar>
-              <button className="absolute bottom-2 right-2 p-2 rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] transition-colors">
+              <button className="absolute bottom-2 right-2 p-2 rounded-full bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
                 <Camera className="w-4 h-4" />
               </button>
             </div>
@@ -173,11 +173,11 @@ export default function ProfilePage() {
           {/* Info */}
           <div className="pt-20 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-[#E5E7EB]">{displayName}</h2>
-              <p className="text-[#9CA3AF]">
+              <h2 className="text-2xl font-bold text-[#E8E0D5]">{displayName}</h2>
+              <p className="text-[#A0B0BC]">
                 {userRole === 'admin' ? 'Administrator' : userRole === 'faculty' ? 'Faculty' : 'Medical Student'}
               </p>
-              <div className="flex items-center gap-4 mt-3 text-sm text-[#9CA3AF]">
+              <div className="flex items-center gap-4 mt-3 text-sm text-[#A0B0BC]">
                 <span className="flex items-center gap-1">
                   <Mail className="w-4 h-4" />
                   {user.email}
@@ -191,16 +191,16 @@ export default function ProfilePage() {
             <div className="flex gap-2">
               <Badge className={`px-3 py-1 ${
                 userRole === 'admin' 
-                  ? 'bg-[rgba(239,68,68,0.2)] text-[#EF4444] border-[rgba(239,68,68,0.3)]'
+                  ? 'bg-[rgba(239,68,68,0.2)] text-[#E57373] border-[rgba(239,68,68,0.3)]'
                   : userPlan === 'premium'
-                  ? 'bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-[rgba(245,158,11,0.3)]'
-                  : 'bg-[rgba(124,58,237,0.2)] text-[#7C3AED] border-[rgba(124,58,237,0.3)]'
+                  ? 'bg-[rgba(245,158,11,0.2)] text-[#C9A86C] border-[rgba(245,158,11,0.3)]'
+                  : 'bg-[rgba(91,179,179,0.2)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]'
               }`}>
                 {userRole === 'admin' && <Shield className="w-3 h-3 mr-1" />}
                 {planLabel}
               </Badge>
               {analytics.currentStreak > 0 && (
-                <Badge className="bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] px-3 py-1">
+                <Badge className="bg-[rgba(245,158,11,0.2)] text-[#C9A86C] border-[rgba(245,158,11,0.3)] px-3 py-1">
                   <Flame className="w-3 h-3 mr-1" />
                   {analytics.currentStreak} Day Streak
                 </Badge>
@@ -213,14 +213,14 @@ export default function ProfilePage() {
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => (
-          <Card key={stat.label} className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+          <Card key={stat.label} className="bg-[#364A5E] border-[rgba(255,255,255,0.06)]">
             <CardContent className="p-4 flex items-center gap-4">
-              <div className="p-3 rounded-lg bg-[rgba(124,58,237,0.15)]">
-                <stat.icon className="w-5 h-5 text-[#7C3AED]" />
+              <div className="p-3 rounded-lg bg-[rgba(91,179,179,0.15)]">
+                <stat.icon className="w-5 h-5 text-[#5BB3B3]" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-[#E5E7EB]">{stat.value}</p>
-                <p className="text-sm text-[#9CA3AF]">{stat.label}</p>
+                <p className="text-2xl font-bold text-[#E8E0D5]">{stat.value}</p>
+                <p className="text-sm text-[#A0B0BC]">{stat.label}</p>
               </div>
             </CardContent>
           </Card>
@@ -229,69 +229,69 @@ export default function ProfilePage() {
 
       {/* Tabs */}
       <Tabs defaultValue="profile" className="space-y-6">
-        <TabsList className="bg-[#0F2233] border border-[rgba(255,255,255,0.06)] p-1">
-          <TabsTrigger value="profile" className="data-[state=active]:bg-[#7C3AED] text-[#9CA3AF] data-[state=active]:text-white">
+        <TabsList className="bg-[#364A5E] border border-[rgba(255,255,255,0.06)] p-1">
+          <TabsTrigger value="profile" className="data-[state=active]:bg-[#5BB3B3] text-[#A0B0BC] data-[state=active]:text-white">
             Profile
           </TabsTrigger>
-          <TabsTrigger value="preferences" className="data-[state=active]:bg-[#7C3AED] text-[#9CA3AF] data-[state=active]:text-white">
+          <TabsTrigger value="preferences" className="data-[state=active]:bg-[#5BB3B3] text-[#A0B0BC] data-[state=active]:text-white">
             Preferences
           </TabsTrigger>
-          <TabsTrigger value="achievements" className="data-[state=active]:bg-[#7C3AED] text-[#9CA3AF] data-[state=active]:text-white">
+          <TabsTrigger value="achievements" className="data-[state=active]:bg-[#5BB3B3] text-[#A0B0BC] data-[state=active]:text-white">
             Achievements
           </TabsTrigger>
         </TabsList>
 
         {/* Profile Tab */}
         <TabsContent value="profile">
-          <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+          <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)]">
             <CardHeader>
-              <CardTitle className="text-[#E5E7EB]">Personal Information</CardTitle>
+              <CardTitle className="text-[#E8E0D5]">Personal Information</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm text-[#9CA3AF]">Full Name</label>
+                  <label className="text-sm text-[#A0B0BC]">Full Name</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
                     <Input
                       value={formData.full_name}
                       onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value }))}
-                      className="pl-10 bg-[#122A40] border-[rgba(255,255,255,0.06)] focus:border-[#7C3AED] text-[#E5E7EB]"
+                      className="pl-10 bg-[#3A4D5F] border-[rgba(255,255,255,0.06)] focus:border-[#5BB3B3] text-[#E8E0D5]"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm text-[#9CA3AF]">Email</label>
+                  <label className="text-sm text-[#A0B0BC]">Email</label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
                     <Input
                       value={user.email}
                       disabled
-                      className="pl-10 bg-[#122A40] border-[rgba(255,255,255,0.06)] text-[#9CA3AF]"
+                      className="pl-10 bg-[#3A4D5F] border-[rgba(255,255,255,0.06)] text-[#A0B0BC]"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm text-[#9CA3AF]">Specialty</label>
+                  <label className="text-sm text-[#A0B0BC]">Specialty</label>
                   <div className="relative">
-                    <Target className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+                    <Target className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
                     <Input
                       value={formData.specialty}
                       onChange={(e) => setFormData(prev => ({ ...prev, specialty: e.target.value }))}
                       placeholder="e.g., Surgery, Medicine"
-                      className="pl-10 bg-[#122A40] border-[rgba(255,255,255,0.06)] focus:border-[#7C3AED] text-[#E5E7EB]"
+                      className="pl-10 bg-[#3A4D5F] border-[rgba(255,255,255,0.06)] focus:border-[#5BB3B3] text-[#E8E0D5]"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm text-[#9CA3AF]">Institution</label>
+                  <label className="text-sm text-[#A0B0BC]">Institution</label>
                   <div className="relative">
-                    <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+                    <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
                     <Input
                       value={formData.institution}
                       onChange={(e) => setFormData(prev => ({ ...prev, institution: e.target.value }))}
                       placeholder="Your medical college"
-                      className="pl-10 bg-[#122A40] border-[rgba(255,255,255,0.06)] focus:border-[#7C3AED] text-[#E5E7EB]"
+                      className="pl-10 bg-[#3A4D5F] border-[rgba(255,255,255,0.06)] focus:border-[#5BB3B3] text-[#E8E0D5]"
                     />
                   </div>
                 </div>
@@ -309,7 +309,7 @@ export default function ProfilePage() {
                 <Button 
                   onClick={handleSave}
                   disabled={isSaving}
-                  className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white shadow-lg shadow-[#7C3AED]/20"
+                  className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white shadow-lg shadow-[#5BB3B3]/20"
                 >
                   {isSaving ? (
                     <Loader2 className="w-4 h-4 animate-spin mr-2" />
@@ -324,9 +324,9 @@ export default function ProfilePage() {
         {/* Preferences Tab */}
         <TabsContent value="preferences">
           <div className="space-y-4">
-            <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+            <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)]">
               <CardHeader>
-                <CardTitle className="text-[#E5E7EB]">Notifications</CardTitle>
+                <CardTitle className="text-[#E8E0D5]">Notifications</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {[
@@ -334,44 +334,44 @@ export default function ProfilePage() {
                   { icon: Smartphone, label: "Telegram Notifications", desc: "ATOM will reach out on Telegram" },
                   { icon: Mail, label: "Email Updates", desc: "Weekly progress reports" },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-center justify-between p-4 rounded-lg bg-[#142538] border border-[rgba(255,255,255,0.06)]">
+                  <div key={item.label} className="flex items-center justify-between p-4 rounded-lg bg-[#3A4D5F] border border-[rgba(255,255,255,0.06)]">
                     <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-lg bg-[rgba(124,58,237,0.15)]">
-                        <item.icon className="w-5 h-5 text-[#7C3AED]" />
+                      <div className="p-2 rounded-lg bg-[rgba(91,179,179,0.15)]">
+                        <item.icon className="w-5 h-5 text-[#5BB3B3]" />
                       </div>
                       <div>
-                        <p className="font-medium text-[#E5E7EB]">{item.label}</p>
-                        <p className="text-sm text-[#9CA3AF]">{item.desc}</p>
+                        <p className="font-medium text-[#E8E0D5]">{item.label}</p>
+                        <p className="text-sm text-[#A0B0BC]">{item.desc}</p>
                       </div>
                     </div>
-                    <button className="w-12 h-6 rounded-full bg-[#7C3AED] relative">
-                      <span className="absolute right-1 top-1 w-4 h-4 rounded-full bg-[#0D1B2A]" />
+                    <button className="w-12 h-6 rounded-full bg-[#5BB3B3] relative">
+                      <span className="absolute right-1 top-1 w-4 h-4 rounded-full bg-[#2D3E50]" />
                     </button>
                   </div>
                 ))}
               </CardContent>
             </Card>
 
-            <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+            <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)]">
               <CardHeader>
-                <CardTitle className="text-[#E5E7EB]">Appearance</CardTitle>
+                <CardTitle className="text-[#E8E0D5]">Appearance</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {[
                   { icon: Moon, label: "Dark Mode", desc: "Currently active" },
                   { icon: Globe, label: "Language", desc: "English" },
                 ].map((item) => (
-                  <div key={item.label} className="flex items-center justify-between p-4 rounded-lg bg-[#142538] border border-[rgba(255,255,255,0.06)]">
+                  <div key={item.label} className="flex items-center justify-between p-4 rounded-lg bg-[#3A4D5F] border border-[rgba(255,255,255,0.06)]">
                     <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-lg bg-[rgba(6,182,212,0.15)]">
-                        <item.icon className="w-5 h-5 text-[#06B6D4]" />
+                      <div className="p-2 rounded-lg bg-[rgba(91,179,179,0.15)]">
+                        <item.icon className="w-5 h-5 text-[#5BB3B3]" />
                       </div>
                       <div>
-                        <p className="font-medium text-[#E5E7EB]">{item.label}</p>
-                        <p className="text-sm text-[#9CA3AF]">{item.desc}</p>
+                        <p className="font-medium text-[#E8E0D5]">{item.label}</p>
+                        <p className="text-sm text-[#A0B0BC]">{item.desc}</p>
                       </div>
                     </div>
-                    <Button variant="outline" className="border-[rgba(255,255,255,0.06)] text-[#9CA3AF] hover:bg-[#142538]">
+                    <Button variant="outline" className="border-[rgba(255,255,255,0.06)] text-[#A0B0BC] hover:bg-[#3A4D5F]">
                       Change
                     </Button>
                   </div>
@@ -379,38 +379,38 @@ export default function ProfilePage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+            <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)]">
               <CardHeader>
-                <CardTitle className="text-[#E5E7EB]">Security</CardTitle>
+                <CardTitle className="text-[#E8E0D5]">Security</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-4 rounded-lg bg-[#142538] border border-[rgba(255,255,255,0.06)]">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-[#3A4D5F] border border-[rgba(255,255,255,0.06)]">
                   <div className="flex items-center gap-4">
                     <div className="p-2 rounded-lg bg-[rgba(16,185,129,0.15)]">
                       <Shield className="w-5 h-5 text-[#10B981]" />
                     </div>
                     <div>
-                      <p className="font-medium text-[#E5E7EB]">Two-Factor Authentication</p>
-                      <p className="text-sm text-[#9CA3AF]">Add extra security</p>
+                      <p className="font-medium text-[#E8E0D5]">Two-Factor Authentication</p>
+                      <p className="text-sm text-[#A0B0BC]">Add extra security</p>
                     </div>
                   </div>
-                  <Button variant="outline" className="border-[rgba(255,255,255,0.06)] text-[#9CA3AF] hover:bg-[#142538]">
+                  <Button variant="outline" className="border-[rgba(255,255,255,0.06)] text-[#A0B0BC] hover:bg-[#3A4D5F]">
                     Enable
                   </Button>
                 </div>
-                <div className="flex items-center justify-between p-4 rounded-lg bg-[#142538] border border-[rgba(255,255,255,0.06)]">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-[#3A4D5F] border border-[rgba(255,255,255,0.06)]">
                   <div className="flex items-center gap-4">
                     <div className="p-2 rounded-lg bg-[rgba(239,68,68,0.15)]">
-                      <LogOut className="w-5 h-5 text-[#EF4444]" />
+                      <LogOut className="w-5 h-5 text-[#E57373]" />
                     </div>
                     <div>
-                      <p className="font-medium text-[#E5E7EB]">Sign Out</p>
-                      <p className="text-sm text-[#9CA3AF]">Log out of your account</p>
+                      <p className="font-medium text-[#E8E0D5]">Sign Out</p>
+                      <p className="text-sm text-[#A0B0BC]">Log out of your account</p>
                     </div>
                   </div>
                   <Button 
                     variant="outline" 
-                    className="border-[rgba(239,68,68,0.3)] text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]"
+                    className="border-[rgba(239,68,68,0.3)] text-[#E57373] hover:bg-[rgba(239,68,68,0.1)]"
                     onClick={handleLogout}
                   >
                     Sign Out
@@ -423,9 +423,9 @@ export default function ProfilePage() {
 
         {/* Achievements Tab */}
         <TabsContent value="achievements">
-          <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+          <Card className="bg-[#364A5E] border-[rgba(255,255,255,0.06)]">
             <CardHeader>
-              <CardTitle className="text-[#E5E7EB]">Your Achievements</CardTitle>
+              <CardTitle className="text-[#E8E0D5]">Your Achievements</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -436,8 +436,8 @@ export default function ProfilePage() {
                       key={achievement.title}
                       className={`p-6 rounded-xl border text-center ${
                         earned
-                          ? "bg-gradient-to-br from-[#0F2233] to-[#0D1B2A] border-[rgba(255,255,255,0.06)]"
-                          : "bg-[#0D1B2A] border-[rgba(255,255,255,0.06)] opacity-50"
+                          ? "bg-gradient-to-br from-[#364A5E] to-[#2D3E50] border-[rgba(255,255,255,0.06)]"
+                          : "bg-[#2D3E50] border-[rgba(255,255,255,0.06)] opacity-50"
                       }`}
                     >
                       <div
@@ -448,11 +448,11 @@ export default function ProfilePage() {
                       >
                         <achievement.icon
                           className="w-8 h-8"
-                          style={{ color: earned ? achievement.color : "#9CA3AF" }}
+                          style={{ color: earned ? achievement.color : "#A0B0BC" }}
                         />
                       </div>
-                      <h3 className="font-semibold mb-1 text-[#E5E7EB]">{achievement.title}</h3>
-                      <p className="text-sm text-[#9CA3AF]">
+                      <h3 className="font-semibold mb-1 text-[#E8E0D5]">{achievement.title}</h3>
+                      <p className="text-sm text-[#A0B0BC]">
                         {earned ? "Earned" : "Locked"}
                       </p>
                     </div>

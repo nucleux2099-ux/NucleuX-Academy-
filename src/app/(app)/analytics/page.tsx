@@ -87,7 +87,7 @@ export default function AnalyticsPage() {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-[#9CA3AF]">Loading analytics...</div>
+        <div className="text-[#A0B0BC]">Loading analytics...</div>
       </div>
     );
   }
@@ -97,8 +97,8 @@ export default function AnalyticsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#E5E7EB]">Analytics</h1>
-          <p className="text-[#9CA3AF] mt-1">
+          <h1 className="text-3xl font-bold text-[#E8E0D5]">Analytics</h1>
+          <p className="text-[#A0B0BC] mt-1">
             {hasData 
               ? "Track your learning progress and performance" 
               : "Start practicing MCQs to see your analytics!"}
@@ -112,8 +112,8 @@ export default function AnalyticsPage() {
               size="sm"
               onClick={() => setSelectedPeriod(period)}
               className={selectedPeriod === period
-                ? "bg-[#06B6D4] text-[#0D1B2A]"
-                : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"
+                ? "bg-[#5BB3B3] text-[#2D3E50]"
+                : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC]"
               }
             >
               {period.charAt(0).toUpperCase() + period.slice(1)}
@@ -123,7 +123,7 @@ export default function AnalyticsPage() {
             variant="outline"
             size="sm"
             onClick={refreshMemoryStrengths}
-            className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"
+            className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC]"
           >
             <RefreshCw className="w-4 h-4" />
           </Button>
@@ -132,61 +132,61 @@ export default function AnalyticsPage() {
 
       {/* Overview Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
-              <Target className="w-5 h-5 text-[#06B6D4]" />
+              <Target className="w-5 h-5 text-[#5BB3B3]" />
               {overallAccuracy >= 80 && (
-                <Badge className="bg-[rgba(5,150,105,0.2)] text-[#059669] border-none text-xs">
+                <Badge className="bg-[rgba(5,150,105,0.2)] text-[#7BA69E] border-none text-xs">
                   🎯 Great!
                 </Badge>
               )}
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{overallAccuracy}%</p>
+            <p className="text-2xl font-bold text-[#E8E0D5]">{overallAccuracy}%</p>
             <p className="text-xs text-[#6B7280]">Overall Accuracy</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
-              <CheckCircle className="w-5 h-5 text-[#059669]" />
+              <CheckCircle className="w-5 h-5 text-[#7BA69E]" />
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{analytics.totalQuestions}</p>
+            <p className="text-2xl font-bold text-[#E8E0D5]">{analytics.totalQuestions}</p>
             <p className="text-xs text-[#6B7280]">Questions Attempted</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
               <Clock className="w-5 h-5 text-[#8B5CF6]" />
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{analytics.totalStudyMinutes}m</p>
+            <p className="text-2xl font-bold text-[#E8E0D5]">{analytics.totalStudyMinutes}m</p>
             <p className="text-xs text-[#6B7280]">Study Time</p>
           </CardContent>
         </Card>
 
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-2">
-              <Flame className="w-5 h-5 text-[#F59E0B]" />
+              <Flame className="w-5 h-5 text-[#C9A86C]" />
             </div>
-            <p className="text-2xl font-bold text-[#E5E7EB]">{analytics.currentStreak}</p>
+            <p className="text-2xl font-bold text-[#E8E0D5]">{analytics.currentStreak}</p>
             <p className="text-xs text-[#6B7280]">Day Streak 🔥</p>
           </CardContent>
         </Card>
       </div>
 
       {/* Calibration Chart */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
+            <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
               <Brain className="w-5 h-5 text-[#8B5CF6]" />
               Confidence Calibration
             </CardTitle>
-            <Badge variant="outline" className="border-[rgba(6,182,212,0.2)] text-[#6B7280]">
+            <Badge variant="outline" className="border-[rgba(91,179,179,0.2)] text-[#6B7280]">
               <Info className="w-3 h-3 mr-1" />
               Metacognition
             </Badge>
@@ -219,7 +219,7 @@ export default function AnalyticsPage() {
                   {/* Grid lines */}
                   <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
                     {[0, 1, 2, 3, 4].map((i) => (
-                      <div key={i} className="border-t border-[rgba(6,182,212,0.1)]" />
+                      <div key={i} className="border-t border-[rgba(91,179,179,0.1)]" />
                     ))}
                   </div>
                   
@@ -227,7 +227,7 @@ export default function AnalyticsPage() {
                   <svg className="absolute inset-0 w-full h-[calc(100%-32px)]" preserveAspectRatio="none">
                     <line 
                       x1="0%" y1="100%" x2="100%" y2="0%" 
-                      stroke="rgba(6,182,212,0.3)" 
+                      stroke="rgba(91,179,179,0.3)" 
                       strokeWidth="2" 
                       strokeDasharray="5,5"
                     />
@@ -244,14 +244,14 @@ export default function AnalyticsPage() {
                         <div key={i} className="flex flex-col items-center gap-2 w-1/4">
                           <div className="relative w-full flex justify-center gap-1">
                             <div 
-                              className="w-8 bg-[rgba(6,182,212,0.3)] rounded-t transition-all"
+                              className="w-8 bg-[rgba(91,179,179,0.3)] rounded-t transition-all"
                               style={{ height: `${item.expected * 2}px` }}
                             />
                             <div 
                               className={`w-8 rounded-t transition-all ${
                                 item.totalQuestions === 0 ? 'bg-[#374151]' :
-                                isCalibrated ? 'bg-[#059669]' :
-                                isOverconfident ? 'bg-[#EF4444]' : 'bg-[#F59E0B]'
+                                isCalibrated ? 'bg-[#7BA69E]' :
+                                isOverconfident ? 'bg-[#E57373]' : 'bg-[#C9A86C]'
                               }`}
                               style={{ height: `${Math.max(item.actual, 5) * 2}px` }}
                             />
@@ -265,7 +265,7 @@ export default function AnalyticsPage() {
                   <div className="absolute bottom-0 left-0 right-0 flex justify-around">
                     {calibrationData.map((item, i) => (
                       <div key={i} className="text-center">
-                        <p className="text-xs text-[#9CA3AF] capitalize">{item.confidence.replace('-', ' ')}</p>
+                        <p className="text-xs text-[#A0B0BC] capitalize">{item.confidence.replace('-', ' ')}</p>
                         <p className="text-[10px] text-[#6B7280]">({item.totalQuestions})</p>
                       </div>
                     ))}
@@ -276,20 +276,20 @@ export default function AnalyticsPage() {
               {/* Legend */}
               <div className="flex flex-wrap gap-4 mb-4 text-xs">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded bg-[rgba(6,182,212,0.3)]" />
-                  <span className="text-[#9CA3AF]">Expected accuracy</span>
+                  <div className="w-3 h-3 rounded bg-[rgba(91,179,179,0.3)]" />
+                  <span className="text-[#A0B0BC]">Expected accuracy</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded bg-[#059669]" />
-                  <span className="text-[#9CA3AF]">Well calibrated</span>
+                  <div className="w-3 h-3 rounded bg-[#7BA69E]" />
+                  <span className="text-[#A0B0BC]">Well calibrated</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded bg-[#EF4444]" />
-                  <span className="text-[#9CA3AF]">Overconfident</span>
+                  <div className="w-3 h-3 rounded bg-[#E57373]" />
+                  <span className="text-[#A0B0BC]">Overconfident</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded bg-[#F59E0B]" />
-                  <span className="text-[#9CA3AF]">Underconfident</span>
+                  <div className="w-3 h-3 rounded bg-[#C9A86C]" />
+                  <span className="text-[#A0B0BC]">Underconfident</span>
                 </div>
               </div>
               
@@ -300,16 +300,16 @@ export default function AnalyticsPage() {
                   const isCalibrated = Math.abs(diff) <= 10 || item.totalQuestions === 0;
                   
                   return (
-                    <div key={i} className="p-3 rounded-lg bg-[#142538]">
+                    <div key={i} className="p-3 rounded-lg bg-[#3A4D5F]">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm text-[#E5E7EB] capitalize">{item.confidence.replace('-', ' ')}</span>
+                        <span className="text-sm text-[#E8E0D5] capitalize">{item.confidence.replace('-', ' ')}</span>
                         {item.totalQuestions > 0 && (
                           isCalibrated ? (
-                            <CheckCircle className="w-4 h-4 text-[#059669]" />
+                            <CheckCircle className="w-4 h-4 text-[#7BA69E]" />
                           ) : diff < 0 ? (
-                            <ArrowDown className="w-4 h-4 text-[#EF4444]" />
+                            <ArrowDown className="w-4 h-4 text-[#E57373]" />
                           ) : (
-                            <ArrowUp className="w-4 h-4 text-[#F59E0B]" />
+                            <ArrowUp className="w-4 h-4 text-[#C9A86C]" />
                           )
                         )}
                       </div>
@@ -326,15 +326,15 @@ export default function AnalyticsPage() {
       </Card>
 
       {/* Forgetting Curve */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardHeader>
           <div className="flex items-center justify-between">
-            <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-              <LineChart className="w-5 h-5 text-[#F59E0B]" />
+            <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+              <LineChart className="w-5 h-5 text-[#C9A86C]" />
               Forgetting Curves & Retention
             </CardTitle>
             {criticalTopics > 0 && (
-              <Badge variant="outline" className="border-[rgba(239,68,68,0.3)] text-[#EF4444]">
+              <Badge variant="outline" className="border-[rgba(239,68,68,0.3)] text-[#E57373]">
                 {criticalTopics} topic{criticalTopics > 1 ? 's' : ''} need review
               </Badge>
             )}
@@ -345,11 +345,11 @@ export default function AnalyticsPage() {
         </CardHeader>
         <CardContent>
           {/* Ebbinghaus Curve Visualization */}
-          <div className="relative h-48 mb-6 rounded-lg bg-[#142538] p-4 overflow-hidden">
+          <div className="relative h-48 mb-6 rounded-lg bg-[#3A4D5F] p-4 overflow-hidden">
             {/* Grid */}
             <div className="absolute inset-4 flex flex-col justify-between pointer-events-none">
               {[0, 1, 2, 3, 4].map((i) => (
-                <div key={i} className="border-t border-[rgba(6,182,212,0.1)] relative">
+                <div key={i} className="border-t border-[rgba(91,179,179,0.1)] relative">
                   <span className="absolute -left-1 -top-2 text-[10px] text-[#6B7280]">
                     {100 - i * 25}%
                   </span>
@@ -371,7 +371,7 @@ export default function AnalyticsPage() {
               <path
                 d="M 0 0 C 50 70, 100 85, 150 90 S 250 95, 350 98"
                 fill="none"
-                stroke="#EF4444"
+                stroke="#E57373"
                 strokeWidth="2"
                 strokeDasharray="5,5"
                 vectorEffect="non-scaling-stroke"
@@ -387,14 +387,14 @@ export default function AnalyticsPage() {
                     L 250 45 L 255 20
                     L 350 25`}
                 fill="none"
-                stroke="#059669"
+                stroke="#7BA69E"
                 strokeWidth="2"
                 vectorEffect="non-scaling-stroke"
               />
               
               {/* Review points */}
               {[35, 85, 155, 255].map((x, i) => (
-                <circle key={i} cx={x} cy={[5, 10, 15, 20][i]} r="4" fill="#059669" />
+                <circle key={i} cx={x} cy={[5, 10, 15, 20][i]} r="4" fill="#7BA69E" />
               ))}
             </svg>
             
@@ -410,21 +410,21 @@ export default function AnalyticsPage() {
           {/* Legend */}
           <div className="flex flex-wrap gap-4 mb-6 text-xs">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-0.5 bg-[#EF4444] opacity-60" style={{ borderStyle: 'dashed' }} />
-              <span className="text-[#9CA3AF]">Without review (Ebbinghaus curve)</span>
+              <div className="w-6 h-0.5 bg-[#E57373] opacity-60" style={{ borderStyle: 'dashed' }} />
+              <span className="text-[#A0B0BC]">Without review (Ebbinghaus curve)</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-6 h-0.5 bg-[#059669]" />
-              <span className="text-[#9CA3AF]">With spaced repetition</span>
+              <div className="w-6 h-0.5 bg-[#7BA69E]" />
+              <span className="text-[#A0B0BC]">With spaced repetition</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[#059669]" />
-              <span className="text-[#9CA3AF]">Review sessions</span>
+              <div className="w-2 h-2 rounded-full bg-[#7BA69E]" />
+              <span className="text-[#A0B0BC]">Review sessions</span>
             </div>
           </div>
           
           {/* Topic Retention Status */}
-          <h4 className="text-sm font-medium text-[#E5E7EB] mb-3">Topic Retention Status</h4>
+          <h4 className="text-sm font-medium text-[#E8E0D5] mb-3">Topic Retention Status</h4>
           {topicMemoryStatus.length === 0 ? (
             <div className="text-center py-8 text-[#6B7280]">
               <BookOpen className="w-10 h-10 mx-auto mb-3 opacity-30" />
@@ -438,23 +438,23 @@ export default function AnalyticsPage() {
                   className={`p-4 rounded-lg ${
                     topic.status === 'critical' ? 'bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)]' :
                     topic.status === 'overdue' ? 'bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)]' :
-                    'bg-[#142538]'
+                    'bg-[#3A4D5F]'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
-                      <span className="text-[#E5E7EB] font-medium">{topic.topicName}</span>
+                      <span className="text-[#E8E0D5] font-medium">{topic.topicName}</span>
                       <Badge className={
-                        topic.status === 'critical' ? 'bg-[#EF4444]/20 text-[#EF4444] border-none' :
-                        topic.status === 'overdue' ? 'bg-[#F59E0B]/20 text-[#F59E0B] border-none' :
-                        'bg-[#059669]/20 text-[#059669] border-none'
+                        topic.status === 'critical' ? 'bg-[#E57373]/20 text-[#E57373] border-none' :
+                        topic.status === 'overdue' ? 'bg-[#C9A86C]/20 text-[#C9A86C] border-none' :
+                        'bg-[#7BA69E]/20 text-[#7BA69E] border-none'
                       }>
                         {topic.status === 'critical' ? 'Critical' :
                          topic.status === 'overdue' ? 'Needs Review' : 'Good'}
                       </Badge>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-[#E5E7EB]">{topic.currentStrength}%</p>
+                      <p className="text-sm text-[#E8E0D5]">{topic.currentStrength}%</p>
                       <p className="text-xs text-[#6B7280]">
                         {topic.daysSinceReview}d ago (optimal: {topic.optimalReviewDays}d)
                       </p>
@@ -462,16 +462,16 @@ export default function AnalyticsPage() {
                   </div>
                   
                   {/* Retention bar */}
-                  <div className="relative h-2 bg-[rgba(6,182,212,0.1)] rounded-full overflow-hidden">
+                  <div className="relative h-2 bg-[rgba(91,179,179,0.1)] rounded-full overflow-hidden">
                     <div 
                       className="absolute top-0 bottom-0 w-0.5 bg-[#6B7280]"
                       style={{ left: `${topic.initialStrength}%` }}
                     />
                     <div 
                       className={`h-full rounded-full transition-all ${
-                        topic.status === 'critical' ? 'bg-[#EF4444]' :
-                        topic.status === 'overdue' ? 'bg-[#F59E0B]' :
-                        'bg-[#059669]'
+                        topic.status === 'critical' ? 'bg-[#E57373]' :
+                        topic.status === 'overdue' ? 'bg-[#C9A86C]' :
+                        'bg-[#7BA69E]'
                       }`}
                       style={{ width: `${topic.currentStrength}%` }}
                     />
@@ -481,8 +481,8 @@ export default function AnalyticsPage() {
                     <div className="mt-3 flex justify-end">
                       <Button size="sm" className={
                         topic.status === 'critical' 
-                          ? 'bg-[#EF4444] hover:bg-[#DC2626] text-white' 
-                          : 'bg-[#F59E0B] hover:bg-[#D97706] text-[#0D1B2A]'
+                          ? 'bg-[#E57373] hover:bg-[#DC2626] text-white' 
+                          : 'bg-[#C9A86C] hover:bg-[#D97706] text-[#2D3E50]'
                       }>
                         <Zap className="w-3 h-3 mr-1" />
                         Review Now
@@ -499,10 +499,10 @@ export default function AnalyticsPage() {
       {/* Weekly Activity & Performance */}
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Weekly Activity */}
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-              <Activity className="w-5 h-5 text-[#06B6D4]" />
+            <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+              <Activity className="w-5 h-5 text-[#5BB3B3]" />
               Weekly Activity
             </CardTitle>
           </CardHeader>
@@ -516,18 +516,18 @@ export default function AnalyticsPage() {
                 
                 return (
                   <div key={i} className="flex items-center gap-4">
-                    <span className="w-10 text-sm text-[#9CA3AF]">{dayName}</span>
+                    <span className="w-10 text-sm text-[#A0B0BC]">{dayName}</span>
                     <div className="flex-1">
                       <div className="flex gap-1 h-6">
                         <div 
-                          className="bg-[#06B6D4] rounded"
+                          className="bg-[#5BB3B3] rounded"
                           style={{ width: `${Math.min((day.questionsAttempted / 50) * 100, 100)}%` }}
                           title={`${day.questionsAttempted} questions`}
                         />
                       </div>
                     </div>
                     <div className="text-right w-20">
-                      <p className="text-sm text-[#E5E7EB]">{accuracy || '-'}%</p>
+                      <p className="text-sm text-[#E8E0D5]">{accuracy || '-'}%</p>
                       <p className="text-xs text-[#6B7280]">{day.studyMinutes}m</p>
                     </div>
                   </div>
@@ -538,10 +538,10 @@ export default function AnalyticsPage() {
         </Card>
 
         {/* Topic Performance */}
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-              <Target className="w-5 h-5 text-[#059669]" />
+            <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+              <Target className="w-5 h-5 text-[#7BA69E]" />
               Topic Performance
             </CardTitle>
           </CardHeader>
@@ -556,11 +556,11 @@ export default function AnalyticsPage() {
                 {topicPerformance.slice(0, 5).map((topic, i) => (
                   <div key={i}>
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-[#E5E7EB]">{topic.topicName}</span>
+                      <span className="text-sm text-[#E8E0D5]">{topic.topicName}</span>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium text-[#E5E7EB]">{topic.accuracy}%</span>
-                        {topic.trend === "up" && <TrendingUp className="w-3 h-3 text-[#059669]" />}
-                        {topic.trend === "down" && <TrendingDown className="w-3 h-3 text-[#EF4444]" />}
+                        <span className="text-sm font-medium text-[#E8E0D5]">{topic.accuracy}%</span>
+                        {topic.trend === "up" && <TrendingUp className="w-3 h-3 text-[#7BA69E]" />}
+                        {topic.trend === "down" && <TrendingDown className="w-3 h-3 text-[#E57373]" />}
                       </div>
                     </div>
                     <Progress value={topic.accuracy} className="h-2" />
@@ -574,26 +574,26 @@ export default function AnalyticsPage() {
       </div>
 
       {/* Difficulty Breakdown */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-            <BarChart3 className="w-5 h-5 text-[#F59E0B]" />
+          <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+            <BarChart3 className="w-5 h-5 text-[#C9A86C]" />
             Performance by Difficulty
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-3 gap-4">
             {difficultyBreakdown.map((level, i) => (
-              <div key={i} className="p-4 rounded-lg bg-[#142538]">
+              <div key={i} className="p-4 rounded-lg bg-[#3A4D5F]">
                 <div className="flex items-center justify-between mb-3">
                   <Badge className={
-                    level.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.2)] text-[#059669] border-none" :
-                    level.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-none" :
-                    "bg-[rgba(239,68,68,0.2)] text-[#EF4444] border-none"
+                    level.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.2)] text-[#7BA69E] border-none" :
+                    level.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.2)] text-[#C9A86C] border-none" :
+                    "bg-[rgba(239,68,68,0.2)] text-[#E57373] border-none"
                   }>
                     {level.difficulty}
                   </Badge>
-                  <span className="text-xl font-bold text-[#E5E7EB]">
+                  <span className="text-xl font-bold text-[#E8E0D5]">
                     {level.total > 0 ? level.percentage : '-'}%
                   </span>
                 </div>
@@ -612,41 +612,41 @@ export default function AnalyticsPage() {
 
       {/* Insights */}
       {hasData && (
-        <Card className="bg-gradient-to-r from-[rgba(139,92,246,0.15)] to-[rgba(6,182,212,0.1)] border-[rgba(139,92,246,0.2)]">
+        <Card className="bg-gradient-to-r from-[rgba(139,92,246,0.15)] to-[rgba(91,179,179,0.1)] border-[rgba(139,92,246,0.2)]">
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-[#E5E7EB] mb-4 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-[#E8E0D5] mb-4 flex items-center gap-2">
               <Brain className="w-5 h-5 text-[#8B5CF6]" />
               Learning Insights
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
               {calibrationData.some(c => c.totalQuestions > 0 && Math.abs(c.actual - c.expected) <= 10) && (
-                <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-                  <p className="text-sm font-medium text-[#059669] mb-1">💪 Strength</p>
-                  <p className="text-sm text-[#9CA3AF]">
+                <div className="p-4 rounded-lg bg-[#2D3E50]/50">
+                  <p className="text-sm font-medium text-[#7BA69E] mb-1">💪 Strength</p>
+                  <p className="text-sm text-[#A0B0BC]">
                     Your confidence calibration is improving! You're learning to accurately 
                     assess what you know.
                   </p>
                 </div>
               )}
               {criticalTopics > 0 && (
-                <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-                  <p className="text-sm font-medium text-[#F59E0B] mb-1">⚠️ Opportunity</p>
-                  <p className="text-sm text-[#9CA3AF]">
+                <div className="p-4 rounded-lg bg-[#2D3E50]/50">
+                  <p className="text-sm font-medium text-[#C9A86C] mb-1">⚠️ Opportunity</p>
+                  <p className="text-sm text-[#A0B0BC]">
                     {criticalTopics} topic{criticalTopics > 1 ? 's' : ''} {criticalTopics > 1 ? 'have' : 'has'} retention 
                     below optimal. Review them today to strengthen long-term memory!
                   </p>
                 </div>
               )}
-              <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
-                <p className="text-sm font-medium text-[#06B6D4] mb-1">📊 Stats</p>
-                <p className="text-sm text-[#9CA3AF]">
+              <div className="p-4 rounded-lg bg-[#2D3E50]/50">
+                <p className="text-sm font-medium text-[#5BB3B3] mb-1">📊 Stats</p>
+                <p className="text-sm text-[#A0B0BC]">
                   You've answered {analytics.totalQuestions} questions with {overallAccuracy}% accuracy.
                   {analytics.currentStreak > 0 && ` Current streak: ${analytics.currentStreak} days!`}
                 </p>
               </div>
-              <div className="p-4 rounded-lg bg-[#0D1B2A]/50">
+              <div className="p-4 rounded-lg bg-[#2D3E50]/50">
                 <p className="text-sm font-medium text-[#8B5CF6] mb-1">🎯 Focus</p>
-                <p className="text-sm text-[#9CA3AF]">
+                <p className="text-sm text-[#A0B0BC]">
                   {difficultyBreakdown.find(d => d.difficulty === 'Hard')?.percentage || 0 < 70
                     ? "Target: Practice more 'Hard' MCQs to build confidence with complex scenarios."
                     : "Great work on hard questions! Keep challenging yourself."
@@ -669,7 +669,7 @@ export default function AnalyticsPage() {
                 resetAnalytics();
               }
             }}
-            className="border-[rgba(239,68,68,0.2)] text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]"
+            className="border-[rgba(239,68,68,0.2)] text-[#E57373] hover:bg-[rgba(239,68,68,0.1)]"
           >
             <Trash2 className="w-4 h-4 mr-2" />
             Reset Analytics

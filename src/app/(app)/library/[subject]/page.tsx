@@ -113,19 +113,19 @@ export default function SubjectPage() {
   }, [filteredTopics]);
 
   const depthFilters = [
-    { id: 'all', label: 'All', color: '#9CA3AF' },
+    { id: 'all', label: 'All', color: '#A0B0BC' },
     { id: 'mbbs', label: 'MBBS', color: '#10B981' },
-    { id: 'pg', label: 'PG', color: '#7C3AED' },
-    { id: 'superSpecialty', label: 'SS', color: '#F59E0B' },
+    { id: 'pg', label: 'PG', color: '#5BB3B3' },
+    { id: 'superSpecialty', label: 'SS', color: '#C9A86C' },
   ];
 
   if (!subject) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <div className="text-center">
-          <h2 className="text-xl font-semibold text-[#E5E7EB]">Subject not found</h2>
+          <h2 className="text-xl font-semibold text-[#E8E0D5]">Subject not found</h2>
           <Link href="/library">
-            <Button variant="link" className="text-[#06B6D4] mt-2">
+            <Button variant="link" className="text-[#5BB3B3] mt-2">
               Back to Library
             </Button>
           </Link>
@@ -138,11 +138,11 @@ export default function SubjectPage() {
     <div className="space-y-6">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm">
-        <Link href="/library" className="text-[#9CA3AF] hover:text-[#06B6D4] transition-colors">
+        <Link href="/library" className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors">
           Library
         </Link>
-        <ChevronRight className="w-4 h-4 text-[#9CA3AF]" />
-        <span className="text-[#E5E7EB] font-medium">{subject.name}</span>
+        <ChevronRight className="w-4 h-4 text-[#A0B0BC]" />
+        <span className="text-[#E8E0D5] font-medium">{subject.name}</span>
       </div>
 
       {/* Subject Header */}
@@ -154,13 +154,13 @@ export default function SubjectPage() {
           {subject.icon}
         </div>
         <div className="flex-1">
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#E5E7EB]">{subject.name}</h1>
-          <p className="text-[#9CA3AF] mt-1">{subject.description}</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5]">{subject.name}</h1>
+          <p className="text-[#A0B0BC] mt-1">{subject.description}</p>
           <div className="flex items-center gap-4 mt-2">
-            <Badge className="bg-[rgba(6,182,212,0.15)] text-[#06B6D4] border-[rgba(6,182,212,0.3)]">
+            <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
               {filteredTopics.length} Topics
             </Badge>
-            <span className="text-sm text-[#9CA3AF]">
+            <span className="text-sm text-[#A0B0BC]">
               {Object.values(userProgress).filter(p => p.completed).length} completed
             </span>
           </div>
@@ -171,12 +171,12 @@ export default function SubjectPage() {
       <div className="flex flex-col sm:flex-row gap-4">
         {/* Search */}
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
           <Input
             placeholder="Search topics or tags..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 bg-[#142538] border-[rgba(6,182,212,0.15)] focus:border-[#06B6D4] text-[#E5E7EB] placeholder:text-[#9CA3AF]"
+            className="pl-10 bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#A0B0BC]"
           />
         </div>
 
@@ -191,8 +191,8 @@ export default function SubjectPage() {
                 className={cn(
                   "px-3 py-2 rounded-lg text-sm font-medium transition-all",
                   isActive
-                    ? "text-[#0D1B2A]"
-                    : "bg-[#142538] text-[#9CA3AF] hover:text-[#E5E7EB]"
+                    ? "text-[#2D3E50]"
+                    : "bg-[#3A4D5F] text-[#A0B0BC] hover:text-[#E8E0D5]"
                 )}
                 style={isActive ? { backgroundColor: filter.color } : undefined}
               >
@@ -206,7 +206,7 @@ export default function SubjectPage() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-          className="px-3 py-2 rounded-lg text-sm bg-[#142538] border border-[rgba(6,182,212,0.15)] text-[#E5E7EB] cursor-pointer"
+          className="px-3 py-2 rounded-lg text-sm bg-[#3A4D5F] border border-[rgba(91,179,179,0.15)] text-[#E8E0D5] cursor-pointer"
         >
           <option value="name">Sort by Name</option>
           <option value="difficulty">Sort by Difficulty</option>
@@ -225,8 +225,8 @@ export default function SubjectPage() {
                   className="w-1 h-6 rounded-full"
                   style={{ backgroundColor: subject.color }}
                 />
-                <h2 className="text-lg font-semibold text-[#E5E7EB]">{category}</h2>
-                <Badge variant="outline" className="text-[#9CA3AF] border-[rgba(255,255,255,0.1)]">
+                <h2 className="text-lg font-semibold text-[#E8E0D5]">{category}</h2>
+                <Badge variant="outline" className="text-[#A0B0BC] border-[rgba(255,255,255,0.1)]">
                   {topics.length}
                 </Badge>
               </div>
@@ -240,21 +240,21 @@ export default function SubjectPage() {
                   return (
                     <Link key={topic.id} href={`/library/${subjectSlug}/${topic.slug}`}>
                       <Card className={cn(
-                        "bg-[#0F2233] border-[rgba(255,255,255,0.06)] hover:border-[rgba(6,182,212,0.3)] transition-all cursor-pointer group h-full",
+                        "bg-[#364A5E] border-[rgba(255,255,255,0.06)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer group h-full",
                         isCompleted && "border-l-2 border-l-[#10B981]"
                       )}>
                         <CardContent className="p-4">
                           {/* Header */}
                           <div className="flex items-start justify-between gap-2">
                             <div className="flex-1 min-w-0">
-                              <h3 className="font-medium text-[#E5E7EB] group-hover:text-[#06B6D4] transition-colors line-clamp-2">
+                              <h3 className="font-medium text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors line-clamp-2">
                                 {topic.name}
                               </h3>
                             </div>
                             {isCompleted ? (
                               <CheckCircle2 className="w-5 h-5 text-[#10B981] shrink-0" />
                             ) : (
-                              <Circle className="w-5 h-5 text-[#9CA3AF] shrink-0 opacity-50" />
+                              <Circle className="w-5 h-5 text-[#A0B0BC] shrink-0 opacity-50" />
                             )}
                           </div>
 
@@ -266,19 +266,19 @@ export default function SubjectPage() {
                               </span>
                             )}
                             {topic.depth.pg && (
-                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(124,58,237,0.2)] text-[#7C3AED]">
+                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(91,179,179,0.2)] text-[#5BB3B3]">
                                 PG
                               </span>
                             )}
                             {topic.depth.superSpecialty && (
-                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(245,158,11,0.2)] text-[#F59E0B]">
+                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(245,158,11,0.2)] text-[#C9A86C]">
                                 SS
                               </span>
                             )}
                           </div>
 
                           {/* Meta */}
-                          <div className="flex items-center gap-3 mt-3 text-xs text-[#9CA3AF]">
+                          <div className="flex items-center gap-3 mt-3 text-xs text-[#A0B0BC]">
                             <span className="flex items-center gap-1">
                               <Clock className="w-3 h-3" />
                               {topic.estimatedMinutes} min
@@ -290,7 +290,7 @@ export default function SubjectPage() {
                             {progress?.mcqAccuracy && (
                               <span className={cn(
                                 "flex items-center gap-1",
-                                progress.mcqAccuracy >= 70 ? "text-[#10B981]" : "text-[#F59E0B]"
+                                progress.mcqAccuracy >= 70 ? "text-[#10B981]" : "text-[#C9A86C]"
                               )}>
                                 <Target className="w-3 h-3" />
                                 {progress.mcqAccuracy}%
@@ -303,7 +303,7 @@ export default function SubjectPage() {
                             {topic.tags.slice(0, 3).map((tag) => (
                               <span 
                                 key={tag}
-                                className="px-2 py-0.5 text-[10px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#9CA3AF]"
+                                className="px-2 py-0.5 text-[10px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#A0B0BC]"
                               >
                                 {tag}
                               </span>
@@ -321,13 +321,13 @@ export default function SubjectPage() {
       ) : (
         /* Empty State */
         <div className="text-center py-12">
-          <div className="w-16 h-16 mx-auto rounded-full bg-[#142538] flex items-center justify-center mb-4">
-            <BookOpen className="w-8 h-8 text-[#9CA3AF]" />
+          <div className="w-16 h-16 mx-auto rounded-full bg-[#3A4D5F] flex items-center justify-center mb-4">
+            <BookOpen className="w-8 h-8 text-[#A0B0BC]" />
           </div>
-          <h3 className="text-lg font-medium text-[#E5E7EB]">
+          <h3 className="text-lg font-medium text-[#E8E0D5]">
             {allTopics.length === 0 ? "Content coming soon" : "No topics found"}
           </h3>
-          <p className="text-[#9CA3AF] mt-1">
+          <p className="text-[#A0B0BC] mt-1">
             {allTopics.length === 0 
               ? "We're working on adding content for this subject"
               : "Try adjusting your filters"

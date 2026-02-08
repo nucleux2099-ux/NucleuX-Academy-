@@ -46,81 +46,104 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
   
-  /* NucleuX Custom Colors */
-  --color-nucleux-purple: #7C3AED;
-  --color-nucleux-cyan: #06B6D4;
-  --color-nucleux-green: #10B981;
-  --color-nucleux-orange: #F59E0B;
-  --color-nucleux-deep-blue: #0F172A;
+  /* NucleuX ATOM Matte Colors */
+  --color-atom-teal: #5BB3B3;
+  --color-atom-gold: #C9A86C;
+  --color-atom-sage: #7BA69E;
+  --color-atom-slate: #2D3E50;
+  --color-atom-cream: #E8E0D5;
 }
 
-/* NucleuX Dark Navy Theme - COLOR SYSTEM V2 */
+/* ===========================================
+   NucleuX Academy - ATOM Matte Theme
+   Inspired by ATOM Clinics branding
+   Deep slate + Teal + Gold + Matte finish
+   =========================================== */
+
 :root {
   --radius: 0.625rem;
-  --background: #0D1B2A;
-  --foreground: #E5E7EB;
-  --card: #0F2233;
-  --card-foreground: #E5E7EB;
-  --popover: #0F2233;
-  --popover-foreground: #E5E7EB;
-  --primary: #06B6D4;
-  --primary-foreground: #0D1B2A;
-  --secondary: #142538;
-  --secondary-foreground: #E5E7EB;
-  --muted: #152A40;
-  --muted-foreground: #9CA3AF;
-  --accent: #06B6D4;
-  --accent-foreground: #0D1B2A;
-  --destructive: #EF4444;
-  --border: rgba(255, 255, 255, 0.06);
-  --input: #122A40;
-  --ring: #06B6D4;
-  --chart-1: #7C3AED;
-  --chart-2: #059669;
-  --chart-3: #0EA5E9;
-  --chart-4: #CA8A04;
-  --chart-5: #EF4444;
   
-  /* Room Colors */
-  --room-dashboard: #7C3AED;
-  --room-library: #059669;
-  --room-classroom: #0EA5E9;
-  --room-exam: #0EA5E9;
-  --room-community: #B45309;
-  --room-arena: #CA8A04;
-  --room-atom: #06B6D4;
+  /* Base Colors - Deep Slate Matte */
+  --background: #2D3E50;
+  --foreground: #E8E0D5;
   
-  /* Dark Navy Sidebar */
-  --sidebar: #0D1B2A;
-  --sidebar-foreground: #E5E7EB;
-  --sidebar-primary: #06B6D4;
-  --sidebar-primary-foreground: #0D1B2A;
-  --sidebar-accent: rgba(255, 255, 255, 0.04);
-  --sidebar-accent-foreground: #E5E7EB;
-  --sidebar-border: rgba(255, 255, 255, 0.05);
-  --sidebar-ring: #06B6D4;
+  /* Card & Surface Colors */
+  --card: #364A5E;
+  --card-foreground: #E8E0D5;
+  --popover: #364A5E;
+  --popover-foreground: #E8E0D5;
+  
+  /* Primary - Teal */
+  --primary: #5BB3B3;
+  --primary-foreground: #1E2D3D;
+  
+  /* Secondary - Darker Slate */
+  --secondary: #253545;
+  --secondary-foreground: #E8E0D5;
+  
+  /* Muted */
+  --muted: #3A4D5F;
+  --muted-foreground: #A0B0BC;
+  
+  /* Accent - Gold */
+  --accent: #C9A86C;
+  --accent-foreground: #1E2D3D;
+  
+  /* Destructive */
+  --destructive: #E57373;
+  
+  /* Borders - Subtle matte lines */
+  --border: rgba(232, 224, 213, 0.08);
+  --input: #3A4D5F;
+  --ring: #5BB3B3;
+  
+  /* Chart Colors - Matte palette */
+  --chart-1: #5BB3B3;
+  --chart-2: #C9A86C;
+  --chart-3: #7BA69E;
+  --chart-4: #8B7355;
+  --chart-5: #E57373;
+  
+  /* Room Colors - ATOM themed */
+  --room-dashboard: #5BB3B3;
+  --room-library: #7BA69E;
+  --room-classroom: #6BA8C9;
+  --room-exam: #5BB3B3;
+  --room-community: #C9A86C;
+  --room-arena: #D4AF37;
+  --room-atom: #5BB3B3;
+  
+  /* Sidebar - Deep slate matte */
+  --sidebar: #253545;
+  --sidebar-foreground: #E8E0D5;
+  --sidebar-primary: #5BB3B3;
+  --sidebar-primary-foreground: #1E2D3D;
+  --sidebar-accent: rgba(232, 224, 213, 0.05);
+  --sidebar-accent-foreground: #E8E0D5;
+  --sidebar-border: rgba(232, 224, 213, 0.06);
+  --sidebar-ring: #5BB3B3;
 }
 
 /* Light theme for marketing/auth pages */
 .theme-light {
-  --background: #FAFAFA;
-  --foreground: #1E293B;
+  --background: #F5F3EF;
+  --foreground: #2D3E50;
   --card: #FFFFFF;
-  --card-foreground: #1E293B;
+  --card-foreground: #2D3E50;
   --popover: #FFFFFF;
-  --popover-foreground: #1E293B;
-  --primary: #7C3AED;
+  --popover-foreground: #2D3E50;
+  --primary: #5BB3B3;
   --primary-foreground: #FFFFFF;
-  --secondary: #F1F5F9;
-  --secondary-foreground: #1E293B;
-  --muted: #152A40;
-  --muted-foreground: #64748B;
-  --accent: #7C3AED;
+  --secondary: #E8E0D5;
+  --secondary-foreground: #2D3E50;
+  --muted: #D9D1C5;
+  --muted-foreground: #5A6B7A;
+  --accent: #C9A86C;
   --accent-foreground: #FFFFFF;
-  --destructive: #E11D48;
-  --border: rgba(255, 255, 255, 0.06);
-  --input: #122A40;
-  --ring: #7C3AED;
+  --destructive: #E57373;
+  --border: rgba(45, 62, 80, 0.1);
+  --input: #E8E0D5;
+  --ring: #5BB3B3;
 }
 
 @layer base {
@@ -132,107 +155,113 @@
   }
 }
 
-/* Custom utility classes for NucleuX Dark Navy Theme */
-@layer utilities {
-  /* Dark theme shadows with cyan glow */
-  .shadow-navy {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-  }
-  .shadow-navy-md {
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
-  }
-  .shadow-navy-lg {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
-  }
-  .shadow-cyan-glow {
-    box-shadow: 0 0 6px rgba(6, 182, 212, 0.08), 0 8px 26px rgba(0, 0, 0, 0.38);
-  }
-  
-  /* Room-specific glows */
-  .glow-dashboard { box-shadow: none; outline: 1px solid rgba(124, 58, 237, 0.35); outline-offset: 0px; }
-  .glow-library { box-shadow: none; outline: 1px solid rgba(5, 150, 105, 0.35); outline-offset: 0px; }
-  .glow-classroom { box-shadow: none; outline: 1px solid rgba(14, 165, 233, 0.35); outline-offset: 0px; }
-  .glow-exam { box-shadow: none; outline: 1px solid rgba(14, 165, 233, 0.35); outline-offset: 0px; }
-  .glow-community { box-shadow: none; outline: 1px solid rgba(180, 83, 9, 0.35); outline-offset: 0px; }
-  .glow-arena { box-shadow: none; outline: 1px solid rgba(202, 138, 4, 0.35); outline-offset: 0px; }
-  
-  /* Text gradients */
-  .text-gradient-purple {
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
-    color: #7C3AED;
-  }
-  .text-gradient-cyan {
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
-    color: #06B6D4;
-  }
-  .text-gradient-forest {
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
-    color: #059669;
-  }
-  .text-gradient-gold {
-    background: none;
-    -webkit-background-clip: initial;
-    -webkit-text-fill-color: initial;
-    background-clip: initial;
-    color: #CA8A04;
-  }
-  
-  /* Dark navy backgrounds */
-  .bg-navy-deep { background: #0D1B2A; }
-  .bg-navy-card { background: #0F2233; }
-  .bg-navy-elevated { background: #122A40; }
-  .bg-navy-muted { background: #152A40; }
-  
-  /* Cyan border utilities */
-  .border-cyan-subtle { border-color: rgba(6, 182, 212, 0.15); }
-  .border-cyan-glow { border-color: rgba(6, 182, 212, 0.3); }
-  
-  
+/* ===========================================
+   ATOM Matte Utility Classes
+   =========================================== */
 
-  /* Matte utilities */
-  .border-matte { border-color: rgba(255, 255, 255, 0.06); }
+@layer utilities {
+  /* Matte shadows - soft, no glow */
+  .shadow-matte {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+  .shadow-matte-md {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  .shadow-matte-lg {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* Subtle teal glow for interactive elements */
+  .shadow-teal-subtle {
+    box-shadow: 0 0 4px rgba(91, 179, 179, 0.15), 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Gold accent glow */
+  .shadow-gold-subtle {
+    box-shadow: 0 0 4px rgba(201, 168, 108, 0.2), 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Room-specific borders - subtle outline style */
+  .glow-dashboard { box-shadow: none; outline: 1px solid rgba(91, 179, 179, 0.35); outline-offset: 0px; }
+  .glow-library { box-shadow: none; outline: 1px solid rgba(123, 166, 158, 0.35); outline-offset: 0px; }
+  .glow-classroom { box-shadow: none; outline: 1px solid rgba(107, 168, 201, 0.35); outline-offset: 0px; }
+  .glow-exam { box-shadow: none; outline: 1px solid rgba(91, 179, 179, 0.35); outline-offset: 0px; }
+  .glow-community { box-shadow: none; outline: 1px solid rgba(201, 168, 108, 0.35); outline-offset: 0px; }
+  .glow-arena { box-shadow: none; outline: 1px solid rgba(212, 175, 55, 0.35); outline-offset: 0px; }
+  
+  /* Text colors - ATOM palette */
+  .text-atom-teal { color: #5BB3B3; }
+  .text-atom-gold { color: #C9A86C; }
+  .text-atom-sage { color: #7BA69E; }
+  .text-atom-cream { color: #E8E0D5; }
+  .text-atom-slate { color: #2D3E50; }
+  
+  /* Background colors - ATOM palette */
+  .bg-atom-slate { background: #2D3E50; }
+  .bg-atom-slate-light { background: #364A5E; }
+  .bg-atom-slate-dark { background: #253545; }
+  .bg-atom-elevated { background: #3A4D5F; }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-atom {
+    background: linear-gradient(135deg, #2D3E50 0%, #364A5E 100%);
+  }
+  .bg-gradient-teal-gold {
+    background: linear-gradient(135deg, #5BB3B3 0%, #C9A86C 100%);
+  }
+  
+  /* Border utilities */
+  .border-teal-subtle { border-color: rgba(91, 179, 179, 0.2); }
+  .border-gold-subtle { border-color: rgba(201, 168, 108, 0.2); }
+  .border-matte { border-color: rgba(232, 224, 213, 0.08); }
+  
+  /* Matte card component */
   .matte-card {
-    background: #0F2233;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+    background: #364A5E;
+    border: 1px solid rgba(232, 224, 213, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
   }
+  
+  /* Matte input component */
   .matte-input {
-    background: #122A40;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: none;
+    background: #3A4D5F;
+    border: 1px solid rgba(232, 224, 213, 0.08);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  .matte-input:focus {
+    border-color: rgba(91, 179, 179, 0.4);
+    outline: none;
+  }
+  
+  /* Noise texture overlay for matte effect */
   .noise-overlay::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     background-image: url("/noise.png");
-    opacity: 0.04;
+    opacity: 0.03;
     mix-blend-mode: overlay;
   }
-/* Room transition class */
+  
+  /* Room transition class */
   .room-transition {
     transition: border-color 0.25s ease, 
                 background-color 0.25s ease, 
                 box-shadow 0.3s ease;
   }
   
-  /* Legacy support */
-  .glow-purple {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2), 0 0 40px rgba(124, 58, 237, 0.1);
+  /* Gold highlight for premium elements */
+  .gold-highlight {
+    border: 1px solid rgba(201, 168, 108, 0.3);
+    background: linear-gradient(135deg, rgba(201, 168, 108, 0.05) 0%, transparent 100%);
   }
-  .border-glow {
-    border: 1px solid rgba(6, 182, 212, 0.3);
+  
+  /* Teal highlight for primary actions */
+  .teal-highlight {
+    border: 1px solid rgba(91, 179, 179, 0.3);
+    background: linear-gradient(135deg, rgba(91, 179, 179, 0.08) 0%, transparent 100%);
   }
 }
 
@@ -241,7 +270,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Page Transition Animations */
+/* ===========================================
+   Animations
+   =========================================== */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -264,14 +296,19 @@ html {
   75% { transform: translateY(-15px) rotate(1deg); }
 }
 
-@keyframes pulse-subtle {
-  0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), 0 0 40px rgba(124, 58, 237, 0.2); }
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 15px rgba(91, 179, 179, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(91, 179, 179, 0.35); }
 }
 
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+
+@keyframes glow-gold {
+  0%, 100% { box-shadow: 0 0 10px rgba(201, 168, 108, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(201, 168, 108, 0.4); }
 }
 
 .animate-fade-in {
@@ -290,28 +327,45 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
-.animate-pulse-subtle {
-  animation: pulse-subtle 2s ease-in-out infinite;
+.animate-pulse-teal {
+  animation: pulse-teal 2s ease-in-out infinite;
 }
 
-/* Card Hover Effects - Dark theme */
+.animate-glow-gold {
+  animation: glow-gold 2s ease-in-out infinite;
+}
+
+/* ===========================================
+   Card Hover Effects - Matte theme
+   =========================================== */
+
 .card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(6, 182, 212, 0.1);
-  border-color: rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(91, 179, 179, 0.25) !important;
 }
 
-/* Skeleton Loading - Dark theme */
+/* Gold card hover for premium content */
+.card-hover-gold:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(201, 168, 108, 0.3) !important;
+}
+
+/* ===========================================
+   Skeleton Loading - Matte theme
+   =========================================== */
+
 .skeleton {
   background: linear-gradient(
     90deg,
-    #142538 0%,
-    #1E3A5F 50%,
-    #142538 100%
+    #3A4D5F 0%,
+    #4A5D6F 50%,
+    #3A4D5F 100%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
@@ -354,49 +408,80 @@ html {
   display: none;
 }
 
-/* Mobile-specific fixes */
+/* ===========================================
+   Mobile-specific fixes
+   =========================================== */
+
 @media (max-width: 640px) {
   .card-hover:hover {
     transform: none;
     box-shadow: none;
   }
   
-  /* Smaller text on mobile */
   h1 {
     font-size: 1.75rem !important;
   }
   
-  /* Better touch targets */
   button, a {
     min-height: 44px;
   }
   
-  /* Reduce padding on mobile */
   .mobile-compact {
     padding: 0.75rem !important;
   }
 }
 
-/* Custom scrollbar - Dark theme */
+/* ===========================================
+   Custom Scrollbar - Matte theme
+   =========================================== */
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D1B2A;
+  background: #253545;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1E3A5F;
+  background: #4A5D6F;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(6, 182, 212, 0.3);
+  background: rgba(91, 179, 179, 0.4);
 }
 
 /* Smooth page transitions */
 .page-transition {
   transition: background-color 0.3s ease, color 0.2s ease;
+}
+
+/* ===========================================
+   ATOM Logo Animation
+   =========================================== */
+
+.atom-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Metallic text effect for branding */
+.text-metallic-gold {
+  background: linear-gradient(135deg, #C9A86C 0%, #E8D5A8 50%, #C9A86C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-metallic-teal {
+  background: linear-gradient(135deg, #5BB3B3 0%, #8CD4D4 50%, #5BB3B3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

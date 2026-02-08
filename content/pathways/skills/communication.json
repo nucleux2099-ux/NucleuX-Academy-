@@ -1,0 +1,107 @@
+{
+  "id": "communication-skills",
+  "title": "Medical Communication & Ethics",
+  "phase": "Phase-1",
+  "subject": "Clinical Skills",
+  "description": "Professional communication skills, medical ethics, patient counseling, and interprofessional collaboration essential for compassionate and effective medical practice.",
+  "competencies": ["EC1.1", "EC1.2", "EC1.3", "EC1.4", "EC1.5"],
+  "prerequisites": [],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Professional Communication",
+      "libraryTopic": "communication-skills",
+      "sections": ["therapeutic-relationship", "active-listening", "empathy", "professional-boundaries"],
+      "duration": "55min",
+      "xp": 28
+    },
+    {
+      "order": 2,
+      "type": "skill",
+      "title": "Patient Interview Role-Play",
+      "competency": "EC1.1",
+      "xp": 45,
+      "duration": "40min"
+    },
+    {
+      "order": 3,
+      "type": "reading", 
+      "title": "Breaking Bad News",
+      "libraryTopic": "communication-skills",
+      "sections": ["spikes-protocol", "emotional-support", "information-sharing", "follow-up"],
+      "duration": "60min",
+      "xp": 32
+    },
+    {
+      "order": 4,
+      "type": "skill",
+      "title": "Difficult Conversations",
+      "competency": "EC1.2",
+      "xp": 50,
+      "duration": "45min"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Medical Ethics Fundamentals",
+      "libraryTopic": "communication-skills",
+      "sections": ["autonomy", "beneficence", "non-maleficence", "justice", "consent"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 6,
+      "type": "case",
+      "title": "Ethical Dilemmas",
+      "competency": "EC1.3",
+      "xp": 55,
+      "duration": "50min"
+    },
+    {
+      "order": 7,
+      "type": "reading",
+      "title": "Interprofessional Collaboration",
+      "libraryTopic": "communication-skills",
+      "sections": ["team-dynamics", "conflict-resolution", "handoffs", "leadership"],
+      "duration": "50min",
+      "xp": 25
+    },
+    {
+      "order": 8,
+      "type": "skill",
+      "title": "Team Communication",
+      "competency": "EC1.4",
+      "xp": 40,
+      "duration": "35min"
+    },
+    {
+      "order": 9,
+      "type": "reading",
+      "title": "Cultural Competency",
+      "libraryTopic": "communication-skills",
+      "sections": ["cultural-awareness", "health-disparities", "language-barriers", "religious-considerations"],
+      "duration": "65min",
+      "xp": 30
+    },
+    {
+      "order": 10,
+      "type": "integration",
+      "title": "Professional Identity Formation",
+      "competency": "EC1.5",
+      "xp": 45,
+      "duration": "40min"
+    }
+  ],
+  "totalXP": 385,
+  "estimatedTime": "7 hours",
+  "unlocks": ["psychiatry-communication", "community-medicine", "medical-law"],
+  "textbooks": [
+    {"title": "The Art of Medicine", "chapters": ["Communication"], "edition": "1st"},
+    {"title": "Medical Ethics: Principles and Practice", "chapters": ["Core Principles"], "edition": "2nd"},
+    {"title": "Interprofessional Collaboration", "chapters": ["Team-Based Care"], "edition": "3rd"}
+  ],
+  "tags": ["ethics", "communication", "high-yield", "clinical"],
+  "difficulty": 2,
+  "lastUpdated": "2024-02-08"
+}

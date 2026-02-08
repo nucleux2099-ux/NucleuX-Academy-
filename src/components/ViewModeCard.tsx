@@ -46,13 +46,13 @@ export function ViewModeCard({
         "flex flex-col items-center rounded-xl transition-all duration-200 text-center group relative overflow-hidden",
         sizeClasses[size],
         isActive
-          ? "bg-gradient-to-br from-[rgba(6,182,212,0.2)] to-[rgba(139,92,246,0.1)] border-2 border-[#06B6D4] shadow-lg shadow-[rgba(6,182,212,0.15)]"
-          : "bg-[#0D1B2A] border-2 border-transparent hover:bg-[rgba(6,182,212,0.05)] hover:border-[rgba(6,182,212,0.2)]"
+          ? "bg-gradient-to-br from-[rgba(91,179,179,0.2)] to-[rgba(139,92,246,0.1)] border-2 border-[#5BB3B3] shadow-lg shadow-[rgba(91,179,179,0.15)]"
+          : "bg-[#2D3E50] border-2 border-transparent hover:bg-[rgba(91,179,179,0.05)] hover:border-[rgba(91,179,179,0.2)]"
       )}
     >
       {/* Glow effect when active */}
       {isActive && (
-        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(6,182,212,0.1)] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(91,179,179,0.1)] to-transparent pointer-events-none" />
       )}
       
       {/* Icon with subtle animation */}
@@ -68,7 +68,7 @@ export function ViewModeCard({
       <span className={cn(
         textSizes[size],
         "font-semibold tracking-wide transition-colors",
-        isActive ? "text-[#06B6D4]" : "text-[#9CA3AF] group-hover:text-[#E5E7EB]"
+        isActive ? "text-[#5BB3B3]" : "text-[#A0B0BC] group-hover:text-[#E8E0D5]"
       )}>
         {config.label}
       </span>
@@ -77,7 +77,7 @@ export function ViewModeCard({
       {showDescription && (
         <span className={cn(
           "text-[10px] text-[#6B7280] mt-0.5 line-clamp-1",
-          isActive && "text-[#9CA3AF]"
+          isActive && "text-[#A0B0BC]"
         )}>
           {config.description}
         </span>
@@ -85,7 +85,7 @@ export function ViewModeCard({
 
       {/* Active indicator dot */}
       {isActive && (
-        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
+        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#5BB3B3] animate-pulse" />
       )}
     </button>
   );

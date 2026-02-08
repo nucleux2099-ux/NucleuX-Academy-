@@ -1,0 +1,28 @@
+{
+  "Phase-1": {
+    "Physiology": 207,
+    "Anatomy": 654,
+    "Biochemistry": 191
+  },
+  "Phase-3B": {
+    "Medicine": 893,
+    "OBG": 158,
+    "Surgery": 189,
+    "Pediatrics": 657
+  },
+  "Phase-2": {
+    "Pathology": 411,
+    "Microbiology": 152,
+    "Forensic Medicine": 269,
+    "Pharmacology": 143,
+    "Community Medicine": 187
+  },
+  "Phase-3A": {
+    "ENT": 79,
+    "Ophthalmology": 73,
+    "Dermatology": 36,
+    "Orthopedics": 76,
+    "Psychiatry": 169,
+    "Radiodiagnosis": 15
+  }
+}

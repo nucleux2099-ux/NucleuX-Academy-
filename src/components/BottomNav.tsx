@@ -5,13 +5,13 @@ import { usePathname } from "next/navigation";
 import { LayoutDashboard, BookOpen, Atom, ClipboardCheck, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Room colors for each navigation item
+// ATOM Matte Theme - Room colors
 const roomColors: Record<string, string> = {
-  '/dashboard': '#7C3AED', // Purple
-  '/library': '#059669',   // Green
-  '/chat': '#06B6D4',      // Cyan (ATOM)
-  '/mcqs': '#0EA5E9',      // Sky blue
-  '/arena': '#CA8A04',     // Gold
+  '/dashboard': '#5BB3B3', // Teal
+  '/library': '#7BA69E',   // Sage
+  '/chat': '#5BB3B3',      // Teal (ATOM)
+  '/mcqs': '#5BB3B3',      // Teal
+  '/arena': '#C9A86C',     // Gold
 };
 
 const navItems = [
@@ -26,12 +26,12 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#0D1B2A]/95 backdrop-blur-lg border-t border-[rgba(6,182,212,0.1)] z-50 pb-safe">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#253545]/95 backdrop-blur-lg border-t border-[rgba(232,224,213,0.08)] z-50 pb-safe">
       <div className="flex items-center justify-around h-16">
         {navItems.map((item) => {
           const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
           const isHighlight = "highlight" in item && item.highlight;
-          const roomColor = roomColors[item.href] || '#06B6D4';
+          const roomColor = roomColors[item.href] || '#5BB3B3';
 
           return (
             <Link
@@ -40,26 +40,26 @@ export function BottomNav() {
               className={cn(
                 "flex flex-col items-center justify-center w-full h-full gap-1 transition-all relative room-transition",
                 isActive
-                  ? "text-[#E5E7EB]"
+                  ? "text-[#E8E0D5]"
                   : isHighlight
-                  ? "text-[#06B6D4]"
-                  : "text-[#9CA3AF]"
+                  ? "text-[#5BB3B3]"
+                  : "text-[#A0B0BC]"
               )}
             >
               {isHighlight && !isActive ? (
                 <div className="relative">
                   <div 
-                    className="absolute inset-0 rounded-full blur-md scale-150 opacity-30"
+                    className="absolute inset-0 rounded-full blur-md scale-150 opacity-20"
                     style={{ backgroundColor: roomColor }}
                   />
                   <div 
-                    className="relative w-10 h-10 rounded-full flex items-center justify-center shadow-lg -mt-4"
+                    className="relative w-10 h-10 rounded-full flex items-center justify-center shadow-matte -mt-4"
                     style={{ 
                       background: `linear-gradient(135deg, ${roomColor}, ${roomColor}dd)`,
-                      boxShadow: `0 4px 15px ${roomColor}40`
+                      boxShadow: `0 4px 12px ${roomColor}30`
                     }}
                   >
-                    <item.icon className="w-5 h-5 text-[#0D1B2A]" />
+                    <item.icon className="w-5 h-5 text-[#1E2D3D]" />
                   </div>
                 </div>
               ) : (

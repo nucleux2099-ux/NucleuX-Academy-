@@ -31,7 +31,7 @@ function ClickableImage({
     <>
       <figure className={cn("my-4", layoutClasses[layout as keyof typeof layoutClasses])}>
         <div 
-          className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#0D1B2A]"
+          className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2D3E50]"
           onClick={() => setIsOpen(true)}
         >
           <img
@@ -44,7 +44,7 @@ function ClickableImage({
           </div>
         </div>
         {alt && (
-          <figcaption className="text-center text-sm text-[#9CA3AF] mt-2 italic">
+          <figcaption className="text-center text-sm text-[#A0B0BC] mt-2 italic">
             {alt}
           </figcaption>
         )}
@@ -69,23 +69,23 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
         components={{
           // Headings
           h1: ({ children }) => (
-            <h1 className="text-2xl font-bold text-[#E5E7EB] mt-6 mb-4 pb-2 border-b border-[rgba(6,182,212,0.2)]">
+            <h1 className="text-2xl font-bold text-[#E8E0D5] mt-6 mb-4 pb-2 border-b border-[rgba(91,179,179,0.2)]">
               {children}
             </h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-xl font-semibold text-[#E5E7EB] mt-5 mb-3 flex items-center gap-2">
-              <span className="w-1 h-5 bg-[#06B6D4] rounded-full" />
+            <h2 className="text-xl font-semibold text-[#E8E0D5] mt-5 mb-3 flex items-center gap-2">
+              <span className="w-1 h-5 bg-[#5BB3B3] rounded-full" />
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-lg font-semibold text-[#06B6D4] mt-4 mb-2">
+            <h3 className="text-lg font-semibold text-[#5BB3B3] mt-4 mb-2">
               {children}
             </h3>
           ),
           h4: ({ children }) => (
-            <h4 className="text-base font-medium text-[#7C3AED] mt-3 mb-2">
+            <h4 className="text-base font-medium text-[#5BB3B3] mt-3 mb-2">
               {children}
             </h4>
           ),
@@ -99,14 +99,14 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
 
           // Strong/Bold - Highlight important terms
           strong: ({ children }) => (
-            <strong className="font-semibold text-[#E5E7EB] bg-[rgba(6,182,212,0.1)] px-1 rounded">
+            <strong className="font-semibold text-[#E8E0D5] bg-[rgba(91,179,179,0.1)] px-1 rounded">
               {children}
             </strong>
           ),
 
           // Emphasis/Italic
           em: ({ children }) => (
-            <em className="text-[#06B6D4] not-italic font-medium">
+            <em className="text-[#5BB3B3] not-italic font-medium">
               {children}
             </em>
           ),
@@ -134,14 +134,14 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
             const isInline = !className;
             if (isInline) {
               return (
-                <code className="px-1.5 py-0.5 bg-[rgba(124,58,237,0.2)] text-[#A78BFA] rounded text-sm font-mono">
+                <code className="px-1.5 py-0.5 bg-[rgba(91,179,179,0.2)] text-[#A78BFA] rounded text-sm font-mono">
                   {children}
                 </code>
               );
             }
             return (
               <code className={cn(
-                "block p-4 bg-[#0D1B2A] border border-[rgba(6,182,212,0.1)] rounded-lg text-sm font-mono text-[#D1D5DB] overflow-x-auto mb-4",
+                "block p-4 bg-[#2D3E50] border border-[rgba(91,179,179,0.1)] rounded-lg text-sm font-mono text-[#D1D5DB] overflow-x-auto mb-4",
                 className
               )}>
                 {children}
@@ -154,9 +154,9 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
 
           // Blockquotes - Clinical Notes
           blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-[#F59E0B] bg-[rgba(245,158,11,0.1)] pl-4 py-3 pr-4 my-4 rounded-r-lg">
+            <blockquote className="border-l-4 border-[#C9A86C] bg-[rgba(245,158,11,0.1)] pl-4 py-3 pr-4 my-4 rounded-r-lg">
               <div className="flex items-start gap-2">
-                <span className="text-[#F59E0B] text-lg">💡</span>
+                <span className="text-[#C9A86C] text-lg">💡</span>
                 <div className="text-[#FCD34D]">{children}</div>
               </div>
             </blockquote>
@@ -171,7 +171,7 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
             </div>
           ),
           thead: ({ children }) => (
-            <thead className="bg-[rgba(6,182,212,0.15)]">
+            <thead className="bg-[rgba(91,179,179,0.15)]">
               {children}
             </thead>
           ),
@@ -181,12 +181,12 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
             </tbody>
           ),
           tr: ({ children }) => (
-            <tr className="hover:bg-[rgba(6,182,212,0.05)] transition-colors">
+            <tr className="hover:bg-[rgba(91,179,179,0.05)] transition-colors">
               {children}
             </tr>
           ),
           th: ({ children }) => (
-            <th className="px-4 py-3 text-left text-sm font-semibold text-[#06B6D4] border-b border-[rgba(6,182,212,0.2)]">
+            <th className="px-4 py-3 text-left text-sm font-semibold text-[#5BB3B3] border-b border-[rgba(91,179,179,0.2)]">
               {children}
             </th>
           ),
@@ -202,7 +202,7 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
               href={href} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#06B6D4] hover:text-[#22D3EE] underline underline-offset-2 transition-colors"
+              className="text-[#5BB3B3] hover:text-[#22D3EE] underline underline-offset-2 transition-colors"
             >
               {children}
             </a>
@@ -210,7 +210,7 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
 
           // Horizontal rule
           hr: () => (
-            <hr className="my-6 border-t border-[rgba(6,182,212,0.2)]" />
+            <hr className="my-6 border-t border-[rgba(91,179,179,0.2)]" />
           ),
 
           // Images with layout support
@@ -263,7 +263,7 @@ export function HighYield({ children }: { children: React.ReactNode }) {
     <div className="flex items-start gap-3 p-4 bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)] rounded-lg my-4">
       <span className="text-2xl">🎯</span>
       <div className="text-[#FCA5A5] flex-1">
-        <span className="font-semibold text-[#EF4444]">HIGH YIELD: </span>
+        <span className="font-semibold text-[#E57373]">HIGH YIELD: </span>
         {children}
       </div>
     </div>
@@ -272,7 +272,7 @@ export function HighYield({ children }: { children: React.ReactNode }) {
 
 export function Mnemonic({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="p-4 bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)] rounded-lg my-4">
+    <div className="p-4 bg-[rgba(91,179,179,0.1)] border border-[rgba(91,179,179,0.2)] rounded-lg my-4">
       <div className="flex items-center gap-2 mb-2">
         <span className="text-xl">🧠</span>
         <h4 className="font-semibold text-[#A78BFA]">{title}</h4>
@@ -284,10 +284,10 @@ export function Mnemonic({ title, children }: { title: string; children: React.R
 
 export function ExamTip({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-start gap-3 p-4 bg-[rgba(6,182,212,0.1)] border border-[rgba(6,182,212,0.2)] rounded-lg my-4">
+    <div className="flex items-start gap-3 p-4 bg-[rgba(91,179,179,0.1)] border border-[rgba(91,179,179,0.2)] rounded-lg my-4">
       <span className="text-2xl">📝</span>
       <div className="text-[#67E8F9] flex-1">
-        <span className="font-semibold text-[#06B6D4]">EXAM TIP: </span>
+        <span className="font-semibold text-[#5BB3B3]">EXAM TIP: </span>
         {children}
       </div>
     </div>

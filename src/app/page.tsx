@@ -30,13 +30,13 @@ const features = [
     icon: BookOpen,
     title: "24 Standard Textbooks",
     description: "Harrison's, Bailey & Love, Robbins, Blumgart's — all indexed, searchable, and citation-ready.",
-    color: "#7C3AED",
+    color: "#5BB3B3",
   },
   {
     icon: Route,
     title: "Personalized Pathways",
     description: "AI-generated learning paths tailored to your NEET-PG/INICET goals, weak areas, and available time.",
-    color: "#06B6D4",
+    color: "#5BB3B3",
   },
   {
     icon: Brain,
@@ -48,19 +48,19 @@ const features = [
     icon: MessageCircle,
     title: "ATOM - Your AI Tutor",
     description: "Proactive AI that reaches out via Telegram with daily questions, identifies your weak spots, and never judges.",
-    color: "#F59E0B",
+    color: "#C9A86C",
   },
   {
     icon: BarChart3,
     title: "Deep Analytics",
     description: "Track subject-wise accuracy, time per question, weak topics — everything you need to improve.",
-    color: "#7C3AED",
+    color: "#5BB3B3",
   },
   {
     icon: Zap,
     title: "Atomic Learning",
     description: "Complex topics broken into digestible atoms. 15 minutes of focused learning beats hours of passive reading.",
-    color: "#06B6D4",
+    color: "#5BB3B3",
   },
 ];
 
@@ -188,8 +188,8 @@ function StatCounter({ value, suffix, label, icon: Icon }: { value: number; suff
   
   return (
     <div ref={ref} className="text-center p-6 bg-white rounded-2xl border border-[#E2E8F0] shadow-sm hover:shadow-lg transition-all">
-      <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#7C3AED]/10 to-[#06B6D4]/10 flex items-center justify-center">
-        <Icon className="w-6 h-6 text-[#7C3AED]" />
+      <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#5BB3B3]/10 to-[#5BB3B3]/10 flex items-center justify-center">
+        <Icon className="w-6 h-6 text-[#5BB3B3]" />
       </div>
       <div className="text-3xl md:text-4xl font-bold text-gradient-purple">
         {count.toLocaleString()}{suffix}
@@ -234,7 +234,7 @@ export default function LandingPage() {
               </Button>
             </Link>
             <Link href="/signup">
-              <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] shadow-lg shadow-[#7C3AED]/20">
+              <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] shadow-lg shadow-[#5BB3B3]/20">
                 Start Free Trial
               </Button>
             </Link>
@@ -259,8 +259,8 @@ export default function LandingPage() {
             
             {/* Badge */}
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F5F3FF] border border-[#E9D5FF] mb-8 shadow-sm ${mounted ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.1s' }}>
-              <Sparkles className="w-4 h-4 text-[#7C3AED]" />
-              <span className="text-sm text-[#7C3AED] font-medium">Trusted by 12,000+ NEET-PG Aspirants</span>
+              <Sparkles className="w-4 h-4 text-[#5BB3B3]" />
+              <span className="text-sm text-[#5BB3B3] font-medium">Trusted by 12,000+ NEET-PG Aspirants</span>
             </div>
             
             {/* Headline with Animation */}
@@ -279,7 +279,7 @@ export default function LandingPage() {
             {/* CTAs */}
             <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 ${mounted ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <Link href="/signup">
-                <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] shadow-xl shadow-[#7C3AED]/25 text-lg px-8">
+                <Button size="lg" className="bg-[#5BB3B3] hover:bg-[#4A9E9E] shadow-xl shadow-[#5BB3B3]/25 text-lg px-8">
                   Start 7-Day Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -302,7 +302,7 @@ export default function LandingPage() {
                 Cancel anytime
               </span>
               <span className="flex items-center gap-2">
-                <Trophy className="w-4 h-4 text-[#F59E0B]" />
+                <Trophy className="w-4 h-4 text-[#C9A86C]" />
                 100+ toppers in 2025
               </span>
             </div>
@@ -331,11 +331,11 @@ export default function LandingPage() {
           {/* Dashboard Preview */}
           <div className={`mt-20 relative ${mounted ? 'animate-slide-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
             <div className="absolute inset-0 bg-gradient-to-t from-[#FAFAFA] via-transparent to-transparent z-10" />
-            <div className="rounded-xl overflow-hidden border border-[#E2E8F0] shadow-2xl shadow-[#7C3AED]/10">
+            <div className="rounded-xl overflow-hidden border border-[#E2E8F0] shadow-2xl shadow-[#5BB3B3]/10">
               <div className="bg-white p-2 flex items-center gap-2 border-b border-[#E2E8F0]">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#EF4444]" />
-                  <div className="w-3 h-3 rounded-full bg-[#F59E0B]" />
+                  <div className="w-3 h-3 rounded-full bg-[#E57373]" />
+                  <div className="w-3 h-3 rounded-full bg-[#C9A86C]" />
                   <div className="w-3 h-3 rounded-full bg-[#10B981]" />
                 </div>
                 <div className="flex-1 text-center text-xs text-[#94A3B8]">NucleuX Academy — Your Personal Study Desk</div>
@@ -358,7 +358,7 @@ export default function LandingPage() {
       <section id="features" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <Badge className="bg-[#F5F3FF] text-[#7C3AED] border-[#E9D5FF] mb-4">Features</Badge>
+            <Badge className="bg-[#F5F3FF] text-[#5BB3B3] border-[#E9D5FF] mb-4">Features</Badge>
             <h2 className="text-4xl font-bold text-[#1E293B] mb-4">Everything you need to <span className="text-gradient-purple">crack NEET-PG</span></h2>
             <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
               Not just another question bank. A complete ecosystem designed around how doctors actually learn.
@@ -369,7 +369,7 @@ export default function LandingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="p-6 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#7C3AED]/30 hover:shadow-xl transition-all cursor-pointer group"
+                className="p-6 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#5BB3B3]/30 hover:shadow-xl transition-all cursor-pointer group"
               >
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shadow-sm"
@@ -377,7 +377,7 @@ export default function LandingPage() {
                 >
                   <feature.icon className="w-6 h-6" style={{ color: feature.color }} />
                 </div>
-                <h3 className="text-xl font-semibold text-[#1E293B] mb-2 group-hover:text-[#7C3AED] transition-colors">
+                <h3 className="text-xl font-semibold text-[#1E293B] mb-2 group-hover:text-[#5BB3B3] transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-[#64748B]">{feature.description}</p>
@@ -405,11 +405,11 @@ export default function LandingPage() {
                 className="p-6 rounded-xl bg-white border border-[#E2E8F0] hover:shadow-xl transition-all shadow-sm relative"
               >
                 {/* Quote icon */}
-                <Quote className="absolute top-4 right-4 w-8 h-8 text-[#7C3AED]/10" />
+                <Quote className="absolute top-4 right-4 w-8 h-8 text-[#5BB3B3]/10" />
                 
                 {/* Badge */}
                 {testimonial.badge && (
-                  <Badge className="bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] text-white border-none mb-4 shadow-md">
+                  <Badge className="bg-gradient-to-r from-[#5BB3B3] to-[#4A9E9E] text-white border-none mb-4 shadow-md">
                     <Trophy className="w-3 h-3 mr-1" />
                     {testimonial.badge}
                   </Badge>
@@ -418,7 +418,7 @@ export default function LandingPage() {
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
+                    <Star key={i} className="w-4 h-4 fill-[#C9A86C] text-[#C9A86C]" />
                   ))}
                 </div>
                 
@@ -429,12 +429,12 @@ export default function LandingPage() {
                 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#06B6D4] flex items-center justify-center text-white font-semibold shadow-md">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5BB3B3] flex items-center justify-center text-white font-semibold shadow-md">
                     {testimonial.avatar}
                   </div>
                   <div>
                     <div className="font-semibold text-[#1E293B]">{testimonial.name}</div>
-                    <div className="text-sm text-[#7C3AED] font-medium">{testimonial.role}</div>
+                    <div className="text-sm text-[#5BB3B3] font-medium">{testimonial.role}</div>
                     <div className="text-xs text-[#94A3B8]">{testimonial.college}</div>
                   </div>
                 </div>
@@ -448,10 +448,10 @@ export default function LandingPage() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="bg-gradient-to-r from-[#F5F3FF] via-white to-[#F0F9FF] rounded-2xl border border-[#E2E8F0] p-8 md:p-12 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C3AED]/5 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#5BB3B3]/5 rounded-full blur-3xl" />
             <div className="grid md:grid-cols-2 gap-8 items-center relative">
               <div>
-                <Badge className="bg-[#7C3AED] text-white mb-4">Meet ATOM</Badge>
+                <Badge className="bg-[#5BB3B3] text-white mb-4">Meet ATOM</Badge>
                 <h2 className="text-3xl font-bold text-[#1E293B] mb-4">
                   An AI Tutor That <span className="text-gradient-purple">Actually Reaches Out</span>
                 </h2>
@@ -473,14 +473,14 @@ export default function LandingPage() {
                   ))}
                 </ul>
                 <Link href="/signup">
-                  <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] shadow-lg shadow-[#7C3AED]/20">
+                  <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] shadow-lg shadow-[#5BB3B3]/20">
                     <Sparkles className="w-4 h-4 mr-2" />
                     Meet ATOM
                   </Button>
                 </Link>
               </div>
               <div className="flex items-center justify-center">
-                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#06B6D4] flex items-center justify-center shadow-2xl">
+                <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5BB3B3] flex items-center justify-center shadow-2xl">
                   <span className="text-8xl">🦁</span>
                 </div>
               </div>
@@ -493,14 +493,14 @@ export default function LandingPage() {
       <section id="pricing" className="py-20 px-6 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="p-12 rounded-2xl bg-gradient-to-br from-[#F5F3FF] via-white to-[#F0F9FF] border border-[#E2E8F0] shadow-xl">
-            <Badge className="bg-[#10B981]/10 text-[#059669] border-[#A7F3D0] mb-4">Limited Offer</Badge>
+            <Badge className="bg-[#10B981]/10 text-[#7BA69E] border-[#A7F3D0] mb-4">Limited Offer</Badge>
             <h2 className="text-4xl font-bold text-[#1E293B] mb-4">Start Your NEET-PG Journey Today</h2>
             <p className="text-[#64748B] text-lg mb-8">
               Join 12,000+ medical students already preparing smarter, not harder.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link href="/signup">
-                <Button size="lg" className="bg-[#7C3AED] hover:bg-[#6D28D9] shadow-xl shadow-[#7C3AED]/25 px-8">
+                <Button size="lg" className="bg-[#5BB3B3] hover:bg-[#4A9E9E] shadow-xl shadow-[#5BB3B3]/25 px-8">
                   Start 7-Day Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -536,9 +536,9 @@ export default function LandingPage() {
               © 2026 NucleuX Academy. Built with 🦁 for medical students who dream of becoming great doctors.
             </p>
             <div className="flex items-center gap-6 text-sm text-[#64748B]">
-              <Link href="#" className="hover:text-[#7C3AED]">Privacy</Link>
-              <Link href="#" className="hover:text-[#7C3AED]">Terms</Link>
-              <Link href="#" className="hover:text-[#7C3AED]">Contact</Link>
+              <Link href="#" className="hover:text-[#5BB3B3]">Privacy</Link>
+              <Link href="#" className="hover:text-[#5BB3B3]">Terms</Link>
+              <Link href="#" className="hover:text-[#5BB3B3]">Contact</Link>
             </div>
           </div>
         </div>

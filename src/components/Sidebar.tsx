@@ -10,19 +10,21 @@ import {
   Users,
   Trophy,
   Atom,
+  Target,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ProfileButton } from "@/components/ProfilePopup";
 
-// Room colors for each navigation item
+// ATOM Matte Theme - Room colors
 const roomColors: Record<string, string> = {
-  '/dashboard': '#7C3AED', // Purple
-  '/library': '#059669',   // Green
-  '/classroom': '#0EA5E9', // Sky blue
-  '/mcqs': '#0EA5E9',      // Sky blue
-  '/community': '#B45309', // Amber
-  '/arena': '#CA8A04',     // Gold
-  '/chat': '#06B6D4',      // Cyan (ATOM)
+  '/dashboard': '#5BB3B3', // Teal
+  '/library': '#7BA69E',   // Sage
+  '/classroom': '#6BA8C9', // Sky teal
+  '/mcqs': '#5BB3B3',      // Teal
+  '/competencies': '#E879F9', // Purple/Pink for CBME
+  '/community': '#C9A86C', // Gold
+  '/arena': '#D4AF37',     // Bright gold
+  '/chat': '#5BB3B3',      // Teal (ATOM)
 };
 
 const navItems = [
@@ -30,6 +32,7 @@ const navItems = [
   { href: "/library", icon: BookOpen, label: "Library", description: "Browse & Pathways" },
   { href: "/classroom", icon: GraduationCap, label: "Classroom", description: "Video Lectures" },
   { href: "/mcqs", icon: ClipboardCheck, label: "Exam Center", description: "Practice MCQs" },
+  { href: "/competencies", icon: Target, label: "CBME", description: "Competencies" },
   { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
   { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
   { href: "/chat", icon: Atom, label: "ATOM", highlight: true, description: "AI Companion" },
@@ -40,17 +43,18 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Sidebar - Only visible on desktop (lg and up) */}
-      <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#0D1B2A] border-r border-[rgba(6,182,212,0.1)] z-40">
+      {/* Sidebar - ATOM Matte Theme */}
+      <aside className="hidden lg:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#253545] border-r border-[rgba(232,224,213,0.06)] z-40">
         {/* Logo */}
-        <div className="p-6 border-b border-[rgba(6,182,212,0.1)]">
+        <div className="p-6 border-b border-[rgba(232,224,213,0.06)]">
           <Link href="/dashboard" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-lg shadow-[#06B6D4]/20 transition-transform group-hover:scale-110">
-              <span className="text-[#0D1B2A] font-bold text-lg">N</span>
+            {/* ATOM-style logo container */}
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center shadow-matte transition-transform group-hover:scale-110">
+              <span className="text-[#1E2D3D] font-bold text-lg">N</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-[#E5E7EB]">NucleuX</h1>
-              <p className="text-xs text-[#9CA3AF]">Academy</p>
+              <h1 className="text-xl font-bold text-[#E8E0D5]">NucleuX</h1>
+              <p className="text-xs text-[#A0B0BC]">Academy</p>
             </div>
           </Link>
         </div>
@@ -61,7 +65,7 @@ export function Sidebar() {
             const isActive = pathname === item.href || 
               (item.href !== "/" && pathname.startsWith(item.href));
             const isHighlight = "highlight" in item && item.highlight;
-            const roomColor = roomColors[item.href] || '#06B6D4';
+            const roomColor = roomColors[item.href] || '#5BB3B3';
             
             return (
               <Link
@@ -70,10 +74,10 @@ export function Sidebar() {
                 className={cn(
                   "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 room-transition relative",
                   isActive
-                    ? "text-[#E5E7EB]"
+                    ? "text-[#E8E0D5]"
                     : isHighlight
-                    ? "text-[#06B6D4]"
-                    : "text-[#9CA3AF] hover:text-[#E5E7EB]"
+                    ? "text-[#5BB3B3]"
+                    : "text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[rgba(232,224,213,0.03)]"
                 )}
                 style={isActive ? {
                   backgroundColor: `${roomColor}15`,
@@ -86,7 +90,7 @@ export function Sidebar() {
                   size={20} 
                   className={cn(
                     "transition-colors",
-                    isActive ? "" : isHighlight ? "text-[#06B6D4]" : ""
+                    isActive ? "" : isHighlight ? "text-[#5BB3B3]" : ""
                   )}
                   style={isActive ? { color: roomColor } : {}}
                 />
@@ -97,8 +101,8 @@ export function Sidebar() {
                   <span 
                     className="text-[10px] px-2 py-0.5 rounded-full font-medium"
                     style={{ 
-                      backgroundColor: isActive ? roomColor : '#06B6D4',
-                      color: '#0D1B2A'
+                      backgroundColor: isActive ? roomColor : '#5BB3B3',
+                      color: '#1E2D3D'
                     }}
                   >
                     AI
@@ -110,7 +114,7 @@ export function Sidebar() {
         </nav>
 
         {/* Profile Button at Bottom */}
-        <div className="p-4 border-t border-[rgba(6,182,212,0.1)]">
+        <div className="p-4 border-t border-[rgba(232,224,213,0.06)]">
           <ProfileButton />
         </div>
       </aside>

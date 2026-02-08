@@ -29,9 +29,9 @@ import {
 
 // Dark theme colors
 const theme = {
-  background: '#0D1B2A',
+  background: '#2D3E50',
   cardBg: '#1B2838',
-  primary: '#06B6D4',
+  primary: '#5BB3B3',
   secondary: '#22D3EE',
   accent: '#5EEAD4',
   text: '#FFFFFF',
@@ -333,13 +333,13 @@ Based on Shackelford 9th Ed, Ch. 35
               {step.progress === 100 ? (
                 <CheckCircle2 className="w-3 h-3 text-[#5EEAD4]" />
               ) : (
-                <Loader2 className="w-3 h-3 text-[#06B6D4] animate-spin" />
+                <Loader2 className="w-3 h-3 text-[#5BB3B3] animate-spin" />
               )}
               <span className="text-xs text-[#94A3B8]">{step.step}</span>
             </div>
             <div className="h-1.5 bg-[#1E3A5F] rounded-full overflow-hidden ml-5">
               <div
-                className="h-full bg-gradient-to-r from-[#06B6D4] to-[#5EEAD4] rounded-full transition-all duration-500"
+                className="h-full bg-gradient-to-r from-[#5BB3B3] to-[#5EEAD4] rounded-full transition-all duration-500"
                 style={{ width: `${step.progress}%` }}
               />
             </div>
@@ -360,7 +360,7 @@ Based on Shackelford 9th Ed, Ch. 35
         <Card className="border-[#1E3A5F] shadow-xl" style={{ backgroundColor: theme.cardBg }}>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold text-white flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-[#06B6D4]" />
+              <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
               Context
             </CardTitle>
           </CardHeader>
@@ -371,17 +371,17 @@ Based on Shackelford 9th Ed, Ch. 35
                 onClick={() => setSelectedContext(option.id)}
                 className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
                   selectedContext === option.id
-                    ? "bg-[#06B6D4]/20 text-[#22D3EE] font-medium"
+                    ? "bg-[#5BB3B3]/20 text-[#22D3EE] font-medium"
                     : "text-[#94A3B8] hover:bg-[#1E3A5F] hover:text-white"
                 }`}
               >
                 <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                   selectedContext === option.id
-                    ? "border-[#06B6D4]"
+                    ? "border-[#5BB3B3]"
                     : "border-[#475569]"
                 }`}>
                   {selectedContext === option.id && (
-                    <span className="w-2 h-2 rounded-full bg-[#06B6D4]" />
+                    <span className="w-2 h-2 rounded-full bg-[#5BB3B3]" />
                   )}
                 </span>
                 <span>{option.icon}</span>
@@ -396,7 +396,7 @@ Based on Shackelford 9th Ed, Ch. 35
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold text-white flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Paperclip className="w-4 h-4 text-[#06B6D4]" />
+                <Paperclip className="w-4 h-4 text-[#5BB3B3]" />
                 Attachments ({attachments.length})
               </span>
             </CardTitle>
@@ -420,7 +420,7 @@ Based on Shackelford 9th Ed, Ch. 35
                 </div>
                 <button
                   onClick={() => handleRemoveAttachment(attachment.id)}
-                  className="opacity-0 group-hover:opacity-100 text-[#94A3B8] hover:text-[#EF4444] transition-opacity"
+                  className="opacity-0 group-hover:opacity-100 text-[#94A3B8] hover:text-[#E57373] transition-opacity"
                 >
                   <X className="w-3 h-3" />
                 </button>
@@ -438,7 +438,7 @@ Based on Shackelford 9th Ed, Ch. 35
               variant="outline"
               size="sm"
               onClick={handleAddFile}
-              className="w-full border-dashed border-[#1E3A5F] bg-transparent text-[#94A3B8] hover:text-[#06B6D4] hover:border-[#06B6D4] hover:bg-[#06B6D4]/10"
+              className="w-full border-dashed border-[#1E3A5F] bg-transparent text-[#94A3B8] hover:text-[#5BB3B3] hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10"
             >
               <FileUp className="w-3 h-3 mr-2" />
               Add files
@@ -450,7 +450,7 @@ Based on Shackelford 9th Ed, Ch. 35
         <Card className="border-[#1E3A5F] shadow-xl" style={{ backgroundColor: theme.cardBg }}>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-semibold text-white flex items-center gap-2">
-              <Lightbulb className="w-4 h-4 text-[#06B6D4]" />
+              <Lightbulb className="w-4 h-4 text-[#5BB3B3]" />
               Quick Actions
             </CardTitle>
           </CardHeader>
@@ -461,9 +461,9 @@ Based on Shackelford 9th Ed, Ch. 35
                 variant="outline"
                 size="sm"
                 onClick={() => handleQuickAction(action.id)}
-                className="border-[#1E3A5F] bg-transparent hover:border-[#06B6D4] hover:bg-[#06B6D4]/10 text-[#94A3B8] hover:text-[#22D3EE] justify-start"
+                className="border-[#1E3A5F] bg-transparent hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10 text-[#94A3B8] hover:text-[#22D3EE] justify-start"
               >
-                <action.icon className="w-3 h-3 mr-1.5 text-[#06B6D4]" />
+                <action.icon className="w-3 h-3 mr-1.5 text-[#5BB3B3]" />
                 <span className="text-xs">{action.label}</span>
               </Button>
             ))}
@@ -485,7 +485,7 @@ Based on Shackelford 9th Ed, Ch. 35
             <div className="relative">
               {/* ATOM Avatar with glow */}
               <div 
-                className="w-12 h-12 rounded-full bg-gradient-to-br from-[#06B6D4] to-[#5EEAD4] flex items-center justify-center shadow-lg relative"
+                className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5EEAD4] flex items-center justify-center shadow-lg relative"
                 style={{ 
                   boxShadow: `0 0 30px ${theme.glow}, 0 0 60px ${theme.glow}`,
                 }}
@@ -502,7 +502,7 @@ Based on Shackelford 9th Ed, Ch. 35
             <div>
               <h1 className="text-xl font-bold text-white flex items-center gap-2">
                 ATOM
-                <Badge className="bg-[#06B6D4]/20 text-[#22D3EE] border-[#06B6D4]/30 text-xs">
+                <Badge className="bg-[#5BB3B3]/20 text-[#22D3EE] border-[#5BB3B3]/30 text-xs">
                   AI Companion
                 </Badge>
               </h1>
@@ -569,7 +569,7 @@ Based on Shackelford 9th Ed, Ch. 35
                   <div
                     className={`rounded-2xl px-4 py-3 shadow-sm ${
                       message.role === "user"
-                        ? "bg-[#06B6D4] text-white rounded-br-md"
+                        ? "bg-[#5BB3B3] text-white rounded-br-md"
                         : "bg-[#1B2838] border border-[#1E3A5F] rounded-bl-md"
                     }`}
                   >
@@ -588,7 +588,7 @@ Based on Shackelford 9th Ed, Ch. 35
                     {/* Progress Indicators */}
                     {message.status === "thinking" && (
                       <div className="flex items-center gap-2 mt-2">
-                        <Loader2 className="w-4 h-4 text-[#06B6D4] animate-spin" />
+                        <Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" />
                         <span className="text-xs text-[#94A3B8]">Thinking...</span>
                       </div>
                     )}
@@ -599,8 +599,8 @@ Based on Shackelford 9th Ed, Ch. 35
                     {message.attachment && (
                       <div className="mt-3 p-3 bg-[#162535] rounded-lg border border-[#1E3A5F]">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-[#06B6D4]/20 flex items-center justify-center">
-                            <Presentation className="w-5 h-5 text-[#06B6D4]" />
+                          <div className="w-10 h-10 rounded-lg bg-[#5BB3B3]/20 flex items-center justify-center">
+                            <Presentation className="w-5 h-5 text-[#5BB3B3]" />
                           </div>
                           <div className="flex-1">
                             <p className="text-sm font-medium text-white">
@@ -612,7 +612,7 @@ Based on Shackelford 9th Ed, Ch. 35
                           </div>
                           <Button
                             size="sm"
-                            className="bg-[#06B6D4] hover:bg-[#22D3EE] text-white"
+                            className="bg-[#5BB3B3] hover:bg-[#22D3EE] text-white"
                           >
                             <Download className="w-3 h-3 mr-1" />
                             Download
@@ -682,9 +682,9 @@ Based on Shackelford 9th Ed, Ch. 35
                 </Avatar>
                 <div className="bg-[#1B2838] border border-[#1E3A5F] rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
                   <div className="flex gap-1">
-                    <span className="w-2 h-2 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                    <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                    <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                    <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                 </div>
               </div>
@@ -703,13 +703,13 @@ Based on Shackelford 9th Ed, Ch. 35
                   onKeyDown={handleKeyDown}
                   placeholder="Ask ATOM anything..."
                   rows={1}
-                  className="w-full px-4 py-3 pr-12 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#06B6D4] focus:ring-2 focus:ring-[#06B6D4]/20 text-white placeholder-[#64748B] min-h-[48px] max-h-[120px] shadow-inner"
+                  className="w-full px-4 py-3 pr-12 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-white placeholder-[#64748B] min-h-[48px] max-h-[120px] shadow-inner"
                 />
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={handleAddFile}
-                  className="absolute right-2 bottom-2 w-8 h-8 text-[#64748B] hover:text-[#06B6D4] hover:bg-[#06B6D4]/10"
+                  className="absolute right-2 bottom-2 w-8 h-8 text-[#64748B] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10"
                 >
                   <Paperclip className="w-4 h-4" />
                 </Button>
@@ -717,7 +717,7 @@ Based on Shackelford 9th Ed, Ch. 35
               <Button
                 onClick={() => handleSend()}
                 disabled={!input.trim() || isTyping}
-                className="h-12 w-12 bg-[#06B6D4] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50 shadow-lg"
+                className="h-12 w-12 bg-[#5BB3B3] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50 shadow-lg"
                 style={{ boxShadow: `0 4px 20px ${theme.glow}` }}
               >
                 <Send className="w-5 h-5" />

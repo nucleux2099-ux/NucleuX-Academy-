@@ -46,7 +46,7 @@ const panelConfigs: Record<string, PanelConfig> = {
   dashboard: {
     title: "ATOM Study Coach",
     icon: "📊",
-    color: "#7C3AED",
+    color: "#5BB3B3",
     lightColor: "#F5F3FF",
     features: [
       { id: "recommendations", label: "Daily Recommendations", icon: <Lightbulb className="w-4 h-4" /> },
@@ -61,7 +61,7 @@ const panelConfigs: Record<string, PanelConfig> = {
   library: {
     title: "ATOM Research Assistant",
     icon: "📚",
-    color: "#059669",
+    color: "#7BA69E",
     lightColor: "#ECFDF5",
     features: [
       { id: "ask-chapter", label: "Ask About This Chapter", icon: <BookOpen className="w-4 h-4" /> },
@@ -75,7 +75,7 @@ const panelConfigs: Record<string, PanelConfig> = {
   classroom: {
     title: "ATOM Lecture Companion",
     icon: "🎓",
-    color: "#0EA5E9",
+    color: "#6BA8C9",
     lightColor: "#F0F9FF",
     features: [
       { id: "auto-detect", label: "Auto-detect Topics", icon: <Brain className="w-4 h-4" /> },
@@ -87,7 +87,7 @@ const panelConfigs: Record<string, PanelConfig> = {
   mcqs: {
     title: "ATOM Tutor",
     icon: "❓",
-    color: "#0EA5E9",
+    color: "#6BA8C9",
     lightColor: "#F0F9FF",
     features: [
       { id: "explain", label: "Why Was I Wrong?", icon: <Lightbulb className="w-4 h-4" /> },
@@ -101,7 +101,7 @@ const panelConfigs: Record<string, PanelConfig> = {
   community: {
     title: "ATOM Moderator",
     icon: "👥",
-    color: "#B45309",
+    color: "#C9A86C",
     lightColor: "#FFFBEB",
     features: [
       { id: "add-ref", label: "Add Textbook Reference", icon: <BookOpen className="w-4 h-4" /> },
@@ -112,7 +112,7 @@ const panelConfigs: Record<string, PanelConfig> = {
   arena: {
     title: "ATOM Competitive Coach",
     icon: "🏆",
-    color: "#CA8A04",
+    color: "#C9A86C",
     lightColor: "#FEFCE8",
     features: [
       { id: "insights", label: "Performance Insights", icon: <TrendingUp className="w-4 h-4" /> },
@@ -299,7 +299,7 @@ export function AtomSuggestion({
   children, 
   actionLabel = "Learn more", 
   onAction,
-  color = "#7C3AED"
+  color = "#5BB3B3"
 }: AtomSuggestionProps) {
   const router = useRouter();
   
@@ -360,7 +360,7 @@ interface AtomBookActionProps {
   color?: string;
 }
 
-export function AtomBookAction({ bookTitle, color = "#059669" }: AtomBookActionProps) {
+export function AtomBookAction({ bookTitle, color = "#7BA69E" }: AtomBookActionProps) {
   const router = useRouter();
   
   const handleAsk = () => {

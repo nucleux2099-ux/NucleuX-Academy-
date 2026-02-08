@@ -115,11 +115,11 @@ const studySessions: StudySession[] = [
 ];
 
 const typeConfig: Record<string, { icon: React.ElementType; color: string; bg: string; label: string }> = {
-  reading: { icon: BookOpen, color: "#059669", bg: "rgba(5,150,105,0.15)", label: "Reading" },
-  mcq: { icon: Target, color: "#0EA5E9", bg: "rgba(14,165,233,0.15)", label: "MCQ Practice" },
-  video: { icon: Video, color: "#EF4444", bg: "rgba(239,68,68,0.15)", label: "Video" },
+  reading: { icon: BookOpen, color: "#7BA69E", bg: "rgba(5,150,105,0.15)", label: "Reading" },
+  mcq: { icon: Target, color: "#6BA8C9", bg: "rgba(14,165,233,0.15)", label: "MCQ Practice" },
+  video: { icon: Video, color: "#E57373", bg: "rgba(239,68,68,0.15)", label: "Video" },
   revision: { icon: Brain, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", label: "Spaced Review" },
-  arena: { icon: Flame, color: "#F59E0B", bg: "rgba(245,158,11,0.15)", label: "Arena" },
+  arena: { icon: Flame, color: "#C9A86C", bg: "rgba(245,158,11,0.15)", label: "Arena" },
 };
 
 export default function HistoryPage() {
@@ -148,41 +148,41 @@ export default function HistoryPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
-            <History className="w-8 h-8 text-[#06B6D4]" />
+          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+            <History className="w-8 h-8 text-[#5BB3B3]" />
             Study History
           </h1>
-          <p className="text-[#9CA3AF] mt-1">Review your learning journey</p>
+          <p className="text-[#A0B0BC] mt-1">Review your learning journey</p>
         </div>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4 text-center">
-            <Clock className="w-6 h-6 text-[#06B6D4] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[#E5E7EB]">{Math.round(totalTime / 60)}h {totalTime % 60}m</p>
+            <Clock className="w-6 h-6 text-[#5BB3B3] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[#E8E0D5]">{Math.round(totalTime / 60)}h {totalTime % 60}m</p>
             <p className="text-xs text-[#6B7280]">Total Study Time</p>
           </CardContent>
         </Card>
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4 text-center">
-            <Target className="w-6 h-6 text-[#0EA5E9] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[#E5E7EB]">{totalMCQs}</p>
+            <Target className="w-6 h-6 text-[#6BA8C9] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[#E8E0D5]">{totalMCQs}</p>
             <p className="text-xs text-[#6B7280]">MCQs Attempted</p>
           </CardContent>
         </Card>
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4 text-center">
-            <TrendingUp className="w-6 h-6 text-[#059669] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[#E5E7EB]">{avgAccuracy}%</p>
+            <TrendingUp className="w-6 h-6 text-[#7BA69E] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[#E8E0D5]">{avgAccuracy}%</p>
             <p className="text-xs text-[#6B7280]">Avg Accuracy</p>
           </CardContent>
         </Card>
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="p-4 text-center">
-            <Flame className="w-6 h-6 text-[#F59E0B] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[#E5E7EB]">{studySessions.length}</p>
+            <Flame className="w-6 h-6 text-[#C9A86C] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[#E8E0D5]">{studySessions.length}</p>
             <p className="text-xs text-[#6B7280]">Sessions This Week</p>
           </CardContent>
         </Card>
@@ -195,8 +195,8 @@ export default function HistoryPage() {
           size="sm"
           onClick={() => setFilter("all")}
           className={filter === "all" 
-            ? "bg-[#06B6D4] text-[#0D1B2A]" 
-            : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"
+            ? "bg-[#5BB3B3] text-[#2D3E50]" 
+            : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
           }
         >
           All
@@ -208,8 +208,8 @@ export default function HistoryPage() {
             size="sm"
             onClick={() => setFilter(type)}
             className={filter === type 
-              ? "bg-[#06B6D4] text-[#0D1B2A]" 
-              : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"
+              ? "bg-[#5BB3B3] text-[#2D3E50]" 
+              : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
             }
           >
             <config.icon className="w-3 h-3 mr-1" style={{ color: filter === type ? undefined : config.color }} />
@@ -227,7 +227,7 @@ export default function HistoryPage() {
           return (
             <Card 
               key={session.id}
-              className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] hover:border-[rgba(6,182,212,0.3)] transition-all cursor-pointer"
+              className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer"
             >
               <CardContent className="p-4">
                 <div className="flex items-start gap-4">
@@ -251,11 +251,11 @@ export default function HistoryPage() {
                           >
                             {config.label}
                           </Badge>
-                          <Badge variant="outline" className="text-[10px] border-[rgba(6,182,212,0.2)] text-[#6B7280]">
+                          <Badge variant="outline" className="text-[10px] border-[rgba(91,179,179,0.2)] text-[#6B7280]">
                             {session.topic}
                           </Badge>
                         </div>
-                        <h3 className="font-medium text-[#E5E7EB]">{session.title}</h3>
+                        <h3 className="font-medium text-[#E8E0D5]">{session.title}</h3>
                         {session.source && (
                           <p className="text-xs text-[#6B7280] mt-0.5">{session.source}</p>
                         )}
@@ -264,7 +264,7 @@ export default function HistoryPage() {
                       {/* Time & Duration */}
                       <div className="text-right shrink-0">
                         <p className="text-xs text-[#6B7280]">{session.date}</p>
-                        <p className="text-sm text-[#9CA3AF] flex items-center justify-end gap-1 mt-1">
+                        <p className="text-sm text-[#A0B0BC] flex items-center justify-end gap-1 mt-1">
                           <Clock className="w-3 h-3" />
                           {session.duration}
                         </p>
@@ -282,19 +282,19 @@ export default function HistoryPage() {
                               'bg-[rgba(239,68,68,0.15)]'
                             }`}>
                               <span className={`text-sm font-bold ${
-                                session.score >= 80 ? 'text-[#059669]' : 
-                                session.score >= 60 ? 'text-[#F59E0B]' : 
-                                'text-[#EF4444]'
+                                session.score >= 80 ? 'text-[#7BA69E]' : 
+                                session.score >= 60 ? 'text-[#C9A86C]' : 
+                                'text-[#E57373]'
                               }`}>{session.score}%</span>
                             </div>
                             <div className="text-xs text-[#6B7280]">
-                              <span className="text-[#059669]">{session.correct}</span>
+                              <span className="text-[#7BA69E]">{session.correct}</span>
                               <span className="mx-1">/</span>
                               <span>{session.totalQuestions}</span>
                               <span className="ml-1">correct</span>
                             </div>
                           </div>
-                          <Button size="sm" variant="ghost" className="ml-auto text-[#06B6D4] hover:bg-[rgba(6,182,212,0.1)]">
+                          <Button size="sm" variant="ghost" className="ml-auto text-[#5BB3B3] hover:bg-[rgba(91,179,179,0.1)]">
                             Review
                             <ChevronRight className="w-4 h-4 ml-1" />
                           </Button>
@@ -306,13 +306,13 @@ export default function HistoryPage() {
                           <div className="flex-1">
                             <div className="flex justify-between text-xs mb-1">
                               <span className="text-[#6B7280]">Progress</span>
-                              <span className={session.progress === 100 ? "text-[#059669]" : "text-[#9CA3AF]"}>
+                              <span className={session.progress === 100 ? "text-[#7BA69E]" : "text-[#A0B0BC]"}>
                                 {session.progress}%
                               </span>
                             </div>
                             <Progress value={session.progress} className="h-1.5" />
                           </div>
-                          <Button size="sm" variant="ghost" className="text-[#06B6D4] hover:bg-[rgba(6,182,212,0.1)]">
+                          <Button size="sm" variant="ghost" className="text-[#5BB3B3] hover:bg-[rgba(91,179,179,0.1)]">
                             {session.progress === 100 ? "Review" : "Continue"}
                             <ChevronRight className="w-4 h-4 ml-1" />
                           </Button>
@@ -329,7 +329,7 @@ export default function HistoryPage() {
 
       {/* Load More */}
       <div className="flex justify-center">
-        <Button variant="outline" className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]">
+        <Button variant="outline" className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]">
           Load More Sessions
         </Button>
       </div>

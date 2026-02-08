@@ -399,32 +399,32 @@ export default function MCQPracticePage() {
   }, {} as Record<string, { correct: number; total: number }>);
   
   const confidenceConfig: Record<string, { label: string; color: string; expected: number }> = {
-    "guessing": { label: "Guessing", color: "#EF4444", expected: 25 },
-    "unsure": { label: "Unsure", color: "#F59E0B", expected: 50 },
-    "sure": { label: "Sure", color: "#06B6D4", expected: 75 },
-    "very-sure": { label: "Very Sure", color: "#059669", expected: 95 },
+    "guessing": { label: "Guessing", color: "#E57373", expected: 25 },
+    "unsure": { label: "Unsure", color: "#C9A86C", expected: 50 },
+    "sure": { label: "Sure", color: "#5BB3B3", expected: 75 },
+    "very-sure": { label: "Very Sure", color: "#7BA69E", expected: 95 },
   };
 
   // Results Screen
   if (mode === "results") {
     return (
       <div className="max-w-4xl mx-auto p-6 space-y-6">
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] overflow-hidden">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[rgba(6,182,212,0.15)] to-[rgba(139,92,246,0.1)] p-8 text-center border-b border-[rgba(6,182,212,0.1)]">
+          <div className="bg-gradient-to-r from-[rgba(91,179,179,0.15)] to-[rgba(139,92,246,0.1)] p-8 text-center border-b border-[rgba(91,179,179,0.1)]">
             <div className={`w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center border-4 ${
-              accuracy >= 80 ? 'bg-[rgba(5,150,105,0.2)] border-[#059669]/30' :
-              accuracy >= 60 ? 'bg-[rgba(245,158,11,0.2)] border-[#F59E0B]/30' :
-              'bg-[rgba(239,68,68,0.2)] border-[#EF4444]/30'
+              accuracy >= 80 ? 'bg-[rgba(5,150,105,0.2)] border-[#7BA69E]/30' :
+              accuracy >= 60 ? 'bg-[rgba(245,158,11,0.2)] border-[#C9A86C]/30' :
+              'bg-[rgba(239,68,68,0.2)] border-[#E57373]/30'
             }`}>
               <Award className={`w-12 h-12 ${
-                accuracy >= 80 ? 'text-[#059669]' :
-                accuracy >= 60 ? 'text-[#F59E0B]' :
-                'text-[#EF4444]'
+                accuracy >= 80 ? 'text-[#7BA69E]' :
+                accuracy >= 60 ? 'text-[#C9A86C]' :
+                'text-[#E57373]'
               }`} />
             </div>
-            <h2 className="text-3xl font-bold text-[#E5E7EB] mb-2">Quiz Complete!</h2>
-            <p className="text-[#9CA3AF]">Here's how you performed</p>
+            <h2 className="text-3xl font-bold text-[#E8E0D5] mb-2">Quiz Complete!</h2>
+            <p className="text-[#A0B0BC]">Here's how you performed</p>
           </div>
           
           <CardContent className="p-8">
@@ -432,40 +432,40 @@ export default function MCQPracticePage() {
             <div className="flex justify-center mb-8">
               <div className="relative w-40 h-40">
                 <svg className="w-full h-full transform -rotate-90">
-                  <circle cx="80" cy="80" r="70" stroke="rgba(6,182,212,0.1)" strokeWidth="12" fill="none" />
+                  <circle cx="80" cy="80" r="70" stroke="rgba(91,179,179,0.1)" strokeWidth="12" fill="none" />
                   <circle 
                     cx="80" cy="80" r="70" 
-                    stroke={accuracy >= 80 ? "#059669" : accuracy >= 60 ? "#F59E0B" : "#EF4444"}
+                    stroke={accuracy >= 80 ? "#7BA69E" : accuracy >= 60 ? "#C9A86C" : "#E57373"}
                     strokeWidth="12" fill="none" strokeLinecap="round"
                     strokeDasharray={`${(accuracy / 100) * 440} 440`}
                     className="transition-all duration-1000"
                   />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-4xl font-bold text-[#E5E7EB]">{accuracy}%</span>
-                  <span className="text-sm text-[#9CA3AF]">Accuracy</span>
+                  <span className="text-4xl font-bold text-[#E8E0D5]">{accuracy}%</span>
+                  <span className="text-sm text-[#A0B0BC]">Accuracy</span>
                 </div>
               </div>
             </div>
             
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="p-4 rounded-xl bg-[#142538] text-center">
-                <Target className="w-6 h-6 text-[#06B6D4] mx-auto mb-2" />
-                <p className="text-2xl font-bold text-[#E5E7EB]">{correct}/{questions.length}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] text-center">
+                <Target className="w-6 h-6 text-[#5BB3B3] mx-auto mb-2" />
+                <p className="text-2xl font-bold text-[#E8E0D5]">{correct}/{questions.length}</p>
                 <p className="text-xs text-[#6B7280]">Score</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#142538] text-center">
-                <CheckCircle className="w-6 h-6 text-[#059669] mx-auto mb-2" />
-                <p className="text-2xl font-bold text-[#059669]">{correct}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] text-center">
+                <CheckCircle className="w-6 h-6 text-[#7BA69E] mx-auto mb-2" />
+                <p className="text-2xl font-bold text-[#7BA69E]">{correct}</p>
                 <p className="text-xs text-[#6B7280]">Correct</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#142538] text-center">
-                <XCircle className="w-6 h-6 text-[#EF4444] mx-auto mb-2" />
-                <p className="text-2xl font-bold text-[#EF4444]">{incorrect}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] text-center">
+                <XCircle className="w-6 h-6 text-[#E57373] mx-auto mb-2" />
+                <p className="text-2xl font-bold text-[#E57373]">{incorrect}</p>
                 <p className="text-xs text-[#6B7280]">Incorrect</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#142538] text-center">
+              <div className="p-4 rounded-xl bg-[#3A4D5F] text-center">
                 <Clock className="w-6 h-6 text-[#8B5CF6] mx-auto mb-2" />
                 <p className="text-2xl font-bold text-[#8B5CF6]">{formatTime(timeElapsed)}</p>
                 <p className="text-xs text-[#6B7280]">Time</p>
@@ -475,7 +475,7 @@ export default function MCQPracticePage() {
             {/* Calibration Analysis */}
             {Object.keys(calibrationData).length > 0 && (
               <div className="mb-8">
-                <h3 className="text-lg font-semibold text-[#E5E7EB] mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-semibold text-[#E8E0D5] mb-4 flex items-center gap-2">
                   <Brain className="w-5 h-5 text-[#8B5CF6]" />
                   Confidence Calibration
                 </h3>
@@ -487,13 +487,13 @@ export default function MCQPracticePage() {
                     
                     return (
                       <div key={level} className="flex items-center gap-4">
-                        <div className="w-24 text-sm text-[#9CA3AF]">{config.label}</div>
+                        <div className="w-24 text-sm text-[#A0B0BC]">{config.label}</div>
                         <div className="flex-1">
                           <div className="flex justify-between text-xs mb-1">
                             <span className="text-[#6B7280]">{data.total} questions</span>
                             <span style={{ color: config.color }}>{actualAccuracy}% correct</span>
                           </div>
-                          <div className="h-2 bg-[#142538] rounded-full overflow-hidden">
+                          <div className="h-2 bg-[#3A4D5F] rounded-full overflow-hidden">
                             <div 
                               className="h-full rounded-full transition-all"
                               style={{ width: `${actualAccuracy}%`, backgroundColor: config.color }}
@@ -501,9 +501,9 @@ export default function MCQPracticePage() {
                           </div>
                         </div>
                         {isCalibrated ? (
-                          <CheckCircle className="w-4 h-4 text-[#059669]" />
+                          <CheckCircle className="w-4 h-4 text-[#7BA69E]" />
                         ) : (
-                          <AlertTriangle className="w-4 h-4 text-[#F59E0B]" />
+                          <AlertTriangle className="w-4 h-4 text-[#C9A86C]" />
                         )}
                       </div>
                     );
@@ -524,12 +524,12 @@ export default function MCQPracticePage() {
             
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button onClick={handleRestart} className="flex-1 bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]">
+              <Button onClick={handleRestart} className="flex-1 bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]">
                 <RotateCcw className="w-4 h-4 mr-2" />
                 Try Again
               </Button>
               {incorrect > 0 && (
-                <Button onClick={handleReviewMistakes} variant="outline" className="flex-1 border-[rgba(6,182,212,0.15)] text-[#9CA3AF]">
+                <Button onClick={handleReviewMistakes} variant="outline" className="flex-1 border-[rgba(91,179,179,0.15)] text-[#A0B0BC]">
                   <Eye className="w-4 h-4 mr-2" />
                   Review Mistakes
                 </Button>
@@ -549,26 +549,26 @@ export default function MCQPracticePage() {
         <div>
           <button
             onClick={() => router.back()}
-            className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors mb-2"
+            className="flex items-center gap-2 text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors mb-2"
           >
             <ArrowLeft className="w-4 h-4" />
             Back
           </button>
-          <h1 className="text-2xl font-bold text-[#E5E7EB]">Gastric Cancer MCQs</h1>
-          <p className="text-[#9CA3AF]">Surgical GI - {questions.length} Questions</p>
+          <h1 className="text-2xl font-bold text-[#E8E0D5]">Gastric Cancer MCQs</h1>
+          <p className="text-[#A0B0BC]">Surgical GI - {questions.length} Questions</p>
         </div>
         
         <div className="flex items-center gap-4">
           {/* Timer */}
           <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${
-            timeElapsed > 600 ? 'bg-[rgba(239,68,68,0.2)] text-[#EF4444]' : 'bg-[#0F2233] border border-[rgba(6,182,212,0.15)] text-[#E5E7EB]'
+            timeElapsed > 600 ? 'bg-[rgba(239,68,68,0.2)] text-[#E57373]' : 'bg-[#364A5E] border border-[rgba(91,179,179,0.15)] text-[#E8E0D5]'
           }`}>
             <Clock className="w-4 h-4" />
             <span className="font-mono font-bold">{formatTime(timeElapsed)}</span>
           </div>
           
           {/* Progress */}
-          <div className="hidden sm:flex items-center gap-2 text-sm text-[#9CA3AF]">
+          <div className="hidden sm:flex items-center gap-2 text-sm text-[#A0B0BC]">
             <span>{currentQuestion + 1}/{questions.length}</span>
           </div>
         </div>
@@ -589,15 +589,15 @@ export default function MCQPracticePage() {
               key={i}
               onClick={() => handleGoToQuestion(i)}
               className={`w-10 h-10 rounded-lg font-medium transition-all relative ${
-                isCurrent ? 'bg-[#06B6D4] text-[#0D1B2A] ring-2 ring-[#06B6D4]/50' :
-                isCorrect ? 'bg-[rgba(5,150,105,0.2)] text-[#059669] border border-[rgba(5,150,105,0.3)]' :
-                isWrong ? 'bg-[rgba(239,68,68,0.2)] text-[#EF4444] border border-[rgba(239,68,68,0.3)]' :
-                'bg-[#0F2233] text-[#9CA3AF] border border-[rgba(6,182,212,0.15)] hover:border-[#06B6D4]'
-              } ${flagged[i] ? 'ring-2 ring-[#F59E0B]' : ''}`}
+                isCurrent ? 'bg-[#5BB3B3] text-[#2D3E50] ring-2 ring-[#5BB3B3]/50' :
+                isCorrect ? 'bg-[rgba(5,150,105,0.2)] text-[#7BA69E] border border-[rgba(5,150,105,0.3)]' :
+                isWrong ? 'bg-[rgba(239,68,68,0.2)] text-[#E57373] border border-[rgba(239,68,68,0.3)]' :
+                'bg-[#364A5E] text-[#A0B0BC] border border-[rgba(91,179,179,0.15)] hover:border-[#5BB3B3]'
+              } ${flagged[i] ? 'ring-2 ring-[#C9A86C]' : ''}`}
             >
               {i + 1}
               {q.highYield && (
-                <Zap className="absolute -top-1 -right-1 w-3 h-3 text-[#F59E0B]" />
+                <Zap className="absolute -top-1 -right-1 w-3 h-3 text-[#C9A86C]" />
               )}
             </button>
           );
@@ -605,18 +605,18 @@ export default function MCQPracticePage() {
       </div>
       
       {/* Question Card */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4 border-l-[#06B6D4] mb-6">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] border-l-4 border-l-[#5BB3B3] mb-6">
         <CardHeader>
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <Badge className="bg-[rgba(6,182,212,0.15)] text-[#06B6D4] border-none">{question.topic}</Badge>
+              <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-none">{question.topic}</Badge>
               <Badge className={
-                question.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.15)] text-[#059669] border-none" :
-                question.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-none" :
-                "bg-[rgba(239,68,68,0.15)] text-[#EF4444] border-none"
+                question.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.15)] text-[#7BA69E] border-none" :
+                question.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.15)] text-[#C9A86C] border-none" :
+                "bg-[rgba(239,68,68,0.15)] text-[#E57373] border-none"
               }>{question.difficulty}</Badge>
               {question.highYield && (
-                <Badge className="bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-none">
+                <Badge className="bg-[rgba(245,158,11,0.2)] text-[#C9A86C] border-none">
                   <Zap className="w-3 h-3 mr-1" />
                   High Yield
                 </Badge>
@@ -631,9 +631,9 @@ export default function MCQPracticePage() {
               variant="ghost"
               size="icon"
               onClick={toggleFlag}
-              className={flagged[currentQuestion] ? "text-[#F59E0B]" : "text-[#6B7280] hover:text-[#F59E0B]"}
+              className={flagged[currentQuestion] ? "text-[#C9A86C]" : "text-[#6B7280] hover:text-[#C9A86C]"}
             >
-              <Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#F59E0B" : "none"} />
+              <Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#C9A86C" : "none"} />
             </Button>
           </div>
         </CardHeader>
@@ -641,14 +641,14 @@ export default function MCQPracticePage() {
         <CardContent className="space-y-6">
           {/* Question Image (if present) */}
           {question.image && (
-            <div className="rounded-lg overflow-hidden border border-[rgba(6,182,212,0.15)]">
+            <div className="rounded-lg overflow-hidden border border-[rgba(91,179,179,0.15)]">
               <img 
                 src={question.image} 
                 alt={question.imageCaption || "Clinical image"} 
-                className="w-full max-h-80 object-contain bg-[#0D1B2A]"
+                className="w-full max-h-80 object-contain bg-[#2D3E50]"
               />
               {question.imageCaption && (
-                <p className="text-xs text-[#6B7280] text-center py-2 bg-[#142538]">
+                <p className="text-xs text-[#6B7280] text-center py-2 bg-[#3A4D5F]">
                   {question.imageCaption}
                 </p>
               )}
@@ -656,7 +656,7 @@ export default function MCQPracticePage() {
           )}
           
           {/* Question Text */}
-          <p className="text-lg text-[#E5E7EB] leading-relaxed">{question.question}</p>
+          <p className="text-lg text-[#E8E0D5] leading-relaxed">{question.question}</p>
           
           {/* Options */}
           <div className="space-y-3">
@@ -665,15 +665,15 @@ export default function MCQPracticePage() {
               const isCorrectOption = index === question.correctAnswer;
               const showResult = showExplanation;
               
-              let optionStyle = "bg-[#142538] border-[rgba(6,182,212,0.1)]";
+              let optionStyle = "bg-[#3A4D5F] border-[rgba(91,179,179,0.1)]";
               if (showResult) {
                 if (isCorrectOption) {
-                  optionStyle = "bg-[rgba(5,150,105,0.15)] border-[#059669] ring-2 ring-[#059669]/30";
+                  optionStyle = "bg-[rgba(5,150,105,0.15)] border-[#7BA69E] ring-2 ring-[#7BA69E]/30";
                 } else if (isSelected && !isCorrectOption) {
-                  optionStyle = "bg-[rgba(239,68,68,0.15)] border-[#EF4444] ring-2 ring-[#EF4444]/30";
+                  optionStyle = "bg-[rgba(239,68,68,0.15)] border-[#E57373] ring-2 ring-[#E57373]/30";
                 }
               } else if (isSelected) {
-                optionStyle = "bg-[rgba(6,182,212,0.15)] border-[#06B6D4]";
+                optionStyle = "bg-[rgba(91,179,179,0.15)] border-[#5BB3B3]";
               }
               
               return (
@@ -682,21 +682,21 @@ export default function MCQPracticePage() {
                   onClick={() => handleSelectAnswer(index)}
                   disabled={showExplanation}
                   className={`w-full p-4 rounded-lg border text-left transition-all ${optionStyle} ${
-                    !showExplanation ? 'hover:border-[#06B6D4] hover:bg-[rgba(6,182,212,0.1)]' : ''
+                    !showExplanation ? 'hover:border-[#5BB3B3] hover:bg-[rgba(91,179,179,0.1)]' : ''
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
-                      showResult && isCorrectOption ? 'bg-[#059669] text-white' :
-                      showResult && isSelected && !isCorrectOption ? 'bg-[#EF4444] text-white' :
-                      isSelected ? 'bg-[#06B6D4] text-[#0D1B2A]' :
-                      'bg-[#0F2233] text-[#9CA3AF]'
+                      showResult && isCorrectOption ? 'bg-[#7BA69E] text-white' :
+                      showResult && isSelected && !isCorrectOption ? 'bg-[#E57373] text-white' :
+                      isSelected ? 'bg-[#5BB3B3] text-[#2D3E50]' :
+                      'bg-[#364A5E] text-[#A0B0BC]'
                     }`}>
                       {showResult && isCorrectOption ? <CheckCircle className="w-4 h-4" /> :
                        showResult && isSelected && !isCorrectOption ? <XCircle className="w-4 h-4" /> :
                        String.fromCharCode(65 + index)}
                     </div>
-                    <span className={`text-[#E5E7EB] ${showResult && isCorrectOption ? 'font-medium text-[#059669]' : ''}`}>
+                    <span className={`text-[#E8E0D5] ${showResult && isCorrectOption ? 'font-medium text-[#7BA69E]' : ''}`}>
                       {option}
                     </span>
                   </div>
@@ -707,8 +707,8 @@ export default function MCQPracticePage() {
           
           {/* Confidence Selector */}
           {showConfidenceSelector && !showExplanation && selectedAnswer !== null && (
-            <div className="p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)]">
-              <p className="text-sm text-[#9CA3AF] mb-3 flex items-center gap-2">
+            <div className="p-4 rounded-lg bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)]">
+              <p className="text-sm text-[#A0B0BC] mb-3 flex items-center gap-2">
                 <Brain className="w-4 h-4 text-[#8B5CF6]" />
                 How confident are you?
               </p>
@@ -721,7 +721,7 @@ export default function MCQPracticePage() {
                     onClick={() => handleSelectConfidence(key as ConfidenceLevel)}
                     className={confidences[currentQuestion] === key 
                       ? `text-white` 
-                      : `border-[rgba(6,182,212,0.15)] text-[#9CA3AF]`
+                      : `border-[rgba(91,179,179,0.15)] text-[#A0B0BC]`
                     }
                     style={confidences[currentQuestion] === key ? { backgroundColor: config.color } : {}}
                   >
@@ -736,12 +736,12 @@ export default function MCQPracticePage() {
           {showExplanation && (
             <div className="p-4 rounded-xl bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)]">
               <div className="flex items-start gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-[#0F2233] shrink-0">
-                  <Lightbulb className="w-5 h-5 text-[#F59E0B]" />
+                <div className="p-2 rounded-lg bg-[#364A5E] shrink-0">
+                  <Lightbulb className="w-5 h-5 text-[#C9A86C]" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="font-semibold text-[#F59E0B]">Explanation</p>
+                    <p className="font-semibold text-[#C9A86C]">Explanation</p>
                     <Button
                       variant="ghost"
                       size="sm"
@@ -755,10 +755,10 @@ export default function MCQPracticePage() {
                       <span className="text-xs">Listen</span>
                     </Button>
                   </div>
-                  <div className="text-[#9CA3AF] leading-relaxed whitespace-pre-line text-sm">
+                  <div className="text-[#A0B0BC] leading-relaxed whitespace-pre-line text-sm">
                     {question.explanation.split("\n").map((line, i) => {
                       if (line.startsWith("**") && line.endsWith("**")) {
-                        return <p key={i} className="font-semibold text-[#E5E7EB] mt-3 mb-2">{line.slice(2, -2)}</p>;
+                        return <p key={i} className="font-semibold text-[#E8E0D5] mt-3 mb-2">{line.slice(2, -2)}</p>;
                       }
                       if (line.startsWith("• ")) {
                         return <li key={i} className="ml-4 my-1">{line.slice(2)}</li>;
@@ -772,8 +772,8 @@ export default function MCQPracticePage() {
               
               {/* Reference */}
               <div className="flex items-center gap-2 pt-3 border-t border-[rgba(245,158,11,0.2)] text-xs">
-                <BookOpen className="w-4 h-4 text-[#06B6D4]" />
-                <span className="text-[#06B6D4] font-medium">{question.reference.book}</span>
+                <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
+                <span className="text-[#5BB3B3] font-medium">{question.reference.book}</span>
                 <span className="text-[#6B7280]">• {question.reference.chapter}</span>
                 <span className="text-[#6B7280]">• p. {question.reference.page}</span>
               </div>
@@ -781,12 +781,12 @@ export default function MCQPracticePage() {
           )}
           
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-[rgba(6,182,212,0.1)]">
+          <div className="flex items-center justify-between pt-4 border-t border-[rgba(91,179,179,0.1)]">
             <Button
               variant="outline"
               onClick={handlePrevQuestion}
               disabled={currentQuestion === 0}
-              className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"
+              className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC]"
             >
               <ChevronLeft className="w-4 h-4 mr-2" />
               Previous
@@ -794,12 +794,12 @@ export default function MCQPracticePage() {
             
             <div className="flex gap-2">
               {!showExplanation && selectedAnswer !== null && (
-                <Button onClick={handleSubmitAnswer} className="bg-[#059669] hover:bg-[#047857] text-white">
+                <Button onClick={handleSubmitAnswer} className="bg-[#7BA69E] hover:bg-[#047857] text-white">
                   <CheckCircle className="w-4 h-4 mr-2" />
                   Submit
                 </Button>
               )}
-              <Button onClick={handleNextQuestion} className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]">
+              <Button onClick={handleNextQuestion} className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]">
                 {currentQuestion === questions.length - 1 ? "Finish" : "Next"}
                 <ChevronRight className="w-4 h-4 ml-2" />
               </Button>
@@ -809,18 +809,18 @@ export default function MCQPracticePage() {
       </Card>
       
       {/* ATOM Help */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardContent className="p-4">
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center">
               <Atom className="w-5 h-5 text-white" />
             </div>
             <div className="flex-1">
-              <p className="text-sm text-[#E5E7EB]">Stuck on this question?</p>
+              <p className="text-sm text-[#E8E0D5]">Stuck on this question?</p>
               <p className="text-xs text-[#6B7280]">Ask ATOM for hints or detailed explanations</p>
             </div>
             <Link href={`/chat?question=${question.id}`}>
-              <Button variant="outline" size="sm" className="border-[rgba(6,182,212,0.15)] text-[#06B6D4]">
+              <Button variant="outline" size="sm" className="border-[rgba(91,179,179,0.15)] text-[#5BB3B3]">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Ask ATOM
               </Button>

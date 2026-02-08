@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 
 // Room color for Notes (using amber as it's personal content)
-const roomColor = "#F59E0B";
+const roomColor = "#C9A86C";
 
 // Mock data - in real app, fetched from Supabase
 const notesData: Record<string, {
@@ -154,19 +154,19 @@ function renderContent(content: string, linkedTopics: typeof notesData["note-123
   return lines.map((line, i) => {
     // Headers
     if (line.startsWith("# ")) {
-      return <h1 key={i} className="text-2xl font-bold text-[#E5E7EB] mt-6 mb-4">{parseWikiLinks(line.slice(2), linkedTopics)}</h1>;
+      return <h1 key={i} className="text-2xl font-bold text-[#E8E0D5] mt-6 mb-4">{parseWikiLinks(line.slice(2), linkedTopics)}</h1>;
     }
     if (line.startsWith("## ")) {
-      return <h2 key={i} className="text-xl font-bold text-[#E5E7EB] mt-5 mb-3">{parseWikiLinks(line.slice(3), linkedTopics)}</h2>;
+      return <h2 key={i} className="text-xl font-bold text-[#E8E0D5] mt-5 mb-3">{parseWikiLinks(line.slice(3), linkedTopics)}</h2>;
     }
     if (line.startsWith("### ")) {
-      return <h3 key={i} className="text-lg font-semibold text-[#E5E7EB] mt-4 mb-2">{parseWikiLinks(line.slice(4), linkedTopics)}</h3>;
+      return <h3 key={i} className="text-lg font-semibold text-[#E8E0D5] mt-4 mb-2">{parseWikiLinks(line.slice(4), linkedTopics)}</h3>;
     }
     
     // Blockquotes
     if (line.startsWith("> ")) {
       return (
-        <blockquote key={i} className="border-l-4 border-[#F59E0B]/50 pl-4 py-2 my-3 text-[#9CA3AF] italic bg-[#F59E0B]/5 rounded-r-lg">
+        <blockquote key={i} className="border-l-4 border-[#C9A86C]/50 pl-4 py-2 my-3 text-[#A0B0BC] italic bg-[#C9A86C]/5 rounded-r-lg">
           {parseWikiLinks(line.slice(2), linkedTopics)}
         </blockquote>
       );
@@ -177,14 +177,14 @@ function renderContent(content: string, linkedTopics: typeof notesData["note-123
       return (
         <div key={i} className="flex items-start gap-2 my-1">
           <input type="checkbox" className="mt-1 rounded border-[#6B7280]" disabled />
-          <span className="text-[#9CA3AF]">{parseWikiLinks(line.slice(6), linkedTopics)}</span>
+          <span className="text-[#A0B0BC]">{parseWikiLinks(line.slice(6), linkedTopics)}</span>
         </div>
       );
     }
     if (line.startsWith("- [x] ")) {
       return (
         <div key={i} className="flex items-start gap-2 my-1">
-          <input type="checkbox" checked className="mt-1 rounded border-[#059669] text-[#059669]" disabled />
+          <input type="checkbox" checked className="mt-1 rounded border-[#7BA69E] text-[#7BA69E]" disabled />
           <span className="text-[#6B7280] line-through">{parseWikiLinks(line.slice(6), linkedTopics)}</span>
         </div>
       );
@@ -193,14 +193,14 @@ function renderContent(content: string, linkedTopics: typeof notesData["note-123
     // List items
     if (line.startsWith("- ")) {
       return (
-        <li key={i} className="ml-4 my-1 text-[#9CA3AF] list-disc">
+        <li key={i} className="ml-4 my-1 text-[#A0B0BC] list-disc">
           {parseWikiLinks(line.slice(2), linkedTopics)}
         </li>
       );
     }
     if (/^\d+\. /.test(line)) {
       return (
-        <li key={i} className="ml-4 my-1 text-[#9CA3AF] list-decimal">
+        <li key={i} className="ml-4 my-1 text-[#A0B0BC] list-decimal">
           {parseWikiLinks(line.replace(/^\d+\. /, ""), linkedTopics)}
         </li>
       );
@@ -216,10 +216,10 @@ function renderContent(content: string, linkedTopics: typeof notesData["note-123
     // Handle bold
     const boldParts = processedLine.split(/\*\*(.*?)\*\*/g);
     const rendered = boldParts.map((part, j) => 
-      j % 2 === 1 ? <strong key={j} className="text-[#E5E7EB] font-semibold">{part}</strong> : parseWikiLinks(part, linkedTopics)
+      j % 2 === 1 ? <strong key={j} className="text-[#E8E0D5] font-semibold">{part}</strong> : parseWikiLinks(part, linkedTopics)
     );
     
-    return <p key={i} className="text-[#9CA3AF] my-2 leading-relaxed">{rendered}</p>;
+    return <p key={i} className="text-[#A0B0BC] my-2 leading-relaxed">{rendered}</p>;
   });
 }
 
@@ -247,9 +247,9 @@ export default function NoteDetailPage() {
     return (
       <div className="max-w-4xl mx-auto text-center py-20">
         <FileText className="w-16 h-16 text-[#6B7280] mx-auto mb-4" />
-        <h1 className="text-2xl font-bold text-[#E5E7EB] mb-2">Note not found</h1>
-        <p className="text-[#9CA3AF] mb-6">This note doesn't exist or has been deleted.</p>
-        <Button onClick={() => router.push("/notes")} variant="outline" className="border-[rgba(6,182,212,0.3)]">
+        <h1 className="text-2xl font-bold text-[#E8E0D5] mb-2">Note not found</h1>
+        <p className="text-[#A0B0BC] mb-6">This note doesn't exist or has been deleted.</p>
+        <Button onClick={() => router.push("/notes")} variant="outline" className="border-[rgba(91,179,179,0.3)]">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Notes
         </Button>
@@ -289,7 +289,7 @@ export default function NoteDetailPage() {
       {/* ATOM Floating Button */}
       <Link
         href={`/chat?context=note&id=${noteId}`}
-        className="fixed bottom-24 lg:bottom-8 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#06B6D4] to-[#0891B2] hover:from-[#0891B2] hover:to-[#0E7490] rounded-full shadow-lg shadow-[#06B6D4]/30 transition-all hover:scale-105 group"
+        className="fixed bottom-24 lg:bottom-8 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-[#5BB3B3] to-[#4A9E9E] hover:from-[#4A9E9E] hover:to-[#0E7490] rounded-full shadow-lg shadow-[#5BB3B3]/30 transition-all hover:scale-105 group"
       >
         <Atom className="w-5 h-5 group-hover:animate-pulse" />
         <span className="hidden sm:inline font-medium">Ask ATOM</span>
@@ -298,14 +298,14 @@ export default function NoteDetailPage() {
       {/* Back Navigation */}
       <button
         onClick={() => router.back()}
-        className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors mb-6"
+        className="flex items-center gap-2 text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors mb-6"
       >
         <ArrowLeft className="w-4 h-4" />
         Back to Notes
       </button>
 
       {/* Main Note Card */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4 mb-6" style={{ borderLeftColor: roomColor }}>
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] border-l-4 mb-6" style={{ borderLeftColor: roomColor }}>
         <CardHeader className="pb-4">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -313,11 +313,11 @@ export default function NoteDetailPage() {
                 <Input
                   value={editTitle}
                   onChange={(e) => setEditTitle(e.target.value)}
-                  className="text-2xl font-bold bg-[#0D1B2A] border-[rgba(6,182,212,0.3)] text-[#E5E7EB] mb-2"
+                  className="text-2xl font-bold bg-[#2D3E50] border-[rgba(91,179,179,0.3)] text-[#E8E0D5] mb-2"
                   placeholder="Note title..."
                 />
               ) : (
-                <h1 className="text-2xl font-bold text-[#E5E7EB] mb-2">{note.title}</h1>
+                <h1 className="text-2xl font-bold text-[#E8E0D5] mb-2">{note.title}</h1>
               )}
               
               {/* Meta info */}
@@ -339,7 +339,7 @@ export default function NoteDetailPage() {
                 <>
                   <Button
                     onClick={handleSave}
-                    className="bg-[#059669] hover:bg-[#047857] text-white"
+                    className="bg-[#7BA69E] hover:bg-[#047857] text-white"
                   >
                     <Save className="w-4 h-4 mr-2" />
                     Save
@@ -347,7 +347,7 @@ export default function NoteDetailPage() {
                   <Button
                     onClick={() => setIsEditing(false)}
                     variant="outline"
-                    className="border-[rgba(6,182,212,0.3)] text-[#9CA3AF]"
+                    className="border-[rgba(91,179,179,0.3)] text-[#A0B0BC]"
                   >
                     <X className="w-4 h-4" />
                   </Button>
@@ -357,7 +357,7 @@ export default function NoteDetailPage() {
                   <Button
                     onClick={() => setIsEditing(true)}
                     variant="outline"
-                    className="border-[rgba(6,182,212,0.3)] text-[#9CA3AF] hover:text-[#F59E0B] hover:border-[#F59E0B]/50"
+                    className="border-[rgba(91,179,179,0.3)] text-[#A0B0BC] hover:text-[#C9A86C] hover:border-[#C9A86C]/50"
                   >
                     <Edit3 className="w-4 h-4 mr-2" />
                     Edit
@@ -365,14 +365,14 @@ export default function NoteDetailPage() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="border-[rgba(6,182,212,0.3)] text-[#9CA3AF]"
+                    className="border-[rgba(91,179,179,0.3)] text-[#A0B0BC]"
                   >
                     <Share2 className="w-4 h-4" />
                   </Button>
                   <Button
                     variant="outline"
                     size="icon"
-                    className="border-[rgba(6,182,212,0.3)] text-[#9CA3AF] hover:text-red-400 hover:border-red-400/50"
+                    className="border-[rgba(91,179,179,0.3)] text-[#A0B0BC] hover:text-red-400 hover:border-red-400/50"
                   >
                     <Trash2 className="w-4 h-4" />
                   </Button>
@@ -387,7 +387,7 @@ export default function NoteDetailPage() {
             {(isEditing ? editTags : note.tags).map((tag) => (
               <Badge
                 key={tag}
-                className="bg-[#F59E0B]/10 text-[#F59E0B] border-[#F59E0B]/30 text-xs"
+                className="bg-[#C9A86C]/10 text-[#C9A86C] border-[#C9A86C]/30 text-xs"
               >
                 #{tag}
                 {isEditing && (
@@ -407,7 +407,7 @@ export default function NoteDetailPage() {
                   onChange={(e) => setNewTag(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleAddTag()}
                   placeholder="Add tag..."
-                  className="h-6 w-24 text-xs bg-[#0D1B2A] border-[rgba(6,182,212,0.2)]"
+                  className="h-6 w-24 text-xs bg-[#2D3E50] border-[rgba(91,179,179,0.2)]"
                 />
                 <Button size="sm" variant="ghost" onClick={handleAddTag} className="h-6 px-2">
                   <Plus className="w-3 h-3" />
@@ -420,17 +420,17 @@ export default function NoteDetailPage() {
         <CardContent>
           {/* Source reference */}
           {note.source && (
-            <div className="mb-6 p-3 rounded-lg bg-[#0D1B2A] border border-[rgba(6,182,212,0.1)] flex items-center gap-3">
-              <BookOpen className="w-5 h-5 text-[#06B6D4] shrink-0" />
+            <div className="mb-6 p-3 rounded-lg bg-[#2D3E50] border border-[rgba(91,179,179,0.1)] flex items-center gap-3">
+              <BookOpen className="w-5 h-5 text-[#5BB3B3] shrink-0" />
               <div>
-                <p className="text-sm text-[#E5E7EB] font-medium">{note.source.title}</p>
+                <p className="text-sm text-[#E8E0D5] font-medium">{note.source.title}</p>
                 <p className="text-xs text-[#6B7280]">
                   {note.source.chapter && `${note.source.chapter}`}
                   {note.source.chapter && note.source.page && " • "}
                   {note.source.page && `p. ${note.source.page}`}
                 </p>
               </div>
-              <Button variant="ghost" size="sm" className="ml-auto text-[#06B6D4] hover:text-[#22D3EE]">
+              <Button variant="ghost" size="sm" className="ml-auto text-[#5BB3B3] hover:text-[#22D3EE]">
                 <ExternalLink className="w-4 h-4" />
               </Button>
             </div>
@@ -441,7 +441,7 @@ export default function NoteDetailPage() {
             <textarea
               value={editContent}
               onChange={(e) => setEditContent(e.target.value)}
-              className="w-full min-h-[400px] p-4 bg-[#0D1B2A] border border-[rgba(6,182,212,0.3)] rounded-lg text-[#E5E7EB] font-mono text-sm leading-relaxed resize-y focus:border-[#F59E0B] focus:outline-none focus:ring-1 focus:ring-[#F59E0B]/50 placeholder-[#6B7280]"
+              className="w-full min-h-[400px] p-4 bg-[#2D3E50] border border-[rgba(91,179,179,0.3)] rounded-lg text-[#E8E0D5] font-mono text-sm leading-relaxed resize-y focus:border-[#C9A86C] focus:outline-none focus:ring-1 focus:ring-[#C9A86C]/50 placeholder-[#6B7280]"
               placeholder="Write your notes here... Use [[Topic Name]] to create links."
             />
           ) : (
@@ -454,10 +454,10 @@ export default function NoteDetailPage() {
 
       {/* Linked Topics */}
       {note.linkedTopics.length > 0 && (
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] mb-6">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] mb-6">
           <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-              <Link2 className="w-5 h-5 text-[#7C3AED]" />
+            <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+              <Link2 className="w-5 h-5 text-[#5BB3B3]" />
               Linked Topics
               <span className="text-sm font-normal text-[#6B7280] ml-auto">
                 {note.linkedTopics.length} links
@@ -470,20 +470,20 @@ export default function NoteDetailPage() {
                 <Link
                   key={topic.id}
                   href={topic.type === "note" ? `/notes/${topic.id}` : `/library/${topic.id}`}
-                  className="p-3 rounded-lg bg-[#0D1B2A] border border-[rgba(6,182,212,0.1)] hover:border-[#7C3AED]/50 transition-all group flex items-center gap-3"
+                  className="p-3 rounded-lg bg-[#2D3E50] border border-[rgba(91,179,179,0.1)] hover:border-[#5BB3B3]/50 transition-all group flex items-center gap-3"
                 >
                   {topic.type === "note" ? (
-                    <FileText className="w-4 h-4 text-[#F59E0B] shrink-0" />
+                    <FileText className="w-4 h-4 text-[#C9A86C] shrink-0" />
                   ) : (
-                    <BookOpen className="w-4 h-4 text-[#7C3AED] shrink-0" />
+                    <BookOpen className="w-4 h-4 text-[#5BB3B3] shrink-0" />
                   )}
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-[#E5E7EB] group-hover:text-[#7C3AED] transition-colors text-sm">
+                    <p className="font-medium text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors text-sm">
                       {topic.title}
                     </p>
                     <p className="text-xs text-[#6B7280] line-clamp-1">{topic.excerpt}</p>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#7C3AED] transition-colors shrink-0" />
+                  <ChevronRight className="w-4 h-4 text-[#6B7280] group-hover:text-[#5BB3B3] transition-colors shrink-0" />
                 </Link>
               ))}
             </div>
@@ -501,19 +501,19 @@ export default function NoteDetailPage() {
       )}
 
       {/* Ask ATOM about this note */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardContent className="p-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center shadow-lg shadow-[#06B6D4]/25">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center shadow-lg shadow-[#5BB3B3]/25">
               <Atom className="w-6 h-6 text-white" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold text-[#E5E7EB]">Need help understanding these notes?</h3>
-              <p className="text-sm text-[#9CA3AF]">ATOM can explain concepts, quiz you, or help expand on any topic.</p>
+              <h3 className="font-semibold text-[#E8E0D5]">Need help understanding these notes?</h3>
+              <p className="text-sm text-[#A0B0BC]">ATOM can explain concepts, quiz you, or help expand on any topic.</p>
             </div>
             <Button
               onClick={() => router.push(`/chat?context=note&id=${noteId}`)}
-              className="bg-gradient-to-r from-[#06B6D4] to-[#0891B2] hover:from-[#0891B2] hover:to-[#0E7490] text-white"
+              className="bg-gradient-to-r from-[#5BB3B3] to-[#4A9E9E] hover:from-[#4A9E9E] hover:to-[#0E7490] text-white"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               Ask ATOM

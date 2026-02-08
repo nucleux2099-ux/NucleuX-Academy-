@@ -102,12 +102,12 @@ const notifications: Notification[] = [
 ];
 
 const typeConfig: Record<string, { icon: React.ElementType; color: string; bg: string }> = {
-  achievement: { icon: Trophy, color: "#F59E0B", bg: "rgba(245,158,11,0.15)" },
-  study: { icon: BookOpen, color: "#059669", bg: "rgba(5,150,105,0.15)" },
+  achievement: { icon: Trophy, color: "#C9A86C", bg: "rgba(245,158,11,0.15)" },
+  study: { icon: BookOpen, color: "#7BA69E", bg: "rgba(5,150,105,0.15)" },
   community: { icon: MessageSquare, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)" },
-  arena: { icon: Zap, color: "#EF4444", bg: "rgba(239,68,68,0.15)" },
-  atom: { icon: Brain, color: "#06B6D4", bg: "rgba(6,182,212,0.15)" },
-  system: { icon: Bell, color: "#9CA3AF", bg: "rgba(156,163,175,0.15)" },
+  arena: { icon: Zap, color: "#E57373", bg: "rgba(239,68,68,0.15)" },
+  atom: { icon: Brain, color: "#5BB3B3", bg: "rgba(91,179,179,0.15)" },
+  system: { icon: Bell, color: "#A0B0BC", bg: "rgba(156,163,175,0.15)" },
 };
 
 export default function NotificationsPage() {
@@ -139,28 +139,28 @@ export default function NotificationsPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
-            <Bell className="w-8 h-8 text-[#06B6D4]" />
+          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+            <Bell className="w-8 h-8 text-[#5BB3B3]" />
             Notifications
             {unreadCount > 0 && (
-              <Badge className="bg-[#EF4444] text-white border-none">
+              <Badge className="bg-[#E57373] text-white border-none">
                 {unreadCount} new
               </Badge>
             )}
           </h1>
-          <p className="text-[#9CA3AF] mt-1">Stay updated on your learning journey</p>
+          <p className="text-[#A0B0BC] mt-1">Stay updated on your learning journey</p>
         </div>
         <div className="flex gap-2">
           <Button 
             variant="outline" 
             onClick={markAllRead}
-            className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"
+            className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
           >
             <CheckCheck className="w-4 h-4 mr-2" />
             Mark all read
           </Button>
           <Link href="/settings">
-            <Button variant="ghost" className="text-[#9CA3AF] hover:text-[#E5E7EB]">
+            <Button variant="ghost" className="text-[#A0B0BC] hover:text-[#E8E0D5]">
               <Settings className="w-4 h-4" />
             </Button>
           </Link>
@@ -184,8 +184,8 @@ export default function NotificationsPage() {
             size="sm"
             onClick={() => setFilter(f.id)}
             className={filter === f.id 
-              ? "bg-[#06B6D4] text-[#0D1B2A]" 
-              : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"
+              ? "bg-[#5BB3B3] text-[#2D3E50]" 
+              : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
             }
           >
             {f.label}
@@ -195,10 +195,10 @@ export default function NotificationsPage() {
 
       {/* Notifications List */}
       {filteredItems.length === 0 ? (
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="py-12 text-center">
             <BellOff className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-            <p className="text-[#9CA3AF]">No notifications yet</p>
+            <p className="text-[#A0B0BC]">No notifications yet</p>
           </CardContent>
         </Card>
       ) : (
@@ -210,7 +210,7 @@ export default function NotificationsPage() {
             return (
               <Card 
                 key={notification.id}
-                className={`bg-[#0F2233] border-[rgba(6,182,212,0.15)] transition-all cursor-pointer hover:border-[rgba(6,182,212,0.3)] ${
+                className={`bg-[#364A5E] border-[rgba(91,179,179,0.15)] transition-all cursor-pointer hover:border-[rgba(91,179,179,0.3)] ${
                   !notification.read ? 'border-l-4' : ''
                 }`}
                 style={!notification.read ? { borderLeftColor: config.color } : {}}
@@ -229,7 +229,7 @@ export default function NotificationsPage() {
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-start justify-between gap-2">
-                        <h3 className={`font-medium ${!notification.read ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}>
+                        <h3 className={`font-medium ${!notification.read ? 'text-[#E8E0D5]' : 'text-[#A0B0BC]'}`}>
                           {notification.title}
                         </h3>
                         <span className="text-xs text-[#6B7280] shrink-0">{notification.time}</span>
@@ -241,7 +241,7 @@ export default function NotificationsPage() {
                           <Button 
                             size="sm" 
                             variant="ghost"
-                            className="mt-2 h-7 px-2 text-xs hover:bg-[#142538]"
+                            className="mt-2 h-7 px-2 text-xs hover:bg-[#3A4D5F]"
                             style={{ color: config.color }}
                           >
                             {notification.actionLabel} →
@@ -268,7 +268,7 @@ export default function NotificationsPage() {
           <Button 
             variant="ghost" 
             onClick={clearAll}
-            className="text-[#6B7280] hover:text-[#EF4444]"
+            className="text-[#6B7280] hover:text-[#E57373]"
           >
             <Trash2 className="w-4 h-4 mr-2" />
             Clear all notifications

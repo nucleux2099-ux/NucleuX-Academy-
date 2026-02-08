@@ -52,16 +52,16 @@ export default function LeaderboardPage() {
 
   const getRankChange = (current: number, previous: number) => {
     const diff = previous - current;
-    if (diff > 0) return { icon: TrendingUp, color: "text-[#059669]", text: `+${diff}` };
-    if (diff < 0) return { icon: TrendingDown, color: "text-[#EF4444]", text: `${diff}` };
+    if (diff > 0) return { icon: TrendingUp, color: "text-[#7BA69E]", text: `+${diff}` };
+    if (diff < 0) return { icon: TrendingDown, color: "text-[#E57373]", text: `${diff}` };
     return { icon: Minus, color: "text-[#6B7280]", text: "—" };
   };
 
   const getRankStyle = (rank: number) => {
-    if (rank === 1) return { bg: "bg-gradient-to-r from-[#F59E0B] to-[#D97706]", icon: Crown, iconColor: "text-white" };
-    if (rank === 2) return { bg: "bg-gradient-to-r from-[#9CA3AF] to-[#6B7280]", icon: Medal, iconColor: "text-white" };
+    if (rank === 1) return { bg: "bg-gradient-to-r from-[#C9A86C] to-[#D97706]", icon: Crown, iconColor: "text-white" };
+    if (rank === 2) return { bg: "bg-gradient-to-r from-[#A0B0BC] to-[#6B7280]", icon: Medal, iconColor: "text-white" };
     if (rank === 3) return { bg: "bg-gradient-to-r from-[#CD7F32] to-[#A0522D]", icon: Award, iconColor: "text-white" };
-    return { bg: "bg-[#142538]", icon: null, iconColor: "" };
+    return { bg: "bg-[#3A4D5F]", icon: null, iconColor: "" };
   };
 
   return (
@@ -69,24 +69,24 @@ export default function LeaderboardPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-[#F59E0B]" />
+          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+            <Trophy className="w-8 h-8 text-[#C9A86C]" />
             Leaderboard
           </h1>
-          <p className="text-[#9CA3AF] mt-1">Compete with medical students across India</p>
+          <p className="text-[#A0B0BC] mt-1">Compete with medical students across India</p>
         </div>
         
         {/* Your Rank Card */}
-        <Card className="bg-gradient-to-r from-[rgba(6,182,212,0.15)] to-[rgba(139,92,246,0.15)] border-[rgba(6,182,212,0.2)]">
+        <Card className="bg-gradient-to-r from-[rgba(91,179,179,0.15)] to-[rgba(139,92,246,0.15)] border-[rgba(91,179,179,0.2)]">
           <CardContent className="p-4 flex items-center gap-4">
             <div className="text-center">
-              <p className="text-3xl font-bold text-[#06B6D4]">#{myRank.rank}</p>
+              <p className="text-3xl font-bold text-[#5BB3B3]">#{myRank.rank}</p>
               <p className="text-xs text-[#6B7280]">Your Rank</p>
             </div>
-            <div className="h-10 w-px bg-[rgba(6,182,212,0.2)]" />
+            <div className="h-10 w-px bg-[rgba(91,179,179,0.2)]" />
             <div>
-              <p className="text-sm text-[#E5E7EB]">{myRank.score.toLocaleString()} pts</p>
-              <div className="flex items-center gap-1 text-xs text-[#059669]">
+              <p className="text-sm text-[#E8E0D5]">{myRank.score.toLocaleString()} pts</p>
+              <div className="flex items-center gap-1 text-xs text-[#7BA69E]">
                 <TrendingUp className="w-3 h-3" />
                 <span>+5 this week</span>
               </div>
@@ -104,8 +104,8 @@ export default function LeaderboardPage() {
             size="sm"
             onClick={() => setSelectedCategory(cat.id)}
             className={selectedCategory === cat.id 
-              ? "bg-[#06B6D4] text-[#0D1B2A]" 
-              : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"
+              ? "bg-[#5BB3B3] text-[#2D3E50]" 
+              : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
             }
           >
             <cat.icon className="w-4 h-4 mr-1" />
@@ -124,20 +124,20 @@ export default function LeaderboardPage() {
           return (
             <Card 
               key={entry.rank}
-              className={`bg-[#0F2233] border-[rgba(6,182,212,0.15)] ${isFirst ? 'ring-2 ring-[#F59E0B]/30' : ''}`}
+              className={`bg-[#364A5E] border-[rgba(91,179,179,0.15)] ${isFirst ? 'ring-2 ring-[#C9A86C]/30' : ''}`}
             >
               <CardContent className={`p-4 text-center ${isFirst ? 'pt-2' : 'pt-6'}`}>
                 {isFirst && (
                   <div className="flex justify-center mb-2">
-                    <Crown className="w-8 h-8 text-[#F59E0B]" />
+                    <Crown className="w-8 h-8 text-[#C9A86C]" />
                   </div>
                 )}
                 <div className={`w-16 h-16 mx-auto rounded-full ${style.bg} flex items-center justify-center mb-3`}>
                   <span className="text-xl font-bold text-white">{entry.avatar}</span>
                 </div>
-                <h3 className="font-semibold text-[#E5E7EB] truncate">{entry.name}</h3>
+                <h3 className="font-semibold text-[#E8E0D5] truncate">{entry.name}</h3>
                 <p className="text-xs text-[#6B7280] truncate">{entry.institution}</p>
-                <p className="text-lg font-bold text-[#06B6D4] mt-2">{entry.score.toLocaleString()}</p>
+                <p className="text-lg font-bold text-[#5BB3B3] mt-2">{entry.score.toLocaleString()}</p>
                 <div className="flex justify-center gap-1 mt-2">
                   {entry.badges.map((badge, i) => (
                     <span key={i} className="text-sm">{badge}</span>
@@ -150,14 +150,14 @@ export default function LeaderboardPage() {
       </div>
 
       {/* Leaderboard Table */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardHeader>
-          <CardTitle className="text-lg text-[#E5E7EB]">Rankings</CardTitle>
+          <CardTitle className="text-lg text-[#E8E0D5]">Rankings</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
             {/* Header */}
-            <div className="grid grid-cols-12 gap-2 px-4 py-2 text-xs text-[#6B7280] border-b border-[rgba(6,182,212,0.1)]">
+            <div className="grid grid-cols-12 gap-2 px-4 py-2 text-xs text-[#6B7280] border-b border-[rgba(91,179,179,0.1)]">
               <div className="col-span-1">#</div>
               <div className="col-span-4">Student</div>
               <div className="col-span-2 text-right">Score</div>
@@ -176,7 +176,7 @@ export default function LeaderboardPage() {
                 <div 
                   key={entry.rank}
                   className={`grid grid-cols-12 gap-2 px-4 py-3 rounded-lg items-center ${
-                    entry.rank <= 3 ? 'bg-[rgba(245,158,11,0.05)]' : 'hover:bg-[#142538]'
+                    entry.rank <= 3 ? 'bg-[rgba(245,158,11,0.05)]' : 'hover:bg-[#3A4D5F]'
                   }`}
                 >
                   {/* Rank */}
@@ -185,7 +185,7 @@ export default function LeaderboardPage() {
                       {style.icon ? (
                         <style.icon className={`w-4 h-4 ${style.iconColor}`} />
                       ) : (
-                        <span className="text-sm font-bold text-[#9CA3AF]">{entry.rank}</span>
+                        <span className="text-sm font-bold text-[#A0B0BC]">{entry.rank}</span>
                       )}
                     </div>
                   </div>
@@ -193,31 +193,31 @@ export default function LeaderboardPage() {
                   {/* Student */}
                   <div className="col-span-4 flex items-center gap-3">
                     <Avatar className="w-8 h-8">
-                      <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-xs">
+                      <AvatarFallback className="bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] text-white text-xs">
                         {entry.avatar}
                       </AvatarFallback>
                     </Avatar>
                     <div className="min-w-0">
-                      <p className="font-medium text-[#E5E7EB] truncate">{entry.name}</p>
+                      <p className="font-medium text-[#E8E0D5] truncate">{entry.name}</p>
                       <p className="text-xs text-[#6B7280] truncate">{entry.institution}</p>
                     </div>
                   </div>
 
                   {/* Score */}
                   <div className="col-span-2 text-right">
-                    <span className="font-semibold text-[#E5E7EB]">{entry.score.toLocaleString()}</span>
+                    <span className="font-semibold text-[#E8E0D5]">{entry.score.toLocaleString()}</span>
                   </div>
 
                   {/* Accuracy */}
                   <div className="col-span-2 text-right">
-                    <Badge className="bg-[rgba(5,150,105,0.15)] text-[#059669] border-none">
+                    <Badge className="bg-[rgba(5,150,105,0.15)] text-[#7BA69E] border-none">
                       {entry.accuracy}%
                     </Badge>
                   </div>
 
                   {/* Streak */}
                   <div className="col-span-2 text-right">
-                    <span className="text-[#F59E0B] flex items-center justify-end gap-1">
+                    <span className="text-[#C9A86C] flex items-center justify-end gap-1">
                       <Flame className="w-3 h-3" />
                       {entry.streak}
                     </span>
@@ -235,40 +235,40 @@ export default function LeaderboardPage() {
             })}
 
             {/* Your Position Highlight */}
-            <div className="mt-4 pt-4 border-t border-[rgba(6,182,212,0.1)]">
-              <div className="grid grid-cols-12 gap-2 px-4 py-3 rounded-lg items-center bg-[rgba(6,182,212,0.1)] border border-[rgba(6,182,212,0.2)]">
+            <div className="mt-4 pt-4 border-t border-[rgba(91,179,179,0.1)]">
+              <div className="grid grid-cols-12 gap-2 px-4 py-3 rounded-lg items-center bg-[rgba(91,179,179,0.1)] border border-[rgba(91,179,179,0.2)]">
                 <div className="col-span-1">
-                  <div className="w-8 h-8 rounded-lg bg-[#06B6D4] flex items-center justify-center">
-                    <span className="text-sm font-bold text-[#0D1B2A]">{myRank.rank}</span>
+                  <div className="w-8 h-8 rounded-lg bg-[#5BB3B3] flex items-center justify-center">
+                    <span className="text-sm font-bold text-[#2D3E50]">{myRank.rank}</span>
                   </div>
                 </div>
                 <div className="col-span-4 flex items-center gap-3">
-                  <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]">
-                    <AvatarFallback className="bg-gradient-to-br from-[#06B6D4] to-[#0891B2] text-white text-xs">
+                  <Avatar className="w-8 h-8 ring-2 ring-[#5BB3B3]">
+                    <AvatarFallback className="bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] text-white text-xs">
                       {myRank.avatar}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-medium text-[#E5E7EB]">{myRank.name} <Badge className="ml-1 bg-[#06B6D4] text-[#0D1B2A] text-[10px]">You</Badge></p>
+                    <p className="font-medium text-[#E8E0D5]">{myRank.name} <Badge className="ml-1 bg-[#5BB3B3] text-[#2D3E50] text-[10px]">You</Badge></p>
                     <p className="text-xs text-[#6B7280]">{myRank.institution}</p>
                   </div>
                 </div>
                 <div className="col-span-2 text-right">
-                  <span className="font-semibold text-[#E5E7EB]">{myRank.score.toLocaleString()}</span>
+                  <span className="font-semibold text-[#E8E0D5]">{myRank.score.toLocaleString()}</span>
                 </div>
                 <div className="col-span-2 text-right">
-                  <Badge className="bg-[rgba(5,150,105,0.15)] text-[#059669] border-none">
+                  <Badge className="bg-[rgba(5,150,105,0.15)] text-[#7BA69E] border-none">
                     {myRank.accuracy}%
                   </Badge>
                 </div>
                 <div className="col-span-2 text-right">
-                  <span className="text-[#F59E0B] flex items-center justify-end gap-1">
+                  <span className="text-[#C9A86C] flex items-center justify-end gap-1">
                     <Flame className="w-3 h-3" />
                     {myRank.streak}
                   </span>
                 </div>
                 <div className="col-span-1 text-right">
-                  <span className="flex items-center justify-end gap-0.5 text-xs text-[#059669]">
+                  <span className="flex items-center justify-end gap-0.5 text-xs text-[#7BA69E]">
                     <TrendingUp className="w-3 h-3" />
                     +5
                   </span>

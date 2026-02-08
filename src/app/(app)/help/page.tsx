@@ -101,15 +101,15 @@ export default function HelpPage() {
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="text-center">
-        <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center justify-center gap-3">
-          <HelpCircle className="w-8 h-8 text-[#06B6D4]" />
+        <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center justify-center gap-3">
+          <HelpCircle className="w-8 h-8 text-[#5BB3B3]" />
           Help Center
         </h1>
-        <p className="text-[#9CA3AF] mt-2">Find answers or get in touch with support</p>
+        <p className="text-[#A0B0BC] mt-2">Find answers or get in touch with support</p>
       </div>
 
       {/* Search */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardContent className="p-6">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6B7280]" />
@@ -117,7 +117,7 @@ export default function HelpPage() {
               placeholder="Search for help..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 py-6 text-lg bg-[#142538] border-[rgba(6,182,212,0.15)] text-[#E5E7EB] placeholder:text-[#6B7280]"
+              className="pl-12 py-6 text-lg bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] text-[#E8E0D5] placeholder:text-[#6B7280]"
             />
           </div>
         </CardContent>
@@ -131,12 +131,12 @@ export default function HelpPage() {
             onClick={() => setSelectedCategory(selectedCategory === cat.id ? null : cat.id)}
             className={`p-4 rounded-xl border transition-all text-left ${
               selectedCategory === cat.id
-                ? 'bg-[rgba(6,182,212,0.15)] border-[#06B6D4]'
-                : 'bg-[#0F2233] border-[rgba(6,182,212,0.15)] hover:border-[rgba(6,182,212,0.3)]'
+                ? 'bg-[rgba(91,179,179,0.15)] border-[#5BB3B3]'
+                : 'bg-[#364A5E] border-[rgba(91,179,179,0.15)] hover:border-[rgba(91,179,179,0.3)]'
             }`}
           >
-            <cat.icon className={`w-6 h-6 mb-2 ${selectedCategory === cat.id ? 'text-[#06B6D4]' : 'text-[#9CA3AF]'}`} />
-            <p className={`font-medium ${selectedCategory === cat.id ? 'text-[#E5E7EB]' : 'text-[#9CA3AF]'}`}>
+            <cat.icon className={`w-6 h-6 mb-2 ${selectedCategory === cat.id ? 'text-[#5BB3B3]' : 'text-[#A0B0BC]'}`} />
+            <p className={`font-medium ${selectedCategory === cat.id ? 'text-[#E8E0D5]' : 'text-[#A0B0BC]'}`}>
               {cat.label}
             </p>
           </button>
@@ -144,10 +144,10 @@ export default function HelpPage() {
       </div>
 
       {/* FAQs */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB] flex items-center gap-2">
-            <Lightbulb className="w-5 h-5 text-[#F59E0B]" />
+          <CardTitle className="text-[#E8E0D5] flex items-center gap-2">
+            <Lightbulb className="w-5 h-5 text-[#C9A86C]" />
             Frequently Asked Questions
           </CardTitle>
         </CardHeader>
@@ -158,17 +158,17 @@ export default function HelpPage() {
             filteredFAQs.map((faq) => (
               <div 
                 key={faq.id}
-                className="border border-[rgba(6,182,212,0.1)] rounded-lg overflow-hidden"
+                className="border border-[rgba(91,179,179,0.1)] rounded-lg overflow-hidden"
               >
                 <button
                   onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
-                  className="w-full p-4 flex items-center justify-between text-left bg-[#142538] hover:bg-[#1a3048] transition-colors"
+                  className="w-full p-4 flex items-center justify-between text-left bg-[#3A4D5F] hover:bg-[#1a3048] transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <Badge variant="outline" className="text-[10px] border-[rgba(6,182,212,0.2)] text-[#6B7280]">
+                    <Badge variant="outline" className="text-[10px] border-[rgba(91,179,179,0.2)] text-[#6B7280]">
                       {faq.category}
                     </Badge>
-                    <span className="font-medium text-[#E5E7EB]">{faq.question}</span>
+                    <span className="font-medium text-[#E8E0D5]">{faq.question}</span>
                   </div>
                   {expandedFAQ === faq.id ? (
                     <ChevronUp className="w-5 h-5 text-[#6B7280] shrink-0" />
@@ -177,8 +177,8 @@ export default function HelpPage() {
                   )}
                 </button>
                 {expandedFAQ === faq.id && (
-                  <div className="p-4 border-t border-[rgba(6,182,212,0.1)] bg-[#0F2233]">
-                    <p className="text-[#9CA3AF] leading-relaxed">{faq.answer}</p>
+                  <div className="p-4 border-t border-[rgba(91,179,179,0.1)] bg-[#364A5E]">
+                    <p className="text-[#A0B0BC] leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -189,17 +189,17 @@ export default function HelpPage() {
 
       {/* Resources */}
       <div>
-        <h2 className="text-xl font-semibold text-[#E5E7EB] mb-4">Resources</h2>
+        <h2 className="text-xl font-semibold text-[#E8E0D5] mb-4">Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {resources.map((resource) => (
             <Link key={resource.title} href={resource.href}>
-              <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] hover:border-[rgba(6,182,212,0.3)] transition-all cursor-pointer">
+              <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer">
                 <CardContent className="p-4 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[rgba(6,182,212,0.15)] flex items-center justify-center">
-                    <resource.icon className="w-5 h-5 text-[#06B6D4]" />
+                  <div className="w-10 h-10 rounded-lg bg-[rgba(91,179,179,0.15)] flex items-center justify-center">
+                    <resource.icon className="w-5 h-5 text-[#5BB3B3]" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-medium text-[#E5E7EB]">{resource.title}</h3>
+                    <h3 className="font-medium text-[#E8E0D5]">{resource.title}</h3>
                     <p className="text-sm text-[#6B7280]">{resource.description}</p>
                   </div>
                   <ExternalLink className="w-4 h-4 text-[#6B7280]" />
@@ -211,19 +211,19 @@ export default function HelpPage() {
       </div>
 
       {/* Contact Support */}
-      <Card className="bg-gradient-to-r from-[rgba(6,182,212,0.15)] to-[rgba(139,92,246,0.15)] border-[rgba(6,182,212,0.2)]">
+      <Card className="bg-gradient-to-r from-[rgba(91,179,179,0.15)] to-[rgba(139,92,246,0.15)] border-[rgba(91,179,179,0.2)]">
         <CardContent className="p-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="text-xl font-semibold text-[#E5E7EB]">Still need help?</h3>
-              <p className="text-[#9CA3AF] mt-1">Our support team is here for you</p>
+              <h3 className="text-xl font-semibold text-[#E8E0D5]">Still need help?</h3>
+              <p className="text-[#A0B0BC] mt-1">Our support team is here for you</p>
             </div>
             <div className="flex gap-3">
-              <Button variant="outline" className="border-[rgba(6,182,212,0.3)] text-[#9CA3AF] hover:bg-[#142538]">
+              <Button variant="outline" className="border-[rgba(91,179,179,0.3)] text-[#A0B0BC] hover:bg-[#3A4D5F]">
                 <Mail className="w-4 h-4 mr-2" />
                 Email Support
               </Button>
-              <Button className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]">
+              <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Live Chat
               </Button>

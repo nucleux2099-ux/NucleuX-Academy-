@@ -47,10 +47,10 @@ export function Backlinks({ backlinks, currentTopicTitle, className }: Backlinks
   }
 
   return (
-    <Card className={cn("bg-[#0F2233] border-[rgba(6,182,212,0.15)]", className)}>
+    <Card className={cn("bg-[#364A5E] border-[rgba(91,179,179,0.15)]", className)}>
       <CardHeader className="pb-3">
-        <CardTitle className="text-lg flex items-center gap-2 text-[#E5E7EB]">
-          <Link2 className="w-5 h-5 text-[#06B6D4]" />
+        <CardTitle className="text-lg flex items-center gap-2 text-[#E8E0D5]">
+          <Link2 className="w-5 h-5 text-[#5BB3B3]" />
           What links here
           <span className="text-sm font-normal text-[#6B7280] ml-auto">
             {backlinks.length} reference{backlinks.length !== 1 ? "s" : ""}
@@ -68,7 +68,7 @@ export function Backlinks({ backlinks, currentTopicTitle, className }: Backlinks
                 ? `/community/${backlink.id}`
                 : `/library/${backlink.id}`
             }
-            className="block p-4 rounded-lg bg-[#0D1B2A] border border-[rgba(6,182,212,0.1)] hover:border-[#7C3AED]/50 transition-all group"
+            className="block p-4 rounded-lg bg-[#2D3E50] border border-[rgba(91,179,179,0.1)] hover:border-[#5BB3B3]/50 transition-all group"
           >
             <div className="flex items-start gap-3">
               {/* Type Icon */}
@@ -79,22 +79,22 @@ export function Backlinks({ backlinks, currentTopicTitle, className }: Backlinks
               {/* Content */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <h4 className="font-medium text-[#E5E7EB] group-hover:text-[#7C3AED] transition-colors line-clamp-1">
+                  <h4 className="font-medium text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors line-clamp-1">
                     {backlink.title}
                   </h4>
-                  <ArrowUpRight className="w-3 h-3 text-[#6B7280] group-hover:text-[#7C3AED] transition-colors shrink-0" />
+                  <ArrowUpRight className="w-3 h-3 text-[#6B7280] group-hover:text-[#5BB3B3] transition-colors shrink-0" />
                 </div>
 
                 {/* Mention context - shows how this topic is referenced */}
                 {backlink.mentionContext && (
-                  <p className="text-xs text-[#9CA3AF] mt-1 line-clamp-2">
+                  <p className="text-xs text-[#A0B0BC] mt-1 line-clamp-2">
                     "...
                     <span 
                       className="text-[#A78BFA] font-medium"
                       dangerouslySetInnerHTML={{
                         __html: backlink.mentionContext.replace(
                           new RegExp(currentTopicTitle, "gi"),
-                          `<mark class="bg-[#7C3AED]/30 text-[#C4B5FD] px-1 rounded">${currentTopicTitle}</mark>`
+                          `<mark class="bg-[#5BB3B3]/30 text-[#C4B5FD] px-1 rounded">${currentTopicTitle}</mark>`
                         ),
                       }}
                     />

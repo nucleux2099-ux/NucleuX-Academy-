@@ -65,21 +65,22 @@ export default function SubspecialtyPage() {
 
   // Check what content is available for current view mode
   const getContentAvailability = (topic: LibraryTopic): boolean => {
+    const hasContent = topic.hasContent ?? { concept: true, examPrep: false, textbook: false, retrievalCards: false, cases: false, grindeMap: false };
     switch (viewMode) {
       case 'explorer':
-        return topic.hasContent.concept;
+        return hasContent.concept;
       case 'examPrep':
-        return topic.hasContent.examPrep;
+        return hasContent.examPrep;
       case 'textbook':
-        return topic.hasContent.textbook;
+        return hasContent.textbook;
       case 'quiz':
-        return topic.hasContent.retrievalCards;
+        return hasContent.retrievalCards;
       case 'cases':
-        return topic.hasContent.cases;
+        return hasContent.cases;
       case 'roadmap':
-        return topic.hasContent.grindeMap;
+        return hasContent.grindeMap;
       default:
-        return topic.hasContent.concept;
+        return hasContent.concept;
     }
   };
 
@@ -88,8 +89,8 @@ export default function SubspecialtyPage() {
   if (!subject || !subspecialty) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-xl font-bold text-[#E5E7EB]">Subspecialty not found</h2>
-        <Link href="/library" className="text-[#06B6D4] hover:underline mt-4 block">
+        <h2 className="text-xl font-bold text-[#E8E0D5]">Subspecialty not found</h2>
+        <Link href="/library" className="text-[#5BB3B3] hover:underline mt-4 block">
           Back to Library
         </Link>
       </div>
@@ -100,18 +101,18 @@ export default function SubspecialtyPage() {
     <div className="space-y-6">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm">
-        <Link href="/library" className="text-[#9CA3AF] hover:text-[#06B6D4] transition-colors">
+        <Link href="/library" className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors">
           Library
         </Link>
         <ChevronRight className="w-4 h-4 text-[#6B7280]" />
         <Link 
           href={`/library?subject=${subject.slug}`} 
-          className="text-[#9CA3AF] hover:text-[#06B6D4] transition-colors"
+          className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors"
         >
           {subject.name}
         </Link>
         <ChevronRight className="w-4 h-4 text-[#6B7280]" />
-        <span className="text-[#E5E7EB]">{subspecialty.name}</span>
+        <span className="text-[#E8E0D5]">{subspecialty.name}</span>
       </div>
 
       {/* Header */}
@@ -119,22 +120,22 @@ export default function SubspecialtyPage() {
         <div className="flex items-center gap-4">
           <Link 
             href="/library"
-            className="p-2 rounded-lg bg-[#142538] hover:bg-[rgba(6,182,212,0.1)] transition-colors"
+            className="p-2 rounded-lg bg-[#3A4D5F] hover:bg-[rgba(91,179,179,0.1)] transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 text-[#9CA3AF]" />
+            <ArrowLeft className="w-5 h-5 text-[#A0B0BC]" />
           </Link>
           <div>
             <div className="flex items-center gap-3">
               <span className="text-3xl">{subspecialty.icon}</span>
-              <h1 className="text-2xl sm:text-3xl font-bold text-[#E5E7EB]">
+              <h1 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5]">
                 {subspecialty.name}
               </h1>
             </div>
-            <p className="text-[#9CA3AF] mt-1">{subspecialty.description}</p>
+            <p className="text-[#A0B0BC] mt-1">{subspecialty.description}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <Badge className="bg-[rgba(6,182,212,0.15)] text-[#06B6D4] border-[rgba(6,182,212,0.3)]">
+          <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
             {filteredTopics.length} topics
           </Badge>
           <Badge 
@@ -151,9 +152,9 @@ export default function SubspecialtyPage() {
       </div>
 
       {/* View Mode Selector */}
-      <div className="bg-[#142538] rounded-xl p-4 border border-[rgba(6,182,212,0.1)]">
+      <div className="bg-[#3A4D5F] rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-sm font-medium text-[#E5E7EB]">View Mode</span>
+          <span className="text-sm font-medium text-[#E8E0D5]">View Mode</span>
           <span className="text-xs text-[#6B7280]">{VIEW_MODE_CONFIG[viewMode].description}</span>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
@@ -167,14 +168,14 @@ export default function SubspecialtyPage() {
                 className={cn(
                   "flex flex-col items-center gap-1 p-2 rounded-lg transition-all text-center",
                   isActive
-                    ? "bg-[rgba(6,182,212,0.2)] border border-[#06B6D4]"
-                    : "bg-[#0D1B2A] border border-transparent hover:bg-[rgba(6,182,212,0.1)]"
+                    ? "bg-[rgba(91,179,179,0.2)] border border-[#5BB3B3]"
+                    : "bg-[#2D3E50] border border-transparent hover:bg-[rgba(91,179,179,0.1)]"
                 )}
               >
                 <span className="text-lg">{config.icon}</span>
                 <span className={cn(
                   "text-xs font-medium",
-                  isActive ? "text-[#06B6D4]" : "text-[#9CA3AF]"
+                  isActive ? "text-[#5BB3B3]" : "text-[#A0B0BC]"
                 )}>
                   {config.label}
                 </span>
@@ -187,12 +188,12 @@ export default function SubspecialtyPage() {
       {/* Search & Filters */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
           <Input
             placeholder="Search topics..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 bg-[#142538] border-[rgba(6,182,212,0.15)] focus:border-[#06B6D4] text-[#E5E7EB] placeholder:text-[#9CA3AF]"
+            className="pl-10 bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#A0B0BC]"
           />
         </div>
         <Button
@@ -201,8 +202,8 @@ export default function SubspecialtyPage() {
           className={cn(
             "gap-2",
             showHighYieldOnly 
-              ? "bg-[#F59E0B] text-[#0D1B2A] border-[#F59E0B] hover:bg-[#D97706]" 
-              : "bg-[#142538] text-[#9CA3AF] border-[rgba(6,182,212,0.15)] hover:text-[#E5E7EB]"
+              ? "bg-[#C9A86C] text-[#2D3E50] border-[#C9A86C] hover:bg-[#D97706]" 
+              : "bg-[#3A4D5F] text-[#A0B0BC] border-[rgba(91,179,179,0.15)] hover:text-[#E8E0D5]"
           )}
         >
           <Target className="w-4 h-4" />
@@ -214,7 +215,9 @@ export default function SubspecialtyPage() {
       <div className="space-y-3">
         {filteredTopics.map((topic) => {
           const hasContent = getContentAvailability(topic);
-          const difficultyColor = topic.difficulty <= 2 ? '#10B981' : topic.difficulty <= 3 ? '#F59E0B' : '#EF4444';
+          const difficulty = topic.difficulty ?? 3;
+          const difficultyColor = difficulty <= 2 ? '#10B981' : difficulty <= 3 ? '#C9A86C' : '#E57373';
+          const topicHasContent = topic.hasContent ?? { concept: true, examPrep: false, textbook: false, retrievalCards: false, cases: false, grindeMap: false };
           
           return (
             <Link
@@ -222,18 +225,18 @@ export default function SubspecialtyPage() {
               href={`/library/${subjectSlug}/${subspecialtySlug}/${topic.slug}?mode=${viewMode}`}
             >
               <Card className={cn(
-                "group bg-[#142538] border-[rgba(6,182,212,0.1)] hover:border-[rgba(6,182,212,0.3)] transition-all cursor-pointer",
+                "group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer",
                 !hasContent && "opacity-60"
               )}>
                 <CardContent className="p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
-                        <h3 className="font-semibold text-[#E5E7EB] group-hover:text-[#06B6D4] transition-colors truncate">
+                        <h3 className="font-semibold text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors truncate">
                           {topic.name}
                         </h3>
                         {topic.highYield && (
-                          <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] text-xs shrink-0">
+                          <Badge className="bg-[rgba(245,158,11,0.15)] text-[#C9A86C] border-[rgba(245,158,11,0.3)] text-xs shrink-0">
                             <Target className="w-3 h-3 mr-1" />
                             High Yield
                           </Badge>
@@ -241,7 +244,7 @@ export default function SubspecialtyPage() {
                       </div>
                       
                       {topic.description && (
-                        <p className="text-sm text-[#9CA3AF] mb-3 line-clamp-1">
+                        <p className="text-sm text-[#A0B0BC] mb-3 line-clamp-1">
                           {topic.description}
                         </p>
                       )}
@@ -249,14 +252,14 @@ export default function SubspecialtyPage() {
                       <div className="flex items-center gap-4 text-xs text-[#6B7280]">
                         <div className="flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5" />
-                          <span>{topic.estimatedMinutes} min</span>
+                          <span>{topic.estimatedMinutes ?? 15} min</span>
                         </div>
                         <div className="flex items-center gap-1.5">
                           <div 
                             className="w-2 h-2 rounded-full"
                             style={{ backgroundColor: difficultyColor }}
                           />
-                          <span>Difficulty {topic.difficulty}/5</span>
+                          <span>Difficulty {difficulty}/5</span>
                         </div>
                         <div className="flex items-center gap-1.5">
                           {hasContent ? (
@@ -272,28 +275,28 @@ export default function SubspecialtyPage() {
                     <div className="flex items-center gap-2 shrink-0">
                       {/* Content availability indicators */}
                       <div className="hidden sm:flex items-center gap-1">
-                        {topic.hasContent.concept && (
+                        {topicHasContent.concept && (
                           <div className="w-6 h-6 rounded bg-[#10B981]/20 flex items-center justify-center" title="Concept">
                             <span className="text-xs">📖</span>
                           </div>
                         )}
-                        {topic.hasContent.examPrep && (
-                          <div className="w-6 h-6 rounded bg-[#F59E0B]/20 flex items-center justify-center" title="Exam Prep">
+                        {topicHasContent.examPrep && (
+                          <div className="w-6 h-6 rounded bg-[#C9A86C]/20 flex items-center justify-center" title="Exam Prep">
                             <span className="text-xs">🎯</span>
                           </div>
                         )}
-                        {topic.hasContent.retrievalCards && (
+                        {topicHasContent.retrievalCards && (
                           <div className="w-6 h-6 rounded bg-[#EC4899]/20 flex items-center justify-center" title="Quiz">
                             <span className="text-xs">🧪</span>
                           </div>
                         )}
-                        {topic.hasContent.cases && (
-                          <div className="w-6 h-6 rounded bg-[#06B6D4]/20 flex items-center justify-center" title="Cases">
+                        {topicHasContent.cases && (
+                          <div className="w-6 h-6 rounded bg-[#5BB3B3]/20 flex items-center justify-center" title="Cases">
                             <span className="text-xs">🏥</span>
                           </div>
                         )}
                       </div>
-                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#06B6D4] group-hover:translate-x-1 transition-all" />
+                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#5BB3B3] group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
                 </CardContent>
@@ -305,10 +308,10 @@ export default function SubspecialtyPage() {
         {filteredTopics.length === 0 && (
           <div className="text-center py-12">
             <Sparkles className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">
+            <h3 className="text-lg font-medium text-[#E8E0D5] mb-2">
               {allTopics.length === 0 ? 'Coming Soon' : 'No topics found'}
             </h3>
-            <p className="text-[#9CA3AF]">
+            <p className="text-[#A0B0BC]">
               {allTopics.length === 0 
                 ? 'Topics for this subspecialty are being added.'
                 : 'Try adjusting your search or filters.'

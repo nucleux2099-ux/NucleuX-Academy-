@@ -1,0 +1,74 @@
+{
+  "id": "anatomy-general",
+  "title": "General Anatomy Fundamentals",
+  "phase": "Phase-1", 
+  "subject": "Anatomy",
+  "description": "Foundation course covering anatomical terminology, basic tissue types, organ systems overview, and fundamental anatomical principles essential for all medical studies.",
+  "competencies": ["AN1.1", "AN1.2", "AN3.1", "AN3.2"],
+  "prerequisites": [],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Anatomical Terminology & Planes",
+      "libraryTopic": "general-anatomy",
+      "sections": ["terminology", "planes", "directions"],
+      "duration": "45min",
+      "xp": 15
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Terminology Checkpoint",
+      "mcqCount": 10,
+      "passingScore": 75,
+      "xp": 25,
+      "competency": "AN1.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Basic Tissues",
+      "libraryTopic": "general-anatomy",
+      "sections": ["epithelial", "connective", "muscle", "nervous"],
+      "duration": "60min",
+      "xp": 20
+    },
+    {
+      "order": 4,
+      "type": "quiz",
+      "title": "Tissue Types Assessment",
+      "mcqCount": 15,
+      "passingScore": 70,
+      "xp": 30,
+      "competency": "AN1.2"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Body Systems Overview",
+      "libraryTopic": "general-anatomy", 
+      "sections": ["systems", "integration", "homeostasis"],
+      "duration": "50min",
+      "xp": 18
+    },
+    {
+      "order": 6,
+      "type": "skill",
+      "title": "Anatomical Position Demo",
+      "competency": "AN3.1",
+      "xp": 40,
+      "duration": "30min"
+    }
+  ],
+  "totalXP": 148,
+  "estimatedTime": "4 hours",
+  "unlocks": ["anatomy-upper-limb", "anatomy-lower-limb", "anatomy-thorax"],
+  "textbooks": [
+    {"title": "Gray's Anatomy", "chapters": ["Introduction to Anatomy"], "edition": "41st"},
+    {"title": "Netter Atlas of Human Anatomy", "chapters": ["Overview"], "edition": "7th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "basic-science"],
+  "difficulty": 1,
+  "lastUpdated": "2024-02-08"
+}

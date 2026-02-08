@@ -145,9 +145,9 @@ export default function SignupPage() {
 
       {/* Progress Steps */}
       <div className="flex items-center justify-center gap-2 mb-8">
-        <div className={`w-3 h-3 rounded-full transition-colors ${step >= 1 ? "bg-[#7C3AED]" : "bg-[#E2E8F0]"}`} />
-        <div className={`w-12 h-1 rounded transition-colors ${step >= 2 ? "bg-[#7C3AED]" : "bg-[#E2E8F0]"}`} />
-        <div className={`w-3 h-3 rounded-full transition-colors ${step >= 2 ? "bg-[#7C3AED]" : "bg-[#E2E8F0]"}`} />
+        <div className={`w-3 h-3 rounded-full transition-colors ${step >= 1 ? "bg-[#5BB3B3]" : "bg-[#E2E8F0]"}`} />
+        <div className={`w-12 h-1 rounded transition-colors ${step >= 2 ? "bg-[#5BB3B3]" : "bg-[#E2E8F0]"}`} />
+        <div className={`w-3 h-3 rounded-full transition-colors ${step >= 2 ? "bg-[#5BB3B3]" : "bg-[#E2E8F0]"}`} />
       </div>
 
       <Card className="bg-white border-[#E2E8F0] shadow-lg">
@@ -166,7 +166,7 @@ export default function SignupPage() {
               <div className="space-y-3 mb-6">
                 <Button
                   variant="outline"
-                  className="w-full border-[#CBD5E1] bg-white hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
+                  className="w-full border-[#CBD5E1] bg-white hover:border-[#5BB3B3] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
                   onClick={handleGoogleSignup}
                   disabled={isLoading}
                 >
@@ -219,7 +219,7 @@ export default function SignupPage() {
                       onChange={(e) =>
                         setFormData((prev) => ({ ...prev, name: e.target.value }))
                       }
-                      className="pl-10 bg-[#F8FAFC] border-[#E2E8F0] h-12 text-[#1E293B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20"
+                      className="pl-10 bg-[#F8FAFC] border-[#E2E8F0] h-12 text-[#1E293B] focus:border-[#5BB3B3] focus:ring-[#5BB3B3]/20"
                       required
                     />
                   </div>
@@ -238,7 +238,7 @@ export default function SignupPage() {
                       onChange={(e) =>
                         setFormData((prev) => ({ ...prev, email: e.target.value }))
                       }
-                      className="pl-10 bg-[#F8FAFC] border-[#E2E8F0] h-12 text-[#1E293B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20"
+                      className="pl-10 bg-[#F8FAFC] border-[#E2E8F0] h-12 text-[#1E293B] focus:border-[#5BB3B3] focus:ring-[#5BB3B3]/20"
                       required
                     />
                   </div>
@@ -257,7 +257,7 @@ export default function SignupPage() {
                       onChange={(e) =>
                         setFormData((prev) => ({ ...prev, password: e.target.value }))
                       }
-                      className="pl-10 pr-10 bg-[#F8FAFC] border-[#E2E8F0] h-12 text-[#1E293B] focus:border-[#7C3AED] focus:ring-[#7C3AED]/20"
+                      className="pl-10 pr-10 bg-[#F8FAFC] border-[#E2E8F0] h-12 text-[#1E293B] focus:border-[#5BB3B3] focus:ring-[#5BB3B3]/20"
                       required
                       minLength={6}
                     />
@@ -298,7 +298,7 @@ export default function SignupPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#7C3AED] hover:bg-[#6D28D9] h-12 shadow-lg shadow-[#7C3AED]/20"
+                  className="w-full bg-[#5BB3B3] hover:bg-[#4A9E9E] h-12 shadow-lg shadow-[#5BB3B3]/20"
                   disabled={isLoading}
                 >
                   {isLoading ? (
@@ -328,8 +328,8 @@ export default function SignupPage() {
                       onClick={() => setFormData((prev) => ({ ...prev, level: level.id }))}
                       className={`p-4 rounded-lg border text-left transition-all ${
                         formData.level === level.id
-                          ? "border-[#7C3AED] bg-[#F5F3FF]"
-                          : "border-[#E2E8F0] hover:border-[#7C3AED]/50 bg-[#F8FAFC]"
+                          ? "border-[#5BB3B3] bg-[#F5F3FF]"
+                          : "border-[#E2E8F0] hover:border-[#5BB3B3]/50 bg-[#F8FAFC]"
                       }`}
                     >
                       <div className="flex items-center justify-between">
@@ -338,7 +338,7 @@ export default function SignupPage() {
                           <p className="text-sm text-[#64748B]">{level.description}</p>
                         </div>
                         {formData.level === level.id && (
-                          <CheckCircle className="w-5 h-5 text-[#7C3AED]" />
+                          <CheckCircle className="w-5 h-5 text-[#5BB3B3]" />
                         )}
                       </div>
                     </button>
@@ -355,7 +355,7 @@ export default function SignupPage() {
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, specialty: e.target.value }))
                   }
-                  className="w-full h-12 px-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#1E293B] focus:border-[#7C3AED] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/20"
+                  className="w-full h-12 px-3 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-[#1E293B] focus:border-[#5BB3B3] focus:outline-none focus:ring-2 focus:ring-[#5BB3B3]/20"
                   required
                 >
                   <option value="">Select specialty...</option>
@@ -378,7 +378,7 @@ export default function SignupPage() {
                 </Button>
                 <Button
                   type="submit"
-                  className="flex-1 bg-[#7C3AED] hover:bg-[#6D28D9] h-12 shadow-lg shadow-[#7C3AED]/20"
+                  className="flex-1 bg-[#5BB3B3] hover:bg-[#4A9E9E] h-12 shadow-lg shadow-[#5BB3B3]/20"
                   disabled={isLoading || !formData.level || !formData.specialty}
                 >
                   {isLoading ? (
@@ -399,7 +399,7 @@ export default function SignupPage() {
       {/* Sign In Link */}
       <p className="text-center mt-6 text-[#64748B]">
         Already have an account?{" "}
-        <Link href="/login" className="text-[#7C3AED] hover:underline font-medium">
+        <Link href="/login" className="text-[#5BB3B3] hover:underline font-medium">
           Sign in
         </Link>
       </p>
@@ -407,11 +407,11 @@ export default function SignupPage() {
       {/* Terms */}
       <p className="text-center mt-4 text-xs text-[#94A3B8]">
         By creating an account, you agree to our{" "}
-        <Link href="/terms" className="text-[#7C3AED] hover:underline">
+        <Link href="/terms" className="text-[#5BB3B3] hover:underline">
           Terms of Service
         </Link>{" "}
         and{" "}
-        <Link href="/privacy" className="text-[#7C3AED] hover:underline">
+        <Link href="/privacy" className="text-[#5BB3B3] hover:underline">
           Privacy Policy
         </Link>
       </p>

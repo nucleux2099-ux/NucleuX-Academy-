@@ -65,7 +65,7 @@ function LoginForm() {
   if (authLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#7C3AED]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#5BB3B3]" />
       </div>
     );
   }
@@ -96,7 +96,7 @@ function LoginForm() {
           {/* Google Sign In Button */}
           <Button
             variant="outline"
-            className="w-full mb-4 border-[#CBD5E1] bg-white hover:border-[#7C3AED] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
+            className="w-full mb-4 border-[#CBD5E1] bg-white hover:border-[#5BB3B3] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
             onClick={handleGoogleLogin}
             disabled={isLoading || isGoogleLoading}
           >
@@ -153,7 +153,7 @@ function LoginForm() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="pl-10 h-12 border-[#CBD5E1] focus:border-[#7C3AED] focus:ring-[#7C3AED] bg-[#F8FAFC]"
+                  className="pl-10 h-12 border-[#CBD5E1] focus:border-[#5BB3B3] focus:ring-[#5BB3B3] bg-[#F8FAFC]"
                   required
                   disabled={isLoading}
                 />
@@ -167,7 +167,7 @@ function LoginForm() {
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-sm text-[#7C3AED] hover:text-[#6D28D9] font-medium"
+                  className="text-sm text-[#5BB3B3] hover:text-[#4A9E9E] font-medium"
                 >
                   Forgot password?
                 </Link>
@@ -181,7 +181,7 @@ function LoginForm() {
                   onChange={(e) =>
                     setFormData({ ...formData, password: e.target.value })
                   }
-                  className="pl-10 pr-10 h-12 border-[#CBD5E1] focus:border-[#7C3AED] focus:ring-[#7C3AED] bg-[#F8FAFC]"
+                  className="pl-10 pr-10 h-12 border-[#CBD5E1] focus:border-[#5BB3B3] focus:ring-[#5BB3B3] bg-[#F8FAFC]"
                   required
                   disabled={isLoading}
                 />
@@ -201,7 +201,7 @@ function LoginForm() {
 
             <Button
               type="submit"
-              className="w-full h-12 bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold shadow-lg shadow-[#7C3AED]/25 transition-all"
+              className="w-full h-12 bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-semibold shadow-lg shadow-[#5BB3B3]/25 transition-all"
               disabled={isLoading || isGoogleLoading}
             >
               {isLoading ? (
@@ -221,7 +221,7 @@ function LoginForm() {
         Don't have an account?{" "}
         <Link
           href="/signup"
-          className="text-[#7C3AED] hover:text-[#6D28D9] font-semibold"
+          className="text-[#5BB3B3] hover:text-[#4A9E9E] font-semibold"
         >
           Sign up for free
         </Link>
@@ -234,7 +234,7 @@ export default function LoginPage() {
   return (
     <Suspense fallback={
       <div className="flex items-center justify-center min-h-[400px]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#7C3AED]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#5BB3B3]" />
       </div>
     }>
       <LoginForm />

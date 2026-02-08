@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, ChevronLeft, ChevronRight, Flag, CheckCircle, XCircle, RotateCcw, Lightbulb, Trophy, Target, TrendingUp, AlertCircle, Eye } from "lucide-react";
 
 // MCQs room color - Sky Blue
-const roomColor = '#0EA5E9';
+const roomColor = '#6BA8C9';
 
 const sampleQuestions = [
   { id: 1, question: "A 45-year-old male presents with progressive dysphagia to solids for 6 months. Endoscopy shows a stricture at 30cm from incisors. Which is the most likely diagnosis?", options: ["Esophageal carcinoma", "Achalasia cardia", "Peptic stricture", "Corrosive stricture"], correctAnswer: 0, explanation: "Progressive dysphagia to solids in a middle-aged male, with a stricture at 30cm (lower 1/3rd), is highly suggestive of esophageal carcinoma.", topic: "Esophageal Disorders", difficulty: "Medium" },
@@ -57,63 +57,63 @@ export default function MCQsPage() {
   if (mode === "results") {
     return (
       <div className="space-y-6 max-w-3xl mx-auto">
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] overflow-hidden">
-          <div className="bg-gradient-to-r from-[rgba(14,165,233,0.15)] to-[rgba(6,182,212,0.1)] p-8 text-center border-b border-[rgba(6,182,212,0.1)]">
-            <div className="w-24 h-24 rounded-full bg-[rgba(5,150,105,0.2)] flex items-center justify-center mx-auto mb-6 border-4 border-[#059669]/30">
-              <Trophy className="w-12 h-12 text-[#059669]" />
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] overflow-hidden">
+          <div className="bg-gradient-to-r from-[rgba(14,165,233,0.15)] to-[rgba(91,179,179,0.1)] p-8 text-center border-b border-[rgba(91,179,179,0.1)]">
+            <div className="w-24 h-24 rounded-full bg-[rgba(5,150,105,0.2)] flex items-center justify-center mx-auto mb-6 border-4 border-[#7BA69E]/30">
+              <Trophy className="w-12 h-12 text-[#7BA69E]" />
             </div>
-            <h2 className="text-3xl font-bold text-[#E5E7EB] mb-2">Quiz Complete!</h2>
-            <p className="text-[#9CA3AF]">Here&apos;s your performance summary</p>
+            <h2 className="text-3xl font-bold text-[#E8E0D5] mb-2">Quiz Complete!</h2>
+            <p className="text-[#A0B0BC]">Here&apos;s your performance summary</p>
           </div>
           <CardContent className="p-8">
             <div className="flex justify-center mb-8">
               <div className="relative w-40 h-40">
                 <svg className="w-full h-full transform -rotate-90">
-                  <circle cx="80" cy="80" r="70" stroke="rgba(6,182,212,0.1)" strokeWidth="12" fill="none" />
-                  <circle cx="80" cy="80" r="70" stroke={percentage >= 70 ? "#059669" : percentage >= 50 ? "#F59E0B" : "#EF4444"} strokeWidth="12" fill="none" strokeLinecap="round" strokeDasharray={`${(percentage / 100) * 440} 440`} className="transition-all duration-1000" />
+                  <circle cx="80" cy="80" r="70" stroke="rgba(91,179,179,0.1)" strokeWidth="12" fill="none" />
+                  <circle cx="80" cy="80" r="70" stroke={percentage >= 70 ? "#7BA69E" : percentage >= 50 ? "#C9A86C" : "#E57373"} strokeWidth="12" fill="none" strokeLinecap="round" strokeDasharray={`${(percentage / 100) * 440} 440`} className="transition-all duration-1000" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-4xl font-bold text-[#E5E7EB]">{percentage}%</span>
-                  <span className="text-sm text-[#9CA3AF]">Accuracy</span>
+                  <span className="text-4xl font-bold text-[#E8E0D5]">{percentage}%</span>
+                  <span className="text-sm text-[#A0B0BC]">Accuracy</span>
                 </div>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[rgba(14,165,233,0.15)] flex items-center justify-center mx-auto mb-2"><Target className="w-5 h-5 text-[#0EA5E9]" /></div>
-                <p className="text-2xl font-bold text-[#E5E7EB]">{score}/{sampleQuestions.length}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(14,165,233,0.15)] flex items-center justify-center mx-auto mb-2"><Target className="w-5 h-5 text-[#6BA8C9]" /></div>
+                <p className="text-2xl font-bold text-[#E8E0D5]">{score}/{sampleQuestions.length}</p>
                 <p className="text-xs text-[#6B7280]">Score</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[rgba(5,150,105,0.15)] flex items-center justify-center mx-auto mb-2"><CheckCircle className="w-5 h-5 text-[#059669]" /></div>
-                <p className="text-2xl font-bold text-[#059669]">{score}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(5,150,105,0.15)] flex items-center justify-center mx-auto mb-2"><CheckCircle className="w-5 h-5 text-[#7BA69E]" /></div>
+                <p className="text-2xl font-bold text-[#7BA69E]">{score}</p>
                 <p className="text-xs text-[#6B7280]">Correct</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[rgba(239,68,68,0.15)] flex items-center justify-center mx-auto mb-2"><XCircle className="w-5 h-5 text-[#EF4444]" /></div>
-                <p className="text-2xl font-bold text-[#EF4444]">{incorrect}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(239,68,68,0.15)] flex items-center justify-center mx-auto mb-2"><XCircle className="w-5 h-5 text-[#E57373]" /></div>
+                <p className="text-2xl font-bold text-[#E57373]">{incorrect}</p>
                 <p className="text-xs text-[#6B7280]">Incorrect</p>
               </div>
-              <div className="p-4 rounded-xl bg-[#142538] border border-[rgba(6,182,212,0.1)] text-center">
-                <div className="w-10 h-10 rounded-lg bg-[rgba(6,182,212,0.15)] flex items-center justify-center mx-auto mb-2"><Clock className="w-5 h-5 text-[#06B6D4]" /></div>
-                <p className="text-2xl font-bold text-[#06B6D4]">{formatTime(600 - timeLeft)}</p>
+              <div className="p-4 rounded-xl bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)] text-center">
+                <div className="w-10 h-10 rounded-lg bg-[rgba(91,179,179,0.15)] flex items-center justify-center mx-auto mb-2"><Clock className="w-5 h-5 text-[#5BB3B3]" /></div>
+                <p className="text-2xl font-bold text-[#5BB3B3]">{formatTime(600 - timeLeft)}</p>
                 <p className="text-xs text-[#6B7280]">Time</p>
               </div>
             </div>
             <div className={`p-4 rounded-xl mb-8 ${percentage >= 70 ? "bg-[rgba(5,150,105,0.15)] border border-[rgba(5,150,105,0.3)]" : percentage >= 50 ? "bg-[rgba(245,158,11,0.15)] border border-[rgba(245,158,11,0.3)]" : "bg-[rgba(239,68,68,0.15)] border border-[rgba(239,68,68,0.3)]"}`}>
               <div className="flex items-start gap-3">
-                {percentage >= 70 ? <TrendingUp className="w-5 h-5 text-[#059669]" /> : <AlertCircle className="w-5 h-5 text-[#F59E0B]" />}
+                {percentage >= 70 ? <TrendingUp className="w-5 h-5 text-[#7BA69E]" /> : <AlertCircle className="w-5 h-5 text-[#C9A86C]" />}
                 <div>
-                  <p className={`font-medium ${percentage >= 70 ? "text-[#059669]" : percentage >= 50 ? "text-[#F59E0B]" : "text-[#EF4444]"}`}>
+                  <p className={`font-medium ${percentage >= 70 ? "text-[#7BA69E]" : percentage >= 50 ? "text-[#C9A86C]" : "text-[#E57373]"}`}>
                     {percentage >= 70 ? "Excellent Performance! 🎉" : percentage >= 50 ? "Good Effort! 💪" : "Needs Improvement"}
                   </p>
-                  <p className="text-sm text-[#9CA3AF] mt-1">{percentage >= 70 ? "You've mastered these concepts!" : "Review the explanations to improve."}</p>
+                  <p className="text-sm text-[#A0B0BC] mt-1">{percentage >= 70 ? "You've mastered these concepts!" : "Review the explanations to improve."}</p>
                 </div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button onClick={handleReset} className="flex-1 bg-[#0EA5E9] hover:bg-[#0284C7] text-[#0D1B2A]"><RotateCcw className="w-4 h-4 mr-2" />Try Again</Button>
-              {wrongQuestions.length > 0 && <Button onClick={handleReviewMistakes} variant="outline" className="flex-1 border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"><Eye className="w-4 h-4 mr-2" />Review Mistakes</Button>}
+              <Button onClick={handleReset} className="flex-1 bg-[#6BA8C9] hover:bg-[#0284C7] text-[#2D3E50]"><RotateCcw className="w-4 h-4 mr-2" />Try Again</Button>
+              {wrongQuestions.length > 0 && <Button onClick={handleReviewMistakes} variant="outline" className="flex-1 border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"><Eye className="w-4 h-4 mr-2" />Review Mistakes</Button>}
             </div>
           </CardContent>
         </Card>
@@ -128,26 +128,26 @@ export default function MCQsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-3xl font-bold text-[#E5E7EB]">📝 MCQ Practice</h1>
-            {mode === "review" && <Badge className="bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-none">Review Mode</Badge>}
+            <h1 className="text-3xl font-bold text-[#E8E0D5]">📝 MCQ Practice</h1>
+            {mode === "review" && <Badge className="bg-[rgba(245,158,11,0.2)] text-[#C9A86C] border-none">Review Mode</Badge>}
           </div>
-          <p className="text-[#9CA3AF]">Surgical GI - Mixed Topics</p>
+          <p className="text-[#A0B0BC]">Surgical GI - Mixed Topics</p>
         </div>
         <div className="flex items-center gap-4">
           {mode === "quiz" && (
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${timeLeft < 60 ? "bg-[rgba(239,68,68,0.2)] text-[#EF4444] animate-pulse" : "bg-[#0F2233] border border-[rgba(6,182,212,0.15)] text-[#E5E7EB]"}`}>
+            <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${timeLeft < 60 ? "bg-[rgba(239,68,68,0.2)] text-[#E57373] animate-pulse" : "bg-[#364A5E] border border-[rgba(91,179,179,0.15)] text-[#E8E0D5]"}`}>
               <Clock className="w-4 h-4" /><span className="font-mono font-bold">{formatTime(timeLeft)}</span>
             </div>
           )}
-          {mode === "review" && <Button onClick={handleReset} variant="outline" className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF]"><RotateCcw className="w-4 h-4 mr-2" />New Quiz</Button>}
+          {mode === "review" && <Button onClick={handleReset} variant="outline" className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC]"><RotateCcw className="w-4 h-4 mr-2" />New Quiz</Button>}
         </div>
       </div>
 
       {/* Progress */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-[#9CA3AF]">{mode === "review" ? "Reviewing" : "Question"} {currentQuestion + 1} of {sampleQuestions.length}</span>
-          <span className="text-[#9CA3AF]">{Math.round(((currentQuestion + 1) / sampleQuestions.length) * 100)}%</span>
+          <span className="text-[#A0B0BC]">{mode === "review" ? "Reviewing" : "Question"} {currentQuestion + 1} of {sampleQuestions.length}</span>
+          <span className="text-[#A0B0BC]">{Math.round(((currentQuestion + 1) / sampleQuestions.length) * 100)}%</span>
         </div>
         <Progress value={((currentQuestion + 1) / sampleQuestions.length) * 100} className="h-2" />
       </div>
@@ -159,23 +159,23 @@ export default function MCQsPage() {
           const isRight = answers[i] !== null && answers[i] === q.correctAnswer;
           return (
             <button key={i} onClick={() => { setCurrentQuestion(i); setSelectedAnswer(answers[i]); setShowResult(mode === "review" || answers[i] !== null); }}
-              className={`w-10 h-10 rounded-lg font-medium transition-all ${i === currentQuestion ? "bg-[#0EA5E9] text-[#0D1B2A] ring-2 ring-[#0EA5E9]/50" : isRight ? "bg-[rgba(5,150,105,0.2)] text-[#059669] border border-[rgba(5,150,105,0.3)]" : isWrong ? "bg-[rgba(239,68,68,0.2)] text-[#EF4444] border border-[rgba(239,68,68,0.3)]" : "bg-[#0F2233] text-[#9CA3AF] border border-[rgba(6,182,212,0.15)] hover:border-[#0EA5E9]"} ${flagged[i] ? "ring-2 ring-[#F59E0B]" : ""}`}
+              className={`w-10 h-10 rounded-lg font-medium transition-all ${i === currentQuestion ? "bg-[#6BA8C9] text-[#2D3E50] ring-2 ring-[#6BA8C9]/50" : isRight ? "bg-[rgba(5,150,105,0.2)] text-[#7BA69E] border border-[rgba(5,150,105,0.3)]" : isWrong ? "bg-[rgba(239,68,68,0.2)] text-[#E57373] border border-[rgba(239,68,68,0.3)]" : "bg-[#364A5E] text-[#A0B0BC] border border-[rgba(91,179,179,0.15)] hover:border-[#6BA8C9]"} ${flagged[i] ? "ring-2 ring-[#C9A86C]" : ""}`}
             >{i + 1}</button>
           );
         })}
       </div>
 
       {/* Question Card */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] border-l-4" style={{ borderLeftColor: roomColor }}>
         <CardHeader className="flex flex-row items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2 flex-wrap">
-              <Badge className="bg-[rgba(14,165,233,0.15)] text-[#0EA5E9] border-none">{question.topic}</Badge>
-              <Badge className={question.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.15)] text-[#059669] border-none" : question.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-none" : "bg-[rgba(239,68,68,0.15)] text-[#EF4444] border-none"}>{question.difficulty}</Badge>
+              <Badge className="bg-[rgba(14,165,233,0.15)] text-[#6BA8C9] border-none">{question.topic}</Badge>
+              <Badge className={question.difficulty === "Easy" ? "bg-[rgba(5,150,105,0.15)] text-[#7BA69E] border-none" : question.difficulty === "Medium" ? "bg-[rgba(245,158,11,0.15)] text-[#C9A86C] border-none" : "bg-[rgba(239,68,68,0.15)] text-[#E57373] border-none"}>{question.difficulty}</Badge>
             </div>
-            <CardTitle className="text-lg font-medium leading-relaxed text-[#E5E7EB]">{question.question}</CardTitle>
+            <CardTitle className="text-lg font-medium leading-relaxed text-[#E8E0D5]">{question.question}</CardTitle>
           </div>
-          {mode === "quiz" && <Button variant="ghost" size="icon" onClick={toggleFlag} className={flagged[currentQuestion] ? "text-[#F59E0B]" : "text-[#6B7280] hover:text-[#F59E0B]"}><Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#F59E0B" : "none"} /></Button>}
+          {mode === "quiz" && <Button variant="ghost" size="icon" onClick={toggleFlag} className={flagged[currentQuestion] ? "text-[#C9A86C]" : "text-[#6B7280] hover:text-[#C9A86C]"}><Flag className="w-5 h-5" fill={flagged[currentQuestion] ? "#C9A86C" : "none"} /></Button>}
         </CardHeader>
         <CardContent className="space-y-4">
           {/* Options */}
@@ -183,20 +183,20 @@ export default function MCQsPage() {
             {question.options.map((option, index) => {
               const isSelected = selectedAnswer === index;
               const isCorrectOption = index === question.correctAnswer;
-              let optionStyle = "bg-[#142538] border-[rgba(6,182,212,0.1)]";
+              let optionStyle = "bg-[#3A4D5F] border-[rgba(91,179,179,0.1)]";
               if (showResult || mode === "review") {
-                if (isCorrectOption) optionStyle = "bg-[rgba(5,150,105,0.15)] border-[#059669] ring-2 ring-[#059669]/30";
-                else if (isSelected && !isCorrectOption) optionStyle = "bg-[rgba(239,68,68,0.15)] border-[#EF4444] ring-2 ring-[#EF4444]/30";
-              } else if (isSelected) optionStyle = "bg-[rgba(14,165,233,0.15)] border-[#0EA5E9]";
+                if (isCorrectOption) optionStyle = "bg-[rgba(5,150,105,0.15)] border-[#7BA69E] ring-2 ring-[#7BA69E]/30";
+                else if (isSelected && !isCorrectOption) optionStyle = "bg-[rgba(239,68,68,0.15)] border-[#E57373] ring-2 ring-[#E57373]/30";
+              } else if (isSelected) optionStyle = "bg-[rgba(14,165,233,0.15)] border-[#6BA8C9]";
 
               return (
                 <button key={index} onClick={() => handleAnswer(index)} disabled={showResult || mode === "review"}
-                  className={`w-full p-4 rounded-lg border text-left transition-all ${optionStyle} ${!showResult && mode === "quiz" ? "hover:border-[#0EA5E9] hover:bg-[rgba(14,165,233,0.1)]" : ""}`}>
+                  className={`w-full p-4 rounded-lg border text-left transition-all ${optionStyle} ${!showResult && mode === "quiz" ? "hover:border-[#6BA8C9] hover:bg-[rgba(14,165,233,0.1)]" : ""}`}>
                   <div className="flex items-center gap-3">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${(showResult || mode === "review") && isCorrectOption ? "bg-[#059669] text-white" : (showResult || mode === "review") && isSelected && !isCorrectOption ? "bg-[#EF4444] text-white" : isSelected ? "bg-[#0EA5E9] text-[#0D1B2A]" : "bg-[#0F2233] text-[#9CA3AF]"}`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${(showResult || mode === "review") && isCorrectOption ? "bg-[#7BA69E] text-white" : (showResult || mode === "review") && isSelected && !isCorrectOption ? "bg-[#E57373] text-white" : isSelected ? "bg-[#6BA8C9] text-[#2D3E50]" : "bg-[#364A5E] text-[#A0B0BC]"}`}>
                       {(showResult || mode === "review") && isCorrectOption ? <CheckCircle className="w-4 h-4" /> : (showResult || mode === "review") && isSelected && !isCorrectOption ? <XCircle className="w-4 h-4" /> : String.fromCharCode(65 + index)}
                     </div>
-                    <span className={`text-[#E5E7EB] ${(showResult || mode === "review") && isCorrectOption ? "text-[#059669] font-medium" : ""}`}>{option}</span>
+                    <span className={`text-[#E8E0D5] ${(showResult || mode === "review") && isCorrectOption ? "text-[#7BA69E] font-medium" : ""}`}>{option}</span>
                   </div>
                 </button>
               );
@@ -207,21 +207,21 @@ export default function MCQsPage() {
           {(showResult || mode === "review") && (
             <div className="p-4 rounded-xl bg-[rgba(245,158,11,0.1)] border border-[rgba(245,158,11,0.2)] mt-6">
               <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-[#0F2233] shrink-0"><Lightbulb className="w-5 h-5 text-[#F59E0B]" /></div>
+                <div className="p-2 rounded-lg bg-[#364A5E] shrink-0"><Lightbulb className="w-5 h-5 text-[#C9A86C]" /></div>
                 <div>
-                  <p className="font-semibold text-[#F59E0B] mb-2">Explanation</p>
-                  <p className="text-[#9CA3AF] leading-relaxed">{question.explanation}</p>
+                  <p className="font-semibold text-[#C9A86C] mb-2">Explanation</p>
+                  <p className="text-[#A0B0BC] leading-relaxed">{question.explanation}</p>
                 </div>
               </div>
             </div>
           )}
 
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-[rgba(6,182,212,0.1)]">
-            <Button variant="outline" onClick={handlePrev} disabled={currentQuestion === 0} className="border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"><ChevronLeft className="w-4 h-4 mr-2" />Previous</Button>
+          <div className="flex items-center justify-between pt-4 border-t border-[rgba(91,179,179,0.1)]">
+            <Button variant="outline" onClick={handlePrev} disabled={currentQuestion === 0} className="border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"><ChevronLeft className="w-4 h-4 mr-2" />Previous</Button>
             <div className="flex gap-2">
-              {mode === "quiz" && !showResult && selectedAnswer !== null && <Button onClick={handleSubmit} className="bg-[#059669] hover:bg-[#047857] text-white"><CheckCircle className="w-4 h-4 mr-2" />Submit</Button>}
-              <Button onClick={handleNext} className="bg-[#0EA5E9] hover:bg-[#0284C7] text-[#0D1B2A]">{currentQuestion === sampleQuestions.length - 1 ? (mode === "review" ? "Back to Results" : "Finish Quiz") : "Next"}<ChevronRight className="w-4 h-4 ml-2" /></Button>
+              {mode === "quiz" && !showResult && selectedAnswer !== null && <Button onClick={handleSubmit} className="bg-[#7BA69E] hover:bg-[#047857] text-white"><CheckCircle className="w-4 h-4 mr-2" />Submit</Button>}
+              <Button onClick={handleNext} className="bg-[#6BA8C9] hover:bg-[#0284C7] text-[#2D3E50]">{currentQuestion === sampleQuestions.length - 1 ? (mode === "review" ? "Back to Results" : "Finish Quiz") : "Next"}<ChevronRight className="w-4 h-4 ml-2" /></Button>
             </div>
           </div>
         </CardContent>

@@ -91,16 +91,16 @@ export function AtomWidget({ onClick, isOpen }: { onClick: () => void; isOpen: b
       className={cn(
         "fixed bottom-6 right-6 z-50 group",
         "w-14 h-14 rounded-full",
-        "bg-gradient-to-br from-[#06B6D4] to-[#8B5CF6]",
-        "shadow-lg shadow-[rgba(6,182,212,0.3)]",
+        "bg-gradient-to-br from-[#5BB3B3] to-[#8B5CF6]",
+        "shadow-lg shadow-[rgba(91,179,179,0.3)]",
         "flex items-center justify-center",
         "transition-all duration-300",
-        "hover:scale-110 hover:shadow-xl hover:shadow-[rgba(6,182,212,0.4)]",
+        "hover:scale-110 hover:shadow-xl hover:shadow-[rgba(91,179,179,0.4)]",
         isOpen && "rotate-90 scale-90"
       )}
     >
       {/* Pulse animation */}
-      <div className="absolute inset-0 rounded-full bg-[#06B6D4] animate-ping opacity-20" />
+      <div className="absolute inset-0 rounded-full bg-[#5BB3B3] animate-ping opacity-20" />
       
       {/* Icon */}
       <Atom className={cn(
@@ -110,7 +110,7 @@ export function AtomWidget({ onClick, isOpen }: { onClick: () => void; isOpen: b
       
       {/* Tooltip */}
       {!isOpen && (
-        <div className="absolute right-full mr-3 px-3 py-1.5 bg-[#0D1B2A] text-[#E5E7EB] text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-[rgba(6,182,212,0.2)]">
+        <div className="absolute right-full mr-3 px-3 py-1.5 bg-[#2D3E50] text-[#E8E0D5] text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-[rgba(91,179,179,0.2)]">
           Ask ATOM
         </div>
       )}
@@ -186,7 +186,7 @@ export function AtomChatPanel({
         id: Date.now().toString(),
         role: 'atom',
         content: currentTopic
-          ? `**${currentTopic.name}** in simple terms:\n\n${currentTopic.content.keyPoints.slice(0, 3).map(p => `• ${p}`).join('\n')}\n\n💡 *Think of it this way:* ${getSimpleAnalogy(currentTopic.name)}`
+          ? `**${currentTopic.name}** in simple terms:\n\n${(currentTopic.content.keyPoints ?? []).slice(0, 3).map(p => `• ${p}`).join('\n')}\n\n💡 *Think of it this way:* ${getSimpleAnalogy(currentTopic.name)}`
           : `Tell me which topic you'd like me to explain! I can break down any concept into bite-sized pieces.`,
         timestamp: new Date(),
       };
@@ -195,12 +195,12 @@ export function AtomChatPanel({
     // Time-based study
     if (lowerMsg.includes('minute') || lowerMsg.includes('time') || lowerMsg.includes('quick')) {
       const quickTopics = allTopics
-        .filter(t => t.estimatedMinutes <= 20)
+        .filter(t => (t.estimatedMinutes ?? 15) <= 20)
         .slice(0, 3);
       return {
         id: Date.now().toString(),
         role: 'atom',
-        content: `⏱️ **Quick Study Session**\n\nHere's what you can cover in 20 minutes:\n\n${quickTopics.map(t => `• **${t.name}** (${t.estimatedMinutes} min)`).join('\n')}\n\nOr switch to **Exam Prep** mode for any topic — it's optimized for quick review!`,
+        content: `⏱️ **Quick Study Session**\n\nHere's what you can cover in 20 minutes:\n\n${quickTopics.map(t => `• **${t.name}** (${t.estimatedMinutes ?? 15} min)`).join('\n')}\n\nOr switch to **Exam Prep** mode for any topic — it's optimized for quick review!`,
         timestamp: new Date(),
       };
     }
@@ -260,9 +260,9 @@ export function AtomChatPanel({
 
   return (
     <div className="fixed bottom-24 right-6 z-50 w-[380px] max-h-[600px] animate-in slide-in-from-bottom-4 fade-in duration-300">
-      <Card className="bg-[#0D1B2A] border-[rgba(6,182,212,0.3)] shadow-2xl shadow-[rgba(6,182,212,0.1)] overflow-hidden">
+      <Card className="bg-[#2D3E50] border-[rgba(91,179,179,0.3)] shadow-2xl shadow-[rgba(91,179,179,0.1)] overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#06B6D4] to-[#8B5CF6] p-4">
+        <div className="bg-gradient-to-r from-[#5BB3B3] to-[#8B5CF6] p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
@@ -300,8 +300,8 @@ export function AtomChatPanel({
               <div className={cn(
                 "max-w-[85%] rounded-2xl px-4 py-3",
                 msg.role === 'user' 
-                  ? "bg-[#06B6D4] text-white rounded-br-sm" 
-                  : "bg-[#142538] text-[#E5E7EB] rounded-bl-sm border border-[rgba(6,182,212,0.1)]"
+                  ? "bg-[#5BB3B3] text-white rounded-br-sm" 
+                  : "bg-[#3A4D5F] text-[#E8E0D5] rounded-bl-sm border border-[rgba(91,179,179,0.1)]"
               )}>
                 <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
                 
@@ -312,10 +312,10 @@ export function AtomChatPanel({
                       <a
                         key={sug.topicId}
                         href={sug.url}
-                        className="block p-2 bg-[#0D1B2A] rounded-lg hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-[rgba(6,182,212,0.1)]"
+                        className="block p-2 bg-[#2D3E50] rounded-lg hover:bg-[rgba(91,179,179,0.1)] transition-colors border border-[rgba(91,179,179,0.1)]"
                       >
-                        <p className="text-sm font-medium text-[#06B6D4]">{sug.topicName}</p>
-                        <p className="text-xs text-[#9CA3AF] mt-0.5">{sug.reason}</p>
+                        <p className="text-sm font-medium text-[#5BB3B3]">{sug.topicName}</p>
+                        <p className="text-xs text-[#A0B0BC] mt-0.5">{sug.reason}</p>
                       </a>
                     ))}
                   </div>
@@ -326,11 +326,11 @@ export function AtomChatPanel({
           
           {isTyping && (
             <div className="flex justify-start">
-              <div className="bg-[#142538] rounded-2xl rounded-bl-sm px-4 py-3 border border-[rgba(6,182,212,0.1)]">
+              <div className="bg-[#3A4D5F] rounded-2xl rounded-bl-sm px-4 py-3 border border-[rgba(91,179,179,0.1)]">
                 <div className="flex gap-1">
-                  <span className="w-2 h-2 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                  <span className="w-2 h-2 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                  <span className="w-2 h-2 bg-[#06B6D4] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                  <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                  <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                  <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </div>
               </div>
             </div>
@@ -340,13 +340,13 @@ export function AtomChatPanel({
         </div>
 
         {/* Quick Actions */}
-        <div className="px-4 py-2 border-t border-[rgba(6,182,212,0.1)]">
+        <div className="px-4 py-2 border-t border-[rgba(91,179,179,0.1)]">
           <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
             {quickActions.map((action) => (
               <button
                 key={action.id}
                 onClick={() => handleQuickAction(action.prompt)}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-[#142538] hover:bg-[rgba(6,182,212,0.1)] rounded-full text-xs text-[#9CA3AF] hover:text-[#06B6D4] transition-colors whitespace-nowrap border border-[rgba(6,182,212,0.1)]"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-[#3A4D5F] hover:bg-[rgba(91,179,179,0.1)] rounded-full text-xs text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors whitespace-nowrap border border-[rgba(91,179,179,0.1)]"
               >
                 <action.icon className="w-3.5 h-3.5" />
                 {action.label}
@@ -356,19 +356,19 @@ export function AtomChatPanel({
         </div>
 
         {/* Input */}
-        <div className="p-4 border-t border-[rgba(6,182,212,0.1)]">
+        <div className="p-4 border-t border-[rgba(91,179,179,0.1)]">
           <div className="flex gap-2">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Ask ATOM anything..."
-              className="flex-1 bg-[#142538] border-[rgba(6,182,212,0.2)] focus:border-[#06B6D4] text-[#E5E7EB] placeholder:text-[#6B7280]"
+              className="flex-1 bg-[#3A4D5F] border-[rgba(91,179,179,0.2)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#6B7280]"
             />
             <Button
               onClick={handleSend}
               disabled={!input.trim()}
-              className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
+              className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-[#2D3E50]"
             >
               <Send className="w-4 h-4" />
             </Button>
@@ -391,7 +391,7 @@ function getNextTopicSuggestions(
   if (!currentTopic) {
     // Suggest starter topics
     return allTopics
-      .filter(t => t.prerequisites.length === 0)
+      .filter(t => (t.prerequisites?.length ?? 0) === 0)
       .slice(0, 3)
       .map(t => ({
         topicId: t.id,
@@ -405,7 +405,7 @@ function getNextTopicSuggestions(
   const suggestions: TopicSuggestion[] = [];
   
   // Add related topics
-  currentTopic.relatedTopics.forEach(relatedId => {
+  (currentTopic.relatedTopics ?? []).forEach(relatedId => {
     const topic = allTopics.find(t => t.id === relatedId);
     if (topic && !completedTopics.includes(relatedId)) {
       suggestions.push({
@@ -419,7 +419,7 @@ function getNextTopicSuggestions(
 
   // Add topics that have current as prerequisite
   allTopics.forEach(topic => {
-    if (topic.prerequisites.includes(currentTopic.id) && !completedTopics.includes(topic.id)) {
+    if ((topic.prerequisites ?? []).includes(currentTopic.id) && !completedTopics.includes(topic.id)) {
       suggestions.push({
         topicId: topic.id,
         topicName: topic.name,

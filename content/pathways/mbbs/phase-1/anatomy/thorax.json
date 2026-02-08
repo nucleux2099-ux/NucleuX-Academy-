@@ -1,0 +1,109 @@
+{
+  "id": "anatomy-thorax",
+  "title": "Thoracic Anatomy & Cardiopulmonary System",
+  "phase": "Phase-1",
+  "subject": "Anatomy",
+  "description": "Comprehensive study of thoracic cavity including chest wall, respiratory system, cardiovascular anatomy, mediastinum, and clinical correlations essential for understanding cardiopulmonary medicine.",
+  "competencies": ["AN4.1", "AN4.2", "AN4.3", "AN4.4", "AN4.5"],
+  "prerequisites": ["anatomy-general"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Chest Wall & Respiratory Framework",
+      "libraryTopic": "thorax-anatomy",
+      "sections": ["chest-wall", "ribcage", "intercostal-spaces", "diaphragm"],
+      "duration": "60min",
+      "xp": 25
+    },
+    {
+      "order": 2,
+      "type": "quiz", 
+      "title": "Thoracic Wall Assessment",
+      "mcqCount": 12,
+      "passingScore": 70,
+      "xp": 30,
+      "competency": "AN4.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Lungs & Pleura",
+      "libraryTopic": "thorax-anatomy",
+      "sections": ["lung-anatomy", "pleural-cavities", "bronchial-tree"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 4,
+      "type": "reading",
+      "title": "Heart & Pericardium",
+      "libraryTopic": "thorax-anatomy",
+      "sections": ["heart-chambers", "cardiac-valves", "coronary-circulation", "pericardium"],
+      "duration": "75min",
+      "xp": 40
+    },
+    {
+      "order": 5,
+      "type": "quiz",
+      "title": "Cardiopulmonary Quiz",
+      "mcqCount": 20,
+      "passingScore": 75,
+      "xp": 45,
+      "competency": "AN4.2"
+    },
+    {
+      "order": 6,
+      "type": "reading",
+      "title": "Mediastinum",
+      "libraryTopic": "thorax-anatomy",
+      "sections": ["superior-mediastinum", "anterior-mediastinum", "middle-mediastinum", "posterior-mediastinum"],
+      "duration": "65min",
+      "xp": 32
+    },
+    {
+      "order": 7,
+      "type": "skill",
+      "title": "Cardiac Auscultation Points",
+      "competency": "AN4.3",
+      "xp": 50,
+      "duration": "35min"
+    },
+    {
+      "order": 8,
+      "type": "reading",
+      "title": "Great Vessels & Nerves", 
+      "libraryTopic": "thorax-anatomy",
+      "sections": ["aorta", "vena-cava", "pulmonary-vessels", "phrenic-nerve", "vagus-nerve"],
+      "duration": "55min",
+      "xp": 30
+    },
+    {
+      "order": 9,
+      "type": "case",
+      "title": "Thoracic Imaging & Clinical Correlation",
+      "competency": "AN4.4",
+      "xp": 55,
+      "duration": "45min"
+    },
+    {
+      "order": 10,
+      "type": "integration",
+      "title": "Cardiopulmonary Integration",
+      "competency": "AN4.5",
+      "xp": 40,
+      "duration": "30min"
+    }
+  ],
+  "totalXP": 382,
+  "estimatedTime": "7 hours",
+  "unlocks": ["anatomy-abdomen", "physiology-cardiovascular", "physiology-respiratory"],
+  "textbooks": [
+    {"title": "Gray's Anatomy", "chapters": ["Thorax"], "edition": "41st"},
+    {"title": "Netter Atlas of Human Anatomy", "chapters": ["Thorax"], "edition": "7th"},
+    {"title": "Grant's Atlas of Anatomy", "chapters": ["Thorax"], "edition": "15th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical", "emergency"],
+  "difficulty": 4,
+  "lastUpdated": "2024-02-08"
+}

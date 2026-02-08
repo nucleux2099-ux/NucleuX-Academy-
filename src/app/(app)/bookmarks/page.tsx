@@ -87,12 +87,12 @@ const bookmarks: BookmarkedItem[] = [
 ];
 
 const typeConfig: Record<string, { icon: React.ElementType; color: string; bg: string; label: string }> = {
-  note: { icon: StickyNote, color: "#F59E0B", bg: "rgba(245,158,11,0.15)", label: "Note" },
-  topic: { icon: BookOpen, color: "#059669", bg: "rgba(5,150,105,0.15)", label: "Topic" },
-  video: { icon: Video, color: "#EF4444", bg: "rgba(239,68,68,0.15)", label: "Video" },
-  mcq: { icon: FileText, color: "#0EA5E9", bg: "rgba(14,165,233,0.15)", label: "MCQ Set" },
+  note: { icon: StickyNote, color: "#C9A86C", bg: "rgba(245,158,11,0.15)", label: "Note" },
+  topic: { icon: BookOpen, color: "#7BA69E", bg: "rgba(5,150,105,0.15)", label: "Topic" },
+  video: { icon: Video, color: "#E57373", bg: "rgba(239,68,68,0.15)", label: "Video" },
+  mcq: { icon: FileText, color: "#6BA8C9", bg: "rgba(14,165,233,0.15)", label: "MCQ Set" },
   discussion: { icon: MessageSquare, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", label: "Discussion" },
-  atom: { icon: Brain, color: "#06B6D4", bg: "rgba(6,182,212,0.15)", label: "ATOM" },
+  atom: { icon: Brain, color: "#5BB3B3", bg: "rgba(91,179,179,0.15)", label: "ATOM" },
 };
 
 const folders = ["All", "Surgery", "Medicine", "Pathology", "Pharmacology"];
@@ -122,20 +122,20 @@ export default function BookmarksPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
-            <Bookmark className="w-8 h-8 text-[#F59E0B]" />
+          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+            <Bookmark className="w-8 h-8 text-[#C9A86C]" />
             Bookmarks
           </h1>
-          <p className="text-[#9CA3AF] mt-1">{items.length} saved items</p>
+          <p className="text-[#A0B0BC] mt-1">{items.length} saved items</p>
         </div>
         
         {/* View Toggle */}
-        <div className="flex items-center gap-2 bg-[#0F2233] rounded-lg p-1 border border-[rgba(6,182,212,0.15)]">
+        <div className="flex items-center gap-2 bg-[#364A5E] rounded-lg p-1 border border-[rgba(91,179,179,0.15)]">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setViewMode("list")}
-            className={viewMode === "list" ? "bg-[#142538] text-[#E5E7EB]" : "text-[#6B7280]"}
+            className={viewMode === "list" ? "bg-[#3A4D5F] text-[#E8E0D5]" : "text-[#6B7280]"}
           >
             <List className="w-4 h-4" />
           </Button>
@@ -143,7 +143,7 @@ export default function BookmarksPage() {
             variant="ghost"
             size="sm"
             onClick={() => setViewMode("grid")}
-            className={viewMode === "grid" ? "bg-[#142538] text-[#E5E7EB]" : "text-[#6B7280]"}
+            className={viewMode === "grid" ? "bg-[#3A4D5F] text-[#E8E0D5]" : "text-[#6B7280]"}
           >
             <Grid className="w-4 h-4" />
           </Button>
@@ -158,7 +158,7 @@ export default function BookmarksPage() {
             placeholder="Search bookmarks..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 bg-[#0F2233] border-[rgba(6,182,212,0.15)] text-[#E5E7EB] placeholder:text-[#6B7280]"
+            className="pl-10 bg-[#364A5E] border-[rgba(91,179,179,0.15)] text-[#E8E0D5] placeholder:text-[#6B7280]"
           />
         </div>
         
@@ -171,8 +171,8 @@ export default function BookmarksPage() {
               size="sm"
               onClick={() => setSelectedFolder(folder)}
               className={selectedFolder === folder 
-                ? "bg-[#06B6D4] text-[#0D1B2A]" 
-                : "border-[rgba(6,182,212,0.15)] text-[#9CA3AF] hover:bg-[#142538]"
+                ? "bg-[#5BB3B3] text-[#2D3E50]" 
+                : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
               }
             >
               <Folder className="w-3 h-3 mr-1" />
@@ -190,10 +190,10 @@ export default function BookmarksPage() {
             variant="outline"
             size="sm"
             onClick={() => setSelectedType(selectedType === type ? null : type)}
-            className={`border-[rgba(6,182,212,0.15)] ${
+            className={`border-[rgba(91,179,179,0.15)] ${
               selectedType === type 
-                ? 'text-[#E5E7EB] bg-[#142538]' 
-                : 'text-[#6B7280] hover:bg-[#142538]'
+                ? 'text-[#E8E0D5] bg-[#3A4D5F]' 
+                : 'text-[#6B7280] hover:bg-[#3A4D5F]'
             }`}
             style={selectedType === type ? { borderColor: config.color } : {}}
           >
@@ -205,10 +205,10 @@ export default function BookmarksPage() {
 
       {/* Bookmarks List/Grid */}
       {filteredItems.length === 0 ? (
-        <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardContent className="py-12 text-center">
             <Bookmark className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-            <p className="text-[#9CA3AF]">No bookmarks found</p>
+            <p className="text-[#A0B0BC]">No bookmarks found</p>
             <p className="text-sm text-[#6B7280] mt-1">Start saving content to access it quickly</p>
           </CardContent>
         </Card>
@@ -224,7 +224,7 @@ export default function BookmarksPage() {
             return (
               <Card 
                 key={item.id}
-                className="bg-[#0F2233] border-[rgba(6,182,212,0.15)] hover:border-[rgba(6,182,212,0.3)] transition-all group"
+                className="bg-[#364A5E] border-[rgba(91,179,179,0.15)] hover:border-[rgba(91,179,179,0.3)] transition-all group"
               >
                 <CardContent className={viewMode === "grid" ? "p-4" : "p-4 flex gap-4"}>
                   {/* Icon */}
@@ -248,12 +248,12 @@ export default function BookmarksPage() {
                             {config.label}
                           </Badge>
                           {item.folder && (
-                            <Badge variant="outline" className="text-[10px] border-[rgba(6,182,212,0.2)] text-[#6B7280]">
+                            <Badge variant="outline" className="text-[10px] border-[rgba(91,179,179,0.2)] text-[#6B7280]">
                               {item.folder}
                             </Badge>
                           )}
                         </div>
-                        <h3 className="font-medium text-[#E5E7EB] truncate">{item.title}</h3>
+                        <h3 className="font-medium text-[#E8E0D5] truncate">{item.title}</h3>
                         {item.description && (
                           <p className="text-sm text-[#6B7280] mt-1 line-clamp-2">{item.description}</p>
                         )}
@@ -261,13 +261,13 @@ export default function BookmarksPage() {
                       
                       {/* Actions */}
                       <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Button variant="ghost" size="icon" className="h-8 w-8 text-[#6B7280] hover:text-[#E5E7EB]">
+                        <Button variant="ghost" size="icon" className="h-8 w-8 text-[#6B7280] hover:text-[#E8E0D5]">
                           <ExternalLink className="w-4 h-4" />
                         </Button>
                         <Button 
                           variant="ghost" 
                           size="icon" 
-                          className="h-8 w-8 text-[#6B7280] hover:text-[#EF4444]"
+                          className="h-8 w-8 text-[#6B7280] hover:text-[#E57373]"
                           onClick={() => removeBookmark(item.id)}
                         >
                           <Trash2 className="w-4 h-4" />
@@ -296,7 +296,7 @@ export default function BookmarksPage() {
                           <Badge 
                             key={tag} 
                             variant="outline" 
-                            className="text-[10px] bg-[#142538] border-[rgba(6,182,212,0.1)] text-[#9CA3AF]"
+                            className="text-[10px] bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] text-[#A0B0BC]"
                           >
                             {tag}
                           </Badge>

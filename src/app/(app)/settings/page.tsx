@@ -90,28 +90,28 @@ export default function SettingsPage() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
-            <Settings className="w-8 h-8 text-[#06B6D4]" />
+          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+            <Settings className="w-8 h-8 text-[#5BB3B3]" />
             Settings
           </h1>
-          <p className="text-[#9CA3AF] mt-1">Customize your NucleuX experience</p>
+          <p className="text-[#A0B0BC] mt-1">Customize your NucleuX experience</p>
         </div>
         <Button 
           onClick={handleSave}
-          className={`${saved ? 'bg-[#059669]' : 'bg-[#06B6D4]'} hover:bg-[#0891B2] text-[#0D1B2A]`}
+          className={`${saved ? 'bg-[#7BA69E]' : 'bg-[#5BB3B3]'} hover:bg-[#4A9E9E] text-[#2D3E50]`}
         >
           {saved ? <><Check className="w-4 h-4 mr-2" /> Saved</> : 'Save Changes'}
         </Button>
       </div>
 
       {/* Theme Selector */}
-      <Card className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
         <CardHeader>
-          <CardTitle className="text-lg text-[#E5E7EB] flex items-center gap-2">
-            {theme === 'dark' ? <Moon className="w-5 h-5 text-[#06B6D4]" /> : <Sun className="w-5 h-5 text-[#F59E0B]" />}
+          <CardTitle className="text-lg text-[#E8E0D5] flex items-center gap-2">
+            {theme === 'dark' ? <Moon className="w-5 h-5 text-[#5BB3B3]" /> : <Sun className="w-5 h-5 text-[#C9A86C]" />}
             Appearance
           </CardTitle>
-          <CardDescription className="text-[#9CA3AF]">Choose your preferred theme</CardDescription>
+          <CardDescription className="text-[#A0B0BC]">Choose your preferred theme</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex gap-3">
@@ -125,11 +125,11 @@ export default function SettingsPage() {
                 onClick={() => setTheme(t.id as typeof theme)}
                 className={`flex-1 p-4 rounded-xl border transition-all ${
                   theme === t.id 
-                    ? 'bg-[rgba(6,182,212,0.15)] border-[#06B6D4] text-[#E5E7EB]' 
-                    : 'bg-[#142538] border-[rgba(6,182,212,0.1)] text-[#9CA3AF] hover:border-[rgba(6,182,212,0.3)]'
+                    ? 'bg-[rgba(91,179,179,0.15)] border-[#5BB3B3] text-[#E8E0D5]' 
+                    : 'bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] text-[#A0B0BC] hover:border-[rgba(91,179,179,0.3)]'
                 }`}
               >
-                <t.icon className={`w-6 h-6 mx-auto mb-2 ${theme === t.id ? 'text-[#06B6D4]' : ''}`} />
+                <t.icon className={`w-6 h-6 mx-auto mb-2 ${theme === t.id ? 'text-[#5BB3B3]' : ''}`} />
                 <p className="text-sm font-medium">{t.label}</p>
               </button>
             ))}
@@ -139,28 +139,28 @@ export default function SettingsPage() {
 
       {/* Settings Sections */}
       {settingsSections.map((section) => (
-        <Card key={section.id} className="bg-[#0F2233] border-[rgba(6,182,212,0.15)]">
+        <Card key={section.id} className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
           <CardHeader>
-            <CardTitle className="text-lg text-[#E5E7EB] flex items-center gap-2">
-              <section.icon className="w-5 h-5 text-[#06B6D4]" />
+            <CardTitle className="text-lg text-[#E8E0D5] flex items-center gap-2">
+              <section.icon className="w-5 h-5 text-[#5BB3B3]" />
               {section.title}
             </CardTitle>
-            <CardDescription className="text-[#9CA3AF]">{section.description}</CardDescription>
+            <CardDescription className="text-[#A0B0BC]">{section.description}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {section.settings.map((setting) => (
               <div 
                 key={setting.id}
-                className="flex items-center justify-between p-3 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)]"
+                className="flex items-center justify-between p-3 rounded-lg bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)]"
               >
                 <div>
-                  <p className="font-medium text-[#E5E7EB]">{setting.label}</p>
+                  <p className="font-medium text-[#E8E0D5]">{setting.label}</p>
                   <p className="text-sm text-[#6B7280]">{setting.description}</p>
                 </div>
                 <Switch 
                   checked={settings[setting.id]} 
                   onCheckedChange={() => toggleSetting(setting.id)}
-                  className="data-[state=checked]:bg-[#06B6D4]"
+                  className="data-[state=checked]:bg-[#5BB3B3]"
                 />
               </div>
             ))}
@@ -169,31 +169,31 @@ export default function SettingsPage() {
       ))}
 
       {/* Danger Zone */}
-      <Card className="bg-[#0F2233] border-[rgba(239,68,68,0.3)]">
+      <Card className="bg-[#364A5E] border-[rgba(239,68,68,0.3)]">
         <CardHeader>
-          <CardTitle className="text-lg text-[#EF4444] flex items-center gap-2">
+          <CardTitle className="text-lg text-[#E57373] flex items-center gap-2">
             <Trash2 className="w-5 h-5" />
             Danger Zone
           </CardTitle>
-          <CardDescription className="text-[#9CA3AF]">Irreversible actions</CardDescription>
+          <CardDescription className="text-[#A0B0BC]">Irreversible actions</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="flex items-center justify-between p-3 rounded-lg bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)]">
             <div>
-              <p className="font-medium text-[#E5E7EB]">Export All Data</p>
+              <p className="font-medium text-[#E8E0D5]">Export All Data</p>
               <p className="text-sm text-[#6B7280]">Download your notes, progress, and history</p>
             </div>
-            <Button variant="outline" className="border-[#EF4444] text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]">
+            <Button variant="outline" className="border-[#E57373] text-[#E57373] hover:bg-[rgba(239,68,68,0.1)]">
               <Download className="w-4 h-4 mr-2" />
               Export
             </Button>
           </div>
           <div className="flex items-center justify-between p-3 rounded-lg bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)]">
             <div>
-              <p className="font-medium text-[#E5E7EB]">Delete Account</p>
+              <p className="font-medium text-[#E8E0D5]">Delete Account</p>
               <p className="text-sm text-[#6B7280]">Permanently remove all your data</p>
             </div>
-            <Button variant="outline" className="border-[#EF4444] text-[#EF4444] hover:bg-[rgba(239,68,68,0.1)]">
+            <Button variant="outline" className="border-[#E57373] text-[#E57373] hover:bg-[rgba(239,68,68,0.1)]">
               <Trash2 className="w-4 h-4 mr-2" />
               Delete
             </Button>

@@ -1,0 +1,101 @@
+{
+  "id": "biochemistry-carbohydrate",
+  "title": "Carbohydrate Metabolism Mastery",
+  "phase": "Phase-1",
+  "subject": "Biochemistry",
+  "description": "Comprehensive study of carbohydrate metabolism including glycolysis, gluconeogenesis, glycogen metabolism, pentose phosphate pathway, and glucose homeostasis regulation.",
+  "competencies": ["BI3.1", "BI3.2", "BI3.3", "BI3.4", "BI3.5"],
+  "prerequisites": ["biochemistry-basics"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Glycolysis Pathway",
+      "libraryTopic": "carb-metabolism",
+      "sections": ["glycolysis-steps", "regulation", "anaerobic", "atp-yield"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Glycolysis Quiz", 
+      "mcqCount": 15,
+      "passingScore": 72,
+      "xp": 35,
+      "competency": "BI3.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Citric Acid Cycle", 
+      "libraryTopic": "carb-metabolism",
+      "sections": ["tca-cycle", "regulatory-steps", "anaplerotic", "energy-yield"],
+      "duration": "65min",
+      "xp": 32
+    },
+    {
+      "order": 4,
+      "type": "reading",
+      "title": "Gluconeogenesis",
+      "libraryTopic": "carb-metabolism",
+      "sections": ["gluconeogenesis-pathway", "substrates", "regulation", "cori-cycle"],
+      "duration": "60min",
+      "xp": 30
+    },
+    {
+      "order": 5,
+      "type": "quiz",
+      "title": "TCA & Gluconeogenesis Quiz",
+      "mcqCount": 18,
+      "passingScore": 75,
+      "xp": 40,
+      "competency": "BI3.2"
+    },
+    {
+      "order": 6,
+      "type": "reading",
+      "title": "Glycogen Metabolism",
+      "libraryTopic": "carb-metabolism",
+      "sections": ["glycogen-synthesis", "glycogenolysis", "hormonal-control", "muscle-liver"],
+      "duration": "55min",
+      "xp": 28
+    },
+    {
+      "order": 7,
+      "type": "reading",
+      "title": "Pentose Phosphate Pathway",
+      "libraryTopic": "carb-metabolism", 
+      "sections": ["ppp-oxidative", "ppp-non-oxidative", "nadph", "g6pd-deficiency"],
+      "duration": "50min",
+      "xp": 25
+    },
+    {
+      "order": 8,
+      "type": "case",
+      "title": "Metabolic Disorders",
+      "competency": "BI3.3",
+      "xp": 50,
+      "duration": "40min"
+    },
+    {
+      "order": 9,
+      "type": "integration",
+      "title": "Glucose Homeostasis Integration",
+      "competency": "BI3.4",
+      "xp": 45,
+      "duration": "35min"
+    }
+  ],
+  "totalXP": 320,
+  "estimatedTime": "6 hours",
+  "unlocks": ["biochemistry-lipid", "endocrinology-diabetes", "pathology-metabolic"],
+  "textbooks": [
+    {"title": "Harper's Illustrated Biochemistry", "chapters": ["Carbohydrate Metabolism"], "edition": "32nd"},
+    {"title": "Lippincott's Biochemistry", "chapters": ["Glucose Metabolism"], "edition": "8th"},
+    {"title": "Lehninger Biochemistry", "chapters": ["Glycolysis", "Citric Acid Cycle"], "edition": "8th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical"],
+  "difficulty": 4,
+  "lastUpdated": "2024-02-08"
+}

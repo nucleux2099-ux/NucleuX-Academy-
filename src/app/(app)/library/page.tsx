@@ -47,22 +47,22 @@ export default function LibraryPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#E5E7EB] flex items-center gap-3">
-            <Library className="w-8 h-8 text-[#06B6D4]" />
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+            <Library className="w-8 h-8 text-[#5BB3B3]" />
             Library
           </h1>
-          <p className="text-[#9CA3AF] mt-1">Browse subjects, topics, and concepts</p>
+          <p className="text-[#A0B0BC] mt-1">Browse subjects, topics, and concepts</p>
         </div>
-        <Badge className="w-fit bg-[rgba(6,182,212,0.15)] text-[#06B6D4] border-[rgba(6,182,212,0.3)]">
+        <Badge className="w-fit bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
           {SUBJECTS.reduce((acc, s) => acc + s.topicCount, 0)} Topics Available
         </Badge>
       </div>
 
       {/* View Mode Selector */}
-      <div className="bg-[#142538] rounded-xl p-4 border border-[rgba(6,182,212,0.1)]">
+      <div className="bg-[#3A4D5F] rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
         <div className="flex items-center gap-2 mb-3">
-          <Compass className="w-4 h-4 text-[#06B6D4]" />
-          <span className="text-sm font-medium text-[#E5E7EB]">How do you want to explore?</span>
+          <Compass className="w-4 h-4 text-[#5BB3B3]" />
+          <span className="text-sm font-medium text-[#E8E0D5]">How do you want to explore?</span>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
           {viewModes.map((mode) => {
@@ -75,14 +75,14 @@ export default function LibraryPage() {
                 className={cn(
                   "flex flex-col items-center gap-1 p-3 rounded-lg transition-all text-center",
                   isActive
-                    ? "bg-[rgba(6,182,212,0.2)] border border-[#06B6D4]"
-                    : "bg-[#0D1B2A] border border-transparent hover:bg-[rgba(6,182,212,0.1)] hover:border-[rgba(6,182,212,0.2)]"
+                    ? "bg-[rgba(91,179,179,0.2)] border border-[#5BB3B3]"
+                    : "bg-[#2D3E50] border border-transparent hover:bg-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.2)]"
                 )}
               >
                 <span className="text-xl">{config.icon}</span>
                 <span className={cn(
                   "text-xs font-medium",
-                  isActive ? "text-[#06B6D4]" : "text-[#9CA3AF]"
+                  isActive ? "text-[#5BB3B3]" : "text-[#A0B0BC]"
                 )}>
                   {config.label}
                 </span>
@@ -97,12 +97,12 @@ export default function LibraryPage() {
 
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9CA3AF]" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
         <Input
           placeholder="Search subjects or topics..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 bg-[#142538] border-[rgba(6,182,212,0.15)] focus:border-[#06B6D4] text-[#E5E7EB] placeholder:text-[#9CA3AF]"
+          className="pl-10 bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#A0B0BC]"
         />
       </div>
 
@@ -114,7 +114,7 @@ export default function LibraryPage() {
             return (
               <Card
                 key={subject.id}
-                className="group bg-[#142538] border-[rgba(6,182,212,0.1)] hover:border-[rgba(6,182,212,0.3)] transition-all cursor-pointer overflow-hidden"
+                className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer overflow-hidden"
                 onClick={() => setSelectedSubject(subject.id)}
               >
                 <CardContent className="p-0">
@@ -130,7 +130,7 @@ export default function LibraryPage() {
                       <div className="flex items-center gap-3">
                         <span className="text-3xl">{subject.icon}</span>
                         <div>
-                          <h3 className="font-semibold text-[#E5E7EB] group-hover:text-[#06B6D4] transition-colors">
+                          <h3 className="font-semibold text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors">
                             {subject.name}
                           </h3>
                           <p className="text-xs text-[#6B7280]">
@@ -138,11 +138,11 @@ export default function LibraryPage() {
                           </p>
                         </div>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#06B6D4] group-hover:translate-x-1 transition-all" />
+                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#5BB3B3] group-hover:translate-x-1 transition-all" />
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm text-[#9CA3AF] mb-4 line-clamp-2">
+                    <p className="text-sm text-[#A0B0BC] mb-4 line-clamp-2">
                       {subject.description}
                     </p>
 
@@ -152,7 +152,7 @@ export default function LibraryPage() {
                         <Badge 
                           key={sub.id}
                           variant="outline" 
-                          className="text-xs bg-[#0D1B2A] border-[rgba(6,182,212,0.2)] text-[#9CA3AF]"
+                          className="text-xs bg-[#2D3E50] border-[rgba(91,179,179,0.2)] text-[#A0B0BC]"
                         >
                           {sub.icon} {sub.name}
                         </Badge>
@@ -160,7 +160,7 @@ export default function LibraryPage() {
                       {subspecs.length > 3 && (
                         <Badge 
                           variant="outline" 
-                          className="text-xs bg-[#0D1B2A] border-[rgba(6,182,212,0.2)] text-[#6B7280]"
+                          className="text-xs bg-[#2D3E50] border-[rgba(91,179,179,0.2)] text-[#6B7280]"
                         >
                           +{subspecs.length - 3} more
                         </Badge>
@@ -168,7 +168,7 @@ export default function LibraryPage() {
                     </div>
 
                     {/* Stats */}
-                    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-[rgba(6,182,212,0.1)]">
+                    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-[rgba(91,179,179,0.1)]">
                       <div className="flex items-center gap-1.5 text-xs text-[#6B7280]">
                         <BookOpen className="w-3.5 h-3.5" />
                         <span>{subject.topicCount} topics</span>
@@ -187,7 +187,7 @@ export default function LibraryPage() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSelectedSubject(null)}
-              className="flex items-center gap-2 text-[#9CA3AF] hover:text-[#06B6D4] transition-colors"
+              className="flex items-center gap-2 text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors"
             >
               <ChevronRight className="w-4 h-4 rotate-180" />
               <span className="text-sm">All Subjects</span>
@@ -195,11 +195,11 @@ export default function LibraryPage() {
           </div>
 
           {selectedSubjectData && (
-            <div className="flex items-center gap-4 pb-4 border-b border-[rgba(6,182,212,0.1)]">
+            <div className="flex items-center gap-4 pb-4 border-b border-[rgba(91,179,179,0.1)]">
               <span className="text-4xl">{selectedSubjectData.icon}</span>
               <div>
-                <h2 className="text-xl font-bold text-[#E5E7EB]">{selectedSubjectData.name}</h2>
-                <p className="text-sm text-[#9CA3AF]">{selectedSubjectData.description}</p>
+                <h2 className="text-xl font-bold text-[#E8E0D5]">{selectedSubjectData.name}</h2>
+                <p className="text-sm text-[#A0B0BC]">{selectedSubjectData.description}</p>
               </div>
             </div>
           )}
@@ -211,23 +211,23 @@ export default function LibraryPage() {
                 key={sub.id}
                 href={`/library/${selectedSubject}/${sub.slug}?mode=${viewMode}`}
               >
-                <Card className="group bg-[#142538] border-[rgba(6,182,212,0.1)] hover:border-[rgba(6,182,212,0.3)] transition-all cursor-pointer h-full">
+                <Card className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer h-full">
                   <CardContent className="p-5">
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <span className="text-2xl">{sub.icon}</span>
-                        <h3 className="font-semibold text-[#E5E7EB] group-hover:text-[#06B6D4] transition-colors">
+                        <h3 className="font-semibold text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors">
                           {sub.name}
                         </h3>
                       </div>
-                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#06B6D4] group-hover:translate-x-1 transition-all" />
+                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#5BB3B3] group-hover:translate-x-1 transition-all" />
                     </div>
 
-                    <p className="text-sm text-[#9CA3AF] mb-4">
+                    <p className="text-sm text-[#A0B0BC] mb-4">
                       {sub.description}
                     </p>
 
-                    <div className="flex items-center gap-4 pt-3 border-t border-[rgba(6,182,212,0.1)]">
+                    <div className="flex items-center gap-4 pt-3 border-t border-[rgba(91,179,179,0.1)]">
                       <div className="flex items-center gap-1.5 text-xs text-[#6B7280]">
                         <BookOpen className="w-3.5 h-3.5" />
                         <span>{sub.topicCount} topics</span>
@@ -252,8 +252,8 @@ export default function LibraryPage() {
           {subspecialties.length === 0 && (
             <div className="text-center py-12">
               <Sparkles className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">Coming Soon</h3>
-              <p className="text-[#9CA3AF]">Subspecialties for this subject are being added.</p>
+              <h3 className="text-lg font-medium text-[#E8E0D5] mb-2">Coming Soon</h3>
+              <p className="text-[#A0B0BC]">Subspecialties for this subject are being added.</p>
             </div>
           )}
         </div>

@@ -92,23 +92,32 @@ export interface TextbookReference {
 }
 
 export interface RetrievalCard {
-  id: string;
+  id?: string;
   question: string;
   answer: string;
-  difficulty: 1 | 2 | 3 | 4 | 5;
+  difficulty?: 1 | 2 | 3 | 4 | 5;
   tags?: string[];
 }
 
 export interface CaseScenario {
-  id: string;
+  id?: string;
   title: string;
   presentation: string;
-  questions: {
+  // Questions can be: [{question, answer}], strings, or single question/answer
+  questions?: ({
     question: string;
     answer: string;
-  }[];
-  keyLearning: string[];
-  difficulty: 1 | 2 | 3 | 4 | 5;
+  } | string)[];
+  // Answers array (parallel to questions)
+  answers?: string[];
+  // Single question/answer format (alternative to questions array)
+  question?: string;
+  answer?: string;
+  keyLearning?: string[];
+  difficulty?: 1 | 2 | 3 | 4 | 5;
+  analysis?: string;
+  clinicalPearl?: string;
+  tags?: string[];
 }
 
 export interface LibraryTopic {
@@ -125,40 +134,41 @@ export interface LibraryTopic {
   content: {
     // Explorer mode
     concept: string;              // Full markdown
-    keyPoints: string[];
+    keyPoints?: string[];
     diagrams?: string[];          // URLs or paths
     
     // Exam prep mode  
     examPrep?: {
-      summary: string;            // One-pager markdown
-      mnemonics: string[];
-      highYield: string[];
-      commonMCQs: string[];
+      summary?: string;            // One-pager markdown
+      mnemonics?: string[];
+      highYield?: string[];
+      commonMCQs?: string[];
+      clinicalPearls?: string[];  // Added by content fill
     };
     
     // Textbook mode
-    textbookRefs: TextbookReference[];
+    textbookRefs?: TextbookReference[];
     
     // Quiz mode
-    retrievalCards: RetrievalCard[];
+    retrievalCards?: RetrievalCard[];
     
     // Cases mode
-    cases: CaseScenario[];
+    cases?: CaseScenario[];
     
     // Roadmap mode
     grindeMap?: string;           // Visual concept map
   };
   
   // Metadata for ATOM librarian
-  prerequisites: string[];        // Topic IDs
-  relatedTopics: string[];        // Topic IDs
-  difficulty: 1 | 2 | 3 | 4 | 5;
-  highYield: boolean;
-  examTags: string[];             // ['NEET_PG', 'USMLE', etc.]
-  estimatedMinutes: number;
+  prerequisites?: string[];        // Topic IDs
+  relatedTopics?: string[];        // Topic IDs
+  difficulty?: 1 | 2 | 3 | 4 | 5;
+  highYield?: boolean;
+  examTags?: string[];             // ['NEET_PG', 'USMLE', etc.]
+  estimatedMinutes?: number;
   
   // Availability flags
-  hasContent: {
+  hasContent?: {
     concept: boolean;
     examPrep: boolean;
     textbook: boolean;
@@ -168,8 +178,8 @@ export interface LibraryTopic {
   };
   
   // Timestamps
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 // =============================================================================
