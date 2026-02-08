@@ -6,14 +6,12 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { 
   ChevronRight,
-  ChevronLeft,
   Clock,
   BookOpen,
   Target,
-  BookMarked,
   Play,
   CheckCircle2,
   Circle,
@@ -21,199 +19,30 @@ import {
   Brain,
   Stethoscope,
   FileText,
-  ExternalLink,
   Bookmark,
-  Share2,
   BarChart3,
   GraduationCap,
   Sparkles,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  AlertTriangle,
+  Zap
 } from "lucide-react";
 import { getSubjectBySlug } from "@/lib/data/subjects";
 import { SURGERY_GI_TOPICS, getMCQsByTopic, getFlashcardsByTopic } from "@/lib/data/topics-surgery-gi";
+import { APPENDICITIS_CONTENT } from "@/lib/content/appendicitis";
 import { cn } from "@/lib/utils";
 import type { Depth } from "@/lib/types";
 
-// Mock content for a topic
-const MOCK_CONTENT = {
-  'acute-appendicitis': {
-    keyPoints: [
-      "Most common surgical emergency worldwide",
-      "Peak incidence: 10-30 years age group",
-      "Lifetime risk: 7-8%",
-      "Male:Female ratio = 1.4:1",
-      "Perforation risk increases after 24-36 hours of symptoms",
-    ],
-    mnemonics: [
-      {
-        title: "MANTRELS Score (Alvarado)",
-        content: "**M**igration of pain (1)\n**A**norexia (1)\n**N**ausea/Vomiting (1)\n**T**enderness RIF (2)\n**R**ebound (1)\n**E**levated temp (1)\n**L**eukocytosis (2)\n**S**hift to left (1)",
-      },
-    ],
-    clinicalPearls: [
-      "Pain before vomiting → Surgical abdomen (vs Gastroenteritis: vomiting before pain)",
-      "Elderly may present atypically with minimal tenderness",
-      "Pregnancy: Appendix displaced upward; RUQ pain in 3rd trimester",
-      "CT scan: Sensitivity 94%, Specificity 95%",
-    ],
-    concepts: [
-      {
-        id: 'c1',
-        title: 'Anatomy & Embryology',
-        depth: 'mbbs' as Depth,
-        content: `The appendix is a blind-ended tube connected to the cecum. It develops from the midgut and shares blood supply with the cecum via the **appendicular artery** (branch of ileocolic artery).
-
-**Position variations:**
-- Retrocecal (65%) - most common
-- Pelvic (31%)
-- Subcecal (2%)
-- Pre-ileal (1%)
-- Post-ileal (0.5%)
-
-**McBurney's Point:** Junction of lateral 1/3 and medial 2/3 of line from ASIS to umbilicus.`,
-        completed: true,
-      },
-      {
-        id: 'c2',
-        title: 'Pathophysiology',
-        depth: 'mbbs' as Depth,
-        content: `**Etiology:** Luminal obstruction → Mucus accumulation → Distension → Venous congestion → Bacterial invasion → Inflammation → Necrosis → Perforation
-
-**Causes of obstruction:**
-1. **Fecalith** (35%) - most common
-2. **Lymphoid hyperplasia** (60% in children)
-3. Parasites (Enterobius)
-4. Foreign bodies
-5. Tumors (carcinoid)
-
-**Bacteriology:**
-- E. coli (most common)
-- Bacteroides fragilis
-- Pseudomonas
-- Streptococcus`,
-        completed: true,
-      },
-      {
-        id: 'c3',
-        title: 'Clinical Features',
-        depth: 'mbbs' as Depth,
-        content: `**Classic presentation:**
-1. **Periumbilical pain** → migrates to **RIF** (visceral → somatic)
-2. **Anorexia** (nearly always present)
-3. **Nausea/Vomiting** (after pain onset)
-4. **Low-grade fever** (37.5-38.5°C)
-
-**Signs:**
-- **Tenderness at McBurney's point**
-- **Rebound tenderness** (Blumberg's sign)
-- **Rovsing's sign**: Pain in RIF on pressing LIF
-- **Psoas sign**: Pain on hip extension (retrocecal)
-- **Obturator sign**: Pain on internal rotation of flexed hip (pelvic)
-
-**Dunphy's sign:** Increased pain on coughing`,
-        completed: false,
-      },
-      {
-        id: 'c4',
-        title: 'Diagnosis & Scoring',
-        depth: 'mbbs' as Depth,
-        content: `**Alvarado Score (MANTRELS):** Total 10 points
-- ≤4: Appendicitis unlikely
-- 5-6: Possible, observe
-- 7-8: Probable
-- ≥9: Very probable
-
-**Investigations:**
-1. **CBC**: Leukocytosis (10,000-18,000)
-2. **Urine**: Rule out UTI
-3. **Pregnancy test**: In females of childbearing age
-
-**Imaging:**
-- **USG**: Aperistaltic, non-compressible tube >6mm
-- **CT**: Gold standard. Sensitivity 94%, Specificity 95%
-  - Dilated appendix >6mm
-  - Periappendiceal fat stranding
-  - Appendicolith`,
-        completed: false,
-      },
-      {
-        id: 'c5',
-        title: 'Management',
-        depth: 'mbbs' as Depth,
-        content: `**Definitive treatment:** Appendectomy
-
-**Approaches:**
-1. **Laparoscopic** (preferred)
-   - Less pain, faster recovery
-   - Better cosmesis
-   - Diagnostic advantage
-
-2. **Open (McBurney/Lanz incision)**
-   - When laparoscopy unavailable
-   - Complicated cases
-
-**Preoperative:**
-- NPO, IV fluids
-- Antibiotics (Ceftriaxone + Metronidazole)
-- Analgesics
-
-**Complicated Appendicitis:**
-- **Appendicular mass**: Conservative (Ochsner-Sherren regimen) → Interval appendectomy at 6 weeks
-- **Appendicular abscess**: CT-guided drainage → Interval appendectomy
-- **Perforation**: Emergency surgery`,
-        completed: false,
-      },
-      {
-        id: 'c6',
-        title: 'Complications',
-        depth: 'pg' as Depth,
-        content: `**Pre-operative:**
-- Perforation (20-30%)
-- Appendicular mass
-- Appendicular abscess
-- Pylephlebitis (portal pyemia)
-
-**Post-operative:**
-- Wound infection (most common)
-- Intra-abdominal abscess
-- Fecal fistula
-- Adhesive intestinal obstruction
-
-**Long-term:**
-- Incisional hernia
-- Stump appendicitis (incomplete removal)`,
-        completed: false,
-      },
-      {
-        id: 'c7',
-        title: 'Special Situations',
-        depth: 'pg' as Depth,
-        content: `**Pregnancy:**
-- 1 in 1500 pregnancies
-- Appendix displaced upward
-- Perforation risk higher (delayed diagnosis)
-- Safe in all trimesters
-- Laparoscopic preferred in 1st/2nd trimester
-
-**Elderly:**
-- Atypical presentation
-- Higher perforation rate (50-70%)
-- Higher mortality
-
-**Pediatric:**
-- Rapid progression
-- Higher perforation rate
-- USG preferred over CT
-
-**Appendiceal tumors:**
-- Carcinoid (most common): <1cm usually benign
-- Adenocarcinoma: Right hemicolectomy
-- Mucinous tumors: Risk of pseudomyxoma peritonei`,
-        completed: false,
-      },
-    ],
-  },
+// Icon mapping for concept sections
+const conceptIcons: Record<string, any> = {
+  '🫀': '🫀',
+  '🔬': '🔬',
+  '🩺': '🩺',
+  '🔍': '🔍',
+  '💊': '💊',
+  '⚠️': '⚠️',
+  '🎓': '🎓',
 };
 
 export default function TopicPage() {
@@ -222,15 +51,18 @@ export default function TopicPage() {
   const topicSlug = params.topic as string;
   
   const [selectedDepth, setSelectedDepth] = useState<Depth>('mbbs');
-  const [expandedConcepts, setExpandedConcepts] = useState<Set<string>>(new Set(['c1', 'c2']));
+  const [expandedConcepts, setExpandedConcepts] = useState<Set<string>>(new Set(['anatomy']));
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [completedConcepts, setCompletedConcepts] = useState<Set<string>>(new Set());
 
   // Get data
   const subject = getSubjectBySlug(subjectSlug);
   const topic = SURGERY_GI_TOPICS.find(t => t.slug === topicSlug);
   const mcqs = topic ? getMCQsByTopic(topic.id) : [];
   const flashcards = topic ? getFlashcardsByTopic(topic.id) : [];
-  const content = MOCK_CONTENT[topicSlug as keyof typeof MOCK_CONTENT];
+  
+  // Get rich content (for now, only appendicitis has full content)
+  const content = topicSlug === 'acute-appendicitis' ? APPENDICITIS_CONTENT : null;
 
   const toggleConcept = (id: string) => {
     const newExpanded = new Set(expandedConcepts);
@@ -240,6 +72,17 @@ export default function TopicPage() {
       newExpanded.add(id);
     }
     setExpandedConcepts(newExpanded);
+  };
+
+  const toggleCompleted = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newCompleted = new Set(completedConcepts);
+    if (newCompleted.has(id)) {
+      newCompleted.delete(id);
+    } else {
+      newCompleted.add(id);
+    }
+    setCompletedConcepts(newCompleted);
   };
 
   // Filter concepts by depth
@@ -367,8 +210,13 @@ export default function TopicPage() {
       {/* Depth Selector */}
       <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
         <CardContent className="p-4">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-[#9CA3AF]">Content depth:</span>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-[#9CA3AF]">Content depth:</span>
+              <span className="text-xs text-[#6B7280]">
+                ({visibleConcepts.length} of {content?.concepts.length || 0} sections visible)
+              </span>
+            </div>
             <div className="flex gap-2">
               {(['mbbs', 'pg', 'superSpecialty'] as Depth[]).map((depth) => {
                 const isActive = selectedDepth === depth;
@@ -382,13 +230,19 @@ export default function TopicPage() {
                   pg: 'PG',
                   superSpecialty: 'Super Specialty',
                 };
+                const icons = {
+                  mbbs: GraduationCap,
+                  pg: Target,
+                  superSpecialty: Sparkles,
+                };
+                const Icon = icons[depth];
                 return (
                   <button
                     key={depth}
                     onClick={() => setSelectedDepth(depth)}
                     disabled={!topic.depth[depth]}
                     className={cn(
-                      "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+                      "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                       isActive
                         ? "text-[#0D1B2A]"
                         : "bg-[#142538] text-[#9CA3AF] hover:text-[#E5E7EB]",
@@ -396,6 +250,7 @@ export default function TopicPage() {
                     )}
                     style={isActive ? { backgroundColor: colors[depth] } : undefined}
                   >
+                    <Icon className="w-4 h-4" />
                     {labels[depth]}
                   </button>
                 );
@@ -409,13 +264,20 @@ export default function TopicPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column - Concepts */}
         <div className="lg:col-span-2 space-y-4">
-          <h2 className="text-lg font-semibold text-[#E5E7EB] flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-[#06B6D4]" />
-            Concepts
-          </h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-[#E5E7EB] flex items-center gap-2">
+              <BookOpen className="w-5 h-5 text-[#06B6D4]" />
+              Concepts
+            </h2>
+            <span className="text-sm text-[#9CA3AF]">
+              {completedConcepts.size}/{visibleConcepts.length} completed
+            </span>
+          </div>
 
           {visibleConcepts.map((concept) => {
             const isExpanded = expandedConcepts.has(concept.id);
+            const isCompleted = completedConcepts.has(concept.id);
+            
             return (
               <Card key={concept.id} className="bg-[#0F2233] border-[rgba(255,255,255,0.06)] overflow-hidden">
                 <button
@@ -423,11 +285,17 @@ export default function TopicPage() {
                   className="w-full p-4 flex items-center justify-between text-left hover:bg-[rgba(6,182,212,0.05)] transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    {concept.completed ? (
-                      <CheckCircle2 className="w-5 h-5 text-[#10B981] shrink-0" />
-                    ) : (
-                      <Circle className="w-5 h-5 text-[#9CA3AF] shrink-0" />
-                    )}
+                    <button
+                      onClick={(e) => toggleCompleted(concept.id, e)}
+                      className="transition-transform hover:scale-110"
+                    >
+                      {isCompleted ? (
+                        <CheckCircle2 className="w-6 h-6 text-[#10B981]" />
+                      ) : (
+                        <Circle className="w-6 h-6 text-[#9CA3AF] hover:text-[#06B6D4]" />
+                      )}
+                    </button>
+                    <span className="text-xl">{concept.icon}</span>
                     <span className="font-medium text-[#E5E7EB]">{concept.title}</span>
                     <Badge 
                       className={cn(
@@ -437,7 +305,7 @@ export default function TopicPage() {
                         concept.depth === 'superSpecialty' && "bg-[rgba(245,158,11,0.2)] text-[#F59E0B]"
                       )}
                     >
-                      {concept.depth.toUpperCase()}
+                      {concept.depth === 'superSpecialty' ? 'SS' : concept.depth.toUpperCase()}
                     </Badge>
                   </div>
                   {isExpanded ? (
@@ -448,26 +316,49 @@ export default function TopicPage() {
                 </button>
                 
                 {isExpanded && (
-                  <CardContent className="pt-0 pb-4 px-4 border-t border-[rgba(255,255,255,0.06)]">
-                    <div className="pl-8 prose prose-invert prose-sm max-w-none">
-                      <div 
-                        className="text-[#D1D5DB] leading-relaxed whitespace-pre-line"
-                        dangerouslySetInnerHTML={{ 
-                          __html: concept.content
-                            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#E5E7EB]">$1</strong>')
-                            .replace(/\n/g, '<br/>')
-                        }}
-                      />
-                    </div>
+                  <CardContent className="pt-0 pb-6 px-6 border-t border-[rgba(255,255,255,0.06)]">
+                    <MedicalMarkdown content={concept.content} className="mt-4" />
                   </CardContent>
                 )}
               </Card>
             );
           })}
+
+          {!content && (
+            <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 mx-auto rounded-full bg-[#142538] flex items-center justify-center mb-4">
+                  <BookOpen className="w-8 h-8 text-[#9CA3AF]" />
+                </div>
+                <h3 className="text-lg font-medium text-[#E5E7EB]">Content coming soon</h3>
+                <p className="text-[#9CA3AF] mt-1">
+                  Rich content for this topic is being prepared
+                </p>
+              </CardContent>
+            </Card>
+          )}
         </div>
 
         {/* Right Column - Quick Reference */}
         <div className="space-y-4">
+          {/* Progress Card */}
+          <Card className="bg-gradient-to-br from-[#7C3AED]/20 to-[#06B6D4]/20 border-[rgba(124,58,237,0.3)]">
+            <CardContent className="p-4">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-medium text-[#E5E7EB]">Your Progress</span>
+                <span className="text-2xl font-bold text-[#7C3AED]">
+                  {Math.round((completedConcepts.size / (visibleConcepts.length || 1)) * 100)}%
+                </span>
+              </div>
+              <div className="w-full h-2 bg-[#142538] rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] rounded-full transition-all duration-500"
+                  style={{ width: `${(completedConcepts.size / (visibleConcepts.length || 1)) * 100}%` }}
+                />
+              </div>
+            </CardContent>
+          </Card>
+
           {/* Key Points */}
           {content?.keyPoints && (
             <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
@@ -499,15 +390,15 @@ export default function TopicPage() {
                   Mnemonics
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-3">
                 {content.mnemonics.map((mnemonic, i) => (
-                  <div key={i} className="bg-[rgba(124,58,237,0.1)] rounded-lg p-3">
-                    <h4 className="font-medium text-[#7C3AED] text-sm mb-2">{mnemonic.title}</h4>
-                    <div 
-                      className="text-sm text-[#D1D5DB] whitespace-pre-line"
-                      dangerouslySetInnerHTML={{ 
-                        __html: mnemonic.content.replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#E5E7EB]">$1</strong>')
-                      }}
+                  <div key={i} className="bg-[rgba(124,58,237,0.1)] rounded-lg p-3 border border-[rgba(124,58,237,0.2)]">
+                    <h4 className="font-medium text-[#A78BFA] text-sm mb-2 flex items-center gap-2">
+                      <span>🧠</span> {mnemonic.title}
+                    </h4>
+                    <MedicalMarkdown 
+                      content={mnemonic.content} 
+                      className="text-sm"
                     />
                   </div>
                 ))}
@@ -528,8 +419,30 @@ export default function TopicPage() {
                 <ul className="space-y-2">
                   {content.clinicalPearls.map((pearl, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#D1D5DB]">
-                      <span className="text-[#10B981]">💎</span>
+                      <span className="text-[#10B981] shrink-0">💎</span>
                       {pearl}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Exam Tips */}
+          {content?.examTips && (
+            <Card className="bg-[#0F2233] border-[rgba(255,255,255,0.06)]">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base flex items-center gap-2 text-[#E5E7EB]">
+                  <Zap className="w-4 h-4 text-[#EF4444]" />
+                  Exam Tips
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {content.examTips.map((tip, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-[#D1D5DB]">
+                      <span className="text-[#EF4444] shrink-0">🎯</span>
+                      {tip}
                     </li>
                   ))}
                 </ul>
