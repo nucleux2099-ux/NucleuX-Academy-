@@ -19,6 +19,13 @@ export const DEMO_USERS: Record<string, MockUser> = {
     role: 'admin',
     plan: 'premium',
   },
+  'nucleux2099@gmail.com': {
+    id: 'user_vishwakarma',
+    email: 'nucleux2099@gmail.com',
+    name: 'Vishwakarma',
+    role: 'admin',
+    plan: 'premium',
+  },
   'sarath@nucleux.com': {
     id: 'user_sarath',
     email: 'sarath@nucleux.com',

@@ -36,6 +36,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/auth-context";
 import { ATOMStudyCoach } from "@/components/ATOMStudyCoach";
 import { TodaysStudyPlan } from "@/components/TodaysStudyPlan";
 import { ContinueWhereYouLeft } from "@/components/ContinueWhereYouLeft";
@@ -131,11 +132,15 @@ const graphNodes = [
 
 export default function DashboardPage() {
   const router = useRouter();
+  const { user } = useAuth();
   const [timePeriod, setTimePeriod] = useState<"weekly" | "monthly">("weekly");
   const [isLoading, setIsLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [activeTab, setActiveTab] = useState("overview");
   const [chartMounted, setChartMounted] = useState(false);
+  
+  // Get user's first name for greeting
+  const userName = user?.name?.split(' ')[0] || 'Student';
 
   const stats = timePeriod === "weekly" ? weeklyStats : monthlyStats;
   const chartData = timePeriod === "weekly" ? weeklyData : monthlyData;
@@ -163,7 +168,7 @@ export default function DashboardPage() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-[#E5E7EB]">
-            {greeting}, Sarath! 👋
+            {greeting}, {userName}! 👋
           </h1>
           <p className="text-[#9CA3AF] mt-1">
             Ready to continue your <span className="text-[#7C3AED] font-medium">Surgery</span> pathway? 
