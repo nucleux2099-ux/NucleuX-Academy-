@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 const pageVariants = {
   initial: {
@@ -26,6 +27,16 @@ const pageTransition = {
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // SSR: render without animation to avoid flash
+  if (!mounted) {
+    return <div style={{ opacity: 1 }}>{children}</div>;
+  }
 
   return (
     <AnimatePresence mode="wait">

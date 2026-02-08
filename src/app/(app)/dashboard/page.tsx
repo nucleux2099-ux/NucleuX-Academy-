@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SkeletonStats } from "@/components/Skeleton";
+import { SkeletonStats, SkeletonCard } from "@/components/Skeleton";
 import {
   AreaChart,
   Area,
@@ -41,6 +41,7 @@ import { ATOMStudyCoach } from "@/components/ATOMStudyCoach";
 import { TodaysStudyPlan } from "@/components/TodaysStudyPlan";
 import { ContinueWhereYouLeft } from "@/components/ContinueWhereYouLeft";
 import { LearningAnalytics } from "@/components/LearningAnalytics";
+import { useStreak, useStudyPlan, useAnalytics, useStudySessions } from "@/lib/api/hooks";
 
 // Dashboard room color - Purple
 const roomColor = '#7C3AED';
@@ -52,6 +53,22 @@ function getGreeting() {
   if (hour < 17) return "Good afternoon";
   if (hour < 21) return "Good evening";
   return "Burning the midnight oil";
+}
+
+// Human-readable time ago
+function getTimeAgo(date: Date): string {
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
+  const diffMins = Math.floor(diffMs / 60000);
+  const diffHours = Math.floor(diffMins / 60);
+  const diffDays = Math.floor(diffHours / 24);
+
+  if (diffMins < 1) return "Just now";
+  if (diffMins < 60) return `${diffMins} min ago`;
+  if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+  if (diffDays === 1) return "Yesterday";
+  if (diffDays < 7) return `${diffDays} days ago`;
+  return date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 }
 
 const weeklyData = [
@@ -134,26 +151,138 @@ export default function DashboardPage() {
   const router = useRouter();
   const { user } = useAuth();
   const [timePeriod, setTimePeriod] = useState<"weekly" | "monthly">("weekly");
-  const [isLoading, setIsLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [activeTab, setActiveTab] = useState("overview");
   const [chartMounted, setChartMounted] = useState(false);
   
-  // Get user's first name for greeting
-  const userName = user?.name?.split(' ')[0] || 'Student';
+  // ============================================
+  // REAL DATA HOOKS - Replacing mock data
+  // ============================================
+  const { data: streak, isLoading: streakLoading } = useStreak();
+  const { data: studyPlan, isLoading: planLoading } = useStudyPlan();
+  const { data: weeklyAnalytics, isLoading: weeklyLoading } = useAnalytics(7);
+  const { data: monthlyAnalytics, isLoading: monthlyLoading } = useAnalytics(30);
+  const { data: sessionsData, isLoading: sessionsLoading } = useStudySessions(5);
 
-  const stats = timePeriod === "weekly" ? weeklyStats : monthlyStats;
-  const chartData = timePeriod === "weekly" ? weeklyData : monthlyData;
+  // Combine loading states
+  const isLoading = streakLoading || planLoading || (timePeriod === "weekly" ? weeklyLoading : monthlyLoading);
+  
+  // Get user's first name for greeting (Supabase stores name in user_metadata)
+  const userName = user?.user_metadata?.full_name?.split(' ')[0] 
+    || user?.email?.split('@')[0] 
+    || 'Student';
+
+  // ============================================
+  // COMPUTED STATS FROM REAL DATA
+  // ============================================
+  const currentStreak = streak?.current_streak ?? 0;
+  const longestStreak = streak?.longest_streak ?? 0;
+
+  // Build stats from analytics data
+  const analytics = timePeriod === "weekly" ? weeklyAnalytics : monthlyAnalytics;
+  
+  const stats = useMemo(() => {
+    if (!analytics) return [];
+    
+    const studyHours = Math.round((analytics.totalStudyMinutes / 60) * 10) / 10;
+    const accuracy = analytics.totalQuestions > 0 
+      ? Math.round((analytics.correctAnswers / analytics.totalQuestions) * 100)
+      : 0;
+
+    return [
+      { 
+        title: "Study Hours", 
+        value: studyHours.toString(), 
+        unit: "hrs", 
+        change: "+12%", // TODO: compute from historical data
+        icon: Clock, 
+        color: "#7C3AED" 
+      },
+      { 
+        title: "Topics Completed", 
+        value: analytics.topicsCompleted.toString(), 
+        unit: "", 
+        change: `+${analytics.topicsCompleted}`, 
+        icon: CheckCircle, 
+        color: "#059669" 
+      },
+      { 
+        title: "Current Streak", 
+        value: currentStreak.toString(), 
+        unit: "days", 
+        change: currentStreak >= longestStreak ? "Personal best!" : `Best: ${longestStreak}`, 
+        icon: Flame, 
+        color: "#F59E0B" 
+      },
+      { 
+        title: "MCQ Accuracy", 
+        value: accuracy.toString(), 
+        unit: "%", 
+        change: `${analytics.totalQuestions} attempted`, 
+        icon: Target, 
+        color: "#06B6D4" 
+      },
+    ];
+  }, [analytics, currentStreak, longestStreak]);
+
+  // Build chart data from analytics
+  const chartData = useMemo(() => {
+    if (!analytics?.dailyStats?.length) {
+      // Fallback to mock data if no real data
+      return timePeriod === "weekly" ? weeklyData : monthlyData;
+    }
+    return analytics.dailyStats.map((day: any) => ({
+      day: day.date ? new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' }) : day.day,
+      hours: Math.round((day.study_minutes || 0) / 60 * 10) / 10,
+      questions: day.mcqs_attempted || 0,
+    }));
+  }, [analytics, timePeriod]);
+
   const xKey = timePeriod === "weekly" ? "day" : "week";
+
+  // Build recent activity from sessions
+  const recentActivityFromSessions = useMemo(() => {
+    if (!sessionsData?.sessions?.length) return recentActivity; // fallback to mock
+    
+    return sessionsData.sessions.slice(0, 4).map((session) => {
+      const accuracy = session.mcqs_attempted > 0 
+        ? Math.round((session.mcqs_correct / session.mcqs_attempted) * 100)
+        : 0;
+      const timeAgo = getTimeAgo(new Date(session.started_at));
+      
+      return {
+        title: session.mcqs_attempted > 0 
+          ? `Scored ${accuracy}% on MCQs` 
+          : `Study session: ${session.atoms_studied?.[0] || 'General'}`,
+        type: session.mcqs_attempted > 0 ? "Assessment" : "Study",
+        time: timeAgo,
+        icon: session.mcqs_attempted > 0 ? Target : BookOpen,
+        color: session.mcqs_attempted > 0 ? "#059669" : "#7C3AED",
+        detail: session.mcqs_attempted > 0 
+          ? `${session.mcqs_correct}/${session.mcqs_attempted} correct • ${session.duration_minutes || 0} min`
+          : `${session.duration_minutes || 0} min session`,
+      };
+    });
+  }, [sessionsData]);
+
+  // Current pathway from study plan
+  const currentPathwayData = useMemo(() => {
+    if (!studyPlan?.active_pathway) return currentPathway; // fallback to mock
+    
+    const pathway = studyPlan.active_pathway;
+    return {
+      title: pathway.title,
+      progress: pathway.progress_percent,
+      currentTopic: `Topic ${pathway.current_atom_index + 1}`,
+      nextTopic: `Topic ${pathway.current_atom_index + 2}`,
+      totalTopics: pathway.total_atoms,
+      completedTopics: pathway.current_atom_index,
+    };
+  }, [studyPlan]);
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 600);
-    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -176,10 +305,17 @@ export default function DashboardPage() {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] px-3 py-1.5">
-            <Flame className="w-4 h-4 mr-1" />
-            12 Day Streak 🔥
-          </Badge>
+          {streakLoading ? (
+            <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] px-3 py-1.5 animate-pulse">
+              <Flame className="w-4 h-4 mr-1" />
+              Loading...
+            </Badge>
+          ) : (
+            <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)] px-3 py-1.5">
+              <Flame className="w-4 h-4 mr-1" />
+              {currentStreak} Day Streak {currentStreak > 0 ? '🔥' : ''}
+            </Badge>
+          )}
           <Badge className="bg-[rgba(5,150,105,0.15)] text-[#059669] border-[rgba(5,150,105,0.3)] px-3 py-1.5">
             <Activity className="w-4 h-4 mr-1" />
             NEET-PG 2026
@@ -355,34 +491,64 @@ export default function DashboardPage() {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between text-[#E5E7EB]">
                   <span>Current Pathway</span>
-                  <Badge className="bg-[rgba(124,58,237,0.2)] text-[#A78BFA] border-none">In Progress</Badge>
+                  {planLoading ? (
+                    <Badge className="bg-[rgba(124,58,237,0.2)] text-[#A78BFA] border-none animate-pulse">Loading...</Badge>
+                  ) : studyPlan?.active_pathway ? (
+                    <Badge className="bg-[rgba(124,58,237,0.2)] text-[#A78BFA] border-none">In Progress</Badge>
+                  ) : (
+                    <Badge className="bg-[rgba(107,114,128,0.2)] text-[#9CA3AF] border-none">No Active Pathway</Badge>
+                  )}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-semibold text-[#A78BFA]">{currentPathway.title}</h3>
-                    <span className="text-[#9CA3AF]">{currentPathway.completedTopics}/{currentPathway.totalTopics} topics</span>
+                {planLoading ? (
+                  <div className="animate-pulse space-y-4">
+                    <div className="h-6 bg-[#142538] rounded w-3/4" />
+                    <div className="h-3 bg-[#142538] rounded w-full" />
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="h-24 bg-[#142538] rounded-lg" />
+                      <div className="h-24 bg-[#142538] rounded-lg" />
+                    </div>
                   </div>
-                  <Progress value={currentPathway.progress} className="h-3" />
-                  <p className="text-sm text-[#9CA3AF] mt-2">{currentPathway.progress}% complete</p>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
-                    <p className="text-sm text-[#9CA3AF] mb-1">Currently Reading</p>
-                    <p className="font-medium text-[#E5E7EB]">{currentPathway.currentTopic}</p>
-                    <p className="text-xs text-[#6B7280] mt-1">Blumgart&apos;s Surgery Ch. 12-18</p>
+                ) : !studyPlan?.active_pathway ? (
+                  <div className="text-center py-8">
+                    <BookOpen className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
+                    <p className="text-[#9CA3AF] mb-4">No active learning pathway</p>
+                    <Button 
+                      onClick={() => router.push('/pathways')}
+                      className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white"
+                    >
+                      Browse Pathways
+                    </Button>
                   </div>
-                  <div className="p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)]">
-                    <p className="text-sm text-[#9CA3AF] mb-1">Up Next</p>
-                    <p className="font-medium text-[#E5E7EB]">{currentPathway.nextTopic}</p>
-                    <p className="text-xs text-[#6B7280] mt-1">Maingot&apos;s Ch. 32-36</p>
-                  </div>
-                </div>
-                <Button className="w-full py-3 bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg font-medium transition-all shadow-lg shadow-[#7C3AED]/20 text-white">
-                  Continue Learning
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                ) : (
+                  <>
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-xl font-semibold text-[#A78BFA]">{currentPathwayData.title}</h3>
+                        <span className="text-[#9CA3AF]">{currentPathwayData.completedTopics}/{currentPathwayData.totalTopics} topics</span>
+                      </div>
+                      <Progress value={currentPathwayData.progress} className="h-3" />
+                      <p className="text-sm text-[#9CA3AF] mt-2">{currentPathwayData.progress}% complete</p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div className="p-4 rounded-lg bg-[rgba(124,58,237,0.1)] border border-[rgba(124,58,237,0.2)]">
+                        <p className="text-sm text-[#9CA3AF] mb-1">Currently Reading</p>
+                        <p className="font-medium text-[#E5E7EB]">{currentPathwayData.currentTopic}</p>
+                        <p className="text-xs text-[#6B7280] mt-1">Blumgart&apos;s Surgery Ch. 12-18</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)]">
+                        <p className="text-sm text-[#9CA3AF] mb-1">Up Next</p>
+                        <p className="font-medium text-[#E5E7EB]">{currentPathwayData.nextTopic}</p>
+                        <p className="text-xs text-[#6B7280] mt-1">Maingot&apos;s Ch. 32-36</p>
+                      </div>
+                    </div>
+                    <Button className="w-full py-3 bg-[#7C3AED] hover:bg-[#6D28D9] rounded-lg font-medium transition-all shadow-lg shadow-[#7C3AED]/20 text-white">
+                      Continue Learning
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </>
+                )}
               </CardContent>
             </Card>
 
@@ -424,23 +590,43 @@ export default function DashboardPage() {
               <CardTitle className="text-[#E5E7EB]">Recent Activity</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {recentActivity.map((activity, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)] hover:border-[rgba(124,58,237,0.2)] transition-all cursor-pointer">
-                    <div className="p-3 rounded-lg shrink-0" style={{ backgroundColor: `${activity.color}15` }}>
-                      <activity.icon className="w-5 h-5" style={{ color: activity.color }} />
+              {sessionsLoading ? (
+                <div className="space-y-4">
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className="animate-pulse flex items-center gap-4 p-4 rounded-lg bg-[#142538]">
+                      <div className="w-12 h-12 bg-[#0F2233] rounded-lg" />
+                      <div className="flex-1 space-y-2">
+                        <div className="h-4 bg-[#0F2233] rounded w-3/4" />
+                        <div className="h-3 bg-[#0F2233] rounded w-1/2" />
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-[#E5E7EB] truncate">{activity.title}</p>
-                      <p className="text-sm text-[#6B7280]">{activity.detail}</p>
+                  ))}
+                </div>
+              ) : recentActivityFromSessions.length === 0 ? (
+                <div className="text-center py-8">
+                  <Activity className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
+                  <p className="text-[#9CA3AF]">No recent activity</p>
+                  <p className="text-sm text-[#6B7280]">Start a study session to see your progress here</p>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {recentActivityFromSessions.map((activity, i) => (
+                    <div key={i} className="flex items-center gap-4 p-4 rounded-lg bg-[#142538] border border-[rgba(6,182,212,0.1)] hover:border-[rgba(124,58,237,0.2)] transition-all cursor-pointer">
+                      <div className="p-3 rounded-lg shrink-0" style={{ backgroundColor: `${activity.color}15` }}>
+                        <activity.icon className="w-5 h-5" style={{ color: activity.color }} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-[#E5E7EB] truncate">{activity.title}</p>
+                        <p className="text-sm text-[#6B7280]">{activity.detail}</p>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <p className="text-sm text-[#9CA3AF]">{activity.time}</p>
+                        <p className="text-xs text-[#6B7280]">{activity.type}</p>
+                      </div>
                     </div>
-                    <div className="text-right shrink-0">
-                      <p className="text-sm text-[#9CA3AF]">{activity.time}</p>
-                      <p className="text-xs text-[#6B7280]">{activity.type}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
             </CardContent>
           </Card>
         </TabsContent>

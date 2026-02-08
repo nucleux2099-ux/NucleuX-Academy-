@@ -122,18 +122,17 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
               {children}
             </ol>
           ),
-          li: ({ children, ordered }) => (
+          li: ({ children, ...props }) => (
             <li className="text-[#D1D5DB] flex items-start gap-2">
-              {!ordered && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] mt-2.5 shrink-0" />
-              )}
               <span className="flex-1">{children}</span>
             </li>
           ),
 
           // Code blocks
-          code: ({ inline, className, children }) => {
-            if (inline) {
+          code: ({ className, children, ...props }) => {
+            // Check if it's inline (no language class means inline)
+            const isInline = !className;
+            if (isInline) {
               return (
                 <code className="px-1.5 py-0.5 bg-[rgba(124,58,237,0.2)] text-[#A78BFA] rounded text-sm font-mono">
                   {children}
@@ -229,9 +228,12 @@ export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
               center: "mx-auto max-w-[500px]",
             };
 
+            // Ensure src is a string
+            const imgSrc = typeof src === 'string' ? src : '';
+
             return (
               <ClickableImage 
-                src={src || ''} 
+                src={imgSrc} 
                 alt={caption} 
                 layout={layout}
                 layoutClasses={layoutClasses}

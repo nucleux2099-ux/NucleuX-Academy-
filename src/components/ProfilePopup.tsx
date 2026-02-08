@@ -65,8 +65,11 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
 
   if (!isOpen || !user) return null;
 
-  const initials = getInitials(user.name);
-  const planInfo = getPlanInfo(user.plan, user.role);
+  const displayName = user.user_metadata?.full_name || user.email?.split('@')[0] || 'User';
+  const userPlan = user.user_metadata?.plan || 'free';
+  const userRole = user.user_metadata?.role || 'user';
+  const initials = getInitials(displayName);
+  const planInfo = getPlanInfo(userPlan, userRole);
   const PlanIcon = planInfo.icon;
 
   const handleLogout = () => {
@@ -83,13 +86,13 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
       <div className="p-4 border-b border-[rgba(6,182,212,0.1)]">
         <div className="flex items-center gap-3">
           <Avatar className="w-12 h-12 ring-2 ring-[#06B6D4]/30">
-            <AvatarImage src={user.avatar} />
+            <AvatarImage src={user.user_metadata?.avatar_url} />
             <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white font-medium">
               {initials}
             </AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
-            <p className="font-semibold text-[#E5E7EB] truncate">{user.name}</p>
+            <p className="font-semibold text-[#E5E7EB] truncate">{displayName}</p>
             <p className="text-xs text-[#9CA3AF]">{user.email}</p>
           </div>
         </div>
@@ -100,10 +103,10 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
             <PlanIcon className="w-3 h-3" />
             {planInfo.label}
           </Badge>
-          {user.role === 'admin' && (
+          {userRole === 'admin' && (
             <span className="text-xs text-[#9CA3AF]">• Full access</span>
           )}
-          {user.plan === 'free' && (
+          {userPlan === 'free' && (
             <span className="text-xs text-[#9CA3AF]">• 5 MCQs left today</span>
           )}
         </div>
@@ -120,7 +123,7 @@ export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
           <span className="text-sm">Profile & Settings</span>
         </Link>
         
-        {user.plan === 'free' && (
+        {userPlan === 'free' && (
           <Link
             href="/billing"
             onClick={onClose}
@@ -162,8 +165,11 @@ export function ProfileButton() {
 
   if (!user) return null;
 
-  const initials = getInitials(user.name);
-  const planInfo = getPlanInfo(user.plan, user.role);
+  const displayName = user.user_metadata?.full_name || user.email?.split('@')[0] || 'User';
+  const userPlan = user.user_metadata?.plan || 'free';
+  const userRole = user.user_metadata?.role || 'user';
+  const initials = getInitials(displayName);
+  const planInfo = getPlanInfo(userPlan, userRole);
 
   return (
     <div className="relative">
@@ -172,13 +178,13 @@ export function ProfileButton() {
         className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)] transition-all group"
       >
         <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20 group-hover:ring-[#06B6D4]/40 transition-all">
-          <AvatarImage src={user.avatar} />
+          <AvatarImage src={user.user_metadata?.avatar_url} />
           <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-xs font-medium">
             {initials}
           </AvatarFallback>
         </Avatar>
         <div className="flex-1 text-left">
-          <p className="text-sm font-medium text-[#E5E7EB]">{user.name}</p>
+          <p className="text-sm font-medium text-[#E5E7EB]">{displayName}</p>
           <p className="text-xs text-[#9CA3AF]">{planInfo.label}</p>
         </div>
         <ChevronUp className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />

@@ -82,10 +82,10 @@ export default function ProfilePage() {
   useEffect(() => {
     if (user) {
       setFormData({
-        full_name: user.name || "",
-        specialty: "",
-        institution: "",
-        target_exam: "",
+        full_name: user.user_metadata?.full_name || user.email?.split('@')[0] || "",
+        specialty: user.user_metadata?.specialty || "",
+        institution: user.user_metadata?.institution || "",
+        target_exam: user.user_metadata?.target_exam || "",
       });
     }
   }, [user]);
@@ -136,9 +136,11 @@ export default function ProfilePage() {
     );
   }
 
-  const displayName = user.name;
+  const displayName = user.user_metadata?.full_name || user.email?.split('@')[0] || 'User';
   const initials = getInitials(displayName);
-  const planLabel = user.role === 'admin' ? 'Admin' : user.plan === 'premium' ? 'Premium' : user.plan === 'pro' ? 'Pro' : 'Free Plan';
+  const userRole = user.user_metadata?.role || 'user';
+  const userPlan = user.user_metadata?.plan || 'free';
+  const planLabel = userRole === 'admin' ? 'Admin' : userPlan === 'premium' ? 'Premium' : userPlan === 'pro' ? 'Pro' : 'Free Plan';
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto">
@@ -157,7 +159,7 @@ export default function ProfilePage() {
           <div className="absolute -top-16 left-6">
             <div className="relative">
               <Avatar className="w-32 h-32 border-4 border-[#0F2233]">
-                <AvatarImage src={user.avatar || undefined} />
+                <AvatarImage src={user.user_metadata?.avatar_url || undefined} />
                 <AvatarFallback className="bg-[#7C3AED] text-white text-3xl">
                   {initials}
                 </AvatarFallback>
@@ -173,7 +175,7 @@ export default function ProfilePage() {
             <div>
               <h2 className="text-2xl font-bold text-[#E5E7EB]">{displayName}</h2>
               <p className="text-[#9CA3AF]">
-                {user.role === 'admin' ? 'Administrator' : user.role === 'faculty' ? 'Faculty' : 'Medical Student'}
+                {userRole === 'admin' ? 'Administrator' : userRole === 'faculty' ? 'Faculty' : 'Medical Student'}
               </p>
               <div className="flex items-center gap-4 mt-3 text-sm text-[#9CA3AF]">
                 <span className="flex items-center gap-1">
@@ -188,13 +190,13 @@ export default function ProfilePage() {
             </div>
             <div className="flex gap-2">
               <Badge className={`px-3 py-1 ${
-                user.role === 'admin' 
+                userRole === 'admin' 
                   ? 'bg-[rgba(239,68,68,0.2)] text-[#EF4444] border-[rgba(239,68,68,0.3)]'
-                  : user.plan === 'premium'
+                  : userPlan === 'premium'
                   ? 'bg-[rgba(245,158,11,0.2)] text-[#F59E0B] border-[rgba(245,158,11,0.3)]'
                   : 'bg-[rgba(124,58,237,0.2)] text-[#7C3AED] border-[rgba(124,58,237,0.3)]'
               }`}>
-                {user.role === 'admin' && <Shield className="w-3 h-3 mr-1" />}
+                {userRole === 'admin' && <Shield className="w-3 h-3 mr-1" />}
                 {planLabel}
               </Badge>
               {analytics.currentStreak > 0 && (

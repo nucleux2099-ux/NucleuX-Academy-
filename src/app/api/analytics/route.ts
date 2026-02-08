@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
     ]);
 
     // Calculate aggregated analytics
-    const streak = streakResult.data || { current_streak: 0, longest_streak: 0 };
+    const streak = streakResult.data || { current_streak: 0, longest_streak: 0, last_study_date: null };
     const sessions = sessionsResult.data || [];
     const progress = progressResult.data || [];
     const mcqs = mcqsResult.data || [];

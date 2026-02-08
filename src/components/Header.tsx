@@ -37,8 +37,11 @@ export function Header() {
 
   if (!user) return null;
 
-  const initials = getInitials(user.name);
-  const roleDisplay = getRoleDisplay(user.role, user.plan);
+  const displayName = user.user_metadata?.full_name || user.email?.split('@')[0] || 'User';
+  const userRole = user.user_metadata?.role || 'user';
+  const userPlan = user.user_metadata?.plan || 'free';
+  const initials = getInitials(displayName);
+  const roleDisplay = getRoleDisplay(userRole, userPlan);
 
   return (
     <header className="h-14 sm:h-16 border-b border-[rgba(6,182,212,0.1)] bg-[#0D1B2A]/95 backdrop-blur-sm sticky top-0 z-30">
@@ -80,14 +83,14 @@ export function Header() {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-2 sm:gap-3 p-1.5 rounded-xl hover:bg-[rgba(6,182,212,0.1)] transition-colors border border-transparent hover:border-[rgba(6,182,212,0.15)]">
                 <Avatar className="w-8 h-8 ring-2 ring-[#06B6D4]/20">
-                  <AvatarImage src={user.avatar} />
+                  <AvatarImage src={user.user_metadata?.avatar_url} />
                   <AvatarFallback className="bg-gradient-to-br from-[#7C3AED] to-[#6D28D9] text-white text-sm font-medium">
                     {isLoading ? "..." : initials}
                   </AvatarFallback>
                 </Avatar>
                 <div className="hidden md:block text-left">
                   <p className="text-sm font-semibold text-[#E5E7EB]">
-                    {isLoading ? "Loading..." : user.name}
+                    {isLoading ? "Loading..." : displayName}
                   </p>
                   <p className="text-xs text-[#9CA3AF]">{roleDisplay}</p>
                 </div>
@@ -99,9 +102,9 @@ export function Header() {
             >
               <DropdownMenuLabel className="text-[#E5E7EB]">
                 <div>
-                  <p className="font-medium">{user.name}</p>
+                  <p className="font-medium">{displayName}</p>
                   <p className="text-xs text-[#9CA3AF] font-normal">{user.email}</p>
-                  {user.role === 'admin' && (
+                  {userRole === 'admin' && (
                     <span className="inline-flex items-center gap-1 mt-1 text-xs text-[#EF4444]">
                       <Shield className="w-3 h-3" /> Admin
                     </span>

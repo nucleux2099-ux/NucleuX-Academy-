@@ -31,6 +31,18 @@ import {
 import { getSubjectBySlug } from "@/lib/data/subjects";
 import { SURGERY_GI_TOPICS, getMCQsByTopic, getFlashcardsByTopic } from "@/lib/data/topics-surgery-gi";
 import { APPENDICITIS_CONTENT } from "@/lib/content/appendicitis";
+import { ESOPHAGUS_ANATOMY_CONTENT } from "@/lib/content/esophagus-anatomy";
+import { GERD_HIATAL_HERNIA_CONTENT } from "@/lib/content/gerd-hiatal-hernia";
+import { PEPTIC_ULCER_DISEASE_CONTENT } from "@/lib/content/peptic-ulcer-disease";
+import { ACUTE_PANCREATITIS_CONTENT } from "@/lib/content/acute-pancreatitis";
+import { CHOLELITHIASIS_CHOLECYSTITIS_CONTENT } from "@/lib/content/cholelithiasis-cholecystitis";
+import { IBD_CONTENT } from "@/lib/content/ibd";
+import { CIRRHOSIS_CONTENT } from "@/lib/content/cirrhosis";
+import { VIRAL_HEPATITIS_CONTENT } from "@/lib/content/viral-hepatitis";
+import { NORMAL_LABOR_CONTENT } from "@/lib/content/normal-labor";
+import { PREECLAMPSIA_CONTENT } from "@/lib/content/preeclampsia";
+import { PPH_CONTENT } from "@/lib/content/pph";
+import { ECTOPIC_PREGNANCY_CONTENT } from "@/lib/content/ectopic-pregnancy";
 import { cn } from "@/lib/utils";
 import type { Depth } from "@/lib/types";
 
@@ -43,6 +55,9 @@ const conceptIcons: Record<string, any> = {
   '💊': '💊',
   '⚠️': '⚠️',
   '🎓': '🎓',
+  '🧬': '🧬',
+  '🚪': '🚪',
+  '🔄': '🔄',
 };
 
 export default function TopicPage() {
@@ -61,8 +76,26 @@ export default function TopicPage() {
   const mcqs = topic ? getMCQsByTopic(topic.id) : [];
   const flashcards = topic ? getFlashcardsByTopic(topic.id) : [];
   
-  // Get rich content (for now, only appendicitis has full content)
-  const content = topicSlug === 'acute-appendicitis' ? APPENDICITIS_CONTENT : null;
+  // Map topic slugs to their content
+  const contentMap: Record<string, typeof APPENDICITIS_CONTENT> = {
+    // Surgery GI
+    'acute-appendicitis': APPENDICITIS_CONTENT,
+    'esophagus-anatomy': ESOPHAGUS_ANATOMY_CONTENT,
+    'gerd-hiatal-hernia': GERD_HIATAL_HERNIA_CONTENT,
+    'peptic-ulcer-disease': PEPTIC_ULCER_DISEASE_CONTENT,
+    'acute-pancreatitis': ACUTE_PANCREATITIS_CONTENT,
+    'cholelithiasis-cholecystitis': CHOLELITHIASIS_CHOLECYSTITIS_CONTENT,
+    // Medicine GI
+    'ibd': IBD_CONTENT,
+    'cirrhosis': CIRRHOSIS_CONTENT,
+    'viral-hepatitis': VIRAL_HEPATITIS_CONTENT,
+    // OBG
+    'normal-labor': NORMAL_LABOR_CONTENT,
+    'preeclampsia': PREECLAMPSIA_CONTENT,
+    'pph': PPH_CONTENT,
+    'ectopic-pregnancy': ECTOPIC_PREGNANCY_CONTENT,
+  };
+  const content = contentMap[topicSlug] || null;
 
   const toggleConcept = (id: string) => {
     const newExpanded = new Set(expandedConcepts);
