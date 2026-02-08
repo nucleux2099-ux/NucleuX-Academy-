@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { DemoTour, useDemoTour } from '@/components/demo/DemoTour'
 
 // ============================================
 // DEMO DATA - Pre-seeded content
@@ -96,7 +97,7 @@ function LibrarySelector({
   onSelect: (id: string) => void 
 }) {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2" data-tour="library-selector">
       <div className="text-xs text-slate-500 uppercase tracking-wider mb-3">📚 Library</div>
       {DEMO_LIBRARIES.map((lib) => (
         <button
@@ -128,7 +129,7 @@ function TopicSelector({
   const topics = DEMO_TOPICS[library] || []
   
   return (
-    <div className="space-y-2">
+    <div className="space-y-2" data-tour="topic-selector">
       <div className="text-xs text-slate-500 uppercase tracking-wider mb-3">📑 Topics</div>
       {topics.map((topic) => (
         <button
@@ -156,7 +157,7 @@ function ModeSelector({
   onSelect: (id: string) => void 
 }) {
   return (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex gap-2 flex-wrap" data-tour="mode-selector">
       {DEMO_MODES.map((mode) => (
         <button
           key={mode.id}
@@ -237,6 +238,9 @@ export default function DemoPage() {
   const [questionsUsed, setQuestionsUsed] = useState(0)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   
+  // Tour state
+  const { showTour, hasSeenTour, completeTour, skipTour, restartTour } = useDemoTour()
+  
   const MAX_QUESTIONS = 5
 
   // Initialize conversation when topic changes
@@ -297,6 +301,11 @@ export default function DemoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Guided Tour */}
+      {showTour && (
+        <DemoTour onComplete={completeTour} onSkip={skipTour} />
+      )}
+      
       {/* Header */}
       <header className="border-b border-white/10 px-4 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -310,6 +319,14 @@ export default function DemoPage() {
             </span>
           </div>
           <div className="flex items-center gap-3">
+            {hasSeenTour && (
+              <button
+                onClick={restartTour}
+                className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+              >
+                🎯 Restart Tour
+              </button>
+            )}
             <span className="text-sm text-slate-400">
               {MAX_QUESTIONS - questionsUsed} questions left
             </span>
@@ -360,7 +377,7 @@ export default function DemoPage() {
           </div>
 
           {/* Chat Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4" data-tour="chat-area">
             <AnimatePresence>
               {messages.map((msg, i) => (
                 <ChatMessage key={i} message={msg} />
@@ -402,7 +419,7 @@ export default function DemoPage() {
                 </Link>
               </div>
             ) : (
-              <div className="flex gap-3">
+              <div className="flex gap-3" data-tour="chat-input">
                 <input
                   type="text"
                   value={input}
