@@ -10,7 +10,7 @@ const roomColors: Record<string, string> = {
   '/dashboard': '#5BB3B3', // Teal
   '/library': '#7BA69E',   // Sage
   '/chat': '#5BB3B3',      // Teal (ATOM)
-  '/mcqs': '#5BB3B3',      // Teal
+  '/exam-centre': '#6366F1', // Indigo for Exam Centre
   '/arena': '#C9A86C',     // Gold
 };
 
@@ -18,7 +18,7 @@ const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, label: "My Desk" },
   { href: "/library", icon: BookOpen, label: "Library" },
   { href: "/chat", icon: Atom, label: "ATOM", highlight: true },
-  { href: "/mcqs", icon: ClipboardCheck, label: "Exam" },
+  { href: "/exam-centre", icon: ClipboardCheck, label: "Exam" },
   { href: "/arena", icon: Trophy, label: "Arena" },
 ];
 

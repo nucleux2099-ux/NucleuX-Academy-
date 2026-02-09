@@ -20,7 +20,7 @@ const roomColors: Record<string, string> = {
   '/dashboard': '#5BB3B3', // Teal
   '/library': '#7BA69E',   // Sage
   '/classroom': '#6BA8C9', // Sky teal
-  '/mcqs': '#5BB3B3',      // Teal
+  '/exam-centre': '#6366F1', // Indigo for Exam Centre
   '/competencies': '#E879F9', // Purple/Pink for CBME
   '/community': '#C9A86C', // Gold
   '/arena': '#D4AF37',     // Bright gold
@@ -31,7 +31,7 @@ const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, label: "My Desk", description: "Dashboard & Graph" },
   { href: "/library", icon: BookOpen, label: "Library", description: "Browse & Pathways" },
   { href: "/classroom", icon: GraduationCap, label: "Classroom", description: "Video Lectures" },
-  { href: "/mcqs", icon: ClipboardCheck, label: "Exam Center", description: "Practice MCQs" },
+  { href: "/exam-centre", icon: ClipboardCheck, label: "Exam Centre", description: "PYQs, MCQs, Cases" },
   { href: "/competencies", icon: Target, label: "CBME", description: "Competencies" },
   { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
   { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
