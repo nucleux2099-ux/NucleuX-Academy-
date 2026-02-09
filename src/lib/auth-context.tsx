@@ -18,8 +18,18 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-// Routes that don't require auth
-const publicRoutes = ['/', '/login', '/signup', '/about', '/pricing', '/forgot-password', '/auth/callback'];
+// Routes that don't require auth (must match middleware.ts)
+const publicRoutes = [
+  '/', 
+  '/login', 
+  '/signup', 
+  '/forgot-password', 
+  '/auth/callback',
+  '/landing',
+  '/demo',
+  '/terms',
+  '/privacy',
+];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
