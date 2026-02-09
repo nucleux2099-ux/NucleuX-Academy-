@@ -10,3 +10,6 @@ export * from './progress';
 
 // Library types (new dynamic library system)
 export * from './library';
+
+// Simulator types
+export * from './simulator';
