@@ -17,6 +17,9 @@ const publicRoutes = [
 // Routes that should redirect to dashboard if already authenticated
 const authRoutes = ['/login', '/signup']
 
+// Routes that should redirect authenticated users to dashboard (landing pages)
+const landingRoutes = ['/', '/landing']
+
 export async function middleware(request: NextRequest) {
   const { response, user } = await updateSession(request)
   const { pathname } = request.nextUrl
@@ -29,8 +32,11 @@ export async function middleware(request: NextRequest) {
   // Check if current path is an auth route (login/signup)
   const isAuthRoute = authRoutes.some(route => pathname === route)
 
-  // If user is authenticated and trying to access auth routes, redirect to dashboard
-  if (user && isAuthRoute) {
+  // Check if current path is a landing route
+  const isLandingRoute = landingRoutes.some(route => pathname === route)
+
+  // If user is authenticated and on landing page or auth routes, redirect to dashboard
+  if (user && (isAuthRoute || isLandingRoute)) {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 

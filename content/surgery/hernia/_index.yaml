@@ -1,0 +1,65 @@
+# Hernia Topic Index
+# NucleuX Academy Content Library
+
+id: hernia
+title: "Hernia Surgery"
+subject: surgery
+subspecialty: general_surgery
+system: abdominal_wall
+
+description: |
+  Comprehensive coverage of abdominal wall hernias including inguinal,
+  femoral, umbilical, incisional, and hiatal hernias. Primary sources: Maingot, Fischer.
+
+stats:
+  total_topics: 5
+  topics_covered: 5
+  coverage_percent: 100
+  concept_notes: 5
+  grinde_maps: 0
+  retrieval_cards: 5
+  case_scenarios: 3
+
+categories:
+  - id: groin
+    title: "Groin Hernias"
+    topics:
+      - inguinal-hernia
+      - femoral-hernia
+  - id: ventral
+    title: "Ventral Hernias"
+    topics:
+      - umbilical-hernia
+      - incisional-hernia
+  - id: diaphragmatic
+    title: "Diaphragmatic Hernias"
+    topics:
+      - hiatal-hernia
+
+priority: high
+exam_relevance:
+  - NEET_PG
+  - USMLE_Step2
+  - MRCS
+
+study_order:
+  - inguinal-hernia (most common, anatomy-heavy)
+  - femoral-hernia (surgical emergency risk)
+  - umbilical-hernia (common)
+  - incisional-hernia (complex)
+  - hiatal-hernia (upper GI crossover)
+
+sources:
+  primary:
+    - book: "Maingot's Abdominal Operations"
+      edition: "12th"
+      part: "I - Abdominal Wall"
+  supplementary:
+    - book: "Fischer's Mastery of Surgery"
+      edition: "7th"
+      chapters: "Various"
+    - book: "Netter's Surgical Anatomy"
+      topic: "Abdominal Wall & Groin"
+
+last_updated: "2025-02-08"
+status: active
