@@ -6,12 +6,12 @@ const publicRoutes = [
   '/',
   '/login',
   '/signup',
-  '/about',
-  '/pricing',
   '/forgot-password',
   '/auth/callback',
   '/landing',
   '/demo',
+  '/terms',
+  '/privacy',
 ]
 
 // Routes that should redirect to dashboard if already authenticated
