@@ -255,6 +255,64 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="max-w-7xl mx-auto px-6 pb-10 relative z-10">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-xl font-bold text-[#E8E0D5]">How it works</h2>
+          <p className="mt-1 text-sm text-[#A0B0BC]">
+            A cohesive campus interface — with ATOM present across rooms as your thinking partner.
+          </p>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-xl border border-white/10 bg-[#364A5E]/40 p-5">
+              <div className="text-sm font-semibold text-[#E8E0D5]">1) Learn</div>
+              <div className="mt-1 text-sm text-[#A0B0BC]">Library / Classroom</div>
+              <div className="mt-3 text-sm text-[#A0B0BC]">Build concepts, mental models, and clarity.</div>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#364A5E]/40 p-5">
+              <div className="text-sm font-semibold text-[#E8E0D5]">2) Practice</div>
+              <div className="mt-1 text-sm text-[#A0B0BC]">Exam Centre / Arena</div>
+              <div className="mt-3 text-sm text-[#A0B0BC]">Convert reading into recall, speed, and exam patterns.</div>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#364A5E]/40 p-5">
+              <div className="text-sm font-semibold text-[#E8E0D5]">3) Track & improve</div>
+              <div className="mt-1 text-sm text-[#A0B0BC]">Backstage</div>
+              <div className="mt-3 text-sm text-[#A0B0BC]">Competency ladder, calibration, reflection, and logbook.</div>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              'ATOM Librarian',
+              'ATOM Scribe',
+              'ATOM Trainer',
+              'ATOM Challenger',
+              'ATOM Coach',
+              'ATOM Guide',
+            ].map((role) => (
+              <span key={role} className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
+                {role}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Built by doctors */}
+      <section className="max-w-7xl mx-auto px-6 pb-10 relative z-10">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-xl font-bold text-[#E8E0D5]">Built by a physician and a surgeon</h2>
+          <p className="mt-1 text-sm text-[#A0B0BC]">
+            Designed for MBBS + residents — and built to grow into a community that thrives.
+          </p>
+          <ul className="mt-5 space-y-2 text-sm text-[#A0B0BC]">
+            <li className="flex items-start gap-2"><span className="mt-1 text-[#10B981]">•</span><span>Grounded in learning science: concept-first, retrieval, calibration, reflection.</span></li>
+            <li className="flex items-start gap-2"><span className="mt-1 text-[#10B981]">•</span><span>One coherent campus UX — ATOM lives across rooms, not as a separate chatbot.</span></li>
+            <li className="flex items-start gap-2"><span className="mt-1 text-[#10B981]">•</span><span>Privacy-first by design: logbook is anonymized by default.</span></li>
+          </ul>
+        </div>
+      </section>
+
       {/* Principles */}
       <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
         <h2 className="text-xl font-bold text-[#E8E0D5]">Ideology</h2>
