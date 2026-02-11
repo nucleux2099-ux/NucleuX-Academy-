@@ -98,9 +98,16 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+      {/* subtle campus blueprint grid */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.08]" style={{
+        backgroundImage:
+          'linear-gradient(rgba(91,179,179,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(91,179,179,0.15) 1px, transparent 1px)',
+        backgroundSize: '44px 44px',
+      }} />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
       {/* Top nav */}
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur">
+      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur relative z-20">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-9 h-9 rounded-xl bg-[rgba(91,179,179,0.18)] border border-[rgba(91,179,179,0.35)] flex items-center justify-center">
@@ -126,7 +133,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+      <section className="max-w-7xl mx-auto px-6 pt-16 pb-10 relative z-10">
         <div className="max-w-3xl">
           <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
             <Sparkles className="w-3.5 h-3.5 mr-2" /> Virtual Campus
@@ -158,11 +165,32 @@ export default function HomePage() {
       </section>
 
       {/* Campus Map */}
-      <section className="max-w-7xl mx-auto px-6 pb-10">
-        <div className="flex items-end justify-between gap-4">
+      <section className="max-w-7xl mx-auto px-6 pb-10 relative z-10">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>
             <h2 className="text-xl font-bold text-[#E8E0D5]">Campus Map</h2>
             <p className="text-sm text-[#A0B0BC]">Same rooms. Same names. One coherent learning OS.</p>
+          </div>
+
+          {/* Campus legend */}
+          <div className="flex flex-wrap gap-2">
+            {[
+              { name: 'Library', color: '#5BB3B3' },
+              { name: 'Classroom', color: '#6BA8C9' },
+              { name: 'Exam Centre', color: '#C9A86C' },
+              { name: 'Arena', color: '#EC4899' },
+              { name: 'Backstage', color: '#A78BFA' },
+              { name: 'Common Room', color: '#10B981' },
+            ].map((x) => (
+              <span
+                key={x.name}
+                className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-[#A0B0BC] bg-white/5"
+                style={{ borderColor: `${x.color}33` }}
+              >
+                <span className="h-2 w-2 rounded-full" style={{ backgroundColor: x.color }} />
+                {x.name}
+              </span>
+            ))}
           </div>
         </div>
 
