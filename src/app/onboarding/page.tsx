@@ -26,17 +26,24 @@ import {
   MessageCircle,
   CheckCircle,
   Loader2,
+  Layers,
 } from "lucide-react";
 
+const tracks = [
+  {
+    id: "mbbs_y1_cbme",
+    title: "MBBS Year 1 (NMC CBME)",
+    description: "Block-wise curriculum, theory + practical + viva, tightly interlinked",
+    icon: Layers,
+    color: "#5BB3B3",
+  },
+];
+
 const specialties = [
-  { id: "surgery", name: "Surgery", icon: Stethoscope, color: "#5BB3B3" },
-  { id: "medicine", name: "Internal Medicine", icon: FlaskConical, color: "#5BB3B3" },
+  // v1: keep it focused for MBBS Y1
   { id: "anatomy", name: "Anatomy", icon: Bone, color: "#C9A86C" },
   { id: "physiology", name: "Physiology", icon: Brain, color: "#10B981" },
-  { id: "pathology", name: "Pathology", icon: Eye, color: "#E57373" },
-  { id: "pharmacology", name: "Pharmacology", icon: Pill, color: "#8B5CF6" },
-  { id: "pediatrics", name: "Pediatrics", icon: Baby, color: "#EC4899" },
-  { id: "cardiology", name: "Cardiology", icon: Heart, color: "#E57373" },
+  { id: "biochemistry", name: "Biochemistry", icon: FlaskConical, color: "#5BB3B3" },
 ];
 
 const goals = [
@@ -69,14 +76,15 @@ export default function OnboardingPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    selectedSpecialties: [] as string[],
+    track: "mbbs_y1_cbme",
+    selectedSpecialties: ["anatomy", "physiology", "biochemistry"] as string[],
     selectedGoals: [] as string[],
-    dailyStudyTime: "",
-    targetExam: "",
+    dailyStudyTime: "60",
+    targetExam: "none",
     telegramConnected: false,
   });
 
-  const totalSteps = 4;
+  const totalSteps = 5;
   const progress = (step / totalSteps) * 100;
 
   // Load existing user data
@@ -135,7 +143,8 @@ export default function OnboardingPage() {
         .from("profiles")
         .update({
           full_name: formData.name,
-          specialty: formData.selectedSpecialties[0] || null, // Primary specialty
+          level: formData.track === "mbbs_y1_cbme" ? "mbbs_y1" : null,
+          specialty: formData.selectedSpecialties[0] || null, // Primary subject focus
           target_exam: formData.targetExam !== "none" ? formData.targetExam : null,
           onboarding_completed: true,
           updated_at: new Date().toISOString(),
@@ -194,10 +203,20 @@ export default function OnboardingPage() {
 
   const canProceed = () => {
     switch (step) {
-      case 1: return formData.name.trim().length > 0;
-      case 2: return formData.selectedSpecialties.length > 0;
-      case 3: return formData.selectedGoals.length > 0 && formData.dailyStudyTime && formData.targetExam;
-      default: return true;
+      case 1:
+        return formData.name.trim().length > 0;
+      case 2:
+        return !!formData.track;
+      case 3:
+        return formData.selectedSpecialties.length > 0;
+      case 4:
+        return (
+          formData.selectedGoals.length > 0 &&
+          formData.dailyStudyTime &&
+          formData.targetExam
+        );
+      default:
+        return true;
     }
   };
 

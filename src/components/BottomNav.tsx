@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, BookOpen, Atom, ClipboardCheck, Trophy } from "lucide-react";
+import { LayoutDashboard, BookOpen, Atom, ClipboardCheck, Fingerprint } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // ATOM Matte Theme - Room colors
@@ -11,15 +11,15 @@ const roomColors: Record<string, string> = {
   '/library': '#7BA69E',   // Sage
   '/chat': '#5BB3B3',      // Teal (ATOM)
   '/exam-centre': '#6366F1', // Indigo for Exam Centre
-  '/arena': '#C9A86C',     // Gold
+  '/backstage': '#F59E0B', // Amber
 };
 
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, label: "My Desk" },
   { href: "/library", icon: BookOpen, label: "Library" },
-  { href: "/chat", icon: Atom, label: "ATOM", highlight: true },
+  { href: "/backstage", icon: Fingerprint, label: "Backstage" },
   { href: "/exam-centre", icon: ClipboardCheck, label: "Exam" },
-  { href: "/arena", icon: Trophy, label: "Arena" },
+  { href: "/chat", icon: Atom, label: "ATOM", highlight: true },
 ];
 
 export function BottomNav() {

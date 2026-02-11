@@ -7,24 +7,7 @@
  * v1 scope: Year 1 only, classic block order.
  */
 
-export type CBMEYear = 1;
-export type CBMEAssessmentTag = "theory" | "practical" | "viva";
-
-export type CBMEBlock = {
-  id: string; // canonical block id
-  year: CBMEYear;
-  subject: "anatomy" | "physiology" | "biochemistry" | "bme";
-  title: string;
-  order: number;
-  tags: CBMEAssessmentTag[];
-  // These will be wired to real content over time.
-  links?: {
-    libraryPath?: string; // e.g. /library/anatomy/...
-    examCentrePath?: string; // e.g. /exam-centre
-    arenaPath?: string; // e.g. /arena
-    flashcardsDeckId?: string;
-  };
-};
+import type { CBMEBlock } from "./cbme-types";
 
 export const CBME_MBBS_Y1_BLOCKS: CBMEBlock[] = [
   // =====================

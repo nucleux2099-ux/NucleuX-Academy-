@@ -1,0 +1,62 @@
+export type Bloom =
+  | "remember"
+  | "understand"
+  | "apply"
+  | "analyze"
+  | "evaluate"
+  | "create";
+
+export type CompetencyStage =
+  | "unconsciously_incompetent"
+  | "consciously_incompetent"
+  | "consciously_competent"
+  | "unconsciously_competent";
+
+export type BackstageEventType = "reading" | "mcq" | "case" | "reflection" | "note";
+
+export type SubjectKey =
+  | "anatomy"
+  | "physiology"
+  | "biochemistry"
+  | "bme"
+  | "pathology"
+  | "pharmacology"
+  | "microbiology"
+  | "forensic"
+  | "psm"
+  | "ent"
+  | "ophthalmology"
+  | "medicine"
+  | "surgery"
+  | "obgyn"
+  | "pediatrics"
+  | "orthopedics"
+  | "unknown";
+
+export type BackstageEvent = {
+  id: string;
+  createdAt: string; // ISO
+  type: BackstageEventType;
+
+  subject: SubjectKey;
+  topic?: string;
+  cbmeBlockId?: string;
+
+  // Metacognition
+  confidence?: number; // 0-100
+  bloom?: Bloom;
+
+  // MCQ specifics
+  mcq?: {
+    correct?: boolean;
+    difficulty?: string;
+  };
+
+  // Free text
+  note?: string;
+};
+
+export type BackstageState = {
+  version: 1;
+  events: BackstageEvent[];
+};

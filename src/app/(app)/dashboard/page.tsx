@@ -9,18 +9,27 @@ import {
   Brain,
   CheckCircle2,
   Flame,
+  Layers,
+  Sparkles,
   Target,
+  TrendingUp,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useAuth } from "@/lib/auth-context";
 import { useAnalytics, useStreak, useStudyPlan } from "@/lib/api/hooks";
-import { CBME_MBBS_Y1_BLOCKS, type CBMEBlock } from "@/lib/data";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  CBME_MBBS_Y1_BLOCKS,
+  CBME_MBBS_Y2_BLOCKS,
+  CBME_MBBS_Y3_BLOCKS,
+  CBME_MBBS_Y4_BLOCKS,
+  type CBMEBlock,
+} from "@/lib/data";
 
 function getGreeting() {
   const hour = new Date().getHours();
@@ -36,17 +45,12 @@ function clampPct(n: number) {
 }
 
 function pickTitle(x: Record<string, unknown>) {
-  const candidates = [
-    x.title,
-    x.topic,
-    x.name,
-    x.atom,
-    x.label,
-    x.id,
-  ] as Array<unknown>;
+  const candidates = [x.title, x.topic, x.name, x.atom, x.label, x.id] as Array<unknown>;
   const first = candidates.find((v) => typeof v === "string" && v.trim().length > 0);
   return (first as string | undefined) ?? "Untitled";
 }
+
+type SubjectMap<T extends string> = Record<T, CBMEBlock[]>;
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -66,6 +70,17 @@ export default function DashboardPage() {
   const today = studyPlan?.today;
   const goals = studyPlan?.goals;
 
+  const streakNow = streak?.current_streak ?? 0;
+  const streakBest = streak?.longest_streak ?? 0;
+
+  const totalQuestions7d = analytics?.totalQuestions ?? 0;
+  const correctAnswers7d = analytics?.correctAnswers ?? 0;
+
+  const studyGoalMinutes = goals?.study_minutes ?? 0;
+  const studiedTodayMinutes = today?.study_minutes ?? 0;
+  const minutesLeftToday = Math.max(0, studyGoalMinutes - studiedTodayMinutes);
+  const todayPct = studyGoalMinutes > 0 ? clampPct((studiedTodayMinutes / studyGoalMinutes) * 100) : 0;
+
   const accuracy = useMemo(() => {
     if (!analytics) return 0;
     if (!analytics.totalQuestions) return 0;
@@ -74,19 +89,35 @@ export default function DashboardPage() {
 
   const difficultyZone = useMemo(() => {
     if (!analytics || analytics.totalQuestions < 10) {
-      return { label: "Not enough data", tone: "neutral" as const, hint: "Do 10 MCQs to calibrate." };
+      return {
+        label: "Not enough data",
+        tone: "neutral" as const,
+        hint: "Do 10 MCQs to calibrate.",
+      };
     }
     if (accuracy >= 86) {
-      return { label: "Too easy", tone: "warn" as const, hint: "Increase difficulty or switch topic." };
+      return {
+        label: "Too easy",
+        tone: "warn" as const,
+        hint: "Increase difficulty or switch topic.",
+      };
     }
     if (accuracy <= 60) {
-      return { label: "Too hard", tone: "warn" as const, hint: "Drop difficulty or review first." };
+      return {
+        label: "Too hard",
+        tone: "warn" as const,
+        hint: "Drop difficulty or review first.",
+      };
     }
-    return { label: "Learning zone", tone: "good" as const, hint: "Stay here — this is where growth happens." };
+    return {
+      label: "Learning zone",
+      tone: "good" as const,
+      hint: "Stay here — this is where growth happens.",
+    };
   }, [analytics, accuracy]);
 
   const nextAction = useMemo(() => {
-    // Simple, deterministic policy (actions-first):
+    // Deterministic “actions-first” policy:
     // 1) If MCQ goal not met → practice
     // 2) Else if study minutes goal not met → read
     // 3) Else → review analytics
@@ -120,26 +151,57 @@ export default function DashboardPage() {
   }, [today?.goal_progress, today?.mcq_progress]);
 
   const cbmeY1BySubject = useMemo(() => {
-    const by: Record<CBMEBlock["subject"], CBMEBlock[]> = {
+    const by: SubjectMap<"anatomy" | "physiology" | "biochemistry" | "bme"> = {
       anatomy: [],
       physiology: [],
       biochemistry: [],
       bme: [],
     };
-    for (const b of CBME_MBBS_Y1_BLOCKS) by[b.subject].push(b);
-    for (const k of Object.keys(by) as Array<CBMEBlock["subject"]>) {
-      by[k].sort((a, b) => a.order - b.order);
-    }
+    for (const b of CBME_MBBS_Y1_BLOCKS) by[b.subject as keyof typeof by]?.push(b);
+    (Object.keys(by) as Array<keyof typeof by>).forEach((k) => by[k].sort((a, b) => a.order - b.order));
+    return by;
+  }, []);
+
+  const cbmeY2BySubject = useMemo(() => {
+    const by: SubjectMap<"pathology" | "pharmacology" | "microbiology" | "forensic"> = {
+      pathology: [],
+      pharmacology: [],
+      microbiology: [],
+      forensic: [],
+    };
+    for (const b of CBME_MBBS_Y2_BLOCKS) by[b.subject as keyof typeof by]?.push(b);
+    (Object.keys(by) as Array<keyof typeof by>).forEach((k) => by[k].sort((a, b) => a.order - b.order));
+    return by;
+  }, []);
+
+  const cbmeY3BySubject = useMemo(() => {
+    const by: SubjectMap<"psm" | "ent" | "ophthalmology"> = {
+      psm: [],
+      ent: [],
+      ophthalmology: [],
+    };
+    for (const b of CBME_MBBS_Y3_BLOCKS) by[b.subject as keyof typeof by]?.push(b);
+    (Object.keys(by) as Array<keyof typeof by>).forEach((k) => by[k].sort((a, b) => a.order - b.order));
+    return by;
+  }, []);
+
+  const cbmeY4BySubject = useMemo(() => {
+    const by: SubjectMap<"medicine" | "surgery" | "obgyn" | "pediatrics" | "orthopedics"> = {
+      medicine: [],
+      surgery: [],
+      obgyn: [],
+      pediatrics: [],
+      orthopedics: [],
+    };
+    for (const b of CBME_MBBS_Y4_BLOCKS) by[b.subject as keyof typeof by]?.push(b);
+    (Object.keys(by) as Array<keyof typeof by>).forEach((k) => by[k].sort((a, b) => a.order - b.order));
     return by;
   }, []);
 
   const weakTopics = useMemo(() => {
-    // We currently don’t have topic-level weakness API on the dashboard route.
-    // Use StudyPlan recommended/continue lists as a best-effort “what to do next” queue.
-    const items = [
-      ...(studyPlan?.recommended ?? []),
-      ...(studyPlan?.continue_learning ?? []),
-    ] as Array<Record<string, unknown>>;
+    const items = [...(studyPlan?.recommended ?? []), ...(studyPlan?.continue_learning ?? [])] as Array<
+      Record<string, unknown>
+    >;
 
     const unique: Record<string, Record<string, unknown>> = {};
     for (const it of items) {
@@ -152,21 +214,16 @@ export default function DashboardPage() {
       .map((k) => ({ title: k, raw: unique[k] }));
   }, [studyPlan?.recommended, studyPlan?.continue_learning]);
 
-  const streakNow = streak?.current_streak ?? 0;
-  const streakBest = streak?.longest_streak ?? 0;
-
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-6 md:px-6 md:py-8">
       {/* Header */}
-      <div className="mb-6 flex flex-col gap-2 md:mb-8">
+      <div className="mb-5 flex flex-col gap-2 md:mb-7">
         <div className="flex items-center justify-between gap-3">
           <div>
             <div className="text-sm text-muted-foreground">
               {getGreeting()}, <span className="text-foreground">{userName}</span>
             </div>
-            <h1 className="mt-1 text-2xl font-semibold tracking-tight md:text-3xl">
-              Dashboard
-            </h1>
+            <h1 className="mt-1 text-2xl font-semibold tracking-tight md:text-3xl">Dashboard</h1>
           </div>
           <div className="flex items-center gap-2">
             <Badge variant="secondary" className="gap-1">
@@ -177,6 +234,124 @@ export default function DashboardPage() {
             </Badge>
           </div>
         </div>
+      </div>
+
+      {/* Banner */}
+      <Card className="mb-4 overflow-hidden border-none bg-gradient-to-br from-primary/15 via-muted/30 to-background">
+        <CardContent className="p-5 md:p-6">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Sparkles className="h-4 w-4" /> Mission control
+              </div>
+              <div className="mt-1 text-xl font-semibold tracking-tight md:text-2xl">
+                One small session. Every day.
+              </div>
+              <div className="mt-1 text-sm text-muted-foreground">
+                NucleuX will keep you in the <span className="font-medium text-foreground">learning zone</span> and map every action to CBME blocks.
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <Button onClick={() => router.push(nextAction.href)}>
+                {nextAction.label} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button variant="secondary" onClick={() => router.push("/exam-centre")}>Do 10 MCQs</Button>
+              <Button variant="outline" onClick={() => router.push("/backstage")}>
+                Open Backstage <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Widgets */}
+      <div className="mb-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="text-xs text-muted-foreground">Accuracy (7d)</div>
+                <div className="mt-1 text-2xl font-semibold">{accuracy}%</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {totalQuestions7d > 0 ? `${correctAnswers7d}/${totalQuestions7d} correct` : "No data yet"}
+                </div>
+              </div>
+              <TrendingUp className="h-5 w-5 text-muted-foreground" />
+            </div>
+            <Button
+              variant="ghost"
+              className="mt-2 h-8 px-0 text-xs"
+              onClick={() => router.push("/analytics")}
+            >
+              Open analytics <ArrowRight className="ml-1 h-3.5 w-3.5" />
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="text-xs text-muted-foreground">Difficulty zone</div>
+                <div className="mt-1 text-lg font-semibold">{difficultyZone.label}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{difficultyZone.hint}</div>
+              </div>
+              <Badge variant={difficultyZone.tone === "good" ? "default" : "secondary"}>70–85%</Badge>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="text-xs text-muted-foreground">Today’s time left</div>
+                <div className="mt-1 text-2xl font-semibold">
+                  {studyGoalMinutes > 0 ? `${minutesLeftToday}m` : "—"}
+                </div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {studyGoalMinutes > 0 ? `${studiedTodayMinutes}/${studyGoalMinutes} min done` : "Set a study goal"}
+                </div>
+              </div>
+              <Brain className="h-5 w-5 text-muted-foreground" />
+            </div>
+            {studyGoalMinutes > 0 ? (
+              <div className="mt-2">
+                <Progress value={todayPct} />
+              </div>
+            ) : null}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="text-xs text-muted-foreground">Streak</div>
+                <div className="mt-1 text-2xl font-semibold">{streakNow}d</div>
+                <div className="mt-1 text-xs text-muted-foreground">Best: {streakBest}d</div>
+              </div>
+              <Flame className="h-5 w-5 text-muted-foreground" />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="text-xs text-muted-foreground">Next best action</div>
+                <div className="mt-1 text-lg font-semibold">{nextAction.label}</div>
+                <div className="mt-1 text-xs text-muted-foreground">{nextAction.desc}</div>
+              </div>
+              <nextAction.icon className="h-5 w-5 text-muted-foreground" />
+            </div>
+            <Button className="mt-2 h-8 w-full" onClick={() => router.push(nextAction.href)}>
+              Start <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Main grid */}
@@ -196,7 +371,6 @@ export default function DashboardPage() {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {/* Empty state */}
             {isLoading ? (
               <div className="space-y-3">
                 <div className="h-4 w-40 animate-pulse rounded bg-muted" />
@@ -213,10 +387,7 @@ export default function DashboardPage() {
                   <Button onClick={() => router.push("/profile")}>
                     Set goals <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  <Button variant="secondary" onClick={() => router.push("/exam-centre")}
-                  >
-                    Do 10 MCQs
-                  </Button>
+                  <Button variant="secondary" onClick={() => router.push("/exam-centre")}>Do 10 MCQs</Button>
                 </div>
               </div>
             ) : (
@@ -226,7 +397,8 @@ export default function DashboardPage() {
                     <div className="text-xs text-muted-foreground">Study goal</div>
                     <div className="mt-1 flex items-end justify-between">
                       <div className="text-lg font-semibold">
-                        {today.study_minutes}/{goals.study_minutes} <span className="text-sm font-normal text-muted-foreground">min</span>
+                        {today.study_minutes}/{goals.study_minutes}{" "}
+                        <span className="text-sm font-normal text-muted-foreground">min</span>
                       </div>
                       <Badge variant="outline">{clampPct(today.goal_progress * 100)}%</Badge>
                     </div>
@@ -236,7 +408,8 @@ export default function DashboardPage() {
                     <div className="text-xs text-muted-foreground">MCQ goal</div>
                     <div className="mt-1 flex items-end justify-between">
                       <div className="text-lg font-semibold">
-                        {today.mcqs_attempted}/{goals.mcqs} <span className="text-sm font-normal text-muted-foreground">Qs</span>
+                        {today.mcqs_attempted}/{goals.mcqs}{" "}
+                        <span className="text-sm font-normal text-muted-foreground">Qs</span>
                       </div>
                       <Badge variant="outline">{clampPct(today.mcq_progress * 100)}%</Badge>
                     </div>
@@ -247,72 +420,182 @@ export default function DashboardPage() {
                   </div>
                 </div>
 
-                {/* 3 action buttons */}
                 <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
-                  <Button variant="secondary" className="justify-start" onClick={() => router.push("/library")}
-                  >
+                  <Button variant="secondary" className="justify-start" onClick={() => router.push("/library")}> 
                     <BookOpen className="mr-2 h-4 w-4" /> Read
                   </Button>
-                  <Button variant="secondary" className="justify-start" onClick={() => router.push("/exam-centre")}
-                  >
+                  <Button variant="secondary" className="justify-start" onClick={() => router.push("/exam-centre")}> 
                     <Target className="mr-2 h-4 w-4" /> MCQ
                   </Button>
-                  <Button variant="secondary" className="justify-start" onClick={() => router.push("/analytics")}
-                  >
+                  <Button variant="secondary" className="justify-start" onClick={() => router.push("/analytics")}> 
                     <BarChart3 className="mr-2 h-4 w-4" /> Review
                   </Button>
-                </div>
-
-                {/* Next best action */}
-                <div className="rounded-lg bg-muted/30 p-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="min-w-0">
-                      <div className="text-sm font-medium">Next best action</div>
-                      <div className="mt-1 text-sm text-muted-foreground">{nextAction.desc}</div>
-                    </div>
-                    <Button onClick={() => router.push(nextAction.href)}>
-                      {nextAction.label} <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
                 </div>
               </>
             )}
           </CardContent>
         </Card>
 
-        {/* Right column: compact premium metrics */}
+        {/* Right column */}
         <div className="md:col-span-5 space-y-4">
-          <Card>
+          <Card className="overflow-hidden">
             <CardHeader className="pb-3">
-              <CardTitle className="text-base">Calibration</CardTitle>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Layers className="h-4 w-4 text-primary" /> CBME Curriculum Backbone
+              </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2">
-              <div className="flex items-end justify-between">
-                <div className="text-2xl font-semibold">{accuracy}%</div>
-                <Badge variant="outline">Last 7 days</Badge>
+            <CardContent className="space-y-3">
+              <div className="rounded-lg bg-gradient-to-r from-primary/10 via-muted/20 to-background p-3">
+                <div className="text-sm font-medium">Featured</div>
+                <div className="mt-1 text-sm text-muted-foreground">
+                  Pick a block → read → practice → review. This is the spine of the app.
+                </div>
               </div>
-              <div className="text-sm text-muted-foreground">
-                Aim for honest confidence: test small → review → re-test.
-              </div>
-              <Button variant="ghost" className="px-0" onClick={() => router.push("/analytics")}
-              >
-                Open analytics <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </CardContent>
-          </Card>
 
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">Difficulty zone</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <div className="flex items-center justify-between">
-                <div className="text-lg font-semibold">{difficultyZone.label}</div>
-                <Badge variant={difficultyZone.tone === "good" ? "default" : "secondary"}>
-                  Target 70–85%
-                </Badge>
-              </div>
-              <div className="text-sm text-muted-foreground">{difficultyZone.hint}</div>
+              <Tabs defaultValue="y1" className="w-full">
+                <TabsList className="grid w-full grid-cols-4">
+                  <TabsTrigger value="y1">Y1</TabsTrigger>
+                  <TabsTrigger value="y2">Y2</TabsTrigger>
+                  <TabsTrigger value="y3">Y3</TabsTrigger>
+                  <TabsTrigger value="y4">Y4</TabsTrigger>
+                </TabsList>
+
+                {/* Year 1 */}
+                <TabsContent value="y1" className="mt-3 space-y-3">
+                  <Tabs defaultValue="anatomy" className="w-full">
+                    <TabsList className="grid w-full grid-cols-4">
+                      <TabsTrigger value="anatomy">Anat</TabsTrigger>
+                      <TabsTrigger value="physiology">Physio</TabsTrigger>
+                      <TabsTrigger value="biochemistry">Biochem</TabsTrigger>
+                      <TabsTrigger value="bme">BME</TabsTrigger>
+                    </TabsList>
+                    {(
+                      [
+                        ["anatomy", cbmeY1BySubject.anatomy],
+                        ["physiology", cbmeY1BySubject.physiology],
+                        ["biochemistry", cbmeY1BySubject.biochemistry],
+                        ["bme", cbmeY1BySubject.bme],
+                      ] as const
+                    ).map(([key, blocks]) => (
+                      <TabsContent key={key} value={key} className="mt-3 space-y-2">
+                        {blocks.map((b) => (
+                          <div key={b.id} className="flex items-center justify-between gap-3 rounded-lg border p-3">
+                            <div className="min-w-0">
+                              <div className="truncate text-sm font-medium">{b.title}</div>
+                              <div className="mt-1 text-xs text-muted-foreground">{b.tags.join(" · ")}</div>
+                            </div>
+                            <Button size="sm" variant="secondary" onClick={() => router.push(b.links?.libraryPath || "/library")}>
+                              Open
+                            </Button>
+                          </div>
+                        ))}
+                      </TabsContent>
+                    ))}
+                  </Tabs>
+                </TabsContent>
+
+                {/* Year 2 */}
+                <TabsContent value="y2" className="mt-3 space-y-3">
+                  <Tabs defaultValue="pathology" className="w-full">
+                    <TabsList className="grid w-full grid-cols-4">
+                      <TabsTrigger value="pathology">Path</TabsTrigger>
+                      <TabsTrigger value="pharmacology">Pharm</TabsTrigger>
+                      <TabsTrigger value="microbiology">Micro</TabsTrigger>
+                      <TabsTrigger value="forensic">FMT</TabsTrigger>
+                    </TabsList>
+                    {(
+                      [
+                        ["pathology", cbmeY2BySubject.pathology],
+                        ["pharmacology", cbmeY2BySubject.pharmacology],
+                        ["microbiology", cbmeY2BySubject.microbiology],
+                        ["forensic", cbmeY2BySubject.forensic],
+                      ] as const
+                    ).map(([key, blocks]) => (
+                      <TabsContent key={key} value={key} className="mt-3 space-y-2">
+                        {blocks.map((b) => (
+                          <div key={b.id} className="flex items-center justify-between gap-3 rounded-lg border p-3">
+                            <div className="min-w-0">
+                              <div className="truncate text-sm font-medium">{b.title}</div>
+                              <div className="mt-1 text-xs text-muted-foreground">{b.tags.join(" · ")}</div>
+                            </div>
+                            <Button size="sm" variant="secondary" onClick={() => router.push(b.links?.libraryPath || "/library")}>
+                              Open
+                            </Button>
+                          </div>
+                        ))}
+                      </TabsContent>
+                    ))}
+                  </Tabs>
+                </TabsContent>
+
+                {/* Year 3 */}
+                <TabsContent value="y3" className="mt-3 space-y-3">
+                  <Tabs defaultValue="psm" className="w-full">
+                    <TabsList className="grid w-full grid-cols-3">
+                      <TabsTrigger value="psm">PSM</TabsTrigger>
+                      <TabsTrigger value="ent">ENT</TabsTrigger>
+                      <TabsTrigger value="ophthalmology">Ophthal</TabsTrigger>
+                    </TabsList>
+                    {(
+                      [
+                        ["psm", cbmeY3BySubject.psm],
+                        ["ent", cbmeY3BySubject.ent],
+                        ["ophthalmology", cbmeY3BySubject.ophthalmology],
+                      ] as const
+                    ).map(([key, blocks]) => (
+                      <TabsContent key={key} value={key} className="mt-3 space-y-2">
+                        {blocks.map((b) => (
+                          <div key={b.id} className="flex items-center justify-between gap-3 rounded-lg border p-3">
+                            <div className="min-w-0">
+                              <div className="truncate text-sm font-medium">{b.title}</div>
+                              <div className="mt-1 text-xs text-muted-foreground">{b.tags.join(" · ")}</div>
+                            </div>
+                            <Button size="sm" variant="secondary" onClick={() => router.push(b.links?.libraryPath || "/library")}>
+                              Open
+                            </Button>
+                          </div>
+                        ))}
+                      </TabsContent>
+                    ))}
+                  </Tabs>
+                </TabsContent>
+
+                {/* Year 4 */}
+                <TabsContent value="y4" className="mt-3 space-y-3">
+                  <Tabs defaultValue="medicine" className="w-full">
+                    <TabsList className="grid w-full grid-cols-5">
+                      <TabsTrigger value="medicine">Med</TabsTrigger>
+                      <TabsTrigger value="surgery">Surg</TabsTrigger>
+                      <TabsTrigger value="obgyn">OBG</TabsTrigger>
+                      <TabsTrigger value="pediatrics">Peds</TabsTrigger>
+                      <TabsTrigger value="orthopedics">Ortho</TabsTrigger>
+                    </TabsList>
+                    {(
+                      [
+                        ["medicine", cbmeY4BySubject.medicine],
+                        ["surgery", cbmeY4BySubject.surgery],
+                        ["obgyn", cbmeY4BySubject.obgyn],
+                        ["pediatrics", cbmeY4BySubject.pediatrics],
+                        ["orthopedics", cbmeY4BySubject.orthopedics],
+                      ] as const
+                    ).map(([key, blocks]) => (
+                      <TabsContent key={key} value={key} className="mt-3 space-y-2">
+                        {blocks.map((b) => (
+                          <div key={b.id} className="flex items-center justify-between gap-3 rounded-lg border p-3">
+                            <div className="min-w-0">
+                              <div className="truncate text-sm font-medium">{b.title}</div>
+                              <div className="mt-1 text-xs text-muted-foreground">{b.tags.join(" · ")}</div>
+                            </div>
+                            <Button size="sm" variant="secondary" onClick={() => router.push(b.links?.libraryPath || "/library")}>
+                              Open
+                            </Button>
+                          </div>
+                        ))}
+                      </TabsContent>
+                    ))}
+                  </Tabs>
+                </TabsContent>
+              </Tabs>
             </CardContent>
           </Card>
 
@@ -331,69 +614,13 @@ export default function DashboardPage() {
                     <div key={t.title} className="flex items-center justify-between gap-3 rounded-lg border p-3">
                       <div className="min-w-0">
                         <div className="truncate text-sm font-medium">{t.title}</div>
-                        <div className="mt-1 text-xs text-muted-foreground">
-                          Quick win: 10 questions + immediate feedback
-                        </div>
+                        <div className="mt-1 text-xs text-muted-foreground">Quick win: 10 questions + immediate feedback</div>
                       </div>
-                      <Button size="sm" onClick={() => router.push("/exam-centre")}>
-                        Do 10
-                      </Button>
+                      <Button size="sm" onClick={() => router.push("/exam-centre")}>Do 10</Button>
                     </div>
                   ))}
                 </div>
               )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">CBME MBBS Year 1 (Blocks)</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-sm text-muted-foreground">
-                Canonical curriculum backbone (v1). This will drive your plans, reviews, and practice.
-              </div>
-
-              <Tabs defaultValue="anatomy" className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
-                  <TabsTrigger value="anatomy">Anat</TabsTrigger>
-                  <TabsTrigger value="physiology">Physio</TabsTrigger>
-                  <TabsTrigger value="biochemistry">Biochem</TabsTrigger>
-                  <TabsTrigger value="bme">BME</TabsTrigger>
-                </TabsList>
-
-                {(
-                  [
-                    ["anatomy", cbmeY1BySubject.anatomy],
-                    ["physiology", cbmeY1BySubject.physiology],
-                    ["biochemistry", cbmeY1BySubject.biochemistry],
-                    ["bme", cbmeY1BySubject.bme],
-                  ] as const
-                ).map(([key, blocks]) => (
-                  <TabsContent key={key} value={key} className="mt-3 space-y-2">
-                    {blocks.map((b) => (
-                      <div
-                        key={b.id}
-                        className="flex items-center justify-between gap-3 rounded-lg border p-3"
-                      >
-                        <div className="min-w-0">
-                          <div className="truncate text-sm font-medium">{b.title}</div>
-                          <div className="mt-1 text-xs text-muted-foreground">
-                            {b.tags.join(" · ")}
-                          </div>
-                        </div>
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          onClick={() => router.push(b.links?.libraryPath || "/library")}
-                        >
-                          Open
-                        </Button>
-                      </div>
-                    ))}
-                  </TabsContent>
-                ))}
-              </Tabs>
             </CardContent>
           </Card>
         </div>

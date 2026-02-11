@@ -11,6 +11,7 @@ import {
   Trophy,
   Atom,
   Target,
+  Fingerprint,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ProfileButton } from "@/components/ProfilePopup";
@@ -25,6 +26,7 @@ const roomColors: Record<string, string> = {
   '/community': '#C9A86C', // Gold
   '/arena': '#D4AF37',     // Bright gold
   '/chat': '#5BB3B3',      // Teal (ATOM)
+  '/backstage': '#F59E0B', // Amber (Cognitive)
 };
 
 const navItems = [
@@ -35,6 +37,7 @@ const navItems = [
   { href: "/competencies", icon: Target, label: "CBME", description: "Competencies" },
   { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
   { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
+  { href: "/backstage", icon: Fingerprint, label: "Backstage", description: "Cognitive OS" },
   { href: "/chat", icon: Atom, label: "ATOM", highlight: true, description: "AI Companion" },
 ];
 

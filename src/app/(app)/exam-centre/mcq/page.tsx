@@ -30,6 +30,7 @@ import {
   Meh,
 } from 'lucide-react';
 import { mcqRansonsCriteria, calculateRansonsScore } from '@/lib/data/templates/mcq-template';
+import { addBackstageEvent, normalizeSubject } from '@/lib/backstage/store';
 
 type ConfidenceLevel = 'sure' | 'unsure' | 'guessing' | null;
 
@@ -53,6 +54,19 @@ export default function MCQPracticePage() {
   const handleSubmit = () => {
     if (selectedAnswer && confidence) {
       setShowExplanation(true);
+
+      // Backstage event (V1: localStorage)
+      addBackstageEvent({
+        type: 'mcq',
+        subject: normalizeSubject(question.subject),
+        topic: question.topic,
+        confidence: confidence === 'sure' ? 85 : confidence === 'unsure' ? 55 : 30,
+        bloom: 'apply',
+        mcq: {
+          correct: selectedAnswer === question.correctAnswer,
+          difficulty: question.difficulty,
+        },
+      });
     }
   };
   
