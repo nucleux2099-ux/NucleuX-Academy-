@@ -13,6 +13,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { RoomCard, type CampusRoom } from '@/components/marketing/RoomCard';
+import { RoomPreviewCard } from '@/components/marketing/RoomPreviewCard';
 import { PrincipleTile } from '@/components/marketing/PrincipleTile';
 
 export default function HomePage() {
@@ -210,6 +211,67 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Room previews */}
+      <section className="max-w-7xl mx-auto px-6 pb-10 relative z-10">
+        <h2 className="text-xl font-bold text-[#E8E0D5]">How each room looks</h2>
+        <p className="text-sm text-[#A0B0BC] mt-1">Real UI previews (screenshots will be added). ATOM lives across the campus.</p>
+
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <RoomPreviewCard
+            title="Library"
+            description="Modes, structure, and connected understanding."
+            atomRole="ATOM Librarian"
+            href="/login"
+            imageSrc="/marketing/screens/placeholder.svg"
+            color="#5BB3B3"
+          />
+          <RoomPreviewCard
+            title="Classroom"
+            description="Live learning with notes, mindmaps, and replay."
+            atomRole="ATOM Scribe"
+            href="/login"
+            imageSrc="/marketing/screens/placeholder.svg"
+            color="#6BA8C9"
+          />
+          <RoomPreviewCard
+            title="Exam Centre"
+            description="Exam-focused practice with feedback that teaches."
+            atomRole="ATOM Trainer"
+            href="/login"
+            imageSrc="/marketing/screens/placeholder.svg"
+            color="#C9A86C"
+          />
+          <RoomPreviewCard
+            title="Arena"
+            description="Timed drills and mixed sets to pressure-proof recall."
+            atomRole="ATOM Challenger"
+            href="/login"
+            imageSrc="/marketing/screens/placeholder.svg"
+            color="#EC4899"
+          />
+          <RoomPreviewCard
+            title="Backstage"
+            description="Competency ladder, calibration, reflection, logbook."
+            atomRole="ATOM Coach"
+            href="/login"
+            imageSrc="/marketing/screens/placeholder.svg"
+            color="#A78BFA"
+          />
+          <RoomPreviewCard
+            title="Common Room (Community)"
+            description="Discussions, doubts, and high-yield takeaways."
+            atomRole="ATOM Guide"
+            href="/login"
+            imageSrc="/marketing/screens/placeholder.svg"
+            color="#10B981"
+          />
+        </div>
+
+        <p className="mt-4 text-xs text-[#6B7280]">
+          We will replace placeholders with real screenshots captured from Chrome. See: <code className="text-[#A0B0BC]">public/marketing/screens/README.md</code>
+        </p>
       </section>
 
       {/* Who is this for */}

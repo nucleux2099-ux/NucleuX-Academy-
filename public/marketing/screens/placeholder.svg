@@ -1,0 +1,33 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.5" stop-color="#122033"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5BB3B3" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#6BA8C9" stop-opacity="0.8"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#5BB3B3" stroke-opacity="0.15" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)" opacity="0.5"/>
+
+  <circle cx="230" cy="180" r="140" fill="#5BB3B3" fill-opacity="0.14" filter="url(#blur)"/>
+  <circle cx="980" cy="520" r="200" fill="#6BA8C9" fill-opacity="0.12" filter="url(#blur)"/>
+
+  <rect x="120" y="120" width="960" height="435" rx="24" fill="#0B1220" fill-opacity="0.55" stroke="#E8E0D5" stroke-opacity="0.10"/>
+  <rect x="120" y="120" width="960" height="6" fill="url(#accent)"/>
+
+  <text x="600" y="330" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system" font-size="28" fill="#E8E0D5" fill-opacity="0.88">Screenshot placeholder</text>
+  <text x="600" y="370" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system" font-size="16" fill="#A0B0BC">Real room screenshots will be added here</text>
+
+  <text x="600" y="610" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system" font-size="12" fill="#6B7280">NucleuX Academy • Virtual Campus</text>
+</svg>
