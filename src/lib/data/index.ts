@@ -3,7 +3,10 @@
  */
 
 // Subjects
-export * from './subjects';
+export * from "./subjects";
+
+// Curricula
+export * from "./cbme-mbbs-y1";
 
 // Topics by subject
-export * from './topics-surgery-gi';
+export * from "./topics-surgery-gi";
