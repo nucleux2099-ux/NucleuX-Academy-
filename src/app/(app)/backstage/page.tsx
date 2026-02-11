@@ -29,6 +29,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Bloom, CompetencyStage, SubjectKey } from "@/lib/backstage/types";
 import { addBackstageEvent, getRecentBackstageEvents, loadBackstageState } from "@/lib/backstage/store";
 import { deriveSubjectStats } from "@/lib/backstage/derive";
+import { countBlooms } from "@/lib/backstage/bloom";
 import { addCaseLog, getRecentCases, subjectLabel } from "@/lib/backstage/case-store";
 
 const SUBJECTS: Array<{ key: SubjectKey; label: string }> = [
@@ -74,6 +75,7 @@ export default function BackstagePage() {
   const [selectedSubject, setSelectedSubject] = useState<SubjectKey>("medicine");
   const [recentEvents, setRecentEvents] = useState(() => getRecentBackstageEvents(12));
   const [subjectStats, setSubjectStats] = useState(() => deriveSubjectStats(loadBackstageState().events));
+  const [bloomCounts, setBloomCounts] = useState(() => countBlooms(loadBackstageState().events));
   const [recentCases, setRecentCases] = useState(() => getRecentCases(6));
 
   const [caseForm, setCaseForm] = useState({
@@ -91,7 +93,9 @@ export default function BackstagePage() {
   useEffect(() => {
     // refresh on mount
     setRecentEvents(getRecentBackstageEvents(12));
-    setSubjectStats(deriveSubjectStats(loadBackstageState().events));
+    const all = loadBackstageState().events;
+    setSubjectStats(deriveSubjectStats(all));
+    setBloomCounts(countBlooms(all));
     setRecentCases(getRecentCases(6));
   }, []);
 
@@ -149,7 +153,9 @@ export default function BackstagePage() {
     });
     setRecentCases(getRecentCases(6));
     setRecentEvents(getRecentBackstageEvents(12));
-    setSubjectStats(deriveSubjectStats(loadBackstageState().events));
+    const all = loadBackstageState().events;
+    setSubjectStats(deriveSubjectStats(all));
+    setBloomCounts(countBlooms(all));
   };
 
   const mock = useMemo(() => {
@@ -358,6 +364,20 @@ export default function BackstagePage() {
         <div className="md:col-span-4 space-y-4">
           <Card>
             <CardHeader className="pb-3">
+              <CardTitle className="flex items-center justify-between gap-3 text-base">
+                <span>Calibration</span>
+                <Button size="sm" variant="secondary" onClick={() => router.push("/backstage/calibration")}>
+                  Open
+                </Button>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-muted-foreground">
+              Confidence vs accuracy — reduce overconfidence, stabilize competence.
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-3">
               <CardTitle className="text-base">Quick actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -378,7 +398,12 @@ export default function BackstagePage() {
 
           <Card>
             <CardHeader className="pb-3">
-              <CardTitle className="text-base">New case (Kolb logbook)</CardTitle>
+              <CardTitle className="flex items-center justify-between gap-3 text-base">
+                <span>Logbook</span>
+                <Button size="sm" variant="secondary" onClick={() => router.push("/backstage/logbook")}>
+                  Open
+                </Button>
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="text-xs text-muted-foreground">
@@ -529,6 +554,40 @@ export default function BackstagePage() {
                 variant="secondary"
                 className="mt-2"
                 onClick={() => setRecentEvents(getRecentBackstageEvents(12))}
+              >
+                Refresh
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base">Bloom distribution</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <div className="text-sm text-muted-foreground">
+                What kind of thinking you’re training (remember → create).
+              </div>
+              <Button
+                size="sm"
+                variant="secondary"
+                className="mt-2"
+                onClick={() => router.push("/backstage/quests")}
+              >
+                Open Quests
+              </Button>
+              <div className="flex flex-wrap gap-2">
+                {(Object.keys(bloomCounts) as Array<keyof typeof bloomCounts>).map((k) => (
+                  <Badge key={k} variant="outline">
+                    {k}: {bloomCounts[k]}
+                  </Badge>
+                ))}
+              </div>
+              <Button
+                size="sm"
+                variant="secondary"
+                className="mt-2"
+                onClick={() => setBloomCounts(countBlooms(loadBackstageState().events))}
               >
                 Refresh
               </Button>

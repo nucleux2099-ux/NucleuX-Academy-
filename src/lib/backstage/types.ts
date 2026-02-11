@@ -39,6 +39,8 @@ export type BackstageEvent = {
   type: BackstageEventType;
 
   subject: SubjectKey;
+  // Canonical curriculum anchor (primary key everywhere)
+  topicId?: string; // subject/subspecialty/topic
   topic?: string;
   cbmeBlockId?: string;
 
@@ -50,6 +52,7 @@ export type BackstageEvent = {
   mcq?: {
     correct?: boolean;
     difficulty?: string;
+    errorType?: "factual" | "conceptual" | "application";
   };
 
   // Free text

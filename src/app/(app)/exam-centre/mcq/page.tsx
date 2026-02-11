@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import { mcqRansonsCriteria, calculateRansonsScore } from '@/lib/data/templates/mcq-template';
 import { addBackstageEvent, normalizeSubject } from '@/lib/backstage/store';
+import { updateBackstageEvent } from '@/lib/backstage/update';
 
 type ConfidenceLevel = 'sure' | 'unsure' | 'guessing' | null;
 
@@ -51,14 +52,42 @@ export default function MCQPracticePage() {
     }
   };
   
+  const [backstageEventId, setBackstageEventId] = useState<string | null>(null);
+  const [errorType, setErrorType] = useState<"factual" | "conceptual" | "application" | null>(null);
+  const [bloomTag, setBloomTag] = useState<
+    "remember" | "understand" | "apply" | "analyze" | "evaluate" | "create" | null
+  >(null);
+
+  const toSlug = (s: string) =>
+    s
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  const subspecialtyFromSystem = (system: string) => {
+    const s = system.toLowerCase();
+    if (s.includes("hepatobiliary") || s.includes("pancre")) return "hepatobiliary";
+    if (s.includes("esoph")) return "esophagus";
+    if (s.includes("stomach") || s.includes("duoden")) return "stomach-duodenum";
+    return toSlug(system);
+  };
+
   const handleSubmit = () => {
     if (selectedAnswer && confidence) {
       setShowExplanation(true);
 
+      const subjectKey = normalizeSubject(question.subject);
+      const subjectSlug = subjectKey; // matches our library subject slugs (medicine/surgery/etc)
+      const subspecialtySlug = subspecialtyFromSystem(question.system);
+      const topicSlug = toSlug(question.topic);
+      const topicId = `${subjectSlug}/${subspecialtySlug}/${topicSlug}`;
+
       // Backstage event (V1: localStorage)
-      addBackstageEvent({
+      const ev = addBackstageEvent({
         type: 'mcq',
-        subject: normalizeSubject(question.subject),
+        subject: subjectKey,
+        topicId,
         topic: question.topic,
         confidence: confidence === 'sure' ? 85 : confidence === 'unsure' ? 55 : 30,
         bloom: 'apply',
@@ -67,6 +96,7 @@ export default function MCQPracticePage() {
           difficulty: question.difficulty,
         },
       });
+      setBackstageEventId(ev.id);
     }
   };
   
@@ -76,6 +106,9 @@ export default function MCQPracticePage() {
     setShowExplanation(false);
     setShowWhyWrong(false);
     setShowHighYield(false);
+    setBackstageEventId(null);
+    setErrorType(null);
+    setBloomTag(null);
   };
   
   const getOptionStyle = (option: 'a' | 'b' | 'c' | 'd') => {
@@ -274,6 +307,102 @@ export default function MCQPracticePage() {
       {/* Explanation Section */}
       {showExplanation && (
         <>
+          {/* Error type + Bloom tag (Backstage intelligence) */}
+          {backstageEventId ? (
+            <Card className="bg-[#1A2332] border-[rgba(91,179,179,0.15)]">
+              <CardHeader>
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Target className="h-4 w-4 text-amber-400" /> Tag this attempt
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {!isCorrect ? (
+                  <div className="space-y-3">
+                    <div className="text-sm text-gray-300">
+                      Why did you miss it? (powers strong/weak + next actions)
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+                      <Button
+                        variant={errorType === "factual" ? "default" : "outline"}
+                        className={errorType === "factual" ? "bg-amber-500 hover:bg-amber-600 text-white" : "border-gray-600 text-gray-300"}
+                        onClick={() => {
+                          setErrorType("factual");
+                          updateBackstageEvent(backstageEventId, { mcq: { errorType: "factual" } });
+                        }}
+                      >
+                        Factual
+                      </Button>
+                      <Button
+                        variant={errorType === "conceptual" ? "default" : "outline"}
+                        className={errorType === "conceptual" ? "bg-amber-500 hover:bg-amber-600 text-white" : "border-gray-600 text-gray-300"}
+                        onClick={() => {
+                          setErrorType("conceptual");
+                          updateBackstageEvent(backstageEventId, { mcq: { errorType: "conceptual" } });
+                        }}
+                      >
+                        Conceptual
+                      </Button>
+                      <Button
+                        variant={errorType === "application" ? "default" : "outline"}
+                        className={errorType === "application" ? "bg-amber-500 hover:bg-amber-600 text-white" : "border-gray-600 text-gray-300"}
+                        onClick={() => {
+                          setErrorType("application");
+                          updateBackstageEvent(backstageEventId, { mcq: { errorType: "application" } });
+                        }}
+                      >
+                        Application
+                      </Button>
+                    </div>
+
+                    {errorType ? (
+                      <Badge variant="outline" className="border-amber-500/30 bg-amber-500/10 text-amber-300">
+                        Error: {errorType}
+                      </Badge>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <div className="space-y-3">
+                  <div className="text-sm text-gray-300">Bloom tag (what skill level was this?)</div>
+                  <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    {(
+                      [
+                        "remember",
+                        "understand",
+                        "apply",
+                        "analyze",
+                        "evaluate",
+                        "create",
+                      ] as const
+                    ).map((b) => (
+                      <Button
+                        key={b}
+                        variant={bloomTag === b ? "default" : "outline"}
+                        className={
+                          bloomTag === b
+                            ? "bg-blue-500 hover:bg-blue-600 text-white"
+                            : "border-gray-600 text-gray-300"
+                        }
+                        onClick={() => {
+                          setBloomTag(b);
+                          updateBackstageEvent(backstageEventId, { bloom: b });
+                        }}
+                      >
+                        {b}
+                      </Button>
+                    ))}
+                  </div>
+                  {bloomTag ? (
+                    <Badge variant="outline" className="border-blue-500/30 bg-blue-500/10 text-blue-300">
+                      Bloom: {bloomTag}
+                    </Badge>
+                  ) : null}
+                </div>
+              </CardContent>
+            </Card>
+          ) : null}
+
           {/* Correct Answer Explanation */}
           <Card className="bg-[#1A2332] border-[rgba(91,179,179,0.15)]">
             <CardHeader>

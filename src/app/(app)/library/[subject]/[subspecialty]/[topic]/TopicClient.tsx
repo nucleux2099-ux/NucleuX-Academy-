@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { 
   ChevronRight,
   ChevronLeft,
@@ -28,6 +30,8 @@ import type { ViewMode, LibraryTopic, RetrievalCard } from "@/lib/types/library"
 import { VIEW_MODE_CONFIG } from "@/lib/types/library";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { AtomLibrarian } from "@/components/AtomLibrarian";
+import { addPocketNote, getNotesForTopic } from "@/lib/pocket/store";
+import { addBackstageEvent, normalizeSubject } from "@/lib/backstage/store";
 
 // Quiz Card Component
 function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
@@ -142,6 +146,13 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   
   const [viewMode, setViewMode] = useState<ViewMode>(initialMode);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+  const topicId = `${subject.slug}/${subspecialty.slug}/${topic.slug}`;
+
+  // Pocket notes (topic-anchored)
+  const [notes, setNotes] = useState(() => getNotesForTopic(topicId, 20));
+  const [noteTitle, setNoteTitle] = useState("");
+  const [noteBody, setNoteBody] = useState("");
   
   // Rich content state
   const [richContent, setRichContent] = useState<string | null>(null);
@@ -539,6 +550,31 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
     }
   };
 
+  const saveNote = () => {
+    if (!noteBody.trim()) return;
+    const title = noteTitle.trim() || `${topic.name} — ${new Date().toLocaleString()}`;
+
+    addPocketNote({
+      topicId,
+      title,
+      body: noteBody.trim(),
+    });
+
+    // Emit a Backstage note event (metacognitive trace)
+    addBackstageEvent({
+      type: "note",
+      subject: normalizeSubject(subject.slug),
+      topicId,
+      topic: topic.name,
+      bloom: "understand",
+      note: title,
+    });
+
+    setNoteTitle("");
+    setNoteBody("");
+    setNotes(getNotesForTopic(topicId, 20));
+  };
+
   return (
     <div className="space-y-6">
       {/* Breadcrumb */}
@@ -614,6 +650,69 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
 
       {/* Content */}
       {renderContent()}
+
+      {/* Your Notes (Pocket of Knowledge) */}
+      <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+        <CardHeader className="pb-3">
+          <div className="flex items-center justify-between gap-3">
+            <div className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+              <FileText className="w-5 h-5 text-[#C9A86C]" /> Your Notes
+              <Badge className="bg-[#0D1B2A] text-[#9CA3AF]">{topicId}</Badge>
+            </div>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setNotes(getNotesForTopic(topicId, 20))}
+              className="text-[#9CA3AF] border-[rgba(6,182,212,0.2)]"
+            >
+              Refresh
+            </Button>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="grid gap-2">
+            <Input
+              value={noteTitle}
+              onChange={(e) => setNoteTitle(e.target.value)}
+              placeholder="Title (optional)"
+              className="bg-[#0D1B2A] border-[rgba(6,182,212,0.2)] text-[#E5E7EB]"
+            />
+            <Textarea
+              value={noteBody}
+              onChange={(e) => setNoteBody(e.target.value)}
+              placeholder="Write your note for this topic… (this becomes part of your pocket of knowledge)"
+              className="min-h-[120px] bg-[#0D1B2A] border-[rgba(6,182,212,0.2)] text-[#E5E7EB]"
+            />
+            <div className="flex justify-end">
+              <Button onClick={saveNote} className="bg-[#C9A86C] hover:bg-[#B89252] text-[#0D1B2A]">
+                Save note
+              </Button>
+            </div>
+          </div>
+
+          {notes.length ? (
+            <div className="space-y-2 pt-2">
+              <div className="text-sm text-[#9CA3AF]">Recent notes</div>
+              {notes.map((n) => (
+                <div key={n.id} className="rounded-lg border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A] p-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <div className="truncate text-sm font-medium text-[#E5E7EB]">{n.title}</div>
+                      <div className="mt-1 text-xs text-[#6B7280]">
+                        {new Date(n.updatedAt).toLocaleString()}
+                      </div>
+                    </div>
+                    <Badge className="bg-[rgba(201,168,108,0.15)] text-[#C9A86C] border-[rgba(201,168,108,0.3)]">note</Badge>
+                  </div>
+                  <div className="mt-2 text-sm text-[#A0B0BC] whitespace-pre-wrap line-clamp-4">{n.body}</div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-sm text-[#6B7280]">No notes for this topic yet.</div>
+          )}
+        </CardContent>
+      </Card>
 
       {/* ATOM Librarian with topic context */}
       <AtomLibrarian 
