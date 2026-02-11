@@ -212,8 +212,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Who is this for */}
+      <section className="max-w-7xl mx-auto px-6 pb-10 relative z-10">
+        <h2 className="text-xl font-bold text-[#E8E0D5]">Who is this for?</h2>
+        <p className="text-sm text-[#A0B0BC] mt-1">Built for MBBS students and residents — different needs, same campus.</p>
+
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="text-sm font-semibold text-[#E8E0D5]">MBBS</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">Build foundations and make exam prep predictable.</div>
+            <ul className="mt-4 space-y-2 text-sm text-[#A0B0BC]">
+              <li className="flex items-start gap-2"><span className="mt-1 text-[#5BB3B3]">•</span><span>Concept-first learning in <b className="text-[#E8E0D5]">Library</b> and <b className="text-[#E8E0D5]">Classroom</b></span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 text-[#5BB3B3]">•</span><span>Daily practice in <b className="text-[#E8E0D5]">Exam Centre</b> + consistency in <b className="text-[#E8E0D5]">Arena</b></span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 text-[#5BB3B3]">•</span><span>Backstage tracks competence + confidence so you don’t overestimate weak areas</span></li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="text-sm font-semibold text-[#E8E0D5]">Residents</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">Study in small windows. Convert real cases into mastery.</div>
+            <ul className="mt-4 space-y-2 text-sm text-[#A0B0BC]">
+              <li className="flex items-start gap-2"><span className="mt-1 text-[#6BA8C9]">•</span><span>Fast refresh + deep clarity with ATOM in <b className="text-[#E8E0D5]">Classroom</b></span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 text-[#6BA8C9]">•</span><span>Structured notes + mindmaps for rounds, seminars, and exams</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 text-[#6BA8C9]">•</span><span><b className="text-[#E8E0D5]">Backstage</b> logbook + Kolb cycle to learn from the ward, not just the book</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="text-sm font-semibold text-[#E8E0D5]">Concept-first</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">Understand mechanisms first. Compress into revision later.</div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="text-sm font-semibold text-[#E8E0D5]">Calibration</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">Confidence vs accuracy mismatch is tracked — no blind spots.</div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div className="text-sm font-semibold text-[#E8E0D5]">Scribe + Replay</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">Learn live with notes and mindmaps that you can replay.</div>
+          </div>
+        </div>
+      </section>
+
       {/* Principles */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
+      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
         <h2 className="text-xl font-bold text-[#E8E0D5]">Ideology</h2>
         <p className="text-sm text-[#A0B0BC] mt-1">How NucleuX Academy thinks about learning.</p>
 
