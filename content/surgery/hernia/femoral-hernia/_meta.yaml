@@ -1,0 +1,9 @@
+topic_id: femoral-hernia
+name: "Femoral Hernia"
+description: "Femoral canal anatomy, high strangulation risk, approach and repair"
+high_yield: true
+difficulty: 4
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [inguinal-hernia]
+related_topics: []
