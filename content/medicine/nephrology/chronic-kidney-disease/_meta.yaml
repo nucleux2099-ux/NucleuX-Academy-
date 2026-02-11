@@ -1,0 +1,9 @@
+topic_id: chronic-kidney-disease
+name: "Chronic Kidney Disease"
+description: "GFR staging, CKD-MBD, anemia management, renoprotective therapy"
+high_yield: true
+difficulty: 3
+estimated_minutes: 20
+exam_tags: [NEET_PG, INICET]
+prerequisites: []
+related_topics: [acute-kidney-injury, diabetic-nephropathy]

@@ -1,0 +1,9 @@
+topic_id: acute-kidney-injury
+name: "Acute Kidney Injury"
+description: "KDIGO staging, prerenal vs intrinsic vs postrenal, FENa, dialysis indications"
+high_yield: true
+difficulty: 3
+estimated_minutes: 20
+exam_tags: [NEET_PG, INICET]
+prerequisites: []
+related_topics: [chronic-kidney-disease, glomerulonephritis, nephrotic-syndrome]

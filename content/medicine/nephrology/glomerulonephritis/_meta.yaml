@@ -1,0 +1,9 @@
+topic_id: glomerulonephritis
+name: "Glomerulonephritis"
+description: "Nephritic syndrome, GN classification, workup, RPGN"
+high_yield: true
+difficulty: 4
+estimated_minutes: 25
+exam_tags: [NEET_PG, INICET]
+prerequisites: []
+related_topics: [nephrotic-syndrome, chronic-kidney-disease]

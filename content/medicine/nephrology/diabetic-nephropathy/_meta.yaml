@@ -1,0 +1,9 @@
+topic_id: diabetic-nephropathy
+name: "Diabetic Nephropathy"
+description: "Albuminuria staging, BP targets, ACEi/ARB, SGLT2 inhibitors"
+high_yield: true
+difficulty: 3
+estimated_minutes: 15
+exam_tags: [NEET_PG, INICET]
+prerequisites: [chronic-kidney-disease]
+related_topics: [nephrotic-syndrome]
