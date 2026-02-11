@@ -131,7 +131,7 @@ export default function HomePage() {
           <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
             <Sparkles className="w-3.5 h-3.5 mr-2" /> Virtual Campus
           </Badge>
-          <h1 className="mt-5 text-4xl sm:text-5xl font-bold text-[#E8E0D5] leading-tight">
+          <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">
             Learn inside a campus built for{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#6BA8C9]">
               medical mastery
@@ -166,9 +166,20 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {rooms.map((r) => (
-            <RoomCard key={r.name} room={r} />
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-4">
+          {/* Featured buildings */}
+          <div className="xl:col-span-3 md:col-span-2">
+            <RoomCard room={rooms[0]} variant="featured" />
+          </div>
+          <div className="xl:col-span-3 md:col-span-2">
+            <RoomCard room={rooms[1]} variant="featured" />
+          </div>
+
+          {/* Remaining rooms */}
+          {rooms.slice(2).map((r) => (
+            <div key={r.name} className="xl:col-span-2">
+              <RoomCard room={r} />
+            </div>
           ))}
         </div>
       </section>

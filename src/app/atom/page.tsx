@@ -90,7 +90,7 @@ export default function AtomPage() {
 
         <section className="mt-10">
           <h2 className="text-xl font-bold text-[#E8E0D5]">ATOM across the Campus</h2>
-          <p className="mt-1 text-sm text-[#A0B0BC]">Same room names as inside the app — consistent, predictable, and connected.</p>
+          <p className="mt-1 text-sm text-[#A0B0BC]">One thinking partner, many roles — aligned to the exact room names inside the app.</p>
 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <RoleCard
@@ -164,6 +164,7 @@ export default function AtomPage() {
 
         <section className="mt-12">
           <h2 className="text-xl font-bold text-[#E8E0D5]">ATOM Philosophy</h2>
+          <p className="mt-1 text-sm text-[#A0B0BC]">Simple rules that compound into mastery.</p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
