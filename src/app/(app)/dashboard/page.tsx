@@ -19,6 +19,8 @@ import { Progress } from "@/components/ui/progress";
 
 import { useAuth } from "@/lib/auth-context";
 import { useAnalytics, useStreak, useStudyPlan } from "@/lib/api/hooks";
+import { CBME_MBBS_Y1_BLOCKS, type CBMEBlock } from "@/lib/data";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function getGreeting() {
   const hour = new Date().getHours();
@@ -116,6 +118,20 @@ export default function DashboardPage() {
       href: "/analytics",
     };
   }, [today?.goal_progress, today?.mcq_progress]);
+
+  const cbmeY1BySubject = useMemo(() => {
+    const by: Record<CBMEBlock["subject"], CBMEBlock[]> = {
+      anatomy: [],
+      physiology: [],
+      biochemistry: [],
+      bme: [],
+    };
+    for (const b of CBME_MBBS_Y1_BLOCKS) by[b.subject].push(b);
+    for (const k of Object.keys(by) as Array<CBMEBlock["subject"]>) {
+      by[k].sort((a, b) => a.order - b.order);
+    }
+    return by;
+  }, []);
 
   const weakTopics = useMemo(() => {
     // We currently don’t have topic-level weakness API on the dashboard route.
@@ -326,6 +342,58 @@ export default function DashboardPage() {
                   ))}
                 </div>
               )}
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base">CBME MBBS Year 1 (Blocks)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="text-sm text-muted-foreground">
+                Canonical curriculum backbone (v1). This will drive your plans, reviews, and practice.
+              </div>
+
+              <Tabs defaultValue="anatomy" className="w-full">
+                <TabsList className="grid w-full grid-cols-4">
+                  <TabsTrigger value="anatomy">Anat</TabsTrigger>
+                  <TabsTrigger value="physiology">Physio</TabsTrigger>
+                  <TabsTrigger value="biochemistry">Biochem</TabsTrigger>
+                  <TabsTrigger value="bme">BME</TabsTrigger>
+                </TabsList>
+
+                {(
+                  [
+                    ["anatomy", cbmeY1BySubject.anatomy],
+                    ["physiology", cbmeY1BySubject.physiology],
+                    ["biochemistry", cbmeY1BySubject.biochemistry],
+                    ["bme", cbmeY1BySubject.bme],
+                  ] as const
+                ).map(([key, blocks]) => (
+                  <TabsContent key={key} value={key} className="mt-3 space-y-2">
+                    {blocks.map((b) => (
+                      <div
+                        key={b.id}
+                        className="flex items-center justify-between gap-3 rounded-lg border p-3"
+                      >
+                        <div className="min-w-0">
+                          <div className="truncate text-sm font-medium">{b.title}</div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {b.tags.join(" · ")}
+                          </div>
+                        </div>
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          onClick={() => router.push(b.links?.libraryPath || "/library")}
+                        >
+                          Open
+                        </Button>
+                      </div>
+                    ))}
+                  </TabsContent>
+                ))}
+              </Tabs>
             </CardContent>
           </Card>
         </div>
