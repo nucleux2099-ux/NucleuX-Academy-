@@ -224,7 +224,7 @@ export default function HomePage() {
             description="Modes, structure, and connected understanding."
             atomRole="ATOM Librarian"
             href="/login"
-            imageSrc="/marketing/screens/landing.png"
+            imageSrc="/marketing/screens/library.png"
             color="#5BB3B3"
           />
           <RoomPreviewCard
@@ -232,7 +232,7 @@ export default function HomePage() {
             description="Live learning with notes, mindmaps, and replay."
             atomRole="ATOM Scribe"
             href="/login"
-            imageSrc="/marketing/screens/atom.png"
+            imageSrc="/marketing/screens/classroom.png"
             color="#6BA8C9"
           />
           <RoomPreviewCard
@@ -240,7 +240,7 @@ export default function HomePage() {
             description="Exam-focused practice with feedback that teaches."
             atomRole="ATOM Trainer"
             href="/login"
-            imageSrc="/marketing/screens/login.png"
+            imageSrc="/marketing/screens/exam-centre.png"
             color="#C9A86C"
           />
           <RoomPreviewCard
@@ -248,7 +248,7 @@ export default function HomePage() {
             description="Timed drills and mixed sets to pressure-proof recall."
             atomRole="ATOM Challenger"
             href="/login"
-            imageSrc="/marketing/screens/placeholder.svg"
+            imageSrc="/marketing/screens/arena.png"
             color="#EC4899"
           />
           <RoomPreviewCard
@@ -256,7 +256,7 @@ export default function HomePage() {
             description="Competency ladder, calibration, reflection, logbook."
             atomRole="ATOM Coach"
             href="/login"
-            imageSrc="/marketing/screens/placeholder.svg"
+            imageSrc="/marketing/screens/backstage.png"
             color="#A78BFA"
           />
           <RoomPreviewCard
@@ -264,7 +264,7 @@ export default function HomePage() {
             description="Discussions, doubts, and high-yield takeaways."
             atomRole="ATOM Guide"
             href="/login"
-            imageSrc="/marketing/screens/placeholder.svg"
+            imageSrc="/marketing/screens/common-room.png"
             color="#10B981"
           />
         </div>
