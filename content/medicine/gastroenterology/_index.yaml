@@ -1,0 +1,20 @@
+title: Gastroenterology
+description: Diseases of the digestive system - esophagus to colon, liver, and pancreas
+icon: 🫁
+order: 2
+tags:
+  - medicine
+  - gastroenterology
+  - GI
+  - hepatology
+level: UG | PG
+sources:
+  - Harrison's Principles of Internal Medicine
+  - Sleisenger & Fordtran's GI and Liver Disease
+  - Davidson's Principles and Practice of Medicine
+topics:
+  - Liver Cirrhosis
+  - Inflammatory Bowel Disease
+  - Peptic Ulcer Disease
+  - GERD
+  - Acute Pancreatitis

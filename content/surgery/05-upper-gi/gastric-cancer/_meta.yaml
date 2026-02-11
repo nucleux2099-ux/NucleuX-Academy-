@@ -1,0 +1,11 @@
+topic_id: gastric-cancer
+system: 05-upper-gi
+name: "Gastric Cancer"
+nmc_competency: "SU28.7"
+sources:
+  primary:
+    bailey: "Ch 62"
+    sabiston: "Ch 49"
+tags: [oncology, high-yield]
+difficulty: medium
+priority: high

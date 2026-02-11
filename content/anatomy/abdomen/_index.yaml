@@ -1,0 +1,20 @@
+title: Abdominal Anatomy
+description: Complete anatomy of the abdomen including GI tract, hepatobiliary system, and retroperitoneum
+icon: 🫁
+order: 2
+topics:
+  - stomach-anatomy
+  - liver-anatomy
+  - biliary-system
+  - small-intestine
+  - large-intestine
+tags:
+  - GI tract
+  - hepatobiliary
+  - peritoneum
+  - retroperitoneum
+level: UG
+sources:
+  - "Gray's Anatomy for Students, 4th Ed"
+  - "Netter Atlas of Human Anatomy, 7th Ed"
+  - "Clinically Oriented Anatomy (Moore), 8th Ed"

@@ -1,0 +1,11 @@
+title: "Medical Jurisprudence"
+description: "Legal aspects of medical practice - consent, negligence, ethics, documentation"
+icon: "⚖️"
+order: 5
+subspecialty: "forensic"
+topics:
+  - consent
+  - medical-negligence
+  - medical-ethics
+  - medical-documentation
+  - courts-evidence

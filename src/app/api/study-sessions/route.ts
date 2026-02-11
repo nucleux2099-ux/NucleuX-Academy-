@@ -138,8 +138,32 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
+    // Read current state first so we only aggregate daily stats once
+    const { data: existingSession, error: existingSessionError } = await supabase
+      .from('study_sessions')
+      .select('ended_at')
+      .eq('id', session_id)
+      .eq('user_id', user.id)
+      .single();
+
+    if (existingSessionError) {
+      console.error('Session fetch error:', existingSessionError);
+      return NextResponse.json(
+        { error: 'Session not found' },
+        { status: 404 }
+      );
+    }
+
     // Update session
-    const updateData: Record<string, any> = { updated_at: new Date().toISOString() };
+    const updateData: {
+      updated_at: string;
+      ended_at?: string;
+      duration_minutes?: number;
+      atoms_studied?: string[];
+      mcqs_attempted?: number;
+      mcqs_correct?: number;
+      notes_created?: number;
+    } = { updated_at: new Date().toISOString() };
     
     if (ended_at) updateData.ended_at = ended_at;
     if (duration_minutes !== undefined) updateData.duration_minutes = duration_minutes;
@@ -164,21 +188,24 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    // Update daily stats if session ended
-    if (ended_at && duration_minutes) {
+    // Update daily stats if session is being ended for the first time
+    if (ended_at && duration_minutes && !existingSession?.ended_at) {
       const today = new Date().toISOString().split('T')[0];
-      
-      await supabase
-        .from('daily_stats')
-        .upsert({
-          user_id: user.id,
-          date: today,
-          study_minutes: duration_minutes,
-          mcqs_attempted: mcqs_attempted || 0,
-          mcqs_correct: mcqs_correct || 0,
-        }, {
-          onConflict: 'user_id,date'
+
+      await supabase.rpc('increment_study_time', {
+        p_user_id: user.id,
+        p_date: today,
+        p_minutes: duration_minutes,
+      });
+
+      if ((mcqs_attempted || 0) > 0 || (mcqs_correct || 0) > 0) {
+        await supabase.rpc('increment_mcq_stats', {
+          p_user_id: user.id,
+          p_date: today,
+          p_attempted: mcqs_attempted || 0,
+          p_correct: mcqs_correct || 0,
         });
+      }
     }
 
     return NextResponse.json(session);

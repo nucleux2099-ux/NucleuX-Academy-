@@ -1,0 +1,15 @@
+title: Antimicrobials
+description: Antibiotics, antifungals, antivirals, and antiparasitic drugs
+icon: 💊
+order: 4
+topics:
+  - beta-lactams
+  - aminoglycosides
+  - fluoroquinolones
+  - macrolides
+  - antifungals
+  - antivirals
+tags:
+  - pharmacology
+  - infectious-disease
+  - antibiotics

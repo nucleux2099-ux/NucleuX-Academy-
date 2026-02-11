@@ -1,0 +1,12 @@
+topic_id: acute-pancreatitis
+system: 07-pancreas
+name: "Acute Pancreatitis"
+nmc_competency: "SU28.11"
+sources:
+  primary:
+    bailey: "Ch 65"
+    sabiston: "Ch 56"
+    schwartz: "Ch 33"
+tags: [emergency, high-yield, critical-care]
+difficulty: medium
+priority: critical

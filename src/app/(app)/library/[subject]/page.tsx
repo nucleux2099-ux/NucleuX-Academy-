@@ -1,340 +1,77 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { useParams } from "next/navigation";
 import Link from "next/link";
+import { useParams, useSearchParams } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { 
-  Search, 
-  BookOpen, 
-  ChevronRight,
-  ChevronLeft,
-  Clock,
-  Target,
-  GraduationCap,
-  Sparkles,
-  BookMarked,
-  Filter,
-  BarChart3,
-  CheckCircle2,
-  Circle
-} from "lucide-react";
-import { getSubjectBySlug, SUBJECTS } from "@/lib/data/subjects";
-import { SURGERY_GI_TOPICS } from "@/lib/data/topics-surgery-gi";
-import { cn } from "@/lib/utils";
-import type { Topic, Depth } from "@/lib/types";
-
-// Mock user progress
-const userProgress: Record<string, { completed: boolean; mcqAccuracy?: number }> = {
-  'surg-gi-appendicitis': { completed: true, mcqAccuracy: 85 },
-  'surg-gi-cholelithiasis': { completed: true, mcqAccuracy: 72 },
-  'surg-gi-portal-hypertension': { completed: false, mcqAccuracy: 45 },
-};
+import { ChevronRight, Library, BookOpen } from "lucide-react";
+import { getSubjectBySlug } from "@/lib/data/subjects";
+import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
 
 export default function SubjectPage() {
   const params = useParams();
+  const searchParams = useSearchParams();
+
   const subjectSlug = params.subject as string;
-  
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedDepth, setSelectedDepth] = useState<'all' | Depth>('all');
-  const [sortBy, setSortBy] = useState<'name' | 'difficulty' | 'progress'>('name');
-
-  // Get subject data
   const subject = getSubjectBySlug(subjectSlug);
-  
-  // Get topics for this subject (for now, only surgery has data)
-  const allTopics = subjectSlug === 'surgery' ? SURGERY_GI_TOPICS : [];
-
-  // Filter and sort topics
-  const filteredTopics = useMemo(() => {
-    let topics = allTopics.filter(topic => {
-      // Search filter
-      const matchesSearch = 
-        topic.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        topic.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      // Depth filter
-      const matchesDepth = selectedDepth === 'all' || topic.depth[selectedDepth];
-      
-      return matchesSearch && matchesDepth;
-    });
-
-    // Sort
-    switch (sortBy) {
-      case 'difficulty':
-        topics = topics.sort((a, b) => a.difficulty - b.difficulty);
-        break;
-      case 'progress':
-        topics = topics.sort((a, b) => {
-          const aCompleted = userProgress[a.id]?.completed ? 1 : 0;
-          const bCompleted = userProgress[b.id]?.completed ? 1 : 0;
-          return bCompleted - aCompleted;
-        });
-        break;
-      default:
-        // Already sorted by order/name
-        break;
-    }
-
-    return topics;
-  }, [allTopics, searchQuery, selectedDepth, sortBy]);
-
-  // Group topics by category (based on tags)
-  const topicCategories = useMemo(() => {
-    const categories: Record<string, Topic[]> = {
-      'Esophagus': [],
-      'Stomach': [],
-      'Small Intestine': [],
-      'Appendix': [],
-      'Colon & Rectum': [],
-      'Anorectal': [],
-      'Hepatobiliary': [],
-      'Pancreas': [],
-      'Other': [],
-    };
-
-    filteredTopics.forEach(topic => {
-      if (topic.tags.includes('esophagus')) categories['Esophagus'].push(topic);
-      else if (topic.tags.includes('stomach')) categories['Stomach'].push(topic);
-      else if (topic.tags.includes('small bowel')) categories['Small Intestine'].push(topic);
-      else if (topic.tags.includes('appendix')) categories['Appendix'].push(topic);
-      else if (topic.tags.includes('colon') || topic.tags.includes('rectum')) categories['Colon & Rectum'].push(topic);
-      else if (topic.tags.includes('anorectal')) categories['Anorectal'].push(topic);
-      else if (topic.tags.includes('liver') || topic.tags.includes('gallbladder')) categories['Hepatobiliary'].push(topic);
-      else if (topic.tags.includes('pancreas')) categories['Pancreas'].push(topic);
-      else categories['Other'].push(topic);
-    });
-
-    // Remove empty categories
-    return Object.entries(categories).filter(([_, topics]) => topics.length > 0);
-  }, [filteredTopics]);
-
-  const depthFilters = [
-    { id: 'all', label: 'All', color: '#A0B0BC' },
-    { id: 'mbbs', label: 'MBBS', color: '#10B981' },
-    { id: 'pg', label: 'PG', color: '#5BB3B3' },
-    { id: 'superSpecialty', label: 'SS', color: '#C9A86C' },
-  ];
 
   if (!subject) {
     return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="text-center">
-          <h2 className="text-xl font-semibold text-[#E8E0D5]">Subject not found</h2>
-          <Link href="/library">
-            <Button variant="link" className="text-[#5BB3B3] mt-2">
-              Back to Library
-            </Button>
-          </Link>
-        </div>
+      <div className="flex items-center justify-center min-h-[40vh]">
+        <p className="text-[#A0B0BC]">Subject not found.</p>
       </div>
     );
   }
 
+  const subspecialties = getSubspecialtiesBySubject(subject.id);
+  const mode = searchParams.get("mode");
+
   return (
     <div className="space-y-6">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm">
-        <Link href="/library" className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors">
-          Library
-        </Link>
-        <ChevronRight className="w-4 h-4 text-[#A0B0BC]" />
-        <span className="text-[#E8E0D5] font-medium">{subject.name}</span>
-      </div>
-
-      {/* Subject Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-        <div 
-          className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shrink-0"
-          style={{ backgroundColor: `${subject.color}20` }}
-        >
-          {subject.icon}
-        </div>
-        <div className="flex-1">
-          <h1 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5]">{subject.name}</h1>
-          <p className="text-[#A0B0BC] mt-1">{subject.description}</p>
-          <div className="flex items-center gap-4 mt-2">
-            <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
-              {filteredTopics.length} Topics
-            </Badge>
-            <span className="text-sm text-[#A0B0BC]">
-              {Object.values(userProgress).filter(p => p.completed).length} completed
-            </span>
-          </div>
+      <div className="flex items-center gap-3">
+        <Library className="w-7 h-7 text-[#5BB3B3]" />
+        <div>
+          <h1 className="text-2xl font-bold text-[#E8E0D5]">{subject.name}</h1>
+          <p className="text-[#A0B0BC]">Choose a subspecialty to continue.</p>
         </div>
       </div>
 
-      {/* Search & Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
-        {/* Search */}
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
-          <Input
-            placeholder="Search topics or tags..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#A0B0BC]"
-          />
-        </div>
+      <Badge className="w-fit bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
+        {subspecialties.length} subspecialties
+      </Badge>
 
-        {/* Depth Filter */}
-        <div className="flex gap-2">
-          {depthFilters.map((filter) => {
-            const isActive = selectedDepth === filter.id;
-            return (
-              <button
-                key={filter.id}
-                onClick={() => setSelectedDepth(filter.id as typeof selectedDepth)}
-                className={cn(
-                  "px-3 py-2 rounded-lg text-sm font-medium transition-all",
-                  isActive
-                    ? "text-[#2D3E50]"
-                    : "bg-[#3A4D5F] text-[#A0B0BC] hover:text-[#E8E0D5]"
-                )}
-                style={isActive ? { backgroundColor: filter.color } : undefined}
-              >
-                {filter.label}
-              </button>
-            );
-          })}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {subspecialties.map((sub) => {
+          const href = mode
+            ? `/library/${subject.slug}/${sub.slug}?mode=${mode}`
+            : `/library/${subject.slug}/${sub.slug}`;
 
-        {/* Sort */}
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-          className="px-3 py-2 rounded-lg text-sm bg-[#3A4D5F] border border-[rgba(91,179,179,0.15)] text-[#E8E0D5] cursor-pointer"
-        >
-          <option value="name">Sort by Name</option>
-          <option value="difficulty">Sort by Difficulty</option>
-          <option value="progress">Sort by Progress</option>
-        </select>
+          return (
+            <Link key={sub.id} href={href}>
+              <Card className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer h-full">
+                <CardContent className="p-5">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{sub.icon}</span>
+                      <h2 className="font-semibold text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors">
+                        {sub.name}
+                      </h2>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#5BB3B3] group-hover:translate-x-1 transition-all" />
+                  </div>
+
+                  <p className="text-sm text-[#A0B0BC] mb-4">{sub.description}</p>
+
+                  <div className="flex items-center gap-2 text-xs text-[#6B7280] pt-3 border-t border-[rgba(91,179,179,0.1)]">
+                    <BookOpen className="w-3.5 h-3.5" />
+                    <span>{sub.topicCount} topics</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          );
+        })}
       </div>
-
-      {/* Topics by Category */}
-      {topicCategories.length > 0 ? (
-        <div className="space-y-8">
-          {topicCategories.map(([category, topics]) => (
-            <div key={category}>
-              {/* Category Header */}
-              <div className="flex items-center gap-2 mb-4">
-                <div 
-                  className="w-1 h-6 rounded-full"
-                  style={{ backgroundColor: subject.color }}
-                />
-                <h2 className="text-lg font-semibold text-[#E8E0D5]">{category}</h2>
-                <Badge variant="outline" className="text-[#A0B0BC] border-[rgba(255,255,255,0.1)]">
-                  {topics.length}
-                </Badge>
-              </div>
-
-              {/* Topics Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {topics.map((topic) => {
-                  const progress = userProgress[topic.id];
-                  const isCompleted = progress?.completed;
-                  
-                  return (
-                    <Link key={topic.id} href={`/library/${subjectSlug}/${topic.slug}`}>
-                      <Card className={cn(
-                        "bg-[#364A5E] border-[rgba(255,255,255,0.06)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer group h-full",
-                        isCompleted && "border-l-2 border-l-[#10B981]"
-                      )}>
-                        <CardContent className="p-4">
-                          {/* Header */}
-                          <div className="flex items-start justify-between gap-2">
-                            <div className="flex-1 min-w-0">
-                              <h3 className="font-medium text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors line-clamp-2">
-                                {topic.name}
-                              </h3>
-                            </div>
-                            {isCompleted ? (
-                              <CheckCircle2 className="w-5 h-5 text-[#10B981] shrink-0" />
-                            ) : (
-                              <Circle className="w-5 h-5 text-[#A0B0BC] shrink-0 opacity-50" />
-                            )}
-                          </div>
-
-                          {/* Depth badges */}
-                          <div className="flex gap-1.5 mt-2">
-                            {topic.depth.mbbs && (
-                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(16,185,129,0.2)] text-[#10B981]">
-                                MBBS
-                              </span>
-                            )}
-                            {topic.depth.pg && (
-                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(91,179,179,0.2)] text-[#5BB3B3]">
-                                PG
-                              </span>
-                            )}
-                            {topic.depth.superSpecialty && (
-                              <span className="px-1.5 py-0.5 text-[10px] font-medium rounded bg-[rgba(245,158,11,0.2)] text-[#C9A86C]">
-                                SS
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Meta */}
-                          <div className="flex items-center gap-3 mt-3 text-xs text-[#A0B0BC]">
-                            <span className="flex items-center gap-1">
-                              <Clock className="w-3 h-3" />
-                              {topic.estimatedMinutes} min
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <BarChart3 className="w-3 h-3" />
-                              L{topic.difficulty}
-                            </span>
-                            {progress?.mcqAccuracy && (
-                              <span className={cn(
-                                "flex items-center gap-1",
-                                progress.mcqAccuracy >= 70 ? "text-[#10B981]" : "text-[#C9A86C]"
-                              )}>
-                                <Target className="w-3 h-3" />
-                                {progress.mcqAccuracy}%
-                              </span>
-                            )}
-                          </div>
-
-                          {/* Tags */}
-                          <div className="flex flex-wrap gap-1 mt-3">
-                            {topic.tags.slice(0, 3).map((tag) => (
-                              <span 
-                                key={tag}
-                                className="px-2 py-0.5 text-[10px] rounded-full bg-[rgba(255,255,255,0.05)] text-[#A0B0BC]"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        /* Empty State */
-        <div className="text-center py-12">
-          <div className="w-16 h-16 mx-auto rounded-full bg-[#3A4D5F] flex items-center justify-center mb-4">
-            <BookOpen className="w-8 h-8 text-[#A0B0BC]" />
-          </div>
-          <h3 className="text-lg font-medium text-[#E8E0D5]">
-            {allTopics.length === 0 ? "Content coming soon" : "No topics found"}
-          </h3>
-          <p className="text-[#A0B0BC] mt-1">
-            {allTopics.length === 0 
-              ? "We're working on adding content for this subject"
-              : "Try adjusting your filters"
-            }
-          </p>
-        </div>
-      )}
     </div>
   );
 }

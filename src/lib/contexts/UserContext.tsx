@@ -6,10 +6,9 @@ import type {
   UserLevel, 
   ExamTarget, 
   TopicProgress,
-  CardPerformance,
   WeakArea 
 } from '@/lib/types/user';
-import { createDefaultUserProfile, DEFAULT_USER_PREFERENCES } from '@/lib/types/user';
+import { createDefaultUserProfile } from '@/lib/types/user';
 
 // =============================================================================
 // CONTEXT TYPES
@@ -102,30 +101,56 @@ function calculateNextReview(
 // PROVIDER COMPONENT
 // =============================================================================
 
-export function UserProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<UserProfile | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Load user on mount
-  useEffect(() => {
+// Custom hook for localStorage with SSR safety
+function useLocalStorageUser() {
+  // Initialize with a function to read from localStorage (client-side only)
+  const getInitialUser = (): UserProfile | null => {
+    if (typeof window === 'undefined') return null;
     const stored = loadUserFromStorage();
-    if (stored) {
-      setUser(stored);
-    } else {
-      // Create default user
-      const defaultUser = createDefaultUserProfile('local-user');
-      setUser(defaultUser);
-      saveUserToStorage(defaultUser);
+    if (stored) return stored;
+    const defaultUser = createDefaultUserProfile('local-user');
+    saveUserToStorage(defaultUser);
+    return defaultUser;
+  };
+
+  const [user, setUserState] = useState<UserProfile | null>(getInitialUser);
+  const [isHydrated, setIsHydrated] = useState(typeof window !== 'undefined');
+
+  // Hydration effect - runs once after mount to sync with localStorage
+  // This is intentional for SSR hydration - the setState calls are necessary
+  // to sync client state with localStorage after server render
+  useEffect(() => {
+    if (!isHydrated) {
+      const storedUser = loadUserFromStorage();
+      if (storedUser) {
+        setUserState(storedUser);
+      } else {
+        const defaultUser = createDefaultUserProfile('local-user');
+        saveUserToStorage(defaultUser);
+        setUserState(defaultUser);
+      }
+      setIsHydrated(true);
     }
-    setIsLoading(false);
+  }, [isHydrated]);
+
+  // Wrapper to also save to localStorage
+  const setUser = useCallback((updater: UserProfile | null | ((prev: UserProfile | null) => UserProfile | null)) => {
+    setUserState(prev => {
+      const newUser = typeof updater === 'function' ? updater(prev) : updater;
+      if (newUser) {
+        saveUserToStorage(newUser);
+      }
+      return newUser;
+    });
   }, []);
 
-  // Save user whenever it changes
-  useEffect(() => {
-    if (user) {
-      saveUserToStorage(user);
-    }
-  }, [user]);
+  return { user, setUser, isLoading: !isHydrated };
+}
+
+export function UserProvider({ children }: { children: ReactNode }) {
+  const { user, setUser, isLoading } = useLocalStorageUser();
+
+  // Note: User is auto-saved via useLocalStorageUser hook
 
   // =============================================================================
   // PROFILE ACTIONS
@@ -133,7 +158,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
   const updateLevel = useCallback((level: UserLevel) => {
     setUser(prev => prev ? { ...prev, level, updatedAt: new Date().toISOString() } : prev);
-  }, []);
+  }, [setUser]);
 
   const updateExamTarget = useCallback((target: ExamTarget, examDate?: string) => {
     setUser(prev => prev ? { 
@@ -142,7 +167,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
       examDate,
       updatedAt: new Date().toISOString() 
     } : prev);
-  }, []);
+  }, [setUser]);
 
   const updatePreferences = useCallback((prefs: Partial<UserProfile['preferences']>) => {
     setUser(prev => prev ? {
@@ -150,7 +175,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
       preferences: { ...prev.preferences, ...prefs },
       updatedAt: new Date().toISOString()
     } : prev);
-  }, []);
+  }, [setUser]);
 
   // =============================================================================
   // PROGRESS ACTIONS
@@ -180,7 +205,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
     });
-  }, []);
+  }, [setUser]);
 
   const markTopicCompleted = useCallback((topicId: string) => {
     setUser(prev => {
@@ -211,7 +236,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
     });
-  }, []);
+  }, [setUser]);
 
   const updateTopicProgress = useCallback((topicId: string, progress: Partial<TopicProgress>) => {
     setUser(prev => {
@@ -236,7 +261,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
     });
-  }, []);
+  }, [setUser]);
 
   // =============================================================================
   // QUIZ ACTIONS
@@ -270,7 +295,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
     });
-  }, []);
+  }, [setUser]);
 
   const recordCardAttempt = useCallback((cardId: string, topicId: string, wasCorrect: boolean) => {
     setUser(prev => {
@@ -312,7 +337,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
     });
-  }, []);
+  }, [setUser]);
 
   // =============================================================================
   // COMPUTED HELPERS
@@ -406,7 +431,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         updatedAt: new Date().toISOString(),
       };
     });
-  }, []);
+  }, [setUser]);
 
   // =============================================================================
   // CONTEXT VALUE

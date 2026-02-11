@@ -1,0 +1,11 @@
+topic_id: fluid-electrolytes
+system: 01-general-topics
+name: "Fluid & Electrolyte Balance"
+nmc_competency: "SU8.1"
+sources:
+  primary:
+    bailey: "Ch 1"
+    sabiston: "Ch 3"
+tags: [foundation, high-yield]
+difficulty: medium
+priority: critical

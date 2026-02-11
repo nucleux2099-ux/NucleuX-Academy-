@@ -53,7 +53,7 @@ export async function GET(request: NextRequest) {
       // MCQ attempts
       supabase
         .from('mcq_attempts')
-        .select('is_correct, time_spent_seconds, created_at')
+        .select('is_correct, time_taken_seconds, created_at')
         .eq('user_id', user.id)
         .gte('created_at', startDate),
       

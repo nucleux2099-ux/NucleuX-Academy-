@@ -1,0 +1,146 @@
+{
+  "topic_id": "wound-healing",
+  "version": "1.0",
+  "cards": [
+    {
+      "id": "wh-001",
+      "type": "basic",
+      "front": "What is the most important cell in wound healing?",
+      "back": "Macrophage - orchestrates healing by releasing cytokines and growth factors, recruiting fibroblasts, and performing phagocytosis",
+      "tags": ["cells", "high-yield"]
+    },
+    {
+      "id": "wh-002",
+      "type": "basic",
+      "front": "What are the three phases of wound healing?",
+      "back": "1. Hemostasis & Inflammation (Day 0-4)\n2. Proliferation (Day 4-21)\n3. Remodeling (Day 21 - 1 year+)",
+      "tags": ["phases", "high-yield"]
+    },
+    {
+      "id": "wh-003",
+      "type": "basic",
+      "front": "Which collagen type predominates in early wounds?",
+      "back": "Type III collagen",
+      "tags": ["collagen", "high-yield"]
+    },
+    {
+      "id": "wh-004",
+      "type": "basic",
+      "front": "Which collagen type predominates in mature scars?",
+      "back": "Type I collagen",
+      "tags": ["collagen", "high-yield"]
+    },
+    {
+      "id": "wh-005",
+      "type": "basic",
+      "front": "What is the maximum tensile strength a healed wound can achieve?",
+      "back": "80% of original tissue (never reaches 100%)",
+      "tags": ["healing", "high-yield"]
+    },
+    {
+      "id": "wh-006",
+      "type": "basic",
+      "front": "How long does it take to achieve maximum wound strength?",
+      "back": "3 months (12 weeks)",
+      "tags": ["healing"]
+    },
+    {
+      "id": "wh-007",
+      "type": "basic",
+      "front": "What is the difference between primary and secondary intention healing?",
+      "back": "Primary: Wound edges approximated (surgical wound)\nSecondary: Wound left open, heals by granulation (abscess cavity)",
+      "tags": ["types", "high-yield"]
+    },
+    {
+      "id": "wh-008",
+      "type": "basic",
+      "front": "What is tertiary intention (delayed primary closure)?",
+      "back": "Wound initially left open (contaminated), then closed primarily once clean (usually day 4-7)",
+      "tags": ["types"]
+    },
+    {
+      "id": "wh-009",
+      "type": "basic",
+      "front": "Why is Vitamin C essential for wound healing?",
+      "back": "Required for prolyl hydroxylase enzyme which hydroxylates proline and lysine in collagen synthesis",
+      "tags": ["nutrition", "high-yield"]
+    },
+    {
+      "id": "wh-010",
+      "type": "basic",
+      "front": "What is the most common cause of impaired wound healing?",
+      "back": "Infection",
+      "tags": ["factors", "high-yield"]
+    },
+    {
+      "id": "wh-011",
+      "type": "basic",
+      "front": "What is the difference between keloid and hypertrophic scar?",
+      "back": "Keloid: Extends BEYOND wound margins, does NOT regress\nHypertrophic: Stays WITHIN wound margins, regresses with time",
+      "tags": ["abnormal", "high-yield"]
+    },
+    {
+      "id": "wh-012",
+      "type": "basic",
+      "front": "Which areas are most prone to keloid formation?",
+      "back": "Earlobes, sternum, deltoid region, upper back",
+      "tags": ["abnormal"]
+    },
+    {
+      "id": "wh-013",
+      "type": "basic",
+      "front": "What is the role of PDGF in wound healing?",
+      "back": "Released by platelets; causes chemotaxis and fibroblast proliferation",
+      "tags": ["growth-factors"]
+    },
+    {
+      "id": "wh-014",
+      "type": "basic",
+      "front": "What is the role of VEGF in wound healing?",
+      "back": "Promotes angiogenesis (new blood vessel formation)",
+      "tags": ["growth-factors"]
+    },
+    {
+      "id": "wh-015",
+      "type": "basic",
+      "front": "Why do diabetic patients have impaired wound healing?",
+      "back": "1. Microangiopathy (reduced blood supply)\n2. Impaired immune function\n3. Neuropathy (unrecognized injuries)",
+      "tags": ["factors"]
+    },
+    {
+      "id": "wh-016",
+      "type": "basic",
+      "front": "First cell to arrive at wound site?",
+      "back": "Platelets (for hemostasis)",
+      "tags": ["cells"]
+    },
+    {
+      "id": "wh-017",
+      "type": "basic",
+      "front": "First inflammatory cell to arrive at wound?",
+      "back": "Neutrophils (peak at 24-48 hours)",
+      "tags": ["cells", "high-yield"]
+    },
+    {
+      "id": "wh-018",
+      "type": "basic",
+      "front": "Main cell of proliferation phase?",
+      "back": "Fibroblast",
+      "tags": ["cells"]
+    },
+    {
+      "id": "wh-019",
+      "type": "basic",
+      "front": "When can sutures typically be removed from facial wounds?",
+      "back": "5-7 days",
+      "tags": ["clinical"]
+    },
+    {
+      "id": "wh-020",
+      "type": "basic",
+      "front": "Which mineral is essential for epithelialization in wound healing?",
+      "back": "Zinc",
+      "tags": ["nutrition", "high-yield"]
+    }
+  ]
+}

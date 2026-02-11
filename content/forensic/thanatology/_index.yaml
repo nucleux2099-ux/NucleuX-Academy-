@@ -1,0 +1,11 @@
+title: "Thanatology"
+description: "Study of death - PM changes, time since death estimation, autopsy procedures"
+icon: "💀"
+order: 1
+subspecialty: "forensic"
+topics:
+  - postmortem-changes
+  - time-since-death
+  - autopsy
+  - death-certification
+  - manner-of-death

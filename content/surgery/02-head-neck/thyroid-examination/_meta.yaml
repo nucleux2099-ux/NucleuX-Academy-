@@ -1,0 +1,42 @@
+# Thyroid Examination - Metadata
+topic_id: thyroid-examination
+system: 02-head-neck
+name: "Thyroid Examination"
+nmc_competency: "SU22.1, SU22.2"
+
+sources:
+  primary:
+    bailey: "Ch 50, pp 805-840"
+    sabiston: "Ch 36, pp 881-922"
+    schwartz: "Ch 38, pp 1537-1578"
+  supplementary:
+    - "Clinical Examination, Talley & O'Connor"
+    - "Browse's Introduction to Clinical Surgery"
+
+tags: [clinical-skills, examination, high-yield, neet-pg, practical]
+difficulty: easy
+priority: high
+
+learning_objectives:
+  - Perform systematic thyroid examination
+  - Differentiate thyroid swelling from other neck swellings
+  - Elicit movement with swallowing and tongue protrusion
+  - Assess thyroid status clinically
+  - Examine for retrosternal extension
+  - Check for cervical lymphadenopathy
+  - Identify signs of thyrotoxicosis and hypothyroidism
+
+estimated_time:
+  explorer: 15min
+  exam_prep: 20min
+  textbook: 35min
+  retrieval: 20min
+  procedural: 20min
+
+prerequisites:
+  - anatomy-thyroid
+
+related_topics:
+  - thyroid-disorders
+  - thyroglossal-cyst
+  - thyroid-neoplasms

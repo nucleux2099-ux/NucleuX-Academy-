@@ -1,0 +1,19 @@
+title: Nephrology
+description: Kidney diseases, dialysis, and fluid/electrolyte balance
+icon: 🫘
+order: 10
+tags:
+  - medicine
+  - nephrology
+  - kidney
+level: UG | PG
+sources:
+  - Harrison's Principles of Internal Medicine
+  - Brenner & Rector's The Kidney
+  - Davidson's Principles and Practice of Medicine
+topics:
+  - Acute Kidney Injury
+  - Chronic Kidney Disease
+  - Glomerulonephritis
+  - Nephrotic Syndrome
+  - Diabetic Nephropathy

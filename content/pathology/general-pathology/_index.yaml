@@ -1,0 +1,14 @@
+title: General Pathology
+description: Fundamental mechanisms of disease - cell injury, inflammation, repair, and neoplasia
+icon: 🔬
+order: 1
+topics:
+  - cell-injury
+  - inflammation
+  - tissue-repair
+  - hemodynamic-disorders
+  - neoplasia
+tags:
+  - pathology
+  - basic-science
+  - foundation

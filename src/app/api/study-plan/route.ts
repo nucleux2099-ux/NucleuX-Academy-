@@ -1,6 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 
+type AtomLite = {
+  id?: string;
+  title?: string;
+  slug?: string;
+  type?: string;
+  specialty?: string;
+  topic?: string;
+  read_time_minutes?: number;
+  difficulty?: number;
+};
+
+type ProgressAtom = {
+  atom?: AtomLite;
+  progress_percent?: number;
+  time_spent_seconds?: number;
+};
+
 // GET /api/study-plan - Get user's study plan for today
 export async function GET(request: NextRequest) {
   try {
@@ -64,7 +81,7 @@ export async function GET(request: NextRequest) {
       .eq('id', user.id)
       .single();
 
-    let recommendedAtoms: any[] = [];
+    let recommendedAtoms: AtomLite[] = [];
     if (profile?.specialty) {
       const { data: atoms } = await supabase
         .from('atoms')
@@ -163,10 +180,28 @@ function generateDailyTasks(
   studiedMinutes: number,
   mcqTarget: number,
   mcqsAttempted: number,
-  inProgress: any[],
-  recommended: any[]
-): any[] {
-  const tasks = [];
+  inProgress: ProgressAtom[],
+  recommended: AtomLite[]
+): Array<{
+  id: string;
+  type: 'continue' | 'mcq' | 'new' | 'review';
+  title: string;
+  description: string;
+  atom_id?: string;
+  slug?: string;
+  estimated_minutes: number;
+  priority: 'high' | 'medium' | 'low';
+}> {
+  const tasks: Array<{
+    id: string;
+    type: 'continue' | 'mcq' | 'new' | 'review';
+    title: string;
+    description: string;
+    atom_id?: string;
+    slug?: string;
+    estimated_minutes: number;
+    priority: 'high' | 'medium' | 'low';
+  }> = [];
   const remainingMinutes = goalMinutes - studiedMinutes;
   const remainingMcqs = mcqTarget - mcqsAttempted;
 
@@ -204,7 +239,7 @@ function generateDailyTasks(
       id: 'new-' + newTopic.id,
       type: 'new',
       title: `Start: ${newTopic.title}`,
-      description: newTopic.topic,
+      description: newTopic.topic || 'Recommended topic',
       atom_id: newTopic.id,
       slug: newTopic.slug,
       estimated_minutes: newTopic.read_time_minutes || 15,

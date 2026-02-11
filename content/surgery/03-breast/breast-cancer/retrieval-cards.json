@@ -1,0 +1,21 @@
+{
+  "topic_id": "breast-cancer",
+  "version": "1.0",
+  "cards": [
+    {"id": "bc-001", "front": "What is the most common type of breast cancer?", "back": "Invasive ductal carcinoma (70-80%)", "tags": ["types", "high-yield"]},
+    {"id": "bc-002", "front": "What is triple assessment in breast?", "back": "Clinical examination + Imaging (mammography/USG) + Pathology (FNAC/core biopsy)", "tags": ["diagnosis", "high-yield"]},
+    {"id": "bc-003", "front": "What breast cancer subtype has the best prognosis?", "back": "Luminal A (ER+, PR+, HER2-)", "tags": ["subtypes", "high-yield"]},
+    {"id": "bc-004", "front": "What breast cancer subtype has the worst prognosis?", "back": "Triple negative (ER-, PR-, HER2-)", "tags": ["subtypes", "high-yield"]},
+    {"id": "bc-005", "front": "What is peau d'orange?", "back": "Orange-peel skin appearance due to lymphatic obstruction — sign of locally advanced breast cancer", "tags": ["clinical", "high-yield"]},
+    {"id": "bc-006", "front": "What is the drug of choice for HER2+ breast cancer?", "back": "Trastuzumab (Herceptin)", "tags": ["treatment", "high-yield"]},
+    {"id": "bc-007", "front": "What hormonal therapy is used for ER+ premenopausal breast cancer?", "back": "Tamoxifen", "tags": ["treatment", "high-yield"]},
+    {"id": "bc-008", "front": "What is sentinel lymph node biopsy?", "back": "Identification of first draining node(s) to assess axillary spread; if negative, axillary dissection avoided", "tags": ["surgery"]},
+    {"id": "bc-009", "front": "What is Paget's disease of nipple?", "back": "Eczematoid changes of nipple with underlying ductal carcinoma", "tags": ["types"]},
+    {"id": "bc-010", "front": "What are BRCA1/2 mutations associated with?", "back": "Increased risk of breast AND ovarian cancer", "tags": ["genetics", "high-yield"]},
+    {"id": "bc-011", "front": "What is the screening age for mammography?", "back": "40-50 years (varies by guidelines)", "tags": ["screening"]},
+    {"id": "bc-012", "front": "What is breast conserving surgery (BCS)?", "back": "Wide local excision + radiotherapy as alternative to mastectomy", "tags": ["surgery"]},
+    {"id": "bc-013", "front": "What are contraindications to BCS?", "back": "Multicentric disease, large tumor:breast ratio, prior RT, inflammatory cancer", "tags": ["surgery"]},
+    {"id": "bc-014", "front": "What is inflammatory breast cancer?", "back": "Rapidly progressive cancer with peau d'orange, warmth, no discrete mass — poor prognosis", "tags": ["types"]},
+    {"id": "bc-015", "front": "What tumor marker is used for breast cancer follow-up?", "back": "CEA, CA 15-3 (not for diagnosis)", "tags": ["investigation"]}
+  ]
+}

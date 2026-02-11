@@ -1,0 +1,18 @@
+title: Thoracic Anatomy
+description: Complete anatomy of the thorax including heart, lungs, mediastinum, and thoracic wall
+icon: 🫀
+order: 1
+topics:
+  - heart-anatomy
+  - lungs-bronchi
+  - mediastinum
+  - thoracic-wall
+tags:
+  - cardiothoracic
+  - respiratory
+  - mediastinum
+level: UG
+sources:
+  - "Gray's Anatomy for Students, 4th Ed"
+  - "Netter Atlas of Human Anatomy, 7th Ed"
+  - "Moore's Clinically Oriented Anatomy, 8th Ed"

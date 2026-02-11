@@ -1,571 +1,174 @@
-"use client";
+/**
+ * NucleuX Academy - Topic Page
+ * 
+ * Server Component that dynamically loads topic content.
+ * Falls back to legacy TypeScript files if content doesn't exist.
+ * 
+ * @author Vishwakarma
+ * @date 2026-02-09
+ */
 
-import { useState, useMemo } from "react";
-import { useParams, useSearchParams } from "next/navigation";
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { 
-  ChevronRight,
-  ChevronLeft,
-  Clock,
-  Target,
-  BookOpen,
-  ArrowLeft,
-  CheckCircle2,
-  XCircle,
-  RotateCcw,
-  Lightbulb,
-  FileText,
-  Brain,
-  Stethoscope
-} from "lucide-react";
+import { Suspense } from "react";
+import { notFound } from "next/navigation";
 import { SUBJECTS } from "@/lib/data/subjects";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
-import { ESOPHAGUS_TOPICS, getTopicBySlug } from "@/lib/data/topics/esophagus";
-import { cn } from "@/lib/utils";
-import type { ViewMode, LibraryTopic, RetrievalCard } from "@/lib/types/library";
-import { VIEW_MODE_CONFIG } from "@/lib/types/library";
-import { MedicalMarkdown } from "@/components/MedicalMarkdown";
-import { AtomLibrarian } from "@/components/AtomLibrarian";
+import { 
+  loadTopicsForSubspecialty, 
+  subspecialtyExists 
+} from "@/lib/content/loader";
+import { TOPIC_REGISTRY } from "@/lib/data/topics";
+import TopicClient from "./TopicClient";
+import type { LibraryTopic } from "@/lib/types/library";
 
-// Quiz Card Component
-function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
-  const [showAnswer, setShowAnswer] = useState(false);
-  const [answered, setAnswered] = useState<'correct' | 'incorrect' | null>(null);
-
-  const handleReveal = () => setShowAnswer(true);
-  
-  const handleAnswer = (correct: boolean) => {
-    setAnswered(correct ? 'correct' : 'incorrect');
-  };
-
-  const handleNext = () => {
-    setShowAnswer(false);
-    setAnswered(null);
-    onNext();
-  };
-
+// Loading fallback for Suspense
+function TopicLoading() {
   return (
-    <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-      <CardContent className="p-6">
-        <div className="mb-4">
-          <Badge className="bg-[rgba(236,72,153,0.15)] text-[#EC4899] border-[rgba(236,72,153,0.3)]">
-            <Brain className="w-3 h-3 mr-1" />
-            Retrieval Practice
-          </Badge>
-        </div>
-
-        <div className="mb-6">
-          <h3 className="text-lg font-semibold text-[#E5E7EB] mb-2">Question</h3>
-          <p className="text-[#9CA3AF]">{card.question}</p>
-        </div>
-
-        {!showAnswer ? (
-          <Button
-            onClick={handleReveal}
-            className="w-full bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
-          >
-            Reveal Answer
-          </Button>
-        ) : (
-          <div className="space-y-4">
-            <div className="p-4 bg-[#0D1B2A] rounded-lg border border-[rgba(6,182,212,0.2)]">
-              <h4 className="text-sm font-medium text-[#06B6D4] mb-2">Answer</h4>
-              <p className="text-[#E5E7EB]">{card.answer}</p>
-            </div>
-
-            {answered === null ? (
-              <div className="flex gap-3">
-                <Button
-                  onClick={() => handleAnswer(false)}
-                  variant="outline"
-                  className="flex-1 border-[#EF4444] text-[#EF4444] hover:bg-[#EF4444]/10"
-                >
-                  <XCircle className="w-4 h-4 mr-2" />
-                  Got it Wrong
-                </Button>
-                <Button
-                  onClick={() => handleAnswer(true)}
-                  className="flex-1 bg-[#10B981] hover:bg-[#059669] text-white"
-                >
-                  <CheckCircle2 className="w-4 h-4 mr-2" />
-                  Got it Right
-                </Button>
-              </div>
-            ) : (
-              <div className="flex items-center justify-between">
-                <Badge className={cn(
-                  "text-sm py-1 px-3",
-                  answered === 'correct' 
-                    ? "bg-[#10B981]/20 text-[#10B981]" 
-                    : "bg-[#EF4444]/20 text-[#EF4444]"
-                )}>
-                  {answered === 'correct' ? '✓ Correct!' : '✗ Review this one'}
-                </Badge>
-                <Button
-                  onClick={handleNext}
-                  className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
-                >
-                  Next Card
-                  <ChevronRight className="w-4 h-4 ml-2" />
-                </Button>
-              </div>
-            )}
-          </div>
-        )}
-      </CardContent>
-    </Card>
+    <div className="space-y-6 animate-pulse">
+      <div className="h-4 bg-[#142538] rounded w-2/3" />
+      <div className="h-12 bg-[#142538] rounded w-1/2" />
+      <div className="flex gap-2">
+        {[1, 2, 3, 4, 5, 6].map(i => (
+          <div key={i} className="h-10 w-24 bg-[#142538] rounded-lg" />
+        ))}
+      </div>
+      <div className="h-64 bg-[#142538] rounded-xl" />
+    </div>
   );
 }
 
-export default function TopicPage() {
-  const params = useParams();
-  const searchParams = useSearchParams();
-  
-  const subjectSlug = params.subject as string;
-  const subspecialtySlug = params.subspecialty as string;
-  const topicSlug = params.topic as string;
-  const initialMode = (searchParams.get('mode') as ViewMode) || 'explorer';
-  
-  const [viewMode, setViewMode] = useState<ViewMode>(initialMode);
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+interface PageProps {
+  params: Promise<{
+    subject: string;
+    subspecialty: string;
+    topic: string;
+  }>;
+}
 
-  // Get data
+/**
+ * Load topics with fallback strategy:
+ * 1. Try loading from content/ directory
+ * 2. Fall back to legacy TypeScript files (via TOPIC_REGISTRY)
+ * 3. Return empty array if neither exists
+ */
+function getTopics(subjectSlug: string, subspecialtySlug: string): LibraryTopic[] {
+  // First, try dynamic content loading
+  if (subspecialtyExists(subjectSlug, subspecialtySlug)) {
+    const topics = loadTopicsForSubspecialty(subjectSlug, subspecialtySlug);
+    if (topics.length > 0) {
+      return topics;
+    }
+  }
+  
+  // Fallback to legacy TypeScript files via TOPIC_REGISTRY
+  if (TOPIC_REGISTRY[subspecialtySlug]) {
+    return TOPIC_REGISTRY[subspecialtySlug];
+  }
+  
+  // No content available
+  return [];
+}
+
+/**
+ * Find a topic by slug from the topics array
+ */
+function findTopicBySlug(topics: LibraryTopic[], slug: string): LibraryTopic | undefined {
+  return topics.find(t => t.slug === slug);
+}
+
+export default async function TopicPage({ params }: PageProps) {
+  const { subject: subjectSlug, subspecialty: subspecialtySlug, topic: topicSlug } = await params;
+  
+  // Get subject and subspecialty metadata
+  const subject = SUBJECTS.find(s => s.slug === subjectSlug);
+  if (!subject) {
+    notFound();
+  }
+  
+  const subspecialties = getSubspecialtiesBySubject(subject.id);
+  const subspecialty = subspecialties.find(s => s.slug === subspecialtySlug);
+  
+  if (!subspecialty) {
+    notFound();
+  }
+  
+  // Load topics dynamically
+  const allTopics = getTopics(subjectSlug, subspecialtySlug);
+  const topic = findTopicBySlug(allTopics, topicSlug);
+  
+  if (!topic) {
+    notFound();
+  }
+  
+  // Prepare subject data for client
+  const subjectData = {
+    id: subject.id,
+    name: subject.name,
+    slug: subject.slug,
+    icon: subject.icon,
+    color: subject.color,
+  };
+  
+  // Prepare subspecialty data for client
+  const subspecialtyData = {
+    id: subspecialty.id,
+    name: subspecialty.name,
+    slug: subspecialty.slug,
+  };
+  
+  return (
+    <Suspense fallback={<TopicLoading />}>
+      <TopicClient 
+        subject={subjectData}
+        subspecialty={subspecialtyData}
+        topic={topic}
+        allTopics={allTopics}
+      />
+    </Suspense>
+  );
+}
+
+// Generate static params for known topics (optional optimization)
+export async function generateStaticParams() {
+  const params: { subject: string; subspecialty: string; topic: string }[] = [];
+  
+  for (const subject of SUBJECTS) {
+    const subspecialties = getSubspecialtiesBySubject(subject.id);
+    for (const subspecialty of subspecialties) {
+      const topics = getTopics(subject.slug, subspecialty.slug);
+      for (const topic of topics) {
+        params.push({
+          subject: subject.slug,
+          subspecialty: subspecialty.slug,
+          topic: topic.slug,
+        });
+      }
+    }
+  }
+  
+  return params;
+}
+
+// Metadata generation
+export async function generateMetadata({ params }: PageProps) {
+  const { subject: subjectSlug, subspecialty: subspecialtySlug, topic: topicSlug } = await params;
+  
   const subject = SUBJECTS.find(s => s.slug === subjectSlug);
   const subspecialties = subject ? getSubspecialtiesBySubject(subject.id) : [];
   const subspecialty = subspecialties.find(s => s.slug === subspecialtySlug);
-  const topic = getTopicBySlug(topicSlug);
-
-  const viewModes: ViewMode[] = ['explorer', 'examPrep', 'textbook', 'quiz', 'cases', 'roadmap'];
-
-  if (!subject || !subspecialty || !topic) {
-    return (
-      <div className="text-center py-12">
-        <h2 className="text-xl font-bold text-[#E5E7EB]">Topic not found</h2>
-        <Link href="/library" className="text-[#06B6D4] hover:underline mt-4 block">
-          Back to Library
-        </Link>
-      </div>
-    );
+  
+  if (!subject || !subspecialty) {
+    return { title: 'Not Found | NucleuX Academy' };
   }
-
-  const renderContent = () => {
-    switch (viewMode) {
-      case 'explorer':
-        return (
-          <div className="space-y-6">
-            {/* Key Points */}
-            {(topic.content.keyPoints?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                    <Lightbulb className="w-5 h-5 text-[#F59E0B]" />
-                    Key Points
-                  </h3>
-                  <ul className="space-y-2">
-                    {topic.content.keyPoints?.map((point, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[#9CA3AF]">
-                        <span className="text-[#06B6D4] mt-1">•</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Main Content */}
-            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-              <CardContent className="p-5">
-                <MedicalMarkdown content={topic.content.concept} />
-              </CardContent>
-            </Card>
-          </div>
-        );
-
-      case 'examPrep':
-        if (!topic.content.examPrep) {
-          return (
-            <div className="text-center py-12">
-              <Target className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">Exam Prep Coming Soon</h3>
-              <p className="text-[#9CA3AF]">High-yield content for this topic is being prepared.</p>
-            </div>
-          );
-        }
-        return (
-          <div className="space-y-6">
-            {/* Summary */}
-            {topic.content.examPrep?.summary && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                    <Target className="w-5 h-5 text-[#F59E0B]" />
-                    Quick Summary
-                  </h3>
-                  <MedicalMarkdown content={topic.content.examPrep.summary} />
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Mnemonics */}
-            {(topic.content.examPrep?.mnemonics?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                    <Brain className="w-5 h-5 text-[#EC4899]" />
-                    Mnemonics
-                  </h3>
-                  <ul className="space-y-2">
-                    {topic.content.examPrep?.mnemonics?.map((m, i) => (
-                      <li key={i} className="p-3 bg-[#0D1B2A] rounded-lg text-[#E5E7EB] border border-[rgba(236,72,153,0.2)]">
-                        {m}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* High Yield Points */}
-            {(topic.content.examPrep?.highYield?.length ?? 0) > 0 && (
-              <Card className="bg-[rgba(245,158,11,0.1)] border-[rgba(245,158,11,0.3)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#F59E0B] mb-3 flex items-center gap-2">
-                    <Target className="w-5 h-5" />
-                    High Yield for Exams
-                  </h3>
-                  <ul className="space-y-2">
-                    {topic.content.examPrep?.highYield?.map((point, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[#E5E7EB]">
-                        <span className="text-[#F59E0B] mt-1">★</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Common MCQs */}
-            {(topic.content.examPrep?.commonMCQs?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3 flex items-center gap-2">
-                    <FileText className="w-5 h-5 text-[#06B6D4]" />
-                    Common MCQ Topics
-                  </h3>
-                  <ul className="space-y-2">
-                    {topic.content.examPrep?.commonMCQs?.map((mcq, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[#9CA3AF]">
-                        <span className="text-[#06B6D4]">{i + 1}.</span>
-                        <span>{mcq}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        );
-
-      case 'textbook':
-        if ((topic.content.textbookRefs?.length ?? 0) === 0) {
-          return (
-            <div className="text-center py-12">
-              <BookOpen className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">No Textbook References</h3>
-              <p className="text-[#9CA3AF]">Textbook references for this topic are being added.</p>
-            </div>
-          );
-        }
-        return (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#E5E7EB]">Textbook References</h3>
-            {topic.content.textbookRefs?.map((ref, i) => (
-              <Card key={i} className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <div className="flex items-start gap-4">
-                    <BookOpen className="w-8 h-8 text-[#6366F1] shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-[#E5E7EB]">{ref.textbook}</h4>
-                      {ref.edition && <p className="text-sm text-[#9CA3AF]">{ref.edition} Edition</p>}
-                      <p className="text-[#06B6D4] mt-1">{ref.chapter}</p>
-                      {ref.chapterTitle && <p className="text-sm text-[#9CA3AF]">{ref.chapterTitle}</p>}
-                      {ref.pages && <p className="text-xs text-[#6B7280] mt-1">Pages: {ref.pages}</p>}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        );
-
-      case 'quiz':
-        if ((topic.content.retrievalCards?.length ?? 0) === 0) {
-          return (
-            <div className="text-center py-12">
-              <Brain className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">No Quiz Cards Yet</h3>
-              <p className="text-[#9CA3AF]">Retrieval cards for this topic are being created.</p>
-            </div>
-          );
-        }
-        const currentCard = topic.content.retrievalCards![currentCardIndex];
-        return (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-[#E5E7EB]">Quiz Mode</h3>
-              <Badge className="bg-[#0D1B2A] text-[#9CA3AF]">
-                Card {currentCardIndex + 1} of {topic.content.retrievalCards!.length}
-              </Badge>
-            </div>
-            <QuizCard 
-              card={currentCard}
-              onNext={() => setCurrentCardIndex((prev) => 
-                (prev + 1) % topic.content.retrievalCards!.length
-              )}
-            />
-            <div className="flex justify-center">
-              <Button
-                variant="outline"
-                onClick={() => setCurrentCardIndex(0)}
-                className="text-[#9CA3AF] border-[rgba(6,182,212,0.2)]"
-              >
-                <RotateCcw className="w-4 h-4 mr-2" />
-                Restart Quiz
-              </Button>
-            </div>
-          </div>
-        );
-
-      case 'cases':
-        if ((topic.content.cases?.length ?? 0) === 0) {
-          return (
-            <div className="text-center py-12">
-              <Stethoscope className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">No Cases Yet</h3>
-              <p className="text-[#9CA3AF]">Clinical cases for this topic are being prepared.</p>
-            </div>
-          );
-        }
-        return (
-          <div className="space-y-6">
-            {topic.content.cases?.map((caseItem, i) => (
-              <Card key={i} className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Stethoscope className="w-5 h-5 text-[#06B6D4]" />
-                    <h3 className="font-semibold text-[#E5E7EB]">{caseItem.title}</h3>
-                  </div>
-                  
-                  <div className="p-4 bg-[#0D1B2A] rounded-lg mb-4">
-                    <p className="text-[#9CA3AF]">{caseItem.presentation}</p>
-                  </div>
-
-                  <div className="space-y-4">
-                    {caseItem.questions?.map((q, qi) => {
-                      const isString = typeof q === 'string';
-                      return (
-                        <details key={qi} className="group">
-                          <summary className="cursor-pointer text-[#06B6D4] hover:text-[#0891B2] font-medium">
-                            Q{qi + 1}: {isString ? q : q.question}
-                          </summary>
-                          {!isString && q.answer && (
-                            <div className="mt-2 pl-4 border-l-2 border-[rgba(6,182,212,0.3)] text-[#E5E7EB]">
-                              {q.answer}
-                            </div>
-                          )}
-                        </details>
-                      );
-                    })}
-                    {caseItem.analysis && (
-                      <div className="p-3 bg-[#0D1B2A] rounded-lg">
-                        <h5 className="text-sm font-medium text-[#06B6D4] mb-1">Analysis</h5>
-                        <p className="text-[#E5E7EB]">{caseItem.analysis}</p>
-                      </div>
-                    )}
-                    {caseItem.clinicalPearl && (
-                      <div className="p-3 bg-[rgba(245,158,11,0.1)] rounded-lg border border-[rgba(245,158,11,0.2)]">
-                        <h5 className="text-sm font-medium text-[#F59E0B] mb-1">💡 Clinical Pearl</h5>
-                        <p className="text-[#E5E7EB]">{caseItem.clinicalPearl}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  {(caseItem.keyLearning?.length ?? 0) > 0 && (
-                    <div className="mt-4 pt-4 border-t border-[rgba(6,182,212,0.1)]">
-                      <h4 className="text-sm font-medium text-[#F59E0B] mb-2">Key Learning Points</h4>
-                      <ul className="space-y-1">
-                        {caseItem.keyLearning?.map((point, pi) => (
-                          <li key={pi} className="text-sm text-[#9CA3AF] flex items-start gap-2">
-                            <span className="text-[#F59E0B]">•</span>
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        );
-
-      case 'roadmap':
-        return (
-          <div className="space-y-6">
-            {/* Prerequisites */}
-            {(topic.prerequisites?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3">Prerequisites</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {topic.prerequisites?.map((prereq) => {
-                      const prereqTopic = ESOPHAGUS_TOPICS.find(t => t.id === prereq);
-                      return (
-                        <Link
-                          key={prereq}
-                          href={`/library/${subjectSlug}/${subspecialtySlug}/${prereqTopic?.slug || prereq}?mode=explorer`}
-                        >
-                          <Badge className="bg-[#0D1B2A] hover:bg-[rgba(6,182,212,0.1)] text-[#9CA3AF] border-[rgba(6,182,212,0.2)] cursor-pointer">
-                            <ChevronLeft className="w-3 h-3 mr-1" />
-                            {prereqTopic?.name || prereq}
-                          </Badge>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Current Topic */}
-            <Card className="bg-[rgba(6,182,212,0.1)] border-[#06B6D4]">
-              <CardContent className="p-5">
-                <h3 className="font-semibold text-[#06B6D4] mb-2">Current Topic</h3>
-                <p className="text-xl font-bold text-[#E5E7EB]">{topic.name}</p>
-                {topic.description && (
-                  <p className="text-[#9CA3AF] mt-1">{topic.description}</p>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Related Topics */}
-            {(topic.relatedTopics?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3">Related Topics</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {topic.relatedTopics?.map((related) => {
-                      const relatedTopic = ESOPHAGUS_TOPICS.find(t => t.id === related);
-                      return (
-                        <Link
-                          key={related}
-                          href={`/library/${subjectSlug}/${subspecialtySlug}/${relatedTopic?.slug || related}?mode=explorer`}
-                        >
-                          <Badge className="bg-[#0D1B2A] hover:bg-[rgba(6,182,212,0.1)] text-[#9CA3AF] border-[rgba(6,182,212,0.2)] cursor-pointer">
-                            {relatedTopic?.name || related}
-                            <ChevronRight className="w-3 h-3 ml-1" />
-                          </Badge>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-        );
-
-      default:
-        return null;
-    }
+  
+  const topics = getTopics(subjectSlug, subspecialtySlug);
+  const topic = findTopicBySlug(topics, topicSlug);
+  
+  if (!topic) {
+    return { title: 'Topic Not Found | NucleuX Academy' };
+  }
+  
+  return {
+    title: `${topic.name} | ${subspecialty.name} | NucleuX Academy`,
+    description: topic.description || `Learn ${topic.name} with NucleuX Academy`,
   };
-
-  return (
-    <div className="space-y-6">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm flex-wrap">
-        <Link href="/library" className="text-[#9CA3AF] hover:text-[#06B6D4]">Library</Link>
-        <ChevronRight className="w-4 h-4 text-[#6B7280]" />
-        <Link href={`/library/${subject.slug}`} className="text-[#9CA3AF] hover:text-[#06B6D4]">
-          {subject.name}
-        </Link>
-        <ChevronRight className="w-4 h-4 text-[#6B7280]" />
-        <Link href={`/library/${subject.slug}/${subspecialty.slug}`} className="text-[#9CA3AF] hover:text-[#06B6D4]">
-          {subspecialty.name}
-        </Link>
-        <ChevronRight className="w-4 h-4 text-[#6B7280]" />
-        <span className="text-[#E5E7EB]">{topic.name}</span>
-      </div>
-
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-        <div className="flex items-start gap-4">
-          <Link 
-            href={`/library/${subject.slug}/${subspecialty.slug}?mode=${viewMode}`}
-            className="p-2 rounded-lg bg-[#142538] hover:bg-[rgba(6,182,212,0.1)] transition-colors mt-1"
-          >
-            <ArrowLeft className="w-5 h-5 text-[#9CA3AF]" />
-          </Link>
-          <div>
-            <h1 className="text-2xl font-bold text-[#E5E7EB]">{topic.name}</h1>
-            {topic.description && (
-              <p className="text-[#9CA3AF] mt-1">{topic.description}</p>
-            )}
-            <div className="flex items-center gap-4 mt-3 text-sm text-[#6B7280]">
-              <div className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                <span>{topic.estimatedMinutes} min</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Target className="w-4 h-4" />
-                <span>Difficulty {topic.difficulty}/5</span>
-              </div>
-              {topic.highYield && (
-                <Badge className="bg-[rgba(245,158,11,0.15)] text-[#F59E0B] border-[rgba(245,158,11,0.3)]">
-                  High Yield
-                </Badge>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* View Mode Tabs */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-        {viewModes.map((mode) => {
-          const config = VIEW_MODE_CONFIG[mode];
-          const isActive = viewMode === mode;
-          return (
-            <button
-              key={mode}
-              onClick={() => setViewMode(mode)}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap",
-                isActive
-                  ? "bg-[#06B6D4] text-[#0D1B2A]"
-                  : "bg-[#142538] text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)]"
-              )}
-            >
-              <span>{config.icon}</span>
-              <span className="text-sm font-medium">{config.label}</span>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Content */}
-      {renderContent()}
-
-      {/* ATOM Librarian with topic context */}
-      <AtomLibrarian 
-        currentTopic={topic}
-        allTopics={ESOPHAGUS_TOPICS}
-      />
-    </div>
-  );
 }

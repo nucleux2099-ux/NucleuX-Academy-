@@ -1,0 +1,27 @@
+# General Principles of Surgery - Index
+system: 01-general-topics
+name: "General Principles of Surgery"
+description: "Foundational surgical concepts: wound healing, infections, shock, fluid management, critical care"
+icon: "🏥"
+color: "#5BB3B3"
+
+topics:
+  - wound-healing
+  - surgical-infections
+  - shock
+  - fluid-electrolytes
+  - blood-transfusion
+  - nutrition
+  - preoperative-care
+  - postoperative-care
+  - critical-care
+  - trauma-response
+  - antibiotic-therapy
+
+primary_sources:
+  - "Bailey & Love Ch 1-15"
+  - "Sabiston Ch 1-12"
+  - "Schwartz Ch 1-11"
+
+competencies_covered: 12
+estimated_hours: 20

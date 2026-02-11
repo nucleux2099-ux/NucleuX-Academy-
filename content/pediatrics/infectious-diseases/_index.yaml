@@ -1,0 +1,15 @@
+title: "Infectious Diseases"
+description: "Pediatric infections including vaccine-preventable diseases, diarrhea, respiratory infections, and CNS infections"
+icon: "🦠"
+order: 4
+tags:
+  - pediatrics
+  - infections
+  - vaccines
+  - tropical
+topics:
+  - measles
+  - acute-diarrhea
+  - bacterial-meningitis
+  - upper-respiratory-infections
+  - vaccine-preventable-diseases

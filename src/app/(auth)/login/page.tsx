@@ -56,8 +56,9 @@ function LoginForm() {
     try {
       await loginWithGoogle();
       // OAuth will redirect, so we don't need to handle success here
-    } catch (err: any) {
-      setError(err.message || "Failed to sign in with Google");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to sign in with Google";
+      setError(message);
       setIsGoogleLoading(false);
     }
   };
@@ -218,7 +219,7 @@ function LoginForm() {
       </Card>
 
       <p className="text-center mt-6 text-[#64748B]">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link
           href="/signup"
           className="text-[#5BB3B3] hover:text-[#4A9E9E] font-semibold"

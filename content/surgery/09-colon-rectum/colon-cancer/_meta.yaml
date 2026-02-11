@@ -1,0 +1,11 @@
+topic_id: colon-cancer
+system: 09-colon-rectum
+name: "Colorectal Cancer"
+nmc_competency: "SU28.9"
+sources:
+  primary:
+    bailey: "Ch 72"
+    sabiston: "Ch 52"
+tags: [oncology, high-yield, screening]
+difficulty: medium
+priority: critical

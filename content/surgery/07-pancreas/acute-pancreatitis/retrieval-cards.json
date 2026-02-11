@@ -1,0 +1,21 @@
+{
+  "topic_id": "acute-pancreatitis",
+  "version": "1.0",
+  "cards": [
+    {"id": "ap-001", "front": "What are the two most common causes of acute pancreatitis?", "back": "Gallstones (40%) and Alcohol (40%)", "tags": ["etiology", "high-yield"]},
+    {"id": "ap-002", "front": "What is Cullen's sign?", "back": "Periumbilical bruising — indicates severe hemorrhagic pancreatitis", "tags": ["clinical", "high-yield"]},
+    {"id": "ap-003", "front": "What is Grey-Turner's sign?", "back": "Flank bruising — indicates retroperitoneal hemorrhage in severe pancreatitis", "tags": ["clinical", "high-yield"]},
+    {"id": "ap-004", "front": "Which enzyme is more specific for pancreatitis: amylase or lipase?", "back": "Lipase (also stays elevated longer)", "tags": ["investigation", "high-yield"]},
+    {"id": "ap-005", "front": "What are Ranson's criteria at admission? (GA LAW)", "back": "Glucose >200, Age >55, LDH >350, AST >250, WBC >16k", "tags": ["scoring", "high-yield"]},
+    {"id": "ap-006", "front": "What Ranson score indicates severe pancreatitis?", "back": "≥3 criteria", "tags": ["scoring", "high-yield"]},
+    {"id": "ap-007", "front": "When should CT be done in acute pancreatitis?", "back": "At 72 hours (to assess necrosis) — not on admission", "tags": ["investigation"]},
+    {"id": "ap-008", "front": "What is the role of antibiotics in acute pancreatitis?", "back": "Not routine; only for infected necrosis", "tags": ["treatment", "high-yield"]},
+    {"id": "ap-009", "front": "When should feeding be started in acute pancreatitis?", "back": "Early (24-48 hours) — enteral preferred over parenteral", "tags": ["treatment", "high-yield"]},
+    {"id": "ap-010", "front": "What is the step-up approach for infected necrosis?", "back": "Drainage (percutaneous/endoscopic) first → Necrosectomy if needed", "tags": ["treatment"]},
+    {"id": "ap-011", "front": "What ALT level suggests gallstone etiology?", "back": ">150 IU/L (or 3× normal)", "tags": ["investigation"]},
+    {"id": "ap-012", "front": "What defines a pseudocyst?", "back": "Peripancreatic fluid collection with defined wall, occurring >4 weeks after acute pancreatitis", "tags": ["complications"]},
+    {"id": "ap-013", "front": "What CRP level at 48 hours suggests severe pancreatitis?", "back": ">150 mg/L", "tags": ["investigation"]},
+    {"id": "ap-014", "front": "What is the GET SMASHED mnemonic?", "back": "Gallstones, Ethanol, Trauma, Steroids, Mumps/Malignancy, Autoimmune, Scorpion, Hyperlipidemia/Hypercalcemia, ERCP, Drugs", "tags": ["etiology"]},
+    {"id": "ap-015", "front": "When is ERCP indicated in gallstone pancreatitis?", "back": "If cholangitis present or CBD stone confirmed", "tags": ["treatment"]}
+  ]
+}

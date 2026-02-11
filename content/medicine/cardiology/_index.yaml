@@ -1,0 +1,19 @@
+title: Cardiology
+description: Cardiovascular diseases - diagnosis and management
+icon: ❤️
+order: 1
+tags:
+  - medicine
+  - cardiology
+  - cardiovascular
+level: UG | PG
+sources:
+  - Harrison's Principles of Internal Medicine
+  - Braunwald's Heart Disease
+  - Davidson's Principles and Practice of Medicine
+topics:
+  - Ischemic Heart Disease
+  - Heart Failure
+  - Arrhythmias
+  - Valvular Heart Disease
+  - Hypertension

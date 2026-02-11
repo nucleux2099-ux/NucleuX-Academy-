@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SkeletonStats, SkeletonCard } from "@/components/Skeleton";
+import { SkeletonStats } from "@/components/Skeleton";
 import {
   AreaChart,
   Area,
@@ -28,10 +28,7 @@ import {
   Calendar,
   Brain,
   AlertCircle,
-  BookMarked,
   Activity,
-  Atom,
-  MessageSquare,
   Network,
   Zap,
 } from "lucide-react";
@@ -88,20 +85,6 @@ const monthlyData = [
   { week: "Week 4", hours: 26, questions: 512 },
 ];
 
-const weeklyStats = [
-  { title: "Study Hours", value: "24.5", unit: "hrs", change: "+12%", icon: Clock, color: "#5BB3B3" },
-  { title: "Topics Completed", value: "48", unit: "", change: "+8", icon: CheckCircle, color: "#7BA69E" },
-  { title: "Current Streak", value: "12", unit: "days", change: "Personal best!", icon: Flame, color: "#C9A86C" },
-  { title: "MCQ Accuracy", value: "78", unit: "%", change: "+5%", icon: Target, color: "#5BB3B3" },
-];
-
-const monthlyStats = [
-  { title: "Study Hours", value: "85", unit: "hrs", change: "+18%", icon: Clock, color: "#5BB3B3" },
-  { title: "Topics Completed", value: "156", unit: "", change: "+24", icon: CheckCircle, color: "#7BA69E" },
-  { title: "Current Streak", value: "12", unit: "days", change: "Personal best!", icon: Flame, color: "#C9A86C" },
-  { title: "MCQ Accuracy", value: "82", unit: "%", change: "+9%", icon: Target, color: "#5BB3B3" },
-];
-
 const recentActivity = [
   { title: "Scored 85% on Appendicitis MCQs", type: "Assessment", time: "2 hours ago", icon: Target, color: "#7BA69E", detail: "23/27 correct • 18 min" },
   { title: "Completed: Inguinal Hernia - Anatomy & Classification", type: "Reading", time: "4 hours ago", icon: BookOpen, color: "#5BB3B3", detail: "Bailey & Love Ch. 57" },
@@ -116,20 +99,6 @@ const currentPathway = {
   nextTopic: "Pancreatic Surgery",
   totalTopics: 24,
   completedTopics: 16,
-};
-
-const todaysPlan = [
-  { title: "Complete: Femoral Hernia", duration: "45 min", type: "reading", source: "Bailey & Love Ch. 58", status: "current", icon: BookOpen },
-  { title: "MCQ Practice: Abdominal Wall Hernias", duration: "30 min", type: "mcq", count: "25 questions", status: "upcoming", icon: Target },
-  { title: "Review: Inguinal Canal Anatomy", duration: "20 min", type: "revision", source: "Gray's Anatomy", status: "upcoming", icon: BookMarked },
-  { title: "Quick Quiz: Hernia Complications", duration: "15 min", type: "quiz", count: "10 questions", status: "upcoming", icon: Brain },
-];
-
-const atomSuggestion = {
-  title: "ATOM's Recommendation",
-  message: "Based on your performance, you're struggling with Portal Hypertension complications. I recommend spending 30 minutes reviewing Variceal Bleeding management before your next Surgery session.",
-  topics: ["Variceal Bleeding", "Child-Pugh Score", "TIPS Procedure"],
-  confidence: 94,
 };
 
 const weakAreas = [
@@ -153,7 +122,6 @@ export default function DashboardPage() {
   const [timePeriod, setTimePeriod] = useState<"weekly" | "monthly">("weekly");
   const [currentTime, setCurrentTime] = useState(new Date());
   const [activeTab, setActiveTab] = useState("overview");
-  const [chartMounted, setChartMounted] = useState(false);
   
   // ============================================
   // REAL DATA HOOKS - Replacing mock data
@@ -231,7 +199,7 @@ export default function DashboardPage() {
       // Fallback to mock data if no real data
       return timePeriod === "weekly" ? weeklyData : monthlyData;
     }
-    return analytics.dailyStats.map((day: any) => ({
+    return analytics.dailyStats.map((day: { date?: string; day?: string; study_minutes?: number; mcqs_attempted?: number }) => ({
       day: day.date ? new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' }) : day.day,
       hours: Math.round((day.study_minutes || 0) / 60 * 10) / 10,
       questions: day.mcqs_attempted || 0,
@@ -283,10 +251,6 @@ export default function DashboardPage() {
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    setChartMounted(true);
   }, []);
 
   const greeting = getGreeting();
@@ -435,41 +399,35 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[300px]">
-                {chartMounted ? (
-                  <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={chartData}>
-                      <defs>
-                        <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#5BB3B3" stopOpacity={0.3}/>
-                          <stop offset="95%" stopColor="#5BB3B3" stopOpacity={0}/>
-                        </linearGradient>
-                        <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#5BB3B3" stopOpacity={0.3}/>
-                          <stop offset="95%" stopColor="#5BB3B3" stopOpacity={0}/>
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(6, 182, 212, 0.1)" />
-                      <XAxis dataKey={xKey} stroke="#A0B0BC" fontSize={12} tickLine={false} />
-                      <YAxis yAxisId="left" stroke="#A0B0BC" fontSize={12} tickLine={false} axisLine={false} />
-                      <YAxis yAxisId="right" orientation="right" stroke="#A0B0BC" fontSize={12} tickLine={false} axisLine={false} />
-                      <Tooltip 
-                        contentStyle={{ 
-                          backgroundColor: '#364A5E', 
-                          border: '1px solid rgba(6, 182, 212, 0.15)',
-                          borderRadius: '8px',
-                          color: '#E8E0D5'
-                        }}
-                        labelStyle={{ color: '#E8E0D5' }}
-                      />
-                      <Area yAxisId="left" type="monotone" dataKey="hours" stroke="#5BB3B3" strokeWidth={2} fillOpacity={1} fill="url(#colorHours)" name="Study Hours" />
-                      <Area yAxisId="right" type="monotone" dataKey="questions" stroke="#5BB3B3" strokeWidth={2} fillOpacity={1} fill="url(#colorQuestions)" name="MCQs Answered" />
-                    </AreaChart>
-                  </ResponsiveContainer>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="animate-pulse bg-[#3A4D5F] rounded-lg w-full h-full" />
-                  </div>
-                )}
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={chartData}>
+                    <defs>
+                      <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#5BB3B3" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#5BB3B3" stopOpacity={0}/>
+                      </linearGradient>
+                      <linearGradient id="colorQuestions" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#5BB3B3" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#5BB3B3" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(6, 182, 212, 0.1)" />
+                    <XAxis dataKey={xKey} stroke="#A0B0BC" fontSize={12} tickLine={false} />
+                    <YAxis yAxisId="left" stroke="#A0B0BC" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis yAxisId="right" orientation="right" stroke="#A0B0BC" fontSize={12} tickLine={false} axisLine={false} />
+                    <Tooltip 
+                      contentStyle={{ 
+                        backgroundColor: '#364A5E', 
+                        border: '1px solid rgba(6, 182, 212, 0.15)',
+                        borderRadius: '8px',
+                        color: '#E8E0D5'
+                      }}
+                      labelStyle={{ color: '#E8E0D5' }}
+                    />
+                    <Area yAxisId="left" type="monotone" dataKey="hours" stroke="#5BB3B3" strokeWidth={2} fillOpacity={1} fill="url(#colorHours)" name="Study Hours" />
+                    <Area yAxisId="right" type="monotone" dataKey="questions" stroke="#5BB3B3" strokeWidth={2} fillOpacity={1} fill="url(#colorQuestions)" name="MCQs Answered" />
+                  </AreaChart>
+                </ResponsiveContainer>
               </div>
               <div className="flex items-center justify-center gap-6 mt-4">
                 <div className="flex items-center gap-2">
