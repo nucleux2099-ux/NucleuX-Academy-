@@ -224,7 +224,7 @@ export default function HomePage() {
             description="Modes, structure, and connected understanding."
             atomRole="ATOM Librarian"
             href="/login"
-            imageSrc="/marketing/screens/placeholder.svg"
+            imageSrc="/marketing/screens/landing.png"
             color="#5BB3B3"
           />
           <RoomPreviewCard
@@ -232,7 +232,7 @@ export default function HomePage() {
             description="Live learning with notes, mindmaps, and replay."
             atomRole="ATOM Scribe"
             href="/login"
-            imageSrc="/marketing/screens/placeholder.svg"
+            imageSrc="/marketing/screens/atom.png"
             color="#6BA8C9"
           />
           <RoomPreviewCard
@@ -240,7 +240,7 @@ export default function HomePage() {
             description="Exam-focused practice with feedback that teaches."
             atomRole="ATOM Trainer"
             href="/login"
-            imageSrc="/marketing/screens/placeholder.svg"
+            imageSrc="/marketing/screens/login.png"
             color="#C9A86C"
           />
           <RoomPreviewCard
