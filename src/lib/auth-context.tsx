@@ -29,6 +29,7 @@ const publicRoutes = [
   '/demo',
   '/terms',
   '/privacy',
+  '/atom',
 ];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {

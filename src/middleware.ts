@@ -12,6 +12,7 @@ const publicRoutes = [
   '/demo',
   '/terms',
   '/privacy',
+  '/atom',
 ]
 
 // Routes that should redirect to dashboard if already authenticated
