@@ -261,7 +261,7 @@ export default function MCQPracticePage() {
   // Timer
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
-  const questionStartTime = useRef(Date.now());
+  const questionStartTime = useRef(0);
   
   // Settings
   const [showConfidenceSelector, setShowConfidenceSelector] = useState(true);
@@ -276,6 +276,10 @@ export default function MCQPracticePage() {
       return () => clearInterval(timer);
     }
   }, [mode, isTimerRunning]);
+
+  useEffect(() => {
+    questionStartTime.current = Date.now();
+  }, []);
   
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -424,7 +428,7 @@ export default function MCQPracticePage() {
               }`} />
             </div>
             <h2 className="text-3xl font-bold text-[#E8E0D5] mb-2">Quiz Complete!</h2>
-            <p className="text-[#A0B0BC]">Here's how you performed</p>
+            <p className="text-[#A0B0BC]">Here&apos;s how you performed</p>
           </div>
           
           <CardContent className="p-8">

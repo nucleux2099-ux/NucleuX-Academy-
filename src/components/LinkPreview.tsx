@@ -41,6 +41,7 @@ export function LinkPreview({
       
       // Show above if not enough space below
       if (spaceBelow < 200 && spaceAbove > spaceBelow) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setPosition("top");
       } else {
         setPosition("bottom");
@@ -225,7 +226,7 @@ export function CitationPreview({
 
           {quote && (
             <blockquote className="mt-3 pl-3 border-l-2 border-[#5BB3B3]/30 text-xs text-[#A0B0BC] italic">
-              "{quote}"
+              &quot;{quote}&quot;
             </blockquote>
           )}
         </div>

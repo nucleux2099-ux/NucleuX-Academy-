@@ -88,7 +88,7 @@ export function Backlinks({ backlinks, currentTopicTitle, className }: Backlinks
                 {/* Mention context - shows how this topic is referenced */}
                 {backlink.mentionContext && (
                   <p className="text-xs text-[#A0B0BC] mt-1 line-clamp-2">
-                    "...
+                    &quot;...
                     <span 
                       className="text-[#A78BFA] font-medium"
                       dangerouslySetInnerHTML={{
@@ -98,7 +98,7 @@ export function Backlinks({ backlinks, currentTopicTitle, className }: Backlinks
                         ),
                       }}
                     />
-                    ..."
+                    ...&quot;
                   </p>
                 )}
 

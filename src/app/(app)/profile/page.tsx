@@ -81,6 +81,7 @@ export default function ProfilePage() {
   // Initialize form data when user loads
   useEffect(() => {
     if (user) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         full_name: user.user_metadata?.full_name || user.email?.split('@')[0] || "",
         specialty: user.user_metadata?.specialty || "",

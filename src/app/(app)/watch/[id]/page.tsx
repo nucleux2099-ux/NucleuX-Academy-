@@ -182,6 +182,7 @@ export default function VideoLessonPage() {
     const chapter = [...videoData.chapters].reverse().find(
       ch => parseTimestamp(ch.timestamp) <= currentTime
     );
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (chapter) setActiveChapter(chapter.id);
   }, [currentTime]);
   

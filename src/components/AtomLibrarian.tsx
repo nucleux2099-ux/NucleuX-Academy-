@@ -141,6 +141,12 @@ export function AtomChatPanel({
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messageCounterRef = useRef(1);
+
+  const nextMessageId = () => {
+    messageCounterRef.current += 1;
+    return messageCounterRef.current.toString();
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -158,7 +164,7 @@ export function AtomChatPanel({
     if (lowerMsg.includes('next') || lowerMsg.includes('should i study') || lowerMsg.includes('suggest')) {
       const suggestions = getNextTopicSuggestions(currentTopic, allTopics, completedTopics);
       return {
-        id: Date.now().toString(),
+        id: nextMessageId(),
         role: 'atom',
         content: currentTopic 
           ? `Based on your progress with **${currentTopic.name}**, here are my suggestions:`
@@ -171,7 +177,7 @@ export function AtomChatPanel({
     // Quiz request
     if (lowerMsg.includes('quiz') || lowerMsg.includes('test me')) {
       return {
-        id: Date.now().toString(),
+        id: nextMessageId(),
         role: 'atom',
         content: currentTopic
           ? `Ready to test yourself on **${currentTopic.name}**? 🧪\n\nSwitch to **Quiz Mode** using the view mode selector above, or ask me specific questions!\n\nQuick question: *${currentTopic.content.retrievalCards?.[0]?.question || 'What are the key features of this condition?'}*`
@@ -183,7 +189,7 @@ export function AtomChatPanel({
     // Explain simply
     if (lowerMsg.includes('explain') || lowerMsg.includes('simple') || lowerMsg.includes('eli5')) {
       return {
-        id: Date.now().toString(),
+        id: nextMessageId(),
         role: 'atom',
         content: currentTopic
           ? `**${currentTopic.name}** in simple terms:\n\n${(currentTopic.content.keyPoints ?? []).slice(0, 3).map(p => `• ${p}`).join('\n')}\n\n💡 *Think of it this way:* ${getSimpleAnalogy(currentTopic.name)}`
@@ -198,7 +204,7 @@ export function AtomChatPanel({
         .filter(t => (t.estimatedMinutes ?? 15) <= 20)
         .slice(0, 3);
       return {
-        id: Date.now().toString(),
+        id: nextMessageId(),
         role: 'atom',
         content: `⏱️ **Quick Study Session**\n\nHere's what you can cover in 20 minutes:\n\n${quickTopics.map(t => `• **${t.name}** (${t.estimatedMinutes ?? 15} min)`).join('\n')}\n\nOr switch to **Exam Prep** mode for any topic — it's optimized for quick review!`,
         timestamp: new Date(),
@@ -209,7 +215,7 @@ export function AtomChatPanel({
     if (lowerMsg.includes('high yield') || lowerMsg.includes('important') || lowerMsg.includes('exam')) {
       const highYieldTopics = allTopics.filter(t => t.highYield).slice(0, 5);
       return {
-        id: Date.now().toString(),
+        id: nextMessageId(),
         role: 'atom',
         content: `🎯 **High Yield Topics**\n\nThese are most likely to appear in exams:\n\n${highYieldTopics.map(t => `• **${t.name}** — ${t.description || 'Key topic'}`).join('\n')}\n\nUse **Exam Prep** mode for mnemonics and quick facts!`,
         timestamp: new Date(),
@@ -218,7 +224,7 @@ export function AtomChatPanel({
     
     // Default response
     return {
-      id: Date.now().toString(),
+      id: nextMessageId(),
       role: 'atom',
       content: `Great question! 🤔\n\nI'm still learning to answer that better. Try asking me:\n• "What should I study next?"\n• "Quiz me on this topic"\n• "Explain in simple terms"\n• "I have 20 minutes"\n\nOr explore the **Library** and I'll help you navigate!`,
       timestamp: new Date(),
@@ -229,7 +235,7 @@ export function AtomChatPanel({
     if (!input.trim()) return;
     
     const userMessage: AtomMessage = {
-      id: Date.now().toString(),
+      id: nextMessageId(),
       role: 'user',
       content: input,
       timestamp: new Date(),

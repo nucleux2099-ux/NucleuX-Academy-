@@ -133,7 +133,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
           
           // Merge daily stats (avoid duplicates)
           const existingDates = new Set(updated.dailyStats.map(d => d.date));
-          cloudData.dailyStats?.forEach((stat: any) => {
+          cloudData.dailyStats?.forEach((stat: { date: string } & typeof updated.dailyStats[number]) => {
             if (!existingDates.has(stat.date)) {
               updated.dailyStats.push(stat);
             }

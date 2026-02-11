@@ -110,8 +110,8 @@ export async function PATCH(request: NextRequest) {
       'theme', 'atom_proactive'
     ];
 
-    const profileUpdate: Record<string, any> = { updated_at: new Date().toISOString() };
-    const prefUpdate: Record<string, any> = { updated_at: new Date().toISOString() };
+    const profileUpdate: Record<string, unknown> = { updated_at: new Date().toISOString() };
+    const prefUpdate: Record<string, unknown> = { updated_at: new Date().toISOString() };
 
     // Split updates
     for (const [key, value] of Object.entries(body)) {

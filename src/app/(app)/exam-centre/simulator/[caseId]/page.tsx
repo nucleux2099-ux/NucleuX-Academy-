@@ -151,6 +151,7 @@ export default function PatientSimulatorPage() {
   useEffect(() => {
     const data = getCaseById(caseId);
     if (data) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCaseData(data);
     }
     setLoading(false);
@@ -646,7 +647,7 @@ export default function PatientSimulatorPage() {
                                 </p>
                                 {isAsked && (
                                   <div className="mt-2 p-3 rounded bg-gray-800/50 border-l-2 border-amber-500">
-                                    <p className="text-gray-300 text-sm italic">"{question.answer}"</p>
+                                    <p className="text-gray-300 text-sm italic">&quot;{question.answer}&quot;</p>
                                   </div>
                                 )}
                               </div>
@@ -1215,7 +1216,7 @@ export default function PatientSimulatorPage() {
                 Simulation Complete!
               </CardTitle>
               <CardDescription>
-                Here's your performance summary for {caseData.title}
+                Here&apos;s your performance summary for {caseData.title}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">

@@ -123,7 +123,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     // Build update data
-    const updateData: Record<string, any> = {
+    const updateData: Record<string, unknown> = {
       user_id: user.id,
       atom_id,
       updated_at: new Date().toISOString(),

@@ -123,6 +123,7 @@ function useLocalStorageUser() {
     if (!isHydrated) {
       const storedUser = loadUserFromStorage();
       if (storedUser) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setUserState(storedUser);
       } else {
         const defaultUser = createDefaultUserProfile('local-user');

@@ -222,7 +222,7 @@ export function ContinueWhereYouLeft() {
 
         {/* Learning science note */}
         <p className="text-xs text-[#6B7280] pt-2 border-t border-[rgba(91,179,179,0.1)]">
-          💡 <span className="text-[#A0B0BC]">Context restoration</span> — Resume without cognitive load of "where was I?"
+          💡 <span className="text-[#A0B0BC]">Context restoration</span> — Resume without cognitive load of &quot;where was I?&quot;
         </p>
       </CardContent>
     </Card>

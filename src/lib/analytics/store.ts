@@ -46,21 +46,21 @@ export function loadAnalytics(): UserAnalytics {
     if (stored) {
       const parsed = JSON.parse(stored);
       // Convert date strings back to Date objects
-      parsed.mcqAttempts = parsed.mcqAttempts?.map((a: any) => ({
+      parsed.mcqAttempts = parsed.mcqAttempts?.map((a: MCQAttempt) => ({
         ...a,
         timestamp: new Date(a.timestamp),
       })) || [];
-      parsed.readingSessions = parsed.readingSessions?.map((s: any) => ({
+      parsed.readingSessions = parsed.readingSessions?.map((s: ReadingSession) => ({
         ...s,
         startTime: new Date(s.startTime),
         endTime: s.endTime ? new Date(s.endTime) : undefined,
       })) || [];
-      parsed.videoSessions = parsed.videoSessions?.map((s: any) => ({
+      parsed.videoSessions = parsed.videoSessions?.map((s: VideoSession) => ({
         ...s,
         startTime: new Date(s.startTime),
         endTime: s.endTime ? new Date(s.endTime) : undefined,
       })) || [];
-      parsed.topicMemories = parsed.topicMemories?.map((m: any) => ({
+      parsed.topicMemories = parsed.topicMemories?.map((m: TopicMemory) => ({
         ...m,
         firstLearned: new Date(m.firstLearned),
         lastReviewed: new Date(m.lastReviewed),

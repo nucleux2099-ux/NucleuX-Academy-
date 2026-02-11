@@ -536,7 +536,7 @@ export default function OSCEStationPage() {
                 
                 <div className="p-3 rounded bg-purple-500/10 border border-purple-500/20 mb-3">
                   <p className="text-sm text-purple-200 italic whitespace-pre-line">
-                    "{answer.verbalScript}"
+                    &quot;{answer.verbalScript}&quot;
                   </p>
                 </div>
                 

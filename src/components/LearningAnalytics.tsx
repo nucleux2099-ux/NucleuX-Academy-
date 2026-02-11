@@ -197,7 +197,7 @@ export function LearningAnalytics() {
               <p className="text-sm text-[#E8E0D5] font-medium">Key Insight</p>
               <p className="text-xs text-[#A0B0BC] mt-1">
                 Your <span className="text-[#5BB3B3]">confidence calibration improved 9%</span> this week! 
-                You're getting better at knowing what you know. Keep using ATOM's feedback.
+                You&apos;re getting better at knowing what you know. Keep using ATOM&apos;s feedback.
               </p>
             </div>
           </div>

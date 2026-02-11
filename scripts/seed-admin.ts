@@ -170,8 +170,9 @@ async function seedAdmin() {
     console.log(`  Role:     ${ADMIN_USER.role}`);
     console.log('═══════════════════════════════════════════════\n');
 
-  } catch (error: any) {
-    console.error('\n❌ Error:', error.message);
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('\n❌ Error:', message);
     process.exit(1);
   }
 }

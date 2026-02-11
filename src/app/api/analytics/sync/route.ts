@@ -1,6 +1,23 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 
+interface SyncedMcqAttempt {
+  questionId: string;
+  selectedAnswer: string;
+  isCorrect: boolean;
+  timeSpent: number;
+  confidence: string;
+  timestamp: string;
+}
+
+interface SyncedDailyStat {
+  date: string;
+  studyMinutes: number;
+  questionsAttempted: number;
+  questionsCorrect: number;
+  topicsReviewed?: string[];
+}
+
 export async function POST(request: Request) {
   try {
     const supabase = await createClient()
@@ -17,7 +34,7 @@ export async function POST(request: Request) {
 
     // Sync MCQ attempts
     if (mcqAttempts?.length > 0) {
-      const mcqData = mcqAttempts.map((attempt: any) => ({
+      const mcqData = (mcqAttempts as SyncedMcqAttempt[]).map((attempt) => ({
         user_id: user.id,
         mcq_id: attempt.questionId, // Note: This might need mapping to actual mcq_id
         selected_options: [attempt.selectedAnswer],
@@ -42,7 +59,7 @@ export async function POST(request: Request) {
 
     // Sync daily stats
     if (dailyStats?.length > 0) {
-      const statsData = dailyStats.map((stat: any) => ({
+      const statsData = (dailyStats as SyncedDailyStat[]).map((stat) => ({
         user_id: user.id,
         date: stat.date,
         study_minutes: stat.studyMinutes,

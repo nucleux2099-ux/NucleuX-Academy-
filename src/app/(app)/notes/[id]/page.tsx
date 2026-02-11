@@ -212,7 +212,7 @@ function renderContent(content: string, linkedTopics: typeof notesData["note-123
     }
     
     // Regular paragraphs with bold/italic
-    let processedLine = line;
+    const processedLine = line;
     // Handle bold
     const boldParts = processedLine.split(/\*\*(.*?)\*\*/g);
     const rendered = boldParts.map((part, j) => 
@@ -237,6 +237,7 @@ export default function NoteDetailPage() {
 
   useEffect(() => {
     if (note) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setEditTitle(note.title);
       setEditContent(note.content);
       setEditTags(note.tags);
@@ -248,7 +249,7 @@ export default function NoteDetailPage() {
       <div className="max-w-4xl mx-auto text-center py-20">
         <FileText className="w-16 h-16 text-[#6B7280] mx-auto mb-4" />
         <h1 className="text-2xl font-bold text-[#E8E0D5] mb-2">Note not found</h1>
-        <p className="text-[#A0B0BC] mb-6">This note doesn't exist or has been deleted.</p>
+        <p className="text-[#A0B0BC] mb-6">This note doesn&apos;t exist or has been deleted.</p>
         <Button onClick={() => router.push("/notes")} variant="outline" className="border-[rgba(91,179,179,0.3)]">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Notes

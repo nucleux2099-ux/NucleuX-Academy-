@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import type { User } from '@supabase/supabase-js';
 
 // Types
 interface UseQueryOptions {
@@ -160,8 +161,13 @@ export interface Analytics {
   avgAccuracy: number;
   weeklyStudyMinutes: number[];
   weeklyMcqs: number[];
-  recentSessions: any[];
-  dailyStats: any[];
+  recentSessions: Array<Record<string, unknown>>;
+  dailyStats: Array<{
+    date?: string;
+    day?: string;
+    study_minutes?: number;
+    mcqs_attempted?: number;
+  }>;
 }
 
 export function useAnalytics(days = 7) {
@@ -169,7 +175,7 @@ export function useAnalytics(days = 7) {
 }
 
 export function useTrackEvent() {
-  const trackEvent = async (event: string, data: Record<string, any>) => {
+  const trackEvent = async (event: string, data: Record<string, unknown>) => {
     try {
       await fetch('/api/analytics', {
         method: 'POST',
@@ -275,9 +281,9 @@ export interface StudyPlan {
     total_atoms: number;
     progress_percent: number;
   };
-  continue_learning: any[];
-  recommended: any[];
-  tasks: any[];
+  continue_learning: Array<Record<string, unknown>>;
+  recommended: Array<Record<string, unknown>>;
+  tasks: Array<Record<string, unknown>>;
 }
 
 export function useStudyPlan() {
@@ -291,7 +297,7 @@ export function useStudyPlan() {
 // ============================================
 
 export interface Progress {
-  progress: any[];
+  progress: Array<Record<string, unknown>>;
   summary: {
     total: number;
     completed: number;
@@ -344,7 +350,7 @@ export function useUpdateProgress() {
 // ============================================
 
 export function useAuth() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const supabase = createClient();
 

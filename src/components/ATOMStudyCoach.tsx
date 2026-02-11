@@ -274,7 +274,7 @@ export function ATOMStudyCoach() {
           isAnimating ? "opacity-0 translate-x-4" : "opacity-100 translate-x-0"
         )}>
           <p className="text-[#E8E0D5] mb-4 leading-relaxed">
-            "{currentRec.message}"
+            &quot;{currentRec.message}&quot;
           </p>
 
           {/* Accuracy indicator for weak areas */}
@@ -336,7 +336,7 @@ export function ATOMStudyCoach() {
           {completedToday > 0 && (
             <div className="mb-4">
               <div className="flex items-center justify-between text-xs text-[#A0B0BC] mb-1">
-                <span>Today's suggestions completed</span>
+                <span>Today&apos;s suggestions completed</span>
                 <span>{completedToday}/3</span>
               </div>
               <div className="flex gap-1">

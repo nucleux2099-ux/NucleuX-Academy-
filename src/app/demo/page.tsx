@@ -246,6 +246,7 @@ export default function DemoPage() {
   // Initialize conversation when topic changes
   useEffect(() => {
     if (topic && DEMO_CONVERSATIONS[topic]) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setMessages(DEMO_CONVERSATIONS[topic])
     } else if (topic) {
       setMessages([{
@@ -410,7 +411,7 @@ export default function DemoPage() {
           <div className="p-4 border-t border-white/10">
             {questionsUsed >= MAX_QUESTIONS ? (
               <div className="text-center py-4">
-                <div className="text-slate-400 mb-3">You've used all 5 demo questions! 🎉</div>
+                <div className="text-slate-400 mb-3">You&apos;ve used all 5 demo questions! 🎉</div>
                 <Link 
                   href="/login"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-cyan-500/25"

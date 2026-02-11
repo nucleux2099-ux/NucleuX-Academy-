@@ -326,10 +326,10 @@ export default function LandingPage() {
               <div className="flex gap-3">
                 <div className="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-sm">🧬</div>
                 <div className="flex-1 p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-lg rounded-tl-none text-slate-300 text-sm">
-                  <p className="mb-2">Great question! Let's break down the brachial plexus into atomic concepts:</p>
+                  <p className="mb-2">Great question! Let&apos;s break down the brachial plexus into atomic concepts:</p>
                   <p className="mb-2">🔹 <strong>What is it?</strong> A network of nerves from C5-T1</p>
                   <p className="mb-2">🔹 <strong>Think of it as:</strong> Roots → Trunks → Divisions → Cords → Branches</p>
-                  <p>🤔 <strong>Quick check:</strong> Can you tell me what "RTDCB" stands for?</p>
+                  <p>🤔 <strong>Quick check:</strong> Can you tell me what &quot;RTDCB&quot; stands for?</p>
                 </div>
               </div>
 

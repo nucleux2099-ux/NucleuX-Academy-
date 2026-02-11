@@ -222,7 +222,7 @@ export function TodaysStudyPlan() {
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
             <Calendar className="w-5 h-5 text-[#5BB3B3]" />
-            Today's Study Plan
+            Today&apos;s Study Plan
           </CardTitle>
           <div className="flex items-center gap-3 text-sm">
             <span className="text-[#A0B0BC]">~{progress.totalMinutes} min</span>
@@ -371,7 +371,7 @@ export function TodaysStudyPlan() {
             className="w-full bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium shadow-lg shadow-[#5BB3B3]/20"
           >
             <Play className="w-4 h-4 mr-2" />
-            Start Today's Plan
+            Start Today&apos;s Plan
             <span className="ml-2 text-xs opacity-80">({totalCoins} coins available)</span>
           </Button>
         )}

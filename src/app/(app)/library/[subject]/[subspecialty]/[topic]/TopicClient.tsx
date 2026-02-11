@@ -151,6 +151,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   // Fetch rich content when textbook mode is selected
   useEffect(() => {
     if (viewMode === 'textbook' && !richContent && !richContentLoading) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRichContentLoading(true);
       setRichContentError(null);
       

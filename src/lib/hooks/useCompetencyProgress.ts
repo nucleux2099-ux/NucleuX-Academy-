@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
 
 interface CompetencyProgress {
@@ -21,6 +21,13 @@ interface UserXP {
   competencies_mastered: number;
 }
 
+interface PathwayProgress {
+  pathway_id: string;
+  status: 'not_started' | 'in_progress' | 'completed';
+  current_step: number;
+  total_steps: number;
+}
+
 export function useCompetencyProgress() {
   const [progress, setProgress] = useState<CompetencyProgress[]>([]);
   const [userXP, setUserXP] = useState<UserXP | null>(null);
@@ -28,7 +35,7 @@ export function useCompetencyProgress() {
   const supabase = createClient();
 
   // Fetch user's competency progress
-  const fetchProgress = async () => {
+  const fetchProgress = useCallback(async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
@@ -58,11 +65,11 @@ export function useCompetencyProgress() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [supabase]);
 
   useEffect(() => {
     fetchProgress();
-  }, []);
+  }, [fetchProgress]);
 
   // Mark competency as read (in_progress)
   const markAsRead = async (competencyCode: string) => {
@@ -168,11 +175,11 @@ export function useCompetencyProgress() {
 
 // Hook for pathway progress
 export function usePathwayProgress() {
-  const [pathways, setPathways] = useState<any[]>([]);
+  const [pathways, setPathways] = useState<PathwayProgress[]>([]);
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
 
-  const fetchPathways = async () => {
+  const fetchPathways = useCallback(async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
@@ -190,11 +197,11 @@ export function usePathwayProgress() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [supabase]);
 
   useEffect(() => {
     fetchPathways();
-  }, []);
+  }, [fetchPathways]);
 
   const startPathway = async (pathwayId: string, totalSteps: number) => {
     try {

@@ -623,7 +623,7 @@ export default function AnalyticsPage() {
                 <div className="p-4 rounded-lg bg-[#2D3E50]/50">
                   <p className="text-sm font-medium text-[#7BA69E] mb-1">💪 Strength</p>
                   <p className="text-sm text-[#A0B0BC]">
-                    Your confidence calibration is improving! You're learning to accurately 
+                    Your confidence calibration is improving! You&apos;re learning to accurately 
                     assess what you know.
                   </p>
                 </div>
@@ -640,7 +640,7 @@ export default function AnalyticsPage() {
               <div className="p-4 rounded-lg bg-[#2D3E50]/50">
                 <p className="text-sm font-medium text-[#5BB3B3] mb-1">📊 Stats</p>
                 <p className="text-sm text-[#A0B0BC]">
-                  You've answered {analytics.totalQuestions} questions with {overallAccuracy}% accuracy.
+                  You&apos;ve answered {analytics.totalQuestions} questions with {overallAccuracy}% accuracy.
                   {analytics.currentStreak > 0 && ` Current streak: ${analytics.currentStreak} days!`}
                 </p>
               </div>

@@ -66,7 +66,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
                 <GraduationCap className="w-6 h-6 text-[#5BB3B3]" />
-                What's your level?
+                What&apos;s your level?
               </CardTitle>
               <CardDescription className="text-[#A0B0BC]">
                 This helps us tailor content complexity for you
@@ -124,7 +124,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                 What are you preparing for?
               </CardTitle>
               <CardDescription className="text-[#A0B0BC]">
-                We'll prioritize high-yield content for your exam
+                We&apos;ll prioritize high-yield content for your exam
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -252,7 +252,7 @@ export function UserOnboarding({ onComplete }: UserOnboardingProps) {
                   className="flex-1 bg-gradient-to-r from-[#5BB3B3] to-[#8B5CF6] hover:from-[#4A9E9E] hover:to-[#5BB3B3] text-white"
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Let's Go!
+                  Let&apos;s Go!
                 </Button>
               </div>
             </CardContent>

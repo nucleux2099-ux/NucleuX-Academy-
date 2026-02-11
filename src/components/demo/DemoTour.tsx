@@ -336,6 +336,7 @@ export function DemoTour({ onComplete, onSkip }: DemoTourProps) {
       ],
     })
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTour(shepherdTour)
 
     // Auto-start tour after a brief delay
@@ -361,6 +362,7 @@ export function useDemoTour() {
     // Check if user has seen the tour before
     const seen = localStorage.getItem('atom-demo-tour-seen')
     if (!seen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowTour(true)
     } else {
       setHasSeenTour(true)

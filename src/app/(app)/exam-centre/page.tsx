@@ -610,7 +610,7 @@ export default function ExamCentrePage() {
                   <div>
                     <h4 className="font-medium text-amber-300">Textbook References Included</h4>
                     <p className="text-sm text-amber-200/70 mt-1">
-                      Every question is linked to standard textbooks — Bailey, Sabiston, Harrison's, and more. 
+                      Every question is linked to standard textbooks — Bailey, Sabiston, Harrison&apos;s, and more. 
                       Learn not just the answer, but the source.
                     </p>
                   </div>

@@ -942,11 +942,11 @@ export function evaluatePreTest(answers: Record<string, 'a' | 'b' | 'c' | 'd'>):
   weakAreas: string[];
   recommendation: string;
 } {
-  const module = herniaBasicsModule;
+  const learningModule = herniaBasicsModule;
   let correct = 0;
   const weakAreas: string[] = [];
   
-  for (const q of module.preTest) {
+  for (const q of learningModule.preTest) {
     if (answers[q.id] === q.correctAnswer) {
       correct++;
     } else {
@@ -954,7 +954,7 @@ export function evaluatePreTest(answers: Record<string, 'a' | 'b' | 'c' | 'd'>):
     }
   }
   
-  const percentage = Math.round((correct / module.preTest.length) * 100);
+  const percentage = Math.round((correct / learningModule.preTest.length) * 100);
   
   let recommendation: string;
   if (percentage >= 80) {
@@ -976,11 +976,11 @@ export function evaluatePostTest(answers: Record<string, 'a' | 'b' | 'c' | 'd'>)
   feedback: string;
   areasToReview: string[];
 } {
-  const module = herniaBasicsModule;
+  const learningModule = herniaBasicsModule;
   let correct = 0;
   const areasToReview: string[] = [];
   
-  for (const q of module.postTest) {
+  for (const q of learningModule.postTest) {
     if (answers[q.id] === q.correctAnswer) {
       correct++;
     } else {
@@ -988,9 +988,9 @@ export function evaluatePostTest(answers: Record<string, 'a' | 'b' | 'c' | 'd'>)
     }
   }
   
-  const percentage = Math.round((correct / module.postTest.length) * 100);
-  const passed = percentage >= module.passingScore;
-  const mastered = percentage >= module.masteryScore;
+  const percentage = Math.round((correct / learningModule.postTest.length) * 100);
+  const passed = percentage >= learningModule.passingScore;
+  const mastered = percentage >= learningModule.masteryScore;
   
   let feedback: string;
   if (mastered) {
