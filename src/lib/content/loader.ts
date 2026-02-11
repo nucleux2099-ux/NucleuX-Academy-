@@ -261,6 +261,7 @@ export function loadTopicFromFolder(
   const examPrepPath = path.join(topicDir, 'exam-prep.md');
   const textbookPath = path.join(topicDir, 'textbook.md');
   const cardsPath = path.join(topicDir, 'retrieval-cards.json');
+  const cardsMdPath = path.join(topicDir, 'retrieval-cards.md');
   const roadmapPath = path.join(topicDir, 'roadmap.md');
 
   try {
@@ -273,7 +274,7 @@ export function loadTopicFromFolder(
     const textbookMd = fs.existsSync(textbookPath) ? fs.readFileSync(textbookPath, 'utf-8') : undefined;
     const roadmapMd = fs.existsSync(roadmapPath) ? fs.readFileSync(roadmapPath, 'utf-8') : undefined;
 
-    // Parse retrieval cards if present
+    // Parse retrieval cards if present (preferred JSON; fallback markdown)
     let retrievalCards: any[] | undefined;
     if (fs.existsSync(cardsPath)) {
       try {
@@ -295,6 +296,9 @@ export function loadTopicFromFolder(
       } catch {
         retrievalCards = undefined;
       }
+    } else if (fs.existsSync(cardsMdPath)) {
+      const md = fs.readFileSync(cardsMdPath, 'utf-8');
+      retrievalCards = parseRetrievalCardsMarkdown(md);
     }
 
     // Normalize difficulty
@@ -449,6 +453,29 @@ function normalizeDifficulty(v: TopicMeta['difficulty']): 1 | 2 | 3 | 4 | 5 | un
     if (v === 'hard') return 4;
   }
   return undefined;
+}
+
+/**
+ * Parse retrieval cards from markdown format used in esophagus pilot.
+ * Extracts cards from blocks like:
+ *   **Q: ...**
+ *   <details> ... </details>
+ */
+function parseRetrievalCardsMarkdown(md: string): Array<{ question: string; answer: string }> {
+  const cards: Array<{ question: string; answer: string }> = [];
+
+  // Match card blocks starting with **Q:** and capturing the following <details> ... </details>
+  const re = /\*\*Q:\s*([\s\S]*?)\*\*\s*[\r\n]+\s*<details>[\s\S]*?<summary>[\s\S]*?<\/summary>\s*([\s\S]*?)<\/details>/g;
+
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(md)) !== null) {
+    const q = m[1].trim().replace(/\s+/g, ' ');
+    // Answer may include markdown; keep it but trim
+    const a = m[2].trim();
+    if (q && a) cards.push({ question: q, answer: a });
+  }
+
+  return cards;
 }
 
 // =============================================================================

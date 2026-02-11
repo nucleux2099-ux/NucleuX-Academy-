@@ -1,0 +1,9 @@
+topic_id: les-physiology
+name: "LES Physiology"
+description: "GER barrier, LES pressure, transient relaxations, pathophysiology"
+high_yield: true
+difficulty: 3
+estimated_minutes: 15
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [esophageal-anatomy]
+related_topics: [gerd, fundoplication]

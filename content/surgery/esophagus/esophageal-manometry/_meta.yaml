@@ -1,0 +1,9 @@
+topic_id: esophageal-manometry
+name: "Esophageal Manometry"
+description: "Indications, HRM interpretation, Chicago classification basics"
+high_yield: true
+difficulty: 4
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [esophageal-anatomy, les-physiology]
+related_topics: [achalasia, motility-disorders]

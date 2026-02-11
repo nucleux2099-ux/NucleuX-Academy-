@@ -1,0 +1,9 @@
+topic_id: motility-disorders
+name: "Esophageal Motility Disorders"
+description: "Diffuse spasm, jackhammer, scleroderma; approach and management"
+high_yield: true
+difficulty: 4
+estimated_minutes: 25
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [esophageal-manometry]
+related_topics: [achalasia]
