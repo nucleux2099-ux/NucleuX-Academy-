@@ -2,41 +2,48 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Atom } from 'lucide-react';
 
 const slides = [
   {
+    id: 'library',
     title: 'Library',
     subtitle: 'Modes, structure, and connected understanding.',
     imageSrc: '/marketing/screens/library.png',
     accent: '#5BB3B3',
   },
   {
+    id: 'classroom',
     title: 'Classroom',
     subtitle: 'Live learning with notes, mindmaps, and replay.',
     imageSrc: '/marketing/screens/classroom.png',
     accent: '#6BA8C9',
   },
   {
+    id: 'exam-centre',
     title: 'Exam Centre',
     subtitle: 'Exam practice with explanations that teach.',
     imageSrc: '/marketing/screens/exam-centre.png',
     accent: '#C9A86C',
   },
   {
+    id: 'arena',
     title: 'Arena',
     subtitle: 'Timed drills to pressure-proof recall.',
     imageSrc: '/marketing/screens/arena.png',
     accent: '#EC4899',
   },
   {
+    id: 'backstage',
     title: 'Backstage',
     subtitle: 'Competency, calibration, reflection, and logbook.',
     imageSrc: '/marketing/screens/backstage.png',
     accent: '#A78BFA',
   },
   {
+    id: 'common-room',
     title: 'Common Room',
     subtitle: 'Community discussions that end in clarity.',
     imageSrc: '/marketing/screens/common-room.png',
@@ -45,11 +52,13 @@ const slides = [
 ] as const;
 
 function Slide({
+  id,
   title,
   subtitle,
   imageSrc,
   accent,
 }: {
+  id: string;
   title: string;
   subtitle: string;
   imageSrc: string;
@@ -57,11 +66,13 @@ function Slide({
 }) {
   return (
     <motion.section
+      id={id}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.55 }}
-      className="relative min-h-[72vh] lg:min-h-[86vh] py-10 lg:py-14"
+      className="relative min-h-[72vh] lg:min-h-[86vh] py-10 lg:py-14 scroll-mt-20 lg:snap-start"
+      style={{ scrollSnapAlign: 'start' }}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/35 shadow-matte-lg">
@@ -93,6 +104,36 @@ function Slide({
 }
 
 export default function HomePage() {
+  const slideIds = useMemo(() => slides.map((s) => s.id), []);
+  const [activeId, setActiveId] = useState<(typeof slideIds)[number]>(slides[0].id);
+
+  // Track which slide is "active" for progress dots.
+  useEffect(() => {
+    const els = slideIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+    if (!els.length) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        // pick the most visible intersecting slide
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
+        if (visible[0]?.target?.id) setActiveId(visible[0].target.id as any);
+      },
+      { threshold: [0.35, 0.5, 0.65] }
+    );
+
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, [slideIds]);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
       {/* subtle campus blueprint grid */}
@@ -171,9 +212,34 @@ export default function HomePage() {
       </section>
 
       {/* Presentation slides */}
-      <div className="relative z-10">
+      <div
+        className="relative z-10 lg:snap-y lg:snap-mandatory"
+        style={{ scrollSnapType: 'y mandatory' }}
+      >
+        {/* Progress dots */}
+        <div className="hidden lg:flex fixed right-5 top-1/2 -translate-y-1/2 z-30 flex-col gap-3">
+          {slides.map((s) => {
+            const isActive = activeId === s.id;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => scrollTo(s.id)}
+                aria-label={`Go to ${s.title}`}
+                className="h-3 w-3 rounded-full border transition-all"
+                style={{
+                  backgroundColor: isActive ? s.accent : 'rgba(255,255,255,0.18)',
+                  borderColor: isActive ? `${s.accent}99` : 'rgba(255,255,255,0.25)',
+                  transform: isActive ? 'scale(1.25)' : 'scale(1)',
+                  boxShadow: isActive ? `0 0 0 6px ${s.accent}22` : 'none',
+                }}
+              />
+            );
+          })}
+        </div>
+
         {slides.map((s) => (
-          <Slide key={s.title} {...s} />
+          <Slide key={s.id} {...s} />
         ))}
       </div>
 
