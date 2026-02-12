@@ -192,14 +192,16 @@ export default function HomePage() {
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
-Built for MBBS + Residents • NEET-PG/INICET workflows
+              Built for MBBS + Residents • NEET-PG/INICET workflows
             </div>
             <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">
-              A virtual campus for{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#6BA8C9]">medical mastery</span>.
+              NucleuX Academy
             </h1>
-            <p className="mt-5 text-lg text-[#A0B0BC]">
-Library • Classroom • Exam Centre • Arena • Backstage • Common Room — with ATOM adapting to each room.
+            <p className="mt-3 text-xl text-[#A0B0BC]">
+              Learn atomically and grow exponentially.
+            </p>
+            <p className="mt-4 text-lg text-[#A0B0BC]">
+              A virtual campus for medical mastery — Library • Classroom • Exam Centre • Arena • Backstage • Common Room.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
