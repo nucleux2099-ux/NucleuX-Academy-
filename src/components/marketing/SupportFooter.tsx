@@ -28,8 +28,19 @@ export function SupportFooter() {
         </div>
 
         <div className="text-xs text-[#6B7280]">
-          Support: <a className="text-[#A0B0BC] hover:text-[#E8E0D5]" href="mailto:Nucleux2099@gmail.com">Nucleux2099@gmail.com</a>
-          {' • '}Customer support: NucleuX Academy Telegram bot
+          Support:{' '}
+          <a className="text-[#A0B0BC] hover:text-[#E8E0D5]" href="mailto:Nucleux2099@gmail.com">
+            Nucleux2099@gmail.com
+          </a>
+          {' • '}Customer support:{' '}
+          <a
+            className="text-[#A0B0BC] hover:text-[#E8E0D5]"
+            href="https://t.me/ATOM_2099_bot"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @ATOM_2099_bot
+          </a>
         </div>
       </div>
     </footer>

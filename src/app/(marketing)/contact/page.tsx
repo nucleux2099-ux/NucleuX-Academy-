@@ -57,9 +57,17 @@ export default function ContactPage() {
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="text-lg font-bold text-[#E8E0D5]">Customer Support</div>
               <p className="mt-2 text-sm text-[#A0B0BC]">
-                Use the <span className="text-[#E8E0D5]">NucleuX Academy Telegram bot</span> for support.
+                Use our Telegram bot for support.
               </p>
-              <div className="mt-4 text-sm text-[#A0B0BC]">
+              <a
+                className="mt-4 inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
+                href="https://t.me/ATOM_2099_bot"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @ATOM_2099_bot
+              </a>
+              <div className="mt-3 text-sm text-[#A0B0BC]">
                 (Share screenshots + your registered email/phone for faster resolution.)
               </div>
             </div>
