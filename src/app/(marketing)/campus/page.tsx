@@ -214,33 +214,50 @@ export default function CampusTourPage() {
             <div className="text-xs text-[#A0B0BC]">A virtual campus for medical mastery</div>
           </Link>
           <nav className="flex items-center gap-4 text-sm">
-            <Link href="/campus" className="text-[#E8E0D5]">
-              Take the tour
-            </Link>
-            <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Meet ATOM
-            </Link>
-            <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Early access
-            </Link>
-            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              FAQ
-            </Link>
-            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Contact
-            </Link>
-            <Link
-              href="/login"
-              className="px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
-            >
-              Enter campus
-            </Link>
+            <div className="hidden md:flex items-center gap-4">
+              <Link href="/campus" className="text-[#E8E0D5]">
+                Take the tour
+              </Link>
+              <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                Meet ATOM
+              </Link>
+              <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                Early access
+              </Link>
+              <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                FAQ
+              </Link>
+              <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                Contact
+              </Link>
+              <Link
+                href="/login"
+                className="px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
+              >
+                Enter campus
+              </Link>
+            </div>
+
+            <div className="flex md:hidden items-center gap-2">
+              <Link
+                href="/campus"
+                className="px-3 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
+              >
+                Tour
+              </Link>
+              <Link
+                href="/login"
+                className="px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-[#E8E0D5] font-medium"
+              >
+                Enter
+              </Link>
+            </div>
           </nav>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+      <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-8 sm:pb-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
             A virtual campus for medical mastery

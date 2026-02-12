@@ -162,33 +162,46 @@ export default function HomePage() {
           </Link>
 
           <nav className="flex items-center gap-4">
-            <Link href="/campus" className="text-sm text-[#E8E0D5] hover:text-white transition-colors">
-              Take the tour
-            </Link>
-            <Link href="/atom" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Meet ATOM
-            </Link>
-            <Link href="/pricing" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Early access
-            </Link>
-            <Link href="/faq" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              FAQ
-            </Link>
-            <Link href="/contact" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Contact
-            </Link>
-            <Link
-              href="/campus"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white text-sm font-medium"
-            >
-              Take the tour <ArrowRight className="w-4 h-4" />
-            </Link>
+            {/* Desktop nav */}
+            <div className="hidden md:flex items-center gap-4">
+              <Link href="/campus" className="text-sm text-[#E8E0D5] hover:text-white transition-colors">
+                Take the tour
+              </Link>
+              <Link href="/atom" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                Meet ATOM
+              </Link>
+              <Link href="/pricing" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                Early access
+              </Link>
+              <Link href="/faq" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                FAQ
+              </Link>
+              <Link href="/contact" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+                Contact
+              </Link>
+              <Link
+                href="/campus"
+                className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white text-sm font-medium"
+              >
+                Take the tour <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Mobile nav (minimal) */}
+            <div className="flex md:hidden items-center gap-2">
+              <Link
+                href="/campus"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white text-sm font-medium"
+              >
+                Tour <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </nav>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-16 pb-10 relative z-10">
+      <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-8 sm:pb-10 relative z-10">
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
