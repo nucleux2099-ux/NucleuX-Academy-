@@ -20,16 +20,26 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 
 // Routes that don't require auth (must match middleware.ts)
 const publicRoutes = [
-  '/', 
-  '/login', 
-  '/signup', 
-  '/forgot-password', 
+  '/',
+  '/login',
+  '/signup',
+  '/forgot-password',
   '/auth/callback',
+
+  // Marketing/public pages
+  '/campus',
+  '/pricing',
+  '/about',
+  '/faq',
+  '/contact',
+  '/atom',
+  '/rooms',
+
+  // Misc public
   '/landing',
   '/demo',
   '/terms',
   '/privacy',
-  '/atom',
 ];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
