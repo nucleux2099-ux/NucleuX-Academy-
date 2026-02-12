@@ -30,6 +30,7 @@ import type { Bloom, CompetencyStage, SubjectKey } from "@/lib/backstage/types";
 import { addBackstageEvent, getRecentBackstageEvents, loadBackstageState } from "@/lib/backstage/store";
 import { deriveSubjectStats } from "@/lib/backstage/derive";
 import { deriveDeckTopicStats, pickStaleDeckTopic, type DeckTopicStats } from "@/lib/backstage/deck-derive";
+import { deriveDeckMinutes } from "@/lib/backstage/deck-time";
 import { findDecksByTopicId } from "@/lib/decks/store";
 import { countBlooms } from "@/lib/backstage/bloom";
 import { addCaseLog, getRecentCases, subjectLabel } from "@/lib/backstage/case-store";
@@ -93,6 +94,9 @@ export default function BackstagePage() {
   const [staleTopic, setStaleTopic] = useState<DeckTopicStats | null>(() => {
     return pickStaleDeckTopic(deriveDeckTopicStats(loadBackstageState().events));
   });
+  const [deckMinutes, setDeckMinutes] = useState(() => {
+    return deriveDeckMinutes(loadBackstageState().events);
+  });
 
   const [caseForm, setCaseForm] = useState({
     title: "",
@@ -121,6 +125,7 @@ export default function BackstagePage() {
     const stats = deriveDeckTopicStats(all);
     setDeckTopicStats(stats.slice(0, 5));
     setStaleTopic(pickStaleDeckTopic(stats));
+    setDeckMinutes(deriveDeckMinutes(all));
   }, []);
 
   const saveCase = () => {
@@ -409,6 +414,8 @@ export default function BackstagePage() {
                 <Badge variant="outline">Deck views: {deckStats.deckViews}</Badge>
                 <Badge variant="outline">Slide views: {deckStats.slideViews}</Badge>
                 <Badge variant="outline">Template inserts: {deckStats.templateInserts}</Badge>
+                <Badge variant="outline">Deck minutes (today): {deckMinutes.minutesToday}</Badge>
+                <Badge variant="outline">Deck minutes (7d): {deckMinutes.minutes7d}</Badge>
               </div>
 
               {staleTopic ? (
@@ -481,6 +488,7 @@ export default function BackstagePage() {
                   setDeckTopicStats(stats.slice(0, 5));
                   setStaleTopic(pickStaleDeckTopic(stats));
                   setRecentEvents(getRecentBackstageEvents(12));
+                  setDeckMinutes(deriveDeckMinutes(all));
                 }}
               >
                 Refresh

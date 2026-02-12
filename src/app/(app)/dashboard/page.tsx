@@ -1,6 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
+import { loadBackstageState } from "@/lib/backstage/store";
+import { pickDeckReviewCTA } from "@/lib/backstage/next-action";
+import { findDecksByTopicId } from "@/lib/decks/store";
 import { useRouter } from "next/navigation";
 import {
   ArrowRight,
@@ -118,9 +121,22 @@ export default function DashboardPage() {
 
   const nextAction = useMemo(() => {
     // Deterministic “actions-first” policy:
+    // 0) If deck-revision minutes are low → suggest deck review
     // 1) If MCQ goal not met → practice
     // 2) Else if study minutes goal not met → read
     // 3) Else → review analytics
+
+    const backstageCTA = pickDeckReviewCTA(loadBackstageState().events);
+    if (backstageCTA.kind === "deck_review") {
+      const decks = findDecksByTopicId(backstageCTA.topicId);
+      return {
+        label: backstageCTA.title,
+        desc: backstageCTA.detail,
+        icon: Layers,
+        href: decks[0] ? `/classroom/decks/${decks[0].deckId}` : "/classroom/decks",
+      };
+    }
+
     const mcqProgress = today?.mcq_progress ?? 0;
     const goalProgress = today?.goal_progress ?? 0;
 
