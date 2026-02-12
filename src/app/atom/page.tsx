@@ -190,6 +190,81 @@ export default function AtomPage() {
         </section>
 
         <section className="mt-12">
+          <h2 className="text-xl font-bold text-[#E8E0D5]">How ATOM’s memory works</h2>
+          <p className="mt-1 text-sm text-[#A0B0BC]">
+            The main promise: ATOM stays with you over time — it doesn’t reset every day like a generic chatbot.
+          </p>
+
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[{
+              title: '1) Captures your learning fingerprint',
+              body: 'Tracks your weak topics, common mistakes, and “near-miss” misconceptions (the ones that keep repeating in MCQs).',
+            }, {
+              title: '2) Builds a personal map (not a playlist)',
+              body: 'Organizes what you know into prerequisites → concepts → applications. It understands dependencies so it can recommend the right next step.',
+            }, {
+              title: '3) Converts performance into teaching',
+              body: 'In Exam Centre/Arena, every wrong answer becomes a concept fix: why you chose it, what pattern trapped you, and what rule prevents it next time.',
+            }, {
+              title: '4) Calibrates you, not just quizzes you',
+              body: 'Backstage compares confidence vs accuracy and highlights blind spots. The goal is predictable performance in exams and wards.',
+            }, {
+              title: '5) Stays consistent across rooms',
+              body: 'Same partner, different behaviour: teacher in Classroom, librarian in Library, coach in Backstage. Your memory map travels with you.',
+            }, {
+              title: '6) Respects boundaries',
+              body: 'Designed to avoid patient identifiers in notes/logbook. The system is built for safe learning and structured revision.',
+            }].map((p) => (
+              <Card key={p.title} className="bg-[#364A5E]/55 border-[rgba(232,224,213,0.10)]">
+                <CardContent className="p-6">
+                  <div className="text-sm font-semibold text-[#E8E0D5]">{p.title}</div>
+                  <div className="mt-2 text-sm text-[#A0B0BC]">{p.body}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+            <div className="text-sm font-semibold text-[#E8E0D5]">What ATOM remembers (examples)</div>
+            <ul className="mt-3 space-y-2 text-sm text-[#A0B0BC]">
+              <li>• “You confuse pre-renal vs ATN patterns when FeNa is borderline.”</li>
+              <li>• “You’re fast in cardio MCQs but accuracy drops in endocrine mixed sets.”</li>
+              <li>• “Your weak nodes cluster around prerequisites (anatomy → physiology → pathology chain).”</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mt-12">
+          <h2 className="text-xl font-bold text-[#E8E0D5]">ATOM through the journey (MBBS → Consultant)</h2>
+          <p className="mt-1 text-sm text-[#A0B0BC]">
+            ATOM is designed to stay as a partner across phases — the room behaviour remains the same, but the depth increases.
+          </p>
+
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[{
+              title: 'MBBS (foundation)',
+              body: 'Build concepts and connections. Reduce overwhelm. Learn mechanisms first, then compress for revision.',
+            }, {
+              title: 'Intern (real-world exposure)',
+              body: 'Turn cases into learning: differentials, “don’t miss” patterns, quick bedside reasoning. Logbook + reflection starts compounding.',
+            }, {
+              title: 'Junior Resident (speed + depth)',
+              body: 'High-volume decisions need fast recall. Arena/Exam Centre drill patterns; Backstage keeps calibration honest.',
+            }, {
+              title: 'Senior resident / early consultant',
+              body: 'Refine judgement: edge cases, pitfalls, and teaching others. ATOM shifts from “help me learn” to “help me supervise + teach”.',
+            }].map((p) => (
+              <Card key={p.title} className="bg-[#364A5E]/55 border-[rgba(232,224,213,0.10)]">
+                <CardContent className="p-6">
+                  <div className="text-sm font-semibold text-[#E8E0D5]">{p.title}</div>
+                  <div className="mt-2 text-sm text-[#A0B0BC]">{p.body}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-12">
           <h2 className="text-xl font-bold text-[#E8E0D5]">ATOM Philosophy</h2>
           <p className="mt-1 text-sm text-[#A0B0BC]">Simple rules that compound into mastery.</p>
           <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
