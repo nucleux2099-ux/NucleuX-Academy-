@@ -31,6 +31,11 @@ export function getDeck(deckId: string): Deck | undefined {
   return loadDecks().find((d) => d.deckId === deckId);
 }
 
+export function findDecksByTopicId(topicId?: string): Deck[] {
+  if (!topicId) return [];
+  return loadDecks().filter((d) => d.topicId === topicId);
+}
+
 export function upsertDeck(deck: Deck) {
   const decks = loadDecks();
   const idx = decks.findIndex((d) => d.deckId === deck.deckId);

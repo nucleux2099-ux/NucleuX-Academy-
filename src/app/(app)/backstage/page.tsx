@@ -29,6 +29,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Bloom, CompetencyStage, SubjectKey } from "@/lib/backstage/types";
 import { addBackstageEvent, getRecentBackstageEvents, loadBackstageState } from "@/lib/backstage/store";
 import { deriveSubjectStats } from "@/lib/backstage/derive";
+import { deriveDeckTopicStats, pickStaleDeckTopic, type DeckTopicStats } from "@/lib/backstage/deck-derive";
+import { findDecksByTopicId } from "@/lib/decks/store";
 import { countBlooms } from "@/lib/backstage/bloom";
 import { addCaseLog, getRecentCases, subjectLabel } from "@/lib/backstage/case-store";
 
@@ -85,6 +87,12 @@ export default function BackstagePage() {
       templateInserts: all.filter((e) => e.type === "template_insert").length,
     };
   });
+  const [deckTopicStats, setDeckTopicStats] = useState<DeckTopicStats[]>(() => {
+    return deriveDeckTopicStats(loadBackstageState().events).slice(0, 5);
+  });
+  const [staleTopic, setStaleTopic] = useState<DeckTopicStats | null>(() => {
+    return pickStaleDeckTopic(deriveDeckTopicStats(loadBackstageState().events));
+  });
 
   const [caseForm, setCaseForm] = useState({
     title: "",
@@ -110,6 +118,9 @@ export default function BackstagePage() {
       slideViews: all.filter((e) => e.type === "slide_view").length,
       templateInserts: all.filter((e) => e.type === "template_insert").length,
     });
+    const stats = deriveDeckTopicStats(all);
+    setDeckTopicStats(stats.slice(0, 5));
+    setStaleTopic(pickStaleDeckTopic(stats));
   }, []);
 
   const saveCase = () => {
@@ -393,12 +404,69 @@ export default function BackstagePage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-base">Deck activity</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-2 text-sm text-muted-foreground">
+            <CardContent className="space-y-3 text-sm text-muted-foreground">
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">Deck views: {deckStats.deckViews}</Badge>
                 <Badge variant="outline">Slide views: {deckStats.slideViews}</Badge>
                 <Badge variant="outline">Template inserts: {deckStats.templateInserts}</Badge>
               </div>
+
+              {staleTopic ? (
+                <div className="rounded-lg border bg-muted/20 p-3">
+                  <div className="text-xs text-muted-foreground">Suggestion</div>
+                  <div className="mt-1 text-sm font-medium text-foreground">Review deck for: {staleTopic.topicId}</div>
+                  <div className="mt-1 text-xs text-muted-foreground">
+                    Last revised: {staleTopic.lastAt ? new Date(staleTopic.lastAt).toLocaleString() : "—"}
+                  </div>
+                  <div className="mt-2 flex gap-2 flex-wrap">
+                    <Button
+                      size="sm"
+                      onClick={() => {
+                        const decks = findDecksByTopicId(staleTopic.topicId);
+                        if (decks[0]) router.push(`/classroom/decks/${decks[0].deckId}`);
+                        else router.push("/classroom/decks");
+                      }}
+                    >
+                      Open deck
+                    </Button>
+                    <Button size="sm" variant="secondary" onClick={() => router.push(`/library/${staleTopic.subject}`)}>
+                      Open subject
+                    </Button>
+                  </div>
+                </div>
+              ) : null}
+
+              {deckTopicStats.length ? (
+                <div className="space-y-2">
+                  <div className="text-xs text-muted-foreground">Top revised topics (via decks)</div>
+                  {deckTopicStats.map((s) => (
+                    <div key={s.topicId} className="rounded-lg border p-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="min-w-0">
+                          <div className="truncate text-sm font-medium text-foreground">{s.topicId}</div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            Views: {s.deckViews} • Slides: {s.slideViews} • Templates: {s.templateInserts}
+                          </div>
+                        </div>
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          onClick={() => {
+                            const decks = findDecksByTopicId(s.topicId);
+                            if (decks[0]) router.push(`/classroom/decks/${decks[0].deckId}`);
+                            else router.push("/classroom/decks");
+                          }}
+                        >
+                          Open
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-xs text-muted-foreground">Open a deck to start building deck-based revision analytics.</div>
+              )}
+
               <Button
                 size="sm"
                 variant="secondary"
@@ -409,6 +477,9 @@ export default function BackstagePage() {
                     slideViews: all.filter((e) => e.type === "slide_view").length,
                     templateInserts: all.filter((e) => e.type === "template_insert").length,
                   });
+                  const stats = deriveDeckTopicStats(all);
+                  setDeckTopicStats(stats.slice(0, 5));
+                  setStaleTopic(pickStaleDeckTopic(stats));
                   setRecentEvents(getRecentBackstageEvents(12));
                 }}
               >
