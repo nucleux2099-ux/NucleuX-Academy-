@@ -221,19 +221,25 @@ export default function HomePage() {
           {slides.map((s) => {
             const isActive = activeId === s.id;
             return (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => scrollTo(s.id)}
-                aria-label={`Go to ${s.title}`}
-                className="h-3 w-3 rounded-full border transition-all"
-                style={{
-                  backgroundColor: isActive ? s.accent : 'rgba(255,255,255,0.18)',
-                  borderColor: isActive ? `${s.accent}99` : 'rgba(255,255,255,0.25)',
-                  transform: isActive ? 'scale(1.25)' : 'scale(1)',
-                  boxShadow: isActive ? `0 0 0 6px ${s.accent}22` : 'none',
-                }}
-              />
+              <div key={s.id} className="relative group flex items-center justify-end">
+                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="rounded-md border border-white/10 bg-slate-950/85 backdrop-blur px-2 py-1 text-[11px] text-[#E8E0D5] shadow-matte-lg whitespace-nowrap">
+                    {s.title}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => scrollTo(s.id)}
+                  aria-label={`Go to ${s.title}`}
+                  className="h-3 w-3 rounded-full border transition-all"
+                  style={{
+                    backgroundColor: isActive ? s.accent : 'rgba(255,255,255,0.18)',
+                    borderColor: isActive ? `${s.accent}99` : 'rgba(255,255,255,0.25)',
+                    transform: isActive ? 'scale(1.25)' : 'scale(1)',
+                    boxShadow: isActive ? `0 0 0 6px ${s.accent}22` : 'none',
+                  }}
+                />
+              </div>
             );
           })}
         </div>
