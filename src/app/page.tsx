@@ -77,9 +77,14 @@ export default function HomePage() {
               Built for MBBS + Residents • NEET-PG/INICET workflows
             </div>
             <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">NucleuX Academy</h1>
-            <p className="mt-3 text-xl text-[#A0B0BC]">Learn atomically and grow exponentially.</p>
+            <p className="mt-3 text-xl text-[#A0B0BC]">
+              Learn with structure. Practice with feedback. Progress with calibration.
+            </p>
             <p className="mt-4 text-lg text-[#A0B0BC]">
-              Not another “content app”. A learning OS — built as a campus, powered by ATOM.
+              A virtual campus for MBBS, Interns, and Junior Residents — with ATOM as your thinking partner that stays with you.
+            </p>
+            <p className="mt-3 text-sm text-[#6B7280]">
+              The differentiator: ATOM remembers your weak areas and patterns over time, and shows up in every room.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -102,17 +107,17 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[{
-            title: 'Atomic learning',
-            body: 'Break complex topics into the smallest teachable units, then connect them into a mental model.',
+            title: 'Learn with structure',
+            body: 'Library is not a dump of pages. It is a connected map: prerequisites, related topics, and mental models.',
           }, {
-            title: 'Retrieval > rereading',
-            body: 'Recall and application (MCQs/cases) turn reading into usable clinical knowledge.',
+            title: 'Practice with feedback',
+            body: 'Exam Centre/Arena are not just scores. Every mistake links back to the concept that fixes it.',
           }, {
-            title: 'Calibration + reflection',
-            body: 'Confidence must match performance. Backstage helps you see blind spots and improve predictably.',
+            title: 'Progress with calibration',
+            body: 'Backstage aligns confidence with accuracy, so performance becomes predictable in exams and wards.',
           }, {
-            title: 'Rooms with jobs',
-            body: 'Each room does one thing well. ATOM changes behaviour by room so the system stays coherent.',
+            title: 'ATOM stays with you',
+            body: 'The main feature: longitudinal memory of your weak areas and patterns — plus presence across every room.',
           }].map((x) => (
             <div key={x.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <div className="text-lg font-bold text-[#E8E0D5]">{x.title}</div>
