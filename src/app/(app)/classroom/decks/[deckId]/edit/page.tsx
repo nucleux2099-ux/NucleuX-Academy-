@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { addSlide, getDeck, updateSlide, upsertDeck } from "@/lib/decks/store";
+import { loadTemplates, saveTemplates } from "@/lib/templates/store";
+import { defaultTemplates } from "@/lib/templates/seed";
+import type { SlideTemplatePayload, Template } from "@/lib/templates/types";
 
 export default function DeckEditPage() {
   const params = useParams<{ deckId: string }>();
@@ -15,6 +18,8 @@ export default function DeckEditPage() {
   const initial = useMemo(() => getDeck(deckId), [deckId]);
   const [deck, setDeck] = useState(initial);
   const [selectedId, setSelectedId] = useState(initial?.slides[0]?.slideId);
+  const [templates, setTemplates] = useState<Template[]>([]);
+  const [templateId, setTemplateId] = useState<string>("");
 
   if (!deck) {
     return (
@@ -27,6 +32,16 @@ export default function DeckEditPage() {
 
   const slides = [...deck.slides].sort((a, b) => a.order - b.order);
   const slide = slides.find((s) => s.slideId === selectedId) ?? slides[0];
+
+  useEffect(() => {
+    const existing = loadTemplates();
+    if (existing.length === 0) {
+      saveTemplates(defaultTemplates);
+      setTemplates(defaultTemplates);
+    } else {
+      setTemplates(existing);
+    }
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -45,18 +60,63 @@ export default function DeckEditPage() {
         <Card className="border-[rgba(91,179,179,0.15)] bg-[#364A5E]">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-[#E8E0D5] text-base">Slides</CardTitle>
-            <Button
-              size="sm"
-              onClick={() => {
-                const updated = addSlide(deck);
-                setDeck(updated);
-                setSelectedId(updated.slides.at(-1)?.slideId);
-              }}
-            >
-              + Add
-            </Button>
+            <div className="flex gap-2">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => {
+                  // Quick insert: selected template → new slide
+                  const t = templates.find((x) => x.templateId === templateId);
+                  if (!t || t.kind !== "slide") return;
+                  const payload = t.payload as SlideTemplatePayload;
+                  const nextOrder = (deck.slides.at(-1)?.order ?? 0) + 1;
+                  const nextSlide = {
+                    slideId: `${deck.deckId}_s${nextOrder}`,
+                    order: nextOrder,
+                    heading: payload.heading,
+                    bullets: payload.bullets,
+                    speakerNotes: payload.speakerNotes,
+                    layout: "bullets" as const,
+                  };
+                  const updatedDeck = { ...deck, slides: [...deck.slides, nextSlide] };
+                  upsertDeck(updatedDeck);
+                  setDeck(updatedDeck);
+                  setSelectedId(nextSlide.slideId);
+                }}
+              >
+                Insert template
+              </Button>
+              <Button
+                size="sm"
+                onClick={() => {
+                  const updated = addSlide(deck);
+                  setDeck(updated);
+                  setSelectedId(updated.slides.at(-1)?.slideId);
+                }}
+              >
+                + Add
+              </Button>
+            </div>
           </CardHeader>
           <CardContent className="space-y-2">
+            <div className="space-y-1">
+              <div className="text-xs text-[#A0B0BC]">Template</div>
+              <select
+                value={templateId}
+                onChange={(e) => setTemplateId(e.target.value)}
+                className="w-full px-3 py-2 bg-[#3A4D5F] border border-[rgba(91,179,179,0.15)] rounded-lg text-sm text-[#E8E0D5]"
+              >
+                <option value="">Select…</option>
+                {templates.filter((t) => t.kind === "slide").map((t) => (
+                  <option key={t.templateId} value={t.templateId}>
+                    {t.title}
+                  </option>
+                ))}
+              </select>
+              <Link href="/classroom/templates" className="text-xs text-[#6BA8C9] underline">
+                Manage templates
+              </Link>
+            </div>
             {slides.map((s) => (
               <button
                 key={s.slideId}

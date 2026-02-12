@@ -35,9 +35,14 @@ export default function DecksIndexPage() {
           <h1 className="text-2xl font-bold text-[#E8E0D5]">🗂️ Slide Decks</h1>
           <p className="text-sm text-[#A0B0BC]">PowerPoint-like decks inside Classroom</p>
         </div>
-        <Link href="/classroom">
-          <Button variant="outline">Back to Classroom</Button>
-        </Link>
+        <div className="flex gap-2">
+          <Link href="/classroom/templates">
+            <Button variant="outline">Templates</Button>
+          </Link>
+          <Link href="/classroom">
+            <Button variant="outline">Back to Classroom</Button>
+          </Link>
+        </div>
       </div>
 
       <Card className="border-[rgba(91,179,179,0.15)] bg-[#364A5E]">
