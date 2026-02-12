@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 type Room = {
@@ -210,43 +211,7 @@ export default function RoomsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="leading-tight">
-            <div className="text-[#E8E0D5] font-bold">NucleuX Academy</div>
-            <div className="text-xs text-[#A0B0BC]">Rooms (detailed)</div>
-          </Link>
-
-          <nav className="flex items-center gap-4 text-sm">
-            <div className="hidden md:flex items-center gap-4">
-              <Link href="/campus" className="text-[#E8E0D5]">Take the tour</Link>
-              <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Meet ATOM</Link>
-              <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Early access</Link>
-              <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Contact</Link>
-              <Link
-                href="/login"
-                className="px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
-              >
-                Enter campus
-              </Link>
-            </div>
-            <div className="flex md:hidden items-center gap-2">
-              <Link
-                href="/campus"
-                className="px-3 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
-              >
-                Tour
-              </Link>
-              <Link
-                href="/login"
-                className="px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-[#E8E0D5] font-medium"
-              >
-                Enter
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <MarketingHeader active="rooms" subtitle="Rooms (detailed)" primaryCta={{ href: '/campus', label: 'Take the tour' }} secondaryCta={{ href: '/login', label: 'Enter' }} showRooms={true} />
 
       <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-8 sm:pb-10">
         <div className="max-w-3xl">

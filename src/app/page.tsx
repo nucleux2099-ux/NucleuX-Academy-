@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Atom } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 export default function HomePage() {
@@ -19,55 +20,7 @@ export default function HomePage() {
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
 
-      {/* Top nav */}
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-[rgba(91,179,179,0.18)] border border-[rgba(91,179,179,0.35)] flex items-center justify-center">
-              <Atom className="w-5 h-5 text-[#5BB3B3]" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-bold text-[#E8E0D5]">NucleuX Academy</div>
-              <div className="text-xs text-[#A0B0BC]">Learn atomically and grow exponentially</div>
-            </div>
-          </Link>
-
-          <nav className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-4">
-              <Link href="/campus" className="text-sm text-[#E8E0D5] hover:text-white transition-colors">
-                Take the tour
-              </Link>
-              <Link href="/atom" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-                Meet ATOM
-              </Link>
-              <Link href="/pricing" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-                Early access
-              </Link>
-              <Link href="/faq" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-                FAQ
-              </Link>
-              <Link href="/contact" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-                Contact
-              </Link>
-              <Link
-                href="/campus"
-                className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white text-sm font-medium"
-              >
-                Take the tour <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <div className="flex md:hidden items-center gap-2">
-              <Link
-                href="/campus"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white text-sm font-medium"
-              >
-                Tour <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <MarketingHeader active="home" subtitle="Learn atomically and grow exponentially" primaryCta={{ href: '/campus', label: 'Take the tour' }} secondaryCta={{ href: '/login', label: 'Enter' }} />
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-10 relative z-10">

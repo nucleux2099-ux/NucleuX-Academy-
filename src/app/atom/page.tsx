@@ -12,6 +12,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 function RoleCard({
@@ -58,42 +59,7 @@ function RoleCard({
 export default function AtomPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <header className="border-b border-white/5 bg-slate-950/40 backdrop-blur">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="leading-tight">
-            <div className="text-[#E8E0D5] font-bold">NucleuX Academy</div>
-            <div className="text-xs text-[#A0B0BC]">Learn atomically and grow exponentially</div>
-          </Link>
-          <nav className="flex items-center gap-4 text-sm">
-            <div className="hidden md:flex items-center gap-4">
-              <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Take the tour</Link>
-              <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Early access</Link>
-              <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">FAQ</Link>
-              <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Contact</Link>
-              <Link href="/login">
-                <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white">
-                  Enter campus <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            </div>
-
-            <div className="flex md:hidden items-center gap-2">
-              <Link
-                href="/campus"
-                className="px-3 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
-              >
-                Tour
-              </Link>
-              <Link
-                href="/login"
-                className="px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-[#E8E0D5] font-medium"
-              >
-                Enter
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <MarketingHeader active="atom" subtitle="Learn atomically and grow exponentially" primaryCta={{ href: '/campus', label: 'Take the tour' }} secondaryCta={{ href: '/login', label: 'Enter' }} showRooms={true} />
 
       <main className="max-w-6xl mx-auto px-6 py-14">
         <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
