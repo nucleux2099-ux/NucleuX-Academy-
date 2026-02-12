@@ -12,6 +12,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 function RoleCard({
   title,
@@ -219,6 +220,7 @@ export default function AtomPage() {
           </Link>
         </div>
       </main>
+      <SupportFooter />
     </div>
   );
 }

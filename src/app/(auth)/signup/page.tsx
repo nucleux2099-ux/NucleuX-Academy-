@@ -133,10 +133,10 @@ export default function SignupPage() {
   return (
     <div className="animate-fade-in">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-[#1E293B] mb-2">
+        <h1 className="text-3xl font-bold text-[#E8E0D5] mb-2">
           {step === 1 ? "Create your account" : "Tell us about yourself"}
         </h1>
-        <p className="text-[#64748B]">
+        <p className="text-[#A0B0BC]">
           {step === 1
             ? "Join thousands of medical students learning smarter"
             : "Help us personalize your learning experience"}
@@ -150,11 +150,11 @@ export default function SignupPage() {
         <div className={`w-3 h-3 rounded-full transition-colors ${step >= 2 ? "bg-[#5BB3B3]" : "bg-[#E2E8F0]"}`} />
       </div>
 
-      <Card className="bg-white border-[#E2E8F0] shadow-lg">
+      <Card className="bg-slate-950/30 border-white/10 shadow-matte-lg">
         <CardContent className="p-6">
           {/* Error Alert */}
           {error && (
-            <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 flex items-center gap-2 text-red-700">
+            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center gap-2 text-red-200">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
               <p className="text-sm">{error}</p>
             </div>
@@ -166,7 +166,7 @@ export default function SignupPage() {
               <div className="space-y-3 mb-6">
                 <Button
                   variant="outline"
-                  className="w-full border-[#CBD5E1] bg-white hover:border-[#5BB3B3] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
+                  className="w-full border-white/15 bg-white/5 hover:border-[#5BB3B3] hover:bg-white/10 h-12 text-[#E8E0D5] font-medium shadow-sm transition-all"
                   onClick={handleGoogleSignup}
                   disabled={isLoading}
                 >
@@ -195,7 +195,7 @@ export default function SignupPage() {
               {/* Divider */}
               <div className="relative mb-6">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-[#E2E8F0]" />
+                  <div className="w-full border-t border-white/10" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
                   <span className="bg-white px-2 text-[#94A3B8]">

@@ -74,17 +74,15 @@ function LoginForm() {
   return (
     <div className="animate-fade-in">
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-[#1E293B] mb-2">Welcome back</h1>
-        <p className="text-[#64748B]">
-          Sign in to continue your learning journey
-        </p>
+        <h1 className="text-3xl font-bold text-[#E8E0D5] mb-2">Welcome back</h1>
+        <p className="text-[#A0B0BC]">Sign in to continue your learning journey</p>
       </div>
 
-      <Card className="bg-white border-[#E2E8F0] shadow-lg">
+      <Card className="bg-slate-950/30 border-white/10 shadow-matte-lg">
         <CardContent className="p-6">
           {/* Error Alert */}
           {(error || callbackError) && (
-            <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 flex items-center gap-2 text-red-700">
+            <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center gap-2 text-red-200">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
               <p className="text-sm">
                 {error || (callbackError === 'auth_callback_error' 
@@ -97,7 +95,7 @@ function LoginForm() {
           {/* Google Sign In Button */}
           <Button
             variant="outline"
-            className="w-full mb-4 border-[#CBD5E1] bg-white hover:border-[#5BB3B3] hover:bg-[#F5F3FF] h-12 text-[#1E293B] font-medium shadow-sm transition-all"
+            className="w-full mb-4 border-white/15 bg-white/5 hover:border-[#5BB3B3] hover:bg-white/10 h-12 text-[#E8E0D5] font-medium shadow-sm transition-all"
             onClick={handleGoogleLogin}
             disabled={isLoading || isGoogleLoading}
           >
@@ -133,7 +131,7 @@ function LoginForm() {
               <span className="w-full border-t border-[#E2E8F0]" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-[#94A3B8]">
+              <span className="bg-transparent px-2 text-[#6B7280]">
                 Or continue with email
               </span>
             </div>

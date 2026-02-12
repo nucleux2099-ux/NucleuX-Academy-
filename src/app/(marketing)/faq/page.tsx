@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 const faqs: Array<{ q: string; a: string }> = [
   {
@@ -37,7 +38,7 @@ export default function FAQPage() {
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Campus Tour
+              Take the tour
             </Link>
             <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Meet ATOM
@@ -93,6 +94,7 @@ export default function FAQPage() {
           </div>
         </div>
       </main>
+      <SupportFooter />
     </div>
   );
 }

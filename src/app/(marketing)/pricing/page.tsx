@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 export default function PricingPage() {
   return (
@@ -11,7 +12,7 @@ export default function PricingPage() {
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Campus Tour
+              Take the tour
             </Link>
             <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Meet ATOM
@@ -89,6 +90,7 @@ export default function PricingPage() {
           ))}
         </section>
       </main>
+      <SupportFooter />
     </div>
   );
 }

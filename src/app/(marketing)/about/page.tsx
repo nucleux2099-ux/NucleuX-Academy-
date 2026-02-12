@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 export default function AboutPage() {
   return (
@@ -10,13 +11,19 @@ export default function AboutPage() {
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Campus Tour
+              Take the tour
             </Link>
             <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Meet ATOM
             </Link>
             <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Early access
+            </Link>
+            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Contact
             </Link>
             <Link
               href="/login"
@@ -62,6 +69,7 @@ export default function AboutPage() {
           </div>
         </div>
       </main>
+      <SupportFooter />
     </div>
   );
 }

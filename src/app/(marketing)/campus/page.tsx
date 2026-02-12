@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 type Room = {
   id: string;
@@ -208,12 +209,13 @@ export default function CampusTourPage() {
       {/* Top nav */}
       <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="text-[#E8E0D5] font-bold">
-            NucleuX Academy
+          <Link href="/" className="leading-tight">
+            <div className="text-[#E8E0D5] font-bold">NucleuX Academy</div>
+            <div className="text-xs text-[#A0B0BC]">A virtual campus for medical mastery</div>
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/campus" className="text-[#E8E0D5]">
-              Campus Tour
+              Take the tour
             </Link>
             <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Meet ATOM
@@ -241,7 +243,7 @@ export default function CampusTourPage() {
       <section className="max-w-7xl mx-auto px-6 pt-16 pb-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
-            Presentation-style product tour
+            A virtual campus for medical mastery
           </div>
           <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">
             Take the tour — see the campus{' '}
@@ -302,26 +304,7 @@ export default function CampusTourPage() {
         ))}
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="text-sm text-[#A0B0BC]">© {new Date().getFullYear()} NucleuX Academy</div>
-          <div className="flex flex-wrap gap-4 text-sm">
-            <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Early access
-            </Link>
-            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              FAQ
-            </Link>
-            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Contact
-            </Link>
-            <Link href="/about" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              About
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <SupportFooter />
     </div>
   );
 }

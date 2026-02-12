@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Atom } from 'lucide-react';
+import { SupportFooter } from '@/components/marketing/SupportFooter';
 
 const slides = [
   {
@@ -156,7 +157,7 @@ export default function HomePage() {
             </div>
             <div className="leading-tight">
               <div className="font-bold text-[#E8E0D5]">NucleuX Academy</div>
-              <div className="text-xs text-[#A0B0BC]">Virtual Campus • Presentation-style learning OS</div>
+              <div className="text-xs text-[#A0B0BC]">Learn atomically and grow exponentially</div>
             </div>
           </Link>
 
@@ -277,31 +278,9 @@ Library • Classroom • Exam Centre • Arena • Backstage • Common Room �
         </div>
       </section>
 
-      <footer className="border-t border-white/5 py-10 relative z-10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="text-sm text-[#A0B0BC]">© {new Date().getFullYear()} NucleuX Academy</div>
-          <div className="flex flex-wrap gap-4 text-sm">
-            <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Campus Tour
-            </Link>
-            <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              ATOM
-            </Link>
-            <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Early access
-            </Link>
-            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              FAQ
-            </Link>
-            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              Contact
-            </Link>
-            <Link href="/about" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              About
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <div className="relative z-10">
+        <SupportFooter />
+      </div>
     </div>
   );
 }
