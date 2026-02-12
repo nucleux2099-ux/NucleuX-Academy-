@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import Link from "next/link";
 import {
   Play, Pause, Volume2, Maximize2, ChevronDown, FileText, Bookmark, 
   HelpCircle, Send, Zap, Clock, BookOpen, User, MessageCircle,
@@ -163,6 +164,9 @@ export default function ClassroomPage() {
               </div>
               <div className="flex flex-wrap gap-2">
                 <Button variant="outline" className="border-[rgba(91,179,179,0.15)] hover:bg-[#3A4D5F] text-[#A0B0BC]"><FileText className="w-4 h-4 mr-2" />Take Notes</Button>
+                <Link href="/classroom/decks">
+                  <Button variant="outline" className="border-[rgba(91,179,179,0.15)] hover:bg-[#3A4D5F] text-[#A0B0BC]">🗂️ Slide Decks</Button>
+                </Link>
                 <Button variant="outline" className={`border-[rgba(91,179,179,0.15)] hover:bg-[#3A4D5F] ${isBookmarked ? "text-[#6BA8C9] bg-[rgba(14,165,233,0.1)]" : "text-[#A0B0BC]"}`} onClick={() => setIsBookmarked(!isBookmarked)}>
                   <Bookmark className={`w-4 h-4 mr-2 ${isBookmarked ? "fill-current" : ""}`} />{isBookmarked ? "Bookmarked" : "Bookmark"}
                 </Button>
