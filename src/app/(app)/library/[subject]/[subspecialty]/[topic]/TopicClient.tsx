@@ -53,6 +53,8 @@ import { getShoot, initShoot, setLayered, setVprefre, updateChunk as updateShoot
 import type { Shoot } from "@/lib/shoot/types";
 import { getSkin, initSkin, setTwoFourRule, setGrinde, setTeachBackGaps, validateSkin, markSkinCompleted } from "@/lib/skin/store";
 import type { Skin } from "@/lib/skin/types";
+import { getMindMap, generateMindMapDraft, renameNode, addEdge, canFinalize, finalizeMindMap } from "@/lib/mindmap/store";
+import type { MindMap } from "@/lib/mindmap/types";
 
 // Quiz Card Component
 function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
@@ -212,6 +214,13 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   const [skinOpen, setSkinOpen] = useState(false);
   const [skin, setSkin] = useState<Skin | null>(() => getSkin(topicId));
 
+  // Learning OS: Mind Map
+  const [mindMapOpen, setMindMapOpen] = useState(false);
+  const [mindMap, setMindMap] = useState<MindMap | null>(() => getMindMap(topicId));
+  const [edgeFrom, setEdgeFrom] = useState<string>("");
+  const [edgeTo, setEdgeTo] = useState<string>("");
+  const [edgeRelation, setEdgeRelation] = useState<"therefore"|"causes"|"leads_to"|"differentiates"|"requires"|"part_of"|"example_of">("therefore");
+
   useEffect(() => {
     // keep in sync when navigating topics
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -239,6 +248,15 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
     setSkin(getSkin(topicId));
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSkinOpen(false);
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMindMap(getMindMap(topicId));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMindMapOpen(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEdgeFrom("");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setEdgeTo("");
   }, [topicId]);
   
   // Rich content state
@@ -1065,6 +1083,216 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                     >
                       Mark SKIN Complete
                     </Button>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
+
+            {/* Learning OS: Mind Map */}
+            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+                      <Brain className="w-5 h-5 text-[#06B6D4]" />
+                      Learning OS — Mind Map
+                    </h3>
+                    <p className="text-sm text-[#9CA3AF] mt-1">
+                      Generate a draft from your Pre‑Study, then make 3 edits to finalize.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {mindMap?.status === "final" ? (
+                      <Badge className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30">✓ Final</Badge>
+                    ) : mindMap ? (
+                      <Badge className="bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30">Draft</Badge>
+                    ) : (
+                      <Badge className={cn(
+                        "border",
+                        skin?.completedAt
+                          ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/30"
+                          : "bg-[#6B7280]/20 text-[#9CA3AF] border-[#6B7280]/30"
+                      )}>
+                        {skin?.completedAt ? "Not generated" : "Do SKIN first"}
+                      </Badge>
+                    )}
+                    <Button
+                      onClick={() => {
+                        if (!skin?.completedAt) return;
+                        if (!mindMap) {
+                          const mm = generateMindMapDraft(topicId, preStudy);
+                          setMindMap(mm);
+                          addBackstageEvent({
+                            type: "mindmap",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: `mindmap_generated nodes=${mm.nodes.length} edges=${mm.edges.length}`,
+                          });
+                        }
+                        setMindMapOpen((v) => !v);
+                      }}
+                      variant="outline"
+                      className={cn(
+                        "border-[rgba(6,182,212,0.35)] text-[#06B6D4] hover:bg-[#06B6D4]/10",
+                        !skin?.completedAt ? "opacity-50 pointer-events-none" : ""
+                      )}
+                    >
+                      {mindMapOpen ? "Close" : mindMap ? "View" : "Generate"}
+                    </Button>
+                  </div>
+                </div>
+              </CardHeader>
+
+              {mindMapOpen && mindMap && preStudy && (
+                <CardContent className="pt-0 space-y-4">
+                  <div className="text-xs text-[#9CA3AF]">
+                    Edits: <span className={canFinalize(mindMap) ? "text-[#10B981]" : "text-[#F59E0B]"}>{mindMap.userEditsCount}/{mindMap.requiredEdits}</span>
+                    {" "}• Rename nodes or add edges to finalize.
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      {preStudy.chunks.map((c) => {
+                        const nodes = mindMap.nodes.filter((n) => n.chunkId === c.id);
+                        return (
+                          <div key={c.id} className="p-3 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]">
+                            <div className="flex items-center gap-2">
+                              <Badge className="bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/25">Chunk {c.order}</Badge>
+                              <div className="text-sm text-[#E5E7EB]">{c.title}</div>
+                            </div>
+                            <div className="mt-2 space-y-2">
+                              {nodes.slice(0, 12).map((n) => (
+                                <Input
+                                  key={n.id}
+                                  value={n.label}
+                                  onChange={(e) => {
+                                    const next = renameNode(mindMap, n.id, e.target.value);
+                                    setMindMap(next);
+                                    addBackstageEvent({
+                                      type: "mindmap",
+                                      subject: normalizeSubject(subject.slug),
+                                      topicId,
+                                      topic: topic.name,
+                                      note: "mindmap_user_edit(rename_node)",
+                                    });
+                                  }}
+                                  className={cn(
+                                    "bg-[#142538] border-[rgba(6,182,212,0.12)] text-[#E5E7EB]",
+                                    n.importance === "A" ? "border-[#10B981]/30" : ""
+                                  )}
+                                />
+                              ))}
+                              {nodes.length > 12 && (
+                                <div className="text-xs text-[#6B7280]">+{nodes.length - 12} more nodes…</div>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="p-3 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]">
+                        <div className="text-sm text-[#E5E7EB] font-medium">Add an edge</div>
+                        <div className="grid grid-cols-1 gap-2 mt-2">
+                          <select
+                            value={edgeFrom}
+                            onChange={(e) => setEdgeFrom(e.target.value)}
+                            className="h-9 rounded bg-[#142538] border border-[rgba(6,182,212,0.12)] text-[#E5E7EB] px-2"
+                          >
+                            <option value="">From node…</option>
+                            {mindMap.nodes.map((n) => (
+                              <option key={n.id} value={n.id}>{n.label}</option>
+                            ))}
+                          </select>
+                          <select
+                            value={edgeRelation}
+                            onChange={(e) => setEdgeRelation(e.target.value as any)}
+                            className="h-9 rounded bg-[#142538] border border-[rgba(6,182,212,0.12)] text-[#E5E7EB] px-2"
+                          >
+                            <option value="therefore">therefore</option>
+                            <option value="causes">causes</option>
+                            <option value="leads_to">leads_to</option>
+                            <option value="differentiates">differentiates</option>
+                            <option value="requires">requires</option>
+                            <option value="part_of">part_of</option>
+                            <option value="example_of">example_of</option>
+                          </select>
+                          <select
+                            value={edgeTo}
+                            onChange={(e) => setEdgeTo(e.target.value)}
+                            className="h-9 rounded bg-[#142538] border border-[rgba(6,182,212,0.12)] text-[#E5E7EB] px-2"
+                          >
+                            <option value="">To node…</option>
+                            {mindMap.nodes.map((n) => (
+                              <option key={n.id} value={n.id}>{n.label}</option>
+                            ))}
+                          </select>
+
+                          <Button
+                            onClick={() => {
+                              if (!edgeFrom || !edgeTo) return;
+                              const next = addEdge(mindMap, edgeFrom, edgeTo, edgeRelation);
+                              setMindMap(next);
+                              setEdgeFrom("");
+                              setEdgeTo("");
+                              addBackstageEvent({
+                                type: "mindmap",
+                                subject: normalizeSubject(subject.slug),
+                                topicId,
+                                topic: topic.name,
+                                note: "mindmap_user_edit(add_edge)",
+                              });
+                            }}
+                            className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
+                          >
+                            Add edge
+                          </Button>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]">
+                        <div className="text-sm text-[#E5E7EB] font-medium">Edges ({mindMap.edges.length})</div>
+                        <div className="mt-2 space-y-1 max-h-[240px] overflow-auto">
+                          {mindMap.edges.slice(0, 30).map((e) => {
+                            const from = mindMap.nodes.find((n) => n.id === e.from)?.label || "?";
+                            const to = mindMap.nodes.find((n) => n.id === e.to)?.label || "?";
+                            return (
+                              <div key={e.id} className="text-xs text-[#9CA3AF]">
+                                {from} <span className="text-[#06B6D4]">{e.relation}</span> {to}
+                              </div>
+                            );
+                          })}
+                          {mindMap.edges.length > 30 && (
+                            <div className="text-xs text-[#6B7280]">+{mindMap.edges.length - 30} more…</div>
+                          )}
+                        </div>
+                      </div>
+
+                      <Button
+                        onClick={() => {
+                          if (!canFinalize(mindMap)) return;
+                          const next = finalizeMindMap(mindMap);
+                          setMindMap(next);
+                          addBackstageEvent({
+                            type: "mindmap",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: "mindmap_finalized",
+                          });
+                        }}
+                        className={cn(
+                          "w-full",
+                          canFinalize(mindMap)
+                            ? "bg-[#10B981] hover:bg-[#059669] text-white"
+                            : "bg-[#374151] text-[#9CA3AF] cursor-not-allowed"
+                        )}
+                      >
+                        Finalize Mind Map (requires 3 edits)
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               )}

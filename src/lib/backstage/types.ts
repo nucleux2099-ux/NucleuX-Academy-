@@ -28,7 +28,8 @@ export type BackstageEventType =
   | "skin"
   | "practice_block"
   | "marginal_gain"
-  | "reverse_plan";
+  | "reverse_plan"
+  | "mindmap";
 
 export type SubjectKey =
   | "anatomy"
