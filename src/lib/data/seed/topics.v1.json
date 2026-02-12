@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "topicId": "medicine/pancreas/acute-pancreatitis",
+    "title": "Acute Pancreatitis",
+    "audience": "residents",
+    "summary": "Diagnosis, severity stratification, early management, complications.",
+    "tags": ["emergency", "gi"],
+    "version": "v1"
+  },
+  {
+    "topicId": "medicine/gastroenterology/upper-gi-bleed-variceal",
+    "title": "Upper GI Bleed (including Variceal Bleed)",
+    "audience": "residents",
+    "summary": "Resuscitation-first, risk stratification, endoscopy pathways, variceal bundle.",
+    "tags": ["emergency", "gi"],
+    "version": "v1"
+  },
+  {
+    "topicId": "medicine/hepatobiliary/acute-cholangitis",
+    "title": "Acute Cholangitis & Biliary Sepsis",
+    "audience": "residents",
+    "summary": "Recognition, antibiotics, source control, timing of ERCP/drainage.",
+    "tags": ["emergency", "sepsis", "gi"],
+    "version": "v1"
+  },
+  {
+    "topicId": "surgery/intestine/intestinal-obstruction",
+    "title": "Intestinal Obstruction",
+    "audience": "residents",
+    "summary": "Initial stabilization, imaging, strangulation red flags, operative indications.",
+    "tags": ["emergency", "surgery"],
+    "version": "v1"
+  },
+  {
+    "topicId": "medicine/critical-care/shock-sepsis-first-hour",
+    "title": "Shock/Sepsis: First Hour Management",
+    "audience": "residents",
+    "summary": "ABCs, fluids, vasopressors, antibiotics, lactate, source control.",
+    "tags": ["emergency", "icu", "sepsis"],
+    "version": "v1"
+  }
+]

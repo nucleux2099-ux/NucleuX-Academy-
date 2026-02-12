@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "topicId": "medicine/pancreas/acute-pancreatitis",
+    "mcqs": [
+      {
+        "mcqId": "medicine-pancreas-acute-pancreatitis-001",
+        "stem": "A patient presents with acute epigastric pain radiating to the back. Serum lipase is 4× ULN. CT abdomen is normal. Which statement is correct?",
+        "options": [
+          {"id": "A", "text": "Acute pancreatitis cannot be diagnosed without CT changes"},
+          {"id": "B", "text": "Two of three criteria are sufficient to diagnose acute pancreatitis"},
+          {"id": "C", "text": "Amylase is mandatory and lipase is optional"},
+          {"id": "D", "text": "A normal CT excludes acute pancreatitis"}
+        ],
+        "correctOptionId": "B",
+        "explanation": "Diagnosis requires 2/3: characteristic pain, enzymes ≥3× ULN, or imaging findings. CT may be normal early.",
+        "tags": {"bloom": "understand", "errorType": "conceptual"},
+        "difficulty": "easy",
+        "source": {"type": "seed", "ref": "v1"}
+      }
+    ]
+  },
+  {
+    "topicId": "medicine/gastroenterology/upper-gi-bleed-variceal",
+    "mcqs": [
+      {
+        "mcqId": "medicine-gastroenterology-upper-gi-bleed-variceal-001",
+        "stem": "In suspected variceal upper GI bleed, which intervention should be started as early as possible along with resuscitation?",
+        "options": [
+          {"id": "A", "text": "High-dose PPI only"},
+          {"id": "B", "text": "Vasoactive therapy (e.g., octreotide/terlipressin)"},
+          {"id": "C", "text": "Delay all meds until endoscopy"},
+          {"id": "D", "text": "Routine NG lavage"}
+        ],
+        "correctOptionId": "B",
+        "explanation": "Variceal bleed bundle: resuscitation + early vasoactive agent + antibiotics, then urgent endoscopy.",
+        "tags": {"bloom": "apply", "errorType": "application"},
+        "difficulty": "medium",
+        "source": {"type": "seed", "ref": "v1"}
+      }
+    ]
+  },
+  {
+    "topicId": "medicine/hepatobiliary/acute-cholangitis",
+    "mcqs": [
+      {
+        "mcqId": "medicine-hepatobiliary-acute-cholangitis-001",
+        "stem": "A patient with fever, jaundice, and RUQ pain is hypotensive and confused. After antibiotics and fluids, the next definitive step is:",
+        "options": [
+          {"id": "A", "text": "Elective cholecystectomy in 6 weeks"},
+          {"id": "B", "text": "Urgent biliary decompression (ERCP or drainage)"},
+          {"id": "C", "text": "Observe for 24 hours"},
+          {"id": "D", "text": "Oral ursodeoxycholic acid"}
+        ],
+        "correctOptionId": "B",
+        "explanation": "Severe cholangitis = sepsis + biliary obstruction → needs early source control via decompression.",
+        "tags": {"bloom": "apply", "errorType": "application"},
+        "difficulty": "medium",
+        "source": {"type": "seed", "ref": "v1"}
+      }
+    ]
+  },
+  {
+    "topicId": "surgery/intestine/intestinal-obstruction",
+    "mcqs": [
+      {
+        "mcqId": "surgery-intestine-intestinal-obstruction-001",
+        "stem": "Which finding most strongly suggests strangulation in small bowel obstruction?",
+        "options": [
+          {"id": "A", "text": "Intermittent colicky pain"},
+          {"id": "B", "text": "High-pitched bowel sounds"},
+          {"id": "C", "text": "Continuous severe pain with fever and leukocytosis"},
+          {"id": "D", "text": "History of prior abdominal surgery"}
+        ],
+        "correctOptionId": "C",
+        "explanation": "Strangulation signs: continuous pain, systemic toxicity (fever), leukocytosis, peritonitis, metabolic acidosis.",
+        "tags": {"bloom": "analyze", "errorType": "conceptual"},
+        "difficulty": "medium",
+        "source": {"type": "seed", "ref": "v1"}
+      }
+    ]
+  },
+  {
+    "topicId": "medicine/critical-care/shock-sepsis-first-hour",
+    "mcqs": [
+      {
+        "mcqId": "medicine-critical-care-shock-sepsis-first-hour-001",
+        "stem": "In septic shock, after adequate fluid resuscitation, the first-line vasopressor to target MAP ≥65 mmHg is:",
+        "options": [
+          {"id": "A", "text": "Dopamine"},
+          {"id": "B", "text": "Norepinephrine"},
+          {"id": "C", "text": "Phenylephrine"},
+          {"id": "D", "text": "Epinephrine only"}
+        ],
+        "correctOptionId": "B",
+        "explanation": "Norepinephrine is first-line vasopressor for septic shock to maintain MAP, with additional agents as needed.",
+        "tags": {"bloom": "remember", "errorType": "factual"},
+        "difficulty": "easy",
+        "source": {"type": "seed", "ref": "v1"}
+      }
+    ]
+  }
+]
