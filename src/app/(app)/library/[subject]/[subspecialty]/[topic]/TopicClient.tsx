@@ -46,6 +46,8 @@ import {
   markPreStudyCompleted,
 } from "@/lib/prestudy/store";
 import type { PreStudy } from "@/lib/prestudy/types";
+import { getAim, initAim, setWhyImportant, setQuestionsFromText, validateAim, markAimCompleted } from "@/lib/aim/store";
+import type { Aim } from "@/lib/aim/types";
 
 // Quiz Card Component
 function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
@@ -174,6 +176,11 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   const [newKeyword, setNewKeyword] = useState("");
   const [aimDraftByChunk, setAimDraftByChunk] = useState<Record<string, string>>({});
 
+  // Learning OS: AIM
+  const [aimOpen, setAimOpen] = useState(false);
+  const [aim, setAim] = useState<Aim | null>(() => getAim(topicId));
+  const [aimQuestionsDraft, setAimQuestionsDraft] = useState<Record<string, string>>({});
+
   useEffect(() => {
     // keep in sync when navigating topics
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -184,6 +191,13 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
     setNewKeyword("");
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setAimDraftByChunk({});
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAim(getAim(topicId));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAimOpen(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAimQuestionsDraft({});
   }, [topicId]);
   
   // Rich content state
@@ -496,6 +510,151 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                       <p className="text-xs text-[#6B7280]">
                         This is the exact workflow we designed: skim → keywords → importance → 3–4 chunks → questions.
                       </p>
+                    </div>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
+
+            {/* Learning OS: AIM */}
+            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+                      <Target className="w-5 h-5 text-[#EC4899]" />
+                      Learning OS — AIM
+                    </h3>
+                    <p className="text-sm text-[#9CA3AF] mt-1">
+                      Turn chunks into a question-driven scaffold (Why important + ≥6 questions per chunk).
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {aim?.completedAt ? (
+                      <Badge className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30">
+                        ✓ Complete
+                      </Badge>
+                    ) : (
+                      <Badge className={cn(
+                        "border",
+                        preStudy?.completedAt
+                          ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/30"
+                          : "bg-[#6B7280]/20 text-[#9CA3AF] border-[#6B7280]/30"
+                      )}>
+                        {preStudy?.completedAt ? "Not done" : "Do Pre‑Study first"}
+                      </Badge>
+                    )}
+                    <Button
+                      onClick={() => {
+                        if (!preStudy?.completedAt) return;
+                        if (!aim) {
+                          const a = initAim(topicId, preStudy.chunks.map((c) => c.id));
+                          setAim(a);
+                          addBackstageEvent({
+                            type: "aim",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: "aim_started",
+                          });
+                        }
+                        setAimOpen((v) => !v);
+                      }}
+                      variant="outline"
+                      className={cn(
+                        "border-[rgba(236,72,153,0.35)] text-[#EC4899] hover:bg-[#EC4899]/10",
+                        !preStudy?.completedAt ? "opacity-50 pointer-events-none" : ""
+                      )}
+                    >
+                      {aimOpen ? "Close" : aim ? "Edit" : "Start"}
+                    </Button>
+                  </div>
+                </div>
+              </CardHeader>
+
+              {aimOpen && aim && preStudy && (
+                <CardContent className="pt-0">
+                  <div className="space-y-4">
+                    {preStudy.chunks.map((c) => {
+                      const plan = aim.chunkPlans.find((p) => p.chunkId === c.id);
+                      const qText =
+                        aimQuestionsDraft[c.id] ??
+                        (plan?.questions || []).map((q) => q.text).join("\n");
+
+                      return (
+                        <div key={c.id} className="p-3 rounded border border-[rgba(236,72,153,0.15)] bg-[#0D1B2A]">
+                          <div className="flex items-center gap-2">
+                            <Badge className="bg-[#EC4899]/15 text-[#EC4899] border border-[#EC4899]/25">
+                              Chunk {c.order}
+                            </Badge>
+                            <div className="text-sm text-[#E5E7EB]">{c.title}</div>
+                          </div>
+
+                          <div className="mt-3">
+                            <label className="text-xs text-[#9CA3AF]">Why important? (one sentence)</label>
+                            <Input
+                              value={plan?.whyImportant || ""}
+                              onChange={(e) => {
+                                const next = setWhyImportant(aim, c.id, e.target.value);
+                                setAim(next);
+                              }}
+                              placeholder="This chunk matters because it changes _____."
+                              className="mt-2 bg-[#142538] border-[rgba(236,72,153,0.15)] text-[#E5E7EB]"
+                            />
+                          </div>
+
+                          <div className="mt-3">
+                            <label className="text-xs text-[#9CA3AF]">Aim questions (≥6; one per line)</label>
+                            <Textarea
+                              value={qText}
+                              onChange={(e) => {
+                                setAimQuestionsDraft((m) => ({ ...m, [c.id]: e.target.value }));
+                              }}
+                              onBlur={() => {
+                                const t = (aimQuestionsDraft[c.id] ?? qText) || "";
+                                const next = setQuestionsFromText(aim, c.id, "viva_mcq", t);
+                                setAim(next);
+                              }}
+                              placeholder="Why important? How related? Common confusion? What changes management?"
+                              className="mt-2 bg-[#142538] border-[rgba(236,72,153,0.15)] text-[#E5E7EB]"
+                              rows={5}
+                            />
+                            <p className="mt-2 text-xs text-[#6B7280]">Tip: mix question types (why / how-related / trap / management-change).</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                    <div className="flex items-center justify-between gap-3">
+                      {(() => {
+                        const v = validateAim(aim);
+                        const good = v.perChunk.filter((c) => c.ok).length;
+                        return (
+                          <div className="text-xs text-[#9CA3AF]">
+                            Chunks complete: <span className={good === v.perChunk.length ? "text-[#10B981]" : "text-[#F59E0B]"}>{good}/{v.perChunk.length}</span>
+                            {" "}• Each needs “why important” + ≥6 questions.
+                          </div>
+                        );
+                      })()}
+
+                      <Button
+                        onClick={() => {
+                          const v = validateAim(aim);
+                          if (!v.ok) return;
+                          const next = markAimCompleted(aim);
+                          setAim(next);
+                          addBackstageEvent({
+                            type: "aim",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: "aim_completed",
+                          });
+                        }}
+                        className="bg-[#10B981] hover:bg-[#059669] text-white"
+                      >
+                        Mark AIM Complete
+                      </Button>
                     </div>
                   </div>
                 </CardContent>
