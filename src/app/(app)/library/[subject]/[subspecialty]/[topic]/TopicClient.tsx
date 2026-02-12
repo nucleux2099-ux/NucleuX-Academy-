@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
+import {
   ChevronRight,
   ChevronLeft,
   Clock,
@@ -23,7 +23,8 @@ import {
   Brain,
   Stethoscope,
   Loader2,
-  GraduationCap
+  GraduationCap,
+  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ViewMode, LibraryTopic, RetrievalCard } from "@/lib/types/library";
@@ -162,6 +163,24 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   
   const [viewMode, setViewMode] = useState<ViewMode>(initialMode);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+
+  // Optional reading aid: Bionic Reader (persisted per-device)
+  const [bionicReader, setBionicReader] = useState(false);
+  useEffect(() => {
+    try {
+      const v = localStorage.getItem('nx_bionic_reader');
+      if (v === '1') setBionicReader(true);
+    } catch {
+      // ignore
+    }
+  }, []);
+  useEffect(() => {
+    try {
+      localStorage.setItem('nx_bionic_reader', bionicReader ? '1' : '0');
+    } catch {
+      // ignore
+    }
+  }, [bionicReader]);
 
   const topicId = `${subject.slug}/${subspecialty.slug}/${topic.slug}`;
 
@@ -684,7 +703,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
             {/* Main Content */}
             <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
               <CardContent className="p-5">
-                <MedicalMarkdown content={topic.content.concept} />
+                <MedicalMarkdown content={topic.content.concept} bionic={bionicReader} />
               </CardContent>
             </Card>
           </div>
@@ -710,7 +729,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                     <Target className="w-5 h-5 text-[#F59E0B]" />
                     Quick Summary
                   </h3>
-                  <MedicalMarkdown content={topic.content.examPrep.summary} />
+                  <MedicalMarkdown content={topic.content.examPrep.summary} bionic={bionicReader} />
                 </CardContent>
               </Card>
             )}
@@ -798,7 +817,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
               </div>
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
                 <CardContent className="p-6">
-                  <MedicalMarkdown content={richContent} />
+                  <MedicalMarkdown content={richContent} bionic={bionicReader} />
                 </CardContent>
               </Card>
             </div>
@@ -1095,26 +1114,45 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
       </div>
 
       {/* View Mode Tabs */}
-      <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-        {viewModes.map((mode) => {
-          const config = VIEW_MODE_CONFIG[mode];
-          const isActive = viewMode === mode;
-          return (
-            <button
-              key={mode}
-              onClick={() => setViewMode(mode)}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap",
-                isActive
-                  ? "bg-[#06B6D4] text-[#0D1B2A]"
-                  : "bg-[#142538] text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)]"
-              )}
-            >
-              <span>{config.icon}</span>
-              <span className="text-sm font-medium">{config.label}</span>
-            </button>
-          );
-        })}
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            {viewModes.map((mode) => {
+            const config = VIEW_MODE_CONFIG[mode];
+            const isActive = viewMode === mode;
+            return (
+              <button
+                key={mode}
+                onClick={() => setViewMode(mode)}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-2 rounded-lg transition-all whitespace-nowrap",
+                  isActive
+                    ? "bg-[#06B6D4] text-[#0D1B2A]"
+                    : "bg-[#142538] text-[#9CA3AF] hover:text-[#E5E7EB] hover:bg-[rgba(6,182,212,0.1)]"
+                )}
+              >
+                <span>{config.icon}</span>
+                <span className="text-sm font-medium">{config.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Optional reading aid */}
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => setBionicReader((v) => !v)}
+          className={cn(
+            "shrink-0 border-[rgba(6,182,212,0.2)]",
+            bionicReader
+              ? "bg-[rgba(6,182,212,0.12)] text-[#E5E7EB]"
+              : "text-[#9CA3AF]"
+          )}
+          title="Bionic Reader (bolds the first part of words)"
+        >
+          <Zap className="w-4 h-4 mr-2" />
+          Bionic
+        </Button>
       </div>
 
       {/* Content */}

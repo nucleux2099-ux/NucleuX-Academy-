@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { remarkBionic } from '@/lib/markdown/bionic';
 import { ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ImageViewer } from './ImageViewer';
@@ -11,6 +12,7 @@ import { ImageViewer } from './ImageViewer';
 interface MedicalMarkdownProps {
   content: string;
   className?: string;
+  bionic?: boolean;
 }
 
 // Internal clickable image component
@@ -60,11 +62,11 @@ function ClickableImage({
   );
 }
 
-export function MedicalMarkdown({ content, className }: MedicalMarkdownProps) {
+export function MedicalMarkdown({ content, className, bionic }: MedicalMarkdownProps) {
   return (
-    <div className={cn("medical-markdown", className)}>
+    <div className={cn("medical-markdown", bionic && 'bionic-reader', className)}>
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={bionic ? [remarkGfm, remarkBionic] : [remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
           // Headings
