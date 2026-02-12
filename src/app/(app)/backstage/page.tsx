@@ -77,6 +77,14 @@ export default function BackstagePage() {
   const [subjectStats, setSubjectStats] = useState(() => deriveSubjectStats(loadBackstageState().events));
   const [bloomCounts, setBloomCounts] = useState(() => countBlooms(loadBackstageState().events));
   const [recentCases, setRecentCases] = useState(() => getRecentCases(6));
+  const [deckStats, setDeckStats] = useState(() => {
+    const all = loadBackstageState().events;
+    return {
+      deckViews: all.filter((e) => e.type === "deck_view").length,
+      slideViews: all.filter((e) => e.type === "slide_view").length,
+      templateInserts: all.filter((e) => e.type === "template_insert").length,
+    };
+  });
 
   const [caseForm, setCaseForm] = useState({
     title: "",
@@ -97,6 +105,11 @@ export default function BackstagePage() {
     setSubjectStats(deriveSubjectStats(all));
     setBloomCounts(countBlooms(all));
     setRecentCases(getRecentCases(6));
+    setDeckStats({
+      deckViews: all.filter((e) => e.type === "deck_view").length,
+      slideViews: all.filter((e) => e.type === "slide_view").length,
+      templateInserts: all.filter((e) => e.type === "template_insert").length,
+    });
   }, []);
 
   const saveCase = () => {
@@ -378,6 +391,34 @@ export default function BackstagePage() {
 
           <Card>
             <CardHeader className="pb-3">
+              <CardTitle className="text-base">Deck activity</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline">Deck views: {deckStats.deckViews}</Badge>
+                <Badge variant="outline">Slide views: {deckStats.slideViews}</Badge>
+                <Badge variant="outline">Template inserts: {deckStats.templateInserts}</Badge>
+              </div>
+              <Button
+                size="sm"
+                variant="secondary"
+                onClick={() => {
+                  const all = loadBackstageState().events;
+                  setDeckStats({
+                    deckViews: all.filter((e) => e.type === "deck_view").length,
+                    slideViews: all.filter((e) => e.type === "slide_view").length,
+                    templateInserts: all.filter((e) => e.type === "template_insert").length,
+                  });
+                  setRecentEvents(getRecentBackstageEvents(12));
+                }}
+              >
+                Refresh
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader className="pb-3">
               <CardTitle className="text-base">Quick actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
@@ -521,7 +562,7 @@ export default function BackstagePage() {
             <CardContent className="space-y-2">
               {recentEvents.length === 0 ? (
                 <div className="text-sm text-muted-foreground">
-                  No events yet. Do an MCQ or read a topic — we’ll start building your cognitive map.
+                  No events yet. Do an MCQ, open a deck, or read a topic — we’ll start building your cognitive map.
                 </div>
               ) : (
                 <div className="space-y-2">
@@ -537,6 +578,9 @@ export default function BackstagePage() {
                       </div>
                       {e.topic ? (
                         <div className="mt-1 text-xs text-muted-foreground">{e.topic}</div>
+                      ) : null}
+                      {e.note ? (
+                        <div className="mt-1 text-xs text-muted-foreground">{e.note}</div>
                       ) : null}
                       {typeof e.mcq?.correct === "boolean" ? (
                         <div className="mt-2 text-xs text-muted-foreground">
