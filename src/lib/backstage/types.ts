@@ -20,7 +20,15 @@ export type BackstageEventType =
   | "note"
   | "deck_view"
   | "slide_view"
-  | "template_insert";
+  | "template_insert"
+  // Learning OS workflow (v1)
+  | "prestudy"
+  | "aim"
+  | "shoot"
+  | "skin"
+  | "practice_block"
+  | "marginal_gain"
+  | "reverse_plan";
 
 export type SubjectKey =
   | "anatomy"

@@ -32,6 +32,20 @@ import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { AtomLibrarian } from "@/components/AtomLibrarian";
 import { addPocketNote, getNotesForTopic } from "@/lib/pocket/store";
 import { addBackstageEvent, normalizeSubject } from "@/lib/backstage/store";
+import {
+  getPreStudy,
+  initPreStudy,
+  upsertPreStudy,
+  addKeyword,
+  setKeywordImportance,
+  setKeywordChunk,
+  setChunkTitle,
+  addChunk,
+  setAimQuestionsText,
+  validatePreStudy,
+  markPreStudyCompleted,
+} from "@/lib/prestudy/store";
+import type { PreStudy } from "@/lib/prestudy/types";
 
 // Quiz Card Component
 function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
@@ -153,6 +167,24 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   const [notes, setNotes] = useState(() => getNotesForTopic(topicId, 20));
   const [noteTitle, setNoteTitle] = useState("");
   const [noteBody, setNoteBody] = useState("");
+
+  // Learning OS: Pre-Study
+  const [preStudyOpen, setPreStudyOpen] = useState(false);
+  const [preStudy, setPreStudy] = useState<PreStudy | null>(() => getPreStudy(topicId));
+  const [newKeyword, setNewKeyword] = useState("");
+  const [aimDraftByChunk, setAimDraftByChunk] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    // keep in sync when navigating topics
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPreStudy(getPreStudy(topicId));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPreStudyOpen(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setNewKeyword("");
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setAimDraftByChunk({});
+  }, [topicId]);
   
   // Rich content state
   const [richContent, setRichContent] = useState<string | null>(null);
@@ -192,6 +224,284 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
       case 'explorer':
         return (
           <div className="space-y-6">
+            {/* Learning OS: Pre-Study */}
+            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+                      <GraduationCap className="w-5 h-5 text-[#06B6D4]" />
+                      Learning OS — Pre‑Study
+                    </h3>
+                    <p className="text-sm text-[#9CA3AF] mt-1">
+                      Skim → keywords → importance (A/B/C) → 3–4 chunks → Aim questions.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {preStudy?.completedAt ? (
+                      <Badge className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30">
+                        ✓ Complete
+                      </Badge>
+                    ) : (
+                      <Badge className="bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/30">
+                        Not done
+                      </Badge>
+                    )}
+                    <Button
+                      onClick={() => {
+                        if (!preStudy) {
+                          const ps = initPreStudy(topicId);
+                          setPreStudy(ps);
+                          addBackstageEvent({
+                            type: "prestudy",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: "prestudy_started",
+                          });
+                        }
+                        setPreStudyOpen((v) => !v);
+                      }}
+                      variant="outline"
+                      className="border-[rgba(6,182,212,0.35)] text-[#06B6D4] hover:bg-[#06B6D4]/10"
+                    >
+                      {preStudyOpen ? "Close" : preStudy ? "Edit" : "Start"}
+                    </Button>
+                  </div>
+                </div>
+              </CardHeader>
+
+              {preStudyOpen && preStudy && (
+                <CardContent className="pt-0">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div>
+                        <label className="text-xs text-[#9CA3AF]">Skim notes (optional)</label>
+                        <Textarea
+                          value={preStudy.skimNotes || ""}
+                          onChange={(e) => {
+                            const next = { ...preStudy, skimNotes: e.target.value };
+                            upsertPreStudy(next);
+                            setPreStudy(next);
+                          }}
+                          placeholder="What is this topic about (1–2 lines)?"
+                          className="mt-2 bg-[#0D1B2A] border-[rgba(6,182,212,0.15)] text-[#E5E7EB]"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="text-xs text-[#9CA3AF]">Keyword harvest</label>
+                        <div className="flex gap-2 mt-2">
+                          <Input
+                            value={newKeyword}
+                            onChange={(e) => setNewKeyword(e.target.value)}
+                            placeholder="Add a core keyword (noun/verb)…"
+                            className="bg-[#0D1B2A] border-[rgba(6,182,212,0.15)] text-[#E5E7EB]"
+                          />
+                          <Button
+                            onClick={() => {
+                              const t = newKeyword.trim();
+                              if (!t) return;
+                              const next = addKeyword(preStudy, t, "B");
+                              setPreStudy(next);
+                              setNewKeyword("");
+                              addBackstageEvent({
+                                type: "prestudy",
+                                subject: normalizeSubject(subject.slug),
+                                topicId,
+                                topic: topic.name,
+                                note: "prestudy_keywords_saved",
+                              });
+                            }}
+                            className="bg-[#06B6D4] hover:bg-[#0891B2] text-[#0D1B2A]"
+                          >
+                            Add
+                          </Button>
+                        </div>
+
+                        <div className="mt-3 space-y-2">
+                          {preStudy.keywords.slice(0, 20).map((k) => {
+                            const assigned = preStudy.assignments.find((a) => a.keywordId === k.id);
+                            return (
+                              <div
+                                key={k.id}
+                                className="flex items-center justify-between gap-3 p-2 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]"
+                              >
+                                <div className="min-w-0">
+                                  <div className="text-sm text-[#E5E7EB] truncate">{k.text}</div>
+                                  <div className="text-xs text-[#6B7280]">
+                                    Importance: {k.importance} • Chunk: {assigned ? preStudy.chunks.find((c) => c.id === assigned.chunkId)?.title : "—"}
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center gap-2 flex-shrink-0">
+                                  {(["A", "B", "C"] as const).map((imp) => (
+                                    <Button
+                                      key={imp}
+                                      size="sm"
+                                      variant="outline"
+                                      onClick={() => {
+                                        const next = setKeywordImportance(preStudy, k.id, imp);
+                                        setPreStudy(next);
+                                      }}
+                                      className={cn(
+                                        "h-8 px-2 border-[rgba(229,231,235,0.12)]",
+                                        k.importance === imp
+                                          ? imp === "A"
+                                            ? "bg-[#10B981]/20 text-[#10B981]"
+                                            : imp === "B"
+                                              ? "bg-[#06B6D4]/15 text-[#06B6D4]"
+                                              : "bg-[#F59E0B]/15 text-[#F59E0B]"
+                                          : "text-[#9CA3AF]"
+                                      )}
+                                    >
+                                      {imp}
+                                    </Button>
+                                  ))}
+
+                                  <div className="flex gap-1">
+                                    {preStudy.chunks.map((c) => (
+                                      <Button
+                                        key={c.id}
+                                        size="sm"
+                                        variant="outline"
+                                        onClick={() => {
+                                          const next = setKeywordChunk(preStudy, k.id, c.id);
+                                          setPreStudy(next);
+                                        }}
+                                        className={cn(
+                                          "h-8 px-2 border-[rgba(6,182,212,0.2)] text-[#9CA3AF]",
+                                          assigned?.chunkId === c.id ? "bg-[#06B6D4]/15 text-[#06B6D4]" : ""
+                                        )}
+                                      >
+                                        {c.order}
+                                      </Button>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <p className="mt-2 text-xs text-[#6B7280]">
+                          Tip: add at least 10 keywords. Tag ≥3 as A (Must know). Assign each keyword to a chunk.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <label className="text-xs text-[#9CA3AF]">Chunks (3–4)</label>
+                          <p className="text-xs text-[#6B7280] mt-1">Each chunk should have ≥3 keywords.</p>
+                        </div>
+                        <Button
+                          onClick={() => {
+                            const next = addChunk(preStudy);
+                            setPreStudy(next);
+                          }}
+                          size="sm"
+                          variant="outline"
+                          className="border-[rgba(6,182,212,0.35)] text-[#06B6D4] hover:bg-[#06B6D4]/10"
+                          disabled={preStudy.chunks.length >= 4}
+                        >
+                          Add chunk
+                        </Button>
+                      </div>
+
+                      {preStudy.chunks.map((c) => {
+                        const currentAimText =
+                          aimDraftByChunk[c.id] ??
+                          preStudy.aimQuestions
+                            .filter((q) => q.chunkId === c.id)
+                            .map((q) => q.text)
+                            .join("\n");
+
+                        return (
+                          <div key={c.id} className="p-3 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]">
+                            <div className="flex items-center gap-2">
+                              <Badge className="bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/25">
+                                Chunk {c.order}
+                              </Badge>
+                              <Input
+                                value={c.title}
+                                onChange={(e) => {
+                                  const next = setChunkTitle(preStudy, c.id, e.target.value);
+                                  setPreStudy(next);
+                                }}
+                                className="bg-[#0D1B2A] border-[rgba(6,182,212,0.15)] text-[#E5E7EB]"
+                              />
+                            </div>
+
+                            <div className="mt-3">
+                              <label className="text-xs text-[#9CA3AF]">Aim questions (one per line)</label>
+                              <Textarea
+                                value={currentAimText}
+                                onChange={(e) => {
+                                  const t = e.target.value;
+                                  setAimDraftByChunk((m) => ({ ...m, [c.id]: t }));
+                                }}
+                                onBlur={() => {
+                                  const t = (aimDraftByChunk[c.id] ?? currentAimText) || "";
+                                  const next = setAimQuestionsText(preStudy, c.id, t);
+                                  setPreStudy(next);
+                                }}
+                                placeholder="Why important? How related? Common confusion?"
+                                className="mt-2 bg-[#142538] border-[rgba(6,182,212,0.15)] text-[#E5E7EB]"
+                                rows={4}
+                              />
+                            </div>
+                          </div>
+                        );
+                      })}
+
+                      <div className="flex items-center justify-between gap-3">
+                        {(() => {
+                          const v = validatePreStudy(preStudy);
+                          return (
+                            <div className="text-xs text-[#9CA3AF]">
+                              <div>
+                                Keywords: <span className={v.keywordCount >= 10 ? "text-[#10B981]" : "text-[#F59E0B]"}>{v.keywordCount}</span>
+                                {" "}• A: <span className={v.aCount >= 3 ? "text-[#10B981]" : "text-[#F59E0B]"}>{v.aCount}</span>
+                                {" "}• Chunks: <span className="text-[#E5E7EB]">{v.chunkCount}</span>
+                              </div>
+                              <div>
+                                Chunk ≥3 keywords: <span className={v.chunkMinOk ? "text-[#10B981]" : "text-[#F59E0B]"}>{v.chunkMinOk ? "OK" : "Fix"}</span>
+                                {" "}• Aim questions: <span className={v.aimMinOk ? "text-[#10B981]" : "text-[#F59E0B]"}>{v.aimMinOk ? "OK" : "Fix"}</span>
+                              </div>
+                            </div>
+                          );
+                        })()}
+
+                        <Button
+                          onClick={() => {
+                            const v = validatePreStudy(preStudy);
+                            if (!v.ok) return;
+                            const next = markPreStudyCompleted(preStudy);
+                            setPreStudy(next);
+                            addBackstageEvent({
+                              type: "prestudy",
+                              subject: normalizeSubject(subject.slug),
+                              topicId,
+                              topic: topic.name,
+                              note: `prestudy_completed kw=${v.keywordCount} a=${v.aCount} chunks=${v.chunkCount}`,
+                            });
+                          }}
+                          className="bg-[#10B981] hover:bg-[#059669] text-white"
+                        >
+                          Mark Pre‑Study Complete
+                        </Button>
+                      </div>
+
+                      <p className="text-xs text-[#6B7280]">
+                        This is the exact workflow we designed: skim → keywords → importance → 3–4 chunks → questions.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
+
             {/* Key Points */}
             {(topic.content.keyPoints?.length ?? 0) > 0 && (
               <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
