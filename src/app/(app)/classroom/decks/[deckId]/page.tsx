@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getDeck } from "@/lib/decks/store";
+import { logDeckView, logSlideView } from "@/lib/backstage/decks";
 
 export default function DeckViewPage() {
   const params = useParams<{ deckId: string }>();
@@ -24,6 +25,24 @@ export default function DeckViewPage() {
 
   const slides = [...deck.slides].sort((a, b) => a.order - b.order);
   const slide = slides[Math.max(0, Math.min(idx, slides.length - 1))];
+
+  useEffect(() => {
+    logDeckView({ deckId: deck.deckId, deckTitle: deck.title, topicId: deck.topicId });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [deck.deckId]);
+
+  useEffect(() => {
+    const current = slides[Math.max(0, Math.min(idx, slides.length - 1))];
+    if (!current) return;
+    logSlideView({
+      deckId: deck.deckId,
+      deckTitle: deck.title,
+      slideOrder: current.order,
+      slideHeading: current.heading,
+      topicId: deck.topicId,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx]);
 
   return (
     <div className="space-y-4">

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { addSlide, getDeck, updateSlide, upsertDeck } from "@/lib/decks/store";
+import { logTemplateInsert } from "@/lib/backstage/decks";
 import { loadTemplates, saveTemplates } from "@/lib/templates/store";
 import { defaultTemplates } from "@/lib/templates/seed";
 import type { SlideTemplatePayload, Template } from "@/lib/templates/types";
@@ -68,6 +69,13 @@ export default function DeckEditPage() {
                   // Quick insert: selected template → new slide
                   const t = templates.find((x) => x.templateId === templateId);
                   if (!t || t.kind !== "slide") return;
+                  logTemplateInsert({
+                    deckId: deck.deckId,
+                    deckTitle: deck.title,
+                    templateId: t.templateId,
+                    templateTitle: t.title,
+                    topicId: deck.topicId,
+                  });
                   const payload = t.payload as SlideTemplatePayload;
                   const nextOrder = (deck.slides.at(-1)?.order ?? 0) + 1;
                   const nextSlide = {

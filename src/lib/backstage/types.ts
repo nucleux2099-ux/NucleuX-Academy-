@@ -12,7 +12,15 @@ export type CompetencyStage =
   | "consciously_competent"
   | "unconsciously_competent";
 
-export type BackstageEventType = "reading" | "mcq" | "case" | "reflection" | "note";
+export type BackstageEventType =
+  | "reading"
+  | "mcq"
+  | "case"
+  | "reflection"
+  | "note"
+  | "deck_view"
+  | "slide_view"
+  | "template_insert";
 
 export type SubjectKey =
   | "anatomy"
