@@ -221,6 +221,12 @@ export default function CampusTourPage() {
             <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Early access
             </Link>
+            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Contact
+            </Link>
             <Link
               href="/login"
               className="px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
@@ -242,7 +248,7 @@ export default function CampusTourPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#6BA8C9]">room by room</span>.
           </h1>
           <p className="mt-5 text-lg text-[#A0B0BC]">
-            Each room has a job. ATOM changes behaviour inside each room to make you learn faster and deeper.
+            Each room has one job. ATOM changes behaviour by room — so you learn faster, deeper, and with less chaos.
           </p>
         </div>
 
@@ -300,12 +306,18 @@ export default function CampusTourPage() {
       <footer className="border-t border-white/5 py-10">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="text-sm text-[#A0B0BC]">© {new Date().getFullYear()} NucleuX Academy</div>
-          <div className="flex gap-4 text-sm">
-            <Link href="/about" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              About
-            </Link>
+          <div className="flex flex-wrap gap-4 text-sm">
             <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Early access
+            </Link>
+            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Contact
+            </Link>
+            <Link href="/about" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              About
             </Link>
           </div>
         </div>

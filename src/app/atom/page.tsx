@@ -59,12 +59,18 @@ export default function AtomPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       <header className="border-b border-white/5 bg-slate-950/40 backdrop-blur">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5]">← Back to Campus</Link>
-          <Link href="/login">
-            <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white">
-              Enter Campus <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          <Link href="/" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5]">← Home</Link>
+          <nav className="flex items-center gap-4 text-sm">
+            <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Campus Tour</Link>
+            <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Early access</Link>
+            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">FAQ</Link>
+            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">Contact</Link>
+            <Link href="/login">
+              <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white">
+                Enter Campus <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </nav>
         </div>
       </header>
 

@@ -16,6 +16,12 @@ export default function PricingPage() {
             <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Meet ATOM
             </Link>
+            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Contact
+            </Link>
             <Link
               href="/login"
               className="px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white font-medium"
@@ -35,7 +41,7 @@ export default function PricingPage() {
             Pricing is <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#6BA8C9]">coming soon</span>.
           </h1>
           <p className="mt-5 text-lg text-[#A0B0BC]">
-            We’re onboarding early users and shaping the product around real workflows. If you want early access, enter the campus and we’ll enable accounts in waves.
+            We’re onboarding early users and shaping the product around real workflows. If you want early access, request it — we enable accounts in waves.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3">

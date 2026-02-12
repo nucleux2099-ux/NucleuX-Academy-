@@ -170,6 +170,12 @@ export default function HomePage() {
             <Link href="/pricing" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Early access
             </Link>
+            <Link href="/faq" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Contact
+            </Link>
             <Link
               href="/campus"
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white text-sm font-medium"
@@ -185,14 +191,14 @@ export default function HomePage() {
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
-              Built for MBBS + Residents • NEET-PG/INICET workflows
+Built for MBBS + Residents • NEET-PG/INICET workflows
             </div>
             <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">
               A virtual campus for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#6BA8C9]">medical mastery</span>.
             </h1>
             <p className="mt-5 text-lg text-[#A0B0BC]">
-              Library • Classroom • Exam Centre • Arena • Backstage • Common Room — with ATOM adapting to each room.
+Library • Classroom • Exam Centre • Arena • Backstage • Common Room — with ATOM adapting to each room.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -274,12 +280,24 @@ export default function HomePage() {
       <footer className="border-t border-white/5 py-10 relative z-10">
         <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="text-sm text-[#A0B0BC]">© {new Date().getFullYear()} NucleuX Academy</div>
-          <div className="flex gap-4 text-sm">
-            <Link href="/about" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
-              About
+          <div className="flex flex-wrap gap-4 text-sm">
+            <Link href="/campus" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Campus Tour
+            </Link>
+            <Link href="/atom" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              ATOM
             </Link>
             <Link href="/pricing" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
               Early access
+            </Link>
+            <Link href="/faq" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              FAQ
+            </Link>
+            <Link href="/contact" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              Contact
+            </Link>
+            <Link href="/about" className="text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors">
+              About
             </Link>
           </div>
         </div>
