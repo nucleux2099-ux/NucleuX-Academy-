@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -95,8 +96,8 @@ function RoomSection({ room, index }: { room: Room; index: number }) {
   return (
     <section
       id={room.id}
-      className="relative py-16 lg:py-24 scroll-mt-24"
-      style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      className="relative py-16 lg:py-24 scroll-mt-24 lg:min-h-[90vh] lg:snap-start"
+      style={{ borderTop: '1px solid rgba(255,255,255,0.06)', scrollSnapAlign: 'start' }}
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <motion.div
@@ -149,14 +150,22 @@ function RoomSection({ room, index }: { room: Room; index: number }) {
           className={isOdd ? 'lg:order-1' : ''}
         >
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-slate-950/40 shadow-matte-lg">
-            <Image
-              src={room.imageSrc}
-              alt={`${room.title} screenshot`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority={index === 0}
-            />
+            <motion.div
+              initial={{ scale: 1.02 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={room.imageSrc}
+                alt={`${room.title} screenshot`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={index === 0}
+              />
+            </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
           </div>
         </motion.div>
@@ -166,6 +175,34 @@ function RoomSection({ room, index }: { room: Room; index: number }) {
 }
 
 export default function CampusTourPage() {
+  const roomIds = useMemo(() => rooms.map((r) => r.id), []);
+  const [activeId, setActiveId] = useState(roomIds[0]);
+
+  useEffect(() => {
+    const els = roomIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+    if (!els.length) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
+        if (visible[0]?.target?.id) setActiveId(visible[0].target.id);
+      },
+      { threshold: [0.35, 0.5, 0.65] }
+    );
+
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, [roomIds]);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Top nav */}
@@ -224,10 +261,40 @@ export default function CampusTourPage() {
         </div>
       </section>
 
-      {/* Sections */}
-      {rooms.map((room, idx) => (
-        <RoomSection key={room.id} room={room} index={idx} />
-      ))}
+      {/* Sections (scroll-snap on desktop) */}
+      <div className="relative lg:snap-y lg:snap-mandatory" style={{ scrollSnapType: 'y mandatory' }}>
+        {/* Progress dots */}
+        <div className="hidden lg:flex fixed right-5 top-1/2 -translate-y-1/2 z-30 flex-col gap-3">
+          {rooms.map((r) => {
+            const isActive = activeId === r.id;
+            return (
+              <div key={r.id} className="relative group flex items-center justify-end">
+                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="rounded-md border border-white/10 bg-slate-950/85 backdrop-blur px-2 py-1 text-[11px] text-[#E8E0D5] shadow-matte-lg whitespace-nowrap">
+                    {r.title}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => scrollTo(r.id)}
+                  aria-label={`Go to ${r.title}`}
+                  className="h-3 w-3 rounded-full border transition-all"
+                  style={{
+                    backgroundColor: isActive ? r.accent : 'rgba(255,255,255,0.18)',
+                    borderColor: isActive ? `${r.accent}99` : 'rgba(255,255,255,0.25)',
+                    transform: isActive ? 'scale(1.25)' : 'scale(1)',
+                    boxShadow: isActive ? `0 0 0 6px ${r.accent}22` : 'none',
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
+
+        {rooms.map((room, idx) => (
+          <RoomSection key={room.id} room={room} index={idx} />
+        ))}
+      </div>
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-10">
