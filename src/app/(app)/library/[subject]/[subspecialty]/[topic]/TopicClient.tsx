@@ -49,6 +49,10 @@ import {
 import type { PreStudy } from "@/lib/prestudy/types";
 import { getAim, initAim, setWhyImportant, setQuestionsFromText, validateAim, markAimCompleted } from "@/lib/aim/store";
 import type { Aim } from "@/lib/aim/types";
+import { getShoot, initShoot, setLayered, setVprefre, updateChunk as updateShootChunk, validateShoot, validateShootChunk, markChunkCompleted as markShootChunkCompleted, markShootCompleted } from "@/lib/shoot/store";
+import type { Shoot } from "@/lib/shoot/types";
+import { getSkin, initSkin, setTwoFourRule, setGrinde, setTeachBackGaps, validateSkin, markSkinCompleted } from "@/lib/skin/store";
+import type { Skin } from "@/lib/skin/types";
 
 // Quiz Card Component
 function QuizCard({ card, onNext }: { card: RetrievalCard; onNext: () => void }) {
@@ -200,6 +204,14 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   const [aim, setAim] = useState<Aim | null>(() => getAim(topicId));
   const [aimQuestionsDraft, setAimQuestionsDraft] = useState<Record<string, string>>({});
 
+  // Learning OS: SHOOT
+  const [shootOpen, setShootOpen] = useState(false);
+  const [shoot, setShoot] = useState<Shoot | null>(() => getShoot(topicId));
+
+  // Learning OS: SKIN
+  const [skinOpen, setSkinOpen] = useState(false);
+  const [skin, setSkin] = useState<Skin | null>(() => getSkin(topicId));
+
   useEffect(() => {
     // keep in sync when navigating topics
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -217,6 +229,16 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
     setAimOpen(false);
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setAimQuestionsDraft({});
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setShoot(getShoot(topicId));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setShootOpen(false);
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSkin(getSkin(topicId));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSkinOpen(false);
   }, [topicId]);
   
   // Rich content state
@@ -675,6 +697,374 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                         Mark AIM Complete
                       </Button>
                     </div>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
+
+            {/* Learning OS: SHOOT */}
+            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-[#A78BFA]" />
+                      Learning OS — SHOOT
+                    </h3>
+                    <p className="text-sm text-[#9CA3AF] mt-1">
+                      Encode each chunk (Logic → Concepts → Important details) + VPReFRE.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {shoot?.completedAt ? (
+                      <Badge className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30">✓ Complete</Badge>
+                    ) : (
+                      <Badge className={cn(
+                        "border",
+                        aim?.completedAt
+                          ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/30"
+                          : "bg-[#6B7280]/20 text-[#9CA3AF] border-[#6B7280]/30"
+                      )}>
+                        {aim?.completedAt ? "Not done" : "Do AIM first"}
+                      </Badge>
+                    )}
+                    <Button
+                      onClick={() => {
+                        if (!aim?.completedAt || !preStudy) return;
+                        if (!shoot) {
+                          const s = initShoot(topicId, preStudy.chunks.map((c) => c.id));
+                          setShoot(s);
+                          addBackstageEvent({
+                            type: "shoot",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: "shoot_started",
+                          });
+                        }
+                        setShootOpen((v) => !v);
+                      }}
+                      variant="outline"
+                      className={cn(
+                        "border-[rgba(167,139,250,0.45)] text-[#A78BFA] hover:bg-[#A78BFA]/10",
+                        !aim?.completedAt ? "opacity-50 pointer-events-none" : ""
+                      )}
+                    >
+                      {shootOpen ? "Close" : shoot ? "Edit" : "Start"}
+                    </Button>
+                  </div>
+                </div>
+              </CardHeader>
+
+              {shootOpen && shoot && preStudy && (
+                <CardContent className="pt-0 space-y-4">
+                  {preStudy.chunks.map((c) => {
+                    const art = shoot.artifacts.find((a) => a.chunkId === c.id);
+                    if (!art) return null;
+                    const v = validateShootChunk(art);
+
+                    return (
+                      <div key={c.id} className="p-3 rounded border border-[rgba(167,139,250,0.15)] bg-[#0D1B2A]">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <Badge className="bg-[#A78BFA]/15 text-[#A78BFA] border border-[#A78BFA]/25">Chunk {c.order}</Badge>
+                            <div className="text-sm text-[#E5E7EB]">{c.title}</div>
+                          </div>
+                          {art.completedAt ? (
+                            <Badge className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30">✓ Done</Badge>
+                          ) : (
+                            <Badge className={cn("border", v.ok ? "bg-[#10B981]/10 text-[#10B981] border-[#10B981]/20" : "bg-[#F59E0B]/15 text-[#F59E0B] border-[#F59E0B]/20")}
+                            >
+                              {v.ok ? "Ready" : "Incomplete"}
+                            </Badge>
+                          )}
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                          <div>
+                            <label className="text-xs text-[#9CA3AF]">Logic / Backbone (≥2 bullets)</label>
+                            <Textarea
+                              value={art.layered.logic}
+                              onChange={(e) => setShoot(setLayered(shoot, c.id, "logic", e.target.value))}
+                              className="mt-2 bg-[#142538] border-[rgba(167,139,250,0.15)] text-[#E5E7EB]"
+                              rows={4}
+                            />
+                          </div>
+                          <div>
+                            <label className="text-xs text-[#9CA3AF]">Concepts / Relationships (≥3 bullets)</label>
+                            <Textarea
+                              value={art.layered.concepts}
+                              onChange={(e) => setShoot(setLayered(shoot, c.id, "concepts", e.target.value))}
+                              className="mt-2 bg-[#142538] border-[rgba(167,139,250,0.15)] text-[#E5E7EB]"
+                              rows={4}
+                            />
+                          </div>
+                          <div>
+                            <label className="text-xs text-[#9CA3AF]">Important details (≥3 bullets)</label>
+                            <Textarea
+                              value={art.layered.importantDetails}
+                              onChange={(e) => setShoot(setLayered(shoot, c.id, "importantDetails", e.target.value))}
+                              className="mt-2 bg-[#142538] border-[rgba(167,139,250,0.15)] text-[#E5E7EB]"
+                              rows={4}
+                            />
+                          </div>
+                          <div>
+                            <label className="text-xs text-[#9CA3AF]">Teach-back prompts (≥1)</label>
+                            <Textarea
+                              value={art.teachBackPrompts}
+                              onChange={(e) => setShoot(updateShootChunk(shoot, c.id, { teachBackPrompts: e.target.value }))}
+                              className="mt-2 bg-[#142538] border-[rgba(167,139,250,0.15)] text-[#E5E7EB]"
+                              rows={4}
+                              placeholder="Explain in 60s: …"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="mt-4">
+                          <label className="text-xs text-[#9CA3AF]">VPReFRE (quick self-check)</label>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-2">
+                            {(
+                              [
+                                ["visual", "Visual"],
+                                ["processed", "Processed"],
+                                ["relational", "Relational"],
+                                ["freehand", "Freehand"],
+                                ["reflective", "Reflective"],
+                                ["efficient", "Efficient"],
+                              ] as const
+                            ).map(([k, label]) => (
+                              <Button
+                                key={k}
+                                type="button"
+                                variant="outline"
+                                onClick={() => {
+                                  const nextVal = !art.vprefre[k];
+                                  setShoot(setVprefre(shoot, c.id, k, nextVal));
+                                }}
+                                className={cn(
+                                  "justify-start border-[rgba(167,139,250,0.2)]",
+                                  art.vprefre[k] ? "bg-[#A78BFA]/15 text-[#A78BFA]" : "text-[#9CA3AF]"
+                                )}
+                              >
+                                {art.vprefre[k] ? "✓" : "○"} {label}
+                              </Button>
+                            ))}
+                          </div>
+                          <p className="mt-2 text-xs text-[#6B7280]">Minimum to pass: Processed + Efficient must be ✓.</p>
+                        </div>
+
+                        <div className="flex items-center justify-end mt-4">
+                          <Button
+                            onClick={() => {
+                              const vv = validateShootChunk(art);
+                              if (!vv.ok) return;
+                              const next = markShootChunkCompleted(shoot, c.id);
+                              setShoot(next);
+                              addBackstageEvent({
+                                type: "shoot",
+                                subject: normalizeSubject(subject.slug),
+                                topicId,
+                                topic: topic.name,
+                                note: `shoot_chunk_completed chunk=${c.order}`,
+                              });
+                            }}
+                            className="bg-[#10B981] hover:bg-[#059669] text-white"
+                          >
+                            Mark Chunk Complete
+                          </Button>
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  <div className="flex items-center justify-between gap-3">
+                    {(() => {
+                      const v = validateShoot(shoot);
+                      const good = v.perChunk.filter((c) => c.ok).length;
+                      return (
+                        <div className="text-xs text-[#9CA3AF]">
+                          Chunks ready: <span className={good === v.perChunk.length ? "text-[#10B981]" : "text-[#F59E0B]"}>{good}/{v.perChunk.length}</span>
+                        </div>
+                      );
+                    })()}
+
+                    <Button
+                      onClick={() => {
+                        const v = validateShoot(shoot);
+                        if (!v.ok) return;
+                        const next = markShootCompleted(shoot);
+                        setShoot(next);
+                        addBackstageEvent({
+                          type: "shoot",
+                          subject: normalizeSubject(subject.slug),
+                          topicId,
+                          topic: topic.name,
+                          note: "shoot_completed",
+                        });
+                      }}
+                      className="bg-[#10B981] hover:bg-[#059669] text-white"
+                    >
+                      Mark SHOOT Complete
+                    </Button>
+                  </div>
+                </CardContent>
+              )}
+            </Card>
+
+            {/* Learning OS: SKIN */}
+            <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-semibold text-[#E5E7EB] flex items-center gap-2">
+                      <RotateCcw className="w-5 h-5 text-[#F59E0B]" />
+                      Learning OS — SKIN
+                    </h3>
+                    <p className="text-sm text-[#9CA3AF] mt-1">
+                      Refine structure (2–4 rule + GRINDE) and capture teach-back gaps.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {skin?.completedAt ? (
+                      <Badge className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30">✓ Complete</Badge>
+                    ) : (
+                      <Badge className={cn(
+                        "border",
+                        shoot?.completedAt
+                          ? "bg-[#F59E0B]/20 text-[#F59E0B] border-[#F59E0B]/30"
+                          : "bg-[#6B7280]/20 text-[#9CA3AF] border-[#6B7280]/30"
+                      )}>
+                        {shoot?.completedAt ? "Not done" : "Do SHOOT first"}
+                      </Badge>
+                    )}
+                    <Button
+                      onClick={() => {
+                        if (!shoot?.completedAt || !preStudy) return;
+                        if (!skin) {
+                          const s = initSkin(topicId, preStudy.chunks.map((c) => c.id));
+                          setSkin(s);
+                          addBackstageEvent({
+                            type: "skin",
+                            subject: normalizeSubject(subject.slug),
+                            topicId,
+                            topic: topic.name,
+                            note: "skin_started",
+                          });
+                        }
+                        setSkinOpen((v) => !v);
+                      }}
+                      variant="outline"
+                      className={cn(
+                        "border-[rgba(245,158,11,0.45)] text-[#F59E0B] hover:bg-[#F59E0B]/10",
+                        !shoot?.completedAt ? "opacity-50 pointer-events-none" : ""
+                      )}
+                    >
+                      {skinOpen ? "Close" : skin ? "Edit" : "Start"}
+                    </Button>
+                  </div>
+                </div>
+              </CardHeader>
+
+              {skinOpen && skin && preStudy && (
+                <CardContent className="pt-0 space-y-4">
+                  {preStudy.chunks.map((c) => {
+                    const sc = skin.chunks.find((x) => x.chunkId === c.id);
+                    if (!sc) return null;
+                    return (
+                      <div key={c.id} className="p-3 rounded border border-[rgba(245,158,11,0.15)] bg-[#0D1B2A]">
+                        <div className="flex items-center gap-2">
+                          <Badge className="bg-[#F59E0B]/15 text-[#F59E0B] border border-[#F59E0B]/25">Chunk {c.order}</Badge>
+                          <div className="text-sm text-[#E5E7EB]">{c.title}</div>
+                        </div>
+
+                        <div className="mt-3 flex items-center gap-2">
+                          <Button
+                            type="button"
+                            variant="outline"
+                            onClick={() => setSkin(setTwoFourRule(skin, c.id, !sc.appliedTwoFourRule))}
+                            className={cn(
+                              "border-[rgba(245,158,11,0.25)]",
+                              sc.appliedTwoFourRule ? "bg-[#F59E0B]/15 text-[#F59E0B]" : "text-[#9CA3AF]"
+                            )}
+                          >
+                            {sc.appliedTwoFourRule ? "✓" : "○"} Applied 2–4 Rule
+                          </Button>
+                        </div>
+
+                        <div className="mt-3">
+                          <label className="text-xs text-[#9CA3AF]">GRINDE (quick self-check)</label>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mt-2">
+                            {(
+                              [
+                                ["grouped", "Grouped"],
+                                ["reflective", "Reflective"],
+                                ["interconnected", "Interconnected"],
+                                ["nonVerbal", "Non‑verbal"],
+                                ["directional", "Directional"],
+                                ["emphasised", "Emphasised"],
+                              ] as const
+                            ).map(([k, label]) => (
+                              <Button
+                                key={k}
+                                type="button"
+                                variant="outline"
+                                onClick={() => setSkin(setGrinde(skin, c.id, k, !sc.grinde[k]))}
+                                className={cn(
+                                  "justify-start border-[rgba(245,158,11,0.25)]",
+                                  sc.grinde[k] ? "bg-[#F59E0B]/15 text-[#F59E0B]" : "text-[#9CA3AF]"
+                                )}
+                              >
+                                {sc.grinde[k] ? "✓" : "○"} {label}
+                              </Button>
+                            ))}
+                          </div>
+                          <p className="mt-2 text-xs text-[#6B7280]">Minimum to pass: Grouped + Directional must be ✓.</p>
+                        </div>
+
+                        <div className="mt-3">
+                          <label className="text-xs text-[#9CA3AF]">Teach-back gaps (what you blanked on)</label>
+                          <Textarea
+                            value={sc.teachBackGaps}
+                            onChange={(e) => setSkin(setTeachBackGaps(skin, c.id, e.target.value))}
+                            className="mt-2 bg-[#142538] border-[rgba(245,158,11,0.15)] text-[#E5E7EB]"
+                            rows={3}
+                            placeholder="List gaps (one per line)…"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+
+                  <div className="flex items-center justify-between gap-3">
+                    {(() => {
+                      const v = validateSkin(skin);
+                      const good = v.perChunk.filter((c) => c.ok).length;
+                      return (
+                        <div className="text-xs text-[#9CA3AF]">
+                          Chunks passing: <span className={good === v.perChunk.length ? "text-[#10B981]" : "text-[#F59E0B]"}>{good}/{v.perChunk.length}</span>
+                          {" "}• Need 2–4 rule + Grouped+Directional.
+                        </div>
+                      );
+                    })()}
+
+                    <Button
+                      onClick={() => {
+                        const v = validateSkin(skin);
+                        if (!v.ok) return;
+                        const next = markSkinCompleted(skin);
+                        setSkin(next);
+                        addBackstageEvent({
+                          type: "skin",
+                          subject: normalizeSubject(subject.slug),
+                          topicId,
+                          topic: topic.name,
+                          note: "skin_completed",
+                        });
+                      }}
+                      className="bg-[#10B981] hover:bg-[#059669] text-white"
+                    >
+                      Mark SKIN Complete
+                    </Button>
                   </div>
                 </CardContent>
               )}
