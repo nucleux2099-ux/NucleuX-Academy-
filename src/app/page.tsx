@@ -1,140 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Atom } from 'lucide-react';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
-const slides = [
-  {
-    id: 'library',
-    title: 'Library',
-    subtitle: 'Modes, structure, and connected understanding.',
-    imageSrc: '/marketing/screens/library.png',
-    accent: '#5BB3B3',
-  },
-  {
-    id: 'classroom',
-    title: 'Classroom',
-    subtitle: 'Live learning with notes, mindmaps, and replay.',
-    imageSrc: '/marketing/screens/classroom.png',
-    accent: '#6BA8C9',
-  },
-  {
-    id: 'exam-centre',
-    title: 'Exam Centre',
-    subtitle: 'Exam practice with explanations that teach.',
-    imageSrc: '/marketing/screens/exam-centre.png',
-    accent: '#C9A86C',
-  },
-  {
-    id: 'arena',
-    title: 'Arena',
-    subtitle: 'Timed drills to pressure-proof recall.',
-    imageSrc: '/marketing/screens/arena.png',
-    accent: '#EC4899',
-  },
-  {
-    id: 'backstage',
-    title: 'Backstage',
-    subtitle: 'Competency, calibration, reflection, and logbook.',
-    imageSrc: '/marketing/screens/backstage.png',
-    accent: '#A78BFA',
-  },
-  {
-    id: 'common-room',
-    title: 'Common Room',
-    subtitle: 'Community discussions that end in clarity.',
-    imageSrc: '/marketing/screens/common-room.png',
-    accent: '#10B981',
-  },
-] as const;
-
-function Slide({
-  id,
-  title,
-  subtitle,
-  imageSrc,
-  accent,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  imageSrc: string;
-  accent: string;
-}) {
-  return (
-    <motion.section
-      id={id}
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.55 }}
-      className="relative min-h-[72vh] lg:min-h-[86vh] py-10 lg:py-14 scroll-mt-20 lg:snap-start"
-      style={{ scrollSnapAlign: 'start' }}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/35 shadow-matte-lg">
-          <div className="relative aspect-[16/9] lg:aspect-[21/9]">
-            <Image
-              src={imageSrc}
-              alt={`${title} screenshot`}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority={title === 'Library'}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
-            <div className="absolute left-6 bottom-6 right-6">
-              <div
-                className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs"
-                style={{ borderColor: `${accent}33`, color: accent, backgroundColor: `${accent}14` }}
-              >
-                Room preview
-              </div>
-              <div className="mt-3 text-3xl sm:text-4xl font-bold text-[#E8E0D5]">{title}</div>
-              <div className="mt-1 text-sm sm:text-base text-[#A0B0BC] max-w-2xl">{subtitle}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.section>
-  );
-}
-
 export default function HomePage() {
-  const slideIds = useMemo(() => slides.map((s) => s.id), []);
-  const [activeId, setActiveId] = useState<(typeof slideIds)[number]>(slides[0].id);
-
-  // Track which slide is "active" for progress dots.
-  useEffect(() => {
-    const els = slideIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
-    if (!els.length) return;
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        // pick the most visible intersecting slide
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
-        if (visible[0]?.target?.id) setActiveId(visible[0].target.id as any);
-      },
-      { threshold: [0.35, 0.5, 0.65] }
-    );
-
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, [slideIds]);
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
       {/* subtle campus blueprint grid */}
@@ -162,7 +33,6 @@ export default function HomePage() {
           </Link>
 
           <nav className="flex items-center gap-4">
-            {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-4">
               <Link href="/campus" className="text-sm text-[#E8E0D5] hover:text-white transition-colors">
                 Take the tour
@@ -187,7 +57,6 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Mobile nav (minimal) */}
             <div className="flex md:hidden items-center gap-2">
               <Link
                 href="/campus"
@@ -201,20 +70,16 @@ export default function HomePage() {
       </header>
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-8 sm:pb-10 relative z-10">
-        <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-10 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
               Built for MBBS + Residents • NEET-PG/INICET workflows
             </div>
-            <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">
-              NucleuX Academy
-            </h1>
-            <p className="mt-3 text-xl text-[#A0B0BC]">
-              Learn atomically and grow exponentially.
-            </p>
+            <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">NucleuX Academy</h1>
+            <p className="mt-3 text-xl text-[#A0B0BC]">Learn atomically and grow exponentially.</p>
             <p className="mt-4 text-lg text-[#A0B0BC]">
-              A virtual campus for medical mastery — Library • Classroom • Exam Centre • Arena • Backstage • Common Room.
+              Not another “content app”. A learning OS — built as a campus, powered by ATOM.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -223,9 +88,9 @@ export default function HomePage() {
                   Take the tour <ArrowRight className="w-4 h-4 ml-2" />
                 </span>
               </Link>
-              <Link href="/pricing" className="w-full sm:w-auto">
+              <Link href="/atom" className="w-full sm:w-auto">
                 <span className="inline-flex w-full items-center justify-center rounded-xl px-6 py-4 text-base font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
-                  Early access
+                  Meet ATOM
                 </span>
               </Link>
             </div>
@@ -233,69 +98,50 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* Presentation slides */}
-      <div
-        className="relative z-10 lg:snap-y lg:snap-mandatory"
-        style={{ scrollSnapType: 'y mandatory' }}
-      >
-        {/* Progress dots */}
-        <div className="hidden lg:flex fixed right-5 top-1/2 -translate-y-1/2 z-30 flex-col gap-3">
-          {slides.map((s) => {
-            const isActive = activeId === s.id;
-            return (
-              <div key={s.id} className="relative group flex items-center justify-end">
-                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="rounded-md border border-white/10 bg-slate-950/85 backdrop-blur px-2 py-1 text-[11px] text-[#E8E0D5] shadow-matte-lg whitespace-nowrap">
-                    {s.title}
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => scrollTo(s.id)}
-                  aria-label={`Go to ${s.title}`}
-                  className="h-3 w-3 rounded-full border transition-all"
-                  style={{
-                    backgroundColor: isActive ? s.accent : 'rgba(255,255,255,0.18)',
-                    borderColor: isActive ? `${s.accent}99` : 'rgba(255,255,255,0.25)',
-                    transform: isActive ? 'scale(1.25)' : 'scale(1)',
-                    boxShadow: isActive ? `0 0 0 6px ${s.accent}22` : 'none',
-                  }}
-                />
-              </div>
-            );
-          })}
+      {/* Philosophy */}
+      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[{
+            title: 'Atomic learning',
+            body: 'Break complex topics into the smallest teachable units, then connect them into a mental model.',
+          }, {
+            title: 'Retrieval > rereading',
+            body: 'Recall and application (MCQs/cases) turn reading into usable clinical knowledge.',
+          }, {
+            title: 'Calibration + reflection',
+            body: 'Confidence must match performance. Backstage helps you see blind spots and improve predictably.',
+          }, {
+            title: 'Rooms with jobs',
+            body: 'Each room does one thing well. ATOM changes behaviour by room so the system stays coherent.',
+          }].map((x) => (
+            <div key={x.title} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="text-lg font-bold text-[#E8E0D5]">{x.title}</div>
+              <p className="mt-2 text-sm text-[#A0B0BC]">{x.body}</p>
+            </div>
+          ))}
         </div>
 
-        {slides.map((s) => (
-          <Slide key={s.id} {...s} />
-        ))}
-      </div>
-
-      {/* Bottom CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-16 relative z-10">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-8 rounded-3xl border border-white/10 bg-slate-950/35 p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <div className="text-2xl font-bold text-[#E8E0D5]">Want early access?</div>
-            <div className="mt-1 text-sm text-[#A0B0BC]">Pricing is coming soon — we’re onboarding in waves while we polish the campus.</div>
+            <div className="text-2xl font-bold text-[#E8E0D5]">See the campus in action</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">A virtual campus for medical mastery — with real screenshots.</div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <Link href="/campus" className="w-full sm:w-auto">
-              <span className="inline-flex w-full items-center justify-center rounded-xl px-5 py-3 font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
+              <span className="inline-flex w-full items-center justify-center rounded-xl px-5 py-3 font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
                 Take the tour
               </span>
             </Link>
-            <Link href="/login" className="w-full sm:w-auto">
-              <span className="inline-flex w-full items-center justify-center rounded-xl px-5 py-3 font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
-                Request early access
+            <Link href="/rooms" className="w-full sm:w-auto">
+              <span className="inline-flex w-full items-center justify-center rounded-xl px-5 py-3 font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
+                Rooms (detailed)
               </span>
             </Link>
           </div>
         </div>
       </section>
 
-      <div className="relative z-10">
-        <SupportFooter />
-      </div>
+      <SupportFooter />
     </div>
   );
 }
