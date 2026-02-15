@@ -1,554 +1,330 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import {
-  Send,
-  BookOpen,
-  FileText,
-  StickyNote,
-  Copy,
-  Check,
-  X,
-  Loader2,
-  Atom,
-  RotateCcw,
-  Brain,
-  Presentation,
-  Headphones,
-  Plus,
-  Download,
-  BookMarked,
-  Upload,
-  Layers,
+  Flame, BookOpen, Clock, ChevronRight, Target, TrendingUp,
+  Bookmark, Brain, Zap, CheckCircle2, Circle, Play,
+  BarChart3, Award, Activity, Star, MessageSquare, AlertTriangle,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const theme = {
-  background: "#2D3E50",
-  cardBg: "#1B2838",
-  primary: "#5BB3B3",
-  accent: "#5EEAD4",
-  text: "#FFFFFF",
-  textMuted: "#94A3B8",
-  border: "#1E3A5F",
-  glow: "rgba(6, 182, 212, 0.3)",
-  inputBg: "#162535",
-};
-
-// --- Types ---
-interface Source {
-  id: string;
-  title: string;
-  type: "textbook" | "notes" | "upload";
-  enabled: boolean;
+// --- Helpers ---
+function getGreeting() {
+  const h = new Date().getHours();
+  if (h < 12) return "Good morning";
+  if (h < 17) return "Good afternoon";
+  return "Good evening";
 }
 
-interface Message {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  timestamp: Date;
-  isStreaming?: boolean;
-  sources?: string[];
-}
-
-interface OutputCard {
-  id: string;
-  title: string;
-  type: "summary" | "flashcards" | "ppt" | "audio";
-  preview: string;
-  createdAt: Date;
+function formatDate() {
+  return new Date().toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "short" });
 }
 
 // --- Mock Data ---
-const initialSources: Source[] = [
-  { id: "1", title: "Shackelford Ch. 35 - Esophageal Replacement", type: "textbook", enabled: true },
-  { id: "2", title: "Harrison's Ch. 12 - Portal Hypertension", type: "textbook", enabled: true },
-  { id: "3", title: "My Surgery Notes - Upper GI", type: "notes", enabled: false },
-  { id: "4", title: "Robbins Ch. 17 - GI Pathology", type: "textbook", enabled: true },
+const studyPlanTasks = [
+  { icon: Brain, title: "Portal Hypertension Review", badge: "Spaced Rep", badgeColor: "bg-purple-500/20 text-purple-400", subtitle: "Surgical GI · Weak Area", time: "15 min", done: false },
+  { icon: BookOpen, title: "Hepatobiliary Anatomy", badge: "New Content", badgeColor: "bg-teal-500/20 text-teal-400", subtitle: "Surgical GI Mastery", time: "20 min", done: false },
+  { icon: Target, title: "Upper GI MCQ Set", badge: "MCQ Practice", badgeColor: "bg-orange-500/20 text-orange-400", subtitle: "30 questions · Mixed difficulty", time: "20 min", done: false },
+  { icon: CheckCircle2, title: "Esophageal Surgery Notes", badge: "Review", badgeColor: "bg-green-500/20 text-green-400", subtitle: "Quick review before moving on", time: "15 min", done: true },
 ];
 
-const mockOutputs: OutputCard[] = [
-  { id: "o1", title: "Portal Hypertension Summary", type: "summary", preview: "Key points on portal HTN pathophysiology, classification, and management...", createdAt: new Date(Date.now() - 3600000) },
-  { id: "o2", title: "Esophageal Surgery Flashcards", type: "flashcards", preview: "15 flashcards covering Ivor Lewis, McKeown, transhiatal approaches...", createdAt: new Date(Date.now() - 7200000) },
+const continueItems = [
+  { title: "Portal Hypertension", subtitle: "Surgical GI · Chapter 12", badge: "Reading", badgeColor: "bg-blue-500/20 text-blue-400", progress: 65, time: "8 min left" },
+  { title: "Appendicitis MCQs", subtitle: "Assessment · 30 questions", badge: "MCQ", badgeColor: "bg-orange-500/20 text-orange-400", progress: 40, time: "12 min left" },
+  { title: "Hepatobiliary Module", subtitle: "Surgical GI Mastery", badge: "New", badgeColor: "bg-green-500/20 text-green-400", progress: 0, time: "Start" },
 ];
 
-const welcomeMessage: Message = {
-  id: "welcome",
-  role: "assistant",
-  content: `Welcome to your **Desk** ⚛️
+const weeklyChart = [
+  { day: "Mon", hours: 3.5, mcqs: 45 },
+  { day: "Tue", hours: 4.2, mcqs: 60 },
+  { day: "Wed", hours: 2.8, mcqs: 35 },
+  { day: "Thu", hours: 5.1, mcqs: 80 },
+  { day: "Fri", hours: 3.0, mcqs: 50 },
+  { day: "Sat", hours: 6.2, mcqs: 90 },
+  { day: "Sun", hours: 1.5, mcqs: 20 },
+];
 
-I'm ATOM, grounded in the sources you've selected on the left. Toggle sources on/off to control what I can reference.
+const focusAreas = [
+  { topic: "Portal Hypertension", accuracy: 52, attempts: 23, color: "text-red-400 bg-red-500/20" },
+  { topic: "Biliary Anatomy", accuracy: 61, attempts: 18, color: "text-orange-400 bg-orange-500/20" },
+  { topic: "Peptic Ulcer Disease", accuracy: 67, attempts: 15, color: "text-orange-400 bg-orange-500/20" },
+];
 
-Ask me anything, or use the action buttons on the right to generate study materials!`,
-  timestamp: new Date(),
-};
+const recentActivity = [
+  { text: "Scored 85% on Appendicitis MCQs", time: "2 hours ago", type: "Assessment", icon: Target, color: "text-teal-400" },
+  { text: "Completed: Inguinal Hernia — Anatomy & Classification", time: "4 hours ago", type: "Reading", icon: BookOpen, color: "text-blue-400" },
+  { text: "Started: Hepatobiliary Surgery Module", time: "Yesterday", type: "Pathway", icon: Play, color: "text-green-400" },
+  { text: "Reviewed: Portal Hypertension — Weak Area", time: "2 days ago", type: "Review", icon: Brain, color: "text-purple-400" },
+];
 
-const sourceIcon = (type: Source["type"]) => {
-  switch (type) {
-    case "textbook": return <BookMarked className="w-4 h-4 text-[#5BB3B3]" />;
-    case "notes": return <StickyNote className="w-4 h-4 text-[#5EEAD4]" />;
-    case "upload": return <Upload className="w-4 h-4 text-[#22D3EE]" />;
-  }
-};
+// --- Components ---
+function Badge({ children, className }: { children: React.ReactNode; className?: string }) {
+  return <span className={cn("px-2 py-0.5 rounded-full text-[11px] font-medium", className)}>{children}</span>;
+}
 
-const outputIcon = (type: OutputCard["type"]) => {
-  switch (type) {
-    case "summary": return <FileText className="w-4 h-4 text-[#5BB3B3]" />;
-    case "flashcards": return <Brain className="w-4 h-4 text-[#5EEAD4]" />;
-    case "ppt": return <Presentation className="w-4 h-4 text-[#22D3EE]" />;
-    case "audio": return <Headphones className="w-4 h-4 text-[#E879F9]" />;
-  }
-};
+function ProgressBar({ value, className, barClass }: { value: number; className?: string; barClass?: string }) {
+  return (
+    <div className={cn("h-1.5 rounded-full bg-[#253545] overflow-hidden", className)}>
+      <div className={cn("h-full rounded-full bg-[#5BB3B3] transition-all", barClass)} style={{ width: `${value}%` }} />
+    </div>
+  );
+}
 
-// --- Panels ---
-type MobileTab = "sources" | "chat" | "actions";
+function StatCard({ label, value, change, extra }: { label: string; value: string; change: string; extra?: string }) {
+  const isPositive = change.startsWith("+");
+  return (
+    <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-4 flex-1">
+      <p className="text-[#6B7A88] text-xs">{label}</p>
+      <p className="text-[#E8E0D5] text-2xl font-bold mt-1">{value}</p>
+      <div className="flex items-center gap-2 mt-1">
+        <span className={cn("text-xs font-medium", isPositive ? "text-green-400" : "text-[#6B7A88]")}>{change}</span>
+        {extra && <span className="text-[10px] text-[#F97316]">{extra}</span>}
+      </div>
+    </Card>
+  );
+}
 
 export default function DeskPage() {
-  const [sources, setSources] = useState<Source[]>(initialSources);
-  const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
-  const [outputs, setOutputs] = useState<OutputCard[]>(mockOutputs);
-  const [input, setInput] = useState("");
-  const [isStreaming, setIsStreaming] = useState(false);
-  const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [mobileTab, setMobileTab] = useState<MobileTab>("chat");
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const abortControllerRef = useRef<AbortController | null>(null);
-
-  const enabledSources = sources.filter((s) => s.enabled);
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
-  const toggleSource = (id: string) => {
-    setSources((prev) => prev.map((s) => (s.id === id ? { ...s, enabled: !s.enabled } : s)));
-  };
-
-  // --- Chat Logic (reused from /chat) ---
-  const handleSend = useCallback(
-    async (text?: string) => {
-      const messageText = text || input.trim();
-      if (!messageText || isStreaming) return;
-
-      const enabledTitles = enabledSources.map((s) => s.title);
-
-      const userMessage: Message = {
-        id: crypto.randomUUID(),
-        role: "user",
-        content: messageText,
-        timestamp: new Date(),
-      };
-
-      const assistantMessageId = crypto.randomUUID();
-      const assistantMessage: Message = {
-        id: assistantMessageId,
-        role: "assistant",
-        content: "",
-        timestamp: new Date(),
-        isStreaming: true,
-        sources: enabledTitles,
-      };
-
-      setMessages((prev) => [...prev, userMessage, assistantMessage]);
-      setInput("");
-      setIsStreaming(true);
-
-      const history = [...messages, userMessage]
-        .filter((m) => m.id !== "welcome")
-        .map((m) => ({ role: m.role, content: m.content }));
-
-      try {
-        abortControllerRef.current = new AbortController();
-
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: history,
-            context: "full",
-            deskSources: enabledTitles,
-          }),
-          signal: abortControllerRef.current.signal,
-        });
-
-        if (!response.ok) {
-          const error = await response.json();
-          throw new Error(error.error || "Failed to get response");
-        }
-
-        const reader = response.body?.getReader();
-        if (!reader) throw new Error("No response body");
-
-        const decoder = new TextDecoder();
-        let fullText = "";
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          const chunk = decoder.decode(value, { stream: true });
-          const lines = chunk.split("\n");
-
-          for (const line of lines) {
-            if (line.startsWith("data: ")) {
-              const data = line.slice(6);
-              if (data === "[DONE]") break;
-
-              try {
-                const parsed = JSON.parse(data);
-                if (parsed.text) {
-                  fullText += parsed.text;
-                  setMessages((prev) =>
-                    prev.map((m) => (m.id === assistantMessageId ? { ...m, content: fullText } : m))
-                  );
-                }
-                if (parsed.error) throw new Error(parsed.error);
-              } catch {
-                // skip malformed
-              }
-            }
-          }
-        }
-
-        setMessages((prev) =>
-          prev.map((m) => (m.id === assistantMessageId ? { ...m, isStreaming: false } : m))
-        );
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") {
-          setMessages((prev) =>
-            prev.map((m) =>
-              m.id === assistantMessageId ? { ...m, content: m.content + "\n\n*[Cancelled]*", isStreaming: false } : m
-            )
-          );
-        } else {
-          setMessages((prev) =>
-            prev.map((m) =>
-              m.id === assistantMessageId
-                ? { ...m, content: `❌ Error: ${error instanceof Error ? error.message : "Something went wrong"}`, isStreaming: false }
-                : m
-            )
-          );
-        }
-      } finally {
-        setIsStreaming(false);
-        abortControllerRef.current = null;
-      }
-    },
-    [input, isStreaming, messages, enabledSources]
-  );
-
-  const handleStop = () => abortControllerRef.current?.abort();
-
-  const handleReset = () => {
-    setMessages([welcomeMessage]);
-    setIsStreaming(false);
-    abortControllerRef.current?.abort();
-  };
-
-  const handleCopy = (id: string, content: string) => {
-    navigator.clipboard.writeText(content);
-    setCopiedId(id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
-  };
-
-  const handleAction = (type: string) => {
-    const prompts: Record<string, string> = {
-      summary: "Generate a comprehensive summary from the enabled sources, with key points and clinical pearls.",
-      flashcards: "Create 10 high-yield flashcards (Q&A) from the enabled sources.",
-      ppt: "Create a presentation outline with key slides from the enabled sources.",
-      audio: "Create a concise audio-overview script summarizing the enabled sources for quick revision.",
-    };
-    handleSend(prompts[type]);
-  };
-
-  const formatMessage = (content: string) => {
-    return content.split("\n").map((line, i) => {
-      if (line.startsWith("### ")) return <h3 key={i} className="text-lg font-bold mt-3 mb-1 text-white">{line.replace("### ", "")}</h3>;
-      if (line.startsWith("## ")) return <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-white">{line.replace("## ", "")}</h2>;
-      if (line.includes("**")) {
-        const parts = line.split(/\*\*(.*?)\*\*/g);
-        return (
-          <p key={i} className="my-1">
-            {parts.map((part, j) => (j % 2 === 1 ? <strong key={j} className="text-[#5EEAD4] font-semibold">{part}</strong> : part))}
-          </p>
-        );
-      }
-      if (line.startsWith("• ") || line.startsWith("- ")) {
-        return <li key={i} className="ml-4 my-0.5 list-disc">{line.replace(/^[•\-]\s/, "")}</li>;
-      }
-      if (!line.trim()) return <br key={i} />;
-      return <p key={i} className="my-1">{line}</p>;
-    });
-  };
-
-  // ========== SOURCES PANEL ==========
-  const SourcesPanel = (
-    <div className="flex flex-col h-full">
-      <div className="p-4 border-b border-[#1E3A5F]">
-        <h2 className="text-sm font-semibold text-white flex items-center gap-2">
-          <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
-          Sources
-          <Badge className="bg-[#5BB3B3]/20 text-[#5EEAD4] border-[#5BB3B3]/30 text-[10px] ml-auto">
-            {enabledSources.length}/{sources.length}
-          </Badge>
-        </h2>
-      </div>
-      <div className="flex-1 overflow-y-auto p-3 space-y-1">
-        {sources.map((source) => (
-          <button
-            key={source.id}
-            onClick={() => toggleSource(source.id)}
-            className={`w-full flex items-start gap-3 px-3 py-2.5 rounded-lg text-left transition-all ${
-              source.enabled ? "bg-[#5BB3B3]/10 border border-[#5BB3B3]/30" : "border border-transparent hover:bg-[#1E3A5F]/50"
-            }`}
-          >
-            <div className={`mt-0.5 w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 ${
-              source.enabled ? "border-[#5BB3B3] bg-[#5BB3B3]" : "border-[#475569]"
-            }`}>
-              {source.enabled && <Check className="w-3 h-3 text-white" />}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-1.5">
-                {sourceIcon(source.type)}
-                <span className={`text-xs font-medium truncate ${source.enabled ? "text-white" : "text-[#94A3B8]"}`}>
-                  {source.title}
-                </span>
-              </div>
-              <span className="text-[10px] text-[#64748B] capitalize">{source.type}</span>
-            </div>
-          </button>
-        ))}
-      </div>
-      <div className="p-3 border-t border-[#1E3A5F]">
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full border-dashed border-[#1E3A5F] bg-transparent text-[#94A3B8] hover:text-[#5BB3B3] hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10"
-        >
-          <Plus className="w-3 h-3 mr-2" />
-          Add Source
-        </Button>
-      </div>
-    </div>
-  );
-
-  // ========== CHAT PANEL ==========
-  const ChatPanel = (
-    <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="flex items-center justify-between p-3 border-b border-[#1E3A5F]" style={{ background: `linear-gradient(135deg, ${theme.cardBg}, #0F2438)` }}>
-        <div className="flex items-center gap-2">
-          <div className="relative">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5EEAD4] flex items-center justify-center" style={{ boxShadow: `0 0 20px ${theme.glow}` }}>
-              <Atom className="w-5 h-5 text-white" />
-              {isStreaming && <div className="absolute inset-0 rounded-full animate-ping opacity-30 bg-[#5BB3B3]" />}
-            </div>
-          </div>
-          <div>
-            <h1 className="text-sm font-bold text-white flex items-center gap-2">
-              ATOM
-              <Badge className="bg-[#5BB3B3]/20 text-[#22D3EE] border-[#5BB3B3]/30 text-[10px]">
-                {isStreaming ? "Thinking..." : "Online"}
-              </Badge>
-            </h1>
-            <p className="text-[10px] text-[#94A3B8]">
-              {enabledSources.length} source{enabledSources.length !== 1 ? "s" : ""} active
-            </p>
-          </div>
-        </div>
-        <Button variant="ghost" size="icon" onClick={handleReset} className="text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F] w-8 h-8">
-          <RotateCcw className="w-4 h-4" />
-        </Button>
-      </div>
-
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{ backgroundColor: theme.background }}>
-        {messages.map((message) => (
-          <div key={message.id} className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}>
-            <Avatar className="w-7 h-7 shrink-0" style={message.role === "assistant" ? { background: `linear-gradient(135deg, ${theme.primary}, ${theme.accent})` } : { backgroundColor: theme.primary }}>
-              <AvatarFallback className="bg-transparent text-white text-xs">
-                {message.role === "assistant" ? <Atom className="w-3.5 h-3.5" /> : "Y"}
-              </AvatarFallback>
-            </Avatar>
-            <div className={`max-w-[85%] ${message.role === "user" ? "items-end" : "items-start"}`}>
-              <div className={`rounded-2xl px-4 py-3 shadow-sm ${
-                message.role === "user" ? "bg-[#5BB3B3] text-white rounded-br-md" : "bg-[#1B2838] border border-[#1E3A5F] rounded-bl-md"
-              }`}>
-                <div className={message.role === "assistant" ? "text-[#E2E8F0] text-sm" : "text-sm"}>
-                  {message.role === "assistant" ? formatMessage(message.content) : message.content}
-                </div>
-                {message.isStreaming && !message.content && (
-                  <div className="flex items-center gap-2 mt-2">
-                    <Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" />
-                    <span className="text-xs text-[#94A3B8]">Searching sources...</span>
-                  </div>
-                )}
-                {message.isStreaming && message.content && (
-                  <span className="inline-block w-2 h-4 bg-[#5BB3B3] animate-pulse ml-1" />
-                )}
-              </div>
-              {/* Source badges */}
-              {message.role === "assistant" && message.sources && !message.isStreaming && message.id !== "welcome" && (
-                <div className="flex flex-wrap gap-1 mt-1.5">
-                  {message.sources.slice(0, 3).map((s, i) => (
-                    <Badge key={i} className="bg-[#1E3A5F]/50 text-[#94A3B8] border-[#1E3A5F] text-[9px] px-1.5 py-0">
-                      📚 {s.length > 25 ? s.slice(0, 25) + "…" : s}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-              {/* Actions */}
-              {message.role === "assistant" && !message.isStreaming && message.id !== "welcome" && (
-                <div className="flex items-center gap-1 mt-1">
-                  <Button variant="ghost" size="sm" onClick={() => handleCopy(message.id, message.content)} className="h-6 px-2 text-[10px] text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]">
-                    {copiedId === message.id ? <Check className="w-3 h-3 mr-1" /> : <Copy className="w-3 h-3 mr-1" />}
-                    {copiedId === message.id ? "Copied" : "Copy"}
-                  </Button>
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Input */}
-      <div className="p-3 border-t border-[#1E3A5F]" style={{ backgroundColor: theme.cardBg }}>
-        <div className="flex items-end gap-2">
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Ask ATOM about your sources..."
-            rows={1}
-            disabled={isStreaming}
-            className="flex-1 px-4 py-2.5 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-white placeholder-[#64748B] text-sm min-h-[44px] max-h-[100px] disabled:opacity-50"
-          />
-          {isStreaming ? (
-            <Button onClick={handleStop} className="h-11 w-11 bg-red-500 hover:bg-red-600 rounded-xl shrink-0">
-              <X className="w-5 h-5" />
-            </Button>
-          ) : (
-            <Button onClick={() => handleSend()} disabled={!input.trim()} className="h-11 w-11 bg-[#5BB3B3] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50" style={{ boxShadow: `0 4px 20px ${theme.glow}` }}>
-              <Send className="w-5 h-5" />
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
-  // ========== ACTIONS PANEL ==========
-  const ActionsPanel = (
-    <div className="flex flex-col h-full">
-      <div className="p-4 border-b border-[#1E3A5F]">
-        <h2 className="text-sm font-semibold text-white flex items-center gap-2">
-          <Layers className="w-4 h-4 text-[#5BB3B3]" />
-          Actions & Output
-        </h2>
-      </div>
-
-      {/* Action Buttons */}
-      <div className="p-3 grid grid-cols-2 gap-2">
-        {[
-          { key: "summary", icon: FileText, label: "Summary", color: "#5BB3B3" },
-          { key: "flashcards", icon: Brain, label: "Flashcards", color: "#5EEAD4" },
-          { key: "ppt", icon: Presentation, label: "Create PPT", color: "#22D3EE" },
-          { key: "audio", icon: Headphones, label: "Audio Overview", color: "#E879F9" },
-        ].map((action) => (
-          <Button
-            key={action.key}
-            variant="outline"
-            size="sm"
-            onClick={() => handleAction(action.key)}
-            disabled={isStreaming || enabledSources.length === 0}
-            className="border-[#1E3A5F] bg-transparent hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10 text-[#94A3B8] hover:text-white justify-start h-10"
-          >
-            <action.icon className="w-3.5 h-3.5 mr-1.5" style={{ color: action.color }} />
-            <span className="text-xs">{action.label}</span>
-          </Button>
-        ))}
-      </div>
-
-      {/* Output Cards */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-2">
-        {outputs.length === 0 ? (
-          <div className="text-center py-8 text-[#64748B]">
-            <Layers className="w-8 h-8 mx-auto mb-2 opacity-50" />
-            <p className="text-xs">Generated outputs will appear here</p>
-          </div>
-        ) : (
-          outputs.map((output) => (
-            <Card key={output.id} className="border-[#1E3A5F] bg-[#162535]">
-              <CardContent className="p-3">
-                <div className="flex items-start gap-2">
-                  {outputIcon(output.type)}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-white truncate">{output.title}</p>
-                    <p className="text-[10px] text-[#94A3B8] mt-0.5 line-clamp-2">{output.preview}</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px] text-[#94A3B8] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10">
-                        <Copy className="w-3 h-3 mr-1" /> Copy
-                      </Button>
-                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px] text-[#94A3B8] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10">
-                        <Download className="w-3 h-3 mr-1" /> Save
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))
-        )}
-      </div>
-    </div>
-  );
+  const [activeTab, setActiveTab] = useState<"overview" | "graph">("overview");
+  const [statsPeriod, setStatsPeriod] = useState<"week" | "month">("week");
+  const maxHours = Math.max(...weeklyChart.map((d) => d.hours));
 
   return (
-    <div className="flex flex-col h-[calc(100vh-8rem)] -m-4 sm:-m-6" style={{ backgroundColor: theme.background }}>
-      {/* Mobile Tab Bar */}
-      <div className="flex md:hidden border-b border-[#1E3A5F]" style={{ backgroundColor: theme.cardBg }}>
-        {(["sources", "chat", "actions"] as MobileTab[]).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setMobileTab(tab)}
-            className={`flex-1 py-3 text-xs font-medium capitalize transition-colors ${
-              mobileTab === tab ? "text-[#5BB3B3] border-b-2 border-[#5BB3B3]" : "text-[#94A3B8]"
-            }`}
-          >
-            {tab}
+    <div className="min-h-screen bg-[#2D3E50] p-4 md:p-6 lg:p-8 space-y-6 max-w-6xl mx-auto">
+      {/* 1. Greeting Header */}
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold text-[#E8E0D5]">{getGreeting()}, User! 👋</h1>
+          <p className="text-[#A0B0BC] text-sm mt-1">Ready to continue your Surgery pathway? · {formatDate()}</p>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <Badge className="bg-orange-500/20 text-orange-400 flex items-center gap-1"><Flame className="w-3 h-3" /> 12 Day Streak</Badge>
+          <Badge className="bg-indigo-500/20 text-indigo-400">NEET PG 202X</Badge>
+        </div>
+      </div>
+      <div className="flex gap-2">
+        {(["overview", "graph"] as const).map((t) => (
+          <button key={t} onClick={() => setActiveTab(t)} className={cn("px-4 py-1.5 rounded-full text-sm font-medium transition-colors", activeTab === t ? "bg-[#5BB3B3] text-white" : "bg-[#1B2838] text-[#A0B0BC] hover:text-[#E8E0D5]")}>
+            {t === "overview" ? "Overview" : "Knowledge Graph"}
           </button>
         ))}
       </div>
 
-      {/* Desktop: 3-column layout */}
-      <div className="flex-1 flex overflow-hidden">
-        {/* Sources Panel */}
-        <Card className={`w-[280px] shrink-0 border-[#1E3A5F] rounded-none border-r overflow-hidden ${mobileTab !== "sources" ? "hidden md:flex" : "flex"} flex-col`} style={{ backgroundColor: theme.cardBg }}>
-          {SourcesPanel}
+      {/* 2. ATOM Study Coach */}
+      <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <div className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5EEAD4] flex items-center justify-center shrink-0">
+            <Zap className="w-5 h-5 text-white" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <h2 className="text-[#E8E0D5] font-semibold">ATOM Study Coach</h2>
+              <Badge className="bg-orange-500/20 text-orange-400">Weak Area</Badge>
+              <span className="ml-auto text-sm text-[#A0B0BC]">84% confidence</span>
+            </div>
+            <ProgressBar value={52} className="mt-2 h-2" barClass="bg-[#F97316]" />
+            <p className="text-[#A0B0BC] text-sm mt-2 italic">&quot;Your Portal Hypertension accuracy is 52%. Let&apos;s strengthen this together.&quot;</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              {[{ name: "Variceal Bleeding", time: "15 min", src: "Shackelford Ch.35" }, { name: "Child-Pugh Score", time: "10 min", src: "Harrison's Ch.12" }, { name: "TIPS Procedure", time: "20 min", src: "Sabiston Ch.54" }].map((t) => (
+                <span key={t.name} className="bg-[#253545] text-[#E8E0D5] text-xs px-3 py-1.5 rounded-lg border border-[rgba(232,224,213,0.06)]">
+                  {t.name} · <span className="text-[#6B7A88]">{t.time} · {t.src}</span>
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-4 mt-3 text-xs text-[#6B7A88]">
+              <span>+50 coins</span><span>+5 XP</span><span>45 min</span><span>Last reviewed: 3 days ago</span>
+            </div>
+            <div className="flex gap-3 mt-4">
+              <button className="bg-[#10B981] hover:bg-[#059669] text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors">Start 45-min Review</button>
+              <button className="border border-[rgba(232,224,213,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5] px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-1.5 transition-colors"><Bookmark className="w-3.5 h-3.5" /> Ask Why</button>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      {/* 3. Today's Study Plan */}
+      <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <h2 className="text-[#E8E0D5] font-semibold text-lg">Today&apos;s Study Plan</h2>
+            <span className="text-[#6B7A88] text-sm">~70 min</span>
+          </div>
+          <Badge className="bg-orange-500/20 text-orange-400 flex items-center gap-1"><Flame className="w-3 h-3" /> 12 day streak</Badge>
+        </div>
+        <div className="space-y-2">
+          {studyPlanTasks.map((task, i) => (
+            <div key={i} className={cn("flex items-center gap-3 p-3 rounded-xl transition-colors", task.done ? "bg-[#253545]/50 opacity-60" : "bg-[#253545] hover:bg-[#2a3f52]")}>
+              {task.done ? <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> : <Circle className="w-5 h-5 text-[#6B7A88] shrink-0" />}
+              <task.icon className="w-4 h-4 text-[#5BB3B3] shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className={cn("text-sm font-medium", task.done ? "line-through text-[#6B7A88]" : "text-[#E8E0D5]")}>{task.title}</span>
+                  <Badge className={task.badgeColor}>{task.badge}</Badge>
+                </div>
+                <p className="text-xs text-[#6B7A88]">{task.subtitle}</p>
+              </div>
+              <span className="text-sm text-[#A0B0BC] shrink-0 flex items-center gap-1">{task.time} <ChevronRight className="w-3 h-3" /></span>
+            </div>
+          ))}
+        </div>
+        <div className="flex items-center justify-between mt-4 pt-3 border-t border-[rgba(232,224,213,0.06)]">
+          <div className="text-xs text-[#6B7A88]">Complete all tasks: <span className="text-[#F97316]">+100 coins bonus</span>, <span className="text-[#5BB3B3]">+15 XP total</span></div>
+        </div>
+        <button className="w-full mt-3 bg-[#5BB3B3] hover:bg-[#4a9e9e] text-white py-2.5 rounded-xl text-sm font-medium transition-colors">Start Today&apos;s Plan (145 coins available)</button>
+        <p className="text-[10px] text-[#6B7A88] mt-2 text-center">💡 Interleaved learning: Topics mix review, new content, and retrieval for optimal retention</p>
+      </Card>
+
+      {/* 4. Continue + Analytics */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <h3 className="text-[#E8E0D5] font-semibold mb-3">Continue Where You Left</h3>
+          <div className="space-y-3">
+            {continueItems.map((item, i) => (
+              <div key={i} className="bg-[#253545] rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-medium text-[#E8E0D5]">{item.title}</span>
+                    <Badge className={item.badgeColor}>{item.badge}</Badge>
+                  </div>
+                  <span className="text-xs text-[#6B7A88]">{item.time}</span>
+                </div>
+                <p className="text-xs text-[#6B7A88] mb-2">{item.subtitle}</p>
+                <ProgressBar value={item.progress} />
+              </div>
+            ))}
+          </div>
         </Card>
 
-        {/* Chat Panel */}
-        <div className={`flex-1 flex-col overflow-hidden ${mobileTab !== "chat" ? "hidden md:flex" : "flex"}`}>
-          {ChatPanel}
-        </div>
-
-        {/* Actions Panel */}
-        <Card className={`w-[320px] shrink-0 border-[#1E3A5F] rounded-none border-l overflow-hidden ${mobileTab !== "actions" ? "hidden lg:flex" : "flex"} flex-col`} style={{ backgroundColor: theme.cardBg }}>
-          {ActionsPanel}
+        <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <h3 className="text-[#E8E0D5] font-semibold mb-3">Your Learning This Week</h3>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { label: "Retrieval Accuracy", value: "82%", target: 85, current: 82 },
+              { label: "Confidence Calibration", value: "71%", target: 80, current: 71 },
+              { label: "Topics Mastered", value: "15", extra: "+3 vs last week" },
+              { label: "Learning Streak", value: "12 days", extra: "Personal best!" },
+            ].map((m, i) => (
+              <div key={i} className="bg-[#253545] rounded-xl p-3">
+                <p className="text-[10px] text-[#6B7A88] uppercase tracking-wider">{m.label}</p>
+                <p className="text-xl font-bold text-[#E8E0D5] mt-1">{m.value}</p>
+                {m.target && <ProgressBar value={(m.current! / m.target) * 100} className="mt-2" />}
+                {m.extra && <p className="text-[10px] text-[#5BB3B3] mt-1">{m.extra}</p>}
+              </div>
+            ))}
+          </div>
+          <div className="bg-[#253545] rounded-xl p-3 mt-3 flex gap-2 items-start">
+            <Star className="w-4 h-4 text-[#F97316] shrink-0 mt-0.5" />
+            <div>
+              <p className="text-xs text-[#E8E0D5] font-medium">Key Insight</p>
+              <p className="text-xs text-[#A0B0BC]">Your retrieval accuracy peaks during morning sessions. Consider scheduling weak areas before noon.</p>
+            </div>
+          </div>
+          <button className="text-xs text-[#5BB3B3] mt-2 hover:underline">Why these metrics?</button>
         </Card>
       </div>
+
+      {/* 5. Stats Row */}
+      <div>
+        <div className="flex items-center gap-2 mb-3">
+          {(["week", "month"] as const).map((p) => (
+            <button key={p} onClick={() => setStatsPeriod(p)} className={cn("px-3 py-1 rounded-full text-xs font-medium transition-colors", statsPeriod === p ? "bg-[#5BB3B3] text-white" : "bg-[#1B2838] text-[#A0B0BC]")}>
+              This {p === "week" ? "Week" : "Month"}
+            </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <StatCard label="Study Hours" value="24.5 hrs" change="+17%" />
+          <StatCard label="Topics Completed" value="48" change="+8" />
+          <StatCard label="Current Streak" value="12 days" change="Personal best!" extra="🔥" />
+          <StatCard label="MCQ Accuracy" value="78%" change="+5%" />
+        </div>
+      </div>
+
+      {/* 6. Study Progress Chart */}
+      <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-[#E8E0D5] font-semibold">Study Progress</h3>
+          <div className="flex items-center gap-3 text-xs text-[#6B7A88]">
+            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded bg-[#5BB3B3]" /> Study Hours</span>
+            <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded bg-[#E879F9]" /> MCQs Answered</span>
+          </div>
+        </div>
+        <div className="flex items-end gap-2 h-40">
+          {weeklyChart.map((d) => (
+            <div key={d.day} className="flex-1 flex flex-col items-center gap-1">
+              <div className="w-full flex flex-col items-center justify-end h-32 relative">
+                <div className="w-full max-w-8 bg-[#5BB3B3] rounded-t-md transition-all" style={{ height: `${(d.hours / (maxHours + 1)) * 100}%` }} />
+                <div className="absolute top-0 w-2 h-2 rounded-full bg-[#E879F9]" style={{ bottom: `${(d.mcqs / 100) * 100}%`, top: "auto" }} />
+              </div>
+              <span className="text-[10px] text-[#6B7A88]">{d.day}</span>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      {/* 7. Pathway + Focus Areas */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-[#E8E0D5] font-semibold">Current Pathway</h3>
+            <Badge className="bg-teal-500/20 text-teal-400">In Progress</Badge>
+          </div>
+          <p className="text-[#A0B0BC] text-sm">Surgical GI Mastery · 16/24 topics</p>
+          <ProgressBar value={85} className="mt-2 h-2" />
+          <p className="text-xs text-[#6B7A88] mt-1 text-right">85%</p>
+          <div className="mt-4 space-y-2">
+            <div className="flex items-center gap-2 text-sm">
+              <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
+              <span className="text-[#6B7A88]">Reading:</span>
+              <span className="text-[#E8E0D5]">Hepatobiliary Anatomy</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm">
+              <ChevronRight className="w-4 h-4 text-[#6B7A88]" />
+              <span className="text-[#6B7A88]">Up Next:</span>
+              <span className="text-[#A0B0BC]">Biliary Tract Surgery</span>
+            </div>
+          </div>
+          <button className="mt-4 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1">Continue Learning <ChevronRight className="w-4 h-4" /></button>
+        </Card>
+
+        <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <h3 className="text-[#E8E0D5] font-semibold mb-1">Focus Areas</h3>
+          <p className="text-xs text-[#6B7A88] mb-3">ATOM flagged these topics based on your MCQ performance:</p>
+          <div className="space-y-3">
+            {focusAreas.map((a, i) => (
+              <div key={i} className="bg-[#253545] rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-sm text-[#E8E0D5]">{a.topic}</span>
+                  <Badge className={a.color}>{a.accuracy}%</Badge>
+                </div>
+                <p className="text-[10px] text-[#6B7A88] mb-1.5">{a.attempts} attempts</p>
+                <ProgressBar value={a.accuracy} barClass={a.accuracy < 60 ? "bg-red-400" : "bg-orange-400"} />
+              </div>
+            ))}
+          </div>
+          <button className="mt-3 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1"><AlertTriangle className="w-3.5 h-3.5" /> Practice Weak Areas</button>
+        </Card>
+      </div>
+
+      {/* 8. Recent Activity */}
+      <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <h3 className="text-[#E8E0D5] font-semibold mb-4">Recent Activity</h3>
+        <div className="space-y-3">
+          {recentActivity.map((a, i) => (
+            <div key={i} className="flex items-start gap-3">
+              <div className="mt-0.5"><a.icon className={cn("w-4 h-4", a.color)} /></div>
+              <div className="flex-1">
+                <p className="text-sm text-[#E8E0D5]">{a.text}</p>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-xs text-[#6B7A88]">{a.time}</span>
+                  <Badge className="bg-[#253545] text-[#A0B0BC]">{a.type}</Badge>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Card>
     </div>
   );
 }
