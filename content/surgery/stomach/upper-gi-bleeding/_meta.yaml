@@ -1,9 +1,2 @@
-topic_id: upper-gi-bleeding
-name: "Upper GI Bleeding"
-description: "Approach to hematemesis/melena, resuscitation, endoscopy, high-yield causes"
-high_yield: true
-difficulty: 4
-estimated_minutes: 20
-exam_tags: [NEET_PG, MRCS]
-prerequisites: []
-related_topics: [peptic-ulcer-disease]
+title: Upper GI Bleeding
+order: 1

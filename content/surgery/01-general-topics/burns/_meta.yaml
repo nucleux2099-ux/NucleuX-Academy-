@@ -1,11 +1,2 @@
-topic_id: burns
-system: 01-general-topics
-name: "Burns"
-nmc_competency: "SU10.1"
-sources:
-  primary:
-    bailey: "Ch 31"
-    sabiston: "Ch 20"
-tags: [emergency, high-yield]
-difficulty: medium
-priority: high
+title: Burns
+order: 3

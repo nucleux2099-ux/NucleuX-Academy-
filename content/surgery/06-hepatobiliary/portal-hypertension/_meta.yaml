@@ -1,11 +1,2 @@
-topic_id: portal-hypertension
-system: 06-hepatobiliary
-name: "Portal Hypertension"
-nmc_competency: "SU28.10"
-sources:
-  primary:
-    bailey: "Ch 64"
-    sabiston: "Ch 54"
-tags: [high-yield, emergency]
-difficulty: hard
-priority: high
+title: Portal Hypertension
+order: 3

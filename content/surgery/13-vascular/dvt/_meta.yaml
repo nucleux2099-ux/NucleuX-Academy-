@@ -1,11 +1,2 @@
-topic_id: dvt
-system: 13-vascular
-name: "Deep Vein Thrombosis"
-nmc_competency: "SU28.14"
-sources:
-  primary:
-    bailey: "Ch 57"
-    sabiston: "Ch 64"
-tags: [emergency, high-yield, common]
-difficulty: medium
-priority: critical
+title: Deep Vein Thrombosis
+order: 2

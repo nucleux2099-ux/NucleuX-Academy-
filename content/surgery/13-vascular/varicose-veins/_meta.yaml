@@ -1,11 +1,2 @@
-topic_id: varicose-veins
-system: 13-vascular
-name: "Varicose Veins"
-nmc_competency: "SU28.13"
-sources:
-  primary:
-    bailey: "Ch 56"
-    sabiston: "Ch 64"
-tags: [common, outpatient]
-difficulty: easy
-priority: high
+title: Varicose Veins
+order: 1
