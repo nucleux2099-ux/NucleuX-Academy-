@@ -24,15 +24,18 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-20 pb-16 relative z-10">
+        {/* Radial glow behind hero */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(91,179,179,0.15),transparent_50%)] pointer-events-none" />
+        
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="max-w-3xl">
+          <div className="max-w-3xl relative">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB3B3]/30 bg-[#5BB3B3]/10 px-4 py-1.5 text-sm text-[#5BB3B3] font-medium">
               <Sparkles className="w-4 h-4" />
               AI-Powered Medical Education Platform
             </div>
-            <h1 className="mt-6 text-5xl sm:text-7xl font-bold text-[#E8E0D5] leading-tight">
-              NucleuX<br />
-              <span className="text-[#5BB3B3]">Academy</span>
+            <h1 className="mt-6 text-5xl sm:text-7xl font-bold leading-tight">
+              <span className="text-[#E8E0D5]">NucleuX</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8E0D5] to-[#5BB3B3]">Academy</span>
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-[#A0B0BC] leading-relaxed">
               Learn with structure. Practice with feedback.<br />
@@ -72,6 +75,7 @@ export default function HomePage() {
                 description: 'A structured knowledge map — not a dump of pages. Prerequisites, related topics, and mental models all connected.',
                 color: '#7BA69E',
                 features: ['Curated Content', 'Topic Maps', 'Quick Reference'],
+                delay: 0,
               },
               {
                 icon: LayoutDashboard,
@@ -80,6 +84,7 @@ export default function HomePage() {
                 color: '#5BB3B3',
                 features: ['AI Companion', 'Longitudinal Memory', 'Personalized Study'],
                 highlight: true,
+                delay: 0.1,
               },
               {
                 icon: GraduationCap,
@@ -87,14 +92,18 @@ export default function HomePage() {
                 description: 'PYQs, patient simulators, clinical flows, and OSCE stations — every mistake links back to the concept that fixes it.',
                 color: '#6366F1',
                 features: ['Patient Simulator', 'PYQ Practice', 'Clinical Pathways'],
+                delay: 0.2,
               },
             ].map((feature) => (
-              <div
+              <motion.div
                 key={feature.title}
-                className={`rounded-2xl border p-8 transition-all hover:scale-[1.02] ${
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + feature.delay }}
+                className={`rounded-2xl border p-8 transition-all duration-200 hover:border-white/20 hover:bg-white/[0.06] hover:scale-[1.02] ${
                   feature.highlight
                     ? 'border-[#5BB3B3]/40 bg-[#5BB3B3]/10 shadow-lg shadow-[#5BB3B3]/5'
-                    : 'border-white/10 bg-white/5'
+                    : 'border-white/10 bg-white/[0.03]'
                 }`}
               >
                 <div
@@ -112,7 +121,7 @@ export default function HomePage() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -162,23 +171,32 @@ export default function HomePage() {
                 icon: Brain,
                 stat: 'Evidence-Based',
                 desc: 'Content sourced from standard textbooks — Bailey, Sabiston, Harrison\'s, and more.',
+                delay: 0,
               },
               {
                 icon: Users,
                 stat: 'Physician-Designed',
                 desc: 'Every feature built around real clinical learning workflows and exam preparation needs.',
+                delay: 0.1,
               },
               {
                 icon: Sparkles,
                 stat: 'AI-Enhanced',
                 desc: 'Cutting-edge AI that adapts to your learning patterns for truly personalized education.',
+                delay: 0.2,
               },
             ].map((item) => (
-              <div key={item.stat} className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
+              <motion.div
+                key={item.stat}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + item.delay }}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center hover:border-white/20 hover:bg-white/[0.06] transition-all duration-200"
+              >
                 <item.icon className="w-8 h-8 text-[#5BB3B3] mx-auto mb-4" />
                 <div className="text-xl font-bold text-[#E8E0D5] mb-2">{item.stat}</div>
                 <p className="text-sm text-[#A0B0BC]">{item.desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

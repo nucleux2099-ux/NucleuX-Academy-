@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Check, X, Sparkles, Zap, Crown } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
@@ -6,8 +9,8 @@ import { SupportFooter } from '@/components/marketing/SupportFooter';
 const plans = [
   {
     name: 'Free',
-    price: '₹0',
-    period: 'forever',
+    price: { monthly: '₹0', annual: '₹0' },
+    period: { monthly: 'forever', annual: 'forever' },
     description: 'Get started with the basics',
     icon: Sparkles,
     color: '#5BB3B3',
@@ -29,8 +32,8 @@ const plans = [
   },
   {
     name: 'Scholar',
-    price: '₹299',
-    period: '/month',
+    price: { monthly: '₹299', annual: '₹249' },
+    period: { monthly: '/month', annual: '/mo (billed yearly)' },
     description: 'Everything you need to excel',
     icon: Zap,
     color: '#6366F1',
@@ -52,8 +55,8 @@ const plans = [
   },
   {
     name: 'Resident',
-    price: '₹599',
-    period: '/month',
+    price: { monthly: '₹599', annual: '₹499' },
+    period: { monthly: '/month', annual: '/mo (billed yearly)' },
     description: 'For serious exam preparation',
     icon: Crown,
     color: '#F59E0B',
@@ -95,8 +98,21 @@ const faqs = [
 ];
 
 export default function PricingPage() {
+  const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly');
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+      {/* Grid overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(91,179,179,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(91,179,179,0.15) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
+
       <MarketingHeader
         active="pricing"
         subtitle="Learn atomically and grow exponentially"
@@ -104,7 +120,7 @@ export default function PricingPage() {
         secondaryCta={{ href: '/login', label: 'Enter' }}
       />
 
-      <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24">
+      <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
@@ -119,6 +135,26 @@ export default function PricingPage() {
           <p className="mt-4 text-lg text-[#A0B0BC]">
             Start free, upgrade when you&apos;re ready. Every plan includes ATOM — your AI thinking partner.
           </p>
+
+          {/* Billing Toggle */}
+          <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 p-1">
+            <button
+              onClick={() => setBilling('monthly')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                billing === 'monthly' ? 'bg-[#5BB3B3] text-slate-950' : 'text-[#A0B0BC] hover:text-[#E8E0D5]'
+              }`}
+            >
+              Monthly
+            </button>
+            <button
+              onClick={() => setBilling('annual')}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                billing === 'annual' ? 'bg-[#5BB3B3] text-slate-950' : 'text-[#A0B0BC] hover:text-[#E8E0D5]'
+              }`}
+            >
+              Annual <span className="text-xs opacity-75">Save 15%</span>
+            </button>
+          </div>
         </div>
 
         {/* Plans Grid */}
@@ -126,14 +162,14 @@ export default function PricingPage() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl border p-6 flex flex-col ${
+              className={`relative rounded-2xl border p-6 flex flex-col transition-all duration-200 ${
                 plan.popular
-                  ? 'border-[#6366F1]/50 bg-gradient-to-b from-[#6366F1]/10 to-transparent scale-105 shadow-xl shadow-[#6366F1]/10'
-                  : 'border-white/10 bg-white/[0.03]'
+                  ? 'border-[#6366F1]/50 bg-gradient-to-b from-[#6366F1]/10 to-transparent md:scale-105 shadow-xl shadow-[#6366F1]/10 hover:scale-[1.07]'
+                  : 'border-white/10 bg-white/[0.03] hover:scale-[1.02] hover:border-white/20'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#6366F1] px-4 py-1 text-xs font-semibold text-white">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#6366F1] px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-[#6366F1]/30 animate-pulse">
                   Most Popular
                 </div>
               )}
@@ -152,8 +188,8 @@ export default function PricingPage() {
               </div>
 
               <div className="mb-6">
-                <span className="text-4xl font-bold text-[#E8E0D5]">{plan.price}</span>
-                <span className="text-[#A0B0BC] text-sm">{plan.period}</span>
+                <span className="text-4xl font-bold text-[#E8E0D5]">{plan.price[billing]}</span>
+                <span className="text-[#A0B0BC] text-sm">{plan.period[billing]}</span>
               </div>
 
               <Link
@@ -195,7 +231,7 @@ export default function PricingPage() {
         </div>
 
         {/* Institutional */}
-        <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center">
+        <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center hover:border-white/20 transition-all duration-200">
           <h2 className="text-2xl font-bold text-[#E8E0D5]">For Medical Colleges & Hospitals</h2>
           <p className="mt-2 text-[#A0B0BC] max-w-xl mx-auto">
             Institutional licensing with bulk pricing, admin dashboards, curriculum alignment, and dedicated support.
@@ -213,7 +249,7 @@ export default function PricingPage() {
           <h2 className="text-2xl font-bold text-[#E8E0D5] text-center mb-8">Common Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.q} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+              <div key={faq.q} className="rounded-xl border border-white/10 bg-white/[0.03] p-5 hover:border-white/20 transition-all duration-200">
                 <h3 className="font-semibold text-[#E8E0D5]">{faq.q}</h3>
                 <p className="mt-2 text-sm text-[#A0B0BC]">{faq.a}</p>
               </div>

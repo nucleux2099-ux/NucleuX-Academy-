@@ -1,4 +1,8 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
+import { ChevronDown } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
@@ -29,12 +33,42 @@ const faqs: Array<{ q: string; a: string }> = [
   },
 ];
 
+function FAQItem({ faq }: { faq: { q: string; a: string } }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <button
+      onClick={() => setOpen(!open)}
+      className="w-full text-left rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:border-white/20 hover:scale-[1.01] transition-all duration-200"
+    >
+      <div className="flex items-center justify-between gap-4">
+        <div className="text-base font-semibold text-[#E8E0D5]">{faq.q}</div>
+        <ChevronDown className={`w-5 h-5 text-[#6B7A88] shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+      </div>
+      {open && (
+        <div className="mt-3 text-sm text-[#A0B0BC] leading-relaxed">{faq.a}</div>
+      )}
+    </button>
+  );
+}
+
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+      {/* Grid overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(91,179,179,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(91,179,179,0.15) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
+
       <MarketingHeader active="faq" subtitle="Learn atomically and grow exponentially" primaryCta={{ href: '/campus', label: 'Take the tour' }} secondaryCta={{ href: '/login', label: 'Enter' }} />
 
-      <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24">
+      <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24 relative z-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
             FAQ
@@ -44,10 +78,7 @@ export default function FAQPage() {
 
           <div className="mt-10 space-y-3">
             {faqs.map((f) => (
-              <div key={f.q} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div className="text-base font-semibold text-[#E8E0D5]">{f.q}</div>
-                <div className="mt-2 text-sm text-[#A0B0BC]">{f.a}</div>
-              </div>
+              <FAQItem key={f.q} faq={f} />
             ))}
           </div>
 

@@ -1,7 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Atom } from 'lucide-react';
+import { ArrowRight, Atom, Menu, X } from 'lucide-react';
 
 export function MarketingHeader({
   subtitle = 'Learn atomically and grow exponentially',
@@ -16,10 +17,17 @@ export function MarketingHeader({
   secondaryCta?: { href: string; label: string };
   showRooms?: boolean;
 }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const linkClass = (isActive?: boolean) =>
     isActive
       ? 'text-sm text-[#E8E0D5]'
       : 'text-sm text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors';
+
+  const mobileLinkClass = (isActive?: boolean) =>
+    isActive
+      ? 'block py-2 text-[#E8E0D5] font-medium'
+      : 'block py-2 text-[#A0B0BC] hover:text-[#E8E0D5] transition-colors';
 
   return (
     <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur">
@@ -51,6 +59,9 @@ export function MarketingHeader({
             <Link href="/pricing" className={linkClass(active === 'pricing')}>
               Early access
             </Link>
+            <Link href="/about" className={linkClass(active === 'about')}>
+              About
+            </Link>
             <Link href="/faq" className={linkClass(active === 'faq')}>
               FAQ
             </Link>
@@ -66,7 +77,7 @@ export function MarketingHeader({
             </Link>
           </div>
 
-          {/* Mobile nav (minimal) */}
+          {/* Mobile nav */}
           <div className="flex md:hidden items-center gap-2">
             <Link
               href={primaryCta.href}
@@ -74,15 +85,54 @@ export function MarketingHeader({
             >
               Tour <ArrowRight className="w-4 h-4" />
             </Link>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 rounded-lg border border-white/10 bg-white/5 text-[#E8E0D5]"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile dropdown */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-white/5 bg-slate-950/95 backdrop-blur px-6 py-4 space-y-1">
+          <Link href="/campus" className={mobileLinkClass(active === 'campus')} onClick={() => setMobileOpen(false)}>
+            Campus Tour
+          </Link>
+          {showRooms && (
+            <Link href="/rooms" className={mobileLinkClass(active === 'rooms')} onClick={() => setMobileOpen(false)}>
+              Rooms
+            </Link>
+          )}
+          <Link href="/atom" className={mobileLinkClass(active === 'atom')} onClick={() => setMobileOpen(false)}>
+            ATOM
+          </Link>
+          <Link href="/pricing" className={mobileLinkClass(active === 'pricing')} onClick={() => setMobileOpen(false)}>
+            Early access
+          </Link>
+          <Link href="/about" className={mobileLinkClass(active === 'about')} onClick={() => setMobileOpen(false)}>
+            About
+          </Link>
+          <Link href="/faq" className={mobileLinkClass(active === 'faq')} onClick={() => setMobileOpen(false)}>
+            FAQ
+          </Link>
+          <Link href="/contact" className={mobileLinkClass(active === 'contact')} onClick={() => setMobileOpen(false)}>
+            Contact
+          </Link>
+          <div className="pt-3 border-t border-white/5">
             <Link
               href={secondaryCta.href}
-              className="inline-flex items-center px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-[#E8E0D5] text-sm font-medium"
+              className="inline-flex items-center px-4 py-2 rounded-lg border border-white/15 bg-white/5 text-[#E8E0D5] text-sm font-medium"
+              onClick={() => setMobileOpen(false)}
             >
               {secondaryCta.label}
             </Link>
           </div>
-        </nav>
-      </div>
+        </div>
+      )}
     </header>
   );
 }

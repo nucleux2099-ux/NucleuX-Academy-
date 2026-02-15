@@ -1,3 +1,5 @@
+'use client';
+
 import { Atom, Heart, BookOpen, Brain, Users, Stethoscope } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
@@ -50,7 +52,18 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+      {/* Grid overlay */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(91,179,179,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(91,179,179,0.15) 1px, transparent 1px)',
+          backgroundSize: '44px 44px',
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
+
       <MarketingHeader
         active="about"
         subtitle="Learn atomically and grow exponentially"
@@ -58,7 +71,7 @@ export default function AboutPage() {
         secondaryCta={{ href: '/login', label: 'Enter' }}
       />
 
-      <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24">
+      <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24 relative z-10">
         {/* Hero */}
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
@@ -90,7 +103,8 @@ export default function AboutPage() {
                 Two physician brothers — one living the chaos of surgical residency, the other obsessed with
                 learning science — realized the same thing independently:
               </p>
-              <blockquote className="mt-4 border-l-2 border-[#5BB3B3] pl-4 text-[#E8E0D5] italic">
+              <blockquote className="mt-4 border-l-2 border-[#5BB3B3] pl-4 text-[#E8E0D5] italic relative">
+                <div className="absolute -left-px top-0 bottom-0 w-0.5 bg-[#5BB3B3] shadow-[0_0_8px_rgba(91,179,179,0.4)]" />
                 &quot;Like dense chromatin is condensed and well-organized inside a nucleus — that&apos;s how knowledge should be.
                 NucleuX.&quot;
               </blockquote>
@@ -116,7 +130,8 @@ export default function AboutPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="rounded-xl border border-white/10 bg-white/[0.03] p-6 hover:border-white/20 transition-all"
+                className="rounded-xl border border-white/10 bg-white/[0.03] p-6 hover:border-white/20 hover:bg-white/[0.06] hover:scale-[1.02] transition-all duration-200"
+                style={{ ['--hover-border' as string]: `${v.color}30` }}
               >
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
@@ -136,9 +151,9 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-[#E8E0D5] text-center">Our Journey</h2>
           <div className="mt-8 max-w-2xl mx-auto space-y-0">
             {timeline.map((item, i) => (
-              <div key={i} className="flex gap-4">
+              <div key={i} className="flex gap-4 group">
                 <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full bg-[#5BB3B3] shrink-0" />
+                  <div className="w-3 h-3 rounded-full bg-[#5BB3B3] shrink-0 group-hover:shadow-[0_0_8px_rgba(91,179,179,0.6)] transition-shadow duration-200" />
                   {i < timeline.length - 1 && <div className="w-0.5 h-16 bg-white/10" />}
                 </div>
                 <div className="pb-8">
