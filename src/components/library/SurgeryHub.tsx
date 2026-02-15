@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ChevronRight, Library, Search, BookOpen, GraduationCap, Stethoscope } from "lucide-react";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
-import { SURGERY_SUBSPECIALTIES, getTotalUGCompetencies, SURGERY_UG_MODULES } from "@/lib/data/cbme-surgery";
+import { SURGERY_SUBSPECIALTIES, getTotalUGCompetencies } from "@/lib/data/cbme-surgery";
 
 /* ─── Logical clusters ─── */
 type Cluster = {
