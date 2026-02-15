@@ -1,298 +1,333 @@
 "use client";
 
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
+  Monitor,
+  BookOpen,
+  GraduationCap,
+  ClipboardCheck,
+  Target,
+  Users,
+  Trophy,
+  Atom,
   Fingerprint,
   Brain,
   BarChart3,
-  Clock,
-  BookOpen,
-  Target,
-  TrendingUp,
-  AlertTriangle,
   Flame,
-  Trophy,
   CheckCircle,
   ChevronRight,
+  Compass,
+  Sparkles,
+  Bookmark,
+  MessageCircle,
+  FileText,
+  Dumbbell,
+  Map,
+  Stethoscope,
+  Lightbulb,
+  Clock,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-// Subject competency data
-const subjects = [
-  { name: "Surgery", progress: 72, color: "#DC2626" },
-  { name: "Medicine", progress: 58, color: "#5BB3B3" },
-  { name: "Anatomy", progress: 85, color: "#7BA69E" },
-  { name: "Physiology", progress: 64, color: "#6BA8C9" },
-  { name: "Pathology", progress: 71, color: "#E879F9" },
-  { name: "Pharmacology", progress: 49, color: "#F59E0B" },
-  { name: "Microbiology", progress: 62, color: "#C9A86C" },
-  { name: "Biochemistry", progress: 55, color: "#6366F1" },
+/* ─────────────────────────── CAMPUS ROOMS ─────────────────────────── */
+
+const campusRooms = [
+  {
+    href: "/desk",
+    icon: Monitor,
+    color: "#5BB3B3",
+    name: "My Desk",
+    tagline: "Your personal workspace",
+    body: "This is **your corner** of the campus. Bookmarks, recent reads, notes — everything you've touched lives here. Think of it as your study table, always set up exactly how you left it.",
+    inside: [
+      { label: "Bookmarks", href: "/bookmarks", icon: Bookmark },
+      { label: "Notes", href: "/notes", icon: FileText },
+      { label: "History", href: "/history", icon: Clock },
+    ],
+  },
+  {
+    href: "/library",
+    icon: BookOpen,
+    color: "#7BA69E",
+    name: "Library",
+    tagline: "Browse, read, and build understanding",
+    body: "The **heart of the campus**. Every subject, every topic — organised by specialty and subspecialty. Pick a subject, open a topic, and read in **Explorer**, **Exam Prep**, or **Textbook** mode. Toggle **Bionic Reader** for faster scanning. Your **Pre-Study**, **AIM**, and **Mind Map** workflows live inside each topic.",
+    inside: [
+      { label: "Surgery", href: "/library/surgery", icon: Stethoscope },
+      { label: "All Subjects", href: "/library", icon: BookOpen },
+    ],
+  },
+  {
+    href: "/classroom",
+    icon: GraduationCap,
+    color: "#6BA8C9",
+    name: "Classroom",
+    tagline: "Decks, lectures, and active learning",
+    body: "Where **passive watching becomes active learning**. Slide decks with built-in templates for note-taking. Live AI sessions for real-time Q&A. Every deck logs to your **Backstage** so ATOM knows what you've covered.",
+    inside: [
+      { label: "Decks", href: "/classroom/decks", icon: FileText },
+      { label: "Live AI", href: "/classroom/live-ai", icon: Sparkles },
+    ],
+  },
+  {
+    href: "/exam-centre",
+    icon: ClipboardCheck,
+    color: "#6366F1",
+    name: "Training Centre",
+    tagline: "MCQs, PYQs, OSCEs, and case drills",
+    body: "This is where you **test what you know** — and discover what you don't. Solve MCQs, practice previous year questions, run through OSCE stations, and work clinical case flows. Every attempt feeds your **Confidence Calibration** so you can see exactly where you're overconfident or underconfident.",
+    inside: [
+      { label: "MCQs", href: "/exam-centre/mcq", icon: Target },
+      { label: "PYQs", href: "/exam-centre/pyq", icon: FileText },
+      { label: "OSCEs", href: "/exam-centre/osce", icon: Stethoscope },
+      { label: "Case Flows", href: "/exam-centre/flow", icon: Map },
+    ],
+  },
+  {
+    href: "/competencies",
+    icon: Target,
+    color: "#E879F9",
+    name: "CBME",
+    tagline: "Competency-based curriculum tracking",
+    body: "Your **NMC competency map**. See which competencies you've covered, which are pending, and where you stand against the curriculum. Maps directly to your **NBME domains** and **subject progress**.",
+    inside: [],
+  },
+  {
+    href: "/community",
+    icon: Users,
+    color: "#C9A86C",
+    name: "Common Room",
+    tagline: "Discuss, debate, and learn together",
+    body: "Medicine is **not a solo sport**. The Common Room is where you discuss cases, debate differentials, share mnemonics, and learn from peers. Every great doctor learned as much from colleagues as from textbooks.",
+    inside: [],
+  },
+  {
+    href: "/arena",
+    icon: Trophy,
+    color: "#D4AF37",
+    name: "Arena",
+    tagline: "Compete and climb the leaderboard",
+    body: "Friendly competition sharpens the mind. **Timed quizzes**, **leaderboards**, and **challenges** against peers. See where you rank — then go back to the Library and close the gap.",
+    inside: [
+      { label: "Leaderboard", href: "/leaderboard", icon: Trophy },
+    ],
+  },
+  {
+    href: "/chat",
+    icon: Atom,
+    color: "#5BB3B3",
+    name: "ATOM",
+    tagline: "Your AI study companion — with memory",
+    body: "ATOM isn't a chatbot. ATOM is a **thinking partner** who remembers your journey. Ask a question today, and six months from now ATOM still knows what you struggled with, what you mastered, and what's due for review. ATOM sees your Backstage data, your Library reads, your MCQ performance — and connects the dots for you.",
+    inside: [],
+    highlight: true,
+  },
 ];
 
-const overallAvg = Math.round(subjects.reduce((a, s) => a + s.progress, 0) / subjects.length);
+/* ─────────────────────── BACKSTAGE WIDGETS ──────────────────────── */
 
-// NBME domains
-const nbmeDomains = [
-  { name: "Patient Care & Procedural Skills", progress: 68 },
-  { name: "Medical Knowledge", progress: 74 },
-  { name: "Practice-Based Learning", progress: 52 },
-  { name: "Interpersonal & Communication", progress: 81 },
-  { name: "Professionalism", progress: 77 },
-  { name: "Systems-Based Practice", progress: 45 },
+const backstageWidgets = [
+  {
+    href: "/backstage/calibration",
+    icon: Brain,
+    color: "#E879F9",
+    name: "Confidence Calibration",
+    desc: "Are you as good as you think? Compare your **confidence** against your **accuracy** — and close the gap.",
+  },
+  {
+    href: "/backstage/logbook",
+    icon: Flame,
+    color: "#F97316",
+    name: "Study Logbook",
+    desc: "Your **streak**, your **hours**, your **habits**. Every session logged. Consistency beats intensity.",
+  },
+  {
+    href: "/backstage/quests",
+    icon: CheckCircle,
+    color: "#10B981",
+    name: "Weekly Quests",
+    desc: "Micro-goals that keep you moving. **50 MCQs this week?** **3 topics reviewed?** Track it here.",
+  },
+  {
+    href: "/analytics",
+    icon: BarChart3,
+    color: "#5BB3B3",
+    name: "Analytics",
+    desc: "The big picture — **hours studied**, **topics covered**, **accuracy trends**, all in one view.",
+  },
 ];
 
-// Weekly heatmap (1 = studied, 0 = not)
-const weekDays = [
-  { day: "M", active: true },
-  { day: "T", active: true },
-  { day: "W", active: true },
-  { day: "T", active: false },
-  { day: "F", active: true },
-  { day: "S", active: true },
-  { day: "S", active: true },
-];
+/* ────────────────────── BOLD MARKDOWN HELPER ─────────────────────── */
 
-// Quests
-const quests = [
-  { name: "Complete 50 Surgery MCQs", current: 32, total: 50 },
-  { name: "Review Pharmacology Notes", current: 3, total: 5 },
-  { name: "Pathology Image Practice", current: 12, total: 20 },
-];
-
-const cardBase =
-  "bg-[#364A5E] border border-[rgba(255,255,255,0.06)] rounded-2xl transition-all duration-200 hover:scale-[1.02] hover:shadow-xl cursor-pointer group";
-
-function WidgetFooter({ text, color }: { text: string; color: string }) {
+function RichText({ text }: { text: string }) {
+  // Convert **bold** to <strong>
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return (
-    <div className="mt-4 pt-3 border-t border-[rgba(255,255,255,0.06)] flex items-center justify-between">
-      <span className="text-xs font-medium" style={{ color }}>
-        {text}
-      </span>
-      <ChevronRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" style={{ color }} />
-    </div>
+    <>
+      {parts.map((part, i) =>
+        part.startsWith("**") && part.endsWith("**") ? (
+          <strong key={i} className="text-[#E8E0D5] font-semibold">
+            {part.slice(2, -2)}
+          </strong>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
   );
 }
 
+/* ─────────────────────────── PAGE ─────────────────────────────── */
+
 export default function BackstagePage() {
-  const confidence = 78;
-  const accuracy = 65;
-  const gap = confidence - accuracy;
-  const gapColor = gap > 15 ? "#DC2626" : gap > 8 ? "#F59E0B" : "#10B981";
-
-  const weakestDomain = nbmeDomains.reduce((a, b) => (a.progress < b.progress ? a : b));
-
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-[rgba(139,92,246,0.15)] flex items-center justify-center">
-            <Fingerprint className="w-6 h-6 text-[#E879F9]" />
+    <div className="max-w-4xl mx-auto space-y-10 pb-24">
+      {/* ── Hero ── */}
+      <header className="pt-2">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center shadow-lg shadow-[#5BB3B3]/20">
+            <Compass className="w-6 h-6 text-[#1E2D3D]" />
           </div>
-          Backstage
-        </h1>
-        <p className="text-[#A0B0BC] mt-1">Your Cognitive OS — competency, confidence, and analytics</p>
-      </div>
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5]">
+              Welcome to Campus
+            </h1>
+            <p className="text-sm text-[#A0B0BC]">
+              Your map to everything inside NucleuX Academy
+            </p>
+          </div>
+        </div>
 
-      {/* Widget Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {/* 1. Competency Radar */}
-        <Link href="/backstage/calibration" className={cardBase} style={{ borderColor: "rgba(232,121,249,0.15)" }}>
-          <div className="p-5 group-hover:border-[#E879F9]/30">
-            <div className="flex items-center gap-2 mb-3">
-              <Brain className="w-5 h-5 text-[#E879F9]" />
-              <span className="font-semibold text-[#E8E0D5] text-sm">Competency Radar</span>
-              <span className="ml-auto text-xl font-bold text-[#E879F9]">{overallAvg}%</span>
-            </div>
-            <div className="space-y-2">
-              {subjects.map((s) => (
-                <div key={s.name} className="flex items-center gap-2">
-                  <span className="text-[10px] text-[#A0B0BC] w-20 truncate">{s.name}</span>
-                  <div className="flex-1 h-1.5 rounded-full bg-[#2D3E50] overflow-hidden">
-                    <div
-                      className="h-full rounded-full"
-                      style={{ width: `${s.progress}%`, backgroundColor: s.color }}
+        <p className="text-[#A0B0BC] leading-relaxed text-[15px]">
+          <RichText text="This is your **home base**. Every room on campus is designed for a specific part of your learning journey — from reading and note-taking to testing, competing, and reflecting. Start anywhere. ATOM connects the dots across all of them." />
+        </p>
+      </header>
+
+      {/* ── Campus Rooms ── */}
+      <section>
+        <h2 className="text-lg font-semibold text-[#E8E0D5] mb-4 flex items-center gap-2">
+          <Map className="w-5 h-5 text-[#5BB3B3]" />
+          Campus Rooms
+        </h2>
+
+        <div className="space-y-4">
+          {campusRooms.map((room) => (
+            <div
+              key={room.href}
+              className={cn(
+                "rounded-2xl border transition-all duration-200",
+                "bg-[#2D3E50]/60 hover:bg-[#364A5E]/80",
+                room.highlight
+                  ? "border-[rgba(91,179,179,0.3)] shadow-lg shadow-[#5BB3B3]/5"
+                  : "border-[rgba(255,255,255,0.06)]"
+              )}
+            >
+              <Link href={room.href} className="block p-5 sm:p-6">
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div
+                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ backgroundColor: `${room.color}18` }}
+                  >
+                    <room.icon
+                      className="w-5 h-5"
+                      style={{ color: room.color }}
                     />
                   </div>
-                  <span className="text-[10px] text-[#A0B0BC] w-7 text-right">{s.progress}%</span>
-                </div>
-              ))}
-            </div>
-            <WidgetFooter text="View detailed breakdown →" color="#E879F9" />
-          </div>
-        </Link>
 
-        {/* 2. Confidence Calibration */}
-        <Link href="/backstage/calibration" className={cardBase} style={{ borderColor: "rgba(245,158,11,0.2)" }}>
-          <div className="p-5">
-            <div className="flex items-center gap-2 mb-4">
-              <AlertTriangle className="w-5 h-5 text-[#F59E0B]" />
-              <span className="font-semibold text-[#E8E0D5] text-sm">Confidence Calibration</span>
-            </div>
-            <div className="grid grid-cols-2 gap-3 mb-3">
-              <div className="bg-[#2D3E50] rounded-xl p-3 text-center">
-                <p className="text-2xl font-bold text-[#E879F9]">{confidence}%</p>
-                <p className="text-[10px] text-[#A0B0BC] mt-0.5">Confidence</p>
-              </div>
-              <div className="bg-[#2D3E50] rounded-xl p-3 text-center">
-                <p className="text-2xl font-bold text-[#7BA69E]">{accuracy}%</p>
-                <p className="text-[10px] text-[#A0B0BC] mt-0.5">Accuracy</p>
-              </div>
-            </div>
-            {/* Gap indicator */}
-            <div className="relative h-2 rounded-full bg-[#2D3E50] mb-2 overflow-hidden">
-              <div className="absolute left-0 h-full rounded-full bg-[#7BA69E]" style={{ width: `${accuracy}%` }} />
-              <div
-                className="absolute h-full rounded-full opacity-60"
-                style={{ left: `${accuracy}%`, width: `${gap}%`, backgroundColor: gapColor }}
-              />
-            </div>
-            <Badge className="text-[10px] px-2 py-0.5 border-0" style={{ backgroundColor: `${gapColor}20`, color: gapColor }}>
-              Overconfident by {gap}%
-            </Badge>
-            <WidgetFooter text="Calibrate now →" color="#F59E0B" />
-          </div>
-        </Link>
-
-        {/* 3. Study Streak & Habits */}
-        <Link href="/backstage/logbook" className={cardBase} style={{ borderColor: "rgba(249,115,22,0.15)" }}>
-          <div className="p-5">
-            <div className="flex items-center gap-2 mb-4">
-              <Flame className="w-5 h-5 text-[#F97316]" />
-              <span className="font-semibold text-[#E8E0D5] text-sm">Study Streak & Habits</span>
-            </div>
-            <div className="text-center mb-4">
-              <p className="text-3xl font-bold text-[#F97316]">7 days 🔥</p>
-              <p className="text-[10px] text-[#A0B0BC] mt-1">Current Streak</p>
-            </div>
-            <div className="flex justify-center gap-1.5 mb-4">
-              {weekDays.map((d, i) => (
-                <div key={i} className="flex flex-col items-center gap-1">
-                  <div
-                    className="w-7 h-7 rounded-md flex items-center justify-center text-[10px] font-medium"
-                    style={{
-                      backgroundColor: d.active ? "#F9731630" : "#2D3E50",
-                      color: d.active ? "#F97316" : "#A0B0BC",
-                      border: d.active ? "1px solid #F9731650" : "1px solid transparent",
-                    }}
-                  >
-                    {d.day}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-between text-xs text-[#A0B0BC]">
-              <span>
-                Best: <span className="text-[#E8E0D5] font-medium">14 days</span>
-              </span>
-              <span>
-                Today: <span className="text-[#E8E0D5] font-medium">2h 15m</span>
-              </span>
-            </div>
-            <WidgetFooter text="View logbook →" color="#F97316" />
-          </div>
-        </Link>
-
-        {/* 4. Study Analytics */}
-        <Link href="/analytics" className={cardBase} style={{ borderColor: "rgba(91,179,179,0.15)" }}>
-          <div className="p-5">
-            <div className="flex items-center gap-2 mb-4">
-              <BarChart3 className="w-5 h-5 text-[#5BB3B3]" />
-              <span className="font-semibold text-[#E8E0D5] text-sm">Study Analytics</span>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { label: "Hours", value: "12.5", icon: Clock, trend: "↑" },
-                { label: "Topics", value: "23", icon: BookOpen, trend: "↑" },
-                { label: "MCQs", value: "145", icon: Target, trend: "↑" },
-                { label: "Accuracy", value: "↑5%", icon: TrendingUp, trend: "↑" },
-              ].map((s, i) => (
-                <div key={i} className="bg-[#2D3E50] rounded-xl p-3 flex items-center gap-2.5">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ backgroundColor: "#5BB3B315" }}
-                  >
-                    <s.icon className="w-4 h-4 text-[#5BB3B3]" />
-                  </div>
-                  <div>
-                    <p className="text-lg font-bold text-[#E8E0D5] leading-tight">{s.value}</p>
-                    <p className="text-[10px] text-[#A0B0BC]">{s.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <WidgetFooter text="View full analytics →" color="#5BB3B3" />
-          </div>
-        </Link>
-
-        {/* 5. NBME Domains */}
-        <Link href="/competencies" className={cardBase} style={{ borderColor: "rgba(99,102,241,0.15)" }}>
-          <div className="p-5">
-            <div className="flex items-center gap-2 mb-3">
-              <Trophy className="w-5 h-5 text-[#6366F1]" />
-              <span className="font-semibold text-[#E8E0D5] text-sm">NBME Domains</span>
-            </div>
-            <div className="space-y-2.5">
-              {nbmeDomains.map((d) => {
-                const barColor = d.progress >= 70 ? "#10B981" : d.progress >= 50 ? "#F59E0B" : "#DC2626";
-                const isWeakest = d.name === weakestDomain.name;
-                return (
-                  <div key={d.name}>
-                    <div className="flex items-center justify-between mb-0.5">
-                      <span
-                        className="text-[10px] truncate max-w-[70%]"
-                        style={{ color: isWeakest ? "#DC2626" : "#A0B0BC", fontWeight: isWeakest ? 600 : 400 }}
-                      >
-                        {isWeakest && "⚠ "}{d.name}
-                      </span>
-                      <span className="text-[10px] text-[#A0B0BC]">{d.progress}%</span>
-                    </div>
-                    <div className="h-1.5 rounded-full bg-[#2D3E50] overflow-hidden">
-                      <div className="h-full rounded-full" style={{ width: `${d.progress}%`, backgroundColor: barColor }} />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <WidgetFooter text="View curriculum map →" color="#6366F1" />
-          </div>
-        </Link>
-
-        {/* 6. Weekly Goals & Quests */}
-        <Link href="/backstage/quests" className={cardBase} style={{ borderColor: "rgba(16,185,129,0.15)" }}>
-          <div className="p-5">
-            <div className="flex items-center gap-2 mb-4">
-              <CheckCircle className="w-5 h-5 text-[#10B981]" />
-              <span className="font-semibold text-[#E8E0D5] text-sm">Weekly Goals & Quests</span>
-            </div>
-            <div className="space-y-3">
-              {quests.map((q, i) => {
-                const pct = Math.round((q.current / q.total) * 100);
-                return (
-                  <div key={i}>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs text-[#E8E0D5] truncate max-w-[75%]">
-                        {i === 0 ? "🎯 " : ""}{q.name}
-                      </span>
-                      <span className="text-[10px] text-[#A0B0BC]">
-                        {q.current}/{q.total}
-                      </span>
-                    </div>
-                    <div className="h-2 rounded-full bg-[#2D3E50] overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all"
-                        style={{ width: `${pct}%`, backgroundColor: "#10B981" }}
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-semibold text-[#E8E0D5] text-base">
+                        {room.name}
+                      </h3>
+                      {room.highlight && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full font-medium bg-[#5BB3B3] text-[#1E2D3D]">
+                          AI
+                        </span>
+                      )}
+                      <ChevronRight
+                        className="w-4 h-4 text-[#A0B0BC] ml-auto opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                        style={{ color: room.color }}
                       />
                     </div>
+                    <p className="text-xs font-medium mb-2" style={{ color: room.color }}>
+                      {room.tagline}
+                    </p>
+                    <p className="text-sm text-[#A0B0BC] leading-relaxed">
+                      <RichText text={room.body} />
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              </Link>
+
+              {/* Sub-links */}
+              {room.inside.length > 0 && (
+                <div className="px-5 sm:px-6 pb-4 pt-0 flex flex-wrap gap-2 ml-[3.75rem]">
+                  {room.inside.map((sub) => (
+                    <Link
+                      key={sub.href}
+                      href={sub.href}
+                      className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-[#253545] text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[#364A5E] transition-colors border border-[rgba(255,255,255,0.04)]"
+                    >
+                      <sub.icon className="w-3 h-3" />
+                      {sub.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-            <WidgetFooter text="View all quests →" color="#10B981" />
-          </div>
-        </Link>
-      </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Backstage (Your Cognitive OS) ── */}
+      <section>
+        <h2 className="text-lg font-semibold text-[#E8E0D5] mb-2 flex items-center gap-2">
+          <Fingerprint className="w-5 h-5 text-[#F59E0B]" />
+          Your Backstage
+        </h2>
+        <p className="text-sm text-[#A0B0BC] mb-4 leading-relaxed">
+          <RichText text="The **Backstage** is where you see yourself clearly. Not what you've read — but what you've **retained**. Not how many hours — but how **effectively** you spent them. This is your Cognitive OS." />
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-3">
+          {backstageWidgets.map((w) => (
+            <Link
+              key={w.href}
+              href={w.href}
+              className="group rounded-xl border border-[rgba(255,255,255,0.06)] bg-[#2D3E50]/60 hover:bg-[#364A5E]/80 p-4 transition-all duration-200"
+            >
+              <div className="flex items-start gap-3">
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: `${w.color}18` }}
+                >
+                  <w.icon className="w-4 h-4" style={{ color: w.color }} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-[#E8E0D5] text-sm mb-1">
+                    {w.name}
+                  </h3>
+                  <p className="text-xs text-[#A0B0BC] leading-relaxed">
+                    <RichText text={w.desc} />
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Philosophy Footer ── */}
+      <footer className="text-center pt-4 pb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#253545] border border-[rgba(255,255,255,0.04)]">
+          <Lightbulb className="w-4 h-4 text-[#F59E0B]" />
+          <p className="text-xs text-[#A0B0BC]">
+            <RichText text="**Learn with structure. Practice with feedback. Progress with calibration.**" />
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
