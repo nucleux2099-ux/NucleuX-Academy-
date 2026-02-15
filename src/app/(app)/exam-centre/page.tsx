@@ -250,7 +250,7 @@ export default function ExamCentrePage() {
         <div>
           <h1 className="text-2xl font-bold text-white flex items-center gap-2">
             <GraduationCap className="h-7 w-7 text-indigo-400" />
-            Exam Centre
+            Training Centre
           </h1>
           <p className="text-gray-400 mt-1">
             Master concepts through practice, simulation, and guided learning

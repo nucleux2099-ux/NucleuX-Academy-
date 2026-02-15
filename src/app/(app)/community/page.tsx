@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Users, MessageSquare, Search, Plus, ThumbsUp, CheckCircle, Clock, Crown, Flame, Star, Sparkles } from "lucide-react";
+import { Users, MessageSquare, Search, Plus, ThumbsUp, CheckCircle, Clock, Crown, Flame, Star, Sparkles, GraduationCap } from "lucide-react";
 
 // Community room color - Amber
 const roomColor = '#C9A86C';
@@ -17,12 +17,18 @@ const discussions = [
   { id: 2, title: "Struggling with Thyroid staging - tips?", author: "Rahul M.", avatar: "RM", replies: 15, likes: 32, time: "4h ago", tags: ["Surgery", "Endocrine"], verified: false, hot: false },
   { id: 3, title: "Child-Pugh vs MELD - when to use which?", author: "Dr. Arun", avatar: "DA", replies: 31, likes: 67, time: "6h ago", tags: ["Medicine", "Hepatology"], verified: true, hot: true },
   { id: 4, title: "Ranson's Criteria mnemonic that actually works", author: "Sneha K.", avatar: "SK", replies: 42, likes: 89, time: "1d ago", tags: ["Surgery", "Pancreas"], verified: false, hot: true },
+  { id: 5, title: "How to approach Electrolyte imbalance questions?", author: "Meera T.", avatar: "MT", replies: 18, likes: 37, time: "2d ago", tags: ["Medicine", "Nephrology"], verified: false, hot: false },
 ];
 
 const studyGroups = [
-  { id: 1, name: "Surgical GI Warriors", members: 156, online: 23, topic: "Surgery", color: "#DC2626" },
-  { id: 2, name: "Medicine Masters", members: 234, online: 45, topic: "Medicine", color: "#5BB3B3" },
-  { id: 3, name: "Pathology Pioneers", members: 89, online: 12, topic: "Pathology", color: "#7BA69E" },
+  { id: 1, name: "Surgery PG Prep", members: 156, online: 23, topic: "Surgery", color: "#DC2626" },
+  { id: 2, name: "NEET-PG 2026", members: 234, online: 45, topic: "Multi-subject", color: "#5BB3B3" },
+  { id: 3, name: "Internal Medicine Cases", members: 89, online: 12, topic: "Medicine", color: "#7BA69E" },
+];
+
+const facultyOfficeHours = [
+  { id: 1, faculty: "Dr. Sharma", subject: "Surgery", time: "Today, 4:00 PM - 5:00 PM", avatar: "DS", available: true },
+  { id: 2, faculty: "Dr. Patel", subject: "Medicine", time: "Tomorrow, 10:00 AM - 11:00 AM", avatar: "DP", available: false },
 ];
 
 const topContributors = [
@@ -46,7 +52,7 @@ export default function CommunityPage() {
             </div>
             👥 Common Room
           </h1>
-          <p className="text-[#A0B0BC] mt-1">Connect, discuss, and learn together</p>
+          <p className="text-[#A0B0BC] mt-1">Discuss, learn, and grow together</p>
         </div>
         <Button className="bg-[#C9A86C] hover:bg-[#92400E] text-white"><Plus className="w-4 h-4 mr-2" />New Discussion</Button>
       </div>
@@ -196,6 +202,35 @@ export default function CommunityPage() {
               </div>
               <p className="text-sm text-[#A0B0BC] mb-3">&quot;The discussion on Portal Hypertension has great textbook references! I can add more if needed.&quot;</p>
               <Button className="w-full bg-[#C9A86C] hover:bg-[#92400E] text-white"><MessageSquare className="w-4 h-4 mr-2" />Ask ATOM</Button>
+            </CardContent>
+          </Card>
+
+          {/* Faculty Office Hours */}
+          <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-[#E8E0D5]">
+                <GraduationCap className="w-5 h-5 text-[#C9A86C]" />
+                Faculty Office Hours
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {facultyOfficeHours.map((f) => (
+                <div key={f.id} className="flex items-center gap-3 p-3 rounded-lg bg-[#3A4D5F] border border-[rgba(91,179,179,0.1)]">
+                  <Avatar className="w-10 h-10 bg-[rgba(180,83,9,0.15)]">
+                    <AvatarFallback className="text-[#C9A86C] text-sm">{f.avatar}</AvatarFallback>
+                  </Avatar>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-[#E8E0D5] text-sm">{f.faculty}</p>
+                    <p className="text-xs text-[#A0B0BC]">{f.subject}</p>
+                    <p className="text-xs text-[#A0B0BC] flex items-center gap-1 mt-1"><Clock className="w-3 h-3" />{f.time}</p>
+                  </div>
+                  {f.available ? (
+                    <Badge className="bg-[rgba(5,150,105,0.2)] text-[#7BA69E] border-none text-xs">Open</Badge>
+                  ) : (
+                    <Badge className="bg-[rgba(156,163,175,0.2)] text-[#A0B0BC] border-none text-xs">Upcoming</Badge>
+                  )}
+                </div>
+              ))}
             </CardContent>
           </Card>
         </div>

@@ -1,225 +1,169 @@
 'use client';
 
-import { useState } from 'react';
-import { 
-  allCompetencies, 
-  getCompetenciesByPhase, 
+import { useState, useMemo } from 'react';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Target, TrendingUp, Award, BookOpen, ChevronDown, CheckCircle2 } from 'lucide-react';
+import {
+  allCompetencies,
+  getCompetenciesByPhase,
   getCompetencyStats,
   subjectsWithCompetencies,
-  type Competency 
+  type Competency,
 } from '@/lib/data/competencies';
 
-const phaseColors = {
-  'Phase-1': 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-  'Phase-2': 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-  'Phase-3A': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  'Phase-3B': 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+const ROOM = '#E879F9';
+
+const phases = ['Phase-1', 'Phase-2', 'Phase-3A', 'Phase-3B'] as const;
+const phaseLabels: Record<string, string> = { 'Phase-1': 'Phase 1', 'Phase-2': 'Phase 2', 'Phase-3A': 'Phase 3A', 'Phase-3B': 'Phase 3B' };
+
+const typeInfo: Record<string, { label: string; color: string }> = {
+  K: { label: 'Knowledge', color: '#60a5fa' },
+  S: { label: 'Skill', color: '#34d399' },
+  A: { label: 'Attitude', color: '#fbbf24' },
+  C: { label: 'Communication', color: '#f472b6' },
 };
 
-const typeIcons = {
-  'K': '📚', // Knowledge
-  'S': '🔧', // Skill
-  'A': '💭', // Attitude
-  'C': '💬', // Communication
-};
-
-const typeLabels = {
-  'K': 'Knowledge',
-  'S': 'Skill',
-  'A': 'Attitude',
-  'C': 'Communication',
-};
+// Mock progress — simulate ~46% completion
+const mockCompleted = new Set(allCompetencies.slice(0, Math.floor(allCompetencies.length * 0.46)).map(c => c.code));
 
 export default function CompetenciesPage() {
-  const [selectedPhase, setSelectedPhase] = useState<string>('all');
-  const [selectedSubject, setSelectedSubject] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState('');
-  
+  const [activePhase, setActivePhase] = useState<string>('Phase-2');
+  const [subjectFilter, setSubjectFilter] = useState('All');
+  const [showSubjectDropdown, setShowSubjectDropdown] = useState(false);
+
   const stats = getCompetencyStats();
-  
-  const filteredCompetencies = allCompetencies.filter(c => {
-    const matchesPhase = selectedPhase === 'all' || c.phase === selectedPhase;
-    const matchesSubject = selectedSubject === 'all' || c.subject.toLowerCase().includes(selectedSubject.toLowerCase());
-    const matchesSearch = searchQuery === '' || 
-      c.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesPhase && matchesSubject && matchesSearch;
-  });
+  const phaseCompetencies = getCompetenciesByPhase(activePhase);
+  const filtered = subjectFilter === 'All' ? phaseCompetencies : phaseCompetencies.filter(c => c.subject === subjectFilter);
+
+  const completedCount = allCompetencies.filter(c => mockCompleted.has(c.code)).length;
+
+  // Subject progress for current phase
+  const subjectProgress = useMemo(() => {
+    const subjects = [...new Set(phaseCompetencies.map(c => c.subject))];
+    return subjects.map(s => {
+      const total = phaseCompetencies.filter(c => c.subject === s).length;
+      const done = phaseCompetencies.filter(c => c.subject === s && mockCompleted.has(c.code)).length;
+      return { subject: s, total, done, pct: total > 0 ? Math.round((done / total) * 100) : 0 };
+    });
+  }, [activePhase, phaseCompetencies]);
 
   return (
-    <div className="min-h-screen bg-[#0a1628] text-white p-6">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-4xl">🎯</span>
-          <h1 className="text-3xl font-bold">CBME Competencies</h1>
-        </div>
-        <p className="text-gray-400">Track your mastery of NMC-mandated MBBS competencies</p>
-      </div>
-
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-[#1a2942] rounded-xl p-4 border border-gray-700">
-          <div className="text-3xl font-bold text-cyan-400">{stats.total}</div>
-          <div className="text-gray-400 text-sm">Total Competencies</div>
-        </div>
-        <div className="bg-[#1a2942] rounded-xl p-4 border border-gray-700">
-          <div className="text-3xl font-bold text-emerald-400">{stats.byPhase['Phase-1']}</div>
-          <div className="text-gray-400 text-sm">Phase 1 (Basic Sciences)</div>
-        </div>
-        <div className="bg-[#1a2942] rounded-xl p-4 border border-gray-700">
-          <div className="text-3xl font-bold text-amber-400">{stats.byPhase['Phase-2']}</div>
-          <div className="text-gray-400 text-sm">Phase 2 (Para-clinical)</div>
-        </div>
-        <div className="bg-[#1a2942] rounded-xl p-4 border border-gray-700">
-          <div className="text-3xl font-bold text-purple-400">{stats.byPhase['Phase-3']}</div>
-          <div className="text-gray-400 text-sm">Phase 3 (Clinical)</div>
-        </div>
-      </div>
-
-      {/* XP Progress */}
-      <div className="bg-[#1a2942] rounded-xl p-6 border border-gray-700 mb-8">
-        <div className="flex justify-between items-center mb-4">
-          <div>
-            <h2 className="text-xl font-semibold">Total XP Available</h2>
-            <p className="text-gray-400 text-sm">Complete competencies to earn XP and level up!</p>
+    <div className="min-h-screen p-6 space-y-6">
+      {/* Stats Banner */}
+      <Card className="bg-[#253545] border-[rgba(232,224,213,0.06)] rounded-xl p-5">
+        <div className="flex flex-wrap items-center gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${ROOM}22` }}>
+              <Target size={20} style={{ color: ROOM }} />
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-[#E8E0D5]">{completedCount}/{allCompetencies.length}</p>
+              <p className="text-xs text-[#A0B0BC]">Competencies Achieved</p>
+            </div>
           </div>
-          <div className="text-right">
-            <div className="text-3xl font-bold text-yellow-400">⚡ {stats.totalXP} XP</div>
-            <div className="text-gray-400 text-sm">0 / {stats.totalXP} earned</div>
+          <div className="h-10 w-px bg-[rgba(232,224,213,0.06)] hidden sm:block" />
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-amber-500/15">
+              <TrendingUp size={20} className="text-amber-400" />
+            </div>
+            <div>
+              <p className="text-lg font-bold text-[#E8E0D5]">{phaseLabels[activePhase]}</p>
+              <p className="text-xs text-[#A0B0BC]">Active Phase</p>
+            </div>
+          </div>
+          <div className="h-10 w-px bg-[rgba(232,224,213,0.06)] hidden sm:block" />
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-emerald-500/15">
+              <Award size={20} className="text-emerald-400" />
+            </div>
+            <div>
+              <p className="text-lg font-bold text-[#E8E0D5]">{subjectsWithCompetencies.length}</p>
+              <p className="text-xs text-[#A0B0BC]">Subjects</p>
+            </div>
           </div>
         </div>
-        <div className="w-full bg-gray-700 rounded-full h-3">
-          <div className="bg-gradient-to-r from-cyan-500 to-emerald-500 h-3 rounded-full" style={{ width: '0%' }}></div>
-        </div>
-      </div>
+      </Card>
 
-      {/* Filters */}
-      <div className="flex flex-wrap gap-4 mb-6">
-        <div>
-          <label className="text-gray-400 text-sm mb-1 block">Phase</label>
-          <select 
-            value={selectedPhase}
-            onChange={(e) => setSelectedPhase(e.target.value)}
-            className="bg-[#1a2942] border border-gray-700 rounded-lg px-4 py-2 text-white"
+      {/* Phase Tabs */}
+      <div className="flex items-center gap-2">
+        {phases.map(p => (
+          <button
+            key={p}
+            onClick={() => { setActivePhase(p); setSubjectFilter('All'); }}
+            className="px-4 py-2 rounded-xl text-sm font-medium transition-all"
+            style={{
+              backgroundColor: activePhase === p ? `${ROOM}22` : 'transparent',
+              color: activePhase === p ? ROOM : '#A0B0BC',
+              border: activePhase === p ? `1px solid ${ROOM}44` : '1px solid rgba(232,224,213,0.06)',
+            }}
           >
-            <option value="all">All Phases</option>
-            <option value="Phase-1">Phase 1 - Basic Sciences</option>
-            <option value="Phase-2">Phase 2 - Para-clinical</option>
-            <option value="Phase-3A">Phase 3A - Clinical</option>
-            <option value="Phase-3B">Phase 3B - Clinical</option>
-          </select>
-        </div>
-        <div>
-          <label className="text-gray-400 text-sm mb-1 block">Subject</label>
-          <select 
-            value={selectedSubject}
-            onChange={(e) => setSelectedSubject(e.target.value)}
-            className="bg-[#1a2942] border border-gray-700 rounded-lg px-4 py-2 text-white"
+            {phaseLabels[p]}
+          </button>
+        ))}
+
+        {/* Subject Filter */}
+        <div className="relative ml-auto">
+          <button
+            onClick={() => setShowSubjectDropdown(!showSubjectDropdown)}
+            className="px-3 py-2 rounded-xl text-sm flex items-center gap-2 bg-[#253545] border border-[rgba(232,224,213,0.06)] text-[#A0B0BC] hover:text-[#E8E0D5] transition"
           >
-            <option value="all">All Subjects</option>
-            {subjectsWithCompetencies.map(s => (
-              <option key={s.id} value={s.name}>{s.name} ({s.count})</option>
-            ))}
-          </select>
-        </div>
-        <div className="flex-1">
-          <label className="text-gray-400 text-sm mb-1 block">Search</label>
-          <input
-            type="text"
-            placeholder="Search by code or description..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-[#1a2942] border border-gray-700 rounded-lg px-4 py-2 text-white"
-          />
+            <BookOpen size={14} /> {subjectFilter} <ChevronDown size={14} />
+          </button>
+          {showSubjectDropdown && (
+            <div className="absolute right-0 top-full mt-1 bg-[#253545] border border-[rgba(232,224,213,0.06)] rounded-xl py-1 z-10 min-w-[180px] shadow-xl">
+              {['All', ...subjectsWithCompetencies.map(s => s.name)].map(s => (
+                <button key={s} onClick={() => { setSubjectFilter(s); setShowSubjectDropdown(false); }}
+                  className="block w-full text-left px-3 py-1.5 text-sm hover:bg-[rgba(232,224,213,0.06)] transition"
+                  style={{ color: subjectFilter === s ? ROOM : '#A0B0BC' }}
+                >{s}</button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Results count */}
-      <div className="text-gray-400 mb-4">
-        Showing {filteredCompetencies.length} of {stats.total} competencies
-      </div>
-
-      {/* Competencies List */}
-      <div className="space-y-3">
-        {filteredCompetencies.map((comp) => (
-          <CompetencyCard key={comp.code} competency={comp} />
+      {/* Subject Progress Bars */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {subjectProgress.map(sp => (
+          <Card key={sp.subject} className="bg-[#253545] border-[rgba(232,224,213,0.06)] rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-xs text-[#E8E0D5] font-medium truncate">{sp.subject}</p>
+              <span className="text-xs font-bold" style={{ color: ROOM }}>{sp.pct}%</span>
+            </div>
+            <div className="h-2 bg-[#1a2a38] rounded-full overflow-hidden">
+              <div className="h-full rounded-full transition-all" style={{ width: `${sp.pct}%`, backgroundColor: ROOM }} />
+            </div>
+            <p className="text-[10px] text-[#A0B0BC] mt-1">{sp.done}/{sp.total}</p>
+          </Card>
         ))}
       </div>
-    </div>
-  );
-}
 
-function CompetencyCard({ competency }: { competency: Competency }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
-  return (
-    <div 
-      className="bg-[#1a2942] rounded-xl border border-gray-700 hover:border-cyan-500/50 transition-all cursor-pointer"
-      onClick={() => setIsExpanded(!isExpanded)}
-    >
-      <div className="p-4">
-        <div className="flex items-start justify-between">
-          <div className="flex items-start gap-3">
-            <div className="text-2xl">{typeIcons[competency.type]}</div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="font-mono font-bold text-cyan-400">{competency.code}</span>
-                <span className={`text-xs px-2 py-0.5 rounded-full border ${phaseColors[competency.phase]}`}>
-                  {competency.phase}
-                </span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-gray-700 text-gray-300">
-                  {competency.subject}
-                </span>
+      {/* Competency Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {filtered.map(c => {
+          const done = mockCompleted.has(c.code);
+          const ti = typeInfo[c.type];
+          return (
+            <Card key={c.code} className="bg-[#253545] border-[rgba(232,224,213,0.06)] rounded-xl p-4 flex gap-3 items-start">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: done ? 'rgba(52,211,153,0.15)' : `${ROOM}15` }}>
+                {done ? <CheckCircle2 size={16} className="text-emerald-400" /> : <Target size={16} style={{ color: ROOM }} />}
               </div>
-              <p className="text-gray-200">{competency.description}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-yellow-400 font-semibold">+{competency.xpReward} XP</span>
-            <div className="w-8 h-8 rounded-full border-2 border-gray-600 flex items-center justify-center">
-              <span className="text-gray-500 text-xs">○</span>
-            </div>
-          </div>
-        </div>
-        
-        {isExpanded && (
-          <div className="mt-4 pt-4 border-t border-gray-700">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-              <div>
-                <span className="text-gray-400">Type:</span>
-                <span className="ml-2 text-white">{typeLabels[competency.type]}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs font-mono font-bold text-[#E8E0D5]">{c.code}</span>
+                  <Badge className="text-[10px] px-1.5 py-0" style={{ backgroundColor: `${ti.color}22`, color: ti.color }}>{ti.label}</Badge>
+                  <Badge variant="outline" className="text-[10px] px-1.5 py-0 border-[rgba(232,224,213,0.1)] text-[#A0B0BC]">{c.level}</Badge>
+                  {done && <Badge className="text-[10px] px-1.5 py-0 bg-emerald-500/20 text-emerald-400">Achieved</Badge>}
+                </div>
+                <p className="text-sm text-[#A0B0BC] mt-1 leading-relaxed">{c.description}</p>
+                <p className="text-[10px] text-[#A0B0BC]/60 mt-1">{c.subject} • {c.domain} • {c.xpReward} XP</p>
               </div>
-              <div>
-                <span className="text-gray-400">Level:</span>
-                <span className="ml-2 text-white">{competency.level}</span>
-              </div>
-              <div>
-                <span className="text-gray-400">Domain:</span>
-                <span className="ml-2 text-white">{competency.domain}</span>
-              </div>
-              <div>
-                <span className="text-gray-400">Core:</span>
-                <span className="ml-2 text-white">{competency.core ? 'Yes ✓' : 'No'}</span>
-              </div>
-            </div>
-            {competency.linkedTopics && competency.linkedTopics.length > 0 && (
-              <div className="mt-3">
-                <span className="text-gray-400 text-sm">Linked Topics: </span>
-                {competency.linkedTopics.map(topic => (
-                  <a 
-                    key={topic}
-                    href={`/library?topic=${topic}`}
-                    className="inline-block bg-cyan-500/20 text-cyan-400 text-xs px-2 py-1 rounded mr-2 hover:bg-cyan-500/30"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {topic}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+            </Card>
+          );
+        })}
       </div>
     </div>
   );

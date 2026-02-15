@@ -1,283 +1,131 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { 
-  Trophy, Crown, Medal, Award, TrendingUp, TrendingDown,
-  Minus, Filter, Calendar, Zap, Target, Brain, Flame
-} from "lucide-react";
+import { Trophy, Medal, Crown, Flame, Target, TrendingUp, User } from "lucide-react";
 
-interface LeaderboardEntry {
-  rank: number;
-  previousRank: number;
-  name: string;
-  avatar: string;
-  institution: string;
-  score: number;
-  accuracy: number;
-  streak: number;
-  badges: string[];
-}
+const periods = ["This Week", "This Month", "All Time"];
+const subjectTabs = ["Overall", "Surgery", "Medicine"];
 
-const leaderboardData: LeaderboardEntry[] = [
-  { rank: 1, previousRank: 1, name: "Dr. Arun Kumar", avatar: "AK", institution: "AIIMS Delhi", score: 48750, accuracy: 94, streak: 45, badges: ["🏆", "🔥", "⚡"] },
-  { rank: 2, previousRank: 3, name: "Dr. Priya Menon", avatar: "PM", institution: "CMC Vellore", score: 45200, accuracy: 92, streak: 38, badges: ["🏆", "🎯"] },
-  { rank: 3, previousRank: 2, name: "Rahul Sharma", avatar: "RS", institution: "MAMC Delhi", score: 43800, accuracy: 91, streak: 42, badges: ["🔥", "📚"] },
-  { rank: 4, previousRank: 4, name: "Dr. Kavitha Reddy", avatar: "KR", institution: "NIMS Hyderabad", score: 41500, accuracy: 89, streak: 31, badges: ["⚡"] },
-  { rank: 5, previousRank: 7, name: "Sneha Patel", avatar: "SP", institution: "BJ Medical Ahmedabad", score: 39200, accuracy: 88, streak: 28, badges: ["📈"] },
-  { rank: 6, previousRank: 5, name: "Dr. Mohammed Ali", avatar: "MA", institution: "Osmania Hyderabad", score: 38100, accuracy: 87, streak: 25, badges: [] },
-  { rank: 7, previousRank: 6, name: "Arjun Reddy", avatar: "AR", institution: "Gandhi Medical", score: 36800, accuracy: 86, streak: 22, badges: [] },
-  { rank: 8, previousRank: 9, name: "Dr. Neha Singh", avatar: "NS", institution: "KGMU Lucknow", score: 35400, accuracy: 85, streak: 19, badges: [] },
-  { rank: 9, previousRank: 8, name: "Vikram Desai", avatar: "VD", institution: "Grant Medical Mumbai", score: 34200, accuracy: 84, streak: 17, badges: [] },
-  { rank: 10, previousRank: 12, name: "Dr. Anjali Nair", avatar: "AN", institution: "Medical College Trivandrum", score: 33100, accuracy: 83, streak: 15, badges: ["📈"] },
+const users = [
+  { rank: 1, name: "Priya Sharma", xp: 12450, accuracy: 94, streak: 45, level: 28 },
+  { rank: 2, name: "Arjun Mehta", xp: 11890, accuracy: 91, streak: 38, level: 26 },
+  { rank: 3, name: "Kavitha Nair", xp: 11200, accuracy: 89, streak: 42, level: 25 },
+  { rank: 4, name: "Rohit Gupta", xp: 10750, accuracy: 87, streak: 30, level: 24 },
+  { rank: 5, name: "Sneha Reddy", xp: 10200, accuracy: 86, streak: 28, level: 23 },
+  { rank: 6, name: "Vikram Singh", xp: 9800, accuracy: 85, streak: 25, level: 22 },
+  { rank: 7, name: "Anjali Desai", xp: 9350, accuracy: 83, streak: 22, level: 21 },
+  { rank: 8, name: "Karthik Iyer", xp: 8900, accuracy: 82, streak: 20, level: 20 },
+  { rank: 9, name: "Divya Patel", xp: 8500, accuracy: 80, streak: 18, level: 19 },
+  { rank: 10, name: "Arun Kumar", xp: 8100, accuracy: 79, streak: 15, level: 18 },
+  { rank: 11, name: "Meera Joshi", xp: 7800, accuracy: 78, streak: 14, level: 17 },
+  { rank: 12, name: "Aditya C.", xp: 7500, accuracy: 76, streak: 15, level: 16 },
+  { rank: 13, name: "Rashi Verma", xp: 7200, accuracy: 75, streak: 12, level: 15 },
+  { rank: 14, name: "Suresh Menon", xp: 6900, accuracy: 74, streak: 10, level: 14 },
+  { rank: 15, name: "Neha Kapoor", xp: 6600, accuracy: 73, streak: 8, level: 13 },
 ];
 
-const myRank: LeaderboardEntry = {
-  rank: 47, previousRank: 52, name: "Aditya", avatar: "AC", institution: "Prasanthi Medical", score: 18500, accuracy: 78, streak: 12, badges: ["📈"]
-};
-
-const categories = [
-  { id: "overall", label: "Overall", icon: Trophy },
-  { id: "weekly", label: "This Week", icon: Calendar },
-  { id: "surgery", label: "Surgery", icon: Target },
-  { id: "medicine", label: "Medicine", icon: Brain },
-  { id: "streak", label: "Streaks", icon: Flame },
-];
+const podiumColors = ["#D4AF37", "#C0C0C0", "#CD7F32"];
+const podiumIcons = [Crown, Medal, Medal];
 
 export default function LeaderboardPage() {
-  const [selectedCategory, setSelectedCategory] = useState("overall");
-
-  const getRankChange = (current: number, previous: number) => {
-    const diff = previous - current;
-    if (diff > 0) return { icon: TrendingUp, color: "text-[#7BA69E]", text: `+${diff}` };
-    if (diff < 0) return { icon: TrendingDown, color: "text-[#E57373]", text: `${diff}` };
-    return { icon: Minus, color: "text-[#6B7280]", text: "—" };
-  };
-
-  const getRankStyle = (rank: number) => {
-    if (rank === 1) return { bg: "bg-gradient-to-r from-[#C9A86C] to-[#D97706]", icon: Crown, iconColor: "text-white" };
-    if (rank === 2) return { bg: "bg-gradient-to-r from-[#A0B0BC] to-[#6B7280]", icon: Medal, iconColor: "text-white" };
-    if (rank === 3) return { bg: "bg-gradient-to-r from-[#CD7F32] to-[#A0522D]", icon: Award, iconColor: "text-white" };
-    return { bg: "bg-[#3A4D5F]", icon: null, iconColor: "" };
-  };
+  const [period, setPeriod] = useState("This Week");
+  const [subject, setSubject] = useState("Overall");
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div className="min-h-screen p-6 space-y-6">
+      <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-[#C9A86C]" />
-            Leaderboard
+          <h1 className="text-2xl font-bold text-[#E8E0D5] flex items-center gap-2">
+            <Trophy className="w-7 h-7 text-[#D4AF37]" /> Leaderboard
           </h1>
-          <p className="text-[#A0B0BC] mt-1">Compete with medical students across India</p>
+          <p className="text-[#A0B0BC] text-sm mt-1">Compete, climb, conquer</p>
         </div>
-        
-        {/* Your Rank Card */}
-        <Card className="bg-gradient-to-r from-[rgba(91,179,179,0.15)] to-[rgba(139,92,246,0.15)] border-[rgba(91,179,179,0.2)]">
-          <CardContent className="p-4 flex items-center gap-4">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-[#5BB3B3]">#{myRank.rank}</p>
-              <p className="text-xs text-[#6B7280]">Your Rank</p>
-            </div>
-            <div className="h-10 w-px bg-[rgba(91,179,179,0.2)]" />
-            <div>
-              <p className="text-sm text-[#E8E0D5]">{myRank.score.toLocaleString()} pts</p>
-              <div className="flex items-center gap-1 text-xs text-[#7BA69E]">
-                <TrendingUp className="w-3 h-3" />
-                <span>+5 this week</span>
+      </div>
+
+      {/* Your Rank Card */}
+      <div className="bg-[rgba(212,175,55,0.1)] rounded-xl border border-[#D4AF37]/30 p-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-full bg-[#D4AF37]/20 flex items-center justify-center">
+            <User className="w-6 h-6 text-[#D4AF37]" />
+          </div>
+          <div>
+            <p className="text-[#E8E0D5] font-semibold">Your Rank: <span className="text-[#D4AF37]">#12</span> out of 234</p>
+            <p className="text-[#A0B0BC] text-sm">7,500 XP • 76% Accuracy • Level 16</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 text-[#22C55E] text-sm font-medium">
+          <TrendingUp className="w-4 h-4" /> +3 this week
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <div className="flex gap-2">
+          {periods.map((p) => (
+            <button key={p} onClick={() => setPeriod(p)}
+              className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
+                period === p ? "bg-[#D4AF37] text-[#1a1a2e]" : "bg-[#253545] text-[#A0B0BC] border border-[rgba(232,224,213,0.06)]"
+              }`}>{p}</button>
+          ))}
+        </div>
+        <div className="flex gap-2">
+          {subjectTabs.map((s) => (
+            <button key={s} onClick={() => setSubject(s)}
+              className={`px-3 py-1.5 rounded-lg text-sm transition ${
+                subject === s ? "bg-[rgba(212,175,55,0.15)] text-[#D4AF37] border border-[#D4AF37]" : "bg-[#253545] text-[#A0B0BC] border border-[rgba(232,224,213,0.06)]"
+              }`}>{s}</button>
+          ))}
+        </div>
+      </div>
+
+      {/* Podium */}
+      <div className="flex items-end justify-center gap-4 py-6">
+        {[1, 0, 2].map((idx) => {
+          const u = users[idx];
+          const Icon = podiumIcons[idx];
+          const isFirst = idx === 0;
+          return (
+            <div key={u.rank} className={`flex flex-col items-center ${isFirst ? "mb-4" : ""}`}>
+              <Icon className="w-6 h-6 mb-2" style={{ color: podiumColors[idx] }} />
+              <div className={`${isFirst ? "w-20 h-20" : "w-16 h-16"} rounded-full bg-[#253545] border-2 flex items-center justify-center text-xl font-bold text-[#E8E0D5]`}
+                style={{ borderColor: podiumColors[idx] }}>
+                {u.name.charAt(0)}
+              </div>
+              <p className="text-[#E8E0D5] font-semibold text-sm mt-2">{u.name}</p>
+              <p className="text-sm font-bold mt-1" style={{ color: podiumColors[idx] }}>{u.xp.toLocaleString()} XP</p>
+              <div className={`${isFirst ? "h-24" : idx === 1 ? "h-16" : "h-12"} w-20 rounded-t-xl mt-2 flex items-center justify-center text-2xl font-bold text-[#1a1a2e]`}
+                style={{ backgroundColor: podiumColors[idx] }}>
+                #{u.rank}
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Category Filter */}
-      <div className="flex gap-2 flex-wrap">
-        {categories.map((cat) => (
-          <Button
-            key={cat.id}
-            variant={selectedCategory === cat.id ? "default" : "outline"}
-            size="sm"
-            onClick={() => setSelectedCategory(cat.id)}
-            className={selectedCategory === cat.id 
-              ? "bg-[#5BB3B3] text-[#2D3E50]" 
-              : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
-            }
-          >
-            <cat.icon className="w-4 h-4 mr-1" />
-            {cat.label}
-          </Button>
-        ))}
-      </div>
-
-      {/* Top 3 Podium */}
-      <div className="grid grid-cols-3 gap-4">
-        {[1, 0, 2].map((index) => {
-          const entry = leaderboardData[index];
-          const style = getRankStyle(entry.rank);
-          const isFirst = entry.rank === 1;
-          
-          return (
-            <Card 
-              key={entry.rank}
-              className={`bg-[#364A5E] border-[rgba(91,179,179,0.15)] ${isFirst ? 'ring-2 ring-[#C9A86C]/30' : ''}`}
-            >
-              <CardContent className={`p-4 text-center ${isFirst ? 'pt-2' : 'pt-6'}`}>
-                {isFirst && (
-                  <div className="flex justify-center mb-2">
-                    <Crown className="w-8 h-8 text-[#C9A86C]" />
-                  </div>
-                )}
-                <div className={`w-16 h-16 mx-auto rounded-full ${style.bg} flex items-center justify-center mb-3`}>
-                  <span className="text-xl font-bold text-white">{entry.avatar}</span>
-                </div>
-                <h3 className="font-semibold text-[#E8E0D5] truncate">{entry.name}</h3>
-                <p className="text-xs text-[#6B7280] truncate">{entry.institution}</p>
-                <p className="text-lg font-bold text-[#5BB3B3] mt-2">{entry.score.toLocaleString()}</p>
-                <div className="flex justify-center gap-1 mt-2">
-                  {entry.badges.map((badge, i) => (
-                    <span key={i} className="text-sm">{badge}</span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           );
         })}
       </div>
 
-      {/* Leaderboard Table */}
-      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
-        <CardHeader>
-          <CardTitle className="text-lg text-[#E8E0D5]">Rankings</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-2">
-            {/* Header */}
-            <div className="grid grid-cols-12 gap-2 px-4 py-2 text-xs text-[#6B7280] border-b border-[rgba(91,179,179,0.1)]">
-              <div className="col-span-1">#</div>
-              <div className="col-span-4">Student</div>
-              <div className="col-span-2 text-right">Score</div>
-              <div className="col-span-2 text-right">Accuracy</div>
-              <div className="col-span-2 text-right">Streak</div>
-              <div className="col-span-1 text-right">Δ</div>
-            </div>
-
-            {/* Entries */}
-            {leaderboardData.map((entry) => {
-              const rankChange = getRankChange(entry.rank, entry.previousRank);
-              const RankIcon = rankChange.icon;
-              const style = getRankStyle(entry.rank);
-              
-              return (
-                <div 
-                  key={entry.rank}
-                  className={`grid grid-cols-12 gap-2 px-4 py-3 rounded-lg items-center ${
-                    entry.rank <= 3 ? 'bg-[rgba(245,158,11,0.05)]' : 'hover:bg-[#3A4D5F]'
-                  }`}
-                >
-                  {/* Rank */}
-                  <div className="col-span-1">
-                    <div className={`w-8 h-8 rounded-lg ${style.bg} flex items-center justify-center`}>
-                      {style.icon ? (
-                        <style.icon className={`w-4 h-4 ${style.iconColor}`} />
-                      ) : (
-                        <span className="text-sm font-bold text-[#A0B0BC]">{entry.rank}</span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Student */}
-                  <div className="col-span-4 flex items-center gap-3">
-                    <Avatar className="w-8 h-8">
-                      <AvatarFallback className="bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] text-white text-xs">
-                        {entry.avatar}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="min-w-0">
-                      <p className="font-medium text-[#E8E0D5] truncate">{entry.name}</p>
-                      <p className="text-xs text-[#6B7280] truncate">{entry.institution}</p>
-                    </div>
-                  </div>
-
-                  {/* Score */}
-                  <div className="col-span-2 text-right">
-                    <span className="font-semibold text-[#E8E0D5]">{entry.score.toLocaleString()}</span>
-                  </div>
-
-                  {/* Accuracy */}
-                  <div className="col-span-2 text-right">
-                    <Badge className="bg-[rgba(5,150,105,0.15)] text-[#7BA69E] border-none">
-                      {entry.accuracy}%
-                    </Badge>
-                  </div>
-
-                  {/* Streak */}
-                  <div className="col-span-2 text-right">
-                    <span className="text-[#C9A86C] flex items-center justify-end gap-1">
-                      <Flame className="w-3 h-3" />
-                      {entry.streak}
-                    </span>
-                  </div>
-
-                  {/* Change */}
-                  <div className="col-span-1 text-right">
-                    <span className={`flex items-center justify-end gap-0.5 text-xs ${rankChange.color}`}>
-                      <RankIcon className="w-3 h-3" />
-                      {rankChange.text}
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Your Position Highlight */}
-            <div className="mt-4 pt-4 border-t border-[rgba(91,179,179,0.1)]">
-              <div className="grid grid-cols-12 gap-2 px-4 py-3 rounded-lg items-center bg-[rgba(91,179,179,0.1)] border border-[rgba(91,179,179,0.2)]">
-                <div className="col-span-1">
-                  <div className="w-8 h-8 rounded-lg bg-[#5BB3B3] flex items-center justify-center">
-                    <span className="text-sm font-bold text-[#2D3E50]">{myRank.rank}</span>
-                  </div>
-                </div>
-                <div className="col-span-4 flex items-center gap-3">
-                  <Avatar className="w-8 h-8 ring-2 ring-[#5BB3B3]">
-                    <AvatarFallback className="bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] text-white text-xs">
-                      {myRank.avatar}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-medium text-[#E8E0D5]">{myRank.name} <Badge className="ml-1 bg-[#5BB3B3] text-[#2D3E50] text-[10px]">You</Badge></p>
-                    <p className="text-xs text-[#6B7280]">{myRank.institution}</p>
-                  </div>
-                </div>
-                <div className="col-span-2 text-right">
-                  <span className="font-semibold text-[#E8E0D5]">{myRank.score.toLocaleString()}</span>
-                </div>
-                <div className="col-span-2 text-right">
-                  <Badge className="bg-[rgba(5,150,105,0.15)] text-[#7BA69E] border-none">
-                    {myRank.accuracy}%
-                  </Badge>
-                </div>
-                <div className="col-span-2 text-right">
-                  <span className="text-[#C9A86C] flex items-center justify-end gap-1">
-                    <Flame className="w-3 h-3" />
-                    {myRank.streak}
-                  </span>
-                </div>
-                <div className="col-span-1 text-right">
-                  <span className="flex items-center justify-end gap-0.5 text-xs text-[#7BA69E]">
-                    <TrendingUp className="w-3 h-3" />
-                    +5
-                  </span>
-                </div>
+      {/* Rankings Table */}
+      <div className="bg-[#253545] rounded-xl border border-[rgba(232,224,213,0.06)] overflow-hidden">
+        <div className="grid grid-cols-[60px_1fr_80px_80px_70px_60px] gap-2 px-4 py-3 text-xs text-[#A0B0BC] font-medium border-b border-[rgba(232,224,213,0.06)]">
+          <span>Rank</span><span>Name</span><span>XP</span><span>Accuracy</span><span>Streak</span><span>Level</span>
+        </div>
+        {users.map((u) => (
+          <div key={u.rank}
+            className={`grid grid-cols-[60px_1fr_80px_80px_70px_60px] gap-2 px-4 py-3 items-center text-sm border-b border-[rgba(232,224,213,0.06)] last:border-0 ${
+              u.rank === 12 ? "bg-[rgba(212,175,55,0.08)]" : ""
+            }`}>
+            <span className={`font-bold ${u.rank <= 3 ? "text-[#D4AF37]" : "text-[#A0B0BC]"}`}>#{u.rank}</span>
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full bg-[#2D3E50] flex items-center justify-center text-xs font-bold text-[#E8E0D5]">
+                {u.name.charAt(0)}
               </div>
+              <span className={`${u.rank === 12 ? "text-[#D4AF37] font-semibold" : "text-[#E8E0D5]"}`}>{u.name}</span>
             </div>
+            <span className="text-[#E8E0D5] font-medium">{u.xp.toLocaleString()}</span>
+            <span className="text-[#E8E0D5]">{u.accuracy}%</span>
+            <span className="text-[#E8E0D5]">{u.streak}🔥</span>
+            <span className="text-[#A0B0BC]">Lv.{u.level}</span>
           </div>
-        </CardContent>
-      </Card>
+        ))}
+      </div>
     </div>
   );
 }

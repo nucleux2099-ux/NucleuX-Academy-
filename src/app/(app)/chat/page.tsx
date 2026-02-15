@@ -19,15 +19,12 @@ import {
   Presentation,
   HelpCircle,
   X,
-  Download,
   Loader2,
-  CheckCircle2,
   Image as ImageIcon,
   FileUp,
   Atom,
 } from "lucide-react";
 
-// Dark theme colors
 const theme = {
   background: '#2D3E50',
   cardBg: '#1B2838',
@@ -48,34 +45,23 @@ interface Attachment {
   size: string;
 }
 
-interface ProgressStep {
-  step: string;
-  progress: number;
-}
-
 interface Message {
   id: string;
   role: "user" | "assistant";
   content: string;
   timestamp: Date;
   saved?: boolean;
-  status?: "thinking" | "working" | "done";
-  progress?: ProgressStep[];
-  attachment?: {
-    type: string;
-    name: string;
-    slides?: number;
-  };
+  isStreaming?: boolean;
 }
 
 const contextOptions = [
   { id: "full", label: "Full Campus", icon: "🏫" },
   { id: "surgery", label: "Surgery Library", icon: "🔪" },
   { id: "medicine", label: "Medicine Library", icon: "💊" },
-  { id: "harrisons", label: "Harrison's Only", icon: "📕" },
-  { id: "robbins", label: "Robbins Only", icon: "📗" },
-  { id: "bailey", label: "Bailey & Love", icon: "📘" },
-  { id: "shackelford", label: "Shackelford", icon: "📙" },
+  { id: "anatomy", label: "Anatomy", icon: "🦴" },
+  { id: "pathology", label: "Pathology", icon: "🔬" },
+  { id: "obgyn", label: "OBG", icon: "🩺" },
+  { id: "pediatrics", label: "Pediatrics", icon: "👶" },
 ];
 
 const quickActions = [
@@ -85,38 +71,31 @@ const quickActions = [
   { id: "quiz", icon: HelpCircle, label: "Quiz Me" },
 ];
 
-const initialMessages: Message[] = [
-  {
-    id: "1",
-    role: "assistant",
-    content: `I'm **ATOM**, your AI companion for mastering medicine.
+const welcomeMessage: Message = {
+  id: "welcome",
+  role: "assistant",
+  content: `I'm **ATOM**, your AI thinking partner for mastering medicine.
 
 I can help you:
-• **Answer questions** with textbook references
-• **Generate PPTs** & summaries
-• **Create flashcards** for spaced repetition
-• **Explain concepts** atomically
+• **Answer questions** grounded in textbook content
+• **Explain concepts** atomically — from fundamentals up
+• **Create flashcards** & study aids
+• **Quiz you** with MCQs and explanations
 
-Currently talking to: 📚 **Surgery Library**
-
-What would you like to learn today?`,
-    timestamp: new Date(),
-    status: "done",
-  },
-];
+Select a library context on the left, then ask me anything. Let's learn! ⚛️`,
+  timestamp: new Date(),
+};
 
 export default function ChatPage() {
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
   const [input, setInput] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
   const [selectedContext, setSelectedContext] = useState("surgery");
-  const [attachments, setAttachments] = useState<Attachment[]>([
-    { id: "1", name: "xray-chest.jpg", type: "image", size: "1.2 MB" },
-    { id: "2", name: "ct-abdomen.pdf", type: "pdf", size: "3.4 MB" },
-  ]);
+  const [attachments, setAttachments] = useState<Attachment[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -126,89 +105,9 @@ export default function ChatPage() {
     scrollToBottom();
   }, [messages]);
 
-  const simulateATOMResponse = useCallback(() => {
-    const messageId = crypto.randomUUID();
-    const thinkingMessage: Message = {
-      id: messageId,
-      role: "assistant",
-      content: "Let me check the relevant sources...",
-      timestamp: new Date(),
-      status: "thinking",
-    };
-    setMessages((prev) => [...prev, thinkingMessage]);
-
-    setTimeout(() => {
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === thinkingMessage.id
-            ? {
-                ...m,
-                content: "I'll create that for you!",
-                status: "working",
-                progress: [
-                  { step: "Reading Shackelford Ch. 35...", progress: 100 },
-                  { step: "Found 8 relevant sections", progress: 100 },
-                  { step: "Generating PPT structure...", progress: 100 },
-                  { step: "Creating slides...", progress: 60 },
-                ],
-              }
-            : m
-        )
-      );
-    }, 1000);
-
-    setTimeout(() => {
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === thinkingMessage.id
-            ? {
-                ...m,
-                progress: [
-                  { step: "Reading Shackelford Ch. 35...", progress: 100 },
-                  { step: "Found 8 relevant sections", progress: 100 },
-                  { step: "Generating PPT structure...", progress: 100 },
-                  { step: "Creating slides...", progress: 100 },
-                ],
-              }
-            : m
-        )
-      );
-    }, 2000);
-
-    setTimeout(() => {
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === thinkingMessage.id
-            ? {
-                ...m,
-                content: `✅ **Done!** I've created a 12-slide presentation covering:
-
-• **Gastric conduit** (most common)
-• **Colon interposition**
-• **Jejunal free grafts**
-• **Outcomes & complications**
-
-Based on Shackelford 9th Ed, Ch. 35
-
-📚 *Reference: Shackelford's Surgery of the Alimentary Tract, 9th Ed, Ch. 35 - Esophageal Replacement*`,
-                status: "done",
-                progress: undefined,
-                attachment: {
-                  type: "ppt",
-                  name: "Esophageal_Replacement_Methods.pptx",
-                  slides: 12,
-                },
-              }
-            : m
-        )
-      );
-      setIsTyping(false);
-    }, 3500);
-  }, []);
-
   const handleSend = useCallback(async (text?: string) => {
     const messageText = text || input.trim();
-    if (!messageText) return;
+    if (!messageText || isStreaming) return;
 
     const userMessage: Message = {
       id: crypto.randomUUID(),
@@ -217,21 +116,131 @@ Based on Shackelford 9th Ed, Ch. 35
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-    setIsTyping(true);
+    const assistantMessageId = crypto.randomUUID();
+    const assistantMessage: Message = {
+      id: assistantMessageId,
+      role: "assistant",
+      content: "",
+      timestamp: new Date(),
+      isStreaming: true,
+    };
 
-    simulateATOMResponse();
-  }, [input, simulateATOMResponse]);
+    setMessages((prev) => [...prev, userMessage, assistantMessage]);
+    setInput("");
+    setIsStreaming(true);
+
+    // Build message history (exclude welcome message and streaming placeholder)
+    const history = [...messages, userMessage]
+      .filter(m => m.id !== 'welcome')
+      .map(m => ({ role: m.role, content: m.content }));
+
+    try {
+      abortControllerRef.current = new AbortController();
+      
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: history,
+          context: selectedContext,
+        }),
+        signal: abortControllerRef.current.signal,
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to get response');
+      }
+
+      const reader = response.body?.getReader();
+      if (!reader) throw new Error('No response body');
+
+      const decoder = new TextDecoder();
+      let fullText = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split('\n');
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') break;
+            
+            try {
+              const parsed = JSON.parse(data);
+              if (parsed.text) {
+                fullText += parsed.text;
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === assistantMessageId
+                      ? { ...m, content: fullText }
+                      : m
+                  )
+                );
+              }
+              if (parsed.error) {
+                throw new Error(parsed.error);
+              }
+            } catch (e) {
+              // Skip malformed JSON lines
+              if (e instanceof Error && e.message !== 'Stream error') {
+                // Ignore parse errors from partial chunks
+              }
+            }
+          }
+        }
+      }
+
+      // Mark streaming as done
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantMessageId
+            ? { ...m, isStreaming: false }
+            : m
+        )
+      );
+    } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        // User cancelled
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantMessageId
+              ? { ...m, content: m.content + '\n\n*[Cancelled]*', isStreaming: false }
+              : m
+          )
+        );
+      } else {
+        console.error('Chat error:', error);
+        setMessages((prev) =>
+          prev.map((m) =>
+            m.id === assistantMessageId
+              ? { ...m, content: `❌ Error: ${error instanceof Error ? error.message : 'Something went wrong'}. Please try again.`, isStreaming: false }
+              : m
+          )
+        );
+      }
+    } finally {
+      setIsStreaming(false);
+      abortControllerRef.current = null;
+    }
+  }, [input, isStreaming, messages, selectedContext]);
 
   const handleQuickAction = (actionId: string) => {
     const prompts: Record<string, string> = {
-      ppt: "Create a PPT on esophageal replacement methods and outcomes",
-      summarize: "Summarize the key points of portal hypertension management",
-      flashcards: "Create flashcards for hepatobiliary anatomy",
-      quiz: "Quiz me on gastric cancer staging with 5 MCQs",
+      ppt: "Create a detailed summary with key points on esophageal replacement methods and outcomes, formatted for a presentation",
+      summarize: "Summarize the key points of portal hypertension management in a high-yield format",
+      flashcards: "Create 10 flashcards (Q&A format) for hepatobiliary anatomy — focus on surgically relevant landmarks",
+      quiz: "Quiz me with 5 MCQs on gastric cancer staging. Give one question at a time, wait for my answer, then explain.",
     };
     handleSend(prompts[actionId]);
+  };
+
+  const handleStop = () => {
+    abortControllerRef.current?.abort();
   };
 
   const handleCopy = (id: string, content: string) => {
@@ -246,9 +255,7 @@ Based on Shackelford 9th Ed, Ch. 35
     );
   };
 
-  const handleAddFile = () => {
-    fileInputRef.current?.click();
-  };
+  const handleAddFile = () => fileInputRef.current?.click();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -274,14 +281,22 @@ Based on Shackelford 9th Ed, Ch. 35
     }
   };
 
+  const handleReset = () => {
+    setMessages([welcomeMessage]);
+    setIsStreaming(false);
+    abortControllerRef.current?.abort();
+  };
+
   const formatMessage = (content: string) => {
     return content.split("\n").map((line, i) => {
+      if (line.startsWith("### ")) {
+        return <h3 key={i} className="text-lg font-bold mt-3 mb-1 text-white">{line.replace("### ", "")}</h3>;
+      }
       if (line.startsWith("## ")) {
-        return (
-          <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-white">
-            {line.replace("## ", "")}
-          </h2>
-        );
+        return <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-white">{line.replace("## ", "")}</h2>;
+      }
+      if (line.startsWith("# ")) {
+        return <h1 key={i} className="text-2xl font-bold mt-4 mb-2 text-white">{line.replace("# ", "")}</h1>;
       }
       if (line.includes("**")) {
         const parts = line.split(/\*\*(.*?)\*\*/g);
@@ -289,9 +304,7 @@ Based on Shackelford 9th Ed, Ch. 35
           <p key={i} className="my-1">
             {parts.map((part, j) =>
               j % 2 === 1 ? (
-                <strong key={j} className="text-[#5EEAD4] font-semibold">
-                  {part}
-                </strong>
+                <strong key={j} className="text-[#5EEAD4] font-semibold">{part}</strong>
               ) : (
                 part
               )
@@ -299,54 +312,19 @@ Based on Shackelford 9th Ed, Ch. 35
           </p>
         );
       }
-      if (line.startsWith("• ") || line.startsWith("- ")) {
-        return (
-          <li key={i} className="ml-4 my-0.5 list-disc">
-            {line.replace(/^[•-] /, "")}
-          </li>
-        );
+      if (line.startsWith("• ") || line.startsWith("- ") || line.match(/^\d+\./)) {
+        const text = line.replace(/^[•\-]\s/, '').replace(/^\d+\.\s/, '');
+        return <li key={i} className="ml-4 my-0.5 list-disc">{text}</li>;
       }
-      if (line.startsWith("📚") || line.startsWith("*Reference")) {
-        return (
-          <p key={i} className="my-2 text-sm text-[#94A3B8] italic">
-            {line}
-          </p>
-        );
+      if (line.startsWith("📚") || line.startsWith("*Reference") || line.startsWith("*Source")) {
+        return <p key={i} className="my-2 text-sm text-[#94A3B8] italic">{line}</p>;
       }
-      if (!line.trim()) {
-        return <br key={i} />;
+      if (line.startsWith("```")) {
+        return null; // Simple code block handling — skip fences
       }
-      return (
-        <p key={i} className="my-1">
-          {line}
-        </p>
-      );
+      if (!line.trim()) return <br key={i} />;
+      return <p key={i} className="my-1">{line}</p>;
     });
-  };
-
-  const renderProgress = (progress: ProgressStep[]) => {
-    return (
-      <div className="space-y-2 mt-3">
-        {progress.map((step, i) => (
-          <div key={i} className="space-y-1">
-            <div className="flex items-center gap-2">
-              {step.progress === 100 ? (
-                <CheckCircle2 className="w-3 h-3 text-[#5EEAD4]" />
-              ) : (
-                <Loader2 className="w-3 h-3 text-[#5BB3B3] animate-spin" />
-              )}
-              <span className="text-xs text-[#94A3B8]">{step.step}</span>
-            </div>
-            <div className="h-1.5 bg-[#1E3A5F] rounded-full overflow-hidden ml-5">
-              <div
-                className="h-full bg-gradient-to-r from-[#5BB3B3] to-[#5EEAD4] rounded-full transition-all duration-500"
-                style={{ width: `${step.progress}%` }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    );
   };
 
   return (
@@ -376,9 +354,7 @@ Based on Shackelford 9th Ed, Ch. 35
                 }`}
               >
                 <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                  selectedContext === option.id
-                    ? "border-[#5BB3B3]"
-                    : "border-[#475569]"
+                  selectedContext === option.id ? "border-[#5BB3B3]" : "border-[#475569]"
                 }`}>
                   {selectedContext === option.id && (
                     <span className="w-2 h-2 rounded-full bg-[#5BB3B3]" />
@@ -413,9 +389,7 @@ Based on Shackelford 9th Ed, Ch. 35
                   <FileText className="w-4 h-4 text-[#5EEAD4]" />
                 )}
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-white truncate">
-                    {attachment.name}
-                  </p>
+                  <p className="text-xs font-medium text-white truncate">{attachment.name}</p>
                   <p className="text-[10px] text-[#94A3B8]">{attachment.size}</p>
                 </div>
                 <button
@@ -426,14 +400,7 @@ Based on Shackelford 9th Ed, Ch. 35
                 </button>
               </div>
             ))}
-            <input
-              ref={fileInputRef}
-              type="file"
-              multiple
-              accept="image/*,.pdf"
-              onChange={handleFileChange}
-              className="hidden"
-            />
+            <input ref={fileInputRef} type="file" multiple accept="image/*,.pdf" onChange={handleFileChange} className="hidden" />
             <Button
               variant="outline"
               size="sm"
@@ -461,6 +428,7 @@ Based on Shackelford 9th Ed, Ch. 35
                 variant="outline"
                 size="sm"
                 onClick={() => handleQuickAction(action.id)}
+                disabled={isStreaming}
                 className="border-[#1E3A5F] bg-transparent hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10 text-[#94A3B8] hover:text-[#22D3EE] justify-start"
               >
                 <action.icon className="w-3 h-3 mr-1.5 text-[#5BB3B3]" />
@@ -483,31 +451,26 @@ Based on Shackelford 9th Ed, Ch. 35
         >
           <div className="flex items-center gap-3">
             <div className="relative">
-              {/* ATOM Avatar with glow */}
               <div 
                 className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5EEAD4] flex items-center justify-center shadow-lg relative"
-                style={{ 
-                  boxShadow: `0 0 30px ${theme.glow}, 0 0 60px ${theme.glow}`,
-                }}
+                style={{ boxShadow: `0 0 30px ${theme.glow}, 0 0 60px ${theme.glow}` }}
               >
                 <Atom className="w-6 h-6 text-white" />
-                {/* Animated ring */}
-                <div 
-                  className="absolute inset-0 rounded-full animate-ping opacity-30"
-                  style={{ backgroundColor: theme.primary }}
-                />
+                {isStreaming && (
+                  <div className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ backgroundColor: theme.primary }} />
+                )}
               </div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#10B981] rounded-full border-2 border-[#1B2838]" />
+              <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-[#1B2838] ${isStreaming ? 'bg-yellow-400' : 'bg-[#10B981]'}`} />
             </div>
             <div>
               <h1 className="text-xl font-bold text-white flex items-center gap-2">
                 ATOM
                 <Badge className="bg-[#5BB3B3]/20 text-[#22D3EE] border-[#5BB3B3]/30 text-xs">
-                  AI Companion
+                  {isStreaming ? 'Thinking...' : 'Online'}
                 </Badge>
               </h1>
               <p className="text-sm text-[#94A3B8]">
-                Online • Talking to{" "}
+                Talking to{" "}
                 <span className="text-[#22D3EE] font-medium">
                   {contextOptions.find((c) => c.id === selectedContext)?.label}
                 </span>
@@ -517,7 +480,7 @@ Based on Shackelford 9th Ed, Ch. 35
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setMessages(initialMessages)}
+            onClick={handleReset}
             className="text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
           >
             <RotateCcw className="w-4 h-4" />
@@ -533,38 +496,20 @@ Based on Shackelford 9th Ed, Ch. 35
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex gap-3 ${
-                  message.role === "user" ? "flex-row-reverse" : ""
-                } animate-fade-in`}
+                className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""} animate-fade-in`}
               >
-                {/* Avatar */}
                 <Avatar
-                  className={`w-8 h-8 shrink-0 shadow-sm ${
-                    message.role === "assistant"
-                      ? ""
-                      : ""
-                  }`}
+                  className="w-8 h-8 shrink-0 shadow-sm"
                   style={message.role === "assistant" ? {
                     background: `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`,
                     boxShadow: `0 0 15px ${theme.glow}`,
                   } : { backgroundColor: theme.primary }}
                 >
-                  <AvatarFallback
-                    className={
-                      message.role === "assistant"
-                        ? "bg-transparent text-white"
-                        : "bg-transparent text-white"
-                    }
-                  >
-                    {message.role === "assistant" ? (
-                      <Atom className="w-4 h-4" />
-                    ) : (
-                      "S"
-                    )}
+                  <AvatarFallback className="bg-transparent text-white">
+                    {message.role === "assistant" ? <Atom className="w-4 h-4" /> : "Y"}
                   </AvatarFallback>
                 </Avatar>
 
-                {/* Message Bubble */}
                 <div className={`max-w-[80%] ${message.role === "user" ? "items-end" : "items-start"}`}>
                   <div
                     className={`rounded-2xl px-4 py-3 shadow-sm ${
@@ -573,57 +518,26 @@ Based on Shackelford 9th Ed, Ch. 35
                         : "bg-[#1B2838] border border-[#1E3A5F] rounded-bl-md"
                     }`}
                   >
-                    <div
-                      className={
-                        message.role === "assistant"
-                          ? "text-[#E2E8F0] prose prose-sm max-w-none prose-invert"
-                          : ""
-                      }
-                    >
+                    <div className={message.role === "assistant" ? "text-[#E2E8F0] prose prose-sm max-w-none prose-invert" : ""}>
                       {message.role === "assistant"
                         ? formatMessage(message.content)
                         : message.content}
                     </div>
 
-                    {/* Progress Indicators */}
-                    {message.status === "thinking" && (
+                    {message.isStreaming && !message.content && (
                       <div className="flex items-center gap-2 mt-2">
                         <Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" />
-                        <span className="text-xs text-[#94A3B8]">Thinking...</span>
+                        <span className="text-xs text-[#94A3B8]">Searching library & thinking...</span>
                       </div>
                     )}
 
-                    {message.status === "working" && message.progress && renderProgress(message.progress)}
-
-                    {/* Attachment Download */}
-                    {message.attachment && (
-                      <div className="mt-3 p-3 bg-[#162535] rounded-lg border border-[#1E3A5F]">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-[#5BB3B3]/20 flex items-center justify-center">
-                            <Presentation className="w-5 h-5 text-[#5BB3B3]" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm font-medium text-white">
-                              {message.attachment.name}
-                            </p>
-                            <p className="text-xs text-[#94A3B8]">
-                              {message.attachment.slides} slides • Ready to download
-                            </p>
-                          </div>
-                          <Button
-                            size="sm"
-                            className="bg-[#5BB3B3] hover:bg-[#22D3EE] text-white"
-                          >
-                            <Download className="w-3 h-3 mr-1" />
-                            Download
-                          </Button>
-                        </div>
-                      </div>
+                    {message.isStreaming && message.content && (
+                      <span className="inline-block w-2 h-4 bg-[#5BB3B3] animate-pulse ml-1" />
                     )}
                   </div>
 
                   {/* Message Actions */}
-                  {message.role === "assistant" && message.status === "done" && (
+                  {message.role === "assistant" && !message.isStreaming && message.id !== "welcome" && (
                     <div className="flex items-center gap-1 mt-2">
                       <Button
                         variant="ghost"
@@ -631,11 +545,7 @@ Based on Shackelford 9th Ed, Ch. 35
                         onClick={() => handleCopy(message.id, message.content)}
                         className="h-7 px-2 text-xs text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
                       >
-                        {copiedId === message.id ? (
-                          <Check className="w-3 h-3 mr-1" />
-                        ) : (
-                          <Copy className="w-3 h-3 mr-1" />
-                        )}
+                        {copiedId === message.id ? <Check className="w-3 h-3 mr-1" /> : <Copy className="w-3 h-3 mr-1" />}
                         {copiedId === message.id ? "Copied" : "Copy"}
                       </Button>
                       <Button
@@ -643,9 +553,7 @@ Based on Shackelford 9th Ed, Ch. 35
                         size="sm"
                         onClick={() => handleSaveAsNote(message)}
                         className={`h-7 px-2 text-xs ${
-                          message.saved
-                            ? "text-[#5EEAD4]"
-                            : "text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
+                          message.saved ? "text-[#5EEAD4]" : "text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
                         }`}
                       >
                         <StickyNote className="w-3 h-3 mr-1" />
@@ -654,42 +562,12 @@ Based on Shackelford 9th Ed, Ch. 35
                     </div>
                   )}
 
-                  {/* Timestamp */}
                   <p className="text-[10px] text-[#64748B] mt-1 px-1">
-                    {message.timestamp.toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
+                    {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                   </p>
                 </div>
               </div>
             ))}
-
-            {/* Typing Indicator */}
-            {isTyping && messages[messages.length - 1]?.status !== "thinking" && 
-              messages[messages.length - 1]?.status !== "working" && (
-              <div className="flex gap-3 animate-fade-in">
-                <Avatar 
-                  className="w-8 h-8 shadow-sm"
-                  style={{
-                    background: `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`,
-                    boxShadow: `0 0 15px ${theme.glow}`,
-                  }}
-                >
-                  <AvatarFallback className="bg-transparent text-white">
-                    <Atom className="w-4 h-4" />
-                  </AvatarFallback>
-                </Avatar>
-                <div className="bg-[#1B2838] border border-[#1E3A5F] rounded-2xl rounded-bl-md px-4 py-3 shadow-sm">
-                  <div className="flex gap-1">
-                    <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 bg-[#5BB3B3] rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
-                  </div>
-                </div>
-              </div>
-            )}
-
             <div ref={messagesEndRef} />
           </div>
 
@@ -703,7 +581,8 @@ Based on Shackelford 9th Ed, Ch. 35
                   onKeyDown={handleKeyDown}
                   placeholder="Ask ATOM anything..."
                   rows={1}
-                  className="w-full px-4 py-3 pr-12 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-white placeholder-[#64748B] min-h-[48px] max-h-[120px] shadow-inner"
+                  disabled={isStreaming}
+                  className="w-full px-4 py-3 pr-12 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-white placeholder-[#64748B] min-h-[48px] max-h-[120px] shadow-inner disabled:opacity-50"
                 />
                 <Button
                   variant="ghost"
@@ -714,17 +593,26 @@ Based on Shackelford 9th Ed, Ch. 35
                   <Paperclip className="w-4 h-4" />
                 </Button>
               </div>
-              <Button
-                onClick={() => handleSend()}
-                disabled={!input.trim() || isTyping}
-                className="h-12 w-12 bg-[#5BB3B3] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50 shadow-lg"
-                style={{ boxShadow: `0 4px 20px ${theme.glow}` }}
-              >
-                <Send className="w-5 h-5" />
-              </Button>
+              {isStreaming ? (
+                <Button
+                  onClick={handleStop}
+                  className="h-12 w-12 bg-red-500 hover:bg-red-600 rounded-xl shrink-0 shadow-lg"
+                >
+                  <X className="w-5 h-5" />
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => handleSend()}
+                  disabled={!input.trim()}
+                  className="h-12 w-12 bg-[#5BB3B3] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50 shadow-lg"
+                  style={{ boxShadow: `0 4px 20px ${theme.glow}` }}
+                >
+                  <Send className="w-5 h-5" />
+                </Button>
+              )}
             </div>
             <p className="text-[10px] text-[#64748B] mt-2 text-center">
-              ATOM may make mistakes. Verify important information with textbooks.
+              ATOM uses textbook content from your selected library. Always verify critical clinical information.
             </p>
           </div>
         </CardContent>

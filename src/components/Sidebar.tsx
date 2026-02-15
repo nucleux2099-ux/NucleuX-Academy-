@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  LayoutDashboard,
+  Monitor,
   BookOpen,
   GraduationCap,
   ClipboardCheck,
@@ -18,7 +18,7 @@ import { ProfileButton } from "@/components/ProfilePopup";
 
 // ATOM Matte Theme - Room colors
 const roomColors: Record<string, string> = {
-  '/dashboard': '#5BB3B3', // Teal
+  '/desk': '#5BB3B3',      // Teal
   '/library': '#7BA69E',   // Sage
   '/classroom': '#6BA8C9', // Sky teal
   '/exam-centre': '#6366F1', // Indigo for Exam Centre
@@ -30,10 +30,10 @@ const roomColors: Record<string, string> = {
 };
 
 const navItems = [
-  { href: "/dashboard", icon: LayoutDashboard, label: "My Desk", description: "Dashboard & Graph" },
+  { href: "/desk", icon: Monitor, label: "My Desk", description: "Personal Workspace" },
   { href: "/library", icon: BookOpen, label: "Library", description: "Browse & Pathways" },
   { href: "/classroom", icon: GraduationCap, label: "Classroom", description: "Video Lectures" },
-  { href: "/exam-centre", icon: ClipboardCheck, label: "Exam Centre", description: "PYQs, MCQs, Cases" },
+  { href: "/exam-centre", icon: ClipboardCheck, label: "Training Centre", description: "PYQs, MCQs, Cases" },
   { href: "/competencies", icon: Target, label: "CBME", description: "Competencies" },
   { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
   { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
@@ -87,6 +87,7 @@ export function Sidebar() {
                   borderLeft: `3px solid ${roomColor}`,
                   marginLeft: '-3px',
                   paddingLeft: 'calc(1rem + 3px)',
+                  boxShadow: `0 0 12px ${roomColor}25, inset 0 0 8px ${roomColor}10`,
                 } : {}}
               >
                 <item.icon 
@@ -115,6 +116,13 @@ export function Sidebar() {
             );
           })}
         </nav>
+
+        {/* ATOM Badge */}
+        <div className="flex justify-center pb-2">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#4A9E9E] flex items-center justify-center shadow-lg shadow-[#5BB3B3]/20 animate-pulse">
+            <span className="text-sm" title="ATOM">⚛️</span>
+          </div>
+        </div>
 
         {/* Profile Button at Bottom */}
         <div className="p-4 border-t border-[rgba(232,224,213,0.06)]">

@@ -1,232 +1,126 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { 
-  Trophy, Star, Target, Flame, BookOpen, Brain, Zap, 
-  Crown, Medal, Award, Shield, Clock, CheckCircle,
-  Lock, Sparkles, TrendingUp
-} from "lucide-react";
+import { Award, Lock, Star, Sparkles, Trophy, Zap } from "lucide-react";
 
-interface Achievement {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ElementType;
-  color: string;
-  bg: string;
-  category: string;
-  progress: number;
-  maxProgress: number;
-  unlocked: boolean;
-  unlockedAt?: string;
-  xp: number;
-  rarity: "common" | "rare" | "epic" | "legendary";
-}
+const categories = ["All", "Learning", "Practice", "Community", "Milestones"];
 
-const achievements: Achievement[] = [
-  // Study Streaks
-  { id: "streak7", title: "Week Warrior", description: "Maintain a 7-day study streak", icon: Flame, color: "#C9A86C", bg: "rgba(245,158,11,0.15)", category: "Streaks", progress: 7, maxProgress: 7, unlocked: true, unlockedAt: "Jan 28, 2025", xp: 100, rarity: "common" },
-  { id: "streak30", title: "Monthly Master", description: "Maintain a 30-day study streak", icon: Flame, color: "#E57373", bg: "rgba(239,68,68,0.15)", category: "Streaks", progress: 12, maxProgress: 30, unlocked: false, xp: 500, rarity: "rare" },
-  { id: "streak100", title: "Century Legend", description: "Maintain a 100-day study streak", icon: Crown, color: "#C9A86C", bg: "rgba(245,158,11,0.2)", category: "Streaks", progress: 12, maxProgress: 100, unlocked: false, xp: 2000, rarity: "legendary" },
-  
-  // MCQ Mastery
-  { id: "mcq100", title: "Question Hunter", description: "Answer 100 MCQs", icon: Target, color: "#5BB3B3", bg: "rgba(91,179,179,0.15)", category: "MCQs", progress: 100, maxProgress: 100, unlocked: true, unlockedAt: "Jan 25, 2025", xp: 150, rarity: "common" },
-  { id: "mcq500", title: "Quiz Champion", description: "Answer 500 MCQs", icon: Target, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", category: "MCQs", progress: 487, maxProgress: 500, unlocked: false, xp: 750, rarity: "rare" },
-  { id: "perfect10", title: "Perfect Ten", description: "Score 100% on 10 quizzes in a row", icon: CheckCircle, color: "#7BA69E", bg: "rgba(5,150,105,0.15)", category: "MCQs", progress: 6, maxProgress: 10, unlocked: false, xp: 1000, rarity: "epic" },
-  
-  // Learning
-  { id: "topics10", title: "Explorer", description: "Complete 10 topics", icon: BookOpen, color: "#7BA69E", bg: "rgba(5,150,105,0.15)", category: "Learning", progress: 10, maxProgress: 10, unlocked: true, unlockedAt: "Jan 30, 2025", xp: 200, rarity: "common" },
-  { id: "topics50", title: "Scholar", description: "Complete 50 topics", icon: BookOpen, color: "#6BA8C9", bg: "rgba(14,165,233,0.15)", category: "Learning", progress: 48, maxProgress: 50, unlocked: false, xp: 1000, rarity: "rare" },
-  { id: "mastery", title: "Subject Master", description: "Achieve 90%+ mastery in any subject", icon: Brain, color: "#EC4899", bg: "rgba(236,72,153,0.15)", category: "Learning", progress: 85, maxProgress: 90, unlocked: false, xp: 1500, rarity: "epic" },
-  
-  // Arena
-  { id: "arena1", title: "First Blood", description: "Win your first Arena match", icon: Zap, color: "#E57373", bg: "rgba(239,68,68,0.15)", category: "Arena", progress: 1, maxProgress: 1, unlocked: true, unlockedAt: "Feb 1, 2025", xp: 250, rarity: "common" },
-  { id: "arena10", title: "Arena Regular", description: "Win 10 Arena matches", icon: Medal, color: "#C9A86C", bg: "rgba(245,158,11,0.15)", category: "Arena", progress: 7, maxProgress: 10, unlocked: false, xp: 500, rarity: "rare" },
-  { id: "top10", title: "Elite Competitor", description: "Reach top 10 in any Arena leaderboard", icon: Crown, color: "#C9A86C", bg: "rgba(245,158,11,0.2)", category: "Arena", progress: 0, maxProgress: 1, unlocked: false, xp: 2000, rarity: "legendary" },
-  
-  // Special
-  { id: "early", title: "Early Bird", description: "Study before 6 AM", icon: Clock, color: "#22D3EE", bg: "rgba(34,211,238,0.15)", category: "Special", progress: 1, maxProgress: 1, unlocked: true, unlockedAt: "Feb 3, 2025", xp: 100, rarity: "common" },
-  { id: "nightowl", title: "Night Owl", description: "Study past midnight for 5 days", icon: Star, color: "#8B5CF6", bg: "rgba(139,92,246,0.15)", category: "Special", progress: 3, maxProgress: 5, unlocked: false, xp: 200, rarity: "rare" },
-  { id: "allrounder", title: "Renaissance Doctor", description: "Complete topics in all 5 subjects", icon: Award, color: "#C9A86C", bg: "rgba(245,158,11,0.2)", category: "Special", progress: 4, maxProgress: 5, unlocked: false, xp: 1500, rarity: "epic" },
+const achievements = [
+  { id: 1, emoji: "🩸", title: "First Blood", desc: "Answer your first MCQ", cat: "Practice", unlocked: "Jan 15, 2025", progress: 100, rarity: "Common" },
+  { id: 2, emoji: "💯", title: "Century", desc: "Complete 100 MCQs", cat: "Practice", unlocked: "Feb 1, 2025", progress: 100, rarity: "Common" },
+  { id: 3, emoji: "🌙", title: "Night Owl", desc: "Study after midnight", cat: "Learning", unlocked: "Jan 22, 2025", progress: 100, rarity: "Rare" },
+  { id: 4, emoji: "⚛️", title: "ATOM Whisperer", desc: "50 AI chat sessions", cat: "Community", unlocked: "Feb 10, 2025", progress: 100, rarity: "Rare" },
+  { id: 5, emoji: "🔥", title: "Streak Master", desc: "Maintain 30-day streak", cat: "Milestones", unlocked: null, progress: 50, rarity: "Legendary" },
+  { id: 6, emoji: "🦴", title: "Anatomy Atlas", desc: "Complete all anatomy topics", cat: "Learning", unlocked: null, progress: 72, rarity: "Rare" },
+  { id: 7, emoji: "📖", title: "Bookworm", desc: "Read 50 topics", cat: "Learning", unlocked: "Jan 28, 2025", progress: 100, rarity: "Common" },
+  { id: 8, emoji: "⚡", title: "Speed Demon", desc: "Answer 10 MCQs under 30 sec each", cat: "Practice", unlocked: "Feb 5, 2025", progress: 100, rarity: "Common" },
+  { id: 9, emoji: "🏆", title: "Top 10", desc: "Reach Top 10 on leaderboard", cat: "Milestones", unlocked: null, progress: 0, rarity: "Legendary" },
+  { id: 10, emoji: "🤝", title: "Team Player", desc: "Join 5 study groups", cat: "Community", unlocked: null, progress: 60, rarity: "Common" },
+  { id: 11, emoji: "🎯", title: "Sharpshooter", desc: "Score 100% on a 50-Q test", cat: "Practice", unlocked: null, progress: 0, rarity: "Rare" },
+  { id: 12, emoji: "📝", title: "Note Taker", desc: "Create 25 notes", cat: "Learning", unlocked: "Feb 8, 2025", progress: 100, rarity: "Common" },
+  { id: 13, emoji: "🎬", title: "Lecture Buff", desc: "Watch 20 lectures", cat: "Learning", unlocked: null, progress: 85, rarity: "Common" },
+  { id: 14, emoji: "💊", title: "Pharma Pro", desc: "Complete all pharmacology topics", cat: "Learning", unlocked: null, progress: 40, rarity: "Rare" },
+  { id: 15, emoji: "🌟", title: "Rising Star", desc: "Earn 5,000 XP", cat: "Milestones", unlocked: "Feb 12, 2025", progress: 100, rarity: "Common" },
+  { id: 16, emoji: "🧠", title: "Knowledge Seeker", desc: "Study 100 hours total", cat: "Milestones", unlocked: null, progress: 65, rarity: "Rare" },
 ];
 
-const rarityConfig = {
-  common: { label: "Common", color: "#A0B0BC", border: "rgba(156,163,175,0.3)" },
-  rare: { label: "Rare", color: "#3B82F6", border: "rgba(59,130,246,0.3)" },
-  epic: { label: "Epic", color: "#8B5CF6", border: "rgba(139,92,246,0.3)" },
-  legendary: { label: "Legendary", color: "#C9A86C", border: "rgba(245,158,11,0.5)" },
+const rarityColors: Record<string, string> = {
+  Common: "#A0B0BC",
+  Rare: "#6366F1",
+  Legendary: "#F59E0B",
 };
 
-const categories = ["All", "Streaks", "MCQs", "Learning", "Arena", "Special"];
-
 export default function AchievementsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  
-  const filtered = selectedCategory === "All" 
-    ? achievements 
-    : achievements.filter(a => a.category === selectedCategory);
-  
-  const unlocked = achievements.filter(a => a.unlocked);
-  const totalXP = unlocked.reduce((sum, a) => sum + a.xp, 0);
+  const [activeCat, setActiveCat] = useState("All");
+
+  const filtered = activeCat === "All" ? achievements : achievements.filter((a) => a.cat === activeCat);
+  const unlocked = achievements.filter((a) => a.unlocked).length;
+  const rare = achievements.filter((a) => a.rarity === "Rare" && a.unlocked).length;
+  const legendary = achievements.filter((a) => a.rarity === "Legendary" && a.unlocked).length;
+
+  // Most recent unlock
+  const recentUnlock = achievements.filter((a) => a.unlocked).sort().at(-1);
 
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-[#C9A86C]" />
-            Achievements
-          </h1>
-          <p className="text-[#A0B0BC] mt-1">Track your milestones and earn rewards</p>
-        </div>
-        
-        {/* Stats */}
-        <div className="flex gap-4">
-          <div className="text-center px-4 py-2 bg-[#364A5E] rounded-xl border border-[rgba(91,179,179,0.15)]">
-            <p className="text-2xl font-bold text-[#C9A86C]">{unlocked.length}</p>
-            <p className="text-xs text-[#6B7280]">Unlocked</p>
-          </div>
-          <div className="text-center px-4 py-2 bg-[#364A5E] rounded-xl border border-[rgba(91,179,179,0.15)]">
-            <p className="text-2xl font-bold text-[#5BB3B3]">{totalXP.toLocaleString()}</p>
-            <p className="text-xs text-[#6B7280]">Total XP</p>
-          </div>
-        </div>
+    <div className="min-h-screen p-6 space-y-6">
+      <div>
+        <h1 className="text-2xl font-bold text-[#E8E0D5] flex items-center gap-2">
+          <Award className="w-7 h-7 text-[#F59E0B]" /> Achievements
+        </h1>
+        <p className="text-[#A0B0BC] text-sm mt-1">Collect badges, unlock glory</p>
       </div>
 
-      {/* Progress Overview */}
-      <Card className="bg-[#364A5E] border-[rgba(91,179,179,0.15)]">
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold text-[#E8E0D5]">Overall Progress</h3>
-            <span className="text-[#5BB3B3]">{unlocked.length}/{achievements.length} achievements</span>
+      {/* Stats */}
+      <div className="flex flex-wrap gap-4">
+        {[
+          { label: `${unlocked}/${achievements.length} Unlocked`, icon: Trophy, color: "#F59E0B" },
+          { label: `${rare} Rare`, icon: Star, color: "#6366F1" },
+          { label: `${legendary} Legendary`, icon: Sparkles, color: "#F59E0B" },
+        ].map((s) => (
+          <div key={s.label} className="bg-[#253545] rounded-xl border border-[rgba(232,224,213,0.06)] px-4 py-3 flex items-center gap-2">
+            <s.icon className="w-4 h-4" style={{ color: s.color }} />
+            <span className="text-[#E8E0D5] text-sm font-medium">{s.label}</span>
           </div>
-          <Progress value={(unlocked.length / achievements.length) * 100} className="h-3" />
-          <div className="flex justify-between mt-4">
-            {Object.entries(rarityConfig).map(([key, config]) => {
-              const count = achievements.filter(a => a.rarity === key && a.unlocked).length;
-              const total = achievements.filter(a => a.rarity === key).length;
-              return (
-                <div key={key} className="text-center">
-                  <Badge 
-                    variant="outline" 
-                    className="mb-1"
-                    style={{ borderColor: config.border, color: config.color }}
-                  >
-                    {config.label}
-                  </Badge>
-                  <p className="text-sm text-[#6B7280]">{count}/{total}</p>
-                </div>
-              );
-            })}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Category Filter */}
-      <div className="flex gap-2 flex-wrap">
-        {categories.map((cat) => (
-          <Button
-            key={cat}
-            variant={selectedCategory === cat ? "default" : "outline"}
-            size="sm"
-            onClick={() => setSelectedCategory(cat)}
-            className={selectedCategory === cat 
-              ? "bg-[#5BB3B3] text-[#2D3E50]" 
-              : "border-[rgba(91,179,179,0.15)] text-[#A0B0BC] hover:bg-[#3A4D5F]"
-            }
-          >
-            {cat}
-          </Button>
         ))}
       </div>
 
-      {/* Achievements Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((achievement) => {
-          const Icon = achievement.icon;
-          const rarity = rarityConfig[achievement.rarity];
-          const progressPercent = (achievement.progress / achievement.maxProgress) * 100;
-          
-          return (
-            <Card 
-              key={achievement.id}
-              className={`bg-[#364A5E] border transition-all hover:scale-[1.02] ${
-                achievement.unlocked 
-                  ? 'border-[rgba(91,179,179,0.15)]' 
-                  : 'border-[rgba(107,114,128,0.2)] opacity-75'
-              }`}
-              style={achievement.rarity === 'legendary' && achievement.unlocked ? {
-                boxShadow: `0 0 20px ${rarityConfig.legendary.border}`
-              } : {}}
-            >
-              <CardContent className="p-4">
-                <div className="flex items-start gap-4">
-                  {/* Icon */}
-                  <div 
-                    className={`w-14 h-14 rounded-xl flex items-center justify-center relative ${
-                      !achievement.unlocked ? 'grayscale' : ''
-                    }`}
-                    style={{ backgroundColor: achievement.bg }}
-                  >
-                    <Icon className="w-7 h-7" style={{ color: achievement.color }} />
-                    {!achievement.unlocked && (
-                      <div className="absolute inset-0 bg-[#2D3E50]/50 rounded-xl flex items-center justify-center">
-                        <Lock className="w-5 h-5 text-[#6B7280]" />
-                      </div>
-                    )}
-                    {achievement.unlocked && achievement.rarity === 'legendary' && (
-                      <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-[#C9A86C]" />
-                    )}
-                  </div>
+      {/* Recent Unlock */}
+      {recentUnlock && (
+        <div className="bg-[rgba(245,158,11,0.1)] rounded-xl border border-[#F59E0B]/30 p-4 flex items-center gap-4">
+          <div className="text-3xl">{recentUnlock.emoji}</div>
+          <div>
+            <p className="text-[#F59E0B] text-xs font-medium flex items-center gap-1"><Zap className="w-3 h-3" /> Latest Unlock</p>
+            <p className="text-[#E8E0D5] font-semibold">{recentUnlock.title}</p>
+            <p className="text-[#A0B0BC] text-xs">{recentUnlock.desc} • {recentUnlock.unlocked}</p>
+          </div>
+        </div>
+      )}
 
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className={`font-semibold truncate ${
-                        achievement.unlocked ? 'text-[#E8E0D5]' : 'text-[#6B7280]'
-                      }`}>
-                        {achievement.title}
-                      </h3>
-                      <Badge 
-                        variant="outline" 
-                        className="text-[10px] shrink-0"
-                        style={{ borderColor: rarity.border, color: rarity.color }}
-                      >
-                        {rarity.label}
-                      </Badge>
-                    </div>
-                    <p className="text-xs text-[#6B7280] mb-2">{achievement.description}</p>
-                    
-                    {/* Progress */}
-                    {!achievement.unlocked && (
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-xs">
-                          <span className="text-[#6B7280]">Progress</span>
-                          <span className="text-[#A0B0BC]">{achievement.progress}/{achievement.maxProgress}</span>
-                        </div>
-                        <Progress value={progressPercent} className="h-1.5" />
-                      </div>
-                    )}
-                    
-                    {achievement.unlocked && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-[#7BA69E]">✓ Unlocked {achievement.unlockedAt}</span>
-                        <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-none text-xs">
-                          +{achievement.xp} XP
-                        </Badge>
-                      </div>
-                    )}
-                  </div>
+      {/* Category Tabs */}
+      <div className="flex gap-2 flex-wrap">
+        {categories.map((c) => (
+          <button key={c} onClick={() => setActiveCat(c)}
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
+              activeCat === c ? "bg-[#F59E0B] text-[#1a1a2e]" : "bg-[#253545] text-[#A0B0BC] border border-[rgba(232,224,213,0.06)]"
+            }`}>{c}</button>
+        ))}
+      </div>
+
+      {/* Achievement Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {filtered.map((a) => (
+          <div key={a.id}
+            className={`bg-[#253545] rounded-xl border border-[rgba(232,224,213,0.06)] p-4 relative ${
+              !a.unlocked ? "opacity-70" : ""
+            }`}>
+            {!a.unlocked && a.progress === 0 && (
+              <Lock className="w-4 h-4 text-[#A0B0BC] absolute top-3 right-3" />
+            )}
+            <div className="text-3xl mb-3">{a.emoji}</div>
+            <h3 className="text-[#E8E0D5] font-semibold text-sm">{a.title}</h3>
+            <p className="text-[#A0B0BC] text-xs mt-1">{a.desc}</p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="text-xs px-2 py-0.5 rounded-full" style={{
+                backgroundColor: `${rarityColors[a.rarity]}20`,
+                color: rarityColors[a.rarity],
+              }}>{a.rarity}</span>
+            </div>
+            {a.unlocked ? (
+              <p className="text-xs text-[#22C55E] mt-3">✓ {a.unlocked}</p>
+            ) : a.progress > 0 ? (
+              <div className="mt-3">
+                <div className="flex justify-between text-xs text-[#A0B0BC] mb-1">
+                  <span>Progress</span><span>{a.progress}%</span>
                 </div>
-              </CardContent>
-            </Card>
-          );
-        })}
+                <div className="w-full h-1.5 bg-[#2D3E50] rounded-full">
+                  <div className="h-full bg-[#F59E0B] rounded-full" style={{ width: `${a.progress}%` }} />
+                </div>
+              </div>
+            ) : (
+              <p className="text-xs text-[#A0B0BC] mt-3">🔒 Locked</p>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

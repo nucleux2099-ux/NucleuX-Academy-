@@ -1,252 +1,137 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { ArrowLeft, BookOpen, ClipboardList, Target } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, Calendar, Flame, Clock, BookOpen } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+// Mock heatmap data for February 2025
+const heatmapData: Record<number, number> = {
+  1: 0, 2: 1.5, 3: 0.5, 4: 3.5, 5: 2, 6: 0, 7: 1, 8: 4, 9: 2.5, 10: 0,
+  11: 3, 12: 1.5, 13: 0, 14: 2, 15: 0.5, 16: 0, 17: 3.5, 18: 2, 19: 1, 20: 0,
+  21: 4, 22: 3, 23: 2.5, 24: 1, 25: 0, 26: 2, 27: 3, 28: 1.5,
+};
 
-import type { SubjectKey } from "@/lib/backstage/types";
-import { addBackstageEvent } from "@/lib/backstage/store";
-import { addCaseLog, getRecentCases, subjectLabel } from "@/lib/backstage/case-store";
+function getHeatColor(hours: number) {
+  if (hours === 0) return "bg-[#2D3E50]";
+  if (hours < 1) return "bg-teal-900/60";
+  if (hours < 3) return "bg-teal-600/60";
+  return "bg-teal-400/80";
+}
 
-const SUBJECTS: Array<{ key: SubjectKey; label: string }> = [
-  { key: "medicine", label: "Medicine" },
-  { key: "surgery", label: "Surgery" },
-  { key: "obgyn", label: "OBGYN" },
-  { key: "pediatrics", label: "Pediatrics" },
-  { key: "orthopedics", label: "Orthopedics" },
-  { key: "anatomy", label: "Anatomy" },
-  { key: "physiology", label: "Physiology" },
-  { key: "biochemistry", label: "Biochemistry" },
-  { key: "pathology", label: "Pathology" },
-  { key: "pharmacology", label: "Pharmacology" },
-  { key: "microbiology", label: "Microbiology" },
-  { key: "psm", label: "PSM" },
-  { key: "ent", label: "ENT" },
-  { key: "ophthalmology", label: "Ophthalmology" },
-  { key: "forensic", label: "Forensic" },
-  { key: "unknown", label: "Other" },
+const weeklySummaries = [
+  { week: "Feb 10–16", hours: 8.5, topics: 12, mcqs: 45 },
+  { week: "Feb 3–9", hours: 14, topics: 18, mcqs: 72 },
+  { week: "Jan 27–Feb 2", hours: 11, topics: 15, mcqs: 58 },
+  { week: "Jan 20–26", hours: 9.5, topics: 10, mcqs: 40 },
+];
+
+const dailyLogs = [
+  { date: "Feb 14", entries: "Surgery - Acute Pancreatitis (45 min), MCQ Practice (30 min)" },
+  { date: "Feb 13", entries: "Pathology - Neoplasia (60 min)" },
+  { date: "Feb 12", entries: "Medicine - Heart Failure (40 min), MCQ Review (20 min)" },
+  { date: "Feb 11", entries: "Anatomy - Brachial Plexus (90 min), Surgery MCQs (30 min)" },
+  { date: "Feb 10", entries: "Pharmacology - ANS Drugs (50 min)" },
+  { date: "Feb 9", entries: "OBG - Normal Labour (45 min), Micro - Gram Staining (30 min)" },
+  { date: "Feb 8", entries: "Surgery - Thyroid (120 min), MCQ Marathon (60 min)" },
 ];
 
 export default function BackstageLogbookPage() {
-  const router = useRouter();
-  const [recentCases, setRecentCases] = useState(() => getRecentCases(20));
-
-  const [form, setForm] = useState({
-    title: "",
-    subject: "medicine" as SubjectKey,
-    experience: "",
-    reflection: "",
-    concept: "",
-    experiment: "",
-    linkLibrary: "",
-    linkMcq: "",
-    linkNotes: "",
-  });
-
-  useEffect(() => {
-    setRecentCases(getRecentCases(20));
-  }, []);
-
-  const save = () => {
-    if (!form.title.trim()) return;
-
-    const split = (s: string) => s.split(/\s+/).map((x) => x.trim()).filter(Boolean);
-    const links = {
-      library: split(form.linkLibrary),
-      mcq: split(form.linkMcq),
-      notes: split(form.linkNotes),
-    };
-
-    addCaseLog({
-      title: form.title.trim(),
-      subject: form.subject,
-      experience: form.experience.trim() || undefined,
-      reflection: form.reflection.trim() || undefined,
-      concept: form.concept.trim() || undefined,
-      experiment: form.experiment.trim() || undefined,
-      links: {
-        library: links.library.length ? links.library : undefined,
-        mcq: links.mcq.length ? links.mcq : undefined,
-        notes: links.notes.length ? links.notes : undefined,
-      },
-    });
-
-    addBackstageEvent({
-      type: "case",
-      subject: form.subject,
-      // cases may not map to a CBME topic yet; keep optional until we add topic linking
-      topic: form.title.trim(),
-      bloom: "analyze",
-      note: form.concept.trim() || undefined,
-    });
-
-    setForm({
-      ...form,
-      title: "",
-      experience: "",
-      reflection: "",
-      concept: "",
-      experiment: "",
-      linkLibrary: "",
-      linkMcq: "",
-      linkNotes: "",
-    });
-    setRecentCases(getRecentCases(20));
-  };
-
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-6 md:px-6 md:py-8">
-      <div className="mb-6 flex items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <ClipboardList className="h-4 w-4" /> Backstage / Logbook
+    <div className="mx-auto w-full max-w-5xl px-4 py-6 md:px-6 md:py-8">
+      {/* Header */}
+      <div className="mb-8">
+        <Link href="/backstage" className="inline-flex items-center gap-1.5 text-sm text-teal-400 hover:text-teal-300 mb-3">
+          <ArrowLeft className="h-4 w-4" /> Back to Backstage
+        </Link>
+        <h1 className="text-2xl font-bold text-[#E8E0D5] md:text-3xl">Learning Logbook</h1>
+        <p className="mt-1 text-sm text-[#6B7280]">Your study history and patterns at a glance.</p>
+      </div>
+
+      {/* Streak Card */}
+      <div className="grid grid-cols-3 gap-4 mb-6">
+        {[
+          { label: "Current Streak", value: "7 days", icon: Flame, color: "text-amber-400" },
+          { label: "Best Streak", value: "14 days", icon: Flame, color: "text-orange-400" },
+          { label: "Total Study Days", value: "45", icon: Calendar, color: "text-teal-400" },
+        ].map((s) => (
+          <div key={s.label} className="rounded-xl border border-[rgba(91,179,179,0.15)] bg-[#364A5E] p-4 text-center">
+            <s.icon className={`h-6 w-6 mx-auto mb-2 ${s.color}`} />
+            <div className="text-xl font-bold text-[#E8E0D5]">{s.value}</div>
+            <div className="text-xs text-[#6B7280] mt-1">{s.label}</div>
           </div>
-          <h1 className="mt-1 text-2xl font-semibold tracking-tight md:text-3xl">Logbook</h1>
-          <div className="mt-1 text-sm text-muted-foreground">
-            Cases + Kolb cycle (experience → reflection → concept → experiment).
-          </div>
+        ))}
+      </div>
+
+      {/* Monthly Heatmap */}
+      <div className="rounded-xl border border-[rgba(91,179,179,0.15)] bg-[#364A5E] p-5 mb-6">
+        <h2 className="text-base font-semibold text-[#E8E0D5] flex items-center gap-2 mb-4">
+          <Calendar className="h-5 w-5 text-teal-400" /> February 2025
+        </h2>
+        <div className="grid grid-cols-7 gap-1.5">
+          {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
+            <div key={i} className="text-center text-[10px] text-[#6B7280] mb-1">{d}</div>
+          ))}
+          {/* Feb 2025 starts on Saturday → 5 empty + 28 days */}
+          {Array.from({ length: 5 }, (_, i) => (
+            <div key={`empty-${i}`} />
+          ))}
+          {Array.from({ length: 28 }, (_, i) => {
+            const day = i + 1;
+            const hours = heatmapData[day] ?? 0;
+            return (
+              <div
+                key={day}
+                className={`aspect-square rounded-sm ${getHeatColor(hours)} flex items-center justify-center text-[10px] text-[#A0B0BC] hover:ring-1 hover:ring-teal-400/50 transition-all cursor-default`}
+                title={`Feb ${day}: ${hours}h`}
+              >
+                {day}
+              </div>
+            );
+          })}
         </div>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="secondary" onClick={() => router.push("/backstage")}
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Backstage
-          </Button>
-          <Button variant="secondary" onClick={() => router.push("/library")}
-          >
-            <BookOpen className="mr-2 h-4 w-4" /> Library
-          </Button>
-          <Button variant="secondary" onClick={() => router.push("/exam-centre")}
-          >
-            <Target className="mr-2 h-4 w-4" /> MCQs
-          </Button>
+        <div className="flex items-center gap-3 mt-3 text-[10px] text-[#6B7280]">
+          <span>Less</span>
+          <div className="flex gap-1">
+            <div className="w-3 h-3 rounded-sm bg-[#2D3E50]" />
+            <div className="w-3 h-3 rounded-sm bg-teal-900/60" />
+            <div className="w-3 h-3 rounded-sm bg-teal-600/60" />
+            <div className="w-3 h-3 rounded-sm bg-teal-400/80" />
+          </div>
+          <span>More</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
-        <Card className="md:col-span-5">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base">New case</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="text-xs text-muted-foreground">
-              Default format: <span className="font-medium text-foreground">M/56 Chest pain</span> (no identifiers).
-            </div>
-
-            <Input
-              placeholder="M/56 Chest pain"
-              value={form.title}
-              onChange={(e) => setForm((p) => ({ ...p, title: e.target.value }))}
-            />
-
-            <div className="space-y-2">
-              <div className="text-xs text-muted-foreground">Subject</div>
-              <Select
-                value={form.subject}
-                onValueChange={(v) => setForm((p) => ({ ...p, subject: v as SubjectKey }))}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select subject" />
-                </SelectTrigger>
-                <SelectContent>
-                  {SUBJECTS.map((s) => (
-                    <SelectItem key={s.key} value={s.key}>
-                      {s.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <Textarea
-              placeholder="Concrete Experience: what happened?"
-              value={form.experience}
-              onChange={(e) => setForm((p) => ({ ...p, experience: e.target.value }))}
-            />
-            <Textarea
-              placeholder="Reflection: what confused you / what went wrong?"
-              value={form.reflection}
-              onChange={(e) => setForm((p) => ({ ...p, reflection: e.target.value }))}
-            />
-            <Textarea
-              placeholder="Concept: the principle you learned"
-              value={form.concept}
-              onChange={(e) => setForm((p) => ({ ...p, concept: e.target.value }))}
-            />
-            <Textarea
-              placeholder="Experiment: what will you do next time?"
-              value={form.experiment}
-              onChange={(e) => setForm((p) => ({ ...p, experiment: e.target.value }))}
-            />
-
-            <div className="space-y-2">
-              <div className="text-xs text-muted-foreground">Attach links (optional)</div>
-              <Input
-                placeholder="Library link(s) (space separated)"
-                value={form.linkLibrary}
-                onChange={(e) => setForm((p) => ({ ...p, linkLibrary: e.target.value }))}
-              />
-              <Input
-                placeholder="MCQ link(s) (space separated)"
-                value={form.linkMcq}
-                onChange={(e) => setForm((p) => ({ ...p, linkMcq: e.target.value }))}
-              />
-              <Input
-                placeholder="Notes link(s) (space separated)"
-                value={form.linkNotes}
-                onChange={(e) => setForm((p) => ({ ...p, linkNotes: e.target.value }))}
-              />
-            </div>
-
-            <Button className="w-full" onClick={save}>Save case</Button>
-          </CardContent>
-        </Card>
-
-        <Card className="md:col-span-7">
-          <CardHeader className="pb-3">
-            <CardTitle className="text-base">Recent cases</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            {recentCases.length === 0 ? (
-              <div className="text-sm text-muted-foreground">No cases yet.</div>
-            ) : (
-              <div className="space-y-2">
-                {recentCases.map((c) => (
-                  <div key={c.id} className="rounded-lg border p-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="min-w-0">
-                        <div className="truncate text-sm font-medium">{c.title}</div>
-                        <div className="mt-1 text-xs text-muted-foreground">
-                          {subjectLabel(c.subject)} • {new Date(c.createdAt).toLocaleString()}
-                          {c.links?.library?.length || c.links?.mcq?.length || c.links?.notes?.length ? (
-                            <span className="ml-2">• links</span>
-                          ) : null}
-                        </div>
-                      </div>
-                      <Badge variant="outline">Case</Badge>
-                    </div>
-                  </div>
-                ))}
+      {/* Weekly Summaries */}
+      <div className="rounded-xl border border-[rgba(91,179,179,0.15)] bg-[#364A5E] p-5 mb-6">
+        <h2 className="text-base font-semibold text-[#E8E0D5] flex items-center gap-2 mb-4">
+          <Clock className="h-5 w-5 text-teal-400" /> Weekly Summaries
+        </h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          {weeklySummaries.map((w) => (
+            <div key={w.week} className="rounded-lg bg-[#2D3E50] p-4 border border-[rgba(91,179,179,0.08)]">
+              <div className="text-sm font-medium text-[#E8E0D5] mb-2">{w.week}</div>
+              <div className="flex gap-4 text-xs text-[#A0B0BC]">
+                <span className="flex items-center gap-1"><Clock className="h-3 w-3 text-teal-400" /> {w.hours}h</span>
+                <span className="flex items-center gap-1"><BookOpen className="h-3 w-3 text-teal-400" /> {w.topics} topics</span>
+                <span className="flex items-center gap-1">📝 {w.mcqs} MCQs</span>
               </div>
-            )}
+            </div>
+          ))}
+        </div>
+      </div>
 
-            <Button variant="secondary" size="sm" className="mt-2" onClick={() => setRecentCases(getRecentCases(20))}>
-              Refresh
-            </Button>
-          </CardContent>
-        </Card>
+      {/* Daily Log */}
+      <div className="rounded-xl border border-[rgba(91,179,179,0.15)] bg-[#364A5E] p-5">
+        <h2 className="text-base font-semibold text-[#E8E0D5] flex items-center gap-2 mb-4">
+          <BookOpen className="h-5 w-5 text-teal-400" /> Daily Log (Last 7 Days)
+        </h2>
+        <div className="space-y-2">
+          {dailyLogs.map((log) => (
+            <div key={log.date} className="flex gap-3 rounded-lg bg-[#2D3E50] p-3 border border-[rgba(91,179,179,0.05)]">
+              <div className="text-sm font-medium text-teal-400 w-14 shrink-0">{log.date}</div>
+              <div className="text-sm text-[#A0B0BC]">{log.entries}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

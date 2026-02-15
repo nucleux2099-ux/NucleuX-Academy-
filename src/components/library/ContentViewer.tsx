@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
+import { Plus, Check } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -35,7 +36,13 @@ const modeStyles: Record<string, { bg: string; accent: string; icon: string }> =
 
 export function ContentViewer({ content, mode, title }: ContentViewerProps) {
   const [fontSize, setFontSize] = useState<'sm' | 'base' | 'lg'>('base')
+  const [addedToDesk, setAddedToDesk] = useState(false)
   const style = modeStyles[mode] || modeStyles.textbook
+
+  const handleAddToDesk = useCallback(() => {
+    setAddedToDesk(true)
+    setTimeout(() => setAddedToDesk(false), 2000)
+  }, [])
 
   const fontSizeClasses = {
     sm: 'prose-sm',
@@ -56,6 +63,19 @@ export function ContentViewer({ content, mode, title }: ContentViewerProps) {
             </div>
           </div>
           
+          {/* Add to Desk Button */}
+          <button
+            onClick={handleAddToDesk}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+              addedToDesk
+                ? 'bg-emerald-500/20 text-emerald-300'
+                : 'bg-teal-500/20 text-teal-300 hover:bg-teal-500/30'
+            }`}
+          >
+            {addedToDesk ? <Check size={16} /> : <Plus size={16} />}
+            {addedToDesk ? 'Added to Desk!' : 'Add to My Desk'}
+          </button>
+
           {/* Font Size Controls */}
           <div className="flex items-center gap-2 bg-gray-800 rounded-lg p-1">
             {(['sm', 'base', 'lg'] as const).map((size) => (

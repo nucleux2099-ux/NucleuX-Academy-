@@ -1,733 +1,297 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
-import {
-  ArrowRight,
-  BarChart3,
-  BookOpen,
-  ClipboardList,
-  Fingerprint,
-  Lightbulb,
-  Target,
-} from "lucide-react";
-
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+  Fingerprint,
+  Brain,
+  BarChart3,
+  Clock,
+  BookOpen,
+  Target,
+  TrendingUp,
+  AlertTriangle,
+  Flame,
+  Trophy,
+  CheckCircle,
+  ChevronRight,
+} from "lucide-react";
 
-import type { Bloom, CompetencyStage, SubjectKey } from "@/lib/backstage/types";
-import { addBackstageEvent, getRecentBackstageEvents, loadBackstageState } from "@/lib/backstage/store";
-import { deriveSubjectStats } from "@/lib/backstage/derive";
-import { deriveDeckTopicStats, pickStaleDeckTopic, type DeckTopicStats } from "@/lib/backstage/deck-derive";
-import { deriveDeckMinutes } from "@/lib/backstage/deck-time";
-import { findDecksByTopicId } from "@/lib/decks/store";
-import { countBlooms } from "@/lib/backstage/bloom";
-import { addCaseLog, getRecentCases, subjectLabel } from "@/lib/backstage/case-store";
-
-const SUBJECTS: Array<{ key: SubjectKey; label: string }> = [
-  { key: "anatomy", label: "Anatomy" },
-  { key: "physiology", label: "Physiology" },
-  { key: "biochemistry", label: "Biochemistry" },
-  { key: "pathology", label: "Pathology" },
-  { key: "pharmacology", label: "Pharmacology" },
-  { key: "microbiology", label: "Microbiology" },
-  { key: "psm", label: "PSM" },
-  { key: "ent", label: "ENT" },
-  { key: "ophthalmology", label: "Ophthal" },
-  { key: "medicine", label: "Medicine" },
-  { key: "surgery", label: "Surgery" },
-  { key: "obgyn", label: "OBGYN" },
-  { key: "pediatrics", label: "Pediatrics" },
-  { key: "orthopedics", label: "Ortho" },
-  { key: "forensic", label: "FMT" },
+// Subject competency data
+const subjects = [
+  { name: "Surgery", progress: 72, color: "#DC2626" },
+  { name: "Medicine", progress: 58, color: "#5BB3B3" },
+  { name: "Anatomy", progress: 85, color: "#7BA69E" },
+  { name: "Physiology", progress: 64, color: "#6BA8C9" },
+  { name: "Pathology", progress: 71, color: "#E879F9" },
+  { name: "Pharmacology", progress: 49, color: "#F59E0B" },
+  { name: "Microbiology", progress: 62, color: "#C9A86C" },
+  { name: "Biochemistry", progress: 55, color: "#6366F1" },
 ];
 
-function stageLabel(s: CompetencyStage) {
-  switch (s) {
-    case "unconsciously_incompetent":
-      return "Unconsciously incompetent";
-    case "consciously_incompetent":
-      return "Consciously incompetent";
-    case "consciously_competent":
-      return "Consciously competent";
-    case "unconsciously_competent":
-      return "Unconsciously competent";
-  }
-}
+const overallAvg = Math.round(subjects.reduce((a, s) => a + s.progress, 0) / subjects.length);
 
-function bloomLabel(b: Bloom) {
-  return b.charAt(0).toUpperCase() + b.slice(1);
+// NBME domains
+const nbmeDomains = [
+  { name: "Patient Care & Procedural Skills", progress: 68 },
+  { name: "Medical Knowledge", progress: 74 },
+  { name: "Practice-Based Learning", progress: 52 },
+  { name: "Interpersonal & Communication", progress: 81 },
+  { name: "Professionalism", progress: 77 },
+  { name: "Systems-Based Practice", progress: 45 },
+];
+
+// Weekly heatmap (1 = studied, 0 = not)
+const weekDays = [
+  { day: "M", active: true },
+  { day: "T", active: true },
+  { day: "W", active: true },
+  { day: "T", active: false },
+  { day: "F", active: true },
+  { day: "S", active: true },
+  { day: "S", active: true },
+];
+
+// Quests
+const quests = [
+  { name: "Complete 50 Surgery MCQs", current: 32, total: 50 },
+  { name: "Review Pharmacology Notes", current: 3, total: 5 },
+  { name: "Pathology Image Practice", current: 12, total: 20 },
+];
+
+const cardBase =
+  "bg-[#364A5E] border border-[rgba(255,255,255,0.06)] rounded-2xl transition-all duration-200 hover:scale-[1.02] hover:shadow-xl cursor-pointer group";
+
+function WidgetFooter({ text, color }: { text: string; color: string }) {
+  return (
+    <div className="mt-4 pt-3 border-t border-[rgba(255,255,255,0.06)] flex items-center justify-between">
+      <span className="text-xs font-medium" style={{ color }}>
+        {text}
+      </span>
+      <ChevronRight className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" style={{ color }} />
+    </div>
+  );
 }
 
 export default function BackstagePage() {
-  const router = useRouter();
+  const confidence = 78;
+  const accuracy = 65;
+  const gap = confidence - accuracy;
+  const gapColor = gap > 15 ? "#DC2626" : gap > 8 ? "#F59E0B" : "#10B981";
 
-  // V1: localStorage-backed events + light derived displays.
-  // V2: Supabase events + derived aggregates.
-  const [selectedSubject, setSelectedSubject] = useState<SubjectKey>("medicine");
-  const [recentEvents, setRecentEvents] = useState(() => getRecentBackstageEvents(12));
-  const [subjectStats, setSubjectStats] = useState(() => deriveSubjectStats(loadBackstageState().events));
-  const [bloomCounts, setBloomCounts] = useState(() => countBlooms(loadBackstageState().events));
-  const [recentCases, setRecentCases] = useState(() => getRecentCases(6));
-  const [deckStats, setDeckStats] = useState(() => {
-    const all = loadBackstageState().events;
-    return {
-      deckViews: all.filter((e) => e.type === "deck_view").length,
-      slideViews: all.filter((e) => e.type === "slide_view").length,
-      templateInserts: all.filter((e) => e.type === "template_insert").length,
-    };
-  });
-  const [deckTopicStats, setDeckTopicStats] = useState<DeckTopicStats[]>(() => {
-    return deriveDeckTopicStats(loadBackstageState().events).slice(0, 5);
-  });
-  const [staleTopic, setStaleTopic] = useState<DeckTopicStats | null>(() => {
-    return pickStaleDeckTopic(deriveDeckTopicStats(loadBackstageState().events));
-  });
-  const [deckMinutes, setDeckMinutes] = useState(() => {
-    return deriveDeckMinutes(loadBackstageState().events);
-  });
-
-  const [caseForm, setCaseForm] = useState({
-    title: "",
-    subject: "medicine" as SubjectKey,
-    experience: "",
-    reflection: "",
-    concept: "",
-    experiment: "",
-    linkLibrary: "",
-    linkMcq: "",
-    linkNotes: "",
-  });
-
-  useEffect(() => {
-    // refresh on mount
-    setRecentEvents(getRecentBackstageEvents(12));
-    const all = loadBackstageState().events;
-    setSubjectStats(deriveSubjectStats(all));
-    setBloomCounts(countBlooms(all));
-    setRecentCases(getRecentCases(6));
-    setDeckStats({
-      deckViews: all.filter((e) => e.type === "deck_view").length,
-      slideViews: all.filter((e) => e.type === "slide_view").length,
-      templateInserts: all.filter((e) => e.type === "template_insert").length,
-    });
-    const stats = deriveDeckTopicStats(all);
-    setDeckTopicStats(stats.slice(0, 5));
-    setStaleTopic(pickStaleDeckTopic(stats));
-    setDeckMinutes(deriveDeckMinutes(all));
-  }, []);
-
-  const saveCase = () => {
-    if (!caseForm.title.trim()) return;
-
-    const links = {
-      library: caseForm.linkLibrary
-        .split(/\s+/)
-        .map((s) => s.trim())
-        .filter(Boolean),
-      mcq: caseForm.linkMcq
-        .split(/\s+/)
-        .map((s) => s.trim())
-        .filter(Boolean),
-      notes: caseForm.linkNotes
-        .split(/\s+/)
-        .map((s) => s.trim())
-        .filter(Boolean),
-    };
-
-    addCaseLog({
-      title: caseForm.title.trim(),
-      subject: caseForm.subject,
-      experience: caseForm.experience.trim() || undefined,
-      reflection: caseForm.reflection.trim() || undefined,
-      concept: caseForm.concept.trim() || undefined,
-      experiment: caseForm.experiment.trim() || undefined,
-      links: {
-        library: links.library.length ? links.library : undefined,
-        mcq: links.mcq.length ? links.mcq : undefined,
-        notes: links.notes.length ? links.notes : undefined,
-      },
-    });
-
-    // Also add a Backstage event so cases influence the cognitive graph.
-    addBackstageEvent({
-      type: "case",
-      subject: caseForm.subject,
-      topic: caseForm.title.trim(),
-      bloom: "analyze",
-      note: caseForm.concept.trim() || undefined,
-    });
-
-    setCaseForm({
-      title: "",
-      subject: caseForm.subject,
-      experience: "",
-      reflection: "",
-      concept: "",
-      experiment: "",
-      linkLibrary: "",
-      linkMcq: "",
-      linkNotes: "",
-    });
-    setRecentCases(getRecentCases(6));
-    setRecentEvents(getRecentBackstageEvents(12));
-    const all = loadBackstageState().events;
-    setSubjectStats(deriveSubjectStats(all));
-    setBloomCounts(countBlooms(all));
-  };
-
-  const mock = useMemo(() => {
-    // deterministic “feels real” placeholders for competence/strength until events are rich.
-    const competency: Record<SubjectKey, CompetencyStage> = Object.fromEntries(
-      SUBJECTS.map((s, i) => [
-        s.key,
-        (i % 4 === 0
-          ? "consciously_incompetent"
-          : i % 4 === 1
-          ? "consciously_competent"
-          : i % 4 === 2
-          ? "unconsciously_incompetent"
-          : "unconsciously_competent") as CompetencyStage,
-      ])
-    ) as Record<SubjectKey, CompetencyStage>;
-
-    const strengthScore: Record<SubjectKey, number> = Object.fromEntries(
-      SUBJECTS.map((s, i) => [s.key, 40 + ((i * 7) % 55)])
-    ) as Record<SubjectKey, number>;
-
-    const bloomMix: Bloom[] = ["remember", "understand", "apply", "analyze"];
-
-    return { competency, strengthScore, bloomMix };
-  }, []);
-
-  const strongSubjects = useMemo(() => {
-    return [...SUBJECTS]
-      .sort((a, b) => mock.strengthScore[b.key] - mock.strengthScore[a.key])
-      .slice(0, 3);
-  }, [mock.strengthScore]);
-
-  const weakSubjects = useMemo(() => {
-    return [...SUBJECTS]
-      .sort((a, b) => mock.strengthScore[a.key] - mock.strengthScore[b.key])
-      .slice(0, 3);
-  }, [mock.strengthScore]);
+  const weakestDomain = nbmeDomains.reduce((a, b) => (a.progress < b.progress ? a : b));
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-6 md:px-6 md:py-8">
-      <div className="mb-6 flex items-start justify-between gap-3">
-        <div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Fingerprint className="h-4 w-4" /> Cognitive OS
+    <div className="space-y-6 max-w-7xl mx-auto">
+      {/* Header */}
+      <div>
+        <h1 className="text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-[rgba(139,92,246,0.15)] flex items-center justify-center">
+            <Fingerprint className="w-6 h-6 text-[#E879F9]" />
           </div>
-          <h1 className="mt-1 text-2xl font-semibold tracking-tight md:text-3xl">
-            Backstage
-          </h1>
-          <div className="mt-1 text-sm text-muted-foreground">
-            Your private layer: competency, confidence, reflection, and case logbook.
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="secondary" onClick={() => router.push("/dashboard")}>
-            Back to Desk
-          </Button>
-          <Button onClick={() => router.push("/notes")}>Open Notes</Button>
-        </div>
+          Backstage
+        </h1>
+        <p className="text-[#A0B0BC] mt-1">Your Cognitive OS — competency, confidence, and analytics</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
-        {/* Left: big analysis */}
-        <div className="md:col-span-8 space-y-4">
-          <Card className="overflow-hidden">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center justify-between gap-3">
-                <span className="flex items-center gap-2">
-                  <BarChart3 className="h-5 w-5 text-primary" /> Self-analysis
-                </span>
-                <Badge variant="secondary">V1 scaffold</Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="rounded-lg border bg-muted/20 p-4">
-                <div className="flex items-center justify-between gap-3">
+      {/* Widget Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* 1. Competency Radar */}
+        <Link href="/backstage/calibration" className={cardBase} style={{ borderColor: "rgba(232,121,249,0.15)" }}>
+          <div className="p-5 group-hover:border-[#E879F9]/30">
+            <div className="flex items-center gap-2 mb-3">
+              <Brain className="w-5 h-5 text-[#E879F9]" />
+              <span className="font-semibold text-[#E8E0D5] text-sm">Competency Radar</span>
+              <span className="ml-auto text-xl font-bold text-[#E879F9]">{overallAvg}%</span>
+            </div>
+            <div className="space-y-2">
+              {subjects.map((s) => (
+                <div key={s.name} className="flex items-center gap-2">
+                  <span className="text-[10px] text-[#A0B0BC] w-20 truncate">{s.name}</span>
+                  <div className="flex-1 h-1.5 rounded-full bg-[#2D3E50] overflow-hidden">
+                    <div
+                      className="h-full rounded-full"
+                      style={{ width: `${s.progress}%`, backgroundColor: s.color }}
+                    />
+                  </div>
+                  <span className="text-[10px] text-[#A0B0BC] w-7 text-right">{s.progress}%</span>
+                </div>
+              ))}
+            </div>
+            <WidgetFooter text="View detailed breakdown →" color="#E879F9" />
+          </div>
+        </Link>
+
+        {/* 2. Confidence Calibration */}
+        <Link href="/backstage/calibration" className={cardBase} style={{ borderColor: "rgba(245,158,11,0.2)" }}>
+          <div className="p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <AlertTriangle className="w-5 h-5 text-[#F59E0B]" />
+              <span className="font-semibold text-[#E8E0D5] text-sm">Confidence Calibration</span>
+            </div>
+            <div className="grid grid-cols-2 gap-3 mb-3">
+              <div className="bg-[#2D3E50] rounded-xl p-3 text-center">
+                <p className="text-2xl font-bold text-[#E879F9]">{confidence}%</p>
+                <p className="text-[10px] text-[#A0B0BC] mt-0.5">Confidence</p>
+              </div>
+              <div className="bg-[#2D3E50] rounded-xl p-3 text-center">
+                <p className="text-2xl font-bold text-[#7BA69E]">{accuracy}%</p>
+                <p className="text-[10px] text-[#A0B0BC] mt-0.5">Accuracy</p>
+              </div>
+            </div>
+            {/* Gap indicator */}
+            <div className="relative h-2 rounded-full bg-[#2D3E50] mb-2 overflow-hidden">
+              <div className="absolute left-0 h-full rounded-full bg-[#7BA69E]" style={{ width: `${accuracy}%` }} />
+              <div
+                className="absolute h-full rounded-full opacity-60"
+                style={{ left: `${accuracy}%`, width: `${gap}%`, backgroundColor: gapColor }}
+              />
+            </div>
+            <Badge className="text-[10px] px-2 py-0.5 border-0" style={{ backgroundColor: `${gapColor}20`, color: gapColor }}>
+              Overconfident by {gap}%
+            </Badge>
+            <WidgetFooter text="Calibrate now →" color="#F59E0B" />
+          </div>
+        </Link>
+
+        {/* 3. Study Streak & Habits */}
+        <Link href="/backstage/logbook" className={cardBase} style={{ borderColor: "rgba(249,115,22,0.15)" }}>
+          <div className="p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <Flame className="w-5 h-5 text-[#F97316]" />
+              <span className="font-semibold text-[#E8E0D5] text-sm">Study Streak & Habits</span>
+            </div>
+            <div className="text-center mb-4">
+              <p className="text-3xl font-bold text-[#F97316]">7 days 🔥</p>
+              <p className="text-[10px] text-[#A0B0BC] mt-1">Current Streak</p>
+            </div>
+            <div className="flex justify-center gap-1.5 mb-4">
+              {weekDays.map((d, i) => (
+                <div key={i} className="flex flex-col items-center gap-1">
+                  <div
+                    className="w-7 h-7 rounded-md flex items-center justify-center text-[10px] font-medium"
+                    style={{
+                      backgroundColor: d.active ? "#F9731630" : "#2D3E50",
+                      color: d.active ? "#F97316" : "#A0B0BC",
+                      border: d.active ? "1px solid #F9731650" : "1px solid transparent",
+                    }}
+                  >
+                    {d.day}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex justify-between text-xs text-[#A0B0BC]">
+              <span>
+                Best: <span className="text-[#E8E0D5] font-medium">14 days</span>
+              </span>
+              <span>
+                Today: <span className="text-[#E8E0D5] font-medium">2h 15m</span>
+              </span>
+            </div>
+            <WidgetFooter text="View logbook →" color="#F97316" />
+          </div>
+        </Link>
+
+        {/* 4. Study Analytics */}
+        <Link href="/analytics" className={cardBase} style={{ borderColor: "rgba(91,179,179,0.15)" }}>
+          <div className="p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <BarChart3 className="w-5 h-5 text-[#5BB3B3]" />
+              <span className="font-semibold text-[#E8E0D5] text-sm">Study Analytics</span>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { label: "Hours", value: "12.5", icon: Clock, trend: "↑" },
+                { label: "Topics", value: "23", icon: BookOpen, trend: "↑" },
+                { label: "MCQs", value: "145", icon: Target, trend: "↑" },
+                { label: "Accuracy", value: "↑5%", icon: TrendingUp, trend: "↑" },
+              ].map((s, i) => (
+                <div key={i} className="bg-[#2D3E50] rounded-xl p-3 flex items-center gap-2.5">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: "#5BB3B315" }}
+                  >
+                    <s.icon className="w-4 h-4 text-[#5BB3B3]" />
+                  </div>
                   <div>
-                    <div className="text-sm font-medium">Strong vs weak (derived)</div>
-                    <div className="mt-1 text-xs text-muted-foreground">
-                      Based on your events (MCQs + confidence). This will get smarter with spacing + trends.
-                    </div>
-                  </div>
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    onClick={() => setSubjectStats(deriveSubjectStats(loadBackstageState().events))}
-                  >
-                    Refresh
-                  </Button>
-                </div>
-
-                {subjectStats.length === 0 ? (
-                  <div className="mt-3 text-sm text-muted-foreground">
-                    No data yet. Do a few MCQs — Backstage will start ranking strong/weak subjects.
-                  </div>
-                ) : (
-                  <div className="mt-3 space-y-2">
-                    {subjectStats.slice(0, 6).map((s) => (
-                      <div key={s.subject} className="flex items-center justify-between gap-3 rounded-md border bg-background/40 p-3">
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-2">
-                            <div className="truncate text-sm font-medium">{s.subject}</div>
-                            <Badge variant="outline">{stageLabel(s.stage)}</Badge>
-                          </div>
-                          <div className="mt-1 text-xs text-muted-foreground">
-                            {s.mcqAttempts > 0
-                              ? `MCQs: ${s.mcqCorrect}/${s.mcqAttempts} • Acc: ${s.accuracyPct}% • Conf: ${s.avgConfidence ?? "—"}% • Gap: ${s.calibrationGap ?? "—"}`
-                              : `Events: ${s.events} • Not tested yet`}
-                          </div>
-                        </div>
-                        <Button size="sm" variant="secondary" onClick={() => router.push(`/library/${s.subject}`)}>
-                          Open
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-                <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-base">
-                      <Target className="h-4 w-4 text-primary" /> Competency ladder
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="text-xs text-muted-foreground">Current subject</div>
-                    <Tabs
-                      value={selectedSubject}
-                      onValueChange={(v) => setSelectedSubject(v as SubjectKey)}
-                    >
-                      <TabsList className="grid w-full grid-cols-3 md:grid-cols-5">
-                        <TabsTrigger value="medicine">Med</TabsTrigger>
-                        <TabsTrigger value="surgery">Surg</TabsTrigger>
-                        <TabsTrigger value="obgyn">OBG</TabsTrigger>
-                        <TabsTrigger value="pediatrics">Peds</TabsTrigger>
-                        <TabsTrigger value="pathology">Path</TabsTrigger>
-                      </TabsList>
-                    </Tabs>
-
-                    <div className="mt-3 rounded-lg border p-3">
-                      <div className="text-sm font-medium">{stageLabel(mock.competency[selectedSubject])}</div>
-                      <div className="mt-1 text-xs text-muted-foreground">
-                        V2: derived from events (MCQ accuracy + confidence + repetition + time).
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-base">
-                      <Lightbulb className="h-4 w-4 text-primary" /> Bloom tags
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="text-xs text-muted-foreground">
-                      On demand tags for the learning you just did.
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {mock.bloomMix.map((b) => (
-                        <Badge key={b} variant="outline">
-                          {bloomLabel(b)}
-                        </Badge>
-                      ))}
-                    </div>
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      className="mt-2"
-                      onClick={() => router.push("/library")}
-                    >
-                      Tag a topic <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center gap-2 text-base">
-                <ClipboardList className="h-4 w-4 text-primary" /> Kolb cycle + Logbook
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="rounded-lg border p-4 text-sm text-muted-foreground">
-                V1 placeholder. V2 will include:
-                <ul className="mt-2 list-disc pl-5">
-                  <li>Case seen → Reflection → Concept → Next experiment</li>
-                  <li>Links to Notes, Library topics, MCQ sets</li>
-                  <li>Competency stage progression over time</li>
-                </ul>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Button variant="secondary" onClick={() => router.push("/notes")}>New reflection</Button>
-                <Button variant="secondary" onClick={() => router.push("/exam-centre")}>Re-test (MCQ)</Button>
-                <Button onClick={() => router.push("/library")}>Read</Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Right: quick entry */}
-        <div className="md:col-span-4 space-y-4">
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center justify-between gap-3 text-base">
-                <span>Calibration</span>
-                <Button size="sm" variant="secondary" onClick={() => router.push("/backstage/calibration")}>
-                  Open
-                </Button>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Confidence vs accuracy — reduce overconfidence, stabilize competence.
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">Deck activity</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">Deck views: {deckStats.deckViews}</Badge>
-                <Badge variant="outline">Slide views: {deckStats.slideViews}</Badge>
-                <Badge variant="outline">Template inserts: {deckStats.templateInserts}</Badge>
-                <Badge variant="outline">Deck minutes (today): {deckMinutes.minutesToday}</Badge>
-                <Badge variant="outline">Deck minutes (7d): {deckMinutes.minutes7d}</Badge>
-              </div>
-
-              {staleTopic ? (
-                <div className="rounded-lg border bg-muted/20 p-3">
-                  <div className="text-xs text-muted-foreground">Suggestion</div>
-                  <div className="mt-1 text-sm font-medium text-foreground">Review deck for: {staleTopic.topicId}</div>
-                  <div className="mt-1 text-xs text-muted-foreground">
-                    Last revised: {staleTopic.lastAt ? new Date(staleTopic.lastAt).toLocaleString() : "—"}
-                  </div>
-                  <div className="mt-2 flex gap-2 flex-wrap">
-                    <Button
-                      size="sm"
-                      onClick={() => {
-                        const decks = findDecksByTopicId(staleTopic.topicId);
-                        if (decks[0]) router.push(`/classroom/decks/${decks[0].deckId}`);
-                        else router.push("/classroom/decks");
-                      }}
-                    >
-                      Open deck
-                    </Button>
-                    <Button size="sm" variant="secondary" onClick={() => router.push(`/library/${staleTopic.subject}`)}>
-                      Open subject
-                    </Button>
+                    <p className="text-lg font-bold text-[#E8E0D5] leading-tight">{s.value}</p>
+                    <p className="text-[10px] text-[#A0B0BC]">{s.label}</p>
                   </div>
                 </div>
-              ) : null}
+              ))}
+            </div>
+            <WidgetFooter text="View full analytics →" color="#5BB3B3" />
+          </div>
+        </Link>
 
-              {deckTopicStats.length ? (
-                <div className="space-y-2">
-                  <div className="text-xs text-muted-foreground">Top revised topics (via decks)</div>
-                  {deckTopicStats.map((s) => (
-                    <div key={s.topicId} className="rounded-lg border p-3">
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="min-w-0">
-                          <div className="truncate text-sm font-medium text-foreground">{s.topicId}</div>
-                          <div className="mt-1 text-xs text-muted-foreground">
-                            Views: {s.deckViews} • Slides: {s.slideViews} • Templates: {s.templateInserts}
-                          </div>
-                        </div>
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          onClick={() => {
-                            const decks = findDecksByTopicId(s.topicId);
-                            if (decks[0]) router.push(`/classroom/decks/${decks[0].deckId}`);
-                            else router.push("/classroom/decks");
-                          }}
-                        >
-                          Open
-                        </Button>
-                      </div>
+        {/* 5. NBME Domains */}
+        <Link href="/competencies" className={cardBase} style={{ borderColor: "rgba(99,102,241,0.15)" }}>
+          <div className="p-5">
+            <div className="flex items-center gap-2 mb-3">
+              <Trophy className="w-5 h-5 text-[#6366F1]" />
+              <span className="font-semibold text-[#E8E0D5] text-sm">NBME Domains</span>
+            </div>
+            <div className="space-y-2.5">
+              {nbmeDomains.map((d) => {
+                const barColor = d.progress >= 70 ? "#10B981" : d.progress >= 50 ? "#F59E0B" : "#DC2626";
+                const isWeakest = d.name === weakestDomain.name;
+                return (
+                  <div key={d.name}>
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span
+                        className="text-[10px] truncate max-w-[70%]"
+                        style={{ color: isWeakest ? "#DC2626" : "#A0B0BC", fontWeight: isWeakest ? 600 : 400 }}
+                      >
+                        {isWeakest && "⚠ "}{d.name}
+                      </span>
+                      <span className="text-[10px] text-[#A0B0BC]">{d.progress}%</span>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="text-xs text-muted-foreground">Open a deck to start building deck-based revision analytics.</div>
-              )}
-
-              <Button
-                size="sm"
-                variant="secondary"
-                onClick={() => {
-                  const all = loadBackstageState().events;
-                  setDeckStats({
-                    deckViews: all.filter((e) => e.type === "deck_view").length,
-                    slideViews: all.filter((e) => e.type === "slide_view").length,
-                    templateInserts: all.filter((e) => e.type === "template_insert").length,
-                  });
-                  const stats = deriveDeckTopicStats(all);
-                  setDeckTopicStats(stats.slice(0, 5));
-                  setStaleTopic(pickStaleDeckTopic(stats));
-                  setRecentEvents(getRecentBackstageEvents(12));
-                  setDeckMinutes(deriveDeckMinutes(all));
-                }}
-              >
-                Refresh
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">Quick actions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <Button className="w-full justify-start" variant="secondary" onClick={() => router.push("/library")}
-              >
-                <BookOpen className="mr-2 h-4 w-4" /> Open Library
-              </Button>
-              <Button className="w-full justify-start" variant="secondary" onClick={() => router.push("/exam-centre")}
-              >
-                <Target className="mr-2 h-4 w-4" /> Practice MCQs
-              </Button>
-              <Button className="w-full justify-start" variant="secondary" onClick={() => router.push("/analytics")}
-              >
-                <BarChart3 className="mr-2 h-4 w-4" /> Analytics
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center justify-between gap-3 text-base">
-                <span>Logbook</span>
-                <Button size="sm" variant="secondary" onClick={() => router.push("/backstage/logbook")}>
-                  Open
-                </Button>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-xs text-muted-foreground">
-                Default format: <span className="font-medium text-foreground">M/56 Chest pain</span> (no identifiers).
-              </div>
-
-              <Input
-                placeholder="M/56 Chest pain"
-                value={caseForm.title}
-                onChange={(e) => setCaseForm((p) => ({ ...p, title: e.target.value }))}
-              />
-
-              <div className="space-y-2">
-                <div className="text-xs text-muted-foreground">Subject</div>
-                <Select
-                  value={caseForm.subject}
-                  onValueChange={(v) => setCaseForm((p) => ({ ...p, subject: v as SubjectKey }))}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select subject" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {SUBJECTS.map((s) => (
-                      <SelectItem key={s.key} value={s.key}>
-                        {s.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <Textarea
-                placeholder="Concrete Experience: what happened?"
-                value={caseForm.experience}
-                onChange={(e) => setCaseForm((p) => ({ ...p, experience: e.target.value }))}
-              />
-              <Textarea
-                placeholder="Reflection: what confused you / what went wrong?"
-                value={caseForm.reflection}
-                onChange={(e) => setCaseForm((p) => ({ ...p, reflection: e.target.value }))}
-              />
-              <Textarea
-                placeholder="Concept: the principle you learned"
-                value={caseForm.concept}
-                onChange={(e) => setCaseForm((p) => ({ ...p, concept: e.target.value }))}
-              />
-              <Textarea
-                placeholder="Experiment: what will you do next time?"
-                value={caseForm.experiment}
-                onChange={(e) => setCaseForm((p) => ({ ...p, experiment: e.target.value }))}
-              />
-
-              <div className="space-y-2">
-                <div className="text-xs text-muted-foreground">Attach links (optional)</div>
-                <Input
-                  placeholder="Library link(s) (space separated)"
-                  value={caseForm.linkLibrary}
-                  onChange={(e) => setCaseForm((p) => ({ ...p, linkLibrary: e.target.value }))}
-                />
-                <Input
-                  placeholder="MCQ link(s) (space separated)"
-                  value={caseForm.linkMcq}
-                  onChange={(e) => setCaseForm((p) => ({ ...p, linkMcq: e.target.value }))}
-                />
-                <Input
-                  placeholder="Notes link(s) (space separated)"
-                  value={caseForm.linkNotes}
-                  onChange={(e) => setCaseForm((p) => ({ ...p, linkNotes: e.target.value }))}
-                />
-              </div>
-
-              <Button className="w-full" onClick={saveCase}>
-                Save case
-              </Button>
-
-              {recentCases.length > 0 ? (
-                <div className="pt-2">
-                  <div className="mb-2 text-xs text-muted-foreground">Recent cases</div>
-                  <div className="space-y-2">
-                    {recentCases.map((c) => (
-                      <div key={c.id} className="rounded-lg border p-3">
-                        <div className="flex items-center justify-between gap-2">
-                          <div className="min-w-0">
-                            <div className="truncate text-sm font-medium">{c.title}</div>
-                            <div className="mt-1 text-xs text-muted-foreground">
-                              {subjectLabel(c.subject)} • {new Date(c.createdAt).toLocaleString()}
-                              {c.links?.library?.length || c.links?.mcq?.length || c.links?.notes?.length ? (
-                                <span className="ml-2">• links</span>
-                              ) : null}
-                            </div>
-                          </div>
-                          <Badge variant="outline">Case</Badge>
-                        </div>
-                      </div>
-                    ))}
+                    <div className="h-1.5 rounded-full bg-[#2D3E50] overflow-hidden">
+                      <div className="h-full rounded-full" style={{ width: `${d.progress}%`, backgroundColor: barColor }} />
+                    </div>
                   </div>
+                );
+              })}
+            </div>
+            <WidgetFooter text="View curriculum map →" color="#6366F1" />
+          </div>
+        </Link>
 
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    className="mt-2 w-full"
-                    onClick={() => setRecentCases(getRecentCases(6))}
-                  >
-                    Refresh cases
-                  </Button>
-                </div>
-              ) : null}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">Recent events</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              {recentEvents.length === 0 ? (
-                <div className="text-sm text-muted-foreground">
-                  No events yet. Do an MCQ, open a deck, or read a topic — we’ll start building your cognitive map.
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  {recentEvents.map((e) => (
-                    <div key={e.id} className="rounded-lg border p-3">
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="text-sm font-medium">
-                          {e.type.toUpperCase()} • {e.subject}
-                        </div>
-                        {typeof e.confidence === "number" ? (
-                          <Badge variant="outline">{e.confidence}%</Badge>
-                        ) : null}
-                      </div>
-                      {e.topic ? (
-                        <div className="mt-1 text-xs text-muted-foreground">{e.topic}</div>
-                      ) : null}
-                      {e.note ? (
-                        <div className="mt-1 text-xs text-muted-foreground">{e.note}</div>
-                      ) : null}
-                      {typeof e.mcq?.correct === "boolean" ? (
-                        <div className="mt-2 text-xs text-muted-foreground">
-                          Result: {e.mcq.correct ? "Correct" : "Wrong"}
-                          {e.mcq.difficulty ? ` • ${e.mcq.difficulty}` : ""}
-                        </div>
-                      ) : null}
+        {/* 6. Weekly Goals & Quests */}
+        <Link href="/backstage/quests" className={cardBase} style={{ borderColor: "rgba(16,185,129,0.15)" }}>
+          <div className="p-5">
+            <div className="flex items-center gap-2 mb-4">
+              <CheckCircle className="w-5 h-5 text-[#10B981]" />
+              <span className="font-semibold text-[#E8E0D5] text-sm">Weekly Goals & Quests</span>
+            </div>
+            <div className="space-y-3">
+              {quests.map((q, i) => {
+                const pct = Math.round((q.current / q.total) * 100);
+                return (
+                  <div key={i}>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs text-[#E8E0D5] truncate max-w-[75%]">
+                        {i === 0 ? "🎯 " : ""}{q.name}
+                      </span>
+                      <span className="text-[10px] text-[#A0B0BC]">
+                        {q.current}/{q.total}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              )}
-
-              <Button
-                size="sm"
-                variant="secondary"
-                className="mt-2"
-                onClick={() => setRecentEvents(getRecentBackstageEvents(12))}
-              >
-                Refresh
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">Bloom distribution</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <div className="text-sm text-muted-foreground">
-                What kind of thinking you’re training (remember → create).
-              </div>
-              <Button
-                size="sm"
-                variant="secondary"
-                className="mt-2"
-                onClick={() => router.push("/backstage/quests")}
-              >
-                Open Quests
-              </Button>
-              <div className="flex flex-wrap gap-2">
-                {(Object.keys(bloomCounts) as Array<keyof typeof bloomCounts>).map((k) => (
-                  <Badge key={k} variant="outline">
-                    {k}: {bloomCounts[k]}
-                  </Badge>
-                ))}
-              </div>
-              <Button
-                size="sm"
-                variant="secondary"
-                className="mt-2"
-                onClick={() => setBloomCounts(countBlooms(loadBackstageState().events))}
-              >
-                Refresh
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base">Roadmap</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2 text-sm text-muted-foreground">
-              <div className="rounded-lg border bg-muted/20 p-3">V1: capture events (localStorage)</div>
-              <div className="rounded-lg border bg-muted/20 p-3">V2: Supabase events → derived competence/confidence</div>
-              <div className="rounded-lg border bg-muted/20 p-3">V3: Case logbook + Kolb loop automation</div>
-            </CardContent>
-          </Card>
-        </div>
+                    <div className="h-2 rounded-full bg-[#2D3E50] overflow-hidden">
+                      <div
+                        className="h-full rounded-full transition-all"
+                        style={{ width: `${pct}%`, backgroundColor: "#10B981" }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <WidgetFooter text="View all quests →" color="#10B981" />
+          </div>
+        </Link>
       </div>
     </div>
   );
