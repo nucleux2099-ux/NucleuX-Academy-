@@ -1,0 +1,21 @@
+topic_id: cm12-define-and-describe-the-concept-of-geriatric-services
+name: Define and describe the concept of Geriatric services
+description: Define and describe the concept of Geriatric services — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM12.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM12.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM12.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM12.4
+  domain: KH
+  core: true
+  phase: Phase 2

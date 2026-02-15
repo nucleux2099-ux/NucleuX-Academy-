@@ -1,0 +1,33 @@
+topic_id: ps10-enumerate-and-describe-the-magnitude-and-etiology-of-somatof
+name: Enumerate and describe the magnitude and etiology of somatoform,
+description: Enumerate and describe the magnitude and etiology of somatoform, — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS10.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS10.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS10.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS10.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PS10.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS10.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PS10.7
+  domain: K
+  core: true
+  phase: Phase 2

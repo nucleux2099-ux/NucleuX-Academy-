@@ -1,0 +1,11 @@
+topic_id: rickets-orthopedic
+name: Rickets Orthopedic
+description: Rickets Orthopedic — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR14.2
+  core: false
+  phase: Phase 3
+- code: OR14.3
+  core: false
+  phase: Phase 3

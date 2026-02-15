@@ -1,0 +1,9 @@
+topic_id: calcium-phosphorus
+name: Calcium Phosphorus
+description: Calcium Phosphorus — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.11
+  domain: P
+  core: true
+  phase: Phase 1

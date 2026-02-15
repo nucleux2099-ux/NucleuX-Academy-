@@ -1,0 +1,9 @@
+topic_id: organ-donation
+name: Organ Donation
+description: Organ Donation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM8.8
+  domain: KH
+  core: true
+  phase: Phase 1

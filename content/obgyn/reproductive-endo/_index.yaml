@@ -1,0 +1,29 @@
+id: reproductive-endo
+title: "Reproductive Endocrinology"
+subject: obgyn
+description: |
+  PCOS, amenorrhea, menstrual disorders, and menopause.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - pcos
+      - hypothalamic-amenorrhea
+      - premature-ovarian-insufficiency
+      - hyperprolactinemia-gyn
+      - hirsutism-virilization
+      - menopause-management
+      - hormone-replacement-therapy
+      - puberty-precocious-delayed
+      - intersex-disorders
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

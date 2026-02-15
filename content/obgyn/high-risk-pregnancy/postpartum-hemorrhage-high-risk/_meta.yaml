@@ -1,0 +1,9 @@
+topic_id: postpartum-hemorrhage-high-risk
+name: Postpartum Hemorrhage High Risk
+description: Postpartum Hemorrhage High Risk — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG5.2
+  domain: SH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,13 @@
+topic_id: gi-hormones
+name: Gi Hormones
+description: Gi Hormones — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY4.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.5
+  domain: KH
+  core: true
+  phase: Phase 1

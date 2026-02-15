@@ -1,0 +1,37 @@
+topic_id: activity-gradation-muscular
+name: The gradation of muscular activity
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY3.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.14
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PY3.16
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PY3.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.6
+  domain: KH
+  core: true
+  phase: Phase 1

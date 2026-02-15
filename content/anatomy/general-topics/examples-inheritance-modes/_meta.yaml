@@ -1,0 +1,21 @@
+topic_id: examples-inheritance-modes
+name: The various modes of inheritance with examples
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN74.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN74.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN74.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN74.4
+  domain: KH
+  core: false
+  phase: Phase 1

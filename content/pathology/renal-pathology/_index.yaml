@@ -1,0 +1,35 @@
+id: renal-pathology
+title: "Renal Pathology"
+subject: pathology
+description: |
+  Glomerulonephritis, nephrotic syndrome, and renal tumors.
+
+stats:
+  total_topics: 15
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - glomerulonephritis-overview-path
+      - minimal-change-disease-path
+      - membranous-nephropathy-path
+      - iga-nephropathy-path
+      - fsgs-path
+      - rpgn-path
+      - diabetic-nephropathy-path
+      - lupus-nephritis-path
+      - amyloidosis-renal
+      - renal-tubular-diseases-path
+      - pyelonephritis-path
+      - renal-cell-carcinoma-path
+      - wilms-tumor
+      - polycystic-kidney-disease-path
+      - renal-calculi-path
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

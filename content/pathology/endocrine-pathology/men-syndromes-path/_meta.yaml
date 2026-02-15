@@ -1,0 +1,9 @@
+topic_id: men-syndromes-path
+name: Men Syndromes Path
+description: Men Syndromes Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA28.2
+  domain: KH
+  core: true
+  phase: Phase 1

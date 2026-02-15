@@ -1,0 +1,46 @@
+id: cns-physiology
+title: "CNS Physiology"
+subject: physiology
+description: |
+  Sensory systems, motor control, and higher functions.
+
+stats:
+  total_topics: 20
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: sensory
+    title: "Sensory"
+    topics:
+      - somatic-sensation
+      - pain-physiology
+      - vision-physiology
+      - hearing-physiology
+      - vestibular-system
+      - taste-smell-physiology
+  - id: motor
+    title: "Motor"
+    topics:
+      - motor-cortex
+      - basal-ganglia-physiology
+      - cerebellum-physiology
+      - spinal-cord-physiology
+      - descending-tracts
+      - upper-vs-lower-motor-neuron
+  - id: higher
+    title: "Higher Functions"
+    topics:
+      - sleep-physiology
+      - memory-learning-physiology
+      - speech-physiology
+      - eeg-basics
+      - hypothalamus-functions
+      - limbic-system
+      - autonomic-nervous-system-physiology
+      - temperature-regulation
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

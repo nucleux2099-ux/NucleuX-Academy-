@@ -1,0 +1,12 @@
+id: forensic-psychiatry
+title: "Forensic Psychiatry"
+subject: psychiatry
+description: |
+  Legal and ethical aspects of psychiatry.
+stats:
+  total_topics: 0
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

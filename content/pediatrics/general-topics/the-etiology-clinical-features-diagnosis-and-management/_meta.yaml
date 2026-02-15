@@ -1,0 +1,17 @@
+topic_id: the-etiology-clinical-features-diagnosis-and-management
+name: The etiology, clinical features, diagnosis and management
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: PE4.2
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE4.3
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE4.4
+  domain: K
+  core: false
+  phase: Phase 2

@@ -1,0 +1,13 @@
+topic_id: giant-cell-arteritis
+name: Giant Cell Arteritis
+description: Giant Cell Arteritis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM9.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM9.9
+  domain: SH
+  core: true
+  phase: Phase 2

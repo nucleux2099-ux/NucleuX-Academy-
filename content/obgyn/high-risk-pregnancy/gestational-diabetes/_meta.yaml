@@ -1,0 +1,9 @@
+topic_id: gestational-diabetes
+name: Gestational Diabetes
+description: Gestational Diabetes — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG35.5
+  domain: SH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,9 @@
+topic_id: cardiac-transplant
+name: Cardiac Transplant
+description: Cardiac Transplant — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM2.17
+  domain: KH
+  core: true
+  phase: Phase 2

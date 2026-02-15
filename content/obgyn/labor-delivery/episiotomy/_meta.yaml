@@ -1,0 +1,9 @@
+topic_id: episiotomy
+name: Episiotomy
+description: Episiotomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG15.2
+  domain: SH
+  core: true
+  phase: Phase 3

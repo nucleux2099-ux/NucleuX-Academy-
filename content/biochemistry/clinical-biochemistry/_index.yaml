@@ -1,0 +1,31 @@
+id: clinical-biochemistry
+title: "Clinical Biochemistry"
+subject: biochemistry
+description: |
+  Inborn errors, diabetes biochemistry, and organ function tests.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - liver-function-tests-biochemistry
+      - renal-function-tests-biochemistry
+      - diabetes-biochemistry
+      - thyroid-function-tests-biochemistry
+      - lipid-profile
+      - cardiac-biomarkers
+      - tumor-markers-biochemistry
+      - acid-base-biochemistry
+      - electrolyte-disorders-biochemistry
+      - csf-analysis
+      - inborn-errors-metabolism-overview
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

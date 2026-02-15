@@ -1,0 +1,9 @@
+topic_id: intersex-disorders
+name: Intersex Disorders
+description: Intersex Disorders — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG5.1
+  domain: SH
+  core: true
+  phase: Phase 3

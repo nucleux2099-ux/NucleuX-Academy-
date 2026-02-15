@@ -1,0 +1,13 @@
+topic_id: general-anesthetics
+name: General Anesthetics
+description: General Anesthetics — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PH1.42
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.5
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,25 @@
+topic_id: antiviral-mechanisms
+name: Antiviral Mechanisms
+description: Antiviral Mechanisms — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI1.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI1.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI1.6
+  domain: K
+  core: true
+  phase: Phase 1
+- code: MI1.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI1.8
+  domain: KH
+  core: true
+  phase: Phase 1

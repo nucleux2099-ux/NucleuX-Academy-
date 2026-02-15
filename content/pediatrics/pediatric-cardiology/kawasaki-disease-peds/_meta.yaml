@@ -1,0 +1,25 @@
+topic_id: kawasaki-disease-peds
+name: Kawasaki Disease Peds
+description: Kawasaki Disease Peds — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE21.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.8
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE9.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE9.7
+  domain: SH
+  core: false
+  phase: Phase 2

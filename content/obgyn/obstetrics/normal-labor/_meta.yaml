@@ -1,0 +1,17 @@
+topic_id: normal-labor
+name: Normal Labor
+description: Normal Labor — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG13.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG13.4
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OG14.2
+  domain: KH
+  core: true
+  phase: Phase 3

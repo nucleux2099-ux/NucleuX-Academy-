@@ -1,0 +1,45 @@
+topic_id: op6-describe-clinical-signs-of-intraocular-inflammation-and-enum
+name: Describe clinical signs of intraocular inflammation and enumerate
+description: Describe clinical signs of intraocular inflammation and enumerate — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OP6.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP6.10
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP6.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP6.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OP6.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP6.5
+  domain: 
+  core: false
+  phase: Phase 3
+- code: OP6.6
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP6.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OP6.8
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP6.9
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,32 @@
+id: biomolecules
+title: "Biomolecules"
+subject: biochemistry
+description: |
+  Proteins, carbohydrates, lipids, and nucleic acids.
+
+stats:
+  total_topics: 12
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - amino-acids
+      - protein-structure
+      - protein-folding
+      - carbohydrate-chemistry
+      - monosaccharides-disaccharides
+      - polysaccharides
+      - lipid-chemistry
+      - fatty-acids
+      - phospholipids
+      - nucleic-acid-structure
+      - dna-structure
+      - rna-types
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

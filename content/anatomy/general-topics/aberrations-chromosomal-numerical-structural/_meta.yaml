@@ -1,0 +1,25 @@
+topic_id: aberrations-chromosomal-numerical-structural
+name: The structural and numerical chromosomal aberrations
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN75.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN75.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN75.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN75.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN75.5
+  domain: KH
+  core: true
+  phase: Phase 1

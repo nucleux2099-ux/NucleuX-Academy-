@@ -1,0 +1,37 @@
+topic_id: basis-factors-genetic-prenatal
+name: The genetic basis, risk factors, complications, prenatal diagnosis
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE32.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE32.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE32.13
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: PE32.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE32.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE32.6
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: PE32.8
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: PE32.9
+  domain: KH
+  core: false
+  phase: Phase 2

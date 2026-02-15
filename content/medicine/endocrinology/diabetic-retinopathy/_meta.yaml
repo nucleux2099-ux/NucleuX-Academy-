@@ -1,0 +1,9 @@
+topic_id: diabetic-retinopathy
+name: Diabetic Retinopathy
+description: Diabetic Retinopathy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.15
+  domain: KH
+  core: true
+  phase: Phase 2

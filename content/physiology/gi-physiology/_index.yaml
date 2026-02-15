@@ -1,0 +1,35 @@
+id: gi-physiology
+title: "GI Physiology"
+subject: physiology
+description: |
+  Digestion, absorption, and GI motility.
+
+stats:
+  total_topics: 15
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - salivary-secretion
+      - gastric-secretion
+      - gastric-motility
+      - pancreatic-secretion
+      - bile-secretion
+      - intestinal-secretion
+      - intestinal-motility
+      - deglutition
+      - defecation-reflex
+      - gi-hormones
+      - absorption-carbohydrates
+      - absorption-proteins
+      - absorption-fats
+      - absorption-vitamins-minerals
+      - liver-functions-physiology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

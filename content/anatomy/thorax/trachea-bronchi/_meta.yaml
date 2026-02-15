@@ -1,0 +1,9 @@
+topic_id: trachea-bronchi
+name: Trachea Bronchi
+description: Trachea Bronchi — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN25.1
+  domain: SH
+  core: true
+  phase: Phase 1

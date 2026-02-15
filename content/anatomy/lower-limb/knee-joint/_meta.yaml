@@ -1,0 +1,13 @@
+topic_id: knee-joint
+name: Knee Joint
+description: Knee Joint — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN18.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN18.6
+  domain: KH
+  core: false
+  phase: Phase 1

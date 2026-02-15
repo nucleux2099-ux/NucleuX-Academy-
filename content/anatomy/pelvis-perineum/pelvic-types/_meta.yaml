@@ -1,0 +1,9 @@
+topic_id: pelvic-types
+name: Pelvic Types
+description: Pelvic Types — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN48.1
+  domain: SH
+  core: true
+  phase: Phase 1

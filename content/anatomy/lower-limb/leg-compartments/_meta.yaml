@@ -1,0 +1,9 @@
+topic_id: leg-compartments
+name: Leg Compartments
+description: Leg Compartments — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN12.14
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,9 @@
+topic_id: cholesterol-synthesis
+name: Cholesterol Synthesis
+description: Cholesterol Synthesis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.9
+  domain: P
+  core: true
+  phase: Phase 1

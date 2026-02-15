@@ -1,0 +1,21 @@
+topic_id: pm6-perform-and-demonstrate-a-clinical-examination-of-sensory-an
+name: Perform and demonstrate a clinical examination of sensory and
+description: Perform and demonstrate a clinical examination of sensory and — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PM6.1
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PM6.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM6.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM6.4
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,50 @@
+id: obstetrics
+title: "Obstetrics"
+subject: obgyn
+description: |
+  Pregnancy, labor, delivery, and postpartum care.
+
+stats:
+  total_topics: 21
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: physiology
+    title: "Physiology"
+    topics:
+      - placenta-physiology
+      - fetal-circulation
+      - maternal-adaptations
+      - embryology-overview
+  - id: normal
+    title: "Normal Pregnancy"
+    topics:
+      - diagnosis-of-pregnancy
+      - antenatal-investigations
+      - antenatal-screening
+      - fetal-growth-assessment
+      - fetal-wellbeing-monitoring
+  - id: labor
+    title: "Labor & Delivery"
+    topics:
+      - normal-labor
+      - partograph
+      - induction-of-labor
+      - augmentation-of-labor
+      - operative-vaginal-delivery
+      - cesarean-section
+      - third-stage-management
+  - id: postpartum
+    title: "Postpartum"
+    topics:
+      - postpartum-hemorrhage
+      - puerperal-sepsis
+      - postpartum-depression-ob
+      - lactation
+      - contraception-postpartum
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

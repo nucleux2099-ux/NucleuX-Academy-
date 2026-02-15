@@ -1,0 +1,13 @@
+topic_id: renal-function-tests-biochemistry
+name: Renal Function Tests Biochemistry
+description: Renal Function Tests Biochemistry — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.14
+  domain: KH
+  core: true
+  phase: Phase 1

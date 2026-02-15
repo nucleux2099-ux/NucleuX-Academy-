@@ -1,0 +1,25 @@
+topic_id: abdominal-aorta
+name: Abdominal Aorta
+description: Abdominal Aorta — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN23.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN44.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN44.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN47.12
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN52.4
+  domain: KH
+  core: false
+  phase: Phase 1

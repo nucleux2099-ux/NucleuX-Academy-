@@ -1,0 +1,17 @@
+topic_id: body-fluid-compartments
+name: Body Fluid Compartments
+description: Body Fluid Compartments — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY1.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY1.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.5
+  domain: KH
+  core: true
+  phase: Phase 1

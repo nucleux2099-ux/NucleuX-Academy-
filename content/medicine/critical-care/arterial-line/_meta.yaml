@@ -1,0 +1,13 @@
+topic_id: arterial-line
+name: Arterial Line
+description: Arterial Line — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM10.20
+  domain: P
+  core: true
+  phase: Phase 2
+- code: IM3.8
+  domain: SH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,31 @@
+id: bone-tumors
+title: "Bone & Soft Tissue Tumors"
+subject: orthopedics
+description: |
+  Benign and malignant bone tumors.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - osteosarcoma
+      - ewing-sarcoma
+      - chondrosarcoma
+      - giant-cell-tumor
+      - osteochondroma
+      - enchondroma
+      - osteoid-osteoma
+      - aneurysmal-bone-cyst
+      - fibrous-dysplasia
+      - metastatic-bone-disease
+      - soft-tissue-sarcoma
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

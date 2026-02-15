@@ -1,0 +1,9 @@
+topic_id: thyroid-hormones-physiology
+name: Thyroid Hormones Physiology
+description: Thyroid Hormones Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY9.5
+  domain: KH
+  core: true
+  phase: Phase 1

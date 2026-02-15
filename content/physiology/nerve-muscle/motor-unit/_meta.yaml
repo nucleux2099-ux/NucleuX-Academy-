@@ -1,0 +1,9 @@
+topic_id: motor-unit
+name: Motor Unit
+description: Motor Unit — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.4
+  domain: KH
+  core: true
+  phase: Phase 1

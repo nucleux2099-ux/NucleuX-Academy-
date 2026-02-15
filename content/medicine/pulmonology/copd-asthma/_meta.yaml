@@ -1,0 +1,61 @@
+topic_id: copd-asthma
+name: "COPD & Asthma"
+description: "Obstructive airway diseases, spirometry, GOLD staging, stepwise therapy"
+high_yield: true
+nmc_codes:
+  - code: IM6.1
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.3
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.4
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: IM6.5
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.6
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.7
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.8
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.9
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.10
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.11
+    domain: P
+    core: true
+    phase: Phase 3
+  - code: IM6.12
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.13
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM6.14
+    domain: KH
+    core: true
+    phase: Phase 3

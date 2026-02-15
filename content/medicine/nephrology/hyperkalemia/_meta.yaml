@@ -1,0 +1,9 @@
+topic_id: hyperkalemia
+name: Hyperkalemia
+description: Hyperkalemia — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM10.18
+  domain: SH
+  core: true
+  phase: Phase 2

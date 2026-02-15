@@ -1,0 +1,32 @@
+id: mycology
+title: "Mycology"
+subject: microbiology
+description: |
+  Superficial and systemic fungal infections.
+
+stats:
+  total_topics: 12
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - dermatophytes
+      - candida-species
+      - aspergillus-species
+      - cryptococcus-neoformans
+      - mucor-rhizopus
+      - histoplasma
+      - coccidioides
+      - blastomyces
+      - pneumocystis-jirovecii
+      - sporotrichosis
+      - chromoblastomycosis
+      - mycetoma
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

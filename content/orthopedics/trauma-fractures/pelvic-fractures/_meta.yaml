@@ -1,0 +1,11 @@
+topic_id: pelvic-fractures
+name: Pelvic Fractures
+description: Pelvic Fractures — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR14.1
+  core: false
+  phase: Phase 3
+- code: OR2.7
+  core: false
+  phase: Phase 3

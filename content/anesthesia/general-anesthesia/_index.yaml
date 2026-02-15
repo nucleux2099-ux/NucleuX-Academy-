@@ -1,0 +1,12 @@
+id: general-anesthesia
+title: "General Anesthesia"
+subject: anesthesia
+description: |
+  Principles and practice of general anesthesia.
+stats:
+  total_topics: 7
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

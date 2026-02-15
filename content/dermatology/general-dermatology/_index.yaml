@@ -1,0 +1,12 @@
+id: general-dermatology
+title: "General Dermatology"
+subject: dermatology
+description: |
+  Common skin conditions and approach.
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

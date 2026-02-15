@@ -1,0 +1,13 @@
+topic_id: pleural-effusion
+name: Pleural Effusion
+description: Pleural Effusion — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM12.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM3.9
+  domain: SH
+  core: true
+  phase: Phase 2

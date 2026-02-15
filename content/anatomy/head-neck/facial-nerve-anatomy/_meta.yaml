@@ -1,0 +1,17 @@
+topic_id: facial-nerve-anatomy
+name: Facial Nerve Anatomy
+description: Facial Nerve Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN28.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN28.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN28.7
+  domain: KH
+  core: true
+  phase: Phase 1

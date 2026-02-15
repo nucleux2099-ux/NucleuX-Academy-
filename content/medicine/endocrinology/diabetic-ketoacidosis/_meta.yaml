@@ -1,0 +1,9 @@
+topic_id: diabetic-ketoacidosis
+name: Diabetic Ketoacidosis
+description: Diabetic Ketoacidosis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.15
+  domain: KH
+  core: true
+  phase: Phase 2

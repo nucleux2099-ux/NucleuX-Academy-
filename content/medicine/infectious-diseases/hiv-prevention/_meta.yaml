@@ -1,0 +1,25 @@
+topic_id: hiv-prevention
+name: Hiv Prevention
+description: Hiv Prevention — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM13.15
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM25.13
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM4.26
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM6.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM6.23
+  domain: SH
+  core: true
+  phase: Phase 2

@@ -1,15 +1,57 @@
-title: High-Risk Pregnancy
-description: Management of pregnancies with increased maternal or fetal risk
-icon: 🚨
-order: 4
-tags:
-  - obstetrics
-  - high-risk
-  - maternal-medicine
-topics:
-  - pregnancy-induced-hypertension
-  - gestational-diabetes
-  - antepartum-hemorrhage
-  - multiple-pregnancy
-  - rh-isoimmunization
-level: PG
+id: high-risk-pregnancy
+title: "High-Risk Pregnancy"
+subject: obgyn
+description: |
+  PIH, GDM, APH, PPH, preterm labor, and IUGR.
+
+stats:
+  total_topics: 25
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: hypertensive
+    title: "Hypertensive Disorders"
+    topics:
+      - pregnancy-induced-hypertension
+      - preeclampsia
+      - eclampsia
+      - hellp-syndrome
+      - chronic-hypertension-pregnancy
+  - id: hemorrhage
+    title: "Hemorrhage"
+    topics:
+      - antepartum-hemorrhage
+      - placenta-previa
+      - abruptio-placentae
+      - vasa-previa
+      - postpartum-hemorrhage-high-risk
+  - id: diabetes
+    title: "Diabetes in Pregnancy"
+    topics:
+      - gestational-diabetes
+      - pregestational-diabetes
+  - id: fetal
+    title: "Fetal Complications"
+    topics:
+      - iugr
+      - oligohydramnios
+      - polyhydramnios
+      - rh-isoimmunization
+      - fetal-distress
+      - intrauterine-fetal-death
+  - id: other
+    title: "Other High-Risk"
+    topics:
+      - preterm-labor
+      - premature-rupture-membranes
+      - multiple-pregnancy
+      - ectopic-pregnancy
+      - molar-pregnancy
+      - recurrent-miscarriage
+      - cervical-incompetence
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,9 @@
+topic_id: fatty-acid-synthesis
+name: Fatty Acid Synthesis
+description: Fatty Acid Synthesis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI4.1
+  domain: KH
+  core: true
+  phase: Phase 1

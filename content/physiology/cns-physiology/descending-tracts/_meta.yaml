@@ -1,0 +1,13 @@
+topic_id: descending-tracts
+name: Descending Tracts
+description: Descending Tracts — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.4
+  domain: KH
+  core: true
+  phase: Phase 1

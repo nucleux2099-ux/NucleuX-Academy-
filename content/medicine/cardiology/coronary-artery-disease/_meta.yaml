@@ -1,0 +1,101 @@
+topic_id: coronary-artery-disease
+name: "Coronary Artery Disease"
+description: "Atherosclerosis, ACS, risk factors, ECG, lipid management"
+high_yield: true
+nmc_codes:
+  - code: IM2.1
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.3
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.4
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.5
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.6
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: IM2.7
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.8
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.9
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.10
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.11
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.12
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM2.13
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.1
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.3
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.4
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.5
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.6
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.7
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: IM10.8
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.9
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.10
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM10.11
+    domain: KH
+    core: true
+    phase: Phase 3

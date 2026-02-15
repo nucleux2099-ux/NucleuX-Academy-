@@ -1,0 +1,13 @@
+topic_id: fallopian-tube-anatomy
+name: Fallopian Tube Anatomy
+description: Fallopian Tube Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN64.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN64.3
+  domain: KH
+  core: false
+  phase: Phase 1

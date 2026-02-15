@@ -1,0 +1,9 @@
+topic_id: cross-level-section-t10
+name: '& identify the cross-section at the level of T8, T10 and L1'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN51.1
+  domain: SH
+  core: true
+  phase: Phase 1

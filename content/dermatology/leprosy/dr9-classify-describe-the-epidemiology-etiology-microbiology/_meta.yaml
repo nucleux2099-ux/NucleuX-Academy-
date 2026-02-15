@@ -1,0 +1,33 @@
+topic_id: dr9-classify-describe-the-epidemiology-etiology-microbiology
+name: Classify, describe the epidemiology, etiology, microbiology,
+description: Classify, describe the epidemiology, etiology, microbiology, — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DR9.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DR9.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: DR9.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: DR9.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DR9.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DR9.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: DR9.7
+  domain: KH
+  core: true
+  phase: Phase 1

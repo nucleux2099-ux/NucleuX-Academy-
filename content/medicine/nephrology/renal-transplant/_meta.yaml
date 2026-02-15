@@ -1,0 +1,25 @@
+topic_id: renal-transplant
+name: Renal Transplant
+description: Renal Transplant — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM10.16
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM10.17
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.19
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM10.24
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.3
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,28 @@
+id: general-physiology
+title: "General Physiology"
+subject: physiology
+description: |
+  Cell membrane, transport, and homeostasis.
+
+stats:
+  total_topics: 8
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - cell-membrane-transport
+      - osmosis-tonicity
+      - resting-membrane-potential
+      - action-potential
+      - synaptic-transmission
+      - homeostasis
+      - body-fluid-compartments
+      - signal-transduction
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,9 +1,5 @@
-topic_id: esophageal-anatomy
-name: "Esophageal Anatomy"
-description: "Wall layers, blood supply, innervation, landmarks, clinical correlations"
-high_yield: true
-difficulty: 3
-estimated_minutes: 20
-exam_tags: [NEET_PG, MRCS]
-prerequisites: []
-related_topics: [les-physiology, esophageal-manometry]
+title: Esophageal Anatomy
+slug: esophageal-anatomy
+depth: UG
+nmc_codes:
+- SU28.5

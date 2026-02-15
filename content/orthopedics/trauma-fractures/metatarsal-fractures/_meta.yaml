@@ -1,0 +1,11 @@
+topic_id: metatarsal-fractures
+name: Metatarsal Fractures
+description: Metatarsal Fractures — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR14.1
+  core: false
+  phase: Phase 3
+- code: OR2.2
+  core: false
+  phase: Phase 3

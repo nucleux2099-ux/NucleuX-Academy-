@@ -1,0 +1,13 @@
+topic_id: epithelium-microscope
+name: Epithelium under the microscope & describe the various types that
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN65.1
+  domain: P
+  core: true
+  phase: Phase 1
+- code: AN65.2
+  domain: KH
+  core: false
+  phase: Phase 1

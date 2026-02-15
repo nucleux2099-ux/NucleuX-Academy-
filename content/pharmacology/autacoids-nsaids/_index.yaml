@@ -1,0 +1,29 @@
+id: autacoids-nsaids
+title: "Autacoids & NSAIDs"
+subject: pharmacology
+description: |
+  Histamine, prostaglandins, and anti-inflammatory drugs.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - histamine-antihistamines
+      - prostaglandins-leukotrienes
+      - nsaids-pharmacology
+      - aspirin
+      - paracetamol-acetaminophen
+      - selective-cox2-inhibitors
+      - drugs-for-gout-pharmacology
+      - drugs-for-rheumatoid-arthritis
+      - disease-modifying-antirheumatic-drugs
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,37 @@
+id: upper-limb
+title: "Upper Limb"
+subject: anatomy
+description: |
+  Shoulder, arm, forearm, and hand.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: shoulder
+    title: "Shoulder & Arm"
+    topics:
+      - shoulder-joint
+      - rotator-cuff
+      - axilla
+      - brachial-plexus-anatomy
+      - arm-muscles
+      - cubital-fossa
+      - elbow-joint
+  - id: forearm
+    title: "Forearm & Hand"
+    topics:
+      - forearm-muscles
+      - carpal-tunnel
+      - hand-muscles
+      - wrist-joint
+      - hand-spaces
+      - blood-supply-upper-limb
+      - nerves-upper-limb
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,53 @@
+id: gi-pathology
+title: "GI Pathology"
+subject: pathology
+description: |
+  GI tumors, IBD, and liver pathology.
+
+stats:
+  total_topics: 24
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: esophagus
+    title: "Esophagus & Stomach"
+    topics:
+      - esophagitis-path
+      - barrett-esophagus-path
+      - esophageal-cancer-path
+      - gastritis-path
+      - peptic-ulcer-path
+      - gastric-cancer-path
+      - gist-pathology
+  - id: intestine
+    title: "Intestinal"
+    topics:
+      - celiac-disease-path
+      - crohns-disease-path
+      - ulcerative-colitis-path
+      - ischemic-bowel-disease-path
+      - colorectal-cancer-path
+      - appendicitis-pathology
+      - intestinal-obstruction-path
+      - diverticular-disease-path
+  - id: liver
+    title: "Liver"
+    topics:
+      - hepatitis-pathology
+      - cirrhosis-pathology
+      - alcoholic-liver-disease-path
+      - nafld-path
+      - hepatocellular-carcinoma-path
+      - cholestasis-path
+  - id: pancreas
+    title: "Pancreas"
+    topics:
+      - acute-pancreatitis-path
+      - chronic-pancreatitis-path
+      - pancreatic-cancer-path
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

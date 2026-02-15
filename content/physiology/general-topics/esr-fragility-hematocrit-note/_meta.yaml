@@ -1,0 +1,21 @@
+topic_id: esr-fragility-hematocrit-note
+name: Test for ESR, Osmotic fragility, Hematocrit. Note the
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY2.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.8
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,21 @@
+topic_id: transfusion-reactions
+name: Transfusion Reactions
+description: Transfusion Reactions — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM15.13
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM17.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM9.17
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM9.19
+  domain: SH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,57 @@
+topic_id: antecedents-risk
+name: And describe the epidemiology, antecedents and risk
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM2.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM2.10
+  domain: P
+  core: true
+  phase: Phase 2
+- code: IM2.12
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM2.13
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.15
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM2.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM2.19
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.24
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM2.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM2.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM2.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM2.8
+  domain: SH
+  core: true
+  phase: Phase 2

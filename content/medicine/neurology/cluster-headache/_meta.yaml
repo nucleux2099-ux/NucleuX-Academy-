@@ -1,0 +1,9 @@
+topic_id: cluster-headache
+name: Cluster Headache
+description: Cluster Headache — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM17.1
+  domain: KH
+  core: true
+  phase: Phase 1

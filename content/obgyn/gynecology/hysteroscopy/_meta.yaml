@@ -1,0 +1,9 @@
+topic_id: hysteroscopy
+name: Hysteroscopy
+description: Hysteroscopy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG38.2
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,25 @@
+topic_id: huntington-disease
+name: Huntington Disease
+description: Huntington Disease — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM16.15
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM5.14
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM7.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM7.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM7.2
+  domain: KH
+  core: false
+  phase: Phase 1

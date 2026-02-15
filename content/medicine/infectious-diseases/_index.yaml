@@ -1,0 +1,62 @@
+id: infectious-diseases
+title: "Infectious Diseases"
+subject: medicine
+description: |
+  HIV, tropical diseases, hospital infections, and sepsis.
+
+stats:
+  total_topics: 30
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: hiv
+    title: "HIV/AIDS"
+    topics:
+      - hiv-aids
+      - opportunistic-infections-hiv
+      - antiretroviral-therapy
+      - hiv-prevention
+  - id: tropical
+    title: "Tropical & Endemic"
+    topics:
+      - malaria
+      - dengue
+      - typhoid
+      - leptospirosis
+      - scrub-typhus
+      - kala-azar
+      - filariasis
+      - chikungunya
+  - id: tb
+    title: "Tuberculosis"
+    topics:
+      - pulmonary-tuberculosis
+      - extrapulmonary-tb
+      - tb-treatment
+      - mdr-tb
+      - latent-tb
+  - id: hospital
+    title: "Hospital Infections"
+    topics:
+      - sepsis
+      - septic-shock
+      - hospital-acquired-infections
+      - catheter-related-infections
+      - ventilator-associated-pneumonia
+      - mrsa
+      - clostridioides-difficile
+  - id: misc
+    title: "Other Infections"
+    topics:
+      - infective-endocarditis-id
+      - urinary-tract-infections
+      - skin-soft-tissue-infections
+      - intra-abdominal-infections
+      - fungal-infections-systemic
+      - parasitic-infections-systemic
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

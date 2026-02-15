@@ -1,0 +1,9 @@
+topic_id: the-pathogenesis-and-features-of-common
+name: The pathogenesis and features of common
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: PA11.1
+  domain: KH
+  core: false
+  phase: Phase 1

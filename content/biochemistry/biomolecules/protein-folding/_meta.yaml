@@ -1,0 +1,17 @@
+topic_id: protein-folding
+name: Protein Folding
+description: Protein Folding — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.21
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: BI8.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI9.3
+  domain: KH
+  core: false
+  phase: Phase 1

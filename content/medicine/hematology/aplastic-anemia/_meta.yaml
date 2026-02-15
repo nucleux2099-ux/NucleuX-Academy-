@@ -1,0 +1,21 @@
+topic_id: aplastic-anemia
+name: Aplastic Anemia
+description: Aplastic Anemia — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM10.9
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM9.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM9.16
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM9.9
+  domain: SH
+  core: true
+  phase: Phase 2

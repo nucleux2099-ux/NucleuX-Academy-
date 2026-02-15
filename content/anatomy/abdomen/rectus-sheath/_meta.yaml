@@ -1,0 +1,9 @@
+topic_id: rectus-sheath
+name: Rectus Sheath
+description: Rectus Sheath — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN44.3
+  domain: KH
+  core: true
+  phase: Phase 1

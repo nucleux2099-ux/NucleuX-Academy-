@@ -1,0 +1,45 @@
+topic_id: history-toxicology
+name: The history of Toxicology K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM8.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM8.9
+  domain: KH
+  core: true
+  phase: Phase 1

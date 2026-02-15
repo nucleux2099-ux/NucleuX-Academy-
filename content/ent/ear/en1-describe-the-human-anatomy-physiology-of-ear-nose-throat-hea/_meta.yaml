@@ -1,0 +1,13 @@
+topic_id: en1-describe-the-human-anatomy-physiology-of-ear-nose-throat-hea
+name: Describe the Human Anatomy & physiology of ear, nose, throat, head &
+description: Describe the Human Anatomy & physiology of ear, nose, throat, head & — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: EN1.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: EN1.2
+  domain: KH
+  core: true
+  phase: Phase 1

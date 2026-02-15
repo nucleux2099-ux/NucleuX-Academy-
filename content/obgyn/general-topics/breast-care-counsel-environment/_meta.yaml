@@ -1,0 +1,13 @@
+topic_id: breast-care-counsel-environment
+name: Counsel in a simulated environment, care of the breast, importance S/A/C
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG17.2
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OG17.3
+  domain: KH
+  core: true
+  phase: Phase 3

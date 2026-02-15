@@ -1,0 +1,137 @@
+topic_id: identification
+name: Identification
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM3.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.12
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: FM3.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.15
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.16
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.19
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.20
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.21
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.22
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.23
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.24
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM3.25
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM3.26
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.27
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.28
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.29
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.30
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.31
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM3.32
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM3.33
+  domain: S
+  core: true
+  phase: Phase 1
+- code: FM3.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: FM3.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.6
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: FM3.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM3.8
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: FM3.9
+  domain: KH
+  core: true
+  phase: Phase 3

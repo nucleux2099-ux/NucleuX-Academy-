@@ -1,0 +1,29 @@
+topic_id: document-elicit-history-present
+name: Elicit and document and present an appropriate history including
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM19.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM19.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM19.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM19.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM19.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM19.8
+  domain: KH
+  core: true
+  phase: Phase 1

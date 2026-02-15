@@ -1,0 +1,25 @@
+topic_id: facial-muscles
+name: Facial Muscles
+description: Facial Muscles — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN28.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN28.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN28.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN28.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN43.5
+  domain: SH
+  core: true
+  phase: Phase 1

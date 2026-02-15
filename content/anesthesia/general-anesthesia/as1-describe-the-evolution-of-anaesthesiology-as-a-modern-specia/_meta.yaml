@@ -1,0 +1,21 @@
+topic_id: as1-describe-the-evolution-of-anaesthesiology-as-a-modern-specia
+name: Describe the evolution of Anaesthesiology as a modern specialty
+description: Describe the evolution of Anaesthesiology as a modern specialty — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AS1.1
+  domain: K
+  core: false
+  phase: Phase 3
+- code: AS1.2
+  domain: K
+  core: false
+  phase: Phase 3
+- code: AS1.3
+  domain: K
+  core: false
+  phase: Phase 3
+- code: AS1.4
+  domain: K
+  core: false
+  phase: Phase 3

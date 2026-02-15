@@ -1,2 +1,6 @@
 title: Breast Cancer
-order: 1
+slug: breast-cancer
+depth: UG
+nmc_codes:
+- SU25.3
+- SU25.4

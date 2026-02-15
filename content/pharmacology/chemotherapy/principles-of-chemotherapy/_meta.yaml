@@ -1,0 +1,9 @@
+topic_id: principles-of-chemotherapy
+name: Principles Of Chemotherapy
+description: Principles Of Chemotherapy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PH1.42
+  domain: KH
+  core: true
+  phase: Phase 1

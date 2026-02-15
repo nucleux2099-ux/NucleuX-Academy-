@@ -1,0 +1,25 @@
+topic_id: enzyme-kinetics
+name: Enzyme Kinetics
+description: Enzyme Kinetics — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI2.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI2.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI2.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI2.7
+  domain: KH
+  core: true
+  phase: Phase 1

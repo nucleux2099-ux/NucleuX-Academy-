@@ -1,0 +1,69 @@
+topic_id: differential-generate-prioritise
+name: Generate a differential diagnosis and prioritise based on clinical
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM11.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.14
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM11.19
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM11.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.20
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM11.21
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.22
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM11.23
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.24
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM11.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.4
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM11.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.8
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM11.9
+  domain: KH
+  core: true
+  phase: Phase 2

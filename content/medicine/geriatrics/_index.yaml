@@ -1,0 +1,30 @@
+id: geriatrics
+title: "Geriatrics"
+subject: medicine
+description: |
+  Elderly care, polypharmacy, and age-related conditions.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Geriatrics"
+    topics:
+      - geriatric-assessment
+      - polypharmacy
+      - falls-in-elderly
+      - frailty-syndrome
+      - delirium-geriatric
+      - elder-abuse
+      - end-of-life-care
+      - pressure-ulcers
+      - urinary-incontinence-geriatric
+      - osteoporosis-geriatric
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

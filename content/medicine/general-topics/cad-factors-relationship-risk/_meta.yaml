@@ -1,0 +1,53 @@
+topic_id: cad-factors-relationship-risk
+name: And discuss the relationship between CAD risk factors and
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM10.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM10.13
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.14
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM10.15
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM10.22
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: IM10.23
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.25
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM10.29
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM10.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM10.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM10.7
+  domain: KH
+  core: true
+  phase: Phase 2

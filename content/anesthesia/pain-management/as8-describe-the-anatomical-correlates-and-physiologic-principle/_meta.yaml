@@ -1,0 +1,25 @@
+topic_id: as8-describe-the-anatomical-correlates-and-physiologic-principle
+name: Describe the anatomical correlates and physiologic principles of pain
+description: Describe the anatomical correlates and physiologic principles of pain — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AS8.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS8.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS8.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS8.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS8.5
+  domain: KH
+  core: true
+  phase: Phase 1

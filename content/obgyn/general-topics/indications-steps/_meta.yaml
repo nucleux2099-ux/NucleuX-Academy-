@@ -1,0 +1,9 @@
+topic_id: indications-steps
+name: And describe the indications and steps of common
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG15.1
+  domain: KH
+  core: true
+  phase: Phase 3

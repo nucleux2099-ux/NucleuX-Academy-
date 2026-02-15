@@ -1,11 +1,39 @@
+id: medical-jurisprudence
 title: "Medical Jurisprudence"
-description: "Legal aspects of medical practice - consent, negligence, ethics, documentation"
-icon: "⚖️"
-order: 5
-subspecialty: "forensic"
-topics:
-  - consent
-  - medical-negligence
-  - medical-ethics
-  - medical-documentation
-  - courts-evidence
+subject: forensic
+description: |
+  Medical law, consent, and professional ethics.
+
+stats:
+  total_topics: 19
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - medical-negligence
+      - informed-consent
+      - therapeutic-privilege
+      - medical-ethics
+      - medical-council-of-india
+      - indian-penal-code-medical
+      - crpc-medical
+      - indian-evidence-act
+      - consumer-protection-act-medical
+      - organ-transplant-act
+      - mtp-act
+      - pcpndt-act
+      - mental-health-act
+      - death-certification
+      - dying-declaration
+      - dying-deposition
+      - identification-forensic
+      - age-estimation
+      - dna-fingerprinting
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

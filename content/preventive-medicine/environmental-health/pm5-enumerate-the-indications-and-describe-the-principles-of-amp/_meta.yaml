@@ -1,0 +1,21 @@
+topic_id: pm5-enumerate-the-indications-and-describe-the-principles-of-amp
+name: Enumerate the indications and describe the principles of amputation
+description: Enumerate the indications and describe the principles of amputation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PM5.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM5.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM5.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PM5.4
+  domain: SH
+  core: true
+  phase: Phase 2

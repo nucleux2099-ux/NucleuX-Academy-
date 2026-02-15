@@ -1,0 +1,13 @@
+topic_id: preterm-labor
+name: Preterm Labor
+description: Preterm Labor — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG13.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG14.2
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,17 @@
+topic_id: heart-anatomy
+name: Heart Anatomy
+description: Heart Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN19.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN22.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN22.6
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,21 @@
+topic_id: care-hospital-pre
+name: And discuss the principles of pre-hospital care and K/S/A/C K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OR1.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OR1.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OR1.5
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OR1.6
+  domain: SH
+  core: true
+  phase: Phase 3

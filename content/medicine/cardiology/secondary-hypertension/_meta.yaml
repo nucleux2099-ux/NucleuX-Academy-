@@ -1,0 +1,25 @@
+topic_id: secondary-hypertension
+name: Secondary Hypertension
+description: Secondary Hypertension — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM8.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM8.19
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM8.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM8.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: IM8.4
+  domain: KH
+  core: true
+  phase: Phase 1

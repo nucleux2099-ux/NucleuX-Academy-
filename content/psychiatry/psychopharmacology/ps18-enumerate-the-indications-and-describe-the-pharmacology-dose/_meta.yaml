@@ -1,0 +1,17 @@
+topic_id: ps18-enumerate-the-indications-and-describe-the-pharmacology-dose
+name: Enumerate the indications and describe the pharmacology, dose
+description: Enumerate the indications and describe the pharmacology, dose — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS18.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PS18.2
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PS18.3
+  domain: KH
+  core: true
+  phase: Phase 2

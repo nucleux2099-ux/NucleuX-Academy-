@@ -1,0 +1,33 @@
+topic_id: st
+name: St
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN21.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN21.2
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN21.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN21.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN21.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN21.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN21.9
+  domain: SH
+  core: true
+  phase: Phase 1

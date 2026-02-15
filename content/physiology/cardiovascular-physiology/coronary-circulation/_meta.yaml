@@ -1,0 +1,9 @@
+topic_id: coronary-circulation
+name: Coronary Circulation
+description: Coronary Circulation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY5.10
+  domain: KH
+  core: true
+  phase: Phase 1

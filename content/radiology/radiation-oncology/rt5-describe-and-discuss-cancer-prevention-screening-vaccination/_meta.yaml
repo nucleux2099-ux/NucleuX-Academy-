@@ -1,0 +1,9 @@
+topic_id: rt5-describe-and-discuss-cancer-prevention-screening-vaccination
+name: Describe and discuss cancer prevention, screening, vaccination,
+description: Describe and discuss cancer prevention, screening, vaccination, — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: RT5.1
+  domain: K
+  core: true
+  phase: Phase 3

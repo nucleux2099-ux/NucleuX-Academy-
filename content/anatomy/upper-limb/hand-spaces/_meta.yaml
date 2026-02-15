@@ -1,0 +1,21 @@
+topic_id: hand-spaces
+name: Hand Spaces
+description: Hand Spaces — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN12.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN12.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN35.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN8.5
+  domain: SH
+  core: true
+  phase: Phase 1

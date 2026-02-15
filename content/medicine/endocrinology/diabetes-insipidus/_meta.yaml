@@ -1,0 +1,17 @@
+topic_id: diabetes-insipidus
+name: Diabetes Insipidus
+description: Diabetes Insipidus — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM11.16
+  domain: KH
+  core: true
+  phase: Phase 2

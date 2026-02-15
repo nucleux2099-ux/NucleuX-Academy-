@@ -1,0 +1,35 @@
+id: mechanical-injuries
+title: "Mechanical Injuries"
+subject: forensic
+description: |
+  Blunt trauma, sharp force, and firearm injuries.
+
+stats:
+  total_topics: 15
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - abrasion
+      - bruise-contusion
+      - laceration
+      - incised-wound
+      - stab-wound
+      - chop-wound
+      - firearm-injuries-forensic
+      - shotgun-injuries
+      - blast-injuries
+      - defense-wounds
+      - fabricated-wounds
+      - age-of-injuries
+      - regional-injuries-head
+      - vehicular-injuries
+      - fall-injuries
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

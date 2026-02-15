@@ -1,0 +1,17 @@
+topic_id: premature-rupture-membranes
+name: Premature Rupture Membranes
+description: Premature Rupture Membranes — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG13.3
+  domain: SH
+  core: false
+  phase: Phase 3
+- code: OG14.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG35.13
+  domain: SH
+  core: true
+  phase: Phase 3

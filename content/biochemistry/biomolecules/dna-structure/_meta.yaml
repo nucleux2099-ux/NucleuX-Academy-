@@ -1,0 +1,25 @@
+topic_id: dna-structure
+name: Dna Structure
+description: Dna Structure — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI4.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI5.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.4
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,37 @@
+topic_id: nerves-lower-limb
+name: Nerves Lower Limb
+description: Nerves Lower Limb — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN13.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN13.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN13.8
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN14.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN20.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN20.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN20.7
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN59.2
+  domain: KH
+  core: true
+  phase: Phase 1

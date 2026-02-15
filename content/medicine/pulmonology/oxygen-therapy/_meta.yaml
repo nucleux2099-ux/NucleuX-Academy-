@@ -1,0 +1,49 @@
+topic_id: oxygen-therapy
+name: Oxygen Therapy
+description: Oxygen Therapy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM10.26
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM10.28
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.17
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM12.15
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM18.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM18.17
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM20.8
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM20.9
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM3.17
+  domain: K
+  core: true
+  phase: Phase 2
+- code: IM7.21
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM9.14
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,13 @@
+topic_id: birth-injuries
+name: Birth Injuries
+description: Birth Injuries — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE20.7
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.9
+  domain: KH
+  core: true
+  phase: Phase 2

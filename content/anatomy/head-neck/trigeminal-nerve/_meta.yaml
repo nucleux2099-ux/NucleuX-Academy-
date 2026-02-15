@@ -1,0 +1,113 @@
+topic_id: trigeminal-nerve
+name: Trigeminal Nerve
+description: Trigeminal Nerve — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN10.13
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN10.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN16.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN2.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN2.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN21.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN24.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN24.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN27.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN29.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN31.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN33.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN34.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN35.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN38.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN38.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN39.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN39.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN40.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN42.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN47.13
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN58.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN59.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN62.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN68.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN7.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN9.1
+  domain: KH
+  core: true
+  phase: Phase 1

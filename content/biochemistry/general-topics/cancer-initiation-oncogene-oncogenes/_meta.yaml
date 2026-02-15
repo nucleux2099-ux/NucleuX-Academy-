@@ -1,0 +1,21 @@
+topic_id: cancer-initiation-oncogene-oncogenes
+name: The cancer initiation, promotion oncogenes & oncogene
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI10.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI10.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI10.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI10.5
+  domain: KH
+  core: true
+  phase: Phase 1

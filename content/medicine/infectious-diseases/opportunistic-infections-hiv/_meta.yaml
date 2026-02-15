@@ -1,0 +1,13 @@
+topic_id: opportunistic-infections-hiv
+name: Opportunistic Infections Hiv
+description: Opportunistic Infections Hiv — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM25.13
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM6.2
+  domain: KH
+  core: true
+  phase: Phase 1

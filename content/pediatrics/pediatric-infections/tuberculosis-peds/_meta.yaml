@@ -1,0 +1,17 @@
+topic_id: tuberculosis-peds
+name: Tuberculosis Peds
+description: Tuberculosis Peds — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE34.13
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE34.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE34.3
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,12 @@
+id: leprosy
+title: "Leprosy"
+subject: dermatology
+description: |
+  Hansen's disease diagnosis and management.
+stats:
+  total_topics: 1
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

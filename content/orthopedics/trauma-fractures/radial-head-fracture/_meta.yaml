@@ -1,0 +1,8 @@
+topic_id: radial-head-fracture
+name: Radial Head Fracture
+description: Radial Head Fracture — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR11.1
+  core: false
+  phase: Phase 1

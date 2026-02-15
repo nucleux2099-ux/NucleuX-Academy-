@@ -1,0 +1,13 @@
+topic_id: pelvic-floor-anatomy
+name: Pelvic Floor Anatomy
+description: Pelvic Floor Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN15.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN16.6
+  domain: SH
+  core: true
+  phase: Phase 1

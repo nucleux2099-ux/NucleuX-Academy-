@@ -1,0 +1,17 @@
+topic_id: cranial-nerves-overview
+name: Cranial Nerves Overview
+description: Cranial Nerves Overview — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN23.6
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN26.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN30.1
+  domain: SH
+  core: true
+  phase: Phase 3

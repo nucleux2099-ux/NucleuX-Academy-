@@ -1,0 +1,181 @@
+topic_id: complete-correct-generic-legible
+name: Parts of a correct, complete and legible generic
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PH1.10
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH1.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.15
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.16
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.19
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.20
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.21
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.24
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.25
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.26
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.27
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.28
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.29
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.30
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PH1.31
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.32
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.33
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.34
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.35
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.36
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.37
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.38
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.39
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.40
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.41
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.43
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.44
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.45
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.46
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.47
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.48
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.49
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.50
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.51
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: PH1.52
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.54
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.55
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.59
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.62
+  domain: KH
+  core: true
+  phase: Phase 1

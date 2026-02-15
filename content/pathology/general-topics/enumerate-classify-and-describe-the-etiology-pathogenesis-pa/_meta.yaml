@@ -1,0 +1,37 @@
+topic_id: enumerate-classify-and-describe-the-etiology-pathogenesis-pa
+name: Enumerate, classify and describe the etiology, pathogenesis, pathology
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA32.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA32.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA32.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA32.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA32.6
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: PA32.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA32.8
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA32.9
+  domain: KH
+  core: false
+  phase: Phase 1

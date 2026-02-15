@@ -1,0 +1,46 @@
+id: pediatric-infections
+title: "Pediatric Infections"
+subject: pediatrics
+description: |
+  Childhood infections and immunization.
+
+stats:
+  total_topics: 20
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: exanthems
+    title: "Exanthems"
+    topics:
+      - measles
+      - rubella
+      - varicella
+      - scarlet-fever
+      - roseola
+      - hand-foot-mouth-disease
+      - mumps
+  - id: other
+    title: "Other Infections"
+    topics:
+      - pertussis
+      - diphtheria
+      - polio
+      - typhoid-peds
+      - tuberculosis-peds
+      - hiv-pediatric
+      - malaria-peds
+      - dengue-peds
+  - id: immunization
+    title: "Immunization"
+    topics:
+      - national-immunization-schedule
+      - vaccine-types
+      - adverse-events-vaccines
+      - catch-up-immunization
+      - travel-vaccines
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

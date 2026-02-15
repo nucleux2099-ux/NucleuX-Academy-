@@ -1,0 +1,13 @@
+topic_id: control-handling-infection-measures
+name: Practice Infection control measures and appropriate handling of the
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE19.14
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.4
+  domain: KH
+  core: true
+  phase: Phase 1

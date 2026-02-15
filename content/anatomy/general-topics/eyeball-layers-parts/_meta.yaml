@@ -1,0 +1,13 @@
+topic_id: eyeball-layers-parts
+name: '& demonstrate parts and layers of eyeball'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN41.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN41.2
+  domain: KH
+  core: false
+  phase: Phase 1

@@ -1,0 +1,55 @@
+id: rheumatology
+title: "Rheumatology"
+subject: medicine
+description: |
+  Autoimmune diseases, arthritis, and connective tissue disorders.
+
+stats:
+  total_topics: 26
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: arthritis
+    title: "Arthritis"
+    topics:
+      - rheumatoid-arthritis
+      - osteoarthritis
+      - gout
+      - pseudogout
+      - septic-arthritis
+      - reactive-arthritis
+      - psoriatic-arthritis
+      - ankylosing-spondylitis
+  - id: connective
+    title: "Connective Tissue"
+    topics:
+      - systemic-lupus-erythematosus
+      - scleroderma
+      - polymyositis-dermatomyositis
+      - mixed-connective-tissue-disease
+      - sjogren-syndrome
+  - id: vasculitis
+    title: "Vasculitis"
+    topics:
+      - vasculitis-overview
+      - giant-cell-arteritis
+      - takayasu-arteritis
+      - polyarteritis-nodosa
+      - granulomatosis-polyangiitis
+      - eosinophilic-granulomatosis
+      - behcet-disease
+      - kawasaki-disease
+  - id: other
+    title: "Other"
+    topics:
+      - fibromyalgia
+      - antiphospholipid-syndrome-rheumatology
+      - igg4-related-disease
+      - adult-onset-stills-disease
+      - sarcoidosis-rheumatology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

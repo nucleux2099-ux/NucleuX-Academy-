@@ -1,0 +1,45 @@
+topic_id: neonatal-jaundice
+name: Neonatal Jaundice
+description: Neonatal Jaundice — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE16.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.14
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.15
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.16
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.19
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE26.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE33.3
+  domain: SH
+  core: true
+  phase: Phase 2

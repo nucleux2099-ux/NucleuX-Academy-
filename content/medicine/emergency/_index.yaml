@@ -1,0 +1,50 @@
+id: emergency
+title: "Emergency Medicine"
+subject: medicine
+description: |
+  Acute presentations, resuscitation, and triage.
+
+stats:
+  total_topics: 21
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: resuscitation
+    title: "Resuscitation"
+    topics:
+      - cpr-acls-bls
+      - anaphylaxis-emergency
+      - acute-coronary-syndrome-em
+      - acute-stroke-em
+      - status-epilepticus-em
+  - id: trauma
+    title: "Trauma"
+    topics:
+      - primary-survey-atls
+      - secondary-survey
+      - head-injury-em
+      - chest-trauma-em
+      - abdominal-trauma-em
+      - spinal-injury-em
+  - id: toxicology
+    title: "Toxicology"
+    topics:
+      - poisoning-general-approach
+      - organophosphate-poisoning
+      - paracetamol-overdose
+      - snake-bite
+      - acid-alkali-ingestion
+  - id: acute
+    title: "Acute Presentations"
+    topics:
+      - acute-abdomen-approach
+      - chest-pain-approach
+      - breathlessness-approach
+      - altered-consciousness-approach
+      - gi-bleeding-approach
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

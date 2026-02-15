@@ -1,0 +1,15 @@
+topic_id: lower-gi-bleeding
+name: Lower GI Bleeding
+description: ''
+high_yield: false
+difficulty: 3
+estimated_minutes: 20
+exam_tags:
+- NEET_PG
+prerequisites: []
+related_topics: []
+nmc_codes:
+- code: SU27.5
+  domain: K
+  core: true
+  phase: Phase 3

@@ -1,0 +1,21 @@
+topic_id: ovarian-tumors-classification
+name: Ovarian Tumors Classification
+description: Ovarian Tumors Classification — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG14.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG31.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.3
+  domain: KH
+  core: true
+  phase: Phase 3

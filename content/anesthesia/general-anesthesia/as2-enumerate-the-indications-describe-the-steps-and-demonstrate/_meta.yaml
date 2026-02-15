@@ -1,0 +1,13 @@
+topic_id: as2-enumerate-the-indications-describe-the-steps-and-demonstrate
+name: Enumerate the indications, describe the steps and demonstrate in a
+description: Enumerate the indications, describe the steps and demonstrate in a — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AS2.1
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: AS2.2
+  domain: SH
+  core: false
+  phase: Phase 2

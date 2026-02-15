@@ -1,0 +1,25 @@
+topic_id: aplastic-anemia-path
+name: Aplastic Anemia Path
+description: Aplastic Anemia Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA13.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA13.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA14.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PA15.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA16.1
+  domain: KH
+  core: true
+  phase: Phase 1

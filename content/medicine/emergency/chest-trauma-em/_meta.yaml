@@ -1,0 +1,13 @@
+topic_id: chest-trauma-em
+name: Chest Trauma Em
+description: Chest Trauma Em — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM13.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.11
+  domain: SH
+  core: true
+  phase: Phase 2

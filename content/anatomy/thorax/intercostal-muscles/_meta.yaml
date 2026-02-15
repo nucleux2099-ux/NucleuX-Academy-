@@ -1,0 +1,69 @@
+topic_id: intercostal-muscles
+name: Intercostal Muscles
+description: Intercostal Muscles — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN10.10
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN15.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN16.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN18.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN19.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN28.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN3.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN31.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN41.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN43.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN44.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN45.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN48.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN7.5
+  domain: KH
+  core: false
+  phase: Phase 1

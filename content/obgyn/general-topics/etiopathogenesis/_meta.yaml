@@ -1,0 +1,13 @@
+topic_id: etiopathogenesis
+name: And discuss the etiopathogenesis, clinical features;
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG26.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG26.2
+  domain: KH
+  core: false
+  phase: Phase 3

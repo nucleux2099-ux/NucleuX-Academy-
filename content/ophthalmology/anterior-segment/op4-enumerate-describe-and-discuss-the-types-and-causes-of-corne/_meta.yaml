@@ -1,0 +1,45 @@
+topic_id: op4-enumerate-describe-and-discuss-the-types-and-causes-of-corne
+name: Enumerate, describe and discuss the types and causes of corneal
+description: Enumerate, describe and discuss the types and causes of corneal — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OP4.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.10
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP4.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.5
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.6
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.7
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP4.8
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP4.9
+  domain: KH
+  core: true
+  phase: Phase 3

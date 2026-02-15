@@ -1,0 +1,25 @@
+topic_id: poisoning-general-approach
+name: Poisoning General Approach
+description: Poisoning General Approach — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM17.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM20.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM21.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM21.7
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM9.4
+  domain: SH
+  core: true
+  phase: Phase 2

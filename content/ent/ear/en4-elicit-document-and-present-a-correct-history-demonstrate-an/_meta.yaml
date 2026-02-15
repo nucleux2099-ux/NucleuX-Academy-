@@ -1,0 +1,217 @@
+topic_id: en4-elicit-document-and-present-a-correct-history-demonstrate-an
+name: Elicit document and present a correct history, demonstrate and describe
+description: Elicit document and present a correct history, demonstrate and describe — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: EN4.1
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.10
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.11
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.12
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.13
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.14
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.15
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.16
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.17
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.18
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.19
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.2
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.20
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: EN4.21
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.22
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.23
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.24
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.25
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.26
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.27
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.28
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.29
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.3
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.30
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.31
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: EN4.32
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.33
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.34
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.35
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: EN4.36
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: EN4.37
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.38
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.39
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.4
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.40
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.41
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.42
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.43
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.44
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.45
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: EN4.46
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.47
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.48
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.49
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.5
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.50
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.51
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN4.52
+  domain: 
+  core: false
+  phase: Phase 3
+- code: EN4.53
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: EN4.6
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.7
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.8
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN4.9
+  domain: SH
+  core: true
+  phase: Phase 3

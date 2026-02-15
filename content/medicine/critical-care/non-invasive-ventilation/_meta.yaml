@@ -1,0 +1,25 @@
+topic_id: non-invasive-ventilation
+name: Non Invasive Ventilation
+description: Non Invasive Ventilation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM1.23
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM15.18
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM2.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM26.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM6.23
+  domain: SH
+  core: true
+  phase: Phase 2

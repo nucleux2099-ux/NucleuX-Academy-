@@ -1,0 +1,13 @@
+topic_id: lupus-skin
+name: Lupus Skin
+description: Lupus Skin — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM7.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM7.13
+  domain: SH
+  core: true
+  phase: Phase 3

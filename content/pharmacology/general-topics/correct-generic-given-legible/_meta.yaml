@@ -1,0 +1,25 @@
+topic_id: correct-generic-given-legible
+name: Write a rational, correct and legible generic prescription for a given S/C
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PH3.1
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PH3.2
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PH3.6
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: PH3.7
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH3.8
+  domain: SH
+  core: true
+  phase: Phase 1

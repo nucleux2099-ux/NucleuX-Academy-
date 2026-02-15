@@ -1,0 +1,12 @@
+id: family-medicine
+title: "Family Medicine"
+subject: community-medicine
+description: |
+  Family health and primary care.
+stats:
+  total_topics: 0
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

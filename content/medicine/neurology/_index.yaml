@@ -1,0 +1,76 @@
+id: neurology
+title: "Neurology"
+subject: medicine
+description: |
+  Stroke, epilepsy, movement disorders, and neuropathies.
+
+stats:
+  total_topics: 38
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: stroke
+    title: "Cerebrovascular"
+    topics:
+      - ischemic-stroke
+      - hemorrhagic-stroke
+      - subarachnoid-hemorrhage
+      - tia
+      - cerebral-venous-thrombosis
+      - stroke-rehabilitation
+  - id: epilepsy
+    title: "Epilepsy"
+    topics:
+      - epilepsy-classification
+      - status-epilepticus
+      - antiepileptic-drugs
+      - febrile-seizures
+  - id: movement
+    title: "Movement Disorders"
+    topics:
+      - parkinson-disease
+      - essential-tremor
+      - huntington-disease
+      - wilson-disease-neuro
+      - dystonia
+      - chorea
+  - id: demyelinating
+    title: "Demyelinating"
+    topics:
+      - multiple-sclerosis
+      - neuromyelitis-optica
+      - guillain-barre-syndrome
+      - cidp
+  - id: infection
+    title: "CNS Infections"
+    topics:
+      - meningitis-bacterial
+      - meningitis-viral
+      - meningitis-tubercular
+      - brain-abscess
+      - encephalitis
+      - neurocysticercosis
+  - id: neuromuscular
+    title: "Neuromuscular"
+    topics:
+      - myasthenia-gravis
+      - motor-neuron-disease
+      - peripheral-neuropathy
+      - diabetic-neuropathy-neuro
+      - carpal-tunnel-syndrome
+  - id: headache
+    title: "Headache & Other"
+    topics:
+      - migraine
+      - tension-headache
+      - cluster-headache
+      - raised-intracranial-pressure
+      - hydrocephalus
+      - brain-tumors-medical
+      - dementia-overview
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

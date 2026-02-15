@@ -1,0 +1,45 @@
+topic_id: dvt-pe-medical
+name: Dvt Pe Medical
+description: Dvt Pe Medical — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM10.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM11.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM25.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM26.40
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: IM4.9
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM5.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM6.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM7.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM8.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM9.3
+  domain: SH
+  core: true
+  phase: Phase 2

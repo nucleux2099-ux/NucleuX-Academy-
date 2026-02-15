@@ -1,0 +1,9 @@
+topic_id: monosaccharides-disaccharides
+name: Monosaccharides Disaccharides
+description: Monosaccharides Disaccharides — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI3.1
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,29 @@
+topic_id: op7-describe-the-surgical-anatomy-and-the-metabolism-of-the-lens
+name: Describe the surgical anatomy and the metabolism of the lens
+description: Describe the surgical anatomy and the metabolism of the lens — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OP7.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OP7.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP7.3
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP7.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP7.5
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP7.6
+  domain: SH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,21 @@
+topic_id: foetomaternal-formation-functions-physiological
+name: Formation of placenta, its physiological functions, foetomaternal
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN80.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN80.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN80.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN80.6
+  domain: KH
+  core: false
+  phase: Phase 1

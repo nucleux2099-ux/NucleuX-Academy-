@@ -1,9 +1,59 @@
 topic_id: surgical-management-gerd
-name: "Surgical Management of GERD"
-description: "Workup, patient selection, operative options, post-op issues"
+name: Surgical Management of GERD
+description: Workup, patient selection, operative options, post-op issues
 high_yield: true
 difficulty: 4
 estimated_minutes: 25
-exam_tags: [NEET_PG, MRCS]
-prerequisites: [gerd, esophageal-manometry]
-related_topics: [fundoplication]
+exam_tags:
+- NEET_PG
+- MRCS
+prerequisites:
+- gerd
+- esophageal-manometry
+related_topics:
+- fundoplication
+nmc_codes:
+- code: SU10.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: SU10.4
+  domain: P
+  core: true
+  phase: Phase 3
+- code: SU12.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: SU14.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: SU14.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: SU18.3
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: SU21.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: SU6.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: SU7.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: SU8.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: SU9.3
+  domain: SH
+  core: true
+  phase: Phase 3

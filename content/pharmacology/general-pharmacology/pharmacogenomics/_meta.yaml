@@ -1,0 +1,9 @@
+topic_id: pharmacogenomics
+name: Pharmacogenomics
+description: Pharmacogenomics — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PH1.60
+  domain: KH
+  core: false
+  phase: Phase 1

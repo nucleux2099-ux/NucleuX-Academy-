@@ -1,0 +1,17 @@
+topic_id: cm19-define-and-describe-the-concept-of-essential-medicine-list-e
+name: Define and describe the concept of Essential Medicine List (EML)
+description: Define and describe the concept of Essential Medicine List (EML) — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM19.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: CM19.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: CM19.3
+  domain: KH
+  core: true
+  phase: Phase 1

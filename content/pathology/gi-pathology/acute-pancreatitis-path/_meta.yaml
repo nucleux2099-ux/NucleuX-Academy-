@@ -1,0 +1,9 @@
+topic_id: acute-pancreatitis-path
+name: Acute Pancreatitis Path
+description: Acute Pancreatitis Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA27.8
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,13 @@
+topic_id: dr2-identify-and-differentiate-vitiligo-from-other-causes-of-hyp
+name: Identify and differentiate vitiligo from other causes of hypopigmented
+description: Identify and differentiate vitiligo from other causes of hypopigmented — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DR2.1
+  domain: S
+  core: true
+  phase: Phase 2
+- code: DR2.2
+  domain: K
+  core: true
+  phase: Phase 2

@@ -1,0 +1,9 @@
+topic_id: adaptive-immunity
+name: Adaptive Immunity
+description: Adaptive Immunity — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY2.10
+  domain: KH
+  core: true
+  phase: Phase 1

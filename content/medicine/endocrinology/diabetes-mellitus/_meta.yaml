@@ -1,0 +1,61 @@
+topic_id: diabetes-mellitus
+name: "Diabetes Mellitus"
+description: "Type 1 & 2 DM, complications, insulin, OHA, DKA, HHS"
+high_yield: true
+nmc_codes:
+  - code: IM11.1
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.3
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.4
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.5
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: IM11.6
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.7
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.8
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.9
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.10
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.11
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.12
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.13
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM11.14
+    domain: KH
+    core: true
+    phase: Phase 3

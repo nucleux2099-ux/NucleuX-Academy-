@@ -1,0 +1,125 @@
+topic_id: emergence-ethics-historical-medical
+name: Medical Ethics and explain its historical emergence
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM4.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.15
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.16
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.19
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.20
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.21
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.22
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.23
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.24
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.25
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM4.26
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.27
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM4.28
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM4.29
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.30
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM4.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM4.9
+  domain: KH
+  core: false
+  phase: Phase 1

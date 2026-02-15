@@ -1,0 +1,17 @@
+topic_id: taste-smell-physiology
+name: Taste Smell Physiology
+description: Taste Smell Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.20
+  domain: P
+  core: true
+  phase: Phase 3

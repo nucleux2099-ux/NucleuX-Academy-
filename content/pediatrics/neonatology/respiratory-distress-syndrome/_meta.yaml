@@ -1,0 +1,37 @@
+topic_id: respiratory-distress-syndrome
+name: Respiratory Distress Syndrome
+description: Respiratory Distress Syndrome — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE23.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.15
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE28.16
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: PE32.12
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: PE32.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE32.7
+  domain: SH
+  core: false
+  phase: Phase 2

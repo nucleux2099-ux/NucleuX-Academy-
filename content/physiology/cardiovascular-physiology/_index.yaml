@@ -1,0 +1,41 @@
+id: cardiovascular-physiology
+title: "Cardiovascular Physiology"
+subject: physiology
+description: |
+  Cardiac cycle, ECG, and hemodynamics.
+
+stats:
+  total_topics: 18
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: cardiac
+    title: "Cardiac"
+    topics:
+      - cardiac-cycle
+      - cardiac-output
+      - frank-starling-mechanism
+      - ecg-basics
+      - cardiac-conduction-physiology
+      - heart-sounds-physiology
+      - cardiac-receptors
+      - cardiac-innervation
+  - id: vascular
+    title: "Vascular"
+    topics:
+      - arterial-blood-pressure
+      - baroreceptor-reflex
+      - venous-return
+      - capillary-exchange
+      - microcirculation
+      - lymphatic-system
+      - coronary-circulation
+      - cerebral-circulation
+      - fetal-circulation-physiology
+      - exercise-cardiovascular
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

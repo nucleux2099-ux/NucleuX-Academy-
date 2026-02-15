@@ -1,0 +1,9 @@
+topic_id: hepatic-failure-icu
+name: Hepatic Failure Icu
+description: Hepatic Failure Icu — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM5.18
+  domain: K
+  core: true
+  phase: Phase 2

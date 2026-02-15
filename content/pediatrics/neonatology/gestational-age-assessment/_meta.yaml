@@ -1,0 +1,60 @@
+topic_id: gestational-age-assessment
+name: Gestational Age Assessment
+description: Gestational Age Assessment — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE1.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE1.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE1.7
+  domain: P
+  core: false
+  phase: Phase 2
+- code: PE10.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PE18.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.6
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE20.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.13
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE28.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE30.17
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE31.4
+  core: false
+  phase: Phase 2
+- code: PE9.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE9.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE9.5
+  domain: SH
+  core: true
+  phase: Phase 2

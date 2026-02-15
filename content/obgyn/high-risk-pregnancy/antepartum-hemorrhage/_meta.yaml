@@ -1,0 +1,9 @@
+topic_id: antepartum-hemorrhage
+name: Antepartum Hemorrhage
+description: Antepartum Hemorrhage — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG35.16
+  domain: SH
+  core: true
+  phase: Phase 3

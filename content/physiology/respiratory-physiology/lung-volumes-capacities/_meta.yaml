@@ -1,0 +1,9 @@
+topic_id: lung-volumes-capacities
+name: Lung Volumes Capacities
+description: Lung Volumes Capacities — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY6.7
+  domain: KH
+  core: true
+  phase: Phase 1

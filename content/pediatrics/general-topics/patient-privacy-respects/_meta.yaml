@@ -1,0 +1,29 @@
+topic_id: patient-privacy-respects
+name: Respects patient privacy A
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE7.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE7.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE7.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE7.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE7.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE7.8
+  domain: SH
+  core: true
+  phase: Phase 2

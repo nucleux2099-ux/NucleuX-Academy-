@@ -1,0 +1,9 @@
+topic_id: high-altitude-physiology
+name: High Altitude Physiology
+description: High Altitude Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY6.4
+  domain: KH
+  core: true
+  phase: Phase 1

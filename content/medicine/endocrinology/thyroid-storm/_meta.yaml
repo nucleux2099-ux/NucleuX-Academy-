@@ -1,0 +1,17 @@
+topic_id: thyroid-storm
+name: Thyroid Storm
+description: Thyroid Storm — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM12.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM12.2
+  domain: K
+  core: false
+  phase: Phase 2
+- code: IM12.7
+  domain: SH
+  core: true
+  phase: Phase 2

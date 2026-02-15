@@ -1,0 +1,34 @@
+id: cardiovascular-drugs
+title: "Cardiovascular Drugs"
+subject: pharmacology
+description: |
+  Antihypertensives, antiarrhythmics, and antianginals.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - antihypertensives-overview
+      - ace-inhibitors-arbs
+      - calcium-channel-blockers
+      - diuretics-pharmacology
+      - antianginal-drugs
+      - nitrates
+      - antiarrhythmic-drugs
+      - cardiac-glycosides-digoxin
+      - anticoagulants
+      - antiplatelets
+      - fibrinolytics
+      - lipid-lowering-drugs
+      - drugs-for-heart-failure
+      - drugs-for-shock
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

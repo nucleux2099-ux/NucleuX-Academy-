@@ -1,0 +1,17 @@
+topic_id: diabetes-mellitus-type-1
+name: Diabetes Mellitus Type 1
+description: Diabetes Mellitus Type 1 — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM11.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM11.16
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,25 @@
+topic_id: op1-describe-the-physiology-of-vision
+name: Describe the physiology of vision.
+description: Describe the physiology of vision. — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OP1.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OP1.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP1.3
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OP1.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP1.5
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,9 @@
+topic_id: puerperal-sepsis
+name: Puerperal Sepsis
+description: Puerperal Sepsis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG19.2
+  domain: SH
+  core: true
+  phase: Phase 2

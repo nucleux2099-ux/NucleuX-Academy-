@@ -1,0 +1,9 @@
+topic_id: paracetamol-overdose
+name: Paracetamol Overdose
+description: Paracetamol Overdose — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM21.4
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,9 @@
+topic_id: g6pd-deficiency
+name: G6Pd Deficiency
+description: G6Pd Deficiency — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM9.8
+  domain: KH
+  core: true
+  phase: Phase 2

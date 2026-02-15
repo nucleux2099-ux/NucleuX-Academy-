@@ -1,0 +1,17 @@
+topic_id: parasitic-infections-systemic
+name: Parasitic Infections Systemic
+description: Parasitic Infections Systemic — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM16.9
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: IM7.22
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM7.23
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,9 @@
+topic_id: upper-vs-lower-motor-neuron
+name: Upper Vs Lower Motor Neuron
+description: Upper Vs Lower Motor Neuron — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY3.1
+  domain: KH
+  core: true
+  phase: Phase 1

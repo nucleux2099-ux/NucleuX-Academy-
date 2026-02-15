@@ -1,0 +1,9 @@
+topic_id: glomerular-filtration
+name: Glomerular Filtration
+description: Glomerular Filtration — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY7.2
+  domain: KH
+  core: true
+  phase: Phase 1

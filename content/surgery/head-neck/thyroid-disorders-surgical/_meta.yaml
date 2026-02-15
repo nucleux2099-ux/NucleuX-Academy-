@@ -1,0 +1,33 @@
+topic_id: thyroid-disorders-surgical
+name: "Thyroid Disorders — Surgical Perspective"
+description: "Clinical examination of thyroid, investigation and surgical management of hypothyroidism, hyperthyroidism, and thyroid nodules"
+high_yield: true
+difficulty: 3
+estimated_minutes: 30
+exam_tags: [NEET_PG, INICET, MRCS, UNIVERSITY]
+prerequisites: []
+related_topics:
+  - parathyroid-disorders
+  - thyroid-cancer
+tags: [endocrine, head-neck, high-yield]
+nmc_codes:
+  - code: SU22.3
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: SU22.6
+    domain: KH
+    core: true
+    phase: Phase 3
+sources:
+  primary:
+    - book: "Sabiston Textbook of Surgery"
+      edition: "22nd"
+      chapter: "Ch. 37"
+  supplementary:
+    - book: "Bailey & Love's Short Practice of Surgery"
+      edition: "28th"
+      chapter: "Ch. 50"
+    - book: "Schwartz's Principles of Surgery"
+      edition: "11th"
+      chapter: "Ch. 38"

@@ -1,0 +1,50 @@
+id: labor-delivery
+title: "Labor & Delivery"
+subject: obgyn
+description: |
+  Normal and abnormal labor, cesarean section, instrumental delivery.
+
+stats:
+  total_topics: 21
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: normal
+    title: "Normal Labor"
+    topics:
+      - mechanism-of-labor
+      - stages-of-labor
+      - partograph-interpretation
+      - pain-relief-labor
+  - id: abnormal
+    title: "Abnormal Labor"
+    topics:
+      - obstructed-labor
+      - malpositions-malpresentations
+      - breech-presentation
+      - face-presentation
+      - brow-presentation
+      - transverse-lie
+      - cord-prolapse
+  - id: operative
+    title: "Operative Delivery"
+    topics:
+      - cesarean-section-ob
+      - vacuum-extraction
+      - forceps-delivery
+      - episiotomy
+      - obstetric-injuries
+  - id: complications
+    title: "Complications"
+    topics:
+      - shoulder-dystocia
+      - uterine-rupture
+      - uterine-inversion
+      - amniotic-fluid-embolism
+      - retained-placenta
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

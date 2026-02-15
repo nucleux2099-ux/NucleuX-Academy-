@@ -1,0 +1,17 @@
+topic_id: rt1-describe-and-discuss-definition-of-radiation-mechanism-of-ac
+name: Describe and discuss definition of radiation, mechanism of action of
+description: Describe and discuss definition of radiation, mechanism of action of — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: RT1.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT1.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT1.3
+  domain: KH
+  core: true
+  phase: Phase 3

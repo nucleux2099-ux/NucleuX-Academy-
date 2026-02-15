@@ -1,0 +1,33 @@
+topic_id: temperature-regulation
+name: Temperature Regulation
+description: Temperature Regulation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY11.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY11.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY4.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.5
+  domain: KH
+  core: true
+  phase: Phase 1

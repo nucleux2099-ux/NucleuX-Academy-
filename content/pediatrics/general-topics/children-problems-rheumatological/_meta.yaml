@@ -1,0 +1,13 @@
+topic_id: children-problems-rheumatological
+name: The common Rheumatological problems in children.
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE22.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE22.3
+  domain: K
+  core: false
+  phase: Phase 2

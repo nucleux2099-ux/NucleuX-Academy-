@@ -1,0 +1,13 @@
+topic_id: cpr-acls-bls
+name: Cpr Acls Bls
+description: Cpr Acls Bls — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM2.21
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM2.22
+  domain: P
+  core: true
+  phase: Phase 2

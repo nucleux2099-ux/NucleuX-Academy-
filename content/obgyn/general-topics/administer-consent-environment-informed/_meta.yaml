@@ -1,0 +1,13 @@
+topic_id: administer-consent-environment-informed
+name: In a simulated environment administer informed consent to a person S/A/C
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG20.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: OG20.3
+  domain: KH
+  core: true
+  phase: Phase 1

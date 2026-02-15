@@ -1,0 +1,9 @@
+topic_id: meconium-aspiration
+name: Meconium Aspiration
+description: Meconium Aspiration — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE29.17
+  domain: SH
+  core: true
+  phase: Phase 2

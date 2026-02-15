@@ -1,0 +1,9 @@
+topic_id: urine-concentration-dilution
+name: Urine Concentration Dilution
+description: Urine Concentration Dilution — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY7.3
+  domain: KH
+  core: true
+  phase: Phase 1

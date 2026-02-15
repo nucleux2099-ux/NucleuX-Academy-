@@ -1,0 +1,13 @@
+topic_id: estimation-observe-sgot-sgpt
+name: Observe the estimation of SGOT & SGPT
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI2.2
+  domain: K
+  core: true
+  phase: Phase 1
+- code: BI2.5
+  domain: KH
+  core: true
+  phase: Phase 1

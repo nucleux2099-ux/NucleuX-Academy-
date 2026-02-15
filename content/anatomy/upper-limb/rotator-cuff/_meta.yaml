@@ -1,0 +1,9 @@
+topic_id: rotator-cuff
+name: Rotator Cuff
+description: Rotator Cuff — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN10.10
+  domain: SH
+  core: true
+  phase: Phase 1

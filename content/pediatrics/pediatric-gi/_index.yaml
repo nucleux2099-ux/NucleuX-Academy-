@@ -1,0 +1,30 @@
+id: pediatric-gi
+title: "Pediatric GI"
+subject: pediatrics
+description: |
+  Diarrhea, vomiting, and GI disorders in children.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - acute-diarrhea-peds
+      - chronic-diarrhea-peds
+      - dehydration-management
+      - oral-rehydration-therapy
+      - vomiting-child
+      - pyloric-stenosis
+      - intussusception-peds
+      - celiac-disease-peds
+      - inflammatory-bowel-disease-peds
+      - constipation-pediatric
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

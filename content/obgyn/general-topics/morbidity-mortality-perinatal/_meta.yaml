@@ -1,0 +1,13 @@
+topic_id: morbidity-mortality-perinatal
+name: And discuss perinatal mortality and morbidity including
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG1.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG1.3
+  domain: KH
+  core: true
+  phase: Phase 1

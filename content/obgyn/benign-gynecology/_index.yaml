@@ -1,0 +1,30 @@
+id: benign-gynecology
+title: "Benign Gynecology"
+subject: obgyn
+description: |
+  Fibroids, endometriosis, adenomyosis, ovarian cysts, PID.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - uterine-fibroids
+      - endometriosis
+      - adenomyosis
+      - ovarian-cysts
+      - dermoid-cyst
+      - chocolate-cyst
+      - pelvic-inflammatory-disease-gyn
+      - bartholin-cyst
+      - cervical-polyps
+      - asherman-syndrome
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

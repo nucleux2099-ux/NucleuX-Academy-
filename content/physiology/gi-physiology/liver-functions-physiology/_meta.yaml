@@ -1,0 +1,52 @@
+topic_id: liver-functions-physiology
+name: Liver Functions Physiology
+description: Liver Functions Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY1.1
+  core: false
+  phase: Phase 1
+- code: PY10.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY2.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY4.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.2
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,49 @@
+topic_id: basics-forensic-knowledge-like
+name: Knowledge of basics of Forensic Medicine like
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM1.1
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM1.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM1.11
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM1.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM1.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM1.4
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM1.5
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM1.6
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: FM1.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM1.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM1.9
+  domain: KH
+  core: true
+  phase: Phase 1

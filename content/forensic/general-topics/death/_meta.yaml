@@ -1,0 +1,141 @@
+topic_id: death
+name: Define, describe and discuss death and its types including
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM2.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.16
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.19
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: FM2.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.20
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.21
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.22
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.23
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.24
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.25
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.26
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.27
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.28
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.29
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM2.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.30
+  domain: K
+  core: true
+  phase: Phase 1
+- code: FM2.31
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.32
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.33
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.34
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.35
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: FM2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM2.9
+  domain: KH
+  core: true
+  phase: Phase 1

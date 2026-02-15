@@ -1,0 +1,9 @@
+topic_id: lumbar-puncture
+name: Lumbar Puncture
+description: Lumbar Puncture — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM6.15
+  domain: SH
+  core: true
+  phase: Phase 2

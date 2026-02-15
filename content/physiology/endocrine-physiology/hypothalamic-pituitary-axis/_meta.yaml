@@ -1,0 +1,9 @@
+topic_id: hypothalamic-pituitary-axis
+name: Hypothalamic Pituitary Axis
+description: Hypothalamic Pituitary Axis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY4.6
+  domain: KH
+  core: true
+  phase: Phase 1

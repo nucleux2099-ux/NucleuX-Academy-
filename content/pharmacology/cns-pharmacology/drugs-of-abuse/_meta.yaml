@@ -1,0 +1,9 @@
+topic_id: drugs-of-abuse
+name: Drugs Of Abuse
+description: Drugs Of Abuse — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PH1.22
+  domain: KH
+  core: true
+  phase: Phase 1

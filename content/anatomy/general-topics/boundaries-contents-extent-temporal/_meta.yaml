@@ -1,0 +1,9 @@
+topic_id: boundaries-contents-extent-temporal
+name: '& demonstrate extent, boundaries and contents of temporal and'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN33.1
+  domain: SH
+  core: true
+  phase: Phase 1

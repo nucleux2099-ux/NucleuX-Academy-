@@ -1,0 +1,17 @@
+topic_id: anatomical-bone-hold-position
+name: '& hold the bone in the anatomical position, Describe the salient'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN53.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN53.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN53.3
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,21 @@
+topic_id: coronary-arteries
+name: Coronary Arteries
+description: Coronary Arteries — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN22.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN25.6
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN5.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN5.4
+  domain: KH
+  core: true
+  phase: Phase 1

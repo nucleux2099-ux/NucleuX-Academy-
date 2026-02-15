@@ -1,0 +1,9 @@
+topic_id: urinary-incontinence-geriatric
+name: Urinary Incontinence Geriatric
+description: Urinary Incontinence Geriatric — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.13
+  domain: P
+  core: true
+  phase: Phase 1

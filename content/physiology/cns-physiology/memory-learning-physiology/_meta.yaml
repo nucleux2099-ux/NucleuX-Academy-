@@ -1,0 +1,13 @@
+topic_id: memory-learning-physiology
+name: Memory Learning Physiology
+description: Memory Learning Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.9
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.18
+  domain: KH
+  core: true
+  phase: Phase 1

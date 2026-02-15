@@ -1,0 +1,13 @@
+topic_id: goals-plan-state-strategies
+name: State the vision and outline the goals, strategies and plan of action
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE17.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE17.2
+  domain: KH
+  core: true
+  phase: Phase 2

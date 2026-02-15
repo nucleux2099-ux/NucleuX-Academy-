@@ -1,0 +1,37 @@
+topic_id: pathophysiology
+name: The etiology, pathophysiology, pathology features and
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA27.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA27.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA27.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA27.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA27.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA27.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA27.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA27.9
+  domain: KH
+  core: false
+  phase: Phase 1

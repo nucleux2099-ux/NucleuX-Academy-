@@ -1,0 +1,9 @@
+topic_id: hepatitis-b
+name: Hepatitis B
+description: Hepatitis B — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM5.16
+  domain: KH
+  core: true
+  phase: Phase 1

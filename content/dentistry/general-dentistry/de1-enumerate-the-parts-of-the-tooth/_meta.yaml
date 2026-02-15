@@ -1,0 +1,25 @@
+topic_id: de1-enumerate-the-parts-of-the-tooth
+name: Enumerate the parts of the tooth
+description: Enumerate the parts of the tooth — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DE1.1
+  domain: K
+  core: false
+  phase: Phase 1
+- code: DE1.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DE1.3
+  domain: SH
+  core: false
+  phase: Phase 3
+- code: DE1.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DE1.5
+  domain: SH
+  core: true
+  phase: Phase 3

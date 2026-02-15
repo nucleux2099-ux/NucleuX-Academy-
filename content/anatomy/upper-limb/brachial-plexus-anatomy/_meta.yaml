@@ -1,0 +1,13 @@
+topic_id: brachial-plexus-anatomy
+name: Brachial Plexus Anatomy
+description: Brachial Plexus Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN10.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN48.4
+  domain: KH
+  core: true
+  phase: Phase 1

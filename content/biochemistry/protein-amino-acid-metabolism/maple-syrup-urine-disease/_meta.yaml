@@ -1,0 +1,33 @@
+topic_id: maple-syrup-urine-disease
+name: Maple Syrup Urine Disease
+description: Maple Syrup Urine Disease — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.20
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: BI11.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.4
+  domain: P
+  core: true
+  phase: Phase 1
+- code: BI11.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI8.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI9.2
+  domain: KH
+  core: true
+  phase: Phase 1

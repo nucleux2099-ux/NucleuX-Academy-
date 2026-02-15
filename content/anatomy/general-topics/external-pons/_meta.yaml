@@ -1,0 +1,9 @@
+topic_id: external-pons
+name: External features of pons
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN59.1
+  domain: SH
+  core: true
+  phase: Phase 1

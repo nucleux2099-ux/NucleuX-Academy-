@@ -1,0 +1,21 @@
+topic_id: able-correctly-discussion-end
+name: At the end of the session the Phase II student must be able to Lecture or...
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: PA42.1
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: PA42.2
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: PA42.3
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: PA42.4
+  domain: ''
+  core: false
+  phase: Phase 1

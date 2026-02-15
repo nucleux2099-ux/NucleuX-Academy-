@@ -1,0 +1,33 @@
+topic_id: anaemia-duplication-ensure-needed
+name: Anaemia both subjects usually not needed. Ensure redundancy and duplication...
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: MI2.1
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: MI2.3
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: MI2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI2.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI2.6
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: MI2.7
+  domain: ''
+  core: false
+  phase: Phase 1
+- code: MI2.8
+  domain: ''
+  core: false
+  phase: Phase 1

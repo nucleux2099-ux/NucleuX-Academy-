@@ -1,0 +1,25 @@
+topic_id: pm4-describe-the-common-patterns-clinical-features-investigation
+name: Describe the common patterns, clinical features, investigations,
+description: Describe the common patterns, clinical features, investigations, — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PM4.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM4.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM4.3
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: PM4.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM4.5
+  domain: SH
+  core: true
+  phase: Phase 2

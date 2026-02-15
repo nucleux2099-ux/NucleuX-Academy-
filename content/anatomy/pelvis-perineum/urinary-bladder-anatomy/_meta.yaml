@@ -1,0 +1,17 @@
+topic_id: urinary-bladder-anatomy
+name: Urinary Bladder Anatomy
+description: Urinary Bladder Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN48.5
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN48.6
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN52.7
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,51 @@
+id: pelvis-perineum
+title: "Pelvis & Perineum"
+subject: anatomy
+description: |
+  Pelvic organs, perineum, and reproductive anatomy.
+
+stats:
+  total_topics: 22
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: bony
+    title: "Bony Pelvis"
+    topics:
+      - pelvic-bones
+      - pelvic-joints
+      - pelvic-types
+      - pelvic-floor-anatomy
+      - perineal-body
+  - id: male
+    title: "Male Pelvis"
+    topics:
+      - prostate-anatomy
+      - urinary-bladder-anatomy
+      - male-urethra
+      - testis-anatomy
+      - spermatic-cord-anatomy
+      - penis-anatomy
+  - id: female
+    title: "Female Pelvis"
+    topics:
+      - uterus-anatomy
+      - ovary-anatomy
+      - fallopian-tube-anatomy
+      - vagina-anatomy
+      - vulva-anatomy
+      - broad-ligament
+      - pelvic-supports
+  - id: perineum
+    title: "Perineum"
+    topics:
+      - ischioanal-fossa
+      - urogenital-triangle
+      - anal-triangle
+      - pudendal-nerve
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

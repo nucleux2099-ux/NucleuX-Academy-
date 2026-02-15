@@ -1,0 +1,9 @@
+topic_id: cardiac-tamponade
+name: Cardiac Tamponade
+description: Cardiac Tamponade — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM2.17
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,13 @@
+topic_id: immunodeficiency-diseases
+name: Immunodeficiency Diseases
+description: Immunodeficiency Diseases — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI1.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI8.4
+  domain: KH
+  core: true
+  phase: Phase 1

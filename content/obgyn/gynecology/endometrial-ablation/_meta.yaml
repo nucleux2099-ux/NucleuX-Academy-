@@ -1,0 +1,9 @@
+topic_id: endometrial-ablation
+name: Endometrial Ablation
+description: Endometrial Ablation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG37.5
+  domain: SH
+  core: true
+  phase: Phase 3

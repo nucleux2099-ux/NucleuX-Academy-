@@ -1,0 +1,21 @@
+topic_id: microanatomical
+name: '& identify the microanatomical features of'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN52.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN52.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN52.3
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN52.6
+  domain: KH
+  core: true
+  phase: Phase 1

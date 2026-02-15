@@ -1,0 +1,9 @@
+topic_id: psychiatric-emergencies
+name: Psychiatric Emergencies
+description: Psychiatric Emergencies — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM8.15
+  domain: SH
+  core: true
+  phase: Phase 1

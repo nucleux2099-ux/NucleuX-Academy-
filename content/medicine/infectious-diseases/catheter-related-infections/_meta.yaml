@@ -1,0 +1,9 @@
+topic_id: catheter-related-infections
+name: Catheter Related Infections
+description: Catheter Related Infections — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM25.13
+  domain: SH
+  core: true
+  phase: Phase 2

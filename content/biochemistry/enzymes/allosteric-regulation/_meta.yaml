@@ -1,0 +1,17 @@
+topic_id: allosteric-regulation
+name: Allosteric Regulation
+description: Allosteric Regulation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI3.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI3.9
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.3
+  domain: KH
+  core: true
+  phase: Phase 1

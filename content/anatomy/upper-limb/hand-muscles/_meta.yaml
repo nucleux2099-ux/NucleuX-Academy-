@@ -1,0 +1,17 @@
+topic_id: hand-muscles
+name: Hand Muscles
+description: Hand Muscles — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN12.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN8.5
+  domain: SH
+  core: true
+  phase: Phase 1

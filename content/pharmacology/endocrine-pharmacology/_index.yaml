@@ -1,0 +1,31 @@
+id: endocrine-pharmacology
+title: "Endocrine Pharmacology"
+subject: pharmacology
+description: |
+  Insulin, thyroid drugs, corticosteroids, and sex hormones.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - insulin-preparations
+      - oral-hypoglycemics-pharmacology
+      - thyroid-drugs
+      - antithyroid-drugs
+      - corticosteroids-pharmacology
+      - anterior-pituitary-hormones
+      - posterior-pituitary-hormones
+      - sex-hormones-pharmacology
+      - oral-contraceptives-pharmacology
+      - drugs-for-osteoporosis
+      - oxytocin-tocolytics
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

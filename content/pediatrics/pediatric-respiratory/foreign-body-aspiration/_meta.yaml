@@ -1,0 +1,13 @@
+topic_id: foreign-body-aspiration
+name: Foreign Body Aspiration
+description: Foreign Body Aspiration — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE28.8
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE29.17
+  domain: SH
+  core: true
+  phase: Phase 2

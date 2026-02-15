@@ -1,0 +1,9 @@
+topic_id: tissue-repair
+name: Tissue Repair
+description: Tissue Repair — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA5.1
+  domain: KH
+  core: true
+  phase: Phase 1

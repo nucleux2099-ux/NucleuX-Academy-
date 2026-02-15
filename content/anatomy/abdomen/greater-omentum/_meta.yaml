@@ -1,0 +1,9 @@
+topic_id: greater-omentum
+name: Greater Omentum
+description: Greater Omentum — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN47.1
+  domain: SH
+  core: true
+  phase: Phase 1

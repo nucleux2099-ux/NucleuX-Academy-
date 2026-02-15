@@ -1,0 +1,21 @@
+topic_id: pm2-describe-the-causes-of-disability-in-the-patient-with-a-cere
+name: Describe the causes of disability in the patient with a cerebrovascular
+description: Describe the causes of disability in the patient with a cerebrovascular — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PM2.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PM2.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM2.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM2.4
+  domain: KH
+  core: true
+  phase: Phase 2

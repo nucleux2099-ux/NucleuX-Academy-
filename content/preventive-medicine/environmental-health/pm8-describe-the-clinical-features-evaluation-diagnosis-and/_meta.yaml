@@ -1,0 +1,25 @@
+topic_id: pm8-describe-the-clinical-features-evaluation-diagnosis-and
+name: Describe the clinical features, evaluation, diagnosis and
+description: Describe the clinical features, evaluation, diagnosis and — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PM8.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM8.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM8.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM8.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PM8.5
+  domain: KH
+  core: true
+  phase: Phase 2

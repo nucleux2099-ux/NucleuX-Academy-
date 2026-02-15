@@ -1,0 +1,13 @@
+topic_id: classify-describe-and-discuss-the-etiology-pathology-clinica
+name: Classify, describe and discuss the etiology, pathology, clinical
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG33.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG33.2
+  domain: KH
+  core: true
+  phase: Phase 3

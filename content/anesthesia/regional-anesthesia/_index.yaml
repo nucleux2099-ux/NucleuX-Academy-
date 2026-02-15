@@ -1,0 +1,12 @@
+id: regional-anesthesia
+title: "Regional Anesthesia"
+subject: anesthesia
+description: |
+  Regional and local anesthetic techniques.
+stats:
+  total_topics: 1
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

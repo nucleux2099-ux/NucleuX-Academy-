@@ -1,0 +1,9 @@
+topic_id: leprosy-classification
+name: Leprosy Classification
+description: Leprosy Classification — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI2.2
+  domain: KH
+  core: true
+  phase: Phase 2

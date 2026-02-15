@@ -1,0 +1,9 @@
+topic_id: rheumatoid-arthritis
+name: Rheumatoid Arthritis
+description: Rheumatoid Arthritis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM7.6
+  domain: KH
+  core: true
+  phase: Phase 2

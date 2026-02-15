@@ -1,0 +1,25 @@
+topic_id: factors-risk
+name: The risk factors, clinical features, diagnosis and
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: PE14.1
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PE14.2
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: PE14.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PE14.4
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PE14.5
+  domain: KH
+  core: false
+  phase: Phase 2

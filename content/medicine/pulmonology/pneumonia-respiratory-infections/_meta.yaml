@@ -1,0 +1,77 @@
+topic_id: pneumonia-respiratory-infections
+name: "Pneumonia & Respiratory Infections"
+description: "CAP, HAP, atypical pneumonia, CURB-65, chest X-ray interpretation"
+high_yield: true
+nmc_codes:
+  - code: IM4.1
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.3
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.4
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: IM4.5
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.6
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.7
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.8
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.9
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.10
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.11
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.12
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.13
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.14
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.15
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.16
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.17
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM4.18
+    domain: KH
+    core: true
+    phase: Phase 3

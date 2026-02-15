@@ -1,0 +1,37 @@
+topic_id: breathlessness-approach
+name: Breathlessness Approach
+description: Breathlessness Approach — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.17
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM20.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM20.8
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM20.9
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: IM21.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM22.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: IM7.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM7.5
+  domain: KH
+  core: true
+  phase: Phase 3

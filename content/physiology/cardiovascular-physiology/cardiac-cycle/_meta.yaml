@@ -1,0 +1,21 @@
+topic_id: cardiac-cycle
+name: Cardiac Cycle
+description: Cardiac Cycle — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY5.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.9
+  domain: KH
+  core: true
+  phase: Phase 1

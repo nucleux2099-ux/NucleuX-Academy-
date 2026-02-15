@@ -1,0 +1,29 @@
+topic_id: upper-respiratory-infections
+name: Upper Respiratory Infections
+description: Upper Respiratory Infections — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE23.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE26.11
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE27.15
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE28.16
+  domain: SH
+  core: false
+  phase: Phase 2

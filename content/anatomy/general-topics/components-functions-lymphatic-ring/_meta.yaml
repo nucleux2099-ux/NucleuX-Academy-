@@ -1,0 +1,17 @@
+topic_id: components-functions-lymphatic-ring
+name: The components and functions of Waldeyer’s lymphatic ring
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN36.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN36.4
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN36.5
+  domain: KH
+  core: false
+  phase: Phase 1

@@ -1,0 +1,33 @@
+topic_id: coagulation-disorders-path
+name: Coagulation Disorders Path
+description: Coagulation Disorders Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA11.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA12.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA12.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA21.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PA21.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA21.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA9.4
+  domain: KH
+  core: true
+  phase: Phase 1

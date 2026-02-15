@@ -1,0 +1,9 @@
+topic_id: urinary-tract-infections
+name: Urinary Tract Infections
+description: Urinary Tract Infections — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM11.13
+  domain: P
+  core: true
+  phase: Phase 1

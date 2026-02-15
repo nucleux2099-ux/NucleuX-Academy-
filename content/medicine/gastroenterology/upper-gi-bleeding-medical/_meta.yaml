@@ -1,0 +1,17 @@
+topic_id: upper-gi-bleeding-medical
+name: Upper Gi Bleeding Medical
+description: Upper Gi Bleeding Medical — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM15.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM15.6
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: IM18.6
+  domain: SH
+  core: true
+  phase: Phase 1

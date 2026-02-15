@@ -1,0 +1,13 @@
+topic_id: absorption-dietary-digestion-processes
+name: The processes involved in digestion and absorption of dietary
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI4.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI4.6
+  domain: KH
+  core: true
+  phase: Phase 1

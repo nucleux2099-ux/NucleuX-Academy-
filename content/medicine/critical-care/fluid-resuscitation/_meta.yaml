@@ -1,0 +1,13 @@
+topic_id: fluid-resuscitation
+name: Fluid Resuscitation
+description: Fluid Resuscitation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM15.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM3.9
+  domain: SH
+  core: true
+  phase: Phase 2

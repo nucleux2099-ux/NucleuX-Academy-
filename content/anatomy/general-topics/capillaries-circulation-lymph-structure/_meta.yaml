@@ -1,0 +1,13 @@
+topic_id: capillaries-circulation-lymph-structure
+name: Structure of lymph capillaries & mechanism of lymph circulation
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: AN6.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN6.3
+  domain: KH
+  core: false
+  phase: Phase 1

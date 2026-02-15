@@ -1,0 +1,9 @@
+topic_id: penis-anatomy
+name: Penis Anatomy
+description: Penis Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN46.3
+  domain: KH
+  core: true
+  phase: Phase 1

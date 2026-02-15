@@ -1,0 +1,9 @@
+topic_id: pelvic-organ-prolapse
+name: Pelvic Organ Prolapse
+description: Pelvic Organ Prolapse — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG8.5
+  domain: SH
+  core: true
+  phase: Phase 3

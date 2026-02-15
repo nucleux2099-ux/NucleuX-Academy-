@@ -1,0 +1,21 @@
+topic_id: distinguishing-presenting
+name: The pathogenesis, pathology, presenting and distinguishing
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA29.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PA29.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PA29.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PA29.5
+  domain: KH
+  core: false
+  phase: Phase 3

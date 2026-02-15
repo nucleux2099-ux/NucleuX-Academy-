@@ -1,0 +1,16 @@
+topic_id: thyroid-cancer-medical
+name: Thyroid Cancer Medical
+description: Thyroid Cancer Medical — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM12.2
+  domain: K
+  core: false
+  phase: Phase 2
+- code: IM12.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM13.17
+  core: false
+  phase: Phase 3

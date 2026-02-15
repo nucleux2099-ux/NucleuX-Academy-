@@ -1,0 +1,17 @@
+topic_id: reproductive-hormones-male
+name: Reproductive Hormones Male
+description: Reproductive Hormones Male — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY9.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.6
+  domain: KH
+  core: true
+  phase: Phase 1

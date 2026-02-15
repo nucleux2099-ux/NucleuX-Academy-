@@ -1,0 +1,9 @@
+topic_id: lupus-nephritis-path
+name: Lupus Nephritis Path
+description: Lupus Nephritis Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA9.5
+  domain: KH
+  core: true
+  phase: Phase 1

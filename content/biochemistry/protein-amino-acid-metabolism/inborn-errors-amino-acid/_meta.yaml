@@ -1,0 +1,9 @@
+topic_id: inborn-errors-amino-acid
+name: Inborn Errors Amino Acid
+description: Inborn Errors Amino Acid — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.5
+  domain: KH
+  core: true
+  phase: Phase 1

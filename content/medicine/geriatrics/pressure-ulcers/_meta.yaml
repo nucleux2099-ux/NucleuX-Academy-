@@ -1,0 +1,9 @@
+topic_id: pressure-ulcers
+name: Pressure Ulcers
+description: Pressure Ulcers — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM1.13
+  domain: SH
+  core: true
+  phase: Phase 2

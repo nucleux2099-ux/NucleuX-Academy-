@@ -1,0 +1,109 @@
+topic_id: five-morbidity-mortality
+name: The common causes of morbidity and mortality in the under five
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE27.1
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PE27.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.14
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.16
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.17
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.18
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.19
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.20
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.22
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.23
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.24
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.25
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.26
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.27
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.28
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE27.30
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.33
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.34
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.35
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.7
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE27.8
+  domain: KH
+  core: true
+  phase: Phase 2

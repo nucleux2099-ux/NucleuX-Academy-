@@ -1,0 +1,49 @@
+topic_id: pericarditis-acute
+name: Pericarditis Acute
+description: Pericarditis Acute — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM1.21
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM15.3
+  domain: K
+  core: true
+  phase: Phase 1
+- code: IM16.1
+  domain: K
+  core: true
+  phase: Phase 1
+- code: IM16.2
+  domain: K
+  core: true
+  phase: Phase 2
+- code: IM18.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM2.16
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.20
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM2.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM6.1
+  domain: KH
+  core: true
+  phase: Phase 1

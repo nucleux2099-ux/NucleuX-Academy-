@@ -1,0 +1,8 @@
+topic_id: small-cell-lung-cancer
+name: Small Cell Lung Cancer
+description: Small Cell Lung Cancer — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: IM13.17
+  core: false
+  phase: Phase 3

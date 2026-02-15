@@ -1,0 +1,19 @@
+topic_id: peripheral-neuropathy
+name: Peripheral Neuropathy
+description: Peripheral Neuropathy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM1.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM10.21
+  domain: P
+  core: true
+  phase: Phase 2
+- code: IM9.10
+  core: false
+  phase: Phase 2
+- code: IM9.11
+  core: false
+  phase: Phase 1

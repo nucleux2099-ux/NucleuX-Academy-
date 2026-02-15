@@ -1,0 +1,9 @@
+topic_id: gi-motility-disorders
+name: Gi Motility Disorders
+description: Gi Motility Disorders — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM19.2
+  domain: KH
+  core: true
+  phase: Phase 2

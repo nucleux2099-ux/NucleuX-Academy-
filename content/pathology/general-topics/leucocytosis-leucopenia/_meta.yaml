@@ -1,0 +1,9 @@
+topic_id: leucocytosis-leucopenia
+name: And describe the causes of leucocytosis leucopenia
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA18.1
+  domain: KH
+  core: true
+  phase: Phase 1

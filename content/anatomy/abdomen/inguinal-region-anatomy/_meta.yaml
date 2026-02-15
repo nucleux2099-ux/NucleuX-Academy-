@@ -1,0 +1,17 @@
+topic_id: inguinal-region-anatomy
+name: Inguinal Region Anatomy
+description: Inguinal Region Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN20.4
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN44.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN44.5
+  domain: KH
+  core: true
+  phase: Phase 1

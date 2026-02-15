@@ -1,0 +1,9 @@
+topic_id: dehydration-management
+name: Dehydration Management
+description: Dehydration Management — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE24.10
+  domain: SH
+  core: true
+  phase: Phase 2

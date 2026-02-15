@@ -1,0 +1,17 @@
+topic_id: antenatal-screening
+name: Antenatal Screening
+description: Antenatal Screening — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.7
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG36.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG8.1
+  domain: KH
+  core: true
+  phase: Phase 3

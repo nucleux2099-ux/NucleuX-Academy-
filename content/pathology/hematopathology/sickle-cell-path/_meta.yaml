@@ -1,0 +1,21 @@
+topic_id: sickle-cell-path
+name: Sickle Cell Path
+description: Sickle Cell Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA2.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA2.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PA20.1
+  domain: SH
+  core: true
+  phase: Phase 1

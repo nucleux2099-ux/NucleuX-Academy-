@@ -1,0 +1,72 @@
+id: trauma-fractures
+title: "Trauma & Fractures"
+subject: orthopedics
+description: |
+  Fractures, dislocations, and polytrauma management.
+
+stats:
+  total_topics: 40
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: general
+    title: "General Principles"
+    topics:
+      - fracture-classification
+      - fracture-healing
+      - principles-of-fracture-management
+      - open-fractures
+      - compartment-syndrome-ortho
+      - fat-embolism
+      - cast-complications
+      - traction-methods
+  - id: upper
+    title: "Upper Limb Fractures"
+    topics:
+      - clavicle-fracture
+      - proximal-humerus-fracture
+      - shaft-humerus-fracture
+      - supracondylar-fracture
+      - olecranon-fracture
+      - radial-head-fracture
+      - colles-fracture
+      - smiths-fracture
+      - scaphoid-fracture
+      - monteggia-fracture
+      - galeazzi-fracture
+  - id: lower
+    title: "Lower Limb Fractures"
+    topics:
+      - neck-of-femur-fracture
+      - intertrochanteric-fracture
+      - shaft-femur-fracture
+      - supracondylar-femur-fracture
+      - tibial-plateau-fracture
+      - shaft-tibia-fracture
+      - ankle-fracture
+      - calcaneum-fracture
+      - metatarsal-fractures
+  - id: pelvis
+    title: "Pelvis & Spine"
+    topics:
+      - pelvic-fractures
+      - acetabulum-fracture
+      - spinal-fractures
+      - cervical-spine-injuries
+      - thoracolumbar-fractures
+      - hangman-fracture
+      - jefferson-fracture
+  - id: dislocations
+    title: "Dislocations"
+    topics:
+      - shoulder-dislocation
+      - elbow-dislocation
+      - hip-dislocation
+      - knee-dislocation
+      - perilunate-dislocation
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

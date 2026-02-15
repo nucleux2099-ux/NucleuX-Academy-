@@ -1,0 +1,9 @@
+topic_id: atrial-fibrillation
+name: Atrial Fibrillation
+description: Atrial Fibrillation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM12.10
+  domain: SH
+  core: true
+  phase: Phase 2

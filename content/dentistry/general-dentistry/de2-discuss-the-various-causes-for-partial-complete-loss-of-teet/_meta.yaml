@@ -1,0 +1,25 @@
+topic_id: de2-discuss-the-various-causes-for-partial-complete-loss-of-teet
+name: Discuss the various causes for partial /complete loss of teeth and
+description: Discuss the various causes for partial /complete loss of teeth and — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DE2.1
+  domain: K
+  core: false
+  phase: Phase 3
+- code: DE2.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: DE2.3
+  domain: SH
+  core: false
+  phase: Phase 3
+- code: DE2.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: DE2.5
+  domain: SH
+  core: true
+  phase: Phase 3

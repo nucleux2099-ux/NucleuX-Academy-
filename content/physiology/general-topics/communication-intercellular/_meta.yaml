@@ -1,0 +1,13 @@
+topic_id: communication-intercellular
+name: Intercellular communication
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY1.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY1.9
+  domain: KH
+  core: true
+  phase: Phase 1

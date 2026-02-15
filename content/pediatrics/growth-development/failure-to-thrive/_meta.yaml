@@ -1,0 +1,17 @@
+topic_id: failure-to-thrive
+name: Failure To Thrive
+description: Failure To Thrive — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE2.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE2.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE21.9
+  domain: SH
+  core: true
+  phase: Phase 2

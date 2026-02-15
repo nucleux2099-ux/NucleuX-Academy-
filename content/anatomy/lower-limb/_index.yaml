@@ -1,0 +1,37 @@
+id: lower-limb
+title: "Lower Limb"
+subject: anatomy
+description: |
+  Hip, thigh, leg, and foot.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: hip
+    title: "Hip & Thigh"
+    topics:
+      - hip-joint
+      - femoral-triangle
+      - adductor-canal
+      - gluteal-region
+      - sciatic-nerve-anatomy
+      - thigh-muscles
+  - id: leg
+    title: "Leg & Foot"
+    topics:
+      - knee-joint
+      - popliteal-fossa
+      - leg-compartments
+      - ankle-joint
+      - foot-arches
+      - foot-muscles
+      - blood-supply-lower-limb
+      - nerves-lower-limb
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

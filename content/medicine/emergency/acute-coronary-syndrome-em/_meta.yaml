@@ -1,0 +1,17 @@
+topic_id: acute-coronary-syndrome-em
+name: Acute Coronary Syndrome Em
+description: Acute Coronary Syndrome Em — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM1.25
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.14
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM2.5
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,34 @@
+id: molecular-biology
+title: "Molecular Biology"
+subject: biochemistry
+description: |
+  DNA replication, transcription, translation, and gene regulation.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - dna-replication
+      - dna-repair-mechanisms
+      - transcription
+      - rna-processing
+      - translation-protein-synthesis
+      - post-translational-modifications
+      - gene-regulation
+      - operon-concept
+      - recombinant-dna-technology
+      - pcr
+      - blotting-techniques
+      - gene-therapy
+      - crispr-cas9
+      - epigenetics
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

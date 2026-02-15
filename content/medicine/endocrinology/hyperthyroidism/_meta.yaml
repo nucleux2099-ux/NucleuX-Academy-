@@ -1,0 +1,9 @@
+topic_id: hyperthyroidism
+name: Hyperthyroidism
+description: Hyperthyroidism — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM12.11
+  domain: SH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,36 @@
+id: vitamins-minerals
+title: "Vitamins & Minerals"
+subject: biochemistry
+description: |
+  Fat-soluble, water-soluble vitamins, and trace elements.
+
+stats:
+  total_topics: 16
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - vitamin-a
+      - vitamin-d-biochemistry
+      - vitamin-e
+      - vitamin-k
+      - vitamin-b1-thiamine
+      - vitamin-b2-riboflavin
+      - vitamin-b3-niacin
+      - vitamin-b6-pyridoxine
+      - vitamin-b12
+      - folic-acid
+      - vitamin-c
+      - biotin-pantothenic-acid
+      - iron-metabolism
+      - calcium-phosphorus
+      - zinc-copper-selenium
+      - trace-elements
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

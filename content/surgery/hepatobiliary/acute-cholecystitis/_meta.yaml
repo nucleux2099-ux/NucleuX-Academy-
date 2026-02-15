@@ -1,0 +1,7 @@
+title: Acute Cholecystitis
+order: 2
+nmc_codes:
+- code: SU29.7
+  domain: KH
+  core: true
+  phase: Phase 3

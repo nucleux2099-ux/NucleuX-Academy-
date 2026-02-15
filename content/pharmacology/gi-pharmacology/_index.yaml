@@ -1,0 +1,29 @@
+id: gi-pharmacology
+title: "GI Pharmacology"
+subject: pharmacology
+description: |
+  Antiemetics, antacids, and GI motility drugs.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - antacids-ppi-h2-blockers
+      - prokinetics
+      - antiemetics-pharmacology
+      - laxatives
+      - antidiarrheal-drugs
+      - drugs-for-ibd
+      - ursodeoxycholic-acid
+      - pancreatic-enzyme-supplements
+      - appetite-stimulants-suppressants
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,17 @@
+topic_id: caloric-consequences-protein
+name: And describe the causes and consequences of protein caloric
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM23.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM23.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM23.5
+  domain: SH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,9 @@
+topic_id: cesarean-section-ob
+name: Cesarean Section Ob
+description: Cesarean Section Ob — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG37.1
+  domain: SH
+  core: true
+  phase: Phase 3

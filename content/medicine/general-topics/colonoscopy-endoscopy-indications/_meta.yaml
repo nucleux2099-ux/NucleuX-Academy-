@@ -1,0 +1,45 @@
+topic_id: colonoscopy-endoscopy-indications
+name: The indications for endoscopy, colonoscopy and other
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM15.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM15.14
+  domain: K
+  core: true
+  phase: Phase 1
+- code: IM15.15
+  domain: K
+  core: true
+  phase: Phase 1
+- code: IM15.16
+  domain: K
+  core: true
+  phase: Phase 2
+- code: IM15.17
+  domain: K
+  core: true
+  phase: Phase 2
+- code: IM15.4
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: IM15.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM15.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM15.8
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM15.9
+  domain: SH
+  core: true
+  phase: Phase 1

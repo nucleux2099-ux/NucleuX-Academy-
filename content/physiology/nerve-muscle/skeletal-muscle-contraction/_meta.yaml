@@ -1,0 +1,25 @@
+topic_id: skeletal-muscle-contraction
+name: Skeletal Muscle Contraction
+description: Skeletal Muscle Contraction — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY3.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.9
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,13 @@
+topic_id: pelvic-bones
+name: Pelvic Bones
+description: Pelvic Bones — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AN26.6
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN53.4
+  domain: SH
+  core: false
+  phase: Phase 1

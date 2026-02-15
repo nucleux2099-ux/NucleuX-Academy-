@@ -1,0 +1,13 @@
+topic_id: systemic-lupus-erythematosus
+name: Systemic Lupus Erythematosus
+description: Systemic Lupus Erythematosus — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM7.22
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM7.23
+  domain: SH
+  core: true
+  phase: Phase 1

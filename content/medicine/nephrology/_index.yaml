@@ -1,24 +1,69 @@
 id: nephrology
 title: "Nephrology"
 subject: medicine
+description: |
+  Kidney diseases, dialysis, and fluid/electrolyte balance.
 
-description: "Kidney diseases, dialysis, and fluid/electrolyte balance"
-icon: "🫘"
-order: 10
-tags: [medicine, nephrology, kidney]
-level: "UG | PG"
-
-sources:
-  - "Harrison's Principles of Internal Medicine"
-  - "Brenner & Rector's The Kidney"
-  - "Davidson's Principles and Practice of Medicine"
+stats:
+  total_topics: 37
+  topics_written: 0
+  coverage_percent: 0
 
 categories:
-  - id: core
-    title: "Core"
+  - id: aki
+    title: "Acute Kidney Injury"
     topics:
       - acute-kidney-injury
+      - prerenal-aki
+      - intrinsic-aki
+      - postrenal-aki
+      - contrast-nephropathy
+      - hepatorenal-syndrome-nephro
+  - id: ckd
+    title: "Chronic Kidney Disease"
+    topics:
       - chronic-kidney-disease
-      - glomerulonephritis
+      - ckd-staging
+      - ckd-complications
+      - renal-osteodystrophy
+      - dialysis-overview
+      - hemodialysis
+      - peritoneal-dialysis
+      - renal-transplant
+  - id: glomerular
+    title: "Glomerular Disease"
+    topics:
       - nephrotic-syndrome
-      - diabetic-nephropathy
+      - nephritic-syndrome
+      - minimal-change-disease
+      - membranous-nephropathy
+      - iga-nephropathy
+      - fsgs
+      - mpgn
+      - lupus-nephritis
+      - anti-gbm-disease
+      - rpgn
+  - id: tubular
+    title: "Tubular & Interstitial"
+    topics:
+      - renal-tubular-acidosis
+      - interstitial-nephritis
+      - polycystic-kidney-disease
+      - medullary-sponge-kidney
+  - id: electrolytes
+    title: "Fluid & Electrolytes"
+    topics:
+      - hyponatremia
+      - hypernatremia
+      - hypokalemia
+      - hyperkalemia
+      - hypocalcemia
+      - hypercalcemia
+      - metabolic-acidosis
+      - metabolic-alkalosis
+      - acid-base-disorders
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

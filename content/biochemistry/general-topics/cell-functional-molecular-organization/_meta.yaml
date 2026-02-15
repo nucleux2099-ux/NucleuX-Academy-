@@ -1,0 +1,21 @@
+topic_id: cell-functional-molecular-organization
+name: The molecular and functional organization of a cell and its sub-
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI1.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI1.26
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: BI1.27
+  domain: SH
+  core: false
+  phase: Phase 2
+- code: BI1.28
+  domain: KH
+  core: true
+  phase: Phase 2

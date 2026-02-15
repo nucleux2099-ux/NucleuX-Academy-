@@ -1,0 +1,69 @@
+topic_id: eatures-etio
+name: The ti etio-pathogenesis, li th clinical f t eatures , complications
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE30.1
+  domain: ''
+  core: false
+  phase: Phase 2
+- code: PE30.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE30.14
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.15
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.19
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE30.20
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE30.21
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE30.22
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE30.23
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE30.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.7
+  domain: KH
+  core: true
+  phase: Phase 2

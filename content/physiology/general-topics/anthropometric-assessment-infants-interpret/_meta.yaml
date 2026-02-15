@@ -1,0 +1,37 @@
+topic_id: anthropometric-assessment-infants-interpret
+name: Interpret anthropometric assessment of infants
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY11.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PY11.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY11.12
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PY11.13
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PY11.14
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PY11.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY11.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY11.5
+  domain: KH
+  core: true
+  phase: Phase 1

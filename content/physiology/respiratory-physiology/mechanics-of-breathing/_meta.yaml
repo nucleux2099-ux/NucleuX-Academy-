@@ -1,0 +1,9 @@
+topic_id: mechanics-of-breathing
+name: Mechanics Of Breathing
+description: Mechanics Of Breathing — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY6.2
+  domain: KH
+  core: true
+  phase: Phase 1

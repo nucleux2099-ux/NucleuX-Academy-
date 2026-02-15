@@ -1,0 +1,9 @@
+topic_id: carpal-tunnel
+name: Carpal Tunnel
+description: Carpal Tunnel — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN12.4
+  domain: KH
+  core: true
+  phase: Phase 1

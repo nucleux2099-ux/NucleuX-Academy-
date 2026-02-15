@@ -1,0 +1,29 @@
+id: contraception
+title: "Contraception & Family Planning"
+subject: obgyn
+description: |
+  Contraceptive methods, counseling, and sterilization.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - combined-oral-contraceptives
+      - progesterone-only-methods
+      - intrauterine-devices
+      - barrier-methods
+      - emergency-contraception
+      - female-sterilization
+      - male-sterilization
+      - natural-family-planning
+      - lactational-amenorrhea-method
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

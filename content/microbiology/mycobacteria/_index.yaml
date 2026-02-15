@@ -1,0 +1,29 @@
+id: mycobacteria
+title: "Mycobacteria"
+subject: microbiology
+description: |
+  Tuberculosis and atypical mycobacteria.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - mycobacterium-tuberculosis
+      - tuberculosis-diagnosis
+      - tuberculin-test
+      - igra
+      - mycobacterium-leprae
+      - leprosy-classification
+      - atypical-mycobacteria
+      - mycobacterium-avium-complex
+      - bcg-vaccine
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

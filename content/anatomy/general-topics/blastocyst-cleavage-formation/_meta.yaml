@@ -1,0 +1,25 @@
+topic_id: blastocyst-cleavage-formation
+name: Cleavage and formation of blastocyst
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN78.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN78.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN78.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN78.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN78.5
+  domain: KH
+  core: true
+  phase: Phase 1

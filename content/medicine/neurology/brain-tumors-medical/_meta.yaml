@@ -1,0 +1,13 @@
+topic_id: brain-tumors-medical
+name: Brain Tumors Medical
+description: Brain Tumors Medical — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM18.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM19.1
+  domain: KH
+  core: true
+  phase: Phase 1

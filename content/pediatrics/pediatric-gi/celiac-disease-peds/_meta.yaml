@@ -1,0 +1,17 @@
+topic_id: celiac-disease-peds
+name: Celiac Disease Peds
+description: Celiac Disease Peds — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE23.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.8
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE9.7
+  domain: SH
+  core: false
+  phase: Phase 2

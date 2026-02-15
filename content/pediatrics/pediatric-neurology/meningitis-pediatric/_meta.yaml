@@ -1,0 +1,17 @@
+topic_id: meningitis-pediatric
+name: Meningitis Pediatric
+description: Meningitis Pediatric — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE23.14
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE27.9
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE30.2
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,34 @@
+id: respiratory-pathology
+title: "Respiratory Pathology"
+subject: pathology
+description: |
+  Pneumonia, COPD, and lung tumors.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - pneumonia-pathology
+      - lung-abscess-path
+      - tuberculosis-pathology
+      - copd-pathology
+      - asthma-pathology
+      - bronchiectasis-path
+      - interstitial-lung-disease-path
+      - pneumoconiosis
+      - sarcoidosis-path
+      - lung-cancer-pathology
+      - mesothelioma-path
+      - pleural-effusion-path
+      - pneumothorax-path
+      - ards-pathology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

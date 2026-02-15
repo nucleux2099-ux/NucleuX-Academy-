@@ -1,0 +1,9 @@
+topic_id: male-sterilization
+name: Male Sterilization
+description: Male Sterilization — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG38.3
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,17 @@
+topic_id: dr13-distinguish-bulla-from-vesicles
+name: Distinguish bulla from vesicles
+description: Distinguish bulla from vesicles — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DR13.1
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: DR13.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: DR13.3
+  domain: SH
+  core: true
+  phase: Phase 2

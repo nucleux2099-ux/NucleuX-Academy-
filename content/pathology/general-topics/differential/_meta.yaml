@@ -1,0 +1,9 @@
+topic_id: differential
+name: The etiology, investigations and differential diagnosis of
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA14.2
+  domain: KH
+  core: true
+  phase: Phase 2

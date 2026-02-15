@@ -1,0 +1,13 @@
+topic_id: connective-functional-tissue
+name: '& identify various types of connective tissue with functional'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN66.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN66.2
+  domain: KH
+  core: false
+  phase: Phase 1

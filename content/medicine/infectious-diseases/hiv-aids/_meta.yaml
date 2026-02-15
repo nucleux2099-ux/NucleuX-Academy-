@@ -1,0 +1,17 @@
+topic_id: hiv-aids
+name: Hiv Aids
+description: Hiv Aids — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM6.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM6.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM6.23
+  domain: SH
+  core: true
+  phase: Phase 2

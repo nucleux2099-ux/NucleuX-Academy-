@@ -1,0 +1,49 @@
+topic_id: dr10-identify-and-l-classify-syphilis-based-on-the-presentation-a
+name: Identify and l classify syphilis based on the presentation and li clinical
+description: Identify and l classify syphilis based on the presentation and li clinical — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DR10.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: DR10.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: DR10.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: DR10.2
+  domain: 
+  core: false
+  phase: Phase 2
+- code: DR10.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DR10.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: DR10.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: DR10.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DR10.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: DR10.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: DR10.9
+  domain: KH
+  core: true
+  phase: Phase 2

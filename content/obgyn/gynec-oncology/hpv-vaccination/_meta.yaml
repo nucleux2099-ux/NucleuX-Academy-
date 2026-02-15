@@ -1,0 +1,9 @@
+topic_id: hpv-vaccination
+name: Hpv Vaccination
+description: Hpv Vaccination — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG8.7
+  domain: KH
+  core: true
+  phase: Phase 3

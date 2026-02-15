@@ -1,0 +1,9 @@
+topic_id: short-stature
+name: Short Stature
+description: Short Stature — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE2.5
+  domain: SH
+  core: true
+  phase: Phase 2

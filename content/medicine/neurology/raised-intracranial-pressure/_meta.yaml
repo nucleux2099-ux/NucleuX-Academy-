@@ -1,0 +1,9 @@
+topic_id: raised-intracranial-pressure
+name: Raised Intracranial Pressure
+description: Raised Intracranial Pressure — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM1.13
+  domain: SH
+  core: true
+  phase: Phase 2

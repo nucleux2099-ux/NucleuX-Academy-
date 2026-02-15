@@ -1,0 +1,45 @@
+topic_id: aetiology
+name: And discuss the epidemiology, aetiology and the
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: IM8.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM8.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM8.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM8.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM8.13
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM8.16
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM8.17
+  domain: P
+  core: true
+  phase: Phase 2
+- code: IM8.18
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: IM8.20
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM8.7
+  domain: KH
+  core: true
+  phase: Phase 1

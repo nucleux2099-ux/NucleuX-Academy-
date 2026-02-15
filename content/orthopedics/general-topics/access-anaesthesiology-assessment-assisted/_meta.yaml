@@ -1,0 +1,9 @@
+topic_id: access-anaesthesiology-assessment-assisted
+name: Participate as a member in team for Resuscitation of Polytrauma S/A KH / Y...
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: OR13.2
+  domain: ''
+  core: false
+  phase: Phase 3

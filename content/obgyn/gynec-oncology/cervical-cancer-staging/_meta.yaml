@@ -1,0 +1,21 @@
+topic_id: cervical-cancer-staging
+name: Cervical Cancer Staging
+description: Cervical Cancer Staging — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG33.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: OG34.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.3
+  domain: KH
+  core: true
+  phase: Phase 3

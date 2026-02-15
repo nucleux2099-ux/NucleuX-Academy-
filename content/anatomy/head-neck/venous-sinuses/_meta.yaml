@@ -1,0 +1,29 @@
+topic_id: venous-sinuses
+name: Venous Sinuses
+description: Venous Sinuses — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN20.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN22.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN30.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN30.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN33.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN5.7
+  domain: KH
+  core: false
+  phase: Phase 1

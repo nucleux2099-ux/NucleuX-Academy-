@@ -1,0 +1,9 @@
+topic_id: bipolar-disorder
+name: Bipolar Disorder
+description: Bipolar Disorder — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: IM22.13
+  domain: KH
+  core: false
+  phase: Phase 1

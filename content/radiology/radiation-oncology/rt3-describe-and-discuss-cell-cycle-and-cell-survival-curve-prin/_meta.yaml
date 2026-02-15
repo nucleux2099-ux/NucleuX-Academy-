@@ -1,0 +1,13 @@
+topic_id: rt3-describe-and-discuss-cell-cycle-and-cell-survival-curve-prin
+name: Describe and discuss cell cycle and cell survival curve, principles of
+description: Describe and discuss cell cycle and cell survival curve, principles of — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: RT3.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT3.2
+  domain: KH
+  core: true
+  phase: Phase 3

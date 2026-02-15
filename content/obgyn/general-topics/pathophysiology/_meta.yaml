@@ -1,0 +1,21 @@
+topic_id: pathophysiology
+name: Define, classify and describe the etiology and pathophysiology
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG12.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG12.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG12.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG12.4
+  domain: KH
+  core: true
+  phase: Phase 2

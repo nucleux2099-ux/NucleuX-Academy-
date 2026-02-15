@@ -1,0 +1,9 @@
+topic_id: endometrial-hyperplasia
+name: Endometrial Hyperplasia
+description: Endometrial Hyperplasia — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG37.5
+  domain: SH
+  core: true
+  phase: Phase 3

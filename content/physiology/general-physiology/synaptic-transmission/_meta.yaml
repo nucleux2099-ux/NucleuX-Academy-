@@ -1,0 +1,13 @@
+topic_id: synaptic-transmission
+name: Synaptic Transmission
+description: Synaptic Transmission — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY3.4
+  domain: KH
+  core: true
+  phase: Phase 1

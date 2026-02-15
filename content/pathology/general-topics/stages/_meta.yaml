@@ -1,0 +1,25 @@
+topic_id: stages
+name: And describe the etiology, types, pathogenesis, stages
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA26.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA26.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA26.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA26.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA26.5
+  domain: KH
+  core: true
+  phase: Phase 2

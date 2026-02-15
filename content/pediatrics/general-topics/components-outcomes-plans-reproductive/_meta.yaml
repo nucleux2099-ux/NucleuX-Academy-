@@ -1,0 +1,25 @@
+topic_id: components-outcomes-plans-reproductive
+name: And explain the components, plans, outcomes of Reproductive
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE18.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE18.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE18.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE18.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE18.8
+  domain: KH
+  core: true
+  phase: Phase 2

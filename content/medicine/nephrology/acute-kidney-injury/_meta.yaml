@@ -1,9 +1,45 @@
 topic_id: acute-kidney-injury
 name: "Acute Kidney Injury"
-description: "KDIGO staging, prerenal vs intrinsic vs postrenal, FENa, dialysis indications"
+description: "AKI classification, CKD staging, dialysis indications, electrolyte emergencies"
 high_yield: true
-difficulty: 3
-estimated_minutes: 20
-exam_tags: [NEET_PG, INICET]
-prerequisites: []
-related_topics: [chronic-kidney-disease, glomerulonephritis, nephrotic-syndrome]
+nmc_codes:
+  - code: IM9.1
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.3
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.4
+    domain: SH
+    core: true
+    phase: Phase 3
+  - code: IM9.5
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.6
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.7
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.8
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.9
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: IM9.10
+    domain: KH
+    core: true
+    phase: Phase 3

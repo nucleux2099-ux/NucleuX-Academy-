@@ -1,0 +1,8 @@
+topic_id: tuberculosis-bone-joint
+name: Tuberculosis Bone Joint
+description: Tuberculosis Bone Joint — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR3.1
+  core: false
+  phase: Phase 3

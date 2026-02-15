@@ -1,0 +1,9 @@
+topic_id: primary-survey-atls
+name: Primary Survey Atls
+description: Primary Survey Atls — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM8.5
+  domain: KH
+  core: true
+  phase: Phase 1

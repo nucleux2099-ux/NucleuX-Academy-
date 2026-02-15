@@ -1,0 +1,21 @@
+topic_id: triangles-of-neck
+name: Triangles Of Neck
+description: Triangles Of Neck — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN17.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN29.3
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN35.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN35.7
+  domain: KH
+  core: true
+  phase: Phase 1

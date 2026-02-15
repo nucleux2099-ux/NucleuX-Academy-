@@ -1,0 +1,13 @@
+topic_id: ectopic-pregnancy
+name: Ectopic Pregnancy
+description: Ectopic Pregnancy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG12.6
+  domain: KH
+  core: true
+  phase: Phase 2

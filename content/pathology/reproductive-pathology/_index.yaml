@@ -1,0 +1,42 @@
+id: reproductive-pathology
+title: "Reproductive Pathology"
+subject: pathology
+description: |
+  Breast, cervical, and testicular pathology.
+
+stats:
+  total_topics: 16
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: breast
+    title: "Breast"
+    topics:
+      - breast-pathology-overview
+      - fibrocystic-changes
+      - fibroadenoma-path
+      - phyllodes-tumor-path
+      - breast-carcinoma-path
+      - paget-disease-breast-path
+  - id: female
+    title: "Female Genital"
+    topics:
+      - cervical-pathology
+      - cin-path
+      - cervical-carcinoma-path
+      - endometrial-pathology
+      - endometrial-carcinoma-path
+      - ovarian-tumors-path
+      - gestational-trophoblastic-disease-path
+  - id: male
+    title: "Male Genital"
+    topics:
+      - testicular-tumors-path
+      - prostatic-hyperplasia-path
+      - prostate-cancer-path
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

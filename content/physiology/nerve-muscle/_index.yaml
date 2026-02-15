@@ -1,0 +1,29 @@
+id: nerve-muscle
+title: "Nerve & Muscle Physiology"
+subject: physiology
+description: |
+  Action potentials, NMJ, and muscle contraction.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - nerve-conduction
+      - neuromuscular-junction
+      - skeletal-muscle-contraction
+      - excitation-contraction-coupling
+      - smooth-muscle-physiology
+      - cardiac-muscle-physiology
+      - motor-unit
+      - muscle-spindle-gto
+      - reflexes-physiology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,17 @@
+topic_id: operative-vaginal-delivery
+name: Operative Vaginal Delivery
+description: Operative Vaginal Delivery — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG13.5
+  domain: P
+  core: true
+  phase: Phase 3
+- code: OG22.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.4
+  domain: SH
+  core: true
+  phase: Phase 3

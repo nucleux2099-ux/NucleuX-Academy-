@@ -1,0 +1,32 @@
+id: protein-amino-acid-metabolism
+title: "Protein & Amino Acid Metabolism"
+subject: biochemistry
+description: |
+  Amino acid catabolism, urea cycle, and one-carbon metabolism.
+
+stats:
+  total_topics: 12
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - transamination-deamination
+      - urea-cycle
+      - amino-acid-catabolism
+      - phenylalanine-tyrosine-metabolism
+      - tryptophan-metabolism
+      - branched-chain-amino-acids
+      - one-carbon-metabolism
+      - creatine-synthesis
+      - inborn-errors-amino-acid
+      - maple-syrup-urine-disease
+      - homocystinuria
+      - alkaptonuria
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

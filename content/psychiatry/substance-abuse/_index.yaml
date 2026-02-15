@@ -1,0 +1,12 @@
+id: substance-abuse
+title: "Substance Abuse"
+subject: psychiatry
+description: |
+  Alcohol and substance use disorders.
+stats:
+  total_topics: 0
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

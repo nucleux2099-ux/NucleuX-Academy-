@@ -1,0 +1,33 @@
+topic_id: electrolyte-fluid-health-requirement
+name: The fluid and electrolyte requirement in health and
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE15.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE15.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE15.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE15.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE15.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE15.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE15.7
+  domain: SH
+  core: true
+  phase: Phase 2

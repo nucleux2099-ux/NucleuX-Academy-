@@ -1,0 +1,13 @@
+topic_id: surrogacy-legal-aspects
+name: Surrogacy Legal Aspects
+description: Surrogacy Legal Aspects — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG20.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OG35.6
+  domain: SH
+  core: true
+  phase: Phase 3

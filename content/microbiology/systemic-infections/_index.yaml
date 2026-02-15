@@ -1,0 +1,31 @@
+id: systemic-infections
+title: "Systemic Infections"
+subject: microbiology
+description: |
+  CNS infections, respiratory infections, and hospital-acquired infections.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - urinary-tract-infections-micro
+      - respiratory-tract-infections-micro
+      - cns-infections-micro
+      - gi-infections-micro
+      - blood-stream-infections
+      - wound-infections-micro
+      - sexually-transmitted-infections-micro
+      - hospital-acquired-infections-micro
+      - biofilm-infections
+      - emerging-infections
+      - zoonotic-infections
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

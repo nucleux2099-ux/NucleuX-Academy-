@@ -1,0 +1,17 @@
+topic_id: parotid-gland-anatomy
+name: Parotid Gland Anatomy
+description: Parotid Gland Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN43.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN43.6
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN70.1
+  domain: SH
+  core: true
+  phase: Phase 1

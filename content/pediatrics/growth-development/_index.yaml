@@ -1,0 +1,30 @@
+id: growth-development
+title: "Growth & Development"
+subject: pediatrics
+description: |
+  Milestones, failure to thrive, and developmental disorders.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - normal-development-milestones
+      - failure-to-thrive
+      - short-stature
+      - obesity-pediatric
+      - developmental-delay
+      - autism-spectrum-disorder
+      - adhd
+      - intellectual-disability
+      - cerebral-palsy
+      - down-syndrome
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

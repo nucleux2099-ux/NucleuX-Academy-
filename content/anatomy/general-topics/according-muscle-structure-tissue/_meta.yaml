@@ -1,0 +1,13 @@
+topic_id: according-muscle-structure-tissue
+name: Classify muscle tissue according to structure & action
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN3.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN3.2
+  domain: KH
+  core: true
+  phase: Phase 1

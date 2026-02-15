@@ -1,0 +1,21 @@
+topic_id: ps15-describe-the-aetiology-and-magnitude-of-mental-retardation
+name: Describe the aetiology and magnitude of mental retardation
+description: Describe the aetiology and magnitude of mental retardation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS15.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS15.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS15.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS15.4
+  domain: KH
+  core: true
+  phase: Phase 2

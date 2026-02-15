@@ -1,0 +1,9 @@
+topic_id: schizoaffective-disorder
+name: Schizoaffective Disorder
+description: Schizoaffective Disorder — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: IM22.13
+  domain: KH
+  core: false
+  phase: Phase 1

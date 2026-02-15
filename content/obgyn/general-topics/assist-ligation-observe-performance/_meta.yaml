@@ -1,0 +1,13 @@
+topic_id: assist-ligation-observe-performance
+name: Observe/ assist in the performance of tubal ligation
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG19.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG19.4
+  domain: SH
+  core: true
+  phase: Phase 3

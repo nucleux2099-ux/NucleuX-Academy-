@@ -1,0 +1,44 @@
+topic_id: pcl-injury
+name: Pcl Injury
+description: Pcl Injury — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OR2.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: OR2.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OR2.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OR2.16
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OR2.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: OR2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OR2.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OR2.7
+  core: false
+  phase: Phase 3
+- code: OR2.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: OR2.9
+  domain: KH
+  core: true
+  phase: Phase 1

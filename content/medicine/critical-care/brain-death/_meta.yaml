@@ -1,0 +1,17 @@
+topic_id: brain-death
+name: Brain Death
+description: Brain Death — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM18.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM19.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: IM19.2
+  domain: KH
+  core: true
+  phase: Phase 2

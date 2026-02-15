@@ -1,0 +1,9 @@
+topic_id: anatomical-aspects-laryngitis
+name: The anatomical aspects of laryngitis
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: AN38.2
+  domain: KH
+  core: false
+  phase: Phase 1

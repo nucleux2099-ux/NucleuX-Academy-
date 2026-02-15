@@ -1,0 +1,9 @@
+topic_id: course-origin-relations-tributaries
+name: '& demonstrate origin, course, relations, tributaries and'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN23.3
+  domain: SH
+  core: true
+  phase: Phase 1

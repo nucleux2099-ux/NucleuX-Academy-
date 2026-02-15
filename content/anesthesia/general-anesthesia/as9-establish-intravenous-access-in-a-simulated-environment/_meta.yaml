@@ -1,0 +1,21 @@
+topic_id: as9-establish-intravenous-access-in-a-simulated-environment
+name: Establish intravenous access in a simulated environment
+description: Establish intravenous access in a simulated environment — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AS9.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS9.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS9.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS9.4
+  domain: KH
+  core: true
+  phase: Phase 3

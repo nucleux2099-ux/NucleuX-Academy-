@@ -1,14 +1,57 @@
-title: General Pathology
-description: Fundamental mechanisms of disease - cell injury, inflammation, repair, and neoplasia
-icon: 🔬
-order: 1
-topics:
-  - cell-injury
-  - inflammation
-  - tissue-repair
-  - hemodynamic-disorders
-  - neoplasia
-tags:
-  - pathology
-  - basic-science
-  - foundation
+id: general-pathology
+title: "General Pathology"
+subject: pathology
+description: |
+  Cell injury, inflammation, repair, and neoplasia.
+
+stats:
+  total_topics: 28
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: cell
+    title: "Cell Injury & Death"
+    topics:
+      - cell-injury
+      - cellular-adaptations
+      - apoptosis
+      - necrosis-types
+      - intracellular-accumulations
+      - calcification-pathological
+      - amyloidosis
+  - id: inflammation
+    title: "Inflammation & Repair"
+    topics:
+      - acute-inflammation
+      - chronic-inflammation
+      - granulomatous-inflammation
+      - wound-healing-pathology
+      - tissue-repair
+  - id: hemodynamics
+    title: "Hemodynamic Disorders"
+    topics:
+      - edema-pathology
+      - hyperemia-congestion
+      - thrombosis
+      - embolism
+      - infarction
+      - shock-pathology
+      - dic-pathology
+  - id: neoplasia
+    title: "Neoplasia"
+    topics:
+      - neoplasia-overview
+      - benign-vs-malignant
+      - tumor-nomenclature
+      - carcinogenesis
+      - tumor-genetics
+      - tumor-immunity
+      - paraneoplastic-syndromes
+      - tumor-markers
+      - grading-staging
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

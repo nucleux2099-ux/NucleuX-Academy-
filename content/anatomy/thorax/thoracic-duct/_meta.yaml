@@ -1,0 +1,25 @@
+topic_id: thoracic-duct
+name: Thoracic Duct
+description: Thoracic Duct — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN21.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN23.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN23.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN43.6
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN57.4
+  domain: KH
+  core: true
+  phase: Phase 1

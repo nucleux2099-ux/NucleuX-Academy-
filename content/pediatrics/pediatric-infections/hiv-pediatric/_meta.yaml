@@ -1,0 +1,9 @@
+topic_id: hiv-pediatric
+name: Hiv Pediatric
+description: Hiv Pediatric — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE19.5
+  domain: KH
+  core: true
+  phase: Phase 1

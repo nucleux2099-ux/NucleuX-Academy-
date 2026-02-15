@@ -1,0 +1,17 @@
+topic_id: cubital-fossa
+name: Cubital Fossa
+description: Cubital Fossa — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN11.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN11.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN36.3
+  domain: KH
+  core: false
+  phase: Phase 1

@@ -1,0 +1,9 @@
+topic_id: etio-multi-presentation
+name: The etio-pathogenesis, clinical presentation and multi-
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE3.8
+  domain: KH
+  core: true
+  phase: Phase 2

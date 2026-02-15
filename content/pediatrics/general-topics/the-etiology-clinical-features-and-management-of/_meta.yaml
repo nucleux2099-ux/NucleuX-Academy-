@@ -1,0 +1,45 @@
+topic_id: the-etiology-clinical-features-and-management-of
+name: The etiology, clinical features and management of
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE20.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.13
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.17
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.18
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE20.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.20
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE20.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE20.8
+  domain: KH
+  core: true
+  phase: Phase 2

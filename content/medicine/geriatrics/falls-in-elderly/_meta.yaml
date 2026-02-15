@@ -1,0 +1,17 @@
+topic_id: falls-in-elderly
+name: Falls In Elderly
+description: Falls In Elderly — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM24.19
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM24.20
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: IM24.21
+  domain: KH
+  core: true
+  phase: Phase 2

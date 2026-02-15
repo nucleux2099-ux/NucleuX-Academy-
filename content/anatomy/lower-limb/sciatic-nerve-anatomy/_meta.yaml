@@ -1,0 +1,9 @@
+topic_id: sciatic-nerve-anatomy
+name: Sciatic Nerve Anatomy
+description: Sciatic Nerve Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN16.2
+  domain: KH
+  core: true
+  phase: Phase 1

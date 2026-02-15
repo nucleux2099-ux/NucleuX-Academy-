@@ -1,0 +1,9 @@
+topic_id: stable-angina
+name: Stable Angina
+description: Stable Angina — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: IM2.9
+  domain: SH
+  core: true
+  phase: Phase 2
