@@ -34,6 +34,7 @@ export const SUBSPECIALTY_CONTENT_MAP: Record<string, Record<string, string>> = 
     'pancreas': '07-pancreas',
     'small-intestine': '08-small-intestine',
     'colorectal': '09-colon-rectum',
+    'colon-rectum': '09-colon-rectum',
     'anorectal': '10-anorectal',
     'hernia': '11-hernias',
     'hernias': '11-hernias',
