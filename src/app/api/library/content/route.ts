@@ -105,27 +105,28 @@ async function loadRichContentForSubject(subjectSlug: string, subspecialtySlug: 
       return tryDirectAccess(subjectSlug, subspecialtySlug, topicSlug)
     }
 
-    const filePath = path.join(CONTENT_BASE, subjectFolder, subspecialtyFolder, `${filename}.md`)
-    
-    // Security check
-    const normalizedPath = path.normalize(filePath)
-    if (!normalizedPath.startsWith(CONTENT_BASE)) {
-      return NextResponse.json({ error: 'Invalid path' }, { status: 400 })
+    // Try folder-based first: {subject}/{subspecialty}/{topic}/textbook.md
+    const folderTextbook = path.join(CONTENT_BASE, subjectFolder, subspecialtyFolder, topicSlug, 'textbook.md')
+    const normalizedFolder = path.normalize(folderTextbook)
+    if (normalizedFolder.startsWith(CONTENT_BASE)) {
+      try {
+        const content = await fs.readFile(folderTextbook, 'utf-8')
+        return NextResponse.json({ content, hasRichContent: true })
+      } catch {}
     }
 
-    try {
-      const content = await fs.readFile(filePath, 'utf-8')
-      return NextResponse.json({ 
-        content,
-        hasRichContent: true,
-        subject: subjectFolder,
-        subspecialty: subspecialtyFolder,
-        filename 
-      })
-    } catch {
-      // Try direct access
-      return tryDirectAccess(subjectSlug, subspecialtySlug, topicSlug)
+    // Try flat file: {subject}/{subspecialty}/{filename}.md
+    const filePath = path.join(CONTENT_BASE, subjectFolder, subspecialtyFolder, `${filename}.md`)
+    const normalizedPath = path.normalize(filePath)
+    if (normalizedPath.startsWith(CONTENT_BASE)) {
+      try {
+        const content = await fs.readFile(filePath, 'utf-8')
+        return NextResponse.json({ content, hasRichContent: true })
+      } catch {}
     }
+
+    // Fallback to direct access with smart resolution
+    return tryDirectAccess(subjectSlug, subspecialtySlug, topicSlug)
   } catch (error) {
     console.error('Error loading rich content:', error)
     return NextResponse.json({ error: 'Failed to load content' }, { status: 500 })
@@ -133,31 +134,75 @@ async function loadRichContentForSubject(subjectSlug: string, subspecialtySlug: 
 }
 
 // Try to load content directly from file system
+// Supports: folder-based (topic/textbook.md), flat (topic.md), and numbered dirs
 async function tryDirectAccess(subjectSlug: string, subspecialtySlug: string, topicSlug: string) {
   try {
-    // Try direct path: content/{subject}/{subspecialty}/{topic}.md
-    const filePath = path.join(CONTENT_BASE, subjectSlug, subspecialtySlug, `${topicSlug}.md`)
+    const subjectDir = path.join(CONTENT_BASE, subjectSlug)
     
-    const normalizedPath = path.normalize(filePath)
-    if (!normalizedPath.startsWith(CONTENT_BASE)) {
+    // Find the actual subspecialty directory (handles numbered prefixes)
+    let subspecialtyDir: string | null = null
+    const candidates = [
+      subspecialtySlug,
+      // Check content-mapping
+      ...((() => {
+        try {
+          const mapped = require('@/lib/data/content-mapping').SUBSPECIALTY_CONTENT_MAP[subjectSlug]?.[subspecialtySlug]
+          return mapped ? [mapped] : []
+        } catch { return [] }
+      })()),
+    ]
+    
+    for (const candidate of candidates) {
+      const tryPath = path.join(subjectDir, candidate)
+      try {
+        await fs.access(tryPath)
+        subspecialtyDir = tryPath
+        break
+      } catch {}
+    }
+    
+    // Also try numbered prefix scan
+    if (!subspecialtyDir) {
+      try {
+        const entries = await fs.readdir(subjectDir)
+        for (const entry of entries) {
+          if (entry.endsWith(`-${subspecialtySlug}`) || entry === subspecialtySlug) {
+            const tryPath = path.join(subjectDir, entry)
+            const stat = await fs.stat(tryPath)
+            if (stat.isDirectory()) {
+              subspecialtyDir = tryPath
+              break
+            }
+          }
+        }
+      } catch {}
+    }
+
+    if (!subspecialtyDir) {
+      return NextResponse.json({ error: 'Subspecialty not found', hasRichContent: false }, { status: 404 })
+    }
+
+    // Security check
+    const normalizedSubDir = path.normalize(subspecialtyDir)
+    if (!normalizedSubDir.startsWith(CONTENT_BASE)) {
       return NextResponse.json({ error: 'Invalid path' }, { status: 400 })
     }
 
+    // Try folder-based: {subspecialty}/{topic}/textbook.md
+    const folderTextbook = path.join(subspecialtyDir, topicSlug, 'textbook.md')
     try {
-      const content = await fs.readFile(filePath, 'utf-8')
-      return NextResponse.json({ 
-        content,
-        hasRichContent: true,
-        subject: subjectSlug,
-        subspecialty: subspecialtySlug,
-        topic: topicSlug 
-      })
-    } catch {
-      return NextResponse.json({ 
-        error: 'Content file not found',
-        hasRichContent: false 
-      }, { status: 404 })
-    }
+      const content = await fs.readFile(folderTextbook, 'utf-8')
+      return NextResponse.json({ content, hasRichContent: true })
+    } catch {}
+
+    // Try flat file: {subspecialty}/{topic}.md
+    const flatFile = path.join(subspecialtyDir, `${topicSlug}.md`)
+    try {
+      const content = await fs.readFile(flatFile, 'utf-8')
+      return NextResponse.json({ content, hasRichContent: true })
+    } catch {}
+
+    return NextResponse.json({ error: 'Content file not found', hasRichContent: false }, { status: 404 })
   } catch (error) {
     console.error('Error in direct access:', error)
     return NextResponse.json({ error: 'Failed to load content' }, { status: 500 })
