@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import topicNmcCodes from "@/lib/data/topic-nmc-codes.json";
 import {
   SURGERY_SUBSPECIALTIES,
   SURGERY_UG_MODULES,
@@ -38,6 +39,14 @@ function levelBadge(level: SurgeryLevel) {
 /* ─── Search helper ─── */
 function matches(text: string, query: string) {
   return text.toLowerCase().includes(query.toLowerCase());
+}
+
+/* ─── Reverse map: code → first library path ─── */
+const codeToPath: Record<string, string> = {};
+for (const [topicPath, codes] of Object.entries(topicNmcCodes as Record<string, string[]>)) {
+  for (const code of codes) {
+    if (!codeToPath[code]) codeToPath[code] = `/library/${topicPath}`;
+  }
 }
 
 type ViewTab = "overview" | "ug" | "pg" | "ss";
@@ -281,9 +290,19 @@ export default function SurgeryCBMEPage() {
               <div className="space-y-1.5 mt-3">
                 {mod.competencies.map((c) => (
                   <div key={c.code} className="flex items-start gap-2 text-sm">
-                    <span className={`px-1.5 py-0.5 text-xs rounded border shrink-0 font-mono ${domainBadge(c.domain).bg}`}>
-                      {c.code}
-                    </span>
+                    {codeToPath[c.code] ? (
+                      <Link
+                        href={codeToPath[c.code]}
+                        className={`px-1.5 py-0.5 text-xs rounded border shrink-0 font-mono ${domainBadge(c.domain).bg} hover:ring-1 hover:ring-teal-400/50 transition-all`}
+                        title="View in Library"
+                      >
+                        {c.code}
+                      </Link>
+                    ) : (
+                      <span className={`px-1.5 py-0.5 text-xs rounded border shrink-0 font-mono ${domainBadge(c.domain).bg}`}>
+                        {c.code}
+                      </span>
+                    )}
                     <span className={`px-1 py-0 text-xs rounded border shrink-0 ${domainBadge(c.domain).bg}`}>
                       {c.domain}
                     </span>

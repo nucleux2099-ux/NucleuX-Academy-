@@ -232,6 +232,22 @@ export default function SubspecialtyClient({
                         </p>
                       )}
 
+                      {topic.nmcCodes && topic.nmcCodes.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          {topic.nmcCodes.slice(0, 3).map((nmc) => (
+                            <span key={typeof nmc === 'string' ? nmc : nmc.code} 
+                                  className="px-1.5 py-0.5 text-[10px] rounded bg-[rgba(91,179,179,0.1)] text-[#5BB3B3] border border-[rgba(91,179,179,0.15)]">
+                              {typeof nmc === 'string' ? nmc : nmc.code}
+                            </span>
+                          ))}
+                          {topic.nmcCodes.length > 3 && (
+                            <span className="px-1.5 py-0.5 text-[10px] rounded bg-[#2D3E50] text-[#6B7280]">
+                              +{topic.nmcCodes.length - 3}
+                            </span>
+                          )}
+                        </div>
+                      )}
+
                       <div className="flex items-center gap-4 text-xs text-[#6B7280]">
                         <div className="flex items-center gap-1.5">
                           <Clock className="w-3.5 h-3.5" />

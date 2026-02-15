@@ -11,8 +11,24 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import type { LibraryTopic } from '@/lib/types/library';
+import type { LibraryTopic, NmcCode } from '@/lib/types/library';
 import { SUBSPECIALTY_CONTENT_MAP } from '@/lib/data/content-mapping';
+
+/**
+ * Normalize NMC codes from _meta.yaml — handles both string and object formats.
+ */
+function normalizeNmcCodes(raw: unknown): NmcCode[] | undefined {
+  if (!Array.isArray(raw) || raw.length === 0) return undefined;
+  return raw.map((item) => {
+    if (typeof item === 'string') {
+      return { code: item, domain: 'KH' as const, core: false };
+    }
+    if (item && typeof item === 'object' && 'code' in item) {
+      return item as NmcCode;
+    }
+    return { code: String(item), domain: 'KH' as const, core: false };
+  });
+}
 
 // Base content directory
 const CONTENT_DIR = path.join(process.cwd(), 'content');
@@ -355,7 +371,7 @@ export function loadTopicFromFolder(
       prerequisites: meta.prerequisites,
       relatedTopics: meta.related_topics,
       examTags: meta.exam_tags,
-      nmcCodes: meta.nmc_codes,
+      nmcCodes: normalizeNmcCodes(meta.nmc_codes),
       content: {
         concept: explorer,
         examPrep: examPrepMd ? { summary: examPrepMd } : undefined,
