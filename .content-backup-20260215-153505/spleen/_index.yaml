@@ -1,0 +1,63 @@
+# Spleen Topic Index
+# NucleuX Academy Content Library
+
+id: spleen
+title: "Spleen"
+subject: surgery
+subspecialty: general_surgery
+system: hematologic
+
+description: |
+  Coverage of splenic surgery including trauma, elective splenectomy,
+  and post-splenectomy management. Primary sources: Maingot, Fischer.
+
+stats:
+  total_topics: 4
+  topics_covered: 4
+  coverage_percent: 100
+  concept_notes: 4
+  grinde_maps: 0
+  retrieval_cards: 4
+  case_scenarios: 2
+
+categories:
+  - id: trauma
+    title: "Splenic Trauma"
+    topics:
+      - splenic-trauma
+  - id: elective
+    title: "Elective Splenectomy"
+    topics:
+      - splenectomy-indications
+      - hypersplenism
+  - id: complications
+    title: "Post-Splenectomy"
+    topics:
+      - opsi
+
+priority: medium
+exam_relevance:
+  - NEET_PG
+  - USMLE_Step2
+  - MRCS
+
+study_order:
+  - splenic-trauma (emergency, common)
+  - splenectomy-indications (when to operate)
+  - opsi (critical complication)
+  - hypersplenism (hematologic crossover)
+
+sources:
+  primary:
+    - book: "Maingot's Abdominal Operations"
+      edition: "12th"
+      part: "VII - Spleen"
+  supplementary:
+    - book: "Fischer's Mastery of Surgery"
+      edition: "7th"
+      topic: "Spleen"
+    - book: "EAST Practice Guidelines"
+      topic: "Splenic Trauma"
+
+last_updated: "2025-02-08"
+status: active

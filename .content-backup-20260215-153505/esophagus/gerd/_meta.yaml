@@ -1,0 +1,9 @@
+topic_id: gerd
+name: "GERD"
+description: "Pathophysiology, symptoms, complications, approach"
+high_yield: true
+difficulty: 3
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [les-physiology]
+related_topics: [fundoplication, surgical-management-gerd]

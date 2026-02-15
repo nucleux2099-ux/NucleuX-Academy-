@@ -1,0 +1,9 @@
+topic_id: fundoplication
+name: "Fundoplication"
+description: "Types (Nissen/Toupet/Dor), indications, outcomes, complications"
+high_yield: true
+difficulty: 4
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [gerd]
+related_topics: [surgical-management-gerd]

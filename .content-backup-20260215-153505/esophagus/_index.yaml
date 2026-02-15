@@ -1,0 +1,84 @@
+# Esophagus Topic Index
+# NucleuX Academy Content Library
+
+id: esophagus
+title: "Esophagus"
+subject: surgery
+subspecialty: gi_surgery
+system: upper_gi
+
+description: |
+  Comprehensive coverage of esophageal anatomy, physiology, 
+  pathology, and surgical management. Primary source: Shackelford 9th Ed.
+
+stats:
+  total_chapters: 42
+  chapters_covered: 13
+  coverage_percent: 31
+  concept_notes: 13
+  grinde_maps: 6
+  retrieval_cards: 13
+  case_scenarios: 6
+
+categories:
+  - id: anatomy
+    title: "Anatomy & Physiology"
+    topics:
+      - esophageal-anatomy
+      - les-physiology
+  - id: diagnostics
+    title: "Diagnostic Evaluation"
+    topics:
+      - esophageal-manometry
+  - id: gerd
+    title: "GERD & Antireflux Surgery"
+    topics:
+      - gerd
+      - fundoplication
+      - surgical-management-gerd
+  - id: motility
+    title: "Motility Disorders"
+    topics:
+      - achalasia
+      - heller-myotomy
+      - poem-procedure
+      - achalasia-lhm-vs-poem
+      - motility-disorders
+  - id: diverticula
+    title: "Diverticula"
+    topics:
+      - zenker-diverticulum
+  - id: reconstruction
+    title: "Reconstruction"
+    topics:
+      - esophageal-reconstruction
+
+priority: high
+exam_relevance:
+  - NEET_PG
+  - USMLE_Step2
+  - MRCS
+
+study_order:
+  - anatomy (foundation)
+  - diagnostics (workup)
+  - gerd (common)
+  - motility (high-yield)
+  - diverticula (boards)
+  - reconstruction (advanced)
+
+sources:
+  primary:
+    - book: "Shackelford's Surgery of the Alimentary Tract"
+      edition: "9th"
+      chapters: "1-42"
+  supplementary:
+    - book: "Fischer's Mastery of Surgery"
+      edition: "7th"
+      chapters: "67-80"
+    - book: "Sleisenger & Fordtran's GI and Liver Disease"
+      edition: "11th"
+      topic: "Esophageal Disorders"
+
+last_updated: "2025-02-08"
+status: pilot

@@ -120,6 +120,13 @@ export interface CaseScenario {
   tags?: string[];
 }
 
+export interface NmcCode {
+  code: string;
+  domain: 'K' | 'KH' | 'SH' | 'P';
+  core: boolean;
+  phase?: string;
+}
+
 export interface LibraryTopic {
   id: string;
   subjectId: string;
@@ -166,6 +173,7 @@ export interface LibraryTopic {
   highYield?: boolean;
   examTags?: string[];             // ['NEET_PG', 'USMLE', etc.]
   estimatedMinutes?: number;
+  nmcCodes?: NmcCode[];
   
   // Availability flags
   hasContent?: {

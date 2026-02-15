@@ -1,0 +1,12 @@
+topic_id: cholelithiasis
+system: 06-hepatobiliary
+name: "Cholelithiasis & Cholecystitis"
+nmc_competency: "SU28.10"
+sources:
+  primary:
+    bailey: "Ch 63-64"
+    sabiston: "Ch 55"
+    schwartz: "Ch 32"
+tags: [common, high-yield, emergency]
+difficulty: medium
+priority: critical

@@ -1,0 +1,9 @@
+topic_id: esophageal-reconstruction
+name: "Esophageal Reconstruction"
+description: "Conduits (stomach/colon/jejunum), principles, complications"
+high_yield: false
+difficulty: 5
+estimated_minutes: 30
+exam_tags: [MRCS]
+prerequisites: []
+related_topics: []

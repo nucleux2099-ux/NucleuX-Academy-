@@ -1,0 +1,21 @@
+{
+  "topic_id": "dvt",
+  "version": "1.0",
+  "cards": [
+    {"id": "dvt-001", "front": "What is Virchow's triad?", "back": "Stasis, Endothelial injury, Hypercoagulability — risk factors for DVT", "tags": ["etiology", "high-yield"]},
+    {"id": "dvt-002", "front": "What is the most common site for DVT?", "back": "Calf veins (soleal sinusoids)", "tags": ["anatomy"]},
+    {"id": "dvt-003", "front": "Which DVT location has highest PE risk?", "back": "Iliofemoral DVT", "tags": ["clinical", "high-yield"]},
+    {"id": "dvt-004", "front": "What is the gold standard investigation for DVT?", "back": "Compression ultrasound", "tags": ["investigation", "high-yield"]},
+    {"id": "dvt-005", "front": "What is the role of D-dimer in DVT?", "back": "Rule OUT DVT (high sensitivity, low specificity) — if negative + low Wells, DVT unlikely", "tags": ["investigation", "high-yield"]},
+    {"id": "dvt-006", "front": "What is Homan's sign?", "back": "Calf pain on dorsiflexion — unreliable sign of DVT", "tags": ["examination"]},
+    {"id": "dvt-007", "front": "What is phlegmasia alba dolens?", "back": "Massive DVT causing white, swollen, painful leg", "tags": ["clinical"]},
+    {"id": "dvt-008", "front": "What is phlegmasia cerulea dolens?", "back": "Massive DVT causing blue leg — risk of venous gangrene", "tags": ["clinical", "high-yield"]},
+    {"id": "dvt-009", "front": "What is the first-line anticoagulant for DVT?", "back": "LMWH or DOAC (rivaroxaban, apixaban)", "tags": ["treatment", "high-yield"]},
+    {"id": "dvt-010", "front": "Duration of anticoagulation for provoked DVT?", "back": "3-6 months", "tags": ["treatment"]},
+    {"id": "dvt-011", "front": "What Wells score indicates DVT likely?", "back": "≥3 points", "tags": ["scoring", "high-yield"]},
+    {"id": "dvt-012", "front": "What is post-thrombotic syndrome?", "back": "Chronic sequela of DVT — valve destruction causing venous hypertension, pain, swelling, ulceration", "tags": ["complications"]},
+    {"id": "dvt-013", "front": "How to prevent post-thrombotic syndrome?", "back": "Adequate anticoagulation + compression stockings", "tags": ["treatment"]},
+    {"id": "dvt-014", "front": "What is mechanical VTE prophylaxis?", "back": "Early mobilization, compression stockings, intermittent pneumatic compression", "tags": ["prevention"]},
+    {"id": "dvt-015", "front": "When is IVC filter indicated?", "back": "Contraindication to anticoagulation with acute DVT/PE, or failure of anticoagulation", "tags": ["treatment"]}
+  ]
+}

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Library, BookOpen } from "lucide-react";
 import { getSubjectBySlug } from "@/lib/data/subjects";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
+import SurgeryHub from "@/components/library/SurgeryHub";
 
 export default function SubjectPage() {
   const params = useParams();
@@ -21,6 +22,11 @@ export default function SubjectPage() {
         <p className="text-[#A0B0BC]">Subject not found.</p>
       </div>
     );
+  }
+
+  // Surgery gets a custom hub
+  if (subjectSlug === "surgery") {
+    return <SurgeryHub mode={searchParams.get("mode")} />;
   }
 
   const subspecialties = getSubspecialtiesBySubject(subject.id);

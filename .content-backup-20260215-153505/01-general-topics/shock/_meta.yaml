@@ -1,0 +1,42 @@
+# Shock - Metadata
+topic_id: shock
+system: 01-general-topics
+name: "Shock"
+nmc_competency: "SU13.1, SU13.2, SU13.3"
+
+sources:
+  primary:
+    bailey: "Ch 2, pp 13-23"
+    sabiston: "Ch 4, pp 62-86"
+    schwartz: "Ch 5, pp 93-122"
+  supplementary:
+    - "ATLS Manual, 10th Ed"
+    - "ICU Book, Marino"
+
+tags: [critical-care, emergency, high-yield, neet-pg, inicet]
+difficulty: medium
+priority: critical
+
+learning_objectives:
+  - Define shock and understand cellular pathophysiology
+  - Classify types of shock (hypovolemic, cardiogenic, distributive, obstructive)
+  - Recognize clinical features of each shock type
+  - Interpret hemodynamic parameters
+  - Initiate appropriate resuscitation
+  - Calculate fluid requirements
+  - Understand vasopressor and inotrope use
+
+estimated_time:
+  explorer: 20min
+  exam_prep: 25min
+  textbook: 50min
+  retrieval: 30min
+
+prerequisites:
+  - cardiovascular-physiology
+
+related_topics:
+  - fluid-electrolytes
+  - blood-transfusion
+  - sepsis
+  - trauma-response

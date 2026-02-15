@@ -18,32 +18,34 @@ export const SUBJECT_CONTENT_MAP: Record<string, string> = {
   'pharmacology': 'pharmacology',
   'microbiology': 'microbiology',
   'forensic': 'forensic',
+  'psychiatry': 'psychiatry',
+  'community-medicine': 'community-medicine',
+  'ent': 'ent',
+  'dermatology': 'dermatology',
+  'ophthalmology': 'ophthalmology',
+  'anesthesia': 'anesthesia',
+  'radiology': 'radiology',
+  'preventive-medicine': 'preventive-medicine',
+  'dentistry': 'dentistry',
 };
 
 // Maps subspecialty slugs to content folder names (within each subject)
 export const SUBSPECIALTY_CONTENT_MAP: Record<string, Record<string, string>> = {
-  // SURGERY
+  // SURGERY — all dirs are now clean slugs (no numbered prefixes)
   'surgery': {
     'esophagus': 'esophagus',
-    'general-topics': '01-general-topics',
-    'head-neck': '02-head-neck',
+    'general-topics': 'general-topics',
+    'head-neck': 'head-neck',
     'breast': 'breast',
-    'stomach-duodenum': '05-upper-gi',
-    'upper-gi': '05-upper-gi',
-    'hepatobiliary': '06-hepatobiliary',
-    'pancreas': '07-pancreas',
-    'small-intestine': '08-small-intestine',
-    'colorectal': '09-colon-rectum',
-    'colon-rectum': '09-colon-rectum',
-    'anorectal': '10-anorectal',
-    'hernia': '11-hernias',
-    'hernias': '11-hernias',
-    'vascular': '13-vascular',
-    'spleen': 'spleen',
-    'liver': 'liver',
-    'stomach': 'stomach',
-    'biliary': 'biliary',
-    'colon': 'colon',
+    'stomach-duodenum': 'stomach-duodenum',
+    'hepatobiliary': 'hepatobiliary',
+    'pancreas': 'pancreas',
+    'small-intestine': 'small-intestine',
+    'colorectal': 'colorectal',
+    'anorectal': 'anorectal',
+    'hernia': 'hernia',
+    'vascular': 'vascular',
+    'procedures': 'procedures',
   },
   // MEDICINE
   'medicine': {
@@ -97,6 +99,69 @@ export const SUBSPECIALTY_CONTENT_MAP: Record<string, Record<string, string>> = 
     'hand-surgery': 'hand-surgery',
     'sports-medicine': 'sports-medicine',
     'bone-diseases': 'bone-diseases',
+  },
+  // PSYCHIATRY
+  'psychiatry': {
+    'general-psychiatry': 'general-psychiatry',
+    'psychopharmacology': 'psychopharmacology',
+    'child-psychiatry': 'child-psychiatry',
+    'substance-abuse': 'substance-abuse',
+    'forensic-psychiatry': 'forensic-psychiatry',
+  },
+  // COMMUNITY MEDICINE
+  'community-medicine': {
+    'epidemiology': 'epidemiology',
+    'biostatistics': 'biostatistics',
+    'public-health': 'public-health',
+    'national-health-programs': 'national-health-programs',
+    'occupational-health': 'occupational-health',
+    'family-medicine': 'family-medicine',
+  },
+  // ENT
+  'ent': {
+    'ear': 'ear',
+    'nose-sinuses': 'nose-sinuses',
+    'throat-larynx': 'throat-larynx',
+    'head-neck-ent': 'head-neck-ent',
+  },
+  // DERMATOLOGY
+  'dermatology': {
+    'general-dermatology': 'general-dermatology',
+    'infections-infestations': 'infections-infestations',
+    'leprosy': 'leprosy',
+    'sexually-transmitted-infections': 'sexually-transmitted-infections',
+  },
+  // OPHTHALMOLOGY
+  'ophthalmology': {
+    'anterior-segment': 'anterior-segment',
+    'posterior-segment': 'posterior-segment',
+    'glaucoma': 'glaucoma',
+    'squint-neuro-ophthalmology': 'squint-neuro-ophthalmology',
+    'community-ophthalmology': 'community-ophthalmology',
+  },
+  // ANESTHESIA
+  'anesthesia': {
+    'general-anesthesia': 'general-anesthesia',
+    'regional-anesthesia': 'regional-anesthesia',
+    'critical-care-anesthesia': 'critical-care-anesthesia',
+    'pain-management': 'pain-management',
+  },
+  // RADIOLOGY
+  'radiology': {
+    'diagnostic-radiology': 'diagnostic-radiology',
+    'interventional-radiology': 'interventional-radiology',
+    'radiation-oncology': 'radiation-oncology',
+  },
+  // PREVENTIVE MEDICINE
+  'preventive-medicine': {
+    'environmental-health': 'environmental-health',
+    'communicable-diseases': 'communicable-diseases',
+    'maternal-child-health': 'maternal-child-health',
+    'nutrition-health': 'nutrition-health',
+  },
+  // DENTISTRY
+  'dentistry': {
+    'general-dentistry': 'general-dentistry',
   },
   // FORENSIC
   'forensic': {
@@ -157,7 +222,7 @@ export const TOPIC_CONTENT_MAP: Record<string, Record<string, Record<string, str
       'bowel-obstruction': 'Bowel Obstruction',
       'lower-gi-bleeding': 'Lower GI Bleeding',
     },
-    '09-colon-rectum': {
+    'colorectal': {
       'colon-cancer': 'colon-cancer',
     },
     'hernia': {

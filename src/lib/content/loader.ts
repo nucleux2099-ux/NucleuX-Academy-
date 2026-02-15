@@ -123,6 +123,12 @@ interface TopicMeta {
   exam_tags?: string[];
   tags?: string[];
   sources?: any;
+  nmc_codes?: Array<{
+    code: string;
+    domain: 'K' | 'KH' | 'SH' | 'P';
+    core: boolean;
+    phase?: string;
+  }>;
 }
 
 // =============================================================================
@@ -349,6 +355,7 @@ export function loadTopicFromFolder(
       prerequisites: meta.prerequisites,
       relatedTopics: meta.related_topics,
       examTags: meta.exam_tags,
+      nmcCodes: meta.nmc_codes,
       content: {
         concept: explorer,
         examPrep: examPrepMd ? { summary: examPrepMd } : undefined,

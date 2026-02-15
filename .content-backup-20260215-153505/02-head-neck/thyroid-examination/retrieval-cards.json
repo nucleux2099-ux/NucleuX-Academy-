@@ -1,0 +1,146 @@
+{
+  "topic_id": "thyroid-examination",
+  "version": "1.0",
+  "cards": [
+    {
+      "id": "te-001",
+      "type": "basic",
+      "front": "How do you confirm that a neck swelling is of thyroid origin?",
+      "back": "It moves with SWALLOWING (thyroid is attached to pretracheal fascia)",
+      "tags": ["examination", "high-yield"]
+    },
+    {
+      "id": "te-002",
+      "type": "basic",
+      "front": "How do you differentiate thyroid swelling from thyroglossal cyst?",
+      "back": "Thyroglossal cyst moves with TONGUE PROTRUSION (attached to hyoid bone), thyroid doesn't",
+      "tags": ["examination", "high-yield"]
+    },
+    {
+      "id": "te-003",
+      "type": "basic",
+      "front": "What position should the examiner take when palpating the thyroid?",
+      "back": "Standing BEHIND the patient",
+      "tags": ["examination", "high-yield"]
+    },
+    {
+      "id": "te-004",
+      "type": "basic",
+      "front": "What is Pemberton's test?",
+      "back": "Patient raises arms above head for 1 minute. Positive if facial congestion, cyanosis, JVP distension occur - indicates retrosternal extension causing thoracic inlet obstruction",
+      "tags": ["examination", "high-yield"]
+    },
+    {
+      "id": "te-005",
+      "type": "basic",
+      "front": "What is Berry's sign?",
+      "back": "Absence of carotid pulsation lateral to thyroid mass - suggests malignancy encasing the carotid artery",
+      "tags": ["examination", "high-yield"]
+    },
+    {
+      "id": "te-006",
+      "type": "basic",
+      "front": "What does a thyroid bruit indicate?",
+      "back": "Thyrotoxicosis (increased blood flow due to hypervascularity)",
+      "tags": ["examination"]
+    },
+    {
+      "id": "te-007",
+      "type": "basic",
+      "front": "What is lid lag?",
+      "back": "When following a descending object, the upper eyelid lags behind the eyeball, exposing sclera above the iris. Sign of thyrotoxicosis.",
+      "tags": ["thyrotoxicosis"]
+    },
+    {
+      "id": "te-008",
+      "type": "basic",
+      "front": "What is lid retraction?",
+      "back": "Sclera visible above the iris at rest (not during movement). Sign of thyrotoxicosis.",
+      "tags": ["thyrotoxicosis"]
+    },
+    {
+      "id": "te-009",
+      "type": "basic",
+      "front": "What clinical features suggest thyrotoxicosis?",
+      "back": "Anxiety, tremor, warm sweaty palms, tachycardia, AF, weight loss, lid lag, lid retraction, exophthalmos, thyroid bruit",
+      "tags": ["thyroid-status"]
+    },
+    {
+      "id": "te-010",
+      "type": "basic",
+      "front": "What clinical features suggest hypothyroidism?",
+      "back": "Lethargy, cold dry skin, bradycardia, weight gain, puffy face (myxedema), hoarse voice, slow-relaxing reflexes",
+      "tags": ["thyroid-status"]
+    },
+    {
+      "id": "te-011",
+      "type": "basic",
+      "front": "How do you elicit fine tremor?",
+      "back": "Ask patient to stretch hands out with fingers spread, place a piece of paper on the hands - fine tremor will make paper shake",
+      "tags": ["examination"]
+    },
+    {
+      "id": "te-012",
+      "type": "basic",
+      "front": "What does a hard thyroid nodule suggest?",
+      "back": "Malignancy (or calcification)",
+      "tags": ["clinical", "high-yield"]
+    },
+    {
+      "id": "te-013",
+      "type": "basic",
+      "front": "What are the red flags for thyroid malignancy?",
+      "back": "Hard nodule, fixed to surroundings, cervical lymphadenopathy, rapid growth, hoarseness, dysphagia, stridor, positive Berry's sign",
+      "tags": ["malignancy", "high-yield"]
+    },
+    {
+      "id": "te-014",
+      "type": "basic",
+      "front": "What does tracheal deviation indicate in thyroid disease?",
+      "back": "Deviation AWAY from swelling = space-occupying (large goitre)\nDeviation TOWARDS swelling = fibrosis/malignancy",
+      "tags": ["examination"]
+    },
+    {
+      "id": "te-015",
+      "type": "basic",
+      "front": "Why does thyroid move with swallowing?",
+      "back": "Thyroid is attached to the pretracheal fascia, which moves with the larynx during swallowing",
+      "tags": ["anatomy", "high-yield"]
+    },
+    {
+      "id": "te-016",
+      "type": "basic",
+      "front": "Why does thyroglossal cyst move with tongue protrusion?",
+      "back": "Thyroglossal cyst is connected to the foramen cecum via the thyroglossal duct remnant, which attaches to the hyoid bone",
+      "tags": ["anatomy"]
+    },
+    {
+      "id": "te-017",
+      "type": "basic",
+      "front": "What lymph node groups should be examined in thyroid cases?",
+      "back": "Submental → Submandibular → Jugulodigastric → Jugular chain → Posterior triangle → Supraclavicular",
+      "tags": ["examination"]
+    },
+    {
+      "id": "te-018",
+      "type": "basic",
+      "front": "What is the most common cause of goitre worldwide?",
+      "back": "Iodine deficiency",
+      "tags": ["etiology"]
+    },
+    {
+      "id": "te-019",
+      "type": "basic",
+      "front": "What is Kocher's test?",
+      "back": "Compression of carotid artery against thyroid mass causing ipsilateral pupil dilation - suggests malignancy invading sympathetic chain",
+      "tags": ["examination"]
+    },
+    {
+      "id": "te-020",
+      "type": "basic",
+      "front": "What investigation should always follow clinical examination of thyroid?",
+      "back": "Thyroid Function Tests (TSH, T3, T4), then USG ± FNAC based on findings",
+      "tags": ["investigation"]
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+"use client";
+
+import { useState } from "react";
+import { CBME_MBBS_Y1_BLOCKS } from "@/lib/data/cbme-mbbs-y1";
+import { CBME_MBBS_Y2_BLOCKS } from "@/lib/data/cbme-mbbs-y2";
+import { CBME_MBBS_Y3_BLOCKS } from "@/lib/data/cbme-mbbs-y3";
+import { CBME_MBBS_Y4_BLOCKS } from "@/lib/data/cbme-mbbs-y4";
+import { PG_CURRICULA, type PGDegree } from "@/lib/data/cbme-pg";
+import { SS_CURRICULA, type SSDegree } from "@/lib/data/cbme-ss";
+import type { CBMEBlock } from "@/lib/data/cbme-types";
+import Link from "next/link";
+
+/* ─── tab types ─── */
+type MainTab = "ug" | "pg" | "ss";
+
+const PHASE_MAP: { label: string; year: 1 | 2 | 3 | 4; blocks: CBMEBlock[] }[] = [
+  { label: "Phase 1 (Year 1)", year: 1, blocks: CBME_MBBS_Y1_BLOCKS },
+  { label: "Phase 2 (Year 2)", year: 2, blocks: CBME_MBBS_Y2_BLOCKS },
+  { label: "Phase 3 Part 1 (Year 3)", year: 3, blocks: CBME_MBBS_Y3_BLOCKS },
+  { label: "Phase 3 Part 2 (Year 4)", year: 4, blocks: CBME_MBBS_Y4_BLOCKS },
+];
+
+/* ─── degree badge colours ─── */
+function degreeBadge(degree: string) {
+  const map: Record<string, string> = {
+    MD: "bg-blue-600/20 text-blue-400 border-blue-500/30",
+    MS: "bg-cyan-600/20 text-cyan-400 border-cyan-500/30",
+    DM: "bg-purple-600/20 text-purple-400 border-purple-500/30",
+    MCh: "bg-rose-600/20 text-rose-400 border-rose-500/30",
+    Diploma: "bg-amber-600/20 text-amber-400 border-amber-500/30",
+  };
+  return map[degree] ?? "bg-zinc-600/20 text-zinc-400 border-zinc-500/30";
+}
+
+/* ─── subject colour hash for UG ─── */
+function subjectColor(subject: string) {
+  const map: Record<string, string> = {
+    anatomy: "border-red-500/40",
+    physiology: "border-orange-500/40",
+    biochemistry: "border-yellow-500/40",
+    pathology: "border-pink-500/40",
+    pharmacology: "border-green-500/40",
+    microbiology: "border-teal-500/40",
+    forensic: "border-slate-400/40",
+    psm: "border-lime-500/40",
+    medicine: "border-blue-500/40",
+    surgery: "border-red-600/40",
+    obgyn: "border-fuchsia-500/40",
+    pediatrics: "border-sky-500/40",
+    orthopedics: "border-amber-500/40",
+    ent: "border-indigo-500/40",
+    ophthalmology: "border-emerald-500/40",
+    bme: "border-violet-500/40",
+  };
+  return map[subject] ?? "border-zinc-500/40";
+}
+
+/* ─── search filter ─── */
+function matches(text: string, query: string) {
+  return text.toLowerCase().includes(query.toLowerCase());
+}
+
+export default function CBMEPage() {
+  const [tab, setTab] = useState<MainTab>("ug");
+  const [search, setSearch] = useState("");
+  const [pgFilter, setPgFilter] = useState<PGDegree | "all">("all");
+  const [ssFilter, setSsFilter] = useState<SSDegree | "all">("all");
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+      {/* Header */}
+      <div>
+        <h1 className="text-3xl font-bold text-white">
+          📋 CBME Curriculum
+        </h1>
+        <p className="text-zinc-400 mt-1">
+          National Medical Commission — Competency Based Medical Education
+        </p>
+      </div>
+
+      {/* Search */}
+      <input
+        type="text"
+        placeholder="Search curricula..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-full max-w-md px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+      />
+
+      {/* Main Tabs */}
+      <div className="flex gap-2 border-b border-zinc-700 pb-2">
+        {(
+          [
+            { key: "ug" as MainTab, label: "UG (MBBS)", count: PHASE_MAP.reduce((s, p) => s + p.blocks.length, 0) },
+            { key: "pg" as MainTab, label: "PG (MD / MS)", count: PG_CURRICULA.length },
+            { key: "ss" as MainTab, label: "SS (DM / MCh / Diploma)", count: SS_CURRICULA.length },
+          ] as const
+        ).map((t) => (
+          <button
+            key={t.key}
+            onClick={() => setTab(t.key)}
+            className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors ${
+              tab === t.key
+                ? "bg-zinc-800 text-white border border-zinc-700 border-b-transparent"
+                : "text-zinc-400 hover:text-zinc-200"
+            }`}
+          >
+            {t.label}{" "}
+            <span className="text-xs text-zinc-500">({t.count})</span>
+          </button>
+        ))}
+      </div>
+
+      {/* ═══ UG TAB ═══ */}
+      {tab === "ug" && (
+        <div className="space-y-8">
+          {PHASE_MAP.map((phase) => {
+            const subjects = [...new Set(phase.blocks.map((b) => b.subject))];
+            return (
+              <div key={phase.year}>
+                <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                  <span className="px-2 py-0.5 text-xs rounded bg-green-600/20 text-green-400 border border-green-500/30">
+                    UG
+                  </span>
+                  {phase.label}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {subjects.map((subj) => {
+                    const blocks = phase.blocks.filter(
+                      (b) =>
+                        b.subject === subj &&
+                        (search === "" || matches(b.title, search) || matches(subj, search))
+                    );
+                    if (blocks.length === 0) return null;
+                    return (
+                      <div
+                        key={subj}
+                        className={`bg-zinc-800/50 rounded-lg border-l-4 ${subjectColor(subj)} p-4`}
+                      >
+                        <h3 className="text-sm font-semibold text-zinc-300 uppercase tracking-wide mb-2">
+                          {subj.replace(/-/g, " ")}
+                        </h3>
+                        <ul className="space-y-1">
+                          {blocks.map((b) => (
+                            <li key={b.id} className="text-sm text-zinc-400 flex items-start gap-2">
+                              <span className="text-zinc-600 mt-0.5">•</span>
+                              {b.links?.libraryPath ? (
+                                <Link
+                                  href={b.links.libraryPath}
+                                  className="hover:text-white transition-colors"
+                                >
+                                  {b.title}
+                                </Link>
+                              ) : (
+                                <span>{b.title}</span>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* ═══ PG TAB ═══ */}
+      {tab === "pg" && (
+        <div className="space-y-4">
+          <div className="flex gap-2">
+            {(["all", "MD", "MS"] as const).map((f) => (
+              <button
+                key={f}
+                onClick={() => setPgFilter(f)}
+                className={`px-3 py-1 rounded text-sm ${
+                  pgFilter === f
+                    ? "bg-blue-600 text-white"
+                    : "bg-zinc-800 text-zinc-400 hover:text-white"
+                }`}
+              >
+                {f === "all" ? "All" : f} {f !== "all" && `(${PG_CURRICULA.filter((c) => c.degree === f).length})`}
+              </button>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {PG_CURRICULA.filter(
+              (c) =>
+                (pgFilter === "all" || c.degree === pgFilter) &&
+                (search === "" || matches(c.title, search) || matches(c.subject, search) || matches(c.description, search))
+            ).map((c) => (
+              <div
+                key={c.id}
+                className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-zinc-600 transition-colors"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`px-2 py-0.5 text-xs rounded border ${degreeBadge(c.degree)}`}>
+                    {c.degree}
+                  </span>
+                  {c.hasRevised && (
+                    <span className="px-1.5 py-0.5 text-xs rounded bg-green-600/10 text-green-500 border border-green-500/20">
+                      Revised
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-white font-medium text-sm">{c.title}</h3>
+                <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
+                {c.librarySubject && (
+                  <Link
+                    href={`/library/${c.librarySubject}`}
+                    className="inline-block mt-2 text-xs text-blue-400 hover:text-blue-300"
+                  >
+                    📚 Library →
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* ═══ SS TAB ═══ */}
+      {tab === "ss" && (
+        <div className="space-y-4">
+          <div className="flex gap-2 flex-wrap">
+            {(["all", "DM", "MCh", "Diploma"] as const).map((f) => (
+              <button
+                key={f}
+                onClick={() => setSsFilter(f)}
+                className={`px-3 py-1 rounded text-sm ${
+                  ssFilter === f
+                    ? "bg-purple-600 text-white"
+                    : "bg-zinc-800 text-zinc-400 hover:text-white"
+                }`}
+              >
+                {f === "all" ? "All" : f} {f !== "all" && `(${SS_CURRICULA.filter((c) => c.degree === f).length})`}
+              </button>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {SS_CURRICULA.filter(
+              (c) =>
+                (ssFilter === "all" || c.degree === ssFilter) &&
+                (search === "" || matches(c.title, search) || matches(c.subject, search) || matches(c.description, search))
+            ).map((c) => (
+              <div
+                key={c.id}
+                className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-zinc-600 transition-colors"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className={`px-2 py-0.5 text-xs rounded border ${degreeBadge(c.degree)}`}>
+                    {c.degree}
+                  </span>
+                  {c.hasRevised && (
+                    <span className="px-1.5 py-0.5 text-xs rounded bg-green-600/10 text-green-500 border border-green-500/20">
+                      Revised
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-white font-medium text-sm">{c.title}</h3>
+                <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
+                {c.parentDegree && (
+                  <p className="text-zinc-600 text-xs mt-1">← {c.parentDegree}</p>
+                )}
+                {c.librarySubject && (
+                  <Link
+                    href={`/library/${c.librarySubject}`}
+                    className="inline-block mt-2 text-xs text-purple-400 hover:text-purple-300"
+                  >
+                    📚 Library →
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Subject-Specific CBME Pages */}
+      <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4">
+        <h3 className="text-sm font-semibold text-zinc-300 mb-2">🔬 Subject-Specific CBME Maps</h3>
+        <p className="text-zinc-500 text-xs mb-3">Detailed UG → PG → SS progression with competency codes mapped to library topics</p>
+        <div className="flex gap-2 flex-wrap">
+          <Link
+            href="/cbme/surgery"
+            className="px-4 py-2 rounded-lg bg-red-600/10 border border-red-500/20 text-red-400 hover:bg-red-600/20 text-sm font-medium transition-colors"
+          >
+            🔪 Surgery — {132} UG codes, 18 subspecialties
+          </Link>
+        </div>
+      </div>
+
+      {/* NMC Competency Coverage */}
+      <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4">
+        <h3 className="text-sm font-semibold text-zinc-300 mb-1">📊 Library Coverage</h3>
+        <p className="text-zinc-400 text-sm">
+          <span className="text-white font-medium">1,020</span> of <span className="text-white font-medium">2,947</span> UG competencies mapped to Library topics
+        </p>
+        <p className="text-zinc-600 text-xs mt-1">34.6% coverage — competency codes are actively being added to topics across all 21 subjects.</p>
+      </div>
+
+      {/* Footer stats */}
+      <div className="border-t border-zinc-800 pt-4 text-xs text-zinc-600 flex gap-4 flex-wrap">
+        <span>UG: 4 Phases</span>
+        <span>MD: {PG_CURRICULA.filter((c) => c.degree === "MD").length}</span>
+        <span>MS: {PG_CURRICULA.filter((c) => c.degree === "MS").length}</span>
+        <span>DM: {SS_CURRICULA.filter((c) => c.degree === "DM").length}</span>
+        <span>MCh: {SS_CURRICULA.filter((c) => c.degree === "MCh").length}</span>
+        <span>Diploma: {SS_CURRICULA.filter((c) => c.degree === "Diploma").length}</span>
+        <span className="text-zinc-500">Source: NMC India</span>
+      </div>
+    </div>
+  );
+}

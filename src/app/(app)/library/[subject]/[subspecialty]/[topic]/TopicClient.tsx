@@ -1724,6 +1724,27 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
             {topic.description && (
               <p className="text-[#9CA3AF] mt-1">{topic.description}</p>
             )}
+            {topic.nmcCodes && topic.nmcCodes.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                <span className="text-[10px] uppercase tracking-wider text-[#6B7280] mr-1">NMC</span>
+                {topic.nmcCodes.map((nmc) => {
+                  const domainColors: Record<string, string> = {
+                    K: 'bg-zinc-500/15 text-zinc-400 border-zinc-500/25',
+                    KH: 'bg-blue-500/15 text-blue-400 border-blue-500/25',
+                    SH: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25',
+                    P: 'bg-purple-500/15 text-purple-400 border-purple-500/25',
+                  };
+                  return (
+                    <span
+                      key={nmc.code}
+                      className={`inline-flex items-center px-1.5 py-0.5 rounded text-[11px] border ${domainColors[nmc.domain] || domainColors.K}`}
+                    >
+                      {nmc.code} ({nmc.domain}{nmc.core ? ', Core' : ''})
+                    </span>
+                  );
+                })}
+              </div>
+            )}
             <div className="flex items-center gap-4 mt-3 text-sm text-[#6B7280]">
               <div className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4" />

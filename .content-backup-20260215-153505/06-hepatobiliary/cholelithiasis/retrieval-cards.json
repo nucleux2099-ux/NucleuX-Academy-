@@ -1,0 +1,21 @@
+{
+  "topic_id": "cholelithiasis",
+  "version": "1.0",
+  "cards": [
+    {"id": "cl-001", "front": "What are the 4 F's for cholesterol gallstone risk?", "back": "Fat, Female, Forty, Fertile", "tags": ["risk-factors", "high-yield"]},
+    {"id": "cl-002", "front": "What is the most common type of gallstone?", "back": "Cholesterol stones (75-80%)", "tags": ["types"]},
+    {"id": "cl-003", "front": "What is Murphy's sign?", "back": "Inspiratory arrest during RUQ palpation due to inflamed gallbladder descending onto examiner's fingers", "tags": ["examination", "high-yield"]},
+    {"id": "cl-004", "front": "What is Charcot's triad?", "back": "Fever + Jaundice + RUQ pain — indicates cholangitis", "tags": ["cholangitis", "high-yield"]},
+    {"id": "cl-005", "front": "What is Reynolds' pentad?", "back": "Charcot's triad + Confusion + Shock — indicates severe/suppurative cholangitis", "tags": ["cholangitis"]},
+    {"id": "cl-006", "front": "Gold standard investigation for gallstones?", "back": "Ultrasound abdomen", "tags": ["investigation", "high-yield"]},
+    {"id": "cl-007", "front": "What is the treatment of choice for symptomatic gallstones?", "back": "Laparoscopic cholecystectomy", "tags": ["treatment", "high-yield"]},
+    {"id": "cl-008", "front": "When should cholecystectomy be done for acute cholecystitis?", "back": "Early - within 72 hours of symptom onset", "tags": ["treatment"]},
+    {"id": "cl-009", "front": "What is Courvoisier's law?", "back": "Palpable, non-tender gallbladder with jaundice is NOT due to stones (suggests malignancy)", "tags": ["clinical", "high-yield"]},
+    {"id": "cl-010", "front": "What is Mirizzi syndrome?", "back": "Impacted stone in cystic duct/Hartmann's pouch causing extrinsic compression of common hepatic duct", "tags": ["complications"]},
+    {"id": "cl-011", "front": "What causes black pigment stones?", "back": "Hemolytic conditions (increased bilirubin) and cirrhosis", "tags": ["types"]},
+    {"id": "cl-012", "front": "What is gallstone ileus?", "back": "Bowel obstruction caused by gallstone passing through cholecystoenteric fistula", "tags": ["complications"]},
+    {"id": "cl-013", "front": "What is the Rigler's triad in gallstone ileus?", "back": "Pneumobilia + SBO + Ectopic gallstone on X-ray", "tags": ["complications"]},
+    {"id": "cl-014", "front": "How does biliary colic differ from acute cholecystitis?", "back": "Biliary colic: <6 hrs, no fever, no Murphy's. Cholecystitis: >6 hrs, fever, Murphy's positive", "tags": ["clinical", "high-yield"]},
+    {"id": "cl-015", "front": "What is the role of ERCP in gallstone disease?", "back": "Therapeutic - for CBD stone extraction; Not for diagnosis (use MRCP)", "tags": ["investigation"]}
+  ]
+}
