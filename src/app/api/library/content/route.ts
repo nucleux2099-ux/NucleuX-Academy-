@@ -5,7 +5,8 @@ import {
   getSubjectFolder, 
   getContentFolder, 
   getContentFilename,
-  getContentFilenameForSubject 
+  getContentFilenameForSubject,
+  SUBSPECIALTY_CONTENT_MAP
 } from '@/lib/data/content-mapping'
 
 const CONTENT_BASE = path.join(process.cwd(), 'content')
@@ -116,13 +117,15 @@ async function loadRichContentForSubject(subjectSlug: string, subspecialtySlug: 
     }
 
     // Try flat file: {subject}/{subspecialty}/{filename}.md
-    const filePath = path.join(CONTENT_BASE, subjectFolder, subspecialtyFolder, `${filename}.md`)
-    const normalizedPath = path.normalize(filePath)
-    if (normalizedPath.startsWith(CONTENT_BASE)) {
-      try {
-        const content = await fs.readFile(filePath, 'utf-8')
-        return NextResponse.json({ content, hasRichContent: true })
-      } catch {}
+    if (filename) {
+      const filePath = path.join(CONTENT_BASE, subjectFolder, subspecialtyFolder, `${filename}.md`)
+      const normalizedPath = path.normalize(filePath)
+      if (normalizedPath.startsWith(CONTENT_BASE)) {
+        try {
+          const content = await fs.readFile(filePath, 'utf-8')
+          return NextResponse.json({ content, hasRichContent: true })
+        } catch {}
+      }
     }
 
     // Fallback to direct access with smart resolution
@@ -141,15 +144,10 @@ async function tryDirectAccess(subjectSlug: string, subspecialtySlug: string, to
     
     // Find the actual subspecialty directory (handles numbered prefixes)
     let subspecialtyDir: string | null = null
+    const mapped = SUBSPECIALTY_CONTENT_MAP[subjectSlug]?.[subspecialtySlug]
     const candidates = [
       subspecialtySlug,
-      // Check content-mapping
-      ...((() => {
-        try {
-          const mapped = require('@/lib/data/content-mapping').SUBSPECIALTY_CONTENT_MAP[subjectSlug]?.[subspecialtySlug]
-          return mapped ? [mapped] : []
-        } catch { return [] }
-      })()),
+      ...(mapped ? [mapped] : []),
     ]
     
     for (const candidate of candidates) {
