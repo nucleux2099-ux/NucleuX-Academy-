@@ -1,0 +1,1219 @@
+[
+  {
+    "id": "ms-ent-otorhinolaryngology",
+    "title": "ENT (Otorhinolaryngology)",
+    "level": "MS",
+    "category": "Clinical",
+    "preamble": "The purpose of PG education is to create specialists who would provide high quality health care and advance the cause of science through research &amp; training. The purpose of MS ENT is to standardize Otorhinolaryngology teaching at Post Graduate level throughout the country so that it will benefit in achieving uniformity in undergraduate teaching as well and resultantly creating competent ENT Surgeons with appropriate expertise. Demonstrate sufficient understanding of basic sciences related to his specialty and The purpose of this document is to provide teachers and learners illustrative guidelines to achieve defined outcomes through learning and assessment. This document was prepared by various subject-content specialists. The Reconciliation Board of Academic Committee has attempted to render uniformity without compromise to purpose and content of the document. Compromise in purity of syntax has been made in order to preserve the purpose and content. This has necessitated retention of 'domains of learning' under the heading 'competencies'.",
+    "objectives": [],
+    "competencies": {
+      "cognitive": [
+        {
+          "code": "A.1",
+          "description": "heading \"competencies\"."
+        },
+        {
+          "code": "A.2",
+          "description": "At the end of training, the student should be able to demonstrate ability to practically apply knowledge gained during training period. This would include the following:"
+        },
+        {
+          "code": "A.3",
+          "description": "Basic Sciences related to Otolaryngology"
+        },
+        {
+          "code": "A.4",
+          "description": "hia yus,"
+        },
+        {
+          "code": "A.5",
+          "description": "Oesophagus, trachea and lungs, tongue, salivary gland Head and Neck and skull base etc."
+        },
+        {
+          "code": "A.6",
+          "description": "Parapharyngeal spaces in the neck including connective tissue barriers of larynx."
+        },
+        {
+          "code": "A.7",
+          "description": " Physiology- Mechanism of perception of smell and taste, mechanism of breathing and voice production, lacrimation, deglutition and salivation. Functional tests of the nose and paranasal sinuses, mechanism of cough and sneezing."
+        },
+        {
+          "code": "A.8",
+          "description": " Physics of sound, theories of hearing, mechanism of perception of sound and speech production, physiology of equilibrium and cerebral function. Physiology of brain in connection with hearing, speech, smell and phonation. Audiologic tests like audiometry, impedance, evoked potentials, OAE, Speech audiometry."
+        },
+        {
+          "code": "A.9",
+          "description": " Physiology of larynx, tracheobronchial tree and oesophagus - Histology of mucous membranes, internal ear and other associated organs and structures, nose, PNS NPx, Larynx, Tracheo-Bronchial tree, Lymphoepithetical system. Mechanism of immune system/immunology and genetics."
+        },
+        {
+          "code": "A.10",
+          "description": " Anatomy-Embryogenesis of ear, nose and throat including palate and the larynx, Oesophagus, trachea and lungs, tongue, salivary gland Head and Neck and skull base etc."
+        },
+        {
+          "code": "A.11",
+          "description": " Parapharyngeal spaces in the neck including connective tissue barriers of larynx."
+        },
+        {
+          "code": "A.12",
+          "description": " Applied anatomy of the skull bones, accessory sinuses, external, middle and inner ears, nose, PNS, nasopharynx, meninges, brain, pharynx, larynx, trachea and bronchi, lungs, pleurae, oesophagus and the mediastinum."
+        },
+        {
+          "code": "A.13",
+          "description": " Anatomy of all cranial nerves with their functions."
+        }
+      ],
+      "psychomotor": [
+        {
+          "code": "B.1",
+          "description": "A student should be adept at good history taking, physical examination, providing basic life support and advanced cardiac life support, common procedures like FNAC, Biopsy, aspiration from serous cavities, lumber puncture etc. She/he should be able to choose the required investigations to enhance the attitude, communication skills, including dealing with patient's relatives with the required empathy, adapt to changing trends in education, learning methods and evolving new diagnostic and therapeutic techniques in the subject of ENT."
+        },
+        {
+          "code": "B.2",
+          "description": " Taking a good history and demonstrating good examination techniques."
+        },
+        {
+          "code": "B.3",
+          "description": " arrive at a logical working diagnosis, differential diagnosis after clinical examination and order appropriate investigations keeping in mind their relevance (need based) and thereby provide appropriate care that is ethical, compassionate, responsive and cost effective and in conformation with statutory rules."
+        },
+        {
+          "code": "B.4",
+          "description": " Should be able to perform and demonstrate the practical skills in the field of ENT including the following:"
+        },
+        {
+          "code": "B.5",
+          "description": "o Examination of the ear, nose and throat oral cavity examination"
+        },
+        {
+          "code": "B.6",
+          "description": "o Clinico-physiological examination and evaluation of the audio-vestibulo neurological system"
+        },
+        {
+          "code": "B.7",
+          "description": "o Examination of the larynx and the throat including flexible endoscopy, stroboscopy, voice analysis and the clinico-physiological examination of the speech"
+        },
+        {
+          "code": "B.8",
+          "description": "o Examination of the otological and audiological system including Tuning fork testing, audiological evaluation, micro and otoendoscopy"
+        },
+        {
+          "code": "B.9",
+          "description": "o Clinical and physiological evaluation of the nose and paranasal sinuses including nasal endoscopy and olfactory evaluation"
+        },
+        {
+          "code": "B.10",
+          "description": "o Examination of the neck and its structures"
+        },
+        {
+          "code": "B.11",
+          "description": " Should demonstrate and perform various therapeutic skills related to the speciality such as :"
+        },
+        {
+          "code": "B.12",
+          "description": " Tracheostomy"
+        },
+        {
+          "code": "B.13",
+          "description": " Anterior/ posterior nasal packing"
+        },
+        {
+          "code": "B.14",
+          "description": " Ear Packing and Syringing"
+        },
+        {
+          "code": "B.15",
+          "description": " Foreign body removal from air nose and throat"
+        },
+        {
+          "code": "B.16",
+          "description": "procedures in relation to the speciality"
+        },
+        {
+          "code": "B.17",
+          "description": "Syllabus"
+        },
+        {
+          "code": "B.18",
+          "description": " Airway management including basic life support skills, Cardiopulmonary resuscitation, intubation, homeostasis maintenance, IV alimentation and fluid, electrolyte maintenance and principles of blood transfusion alimentation including Nasogastric feeding, gastrostomy"
+        },
+        {
+          "code": "B.19",
+          "description": " Wound suturing, dressings and care of the wounds"
+        },
+        {
+          "code": "B.20",
+          "description": " Basic principles of rehabilitation"
+        },
+        {
+          "code": "B.21",
+          "description": " common procedures like FNAC, biopsy, aspiration from serous cavities, lumber puncture etc."
+        },
+        {
+          "code": "B.22",
+          "description": " Should understand principles of and interpret X-rays/CT/MRI, audiograms, ENG, BERA, OAE, ultrasonographic abnormalities and other diagnostic procedures in relation to the speciality"
+        },
+        {
+          "code": "B.23",
+          "description": " Should have observed/performed under supervision the various surgical procedures in relation to the speciality"
+        },
+        {
+          "code": "B.24",
+          "description": "Preparation of slides"
+        }
+      ],
+      "affective": [
+        {
+          "code": "C.1",
+          "description": "allu"
+        },
+        {
+          "code": "C.2",
+          "description": "C. Psychomotor Domain"
+        },
+        {
+          "code": "C.3",
+          "description": "By the end of the training, a student should be able to demonstrate his skills in:"
+        },
+        {
+          "code": "C.4",
+          "description": "The student will show integrity, accountability, respect, compassion and dedicated patient care. The student will demonstrate a commitment to excellence and continuous professional development."
+        },
+        {
+          "code": "C.5",
+          "description": "The student should demonstrate a commitment to ethical principles relating to providing patient care, confidentiality of patient information and informed consent."
+        },
+        {
+          "code": "C.6",
+          "description": "The student should show sensitivity and responsiveness to patients' culture, age, gender and disabilities."
+        },
+        {
+          "code": "C.7",
+          "description": "The student should be able to choose the required investigations to enhance the attitude, communicative skills, including dealing with patient's relatives with the required empathy, adapt to changing trends in education, learning methods and evolving new diagnostic and therapeutic techniques in the subject of ENT."
+        },
+        {
+          "code": "C.8",
+          "description": "Examination of the larynx and the throat including flexible endoscopy,"
+        }
+      ]
+    },
+    "teachingMethods": [
+      "Didactic lectures are of least importance; small group discussion such as seminars, journal clubs, symposia, reviews and guest lectures should get priority for theoretical knowledge. Bedside teaching, grand rounds, structured interactive group discussions and clinical demonstrations should be the hallmark of clinical/practical learning with appropriate emphasis on e-learning. Student should have hand-on training in performing various procedures and ability to interpret various tests/investigations. Exposure to newer specialized diagnostic/therapeutic procedures concerning her/his subject should be given. Self-learning tools like assignments and case-based learning may be promoted. Exposure to newer specialized diagnostic/therapeutic procedures concerning ENT should be given."
+    ],
+    "assessment": "Clinical examination shall be conducted to test the knowledge, skills, attitude and competence of the post graduate students for undertaking independent work as a Recommended Reading: Books (latest edition) specialist/teacher, for which post graduate students shall examine a minimum one long case and two short cases. Otolaryngology, Otology &amp; Neurotalogy by Paprella&amp;Micheal The Oral examination shall be thorough and shall aim at assessing the post graduate student's knowledge and competence about the subject, investigative procedures, therapeutic technique and other aspects of the specialty, which form a part of the examination. Assessment may include Objective Structured Clinical Examination(OSCE). Oral/Viva-voce examination needs to assess knowledge on X-rays, instrumentation, operative procedures. Due weightage should be given to Log Book Records and dayto-day observation during the training.",
+    "recommendedBooks": [
+      " Scott-Brown's Otorhinolaryngology and Head and Neck Surgery",
+      " Cummings Otolaryngology - Head and Neck Surgery",
+      " Otolaryngology, Otology &amp;Neurotalogy by Paprella&amp;Micheal",
+      " Glasscock-Shambaugh's Surgery of the Ear",
+      " Essentials of Functional Sinus Surgery by Heinz Stammberger MD",
+      " Color Atlas of Head &amp; Neck Surgery by Jatin P Shah",
+      " Handbook of Clinical Audiology by Jack Katz",
+      " Stell&amp; Maran's Textbook of Head and Neck Surgery and Oncology"
+    ],
+    "wordCount": 4260
+  },
+  {
+    "id": "ms-obstetrics-gynaecology",
+    "title": "Obstetrics & Gynaecology",
+    "level": "MS",
+    "category": "Clinical",
+    "preamble": "The purpose of PG education is to create specialists who would provide high quality health care and advance the cause of science through research &amp; training. The purpose of MS Obstetrics and Gynaecology is to standardize Obstetrics &amp; Gynaecology teaching at Post Graduate level throughout the country so that it will benefit in achieving uniformity in undergraduate teaching as well and resultantly creating competent Obstetrician and Gynaecologist with appropriate expertise. Provide quality care to the community in the diagnosis and management of The purpose of this document is to provide teachers and learners illustrative guidelines to achieve defined outcomes through learning and assessment. This document was prepared by various subject-content specialists. The Reconciliation Board of Academic Committee has attempted to render uniformity without compromise to purpose and content of the document. Compromise in purity of syntax has been made in order to preserve the purpose and content. This has necessitated retention of 'domains of learning' under the heading 'competencies'.",
+    "objectives": [
+      "The goal of the MS course in Obstetrics and Gynaecology is to produce a competent Obstetrician and Gynaecologist who can:",
+      "a. Provide quality care to the community in the diagnosis and management of Antenatal, Intra-natal and Post-natal period of normal and abnormal pregnancy and labor.",
+      "b. provide effective and adequate care to a pregnant woman with complicated pregnancy.",
+      "c. provide effective and adequate care to a normal and high risk neonate.",
+      "d. perform obstetrical ultrasound in normal and abnormal pregnancy including Doppler.",
+      "make appropriate referrals.",
+      "f. provide quality care to the community in the diagnosis and management of gynaecological problems including screening, and management of all gynecological cancers including during pregnancy.",
+      "At the end of the MS Course in Obstetrics and Gynaecology, the student should have acquired knowledge in the following:",
+      "g. conduct a comprehensive evaluation of infertile couple and have a broad based knowledge of assisted reproductive techniques including - ovulation induction, in vitro fertilization and intra-cytoplasmic sperm injection, gamete donation, surrogacy and the legal and ethical implications of these procedures.",
+      "h. provide counseling and delivery of fertility regulation methods including reversible and irreversible contraception, emergency contraception etc.",
+      "i. provide quality care to women having spontaneous abortion or requesting Medical Termination of Pregnancy (MTP) and manage their related complications.",
+      "on Gynecological Endocrinology and infertility."
+    ],
+    "competencies": {
+      "cognitive": [
+        {
+          "code": "A.1",
+          "description": "heading \"competencies\""
+        },
+        {
+          "code": "A.2",
+          "description": "modalities in Obstetrics &amp; Gynecology."
+        }
+      ],
+      "psychomotor": [
+        {
+          "code": "B.1",
+          "description": "Application of forceps and ventouse (10)."
+        },
+        {
+          "code": "B.2",
+          "description": "-Adequate proficiency in common minor and major operations, post-operative management and management of their complications."
+        },
+        {
+          "code": "B.3",
+          "description": "-Operative procedures which must be done by P G students during training period: (in graded manner - assisting, operating with senior person assisting, operating under supervision)"
+        },
+        {
+          "code": "B.4",
+          "description": "(Operations MUST BE DONE/OBSERVED during PG training programme and log book maintained)"
+        },
+        {
+          "code": "B.5",
+          "description": "Obstetrics:"
+        },
+        {
+          "code": "B.6",
+          "description": "Venesection, culdocentesis Conduct normal deliveries Episiotomy and its repair"
+        },
+        {
+          "code": "B.7",
+          "description": " Application of forceps and ventouse (10)."
+        },
+        {
+          "code": "B.8",
+          "description": " Carry out caesarian section delivery (10 must be done)"
+        },
+        {
+          "code": "B.9",
+          "description": " Manual removal of placenta"
+        },
+        {
+          "code": "B.10",
+          "description": " Management of genital tract obstetrical injuries."
+        },
+        {
+          "code": "B.11",
+          "description": " Post partum sterilization/Minilap tubal ligation (20 must be done)"
+        },
+        {
+          "code": "B.12",
+          "description": " Medical termination of pregnancy - various methods (20 must be done)"
+        },
+        {
+          "code": "B.13",
+          "description": "Gynaecology: Endometrial / cervical biopsy."
+        },
+        {
+          "code": "B.14",
+          "description": "Dilatation and curettage"
+        },
+        {
+          "code": "B.15",
+          "description": "Coldocentesis, Colpotomy"
+        },
+        {
+          "code": "B.16",
+          "description": " Opening and closing of abdomen (10 must be done)"
+        },
+        {
+          "code": "B.17",
+          "description": " Operations for pelvic organ prolapse"
+        },
+        {
+          "code": "B.18",
+          "description": " Ovarian cyst operation"
+        },
+        {
+          "code": "B.19",
+          "description": " Operation for ectopic pregnancy"
+        },
+        {
+          "code": "B.20",
+          "description": " Vaginal and abdominal hysterectomy"
+        },
+        {
+          "code": "B.21",
+          "description": "Diagnostic Procedures"
+        },
+        {
+          "code": "B.22",
+          "description": "Interpretation of x-rays - Twins, common fetal malformations / mal-presentations,"
+        }
+      ],
+      "affective": [
+        {
+          "code": "C.1",
+          "description": "Should be able to function as a part of a team, develop an attitude of cooperation with colleagues, and interact with the patient and the clinician or other colleagues to provide the best possible diagnosis or opinion."
+        },
+        {
+          "code": "C.2",
+          "description": "Adequate proficiency in common minor and major operations, post-operative management and management of their complications."
+        },
+        {
+          "code": "C.3",
+          "description": "Operative procedures which must be done by P G students during training period:"
+        },
+        {
+          "code": "C.4",
+          "description": "Always adopt ethical principles and maintain proper etiquette in dealings with patients, relatives and other health personnel and to respect the rights of the patient including the right to information and second opinion."
+        },
+        {
+          "code": "C.5",
+          "description": "Develop communication skills to word reports and professional opinion as well as to interact with patients, relatives, peers and paramedical staff, and for effective teaching."
+        }
+      ]
+    },
+    "teachingMethods": [],
+    "assessment": "",
+    "recommendedBooks": [
+      "Books (latest edition)"
+    ],
+    "wordCount": 5257
+  },
+  {
+    "id": "ms-ophthalmology",
+    "title": "Ophthalmology",
+    "level": "MS",
+    "category": "Clinical",
+    "preamble": "The purpose of PG education is to create specialists who would provide high quality health care and advance the cause of science through research &amp; training. The purpose of this programme is to standardize Ophthalmology teaching at post graduate level throughout the country so that it will benefit in achieving uniformity in post graduate and undergraduate teaching as well as result in creating competent ophthalmic surgeons with appropriate expertise. The purpose of this document is to provide teachers and learners illustrative guidelines to achieve defined outcomes through learning and assessment. This document was prepared by various subject-content specialists. The Reconciliation Board of the Academic Committee has attempted to render uniformity without compromise to purpose and content of the document. Compromise in purity of syntax has been made in order to preserve the purpose and content. This has necessitated retention of 'domains of learning' under the heading 'competencies'.",
+    "objectives": [
+      "The clinical post graduate training programmes are intended at developing in a student a blend of qualities that of a clinical specialist, a teacher and a researcher. These programmes are organized such that a post graduate student should possess the following qualities, knowledge and skills:",
+      "a. The student should possess basic knowledge of the structure, function and development of the human body as related to ophthalmology, of the factors which may disturb these mechanisms and the disorders of structure and function which may result thereafter.",
+      "b. The student should be able to practice and handle most day-to-day problems independently in ophthalmology. The student should recognize the limitations of his/her own clinical knowledge and know when to seek further help.",
+      "c. The student should understand the effects of environment on health and be familiar with the epidemiology of at least the more common diseases in the field of ophthalmology.",
+      "approach to its solution, execute it and critically evaluate his/her data in the light of existing knowledge.",
+      "The student should reach the conclusions by logical deduction and should be able to assess evidence both as to its reliability and its relevance.",
+      "d. The student should be able to integrate the preventive methods with the curative and rehabilitative measures in the comprehensive management of the disease. 1.",
+      "e. The student should be familiar with common eye problems occurring in rural areas and be able to deal with them effectively.",
+      "f. The student should also be made aware of Mobile Ophthalmic Unit and its working and components.",
+      "g. The student should be familiar with the current developments in Ophthalmic Sciences.",
+      "h. The student should be able to plan educational programmes in Ophthalmology in association with senior colleagues and be familiar with the modern methods of teaching and evaluation. a)",
+      "i. The student should be able to identify a problem for research, plan a rational approach to its solution, execute it and critically evaluate his/her data in the light of existing knowledge.",
+      "j. The student should reach the conclusions by logical deduction and should be able to assess evidence both as to its reliability and its relevance.",
+      "k. The student should have basic knowledge of medico-legal aspects of medicine.",
+      "l. The student should be familiar with patient counseling and proper consent taking."
+    ],
+    "competencies": {
+      "cognitive": [
+        {
+          "code": "A.1",
+          "description": "A post graduate student upon successfully qualifying in the M.S. (Ophthalmology) examination should be able to:"
+        },
+        {
+          "code": "A.2",
+          "description": "Offer to the community, the current quality of 'standard of care' in ophthalmic diagnosis as well as therapeutics, medical or surgical, in most of the common situations encountered at the level of health services."
+        },
+        {
+          "code": "A.3",
+          "description": "Periodically self assess his or her performance and keep abreast with ongoing advances in the field and apply the same in his/her practice."
+        },
+        {
+          "code": "A.4",
+          "description": "Be aware of her/his own limitations to the application of the specialty in situations, which warrant referral to more qualified centers or individuals."
+        },
+        {
+          "code": "A.5",
+          "description": "Apply research and epidemiological methods during his/her practice. The post graduate student should be able to present or publish work done by him/her."
+        },
+        {
+          "code": "A.6",
+          "description": "Contribute as an individual/group towards the fulfillment of national objectives with regard to prevention of blindness."
+        },
+        {
+          "code": "A.7",
+          "description": "Effectively communicate with patients or relatives so as to educate them sufficiently and give them the full benefit of informed consent to treatment and ensure compliance."
+        },
+        {
+          "code": "A.8",
+          "description": "At the end of the course, the student should have acquired knowledge in the following:"
+        },
+        {
+          "code": "A.9",
+          "description": "Clinical Ophthalmology:"
+        },
+        {
+          "code": "A.10",
+          "description": "Given adequate opportunity to work on the basis of graded responsibilities in outpatients, inpatient and operation theatres on a rational basis in the"
+        },
+        {
+          "code": "A.11",
+          "description": "clinical sections from the day of entry to the completion of the training"
+        }
+      ],
+      "psychomotor": [
+        {
+          "code": "B.1",
+          "description": "I. Examination techniques along with interpretation"
+        }
+      ],
+      "affective": [
+        {
+          "code": "C.1",
+          "description": "Should be able to function as a part of a team, develop an attitude of cooperation with colleagues, and interact with the patient and the clinician or other colleagues to provide the best possible diagnosis or opinion."
+        },
+        {
+          "code": "C.2",
+          "description": "i. Diffuse examination"
+        },
+        {
+          "code": "C.3",
+          "description": "Always adopt ethical principles and maintain proper etiquette in dealings with patients, relatives and other health personnel and to respect the rights of the patient including the right to information and second opinion."
+        },
+        {
+          "code": "C.4",
+          "description": "Develop communication skills to word reports and professional opinion as well as to interact with patients, relatives, peers and paramedical staff, and for effective teaching."
+        }
+      ]
+    },
+    "teachingMethods": [
+      "The theoretical knowledge is imparted to the post graduate student through distinct courses of lecture demonstrations, seminars, symposia and interand intradepartmental meetings. The students are exposed to recent advances through discussions in journal clubs and participation in CMEs, and symposia."
+    ],
+    "assessment": "i. Instruments ii. Pathology specimens iii. Drugs, X-rays, USG/OCT/CT/MRI Scans, etc. iv. Visual fields and other ophthalmic diagnostic charts Cornea: Fundamentals, Diagnosis, and Management. Krachmer JH, Mannis MJ, Holland EJ. Mosby Elsevier. Ophthalmology. Yanoff N, Duker JS. Mosby Elsevier.",
+    "recommendedBooks": [
+      "Name of the Department/Unit :",
+      "Name of the PG Student :",
+      "Period of Training",
+      ": FROM…………………TO……………",
+      "Annexure I",
+      "Yes/ No"
+    ],
+    "wordCount": 5451
+  },
+  {
+    "id": "ms-orthopedics",
+    "title": "Orthopedics",
+    "level": "MS",
+    "category": "Clinical",
+    "preamble": "The purpose of PG education is to create specialists who would provide high quality health care and advance the cause of science through research &amp; training. A postgraduate undergoing training MS in Orthopaedics should be trained to identify and recognize various congenital, developmental, inflammatory, infective, traumatic, metabolic, neuromuscular, degenerative and oncologic disorders of the musculoskeletal systems. She/he should be able to provide competent professional services to trauma and orthopaedic patients at a primary/ secondary/tertiary healthcare centres. Training in Research Methodology (Practice based learning, Evidence based practice) The purpose of this document is to provide teachers and learners illustrative guidelines to achieve defined outcomes through learning and assessment. This document was prepared by various subject-content specialists. The Reconciliation Board of Academic Committee has attempted to render uniformity without compromise to purpose and content of the document. Compromise in purity of syntax has been made in order to preserve the purpose and content. This has necessitated retention of 'domains of learning' under the heading 'competencies'.",
+    "objectives": [
+      "This will be dealt with under the following headings:",
+      " Theoretical knowledge (Cognitive domain)",
+      " Practical and clinical skills (psychomotor domain)",
+      " Attitudes including communication skills (Affective domain)",
+      " Writing thesis / Reviewing Research activities (Scholarly activity)",
+      " Training in Research Methodology (Practice based learning, Evidence based practice)",
+      " Professionalism",
+      " Teaching skills"
+    ],
+    "competencies": {
+      "cognitive": [],
+      "psychomotor": [
+        {
+          "code": "B.1",
+          "description": " Exhibits participation in honest, accurate health related information sharing in a sensitive and suitable manner"
+        },
+        {
+          "code": "B.2",
+          "description": " Recognizes that being a good communicator is essential to practice effectively"
+        },
+        {
+          "code": "B.3",
+          "description": "c. Counseling of relatives: regarding patients condition, seriousness, bereavement and counseling for organ donation in case of brain stem death"
+        },
+        {
+          "code": "B.4",
+          "description": " Exhibits effective and sensitive listening skills"
+        },
+        {
+          "code": "B.5",
+          "description": " Recognises the importance and timing of breaking bad news and knows how to communicate"
+        },
+        {
+          "code": "B.6",
+          "description": " Exhibits participation in discussion of emotional issues"
+        },
+        {
+          "code": "B.7",
+          "description": " Exhibits leadership in handling complex and advanced communication"
+        },
+        {
+          "code": "B.8",
+          "description": " Recognizes the importance of patient confidentiality and the conflict between confidentiality and disclosure"
+        },
+        {
+          "code": "B.9",
+          "description": " Able to establish rapport in therapeutic bonding with patients, relatives and other stakeholders through appropriate communication"
+        },
+        {
+          "code": "B.10",
+          "description": " Able to obtain comprehensive and relevant history from patients/relatives"
+        },
+        {
+          "code": "B.11",
+          "description": " Able to counsel patients on their condition and needs"
+        },
+        {
+          "code": "B.12",
+          "description": "b. Teamwork : Seek cooperation. Coordination and communication among treating specialties and paramedical staff"
+        },
+        {
+          "code": "B.13",
+          "description": "c. Counseling of relatives : regarding patients condition, seriousness, bereavement and counseling for organ donation in case of brain stem death"
+        },
+        {
+          "code": "B.14",
+          "description": "d. Leadership : Trauma prevention, education of the public, paramedical and medical persons. Advocacy : with the government and other agencies towards cause of trauma care"
+        },
+        {
+          "code": "B.15",
+          "description": "e. Ethics : The Code of Medical Ethics as proposed by Medical Council of India will be learnt and observed."
+        }
+      ],
+      "affective": [
+        {
+          "code": "C.1",
+          "description": "Should be able to function as a part of a team, develop an attitude of cooperation with colleagues, and interact with the patient and the clinician or other colleagues to provide the best possible diagnosis or opinion."
+        },
+        {
+          "code": "C.2",
+          "description": "Always adopt ethical principles and maintain proper etiquette in dealings with patients, relatives and other health personnel and to respect the rights of the patient including the right to information and second opinion."
+        },
+        {
+          "code": "C.3",
+          "description": "Develop communication skills to word reports and professional opinion as well as to interact with patients, relatives, peers and paramedical staff, and for effective teaching."
+        }
+      ]
+    },
+    "teachingMethods": [
+      " Emphasis should be given to various small group teachings rather than didactic lectures.",
+      " CASE PRESENTATION once a week in the ward, in the outpatient department and special clinics.",
+      " Seminars / Symposia - Twice a month; Theme based student centered",
+      " Journal club/ Review : Twice a month",
+      " Academic grand ward rounds: Twice a month presentation of cases by residents and clinically applicable discussions.",
+      " ORTHO RADIOLOGY MEETS: Twice a month discussions amongst Ortho &amp; Radiology Residents under facilitation of faculty on various imaging modalities used and its interpretation",
+      " ORTHO SURGICAL PATHOLOGICAL MEET : Special emphasis on the surgical pathology radiological aspect of the case in the pathology department. Clinician (Ortho resident) presenting the clinical details of the case, radiology PG student describes the Radiological findings and its interpretation and Pathology student describes the morbid anatomy and histopathology of the same case.",
+      " SKILLS LAB SESSIONS: Once a fortnight for all two years.",
+      " Clinical teaching in the OPD, Emergency room, ICU, OR as per the situation.",
+      " Mortality &amp; Morbidity meetings with SURGICAL AUDIT: Once a month",
+      "Clinical postings",
+      " Maintenance of log book: to be signed by the faculty in charge",
+      " The post graduate students shall be required to participate in the teaching and training programme of undergraduate students and interns.",
+      " A post graduate student of a postgraduate degree course in broad specialities/super specialities would be required to present one poster presentation, to read one paper at a national/state conference and to present one research paper which should be published/accepted for publication/sent for publication during the period of his postgraduate studies so as to make him eligible to appear at the post graduate degree examination .",
+      " Should have attended two conferences/CMEs/Workshops during his tenure as a postgraduate",
+      " Department should encourage e-learning activities."
+    ],
+    "assessment": "-Surgical Anatomy including Osteology -Instruments -Radiology -Surgical Pathology -Orthotics and prosthetics",
+    "recommendedBooks": [
+      "Campbell's Operative Orthopaedics, Vols 1,2,3 &amp; 4",
+      "Mercer's Orthopaedic Surgery",
+      "Rockwood And Greens - Fractures In Adults, Vol 1&amp; 2",
+      "Fractures In Children - Rockwood &amp; Wilkins",
+      "Physiological Basis Of Medical Practice - Best And Taylor's",
+      "Arthroscopic Surgery Of The Knee - Johannes",
+      "PaediatricOrthopaedics - Tachidjian, Vol 4",
+      "Concise System Of Orthopaedics And Fractures - Graham Apley",
+      "Orthopaedics And Traumatology - Natarajan",
+      "Outline Of Fractures Adams, Hamblen",
+      "Textbook Of Orthopaedics And Trauma - Kulkarni, Vol 1",
+      "B.D. Chaurasia's Human Anatomy, Vol1,Vol 2, Vol 3",
+      "Pharmacology And Pharmacotherapeutics - Satoskar",
+      "Orthopaedics Anatomy And Surgical Approaches Frederick Wreckling",
+      "Essential Orthopaedics And Trauma, Dandy, David J; Edwards, Dennis J",
+      "Adams's Outlines Of Fractures;Including Joint Injuries, Hamblen, David L; Simpson, A",
+      "Hamish R W",
+      "The Art Of Aesthetic Plastic Surgery - John R Levis, Vol 1",
+      "Current Concepts In Orthopaedics Dr. D. K. Tareja",
+      "Custom Mega Prosthesis &amp; Limb Salvage Surgery Dr. Mayilvahanan",
+      "Advances In Operative Orthopaedics",
+      "Green's Operative Hand Surgery-Vol. 1&amp;. 2, Green, David P; Hotchkiss, Robert N",
+      "Tachdjian's Pediatric Orthopaedics-Vol. 1, Vol 2, Vol 3, Herring, John Anthony",
+      "Surgical Exposures In Orthopedics:The Anatomic Approach, Hoppenfeld, Stanley; De Boer,Piet JUN",
+      "Adams's Outline Of Orthopaedics, Hamblen, David L; Simpson, Hamish R",
+      "Text Book Of Ilizarov Surgical Techniques Bone Correction And Lengthening, Golyakhovsky, Vladimir; Frankel, Victor H",
+      "Current Techniques In Total Knee Arthroplasty, Sawhney G S",
+      "Applied Orthopaedic Biomechanics, Dutta, Santosh; Datta,Debasis",
+      "Essential Orthopaedics And Trauma, Dandy, David J; Edwards, Dennis J",
+      "Adams's Outlines Of Fractures;Including Joint Injuries, Hamblen, David L; Simpson, A Hamish R W",
+      "Orthopedic Physical Assessment, Magee, David J",
+      "Turek's Textbook Of Orthopaedics Vol 1 &amp; 2, Turek's",
+      "Orthoapedics Surgical Approach, Miller"
+    ],
+    "wordCount": 4348
+  },
+  {
+    "id": "ms-general-surgery",
+    "title": "General Surgery",
+    "level": "MS",
+    "category": "Clinical",
+    "preamble": "The purpose of PG education is to create specialists who would provide high quality health care and advance the cause of science through research &amp; training. A post graduate specialist having undergone the required training should be able to recognize the health needs of the community, should be competent to handle effectively medical / surgical problems and should be aware of the recent advances pertaining to his specialty. The PG student should be competent to provide professional services with empathy and humane approach. The PG student should acquire the basic skills in teaching of medical / para-medical students and is also expected to know the principles of research methodology and self-directed learning for continuous professional development. The purpose of this document is to provide teachers and learners illustrative guidelines to achieve defined outcomes through learning and assessment. This document was prepared by various subject-content specialists. The Reconciliation Board of the Academic Committee has attempted to render uniformity without compromise to purpose and content of the document. Compromise in purity of syntax has been made in order to preserve the purpose and content. This has necessitated retention of 'domains of learning' under the heading 'competencies'.",
+    "objectives": [
+      "At the end of postgraduate training, the PG student should be able to: -",
+      "diagnose and appropriately manage common surgical ailments in a given situation.",
+      "provide adequate preoperative, post-operative and follow-up care of surgical patients.",
+      "identify situations calling for urgent or early surgical intervention and refer at the optimum time to the appropriate centers.",
+      "counsel and guide patients and relatives regarding need, implications and problems of surgery in the individual patient.",
+      "provide and coordinate emergency resuscitative measures in acute surgical situations including trauma.",
+      "organize and conduct relief measures in situations of mass disaster including triage.",
+      "logbook.",
+      "demonstrate sufficient understanding of basic sciences related to his specialty.",
+      "plan and advise measures for the prevention and rehabilitation of patients belonging to his specialty.",
+      "effectively participate in the National Health Programs especially in the Family Welfare Programs.",
+      "discharge effectively medico-legal and ethical responsibilities and practice his specialty ethically.",
+      "must learn to minimize medical errors.",
+      "must update knowledge in recent advances and newer techniques in the management of the patients.",
+      "must learn to obtain informed consent prior to performance of operative procedure.",
+      "perform surgical audit on a regular basis and maintain records (manual and/or electronic) for life.",
+      "participate regularly in departmental academic activities by presenting Seminar, Case discussion, Journal Club and Topic discussion on weekly basis and maintain logbook.",
+      "demonstrate sufficient understanding of basic sciences related to his specialty.",
+      "plan and advise measures for the prevention and rehabilitation of patients belonging to his specialty."
+    ],
+    "competencies": {
+      "cognitive": [
+        {
+          "code": "A.1",
+          "description": "By the end of the course, the student should have acquired knowledge (cognitive domain), professionalism (affective domain) and skills (psychomotor domain) as given below:"
+        },
+        {
+          "code": "A.2",
+          "description": "MRI."
+        },
+        {
+          "code": "A.3",
+          "description": "Demonstrate the knowledge of ethics, medico-legal aspects, communication skills and leadership skills. The PG student should be able to provide professional"
+        },
+        {
+          "code": "A.4",
+          "description": "o Demonstrate knowledge of applied aspects of basic sciences like applied anatomy, physiology, biochemistry, pathology, microbiology and pharmacology."
+        },
+        {
+          "code": "A.5",
+          "description": "o Demonstrate knowledge of the bedside procedures and latest diagnostics and therapeutics available."
+        },
+        {
+          "code": "A.6",
+          "description": "o Describe aetoiology, pathophysiology, principles of diagnosis and management of common surgical problems including emergencies, in adults and children."
+        },
+        {
+          "code": "A.7",
+          "description": "o Demonstrate the theoretical knowledge of general principles of surgery."
+        },
+        {
+          "code": "A.8",
+          "description": "o Demonstrate the theoretical knowledge of systemic surgery including disaster management and recent advances."
+        },
+        {
+          "code": "A.9",
+          "description": "o Demonstrate the theoretical knowledge to choose, and interpret appropriate diagnostic and therapeutic imaging including ultrasound, Mammogram, CT scan, MRI."
+        },
+        {
+          "code": "A.10",
+          "description": "o Demonstrate the knowledge of ethics, medico-legal aspects, communication skills and leadership skills. The PG student should be able to provide professional services with empathy and humane approach."
+        }
+      ],
+      "psychomotor": [
+        {
+          "code": "B.1",
+          "description": "o Perform a humane and thorough clinical examination including internal examinations and examinations of all organs/systems in adults and children"
+        },
+        {
+          "code": "B.2",
+          "description": "o Write a complete case record with all necessary details."
+        },
+        {
+          "code": "B.3",
+          "description": "o Arrive at a logical working diagnosis / differential diagnosis after clinical examination."
+        },
+        {
+          "code": "B.4",
+          "description": "o Order appropriate investigations keeping in mind their relevance (need based)."
+        },
+        {
+          "code": "B.5",
+          "description": "o Choose, perform and interpret appropriate imaging in trauma - ultrasound FAST (Focused Abdominal Sonography in Trauma)."
+        },
+        {
+          "code": "B.6",
+          "description": "Medi"
+        },
+        {
+          "code": "B.7",
+          "description": "Course Contents:"
+        },
+        {
+          "code": "B.8",
+          "description": "No limit can be fixed and no fixed number of topics can be prescribed as course"
+        },
+        {
+          "code": "B.9",
+          "description": "o Perform minor operative procedures and common general surgical operations independently and the major procedures under guidance."
+        },
+        {
+          "code": "B.10",
+          "description": "o Provide basic and advanced life saving support services in emergency situations"
+        },
+        {
+          "code": "B.11",
+          "description": "o Provide required immediate treatment and comprehensive treatment taking the help of specialist as required."
+        },
+        {
+          "code": "B.12",
+          "description": "o Perform minimally invasive surgery in appropriate clinical settings. Must have undergone basic training in operative laparoscopy related to general and GI Surgery."
+        },
+        {
+          "code": "B.13",
+          "description": "o Undertake complete patient monitoring including the preoperative and post operative care of the patient."
+        },
+        {
+          "code": "B.14",
+          "description": "o Write a proper discharge summary with all relevant information."
+        }
+      ],
+      "affective": [
+        {
+          "code": "C.1",
+          "description": "o Should be able to function as a part of a team, develop an attitude of cooperation with colleagues, and interact with the patient and the clinician or other colleagues to provide the best possible diagnosis or opinion."
+        },
+        {
+          "code": "C.2",
+          "description": "o Always adopt ethical principles and maintain proper etiquette in dealings with patients, relatives and other health personnel and to respect the rights of the patient including the right to information and second opinion."
+        },
+        {
+          "code": "C.3",
+          "description": "o Develop communication skills to word reports, obtain a proper relevant history and professional opinion as well as to interact with patients, relatives, peers and paramedical staff, and for effective teaching."
+        },
+        {
+          "code": "C.4",
+          "description": "o Obtain informed consent for any examination/procedure and explain to the patient and attendants the disease and its prognosis with a humane approach."
+        },
+        {
+          "code": "C.5",
+          "description": "o Provide appropriate care that is ethical, compassionate, responsive and cost effective and in conformation with statutory rules."
+        }
+      ]
+    },
+    "teachingMethods": [
+      "Didactic lectures are of least importance; small group discussion such as seminars, journal clubs, symposia, reviews and guest lectures should get priority for theoretical knowledge. Bedside teaching, grand rounds, structured interactive group discussions and clinical demonstrations should be the hallmark of clinical/practical learning with appropriate emphasis on e-learning. Student should have hand-on training in performing various procedures and ability to interpret various tests/investigations. Exposure to newer specialized diagnostic/therapeutic procedures concerning her/his subject should be given. Self-learning tools like assignments and case-based learning may be promoted."
+    ],
+    "assessment": "Clinical examination shall be conducted to test the knowledge, skills, attitude and competence of the post graduate students for undertaking independent work as a specialist/Teacher, for which post graduate students shall examine a minimum one long case and two short cases. The Oral examination shall be thorough and shall aim at assessing the post graduate student's knowledge and competence about the subject, investigative procedures, therapeutic technique and other aspects of the specialty, which form a part of the examination. Recent Advances in Surgery Assessment may include Objective structured clinical examination.(OSCE) Suroical Clinics of North America Oral/Viva-voce examination needs to assess knowledge on X-rays, instrumentation, operative procedures. Due weightage should be given to Log Book Records and dayto-day observation during the training.",
+    "recommendedBooks": [
+      "Name of the Department/Unit :",
+      "Name of the PG Student :",
+      "Period of Training",
+      ": FROM…………………TO……………",
+      "Yes/ No"
+    ],
+    "wordCount": 4850
+  },
+  {
+    "id": "ms-traumatology-surgery",
+    "title": "Traumatology & Surgery",
+    "level": "MS",
+    "category": "Clinical",
+    "preamble": "Emergency surgical problems including Accidental trauma is one of the leading causes of morbidity and mortality in India. Expansion in road network, motorization &amp; urbanization in the country has increased the dimension of death, disability and hospitalization with enormous socio-economic costs. The incidence of accidental deaths has shown a mixed trend during the decade 1997-2007 with an increase of 45.7% in the year 2007 as compared to 1997. The population growth during the corresponding period was 19.0% whereas the increase in the rate of accidental deaths during the same period was 22.5%. The total number of accidents reported by National Crime Report Bureau in the year 2014 was 4, 51,757 of which the number of persons killed in the road accidents were 1,41,526 and the number of persons injured 4,77,731 in 2014. The accident rate of 35 per thousand vehicles in India is the highest in the world as compared to 10 accidents per thousand vehicles in the developed countries. Every 12 minutes one Indian dies on the road and 10 times that number are injured. Amongst them 30% are disabled for life either partially or totally. WHO has projected that by the year presentations like abscesses, etc. These conditions if not managed in time lead to increase in the global burden of disease. According to one WHO estimates conditions treatable by surgery account for 11% of Global burden of disease. 2020, road traffic accident in India would be a major killer accounting to 5,46,000 deaths and 1,53,14,000 disability adjusted life years. In addition to Trauma, Non-Trauma Surgical Emergencies are also on the rise, and pose an added burden on the emergency services of the country. There is a high mortality and morbidity of patients with emergent surgical problems like acute abdominal conditions such as peritonitis (of various etiologies), appendicitis, acute cholecystitis, Intestinal Obstructions, septic presentations like abscesses, etc. These conditions if not managed in time lead to increase in the global burden of disease. According to one WHO estimates conditions treatable by surgery account for 11% of Global burden of disease. There is lack of exclusively trained specialists to manage the Acute Surgical conditions including trauma victims in an effective manner. The need in the trauma care is at various levels of trauma care centers. Presently, there is no exclusive availability of course on trauma and emergency surgery for doctors. Thus, there is need to undertake a Post Graduate course in Trauma and Acute Care Surgery leading to the nurturing of a new specialist of Emergency Surgeon who could be capable to manage all aspects of trauma and Acute care surgery comprehensively. Presently these patients are admitted in the department of Neurosurgery, Orthopaedics, General Surgery with cross referrals for specific needs. Every Medical College Casualty department receives anywhere between 10-30 patients a day who require attention through a single window rather than patients waiting in the Emergency room for multiple consults and clearance.",
+    "objectives": [
+      "Theoretical Knowledge",
+      "Practical and Clinical skills",
+      "Writing thesis/Research articles",
+      "Attitudes including communication skills",
+      "Training in Research Methodology"
+    ],
+    "competencies": {
+      "cognitive": [
+        {
+          "code": "A.1",
+          "description": "Describe the principles of cardiopulmonary resuscitation"
+        },
+        {
+          "code": "A.2",
+          "description": "Enumerate, classify and describe the Physiology, Patho-physiology basis of disorders of the various human systems namely (cardio vascular, musculoskeletal etc"
+        },
+        {
+          "code": "A.3",
+          "description": "Define and describe the various aspect of respiratory and circulatory failure (Shock)"
+        },
+        {
+          "code": "A.4",
+          "description": "By the end of the course, the student should have acquired knowledge (cognitive domain), professionalism (affective domain) and skills (psychomotor domain) as given below:"
+        },
+        {
+          "code": "A.5",
+          "description": "Describe hematological and coagulation disorders"
+        },
+        {
+          "code": "A.6",
+          "description": "The student/ learner should be able to:"
+        },
+        {
+          "code": "A.7",
+          "description": "Describe the principles of cardiopulmonary resuscitation"
+        },
+        {
+          "code": "A.8",
+          "description": "Enumerate, classify and describe the Physiology, Patho-physiology basis of disorders of the various human systems namely (cardio vascular, musculoskeletal etc)"
+        },
+        {
+          "code": "A.9",
+          "description": "Define and describe the various aspect of respiratory and circulatory failure (Shock)"
+        },
+        {
+          "code": "A.10",
+          "description": "Understand the metabolic, nutritional and endocrine effects of Trauma and critical illness including ambulance facilities"
+        },
+        {
+          "code": "A.11",
+          "description": "Understand ethical and legal aspects of surgical critical care and acute trauma care"
+        },
+        {
+          "code": "A.12",
+          "description": "Diagnose and manage acute surgical patients including trauma, in all situations including Obstetric patients, Geriatric, Pediatric and mentally disabled patients"
+        },
+        {
+          "code": "A.13",
+          "description": "Have basic understanding of Trauma systems, Trauma scores, GC scale, Triage etc."
+        },
+        {
+          "code": "A.14",
+          "description": "Describe hematological and coagulation disorders"
+        },
+        {
+          "code": "A.15",
+          "description": "Describe the pharmacokinetics and dynamics of drug metabolism, excretion in critical illness"
+        },
+        {
+          "code": "A.16",
+          "description": "Understanding of biostatistics and research methodology"
+        },
+        {
+          "code": "A.17",
+          "description": "Demonstrate ability to organize emergency trauma &amp; acute care services in the country including ambulance facilities"
+        },
+        {
+          "code": "A.18",
+          "description": "Understand ethical and legal aspects of surgical critical care and acute trauma care"
+        },
+        {
+          "code": "A.19",
+          "description": "Classification, diagnosis and emergency management of musculoskeletal traumas both bone and soft tissues of extremities, operative and non-operative"
+        },
+        {
+          "code": "A.20",
+          "description": "Reinforce the basic understanding of the structure and function of the human body and all other systems"
+        },
+        {
+          "code": "A.21",
+          "description": "Reinforce the pathological basics for diseases with particular focus on traumatic condition and non-traumatic acute surgical condition"
+        },
+        {
+          "code": "A.22",
+          "description": "Describe the microbiological basis of infectious diseases and its pharmacotherapeutics"
+        },
+        {
+          "code": "A.23",
+          "description": "Understand the principles and technologies of administration and management of ICU"
+        },
+        {
+          "code": "A.24",
+          "description": "chest, abdominal, neck, cervical-thoracic and lumbar spine, pelvis and extremity films, and also the point of care Ultrasonography in both trauma and non-trauma patients."
+        },
+        {
+          "code": "A.25",
+          "description": "Discuss the importance of relevant history of surgical patient including mechanism of injury in the evaluation and treatment of a trauma victim."
+        },
+        {
+          "code": "A.26",
+          "description": "Demonstrate ability to establish priorities in the initial management of victims of lifethreatening and potentially life threatening surgical emergencies."
+        },
+        {
+          "code": "A.27",
+          "description": "Demonstrate ability to rapidly and thoroughly assess victims of major and minor trauma."
+        },
+        {
+          "code": "A.28",
+          "description": "Demonstrate ability to manage the airway of acutely ill patients."
+        },
+        {
+          "code": "A.29",
+          "description": "Demonstrate ability to manage fluid resuscitation of acutely ill surgical patients."
+        },
+        {
+          "code": "A.30",
+          "description": "Discuss the continuing care of the surgical patient, including aneasthesia, operative, postoperative and rehabilitative phases of care."
+        },
+        {
+          "code": "A.31",
+          "description": "Demonstrate ability to interpret radiographs and CT Scans on surgical patients, including chest, abdominal, neck, cervical-thoracic and lumbar spine, pelvis and extremity films, and also the point of care Ultrasonography in both trauma and non-trauma patients."
+        },
+        {
+          "code": "A.32",
+          "description": "Discuss the importance of relevant history of surgical patient including mechanism of injury in the evaluation and treatment of a trauma victim."
+        },
+        {
+          "code": "A.33",
+          "description": "Demonstrate the ability to assess and initially manage patient with acute non-traumatic surgical conditions such as Intra-Abdominal Catastrophes, Hollow Visceral Surgical Emergencies, Hepato-biliary Surgical Emergencies, Pancreatitis, Abdominal Wall Hernias and acute complications, acute upper and lower GI bleedings etc."
+        },
+        {
+          "code": "A.34",
+          "description": "Demonstrate ability to manage soft tissue infections and injuries including, lacerations, avulsions and high-pressure injuries."
+        },
+        {
+          "code": "A.35",
+          "description": "Discuss the diagnosis and emergent management of compartment syndromes."
+        },
+        {
+          "code": "A.36",
+          "description": "Discuss the diagnosis and emergency management of trauma related uro-genital emergencies"
+        },
+        {
+          "code": "A.37",
+          "description": "Demonstrate appropriate use of analgesics and sedatives in emergency surgical patients."
+        },
+        {
+          "code": "A.38",
+          "description": "Demonstrate appropriate use of antibiotics in emergency surgery and trauma patients."
+        },
+        {
+          "code": "A.39",
+          "description": "Demonstrate ability to arrange appropriate consultation and disposition of trauma patients from the ED."
+        },
+        {
+          "code": "A.40",
+          "description": "Demonstrate ability to direct the care of acutely ill victims in the pre-hospital setting."
+        },
+        {
+          "code": "A.41",
+          "description": "Discuss principle of disaster management and participate in disaster drills."
+        },
+        {
+          "code": "A.42",
+          "description": "Demonstrate the ability to manage the acutely burned patient, including minor and major injuries."
+        },
+        {
+          "code": "A.43",
+          "description": "Discuss indications and procedures for safe transfer of an emergency patient to another center."
+        },
+        {
+          "code": "A.44",
+          "description": "Demonstrate skills in Advanced Trauma Life Support, Basic life support, advanced cardiac life support,"
+        },
+        {
+          "code": "A.45",
+          "description": "Optional Courses: Pediatric cardiac life support, Neonatal Life support, advanced burn life support and advanced hazmat life support."
+        },
+        {
+          "code": "A.46",
+          "description": "Demonstrate the ability to determine priorities of treatment care in a patient with multiple injuries including spinal injuries and plan definitive care with appropriate specialists."
+        },
+        {
+          "code": "A.47",
+          "description": "colleagues, and interact with the patient and the clinician or other colleagues to provide the best possible diagnosis or opinion."
+        },
+        {
+          "code": "A.48",
+          "description": "Always adopt ethical principles and maintain proper etiquette in dealings with patients, relatives and other health personnel and to respect the rights of the patient including the"
+        },
+        {
+          "code": "A.49",
+          "description": "Demonstrate the ability to manage non-trauma acute surgical emergencies both as acute care and definitive surgical management."
+        }
+      ],
+      "psychomotor": [
+        {
+          "code": "B.1",
+          "description": "At the end of the course, the student should be able to perform the following procedures, under supervision during the training period:"
+        },
+        {
+          "code": "B.2",
+          "description": " Airway management including Endotracheal intubation and difficult airway"
+        },
+        {
+          "code": "B.3",
+          "description": " Surgical airway / Cricothyroidotomy/Tracheostomy"
+        },
+        {
+          "code": "B.4",
+          "description": " Venous access"
+        },
+        {
+          "code": "B.5",
+          "description": " Intraosseous access"
+        },
+        {
+          "code": "B.6",
+          "description": " Needle thoracocentesis/Chest drain insertion/Pericardial drainage"
+        },
+        {
+          "code": "B.7",
+          "description": " Focussed Assessment Sonography in Trauma (FAST) and Diagnostic Peritoneal Lavage (DPL)"
+        },
+        {
+          "code": "B.8",
+          "description": " Suprapubiccystostomy"
+        },
+        {
+          "code": "B.9",
+          "description": " Splinting of fractures"
+        },
+        {
+          "code": "B.10",
+          "description": " Immobilisation of pelvic fractures in ED"
+        },
+        {
+          "code": "B.11",
+          "description": " Application of plaster slab for various extremity fractures"
+        },
+        {
+          "code": "B.12",
+          "description": " Fasciotomy"
+        },
+        {
+          "code": "B.13",
+          "description": " Control of oromaxillofacial bleeding"
+        },
+        {
+          "code": "B.14",
+          "description": " Laparotomy for trauma"
+        },
+        {
+          "code": "B.15",
+          "description": "Critical Care:"
+        },
+        {
+          "code": "B.16",
+          "description": "Monitoring in ICU including ICP monitoring"
+        },
+        {
+          "code": "B.17",
+          "description": "Ventilatory support techniques"
+        },
+        {
+          "code": "B.18",
+          "description": " Thoracotomy for trauma"
+        },
+        {
+          "code": "B.19",
+          "description": " Craniotomy for trauma: When neurosurgeon is not available"
+        },
+        {
+          "code": "B.20",
+          "description": " Emergency amputation for crush limbs"
+        },
+        {
+          "code": "B.21",
+          "description": " Application of external fixator"
+        },
+        {
+          "code": "B.22",
+          "description": " Emergency vascular procedures for limb salvage"
+        },
+        {
+          "code": "B.23",
+          "description": " Neck surgeries for trauma"
+        },
+        {
+          "code": "B.24",
+          "description": " Surgeries for crush injuries, wound management including debrediment."
+        },
+        {
+          "code": "B.25",
+          "description": "Cranial decompression in dire emergencies when neurosurgeon not present"
+        },
+        {
+          "code": "B.26",
+          "description": "Intermaxillary wiring"
+        },
+        {
+          "code": "B.27",
+          "description": "Basic plastic reconstruction techniques for facial soft tissues"
+        },
+        {
+          "code": "B.28",
+          "description": "Exposure and techniques for ORIF of facial fractures including"
+        },
+        {
+          "code": "B.29",
+          "description": "Emergency management of acute operative conditions in the pregnant patient"
+        },
+        {
+          "code": "B.30",
+          "description": "Emergency management of abdominal compartment syndrome"
+        },
+        {
+          "code": "B.31",
+          "description": "Damage control techniques"
+        },
+        {
+          "code": "B.32",
+          "description": "Abdominal wall reconstruction following resectional"
+        },
+        {
+          "code": "B.33",
+          "description": "Attends OPD (related to trauma and Emergency Surgery follow up)"
+        },
+        {
+          "code": "B.34",
+          "description": "Attends operation room/theatre"
+        }
+      ],
+      "affective": [
+        {
+          "code": "C.1",
+          "description": "The post graduate student:"
+        },
+        {
+          "code": "C.2",
+          "description": "a. Communication skills:"
+        },
+        {
+          "code": "C.3",
+          "description": "Should be able to function as a part of a team, develop an attitude of cooperation with colleagues, and interact with the patient and the clinician or other colleagues to provide the best possible diagnosis or opinion."
+        },
+        {
+          "code": "C.4",
+          "description": "Always adopt ethical principles and maintain proper etiquette in dealings with patients, relatives and other health personnel and to respect the rights of the patient including the right to information and second opinion."
+        },
+        {
+          "code": "C.5",
+          "description": "Develop communication skills to word reports and professional opinion as well as to interact with patients, relatives, peers and paramedical staff, and for effective teaching."
+        },
+        {
+          "code": "C.6",
+          "description": "These are detailed below:"
+        }
+      ]
+    },
+    "teachingMethods": [
+      "The following learning methods are to be used for the teaching of postgraduate students:",
+      "Journal Club: 1 hour duration (Paper presentation/discussion) once per week (Afternoon).",
+      "Seminar: One seminar every week of one hour duration (Afternoon)",
+      "Lecture/discussion: Lectures on newer topics by faculty, in place of Seminar/as per need.",
+      "Case presentation in the ward (trainee will present a clinical case for discussion before a faculty and discussion made pertaining to its management and decision to be recorded in case files)",
+      "Case Conference . Post graduate students are expected to work-up one long case and three short cases and present the same to a faculty member and discuss the management.",
+      "out by them and the training programme undergone during the period of training including details of surgical operations assisted or done independently by M.S. candidates. The Log",
+      "Books shall be checked and assessed periodically by the faculty members imparting the training.",
+      "Radiology Conferences: To be held twice weekly in morning in which the radiological features of various problems are discussed.",
+      "Quality Assurance Meetings / Mortality-Morbidity meetings: Special emphasis is made on the unusual incidents and unnatural deaths/ morbidity aspect of the case, so as to assure quality care and also act as an effective teaching tool.",
+      "Combined Round/Grand Round: These exercises are to be done for the hospital once/week or twice a month involving presentation of usual or difficult patients",
+      "Clinical teaching: In emergency, OPD, ward rounds, ICU and the operation theatres.",
+      "Log Book: Post Graduate students shall maintain a record (log) book of the work carried out by them and the training programme undergone during the period of training including details of surgical operations assisted or done independently by M.S. candidates. The Log Books shall be checked and assessed periodically by the faculty members imparting the training.",
+      "The Post Graduate students shall be required to participate in the teaching and training programme of undergraduate students and interns.",
+      "Department should encourage e-learning activities.",
+      "Clinical postings: Recommended schedule for three years training:",
+      "TT T",
+      "The post graduate student is required to work full time in the Department of Trauma &amp; Acute Care Surgery, participate in the patient care and academic and research activities as described below."
+    ],
+    "assessment": "Oral examination shall be comprehensive enough to test the candidate's overall knowledge of the subject.",
+    "recommendedBooks": [
+      "Publisher",
+      "Trauma. Feliciano, Mattox, Moore (ed), The Mc Grow Hill Co. publishers",
+      "Emergency Management of Trauma patient Cases, Algorithms. Mark Bisanzo, Michael R Fibin, Kriti Bhatia (ed), Lippincott Williams &amp; Wilkins publishers 9.",
+      "Trauma - Contemporary Principles &amp; therapy, Lewis Flint, J. Wayne Meredith, C. William Schwab (eds) , Lippincott Williams &amp; Wilkins publishers",
+      "Disaster Medicine. David Hogan, Jonathan Brownstein (eds), Lippincott Williams &amp; Wilkins publishers 11. comprehensive studv ouide Judith Tintinalli Robert",
+      "Trauma (Vol 1 &amp; 2) - Emergency Resuscitation, Preoperative Anesthesia, Surgical Management. Leslie Wilson, William Wilson (eds). Informa Health Care publishers",
+      "Hamilton Baily's Emergency Surgery - T. J. McNair, John Wright &amp; Sons, publishers",
+      "The Injured child - Surgical Management. Judson G. Randolph, Mark M. Ravitch, Kenneth J. Welch, Clifford D. Benson, Eoin Aberdeen (eds) Year Book Medical Publisher",
+      "Trauma Management -Emergency Medicine Approach. Peter Ferrera, Stephen Colucciello, John Marx, Vincent Verdile, Michael Gibbs (eds), Mosby publishers.",
+      "Evaluation of Impairments &amp; disabilities. Murlidhar V., Vijay Kanhere (eds), Bhalani Publishing House.",
+      "Current Emergency diagnosis &amp; Treatment. John Mills, Mary T. Ho, Donald D Trunky. Lange Medical Publications.",
+      "Emergency Medicine -A comprehensive study guide. Judith Tintinalli, Robert Rothsteinis, Ronald Kozme (eds) McGrow Hill Publication",
+      "Primary Surgery - Trauma - Maurice King, Oxford Publications",
+      "Rob &amp; Smith's Operative surgery Accidental Surgery. Champion Howard (eds). Butter Worths publications",
+      "The Textbook of Penetrating Abdominal Trauma. Rao R. Ivatuari, C. Gene Cayten. Williams &amp; Wilkins",
+      "Rockwood and Green's Fractures in Adults: Two Volumes Plus Integrated Content",
+      "Website",
+      "(Rockwood,",
+      "Green, and Wilkins'",
+      "Fractures) by Robert",
+      "Bucholz (Editor), Charles M. Court-Brown (Editor), James D. Heckman (Editor)",
+      "Manual of definitive surgical trauma care by Kenneth D. Boffard, (A Hodder Arnold Publication)",
+      "Top Knife: The Art and Craft of Trauma Surgery by Asher Hirshberg, Kenneth L. Mattox (Authors) TFM publishers",
+      "ATLS Student Course Manual published by American College of Surgeons",
+      "ACLS course manual",
+      "PALS course manual",
+      "Life Support Course Manual (AIIMS)",
+      "Rockwood and Green's Fractures in Adults: Two Volumes Plus Integrated Content Website (Rockwood, Green, and Wilkins' Fractures) by Robert W. Bucholz (Editor), Charles M. Court-Brown (Editor), James D. Heckman (Editor)",
+      "Watson-Jones Fractures and Joint Injuries by J.N. Wilson (Author)"
+    ],
+    "wordCount": 4628
+  }
+]

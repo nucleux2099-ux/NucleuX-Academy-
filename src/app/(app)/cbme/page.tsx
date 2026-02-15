@@ -8,6 +8,7 @@ import { CBME_MBBS_Y4_BLOCKS } from "@/lib/data/cbme-mbbs-y4";
 import { PG_CURRICULA, type PGDegree } from "@/lib/data/cbme-pg";
 import { SS_CURRICULA, type SSDegree } from "@/lib/data/cbme-ss";
 import type { CBMEBlock } from "@/lib/data/cbme-types";
+import { ALL_CURRICULA, NMC_STATS, getCurriculumBySlug } from "@/lib/data/nmc-vault";
 import Link from "next/link";
 
 /* ─── tab types ─── */
@@ -190,33 +191,42 @@ export default function CBMEPage() {
               (c) =>
                 (pgFilter === "all" || c.degree === pgFilter) &&
                 (search === "" || matches(c.title, search) || matches(c.subject, search) || matches(c.description, search))
-            ).map((c) => (
-              <div
-                key={c.id}
-                className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-zinc-600 transition-colors"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`px-2 py-0.5 text-xs rounded border ${degreeBadge(c.degree)}`}>
-                    {c.degree}
-                  </span>
-                  {c.hasRevised && (
-                    <span className="px-1.5 py-0.5 text-xs rounded bg-green-600/10 text-green-500 border border-green-500/20">
-                      Revised
+            ).map((c) => {
+              const nmc = getCurriculumBySlug(c.id);
+              const totalComp = nmc
+                ? nmc.competencies.cognitive.length + nmc.competencies.psychomotor.length + nmc.competencies.affective.length
+                : 0;
+              return (
+                <Link
+                  key={c.id}
+                  href={c.id === "ms-general-surgery" ? "/cbme/surgery" : `/cbme/${c.id}`}
+                  className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-cyan-500/30 transition-colors block"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className={`px-2 py-0.5 text-xs rounded border ${degreeBadge(c.degree)}`}>
+                      {c.degree}
+                    </span>
+                    {totalComp > 0 && (
+                      <span className="px-1.5 py-0.5 text-xs rounded bg-cyan-600/10 text-cyan-400 border border-cyan-500/20">
+                        {totalComp} competencies
+                      </span>
+                    )}
+                    {c.hasRevised && (
+                      <span className="px-1.5 py-0.5 text-xs rounded bg-green-600/10 text-green-500 border border-green-500/20">
+                        Revised
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-white font-medium text-sm">{c.title}</h3>
+                  <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
+                  {c.librarySubject && (
+                    <span className="inline-block mt-2 text-xs text-blue-400">
+                      📚 Library →
                     </span>
                   )}
-                </div>
-                <h3 className="text-white font-medium text-sm">{c.title}</h3>
-                <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
-                {c.librarySubject && (
-                  <Link
-                    href={`/library/${c.librarySubject}`}
-                    className="inline-block mt-2 text-xs text-blue-400 hover:text-blue-300"
-                  >
-                    📚 Library →
-                  </Link>
-                )}
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
@@ -244,36 +254,45 @@ export default function CBMEPage() {
               (c) =>
                 (ssFilter === "all" || c.degree === ssFilter) &&
                 (search === "" || matches(c.title, search) || matches(c.subject, search) || matches(c.description, search))
-            ).map((c) => (
-              <div
-                key={c.id}
-                className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-zinc-600 transition-colors"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`px-2 py-0.5 text-xs rounded border ${degreeBadge(c.degree)}`}>
-                    {c.degree}
-                  </span>
-                  {c.hasRevised && (
-                    <span className="px-1.5 py-0.5 text-xs rounded bg-green-600/10 text-green-500 border border-green-500/20">
-                      Revised
+            ).map((c) => {
+              const nmc = getCurriculumBySlug(c.id);
+              const totalComp = nmc
+                ? nmc.competencies.cognitive.length + nmc.competencies.psychomotor.length + nmc.competencies.affective.length
+                : 0;
+              return (
+                <Link
+                  key={c.id}
+                  href={`/cbme/${c.id}`}
+                  className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-cyan-500/30 transition-colors block"
+                >
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
+                    <span className={`px-2 py-0.5 text-xs rounded border ${degreeBadge(c.degree)}`}>
+                      {c.degree}
+                    </span>
+                    {totalComp > 0 && (
+                      <span className="px-1.5 py-0.5 text-xs rounded bg-cyan-600/10 text-cyan-400 border border-cyan-500/20">
+                        {totalComp} competencies
+                      </span>
+                    )}
+                    {c.hasRevised && (
+                      <span className="px-1.5 py-0.5 text-xs rounded bg-green-600/10 text-green-500 border border-green-500/20">
+                        Revised
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-white font-medium text-sm">{c.title}</h3>
+                  <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
+                  {c.parentDegree && (
+                    <p className="text-zinc-600 text-xs mt-1">← {c.parentDegree}</p>
+                  )}
+                  {c.librarySubject && (
+                    <span className="inline-block mt-2 text-xs text-purple-400">
+                      📚 Library →
                     </span>
                   )}
-                </div>
-                <h3 className="text-white font-medium text-sm">{c.title}</h3>
-                <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
-                {c.parentDegree && (
-                  <p className="text-zinc-600 text-xs mt-1">← {c.parentDegree}</p>
-                )}
-                {c.librarySubject && (
-                  <Link
-                    href={`/library/${c.librarySubject}`}
-                    className="inline-block mt-2 text-xs text-purple-400 hover:text-purple-300"
-                  >
-                    📚 Library →
-                  </Link>
-                )}
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}
@@ -292,9 +311,21 @@ export default function CBMEPage() {
         </div>
       </div>
 
-      {/* NMC Competency Coverage */}
+      {/* NMC Vault Stats */}
       <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4">
-        <h3 className="text-sm font-semibold text-zinc-300 mb-1">📊 Library Coverage</h3>
+        <h3 className="text-sm font-semibold text-zinc-300 mb-2">📊 NMC Vault — Full Curriculum Data</h3>
+        <div className="flex gap-4 flex-wrap text-sm">
+          <span className="text-white font-medium">{NMC_STATS.totalSpecialties} <span className="text-zinc-500 font-normal">specialties</span></span>
+          <span className="text-cyan-400 font-medium">{NMC_STATS.totalCompetencies.toLocaleString()} <span className="text-zinc-500 font-normal">competencies</span></span>
+          <span className="text-amber-400 font-medium">{NMC_STATS.totalBooks.toLocaleString()} <span className="text-zinc-500 font-normal">books</span></span>
+          <span className="text-green-400 font-medium">{NMC_STATS.booksWeHave} <span className="text-zinc-500 font-normal">in library</span></span>
+        </div>
+        <p className="text-zinc-600 text-xs mt-2">Click any PG/SS card above to view full curriculum with competencies, teaching methods, assessment & books.</p>
+      </div>
+
+      {/* UG Library Coverage */}
+      <div className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4">
+        <h3 className="text-sm font-semibold text-zinc-300 mb-1">📊 UG Library Coverage</h3>
         <p className="text-zinc-400 text-sm">
           <span className="text-white font-medium">1,020</span> of <span className="text-white font-medium">2,947</span> UG competencies mapped to Library topics
         </p>
