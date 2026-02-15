@@ -32,6 +32,7 @@ import { VIEW_MODE_CONFIG } from "@/lib/types/library";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { AutoExamPrep } from "@/components/AutoExamPrep";
 import { AtomLibrarian } from "@/components/AtomLibrarian";
+import { RoadmapView } from "@/components/library/RoadmapView";
 import { addPocketNote, getNotesForTopic } from "@/lib/pocket/store";
 import { addBackstageEvent, normalizeSubject } from "@/lib/backstage/store";
 import {
@@ -1599,68 +1600,11 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
 
       case 'roadmap':
         return (
-          <div className="space-y-6">
-            {/* Prerequisites */}
-            {(topic.prerequisites?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3">Prerequisites</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {topic.prerequisites?.map((prereq) => {
-                      const prereqTopic = allTopics.find(t => t.id === prereq);
-                      return (
-                        <Link
-                          key={prereq}
-                          href={`/library/${subject.slug}/${subspecialty.slug}/${prereqTopic?.slug || prereq}?mode=explorer`}
-                        >
-                          <Badge className="bg-[#0D1B2A] hover:bg-[rgba(6,182,212,0.1)] text-[#9CA3AF] border-[rgba(6,182,212,0.2)] cursor-pointer">
-                            <ChevronLeft className="w-3 h-3 mr-1" />
-                            {prereqTopic?.name || prereq}
-                          </Badge>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Current Topic */}
-            <Card className="bg-[rgba(6,182,212,0.1)] border-[#06B6D4]">
-              <CardContent className="p-5">
-                <h3 className="font-semibold text-[#06B6D4] mb-2">Current Topic</h3>
-                <p className="text-xl font-bold text-[#E5E7EB]">{topic.name}</p>
-                {topic.description && (
-                  <p className="text-[#9CA3AF] mt-1">{topic.description}</p>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Related Topics */}
-            {(topic.relatedTopics?.length ?? 0) > 0 && (
-              <Card className="bg-[#142538] border-[rgba(6,182,212,0.1)]">
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-[#E5E7EB] mb-3">Related Topics</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {topic.relatedTopics?.map((related) => {
-                      const relatedTopic = allTopics.find(t => t.id === related);
-                      return (
-                        <Link
-                          key={related}
-                          href={`/library/${subject.slug}/${subspecialty.slug}/${relatedTopic?.slug || related}?mode=explorer`}
-                        >
-                          <Badge className="bg-[#0D1B2A] hover:bg-[rgba(6,182,212,0.1)] text-[#9CA3AF] border-[rgba(6,182,212,0.2)] cursor-pointer">
-                            {relatedTopic?.name || related}
-                            <ChevronRight className="w-3 h-3 ml-1" />
-                          </Badge>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-          </div>
+          <RoadmapView
+            topic={topic}
+            subjectSlug={subject.slug}
+            subspecialtySlug={subspecialty.slug}
+          />
         );
 
       default:
