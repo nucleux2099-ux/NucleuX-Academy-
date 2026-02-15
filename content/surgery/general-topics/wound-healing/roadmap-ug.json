@@ -1,0 +1,59 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Normal wound healing depends on intact hemostatic and inflammatory cascades; understanding tissue oxygenation and perfusion physiology is essential",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-nutrition",
+      "nmcCode": "",
+      "reason": "Protein-calorie malnutrition, vitamin C and zinc deficiency directly impair collagen synthesis and wound tensile strength",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Burn wound healing involves unique challenges including contraction, hypertrophic scarring, and the need for grafting in deep burns",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "asepsis-sterilization",
+      "nmcCode": "",
+      "reason": "Aseptic wound management and sterile dressing technique are fundamental to promoting primary wound healing",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Wound infection is the most common cause of impaired healing and dehiscence; SSI prevention is integral to wound management",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "skin-subcutaneous-tumors",
+      "nmcCode": "",
+      "reason": "Chronic non-healing wounds (Marjolin's ulcer) can undergo malignant transformation; wound biology underpins excision and reconstruction planning",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU5.1: Describe normal wound healing and factors affecting healing.",
+    "SU5.2: Elicit, document and present a history in a patient presenting with C",
+    "SU5.3: Differentiate the various types of wounds, plan and observe",
+    "SU5.4: Discuss medico legal aspects of wounds"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Wound Healing across foundational sciences and clinical applications."
+}

@@ -1,3 +1,41 @@
-title: Liver Abscess
+title: "Liver Abscess"
 slug: liver-abscess
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.10"
+  - "IM5.13"
+prerequisites:
+  - "liver-anatomy"
+  - "portal-hypertension"
+related_topics:
+  - "hydatid-cyst"
+  - "cholangitis"
+  - "hepatocellular-carcinoma"
+  - "obstructive-jaundice"
+enrichment:
+  nmcCodes:
+    - code: "SU28.10"
+      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
+      domain: "KH"
+    - code: "IM5.13"
+      text: "Enumerate the indications for ultrasound and other imaging studies including MRCP and ERCP and describe the findings in liver disease"
+      domain: "K"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Segmental anatomy determines abscess localization and guides percutaneous vs surgical drainage approach"
+    - slug: "portal-hypertension"
+      reason: "Portal pyaemia from intra-abdominal sepsis (e.g., appendicitis, diverticulitis) is a key pathogenic route for pyogenic liver abscess"
+  related_details:
+    - slug: "hydatid-cyst"
+      reason: "Hydatid cyst is the chief differential for cystic hepatic lesions; infected hydatid mimics pyogenic abscess"
+      relationship: "differential"
+    - slug: "cholangitis"
+      reason: "Ascending cholangitis with biliary obstruction is the most common cause of pyogenic liver abscess"
+      relationship: "etiology"
+    - slug: "hepatocellular-carcinoma"
+      reason: "Necrotic HCC can mimic liver abscess on imaging; tumor markers and biopsy differentiate the two"
+      relationship: "differential"
+    - slug: "obstructive-jaundice"
+      reason: "Biliary obstruction predisposes to cholangitic abscesses; jaundice with fever and RUQ pain raises suspicion"
+      relationship: "clinical"

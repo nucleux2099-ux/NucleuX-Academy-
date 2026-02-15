@@ -1,6 +1,45 @@
-title: Surgical Infections
+title: "Surgical Infections"
 slug: surgical-infections
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU6.1
-- SU6.2
+  - "SU6.1"
+  - "SU6.2"
+prerequisites:
+  - "asepsis-sterilization"
+  - "homeostasis"
+related_topics:
+  - "shock"
+  - "burns"
+  - "wound-healing"
+  - "gas-gangrene"
+  - "perioperative-management"
+enrichment:
+  nmcCodes:
+    - code: "SU6.1"
+      text: "Define and describe the aetiology and pathogenesis of surgical infections"
+      domain: "K"
+    - code: "SU6.2"
+      text: "Enumerate Prophylactic and therapeutic antibiotics. Plan appropriate management"
+      domain: "K"
+  prerequisite_details:
+    - slug: "asepsis-sterilization"
+      reason: "Understanding sterilization, disinfection and aseptic technique is fundamental to preventing surgical site infections"
+    - slug: "homeostasis"
+      reason: "Understanding the immune response, inflammatory cascade and body defense mechanisms is fundamental to comprehending surgical infection pathogenesis"
+  related_details:
+    - slug: "shock"
+      reason: "Uncontrolled surgical infections progress to sepsis and septic shock requiring source control, antibiotics and hemodynamic support"
+      relationship: "clinical"
+    - slug: "burns"
+      reason: "Burn wounds are highly susceptible to infection (Pseudomonas, MRSA) which is the leading cause of mortality in burn patients"
+      relationship: "clinical"
+    - slug: "wound-healing"
+      reason: "Surgical infections disrupt normal wound healing; SSI is the most common cause of wound dehiscence and delayed healing"
+      relationship: "clinical"
+    - slug: "gas-gangrene"
+      reason: "Gas gangrene (Clostridial myonecrosis) is a life-threatening surgical infection requiring emergency debridement and high-dose penicillin"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "Surgical antibiotic prophylaxis timing and choice is a key perioperative intervention to reduce SSI rates"
+      relationship: "clinical"

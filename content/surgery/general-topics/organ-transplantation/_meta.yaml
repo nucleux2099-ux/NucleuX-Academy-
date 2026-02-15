@@ -1,8 +1,45 @@
-title: Organ Transplantation
+title: "Organ Transplantation"
 slug: organ-transplantation
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU13.1
-- SU13.2
-- SU13.3
-- SU13.4
+  - "SU13.1"
+  - "SU13.2"
+  - "SU13.3"
+  - "SU13.4"
+prerequisites:
+  - "surgical-ethics"
+  - "surgical-infections"
+related_topics:
+  - "shock"
+  - "blood-transfusion"
+  - "investigations-imaging"
+enrichment:
+  nmcCodes:
+    - code: "SU13.1"
+      text: "Describe the immunological basis of organ transplantation."
+      domain: "K"
+    - code: "SU13.2"
+      text: "Discuss the Principles of immunosuppressive therapy. Enumerate indications for organ transplantation."
+      domain: "K"
+    - code: "SU13.3"
+      text: "Discuss the legal and ethical issues concerning organ donation."
+      domain: "K"
+    - code: "SU13.4"
+      text: "Counsel patients and relatives on organ donation in a simulated environment."
+      domain: "S"
+  prerequisite_details:
+    - slug: "surgical-ethics"
+      reason: "Brain death declaration, consent for organ harvesting, and allocation ethics are central to transplant practice"
+    - slug: "surgical-infections"
+      reason: "Immunosuppressed transplant recipients are highly vulnerable to opportunistic and surgical infections"
+  related_details:
+    - slug: "shock"
+      reason: "Organ donors are often brain-dead patients requiring hemodynamic management to preserve organ viability"
+      relationship: "clinical"
+    - slug: "blood-transfusion"
+      reason: "Cross-matching, blood group compatibility, and transfusion support are critical in transplant surgery"
+      relationship: "clinical"
+    - slug: "investigations-imaging"
+      reason: "Donor-recipient matching requires imaging assessment of organ anatomy and vascular compatibility"
+      relationship: "clinical"

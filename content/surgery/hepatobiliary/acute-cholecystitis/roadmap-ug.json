@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Over 90% of acute cholecystitis is caused by gallstone impaction in the cystic duct; understanding stone types and pathogenesis is foundational",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Knowledge of Calot's triangle, cystic artery variants, and the critical view of safety is essential for cholecystectomy and avoiding bile duct injury",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "choledocholithiasis",
+      "nmcCode": "",
+      "reason": "Concomitant CBD stones occur in 10-15% of cholecystitis cases and must be investigated with LFTs and imaging before surgery",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Ascending cholangitis can complicate cholecystitis when stones migrate into the CBD causing biliary sepsis (Charcot's triad/Reynolds' pentad)",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gallbladder-cancer",
+      "nmcCode": "",
+      "reason": "Chronic cholecystitis is a risk factor for gallbladder carcinoma; incidental cancer may be discovered at cholecystectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "bile-duct-injury",
+      "nmcCode": "",
+      "reason": "Bile duct injury is the most feared complication of cholecystectomy, especially in inflamed Calot's triangle with obscured anatomy",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "IM5.8: Describe and discuss the pathophysiology, clinical evolution and"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Acute Cholecystitis across foundational sciences and clinical applications."
+}

@@ -1,0 +1,50 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Gas gangrene is a specific clostridial surgical infection; understanding microbiology and infection spread is essential",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "wound-healing",
+      "nmcCode": "",
+      "reason": "Contaminated and devitalized wounds are the substrate for Clostridium perfringens colonization",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "asepsis-sterilization",
+      "nmcCode": "",
+      "reason": "Wound debridement and aseptic technique are primary preventive measures against gas gangrene",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Severe gas gangrene causes toxemia and septic shock requiring aggressive resuscitation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Burn wounds with devitalized tissue are susceptible to clostridial infections including gas gangrene",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU6.1: Define and describe the aetiology and pathogenesis of surgical",
+    "SU27.4: Describe the types of gangrene and principles of amputation"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Gas Gangrene across foundational sciences and clinical applications."
+}

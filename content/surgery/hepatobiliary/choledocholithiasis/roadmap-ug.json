@@ -1,0 +1,65 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Most CBD stones are secondary, migrating from the gallbladder; understanding gallstone pathogenesis explains stone composition and recurrence",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Choledocholithiasis is the prototype cause of surgical obstructive jaundice; the diagnostic workup algorithm directly applies",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "CBD anatomy, its relationship to the portal vein and hepatic artery, and the ampulla of Vater are essential for understanding stone impaction sites and ERCP",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "CBD stone obstruction with bacterial superinfection causes ascending cholangitis — the most dangerous complication requiring emergency ERCP",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "acute-cholecystitis",
+      "nmcCode": "",
+      "reason": "Cholecystitis and choledocholithiasis frequently coexist; management strategy depends on whether CBD stones are present at cholecystectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-stricture",
+      "nmcCode": "",
+      "reason": "Post-ERCP or post-surgical biliary stricture is a differential for recurrent obstructive symptoms after CBD stone clearance",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "bile-duct-injury",
+      "nmcCode": "",
+      "reason": "CBD exploration and ERCP carry risk of bile duct injury; recognizing and managing iatrogenic injury is a critical surgical competency",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "IM5.8: Describe and discuss the pathophysiology, clinical evolution and",
+    "IM5.13: Enumerate the indications for ultrasound and other imaging studies"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Choledocholithiasis across foundational sciences and clinical applications."
+}

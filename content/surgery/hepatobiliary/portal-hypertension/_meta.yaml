@@ -1,3 +1,45 @@
-title: Portal Hypertension
+title: "Portal Hypertension"
 slug: portal-hypertension
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.6"
+  - "SU28.10"
+  - "SU28.11"
+prerequisites:
+  - "liver-anatomy"
+  - "obstructive-jaundice"
+related_topics:
+  - "hepatocellular-carcinoma"
+  - "spleen-surgical"
+  - "liver-transplant-indications"
+  - "liver-abscess"
+enrichment:
+  nmcCodes:
+    - code: "IM5.6"
+      text: "Describe and discuss the pathophysiology, clinical evolution and complications of cirrhosis and portal hypertension including ascites, spontaneous bacterial peritonitis, hepatorenal syndrome and hepatic encephalopathy"
+      domain: "K"
+    - code: "SU28.10"
+      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
+      domain: "KH"
+    - code: "SU28.11"
+      text: "Describe the applied anatomy of Spleen. Describe the clinical features, Investigations and principles of management of splenic injuries. Describe the Post-splenectomy sepsis- prophylaxis."
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Portal vein formation, hepatic sinusoidal architecture, and portosystemic anastomosis sites are fundamental to understanding pre-hepatic, hepatic, and post-hepatic causes"
+    - slug: "obstructive-jaundice"
+      reason: "Cirrhosis causing portal hypertension frequently coexists with cholestatic jaundice; shared assessment with LFTs, imaging, and Child-Pugh scoring"
+  related_details:
+    - slug: "hepatocellular-carcinoma"
+      reason: "HCC arises in cirrhotic livers with portal hypertension; portal vein thrombosis by tumor worsens portal pressures and contraindicates resection"
+      relationship: "complication"
+    - slug: "spleen-surgical"
+      reason: "Hypersplenism from portal hypertension causes pancytopenia; splenectomy or devascularization procedures may be indicated"
+      relationship: "clinical"
+    - slug: "liver-transplant-indications"
+      reason: "Decompensated portal hypertension (recurrent variceal bleeding, refractory ascites) is a primary indication for liver transplantation"
+      relationship: "management"
+    - slug: "liver-abscess"
+      reason: "Portal pyemia from intra-abdominal infections can cause both portal vein thrombosis and liver abscess, representing pre-hepatic portal hypertension"
+      relationship: "etiological"

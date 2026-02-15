@@ -1,0 +1,51 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Understanding fluid compartments and volume status is essential for deciding when crystalloids are insufficient and blood products are needed",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Blood transfusion restores oxygen-carrying capacity and coagulation factors disrupted by hemorrhage; understanding normal hemostatic mechanisms guides appropriate component therapy",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Hemorrhagic shock (class III/IV) requires massive transfusion protocols with packed RBCs, FFP, and platelets in defined ratios",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Perioperative blood loss estimation and transfusion triggers (Hb <7-8 g/dL) are core to safe surgical management",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Major burns cause hemoconcentration initially then anemia from hemolysis and marrow suppression, requiring staged transfusion support",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU3.1: Describe the Indications and appropriate use of blood and blood",
+    "SU3.2: Observe blood transfusions.",
+    "SU3.3: Counsel patients and family/ friends for blood transfusion and blood A/C"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Blood Transfusion across foundational sciences and clinical applications."
+}

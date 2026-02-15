@@ -1,7 +1,41 @@
-title: Investigations Imaging
+title: "Investigations & Imaging"
 slug: investigations-imaging
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU9.1
-- SU9.2
-- SU9.3
+  - "SU9.1"
+  - "SU9.2"
+  - "SU9.3"
+prerequisites:
+  - "preoperative-assessment"
+  - "homeostasis"
+related_topics:
+  - "minimally-invasive-surgery"
+  - "organ-transplantation"
+  - "surgical-audit"
+enrichment:
+  nmcCodes:
+    - code: "SU9.1"
+      text: "Choose appropriate biochemical, microbiological, pathological investigations and interpret findings."
+      domain: "C"
+    - code: "SU9.2"
+      text: "Biological basis for early detection of cancer and multidisciplinary approach in management."
+      domain: "C"
+    - code: "SU9.3"
+      text: "Communicate the results of surgical investigations and counsel the patient appropriately."
+      domain: "C"
+  prerequisite_details:
+    - slug: "preoperative-assessment"
+      reason: "Investigations are ordered based on preoperative clinical assessment and risk stratification"
+    - slug: "homeostasis"
+      reason: "Interpreting biochemical investigations requires understanding of fluid-electrolyte and acid-base homeostasis"
+  related_details:
+    - slug: "minimally-invasive-surgery"
+      reason: "Preoperative imaging (CT, MRI) is essential for planning laparoscopic and robotic surgical approaches"
+      relationship: "clinical"
+    - slug: "organ-transplantation"
+      reason: "Donor evaluation and post-transplant surveillance rely heavily on imaging and laboratory investigations"
+      relationship: "clinical"
+    - slug: "surgical-audit"
+      reason: "Appropriate investigation ordering and diagnostic accuracy are key surgical audit metrics"
+      relationship: "foundational"

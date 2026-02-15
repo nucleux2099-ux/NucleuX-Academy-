@@ -1,0 +1,58 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Fluid resuscitation is the cornerstone of shock management; understanding fluid compartments and electrolyte shifts is essential for rational volume replacement",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Shock represents a failure of homeostatic mechanisms; understanding normal compensatory responses (baroreceptor reflexes, RAAS) is needed to comprehend shock pathophysiology",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "blood-transfusion",
+      "nmcCode": "",
+      "reason": "Hemorrhagic shock requires blood product resuscitation; massive transfusion protocols are critical in managing class III/IV hemorrhagic shock",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Major burns cause distributive and hypovolemic shock through massive fluid shifts and capillary leak requiring Parkland formula-guided resuscitation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Intraoperative and postoperative shock recognition and management is a core perioperative competency",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Septic shock is a major type of distributive shock encountered in surgical practice requiring source control and antimicrobial therapy",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU2.1: Describe Pathophysiology of shock, types of shock & principles of",
+    "SU2.2: Describe the clinical features of shock and its appropriate treatment.",
+    "SU2.3: Communicate and counsel patients and families about the A/C"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Shock across foundational sciences and clinical applications."
+}

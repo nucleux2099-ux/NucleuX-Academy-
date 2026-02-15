@@ -1,0 +1,56 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Gallstones >3cm and porcelain gallbladder are established risk factors; chronic irritation drives the metaplasia-dysplasia-carcinoma sequence",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Understanding hepatic segments (Couinaud) and liver bed anatomy is essential for staging and planning radical cholecystectomy with hepatic resection",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Gallbladder cancer invading the bile duct causes malignant biliary obstruction presenting as cholangitis",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Advanced gallbladder cancer presents with obstructive jaundice from hilar or CBD infiltration, often the first clinical sign",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholecystitis",
+      "nmcCode": "",
+      "reason": "Incidental gallbladder cancer discovered in cholecystectomy specimens for presumed cholecystitis occurs in 0.5-1% of cases",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-metastases",
+      "nmcCode": "",
+      "reason": "Direct hepatic invasion and segment IVb/V involvement dictates the extent of radical resection required",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Gallbladder Cancer across foundational sciences and clinical applications."
+}

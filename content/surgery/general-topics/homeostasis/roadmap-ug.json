@@ -1,0 +1,51 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "acid-base-physiology",
+      "nmcCode": "",
+      "reason": "Acid-base buffering systems (bicarbonate, phosphate, protein) are core homeostatic mechanisms; surgical injury causes metabolic acidosis that triggers compensatory respiratory and renal responses",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "adrenal-medulla",
+      "nmcCode": "",
+      "reason": "The adrenal medullary catecholamine response is the primary neuroendocrine mediator of the acute stress response to surgical injury, driving tachycardia, vasoconstriction, and glycogenolysis",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Shock represents decompensated homeostatic failure; understanding normal compensatory mechanisms (baroreceptor reflexes, RAAS, ADH) is essential to comprehend shock pathophysiology",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Major burns trigger the most extreme metabolic response to injury with hypermetabolism, catecholamine surge, and massive fluid shifts disrupting homeostasis",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Fluid and electrolyte balance is the most clinically relevant homeostatic mechanism in surgery; Na/K/Ca regulation underpins the metabolic response to surgical injury",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU1.1: Describe basic concepts of homeostasis, enumerate the metabolic",
+    "SU1.2: Describe the factors that affect the metabolic response to injury.",
+    "SU1.3: Describe basic concepts of perioperative care."
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Homeostasis across foundational sciences and clinical applications."
+}

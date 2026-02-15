@@ -1,5 +1,41 @@
-title: Cholelithiasis
+title: "Cholelithiasis"
 slug: cholelithiasis
-depth: PG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU28.12
+  - "SU28.12"
+  - "IM5.8"
+prerequisites:
+  - "liver-anatomy"
+  - "obstructive-jaundice"
+related_topics:
+  - "acute-cholecystitis"
+  - "choledocholithiasis"
+  - "gallbladder-cancer"
+  - "biliary-dyskinesia"
+enrichment:
+  nmcCodes:
+    - code: "SU28.12"
+      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
+      domain: "KH"
+    - code: "IM5.8"
+      text: "Describe and discuss the pathophysiology, clinical evolution and complications cholelithiasis and cholecystitis"
+      domain: "K"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Calot's triangle anatomy and cystic artery variations are essential for safe cholecystectomy and understanding biliary drainage"
+    - slug: "obstructive-jaundice"
+      reason: "Gallstones may migrate to cause CBD obstruction; understanding the jaundice workup is essential to guide management"
+  related_details:
+    - slug: "acute-cholecystitis"
+      reason: "Cholelithiasis is the commonest cause of acute cholecystitis; the two conditions share a clinical continuum"
+      relationship: "clinical"
+    - slug: "choledocholithiasis"
+      reason: "Secondary CBD stones originate from gallbladder calculi; concurrent CBD stones must be excluded before cholecystectomy"
+      relationship: "clinical"
+    - slug: "gallbladder-cancer"
+      reason: "Porcelain gallbladder and large gallstones are risk factors for gallbladder carcinoma; incidental cancer is found in ~1% of cholecystectomy specimens"
+      relationship: "clinical"
+    - slug: "biliary-dyskinesia"
+      reason: "Acalculous biliary pain with low gallbladder ejection fraction is a differential diagnosis for symptomatic cholelithiasis"
+      relationship: "differential"

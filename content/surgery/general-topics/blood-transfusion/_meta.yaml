@@ -1,7 +1,41 @@
-title: Blood Transfusion
+title: "Blood Transfusion"
 slug: blood-transfusion
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU3.1
-- SU3.2
-- SU3.3
+  - "SU3.1"
+  - "SU3.2"
+  - "SU3.3"
+prerequisites:
+  - "fluid-electrolytes"
+  - "homeostasis"
+related_topics:
+  - "shock"
+  - "perioperative-management"
+  - "burns"
+enrichment:
+  nmcCodes:
+    - code: "SU3.1"
+      text: "Describe the Indications and appropriate use of blood and blood products and complications of blood transfusion."
+      domain: "K"
+    - code: "SU3.2"
+      text: "Observe blood transfusions."
+      domain: "S"
+    - code: "SU3.3"
+      text: "Counsel patients and family/friends for blood transfusion and blood donation."
+      domain: "S"
+  prerequisite_details:
+    - slug: "fluid-electrolytes"
+      reason: "Understanding fluid compartments and volume status is essential for deciding when crystalloids are insufficient and blood products are needed"
+    - slug: "homeostasis"
+      reason: "Blood transfusion restores oxygen-carrying capacity and coagulation factors disrupted by hemorrhage; understanding normal hemostatic mechanisms guides appropriate component therapy"
+  related_details:
+    - slug: "shock"
+      reason: "Hemorrhagic shock (class III/IV) requires massive transfusion protocols with packed RBCs, FFP, and platelets in defined ratios"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "Perioperative blood loss estimation and transfusion triggers (Hb <7-8 g/dL) are core to safe surgical management"
+      relationship: "clinical"
+    - slug: "burns"
+      reason: "Major burns cause hemoconcentration initially then anemia from hemolysis and marrow suppression, requiring staged transfusion support"
+      relationship: "clinical"

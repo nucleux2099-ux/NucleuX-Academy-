@@ -1,0 +1,51 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "wound-healing",
+      "nmcCode": "",
+      "reason": "Excision and reconstruction of skin tumors requires understanding of wound healing phases and closure techniques",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Subcutaneous infections (abscess, cellulitis) must be differentiated from neoplastic swellings on clinical examination",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "soft-tissue-injuries",
+      "nmcCode": "",
+      "reason": "Traumatic skin lesions share examination findings with subcutaneous tumors and may require similar excision techniques",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cervical-lymphadenopathy",
+      "nmcCode": "",
+      "reason": "Skin malignancies (melanoma, SCC) metastasize to regional lymph nodes requiring nodal examination and staging",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "breast-cancer",
+      "nmcCode": "",
+      "reason": "Skin changes (peau d'orange, ulceration) overlap with cutaneous tumor presentations; Paget's disease bridges both",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU18.1: Describe the pathogenesis, clinical features and management of",
+    "SU18.2: Classify skin tumors",
+    "SU18.3: Describe and demonstrate the clinical examination of surgical"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Skin & Subcutaneous Tumors across foundational sciences and clinical applications."
+}

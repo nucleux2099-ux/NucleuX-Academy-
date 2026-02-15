@@ -1,0 +1,67 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Understanding the intrahepatic and extrahepatic biliary tree anatomy is essential to localize the level and cause of obstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "acute-cholecystitis",
+      "nmcCode": "",
+      "reason": "Cholecystitis workup often reveals concomitant biliary obstruction; understanding gallbladder inflammation contextualizes the jaundice evaluation",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "choledocholithiasis",
+      "nmcCode": "",
+      "reason": "CBD stones are the most common cause of surgical obstructive jaundice and the primary differential in acute presentations",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Biliary obstruction complicated by infection leads to cholangitis — a surgical emergency requiring urgent biliary decompression",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gallbladder-cancer",
+      "nmcCode": "",
+      "reason": "Periampullary and gallbladder malignancies present as painless obstructive jaundice with Courvoisier's sign",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-stricture",
+      "nmcCode": "",
+      "reason": "Post-surgical and inflammatory biliary strictures are important benign causes of obstructive jaundice requiring differentiation from malignancy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "choledochal-cyst",
+      "nmcCode": "",
+      "reason": "Congenital choledochal cysts present with the classic triad of jaundice, pain, and abdominal mass, especially in children",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "PA25.1: Describe bilirubin metabolism, enumerate the etiology and pathogenesis",
+    "PA25.6: Interpret a liver function and viral hepatitis serology panel.",
+    "IM5.13: Enumerate the indications for ultrasound and other imaging studies",
+    "IM5.14: Outline a diagnostic approach to liver disease based on"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Obstructive Jaundice across foundational sciences and clinical applications."
+}

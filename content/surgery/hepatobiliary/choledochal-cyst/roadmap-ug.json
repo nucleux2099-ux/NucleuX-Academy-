@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Understanding the extrahepatic biliary tree and its junction with the pancreatic duct is essential for classifying Todani types",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Choledochal cysts present with obstructive jaundice in the classic triad; biliary obstruction workup is the diagnostic pathway",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Recurrent cholangitis is a common complication of choledochal cysts due to biliary stasis and anomalous pancreaticobiliary junction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gallbladder-cancer",
+      "nmcCode": "",
+      "reason": "Choledochal cysts carry a 10-30% lifetime risk of cholangiocarcinoma, mandating complete cyst excision",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-stricture",
+      "nmcCode": "",
+      "reason": "Post-operative biliary stricture is a key complication after hepaticojejunostomy for choledochal cyst excision",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Biliary stasis in choledochal cysts predisposes to intracystic and intrahepatic stone formation",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "SU28.10: Describe the applied anatomy of liver. Describe the Clinical features,"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Choledochal Cyst across foundational sciences and clinical applications."
+}

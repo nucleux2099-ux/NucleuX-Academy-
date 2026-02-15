@@ -1,0 +1,52 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-ethics",
+      "nmcCode": "",
+      "reason": "Brain death declaration, consent for organ harvesting, and allocation ethics are central to transplant practice",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Immunosuppressed transplant recipients are highly vulnerable to opportunistic and surgical infections",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Organ donors are often brain-dead patients requiring hemodynamic management to preserve organ viability",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "blood-transfusion",
+      "nmcCode": "",
+      "reason": "Cross-matching, blood group compatibility, and transfusion support are critical in transplant surgery",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "investigations-imaging",
+      "nmcCode": "",
+      "reason": "Donor-recipient matching requires imaging assessment of organ anatomy and vascular compatibility",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU13.1: Describe the immunological basis of organ transplantation",
+    "SU13.2: Discuss the Principles of immunosuppressive therapy. Enumerate",
+    "SU13.3: Discuss the legal and ethical issues concerning organ donation",
+    "SU13.4: Counsel patients and relatives on organ donation in a simulated"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Organ Transplantation across foundational sciences and clinical applications."
+}

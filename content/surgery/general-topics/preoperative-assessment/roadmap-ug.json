@@ -1,0 +1,54 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Preoperative assessment evaluates the patient's metabolic and physiological reserve; understanding homeostatic mechanisms helps identify patients at risk for decompensation under surgical stress",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-ethics",
+      "nmcCode": "",
+      "reason": "Informed consent is a mandatory ethical and legal prerequisite before any surgical procedure; understanding autonomy, beneficence, and capacity assessment is integral to preoperative evaluation",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Preoperative assessment findings directly dictate the perioperative plan including monitoring level, fluid strategy, and anesthesia choice",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "blood-transfusion",
+      "nmcCode": "",
+      "reason": "Preoperative hemoglobin assessment and blood typing/crossmatching determine transfusion readiness for anticipated surgical blood loss",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "investigations-imaging",
+      "nmcCode": "",
+      "reason": "Preoperative workup relies on interpreting baseline blood tests (CBC, RFT, LFT, coagulation), ECG, chest X-ray, and risk-specific imaging to stratify surgical risk",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU11.1: Describe principles of Preoperative assessment.",
+    "SU11.2: Enumerate the principles of general, regional, and local",
+    "SU11.3: Demonstrate maintenance of an airway in a mannequin or",
+    "SU11.4: Enumerate the indications and principles of day care General",
+    "SU11.5: Describe principles of providing post-operative pain relief and",
+    "SU11.6: Describe Principles of safe General Surgery"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Preoperative Assessment across foundational sciences and clinical applications."
+}

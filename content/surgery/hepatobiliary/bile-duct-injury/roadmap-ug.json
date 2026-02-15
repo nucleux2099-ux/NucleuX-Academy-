@@ -1,0 +1,56 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Calot triangle anatomy, cystic duct-CBD junction variants, and aberrant right hepatic artery are the key anatomical factors in iatrogenic bile duct injury",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Laparoscopic cholecystectomy for gallstones is the most common setting for bile duct injury; understanding surgical indications provides clinical context",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Unrecognized or partially repaired bile duct injury leads to recurrent cholangitis from biliary stasis and stricture",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-stricture",
+      "nmcCode": "",
+      "reason": "Post-injury stricture (Bismuth-Strasberg classification) is the most important long-term consequence requiring hepaticojejunostomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Bile duct injury presents with post-operative jaundice, bile leak, or biloma requiring urgent MRCP evaluation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholecystitis",
+      "nmcCode": "",
+      "reason": "Severe acute cholecystitis with frozen Calot triangle is a major risk factor for intraoperative bile duct injury",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Bile Duct Injury across foundational sciences and clinical applications."
+}

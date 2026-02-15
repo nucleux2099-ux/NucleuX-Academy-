@@ -1,3 +1,41 @@
-title: Liver Transplant Indications
+title: "Liver Transplant Indications"
 slug: liver-transplant-indications
-depth: SS
+depth: "SS"
+highYield: true
+nmc_codes:
+  - "SU13.1"
+  - "SU13.2"
+  - "IM5.18"
+prerequisites:
+  - "liver-anatomy"
+  - "portal-hypertension"
+related_topics:
+  - "hepatocellular-carcinoma"
+  - "liver-abscess"
+  - "obstructive-jaundice"
+enrichment:
+  nmcCodes:
+    - code: "SU13.1"
+      text: "Describe the immunological basis of organ transplantation"
+      domain: "KH"
+    - code: "SU13.2"
+      text: "Discuss the Principles of immunosuppressive therapy. Enumerate indications, describe surgical principles, management of organ transplantation"
+      domain: "KH"
+    - code: "IM5.18"
+      text: "Enumerate the indications for hepatic transplantation"
+      domain: "K"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Couinaud segmental anatomy is critical for living donor hepatectomy planning and graft size matching"
+    - slug: "portal-hypertension"
+      reason: "Decompensated cirrhosis with portal hypertension (MELD scoring) is the primary indication for transplant listing"
+  related_details:
+    - slug: "hepatocellular-carcinoma"
+      reason: "Milan criteria determine transplant eligibility for HCC — curative option for early-stage tumors in cirrhotic livers"
+      relationship: "indication"
+    - slug: "liver-abscess"
+      reason: "Fulminant hepatic failure from amoebic liver abscess may rarely require emergent transplant evaluation"
+      relationship: "clinical"
+    - slug: "obstructive-jaundice"
+      reason: "Secondary biliary cirrhosis from chronic obstruction can progress to end-stage liver disease requiring transplant"
+      relationship: "clinical"

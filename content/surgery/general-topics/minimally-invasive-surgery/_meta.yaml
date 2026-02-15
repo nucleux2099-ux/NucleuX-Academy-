@@ -1,5 +1,33 @@
-title: Minimally Invasive Surgery
+title: "Minimally Invasive Surgery"
 slug: minimally-invasive-surgery
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU16.1
+  - "SU16.1"
+prerequisites:
+  - "perioperative-management"
+  - "asepsis-sterilization"
+related_topics:
+  - "investigations-imaging"
+  - "surgical-nutrition"
+  - "surgical-audit"
+enrichment:
+  nmcCodes:
+    - code: "SU16.1"
+      text: "Minimally invasive General Surgery: Describe indications, advantages, limitations and complications of minimal access surgery."
+      domain: "K"
+  prerequisite_details:
+    - slug: "perioperative-management"
+      reason: "Understanding pneumoperitoneum physiology and perioperative care specific to laparoscopic procedures"
+    - slug: "asepsis-sterilization"
+      reason: "Sterilization of laparoscopic instruments and port-site infection prevention require specific aseptic protocols"
+  related_details:
+    - slug: "investigations-imaging"
+      reason: "Intraoperative imaging and preoperative CT/MRI planning are integral to laparoscopic and robotic surgery"
+      relationship: "clinical"
+    - slug: "surgical-nutrition"
+      reason: "Enhanced recovery after surgery (ERAS) protocols in MIS emphasize early enteral nutrition"
+      relationship: "clinical"
+    - slug: "surgical-audit"
+      reason: "MIS outcomes require systematic audit for quality assurance including conversion rates and complications"
+      relationship: "foundational"

@@ -1,7 +1,41 @@
-title: Skin Subcutaneous Tumors
+title: "Skin & Subcutaneous Tumors"
 slug: skin-subcutaneous-tumors
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU18.1
-- SU18.2
-- SU18.3
+  - "SU18.1"
+  - "SU18.2"
+  - "SU18.3"
+prerequisites:
+  - "wound-healing"
+  - "surgical-infections"
+related_topics:
+  - "soft-tissue-injuries"
+  - "cervical-lymphadenopathy"
+  - "breast-cancer"
+enrichment:
+  nmcCodes:
+    - code: "SU18.1"
+      text: "Describe the pathogenesis, clinical features and management of various cutaneous and subcutaneous infections"
+      domain: "K"
+    - code: "SU18.2"
+      text: "Classify skin tumors. Differentiate different skin tumors and discuss their management"
+      domain: "K"
+    - code: "SU18.3"
+      text: "Describe and demonstrate the clinical examination of surgical patient including swelling and order relevant investigation for diagnosis. Describe and discuss appropriate treatment plan"
+      domain: "S"
+  prerequisite_details:
+    - slug: "wound-healing"
+      reason: "Excision and reconstruction of skin tumors requires understanding of wound healing phases and closure techniques"
+    - slug: "surgical-infections"
+      reason: "Subcutaneous infections (abscess, cellulitis) must be differentiated from neoplastic swellings on clinical examination"
+  related_details:
+    - slug: "soft-tissue-injuries"
+      reason: "Traumatic skin lesions share examination findings with subcutaneous tumors and may require similar excision techniques"
+      relationship: "clinical"
+    - slug: "cervical-lymphadenopathy"
+      reason: "Skin malignancies (melanoma, SCC) metastasize to regional lymph nodes requiring nodal examination and staging"
+      relationship: "clinical"
+    - slug: "breast-cancer"
+      reason: "Skin changes (peau d'orange, ulceration) overlap with cutaneous tumor presentations; Paget's disease bridges both"
+      relationship: "clinical"

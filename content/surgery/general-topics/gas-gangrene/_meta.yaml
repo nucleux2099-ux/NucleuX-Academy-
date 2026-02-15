@@ -1,5 +1,37 @@
-title: Gas Gangrene
+title: "Gas Gangrene"
 slug: gas-gangrene
-depth:
-- UG
-- PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU6.1"
+  - "SU27.4"
+prerequisites:
+  - "surgical-infections"
+  - "wound-healing"
+related_topics:
+  - "asepsis-sterilization"
+  - "shock"
+  - "burns"
+enrichment:
+  nmcCodes:
+    - code: "SU6.1"
+      text: "Define and describe the aetiology and pathogenesis of surgical infections."
+      domain: "K"
+    - code: "SU27.4"
+      text: "Describe the types of gangrene and principles of amputation."
+      domain: "K"
+  prerequisite_details:
+    - slug: "surgical-infections"
+      reason: "Gas gangrene is a specific clostridial surgical infection; understanding microbiology and infection spread is essential"
+    - slug: "wound-healing"
+      reason: "Contaminated and devitalized wounds are the substrate for Clostridium perfringens colonization"
+  related_details:
+    - slug: "asepsis-sterilization"
+      reason: "Wound debridement and aseptic technique are primary preventive measures against gas gangrene"
+      relationship: "clinical"
+    - slug: "shock"
+      reason: "Severe gas gangrene causes toxemia and septic shock requiring aggressive resuscitation"
+      relationship: "clinical"
+    - slug: "burns"
+      reason: "Burn wounds with devitalized tissue are susceptible to clostridial infections including gas gangrene"
+      relationship: "clinical"

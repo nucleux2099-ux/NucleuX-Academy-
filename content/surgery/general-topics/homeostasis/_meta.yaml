@@ -1,7 +1,41 @@
-title: Homeostasis
+title: "Homeostasis"
 slug: homeostasis
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU1.1
-- SU1.2
-- SU1.3
+  - "SU1.1"
+  - "SU1.2"
+  - "SU1.3"
+prerequisites:
+  - "acid-base-physiology"
+  - "adrenal-medulla"
+related_topics:
+  - "shock"
+  - "burns"
+  - "fluid-electrolytes"
+enrichment:
+  nmcCodes:
+    - code: "SU1.1"
+      text: "Describe basic concepts of homeostasis, enumerate the metabolic changes in injury and their mediators."
+      domain: "K"
+    - code: "SU1.2"
+      text: "Describe the factors that affect the metabolic response to injury."
+      domain: "K"
+    - code: "SU1.3"
+      text: "Describe basic concepts of perioperative care."
+      domain: "K"
+  prerequisite_details:
+    - slug: "acid-base-physiology"
+      reason: "Acid-base buffering systems (bicarbonate, phosphate, protein) are core homeostatic mechanisms; surgical injury causes metabolic acidosis that triggers compensatory respiratory and renal responses"
+    - slug: "adrenal-medulla"
+      reason: "The adrenal medullary catecholamine response is the primary neuroendocrine mediator of the acute stress response to surgical injury, driving tachycardia, vasoconstriction, and glycogenolysis"
+  related_details:
+    - slug: "shock"
+      reason: "Shock represents decompensated homeostatic failure; understanding normal compensatory mechanisms (baroreceptor reflexes, RAAS, ADH) is essential to comprehend shock pathophysiology"
+      relationship: "clinical"
+    - slug: "burns"
+      reason: "Major burns trigger the most extreme metabolic response to injury with hypermetabolism, catecholamine surge, and massive fluid shifts disrupting homeostasis"
+      relationship: "clinical"
+    - slug: "fluid-electrolytes"
+      reason: "Fluid and electrolyte balance is the most clinically relevant homeostatic mechanism in surgery; Na/K/Ca regulation underpins the metabolic response to surgical injury"
+      relationship: "clinical"

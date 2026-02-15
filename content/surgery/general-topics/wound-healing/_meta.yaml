@@ -1,8 +1,49 @@
-title: Wound Healing
+title: "Wound Healing"
 slug: wound-healing
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU5.1
-- SU5.2
-- SU5.3
-- SU5.4
+  - "SU5.1"
+  - "SU5.2"
+  - "SU5.3"
+  - "SU5.4"
+prerequisites:
+  - "homeostasis"
+  - "surgical-nutrition"
+related_topics:
+  - "burns"
+  - "asepsis-sterilization"
+  - "surgical-infections"
+  - "skin-subcutaneous-tumors"
+enrichment:
+  nmcCodes:
+    - code: "SU5.1"
+      text: "Describe normal wound healing and factors affecting healing."
+      domain: "K"
+    - code: "SU5.2"
+      text: "Elicit, document and present a history in a patient presenting with wounds."
+      domain: "S"
+    - code: "SU5.3"
+      text: "Differentiate the various types of wounds, plan and observe management of wounds."
+      domain: "K"
+    - code: "SU5.4"
+      text: "Discuss medico legal aspects of wounds"
+      domain: "K"
+  prerequisite_details:
+    - slug: "homeostasis"
+      reason: "Normal wound healing depends on intact hemostatic and inflammatory cascades; understanding tissue oxygenation and perfusion physiology is essential"
+    - slug: "surgical-nutrition"
+      reason: "Protein-calorie malnutrition, vitamin C and zinc deficiency directly impair collagen synthesis and wound tensile strength"
+  related_details:
+    - slug: "burns"
+      reason: "Burn wound healing involves unique challenges including contraction, hypertrophic scarring, and the need for grafting in deep burns"
+      relationship: "clinical"
+    - slug: "asepsis-sterilization"
+      reason: "Aseptic wound management and sterile dressing technique are fundamental to promoting primary wound healing"
+      relationship: "clinical"
+    - slug: "surgical-infections"
+      reason: "Wound infection is the most common cause of impaired healing and dehiscence; SSI prevention is integral to wound management"
+      relationship: "clinical"
+    - slug: "skin-subcutaneous-tumors"
+      reason: "Chronic non-healing wounds (Marjolin's ulcer) can undergo malignant transformation; wound biology underpins excision and reconstruction planning"
+      relationship: "clinical"

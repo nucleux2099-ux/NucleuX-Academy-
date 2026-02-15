@@ -1,3 +1,37 @@
-title: Hydatid Cyst
+title: "Hydatid Cyst"
 slug: hydatid-cyst
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.10"
+  - "MI8.1"
+prerequisites:
+  - "liver-anatomy"
+  - "liver-abscess"
+related_topics:
+  - "hepatocellular-carcinoma"
+  - "cholangitis"
+  - "liver-metastases"
+enrichment:
+  nmcCodes:
+    - code: "SU28.10"
+      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
+      domain: "KH"
+    - code: "MI8.1"
+      text: "Enumerate the microbial agents and their vectors causing Zoonotic diseases. Describe the morphology, mode of transmission, pathogenesis and discuss the clinical course, laboratory diagnosis and prevention"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Segmental liver anatomy determines cyst localization, surgical approach, and proximity to major hepatic veins and bile ducts"
+    - slug: "liver-abscess"
+      reason: "Liver abscess is the primary differential for cystic hepatic lesions; distinguishing hydatid from pyogenic/amoebic abscess guides management"
+  related_details:
+    - slug: "hepatocellular-carcinoma"
+      reason: "Solid-appearing hydatid cysts can mimic hepatic tumors on imaging; differentiation is critical before intervention"
+      relationship: "differential"
+    - slug: "cholangitis"
+      reason: "Intrabiliary rupture of hydatid cyst causes obstructive cholangitis, a surgical emergency"
+      relationship: "complication"
+    - slug: "liver-metastases"
+      reason: "Cystic liver metastases (ovarian, neuroendocrine) enter the differential for hepatic cystic lesions"
+      relationship: "differential"

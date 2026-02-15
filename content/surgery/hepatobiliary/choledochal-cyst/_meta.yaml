@@ -1,3 +1,41 @@
-title: Choledochal Cyst
+title: "Choledochal Cyst"
 slug: choledochal-cyst
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.12"
+  - "SU28.10"
+prerequisites:
+  - "liver-anatomy"
+  - "obstructive-jaundice"
+related_topics:
+  - "cholangitis"
+  - "gallbladder-cancer"
+  - "biliary-stricture"
+  - "cholelithiasis"
+enrichment:
+  nmcCodes:
+    - code: "SU28.12"
+      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
+      domain: "KH"
+    - code: "SU28.10"
+      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Understanding the extrahepatic biliary tree and its junction with the pancreatic duct is essential for classifying Todani types"
+    - slug: "obstructive-jaundice"
+      reason: "Choledochal cysts present with obstructive jaundice in the classic triad; biliary obstruction workup is the diagnostic pathway"
+  related_details:
+    - slug: "cholangitis"
+      reason: "Recurrent cholangitis is a common complication of choledochal cysts due to biliary stasis and anomalous pancreaticobiliary junction"
+      relationship: "complication"
+    - slug: "gallbladder-cancer"
+      reason: "Choledochal cysts carry a 10-30% lifetime risk of cholangiocarcinoma, mandating complete cyst excision"
+      relationship: "progression"
+    - slug: "biliary-stricture"
+      reason: "Post-operative biliary stricture is a key complication after hepaticojejunostomy for choledochal cyst excision"
+      relationship: "complication"
+    - slug: "cholelithiasis"
+      reason: "Biliary stasis in choledochal cysts predisposes to intracystic and intrahepatic stone formation"
+      relationship: "clinical"

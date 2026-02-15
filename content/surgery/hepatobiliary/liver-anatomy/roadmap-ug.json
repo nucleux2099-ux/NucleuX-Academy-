@@ -1,0 +1,58 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Liver is central to metabolic homeostasis — understanding fluid/metabolic balance provides foundation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Liver regulates albumin synthesis affecting fluid balance; portal circulation affects electrolyte handling",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "liver-abscess",
+      "nmcCode": "",
+      "reason": "Segmental anatomy determines the approach to percutaneous or surgical drainage of hepatic abscesses",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "Couinaud segmental anatomy is the basis for planning hepatic resections in HCC",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "portal-hypertension",
+      "nmcCode": "",
+      "reason": "Portal venous anatomy and hepatic sinusoidal structure underpin portal hypertension pathophysiology",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Biliary anatomy — intrahepatic ducts, confluence, CBD — is the basis for understanding obstructive jaundice",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.10: Describe the applied anatomy of liver. Describe the Clinical features,",
+    "AN55.2: Demonstrate the surface projections of: Stomach, Liver, Fundus of gall",
+    "PY4.7: Describe & discuss the structure and functions of liver and gall bladder"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Liver Anatomy across foundational sciences and clinical applications."
+}

@@ -1,3 +1,37 @@
-title: Gallbladder Cancer
+title: "Gallbladder Cancer"
 slug: gallbladder-cancer
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.12"
+prerequisites:
+  - "cholelithiasis"
+  - "liver-anatomy"
+related_topics:
+  - "cholangitis"
+  - "obstructive-jaundice"
+  - "cholecystitis"
+  - "liver-metastases"
+enrichment:
+  nmcCodes:
+    - code: "SU28.12"
+      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
+      domain: "KH"
+  prerequisite_details:
+    - slug: "cholelithiasis"
+      reason: "Gallstones >3cm and porcelain gallbladder are established risk factors; chronic irritation drives the metaplasia-dysplasia-carcinoma sequence"
+    - slug: "liver-anatomy"
+      reason: "Understanding hepatic segments (Couinaud) and liver bed anatomy is essential for staging and planning radical cholecystectomy with hepatic resection"
+  related_details:
+    - slug: "cholangitis"
+      reason: "Gallbladder cancer invading the bile duct causes malignant biliary obstruction presenting as cholangitis"
+      relationship: "complication"
+    - slug: "obstructive-jaundice"
+      reason: "Advanced gallbladder cancer presents with obstructive jaundice from hilar or CBD infiltration, often the first clinical sign"
+      relationship: "clinical"
+    - slug: "cholecystitis"
+      reason: "Incidental gallbladder cancer discovered in cholecystectomy specimens for presumed cholecystitis occurs in 0.5-1% of cases"
+      relationship: "clinical"
+    - slug: "liver-metastases"
+      reason: "Direct hepatic invasion and segment IVb/V involvement dictates the extent of radical resection required"
+      relationship: "progression"

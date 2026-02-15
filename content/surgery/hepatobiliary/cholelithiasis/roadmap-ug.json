@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Calot's triangle anatomy and cystic artery variations are essential for safe cholecystectomy and understanding biliary drainage",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Gallstones may migrate to cause CBD obstruction; understanding the jaundice workup is essential to guide management",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "acute-cholecystitis",
+      "nmcCode": "",
+      "reason": "Cholelithiasis is the commonest cause of acute cholecystitis; the two conditions share a clinical continuum",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "choledocholithiasis",
+      "nmcCode": "",
+      "reason": "Secondary CBD stones originate from gallbladder calculi; concurrent CBD stones must be excluded before cholecystectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gallbladder-cancer",
+      "nmcCode": "",
+      "reason": "Porcelain gallbladder and large gallstones are risk factors for gallbladder carcinoma; incidental cancer is found in ~1% of cholecystectomy specimens",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-dyskinesia",
+      "nmcCode": "",
+      "reason": "Acalculous biliary pain with low gallbladder ejection fraction is a differential diagnosis for symptomatic cholelithiasis",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "IM5.8: Describe and discuss the pathophysiology, clinical evolution and"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Cholelithiasis across foundational sciences and clinical applications."
+}

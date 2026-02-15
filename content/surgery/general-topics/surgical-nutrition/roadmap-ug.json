@@ -1,0 +1,51 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Surgical nutrition addresses the catabolic phase of the metabolic response to injury; understanding ebb and flow phases of homeostasis guides when and how to initiate nutritional support",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Enteral and parenteral nutrition require concurrent fluid and electrolyte management; refeeding syndrome causes dangerous hypophosphatemia and hypokalemia",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "wound-healing",
+      "nmcCode": "",
+      "reason": "Protein-calorie malnutrition impairs collagen synthesis and immune function, directly delaying wound healing and increasing dehiscence risk",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Malnutrition is the strongest modifiable risk factor for surgical site infections; albumin <3 g/dL significantly increases SSI rates",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "ERAS protocols mandate preoperative carbohydrate loading and early postoperative enteral feeding as core perioperative nutritional interventions",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU12.1: Enumerate the causes and consequences of malnutrition in the",
+    "SU12.2: Describe and discuss the methods of estimation and replacement of",
+    "SU12.3: Discuss the nutritional requirements of surgical patients, the methods of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Surgical Nutrition across foundational sciences and clinical applications."
+}

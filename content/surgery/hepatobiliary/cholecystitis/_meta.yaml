@@ -1,3 +1,56 @@
-title: Cholecystitis
+title: "Cholecystitis"
 slug: cholecystitis
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.12"
+  - "IM5.8"
+  - "AN47.6"
+  - "AN47.7"
+prerequisites:
+  - "cholelithiasis"
+  - "liver-anatomy"
+  - "obstructive-jaundice"
+related_topics:
+  - "acute-cholecystitis"
+  - "choledocholithiasis"
+  - "cholangitis"
+  - "gallbladder-cancer"
+  - "biliary-dyskinesia"
+enrichment:
+  nmcCodes:
+    - code: "SU28.12"
+      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
+      domain: "KH"
+    - code: "IM5.8"
+      text: "Describe and discuss the pathophysiology, clinical evolution and complications cholelithiasis and cholecystitis"
+      domain: "K"
+    - code: "AN47.6"
+      text: "Explain the anatomical basis of Referred pain in cholecystitis, Obstructive jaundice"
+      domain: "KH"
+    - code: "AN47.7"
+      text: "Mention the clinical importance of Calot's triangle"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "cholelithiasis"
+      reason: "Gallstones are the causative factor in >90% of cholecystitis cases; understanding stone pathogenesis is essential"
+    - slug: "liver-anatomy"
+      reason: "Knowledge of hepatic arterial supply via cystic artery and Calot's triangle anatomy is critical for safe cholecystectomy"
+    - slug: "obstructive-jaundice"
+      reason: "Cholecystitis can coexist with CBD stones causing obstructive jaundice; distinguishing biliary obstruction guides management"
+  related_details:
+    - slug: "acute-cholecystitis"
+      reason: "Acute cholecystitis is the most common emergency presentation requiring urgent cholecystectomy"
+      relationship: "clinical"
+    - slug: "choledocholithiasis"
+      reason: "Concomitant CBD stones occur in 10-15% of cholecystitis patients, altering surgical planning"
+      relationship: "clinical"
+    - slug: "cholangitis"
+      reason: "Ascending cholangitis is a life-threatening complication when cholecystitis is complicated by biliary obstruction"
+      relationship: "complication"
+    - slug: "gallbladder-cancer"
+      reason: "Chronic cholecystitis is a risk factor for gallbladder carcinoma; incidental cancer found in 1-2% of cholecystectomy specimens"
+      relationship: "progression"
+    - slug: "biliary-dyskinesia"
+      reason: "Acalculous biliary dyskinesia mimics cholecystitis and is a key differential in stone-negative biliary colic"
+      relationship: "differential"
