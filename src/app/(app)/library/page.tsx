@@ -11,36 +11,29 @@ import {
   ChevronRight,
   Sparkles,
   GraduationCap,
-  Target,
   Library,
-  Compass
+  Compass,
+  Stethoscope
 } from "lucide-react";
 import { SUBJECTS } from "@/lib/data/subjects";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
 import { cn } from "@/lib/utils";
-import type { ViewMode } from "@/lib/types/library";
-import { VIEW_MODE_CONFIG } from "@/lib/types/library";
 import { AtomLibrarian } from "@/components/AtomLibrarian";
+
+type LevelFilter = "all" | "UG" | "PG" | "SS";
 
 export default function LibraryPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<ViewMode>('explorer');
+  const [levelFilter, setLevelFilter] = useState<LevelFilter>("all");
 
   const filteredSubjects = SUBJECTS.filter(subject =>
     subject.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     subject.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const selectedSubjectData = selectedSubject 
-    ? SUBJECTS.find(s => s.id === selectedSubject) 
-    : null;
-  
-  const subspecialties = selectedSubject 
-    ? getSubspecialtiesBySubject(selectedSubject) 
-    : [];
-
-  const viewModes: ViewMode[] = ['explorer', 'examPrep', 'textbook', 'quiz', 'cases', 'roadmap'];
+  // Total stats
+  const totalTopics = SUBJECTS.reduce((acc, s) => acc + s.topicCount, 0);
+  const totalSubspecs = SUBJECTS.reduce((acc, s) => acc + getSubspecialtiesBySubject(s.id).length, 0);
 
   return (
     <div className="space-y-6">
@@ -51,47 +44,69 @@ export default function LibraryPage() {
             <Library className="w-8 h-8 text-[#5BB3B3]" />
             Library
           </h1>
-          <p className="text-[#A0B0BC] mt-1">Browse subjects, topics, and concepts</p>
+          <p className="text-[#A0B0BC] mt-1">
+            Browse {SUBJECTS.length} subjects across UG, PG, and Super-Specialty levels
+          </p>
         </div>
-        <Badge className="w-fit bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
-          {SUBJECTS.reduce((acc, s) => acc + s.topicCount, 0)} Topics Available
-        </Badge>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/cbme"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[rgba(91,179,179,0.1)] border border-[rgba(91,179,179,0.2)] text-[#5BB3B3] text-xs font-medium hover:bg-[rgba(91,179,179,0.2)] transition-colors"
+          >
+            <GraduationCap className="w-3.5 h-3.5" />
+            CBME Curriculum
+          </Link>
+        </div>
       </div>
 
-      {/* View Mode Selector */}
+      {/* Stats Bar */}
+      <div className="grid grid-cols-3 gap-3">
+        <div className="bg-[#3A4D5F] rounded-lg p-3 border border-[rgba(91,179,179,0.08)]">
+          <div className="text-xl font-bold text-[#E8E0D5]">{SUBJECTS.length}</div>
+          <div className="text-xs text-[#6B7280]">Subjects</div>
+        </div>
+        <div className="bg-[#3A4D5F] rounded-lg p-3 border border-[rgba(91,179,179,0.08)]">
+          <div className="text-xl font-bold text-[#E8E0D5]">{totalSubspecs}</div>
+          <div className="text-xs text-[#6B7280]">Subspecialties</div>
+        </div>
+        <div className="bg-[#3A4D5F] rounded-lg p-3 border border-[rgba(91,179,179,0.08)]">
+          <div className="text-xl font-bold text-[#E8E0D5]">{totalTopics}</div>
+          <div className="text-xs text-[#6B7280]">Topics</div>
+        </div>
+      </div>
+
+      {/* Training Level Toggle */}
       <div className="bg-[#3A4D5F] rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
         <div className="flex items-center gap-2 mb-3">
-          <Compass className="w-4 h-4 text-[#5BB3B3]" />
-          <span className="text-sm font-medium text-[#E8E0D5]">How do you want to explore?</span>
+          <Stethoscope className="w-4 h-4 text-[#5BB3B3]" />
+          <span className="text-sm font-medium text-[#E8E0D5]">Training Level</span>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-          {viewModes.map((mode) => {
-            const config = VIEW_MODE_CONFIG[mode];
-            const isActive = viewMode === mode;
-            return (
-              <button
-                key={mode}
-                onClick={() => setViewMode(mode)}
-                className={cn(
-                  "flex flex-col items-center gap-1 p-3 rounded-lg transition-all text-center",
-                  isActive
-                    ? "bg-[rgba(91,179,179,0.2)] border border-[#5BB3B3]"
-                    : "bg-[#2D3E50] border border-transparent hover:bg-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.2)]"
-                )}
-              >
-                <span className="text-xl">{config.icon}</span>
-                <span className={cn(
-                  "text-xs font-medium",
-                  isActive ? "text-[#5BB3B3]" : "text-[#A0B0BC]"
-                )}>
-                  {config.label}
-                </span>
-              </button>
-            );
-          })}
+        <div className="flex gap-2 flex-wrap">
+          {([
+            { key: "all" as LevelFilter, label: "All Levels", color: "bg-[#5BB3B3]", desc: "Complete library across all training stages" },
+            { key: "UG" as LevelFilter, label: "🟢 UG (MBBS)", color: "bg-green-600", desc: "Undergraduate — Know & Know How (K/KH)" },
+            { key: "PG" as LevelFilter, label: "🔵 PG (MD/MS)", color: "bg-blue-600", desc: "Postgraduate — Shows How (SH)" },
+            { key: "SS" as LevelFilter, label: "🔴 SS (DM/MCh)", color: "bg-red-600", desc: "Super Specialty — Performs (P)" },
+          ]).map((level) => (
+            <button
+              key={level.key}
+              onClick={() => setLevelFilter(level.key)}
+              className={cn(
+                "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+                levelFilter === level.key
+                  ? `${level.color} text-white`
+                  : "bg-[#2D3E50] text-[#A0B0BC] hover:text-[#E8E0D5] border border-transparent hover:border-[rgba(91,179,179,0.15)]"
+              )}
+            >
+              {level.label}
+            </button>
+          ))}
         </div>
-        <p className="text-xs text-[#6B7280] mt-2 text-center">
-          {VIEW_MODE_CONFIG[viewMode].description}
+        <p className="text-xs text-[#6B7280] mt-2">
+          {levelFilter === "all" && "Showing all subjects across UG, PG, and Super Specialty levels"}
+          {levelFilter === "UG" && "Foundation subjects for MBBS — NMC competency domains K (Knows) and KH (Knows How)"}
+          {levelFilter === "PG" && "Advanced subjects for MD/MS residents — NMC domain SH (Shows How)"}
+          {levelFilter === "SS" && "Super-specialty subjects for DM/MCh — NMC domain P (Performs)"}
         </p>
       </div>
 
@@ -99,24 +114,35 @@ export default function LibraryPage() {
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
         <Input
-          placeholder="Search subjects or topics..."
+          placeholder="Search subjects..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-10 bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#A0B0BC]"
         />
       </div>
 
-      {/* Subject Rooms Grid */}
-      {!selectedSubject ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filteredSubjects.map((subject) => {
-            const subspecs = getSubspecialtiesBySubject(subject.id);
-            return (
-              <Card
-                key={subject.id}
-                className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer overflow-hidden"
-                onClick={() => setSelectedSubject(subject.id)}
-              >
+      {/* Subject Grid — each card links to /library/[subject] */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredSubjects.map((subject) => {
+          const subspecs = getSubspecialtiesBySubject(subject.id);
+
+          // Level filter logic — show subject if it has content at that level
+          // For now all subjects show at all levels (we can refine with actual depth data later)
+          // UG: all subjects, PG: clinical subjects, SS: surgical/medical subspecialties
+          const ugSubjects = ["anatomy", "physiology", "biochemistry", "pathology", "pharmacology", "microbiology", "forensic-medicine", "community-medicine", "surgery", "medicine", "obgyn", "pediatrics", "orthopedics", "ent", "ophthalmology", "psychiatry", "dermatology", "anesthesia", "radiology", "preventive-medicine", "dentistry"];
+          const pgSubjects = ["surgery", "medicine", "obgyn", "pediatrics", "orthopedics", "ent", "ophthalmology", "anatomy", "physiology", "biochemistry", "pathology", "pharmacology", "microbiology", "forensic-medicine", "community-medicine", "psychiatry", "dermatology", "anesthesia", "radiology"];
+          const ssSubjects = ["surgery", "medicine", "pediatrics", "obgyn", "orthopedics"];
+
+          if (levelFilter === "UG" && !ugSubjects.includes(subject.slug)) return null;
+          if (levelFilter === "PG" && !pgSubjects.includes(subject.slug)) return null;
+          if (levelFilter === "SS" && !ssSubjects.includes(subject.slug)) return null;
+
+          return (
+            <Link
+              key={subject.id}
+              href={`/library/${subject.slug}`}
+            >
+              <Card className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer overflow-hidden h-full">
                 <CardContent className="p-0">
                   {/* Color Banner */}
                   <div 
@@ -173,89 +199,32 @@ export default function LibraryPage() {
                         <BookOpen className="w-3.5 h-3.5" />
                         <span>{subject.topicCount} topics</span>
                       </div>
+                      {/* Level indicators */}
+                      <div className="flex gap-1 ml-auto">
+                        {ugSubjects.includes(subject.slug) && (
+                          <span className="px-1.5 py-0.5 text-[10px] rounded border bg-green-600/20 text-green-400 border-green-500/30 font-medium">UG</span>
+                        )}
+                        {pgSubjects.includes(subject.slug) && (
+                          <span className="px-1.5 py-0.5 text-[10px] rounded border bg-blue-600/20 text-blue-400 border-blue-500/30 font-medium">PG</span>
+                        )}
+                        {ssSubjects.includes(subject.slug) && (
+                          <span className="px-1.5 py-0.5 text-[10px] rounded border bg-red-600/20 text-red-400 border-red-500/30 font-medium">SS</span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
-            );
-          })}
-        </div>
-      ) : (
-        /* Subspecialties View */
-        <div className="space-y-4">
-          {/* Back Button + Subject Header */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setSelectedSubject(null)}
-              className="flex items-center gap-2 text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors"
-            >
-              <ChevronRight className="w-4 h-4 rotate-180" />
-              <span className="text-sm">All Subjects</span>
-            </button>
-          </div>
+            </Link>
+          );
+        })}
+      </div>
 
-          {selectedSubjectData && (
-            <div className="flex items-center gap-4 pb-4 border-b border-[rgba(91,179,179,0.1)]">
-              <span className="text-4xl">{selectedSubjectData.icon}</span>
-              <div>
-                <h2 className="text-xl font-bold text-[#E8E0D5]">{selectedSubjectData.name}</h2>
-                <p className="text-sm text-[#A0B0BC]">{selectedSubjectData.description}</p>
-              </div>
-            </div>
-          )}
-
-          {/* Subspecialties Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {subspecialties.map((sub) => (
-              <Link
-                key={sub.id}
-                href={`/library/${selectedSubject}/${sub.slug}?mode=${viewMode}`}
-              >
-                <Card className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer h-full">
-                  <CardContent className="p-5">
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl">{sub.icon}</span>
-                        <h3 className="font-semibold text-[#E8E0D5] group-hover:text-[#5BB3B3] transition-colors">
-                          {sub.name}
-                        </h3>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-[#6B7280] group-hover:text-[#5BB3B3] group-hover:translate-x-1 transition-all" />
-                    </div>
-
-                    <p className="text-sm text-[#A0B0BC] mb-4">
-                      {sub.description}
-                    </p>
-
-                    <div className="flex items-center gap-4 pt-3 border-t border-[rgba(91,179,179,0.1)]">
-                      <div className="flex items-center gap-1.5 text-xs text-[#6B7280]">
-                        <BookOpen className="w-3.5 h-3.5" />
-                        <span>{sub.topicCount} topics</span>
-                      </div>
-                      <Badge 
-                        className="text-xs"
-                        style={{ 
-                          backgroundColor: `${VIEW_MODE_CONFIG[viewMode].color}20`,
-                          color: VIEW_MODE_CONFIG[viewMode].color,
-                          borderColor: `${VIEW_MODE_CONFIG[viewMode].color}40`
-                        }}
-                      >
-                        {VIEW_MODE_CONFIG[viewMode].icon} {VIEW_MODE_CONFIG[viewMode].label}
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
-
-          {subspecialties.length === 0 && (
-            <div className="text-center py-12">
-              <Sparkles className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-[#E8E0D5] mb-2">Coming Soon</h3>
-              <p className="text-[#A0B0BC]">Subspecialties for this subject are being added.</p>
-            </div>
-          )}
+      {filteredSubjects.length === 0 && (
+        <div className="text-center py-12">
+          <Sparkles className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
+          <h3 className="text-lg font-medium text-[#E8E0D5] mb-2">No subjects found</h3>
+          <p className="text-[#A0B0BC]">Try a different search term.</p>
         </div>
       )}
 

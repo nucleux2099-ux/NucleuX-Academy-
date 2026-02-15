@@ -89,7 +89,7 @@ export default function SubspecialtyClient({
         </Link>
         <ChevronRight className="w-4 h-4 text-[#6B7280]" />
         <Link 
-          href={`/library?subject=${subject.slug}`} 
+          href={`/library/${subject.slug}`} 
           className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors"
         >
           {subject.name}
