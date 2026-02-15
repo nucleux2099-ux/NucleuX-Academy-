@@ -36,25 +36,6 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-/* ─────────────── BOLD MARKDOWN HELPER ──────────────── */
-
-function RichText({ text, className }: { text: string; className?: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return (
-    <span className={className}>
-      {parts.map((part, i) =>
-        part.startsWith("**") && part.endsWith("**") ? (
-          <strong key={i} className="text-[#E8E0D5] font-semibold">
-            {part.slice(2, -2)}
-          </strong>
-        ) : (
-          <span key={i}>{part}</span>
-        )
-      )}
-    </span>
-  );
-}
-
 /* ──────────────────── CALLOUT COMPONENT ─────────────── */
 
 function Callout({
@@ -114,7 +95,7 @@ const campusRooms = [
     color: "#5BB3B3",
     name: "My Desk",
     tagline: "Your personal workspace",
-    body: "This is **your corner** of the campus. Bookmarks, recent reads, notes — everything you've touched lives here. Think of it as your study table, always set up exactly how you left it.",
+    body: "This is your corner of the campus. Bookmarks, recent reads, notes — everything you've touched lives here. Think of it as your study table, always set up exactly how you left it.",
     callout: null,
     inside: [
       { label: "Bookmarks", href: "/bookmarks", icon: Bookmark, color: "#5BB3B3" },
@@ -129,11 +110,11 @@ const campusRooms = [
     color: "#7BA69E",
     name: "Library",
     tagline: "Browse, read, and build understanding",
-    body: "The **heart of the campus**. Every subject, every topic — organised by specialty and subspecialty. Open any topic and choose your reading mode:",
+    body: "The heart of the campus. Every subject, every topic — organised by specialty and subspecialty. Open any topic and choose your reading mode:",
     callout: {
       icon: Zap,
       color: "#7BA69E",
-      text: "Try **Bionic Reader** — toggle it on any reading page to bold the first half of every word. Your eyes move faster, you retain more.",
+      text: "Try Bionic Reader — toggle it on any reading page to bold the first half of every word. Your eyes move faster, you retain more.",
     },
     features: [
       { icon: Eye, label: "Explorer Mode", desc: "Concept notes with clinical pearls" },
@@ -154,11 +135,11 @@ const campusRooms = [
     color: "#6BA8C9",
     name: "Classroom",
     tagline: "Decks, lectures, and active learning",
-    body: "Where **passive watching becomes active learning**. Slide decks with built-in templates for note-taking. Every deck you open logs to your Backstage — so ATOM knows what you've covered and what's stale.",
+    body: "Where passive watching becomes active learning. Slide decks with built-in templates for note-taking. Every deck you open logs to your Backstage — so ATOM knows what you've covered and what's stale.",
     callout: {
       icon: Lightbulb,
       color: "#6BA8C9",
-      text: "Each deck has **SHOOT** and **SKIN** workflows built in — structured note-taking that forces you to process, not just consume.",
+      text: "Each deck has SHOOT and SKIN workflows built in — structured note-taking that forces you to process, not just consume.",
     },
     inside: [
       { label: "Slide Decks", href: "/classroom/decks", icon: FileText, color: "#6BA8C9" },
@@ -172,11 +153,11 @@ const campusRooms = [
     color: "#6366F1",
     name: "Training Centre",
     tagline: "MCQs, PYQs, OSCEs, and case drills",
-    body: "This is where you **test what you know** — and discover what you don't. Every attempt feeds your **Confidence Calibration** in Backstage, so you can see exactly where you're overconfident or underconfident.",
+    body: "This is where you test what you know — and discover what you don't. Every attempt feeds your Confidence Calibration in Backstage, so you can see exactly where you're overconfident or underconfident.",
     callout: {
       icon: Info,
       color: "#6366F1",
-      text: "Your MCQ accuracy **by topic** feeds back into your Library view. Weak topics get flagged automatically — no guesswork about what to revise.",
+      text: "Your MCQ accuracy by topic feeds back into your Library view. Weak topics get flagged automatically — no guesswork about what to revise.",
     },
     inside: [
       { label: "MCQs", href: "/exam-centre/mcq", icon: Target, color: "#6366F1" },
@@ -191,7 +172,7 @@ const campusRooms = [
     color: "#E879F9",
     name: "CBME",
     tagline: "Competency-based curriculum tracking",
-    body: "Your **NMC competency map**. See which competencies you've covered, which are pending, and where you stand against the curriculum. Every topic in the Library links back to a competency here.",
+    body: "Your NMC competency map. See which competencies you've covered, which are pending, and where you stand against the curriculum. Every topic in the Library links back to a competency here.",
     callout: null,
     inside: [
       { label: "Curriculum Map", href: "/competencies", icon: Map, color: "#E879F9" },
@@ -204,7 +185,7 @@ const campusRooms = [
     color: "#C9A86C",
     name: "Common Room",
     tagline: "Discuss, debate, and learn together",
-    body: "Medicine is **not a solo sport**. Discuss cases, debate differentials, share mnemonics, and learn from peers. Every great doctor learned as much from colleagues as from textbooks.",
+    body: "Medicine is not a solo sport. Discuss cases, debate differentials, share mnemonics, and learn from peers. Every great doctor learned as much from colleagues as from textbooks.",
     callout: null,
     inside: [
       { label: "Discussions", href: "/community", icon: MessageCircle, color: "#C9A86C" },
@@ -216,7 +197,7 @@ const campusRooms = [
     color: "#D4AF37",
     name: "Arena",
     tagline: "Compete and climb the leaderboard",
-    body: "Friendly competition **sharpens the mind**. Timed quizzes, leaderboards, and challenges against peers. See where you rank — then go back to the Library and close the gap.",
+    body: "Friendly competition sharpens the mind. Timed quizzes, leaderboards, and challenges against peers. See where you rank — then go back to the Library and close the gap.",
     callout: null,
     inside: [
       { label: "Leaderboard", href: "/leaderboard", icon: Trophy, color: "#D4AF37" },
@@ -229,11 +210,11 @@ const campusRooms = [
     color: "#5BB3B3",
     name: "ATOM",
     tagline: "Your AI study companion — with memory",
-    body: "ATOM isn't a chatbot. ATOM is a **thinking partner** who remembers your journey. Ask a question today, and six months from now ATOM still knows what you struggled with, what you mastered, and what's due for review.",
+    body: "ATOM isn't a chatbot. ATOM is a thinking partner who remembers your journey. Ask a question today, and six months from now ATOM still knows what you struggled with, what you mastered, and what's due for review.",
     callout: {
       icon: Star,
       color: "#5BB3B3",
-      text: "ATOM sees your **Backstage data**, your **Library reads**, your **MCQ performance** — and connects the dots. It's the only AI that gets better at helping you the longer you use it.",
+      text: "ATOM sees your Backstage data, your Library reads, your MCQ performance — and connects the dots. It's the only AI that gets better at helping you the longer you use it.",
     },
     inside: [],
     highlight: true,
@@ -248,28 +229,28 @@ const backstageWidgets = [
     icon: Brain,
     color: "#E879F9",
     name: "Confidence Calibration",
-    desc: "Are you as good as you think? Compare your **confidence** against your **accuracy** — and close the gap.",
+    desc: "Are you as good as you think? Compare your confidence against your accuracy — and close the gap.",
   },
   {
     href: "/backstage/logbook",
     icon: Flame,
     color: "#F97316",
     name: "Study Logbook",
-    desc: "Your **streak**, your **hours**, your **habits**. Every session logged. Consistency beats intensity.",
+    desc: "Your streak, your hours, your habits. Every session logged. Consistency beats intensity.",
   },
   {
     href: "/backstage/quests",
     icon: CheckCircle,
     color: "#10B981",
     name: "Weekly Quests",
-    desc: "Micro-goals that keep you moving. **50 MCQs this week?** **3 topics reviewed?** Track it here.",
+    desc: "Micro-goals that keep you moving. 50 MCQs this week? 3 topics reviewed? Track it here.",
   },
   {
     href: "/analytics",
     icon: BarChart3,
     color: "#5BB3B3",
     name: "Analytics",
-    desc: "The big picture — **hours studied**, **topics covered**, **accuracy trends**, all in one view.",
+    desc: "The big picture — hours studied, topics covered, accuracy trends, all in one view.",
   },
 ];
 
@@ -280,28 +261,28 @@ const spotlightFeatures = [
     icon: Zap,
     color: "#7BA69E",
     title: "Bionic Reader",
-    desc: "Toggle on any reading page. Bolds the first half of every word for **2× faster scanning**.",
+    desc: "Toggle on any reading page. Bolds the first half of every word for 2× faster scanning.",
     cta: { label: "Try in Library", href: "/library" },
   },
   {
     icon: Layers,
     color: "#6BA8C9",
     title: "Learning Workflows",
-    desc: "**Pre-Study → AIM → SHOOT → SKIN → Mind Map** — five structured steps built into every topic.",
+    desc: "Pre-Study → AIM → SHOOT → SKIN → Mind Map — five structured steps built into every topic.",
     cta: { label: "Open a topic", href: "/library/surgery" },
   },
   {
     icon: Brain,
     color: "#E879F9",
     title: "Confidence Calibration",
-    desc: "After every MCQ, rate your confidence. We track the gap between **what you think you know** and **what you actually know**.",
+    desc: "After every MCQ, rate your confidence. We track the gap between what you think you know and what you actually know.",
     cta: { label: "See your calibration", href: "/backstage/calibration" },
   },
   {
     icon: Atom,
     color: "#5BB3B3",
     title: "ATOM Memory",
-    desc: "ATOM remembers every topic you've read, every question you've answered, every note you've made. It **compounds** over your entire medical journey.",
+    desc: "ATOM remembers every topic you've read, every question you've answered, every note you've made. It compounds over your entire medical journey.",
     cta: { label: "Talk to ATOM", href: "/chat" },
   },
 ];
@@ -328,7 +309,7 @@ export default function BackstagePage() {
         </div>
 
         <p className="text-[#A0B0BC] leading-relaxed text-[15px]">
-          <RichText text="This is your **home base**. Every room on campus is built for a specific part of your learning journey — reading, practising, testing, competing, reflecting. Start anywhere you like. **ATOM connects the dots** across all of them." />
+          This is your home base. Every room on campus is built for a specific part of your learning journey — reading, practising, testing, competing, reflecting. Start anywhere you like. ATOM connects the dots across all of them.
         </p>
       </header>
 
@@ -383,7 +364,7 @@ export default function BackstagePage() {
                       {room.tagline}
                     </p>
                     <p className="text-sm text-[#A0B0BC] leading-relaxed">
-                      <RichText text={room.body} />
+                      {room.body}
                     </p>
                   </div>
                 </div>
@@ -413,7 +394,7 @@ export default function BackstagePage() {
               {room.callout && (
                 <div className="px-5 sm:px-6 pb-3 ml-[3.75rem]">
                   <Callout icon={room.callout.icon} color={room.callout.color}>
-                    <RichText text={room.callout.text} />
+                    {room.callout.text}
                   </Callout>
                 </div>
               )}
@@ -438,7 +419,7 @@ export default function BackstagePage() {
           Things You Should Try
         </h2>
         <p className="text-sm text-[#A0B0BC] mb-4">
-          <RichText text="Features that make NucleuX different from reading a PDF." />
+          Features that make NucleuX different from reading a PDF.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-3">
@@ -458,7 +439,7 @@ export default function BackstagePage() {
                 <div className="flex-1">
                   <h3 className="font-semibold text-[#E8E0D5] text-sm mb-1">{f.title}</h3>
                   <p className="text-xs text-[#A0B0BC] leading-relaxed mb-2">
-                    <RichText text={f.desc} />
+                    {f.desc}
                   </p>
                   <span
                     className="inline-flex items-center gap-1 text-xs font-medium group-hover:gap-2 transition-all"
@@ -480,7 +461,7 @@ export default function BackstagePage() {
           Your Backstage
         </h2>
         <p className="text-sm text-[#A0B0BC] mb-4 leading-relaxed">
-          <RichText text="The **Backstage** is where you see yourself clearly. Not what you've read — but what you've **retained**. Not how many hours — but how **effectively** you spent them. This is your Cognitive OS." />
+          The Backstage is where you see yourself clearly. Not what you've read — but what you've retained. Not how many hours — but how effectively you spent them. This is your Cognitive OS.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-3">
@@ -500,7 +481,7 @@ export default function BackstagePage() {
                 <div>
                   <h3 className="font-semibold text-[#E8E0D5] text-sm mb-1">{w.name}</h3>
                   <p className="text-xs text-[#A0B0BC] leading-relaxed">
-                    <RichText text={w.desc} />
+                    {w.desc}
                   </p>
                 </div>
               </div>
@@ -509,7 +490,7 @@ export default function BackstagePage() {
         </div>
 
         <Callout icon={Info} color="#F59E0B">
-          <RichText text="Everything here updates automatically as you use the campus. Read a topic? It shows in your logbook. Solve MCQs? Your calibration updates. **You don't need to track anything manually.**" />
+          Everything here updates automatically as you use the campus. Read a topic? It shows in your logbook. Solve MCQs? Your calibration updates. You don't need to track anything manually.
         </Callout>
       </section>
 
@@ -518,7 +499,7 @@ export default function BackstagePage() {
         <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#253545] border border-[rgba(255,255,255,0.04)]">
           <Lightbulb className="w-4 h-4 text-[#F59E0B]" />
           <p className="text-xs text-[#A0B0BC]">
-            <RichText text="**Learn with structure. Practice with feedback. Progress with calibration.**" />
+            Learn with structure. Practice with feedback. Progress with calibration.
           </p>
         </div>
       </footer>
