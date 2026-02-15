@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "diaphragm-anatomy",
+      "nmcCode": "",
+      "reason": "Esophageal hiatus and diaphragmatic crura",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "thoracic-duct",
+      "nmcCode": "",
+      "reason": "Thoracic duct relation to esophagus — surgical significance",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "LES function depends on esophageal anatomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "Anatomical constrictions are key to understanding dysphagia",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hiatal-hernia",
+      "nmcCode": "",
+      "reason": "Hiatal hernia relates to esophageal hiatus anatomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-perforation",
+      "nmcCode": "",
+      "reason": "Anatomical weak points predispose to perforation",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.5: Describe the applied anatomy and physiology of esophagus",
+    "AN23.1: Describe & demonstrate the external appearance, relations, blood supply,"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Esophageal Anatomy across foundational sciences and clinical applications."
+}

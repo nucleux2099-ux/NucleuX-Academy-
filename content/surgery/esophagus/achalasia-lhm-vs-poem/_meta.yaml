@@ -1,9 +1,43 @@
-topic_id: achalasia-lhm-vs-poem
-name: "Achalasia: LHM vs POEM"
-description: "Comparative outcomes, reflux risk, patient selection"
-high_yield: true
-difficulty: 3
-estimated_minutes: 15
-exam_tags: [NEET_PG, MRCS]
-prerequisites: [heller-myotomy, poem-procedure]
-related_topics: [achalasia]
+title: "Achalasia: LHM vs POEM"
+slug: achalasia-lhm-vs-poem
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "achalasia"
+  - "heller-myotomy"
+  - "esophageal-manometry"
+  - "les-physiology"
+related_topics:
+  - "poem-procedure"
+  - "fundoplication"
+  - "gerd"
+  - "motility-disorders"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "achalasia"
+      reason: "Must understand achalasia pathophysiology and Chicago classification before comparing treatments"
+    - slug: "heller-myotomy"
+      reason: "LHM technique, outcomes and reflux rates are one arm of the comparison"
+    - slug: "esophageal-manometry"
+      reason: "Pre-operative manometry subtype (Chicago classification) guides choice between LHM and POEM"
+    - slug: "les-physiology"
+      reason: "LES pressure dynamics and relaxation physiology underpin both myotomy approaches"
+  related_details:
+    - slug: "poem-procedure"
+      reason: "POEM technique and outcomes form one arm of the comparison"
+      relationship: "clinical"
+    - slug: "fundoplication"
+      reason: "Dor/Toupet fundoplication added to LHM reduces post-operative GERD — key differentiator vs POEM"
+      relationship: "clinical"
+    - slug: "gerd"
+      reason: "Post-procedure reflux is the main trade-off in LHM vs POEM decision-making"
+      relationship: "clinical"
+    - slug: "motility-disorders"
+      reason: "Type III achalasia and spastic disorders may favour POEM over LHM"
+      relationship: "clinical"

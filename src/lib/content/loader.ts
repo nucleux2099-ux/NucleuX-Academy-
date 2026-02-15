@@ -317,6 +317,9 @@ export function loadTopicFromFolder(
   const cardsPath = path.join(topicDir, 'retrieval-cards.json');
   const cardsMdPath = path.join(topicDir, 'retrieval-cards.md');
   const roadmapPath = path.join(topicDir, 'roadmap.md');
+  const roadmapUgPath = path.join(topicDir, 'roadmap-ug.json');
+  const roadmapPgPath = path.join(topicDir, 'roadmap-pg.json');
+  const roadmapSsPath = path.join(topicDir, 'roadmap-ss.json');
 
   try {
     const meta: TopicMeta = fs.existsSync(metaPath)
@@ -355,6 +358,17 @@ export function loadTopicFromFolder(
       retrievalCards = parseRetrievalCardsMarkdown(md);
     }
 
+    // Load roadmap JSON files (UG/PG/SS)
+    const roadmapJsonData: any[] = [];
+    for (const [rPath, level] of [[roadmapUgPath, 'UG'], [roadmapPgPath, 'PG'], [roadmapSsPath, 'SS']] as const) {
+      if (fs.existsSync(rPath)) {
+        try {
+          const parsed = JSON.parse(fs.readFileSync(rPath, 'utf-8'));
+          roadmapJsonData.push({ ...parsed, level });
+        } catch { /* skip malformed */ }
+      }
+    }
+
     // Normalize difficulty
     const difficulty = normalizeDifficulty(meta.difficulty);
 
@@ -379,6 +393,7 @@ export function loadTopicFromFolder(
         retrievalCards,
         cases: undefined,
         grindeMap: roadmapMd,
+        roadmapJson: roadmapJsonData.length > 0 ? roadmapJsonData : undefined,
       },
       hasContent: {
         concept: explorer.trim().length > 0,

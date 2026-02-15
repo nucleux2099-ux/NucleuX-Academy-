@@ -1,3 +1,40 @@
-title: Achalasia Cardia
+title: "Achalasia Cardia"
 slug: achalasia-cardia
-depth: PG
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "esophageal-anatomy"
+  - "les-physiology"
+  - "esophageal-manometry"
+related_topics:
+  - "achalasia"
+  - "heller-myotomy"
+  - "poem-procedure"
+  - "achalasia-lhm-vs-poem"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Understanding LES anatomy and esophageal muscle layers is essential for achalasia pathophysiology"
+    - slug: "les-physiology"
+      reason: "Achalasia results from failed LES relaxation — requires knowledge of normal LES physiology"
+    - slug: "esophageal-manometry"
+      reason: "Manometry is the gold standard for diagnosing and classifying achalasia (Chicago classification)"
+  related_details:
+    - slug: "achalasia"
+      reason: "Achalasia cardia is the clinical entity; achalasia covers the broader pathophysiology and classification"
+      relationship: "parent"
+    - slug: "heller-myotomy"
+      reason: "Laparoscopic Heller myotomy is the standard surgical treatment for achalasia cardia"
+      relationship: "therapeutic"
+    - slug: "poem-procedure"
+      reason: "POEM is an emerging endoscopic alternative to surgical myotomy for achalasia"
+      relationship: "therapeutic"
+    - slug: "achalasia-lhm-vs-poem"
+      reason: "Direct comparison of the two main interventional approaches for achalasia cardia"
+      relationship: "clinical"

@@ -1,5 +1,41 @@
-title: Dysphagia
+title: "Dysphagia"
 slug: dysphagia
-depth: UG
+depth: "UG"
+highYield: true
 nmc_codes:
-- SU28.6
+  - "SU28.6"
+  - "EN4.38"
+prerequisites:
+  - "esophageal-anatomy"
+  - "les-physiology"
+related_topics:
+  - "achalasia"
+  - "esophageal-cancer"
+  - "motility-disorders"
+  - "esophageal-manometry"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+    - code: "EN4.38"
+      text: "Elicit document and present a correct history demonstrate and describe the clinical features, choose the correct investigations and describe the principles of management of type of dysphagia"
+      domain: "SH"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Anatomical narrowings and mucosal layers determine sites and causes of obstruction"
+    - slug: "les-physiology"
+      reason: "LES dysfunction is central to distinguishing motility from mechanical dysphagia"
+  related_details:
+    - slug: "achalasia"
+      reason: "Achalasia is the prototypical motility cause of dysphagia — progressive dysphagia to solids and liquids"
+      relationship: "clinical"
+    - slug: "esophageal-cancer"
+      reason: "Progressive dysphagia to solids is the red-flag presentation of esophageal malignancy"
+      relationship: "clinical"
+    - slug: "motility-disorders"
+      reason: "Dysphagia classification depends on distinguishing motility disorders from mechanical obstruction"
+      relationship: "foundation"
+    - slug: "esophageal-manometry"
+      reason: "Manometry is the key investigation for motility-related dysphagia"
+      relationship: "clinical"

@@ -1,59 +1,40 @@
-topic_id: surgical-management-gerd
-name: Surgical Management of GERD
-description: Workup, patient selection, operative options, post-op issues
-high_yield: true
-difficulty: 4
-estimated_minutes: 25
-exam_tags:
-- NEET_PG
-- MRCS
-prerequisites:
-- gerd
-- esophageal-manometry
-related_topics:
-- fundoplication
+title: "Surgical Management of GERD"
+slug: surgical-management-gerd
+depth: "PG"
+highYield: true
 nmc_codes:
-- code: SU10.3
-  domain: KH
-  core: true
-  phase: Phase 3
-- code: SU10.4
-  domain: P
-  core: true
-  phase: Phase 3
-- code: SU12.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: SU14.2
-  domain: KH
-  core: true
-  phase: Phase 3
-- code: SU14.3
-  domain: KH
-  core: true
-  phase: Phase 3
-- code: SU18.3
-  domain: SH
-  core: true
-  phase: Phase 3
-- code: SU21.1
-  domain: KH
-  core: true
-  phase: Phase 3
-- code: SU6.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: SU7.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: SU8.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: SU9.3
-  domain: SH
-  core: true
-  phase: Phase 3
+  - "SU28.6"
+  - "SU28.5"
+prerequisites:
+  - "gerd"
+  - "esophageal-manometry"
+  - "les-physiology"
+related_topics:
+  - "fundoplication"
+  - "barrett-esophagus"
+  - "esophageal-anatomy"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "gerd"
+      reason: "Must understand GERD pathophysiology, diagnosis, and failed medical therapy criteria before considering surgery"
+    - slug: "esophageal-manometry"
+      reason: "Pre-operative manometry is mandatory to rule out motility disorders and guide choice of fundoplication (Nissen vs Toupet)"
+    - slug: "les-physiology"
+      reason: "Anti-reflux surgery aims to restore LES competence — requires understanding of normal LES mechanics"
+  related_details:
+    - slug: "fundoplication"
+      reason: "Fundoplication (Nissen, Toupet, Dor) is the primary surgical procedure for GERD"
+      relationship: "therapeutic"
+    - slug: "barrett-esophagus"
+      reason: "Barrett's esophagus from chronic GERD is a key indication for considering anti-reflux surgery"
+      relationship: "clinical"
+    - slug: "esophageal-anatomy"
+      reason: "Hiatal dissection and crural repair require detailed knowledge of GEJ and diaphragmatic anatomy"
+      relationship: "anatomical"

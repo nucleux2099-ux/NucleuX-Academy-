@@ -1,9 +1,40 @@
-topic_id: poem-procedure
-name: "POEM Procedure"
-description: "Peroral endoscopic myotomy, indications, advantages, complications"
-high_yield: true
-difficulty: 4
-estimated_minutes: 20
-exam_tags: [NEET_PG, MRCS]
-prerequisites: [achalasia]
-related_topics: [heller-myotomy, achalasia-lhm-vs-poem]
+title: "POEM Procedure"
+slug: poem-procedure
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "achalasia"
+  - "les-physiology"
+  - "esophageal-anatomy"
+related_topics:
+  - "heller-myotomy"
+  - "achalasia-lhm-vs-poem"
+  - "esophageal-manometry"
+  - "gerd"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "achalasia"
+      reason: "Achalasia is the primary indication for POEM — Chicago classification subtypes guide treatment selection"
+    - slug: "les-physiology"
+      reason: "POEM performs selective inner circular muscle myotomy at the LES — understanding LES tone mechanisms is essential"
+    - slug: "esophageal-anatomy"
+      reason: "Submucosal tunneling technique requires knowledge of esophageal wall layers and GEJ anatomy"
+  related_details:
+    - slug: "heller-myotomy"
+      reason: "POEM is the endoscopic alternative to laparoscopic Heller myotomy — both target LES circular muscle"
+      relationship: "clinical"
+    - slug: "achalasia-lhm-vs-poem"
+      reason: "Direct comparison of outcomes, reflux rates, and indications between LHM and POEM"
+      relationship: "clinical"
+    - slug: "esophageal-manometry"
+      reason: "Post-POEM manometry confirms adequate LES relaxation and treatment response"
+      relationship: "clinical"
+    - slug: "gerd"
+      reason: "Post-POEM GERD is a major complication since no anti-reflux procedure is added (unlike LHM+fundoplication)"
+      relationship: "clinical"

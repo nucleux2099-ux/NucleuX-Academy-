@@ -1,0 +1,50 @@
+{
+  "level": "SS",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Lack of serosa and anatomical relations determine perforation sites (Killian's triangle, left posterolateral for Boerhaave's)",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Forceful vomiting against a closed glottis (Boerhaave's) involves pressure dynamics assessed by manometry",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "caustic-injury-esophagus",
+      "nmcCode": "",
+      "reason": "Full-thickness caustic burns and post-dilatation perforation are common aetiologies",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-reconstruction",
+      "nmcCode": "",
+      "reason": "Delayed or extensive perforations may require esophagectomy with reconstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-cancer",
+      "nmcCode": "",
+      "reason": "Perforation during endoscopic staging or stenting of esophageal cancer is an iatrogenic cause",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "SU28.5: Describe the applied anatomy and physiology of esophagus"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This superspecialty-level roadmap connects Esophageal Perforation across foundational sciences and clinical applications."
+}

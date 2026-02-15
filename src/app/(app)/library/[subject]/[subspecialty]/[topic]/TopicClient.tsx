@@ -510,6 +510,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
             topic={topic}
             subjectSlug={subject.slug}
             subspecialtySlug={subspecialty.slug}
+            roadmaps={topic.content.roadmapJson}
           />
         );
 

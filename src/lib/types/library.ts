@@ -163,7 +163,8 @@ export interface LibraryTopic {
     cases?: CaseScenario[];
     
     // Roadmap mode
-    grindeMap?: string;           // Visual concept map
+    grindeMap?: string;           // Visual concept map (legacy markdown)
+    roadmapJson?: import('@/lib/data/roadmap-types').TopicRoadmap[];  // JSON roadmaps (UG/PG/SS)
   };
   
   // Metadata for ATOM librarian

@@ -1,0 +1,84 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Heller myotomy is the definitive surgical treatment for achalasia",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "LES anatomy, muscle layers, and GEJ relations — critical for safe myotomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "Understanding LES hypertension and failure of relaxation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Pre-operative manometry confirms diagnosis and guides myotomy length",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "poem-procedure",
+      "nmcCode": "",
+      "reason": "POEM is the competing endoscopic alternative to Heller myotomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "achalasia-lhm-vs-poem",
+      "nmcCode": "",
+      "reason": "Head-to-head comparison of LHM vs POEM outcomes",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fundoplication",
+      "nmcCode": "",
+      "reason": "Partial fundoplication (Dor/Toupet) added to prevent post-myotomy reflux",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Post-myotomy GERD is the main long-term complication",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "minimally-invasive-surgery",
+      "nmcCode": "",
+      "reason": "Laparoscopic approach is standard for Heller myotomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "motility-disorders",
+      "nmcCode": "",
+      "reason": "Myotomy may be used for other spastic motility disorders",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Heller Myotomy across foundational sciences and clinical applications."
+}

@@ -1,9 +1,51 @@
-topic_id: achalasia
-name: "Achalasia"
-description: "Presentation, diagnosis, barium/manometry, treatment options"
-high_yield: true
-difficulty: 4
-estimated_minutes: 25
-exam_tags: [NEET_PG, MRCS]
-prerequisites: [esophageal-manometry]
-related_topics: [heller-myotomy, poem-procedure, achalasia-lhm-vs-poem]
+title: "Achalasia"
+slug: achalasia
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "esophageal-anatomy"
+  - "les-physiology"
+  - "esophageal-manometry"
+  - "dysphagia"
+related_topics:
+  - "heller-myotomy"
+  - "poem-procedure"
+  - "achalasia-lhm-vs-poem"
+  - "motility-disorders"
+  - "esophageal-cancer"
+  - "chronic-inflammation"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "LES anatomy and esophageal structure essential for understanding achalasia"
+    - slug: "les-physiology"
+      reason: "LES relaxation physiology is the core defect in achalasia"
+    - slug: "esophageal-manometry"
+      reason: "Manometry is the gold standard diagnostic test for achalasia"
+    - slug: "dysphagia"
+      reason: "Dysphagia is the cardinal symptom — differential diagnosis framework"
+  related_details:
+    - slug: "heller-myotomy"
+      reason: "Primary surgical treatment for achalasia"
+      relationship: "clinical"
+    - slug: "poem-procedure"
+      reason: "Alternative endoscopic treatment for achalasia"
+      relationship: "clinical"
+    - slug: "achalasia-lhm-vs-poem"
+      reason: "Comparative outcomes of LHM vs POEM"
+      relationship: "clinical"
+    - slug: "motility-disorders"
+      reason: "Achalasia is part of the esophageal motility disorder spectrum"
+      relationship: "foundation"
+    - slug: "esophageal-cancer"
+      reason: "Long-standing achalasia increases squamous cell carcinoma risk"
+      relationship: "clinical"
+    - slug: "chronic-inflammation"
+      reason: "Auerbach plexus degeneration and inflammatory pathology"
+      relationship: "foundation"

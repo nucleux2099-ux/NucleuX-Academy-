@@ -1,0 +1,57 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Must understand GERD pathophysiology, diagnosis, and failed medical therapy criteria before considering surgery",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Pre-operative manometry is mandatory to rule out motility disorders and guide choice of fundoplication (Nissen vs Toupet)",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "Anti-reflux surgery aims to restore LES competence — requires understanding of normal LES mechanics",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "fundoplication",
+      "nmcCode": "",
+      "reason": "Fundoplication (Nissen, Toupet, Dor) is the primary surgical procedure for GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "barrett-esophagus",
+      "nmcCode": "",
+      "reason": "Barrett's esophagus from chronic GERD is a key indication for considering anti-reflux surgery",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Hiatal dissection and crural repair require detailed knowledge of GEJ and diaphragmatic anatomy",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "SU28.5: Describe the applied anatomy and physiology of esophagus"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Surgical Management of GERD across foundational sciences and clinical applications."
+}

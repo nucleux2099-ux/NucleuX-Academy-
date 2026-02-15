@@ -1,3 +1,55 @@
-title: Esophageal Cancer
+title: "Esophageal Cancer"
 slug: esophageal-cancer
-depth: PG
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "esophageal-anatomy"
+  - "dysphagia"
+  - "neoplasia-overview"
+  - "barrett-esophagus"
+related_topics:
+  - "gerd"
+  - "esophageal-reconstruction"
+  - "caustic-injury-esophagus"
+  - "surgical-nutrition"
+  - "perioperative-management"
+  - "gastric-anatomy-physiology"
+  - "thoracic-duct"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Anatomical thirds, lymphatic drainage, and relations — critical for staging and surgery"
+    - slug: "dysphagia"
+      reason: "Progressive dysphagia is the cardinal presenting symptom"
+    - slug: "neoplasia-overview"
+      reason: "TNM staging, tumor biology, metastasis principles"
+    - slug: "barrett-esophagus"
+      reason: "Barrett's metaplasia-dysplasia-carcinoma sequence for adenocarcinoma"
+  related_details:
+    - slug: "gerd"
+      reason: "GERD → Barrett's → adenocarcinoma pathway"
+      relationship: "foundation"
+    - slug: "esophageal-reconstruction"
+      reason: "Conduit options after esophagectomy"
+      relationship: "clinical"
+    - slug: "caustic-injury-esophagus"
+      reason: "Caustic stricture is a risk factor for squamous cell carcinoma"
+      relationship: "clinical"
+    - slug: "surgical-nutrition"
+      reason: "Nutritional optimization in esophageal cancer patients"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "Complex perioperative care for esophagectomy"
+      relationship: "clinical"
+    - slug: "gastric-anatomy-physiology"
+      reason: "Gastric pull-up is the commonest conduit for reconstruction"
+      relationship: "clinical"
+    - slug: "thoracic-duct"
+      reason: "Chylothorax risk during esophagectomy"
+      relationship: "clinical"

@@ -1,0 +1,70 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Must understand achalasia pathophysiology and Chicago classification before comparing treatments",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "heller-myotomy",
+      "nmcCode": "",
+      "reason": "LHM technique, outcomes and reflux rates are one arm of the comparison",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Pre-operative manometry subtype (Chicago classification) guides choice between LHM and POEM",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "LES pressure dynamics and relaxation physiology underpin both myotomy approaches",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "poem-procedure",
+      "nmcCode": "",
+      "reason": "POEM technique and outcomes form one arm of the comparison",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fundoplication",
+      "nmcCode": "",
+      "reason": "Dor/Toupet fundoplication added to LHM reduces post-operative GERD — key differentiator vs POEM",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Post-procedure reflux is the main trade-off in LHM vs POEM decision-making",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "motility-disorders",
+      "nmcCode": "",
+      "reason": "Type III achalasia and spastic disorders may favour POEM over LHM",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Achalasia: LHM vs POEM across foundational sciences and clinical applications."
+}

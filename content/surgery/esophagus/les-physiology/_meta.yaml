@@ -1,27 +1,43 @@
-topic_id: les-physiology
-name: LES Physiology
-description: GER barrier, LES pressure, transient relaxations, pathophysiology
-high_yield: true
-difficulty: 3
-estimated_minutes: 15
-exam_tags:
-- NEET_PG
-- MRCS
-prerequisites:
-- esophageal-anatomy
-related_topics:
-- gerd
-- fundoplication
+title: "LES Physiology"
+slug: les-physiology
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: SU22.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: SU28.5
-  domain: K
-  core: true
-  phase: Phase 1
-- code: SU28.7
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "SU28.5"
+  - "PY4.9"
+prerequisites:
+  - "esophageal-anatomy"
+  - "gastric-motility"
+related_topics:
+  - "gerd"
+  - "achalasia"
+  - "dysphagia"
+  - "fundoplication"
+  - "heller-myotomy"
+enrichment:
+  nmcCodes:
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+    - code: "PY4.9"
+      text: "Discuss the physiology aspects of: peptic ulcer, gastro-oesophageal reflux disease, vomiting, diarrhoea, constipation, Adynamic ileus, Hirschsprung's disease"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Diaphragmatic crural anatomy and GEJ structure form the anatomical basis of the anti-reflux barrier"
+  related_details:
+    - slug: "gerd"
+      reason: "LES hypotension and transient LES relaxations are the primary pathophysiological mechanisms of GERD"
+      relationship: "clinical"
+    - slug: "achalasia"
+      reason: "Failed LES relaxation due to myenteric plexus degeneration defines achalasia"
+      relationship: "clinical"
+    - slug: "dysphagia"
+      reason: "LES dysfunction manifests as dysphagia — understanding physiology explains symptom mechanisms"
+      relationship: "clinical"
+    - slug: "fundoplication"
+      reason: "Fundoplication augments the LES anti-reflux barrier by wrapping gastric fundus around the GEJ"
+      relationship: "clinical"
+    - slug: "heller-myotomy"
+      reason: "Myotomy disrupts hypertensive LES in achalasia — directly targets LES pathology"
+      relationship: "clinical"
