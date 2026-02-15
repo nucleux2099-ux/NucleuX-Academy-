@@ -17,7 +17,7 @@ const roomColors: Record<string, string> = {
 const navItems = [
   { href: "/desk", icon: LayoutDashboard, label: "My Desk" },
   { href: "/library", icon: BookOpen, label: "Library" },
-  { href: "/backstage", icon: Fingerprint, label: "Backstage" },
+  { href: "/backstage", icon: Fingerprint, label: "Backstage", highlight: false },
   { href: "/exam-centre", icon: ClipboardCheck, label: "Exam" },
   { href: "/chat", icon: Atom, label: "ATOM", highlight: true },
 ];

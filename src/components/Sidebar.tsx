@@ -30,6 +30,7 @@ const roomColors: Record<string, string> = {
 };
 
 const navItems = [
+  { href: "/backstage", icon: Fingerprint, label: "Backstage", description: "Cognitive OS" },
   { href: "/desk", icon: Monitor, label: "My Desk", description: "Personal Workspace" },
   { href: "/library", icon: BookOpen, label: "Library", description: "Browse & Pathways" },
   { href: "/classroom", icon: GraduationCap, label: "Classroom", description: "Video Lectures" },
@@ -37,7 +38,6 @@ const navItems = [
   { href: "/competencies", icon: Target, label: "CBME", description: "Competencies" },
   { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
   { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
-  { href: "/backstage", icon: Fingerprint, label: "Backstage", description: "Cognitive OS" },
   { href: "/chat", icon: Atom, label: "ATOM", highlight: true, description: "AI Companion" },
 ];
 
