@@ -1,12 +1,2 @@
-topic_id: hemorrhoids
-system: 10-anorectal
-name: "Hemorrhoids"
-nmc_competency: "SU28.12"
-sources:
-  primary:
-    bailey: "Ch 74"
-    sabiston: "Ch 53"
-    schwartz: "Ch 29"
-tags: [common, outpatient, high-yield]
-difficulty: easy
-priority: high
+title: Hemorrhoids
+order: 1
