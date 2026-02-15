@@ -8,41 +8,42 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Send,
   BookOpen,
-  Brain,
-  Lightbulb,
+  FileText,
+  StickyNote,
   Copy,
   Check,
-  StickyNote,
-  RotateCcw,
-  Paperclip,
-  FileText,
-  Presentation,
-  HelpCircle,
   X,
   Loader2,
-  Image as ImageIcon,
-  FileUp,
   Atom,
+  RotateCcw,
+  Brain,
+  Presentation,
+  Headphones,
+  Plus,
+  Download,
+  BookMarked,
+  Upload,
+  Layers,
 } from "lucide-react";
 
 const theme = {
-  background: '#2D3E50',
-  cardBg: '#1B2838',
-  primary: '#5BB3B3',
-  secondary: '#22D3EE',
-  accent: '#5EEAD4',
-  text: '#FFFFFF',
-  textMuted: '#94A3B8',
-  border: '#1E3A5F',
-  glow: 'rgba(6, 182, 212, 0.3)',
-  inputBg: '#162535',
+  background: "#2D3E50",
+  cardBg: "#1B2838",
+  primary: "#5BB3B3",
+  accent: "#5EEAD4",
+  text: "#FFFFFF",
+  textMuted: "#94A3B8",
+  border: "#1E3A5F",
+  glow: "rgba(6, 182, 212, 0.3)",
+  inputBg: "#162535",
 };
 
-interface Attachment {
+// --- Types ---
+interface Source {
   id: string;
-  name: string;
-  type: "image" | "pdf" | "other";
-  size: string;
+  title: string;
+  type: "textbook" | "notes" | "upload";
+  enabled: boolean;
 }
 
 interface Message {
@@ -50,196 +51,201 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   timestamp: Date;
-  saved?: boolean;
   isStreaming?: boolean;
+  sources?: string[];
 }
 
-const contextOptions = [
-  { id: "full", label: "Full Campus", icon: "🏫" },
-  { id: "surgery", label: "Surgery Library", icon: "🔪" },
-  { id: "medicine", label: "Medicine Library", icon: "💊" },
-  { id: "anatomy", label: "Anatomy", icon: "🦴" },
-  { id: "pathology", label: "Pathology", icon: "🔬" },
-  { id: "obgyn", label: "OBG", icon: "🩺" },
-  { id: "pediatrics", label: "Pediatrics", icon: "👶" },
+interface OutputCard {
+  id: string;
+  title: string;
+  type: "summary" | "flashcards" | "ppt" | "audio";
+  preview: string;
+  createdAt: Date;
+}
+
+// --- Mock Data ---
+const initialSources: Source[] = [
+  { id: "1", title: "Shackelford Ch. 35 - Esophageal Replacement", type: "textbook", enabled: true },
+  { id: "2", title: "Harrison's Ch. 12 - Portal Hypertension", type: "textbook", enabled: true },
+  { id: "3", title: "My Surgery Notes - Upper GI", type: "notes", enabled: false },
+  { id: "4", title: "Robbins Ch. 17 - GI Pathology", type: "textbook", enabled: true },
 ];
 
-const quickActions = [
-  { id: "ppt", icon: Presentation, label: "Generate PPT" },
-  { id: "summarize", icon: FileText, label: "Summarize" },
-  { id: "flashcards", icon: Brain, label: "Flashcards" },
-  { id: "quiz", icon: HelpCircle, label: "Quiz Me" },
+const mockOutputs: OutputCard[] = [
+  { id: "o1", title: "Portal Hypertension Summary", type: "summary", preview: "Key points on portal HTN pathophysiology, classification, and management...", createdAt: new Date(Date.now() - 3600000) },
+  { id: "o2", title: "Esophageal Surgery Flashcards", type: "flashcards", preview: "15 flashcards covering Ivor Lewis, McKeown, transhiatal approaches...", createdAt: new Date(Date.now() - 7200000) },
 ];
 
 const welcomeMessage: Message = {
   id: "welcome",
   role: "assistant",
-  content: `I'm **ATOM**, your AI thinking partner for mastering medicine.
+  content: `Welcome to your **Desk** ⚛️
 
-I can help you:
-• **Answer questions** grounded in textbook content
-• **Explain concepts** atomically — from fundamentals up
-• **Create flashcards** & study aids
-• **Quiz you** with MCQs and explanations
+I'm ATOM, grounded in the sources you've selected on the left. Toggle sources on/off to control what I can reference.
 
-Select a library context on the left, then ask me anything. Let's learn! ⚛️`,
+Ask me anything, or use the action buttons on the right to generate study materials!`,
   timestamp: new Date(),
 };
 
-export default function ChatPage() {
+const sourceIcon = (type: Source["type"]) => {
+  switch (type) {
+    case "textbook": return <BookMarked className="w-4 h-4 text-[#5BB3B3]" />;
+    case "notes": return <StickyNote className="w-4 h-4 text-[#5EEAD4]" />;
+    case "upload": return <Upload className="w-4 h-4 text-[#22D3EE]" />;
+  }
+};
+
+const outputIcon = (type: OutputCard["type"]) => {
+  switch (type) {
+    case "summary": return <FileText className="w-4 h-4 text-[#5BB3B3]" />;
+    case "flashcards": return <Brain className="w-4 h-4 text-[#5EEAD4]" />;
+    case "ppt": return <Presentation className="w-4 h-4 text-[#22D3EE]" />;
+    case "audio": return <Headphones className="w-4 h-4 text-[#E879F9]" />;
+  }
+};
+
+// --- Panels ---
+type MobileTab = "sources" | "chat" | "actions";
+
+export default function DeskPage() {
+  const [sources, setSources] = useState<Source[]>(initialSources);
   const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
+  const [outputs, setOutputs] = useState<OutputCard[]>(mockOutputs);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
-  const [selectedContext, setSelectedContext] = useState("surgery");
-  const [attachments, setAttachments] = useState<Attachment[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [mobileTab, setMobileTab] = useState<MobileTab>("chat");
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const enabledSources = sources.filter((s) => s.enabled);
 
   useEffect(() => {
-    scrollToBottom();
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  const handleSend = useCallback(async (text?: string) => {
-    const messageText = text || input.trim();
-    if (!messageText || isStreaming) return;
+  const toggleSource = (id: string) => {
+    setSources((prev) => prev.map((s) => (s.id === id ? { ...s, enabled: !s.enabled } : s)));
+  };
 
-    const userMessage: Message = {
-      id: crypto.randomUUID(),
-      role: "user",
-      content: messageText,
-      timestamp: new Date(),
-    };
+  // --- Chat Logic (reused from /chat) ---
+  const handleSend = useCallback(
+    async (text?: string) => {
+      const messageText = text || input.trim();
+      if (!messageText || isStreaming) return;
 
-    const assistantMessageId = crypto.randomUUID();
-    const assistantMessage: Message = {
-      id: assistantMessageId,
-      role: "assistant",
-      content: "",
-      timestamp: new Date(),
-      isStreaming: true,
-    };
+      const enabledTitles = enabledSources.map((s) => s.title);
 
-    setMessages((prev) => [...prev, userMessage, assistantMessage]);
-    setInput("");
-    setIsStreaming(true);
+      const userMessage: Message = {
+        id: crypto.randomUUID(),
+        role: "user",
+        content: messageText,
+        timestamp: new Date(),
+      };
 
-    // Build message history (exclude welcome message and streaming placeholder)
-    const history = [...messages, userMessage]
-      .filter(m => m.id !== 'welcome')
-      .map(m => ({ role: m.role, content: m.content }));
+      const assistantMessageId = crypto.randomUUID();
+      const assistantMessage: Message = {
+        id: assistantMessageId,
+        role: "assistant",
+        content: "",
+        timestamp: new Date(),
+        isStreaming: true,
+        sources: enabledTitles,
+      };
 
-    try {
-      abortControllerRef.current = new AbortController();
-      
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: history,
-          context: selectedContext,
-        }),
-        signal: abortControllerRef.current.signal,
-      });
+      setMessages((prev) => [...prev, userMessage, assistantMessage]);
+      setInput("");
+      setIsStreaming(true);
 
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Failed to get response');
-      }
+      const history = [...messages, userMessage]
+        .filter((m) => m.id !== "welcome")
+        .map((m) => ({ role: m.role, content: m.content }));
 
-      const reader = response.body?.getReader();
-      if (!reader) throw new Error('No response body');
+      try {
+        abortControllerRef.current = new AbortController();
 
-      const decoder = new TextDecoder();
-      let fullText = '';
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: history,
+            context: "full",
+            deskSources: enabledTitles,
+          }),
+          signal: abortControllerRef.current.signal,
+        });
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error || "Failed to get response");
+        }
 
-        const chunk = decoder.decode(value, { stream: true });
-        const lines = chunk.split('\n');
+        const reader = response.body?.getReader();
+        if (!reader) throw new Error("No response body");
 
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            const data = line.slice(6);
-            if (data === '[DONE]') break;
-            
-            try {
-              const parsed = JSON.parse(data);
-              if (parsed.text) {
-                fullText += parsed.text;
-                setMessages((prev) =>
-                  prev.map((m) =>
-                    m.id === assistantMessageId
-                      ? { ...m, content: fullText }
-                      : m
-                  )
-                );
-              }
-              if (parsed.error) {
-                throw new Error(parsed.error);
-              }
-            } catch (e) {
-              // Skip malformed JSON lines
-              if (e instanceof Error && e.message !== 'Stream error') {
-                // Ignore parse errors from partial chunks
+        const decoder = new TextDecoder();
+        let fullText = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          const chunk = decoder.decode(value, { stream: true });
+          const lines = chunk.split("\n");
+
+          for (const line of lines) {
+            if (line.startsWith("data: ")) {
+              const data = line.slice(6);
+              if (data === "[DONE]") break;
+
+              try {
+                const parsed = JSON.parse(data);
+                if (parsed.text) {
+                  fullText += parsed.text;
+                  setMessages((prev) =>
+                    prev.map((m) => (m.id === assistantMessageId ? { ...m, content: fullText } : m))
+                  );
+                }
+                if (parsed.error) throw new Error(parsed.error);
+              } catch {
+                // skip malformed
               }
             }
           }
         }
-      }
 
-      // Mark streaming as done
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === assistantMessageId
-            ? { ...m, isStreaming: false }
-            : m
-        )
-      );
-    } catch (error) {
-      if (error instanceof Error && error.name === 'AbortError') {
-        // User cancelled
         setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantMessageId
-              ? { ...m, content: m.content + '\n\n*[Cancelled]*', isStreaming: false }
-              : m
-          )
+          prev.map((m) => (m.id === assistantMessageId ? { ...m, isStreaming: false } : m))
         );
-      } else {
-        console.error('Chat error:', error);
-        setMessages((prev) =>
-          prev.map((m) =>
-            m.id === assistantMessageId
-              ? { ...m, content: `❌ Error: ${error instanceof Error ? error.message : 'Something went wrong'}. Please try again.`, isStreaming: false }
-              : m
-          )
-        );
+      } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantMessageId ? { ...m, content: m.content + "\n\n*[Cancelled]*", isStreaming: false } : m
+            )
+          );
+        } else {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantMessageId
+                ? { ...m, content: `❌ Error: ${error instanceof Error ? error.message : "Something went wrong"}`, isStreaming: false }
+                : m
+            )
+          );
+        }
+      } finally {
+        setIsStreaming(false);
+        abortControllerRef.current = null;
       }
-    } finally {
-      setIsStreaming(false);
-      abortControllerRef.current = null;
-    }
-  }, [input, isStreaming, messages, selectedContext]);
+    },
+    [input, isStreaming, messages, enabledSources]
+  );
 
-  const handleQuickAction = (actionId: string) => {
-    const prompts: Record<string, string> = {
-      ppt: "Create a detailed summary with key points on esophageal replacement methods and outcomes, formatted for a presentation",
-      summarize: "Summarize the key points of portal hypertension management in a high-yield format",
-      flashcards: "Create 10 flashcards (Q&A format) for hepatobiliary anatomy — focus on surgically relevant landmarks",
-      quiz: "Quiz me with 5 MCQs on gastric cancer staging. Give one question at a time, wait for my answer, then explain.",
-    };
-    handleSend(prompts[actionId]);
-  };
+  const handleStop = () => abortControllerRef.current?.abort();
 
-  const handleStop = () => {
+  const handleReset = () => {
+    setMessages([welcomeMessage]);
+    setIsStreaming(false);
     abortControllerRef.current?.abort();
   };
 
@@ -249,31 +255,6 @@ export default function ChatPage() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const handleSaveAsNote = (message: Message) => {
-    setMessages((prev) =>
-      prev.map((m) => (m.id === message.id ? { ...m, saved: true } : m))
-    );
-  };
-
-  const handleAddFile = () => fileInputRef.current?.click();
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (files) {
-      const newAttachments: Attachment[] = Array.from(files).map((file, i) => ({
-        id: (Date.now() + i).toString(),
-        name: file.name,
-        type: file.type.startsWith("image/") ? "image" : file.type === "application/pdf" ? "pdf" : "other",
-        size: `${(file.size / (1024 * 1024)).toFixed(1)} MB`,
-      }));
-      setAttachments((prev) => [...prev, ...newAttachments]);
-    }
-  };
-
-  const handleRemoveAttachment = (id: string) => {
-    setAttachments((prev) => prev.filter((a) => a.id !== id));
-  };
-
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -281,342 +262,293 @@ export default function ChatPage() {
     }
   };
 
-  const handleReset = () => {
-    setMessages([welcomeMessage]);
-    setIsStreaming(false);
-    abortControllerRef.current?.abort();
+  const handleAction = (type: string) => {
+    const prompts: Record<string, string> = {
+      summary: "Generate a comprehensive summary from the enabled sources, with key points and clinical pearls.",
+      flashcards: "Create 10 high-yield flashcards (Q&A) from the enabled sources.",
+      ppt: "Create a presentation outline with key slides from the enabled sources.",
+      audio: "Create a concise audio-overview script summarizing the enabled sources for quick revision.",
+    };
+    handleSend(prompts[type]);
   };
 
   const formatMessage = (content: string) => {
     return content.split("\n").map((line, i) => {
-      if (line.startsWith("### ")) {
-        return <h3 key={i} className="text-lg font-bold mt-3 mb-1 text-white">{line.replace("### ", "")}</h3>;
-      }
-      if (line.startsWith("## ")) {
-        return <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-white">{line.replace("## ", "")}</h2>;
-      }
-      if (line.startsWith("# ")) {
-        return <h1 key={i} className="text-2xl font-bold mt-4 mb-2 text-white">{line.replace("# ", "")}</h1>;
-      }
+      if (line.startsWith("### ")) return <h3 key={i} className="text-lg font-bold mt-3 mb-1 text-white">{line.replace("### ", "")}</h3>;
+      if (line.startsWith("## ")) return <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-white">{line.replace("## ", "")}</h2>;
       if (line.includes("**")) {
         const parts = line.split(/\*\*(.*?)\*\*/g);
         return (
           <p key={i} className="my-1">
-            {parts.map((part, j) =>
-              j % 2 === 1 ? (
-                <strong key={j} className="text-[#5EEAD4] font-semibold">{part}</strong>
-              ) : (
-                part
-              )
-            )}
+            {parts.map((part, j) => (j % 2 === 1 ? <strong key={j} className="text-[#5EEAD4] font-semibold">{part}</strong> : part))}
           </p>
         );
       }
-      if (line.startsWith("• ") || line.startsWith("- ") || line.match(/^\d+\./)) {
-        const text = line.replace(/^[•\-]\s/, '').replace(/^\d+\.\s/, '');
-        return <li key={i} className="ml-4 my-0.5 list-disc">{text}</li>;
-      }
-      if (line.startsWith("📚") || line.startsWith("*Reference") || line.startsWith("*Source")) {
-        return <p key={i} className="my-2 text-sm text-[#94A3B8] italic">{line}</p>;
-      }
-      if (line.startsWith("```")) {
-        return null; // Simple code block handling — skip fences
+      if (line.startsWith("• ") || line.startsWith("- ")) {
+        return <li key={i} className="ml-4 my-0.5 list-disc">{line.replace(/^[•\-]\s/, "")}</li>;
       }
       if (!line.trim()) return <br key={i} />;
       return <p key={i} className="my-1">{line}</p>;
     });
   };
 
-  return (
-    <div 
-      className="flex h-[calc(100vh-8rem)] gap-4 page-transition -m-4 sm:-m-6 p-4 sm:p-6"
-      style={{ backgroundColor: theme.background }}
-    >
-      {/* Left Panel - Context & Actions */}
-      <div className="w-72 shrink-0 space-y-4 hidden lg:block">
-        {/* Context Selector */}
-        <Card className="border-[#1E3A5F] shadow-xl" style={{ backgroundColor: theme.cardBg }}>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-semibold text-white flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
-              Context
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-1">
-            {contextOptions.map((option) => (
-              <button
-                key={option.id}
-                onClick={() => setSelectedContext(option.id)}
-                className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
-                  selectedContext === option.id
-                    ? "bg-[#5BB3B3]/20 text-[#22D3EE] font-medium"
-                    : "text-[#94A3B8] hover:bg-[#1E3A5F] hover:text-white"
-                }`}
-              >
-                <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                  selectedContext === option.id ? "border-[#5BB3B3]" : "border-[#475569]"
-                }`}>
-                  {selectedContext === option.id && (
-                    <span className="w-2 h-2 rounded-full bg-[#5BB3B3]" />
-                  )}
-                </span>
-                <span>{option.icon}</span>
-                <span>{option.label}</span>
-              </button>
-            ))}
-          </CardContent>
-        </Card>
-
-        {/* Attachments */}
-        <Card className="border-[#1E3A5F] shadow-xl" style={{ backgroundColor: theme.cardBg }}>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-semibold text-white flex items-center justify-between">
-              <span className="flex items-center gap-2">
-                <Paperclip className="w-4 h-4 text-[#5BB3B3]" />
-                Attachments ({attachments.length})
-              </span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            {attachments.map((attachment) => (
-              <div
-                key={attachment.id}
-                className="flex items-center gap-2 px-3 py-2 bg-[#162535] rounded-lg group border border-[#1E3A5F]"
-              >
-                {attachment.type === "image" ? (
-                  <ImageIcon className="w-4 h-4 text-[#22D3EE]" />
-                ) : (
-                  <FileText className="w-4 h-4 text-[#5EEAD4]" />
-                )}
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-white truncate">{attachment.name}</p>
-                  <p className="text-[10px] text-[#94A3B8]">{attachment.size}</p>
-                </div>
-                <button
-                  onClick={() => handleRemoveAttachment(attachment.id)}
-                  className="opacity-0 group-hover:opacity-100 text-[#94A3B8] hover:text-[#E57373] transition-opacity"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              </div>
-            ))}
-            <input ref={fileInputRef} type="file" multiple accept="image/*,.pdf" onChange={handleFileChange} className="hidden" />
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleAddFile}
-              className="w-full border-dashed border-[#1E3A5F] bg-transparent text-[#94A3B8] hover:text-[#5BB3B3] hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10"
-            >
-              <FileUp className="w-3 h-3 mr-2" />
-              Add files
-            </Button>
-          </CardContent>
-        </Card>
-
-        {/* Quick Actions */}
-        <Card className="border-[#1E3A5F] shadow-xl" style={{ backgroundColor: theme.cardBg }}>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-semibold text-white flex items-center gap-2">
-              <Lightbulb className="w-4 h-4 text-[#5BB3B3]" />
-              Quick Actions
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="grid grid-cols-2 gap-2">
-            {quickActions.map((action) => (
-              <Button
-                key={action.id}
-                variant="outline"
-                size="sm"
-                onClick={() => handleQuickAction(action.id)}
-                disabled={isStreaming}
-                className="border-[#1E3A5F] bg-transparent hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10 text-[#94A3B8] hover:text-[#22D3EE] justify-start"
-              >
-                <action.icon className="w-3 h-3 mr-1.5 text-[#5BB3B3]" />
-                <span className="text-xs">{action.label}</span>
-              </Button>
-            ))}
-          </CardContent>
-        </Card>
+  // ========== SOURCES PANEL ==========
+  const SourcesPanel = (
+    <div className="flex flex-col h-full">
+      <div className="p-4 border-b border-[#1E3A5F]">
+        <h2 className="text-sm font-semibold text-white flex items-center gap-2">
+          <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
+          Sources
+          <Badge className="bg-[#5BB3B3]/20 text-[#5EEAD4] border-[#5BB3B3]/30 text-[10px] ml-auto">
+            {enabledSources.length}/{sources.length}
+          </Badge>
+        </h2>
       </div>
-
-      {/* Main Chat Area */}
-      <Card 
-        className="flex-1 backdrop-blur border-[#1E3A5F] overflow-hidden shadow-2xl flex flex-col"
-        style={{ backgroundColor: theme.cardBg }}
-      >
-        {/* Header */}
-        <div 
-          className="flex items-center justify-between p-4 border-b border-[#1E3A5F]"
-          style={{ background: `linear-gradient(135deg, ${theme.cardBg}, #0F2438)` }}
-        >
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div 
-                className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5EEAD4] flex items-center justify-center shadow-lg relative"
-                style={{ boxShadow: `0 0 30px ${theme.glow}, 0 0 60px ${theme.glow}` }}
-              >
-                <Atom className="w-6 h-6 text-white" />
-                {isStreaming && (
-                  <div className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ backgroundColor: theme.primary }} />
-                )}
-              </div>
-              <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-[#1B2838] ${isStreaming ? 'bg-yellow-400' : 'bg-[#10B981]'}`} />
+      <div className="flex-1 overflow-y-auto p-3 space-y-1">
+        {sources.map((source) => (
+          <button
+            key={source.id}
+            onClick={() => toggleSource(source.id)}
+            className={`w-full flex items-start gap-3 px-3 py-2.5 rounded-lg text-left transition-all ${
+              source.enabled ? "bg-[#5BB3B3]/10 border border-[#5BB3B3]/30" : "border border-transparent hover:bg-[#1E3A5F]/50"
+            }`}
+          >
+            <div className={`mt-0.5 w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 ${
+              source.enabled ? "border-[#5BB3B3] bg-[#5BB3B3]" : "border-[#475569]"
+            }`}>
+              {source.enabled && <Check className="w-3 h-3 text-white" />}
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-white flex items-center gap-2">
-                ATOM
-                <Badge className="bg-[#5BB3B3]/20 text-[#22D3EE] border-[#5BB3B3]/30 text-xs">
-                  {isStreaming ? 'Thinking...' : 'Online'}
-                </Badge>
-              </h1>
-              <p className="text-sm text-[#94A3B8]">
-                Talking to{" "}
-                <span className="text-[#22D3EE] font-medium">
-                  {contextOptions.find((c) => c.id === selectedContext)?.label}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-1.5">
+                {sourceIcon(source.type)}
+                <span className={`text-xs font-medium truncate ${source.enabled ? "text-white" : "text-[#94A3B8]"}`}>
+                  {source.title}
                 </span>
-              </p>
+              </div>
+              <span className="text-[10px] text-[#64748B] capitalize">{source.type}</span>
+            </div>
+          </button>
+        ))}
+      </div>
+      <div className="p-3 border-t border-[#1E3A5F]">
+        <Button
+          variant="outline"
+          size="sm"
+          className="w-full border-dashed border-[#1E3A5F] bg-transparent text-[#94A3B8] hover:text-[#5BB3B3] hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10"
+        >
+          <Plus className="w-3 h-3 mr-2" />
+          Add Source
+        </Button>
+      </div>
+    </div>
+  );
+
+  // ========== CHAT PANEL ==========
+  const ChatPanel = (
+    <div className="flex flex-col h-full">
+      {/* Header */}
+      <div className="flex items-center justify-between p-3 border-b border-[#1E3A5F]" style={{ background: `linear-gradient(135deg, ${theme.cardBg}, #0F2438)` }}>
+        <div className="flex items-center gap-2">
+          <div className="relative">
+            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#5EEAD4] flex items-center justify-center" style={{ boxShadow: `0 0 20px ${theme.glow}` }}>
+              <Atom className="w-5 h-5 text-white" />
+              {isStreaming && <div className="absolute inset-0 rounded-full animate-ping opacity-30 bg-[#5BB3B3]" />}
             </div>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handleReset}
-            className="text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
-          >
-            <RotateCcw className="w-4 h-4" />
-          </Button>
-        </div>
-
-        {/* Messages Area */}
-        <CardContent className="p-0 flex-1 flex flex-col overflow-hidden">
-          <div 
-            className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-hide"
-            style={{ backgroundColor: theme.background }}
-          >
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""} animate-fade-in`}
-              >
-                <Avatar
-                  className="w-8 h-8 shrink-0 shadow-sm"
-                  style={message.role === "assistant" ? {
-                    background: `linear-gradient(135deg, ${theme.primary}, ${theme.accent})`,
-                    boxShadow: `0 0 15px ${theme.glow}`,
-                  } : { backgroundColor: theme.primary }}
-                >
-                  <AvatarFallback className="bg-transparent text-white">
-                    {message.role === "assistant" ? <Atom className="w-4 h-4" /> : "Y"}
-                  </AvatarFallback>
-                </Avatar>
-
-                <div className={`max-w-[80%] ${message.role === "user" ? "items-end" : "items-start"}`}>
-                  <div
-                    className={`rounded-2xl px-4 py-3 shadow-sm ${
-                      message.role === "user"
-                        ? "bg-[#5BB3B3] text-white rounded-br-md"
-                        : "bg-[#1B2838] border border-[#1E3A5F] rounded-bl-md"
-                    }`}
-                  >
-                    <div className={message.role === "assistant" ? "text-[#E2E8F0] prose prose-sm max-w-none prose-invert" : ""}>
-                      {message.role === "assistant"
-                        ? formatMessage(message.content)
-                        : message.content}
-                    </div>
-
-                    {message.isStreaming && !message.content && (
-                      <div className="flex items-center gap-2 mt-2">
-                        <Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" />
-                        <span className="text-xs text-[#94A3B8]">Searching library & thinking...</span>
-                      </div>
-                    )}
-
-                    {message.isStreaming && message.content && (
-                      <span className="inline-block w-2 h-4 bg-[#5BB3B3] animate-pulse ml-1" />
-                    )}
-                  </div>
-
-                  {/* Message Actions */}
-                  {message.role === "assistant" && !message.isStreaming && message.id !== "welcome" && (
-                    <div className="flex items-center gap-1 mt-2">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => handleCopy(message.id, message.content)}
-                        className="h-7 px-2 text-xs text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
-                      >
-                        {copiedId === message.id ? <Check className="w-3 h-3 mr-1" /> : <Copy className="w-3 h-3 mr-1" />}
-                        {copiedId === message.id ? "Copied" : "Copy"}
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => handleSaveAsNote(message)}
-                        className={`h-7 px-2 text-xs ${
-                          message.saved ? "text-[#5EEAD4]" : "text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]"
-                        }`}
-                      >
-                        <StickyNote className="w-3 h-3 mr-1" />
-                        {message.saved ? "Saved" : "Save as Note"}
-                      </Button>
-                    </div>
-                  )}
-
-                  <p className="text-[10px] text-[#64748B] mt-1 px-1">
-                    {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                  </p>
-                </div>
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Input Area */}
-          <div className="p-4 border-t border-[#1E3A5F]" style={{ backgroundColor: theme.cardBg }}>
-            <div className="flex items-end gap-2">
-              <div className="flex-1 relative">
-                <textarea
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                  placeholder="Ask ATOM anything..."
-                  rows={1}
-                  disabled={isStreaming}
-                  className="w-full px-4 py-3 pr-12 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-white placeholder-[#64748B] min-h-[48px] max-h-[120px] shadow-inner disabled:opacity-50"
-                />
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={handleAddFile}
-                  className="absolute right-2 bottom-2 w-8 h-8 text-[#64748B] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10"
-                >
-                  <Paperclip className="w-4 h-4" />
-                </Button>
-              </div>
-              {isStreaming ? (
-                <Button
-                  onClick={handleStop}
-                  className="h-12 w-12 bg-red-500 hover:bg-red-600 rounded-xl shrink-0 shadow-lg"
-                >
-                  <X className="w-5 h-5" />
-                </Button>
-              ) : (
-                <Button
-                  onClick={() => handleSend()}
-                  disabled={!input.trim()}
-                  className="h-12 w-12 bg-[#5BB3B3] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50 shadow-lg"
-                  style={{ boxShadow: `0 4px 20px ${theme.glow}` }}
-                >
-                  <Send className="w-5 h-5" />
-                </Button>
-              )}
-            </div>
-            <p className="text-[10px] text-[#64748B] mt-2 text-center">
-              ATOM uses textbook content from your selected library. Always verify critical clinical information.
+          <div>
+            <h1 className="text-sm font-bold text-white flex items-center gap-2">
+              ATOM
+              <Badge className="bg-[#5BB3B3]/20 text-[#22D3EE] border-[#5BB3B3]/30 text-[10px]">
+                {isStreaming ? "Thinking..." : "Online"}
+              </Badge>
+            </h1>
+            <p className="text-[10px] text-[#94A3B8]">
+              {enabledSources.length} source{enabledSources.length !== 1 ? "s" : ""} active
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+        <Button variant="ghost" size="icon" onClick={handleReset} className="text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F] w-8 h-8">
+          <RotateCcw className="w-4 h-4" />
+        </Button>
+      </div>
+
+      {/* Messages */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{ backgroundColor: theme.background }}>
+        {messages.map((message) => (
+          <div key={message.id} className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}>
+            <Avatar className="w-7 h-7 shrink-0" style={message.role === "assistant" ? { background: `linear-gradient(135deg, ${theme.primary}, ${theme.accent})` } : { backgroundColor: theme.primary }}>
+              <AvatarFallback className="bg-transparent text-white text-xs">
+                {message.role === "assistant" ? <Atom className="w-3.5 h-3.5" /> : "Y"}
+              </AvatarFallback>
+            </Avatar>
+            <div className={`max-w-[85%] ${message.role === "user" ? "items-end" : "items-start"}`}>
+              <div className={`rounded-2xl px-4 py-3 shadow-sm ${
+                message.role === "user" ? "bg-[#5BB3B3] text-white rounded-br-md" : "bg-[#1B2838] border border-[#1E3A5F] rounded-bl-md"
+              }`}>
+                <div className={message.role === "assistant" ? "text-[#E2E8F0] text-sm" : "text-sm"}>
+                  {message.role === "assistant" ? formatMessage(message.content) : message.content}
+                </div>
+                {message.isStreaming && !message.content && (
+                  <div className="flex items-center gap-2 mt-2">
+                    <Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" />
+                    <span className="text-xs text-[#94A3B8]">Searching sources...</span>
+                  </div>
+                )}
+                {message.isStreaming && message.content && (
+                  <span className="inline-block w-2 h-4 bg-[#5BB3B3] animate-pulse ml-1" />
+                )}
+              </div>
+              {/* Source badges */}
+              {message.role === "assistant" && message.sources && !message.isStreaming && message.id !== "welcome" && (
+                <div className="flex flex-wrap gap-1 mt-1.5">
+                  {message.sources.slice(0, 3).map((s, i) => (
+                    <Badge key={i} className="bg-[#1E3A5F]/50 text-[#94A3B8] border-[#1E3A5F] text-[9px] px-1.5 py-0">
+                      📚 {s.length > 25 ? s.slice(0, 25) + "…" : s}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+              {/* Actions */}
+              {message.role === "assistant" && !message.isStreaming && message.id !== "welcome" && (
+                <div className="flex items-center gap-1 mt-1">
+                  <Button variant="ghost" size="sm" onClick={() => handleCopy(message.id, message.content)} className="h-6 px-2 text-[10px] text-[#94A3B8] hover:text-white hover:bg-[#1E3A5F]">
+                    {copiedId === message.id ? <Check className="w-3 h-3 mr-1" /> : <Copy className="w-3 h-3 mr-1" />}
+                    {copiedId === message.id ? "Copied" : "Copy"}
+                  </Button>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* Input */}
+      <div className="p-3 border-t border-[#1E3A5F]" style={{ backgroundColor: theme.cardBg }}>
+        <div className="flex items-end gap-2">
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Ask ATOM about your sources..."
+            rows={1}
+            disabled={isStreaming}
+            className="flex-1 px-4 py-2.5 bg-[#162535] border border-[#1E3A5F] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-white placeholder-[#64748B] text-sm min-h-[44px] max-h-[100px] disabled:opacity-50"
+          />
+          {isStreaming ? (
+            <Button onClick={handleStop} className="h-11 w-11 bg-red-500 hover:bg-red-600 rounded-xl shrink-0">
+              <X className="w-5 h-5" />
+            </Button>
+          ) : (
+            <Button onClick={() => handleSend()} disabled={!input.trim()} className="h-11 w-11 bg-[#5BB3B3] hover:bg-[#22D3EE] rounded-xl shrink-0 disabled:opacity-50" style={{ boxShadow: `0 4px 20px ${theme.glow}` }}>
+              <Send className="w-5 h-5" />
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  // ========== ACTIONS PANEL ==========
+  const ActionsPanel = (
+    <div className="flex flex-col h-full">
+      <div className="p-4 border-b border-[#1E3A5F]">
+        <h2 className="text-sm font-semibold text-white flex items-center gap-2">
+          <Layers className="w-4 h-4 text-[#5BB3B3]" />
+          Actions & Output
+        </h2>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="p-3 grid grid-cols-2 gap-2">
+        {[
+          { key: "summary", icon: FileText, label: "Summary", color: "#5BB3B3" },
+          { key: "flashcards", icon: Brain, label: "Flashcards", color: "#5EEAD4" },
+          { key: "ppt", icon: Presentation, label: "Create PPT", color: "#22D3EE" },
+          { key: "audio", icon: Headphones, label: "Audio Overview", color: "#E879F9" },
+        ].map((action) => (
+          <Button
+            key={action.key}
+            variant="outline"
+            size="sm"
+            onClick={() => handleAction(action.key)}
+            disabled={isStreaming || enabledSources.length === 0}
+            className="border-[#1E3A5F] bg-transparent hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10 text-[#94A3B8] hover:text-white justify-start h-10"
+          >
+            <action.icon className="w-3.5 h-3.5 mr-1.5" style={{ color: action.color }} />
+            <span className="text-xs">{action.label}</span>
+          </Button>
+        ))}
+      </div>
+
+      {/* Output Cards */}
+      <div className="flex-1 overflow-y-auto p-3 space-y-2">
+        {outputs.length === 0 ? (
+          <div className="text-center py-8 text-[#64748B]">
+            <Layers className="w-8 h-8 mx-auto mb-2 opacity-50" />
+            <p className="text-xs">Generated outputs will appear here</p>
+          </div>
+        ) : (
+          outputs.map((output) => (
+            <Card key={output.id} className="border-[#1E3A5F] bg-[#162535]">
+              <CardContent className="p-3">
+                <div className="flex items-start gap-2">
+                  {outputIcon(output.type)}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-medium text-white truncate">{output.title}</p>
+                    <p className="text-[10px] text-[#94A3B8] mt-0.5 line-clamp-2">{output.preview}</p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px] text-[#94A3B8] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10">
+                        <Copy className="w-3 h-3 mr-1" /> Copy
+                      </Button>
+                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px] text-[#94A3B8] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10">
+                        <Download className="w-3 h-3 mr-1" /> Save
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        )}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col h-[calc(100vh-8rem)] -m-4 sm:-m-6" style={{ backgroundColor: theme.background }}>
+      {/* Mobile Tab Bar */}
+      <div className="flex md:hidden border-b border-[#1E3A5F]" style={{ backgroundColor: theme.cardBg }}>
+        {(["sources", "chat", "actions"] as MobileTab[]).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setMobileTab(tab)}
+            className={`flex-1 py-3 text-xs font-medium capitalize transition-colors ${
+              mobileTab === tab ? "text-[#5BB3B3] border-b-2 border-[#5BB3B3]" : "text-[#94A3B8]"
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* Desktop: 3-column layout */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* Sources Panel */}
+        <Card className={`w-[280px] shrink-0 border-[#1E3A5F] rounded-none border-r overflow-hidden ${mobileTab !== "sources" ? "hidden md:flex" : "flex"} flex-col`} style={{ backgroundColor: theme.cardBg }}>
+          {SourcesPanel}
+        </Card>
+
+        {/* Chat Panel */}
+        <div className={`flex-1 flex-col overflow-hidden ${mobileTab !== "chat" ? "hidden md:flex" : "flex"}`}>
+          {ChatPanel}
+        </div>
+
+        {/* Actions Panel */}
+        <Card className={`w-[320px] shrink-0 border-[#1E3A5F] rounded-none border-l overflow-hidden ${mobileTab !== "actions" ? "hidden lg:flex" : "flex"} flex-col`} style={{ backgroundColor: theme.cardBg }}>
+          {ActionsPanel}
+        </Card>
+      </div>
     </div>
   );
 }
