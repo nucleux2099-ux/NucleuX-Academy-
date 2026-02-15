@@ -28,6 +28,15 @@ export default function SubjectPage() {
 
   return (
     <div className="space-y-6">
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-2 text-sm">
+        <Link href="/library" className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors">
+          Library
+        </Link>
+        <ChevronRight className="w-4 h-4 text-[#6B7280]" />
+        <span className="text-[#E8E0D5]">{subject.name}</span>
+      </div>
+
       <div className="flex items-center gap-3">
         <Library className="w-7 h-7 text-[#5BB3B3]" />
         <div>

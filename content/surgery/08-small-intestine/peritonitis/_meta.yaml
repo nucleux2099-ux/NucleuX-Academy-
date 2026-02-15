@@ -1,11 +1,2 @@
-topic_id: peritonitis
-system: 08-small-intestine
-name: "Peritonitis"
-nmc_competency: "SU28.6"
-sources:
-  primary:
-    bailey: "Ch 69"
-    sabiston: "Ch 47"
-tags: [emergency, high-yield]
-difficulty: medium
-priority: critical
+title: Peritonitis
+order: 3

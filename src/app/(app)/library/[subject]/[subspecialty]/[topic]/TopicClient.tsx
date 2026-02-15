@@ -30,6 +30,7 @@ import { cn } from "@/lib/utils";
 import type { ViewMode, LibraryTopic, RetrievalCard } from "@/lib/types/library";
 import { VIEW_MODE_CONFIG } from "@/lib/types/library";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
+import { AutoExamPrep } from "@/components/AutoExamPrep";
 import { AtomLibrarian } from "@/components/AtomLibrarian";
 import { addPocketNote, getNotesForTopic } from "@/lib/pocket/store";
 import { addBackstageEvent, normalizeSubject } from "@/lib/backstage/store";
@@ -266,7 +267,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
 
   // Fetch rich content when textbook mode is selected
   useEffect(() => {
-    if (viewMode === 'textbook' && !richContent && !richContentLoading) {
+    if ((viewMode === 'textbook' || viewMode === 'examPrep') && !richContent && !richContentLoading) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setRichContentLoading(true);
       setRichContentError(null);
@@ -398,7 +399,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                             return (
                               <div
                                 key={k.id}
-                                className="flex items-center justify-between gap-3 p-2 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]"
+                                className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 p-2 rounded border border-[rgba(6,182,212,0.12)] bg-[#0D1B2A]"
                               >
                                 <div className="min-w-0">
                                   <div className="text-sm text-[#E5E7EB] truncate">{k.text}</div>
@@ -407,7 +408,7 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                                   </div>
                                 </div>
 
-                                <div className="flex items-center gap-2 flex-shrink-0">
+                                <div className="flex items-center gap-2 flex-shrink-0 flex-wrap">
                                   {(["A", "B", "C"] as const).map((imp) => (
                                     <Button
                                       key={imp}
@@ -1329,6 +1330,17 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
 
       case 'examPrep':
         if (!topic.content.examPrep) {
+          // Auto-generate exam prep from concept content or rich textbook content
+          const sourceContent = richContent || topic.content.concept;
+          if (sourceContent && sourceContent.length > 50) {
+            return (
+              <AutoExamPrep 
+                conceptContent={sourceContent} 
+                topicName={topic.name}
+                bionic={bionicReader}
+              />
+            );
+          }
           return (
             <div className="text-center py-12">
               <Target className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />

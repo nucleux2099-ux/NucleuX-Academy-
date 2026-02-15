@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 // ATOM Matte Theme - Room colors
 const roomColors: Record<string, string> = {
-  '/dashboard': '#5BB3B3', // Teal
+  '/desk': '#5BB3B3',      // Teal
   '/library': '#7BA69E',   // Sage
   '/chat': '#5BB3B3',      // Teal (ATOM)
   '/exam-centre': '#6366F1', // Indigo for Exam Centre
@@ -15,7 +15,7 @@ const roomColors: Record<string, string> = {
 };
 
 const navItems = [
-  { href: "/dashboard", icon: LayoutDashboard, label: "My Desk" },
+  { href: "/desk", icon: LayoutDashboard, label: "My Desk" },
   { href: "/library", icon: BookOpen, label: "Library" },
   { href: "/backstage", icon: Fingerprint, label: "Backstage" },
   { href: "/exam-centre", icon: ClipboardCheck, label: "Exam" },
