@@ -12,9 +12,42 @@ import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 import type { LibraryTopic } from '@/lib/types/library';
+import { SUBSPECIALTY_CONTENT_MAP } from '@/lib/data/content-mapping';
 
 // Base content directory
 const CONTENT_DIR = path.join(process.cwd(), 'content');
+
+/**
+ * Resolve the actual content directory for a subspecialty.
+ * Checks: direct match, content-mapping, and numbered prefix (e.g., "06-hepatobiliary").
+ */
+function resolveContentDir(subject: string, subspecialty: string): string | null {
+  // 1. Direct match
+  const direct = path.join(CONTENT_DIR, subject, subspecialty);
+  if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) return direct;
+
+  // 2. Content mapping
+  const mapped = SUBSPECIALTY_CONTENT_MAP[subject]?.[subspecialty];
+  if (mapped) {
+    const mappedPath = path.join(CONTENT_DIR, subject, mapped);
+    if (fs.existsSync(mappedPath) && fs.statSync(mappedPath).isDirectory()) return mappedPath;
+  }
+
+  // 3. Numbered prefix scan (e.g., "06-hepatobiliary" matches "hepatobiliary")
+  const subjectDir = path.join(CONTENT_DIR, subject);
+  if (fs.existsSync(subjectDir)) {
+    const entries = fs.readdirSync(subjectDir);
+    for (const entry of entries) {
+      // Match patterns like "06-hepatobiliary" for slug "hepatobiliary"
+      if (entry.endsWith(`-${subspecialty}`) || entry === subspecialty) {
+        const full = path.join(subjectDir, entry);
+        if (fs.statSync(full).isDirectory()) return full;
+      }
+    }
+  }
+
+  return null;
+}
 
 // =============================================================================
 // TYPES
@@ -147,8 +180,7 @@ function fileToTitle(filename: string): string {
  * Check if a subspecialty content directory exists
  */
 export function subspecialtyExists(subject: string, subspecialty: string): boolean {
-  const dirPath = path.join(CONTENT_DIR, subject, subspecialty);
-  return fs.existsSync(dirPath) && fs.statSync(dirPath).isDirectory();
+  return resolveContentDir(subject, subspecialty) !== null;
 }
 
 /**
@@ -349,9 +381,9 @@ export function loadTopicsForSubspecialty(
   subject: string,
   subspecialty: string
 ): LibraryTopic[] {
-  const dirPath = path.join(CONTENT_DIR, subject, subspecialty);
+  const dirPath = resolveContentDir(subject, subspecialty);
 
-  if (!fs.existsSync(dirPath)) {
+  if (!dirPath) {
     return [];
   }
 
@@ -380,9 +412,8 @@ export function loadTopicsForSubspecialty(
     const full = path.join(dirPath, entry);
     if (!fs.statSync(full).isDirectory()) continue;
 
-    // Skip known non-topic directories
-    if (['cases', 'retrieval-cards', 'grinde-maps', 'diagnostics', 'motility', 'gerd', 'diverticula', 'reconstruction', 'cancer'].includes(entry)) {
-      // NOTE: some subspecialties had old subfolders; only treat as topic if it contains _meta.yaml
+    // Skip known non-topic directories (only if they lack _meta.yaml)
+    if (['cases', 'retrieval-cards', 'grinde-maps'].includes(entry)) {
       if (!fs.existsSync(path.join(full, '_meta.yaml'))) continue;
     }
 
