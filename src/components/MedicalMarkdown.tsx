@@ -8,6 +8,7 @@ import { remarkBionic } from '@/lib/markdown/bionic';
 import { ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ImageViewer } from './ImageViewer';
+import { MermaidDiagram } from './MermaidDiagram';
 
 interface MedicalMarkdownProps {
   content: string;
@@ -99,9 +100,9 @@ export function MedicalMarkdown({ content, className, bionic }: MedicalMarkdownP
             </p>
           ),
 
-          // Strong/Bold - Highlight important terms
+          // Strong/Bold - Key term highlight
           strong: ({ children }) => (
-            <strong className="font-semibold text-[#E8E0D5] bg-[rgba(91,179,179,0.1)] px-1 rounded">
+            <strong className="font-semibold text-[#E8E0D5] bg-[rgba(91,179,179,0.12)] border-b border-[rgba(91,179,179,0.3)] px-1 py-0.5 rounded">
               {children}
             </strong>
           ),
@@ -132,6 +133,11 @@ export function MedicalMarkdown({ content, className, bionic }: MedicalMarkdownP
 
           // Code blocks
           code: ({ className, children, ...props }) => {
+            // Mermaid diagrams
+            if (className?.includes('language-mermaid')) {
+              const chart = String(children).replace(/\n$/, '');
+              return <MermaidDiagram chart={chart} />;
+            }
             // Check if it's inline (no language class means inline)
             const isInline = !className;
             if (isInline) {
