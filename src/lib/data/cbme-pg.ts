@@ -113,7 +113,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Forensic Medicine & Toxicology",
     description: "Medicolegal expertise, autopsy, toxicology, medical jurisprudence",
     hasRevised: false,
-    librarySubject: "forensic-medicine",
+    librarySubject: "forensic",
     tags: ["preclinical"],
   },
   {

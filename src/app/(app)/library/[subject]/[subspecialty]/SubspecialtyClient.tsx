@@ -102,7 +102,7 @@ export default function SubspecialtyClient({
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-4">
           <Link 
-            href="/library"
+            href={`/library/${subject.slug}`}
             className="p-2 rounded-lg bg-[#3A4D5F] hover:bg-[rgba(91,179,179,0.1)] transition-colors"
           >
             <ArrowLeft className="w-5 h-5 text-[#A0B0BC]" />

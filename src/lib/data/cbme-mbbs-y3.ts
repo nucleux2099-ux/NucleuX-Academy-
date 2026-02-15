@@ -74,6 +74,24 @@ export const CBME_MBBS_Y3_BLOCKS: CBMEBlock[] = [
     tags: ["theory", "viva"],
     links: { libraryPath: "/library/community-medicine" },
   },
+  {
+    id: "cbme-y3-psm-08-research-ethics",
+    year: 3,
+    subject: "psm",
+    title: "Research Methodology & Bioethics — Study Design, Sampling, Ethics Committees, Informed Consent",
+    order: 8,
+    tags: ["theory", "viva"],
+    links: { libraryPath: "/library/community-medicine" },
+  },
+  {
+    id: "cbme-y3-psm-09-disaster-geriatrics",
+    year: 3,
+    subject: "psm",
+    title: "Disaster Management & Geriatrics — Disaster Preparedness, Triage, Elderly Health, Rehabilitation",
+    order: 9,
+    tags: ["theory", "viva"],
+    links: { libraryPath: "/library/community-medicine" },
+  },
 
   // =====================
   // ENT
