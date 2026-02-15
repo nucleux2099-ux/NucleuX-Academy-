@@ -157,6 +157,9 @@ export const TOPIC_CONTENT_MAP: Record<string, Record<string, Record<string, str
       'bowel-obstruction': 'Bowel Obstruction',
       'lower-gi-bleeding': 'Lower GI Bleeding',
     },
+    '09-colon-rectum': {
+      'colon-cancer': 'colon-cancer',
+    },
     'hernia': {
       'inguinal-hernia': 'Inguinal Hernia',
       'femoral-hernia': 'Femoral Hernia',
