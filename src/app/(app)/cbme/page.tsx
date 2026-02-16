@@ -341,6 +341,24 @@ export default function CBMEPage() {
           <Link href="/cbme/biochemistry" className="px-4 py-2 rounded-lg bg-yellow-600/10 border border-yellow-500/20 text-yellow-400 hover:bg-yellow-600/20 text-sm font-medium transition-colors">
             🧬 Biochemistry — BI1–BI11, 9 subspecialties
           </Link>
+          <Link href="/cbme/anatomy" className="px-4 py-2 rounded-lg bg-rose-600/10 border border-rose-500/20 text-rose-400 hover:bg-rose-600/20 text-sm font-medium transition-colors">
+            🧬 Anatomy — AN1–AN80, 7 regions
+          </Link>
+          <Link href="/cbme/pathology" className="px-4 py-2 rounded-lg bg-pink-600/10 border border-pink-500/20 text-pink-300 hover:bg-pink-600/20 text-sm font-medium transition-colors">
+            🔬 Pathology — PA1–PA35, 10 subspecialties
+          </Link>
+          <Link href="/cbme/pharmacology" className="px-4 py-2 rounded-lg bg-green-600/10 border border-green-500/20 text-green-400 hover:bg-green-600/20 text-sm font-medium transition-colors">
+            💊 Pharmacology — PH1–PH5, 10 domains
+          </Link>
+          <Link href="/cbme/physiology" className="px-4 py-2 rounded-lg bg-orange-600/10 border border-orange-500/20 text-orange-300 hover:bg-orange-600/20 text-sm font-medium transition-colors">
+            ⚡ Physiology — PY1–PY11, 10 systems
+          </Link>
+          <Link href="/cbme/microbiology" className="px-4 py-2 rounded-lg bg-teal-600/10 border border-teal-500/20 text-teal-400 hover:bg-teal-600/20 text-sm font-medium transition-colors">
+            🦠 Microbiology — MI1–MI8, 10 domains
+          </Link>
+          <Link href="/cbme/forensic" className="px-4 py-2 rounded-lg bg-slate-600/10 border border-slate-500/20 text-slate-300 hover:bg-slate-600/20 text-sm font-medium transition-colors">
+            ⚖️ Forensic Medicine — FM1–FM14, 8 domains
+          </Link>
         </div>
       </div>
 

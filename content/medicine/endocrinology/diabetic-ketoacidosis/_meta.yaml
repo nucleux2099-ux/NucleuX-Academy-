@@ -1,15 +1,26 @@
-title: Diabetic Ketoacidosis
+title: "Diabetic Ketoacidosis"
 slug: diabetic-ketoacidosis
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM11.15
-prerequisites: []
-related_topics: []
+  - "IM11.15"
+prerequisites:
+  - "diabetes-mellitus-type-1"
+  - "acid-base-disorders"
+related_topics:
+  - "insulin-therapy"
+  - "diabetes-mellitus-type-2"
 enrichment:
   nmcCodes:
-    - code: IM11.15
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetic ketoacidosis
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+    - code: "IM11.15"
+      text: "Describe and discuss the management of diabetic emergencies including DKA and HHS"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "diabetes-mellitus-type-1"
+      reason: "DKA occurs primarily in T1DM"
+    - slug: "acid-base-disorders"
+      reason: "DKA causes high anion gap metabolic acidosis"
+  related_details:
+    - slug: "insulin-therapy"
+      reason: "Insulin is the mainstay of DKA treatment"
+      relationship: "clinical"
