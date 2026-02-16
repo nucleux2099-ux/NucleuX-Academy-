@@ -156,79 +156,13 @@ export function AtomChatPanel({
     scrollToBottom();
   }, [messages]);
 
-  // Generate ATOM response (simulated for now)
-  const generateResponse = async (userMessage: string): Promise<AtomMessage> => {
+  // Check if message warrants client-side topic suggestions
+  const getTopicSuggestions = (userMessage: string): TopicSuggestion[] | undefined => {
     const lowerMsg = userMessage.toLowerCase();
-    
-    // What's next / suggestions
     if (lowerMsg.includes('next') || lowerMsg.includes('should i study') || lowerMsg.includes('suggest')) {
-      const suggestions = getNextTopicSuggestions(currentTopic, allTopics, completedTopics);
-      return {
-        id: nextMessageId(),
-        role: 'atom',
-        content: currentTopic 
-          ? `Based on your progress with **${currentTopic.name}**, here are my suggestions:`
-          : `Here are some topics to get you started:`,
-        suggestions,
-        timestamp: new Date(),
-      };
+      return getNextTopicSuggestions(currentTopic, allTopics, completedTopics);
     }
-    
-    // Quiz request
-    if (lowerMsg.includes('quiz') || lowerMsg.includes('test me')) {
-      return {
-        id: nextMessageId(),
-        role: 'atom',
-        content: currentTopic
-          ? `Ready to test yourself on **${currentTopic.name}**? 🧪\n\nSwitch to **Quiz Mode** using the view mode selector above, or ask me specific questions!\n\nQuick question: *${currentTopic.content.retrievalCards?.[0]?.question || 'What are the key features of this condition?'}*`
-          : `Pick a topic first, then I can quiz you! Head to the Library and select something interesting.`,
-        timestamp: new Date(),
-      };
-    }
-    
-    // Explain simply
-    if (lowerMsg.includes('explain') || lowerMsg.includes('simple') || lowerMsg.includes('eli5')) {
-      return {
-        id: nextMessageId(),
-        role: 'atom',
-        content: currentTopic
-          ? `**${currentTopic.name}** in simple terms:\n\n${(currentTopic.content.keyPoints ?? []).slice(0, 3).map(p => `• ${p}`).join('\n')}\n\n💡 *Think of it this way:* ${getSimpleAnalogy(currentTopic.name)}`
-          : `Tell me which topic you'd like me to explain! I can break down any concept into bite-sized pieces.`,
-        timestamp: new Date(),
-      };
-    }
-    
-    // Time-based study
-    if (lowerMsg.includes('minute') || lowerMsg.includes('time') || lowerMsg.includes('quick')) {
-      const quickTopics = allTopics
-        .filter(t => (t.estimatedMinutes ?? 15) <= 20)
-        .slice(0, 3);
-      return {
-        id: nextMessageId(),
-        role: 'atom',
-        content: `⏱️ **Quick Study Session**\n\nHere's what you can cover in 20 minutes:\n\n${quickTopics.map(t => `• **${t.name}** (${t.estimatedMinutes ?? 15} min)`).join('\n')}\n\nOr switch to **Exam Prep** mode for any topic — it's optimized for quick review!`,
-        timestamp: new Date(),
-      };
-    }
-    
-    // High yield
-    if (lowerMsg.includes('high yield') || lowerMsg.includes('important') || lowerMsg.includes('exam')) {
-      const highYieldTopics = allTopics.filter(t => t.highYield).slice(0, 5);
-      return {
-        id: nextMessageId(),
-        role: 'atom',
-        content: `🎯 **High Yield Topics**\n\nThese are most likely to appear in exams:\n\n${highYieldTopics.map(t => `• **${t.name}** — ${t.description || 'Key topic'}`).join('\n')}\n\nUse **Exam Prep** mode for mnemonics and quick facts!`,
-        timestamp: new Date(),
-      };
-    }
-    
-    // Default response
-    return {
-      id: nextMessageId(),
-      role: 'atom',
-      content: `Great question! 🤔\n\nI'm still learning to answer that better. Try asking me:\n• "What should I study next?"\n• "Quiz me on this topic"\n• "Explain in simple terms"\n• "I have 20 minutes"\n\nOr explore the **Library** and I'll help you navigate!`,
-      timestamp: new Date(),
-    };
+    return undefined;
   };
 
   const handleSend = async () => {
@@ -241,16 +175,95 @@ export function AtomChatPanel({
       timestamp: new Date(),
     };
     
+    const currentInput = input;
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsTyping(true);
-    
-    // Simulate typing delay
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    const response = await generateResponse(input);
-    setIsTyping(false);
-    setMessages(prev => [...prev, response]);
+
+    // Build context string for the API
+    const topicContext = currentTopic
+      ? `Currently viewing: ${currentTopic.name}${currentTopic.subjectId ? ` (${currentTopic.subjectId})` : ''}`
+      : undefined;
+
+    // Build messages array for API (convert atom -> assistant)
+    const apiMessages = [...messages, userMessage]
+      .filter(m => m.role === 'user' || m.role === 'atom')
+      .map(m => ({
+        role: m.role === 'atom' ? 'assistant' as const : 'user' as const,
+        content: m.content,
+      }));
+
+    // Check for topic suggestions (client-side)
+    const suggestions = getTopicSuggestions(currentInput);
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: apiMessages,
+          context: currentTopic?.subjectId || 'surgery',
+          topic: topicContext,
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`API error: ${res.status}`);
+      }
+
+      // Handle SSE streaming
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error('No response body');
+
+      const decoder = new TextDecoder();
+      let fullText = '';
+      const responseId = nextMessageId();
+
+      setIsTyping(false);
+      // Add empty message that we'll stream into
+      setMessages(prev => [...prev, {
+        id: responseId,
+        role: 'atom',
+        content: '',
+        suggestions,
+        timestamp: new Date(),
+      }]);
+
+      let buffer = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const data = line.slice(6);
+          if (data === '[DONE]') continue;
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.text) {
+              fullText += parsed.text;
+              setMessages(prev => prev.map(m =>
+                m.id === responseId ? { ...m, content: fullText } : m
+              ));
+            }
+          } catch {
+            // skip malformed chunks
+          }
+        }
+      }
+    } catch (error) {
+      setIsTyping(false);
+      setMessages(prev => [...prev, {
+        id: nextMessageId(),
+        role: 'atom',
+        content: `Sorry, I couldn't process that request. ${error instanceof Error ? error.message : 'Please try again.'}`,
+        timestamp: new Date(),
+      }]);
+    }
   };
 
   const handleQuickAction = (prompt: string) => {

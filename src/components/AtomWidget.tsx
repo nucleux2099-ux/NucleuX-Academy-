@@ -109,7 +109,7 @@ export function AtomWidget() {
 
   const currentMode = getAtomMode();
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMessage: Message = {
@@ -118,20 +118,68 @@ export function AtomWidget() {
       content: input,
     };
 
+    const currentMessages = [...messages, userMessage];
     setMessages(prev => [...prev, userMessage]);
     setInput("");
     setIsTyping(true);
 
-    // Simulate ATOM response
-    setTimeout(() => {
-      const response: Message = {
+    try {
+      const apiMessages = currentMessages.map(m => ({
+        role: m.role as 'user' | 'assistant',
+        content: m.content,
+      }));
+
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages: apiMessages,
+          context: 'surgery',
+        }),
+      });
+
+      if (!res.ok) throw new Error(`API error: ${res.status}`);
+
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error('No response body');
+
+      const decoder = new TextDecoder();
+      let fullText = '';
+      const responseId = (Date.now() + 1).toString();
+
+      setIsTyping(false);
+      setMessages(prev => [...prev, { id: responseId, role: 'assistant', content: '' }]);
+
+      let buffer = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || '';
+        for (const line of lines) {
+          if (!line.startsWith('data: ')) continue;
+          const data = line.slice(6);
+          if (data === '[DONE]') continue;
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.text) {
+              fullText += parsed.text;
+              setMessages(prev => prev.map(m =>
+                m.id === responseId ? { ...m, content: fullText } : m
+              ));
+            }
+          } catch { /* skip */ }
+        }
+      }
+    } catch {
+      setIsTyping(false);
+      setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `I'm here as your ${currentMode.mode}! Let me help you with that. For a more detailed conversation, let's continue in the ATOM chat.`,
-      };
-      setMessages(prev => [...prev, response]);
-      setIsTyping(false);
-    }, 1500);
+        content: 'Sorry, I couldn\'t connect. Try the full ATOM chat for a better experience.',
+      }]);
+    }
   };
 
   const handleSuggestionClick = (suggestion: string) => {
