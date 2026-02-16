@@ -1,15 +1,12 @@
-title: Adrenal Disorders
+title: "Adrenal Disorders"
 slug: adrenal-disorders
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM10.1
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM10.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of adrenal disorders
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM12.1"
+  - "IM12.2"
+prerequisites:
+  - "pituitary-disorders"
+related_topics:
+  - "metabolic-syndrome"
+  - "calcium-disorders"
