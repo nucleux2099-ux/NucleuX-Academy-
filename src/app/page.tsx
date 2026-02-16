@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, LayoutDashboard, GraduationCap, Atom, Brain, Sparkles, Users, Shield, Target, Zap, CheckCircle2, XCircle } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
@@ -120,6 +121,33 @@ export default function HomePage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* See It In Action */}
+      <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#E8E0D5] mb-3">See It In Action</h2>
+            <p className="text-[#A0B0BC] max-w-2xl mx-auto">Real screenshots from the platform — no mockups, no promises. This is what you get.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <div className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                <Image src="/screenshots/atom-demo.png" alt="ATOM AI tutor demo" width={800} height={500} className="w-full h-auto" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <p className="text-center text-sm text-[#A0B0BC]">ATOM — your AI teaching companion that remembers your journey</p>
+            </div>
+            <div className="space-y-4">
+              <div className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                <Image src="/screenshots/rooms-library.jpg" alt="Rooms with 11 subjects" width={800} height={500} className="w-full h-auto" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <p className="text-center text-sm text-[#A0B0BC]">11 subjects, 1,400+ topics, 720+ MCQs — all mapped to NMC competencies</p>
             </div>
           </div>
         </motion.div>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Brain, Atom, CheckCircle2, Star, Users, Shield, Sparkles } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
@@ -132,6 +133,30 @@ export default function LandingPage() {
               <h3 className="font-bold text-[#E8E0D5] mb-2">{f.title}</h3>
               <p className="text-sm text-[#A0B0BC] leading-relaxed">{f.desc}</p>
             </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Platform Preview */}
+      <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#E8E0D5] mb-3">Platform Preview</h2>
+          <p className="text-[#A0B0BC] max-w-2xl mx-auto">See what&apos;s waiting inside — real screenshots, not rendered mockups.</p>
+        </div>
+
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+          {[
+            { src: '/screenshots/atom-demo.png', alt: 'ATOM AI tutor', caption: 'ATOM — your AI teaching companion' },
+            { src: '/screenshots/rooms-library.jpg', alt: 'Rooms with 11 subjects', caption: '11 subjects, 1,400+ topics, 720+ MCQs' },
+            { src: '/screenshots/campus-tour.jpg', alt: 'Campus tour', caption: 'Library, Desk & Training Centre' },
+          ].map((img) => (
+            <div key={img.src} className="flex-shrink-0 w-[85%] sm:w-[45%] lg:w-[33%] snap-center space-y-3">
+              <div className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                <Image src={img.src} alt={img.alt} width={800} height={500} className="w-full h-auto" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <p className="text-center text-sm text-[#A0B0BC]">{img.caption}</p>
+            </div>
           ))}
         </div>
       </section>

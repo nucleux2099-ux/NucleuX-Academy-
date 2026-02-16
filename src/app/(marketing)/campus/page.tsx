@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, LayoutDashboard, GraduationCap, Search, FileText, HelpCircle, Stethoscope, Zap, Brain } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
@@ -120,6 +121,15 @@ export default function CampusTourPage() {
                     </div>
                   </div>
                   <p className="text-[#A0B0BC] leading-relaxed mt-4">{space.description}</p>
+                  {space.highlight && (
+                    <div className="mt-6 space-y-3">
+                      <div className="relative rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                        <Image src="/screenshots/atom-demo.png" alt="ATOM in action" width={800} height={500} className="w-full h-auto" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
+                      </div>
+                      <p className="text-center text-xs text-[#A0B0BC]">ATOM in action — Socratic teaching, not spoon-feeding</p>
+                    </div>
+                  )}
                 </div>
                 <div className="md:w-80 flex-shrink-0">
                   <ul className="space-y-3">
