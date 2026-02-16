@@ -1,17 +1,23 @@
-topic_id: anti-gbm-disease
-name: Anti Gbm Disease
-description: Anti Gbm Disease — NMC curriculum topic
-high_yield: true
+title: Anti Gbm Disease
+slug: anti-gbm-disease
+depth: PG
+highYield: true
 nmc_codes:
-- code: IM18.13
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM2.23
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM7.15
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM18.13
+  - IM2.23
+  - IM7.15
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM18.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anti gbm disease
+      domain: KH
+    - code: IM2.23
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anti gbm disease
+      domain: KH
+    - code: IM7.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anti gbm disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

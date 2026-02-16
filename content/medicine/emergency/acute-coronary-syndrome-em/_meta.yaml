@@ -1,17 +1,22 @@
-topic_id: acute-coronary-syndrome-em
-name: Acute Coronary Syndrome Em
-description: Acute Coronary Syndrome Em — NMC curriculum topic
-high_yield: true
+title: "Acute Coronary Syndrome — Emergency"
+slug: acute-coronary-syndrome-em
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM1.25
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM2.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM2.5
-  domain: KH
-  core: true
-  phase: Phase 2
+  - "IM24.1"
+prerequisites:
+  - "chest-pain-approach"
+related_topics:
+  - "cpr-acls-bls"
+enrichment:
+  nmcCodes:
+    - code: "IM24.1"
+      text: "Acute Coronary Syndrome — Emergency — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "chest-pain-approach"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "cpr-acls-bls"
+      reason: "Clinically related"
+      relationship: "clinical"

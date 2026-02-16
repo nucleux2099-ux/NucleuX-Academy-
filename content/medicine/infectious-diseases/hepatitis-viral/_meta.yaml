@@ -1,0 +1,15 @@
+title: Hepatitis Viral
+slug: hepatitis-viral
+depth: UG
+highYield: true
+nmc_codes:
+  - IM8.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM8.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hepatitis viral
+      domain: KH
+  prerequisite_details: []
+  related_details: []

@@ -1,25 +1,21 @@
-topic_id: area-plant-poisons-seen
-name: The common plant poisons seen in your area and
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Plant Poisons"
+slug: area-plant-poisons-seen
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM21.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM21.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM21.5
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM21.6
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM21.8
-  domain: KH
-  core: true
-  phase: Phase 2
+  - "IM26.5"
+prerequisites:
+  []
+related_topics:
+  - "area-poisonous-snakes-your"
+enrichment:
+  nmcCodes:
+    - code: "IM26.5"
+      text: "Plant Poisons — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "area-poisonous-snakes-your"
+      reason: "Clinically related"
+      relationship: "clinical"

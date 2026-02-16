@@ -1,49 +1,55 @@
-topic_id: joint-diseases
-name: "Joint Diseases"
-description: "RA, OA, gout, SLE, joint examination and differentials"
-high_yield: true
+title: Joint Diseases
+slug: joint-diseases
+depth: UG
+highYield: true
 nmc_codes:
-  - code: IM7.1
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.2
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.3
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.4
-    domain: SH
-    core: true
-    phase: Phase 3
-  - code: IM7.5
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.6
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.7
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.8
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.9
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.10
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM7.11
-    domain: KH
-    core: true
-    phase: Phase 3
+  - IM7.1
+  - IM7.2
+  - IM7.3
+  - IM7.4
+  - IM7.5
+  - IM7.6
+  - IM7.7
+  - IM7.8
+  - IM7.9
+  - IM7.10
+  - IM7.11
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM7.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+    - code: IM7.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of joint diseases
+      domain: KH
+  prerequisite_details: []
+  related_details: []

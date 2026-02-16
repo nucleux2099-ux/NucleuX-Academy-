@@ -1,0 +1,15 @@
+title: Calcium Disorders
+slug: calcium-disorders
+depth: UG
+highYield: true
+nmc_codes:
+  - IM10.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of calcium disorders
+      domain: KH
+  prerequisite_details: []
+  related_details: []

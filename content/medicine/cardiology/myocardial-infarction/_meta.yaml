@@ -1,0 +1,53 @@
+title: Myocardial Infarction
+slug: myocardial-infarction
+depth: UG
+highYield: true
+nmc_codes:
+  - IM2.5
+  - IM2.7
+  - IM2.9
+  - IM2.11
+  - IM2.14
+prerequisites:
+  - coronary-artery-disease
+  - acute-coronary-syndrome
+related_topics:
+  - heart-failure
+  - heart-block
+  - pericarditis-acute
+  - cardiac-tamponade
+enrichment:
+  nmcCodes:
+    - code: IM2.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocardial infarction
+      domain: KH
+    - code: IM2.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocardial infarction
+      domain: KH
+    - code: IM2.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocardial infarction
+      domain: KH
+    - code: IM2.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocardial infarction
+      domain: KH
+    - code: IM2.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocardial infarction
+      domain: KH
+  prerequisite_details:
+    - slug: coronary-artery-disease
+      reason: Foundation knowledge for myocardial infarction
+    - slug: acute-coronary-syndrome
+      reason: Foundation knowledge for myocardial infarction
+  related_details:
+    - slug: heart-failure
+      reason: Clinically related to myocardial infarction
+      relationship: clinical
+    - slug: heart-block
+      reason: Clinically related to myocardial infarction
+      relationship: clinical
+    - slug: pericarditis-acute
+      reason: Clinically related to myocardial infarction
+      relationship: clinical
+    - slug: cardiac-tamponade
+      reason: Clinically related to myocardial infarction
+      relationship: clinical

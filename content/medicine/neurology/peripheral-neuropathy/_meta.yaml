@@ -1,19 +1,30 @@
-topic_id: peripheral-neuropathy
-name: Peripheral Neuropathy
-description: Peripheral Neuropathy — NMC curriculum topic
-high_yield: true
+title: "Peripheral Neuropathy"
+slug: peripheral-neuropathy
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM1.12
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM10.21
-  domain: P
-  core: true
-  phase: Phase 2
-- code: IM9.10
-  core: false
-  phase: Phase 2
-- code: IM9.11
-  core: false
-  phase: Phase 1
+  - "IM18.6"
+  - "IM10.21"
+prerequisites:
+  - "neuroanatomy-motor-pathways"
+  - "diabetes-mellitus"
+related_topics:
+  - "motor-neuron-disease"
+  - "diabetic-nephropathy"
+enrichment:
+  nmcCodes:
+    - code: "IM18.6"
+      text: "Describe and discuss the aetiology, clinical features and diagnosis of peripheral neuropathy"
+      domain: "KH"
+    - code: "IM10.21"
+      text: "Describe the management of diabetic neuropathy"
+      domain: "P"
+  prerequisite_details:
+    - slug: "neuroanatomy-motor-pathways"
+      reason: "Understanding nerve anatomy for localization"
+    - slug: "diabetes-mellitus"
+      reason: "Most common cause of peripheral neuropathy"
+  related_details:
+    - slug: "motor-neuron-disease"
+      reason: "Differential diagnosis for LMN weakness"
+      relationship: "clinical"

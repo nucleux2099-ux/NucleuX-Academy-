@@ -1,0 +1,21 @@
+title: "Leukemia Overview"
+slug: leukemia-overview
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.34"
+prerequisites:
+  []
+related_topics:
+  - "lymphoma"
+enrichment:
+  nmcCodes:
+    - code: "IM26.34"
+      text: "Leukemia Overview — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "lymphoma"
+      reason: "Clinically related"
+      relationship: "clinical"

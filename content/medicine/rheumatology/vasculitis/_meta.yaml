@@ -1,0 +1,15 @@
+title: Vasculitis
+slug: vasculitis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM13.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM13.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of vasculitis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

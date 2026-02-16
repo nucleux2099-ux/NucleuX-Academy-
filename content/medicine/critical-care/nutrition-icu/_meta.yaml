@@ -1,9 +1,20 @@
-topic_id: nutrition-icu
-name: Nutrition Icu
-description: Nutrition Icu — NMC curriculum topic
-high_yield: true
+title: "Nutrition in ICU"
+slug: nutrition-icu
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM23.4
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM24.21"
+prerequisites:
+  - "fluid-resuscitation"
+related_topics:
+  []
+enrichment:
+  nmcCodes:
+    - code: "IM24.21"
+      text: "Nutrition in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "fluid-resuscitation"
+      reason: "Foundation knowledge"
+  related_details:
+  []

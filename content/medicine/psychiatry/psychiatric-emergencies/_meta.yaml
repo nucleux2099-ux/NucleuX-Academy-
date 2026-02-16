@@ -1,9 +1,21 @@
-topic_id: psychiatric-emergencies
-name: Psychiatric Emergencies
-description: Psychiatric Emergencies — NMC curriculum topic
-high_yield: true
+title: "Psychiatric Emergencies"
+slug: psychiatric-emergencies
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM8.15
-  domain: SH
-  core: true
-  phase: Phase 1
+  - "IM22.6"
+prerequisites:
+  []
+related_topics:
+  - "bipolar-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.6"
+      text: "Psychiatric Emergencies — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "bipolar-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

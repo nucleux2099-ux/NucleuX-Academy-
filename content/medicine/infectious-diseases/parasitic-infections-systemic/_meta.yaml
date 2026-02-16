@@ -1,17 +1,25 @@
-topic_id: parasitic-infections-systemic
-name: Parasitic Infections Systemic
-description: Parasitic Infections Systemic — NMC curriculum topic
-high_yield: true
+title: "Systemic Parasitic Infections"
+slug: parasitic-infections-systemic
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM16.9
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM7.22
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM7.23
-  domain: SH
-  core: true
-  phase: Phase 1
+  - "IM8.12"
+prerequisites:
+  []
+related_topics:
+  - "malaria"
+  - "tropical-infections"
+enrichment:
+  nmcCodes:
+    - code: "IM8.12"
+      text: "Systemic Parasitic Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "malaria"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "tropical-infections"
+      reason: "Clinically related"
+      relationship: "clinical"

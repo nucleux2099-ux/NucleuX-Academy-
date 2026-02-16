@@ -1,13 +1,22 @@
-topic_id: end-of-life-icu
-name: End Of Life Icu
-description: End Of Life Icu — NMC curriculum topic
-high_yield: true
+title: "End-of-Life Care in ICU"
+slug: end-of-life-icu
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM10.30
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM13.5
-  domain: K
-  core: false
-  phase: Phase 2
+  - "IM24.20"
+prerequisites:
+  - "brain-death"
+related_topics:
+  - "organ-donation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.20"
+      text: "End-of-Life Care in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "brain-death"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "organ-donation"
+      reason: "Clinically related"
+      relationship: "clinical"

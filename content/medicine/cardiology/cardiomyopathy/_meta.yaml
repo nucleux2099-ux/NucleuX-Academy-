@@ -1,0 +1,15 @@
+title: Cardiomyopathy
+slug: cardiomyopathy
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of cardiomyopathy
+      domain: KH
+  prerequisite_details: []
+  related_details: []

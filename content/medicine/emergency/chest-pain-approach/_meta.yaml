@@ -1,33 +1,21 @@
-topic_id: chest-pain-approach
-name: Chest Pain Approach
-description: Chest Pain Approach — NMC curriculum topic
-high_yield: true
+title: "Approach to Chest Pain"
+slug: chest-pain-approach
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM13.12
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM13.13
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM7.3
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.4
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.5
-  domain: KH
-  core: true
-  phase: Phase 3
-- code: IM7.8
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.9
-  domain: KH
-  core: true
-  phase: Phase 3
+  - "IM24.4"
+prerequisites:
+  []
+related_topics:
+  - "acute-coronary-syndrome-em"
+enrichment:
+  nmcCodes:
+    - code: "IM24.4"
+      text: "Approach to Chest Pain — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "acute-coronary-syndrome-em"
+      reason: "Clinically related"
+      relationship: "clinical"

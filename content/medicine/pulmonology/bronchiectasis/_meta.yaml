@@ -1,0 +1,34 @@
+title: Bronchiectasis
+slug: bronchiectasis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM2.1
+  - IM2.3
+prerequisites:
+  - pneumonia
+related_topics:
+  - copd
+  - lung-abscess
+  - pneumonia
+enrichment:
+  nmcCodes:
+    - code: IM2.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of bronchiectasis
+      domain: KH
+    - code: IM2.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of bronchiectasis
+      domain: KH
+  prerequisite_details:
+    - slug: pneumonia
+      reason: Foundation knowledge for bronchiectasis
+  related_details:
+    - slug: copd
+      reason: Clinically related to bronchiectasis
+      relationship: clinical
+    - slug: lung-abscess
+      reason: Clinically related to bronchiectasis
+      relationship: clinical
+    - slug: pneumonia
+      reason: Clinically related to bronchiectasis
+      relationship: clinical

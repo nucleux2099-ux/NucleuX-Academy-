@@ -1,13 +1,22 @@
-topic_id: arterial-line
-name: Arterial Line
-description: Arterial Line — NMC curriculum topic
-high_yield: true
+title: "Arterial Line"
+slug: arterial-line
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM10.20
-  domain: P
-  core: true
-  phase: Phase 2
-- code: IM3.8
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM24.15"
+prerequisites:
+  - "fluid-resuscitation"
+related_topics:
+  - "non-invasive-ventilation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.15"
+      text: "Arterial Line — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "fluid-resuscitation"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "non-invasive-ventilation"
+      reason: "Clinically related"
+      relationship: "clinical"

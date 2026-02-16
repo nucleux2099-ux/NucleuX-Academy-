@@ -1,17 +1,23 @@
-topic_id: massive-transfusion
-name: Massive Transfusion
-description: Massive Transfusion — NMC curriculum topic
-high_yield: true
+title: Massive Transfusion
+slug: massive-transfusion
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM15.13
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.17
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.19
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM15.13
+  - IM9.17
+  - IM9.19
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM15.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of massive transfusion
+      domain: KH
+    - code: IM9.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of massive transfusion
+      domain: KH
+    - code: IM9.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of massive transfusion
+      domain: KH
+  prerequisite_details: []
+  related_details: []

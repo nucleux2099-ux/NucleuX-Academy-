@@ -1,51 +1,71 @@
-topic_id: blood-component-therapy
-name: Blood Component Therapy
-description: Blood Component Therapy — NMC curriculum topic
-high_yield: true
+title: Blood Component Therapy
+slug: blood-component-therapy
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM1.13
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM10.20
-  domain: P
-  core: true
-  phase: Phase 2
-- code: IM11.12
-  domain: P
-  core: true
-  phase: Phase 1
-- code: IM15.12
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM15.13
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM16.11
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM25.9
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM4.19
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM9.10
-  core: false
-  phase: Phase 2
-- code: IM9.11
-  core: false
-  phase: Phase 1
-- code: IM9.17
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.19
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM1.13
+  - IM10.20
+  - IM11.12
+  - IM15.12
+  - IM15.13
+  - IM16.11
+  - IM25.9
+  - IM4.19
+  - IM9.10
+  - IM9.11
+  - IM9.17
+  - IM9.19
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM10.20
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM11.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM15.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM15.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM16.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM25.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM4.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM9.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM9.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM9.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+    - code: IM9.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of blood component
+        therapy
+      domain: KH
+  prerequisite_details: []
+  related_details: []

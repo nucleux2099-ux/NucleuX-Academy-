@@ -1,13 +1,21 @@
-topic_id: anemia-of-chronic-disease
-name: Anemia Of Chronic Disease
-description: Anemia Of Chronic Disease — NMC curriculum topic
-high_yield: true
+title: Anemia Of Chronic Disease
+slug: anemia-of-chronic-disease
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM10.6
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM16.3
-  domain: K
-  core: true
-  phase: Phase 2
+  - IM10.6
+  - IM16.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anemia of chronic
+        disease
+      domain: KH
+    - code: IM16.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anemia of chronic
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

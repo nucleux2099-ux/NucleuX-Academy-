@@ -1,9 +1,19 @@
-topic_id: lumbar-puncture
-name: Lumbar Puncture
-description: Lumbar Puncture — NMC curriculum topic
-high_yield: true
+title: "Lumbar Puncture"
+slug: lumbar-puncture
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM6.15
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM24.19"
+prerequisites:
+  []
+related_topics:
+  []
+enrichment:
+  nmcCodes:
+    - code: "IM24.19"
+      text: "Lumbar Puncture — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+  []

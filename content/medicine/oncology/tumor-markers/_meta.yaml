@@ -1,0 +1,21 @@
+title: "Tumor Markers"
+slug: tumor-markers
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.37"
+prerequisites:
+  []
+related_topics:
+  - "chemotherapy-principles"
+enrichment:
+  nmcCodes:
+    - code: "IM26.37"
+      text: "Tumor Markers — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "chemotherapy-principles"
+      reason: "Clinically related"
+      relationship: "clinical"

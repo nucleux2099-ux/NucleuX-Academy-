@@ -1,9 +1,15 @@
-topic_id: g6pd-deficiency
-name: G6Pd Deficiency
-description: G6Pd Deficiency — NMC curriculum topic
-high_yield: true
+title: G6Pd Deficiency
+slug: g6pd-deficiency
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM9.8
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM9.8
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM9.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of g6pd deficiency
+      domain: KH
+  prerequisite_details: []
+  related_details: []

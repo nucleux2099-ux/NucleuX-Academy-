@@ -1,13 +1,21 @@
-topic_id: fungal-infections-systemic
-name: Fungal Infections Systemic
-description: Fungal Infections Systemic — NMC curriculum topic
-high_yield: true
+title: "Systemic Fungal Infections"
+slug: fungal-infections-systemic
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM7.22
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM7.23
-  domain: SH
-  core: true
-  phase: Phase 1
+  - "IM8.11"
+prerequisites:
+  []
+related_topics:
+  - "opportunistic-infections-hiv"
+enrichment:
+  nmcCodes:
+    - code: "IM8.11"
+      text: "Systemic Fungal Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "opportunistic-infections-hiv"
+      reason: "Clinically related"
+      relationship: "clinical"

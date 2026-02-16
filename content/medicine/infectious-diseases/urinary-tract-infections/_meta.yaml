@@ -1,9 +1,21 @@
-topic_id: urinary-tract-infections
-name: Urinary Tract Infections
-description: Urinary Tract Infections — NMC curriculum topic
-high_yield: true
+title: "Urinary Tract Infections"
+slug: urinary-tract-infections
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM11.13
-  domain: P
-  core: true
-  phase: Phase 1
+  - "IM8.9"
+prerequisites:
+  []
+related_topics:
+  - "catheter-related-infections"
+enrichment:
+  nmcCodes:
+    - code: "IM8.9"
+      text: "Urinary Tract Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "catheter-related-infections"
+      reason: "Clinically related"
+      relationship: "clinical"

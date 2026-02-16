@@ -1,0 +1,42 @@
+title: Nephritic Syndrome
+slug: nephritic-syndrome
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+  - IM9.5
+prerequisites:
+  - glomerulonephritis
+related_topics:
+  - nephrotic-syndrome
+  - iga-nephropathy
+  - glomerulonephritis
+  - acute-kidney-injury
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of nephritic syndrome
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of nephritic syndrome
+      domain: KH
+    - code: IM9.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of nephritic syndrome
+      domain: KH
+  prerequisite_details:
+    - slug: glomerulonephritis
+      reason: Foundation knowledge for nephritic syndrome
+  related_details:
+    - slug: nephrotic-syndrome
+      reason: Clinically related to nephritic syndrome
+      relationship: clinical
+    - slug: iga-nephropathy
+      reason: Clinically related to nephritic syndrome
+      relationship: clinical
+    - slug: glomerulonephritis
+      reason: Clinically related to nephritic syndrome
+      relationship: clinical
+    - slug: acute-kidney-injury
+      reason: Clinically related to nephritic syndrome
+      relationship: clinical

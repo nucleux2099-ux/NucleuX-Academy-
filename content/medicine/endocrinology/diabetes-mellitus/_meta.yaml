@@ -1,61 +1,67 @@
-topic_id: diabetes-mellitus
-name: "Diabetes Mellitus"
-description: "Type 1 & 2 DM, complications, insulin, OHA, DKA, HHS"
-high_yield: true
+title: Diabetes Mellitus
+slug: diabetes-mellitus
+depth: UG
+highYield: true
 nmc_codes:
-  - code: IM11.1
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.2
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.3
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.4
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.5
-    domain: SH
-    core: true
-    phase: Phase 3
-  - code: IM11.6
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.7
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.8
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.9
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.10
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.11
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.12
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.13
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM11.14
-    domain: KH
-    core: true
-    phase: Phase 3
+  - IM11.1
+  - IM11.2
+  - IM11.3
+  - IM11.4
+  - IM11.5
+  - IM11.6
+  - IM11.7
+  - IM11.8
+  - IM11.9
+  - IM11.10
+  - IM11.11
+  - IM11.12
+  - IM11.13
+  - IM11.14
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM11.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+    - code: IM11.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
+      domain: KH
+  prerequisite_details: []
+  related_details: []

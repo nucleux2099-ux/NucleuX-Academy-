@@ -1,9 +1,15 @@
-topic_id: rheumatoid-arthritis
-name: Rheumatoid Arthritis
-description: Rheumatoid Arthritis — NMC curriculum topic
-high_yield: true
+title: Rheumatoid Arthritis
+slug: rheumatoid-arthritis
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM7.6
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM7.6
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM7.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatoid arthritis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

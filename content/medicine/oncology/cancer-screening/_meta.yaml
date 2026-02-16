@@ -1,0 +1,15 @@
+title: Cancer Screening
+slug: cancer-screening
+depth: UG
+highYield: true
+nmc_codes:
+  - IM7.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM7.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of cancer screening
+      domain: KH
+  prerequisite_details: []
+  related_details: []

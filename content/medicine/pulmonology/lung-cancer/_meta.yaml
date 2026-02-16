@@ -1,8 +1,15 @@
-topic_id: lung-cancer
-name: Lung Cancer
-description: Lung Cancer — NMC curriculum topic
-high_yield: false
+title: Lung Cancer
+slug: lung-cancer
+depth: UG
+highYield: false
 nmc_codes:
-- code: IM13.17
-  core: false
-  phase: Phase 3
+  - IM13.17
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM13.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of lung cancer
+      domain: KH
+  prerequisite_details: []
+  related_details: []

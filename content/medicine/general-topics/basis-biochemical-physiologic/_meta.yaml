@@ -1,53 +1,21 @@
-topic_id: basis-biochemical-physiologic
-name: And discuss the physiologic and biochemical basis of
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Biochemical and Physiologic Basis of Disease"
+slug: basis-biochemical-physiologic
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM5.1
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM5.10
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM5.11
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM5.12
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM5.13
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM5.15
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM5.17
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM5.3
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM5.4
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM5.5
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM5.6
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM5.8
-  domain: K
-  core: true
-  phase: Phase 2
+  - "IM26.7"
+prerequisites:
+  []
+related_topics:
+  - "aetiology"
+enrichment:
+  nmcCodes:
+    - code: "IM26.7"
+      text: "Biochemical and Physiologic Basis of Disease — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "aetiology"
+      reason: "Clinically related"
+      relationship: "clinical"

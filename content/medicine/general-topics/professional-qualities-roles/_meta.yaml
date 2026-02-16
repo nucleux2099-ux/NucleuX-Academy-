@@ -1,173 +1,19 @@
-topic_id: professional-qualities-roles
-name: And describe professional qualities and roles of a
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Professional Qualities and Roles"
+slug: professional-qualities-roles
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM26.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.10
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.11
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.12
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.13
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.15
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.17
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.18
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.19
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.2
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.20
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.21
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.23
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.24
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.25
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.26
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.27
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.29
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.31
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.32
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.33
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.35
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.36
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.37
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.38
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.39
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.4
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.41
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.42
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM26.43
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM26.44
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM26.45
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM26.46
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM26.47
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.48
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.49
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.5
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.7
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.8
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM26.9
-  domain: KH
-  core: true
-  phase: Phase 2
+  - "IM26.25"
+prerequisites:
+  []
+related_topics:
+  []
+enrichment:
+  nmcCodes:
+    - code: "IM26.25"
+      text: "Professional Qualities and Roles — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+  []

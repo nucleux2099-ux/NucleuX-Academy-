@@ -1,0 +1,37 @@
+title: Renal Artery Stenosis
+slug: renal-artery-stenosis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+prerequisites:
+  - hypertension
+  - chronic-kidney-disease
+related_topics:
+  - renovascular-hypertension
+  - acute-kidney-injury
+  - chronic-kidney-disease
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal artery stenosis
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal artery stenosis
+      domain: KH
+  prerequisite_details:
+    - slug: hypertension
+      reason: Foundation knowledge for renal artery stenosis
+    - slug: chronic-kidney-disease
+      reason: Foundation knowledge for renal artery stenosis
+  related_details:
+    - slug: renovascular-hypertension
+      reason: Clinically related to renal artery stenosis
+      relationship: clinical
+    - slug: acute-kidney-injury
+      reason: Clinically related to renal artery stenosis
+      relationship: clinical
+    - slug: chronic-kidney-disease
+      reason: Clinically related to renal artery stenosis
+      relationship: clinical

@@ -1,45 +1,22 @@
-topic_id: aetiology-determine-develop-diagnostic
-name: Describe, develop a diagnostic plan to determine the aetiology of
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Diagnostic Approach to Etiology"
+slug: aetiology-determine-develop-diagnostic
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM9.12
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.13
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM9.15
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.18
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.2
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.20
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.21
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.5
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.6
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM9.7
-  domain: KH
-  core: true
-  phase: Phase 2
+  - "IM26.2"
+prerequisites:
+  - "aetiology"
+related_topics:
+  - "diagnostic-work"
+enrichment:
+  nmcCodes:
+    - code: "IM26.2"
+      text: "Diagnostic Approach to Etiology — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "aetiology"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "diagnostic-work"
+      reason: "Clinically related"
+      relationship: "clinical"

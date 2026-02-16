@@ -1,13 +1,19 @@
-topic_id: pleural-effusion
-name: Pleural Effusion
-description: Pleural Effusion — NMC curriculum topic
-high_yield: true
+title: Pleural Effusion
+slug: pleural-effusion
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM12.10
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM3.9
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM12.10
+  - IM3.9
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM12.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pleural effusion
+      domain: KH
+    - code: IM3.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pleural effusion
+      domain: KH
+  prerequisite_details: []
+  related_details: []

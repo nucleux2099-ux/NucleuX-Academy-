@@ -1,13 +1,22 @@
-topic_id: alcoholic-liver-disease
-name: Alcoholic Liver Disease
-description: Alcoholic Liver Disease — NMC curriculum topic
-high_yield: true
+title: "Alcoholic Liver Disease"
+slug: alcoholic-liver-disease
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM5.14
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM5.2
-  domain: K
-  core: true
-  phase: Phase 1
+  - "IM5.10"
+prerequisites:
+  - "liver-cirrhosis"
+related_topics:
+  - "acute-liver-failure"
+enrichment:
+  nmcCodes:
+    - code: "IM5.10"
+      text: "Alcoholic Liver Disease — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-cirrhosis"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "acute-liver-failure"
+      reason: "Clinically related"
+      relationship: "clinical"

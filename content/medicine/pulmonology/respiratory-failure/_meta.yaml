@@ -1,9 +1,15 @@
-topic_id: respiratory-failure
-name: Respiratory Failure
-description: Respiratory Failure — NMC curriculum topic
-high_yield: true
+title: Respiratory Failure
+slug: respiratory-failure
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM1.4
-  domain: KH
-  core: true
-  phase: Phase 1
+  - IM1.4
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of respiratory failure
+      domain: KH
+  prerequisite_details: []
+  related_details: []

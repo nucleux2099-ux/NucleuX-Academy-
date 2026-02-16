@@ -1,0 +1,21 @@
+title: "Alcohol Poisoning"
+slug: alcohol-poisoning
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.26"
+prerequisites:
+  []
+related_topics:
+  - "drug-overdose"
+enrichment:
+  nmcCodes:
+    - code: "IM24.26"
+      text: "Alcohol Poisoning — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "drug-overdose"
+      reason: "Clinically related"
+      relationship: "clinical"

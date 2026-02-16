@@ -1,9 +1,25 @@
-topic_id: primary-survey-atls
-name: Primary Survey Atls
-description: Primary Survey Atls — NMC curriculum topic
-high_yield: true
+title: "Primary Survey / ATLS"
+slug: primary-survey-atls
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM8.5
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM24.9"
+prerequisites:
+  []
+related_topics:
+  - "cpr-acls-bls"
+  - "chest-trauma-em"
+enrichment:
+  nmcCodes:
+    - code: "IM24.9"
+      text: "Primary Survey / ATLS — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "cpr-acls-bls"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "chest-trauma-em"
+      reason: "Clinically related"
+      relationship: "clinical"

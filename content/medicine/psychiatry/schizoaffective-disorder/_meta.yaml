@@ -1,9 +1,25 @@
-topic_id: schizoaffective-disorder
-name: Schizoaffective Disorder
-description: Schizoaffective Disorder — NMC curriculum topic
-high_yield: false
+title: "Schizoaffective Disorder"
+slug: schizoaffective-disorder
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM22.13
-  domain: KH
-  core: false
-  phase: Phase 1
+  - "IM22.7"
+prerequisites:
+  []
+related_topics:
+  - "bipolar-disorder"
+  - "delusional-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.7"
+      text: "Schizoaffective Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "bipolar-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "delusional-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

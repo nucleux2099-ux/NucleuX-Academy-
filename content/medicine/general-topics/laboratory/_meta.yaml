@@ -1,45 +1,21 @@
-topic_id: laboratory
-name: The causes of describe the clinical and laboratory
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Laboratory Investigations"
+slug: laboratory
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM22.10
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: IM22.11
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: IM22.12
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: IM22.2
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM22.4
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM22.5
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM22.6
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM22.7
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM22.8
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM22.9
-  domain: KH
-  core: false
-  phase: Phase 1
+  - "IM26.24"
+prerequisites:
+  []
+related_topics:
+  - "indications-interpret-results-tests"
+enrichment:
+  nmcCodes:
+    - code: "IM26.24"
+      text: "Laboratory Investigations — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "indications-interpret-results-tests"
+      reason: "Clinically related"
+      relationship: "clinical"

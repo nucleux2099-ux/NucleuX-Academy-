@@ -1,13 +1,19 @@
-topic_id: migraine
-name: Migraine
-description: Migraine — NMC curriculum topic
-high_yield: true
+title: Migraine
+slug: migraine
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM17.14
-  domain: SH
-  core: false
-  phase: Phase 1
-- code: IM17.3
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM17.14
+  - IM17.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM17.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of migraine
+      domain: KH
+    - code: IM17.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of migraine
+      domain: KH
+  prerequisite_details: []
+  related_details: []

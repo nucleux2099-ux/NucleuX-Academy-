@@ -1,9 +1,22 @@
-topic_id: acute-liver-failure
-name: Acute Liver Failure
-description: Acute Liver Failure — NMC curriculum topic
-high_yield: true
+title: "Acute Liver Failure"
+slug: acute-liver-failure
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM5.2
-  domain: K
-  core: true
-  phase: Phase 1
+  - "IM5.9"
+prerequisites:
+  - "liver-cirrhosis"
+related_topics:
+  - "drug-induced-liver-injury"
+enrichment:
+  nmcCodes:
+    - code: "IM5.9"
+      text: "Acute Liver Failure — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-cirrhosis"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "drug-induced-liver-injury"
+      reason: "Clinically related"
+      relationship: "clinical"

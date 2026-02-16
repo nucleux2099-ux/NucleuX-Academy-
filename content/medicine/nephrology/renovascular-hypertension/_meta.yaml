@@ -1,0 +1,39 @@
+title: Renovascular Hypertension
+slug: renovascular-hypertension
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+prerequisites:
+  - hypertension
+  - renal-artery-stenosis
+related_topics:
+  - renal-artery-stenosis
+  - hypertension
+  - chronic-kidney-disease
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renovascular
+        hypertension
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renovascular
+        hypertension
+      domain: KH
+  prerequisite_details:
+    - slug: hypertension
+      reason: Foundation knowledge for renovascular hypertension
+    - slug: renal-artery-stenosis
+      reason: Foundation knowledge for renovascular hypertension
+  related_details:
+    - slug: renal-artery-stenosis
+      reason: Clinically related to renovascular hypertension
+      relationship: clinical
+    - slug: hypertension
+      reason: Clinically related to renovascular hypertension
+      relationship: clinical
+    - slug: chronic-kidney-disease
+      reason: Clinically related to renovascular hypertension
+      relationship: clinical

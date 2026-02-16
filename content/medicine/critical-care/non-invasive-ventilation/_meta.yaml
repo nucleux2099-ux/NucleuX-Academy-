@@ -1,25 +1,21 @@
-topic_id: non-invasive-ventilation
-name: Non Invasive Ventilation
-description: Non Invasive Ventilation — NMC curriculum topic
-high_yield: true
+title: "Non-Invasive Ventilation"
+slug: non-invasive-ventilation
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM1.23
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM15.18
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM2.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM26.3
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM6.23
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM24.14"
+prerequisites:
+  []
+related_topics:
+  - "chest-tube-icu"
+enrichment:
+  nmcCodes:
+    - code: "IM24.14"
+      text: "Non-Invasive Ventilation — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "chest-tube-icu"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,21 @@
+title: "Lymphoma (Hodgkin and Non-Hodgkin)"
+slug: lymphoma
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.33"
+prerequisites:
+  []
+related_topics:
+  - "leukemia-overview"
+enrichment:
+  nmcCodes:
+    - code: "IM26.33"
+      text: "Lymphoma (Hodgkin and Non-Hodgkin) — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "leukemia-overview"
+      reason: "Clinically related"
+      relationship: "clinical"

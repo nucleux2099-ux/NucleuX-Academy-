@@ -1,9 +1,22 @@
-topic_id: diabetic-nephropathy
-name: "Diabetic Nephropathy"
-description: "Albuminuria staging, BP targets, ACEi/ARB, SGLT2 inhibitors"
-high_yield: true
-difficulty: 3
-estimated_minutes: 15
-exam_tags: [NEET_PG, INICET]
-prerequisites: [chronic-kidney-disease]
-related_topics: [nephrotic-syndrome]
+title: Diabetic Nephropathy
+slug: diabetic-nephropathy
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+prerequisites:
+  - chronic-kidney-disease
+related_topics:
+  - nephrotic-syndrome
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetic nephropathy
+      domain: KH
+  prerequisite_details:
+    - slug: chronic-kidney-disease
+      reason: Foundation knowledge for diabetic nephropathy
+  related_details:
+    - slug: nephrotic-syndrome
+      reason: Clinically related to diabetic nephropathy
+      relationship: clinical

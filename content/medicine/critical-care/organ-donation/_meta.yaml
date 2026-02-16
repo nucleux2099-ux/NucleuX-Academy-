@@ -1,9 +1,22 @@
-topic_id: organ-donation
-name: Organ Donation
-description: Organ Donation — NMC curriculum topic
-high_yield: true
+title: "Organ Donation"
+slug: organ-donation
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM8.8
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM24.22"
+prerequisites:
+  - "brain-death"
+related_topics:
+  - "end-of-life-icu"
+enrichment:
+  nmcCodes:
+    - code: "IM24.22"
+      text: "Organ Donation — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "brain-death"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "end-of-life-icu"
+      reason: "Clinically related"
+      relationship: "clinical"

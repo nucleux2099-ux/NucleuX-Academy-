@@ -1,45 +1,20 @@
-topic_id: choose-diagnostic-interpret-testing
-name: Choose and interpret the appropriate diagnostic testing in young
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Diagnostic Testing in Young Adults"
+slug: choose-diagnostic-interpret-testing
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM18.10
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM18.11
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM18.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM18.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM18.3
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM18.4
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM18.5
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM18.7
-  domain: SH
-  core: false
-  phase: Phase 1
-- code: IM18.8
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM18.9
-  domain: KH
-  core: true
-  phase: Phase 2
+  - "IM26.12"
+prerequisites:
+  - "choose-diagnose-diagnostic-interpret"
+related_topics:
+  []
+enrichment:
+  nmcCodes:
+    - code: "IM26.12"
+      text: "Diagnostic Testing in Young Adults — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "choose-diagnose-diagnostic-interpret"
+      reason: "Foundation knowledge"
+  related_details:
+  []

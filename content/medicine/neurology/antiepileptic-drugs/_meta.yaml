@@ -1,25 +1,27 @@
-topic_id: antiepileptic-drugs
-name: Antiepileptic Drugs
-description: Antiepileptic Drugs — NMC curriculum topic
-high_yield: true
+title: "Antiepileptic Drugs"
+slug: antiepileptic-drugs
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM1.24
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM4.23
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM6.13
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM6.18
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM6.19
-  domain: K
-  core: true
-  phase: Phase 1
+  - "IM16.13"
+  - "IM16.18"
+prerequisites:
+  - "seizure-disorders"
+related_topics:
+  - "febrile-seizures"
+  - "raised-intracranial-pressure"
+enrichment:
+  nmcCodes:
+    - code: "IM16.13"
+      text: "Describe the pharmacology and side effects of antiepileptic drugs"
+      domain: "KH"
+    - code: "IM16.18"
+      text: "Enumerate and describe the indications for use of antiepileptic drugs"
+      domain: "K"
+  prerequisite_details:
+    - slug: "seizure-disorders"
+      reason: "Must understand seizure types to select appropriate AED"
+  related_details:
+    - slug: "febrile-seizures"
+      reason: "AED use considerations in febrile seizures"
+      relationship: "clinical"

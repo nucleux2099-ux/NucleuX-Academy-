@@ -1,21 +1,27 @@
-topic_id: aplastic-anemia
-name: Aplastic Anemia
-description: Aplastic Anemia — NMC curriculum topic
-high_yield: true
+title: Aplastic Anemia
+slug: aplastic-anemia
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM10.9
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM9.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.16
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.9
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM10.9
+  - IM9.1
+  - IM9.16
+  - IM9.9
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of aplastic anemia
+      domain: KH
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of aplastic anemia
+      domain: KH
+    - code: IM9.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of aplastic anemia
+      domain: KH
+    - code: IM9.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of aplastic anemia
+      domain: KH
+  prerequisite_details: []
+  related_details: []

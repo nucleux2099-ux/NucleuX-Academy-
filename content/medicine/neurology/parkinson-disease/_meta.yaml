@@ -1,25 +1,30 @@
-topic_id: parkinson-disease
-name: Parkinson Disease
-description: Parkinson Disease — NMC curriculum topic
-high_yield: true
+title: Parkinson Disease
+slug: parkinson-disease
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM16.15
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM5.14
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM7.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM7.10
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.2
-  domain: KH
-  core: false
-  phase: Phase 1
+  - IM16.15
+  - IM18.6
+prerequisites:
+  - basal-ganglia-physiology
+related_topics:
+  - huntington-disease
+  - motor-neuron-disease
+enrichment:
+  nmcCodes:
+    - code: IM16.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of parkinson disease
+      domain: KH
+    - code: IM18.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of parkinson disease
+      domain: KH
+  prerequisite_details:
+    - slug: basal-ganglia-physiology
+      reason: Foundation knowledge for parkinson disease
+  related_details:
+    - slug: huntington-disease
+      reason: Clinically related to parkinson disease
+      relationship: clinical
+    - slug: motor-neuron-disease
+      reason: Clinically related to parkinson disease
+      relationship: clinical

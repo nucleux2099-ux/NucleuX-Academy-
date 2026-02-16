@@ -1,0 +1,16 @@
+title: Acute Abdomen Approach
+slug: acute-abdomen-approach
+depth: UG
+highYield: true
+nmc_codes:
+  - IM24.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM24.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute abdomen
+        approach
+      domain: KH
+  prerequisite_details: []
+  related_details: []

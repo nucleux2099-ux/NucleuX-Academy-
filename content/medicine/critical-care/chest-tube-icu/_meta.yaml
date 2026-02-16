@@ -1,9 +1,21 @@
-topic_id: chest-tube-icu
-name: Chest Tube Icu
-description: Chest Tube Icu — NMC curriculum topic
-high_yield: true
+title: "Chest Tube in ICU"
+slug: chest-tube-icu
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM13.12
-  domain: KH
-  core: true
-  phase: Phase 2
+  - "IM24.16"
+prerequisites:
+  []
+related_topics:
+  - "non-invasive-ventilation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.16"
+      text: "Chest Tube in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "non-invasive-ventilation"
+      reason: "Clinically related"
+      relationship: "clinical"

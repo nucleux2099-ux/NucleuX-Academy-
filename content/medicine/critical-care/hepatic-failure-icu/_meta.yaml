@@ -1,9 +1,21 @@
-topic_id: hepatic-failure-icu
-name: Hepatic Failure Icu
-description: Hepatic Failure Icu — NMC curriculum topic
-high_yield: true
+title: "Hepatic Failure in ICU"
+slug: hepatic-failure-icu
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM5.18
-  domain: K
-  core: true
-  phase: Phase 2
+  - "IM24.17"
+prerequisites:
+  []
+related_topics:
+  - "fluid-resuscitation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.17"
+      text: "Hepatic Failure in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "fluid-resuscitation"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,32 @@
+title: Minimal Change Disease
+slug: minimal-change-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+prerequisites:
+  - nephrotic-syndrome
+related_topics:
+  - nephrotic-syndrome
+  - glomerulonephritis
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of minimal change
+        disease
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of minimal change
+        disease
+      domain: KH
+  prerequisite_details:
+    - slug: nephrotic-syndrome
+      reason: Foundation knowledge for minimal change disease
+  related_details:
+    - slug: nephrotic-syndrome
+      reason: Clinically related to minimal change disease
+      relationship: clinical
+    - slug: glomerulonephritis
+      reason: Clinically related to minimal change disease
+      relationship: clinical

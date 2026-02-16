@@ -1,17 +1,23 @@
-topic_id: diabetes-insipidus
-name: Diabetes Insipidus
-description: Diabetes Insipidus — NMC curriculum topic
-high_yield: true
+title: Diabetes Insipidus
+slug: diabetes-insipidus
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM11.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM11.11
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM11.16
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM11.1
+  - IM11.11
+  - IM11.16
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM11.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes insipidus
+      domain: KH
+    - code: IM11.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes insipidus
+      domain: KH
+    - code: IM11.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes insipidus
+      domain: KH
+  prerequisite_details: []
+  related_details: []

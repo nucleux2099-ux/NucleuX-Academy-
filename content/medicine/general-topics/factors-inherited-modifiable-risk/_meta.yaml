@@ -1,61 +1,21 @@
-topic_id: factors-inherited-modifiable-risk
-name: The clinical epidemiology and inherited & modifiable risk factors
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Inherited and Modifiable Risk Factors"
+slug: factors-inherited-modifiable-risk
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM13.1
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM13.10
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM13.11
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM13.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM13.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM13.18
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM13.19
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM13.2
-  domain: K
-  core: false
-  phase: Phase 1
-- code: IM13.3
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM13.4
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM13.6
-  domain: K
-  core: false
-  phase: Phase 1
-- code: IM13.7
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM13.8
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM13.9
-  domain: K
-  core: true
-  phase: Phase 1
+  - "IM26.20"
+prerequisites:
+  []
+related_topics:
+  - "cad-factors-relationship-risk"
+enrichment:
+  nmcCodes:
+    - code: "IM26.20"
+      text: "Inherited and Modifiable Risk Factors — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "cad-factors-relationship-risk"
+      reason: "Clinically related"
+      relationship: "clinical"

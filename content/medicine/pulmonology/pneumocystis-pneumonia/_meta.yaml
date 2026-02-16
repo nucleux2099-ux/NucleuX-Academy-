@@ -1,13 +1,21 @@
-topic_id: pneumocystis-pneumonia
-name: Pneumocystis Pneumonia
-description: Pneumocystis Pneumonia — NMC curriculum topic
-high_yield: true
+title: Pneumocystis Pneumonia
+slug: pneumocystis-pneumonia
+depth: PG
+highYield: true
 nmc_codes:
-- code: IM3.1
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM3.2
-  domain: K
-  core: true
-  phase: Phase 2
+  - IM3.1
+  - IM3.2
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM3.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumocystis
+        pneumonia
+      domain: KH
+    - code: IM3.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumocystis
+        pneumonia
+      domain: KH
+  prerequisite_details: []
+  related_details: []

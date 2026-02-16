@@ -1,29 +1,21 @@
-topic_id: document-elicit-history-present
-name: Elicit and document and present an appropriate history including
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "History Taking and Documentation"
+slug: document-elicit-history-present
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM19.3
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM19.4
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM19.5
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM19.6
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM19.7
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM19.8
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM26.17"
+prerequisites:
+  []
+related_topics:
+  - "establishes-examination-perform-systematic"
+enrichment:
+  nmcCodes:
+    - code: "IM26.17"
+      text: "History Taking and Documentation — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "establishes-examination-perform-systematic"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,73 +1,21 @@
-topic_id: tropical-infections
-name: "Tropical Infections"
-description: "Malaria, dengue, typhoid, leptospirosis, scrub typhus"
-high_yield: true
+title: "Tropical Infections"
+slug: tropical-infections
+depth: "UG"
+highYield: true
 nmc_codes:
-  - code: IM24.1
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.2
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.3
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.4
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.5
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.6
-    domain: SH
-    core: true
-    phase: Phase 3
-  - code: IM24.7
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.8
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.9
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.10
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.11
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.12
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.13
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.14
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.15
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.16
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM24.17
-    domain: KH
-    core: true
-    phase: Phase 3
+  - "IM8.2"
+prerequisites:
+  []
+related_topics:
+  - "malaria"
+enrichment:
+  nmcCodes:
+    - code: "IM8.2"
+      text: "Tropical Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "malaria"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,9 +1,16 @@
-topic_id: polycystic-kidney-disease
-name: Polycystic Kidney Disease
-description: Polycystic Kidney Disease — NMC curriculum topic
-high_yield: true
+title: Polycystic Kidney Disease
+slug: polycystic-kidney-disease
+depth: PG
+highYield: true
 nmc_codes:
-- code: IM10.6
-  domain: KH
-  core: true
-  phase: Phase 1
+  - IM10.6
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of polycystic kidney
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

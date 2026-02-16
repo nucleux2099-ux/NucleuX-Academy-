@@ -1,0 +1,21 @@
+title: "Drug Overdose (Benzodiazepines, Opioids, TCA)"
+slug: drug-overdose
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.27"
+prerequisites:
+  []
+related_topics:
+  - "paracetamol-overdose"
+enrichment:
+  nmcCodes:
+    - code: "IM24.27"
+      text: "Drug Overdose (Benzodiazepines, Opioids, TCA) — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "paracetamol-overdose"
+      reason: "Clinically related"
+      relationship: "clinical"

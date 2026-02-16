@@ -1,37 +1,51 @@
-topic_id: acute-coronary-syndrome
-name: Acute Coronary Syndrome
-description: Acute Coronary Syndrome — NMC curriculum topic
-high_yield: true
+title: Acute Coronary Syndrome
+slug: acute-coronary-syndrome
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM1.21
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM1.25
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM15.3
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM16.1
-  domain: K
-  core: true
-  phase: Phase 1
-- code: IM16.2
-  domain: K
-  core: true
-  phase: Phase 2
-- code: IM2.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM2.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM2.5
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM1.21
+  - IM1.25
+  - IM15.3
+  - IM16.1
+  - IM16.2
+  - IM2.14
+  - IM2.16
+  - IM2.5
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.21
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM1.25
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM15.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM16.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM16.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM2.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM2.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM2.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+  prerequisite_details: []
+  related_details: []

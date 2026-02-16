@@ -1,9 +1,16 @@
-topic_id: adult-onset-stills-disease
-name: Adult Onset Stills Disease
-description: Adult Onset Stills Disease — NMC curriculum topic
-high_yield: true
+title: Adult Onset Stills Disease
+slug: adult-onset-stills-disease
+depth: PG
+highYield: true
 nmc_codes:
-- code: IM23.1
-  domain: KH
-  core: true
-  phase: Phase 1
+  - IM23.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM23.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of adult onset stills
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

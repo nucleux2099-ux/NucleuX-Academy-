@@ -1,73 +1,21 @@
-topic_id: and-discuss-the-epidemiology-pathogenesis-clinical
-name: And discuss the epidemiology, pathogenesis clinical
-description: Auto-generated from NMC competency gaps
-high_yield: true
+title: "Epidemiology and Pathogenesis"
+slug: and-discuss-the-epidemiology-pathogenesis-clinical
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM1.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM1.10
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM1.11
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM1.15
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM1.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM1.17
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM1.18
-  domain: P
-  core: true
-  phase: Phase 2
-- code: IM1.22
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM1.26
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM1.27
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM1.29
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM1.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM1.30
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM1.5
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM1.6
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM1.8
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM1.9
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM26.3"
+prerequisites:
+  []
+related_topics:
+  - "aetiology"
+enrichment:
+  nmcCodes:
+    - code: "IM26.3"
+      text: "Epidemiology and Pathogenesis — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "aetiology"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,13 +1,21 @@
-topic_id: fluid-resuscitation
-name: Fluid Resuscitation
-description: Fluid Resuscitation — NMC curriculum topic
-high_yield: true
+title: "Fluid Resuscitation"
+slug: fluid-resuscitation
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM15.11
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM3.9
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM24.13"
+prerequisites:
+  []
+related_topics:
+  - "nutrition-icu"
+enrichment:
+  nmcCodes:
+    - code: "IM24.13"
+      text: "Fluid Resuscitation — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "nutrition-icu"
+      reason: "Clinically related"
+      relationship: "clinical"

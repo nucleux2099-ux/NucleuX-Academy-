@@ -1,21 +1,21 @@
-topic_id: opioid-use-disorder
-name: Opioid Use Disorder
-description: Opioid Use Disorder — NMC curriculum topic
-high_yield: true
+title: "Opioid Use Disorder"
+slug: opioid-use-disorder
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM19.9
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM25.8
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM26.28
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM4.18
-  domain: KH
-  core: false
-  phase: Phase 2
+  - "IM22.5"
+prerequisites:
+  []
+related_topics:
+  - "alcohol-use-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.5"
+      text: "Opioid Use Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "alcohol-use-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

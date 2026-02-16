@@ -1,9 +1,15 @@
-topic_id: paget-disease-bone
-name: Paget Disease Bone
-description: Paget Disease Bone — NMC curriculum topic
-high_yield: false
+title: Paget Disease Bone
+slug: paget-disease-bone
+depth: UG
+highYield: false
 nmc_codes:
-- code: IM4.17
-  domain: SH
-  core: false
-  phase: Phase 2
+  - IM4.17
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM4.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of paget disease bone
+      domain: KH
+  prerequisite_details: []
+  related_details: []

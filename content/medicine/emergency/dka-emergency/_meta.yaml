@@ -1,0 +1,15 @@
+title: DKA Emergency
+slug: dka-emergency
+depth: UG
+highYield: true
+nmc_codes:
+  - IM24.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM24.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dka emergency
+      domain: KH
+  prerequisite_details: []
+  related_details: []

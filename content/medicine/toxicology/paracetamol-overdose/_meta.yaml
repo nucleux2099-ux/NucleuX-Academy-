@@ -1,0 +1,21 @@
+title: "Paracetamol Overdose"
+slug: paracetamol-overdose
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.12"
+prerequisites:
+  []
+related_topics:
+  - "drug-overdose"
+enrichment:
+  nmcCodes:
+    - code: "IM24.12"
+      text: "Paracetamol Overdose — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "drug-overdose"
+      reason: "Clinically related"
+      relationship: "clinical"

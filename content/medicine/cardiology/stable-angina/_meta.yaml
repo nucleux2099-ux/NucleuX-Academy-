@@ -1,9 +1,15 @@
-topic_id: stable-angina
-name: Stable Angina
-description: Stable Angina — NMC curriculum topic
-high_yield: true
+title: Stable Angina
+slug: stable-angina
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM2.9
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM2.9
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM2.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of stable angina
+      domain: KH
+  prerequisite_details: []
+  related_details: []

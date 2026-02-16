@@ -1,17 +1,26 @@
-topic_id: iron-deficiency-anemia
-name: Iron Deficiency Anemia
-description: Iron Deficiency Anemia — NMC curriculum topic
-high_yield: true
+title: Iron Deficiency Anemia
+slug: iron-deficiency-anemia
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM10.9
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM9.16
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.8
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM10.9
+  - IM9.16
+  - IM9.8
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of iron deficiency
+        anemia
+      domain: KH
+    - code: IM9.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of iron deficiency
+        anemia
+      domain: KH
+    - code: IM9.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of iron deficiency
+        anemia
+      domain: KH
+  prerequisite_details: []
+  related_details: []

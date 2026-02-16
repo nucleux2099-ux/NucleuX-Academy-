@@ -1,9 +1,23 @@
-topic_id: nephrotic-syndrome
-name: "Nephrotic Syndrome"
-description: "Proteinuria, edema, hyperlipidemia; causes and management"
-high_yield: true
-difficulty: 3
-estimated_minutes: 20
-exam_tags: [NEET_PG, INICET]
+title: Nephrotic Syndrome
+slug: nephrotic-syndrome
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
 prerequisites: []
-related_topics: [glomerulonephritis, diabetic-nephropathy]
+related_topics:
+  - glomerulonephritis
+  - diabetic-nephropathy
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of nephrotic syndrome
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: glomerulonephritis
+      reason: Clinically related to nephrotic syndrome
+      relationship: clinical
+    - slug: diabetic-nephropathy
+      reason: Clinically related to nephrotic syndrome
+      relationship: clinical

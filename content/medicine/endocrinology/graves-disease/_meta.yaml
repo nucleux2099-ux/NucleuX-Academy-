@@ -1,21 +1,27 @@
-topic_id: graves-disease
-name: Graves Disease
-description: Graves Disease — NMC curriculum topic
-high_yield: true
+title: Graves Disease
+slug: graves-disease
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM16.15
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM7.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM7.10
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.2
-  domain: KH
-  core: false
-  phase: Phase 1
+  - IM16.15
+  - IM7.1
+  - IM7.10
+  - IM7.2
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM16.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
+      domain: KH
+    - code: IM7.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
+      domain: KH
+    - code: IM7.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
+      domain: KH
+    - code: IM7.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

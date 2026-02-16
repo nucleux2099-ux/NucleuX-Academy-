@@ -1,9 +1,15 @@
-topic_id: diabetic-nephropathy
-name: Diabetic Nephropathy
-description: Diabetic Nephropathy — NMC curriculum topic
-high_yield: true
+title: Diabetic Nephropathy
+slug: diabetic-nephropathy
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM11.15
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM11.15
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM11.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetic nephropathy
+      domain: KH
+  prerequisite_details: []
+  related_details: []

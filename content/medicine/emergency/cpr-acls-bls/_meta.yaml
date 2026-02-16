@@ -1,13 +1,21 @@
-topic_id: cpr-acls-bls
-name: Cpr Acls Bls
-description: Cpr Acls Bls — NMC curriculum topic
-high_yield: true
+title: "CPR / ACLS / BLS"
+slug: cpr-acls-bls
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM2.21
-  domain: KH
-  core: false
-  phase: Phase 2
-- code: IM2.22
-  domain: P
-  core: true
-  phase: Phase 2
+  - "IM24.6"
+prerequisites:
+  []
+related_topics:
+  - "primary-survey-atls"
+enrichment:
+  nmcCodes:
+    - code: "IM24.6"
+      text: "CPR / ACLS / BLS — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "primary-survey-atls"
+      reason: "Clinically related"
+      relationship: "clinical"

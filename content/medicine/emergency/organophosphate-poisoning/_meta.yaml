@@ -1,9 +1,22 @@
-topic_id: organophosphate-poisoning
-name: Organophosphate Poisoning
-description: Organophosphate Poisoning — NMC curriculum topic
-high_yield: true
+title: "Organophosphate Poisoning"
+slug: organophosphate-poisoning
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM21.7
-  domain: SH
-  core: true
-  phase: Phase 1
+  - "IM24.11"
+prerequisites:
+  - "poisoning-general-approach"
+related_topics:
+  - "paracetamol-overdose"
+enrichment:
+  nmcCodes:
+    - code: "IM24.11"
+      text: "Organophosphate Poisoning — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "poisoning-general-approach"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "paracetamol-overdose"
+      reason: "Clinically related"
+      relationship: "clinical"

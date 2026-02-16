@@ -1,45 +1,21 @@
-topic_id: gerd-medical
-name: Gerd Medical
-description: Gerd Medical — NMC curriculum topic
-high_yield: true
+title: "GERD (Gastroesophageal Reflux Disease)"
+slug: gerd-medical
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM10.12
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM11.7
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM25.4
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM26.40
-  domain: SH
-  core: false
-  phase: Phase 2
-- code: IM4.9
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM5.9
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM6.7
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM7.11
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM8.9
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM9.3
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM5.2"
+prerequisites:
+  []
+related_topics:
+  - "acid-peptic-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM5.2"
+      text: "GERD (Gastroesophageal Reflux Disease) — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "acid-peptic-disease"
+      reason: "Clinically related"
+      relationship: "clinical"

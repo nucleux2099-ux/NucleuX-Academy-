@@ -1,17 +1,23 @@
-topic_id: thyroid-storm
-name: Thyroid Storm
-description: Thyroid Storm — NMC curriculum topic
-high_yield: true
+title: Thyroid Storm
+slug: thyroid-storm
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM12.11
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM12.2
-  domain: K
-  core: false
-  phase: Phase 2
-- code: IM12.7
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM12.11
+  - IM12.2
+  - IM12.7
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM12.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid storm
+      domain: KH
+    - code: IM12.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid storm
+      domain: KH
+    - code: IM12.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid storm
+      domain: KH
+  prerequisite_details: []
+  related_details: []

@@ -1,9 +1,21 @@
-topic_id: pressure-ulcers
-name: Pressure Ulcers
-description: Pressure Ulcers — NMC curriculum topic
-high_yield: true
+title: "Pressure Ulcers"
+slug: pressure-ulcers
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM1.13
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM23.5"
+prerequisites:
+  []
+related_topics:
+  - "end-of-life-care"
+enrichment:
+  nmcCodes:
+    - code: "IM23.5"
+      text: "Pressure Ulcers — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "end-of-life-care"
+      reason: "Clinically related"
+      relationship: "clinical"

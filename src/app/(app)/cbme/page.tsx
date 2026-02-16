@@ -302,11 +302,32 @@ export default function CBMEPage() {
         <h3 className="text-sm font-semibold text-zinc-300 mb-2">🔬 Subject-Specific CBME Maps</h3>
         <p className="text-zinc-500 text-xs mb-3">Detailed UG → PG → SS progression with competency codes mapped to library topics</p>
         <div className="flex gap-2 flex-wrap">
-          <Link
-            href="/cbme/surgery"
-            className="px-4 py-2 rounded-lg bg-red-600/10 border border-red-500/20 text-red-400 hover:bg-red-600/20 text-sm font-medium transition-colors"
-          >
-            🔪 Surgery — {132} UG codes, 18 subspecialties
+          <Link href="/cbme/surgery" className="px-4 py-2 rounded-lg bg-red-600/10 border border-red-500/20 text-red-400 hover:bg-red-600/20 text-sm font-medium transition-colors">
+            🔪 Surgery — 132 UG codes, 18 subspecialties
+          </Link>
+          <Link href="/cbme/ophthalmology" className="px-4 py-2 rounded-lg bg-emerald-600/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-600/20 text-sm font-medium transition-colors">
+            👁️ Ophthalmology — OP1–OP9, 5 subspecialties
+          </Link>
+          <Link href="/cbme/ent" className="px-4 py-2 rounded-lg bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 hover:bg-indigo-600/20 text-sm font-medium transition-colors">
+            👂 ENT — EN1–EN4, 4 subspecialties
+          </Link>
+          <Link href="/cbme/psychiatry" className="px-4 py-2 rounded-lg bg-purple-600/10 border border-purple-500/20 text-purple-400 hover:bg-purple-600/20 text-sm font-medium transition-colors">
+            🧠 Psychiatry — PS1–PS19, 5 subspecialties
+          </Link>
+          <Link href="/cbme/dermatology" className="px-4 py-2 rounded-lg bg-pink-600/10 border border-pink-500/20 text-pink-400 hover:bg-pink-600/20 text-sm font-medium transition-colors">
+            🧴 Dermatology — DR1–DR16, 4 subspecialties
+          </Link>
+          <Link href="/cbme/anesthesia" className="px-4 py-2 rounded-lg bg-cyan-600/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-600/20 text-sm font-medium transition-colors">
+            💉 Anesthesia — AS1–AS10, 4 subspecialties
+          </Link>
+          <Link href="/cbme/community-medicine" className="px-4 py-2 rounded-lg bg-lime-600/10 border border-lime-500/20 text-lime-400 hover:bg-lime-600/20 text-sm font-medium transition-colors">
+            🏥 Community Medicine — CM1–CM19, 6 subspecialties
+          </Link>
+          <Link href="/cbme/radiology" className="px-4 py-2 rounded-lg bg-amber-600/10 border border-amber-500/20 text-amber-400 hover:bg-amber-600/20 text-sm font-medium transition-colors">
+            🔬 Radiology — RD1–RD3, 3 subspecialties
+          </Link>
+          <Link href="/cbme/biochemistry" className="px-4 py-2 rounded-lg bg-yellow-600/10 border border-yellow-500/20 text-yellow-400 hover:bg-yellow-600/20 text-sm font-medium transition-colors">
+            🧬 Biochemistry — BI1–BI11, 9 subspecialties
           </Link>
         </div>
       </div>

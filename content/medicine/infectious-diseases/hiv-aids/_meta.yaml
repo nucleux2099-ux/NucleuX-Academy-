@@ -1,17 +1,25 @@
-topic_id: hiv-aids
-name: Hiv Aids
-description: Hiv Aids — NMC curriculum topic
-high_yield: true
+title: "HIV/AIDS"
+slug: hiv-aids
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM6.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM6.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM6.23
-  domain: SH
-  core: true
-  phase: Phase 2
+  - "IM8.4"
+prerequisites:
+  []
+related_topics:
+  - "antiretroviral-therapy"
+  - "opportunistic-infections-hiv"
+enrichment:
+  nmcCodes:
+    - code: "IM8.4"
+      text: "HIV/AIDS — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "antiretroviral-therapy"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "opportunistic-infections-hiv"
+      reason: "Clinically related"
+      relationship: "clinical"

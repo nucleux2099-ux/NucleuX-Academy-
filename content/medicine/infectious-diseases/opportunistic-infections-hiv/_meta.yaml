@@ -1,13 +1,22 @@
-topic_id: opportunistic-infections-hiv
-name: Opportunistic Infections Hiv
-description: Opportunistic Infections Hiv — NMC curriculum topic
-high_yield: true
+title: "Opportunistic Infections in HIV"
+slug: opportunistic-infections-hiv
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM25.13
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM6.2
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM8.7"
+prerequisites:
+  - "hiv-aids"
+related_topics:
+  - "fungal-infections-systemic"
+enrichment:
+  nmcCodes:
+    - code: "IM8.7"
+      text: "Opportunistic Infections in HIV — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "hiv-aids"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "fungal-infections-systemic"
+      reason: "Clinically related"
+      relationship: "clinical"

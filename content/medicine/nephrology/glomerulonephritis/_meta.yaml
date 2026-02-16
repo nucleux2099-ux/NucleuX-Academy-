@@ -1,9 +1,23 @@
-topic_id: glomerulonephritis
-name: "Glomerulonephritis"
-description: "Nephritic syndrome, GN classification, workup, RPGN"
-high_yield: true
-difficulty: 4
-estimated_minutes: 25
-exam_tags: [NEET_PG, INICET]
+title: Glomerulonephritis
+slug: glomerulonephritis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
 prerequisites: []
-related_topics: [nephrotic-syndrome, chronic-kidney-disease]
+related_topics:
+  - nephrotic-syndrome
+  - chronic-kidney-disease
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of glomerulonephritis
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: nephrotic-syndrome
+      reason: Clinically related to glomerulonephritis
+      relationship: clinical
+    - slug: chronic-kidney-disease
+      reason: Clinically related to glomerulonephritis
+      relationship: clinical

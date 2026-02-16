@@ -1,13 +1,19 @@
-topic_id: giant-cell-arteritis
-name: Giant Cell Arteritis
-description: Giant Cell Arteritis — NMC curriculum topic
-high_yield: true
+title: Giant Cell Arteritis
+slug: giant-cell-arteritis
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM9.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM9.9
-  domain: SH
-  core: true
-  phase: Phase 2
+  - IM9.1
+  - IM9.9
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of giant cell arteritis
+      domain: KH
+    - code: IM9.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of giant cell arteritis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

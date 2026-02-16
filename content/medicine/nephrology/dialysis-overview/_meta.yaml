@@ -1,9 +1,15 @@
-topic_id: dialysis-overview
-name: Dialysis Overview
-description: Dialysis Overview — NMC curriculum topic
-high_yield: true
+title: Dialysis Overview
+slug: dialysis-overview
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM10.27
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM10.27
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.27
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dialysis overview
+      domain: KH
+  prerequisite_details: []
+  related_details: []

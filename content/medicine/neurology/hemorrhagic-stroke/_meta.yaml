@@ -1,13 +1,19 @@
-topic_id: hemorrhagic-stroke
-name: Hemorrhagic Stroke
-description: Hemorrhagic Stroke — NMC curriculum topic
-high_yield: true
+title: Hemorrhagic Stroke
+slug: hemorrhagic-stroke
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM18.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM18.15
-  domain: K
-  core: true
-  phase: Phase 2
+  - IM18.14
+  - IM18.15
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM18.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hemorrhagic stroke
+      domain: KH
+    - code: IM18.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hemorrhagic stroke
+      domain: KH
+  prerequisite_details: []
+  related_details: []

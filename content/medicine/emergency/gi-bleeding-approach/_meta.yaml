@@ -1,29 +1,19 @@
-topic_id: gi-bleeding-approach
-name: Gi Bleeding Approach
-description: Gi Bleeding Approach — NMC curriculum topic
-high_yield: true
+title: "Approach to GI Bleeding"
+slug: gi-bleeding-approach
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM15.6
-  domain: KH
-  core: true
-  phase: Phase 3
-- code: IM20.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM21.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM22.3
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: IM7.4
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.5
-  domain: KH
-  core: true
-  phase: Phase 3
+  - "IM24.7"
+prerequisites:
+  []
+related_topics:
+  []
+enrichment:
+  nmcCodes:
+    - code: "IM24.7"
+      text: "Approach to GI Bleeding — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+  []

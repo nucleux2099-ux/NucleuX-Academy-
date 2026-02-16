@@ -1,13 +1,25 @@
-topic_id: lupus-skin
-name: Lupus Skin
-description: Lupus Skin — NMC curriculum topic
-high_yield: true
+title: "Lupus — Skin Manifestations"
+slug: lupus-skin
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM7.12
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM7.13
-  domain: SH
-  core: true
-  phase: Phase 3
+  - "IM19.2"
+prerequisites:
+  []
+related_topics:
+  - "scleroderma-skin"
+  - "dermatomyositis-skin"
+enrichment:
+  nmcCodes:
+    - code: "IM19.2"
+      text: "Lupus — Skin Manifestations — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "scleroderma-skin"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "dermatomyositis-skin"
+      reason: "Clinically related"
+      relationship: "clinical"

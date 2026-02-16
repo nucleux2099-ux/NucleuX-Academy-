@@ -1,0 +1,34 @@
+title: IgA Nephropathy
+slug: iga-nephropathy
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+prerequisites:
+  - glomerulonephritis
+related_topics:
+  - nephritic-syndrome
+  - glomerulonephritis
+  - chronic-kidney-disease
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of iga nephropathy
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of iga nephropathy
+      domain: KH
+  prerequisite_details:
+    - slug: glomerulonephritis
+      reason: Foundation knowledge for iga nephropathy
+  related_details:
+    - slug: nephritic-syndrome
+      reason: Clinically related to iga nephropathy
+      relationship: clinical
+    - slug: glomerulonephritis
+      reason: Clinically related to iga nephropathy
+      relationship: clinical
+    - slug: chronic-kidney-disease
+      reason: Clinically related to iga nephropathy
+      relationship: clinical

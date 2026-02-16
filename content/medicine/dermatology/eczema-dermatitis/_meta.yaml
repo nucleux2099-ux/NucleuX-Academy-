@@ -1,0 +1,15 @@
+title: Eczema Dermatitis
+slug: eczema-dermatitis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM19.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM19.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of eczema dermatitis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

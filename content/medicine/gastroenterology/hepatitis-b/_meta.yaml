@@ -1,9 +1,25 @@
-topic_id: hepatitis-b
-name: Hepatitis B
-description: Hepatitis B — NMC curriculum topic
-high_yield: true
+title: "Hepatitis B"
+slug: hepatitis-b
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM5.16
-  domain: KH
-  core: true
-  phase: Phase 1
+  - "IM5.6"
+prerequisites:
+  []
+related_topics:
+  - "hepatitis-c"
+  - "liver-cirrhosis"
+enrichment:
+  nmcCodes:
+    - code: "IM5.6"
+      text: "Hepatitis B — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "hepatitis-c"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "liver-cirrhosis"
+      reason: "Clinically related"
+      relationship: "clinical"

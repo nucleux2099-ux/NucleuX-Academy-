@@ -1,61 +1,67 @@
-topic_id: heart-failure
-name: "Heart Failure"
-description: "HFrEF, HFpEF, NYHA classification, diagnosis and management"
-high_yield: true
+title: Heart Failure
+slug: heart-failure
+depth: UG
+highYield: true
 nmc_codes:
-  - code: IM3.1
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.2
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.3
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.4
-    domain: SH
-    core: true
-    phase: Phase 3
-  - code: IM3.5
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.6
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.7
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.8
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.9
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.10
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.11
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.12
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.13
-    domain: KH
-    core: true
-    phase: Phase 3
-  - code: IM3.14
-    domain: KH
-    core: true
-    phase: Phase 3
+  - IM3.1
+  - IM3.2
+  - IM3.3
+  - IM3.4
+  - IM3.5
+  - IM3.6
+  - IM3.7
+  - IM3.8
+  - IM3.9
+  - IM3.10
+  - IM3.11
+  - IM3.12
+  - IM3.13
+  - IM3.14
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM3.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+    - code: IM3.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart failure
+      domain: KH
+  prerequisite_details: []
+  related_details: []

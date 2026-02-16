@@ -333,6 +333,36 @@ export const SUBSPECIALTIES: Subspecialty[] = [
     topicCount: 20,
     order: 14,
   },
+  {
+    id: 'medicine-general-topics',
+    subjectId: 'medicine',
+    name: 'General Topics',
+    slug: 'general-topics',
+    icon: '📋',
+    description: 'Clinical skills, history taking, examination, and general principles',
+    topicCount: 25,
+    order: 15,
+  },
+  {
+    id: 'medicine-oncology',
+    subjectId: 'medicine',
+    name: 'Oncology',
+    slug: 'oncology',
+    icon: '🎗️',
+    description: 'Medical oncology, chemotherapy principles, and palliative care',
+    topicCount: 8,
+    order: 16,
+  },
+  {
+    id: 'medicine-toxicology',
+    subjectId: 'medicine',
+    name: 'Toxicology',
+    slug: 'toxicology',
+    icon: '☠️',
+    description: 'Poisoning, envenomation, drug overdose, and antidotes',
+    topicCount: 8,
+    order: 17,
+  },
   
   // =============================================================================
   // ANATOMY

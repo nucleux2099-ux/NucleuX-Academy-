@@ -1,9 +1,21 @@
-topic_id: delusional-disorder
-name: Delusional Disorder
-description: Delusional Disorder — NMC curriculum topic
-high_yield: false
+title: "Delusional Disorder"
+slug: delusional-disorder
+depth: "UG"
+highYield: false
 nmc_codes:
-- code: IM22.13
-  domain: KH
-  core: false
-  phase: Phase 1
+  - "IM22.4"
+prerequisites:
+  []
+related_topics:
+  - "schizoaffective-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.4"
+      text: "Delusional Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+  []
+  related_details:
+    - slug: "schizoaffective-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

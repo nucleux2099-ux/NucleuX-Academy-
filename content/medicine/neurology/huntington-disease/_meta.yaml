@@ -1,25 +1,23 @@
-topic_id: huntington-disease
-name: Huntington Disease
-description: Huntington Disease — NMC curriculum topic
-high_yield: true
+title: "Huntington Disease"
+slug: huntington-disease
+depth: "UG"
+highYield: true
 nmc_codes:
-- code: IM16.15
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM5.14
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: IM7.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM7.10
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: IM7.2
-  domain: KH
-  core: false
-  phase: Phase 1
+  - "IM16.15"
+prerequisites:
+  - "basal-ganglia-physiology"
+related_topics:
+  - "parkinson-disease"
+  - "motor-neuron-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM16.15"
+      text: "Describe and discuss the aetiology, clinical features and management of movement disorders including Huntington disease"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "basal-ganglia-physiology"
+      reason: "Caudate nucleus atrophy is the hallmark"
+  related_details:
+    - slug: "parkinson-disease"
+      reason: "Another basal ganglia disorder; hypokinetic vs hyperkinetic"
+      relationship: "clinical"

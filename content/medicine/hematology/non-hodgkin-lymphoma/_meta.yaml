@@ -1,21 +1,27 @@
-topic_id: non-hodgkin-lymphoma
-name: Non Hodgkin Lymphoma
-description: Non Hodgkin Lymphoma — NMC curriculum topic
-high_yield: true
+title: Non Hodgkin Lymphoma
+slug: non-hodgkin-lymphoma
+depth: UG
+highYield: true
 nmc_codes:
-- code: IM1.23
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM15.18
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: IM2.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: IM26.3
-  domain: KH
-  core: true
-  phase: Phase 2
+  - IM1.23
+  - IM15.18
+  - IM2.2
+  - IM26.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.23
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of non hodgkin lymphoma
+      domain: KH
+    - code: IM15.18
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of non hodgkin lymphoma
+      domain: KH
+    - code: IM2.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of non hodgkin lymphoma
+      domain: KH
+    - code: IM26.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of non hodgkin lymphoma
+      domain: KH
+  prerequisite_details: []
+  related_details: []
