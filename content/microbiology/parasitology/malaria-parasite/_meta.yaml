@@ -1,0 +1,155 @@
+topic_id: malaria-parasite
+name: "Malaria Parasite (Life Cycle, Diagnosis)"
+description: >
+  Plasmodium species, life cycle, clinical features, diagnosis (peripheral smear, RDT), and treatment.
+high_yield: true
+nmc_codes:
+  - code: MI5.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Malaria is caused by Plasmodium species (P. vivax, P. falciparum, P. malariae, P. ovale, P. knowlesi)
+  transmitted by female Anopheles mosquito. P. falciparum causes the most severe/fatal malaria.
+  P. vivax has hypnozoites in liver (relapse). Life cycle involves mosquito (sexual cycle) and
+  human (asexual cycle in liver + RBCs). Diagnosis: Giemsa-stained peripheral blood smear (gold standard)
+  and rapid diagnostic tests (RDTs).
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.46; 📚 Ananthanarayan, 11th Ed, Ch.84
+
+learning_objectives:
+  - Describe the complete life cycle of Plasmodium (mosquito and human stages)
+  - Differentiate P. falciparum from P. vivax clinically and microscopically
+  - Explain the concept of hypnozoites and relapse vs recrudescence
+  - List diagnostic methods for malaria
+  - Outline treatment protocols including anti-relapse therapy
+
+content:
+  atoms:
+    - id: life-cycle
+      title: "Plasmodium Life Cycle"
+      text: >
+        Mosquito (definitive host, sexual cycle): gametocytes ingested → gametes fuse → ookinete → oocyst →
+        sporozoites migrate to salivary glands.
+        Human (intermediate host, asexual cycle):
+        (1) Hepatic (exo-erythrocytic) phase: sporozoites → liver → schizogony → merozoites released.
+        P. vivax/ovale form HYPNOZOITES (dormant liver stage → RELAPSE months-years later).
+        (2) Erythrocytic phase: merozoites invade RBCs → ring → trophozoite → schizont → merozoites burst out
+        (→ fever paroxysm). P. vivax: reticulocytes only. P. falciparum: ALL RBC ages (→ high parasitemia, severe).
+        (3) Some merozoites → gametocytes (infective to mosquito). P. falciparum gametocytes: banana/crescent-shaped.
+        📚 Ananthanarayan, 11th Ed, Ch.84
+
+    - id: clinical-features
+      title: "Clinical Features & Species Comparison"
+      text: >
+        Classic: fever paroxysm (cold stage → hot stage → sweating stage) every 48h (tertian: P. vivax, P. falciparum, P. ovale)
+        or 72h (quartan: P. malariae). P. falciparum: daily/irregular (malignant tertian).
+        P. falciparum complications (severe/cerebral malaria): cerebral malaria (sequestration of parasitized RBCs
+        in brain capillaries), ARDS, severe anemia, hypoglycemia, DIC, blackwater fever (massive hemolysis → hemoglobinuria).
+        P. vivax: benign tertian, relapse from hypnozoites, splenomegaly.
+        P. malariae: quartan, nephrotic syndrome, longest lasting (decades without treatment — recrudescence).
+        Blackwater fever: massive intravascular hemolysis → dark urine (hemoglobinuria), seen in P. falciparum.
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.46
+
+    - id: diagnosis-treatment
+      title: "Diagnosis & Treatment"
+      text: >
+        Gold standard: Giemsa-stained thick (detection, sensitivity) and thin (species identification) blood smear.
+        P. falciparum: multiple ring forms per RBC, crescent gametocytes, no Schuffner's dots.
+        P. vivax: enlarged RBCs, Schuffner's dots, amoeboid trophozoites.
+        RDTs: detect HRP-2 (P. falciparum specific) or pLDH/aldolase (pan-Plasmodium).
+        Treatment: Uncomplicated P. vivax: chloroquine + primaquine (14 days, kills hypnozoites — anti-relapse).
+        Check G6PD before primaquine (hemolytic anemia in G6PD deficiency).
+        Uncomplicated P. falciparum: ACT (artemisinin-based combination therapy: artesunate + mefloquine/lumefantrine).
+        Severe malaria: IV artesunate (drug of choice). Chloroquine resistance widespread in P. falciparum.
+        📚 Ananthanarayan, 11th Ed, Ch.84
+
+  clinical:
+    - title: "Clinical Correlation: Cerebral Malaria"
+      text: >
+        P. falciparum sequesters in cerebral microvasculature (PfEMP-1 binds to ICAM-1 on endothelium).
+        Presents with altered consciousness, seizures, coma. Mortality 15-20% even with treatment.
+        IV artesunate is the drug of choice. Exchange transfusion for very high parasitemia.
+    - title: "Clinical Correlation: G6PD & Primaquine"
+      text: >
+        Primaquine causes oxidant stress → hemolytic anemia in G6PD-deficient patients.
+        Must check G6PD status before prescribing. G6PD deficiency is protective against malaria
+        (along with sickle cell trait, thalassemia, Duffy-negative blood group for P. vivax).
+
+high_yield_points:
+  - "Female Anopheles mosquito = definitive host (sexual cycle); human = intermediate host"
+  - "P. vivax/ovale form HYPNOZOITES → RELAPSE; P. falciparum has NO hypnozoites"
+  - "P. falciparum: invades ALL RBC ages → high parasitemia → severe/cerebral malaria"
+  - "P. falciparum gametocytes are BANANA/CRESCENT-shaped"
+  - "Schuffner's dots = P. vivax; multiple ring forms = P. falciparum"
+  - "Gold standard diagnosis: Giemsa-stained peripheral blood smear"
+  - "Primaquine kills hypnozoites (anti-relapse); check G6PD first"
+  - "IV artesunate = drug of choice for severe malaria"
+  - "Duffy-negative individuals resistant to P. vivax (Duffy antigen = receptor)"
+  - "Sickle cell trait, thalassemia, G6PD deficiency = protective against malaria"
+
+mcqs:
+  - question: "Relapse in P. vivax malaria is due to reactivation of:"
+    options:
+      - "Merozoites in RBCs"
+      - "Sporozoites in blood"
+      - "Hypnozoites in liver"
+      - "Gametocytes in circulation"
+    answer: "Hypnozoites in liver"
+    explanation: >
+      Hypnozoites are dormant liver stages unique to P. vivax and P. ovale. They can reactivate
+      months to years later causing relapse. Primaquine is the only drug that kills hypnozoites.
+      📚 Ananthanarayan, 11th Ed, Ch.84
+    difficulty: 1
+
+  - question: "Banana-shaped gametocytes on peripheral blood smear are characteristic of:"
+    options:
+      - "P. vivax"
+      - "P. falciparum"
+      - "P. malariae"
+      - "P. ovale"
+    answer: "P. falciparum"
+    explanation: >
+      P. falciparum gametocytes have a distinctive crescent/banana shape (also called
+      "sausage-shaped"). This is pathognomonic and helps species identification on thin smear.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.46
+    difficulty: 1
+
+  - question: "Before prescribing primaquine, which test must be performed?"
+    options:
+      - "Liver function test"
+      - "Renal function test"
+      - "G6PD assay"
+      - "Coagulation profile"
+    answer: "G6PD assay"
+    explanation: >
+      Primaquine causes oxidative hemolysis in G6PD-deficient patients. G6PD testing is mandatory
+      before prescribing. Alternative for G6PD-deficient: tafenoquine (weekly dosing) with testing.
+      📚 Ananthanarayan, 11th Ed, Ch.84
+    difficulty: 1
+
+  - question: "The drug of choice for severe/cerebral malaria is:"
+    options:
+      - "Chloroquine"
+      - "Mefloquine"
+      - "IV artesunate"
+      - "Primaquine"
+    answer: "IV artesunate"
+    explanation: >
+      IV artesunate has replaced IV quinine as the drug of choice for severe malaria (WHO recommendation).
+      It acts faster, reduces mortality by 35% compared to quinine, and is better tolerated.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.46
+    difficulty: 1
+
+  - question: "P. vivax preferentially invades which type of RBCs?"
+    options:
+      - "All ages of RBCs"
+      - "Only reticulocytes (young RBCs)"
+      - "Only mature RBCs"
+      - "Only sickle cells"
+    answer: "Only reticulocytes (young RBCs)"
+    explanation: >
+      P. vivax uses the Duffy blood group antigen (DARC) on reticulocytes for invasion, limiting it to
+      young RBCs → lower parasitemia → benign tertian. P. falciparum invades all RBC ages → high parasitemia.
+      📚 Ananthanarayan, 11th Ed, Ch.84
+    difficulty: 2

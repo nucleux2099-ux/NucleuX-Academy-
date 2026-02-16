@@ -1,52 +1,179 @@
-topic_id: liver-functions-physiology
-name: Liver Functions Physiology
-description: Liver Functions Physiology — NMC curriculum topic
+topic_id: liver-functions-bilirubin
+name: Liver Functions & Bilirubin Metabolism
+description: Liver Functions & Bilirubin Metabolism — Hepatic functions, bilirubin pathway, and jaundice classification
 high_yield: true
 nmc_codes:
-- code: PY1.1
-  core: false
-  phase: Phase 1
-- code: PY10.5
+- code: PY4.6
   domain: KH
   core: true
   phase: Phase 1
-- code: PY10.6
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY2.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY2.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY2.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY2.7
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY3.1
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY3.2
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY4.3
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY4.7
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY7.2
-  domain: KH
-  core: true
-  phase: Phase 1
+
+overview: >
+  The liver performs over 500 functions including bile production, protein synthesis, detoxification, carbohydrate/lipid
+  metabolism, and storage. Bilirubin metabolism (heme → unconjugated bilirubin → conjugation → excretion) is critical for
+  understanding jaundice classification and liver function tests.
+  📚 Guyton & Hall, 14th Ed, Ch.70-71 (p.897-916) / 📚 Ganong's, 26th Ed, Ch.28
+
+learning_objectives:
+  - List the major functions of the liver (synthetic, metabolic, excretory)
+  - Describe the pathway of bilirubin metabolism from heme to urobilinogen
+  - Classify jaundice as pre-hepatic, hepatic, or post-hepatic with LFT patterns
+  - Explain the enterohepatic circulation of bile salts
+  - Interpret liver function tests and their significance
+
+content:
+  atoms:
+    - id: liver-functions
+      title: "Major Liver Functions"
+      text: >
+        Synthetic: albumin, clotting factors (I, II, V, VII, IX, X, XI — all EXCEPT VIII), complement,
+        ceruloplasmin, transferrin, angiotensinogen, bile salts, cholesterol.
+        Metabolic: gluconeogenesis, glycogen storage, urea synthesis (ammonia → urea via urea cycle),
+        drug metabolism (Phase I: CYP450 oxidation; Phase II: conjugation — glucuronidation, sulfation, glutathione).
+        Storage: glycogen, vitamins (A, D, E, K, B12), iron (ferritin), copper.
+        Excretory: bile production (500-1000 mL/day), bilirubin conjugation and excretion.
+        Detoxification: Kupffer cells (resident macrophages) filter portal blood of bacteria/toxins.
+        📚 Guyton & Hall, 14th Ed, Ch.70 (p.897-906)
+
+    - id: bilirubin-metabolism
+      title: "Bilirubin Metabolism Pathway"
+      text: >
+        1. Heme (from RBC breakdown in spleen) → biliverdin (heme oxygenase) → unconjugated bilirubin (UCB).
+        2. UCB is lipid-soluble, bound to albumin in blood (cannot be filtered by kidney → no bilirubinuria).
+        3. Liver: UCB taken up by hepatocytes (ligandin/Y protein) → conjugated with glucuronic acid by
+        UDP-glucuronosyltransferase (UGT1A1) → conjugated bilirubin (CB) = water-soluble.
+        4. CB excreted into bile canaliculi (MRP2 transporter) → bile → intestine.
+        5. Intestinal bacteria convert CB → urobilinogen. Most urobilinogen: excreted in feces (stercobilinogen → stercobilin, brown color).
+        Some urobilinogen: reabsorbed (enterohepatic circulation) → kidney → urine urobilinogen.
+        📚 Ganong's, 26th Ed, Ch.28
+
+    - id: jaundice-types
+      title: "Classification of Jaundice"
+      text: >
+        Pre-hepatic (hemolytic): ↑UCB, ↑urobilinogen in urine and stool, NO bilirubinuria (UCB is albumin-bound).
+        LFTs normal. Causes: hemolytic anemias, ineffective erythropoiesis.
+        Hepatic (hepatocellular): ↑BOTH UCB and CB, ↑AST/ALT (hepatocyte damage), ↓albumin, ↑PT.
+        ↑urine bilirubin (CB leaks), variable urobilinogen. Causes: viral hepatitis, cirrhosis, drug-induced.
+        Post-hepatic (obstructive/cholestatic): ↑CB predominantly, ↑ALP and GGT (cholestatic enzymes),
+        ↑urine bilirubin (dark urine — "cola-colored"), ↓stool urobilinogen (clay/pale stools), ↑conjugated bilirubin.
+        Causes: gallstones, pancreatic head tumor, cholangiocarcinoma.
+        📚 Guyton & Hall, 14th Ed, Ch.70 (p.906-910)
+
+    - id: bile-enterohepatic
+      title: "Bile Salts & Enterohepatic Circulation"
+      text: >
+        Primary bile acids: cholic acid, chenodeoxycholic acid (synthesized from cholesterol by 7α-hydroxylase — rate-limiting).
+        Secondary bile acids: deoxycholic acid, lithocholic acid (bacterial modification in colon).
+        Bile salts conjugated with glycine/taurine → more water-soluble, better emulsifiers.
+        Critical micellar concentration: bile salts form micelles above this concentration → fat emulsification and absorption.
+        Enterohepatic circulation: bile salts reabsorbed in terminal ileum (ASBT transporter) → portal vein → liver → re-secreted.
+        95% of bile salts recycled, 5% lost in feces. Pool circulates 6-8x/day.
+        Terminal ileum resection/Crohn's → bile salt malabsorption → fat malabsorption + gallstones (↓bile salt pool).
+        📚 Ganong's, 26th Ed, Ch.28
+
+    - id: hereditary-jaundice
+      title: "Hereditary Hyperbilirubinemias"
+      text: >
+        Gilbert syndrome: ↓UGT1A1 activity (mild) → mild unconjugated hyperbilirubinemia.
+        Triggered by fasting, stress, illness. Benign, most common hereditary jaundice (5-10% population).
+        Crigler-Najjar Type I: absent UGT1A1 → severe UCB → kernicterus → death without liver transplant.
+        Crigler-Najjar Type II: reduced UGT1A1 → moderate UCB → responds to phenobarbital (induces UGT).
+        Dubin-Johnson: defective MRP2 (canalicular CB excretion) → conjugated hyperbilirubinemia.
+        Black liver (melanin-like pigment). Coproporphyrin III in urine.
+        Rotor syndrome: similar to Dubin-Johnson but liver is NOT pigmented. Defective hepatic storage.
+        📚 Guyton & Hall, 14th Ed, Ch.70
+
+  clinical:
+    - title: "Clinical Correlation: Neonatal Jaundice"
+      text: >
+        Physiologic: immature UGT1A1 + ↑RBC turnover → UCB peaks day 3-5, resolves by week 2.
+        Pathologic: appears <24 hours (hemolytic — ABO/Rh incompatibility), UCB >15 mg/dL.
+        Kernicterus: UCB crosses BBB (lipid-soluble) → deposits in basal ganglia, hippocampus → brain damage.
+        Treatment: phototherapy (converts UCB to water-soluble lumirubin), exchange transfusion.
+    - title: "Clinical Correlation: LFT Interpretation"
+      text: >
+        Hepatocellular pattern: ↑AST/ALT >> ↑ALP. AST>ALT 2:1 suggests alcoholic liver disease.
+        Cholestatic pattern: ↑ALP >> ↑AST/ALT, ↑GGT, ↑direct bilirubin.
+        Synthetic function: albumin (half-life 20 days — late marker), PT/INR (factor VII half-life 6 hours — early marker).
+
+  high_yield_points:
+    - "UCB is lipid-soluble, albumin-bound → NO bilirubinuria; CB is water-soluble → bilirubinuria"
+    - "UGT1A1 conjugates bilirubin; deficiency: Gilbert (mild), Crigler-Najjar I (absent), II (reduced)"
+    - "Pre-hepatic: ↑UCB, ↑urobilinogen, no bilirubinuria; Post-hepatic: ↑CB, ↓urobilinogen, dark urine, pale stools"
+    - "Liver synthesizes ALL clotting factors EXCEPT Factor VIII (endothelium)"
+    - "7α-hydroxylase = rate-limiting enzyme of bile acid synthesis from cholesterol"
+    - "Enterohepatic circulation: 95% bile salt recycled via terminal ileum ASBT transporter"
+    - "Dubin-Johnson = ↑CB + black liver; Rotor = ↑CB + normal liver"
+    - "Kernicterus: UCB crosses BBB → basal ganglia damage in neonates"
+    - "PT/INR = early marker of liver failure (factor VII t½ = 6h); Albumin = late marker (t½ = 20 days)"
+    - "Phase I (CYP450): oxidation, reduction; Phase II: conjugation (glucuronidation, sulfation)"
+
+mcqs:
+  - question: "A patient with obstructive jaundice due to pancreatic head tumor will have:"
+    options:
+      - "Increased unconjugated bilirubin, increased urine urobilinogen"
+      - "Increased conjugated bilirubin, dark urine, pale stools"
+      - "Normal bilirubin, increased AST/ALT"
+      - "Increased unconjugated bilirubin, absent bilirubinuria"
+    answer: "Increased conjugated bilirubin, dark urine, pale stools"
+    explanation: >
+      Obstruction prevents CB from reaching intestine → CB regurgitates into blood → bilirubinuria (dark urine).
+      No CB in intestine → no urobilinogen → pale/clay-colored stools. ALP and GGT are elevated (cholestatic pattern).
+      📚 Guyton & Hall, 14th Ed, Ch.70 (p.909)
+    difficulty: 1
+
+  - question: "Gilbert syndrome is caused by deficiency of:"
+    options:
+      - "Heme oxygenase"
+      - "UDP-glucuronosyltransferase (UGT1A1)"
+      - "MRP2 canalicular transporter"
+      - "Ligandin (Y protein)"
+    answer: "UDP-glucuronosyltransferase (UGT1A1)"
+    explanation: >
+      Gilbert syndrome results from reduced (not absent) UGT1A1 activity → mild unconjugated hyperbilirubinemia,
+      especially triggered by fasting or stress. Benign condition affecting 5-10% of the population.
+      Absent UGT1A1 = Crigler-Najjar Type I (severe). MRP2 defect = Dubin-Johnson (conjugated).
+      📚 Ganong's, 26th Ed, Ch.28
+    difficulty: 1
+
+  - question: "Which clotting factor is NOT synthesized by the liver?"
+    options:
+      - "Factor II (prothrombin)"
+      - "Factor VII"
+      - "Factor VIII"
+      - "Factor IX"
+    answer: "Factor VIII"
+    explanation: >
+      Factor VIII is primarily synthesized by vascular endothelial cells and sinusoidal cells, not hepatocytes.
+      All other clotting factors (I, II, V, VII, IX, X, XI, XII, XIII) are synthesized by the liver.
+      This is why Factor VIII levels may be normal or elevated in liver failure.
+      📚 Guyton & Hall, 14th Ed, Ch.70
+    difficulty: 1
+
+  - question: "The rate-limiting enzyme in bile acid synthesis from cholesterol is:"
+    options:
+      - "HMG-CoA reductase"
+      - "7α-hydroxylase"
+      - "Cholesterol esterase"
+      - "Lecithin-cholesterol acyltransferase"
+    answer: "7α-hydroxylase"
+    explanation: >
+      7α-hydroxylase (CYP7A1) catalyzes the first and rate-limiting step in bile acid synthesis.
+      It converts cholesterol to 7α-hydroxycholesterol. HMG-CoA reductase is rate-limiting for
+      cholesterol synthesis (target of statins), not bile acid synthesis.
+      📚 Ganong's, 26th Ed, Ch.28
+    difficulty: 2
+
+  - question: "In pre-hepatic (hemolytic) jaundice, which of the following is TRUE?"
+    options:
+      - "Urine bilirubin is positive"
+      - "Stool color is pale"
+      - "Urine urobilinogen is increased"
+      - "Conjugated bilirubin is predominantly elevated"
+    answer: "Urine urobilinogen is increased"
+    explanation: >
+      In hemolytic jaundice: ↑RBC breakdown → ↑UCB → liver conjugates more → ↑CB in bile → ↑urobilinogen in gut.
+      More urobilinogen reabsorbed → ↑urine urobilinogen. No bilirubinuria (UCB is albumin-bound, not filtered).
+      Stools are dark (excess stercobilin). CB is not predominantly elevated.
+      📚 Guyton & Hall, 14th Ed, Ch.70
+    difficulty: 2

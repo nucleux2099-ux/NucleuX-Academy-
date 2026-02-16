@@ -1,0 +1,172 @@
+topic_id: immunology-basics
+name: "Immunology Basics (Innate vs Adaptive, Complement)"
+description: >
+  Fundamentals of innate and adaptive immunity, complement pathways, and immunoglobulin classes.
+high_yield: true
+nmc_codes:
+  - code: MI7.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  The immune system has two arms: innate (non-specific, immediate, no memory) and adaptive (specific,
+  delayed, immunological memory). Innate includes physical barriers, phagocytes (neutrophils, macrophages),
+  NK cells, complement, and pattern recognition receptors (TLRs). Adaptive involves T cells (cell-mediated)
+  and B cells (humoral/antibody-mediated). The complement system (3 pathways converging on C3) enhances
+  opsonization, inflammation, and membrane attack complex (MAC) formation.
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.8; 📚 Ananthanarayan, 11th Ed, Ch.10-15
+
+learning_objectives:
+  - Compare innate and adaptive immunity
+  - Describe the cells and molecules of innate immunity (TLRs, phagocytes, NK cells)
+  - Differentiate T cell subsets (CD4 Th1/Th2/Th17, CD8 cytotoxic, Treg) and their functions
+  - List immunoglobulin classes (IgG, IgA, IgM, IgE, IgD) and their properties
+  - Explain the three complement pathways and their clinical significance
+
+content:
+  atoms:
+    - id: innate-immunity
+      title: "Innate Immunity"
+      text: >
+        First line of defense, no memory, no specificity. Components:
+        Physical barriers: skin, mucosa, cilia, gastric acid, lysozyme.
+        Cellular: neutrophils (most abundant WBC, first responder), macrophages (APC, phagocytosis),
+        NK cells (kill virus-infected/tumor cells via perforin/granzymes, MHC-I independent — "missing self").
+        Dendritic cells: professional APCs, bridge innate and adaptive.
+        Pattern recognition receptors: TLRs (TLR4 = LPS, TLR3 = dsRNA, TLR9 = CpG DNA).
+        Acute phase reactants: CRP, ferritin, fibrinogen (↑ in inflammation).
+        Complement system. Interferons (IFN-α, IFN-β: antiviral; IFN-γ: activates macrophages).
+        📚 Ananthanarayan, 11th Ed, Ch.10
+
+    - id: adaptive-immunity
+      title: "Adaptive Immunity"
+      text: >
+        Specific, slow onset (days), immunological MEMORY. Two arms:
+        Humoral (B cells → plasma cells → antibodies): extracellular pathogens, toxins.
+        Cell-mediated (T cells): intracellular pathogens, transplant rejection, tumor surveillance.
+        CD4+ T helper cells: Th1 (IFN-γ → activate macrophages, intracellular pathogens),
+        Th2 (IL-4, IL-5, IL-13 → B cell help, eosinophil activation, allergic/parasitic response),
+        Th17 (IL-17 → neutrophil recruitment, mucosal defense, autoimmunity).
+        CD8+ cytotoxic T cells: kill virus-infected cells via MHC-I recognition, perforin/granzymes.
+        Treg cells (CD4+CD25+FoxP3+): suppress immune response, prevent autoimmunity.
+        MHC-I (all nucleated cells, presents to CD8), MHC-II (APCs only, presents to CD4).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.8
+
+    - id: immunoglobulins
+      title: "Immunoglobulins"
+      text: >
+        IgG: most abundant serum Ig, crosses placenta (neonatal passive immunity), secondary response,
+        opsonization, complement activation (classical). 4 subclasses.
+        IgA: mucosal immunity (secretory IgA = dimer), breast milk, saliva, tears. Does NOT fix complement.
+        IgM: largest Ig (pentamer), first antibody produced (primary response), best complement activator,
+        isohemagglutinins (anti-A, anti-B). Does not cross placenta.
+        IgE: allergic reactions (Type I hypersensitivity), parasitic defense. Binds mast cells/basophils via FcεRI.
+        Lowest serum concentration.
+        IgD: B cell surface receptor, function largely unknown.
+        📚 Ananthanarayan, 11th Ed, Ch.13
+
+    - id: complement-system
+      title: "Complement System"
+      text: >
+        Three activation pathways converging on C3 convertase:
+        Classical: Ag-Ab complex (IgG/IgM) → C1qrs → C4b2a (C3 convertase).
+        Alternative: microbial surfaces → C3b + Factor B + Factor D → C3bBb.
+        Lectin (MBL): mannose-binding lectin binds bacterial mannose → activates C4, C2 (like classical).
+        All → C3 → C3a (anaphylatoxin) + C3b (opsonization) → C5 convertase → C5a (most potent chemotaxis/anaphylatoxin)
+        + C5b → C5b-C9 = MAC (membrane attack complex, lysis).
+        C3b = opsonization (most important); C3a, C5a = anaphylatoxins (mast cell degranulation);
+        C5a = chemotaxis. Deficiency: C3 = severe recurrent infections; C5-C9 (MAC) = recurrent Neisseria infections;
+        C1 esterase inhibitor = hereditary angioedema.
+        DAF (CD55) and CD59 deficiency = paroxysmal nocturnal hemoglobinuria (PNH).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.8
+
+  clinical:
+    - title: "Clinical Correlation: Hereditary Angioedema"
+      text: >
+        C1 esterase inhibitor deficiency → uncontrolled complement activation → recurrent episodes of
+        non-pitting, non-pruritic edema (face, larynx, intestines). NOT responsive to epinephrine/antihistamines.
+        Treatment: C1-INH concentrate, icatibant (bradykinin B2 antagonist).
+    - title: "Clinical Correlation: Recurrent Neisseria Infections"
+      text: >
+        Terminal complement (C5-C9/MAC) deficiency → cannot form MAC → cannot lyse Neisseria
+        (which has an outer membrane requiring MAC for killing). Recurrent meningococcal/gonococcal infections.
+
+high_yield_points:
+  - "Innate = immediate, no memory; Adaptive = specific, memory, delayed"
+  - "NK cells kill via 'missing self' (absent MHC-I) — perforin/granzymes"
+  - "MHC-I: all nucleated cells → CD8; MHC-II: APCs only → CD4"
+  - "IgG: crosses placenta, most abundant; IgM: first produced, pentamer, best complement"
+  - "IgA: mucosal immunity (secretory); IgE: allergy, parasites, mast cell binding"
+  - "C3b = opsonization; C5a = chemotaxis + anaphylatoxin (most potent)"
+  - "MAC (C5b-C9) deficiency → recurrent Neisseria infections"
+  - "C1-INH deficiency → hereditary angioedema"
+  - "DAF/CD59 deficiency → PNH (complement-mediated RBC lysis)"
+  - "TLR4 recognizes LPS (Gram-negative endotoxin)"
+
+mcqs:
+  - question: "Which immunoglobulin crosses the placenta and provides passive immunity to the neonate?"
+    options:
+      - "IgA"
+      - "IgM"
+      - "IgG"
+      - "IgE"
+    answer: "IgG"
+    explanation: >
+      IgG is the only immunoglobulin that crosses the placenta (via FcRn receptor on trophoblasts),
+      providing passive immunity to the fetus/neonate for the first 6 months of life.
+      📚 Ananthanarayan, 11th Ed, Ch.13
+    difficulty: 1
+
+  - question: "Recurrent Neisseria meningitidis infections suggest deficiency of which complement components?"
+    options:
+      - "C1, C4"
+      - "C3"
+      - "C5-C9 (MAC)"
+      - "Factor B"
+    answer: "C5-C9 (MAC)"
+    explanation: >
+      Terminal complement (C5-C9) forms the membrane attack complex. Neisseria species have an outer
+      membrane that requires MAC for lysis. Deficiency → recurrent meningococcal and gonococcal infections.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.8
+    difficulty: 2
+
+  - question: "Which cell presents antigens via MHC-II to CD4+ T helper cells?"
+    options:
+      - "All nucleated cells"
+      - "Red blood cells"
+      - "Antigen-presenting cells (dendritic cells, macrophages, B cells)"
+      - "NK cells"
+    answer: "Antigen-presenting cells (dendritic cells, macrophages, B cells)"
+    explanation: >
+      MHC-II is expressed only on professional APCs (dendritic cells, macrophages, B cells).
+      They present extracellular antigens to CD4+ T cells. MHC-I (all nucleated cells) presents to CD8+ T cells.
+      📚 Ananthanarayan, 11th Ed, Ch.12
+    difficulty: 1
+
+  - question: "The most potent anaphylatoxin and chemotactic factor in the complement system is:"
+    options:
+      - "C3a"
+      - "C3b"
+      - "C4a"
+      - "C5a"
+    answer: "C5a"
+    explanation: >
+      C5a is the most potent anaphylatoxin (mast cell degranulation → histamine release) and
+      strongest chemotactic factor for neutrophils. C3a is a weaker anaphylatoxin. C3b = opsonization.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.8
+    difficulty: 1
+
+  - question: "Th1 cells primarily secrete which cytokine to activate macrophages?"
+    options:
+      - "IL-4"
+      - "IL-5"
+      - "IFN-γ"
+      - "IL-10"
+    answer: "IFN-γ"
+    explanation: >
+      Th1 cells produce IFN-γ, which is the most potent activator of macrophages (enhances
+      intracellular killing of engulfed pathogens). Th2 cells produce IL-4 (B cell activation),
+      IL-5 (eosinophils). IL-10 is anti-inflammatory (Treg/Th2).
+      📚 Ananthanarayan, 11th Ed, Ch.12
+    difficulty: 1

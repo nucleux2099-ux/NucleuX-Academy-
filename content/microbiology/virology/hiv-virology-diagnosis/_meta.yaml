@@ -1,0 +1,151 @@
+topic_id: hiv-virology-diagnosis
+name: "HIV Virology & Diagnosis"
+description: >
+  HIV structure, replication cycle, pathogenesis of AIDS, diagnostic algorithms, and antiretroviral therapy.
+high_yield: true
+nmc_codes:
+  - code: MI4.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  HIV is a lentivirus (Retroviridae) with two types: HIV-1 (pandemic) and HIV-2 (West Africa, milder).
+  Enveloped RNA virus with reverse transcriptase. Targets CD4+ T cells via gp120/gp41 binding.
+  Progressive CD4 depletion → AIDS (CD4 <200/μL or AIDS-defining illness). Diagnosis: ELISA screening →
+  Western blot/4th gen confirmatory. ART has transformed HIV into a chronic manageable disease.
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.44; 📚 Ananthanarayan, 11th Ed, Ch.62
+
+learning_objectives:
+  - Describe HIV structure (gp120, gp41, p24, reverse transcriptase, integrase, protease)
+  - Explain the HIV replication cycle and CD4+ T cell tropism
+  - Describe the natural history of HIV infection (acute → latent → AIDS)
+  - Outline the diagnostic algorithm (ELISA, Western blot, p24 antigen, viral load)
+  - List major classes of antiretroviral drugs and their targets
+
+content:
+  atoms:
+    - id: hiv-structure
+      title: "HIV Structure & Replication"
+      text: >
+        Enveloped, diploid (+)ssRNA virus. Key proteins: gp120 (binds CD4), gp41 (fusion),
+        p24 (capsid, earliest serologic marker), p17 (matrix). Enzymes: reverse transcriptase (RT),
+        integrase, protease. Genes: gag (structural), pol (enzymes), env (envelope gp120/gp41).
+        Replication: gp120 binds CD4 + coreceptor (CCR5 for macrophage-tropic/R5, CXCR4 for T-cell-tropic/X4)
+        → gp41-mediated fusion → RT converts RNA→DNA → integrase inserts into host genome (provirus)
+        → transcription by host RNA pol II → translation → protease cleaves polyproteins → assembly → budding.
+        CCR5-Δ32 homozygotes are resistant to HIV infection (Berlin patient cured with CCR5-Δ32 stem cell transplant).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.44
+
+    - id: natural-history
+      title: "Natural History of HIV Infection"
+      text: >
+        Acute retroviral syndrome (2-4 weeks): flu-like, maculopapular rash, high viremia, ↓CD4 transiently.
+        Window period: antibodies not yet detectable (ELISA may be negative; p24 antigen/RNA PCR positive).
+        Clinical latency (asymptomatic, 8-10 years): stable CD4, low-level viral replication.
+        AIDS: CD4 <200/μL or AIDS-defining illness (PCP, Kaposi sarcoma, CMV retinitis, Cryptococcal meningitis,
+        Toxoplasma encephalitis, MAC, esophageal candidiasis, progressive multifocal leukoencephalopathy).
+        CD4 count predicts opportunistic infections: <200 → PCP, <100 → Toxoplasma/Crypto, <50 → MAC/CMV.
+        📚 Ananthanarayan, 11th Ed, Ch.62
+
+    - id: diagnosis-treatment
+      title: "Diagnosis & Antiretroviral Therapy"
+      text: >
+        Screening: ELISA/EIA (detects anti-HIV antibodies; 4th gen also detects p24 antigen).
+        Confirmatory: Western blot (bands for gp120, gp41, p24). Now replaced by 4th gen combo assays in many settings.
+        Window period detection: p24 antigen or HIV RNA PCR (viral load).
+        Viral load (RNA PCR): monitors treatment response. CD4 count: monitors immune status.
+        ART classes: NRTIs (zidovudine, tenofovir, lamivudine — nucleoside analogs, inhibit RT),
+        NNRTIs (efavirenz, nevirapine — bind RT allosteric site), PIs (lopinavir, atazanavir — inhibit protease),
+        INSTIs (dolutegravir, raltegravir — inhibit integrase, preferred first-line),
+        Entry inhibitors (maraviroc — CCR5 antagonist; enfuvirtide — fusion inhibitor).
+        Standard: 2 NRTIs + 1 INSTI (e.g., TLD: tenofovir + lamivudine + dolutegravir).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.44
+
+  clinical:
+    - title: "Clinical Correlation: Post-Exposure Prophylaxis (PEP)"
+      text: >
+        Start within 72 hours of exposure. 28-day course of 3-drug ART (TDF/FTC + dolutegravir).
+        For needlestick injuries, sexual assault, or high-risk sexual exposure.
+    - title: "Clinical Correlation: PMTCT"
+      text: >
+        Prevention of mother-to-child transmission: ART during pregnancy (TLD regimen), elective C-section
+        if viral load >1000, avoid breastfeeding (in resource-rich settings), nevirapine syrup to neonate.
+
+high_yield_points:
+  - "gp120 binds CD4; gp41 mediates fusion; p24 = earliest serologic marker"
+  - "CCR5 = coreceptor for macrophage-tropic HIV; CXCR4 = T-cell-tropic"
+  - "CCR5-Δ32 homozygotes are resistant to HIV infection"
+  - "Window period: antibodies negative, but p24/viral load positive"
+  - "CD4 <200 → PCP; <100 → Toxoplasma, Crypto; <50 → MAC, CMV"
+  - "4th gen ELISA detects both antibodies AND p24 antigen (shortens window period)"
+  - "Preferred first-line ART: 2 NRTIs + 1 INSTI (TLD regimen)"
+  - "Reverse transcriptase lacks proofreading → high mutation rate → drug resistance"
+  - "Western blot: gp120, gp41, p24 bands confirm HIV"
+
+mcqs:
+  - question: "HIV enters CD4+ T cells by binding gp120 to CD4 and which coreceptor on macrophage-tropic strains?"
+    options:
+      - "CXCR4"
+      - "CCR5"
+      - "CCR7"
+      - "CXCR5"
+    answer: "CCR5"
+    explanation: >
+      Macrophage-tropic (R5) HIV strains use CCR5 as coreceptor. T-cell-tropic (X4) strains use CXCR4.
+      CCR5-Δ32 mutation confers resistance to R5 strains of HIV.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.44
+    difficulty: 1
+
+  - question: "The earliest detectable marker of HIV infection during the window period is:"
+    options:
+      - "Anti-gp120 antibodies"
+      - "Anti-gp41 antibodies"
+      - "p24 antigen"
+      - "Anti-p24 antibodies"
+    answer: "p24 antigen"
+    explanation: >
+      p24 (capsid protein) antigen appears in blood before antibodies develop (window period).
+      4th generation ELISA detects both p24 antigen and antibodies, shortening the diagnostic window.
+      📚 Ananthanarayan, 11th Ed, Ch.62
+    difficulty: 1
+
+  - question: "An HIV patient with CD4 count of 80/μL presents with ring-enhancing brain lesions. The most likely diagnosis is:"
+    options:
+      - "PCP pneumonia"
+      - "Toxoplasma encephalitis"
+      - "Cryptococcal meningitis"
+      - "CMV retinitis"
+    answer: "Toxoplasma encephalitis"
+    explanation: >
+      Ring-enhancing lesions in brain + CD4 <100 = Toxoplasma encephalitis (most common cause of
+      focal brain lesions in AIDS). Treatment: pyrimethamine + sulfadiazine + leucovorin.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.44
+    difficulty: 2
+
+  - question: "Which class of antiretroviral drugs inhibits HIV integrase?"
+    options:
+      - "NRTIs"
+      - "NNRTIs"
+      - "Protease inhibitors"
+      - "INSTIs"
+    answer: "INSTIs"
+    explanation: >
+      Integrase strand transfer inhibitors (INSTIs): dolutegravir, raltegravir, elvitegravir.
+      They block integration of viral DNA into the host genome. Preferred first-line class due to
+      high efficacy, high barrier to resistance, and good tolerability.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.44
+    difficulty: 1
+
+  - question: "Post-exposure prophylaxis (PEP) for HIV should be started within:"
+    options:
+      - "24 hours"
+      - "48 hours"
+      - "72 hours"
+      - "1 week"
+    answer: "72 hours"
+    explanation: >
+      PEP must be initiated within 72 hours of exposure for efficacy. The 28-day regimen
+      typically uses 3-drug ART (e.g., TDF/FTC + dolutegravir). Earlier initiation = better efficacy.
+      📚 Ananthanarayan, 11th Ed, Ch.62
+    difficulty: 1

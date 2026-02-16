@@ -1,0 +1,165 @@
+topic_id: spinal-cord-tracts
+name: Spinal Cord Cross-Section & Tracts
+description: Spinal Cord — Cross-sectional anatomy, ascending and descending tracts, and clinical syndromes
+high_yield: true
+nmc_codes:
+- code: AN57.2
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The spinal cord extends from the foramen magnum to L1-L2 (conus medullaris). It has cervical and lumbar
+  enlargements. Cross-section shows central H-shaped gray matter (anterior horn — motor, posterior horn — sensory,
+  lateral horn — sympathetic T1-L2) surrounded by white matter containing ascending (sensory) and descending (motor) tracts.
+  📚 Gray's Anatomy, 42nd Ed, Ch.43; 📚 BD Chaurasia, Vol.3, Ch.12
+
+learning_objectives:
+  - Describe the cross-sectional anatomy of the spinal cord
+  - List the major ascending tracts and their functions
+  - List the major descending tracts and their functions
+  - Correlate spinal cord lesion patterns with clinical syndromes
+  - Explain the anatomical basis of syringomyelia, Brown-Séquard, and other cord syndromes
+
+content:
+  atoms:
+    - id: cross-section
+      title: "Spinal Cord Cross-Section"
+      text: >
+        Gray matter: anterior (ventral) horn — alpha motor neurons (LMN); posterior (dorsal) horn — sensory neurons;
+        lateral horn — intermediolateral cell column (sympathetic preganglionic neurons, T1-L2 only;
+        parasympathetic S2-S4). Central canal surrounded by gray commissure.
+        White matter: posterior (dorsal) columns — fine touch, proprioception, vibration. Lateral columns — lateral
+        corticospinal tract, lateral spinothalamic tract. Anterior columns — anterior corticospinal tract,
+        anterior spinothalamic tract. Lamination: in lateral corticospinal tract, cervical fibers medial,
+        sacral fibers lateral (somatotopic organization).
+        📚 BD Chaurasia, Vol.3, Ch.12 (p.180-190)
+
+    - id: ascending-tracts
+      title: "Major Ascending (Sensory) Tracts"
+      text: >
+        Dorsal columns (fasciculus gracilis + fasciculus cuneatus): fine touch, proprioception, vibration, 2-point
+        discrimination. 1st order neuron: DRG → ipsilateral dorsal column. Decussates in medulla (internal arcuate fibers).
+        Fasciculus gracilis (medial) = lower limb (below T6). Fasciculus cuneatus (lateral) = upper limb (above T6).
+        Lateral spinothalamic tract: pain and temperature. 1st order → DRG → posterior horn → crosses in anterior
+        white commissure (1-2 segments above) → ascends contralateral lateral column → thalamus.
+        Anterior spinothalamic tract: crude touch, pressure. Same pathway but in anterior column.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.3
+
+    - id: descending-tracts
+      title: "Major Descending (Motor) Tracts"
+      text: >
+        Lateral corticospinal tract (pyramidal): 90% of corticospinal fibers decussate at pyramidal decussation
+        (medulla). Descend in lateral column → synapse with alpha motor neurons in anterior horn. Controls
+        voluntary fine movements of limbs. Anterior corticospinal tract: 10% uncrossed fibers, cross at
+        segmental level via anterior white commissure. Rubrospinal: facilitates flexor tone (upper limb).
+        Reticulospinal: posture and tone. Vestibulospinal: balance, extensor tone.
+        UMN signs: spasticity, hyperreflexia, Babinski +, clonus. LMN signs: flaccidity, areflexia, atrophy, fasciculations.
+        📚 Gray's Anatomy, 42nd Ed
+
+    - id: cord-syndromes
+      title: "Spinal Cord Syndromes"
+      text: >
+        Brown-Séquard (hemisection): ipsilateral UMN paralysis + loss of proprioception/vibration (dorsal column);
+        contralateral loss of pain/temperature (spinothalamic crosses).
+        Syringomyelia: central cord cavitation, typically cervical. Destroys anterior white commissure → bilateral
+        loss of pain/temperature in a "cape-like" distribution (upper limbs/shoulders). Proprioception preserved.
+        May damage anterior horn → LMN signs in hands. Associated with Chiari malformation.
+        Anterior cord syndrome: loss of motor function + pain/temperature below lesion. Proprioception PRESERVED
+        (dorsal columns spared). Central cord syndrome: upper limbs affected more than lower (sacral sparing).
+        Subacute combined degeneration (B12 deficiency): dorsal columns + lateral corticospinal tracts.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.3
+
+  clinical:
+    - title: "Clinical: Syringomyelia"
+      text: >
+        Cavitation (syrinx) in central spinal cord, typically cervicothoracic. First damages the anterior white
+        commissure → bilateral suspended loss of pain and temperature (cape distribution) with PRESERVED touch and
+        proprioception (dissociated sensory loss). Extension damages anterior horns → LMN signs in upper limbs
+        (wasting of small hand muscles). Charcot joints may develop. Most associated with Chiari I malformation.
+    - title: "Clinical: Brown-Séquard Syndrome"
+      text: >
+        Hemisection of cord (stab wound, tumor). Below the lesion: ipsilateral UMN paralysis (corticospinal),
+        ipsilateral loss of proprioception/vibration (dorsal columns), contralateral loss of pain/temperature
+        (spinothalamic — crosses 1-2 levels above). Has the BEST prognosis of incomplete cord syndromes.
+
+high_yield_points:
+  - "Dorsal columns: fine touch, proprioception, vibration — decussate in medulla"
+  - "Spinothalamic tract: pain, temperature — crosses at spinal cord level (anterior white commissure)"
+  - "Lateral corticospinal tract: 90% fibers cross at pyramidal decussation in medulla"
+  - "Syringomyelia: bilateral loss of pain/temp (cape distribution) with preserved proprioception"
+  - "Brown-Séquard: ipsilateral motor + proprioception loss; contralateral pain/temp loss"
+  - "Conus medullaris at L1-L2 — lumbar puncture below L3-L4"
+  - "Fasciculus gracilis (medial) = lower limb; Cuneatus (lateral) = upper limb"
+  - "Lateral horn (sympathetic) present only at T1-L2"
+  - "Anterior cord syndrome: motor + pain/temp lost, proprioception spared"
+  - "Subacute combined degeneration (B12): dorsal columns + corticospinal tracts"
+
+mcqs:
+  - question: "A patient presents with bilateral loss of pain and temperature sensation in the upper limbs (cape-like distribution) with preserved proprioception. The most likely diagnosis is:"
+    options:
+      - "Brown-Séquard syndrome"
+      - "Syringomyelia"
+      - "Posterior cord syndrome"
+      - "Anterior cord syndrome"
+    answer: "Syringomyelia"
+    explanation: >
+      Syringomyelia causes a central cord cavitation that first damages the anterior white commissure (where
+      spinothalamic fibers cross), resulting in bilateral suspended loss of pain/temperature. Dorsal columns
+      (proprioception) are preserved. Cape-like distribution is classic.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "In Brown-Séquard syndrome, the loss of pain and temperature is:"
+    options:
+      - "Ipsilateral to the lesion"
+      - "Contralateral to the lesion"
+      - "Bilateral"
+      - "Not affected"
+    answer: "Contralateral to the lesion"
+    explanation: >
+      The spinothalamic tract crosses in the anterior white commissure 1-2 segments above entry, then ascends
+      contralaterally. In cord hemisection, spinothalamic damage causes contralateral pain/temperature loss.
+      Motor and proprioception loss are ipsilateral (corticospinal and dorsal columns are uncrossed at spinal level).
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "The dorsal columns carry all of the following EXCEPT:"
+    options:
+      - "Fine touch"
+      - "Proprioception"
+      - "Pain"
+      - "Vibration"
+    answer: "Pain"
+    explanation: >
+      Dorsal columns (fasciculus gracilis and cuneatus) carry fine touch, proprioception, vibration, and 2-point
+      discrimination. Pain and temperature travel via the lateral spinothalamic tract.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "At which level does the spinal cord terminate in adults?"
+    options:
+      - "T12"
+      - "L1-L2"
+      - "L3-L4"
+      - "S1-S2"
+    answer: "L1-L2"
+    explanation: >
+      The conus medullaris (terminal end of the spinal cord) is at L1-L2 in adults (L3 in newborns).
+      Below this is the cauda equina (nerve roots). Lumbar puncture is performed at L3-L4 or L4-L5 to avoid cord injury.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "Subacute combined degeneration of the spinal cord (vitamin B12 deficiency) affects which tracts?"
+    options:
+      - "Spinothalamic + anterior corticospinal"
+      - "Dorsal columns + lateral corticospinal"
+      - "Dorsal columns + spinothalamic"
+      - "Lateral corticospinal + rubrospinal"
+    answer: "Dorsal columns + lateral corticospinal"
+    explanation: >
+      B12 deficiency causes demyelination of dorsal columns (loss of proprioception, vibration — sensory ataxia)
+      and lateral corticospinal tracts (UMN signs — spasticity, Babinski). Combined = both sensory and motor
+      tracts. Spinothalamic tracts are typically spared.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2

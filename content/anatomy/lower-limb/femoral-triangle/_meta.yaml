@@ -1,29 +1,158 @@
-topic_id: femoral-triangle
-name: Femoral Triangle
-description: Femoral Triangle — NMC curriculum topic
+topic_id: femoral-triangle-canal
+name: Femoral Triangle & Canal
+description: Femoral Triangle & Canal — Boundaries, contents, femoral sheath, and femoral hernia anatomy
 high_yield: true
 nmc_codes:
-- code: AN15.3
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: AN15.4
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: AN20.8
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: AN20.9
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: AN32.1
+- code: AN15.1
   domain: KH
   core: true
   phase: Phase 1
-- code: AN47.7
-  domain: KH
-  core: false
-  phase: Phase 1
+
+overview: >
+  The femoral triangle is a depressed area on the anterior aspect of the upper thigh, containing the femoral nerve,
+  artery, vein, and lymphatics. The femoral canal is the medial compartment of the femoral sheath, providing
+  the site of femoral hernia. Understanding this anatomy is crucial for femoral vessel access and hernia surgery.
+  📚 BD Chaurasia, Vol.2, Ch.2; 📚 Gray's Anatomy, 42nd Ed, Ch.79
+
+learning_objectives:
+  - Describe the boundaries and contents of the femoral triangle
+  - Explain the femoral sheath and its compartments
+  - Describe the femoral canal and its boundaries
+  - Differentiate femoral hernia from inguinal hernia
+  - Describe the clinical significance of the femoral triangle in vascular access
+
+content:
+  atoms:
+    - id: femoral-triangle
+      title: "Femoral Triangle — Boundaries and Contents"
+      text: >
+        Boundaries: superior — inguinal ligament; lateral — medial border of sartorius; medial — medial border
+        of adductor longus. Roof: fascia lata + cribriform fascia. Floor: iliopsoas (laterally), pectineus (medially),
+        adductor longus (medially). Contents (lateral to medial): femoral Nerve, femoral Artery, femoral Vein,
+        femoral Canal (lymphatics) — mnemonic: "NAVY" (Nerve, Artery, Vein, Y-fronts [underwear = lymphatics]).
+        Femoral nerve is OUTSIDE the femoral sheath. The apex of the femoral triangle leads into the adductor canal.
+        📚 BD Chaurasia, Vol.2, Ch.2 (p.28-34); 📚 Netter's Atlas, 6th Ed, Plate 489
+
+    - id: femoral-sheath
+      title: "Femoral Sheath & Canal"
+      text: >
+        Femoral sheath: funnel-shaped fascial tube from transversalis fascia (anterior) and iliac fascia (posterior).
+        Contains 3 compartments: lateral (femoral artery), intermediate (femoral vein), medial (femoral canal).
+        Femoral nerve lies OUTSIDE and lateral to the femoral sheath.
+        Femoral canal: ~1.3 cm long. Boundaries: anterior — inguinal ligament; posterior — pectineus + pectineal
+        ligament (Cooper's); medial — lacunar ligament (Gimbernat's); lateral — femoral vein.
+        Contains fat and lymph node of Cloquet (Rosenmüller). The femoral ring is the abdominal opening of the canal.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.2
+
+    - id: femoral-hernia
+      title: "Femoral Hernia"
+      text: >
+        Hernia through the femoral canal, below and lateral to the pubic tubercle (distinguishes from inguinal
+        hernia which is above and medial). More common in FEMALES (wider pelvis, larger femoral canal).
+        Most common cause of intestinal obstruction in elderly females. Highest risk of strangulation among
+        all hernias (rigid boundaries — inguinal ligament, lacunar ligament, pectineal ligament).
+        Lacunar ligament is the sharp medial boundary — most common site of constriction (can be cut to relieve
+        strangulation — beware of abnormal obturator artery).
+        📚 BD Chaurasia, Vol.2; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: saphenous-opening
+      title: "Saphenous Opening & Great Saphenous Vein"
+      text: >
+        Saphenous opening (fossa ovalis): opening in the fascia lata, 4 cm below and lateral to the pubic tubercle.
+        Great saphenous vein passes through it to drain into the femoral vein. Covered by cribriform fascia.
+        Great saphenous vein: longest vein in body, runs anterior to medial malleolus, ascends medial leg and thigh.
+        Receives 4 tributaries near saphenofemoral junction: superficial epigastric, superficial circumflex iliac,
+        superficial external pudendal, deep external pudendal.
+        📚 BD Chaurasia, Vol.2
+
+  clinical:
+    - title: "Clinical: Femoral Vessel Catheterization"
+      text: >
+        Femoral artery palpated at the mid-inguinal point (midway between ASIS and pubic symphysis). Femoral vein
+        is medial to the artery — site for central venous access. The mnemonic "VAN" (Vein, Artery, Nerve) medial
+        to lateral, or "NAVY" lateral to medial, guides needle placement.
+    - title: "Clinical: Femoral Hernia vs Inguinal Hernia"
+      text: >
+        Key distinction: femoral hernia emerges BELOW and LATERAL to the pubic tubercle; inguinal hernia emerges
+        ABOVE and MEDIAL to the pubic tubercle. Femoral hernia has the highest strangulation rate. More common in
+        females. Inguinal hernia more common in males.
+
+high_yield_points:
+  - "Femoral triangle: NAVY — Nerve, Artery, Vein, Y-fronts (lateral to medial)"
+  - "Femoral nerve lies OUTSIDE the femoral sheath"
+  - "Femoral canal boundaries: inguinal ligament, pectineal ligament, lacunar ligament, femoral vein"
+  - "Femoral hernia: below and lateral to pubic tubercle; more common in females"
+  - "Femoral hernia has HIGHEST strangulation rate of all hernias"
+  - "Lacunar ligament: sharp medial boundary — site of constriction in femoral hernia"
+  - "Mid-inguinal point (ASIS to pubic symphysis midpoint): femoral artery palpation"
+  - "Great saphenous vein: anterior to medial malleolus, drains into femoral vein at saphenous opening"
+  - "Node of Cloquet in the femoral canal"
+  - "Apex of femoral triangle leads into adductor canal (subsartorial canal)"
+
+mcqs:
+  - question: "A femoral hernia passes through the femoral canal, which lies:"
+    options:
+      - "Lateral to the femoral artery"
+      - "Between the femoral artery and vein"
+      - "Medial to the femoral vein"
+      - "Lateral to the femoral nerve"
+    answer: "Medial to the femoral vein"
+    explanation: >
+      The femoral canal is the most medial compartment of the femoral sheath, lying medial to the femoral vein.
+      From lateral to medial: nerve (outside sheath), artery, vein, canal (NAVY).
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "Femoral hernia is more common in females because of:"
+    options:
+      - "Weaker abdominal muscles"
+      - "Wider pelvis and larger femoral canal"
+      - "More pregnancies"
+      - "Longer inguinal canal"
+    answer: "Wider pelvis and larger femoral canal"
+    explanation: >
+      The female pelvis is wider, resulting in a larger femoral canal. This anatomical predisposition makes femoral
+      hernias more common in females (though inguinal hernias are still more common overall even in females).
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The structure that lies immediately lateral to the femoral canal is the:"
+    options:
+      - "Femoral artery"
+      - "Femoral nerve"
+      - "Femoral vein"
+      - "Lacunar ligament"
+    answer: "Femoral vein"
+    explanation: >
+      The femoral vein forms the lateral boundary of the femoral canal. The medial boundary is the lacunar ligament.
+      The femoral artery is further lateral, separated by the vein.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "The femoral artery is palpated at the mid-inguinal point, which is midway between:"
+    options:
+      - "ASIS and pubic tubercle"
+      - "ASIS and pubic symphysis"
+      - "Umbilicus and pubic symphysis"
+      - "Ischial tuberosity and pubic symphysis"
+    answer: "ASIS and pubic symphysis"
+    explanation: >
+      The mid-inguinal point (midway between ASIS and pubic symphysis) marks the femoral artery pulsation.
+      This is different from the midpoint of the inguinal ligament (ASIS to pubic tubercle) which marks the
+      deep inguinal ring.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 2
+
+  - question: "Which structure in the femoral hernia is most commonly responsible for constriction leading to strangulation?"
+    options:
+      - "Inguinal ligament"
+      - "Pectineal ligament"
+      - "Lacunar ligament"
+      - "Femoral vein"
+    answer: "Lacunar ligament"
+    explanation: >
+      The lacunar ligament (Gimbernat's ligament) forms the sharp, rigid medial boundary of the femoral ring.
+      Its cutting edge is the most common site of constriction in a strangulated femoral hernia. It may be
+      incised to release the hernia, taking care to avoid an abnormal obturator artery.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2

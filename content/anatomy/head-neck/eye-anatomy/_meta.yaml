@@ -1,0 +1,162 @@
+topic_id: eye-anatomy
+name: Eye Anatomy (Extraocular Muscles, Nerve Supply)
+description: Eye Anatomy — Extraocular muscles, nerve supply, visual pathway, and clinical correlations
+high_yield: true
+nmc_codes:
+- code: AN41.1
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The orbit contains the eyeball, 6 extraocular muscles, nerves, vessels, and fat. Extraocular muscles:
+  4 recti (superior, inferior, medial, lateral) and 2 obliques (superior, inferior). All supplied by CN III
+  except lateral rectus (CN VI) and superior oblique (CN IV) — mnemonic: "LR6 SO4, rest 3."
+  📚 Gray's Anatomy, 42nd Ed, Ch.38; 📚 BD Chaurasia, Vol.3, Ch.8; 📚 Netter's Atlas, 6th Ed, Plates 83-86
+
+learning_objectives:
+  - List the extraocular muscles with their actions and nerve supply
+  - Describe the layers of the eyeball
+  - Explain the visual pathway and visual field defects at different lesion sites
+  - Describe the pupillary light reflex pathway
+  - Identify clinical features of CN III, IV, and VI palsies
+
+content:
+  atoms:
+    - id: extraocular-muscles
+      title: "Extraocular Muscles"
+      text: >
+        Lateral rectus (LR): CN VI — abduction. Medial rectus (MR): CN III — adduction.
+        Superior rectus (SR): CN III — elevation (in abducted eye), intorsion, adduction.
+        Inferior rectus (IR): CN III — depression (in abducted eye), extorsion, adduction.
+        Superior oblique (SO): CN IV — depression in adducted eye (looking down stairs), intorsion, abduction.
+        Inferior oblique (IO): CN III — elevation in adducted eye, extorsion, abduction.
+        Testing: to isolate each muscle, move eye to position where it is the sole agonist.
+        SR tested by looking UP and OUT; IR looking DOWN and OUT; SO looking DOWN and IN; IO looking UP and IN.
+        📚 BD Chaurasia, Vol.3, Ch.8; 📚 Netter's Atlas, 6th Ed, Plate 84
+
+    - id: eyeball-layers
+      title: "Layers of the Eyeball"
+      text: >
+        Outer fibrous coat: sclera (posterior 5/6) + cornea (anterior 1/6, avascular, most powerful refractive surface).
+        Middle vascular coat (uveal tract): choroid (posterior, highly vascular), ciliary body (produces aqueous humor,
+        accommodation), iris (colored diaphragm, controls pupil size — sphincter pupillae = parasympathetic CN III,
+        dilator pupillae = sympathetic).
+        Inner nervous coat: retina — 10 layers. Macula lutea with fovea centralis (most acute vision, cones only,
+        avascular). Optic disc = blind spot (no photoreceptors, where optic nerve exits).
+        📚 Gray's Anatomy, 42nd Ed, Ch.38
+
+    - id: visual-pathway
+      title: "Visual Pathway & Field Defects"
+      text: >
+        Retina → optic nerve → optic chiasm (nasal fibers cross) → optic tract → lateral geniculate body (thalamus)
+        → optic radiation → visual cortex (calcarine sulcus, area 17).
+        Lesion sites: Optic nerve → ipsilateral blindness. Optic chiasm (central, e.g., pituitary tumor) →
+        bitemporal hemianopia. Optic tract → contralateral homonymous hemianopia. Temporal lobe (Meyer's loop) →
+        contralateral superior quadrantanopia ("pie in the sky"). Parietal lobe → contralateral inferior
+        quadrantanopia. Occipital cortex → contralateral homonymous hemianopia with macular sparing.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.3
+
+    - id: nerve-palsies
+      title: "CN III, IV, VI Palsies"
+      text: >
+        CN III palsy: ptosis (levator palpebrae), eye "down and out" (unopposed LR and SO), fixed dilated
+        pupil (parasympathetic loss). Causes: PComA aneurysm (pupil-involving), diabetes (pupil-sparing).
+        CN IV palsy: head tilt to opposite side (compensatory), difficulty looking down (reading/stairs),
+        diplopia maximal when looking down and medially. Most common cause: trauma.
+        CN VI palsy: medial strabismus (convergent squint), cannot abduct eye. Causes: raised ICP, diabetes, MS.
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed
+
+  clinical:
+    - title: "Clinical: Horner's Syndrome"
+      text: >
+        Loss of sympathetic supply to the eye: miosis (loss of dilator pupillae), partial ptosis (loss of Müller's
+        muscle), anhidrosis (loss of facial sweating on ipsilateral side), enophthalmos (apparent).
+        Causes: Pancoast tumor (apical lung cancer), carotid dissection, lateral medullary syndrome, syringomyelia.
+    - title: "Clinical: Pupillary Reflexes"
+      text: >
+        Direct light reflex: light in one eye → both pupils constrict. Afferent: CN II, Efferent: CN III.
+        RAPD (Marcus Gunn pupil): relative afferent pupillary defect — swinging flashlight test shows pupil dilates
+        when light swung to affected eye. Indicates optic nerve lesion (not retinal).
+        Argyll Robertson pupil: small irregular pupils, accommodate but don't react to light. Neurosyphilis.
+
+high_yield_points:
+  - "LR6 SO4, rest 3 — lateral rectus (VI), superior oblique (IV), all others (III)"
+  - "CN III palsy: ptosis + 'down and out' eye + fixed dilated pupil"
+  - "PComA aneurysm → CN III palsy with pupil involvement"
+  - "CN IV palsy: head tilt to opposite side, difficulty descending stairs"
+  - "CN VI palsy: convergent squint — false localizing sign in raised ICP"
+  - "Bitemporal hemianopia = optic chiasm lesion (pituitary tumor)"
+  - "Contralateral homonymous hemianopia = optic tract or visual cortex lesion"
+  - "Meyer's loop (temporal lobe): superior quadrantanopia ('pie in the sky')"
+  - "Horner's syndrome: miosis + ptosis + anhidrosis (sympathetic loss)"
+  - "Argyll Robertson pupil: accommodates but doesn't react to light (neurosyphilis)"
+
+mcqs:
+  - question: "A patient has ptosis, eye in 'down and out' position, and a fixed dilated pupil. Which cranial nerve is affected?"
+    options:
+      - "CN IV"
+      - "CN III"
+      - "CN VI"
+      - "CN VII"
+    answer: "CN III"
+    explanation: >
+      CN III supplies all extraocular muscles except LR (VI) and SO (IV). Loss of CN III leaves LR and SO unopposed
+      → eye deviates laterally (out) and down. Ptosis from levator palpebrae paralysis. Dilated pupil from
+      parasympathetic fiber damage.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "A pituitary tumor compressing the optic chiasm would most likely cause:"
+    options:
+      - "Ipsilateral blindness"
+      - "Bitemporal hemianopia"
+      - "Homonymous hemianopia"
+      - "Superior quadrantanopia"
+    answer: "Bitemporal hemianopia"
+    explanation: >
+      The optic chiasm is located above the pituitary gland. A pituitary tumor compresses the crossing nasal fibers
+      (which carry temporal visual fields) → bilateral loss of temporal visual fields = bitemporal hemianopia.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The superior oblique muscle is tested by asking the patient to look:"
+    options:
+      - "Up and out"
+      - "Down and out"
+      - "Down and in"
+      - "Up and in"
+    answer: "Down and in"
+    explanation: >
+      The superior oblique (CN IV) is the primary depressor when the eye is adducted (looking medially).
+      Testing: patient looks down and in. CN IV palsy causes difficulty looking downward when reading or descending stairs.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 2
+
+  - question: "Horner's syndrome consists of all EXCEPT:"
+    options:
+      - "Miosis"
+      - "Ptosis"
+      - "Mydriasis"
+      - "Anhidrosis"
+    answer: "Mydriasis"
+    explanation: >
+      Horner's syndrome results from loss of sympathetic supply: miosis (not mydriasis), partial ptosis,
+      anhidrosis, and apparent enophthalmos. Mydriasis (pupil dilation) would occur with parasympathetic loss
+      (CN III palsy), not sympathetic loss.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "A lesion in Meyer's loop (temporal lobe) causes:"
+    options:
+      - "Ipsilateral blindness"
+      - "Bitemporal hemianopia"
+      - "Contralateral superior quadrantanopia"
+      - "Contralateral inferior quadrantanopia"
+    answer: "Contralateral superior quadrantanopia"
+    explanation: >
+      Meyer's loop carries inferior retinal fibers (representing the superior visual field) through the temporal lobe.
+      Lesion causes contralateral superior quadrantanopia ("pie in the sky"). Parietal lobe lesion causes inferior
+      quadrantanopia ("pie on the floor").
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2

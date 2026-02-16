@@ -1,0 +1,185 @@
+topic_id: gi-motility-secretions
+name: GI Motility & Secretions
+description: GI Motility & Secretions — Peristalsis, segmentation, migrating motor complex, and major GI secretions
+high_yield: true
+nmc_codes:
+- code: PY4.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY4.4
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  GI motility includes mixing (segmentation) and propulsive (peristalsis) movements controlled by the enteric
+  nervous system (ENS), autonomic nervous system, and GI hormones. Major secretions include saliva, gastric juice,
+  pancreatic juice, bile, and intestinal secretions, each with specific regulatory mechanisms.
+  📚 Guyton & Hall, 14th Ed, Ch.63-66 (p.815-860) / 📚 Ganong's, 26th Ed, Ch.25-27
+
+learning_objectives:
+  - Describe the types of GI motility (peristalsis, segmentation, MMC, haustration)
+  - Explain the role of the enteric nervous system and interstitial cells of Cajal
+  - Describe the composition and regulation of salivary, gastric, pancreatic, and biliary secretions
+  - List major GI hormones and their functions
+  - Explain the cephalic, gastric, and intestinal phases of digestion
+
+content:
+  atoms:
+    - id: gi-motility-types
+      title: "Types of GI Motility"
+      text: >
+        Peristalsis: propulsive wave — contraction behind bolus (orad), relaxation ahead (caudad).
+        Mediated by Auerbach's (myenteric) plexus. Involves ascending excitatory (ACh, substance P) and
+        descending inhibitory (NO, VIP) reflexes. "Law of the intestine" (Bayliss & Starling).
+        Segmentation: mixing contractions in small intestine — alternating contraction/relaxation of circular muscle.
+        Migrating Motor Complex (MMC): Phase III = strong propulsive contractions during fasting (every 90-120 min).
+        Mediated by motilin. "Housekeeper" of the gut — clears residual food/bacteria. Disrupted by feeding.
+        Erythromycin is a motilin receptor agonist — used as prokinetic.
+        Haustration: slow segmental contractions in colon. Mass movements: 1-3x/day, propel contents toward rectum.
+        📚 Guyton & Hall, 14th Ed, Ch.63 (p.815-826)
+
+    - id: ens-icc
+      title: "Enteric Nervous System & Interstitial Cells of Cajal"
+      text: >
+        ENS: "second brain" — 100 million neurons, can function independently of CNS.
+        Myenteric (Auerbach's) plexus: between longitudinal and circular muscle → controls MOTILITY.
+        Submucosal (Meissner's) plexus: in submucosa → controls SECRETION and blood flow.
+        Interstitial cells of Cajal (ICC): pacemaker cells of GI tract. Generate slow waves
+        (basic electrical rhythm/BER). Slow wave frequency: stomach 3/min, duodenum 12/min, ileum 8-9/min.
+        Slow waves do NOT cause contraction alone — spikes (action potentials) superimposed on slow waves → contraction.
+        Parasympathetic (vagus): ↑motility, ↑secretion. Sympathetic: ↓motility, ↑sphincter tone.
+        📚 Ganong's, 26th Ed, Ch.25
+
+    - id: gi-hormones
+      title: "Major GI Hormones"
+      text: >
+        Gastrin (G cells, antrum): stimulates HCl secretion, trophic to gastric mucosa. Released by amino acids, vagal stimulation.
+        CCK (I cells, duodenum/jejunum): stimulates pancreatic enzyme secretion, gallbladder contraction,
+        relaxes sphincter of Oddi, delays gastric emptying. Released by fat and protein.
+        Secretin (S cells, duodenum): stimulates pancreatic HCO3- secretion, inhibits gastric acid. Released by acid (pH <4.5).
+        GIP (K cells, duodenum/jejunum): incretin effect — stimulates insulin release. Inhibits gastric acid ("enterogastrone").
+        Motilin (M cells, duodenum): stimulates MMC Phase III during fasting.
+        VIP: relaxes smooth muscle, stimulates pancreatic/intestinal secretion.
+        Somatostatin (D cells): inhibits virtually all GI secretions and hormones.
+        📚 Guyton & Hall, 14th Ed, Ch.63-64
+
+    - id: salivary-secretion
+      title: "Salivary Secretion"
+      text: >
+        1-1.5 L/day. Serous (parotid — ptyalin/salivary amylase) and mucous (sublingual — mucin) glands.
+        Submandibular: mixed. Primary secretion (acini): isotonic, NaCl rich.
+        Ductal modification: Na+ and Cl- reabsorbed, K+ and HCO3- secreted → final saliva is HYPOTONIC,
+        K+-rich, HCO3--rich, Na+-poor. At high flow rates: less time for ductal modification → approaches plasma composition.
+        Innervation: BOTH parasympathetic (CN VII, IX) and sympathetic stimulate secretion.
+        Parasympathetic: watery, high-volume. Sympathetic: viscous, low-volume, high protein.
+        Functions: lubrication, starch digestion (amylase, pH 6.8), antibacterial (lysozyme, IgA, lactoferrin).
+        📚 Guyton & Hall, 14th Ed, Ch.65 (p.839-842)
+
+    - id: pancreatic-secretion
+      title: "Pancreatic Secretion"
+      text: >
+        1.5 L/day. Two components: (1) Aqueous (ductal cells): HCO3--rich, stimulated by SECRETIN.
+        Neutralizes gastric acid in duodenum. CFTR channel mediates HCO3-/Cl- exchange. CF → inspissated secretions.
+        (2) Enzymatic (acinar cells): stimulated by CCK and vagus (ACh).
+        Enzymes: trypsinogen (activated by enterokinase → trypsin → activates all others), chymotrypsinogen,
+        proelastase, procarboxypeptidase (all zymogens), lipase, amylase, phospholipase A2.
+        Trypsin inhibitor in pancreatic juice prevents premature activation. Premature trypsinogen activation → pancreatitis.
+        📚 Ganong's, 26th Ed, Ch.26
+
+  clinical:
+    - title: "Clinical Correlation: Hirschsprung Disease"
+      text: >
+        Congenital absence of ganglion cells (Auerbach's and Meissner's plexuses) in distal colon/rectum.
+        Neural crest cell migration failure. Affected segment: tonically contracted, no relaxation.
+        Presents with failure to pass meconium, abdominal distension, chronic constipation.
+        Diagnosis: rectal biopsy showing absent ganglion cells + nerve fiber hypertrophy + elevated AChE.
+    - title: "Clinical Correlation: Zollinger-Ellison Syndrome"
+      text: >
+        Gastrinoma (usually pancreatic/duodenal) → excess gastrin → massive HCl secretion → multiple peptic ulcers,
+        diarrhea (acid inactivates pancreatic enzymes). Diagnose: fasting gastrin >1000 pg/mL, secretin stimulation
+        test (paradoxical increase in gastrin).
+
+  high_yield_points:
+    - "Slow wave frequency: stomach 3/min, duodenum 12/min, ileum 8-9/min"
+    - "ICC = pacemaker of GI tract; Auerbach's = motility; Meissner's = secretion"
+    - "MMC Phase III: motilin-mediated, fasting, 'housekeeper.' Erythromycin = motilin agonist"
+    - "Gastrin → HCl; Secretin → HCO3-; CCK → enzymes + gallbladder contraction"
+    - "Somatostatin inhibits ALL GI hormones and secretions"
+    - "Saliva: hypotonic, K+-rich, HCO3--rich (opposite of plasma); BOTH sympathetic and parasympathetic stimulate"
+    - "Enterokinase activates trypsinogen → trypsin → activates all pancreatic zymogens"
+    - "CFTR defect (CF) → thick pancreatic secretions → chronic pancreatitis"
+    - "GIP = incretin (stimulates insulin release in response to oral glucose)"
+    - "Parasympathetic: ↑motility, ↑secretion; Sympathetic: ↓motility, ↑sphincter tone"
+
+mcqs:
+  - question: "The migrating motor complex (MMC) during fasting is primarily mediated by:"
+    options:
+      - "Gastrin"
+      - "CCK"
+      - "Motilin"
+      - "Secretin"
+    answer: "Motilin"
+    explanation: >
+      Motilin triggers Phase III of the MMC, the strong propulsive contractions that sweep through the GI tract
+      every 90-120 minutes during fasting. This "housekeeper" function clears residual food and bacteria.
+      Erythromycin acts as a motilin receptor agonist and can be used as a prokinetic.
+      📚 Guyton & Hall, 14th Ed, Ch.63
+    difficulty: 1
+
+  - question: "Enterokinase (enteropeptidase) in the duodenal brush border activates:"
+    options:
+      - "Pepsinogen"
+      - "Trypsinogen"
+      - "Lipase"
+      - "Amylase"
+    answer: "Trypsinogen"
+    explanation: >
+      Enterokinase specifically cleaves trypsinogen → trypsin. Trypsin then autocatalytically activates more
+      trypsinogen and activates all other pancreatic zymogens (chymotrypsinogen, proelastase, procarboxypeptidase).
+      Pepsinogen is activated by HCl in the stomach, not enterokinase.
+      📚 Ganong's, 26th Ed, Ch.26
+    difficulty: 1
+
+  - question: "Which GI hormone stimulates pancreatic bicarbonate secretion?"
+    options:
+      - "Gastrin"
+      - "CCK"
+      - "Secretin"
+      - "Motilin"
+    answer: "Secretin"
+    explanation: >
+      Secretin is released by S cells in the duodenum in response to acid (pH <4.5). It stimulates
+      ductal cells to secrete HCO3--rich fluid, neutralizing gastric acid. CCK stimulates pancreatic
+      enzyme (not bicarbonate) secretion from acinar cells.
+      📚 Guyton & Hall, 14th Ed, Ch.65
+    difficulty: 1
+
+  - question: "The pacemaker cells of the GI tract that generate slow waves are:"
+    options:
+      - "Enteric neurons"
+      - "Interstitial cells of Cajal"
+      - "Smooth muscle cells"
+      - "Enterochromaffin cells"
+    answer: "Interstitial cells of Cajal"
+    explanation: >
+      ICC are mesenchymal cells located between nerve endings and smooth muscle that generate the basic
+      electrical rhythm (slow waves). They set the maximum frequency of contractions in each GI segment.
+      Actual contractions occur when action potentials are superimposed on slow waves.
+      📚 Ganong's, 26th Ed, Ch.25
+    difficulty: 1
+
+  - question: "Saliva is hypotonic because of:"
+    options:
+      - "Active secretion of water by acinar cells"
+      - "Ductal reabsorption of Na+ and Cl- exceeding secretion of K+ and HCO3-"
+      - "Absence of any electrolytes in saliva"
+      - "Salivary amylase diluting the electrolytes"
+    answer: "Ductal reabsorption of Na+ and Cl- exceeding secretion of K+ and HCO3-"
+    explanation: >
+      Primary acinar secretion is isotonic. As it passes through ducts, Na+ and Cl- are reabsorbed while
+      K+ and HCO3- are secreted. Since the duct is relatively impermeable to water and more solute is removed
+      than added, the final saliva becomes hypotonic.
+      📚 Guyton & Hall, 14th Ed, Ch.65 (p.840)
+    difficulty: 2

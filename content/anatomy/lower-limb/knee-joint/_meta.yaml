@@ -1,13 +1,157 @@
 topic_id: knee-joint
 name: Knee Joint
-description: Knee Joint — NMC curriculum topic
+description: Knee Joint — Anatomy, ligaments, menisci, bursae, and clinical correlations
 high_yield: true
 nmc_codes:
-- code: AN18.5
+- code: AN18.1
   domain: KH
   core: true
   phase: Phase 1
-- code: AN18.6
-  domain: KH
-  core: false
-  phase: Phase 1
+
+overview: >
+  The knee is the largest and most complex joint in the body — a modified hinge (synovial) joint between femur,
+  tibia, and patella. It has two articulations: tibiofemoral and patellofemoral. Stability is provided by
+  ligaments (cruciate and collateral), menisci, and surrounding muscles. The "unhappy triad" (O'Donoghue's triad)
+  involves ACL + MCL + medial meniscus injury.
+  📚 Gray's Anatomy, 42nd Ed, Ch.82; 📚 BD Chaurasia, Vol.2, Ch.6
+
+learning_objectives:
+  - Describe the articular surfaces and type of knee joint
+  - List the intra-articular and extra-articular ligaments
+  - Describe the menisci and their clinical significance
+  - Explain the locking and unlocking mechanism of the knee
+  - Describe common knee injuries and their clinical tests
+
+content:
+  atoms:
+    - id: ligaments
+      title: "Ligaments of the Knee"
+      text: >
+        Collateral ligaments: MCL (medial/tibial) — broad, attached to medial meniscus (hence medial meniscus
+        torn more commonly). LCL (lateral/fibular) — cord-like, NOT attached to lateral meniscus.
+        Cruciate ligaments (intracapsular, extrasynovial): ACL — from anterior intercondylar area of tibia to
+        lateral femoral condyle (posteromedial surface). Prevents anterior displacement of tibia / posterior
+        displacement of femur. PCL — from posterior intercondylar area to medial femoral condyle. Prevents
+        posterior displacement of tibia. PCL is STRONGER than ACL. ACL most commonly injured ligament of knee.
+        📚 BD Chaurasia, Vol.2, Ch.6 (p.86-94); 📚 Netter's Atlas, 6th Ed, Plate 496
+
+    - id: menisci
+      title: "Menisci"
+      text: >
+        C-shaped fibrocartilaginous discs on tibial plateau. Medial meniscus: larger, C-shaped, firmly attached
+        to MCL — less mobile → more commonly injured. Lateral meniscus: smaller, more circular (O-shaped),
+        NOT attached to LCL — more mobile, less commonly injured. Blood supply: peripheral 1/3 (red zone) is
+        vascular — can heal; inner 2/3 (white zone) is avascular — cannot heal (needs excision).
+        Functions: shock absorption, load distribution, joint stability, lubrication.
+        Discoid lateral meniscus: congenital variant, snapping knee in children.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.2
+
+    - id: bursae-locking
+      title: "Bursae & Locking Mechanism"
+      text: >
+        Important bursae: suprapatellar (communicates with joint cavity, largest), prepatellar (housemaid's knee),
+        infrapatellar (superficial — clergyman's knee; deep), semimembranosus bursa (Baker's cyst if enlarged,
+        communicates with joint cavity in adults). Locking: terminal medial rotation of femur on tibia during
+        last 30° of extension (screw-home mechanism). Unlocking: popliteus initiates lateral rotation of
+        femur to unlock the knee for flexion — "key to the knee joint."
+        📚 BD Chaurasia, Vol.2; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: clinical-tests
+      title: "Clinical Tests for Knee Injuries"
+      text: >
+        ACL tear: anterior drawer test (tibia pulled forward with knee at 90°), Lachman test (most sensitive,
+        at 20-30° flexion), pivot shift test. PCL tear: posterior drawer test, posterior sag sign.
+        MCL tear: valgus stress test (abduction stress). LCL tear: varus stress test (adduction stress).
+        Meniscal tear: McMurray test (rotation + extension from flexion — click/pain), Apley grinding test
+        (prone, compression + rotation).
+        📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Unhappy Triad (O'Donoghue's Triad)"
+      text: >
+        Lateral blow to the knee (e.g., football tackle) with foot planted → valgus stress → tears MCL first,
+        then ACL, then medial meniscus (attached to MCL). Classic sports injury. Presents with immediate
+        swelling (hemarthrosis from ACL), medial joint line tenderness, and instability.
+    - title: "Clinical: Baker's Cyst"
+      text: >
+        Popliteal (Baker's) cyst: distension of the semimembranosus bursa communicating with the knee joint.
+        Often secondary to intra-articular pathology (OA, meniscal tear, RA). Presents as painless swelling in
+        the popliteal fossa. May rupture → calf swelling mimicking DVT (pseudothrombophlebitis).
+
+high_yield_points:
+  - "ACL: prevents anterior tibial displacement — most commonly injured knee ligament"
+  - "PCL: prevents posterior tibial displacement — stronger than ACL"
+  - "MCL attached to medial meniscus → both injured together"
+  - "LCL NOT attached to lateral meniscus"
+  - "Unhappy triad: ACL + MCL + medial meniscus"
+  - "Medial meniscus injured more often (less mobile, attached to MCL)"
+  - "Meniscus blood supply: peripheral 1/3 (red zone) can heal; inner 2/3 (white zone) cannot"
+  - "Popliteus = 'key to the knee joint' — unlocks the knee"
+  - "Lachman test: most sensitive test for ACL tear"
+  - "Baker's cyst = semimembranosus bursa enlargement in popliteal fossa"
+
+mcqs:
+  - question: "The 'unhappy triad' of the knee involves injury to:"
+    options:
+      - "ACL, LCL, lateral meniscus"
+      - "ACL, MCL, medial meniscus"
+      - "PCL, MCL, medial meniscus"
+      - "PCL, LCL, lateral meniscus"
+    answer: "ACL, MCL, medial meniscus"
+    explanation: >
+      A lateral blow to the knee causes valgus stress → MCL tear, followed by ACL tear and medial meniscus
+      tear (which is attached to MCL). This classic triad (O'Donoghue's) is a common sports injury.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "The most sensitive clinical test for ACL tear is:"
+    options:
+      - "Anterior drawer test"
+      - "Lachman test"
+      - "McMurray test"
+      - "Pivot shift test"
+    answer: "Lachman test"
+    explanation: >
+      Lachman test (performed at 20-30° knee flexion) is the most sensitive test for ACL tear. Anterior drawer
+      test (at 90°) is less sensitive due to hamstring guarding. McMurray test is for meniscal tears.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Which muscle is called the 'key to the knee joint'?"
+    options:
+      - "Quadriceps"
+      - "Popliteus"
+      - "Gastrocnemius"
+      - "Sartorius"
+    answer: "Popliteus"
+    explanation: >
+      Popliteus initiates lateral rotation of the femur on the fixed tibia (or medial rotation of tibia on femur),
+      unlocking the knee from its fully extended (locked) position to begin flexion.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "The medial meniscus is more commonly injured than the lateral because it is:"
+    options:
+      - "Smaller and more mobile"
+      - "Attached to the MCL and less mobile"
+      - "Attached to the LCL"
+      - "Avascular throughout"
+    answer: "Attached to the MCL and less mobile"
+    explanation: >
+      The medial meniscus is firmly attached to the MCL, making it less mobile and more prone to injury during
+      valgus stress. The lateral meniscus is not attached to the LCL and is more mobile, hence less commonly injured.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "A Baker's cyst is an enlargement of which bursa?"
+    options:
+      - "Suprapatellar bursa"
+      - "Prepatellar bursa"
+      - "Semimembranosus bursa"
+      - "Infrapatellar bursa"
+    answer: "Semimembranosus bursa"
+    explanation: >
+      Baker's (popliteal) cyst is a distension of the semimembranosus bursa, which communicates with the knee
+      joint cavity in adults. It presents as a swelling in the popliteal fossa. Rupture mimics DVT.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1

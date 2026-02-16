@@ -1,9 +1,178 @@
 topic_id: hypothalamic-pituitary-axis
-name: Hypothalamic Pituitary Axis
-description: Hypothalamic Pituitary Axis — NMC curriculum topic
+name: Endocrine — Hypothalamic-Pituitary Axis
+description: Hypothalamic-Pituitary Axis — Anterior and posterior pituitary hormones, feedback mechanisms, and clinical disorders
 high_yield: true
 nmc_codes:
-- code: PY4.6
+- code: PY8.2
   domain: KH
   core: true
   phase: Phase 1
+
+overview: >
+  The hypothalamus-pituitary axis is the master endocrine regulator. The hypothalamus produces releasing/inhibiting
+  hormones that reach the anterior pituitary via the hypothalamic-hypophyseal portal system. The posterior pituitary
+  stores and releases ADH and oxytocin (synthesized in hypothalamic nuclei). Negative feedback loops regulate
+  hormone levels at hypothalamic and pituitary levels.
+  📚 Guyton & Hall, 14th Ed, Ch.76-77 (p.965-986) / 📚 Ganong's, 26th Ed, Ch.17-18
+
+learning_objectives:
+  - Describe the hypothalamic-hypophyseal portal system and its significance
+  - List anterior pituitary hormones and their hypothalamic regulators
+  - Explain ADH and oxytocin synthesis, storage, and release from posterior pituitary
+  - Describe feedback mechanisms (long, short, ultra-short loops)
+  - Recognize clinical disorders of pituitary hyper/hypofunction
+
+content:
+  atoms:
+    - id: portal-system
+      title: "Hypothalamic-Hypophyseal Portal System"
+      text: >
+        Superior hypophyseal artery → primary capillary plexus in median eminence → portal veins →
+        secondary capillary plexus in anterior pituitary. This portal system delivers hypothalamic
+        releasing/inhibiting hormones DIRECTLY to anterior pituitary at high concentrations.
+        Pituitary stalk transection → loss of stimulatory hormones → ↓all anterior pituitary hormones
+        EXCEPT prolactin (↑, because prolactin is under tonic INHIBITION by dopamine).
+        Posterior pituitary: direct neural connection (supraoptic → ADH, paraventricular → oxytocin).
+        📚 Guyton & Hall, 14th Ed, Ch.76 (p.965-968)
+
+    - id: anterior-pituitary-hormones
+      title: "Anterior Pituitary Hormones"
+      text: >
+        GH (somatotrophs, 50%): stimulated by GHRH, inhibited by somatostatin. IGF-1 mediates most effects.
+        Prolactin (lactotrophs): stimulated by TRH, estrogen; tonically INHIBITED by dopamine. Only hormone under tonic inhibition.
+        TSH (thyrotrophs): stimulated by TRH, inhibited by T3/T4 and somatostatin.
+        ACTH (corticotrophs): stimulated by CRH, inhibited by cortisol. Derived from POMC (→ ACTH + β-lipotropin + MSH + β-endorphin).
+        FSH and LH (gonadotrophs): stimulated by pulsatile GnRH, inhibited by sex steroids.
+        FSH also inhibited by inhibin (Sertoli cells/granulosa cells).
+        Mnemonic for anterior pituitary: "FLAT PiG" — FSH, LH, ACTH, TSH, Prolactin, GH.
+        📚 Ganong's, 26th Ed, Ch.17-18
+
+    - id: posterior-pituitary
+      title: "Posterior Pituitary — ADH and Oxytocin"
+      text: >
+        Posterior pituitary (neurohypophysis): does NOT synthesize hormones — stores and releases them.
+        ADH (vasopressin): synthesized in supraoptic nucleus. V1 receptors (vascular smooth muscle → vasoconstriction),
+        V2 receptors (collecting duct → AQP2 → water reabsorption), V3 receptors (anterior pituitary → ACTH release).
+        Stimuli for ADH: ↑plasma osmolality (most sensitive, osmoreceptors), ↓blood volume/pressure (less sensitive but stronger response).
+        Oxytocin: synthesized in paraventricular nucleus. Functions: milk ejection (letdown reflex), uterine contraction.
+        Ferguson reflex: cervical dilation → oxytocin release → uterine contraction → positive feedback loop during labor.
+        📚 Guyton & Hall, 14th Ed, Ch.76 (p.970-972)
+
+    - id: feedback-loops
+      title: "Feedback Mechanisms"
+      text: >
+        Long loop: target gland hormone feeds back to hypothalamus and pituitary (e.g., cortisol → ↓CRH + ↓ACTH).
+        Short loop: pituitary hormone feeds back to hypothalamus (e.g., ACTH → ↓CRH).
+        Ultra-short loop: hypothalamic hormone inhibits its own release.
+        Positive feedback examples: (1) LH surge — estrogen in late follicular phase → ↑GnRH → ↑LH → ovulation.
+        (2) Ferguson reflex — oxytocin during labor. (3) Suckling → oxytocin (milk letdown).
+        Exogenous glucocorticoids → suppress CRH/ACTH → adrenal atrophy → acute withdrawal → adrenal crisis.
+        📚 Ganong's, 26th Ed, Ch.17
+
+    - id: pituitary-disorders
+      title: "Pituitary Disorders"
+      text: >
+        Hyperpituitarism: usually pituitary adenoma. GH excess: gigantism (before epiphyseal closure),
+        acromegaly (after closure). Prolactinoma: galactorrhea + amenorrhea (most common pituitary adenoma).
+        Cushing disease: ACTH-secreting pituitary adenoma → cortisol excess.
+        Hypopituitarism: Sheehan syndrome (postpartum pituitary necrosis — hemorrhagic shock → infarction).
+        Presents with failure to lactate (prolactin deficiency — first sign), then other hormone deficiencies.
+        Empty sella syndrome, pituitary apoplexy, craniopharyngioma (suprasellar, Rathke's pouch remnant,
+        bimodal age, calcification, cholesterol crystals).
+        📚 Guyton & Hall, 14th Ed, Ch.77
+
+  clinical:
+    - title: "Clinical Correlation: Prolactinoma"
+      text: >
+        Most common pituitary adenoma. Elevated prolactin → galactorrhea + amenorrhea/infertility in women;
+        hypogonadism, gynecomastia, decreased libido in men. Prolactin inhibits GnRH pulsatility.
+        Treatment: dopamine agonists (cabergoline, bromocriptine) — medical therapy, not surgery, is first-line.
+        Stalk effect: any large sellar mass compressing the stalk → ↓dopamine to lactotrophs → mild ↑prolactin (<200 ng/mL).
+    - title: "Clinical Correlation: GH Excess and Deficiency"
+      text: >
+        Acromegaly: GH excess in adults → soft tissue overgrowth, enlarged hands/feet/jaw, diabetes,
+        cardiomegaly. Diagnosis: ↑IGF-1, failure to suppress GH with oral glucose tolerance test.
+        GH deficiency in children: short stature, delayed puberty, ↑body fat. Treat with recombinant GH.
+
+  high_yield_points:
+    - "Prolactin is the ONLY anterior pituitary hormone under tonic INHIBITION (by dopamine)"
+    - "Pituitary stalk transection → ↓all hormones EXCEPT prolactin (↑ due to loss of dopamine inhibition)"
+    - "ACTH derived from POMC → ACTH + MSH + β-endorphin + β-lipotropin"
+    - "ADH: supraoptic nucleus; Oxytocin: paraventricular nucleus"
+    - "↑Osmolality (most sensitive) and ↓blood volume (most potent) stimulate ADH"
+    - "LH surge = positive feedback by estrogen (only example in HPG axis)"
+    - "Sheehan syndrome: postpartum pituitary necrosis → failure to lactate (first sign)"
+    - "Prolactinoma = most common pituitary adenoma; treat with dopamine agonists (not surgery)"
+    - "Craniopharyngioma: Rathke's pouch, suprasellar calcification, cholesterol crystals, bimodal age"
+    - "Ferguson reflex: cervical dilation → oxytocin → uterine contraction (positive feedback)"
+
+mcqs:
+  - question: "After pituitary stalk transection, which hormone level INCREASES?"
+    options:
+      - "GH"
+      - "ACTH"
+      - "Prolactin"
+      - "TSH"
+    answer: "Prolactin"
+    explanation: >
+      Prolactin is under tonic inhibition by dopamine from the hypothalamus. Stalk transection interrupts
+      dopamine delivery → loss of inhibition → prolactin increases. All other anterior pituitary hormones
+      decrease because they depend on stimulatory hypothalamic releasing hormones.
+      📚 Guyton & Hall, 14th Ed, Ch.76 (p.968)
+    difficulty: 1
+
+  - question: "ACTH is derived from the precursor molecule:"
+    options:
+      - "Preproenkephalin"
+      - "Proopiomelanocortin (POMC)"
+      - "Preproglucagon"
+      - "Progonadotropin"
+    answer: "Proopiomelanocortin (POMC)"
+    explanation: >
+      POMC is a large precursor protein cleaved to produce ACTH, β-lipotropin, MSH (melanocyte-stimulating hormone),
+      and β-endorphin. This explains hyperpigmentation in ACTH excess (e.g., Addison's disease) —
+      excess POMC cleavage produces excess MSH, which stimulates melanocytes.
+      📚 Ganong's, 26th Ed, Ch.18
+    difficulty: 1
+
+  - question: "A woman fails to lactate after a complicated delivery with massive hemorrhage. The most likely diagnosis is:"
+    options:
+      - "Prolactinoma"
+      - "Sheehan syndrome"
+      - "Empty sella syndrome"
+      - "Craniopharyngioma"
+    answer: "Sheehan syndrome"
+    explanation: >
+      Sheehan syndrome is postpartum pituitary necrosis due to hemorrhagic shock. The enlarged pituitary of
+      pregnancy is vulnerable to ischemia. Failure to lactate (prolactin deficiency) is the earliest sign,
+      followed by progressive loss of other pituitary hormones.
+      📚 Guyton & Hall, 14th Ed, Ch.77
+    difficulty: 1
+
+  - question: "The positive feedback of estrogen leading to the LH surge occurs during which phase of the menstrual cycle?"
+    options:
+      - "Early follicular phase"
+      - "Late follicular phase"
+      - "Luteal phase"
+      - "Menstrual phase"
+    answer: "Late follicular phase"
+    explanation: >
+      Rising estrogen from the dominant follicle reaches a critical threshold in the late follicular phase →
+      switches from negative to POSITIVE feedback on GnRH/LH release → LH surge → ovulation.
+      This is the only significant positive feedback mechanism in the HPG axis.
+      📚 Ganong's, 26th Ed, Ch.17
+    difficulty: 2
+
+  - question: "ADH is synthesized primarily in which hypothalamic nucleus?"
+    options:
+      - "Paraventricular nucleus"
+      - "Supraoptic nucleus"
+      - "Arcuate nucleus"
+      - "Ventromedial nucleus"
+    answer: "Supraoptic nucleus"
+    explanation: >
+      ADH is primarily synthesized in the supraoptic nucleus (though some is produced in paraventricular).
+      Oxytocin is primarily from the paraventricular nucleus. Both are transported along axons to the
+      posterior pituitary (neurohypophysis) for storage and release.
+      📚 Guyton & Hall, 14th Ed, Ch.76 (p.970)
+    difficulty: 1

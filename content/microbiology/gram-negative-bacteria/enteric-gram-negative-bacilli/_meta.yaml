@@ -1,0 +1,150 @@
+topic_id: enteric-gram-negative-bacilli
+name: "Enteric Gram-Negative Bacilli (E.coli, Salmonella, Shigella)"
+description: >
+  Enterobacteriaceae family — E.coli pathotypes, Salmonella typhi, Shigella, and other enteric GNBs.
+high_yield: true
+nmc_codes:
+  - code: MI3.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Enterobacteriaceae are Gram-negative, facultatively anaerobic bacilli that ferment glucose, reduce nitrates,
+  and are oxidase-negative. Major pathogens: E.coli (UTI, diarrhea, meningitis), Salmonella (enteric fever,
+  gastroenteritis), Shigella (bacillary dysentery), Klebsiella (pneumonia, UTI). Key virulence: LPS endotoxin,
+  capsule, adhesins, toxins. Antibiotic resistance (ESBL, carbapenemase) is a growing concern.
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.15; 📚 Ananthanarayan, 11th Ed, Ch.28-30
+
+learning_objectives:
+  - List the general features of Enterobacteriaceae
+  - Describe E.coli pathotypes (ETEC, EPEC, EHEC, EIEC, EAEC) and their mechanisms
+  - Explain Salmonella typhi pathogenesis, Widal test, and treatment
+  - Differentiate Shigella species and describe dysentery mechanism
+  - Discuss antibiotic resistance patterns (ESBL, CRE)
+
+content:
+  atoms:
+    - id: e-coli
+      title: "Escherichia coli"
+      text: >
+        Most common Gram− cause of UTI, neonatal meningitis (K1 capsule), and gram-negative sepsis.
+        Diarrheagenic pathotypes:
+        ETEC (traveler's diarrhea): heat-labile toxin (LT, ↑cAMP like cholera) + heat-stable toxin (ST, ↑cGMP). Watery diarrhea.
+        EPEC: attaching-effacing lesion, infantile diarrhea. No toxin.
+        EHEC (O157:H7): Shiga-like toxin → bloody diarrhea, HUS (hemolytic uremic anemia, thrombocytopenia, renal failure).
+        Do NOT give antibiotics (↑toxin release). Sorbitol non-fermenting.
+        EIEC: invades colonic epithelium like Shigella → dysentery.
+        EAEC: persistent diarrhea, biofilm ("stacked brick" pattern).
+        📚 Ananthanarayan, 11th Ed, Ch.28
+
+    - id: salmonella
+      title: "Salmonella"
+      text: >
+        S. typhi: enteric (typhoid) fever. Fecal-oral transmission. Vi capsular antigen (vaccine target).
+        Pathogenesis: invades Peyer's patches → lymphatic → bacteremia → hepatosplenomegaly.
+        Week 1: fever, relative bradycardia (Faget's sign). Week 2: rose spots, splenomegaly.
+        Week 3: intestinal complications (perforation, hemorrhage). Carriers: gallbladder colonization.
+        Diagnosis: blood culture (week 1), stool culture (week 2-3), Widal test (↑O = active, ↑H = past/vaccinated).
+        Treatment: ceftriaxone, azithromycin, fluoroquinolones. Vaccines: Vi polysaccharide, Ty21a (live oral).
+        Non-typhoidal Salmonella: gastroenteritis (poultry, eggs), self-limited, antibiotics only if severe.
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.15
+
+    - id: shigella
+      title: "Shigella"
+      text: >
+        Causes bacillary dysentery (bloody, mucoid diarrhea with tenesmus). Fecal-oral, very low infective dose (10-100 organisms).
+        4 species: S. dysenteriae (most severe, Shiga toxin), S. flexneri (most common in developing countries),
+        S. boydii, S. sonnei (most common in developed countries, mildest).
+        Shiga toxin: inhibits 60S ribosomal subunit → cell death → bloody diarrhea.
+        S. dysenteriae type 1 → HUS (like EHEC). No animal reservoir (human-only pathogen).
+        Does NOT produce H2S (unlike Salmonella on TSI). Non-motile (unlike Salmonella).
+        Treatment: fluoroquinolones, azithromycin, ceftriaxone.
+        📚 Ananthanarayan, 11th Ed, Ch.29
+
+  clinical:
+    - title: "Clinical Correlation: HUS from EHEC"
+      text: >
+        E.coli O157:H7 produces Shiga-like toxin → endothelial damage in kidneys → microangiopathic hemolytic
+        anemia + thrombocytopenia + acute renal failure (classic HUS triad). In children after bloody diarrhea.
+        Do NOT give antibiotics (increase toxin release from bacterial lysis). Supportive care + dialysis if needed.
+    - title: "Clinical Correlation: Typhoid Fever Complications"
+      text: >
+        Week 3 of untreated typhoid: intestinal perforation (ileal Peyer's patches) → peritonitis — surgical emergency.
+        Chronic carriers (2-5%): S. typhi persists in gallbladder. Cholecystectomy may be needed.
+
+high_yield_points:
+  - "Enterobacteriaceae: Gram−, facultative anaerobe, oxidase−, glucose-fermenting"
+  - "EHEC O157:H7: Shiga-like toxin → HUS; do NOT give antibiotics"
+  - "ETEC: traveler's diarrhea; LT (↑cAMP) + ST (↑cGMP)"
+  - "S. typhi: enteric fever, rose spots, relative bradycardia, Vi antigen"
+  - "Widal test: ↑O titer = active infection; ↑H titer = past infection/vaccination"
+  - "Shigella: lowest infective dose (10-100), non-motile, no H2S"
+  - "Shiga toxin (S. dysenteriae) inhibits 60S ribosomal subunit"
+  - "Salmonella: motile, H2S+, non-lactose fermenting on MacConkey"
+
+mcqs:
+  - question: "A child develops bloody diarrhea followed by hemolytic anemia, thrombocytopenia, and renal failure. The most likely causative organism is:"
+    options:
+      - "Shigella sonnei"
+      - "E.coli O157:H7 (EHEC)"
+      - "Salmonella typhi"
+      - "Vibrio cholerae"
+    answer: "E.coli O157:H7 (EHEC)"
+    explanation: >
+      Classic HUS triad (hemolytic anemia + thrombocytopenia + renal failure) following bloody diarrhea
+      = EHEC (O157:H7). Shiga-like toxin damages renal endothelium. Avoid antibiotics.
+      📚 Ananthanarayan, 11th Ed, Ch.28
+    difficulty: 1
+
+  - question: "Which Shigella species produces Shiga toxin and causes the most severe dysentery?"
+    options:
+      - "S. sonnei"
+      - "S. flexneri"
+      - "S. dysenteriae"
+      - "S. boydii"
+    answer: "S. dysenteriae"
+    explanation: >
+      S. dysenteriae type 1 produces Shiga toxin (AB toxin, inhibits 60S ribosome → protein synthesis arrest),
+      causing the most severe bacillary dysentery and can lead to HUS.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.15
+    difficulty: 1
+
+  - question: "Rose spots on the abdomen during the second week of fever suggest infection with:"
+    options:
+      - "E. coli"
+      - "Shigella flexneri"
+      - "Salmonella typhi"
+      - "Klebsiella pneumoniae"
+    answer: "Salmonella typhi"
+    explanation: >
+      Rose spots (salmon-colored, blanching maculopapular rash on abdomen/chest) appear during week 2
+      of typhoid fever. They represent bacterial emboli in the skin.
+      📚 Ananthanarayan, 11th Ed, Ch.30
+    difficulty: 1
+
+  - question: "ETEC causes traveler's diarrhea through which toxin mechanism?"
+    options:
+      - "Shiga toxin inhibiting 60S ribosome"
+      - "Heat-labile toxin increasing cAMP"
+      - "Exfoliative toxin causing skin peeling"
+      - "TSST-1 superantigen activation"
+    answer: "Heat-labile toxin increasing cAMP"
+    explanation: >
+      ETEC LT (heat-labile toxin) activates adenylate cyclase → ↑cAMP → Cl⁻ secretion → watery diarrhea.
+      Mechanism identical to cholera toxin. ST (heat-stable) activates guanylate cyclase → ↑cGMP.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.15
+    difficulty: 2
+
+  - question: "Which feature differentiates Shigella from Salmonella on culture?"
+    options:
+      - "Shigella is motile"
+      - "Shigella produces H2S"
+      - "Shigella is non-motile and H2S-negative"
+      - "Shigella ferments lactose"
+    answer: "Shigella is non-motile and H2S-negative"
+    explanation: >
+      Shigella: non-motile, no H2S, no gas from glucose. Salmonella: motile (peritrichous flagella),
+      H2S-positive on TSI, non-lactose fermenting. Both are non-lactose fermenters on MacConkey.
+      📚 Ananthanarayan, 11th Ed, Ch.29
+    difficulty: 1

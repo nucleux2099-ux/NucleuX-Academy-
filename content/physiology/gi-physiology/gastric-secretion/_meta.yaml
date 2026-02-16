@@ -1,17 +1,179 @@
-topic_id: gastric-secretion
-name: Gastric Secretion
-description: Gastric Secretion — NMC curriculum topic
+topic_id: gastric-acid-secretion
+name: Gastric Acid Secretion & Regulation
+description: Gastric Acid Secretion & Regulation — Parietal cell physiology, phases of secretion, and pharmacological targets
 high_yield: true
 nmc_codes:
-- code: PY4.2
+- code: PY4.3
   domain: KH
   core: true
   phase: Phase 1
-- code: PY4.8
-  domain: KH
-  core: true
-  phase: Phase 1
-- code: PY8.2
-  domain: KH
-  core: true
-  phase: Phase 1
+
+overview: >
+  Gastric acid (HCl, pH 1-2) is secreted by parietal cells in gastric glands. The H+/K+ ATPase (proton pump)
+  is the final common pathway. Secretion is regulated by three stimulants (ACh, gastrin, histamine) and
+  inhibitors (somatostatin, secretin, prostaglandins). Three phases: cephalic, gastric, intestinal.
+  📚 Guyton & Hall, 14th Ed, Ch.65 (p.842-852) / 📚 Ganong's, 26th Ed, Ch.25
+
+learning_objectives:
+  - Describe the cellular mechanism of HCl secretion by parietal cells
+  - Explain the three stimulants and their receptors on parietal cells
+  - Describe the three phases of gastric acid secretion
+  - List the mucosal defense mechanisms against acid injury
+  - Explain the pharmacology of acid suppression (PPIs, H2 blockers, antacids)
+
+content:
+  atoms:
+    - id: parietal-cell-mechanism
+      title: "Parietal Cell — HCl Secretion Mechanism"
+      text: >
+        H+/K+ ATPase (proton pump) on apical (canalicular) membrane: pumps H+ into lumen, K+ into cell.
+        H+ comes from: CO2 + H2O → H2CO3 (carbonic anhydrase II) → H+ + HCO3-.
+        HCO3- exits basolaterally via Cl-/HCO3- exchanger → "alkaline tide" in blood after meals.
+        Cl- enters cell basolaterally, exits apically through Cl- channels.
+        Net result: HCl in lumen, NaHCO3 in blood.
+        Three stimulants act on parietal cell: (1) ACh (M3 receptor, vagus) → Ca2+/IP3 pathway;
+        (2) Histamine (H2 receptor, from ECL cells) → cAMP pathway — MOST IMPORTANT potentiator;
+        (3) Gastrin (CCK-B receptor) → Ca2+ pathway + stimulates ECL cells to release histamine.
+        Inhibitors: Somatostatin (SST2), prostaglandins (EP3) → ↓cAMP.
+        📚 Guyton & Hall, 14th Ed, Ch.65 (p.843-846)
+
+    - id: phases-gastric-secretion
+      title: "Phases of Gastric Acid Secretion"
+      text: >
+        Cephalic phase (~30%): sight, smell, taste, thought of food → vagal stimulation → ACh release →
+        direct parietal cell stimulation + G cell stimulation (gastrin release). GRP (gastrin-releasing peptide)
+        mediates vagal stimulation of G cells (NOT ACh — atropine doesn't block gastrin release).
+        Gastric phase (~60%): food in stomach → distension (vagovagal reflex) + amino acids/peptides →
+        G cell stimulation → gastrin → HCl. As pH drops <2, somatostatin (D cells) inhibits G cells (negative feedback).
+        Intestinal phase (~10%): amino acids in duodenum → some gastrin release. But predominantly INHIBITORY:
+        acid, fat, hyperosmolar chyme → secretin, CCK, GIP → ↓acid secretion ("enterogastric reflex").
+        📚 Ganong's, 26th Ed, Ch.25
+
+    - id: mucosal-defense
+      title: "Gastric Mucosal Defense"
+      text: >
+        Mucus-bicarbonate barrier: mucus (mucous neck cells) traps HCO3- → pH gradient (lumen pH 2, epithelial surface pH 7).
+        Prostaglandins (PGE2, PGI2): ↑mucus secretion, ↑HCO3- secretion, ↑mucosal blood flow, ↓acid secretion.
+        Rapid epithelial restitution: surface cells migrate to cover defects within hours.
+        Mucosal blood flow: washes away back-diffused H+.
+        NSAIDs inhibit COX → ↓prostaglandins → ↓mucosal defense → peptic ulcers.
+        COX-1: constitutive, protective (mucus, blood flow). COX-2: inducible, inflammatory.
+        H. pylori: damages mucus layer + urease → ammonia → alkaline environment → survives + damages epithelium.
+        📚 Guyton & Hall, 14th Ed, Ch.65 (p.848-850)
+
+    - id: acid-suppression-drugs
+      title: "Pharmacology of Acid Suppression"
+      text: >
+        Proton Pump Inhibitors (omeprazole, pantoprazole): irreversibly block H+/K+ ATPase. Most potent acid suppressors.
+        Prodrugs activated in acidic environment of parietal cell canaliculus. Take before meals.
+        H2 receptor antagonists (ranitidine, famotidine): block histamine H2 receptors → ↓cAMP → ↓acid.
+        Less potent than PPIs. Good for nocturnal acid suppression.
+        Antacids (MgOH, AlOH, CaCO3): neutralize secreted acid. Mg → diarrhea, Al → constipation.
+        Sucralfate: polymerizes in acidic pH → coats ulcer base → physical barrier.
+        Misoprostol: PGE1 analog → ↑mucosal defense. Used to prevent NSAID-induced ulcers. Contraindicated in pregnancy.
+        📚 Ganong's, 26th Ed, Ch.25
+
+    - id: gastric-cells
+      title: "Gastric Gland Cell Types"
+      text: >
+        Parietal (oxyntic) cells: HCl + intrinsic factor (IF). IF essential for B12 absorption in terminal ileum.
+        Autoimmune gastritis: anti-parietal cell/anti-IF antibodies → ↓HCl + ↓IF → pernicious anemia + achlorhydria.
+        Chief (peptic) cells: pepsinogen → activated to pepsin by HCl (pH <2). Pepsin digests proteins (optimum pH 1-3).
+        Mucous neck cells: mucus.
+        G cells (antrum): gastrin. D cells: somatostatin. ECL cells: histamine.
+        📚 Guyton & Hall, 14th Ed, Ch.65 (p.842)
+
+  clinical:
+    - title: "Clinical Correlation: Peptic Ulcer Disease"
+      text: >
+        Two main causes: H. pylori (most common, duodenal > gastric) and NSAIDs. Duodenal ulcers: ↑acid secretion.
+        Gastric ulcers: ↓mucosal defense. H. pylori produces urease (urea breath test for diagnosis),
+        CagA and VacA virulence factors. Treatment: triple therapy (PPI + amoxicillin + clarithromycin).
+    - title: "Clinical Correlation: Pernicious Anemia"
+      text: >
+        Autoimmune destruction of parietal cells → ↓IF → malabsorption of B12 → megaloblastic anemia +
+        subacute combined degeneration of spinal cord (dorsal columns + lateral corticospinal tracts).
+        Also → achlorhydria → ↑gastrin (loss of negative feedback) → ECL cell hyperplasia → carcinoid risk.
+
+  high_yield_points:
+    - "H+/K+ ATPase (proton pump) = final common pathway of acid secretion"
+    - "Three stimulants: ACh (M3), Histamine (H2, MOST IMPORTANT), Gastrin (CCK-B)"
+    - "Histamine from ECL cells potentiates both ACh and gastrin effects — H2 blockers reduce all stimulation"
+    - "Cephalic phase 30%, Gastric phase 60%, Intestinal phase 10%"
+    - "Vagal stimulation of G cells via GRP (not ACh) — atropine doesn't fully block gastrin release"
+    - "Alkaline tide: HCO3- enters blood after meals as H+ is secreted into stomach"
+    - "PPIs > H2 blockers in potency (irreversible pump block vs receptor antagonism)"
+    - "NSAIDs → ↓PGE2 → ↓mucosal defense → ulcers; Misoprostol = PGE1 analog for prevention"
+    - "Parietal cells also produce intrinsic factor — autoimmune destruction → pernicious anemia"
+    - "Somatostatin from D cells inhibits G cells, parietal cells, and ECL cells — universal inhibitor"
+
+mcqs:
+  - question: "The MOST potent stimulant of acid secretion by parietal cells is:"
+    options:
+      - "Acetylcholine alone"
+      - "Gastrin alone"
+      - "Histamine potentiated by ACh and gastrin"
+      - "Secretin"
+    answer: "Histamine potentiated by ACh and gastrin"
+    explanation: >
+      Histamine from ECL cells acts via H2 receptors (cAMP pathway) and potentiates the effects of both ACh
+      and gastrin. All three stimulants together produce maximal acid output. This is why H2 blockers reduce
+      acid secretion stimulated by all three pathways.
+      📚 Guyton & Hall, 14th Ed, Ch.65 (p.845)
+    difficulty: 2
+
+  - question: "The 'alkaline tide' after a meal refers to:"
+    options:
+      - "Increased HCO3- in gastric lumen"
+      - "Increased HCO3- in blood due to parietal cell H+ secretion"
+      - "Increased pH of pancreatic secretion"
+      - "Alkaline saliva production"
+    answer: "Increased HCO3- in blood due to parietal cell H+ secretion"
+    explanation: >
+      When parietal cells secrete H+ into the lumen, the HCO3- generated intracellularly exits into blood
+      via basolateral Cl-/HCO3- exchanger → transient postprandial alkalemia ("alkaline tide").
+      This is balanced by pancreatic HCO3- secretion into the duodenum.
+      📚 Ganong's, 26th Ed, Ch.25
+    difficulty: 2
+
+  - question: "A patient on long-term NSAIDs develops a gastric ulcer. The mechanism is:"
+    options:
+      - "Increased acid secretion"
+      - "H. pylori infection"
+      - "Decreased prostaglandin-mediated mucosal defense"
+      - "Increased gastrin secretion"
+    answer: "Decreased prostaglandin-mediated mucosal defense"
+    explanation: >
+      NSAIDs inhibit COX-1 → decreased PGE2 and PGI2 → reduced mucus secretion, reduced HCO3- secretion,
+      reduced mucosal blood flow → weakened mucosal defense → ulcer formation. NSAIDs cause gastric ulcers
+      through mucosal defense failure, not acid hypersecretion.
+      📚 Guyton & Hall, 14th Ed, Ch.65
+    difficulty: 1
+
+  - question: "Intrinsic factor is secreted by:"
+    options:
+      - "Chief cells"
+      - "Parietal cells"
+      - "G cells"
+      - "Mucous neck cells"
+    answer: "Parietal cells"
+    explanation: >
+      Parietal (oxyntic) cells secrete both HCl and intrinsic factor. IF is essential for vitamin B12
+      absorption in the terminal ileum. Autoimmune destruction of parietal cells → loss of both HCl
+      (achlorhydria) and IF (pernicious anemia).
+      📚 Guyton & Hall, 14th Ed, Ch.65 (p.842)
+    difficulty: 1
+
+  - question: "The gastric phase of acid secretion accounts for what percentage of total acid output?"
+    options:
+      - "10%"
+      - "30%"
+      - "60%"
+      - "90%"
+    answer: "60%"
+    explanation: >
+      The gastric phase is the largest contributor (~60%) triggered by food distension and amino acids
+      in the stomach. Cephalic phase contributes ~30% (vagal). Intestinal phase ~10% and is predominantly
+      inhibitory (enterogastric reflex via secretin, CCK, GIP).
+      📚 Ganong's, 26th Ed, Ch.25
+    difficulty: 1
