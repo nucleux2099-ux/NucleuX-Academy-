@@ -1,0 +1,157 @@
+topic_id: epidemiology-basics
+name: Epidemiology Basics (Incidence, Prevalence)
+description: Fundamental concepts of epidemiology — measures of disease frequency, distribution, and determinants
+high_yield: true
+
+overview: >
+  Epidemiology is the study of distribution and determinants of disease in populations, and the application of
+  this study to control health problems. Key measures include incidence (new cases) and prevalence (existing cases).
+  Understanding these measures is essential for planning health services, evaluating interventions, and conducting research.
+  📚 Park's Textbook of Preventive & Social Medicine, 26th Ed, Ch.3 (p.58-85)
+
+learning_objectives:
+  - Define epidemiology and its objectives
+  - Differentiate incidence from prevalence
+  - Calculate incidence rate, prevalence, attack rate
+  - Explain the relationship between incidence, prevalence, and duration
+  - Describe measures of morbidity and mortality
+
+content:
+  atoms:
+    - id: incidence
+      title: "Incidence"
+      text: >
+        Incidence = number of NEW cases occurring in a defined population during a specified time period.
+        Incidence rate (person-time) = New cases / Person-time at risk. Cumulative incidence (attack rate)
+        = New cases / Population at risk at start of period. Incidence measures RISK of developing disease.
+        Used for: acute diseases, studying etiology, evaluating prevention programs.
+        Secondary attack rate = new cases among contacts / total susceptible contacts × 100.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.62-68)
+
+    - id: prevalence
+      title: "Prevalence"
+      text: >
+        Prevalence = number of EXISTING cases (old + new) at a given point or period in time.
+        Point prevalence = cases at a specific point / total population. Period prevalence = cases during
+        a period / average population. Prevalence measures BURDEN of disease. Used for: chronic diseases,
+        health service planning, resource allocation.
+        Prevalence = Incidence × Duration (P = I × D). If disease duration increases (better survival
+        but no cure), prevalence increases even if incidence stays constant.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.68-72)
+
+    - id: relationship
+      title: "Relationship: Incidence, Prevalence, Duration"
+      text: >
+        P = I × D (prevalence = incidence × average duration). This means:
+        (1) A disease with LOW incidence but LONG duration → HIGH prevalence (e.g., diabetes, HIV on ART).
+        (2) A disease with HIGH incidence but SHORT duration → LOW prevalence (e.g., common cold).
+        (3) If a disease is rapidly fatal → LOW prevalence despite high incidence (e.g., Ebola, rabies).
+        Improved treatment (longer survival without cure) INCREASES prevalence.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.72-75)
+
+    - id: mortality-measures
+      title: "Mortality Measures"
+      text: >
+        Crude death rate (CDR) = Total deaths / Mid-year population × 1000.
+        Specific death rates: age-specific, sex-specific, cause-specific.
+        Case fatality rate (CFR) = Deaths from disease / Total cases of disease × 100 (measures severity).
+        Proportional mortality rate (PMR) = Deaths from specific cause / Total deaths × 100.
+        Infant mortality rate (IMR) = Deaths <1 year / Live births × 1000 (sensitive indicator of health status).
+        Maternal mortality ratio (MMR) = Maternal deaths / Live births × 100,000.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.75-82)
+
+    - id: morbidity-measures
+      title: "Other Morbidity Measures"
+      text: >
+        Attack rate = cases / exposed population × 100 (used in outbreaks).
+        Disability-Adjusted Life Years (DALY) = YLL + YLD (measures disease burden — years of life lost
+        + years lived with disability). Quality-Adjusted Life Year (QALY) = years × quality weight.
+        HALE (Healthy Life Expectancy) — expected years in full health.
+        Standardization: direct (apply study rates to standard population) and indirect (SMR — compare
+        observed to expected deaths).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.82-85)
+
+  clinical:
+    - title: "Clinical Correlation: HIV/AIDS — Prevalence vs Incidence"
+      text: >
+        With introduction of ART, HIV mortality decreased dramatically. Patients live longer, but are NOT cured.
+        Result: incidence may decrease (due to prevention efforts) but PREVALENCE increases (longer survival).
+        This illustrates P = I × D perfectly.
+
+high_yield_points:
+  - "Incidence = NEW cases; Prevalence = ALL existing cases (old + new)"
+  - "Prevalence = Incidence × Duration (P = I × D)"
+  - "Incidence measures RISK; Prevalence measures BURDEN"
+  - "Better treatment (longer survival) increases PREVALENCE without affecting incidence"
+  - "Rapidly fatal disease → LOW prevalence despite HIGH incidence"
+  - "Case fatality rate measures SEVERITY of disease"
+  - "IMR is the most SENSITIVE indicator of a country's health status"
+  - "DALY = YLL + YLD (measures total disease burden)"
+  - "Attack rate is used in OUTBREAK investigations"
+  - "Secondary attack rate = new cases among contacts / susceptible contacts"
+
+mcqs:
+  - question: "If a new treatment prolongs survival in cancer patients without curing them, the effect on epidemiological measures would be:"
+    options:
+      - "Increased incidence, decreased prevalence"
+      - "Decreased incidence, increased prevalence"
+      - "Unchanged incidence, increased prevalence"
+      - "Decreased incidence, unchanged prevalence"
+    answer: "Unchanged incidence, increased prevalence"
+    explanation: >
+      The treatment doesn't prevent new cases (incidence unchanged) but increases disease duration (longer survival).
+      Since P = I × D, increased duration leads to increased prevalence.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.73)
+    difficulty: 2
+
+  - question: "Case fatality rate is a measure of:"
+    options:
+      - "Risk of developing disease"
+      - "Burden of disease"
+      - "Severity/lethality of disease"
+      - "Speed of disease transmission"
+    answer: "Severity/lethality of disease"
+    explanation: >
+      CFR = deaths from disease / total cases × 100. It measures the proportion of affected individuals
+      who die, reflecting disease severity. Ebola has high CFR (~50-90%), common cold has near-zero CFR.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.78)
+    difficulty: 1
+
+  - question: "The most sensitive indicator of health status of a country is:"
+    options:
+      - "Crude death rate"
+      - "Infant mortality rate"
+      - "Maternal mortality ratio"
+      - "Life expectancy at birth"
+    answer: "Infant mortality rate"
+    explanation: >
+      IMR reflects maternal health, nutrition, sanitation, healthcare access, and socioeconomic conditions.
+      It is the most sensitive and widely used single indicator of a country's overall health status.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.79)
+    difficulty: 1
+
+  - question: "Prevalence of a disease will DECREASE when:"
+    options:
+      - "New treatment increases survival without cure"
+      - "Incidence increases"
+      - "Disease becomes rapidly fatal"
+      - "Immigration of cases increases"
+    answer: "Disease becomes rapidly fatal"
+    explanation: >
+      P = I × D. If disease becomes rapidly fatal, duration decreases dramatically, reducing prevalence
+      even if incidence is high. Better treatment increases duration → increases prevalence.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.74)
+    difficulty: 2
+
+  - question: "DALY (Disability-Adjusted Life Year) is calculated as:"
+    options:
+      - "YLL only"
+      - "YLD only"
+      - "YLL + YLD"
+      - "Life expectancy - HALE"
+    answer: "YLL + YLD"
+    explanation: >
+      DALY = Years of Life Lost (YLL, due to premature death) + Years Lived with Disability (YLD).
+      One DALY represents one lost year of healthy life. It measures total disease burden.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.3 (p.83)
+    difficulty: 1

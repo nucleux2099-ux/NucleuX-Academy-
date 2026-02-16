@@ -1,0 +1,157 @@
+topic_id: poisoning-organophosphorus
+name: Poisoning — Organophosphorus
+description: Organophosphorus compound poisoning — mechanism, clinical features, diagnosis, treatment, and PM findings
+high_yield: true
+
+overview: >
+  Organophosphorus (OP) compounds are the most common cause of poisoning death in India. They are used as
+  insecticides/pesticides (malathion, parathion, chlorpyrifos). OP compounds inhibit acetylcholinesterase (AChE)
+  irreversibly, causing accumulation of acetylcholine at muscarinic, nicotinic, and CNS receptors.
+  The clinical picture follows the DUMBELS/SLUDGE mnemonic. Treatment includes atropine and pralidoxime (PAM).
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.505-520)
+
+learning_objectives:
+  - Describe the mechanism of action of OP compounds
+  - List clinical features using DUMBELS/SLUDGE mnemonic
+  - Explain the difference between muscarinic and nicotinic effects
+  - Describe treatment protocol including atropine and oximes
+  - Discuss PM findings and medicolegal aspects
+
+content:
+  atoms:
+    - id: mechanism
+      title: "Mechanism of Action"
+      text: >
+        OP compounds phosphorylate the serine residue at the active site of acetylcholinesterase (AChE),
+        causing IRREVERSIBLE inhibition. This leads to accumulation of ACh at: (1) Muscarinic receptors
+        (parasympathetic postganglionic), (2) Nicotinic receptors (NMJ, autonomic ganglia),
+        (3) CNS. "Aging" — after 24-48 hours, the phosphorylated enzyme becomes resistant to reactivation
+        (important for timing of oxime therapy).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.506-508)
+
+    - id: clinical-features
+      title: "Clinical Features — DUMBELS & Nicotinic Effects"
+      text: >
+        MUSCARINIC effects (DUMBELS): Diarrhea, Urination, Miosis, Bradycardia/Bronchospasm,
+        Emesis, Lacrimation, Salivation. Also: sweating, wheezing, hypotension.
+        NICOTINIC effects: Fasciculations, muscle weakness, tachycardia, hypertension, mydriasis (can override miosis),
+        paralysis (including respiratory muscles).
+        CNS effects: Anxiety, seizures, coma, respiratory depression.
+        Intermediate syndrome: 1-4 days post-exposure — proximal muscle weakness, respiratory failure (cranial nerve palsies).
+        OPIDN (OP-induced delayed neuropathy): 2-3 weeks later — distal sensorimotor neuropathy.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.508-512)
+
+    - id: diagnosis
+      title: "Diagnosis"
+      text: >
+        (1) Garlicky/kerosene odor of breath/vomitus, (2) Low serum cholinesterase (pseudocholinesterase <50% = significant,
+        <10% = severe), (3) Low RBC acetylcholinesterase (more specific), (4) Miosis with excessive secretions.
+        Serum pseudocholinesterase is a quick marker but less specific than RBC AChE.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.512-514)
+
+    - id: treatment
+      title: "Treatment Protocol"
+      text: >
+        (1) Decontamination — remove clothing, wash skin, gastric lavage with KMnO4 (potassium permanganate).
+        (2) ATROPINE — competitive muscarinic antagonist. Dose: 2-5 mg IV, repeat every 5-10 min until
+        "atropinization" (dry mouth, tachycardia, dilated pupils). Does NOT reverse nicotinic effects.
+        (3) PRALIDOXIME (PAM/2-PAM) — oxime that reactivates AChE before "aging." Dose: 1-2g IV.
+        Must be given within 24-48 hours. Reverses both muscarinic and nicotinic effects.
+        (4) Supportive: ventilation, diazepam for seizures.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.514-518)
+
+    - id: pm-findings
+      title: "Postmortem Findings"
+      text: >
+        External: garlicky odor, miosis, cyanosis, froth at mouth, excessive secretions.
+        Internal: pulmonary edema, congested viscera, garlicky odor on opening abdomen.
+        Stomach mucosa may be congested. Brain edema. Chemical analysis of stomach contents,
+        blood, liver confirms OP compound. Viscera preserved in saturated NaCl.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.518-520)
+
+  clinical:
+    - title: "Clinical Correlation: Intermediate Syndrome"
+      text: >
+        Occurs 1-4 days after acute OP poisoning, after resolution of cholinergic crisis. Features: weakness of
+        proximal limb muscles, neck flexors, cranial nerve palsies (facial, extraocular), respiratory muscle
+        weakness → respiratory failure. Not responsive to atropine or PAM. Requires ventilatory support.
+
+high_yield_points:
+  - "OP compounds cause IRREVERSIBLE inhibition of AChE"
+  - "DUMBELS mnemonic for muscarinic effects: Diarrhea, Urination, Miosis, Bradycardia/Bronchospasm, Emesis, Lacrimation, Salivation"
+  - "Atropine reverses MUSCARINIC effects only — NOT nicotinic"
+  - "Pralidoxime (PAM) reverses BOTH muscarinic and nicotinic effects — must give before aging (24-48 hrs)"
+  - "Garlicky odor = characteristic of OP poisoning"
+  - "Intermediate syndrome: 1-4 days post, proximal weakness, respiratory failure"
+  - "OPIDN: 2-3 weeks post, distal sensorimotor neuropathy"
+  - "Serum pseudocholinesterase <10% = severe poisoning"
+  - "Most common cause of poisoning death in India"
+  - "Gastric lavage with potassium permanganate (KMnO4)"
+
+mcqs:
+  - question: "The mechanism of action of organophosphorus compounds involves:"
+    options:
+      - "Reversible inhibition of acetylcholinesterase"
+      - "Irreversible inhibition of acetylcholinesterase"
+      - "Stimulation of nicotinic receptors"
+      - "Blockade of muscarinic receptors"
+    answer: "Irreversible inhibition of acetylcholinesterase"
+    explanation: >
+      OP compounds phosphorylate the serine residue at the active site of AChE, causing irreversible inhibition.
+      This leads to accumulation of ACh at all cholinergic synapses. Carbamates cause reversible inhibition.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.506)
+    difficulty: 1
+
+  - question: "Which drug reverses BOTH muscarinic and nicotinic effects of OP poisoning?"
+    options:
+      - "Atropine"
+      - "Pralidoxime (PAM)"
+      - "Physostigmine"
+      - "Neostigmine"
+    answer: "Pralidoxime (PAM)"
+    explanation: >
+      Pralidoxime reactivates AChE by breaking the OP-enzyme bond, thus reversing effects at all cholinergic
+      sites (muscarinic and nicotinic). Atropine only blocks muscarinic receptors. Must give PAM before
+      "aging" of enzyme (within 24-48 hours).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.516)
+    difficulty: 1
+
+  - question: "Intermediate syndrome in OP poisoning is characterized by:"
+    options:
+      - "Immediate cholinergic crisis"
+      - "Proximal muscle weakness and respiratory failure 1-4 days post-exposure"
+      - "Distal sensory neuropathy after 2-3 weeks"
+      - "Seizures and coma"
+    answer: "Proximal muscle weakness and respiratory failure 1-4 days post-exposure"
+    explanation: >
+      Intermediate syndrome occurs 1-4 days after OP exposure, after initial cholinergic crisis resolves.
+      Features include proximal limb weakness, neck flexor weakness, and respiratory muscle paralysis.
+      OPIDN is the delayed neuropathy occurring at 2-3 weeks.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.511)
+    difficulty: 2
+
+  - question: "The endpoint of atropine therapy in OP poisoning is:"
+    options:
+      - "Pupillary constriction"
+      - "Drying of secretions and tachycardia (atropinization)"
+      - "Reversal of fasciculations"
+      - "Normalization of serum cholinesterase"
+    answer: "Drying of secretions and tachycardia (atropinization)"
+    explanation: >
+      Atropine is titrated to clinical effect — "atropinization" includes dry mouth, decreased bronchial
+      secretions, tachycardia, and dilated pupils. Fasciculations are nicotinic (not reversed by atropine).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.515)
+    difficulty: 2
+
+  - question: "A farmer is brought dead with garlicky odor, miosis, and excessive secretions. The most likely poison is:"
+    options:
+      - "Cyanide"
+      - "Organophosphorus compound"
+      - "Arsenic"
+      - "Dhatura"
+    answer: "Organophosphorus compound"
+    explanation: >
+      Garlicky odor + miosis + excessive secretions is the classic triad of OP poisoning. Cyanide has bitter
+      almond odor. Arsenic causes garlic odor but no miosis/secretions. Dhatura causes mydriasis (anticholinergic).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.24 (p.518)
+    difficulty: 1

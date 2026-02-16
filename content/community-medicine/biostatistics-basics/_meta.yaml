@@ -1,0 +1,155 @@
+topic_id: biostatistics-basics
+name: Biostatistics (Mean, Median, Tests of Significance)
+description: Basic biostatistical concepts — measures of central tendency, dispersion, and tests of significance
+high_yield: true
+
+overview: >
+  Biostatistics provides tools for collecting, analyzing, and interpreting health data. Measures of central tendency
+  (mean, median, mode), dispersion (range, SD, variance), and tests of significance (chi-square, t-test, ANOVA)
+  are essential for evidence-based medicine and research methodology.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.131-165); High-Yield Biostatistics
+
+learning_objectives:
+  - Define and calculate mean, median, and mode
+  - Describe measures of dispersion
+  - Explain types of data and appropriate statistical tests
+  - Differentiate parametric from non-parametric tests
+  - Interpret p-value, confidence interval, and statistical significance
+
+content:
+  atoms:
+    - id: central-tendency
+      title: "Measures of Central Tendency"
+      text: >
+        Mean (arithmetic average) = sum of values / number of values. Affected by extreme values (outliers).
+        Median = middle value when arranged in order. NOT affected by outliers. Best for skewed data.
+        Mode = most frequently occurring value. Can have multiple modes.
+        In normal distribution: Mean = Median = Mode. In positively skewed: Mean > Median > Mode.
+        In negatively skewed: Mean < Median < Mode.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.135-140)
+
+    - id: dispersion
+      title: "Measures of Dispersion"
+      text: >
+        Range = highest - lowest value. Simple but affected by outliers.
+        Variance = mean of squared deviations from mean. Standard deviation (SD) = √variance.
+        In normal distribution: ±1 SD = 68.3%, ±2 SD = 95.4%, ±3 SD = 99.7% of values.
+        Standard error of mean (SEM) = SD/√n. SEM decreases with increasing sample size.
+        Coefficient of variation (CV) = (SD/mean) × 100 — allows comparison of variability between groups
+        with different units/means.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.140-148)
+
+    - id: tests-significance
+      title: "Tests of Significance"
+      text: >
+        Chi-square (χ²) test: for categorical/qualitative data. Compares observed vs expected frequencies.
+        Student's t-test: for comparing means of TWO groups (quantitative data, normal distribution).
+        Paired t-test: same group measured twice (before-after). Unpaired t-test: two independent groups.
+        ANOVA (F-test): comparing means of THREE or more groups. Post-hoc tests identify which groups differ.
+        Correlation coefficient (r): measures strength and direction of linear relationship (-1 to +1).
+        Regression: predicts dependent variable from independent variable.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.148-160)
+
+    - id: parametric-nonparametric
+      title: "Parametric vs Non-parametric Tests"
+      text: >
+        Parametric (assume normal distribution): t-test, ANOVA, Pearson correlation.
+        Non-parametric (no distribution assumption): Mann-Whitney U (instead of unpaired t-test),
+        Wilcoxon signed-rank (instead of paired t-test), Kruskal-Wallis (instead of ANOVA),
+        Spearman correlation (instead of Pearson), Chi-square, Fisher's exact test.
+        Use non-parametric when: small sample, ordinal data, skewed distribution, non-normal data.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.155-158)
+
+    - id: p-value-ci
+      title: "P-value & Confidence Interval"
+      text: >
+        P-value = probability of observing results as extreme as observed, assuming null hypothesis is true.
+        P < 0.05 = statistically significant (by convention). Type I error (α) = rejecting true null hypothesis
+        (false positive). Type II error (β) = accepting false null hypothesis (false negative).
+        Power = 1 - β (probability of detecting a true effect). 95% CI = range within which true population
+        parameter lies with 95% probability. If CI for RR or OR includes 1 → not statistically significant.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.160-165)
+
+  clinical:
+    - title: "Clinical Correlation: Choosing the Right Test"
+      text: >
+        Comparing 2 means (quantitative, normal) → unpaired t-test. Before-after same group → paired t-test.
+        3+ group means → ANOVA. Proportions/frequencies → chi-square. Correlation → Pearson (parametric) or
+        Spearman (non-parametric). Survival analysis → Kaplan-Meier + log-rank test.
+
+high_yield_points:
+  - "Normal distribution: Mean = Median = Mode"
+  - "Positively skewed: Mean > Median > Mode"
+  - "±1 SD = 68.3%, ±2 SD = 95.4%, ±3 SD = 99.7%"
+  - "SEM = SD/√n — decreases with increasing sample size"
+  - "Chi-square test = categorical data; t-test = quantitative data (2 groups); ANOVA = 3+ groups"
+  - "Type I error (α) = false positive; Type II error (β) = false negative"
+  - "Power = 1 - β (ability to detect true effect)"
+  - "If 95% CI for OR/RR includes 1 → NOT statistically significant"
+  - "Mann-Whitney U = non-parametric equivalent of unpaired t-test"
+  - "Median is the best measure of central tendency for SKEWED data"
+
+mcqs:
+  - question: "In a positively skewed distribution, the relationship between mean, median, and mode is:"
+    options:
+      - "Mean = Median = Mode"
+      - "Mean > Median > Mode"
+      - "Mean < Median < Mode"
+      - "Mode > Mean > Median"
+    answer: "Mean > Median > Mode"
+    explanation: >
+      In positive skew, the tail extends to the right, pulling the mean toward higher values.
+      The order is Mean > Median > Mode. In negative skew, it's reversed.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.138)
+    difficulty: 1
+
+  - question: "The appropriate test to compare means of THREE independent groups is:"
+    options:
+      - "Chi-square test"
+      - "Paired t-test"
+      - "ANOVA (F-test)"
+      - "Mann-Whitney U test"
+    answer: "ANOVA (F-test)"
+    explanation: >
+      ANOVA compares means of three or more groups simultaneously. Using multiple t-tests would increase
+      Type I error. Post-hoc tests (Tukey, Bonferroni) identify which specific groups differ.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.153)
+    difficulty: 1
+
+  - question: "In a normal distribution, approximately what percentage of values fall within ±2 standard deviations of the mean?"
+    options:
+      - "50%"
+      - "68.3%"
+      - "95.4%"
+      - "99.7%"
+    answer: "95.4%"
+    explanation: >
+      In normal distribution: ±1 SD = 68.3%, ±2 SD = 95.4%, ±3 SD = 99.7% (68-95-99.7 rule).
+      📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.145)
+    difficulty: 1
+
+  - question: "Type II error (β) is:"
+    options:
+      - "Rejecting a true null hypothesis"
+      - "Accepting a false null hypothesis"
+      - "Accepting a true null hypothesis"
+      - "Rejecting a false null hypothesis"
+    answer: "Accepting a false null hypothesis"
+    explanation: >
+      Type II error (β) = failing to reject a false null hypothesis (false negative — missing a real effect).
+      Type I error (α) = rejecting a true null hypothesis (false positive). Power = 1 - β.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.161)
+    difficulty: 2
+
+  - question: "A 95% confidence interval for an odds ratio is 0.85 to 1.32. This means:"
+    options:
+      - "The association is statistically significant"
+      - "The association is NOT statistically significant"
+      - "The odds ratio is exactly 1.0"
+      - "The p-value is less than 0.05"
+    answer: "The association is NOT statistically significant"
+    explanation: >
+      If the 95% CI for OR includes 1.0 (the null value), the result is not statistically significant at p=0.05.
+      The CI 0.85-1.32 includes 1.0, indicating the observed association could be due to chance.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.6 (p.164)
+    difficulty: 2

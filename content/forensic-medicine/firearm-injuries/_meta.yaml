@@ -1,0 +1,155 @@
+topic_id: firearm-injuries
+name: Firearm Injuries
+description: Classification of firearms, wound ballistics, entry vs exit wounds, range estimation, and medicolegal aspects
+high_yield: true
+
+overview: >
+  Firearm injuries are increasingly important in forensic medicine. Firearms are classified as rifled (pistol,
+  revolver, rifle) and smooth-bore (shotgun). The characteristics of entry and exit wounds, and features like
+  tattooing, blackening, and singeing help determine the range of firing. Understanding wound ballistics is
+  essential for reconstructing the incident. The Indian Arms Act, 1959 governs possession and use of firearms.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.265-300)
+
+learning_objectives:
+  - Classify firearms into rifled and smooth-bore types
+  - Differentiate entry wound from exit wound
+  - Estimate range of firing based on wound characteristics
+  - Describe wound ballistics and factors affecting injury severity
+  - Discuss medicolegal significance of firearm injuries
+
+content:
+  atoms:
+    - id: classification
+      title: "Classification of Firearms"
+      text: >
+        (1) Rifled firearms — spiral grooves inside barrel impart spin to bullet for accuracy.
+        Types: pistol, revolver, rifle. Bullet has rifling marks (individual to each weapon).
+        (2) Smooth-bore firearms — smooth barrel, fires multiple pellets (shot). Shotgun is the main type.
+        (3) Country-made/improvised firearms — common in India, irregular markings.
+        Ammunition: bullet (rifled), cartridge containing propellant, primer, and projectile.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.265-270)
+
+    - id: entry-vs-exit
+      title: "Entry Wound vs Exit Wound"
+      text: >
+        ENTRY wound: (1) Round/oval, (2) Inverted margins (inward beveling), (3) Abrasion collar/grease collar,
+        (4) SMALLER than exit, (5) Clean-cut edges. Abrasion collar = marginal abrasion from friction of bullet.
+        EXIT wound: (1) Irregular/stellate, (2) Everted margins (outward beveling), (3) NO abrasion collar,
+        (4) LARGER than entry, (5) Ragged edges. NO tattooing/blackening at exit wound.
+        Kennedy phenomenon: contact wound over thin bone (skull) — entry resembles exit (stellate, everted).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.275-285)
+
+    - id: range-estimation
+      title: "Range of Firing"
+      text: >
+        Contact/near-contact: muzzle imprint, cherry-red CO-stained tissue, stellate wound (gas expansion),
+        soot in wound track. Close range (<60cm): burning/singeing of hair, blackening (soot), tattooing
+        (unburnt powder). Medium range (60cm-2m): tattooing only (NO blackening). Distant (>2m): bullet
+        hole only — no burning, blackening, or tattooing. These features help determine range of firing.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.285-295)
+
+    - id: wound-ballistics
+      title: "Wound Ballistics"
+      text: >
+        Factors determining wound severity: (1) Velocity (KE = ½mv²) — most important factor,
+        (2) Mass of projectile, (3) Yaw and tumbling, (4) Fragmentation, (5) Tissue type struck.
+        High-velocity rifles (>2000 ft/s): temporary cavity, extensive tissue destruction.
+        Low-velocity handguns (<2000 ft/s): permanent cavity, less destruction.
+        Tandem bullet: two bullets fired in succession, second enters wound of first.
+        Ricochet bullet: changed trajectory — irregular entry, difficult interpretation.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.270-275)
+
+    - id: shotgun-injuries
+      title: "Shotgun Injuries"
+      text: >
+        Shotgun fires multiple pellets (shot). Pattern varies with distance:
+        Contact: rat-hole wound (single large entry), wadding/plastic cup in wound.
+        Close range: central hole with satellite pellet marks around it.
+        Medium: pellets spread, larger area of injury.
+        Distant: individual scattered pellet wounds. Wadding may cause additional injury at close range.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.295-300)
+
+  clinical:
+    - title: "Clinical Correlation: Determining Sequence of Multiple Gunshot Wounds"
+      text: >
+        When multiple GSWs are present, the sequence can sometimes be determined by: (1) Fracture pattern —
+        later fractures are arrested by existing fracture lines (Puppe's rule), (2) Bleeding — earlier wounds
+        bleed more, (3) Soot/stippling pattern overlap. This is important for reconstruction.
+
+high_yield_points:
+  - "Entry wound: SMALLER, inverted margins, abrasion collar PRESENT"
+  - "Exit wound: LARGER, everted margins, NO abrasion collar"
+  - "Contact wound: muzzle imprint, cherry-red CO staining, stellate wound"
+  - "Tattooing (stippling) = unburnt powder — present in close range, CANNOT be washed off"
+  - "Blackening (sooting) = soot deposit — CAN be washed off"
+  - "Range: Contact→Burning+Blackening+Tattooing; Close→Blackening+Tattooing; Medium→Tattooing only; Distant→Bullet hole only"
+  - "KE = ½mv² — velocity is the MOST important factor in wound severity"
+  - "Kennedy phenomenon: contact shot over skull → entry mimics exit (stellate)"
+  - "Shotgun contact wound = rat-hole wound"
+  - "Puppe's rule: later fractures arrested by earlier fracture lines"
+
+mcqs:
+  - question: "An entry wound of a firearm is characterized by:"
+    options:
+      - "Everted margins and no abrasion collar"
+      - "Inverted margins and abrasion collar present"
+      - "Larger than exit wound"
+      - "Irregular stellate shape"
+    answer: "Inverted margins and abrasion collar present"
+    explanation: >
+      Entry wounds show inverted (inward) margins, abrasion collar from bullet friction, and are typically
+      smaller and more regular than exit wounds. Exit wounds show everted margins and no abrasion collar.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.276)
+    difficulty: 1
+
+  - question: "Tattooing (stippling) around a gunshot wound indicates a firing range of:"
+    options:
+      - "Contact"
+      - "Close range (within 60cm)"
+      - "Within 2 meters"
+      - "Beyond 2 meters"
+    answer: "Within 2 meters"
+    explanation: >
+      Tattooing is caused by unburnt gunpowder particles embedding in skin and occurs up to about 2 meters.
+      Unlike blackening (soot), tattooing CANNOT be washed off. Beyond 2m, only the bullet hole is present.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.290)
+    difficulty: 2
+
+  - question: "Cherry-red discoloration of tissues around a gunshot wound is due to:"
+    options:
+      - "High temperature of bullet"
+      - "Carbon monoxide (CO) combining with hemoglobin/myoglobin"
+      - "Copper from bullet jacket"
+      - "Lead deposition"
+    answer: "Carbon monoxide (CO) combining with hemoglobin/myoglobin"
+    explanation: >
+      In contact wounds, CO from propellant gases enters the wound and combines with hemoglobin/myoglobin
+      to form carboxyhemoglobin/carboxymyoglobin, producing cherry-red discoloration.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.287)
+    difficulty: 2
+
+  - question: "The Kennedy phenomenon refers to:"
+    options:
+      - "Bullet tumbling inside the body"
+      - "Contact wound over thin bone resembling an exit wound"
+      - "Ricochet bullet causing irregular entry"
+      - "Tandem bullet entry"
+    answer: "Contact wound over thin bone resembling an exit wound"
+    explanation: >
+      When a contact shot is fired over thin bone (skull), expanding gases cause stellate laceration with
+      everted margins — resembling an exit wound. This is the Kennedy phenomenon (named after JFK assassination studies).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.283)
+    difficulty: 2
+
+  - question: "The most important factor determining the severity of a firearm wound is:"
+    options:
+      - "Mass of bullet"
+      - "Velocity of bullet"
+      - "Caliber of weapon"
+      - "Type of bullet material"
+    answer: "Velocity of bullet"
+    explanation: >
+      Kinetic energy = ½mv². Since velocity is squared, it contributes far more to wound severity than mass.
+      High-velocity rifle bullets cause much more tissue destruction than low-velocity handgun bullets.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.12 (p.271)
+    difficulty: 1

@@ -1,0 +1,157 @@
+topic_id: poisoning-corrosives
+name: Poisoning — Corrosives
+description: Corrosive poisoning by acids and alkalis — mechanism, clinical features, treatment, and PM findings
+high_yield: true
+
+overview: >
+  Corrosive poisons cause tissue destruction by chemical action on contact. They include strong acids
+  (sulfuric/vitriol, nitric, hydrochloric) and strong alkalis (NaOH, KOH). Sulfuric acid (vitriol) is the
+  most common corrosive acid used for poisoning and vitriolage (acid throwing). Acids cause coagulative
+  necrosis; alkalis cause liquefactive necrosis (deeper penetration). Most cases are suicidal or accidental.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.465-480)
+
+learning_objectives:
+  - Differentiate acid from alkali corrosive poisoning
+  - Describe clinical features and complications of corrosive ingestion
+  - Explain the PM findings in acid vs alkali poisoning
+  - Discuss treatment principles
+  - Describe vitriolage and its medicolegal aspects
+
+content:
+  atoms:
+    - id: acids-vs-alkalis
+      title: "Acids vs Alkalis — Mechanism of Injury"
+      text: >
+        ACIDS: cause coagulative necrosis — protein denaturation forms a protective coagulum that limits depth
+        of penetration. Sulfuric acid: charring (black), Nitric acid: yellow staining (xanthoproteic reaction),
+        HCl: whitish-gray discoloration.
+        ALKALIS: cause liquefactive necrosis — saponification of fats, dissolution of proteins → deeper penetration,
+        more dangerous for esophagus. Alkalis cause MORE esophageal damage; acids cause MORE gastric damage.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.465-470)
+
+    - id: clinical-features
+      title: "Clinical Features of Corrosive Ingestion"
+      text: >
+        Immediate: burning pain from mouth to stomach, difficulty swallowing, drooling, vomiting (hematemesis),
+        burns on lips/chin/tongue. Systemic: shock, dehydration, renal failure (acid hemoglobin precipitation).
+        Complications: (1) Acute — perforation (gastric/esophageal), mediastinitis, peritonitis, aspiration;
+        (2) Chronic — esophageal stricture (2-8 weeks, especially with alkalis), pyloric stenosis (with acids),
+        increased risk of squamous cell carcinoma of esophagus (lye stricture).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.470-475)
+
+    - id: treatment
+      title: "Treatment Principles"
+      text: >
+        (1) DO NOT induce vomiting or gastric lavage (risk of re-exposure and perforation).
+        (2) DO NOT neutralize (exothermic reaction causes thermal injury).
+        (3) Dilution with water/milk (controversial, mainly for early presentation).
+        (4) Endoscopy within 12-24 hours to assess damage grade.
+        (5) Supportive: IV fluids, analgesics, antibiotics, PPI.
+        (6) Steroids controversial (some evidence for Grade 2b alkali burns to prevent stricture).
+        (7) Surgery for perforation. Long-term: serial dilation for strictures.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.475-478)
+
+    - id: pm-findings
+      title: "PM Findings"
+      text: >
+        External: burns/staining around mouth, lips, chin. Acid burns are hard, dry; alkali burns are soft, soapy.
+        Sulfuric acid: black charred mucosa. Nitric acid: yellow mucosa. HCl: white-gray.
+        Internal: esophageal/gastric mucosa shows necrosis, perforation sites, corrosive track visible.
+        Stomach may show "leather-bottle" appearance (contracted, thick wall).
+        Viscera preserved in saturated NaCl for chemical analysis.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.478-480)
+
+    - id: vitriolage
+      title: "Vitriolage (Acid Throwing)"
+      text: >
+        Vitriolage is throwing of acid (usually sulfuric acid/vitriol) on a person with intent to cause injury.
+        Punishable under Section 326A IPC (minimum 10 years, extendable to life imprisonment).
+        Section 326B: attempting to throw acid. Causes disfigurement, blindness, and severe psychological trauma.
+        Victim compensation mandated under the Criminal Law Amendment Act, 2013.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.468)
+
+  clinical:
+    - title: "Clinical Correlation: Esophageal Stricture after Alkali Ingestion"
+      text: >
+        Alkali ingestion causes deeper liquefactive necrosis of the esophagus. Strictures develop in 2-8 weeks
+        in up to 70% of Grade 2b-3 injuries. Long-term risk of squamous cell carcinoma (1000x increased risk
+        after lye stricture). Management includes serial dilation, stenting, or esophageal replacement surgery.
+
+high_yield_points:
+  - "Acids → coagulative necrosis (limited depth); Alkalis → liquefactive necrosis (DEEPER penetration)"
+  - "Alkalis damage ESOPHAGUS more; Acids damage STOMACH more"
+  - "Sulfuric acid → BLACK charring; Nitric acid → YELLOW staining; HCl → WHITE-GRAY"
+  - "DO NOT do gastric lavage or neutralize in corrosive poisoning"
+  - "Lye (alkali) stricture → increased risk of esophageal squamous cell carcinoma"
+  - "Vitriolage = acid throwing — Section 326A IPC (min 10 years to life)"
+  - "Esophageal stricture develops in 2-8 weeks after alkali ingestion"
+  - "Endoscopy within 12-24 hours to grade injury"
+  - "Sulfuric acid (vitriol) is the most common acid used in poisoning"
+  - "Leather-bottle stomach seen in chronic acid ingestion"
+
+mcqs:
+  - question: "Alkali ingestion causes MORE damage to the esophagus because alkalis cause:"
+    options:
+      - "Coagulative necrosis"
+      - "Liquefactive necrosis"
+      - "Caseous necrosis"
+      - "Fat necrosis"
+    answer: "Liquefactive necrosis"
+    explanation: >
+      Alkalis cause liquefactive necrosis by saponifying fats and dissolving proteins, leading to deeper tissue
+      penetration. Acids cause coagulative necrosis which forms a protective coagulum limiting depth.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.466)
+    difficulty: 1
+
+  - question: "Yellow staining of mucosa in corrosive poisoning suggests ingestion of:"
+    options:
+      - "Sulfuric acid"
+      - "Nitric acid"
+      - "Hydrochloric acid"
+      - "Sodium hydroxide"
+    answer: "Nitric acid"
+    explanation: >
+      Nitric acid causes yellow staining due to xanthoproteic reaction (nitration of aromatic amino acids in proteins).
+      Sulfuric acid causes black charring, HCl causes white-gray discoloration.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.467)
+    difficulty: 1
+
+  - question: "The correct FIRST AID for corrosive acid ingestion is:"
+    options:
+      - "Induce vomiting immediately"
+      - "Neutralize with alkali"
+      - "Gastric lavage with normal saline"
+      - "Dilution with water or milk (do NOT neutralize or lavage)"
+    answer: "Dilution with water or milk (do NOT neutralize or lavage)"
+    explanation: >
+      Vomiting and gastric lavage cause re-exposure of esophagus to corrosive. Neutralization causes exothermic
+      reaction (thermal burn). Dilution with water/milk is the safest immediate measure.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.475)
+    difficulty: 1
+
+  - question: "Vitriolage (acid throwing) is punishable under which section of IPC?"
+    options:
+      - "Section 302"
+      - "Section 307"
+      - "Section 326A"
+      - "Section 375"
+    answer: "Section 326A"
+    explanation: >
+      Section 326A IPC (Criminal Law Amendment Act, 2013) specifically deals with voluntarily causing grievous
+      hurt by acid throwing. Punishment: minimum 10 years, extendable to life imprisonment.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.468)
+    difficulty: 2
+
+  - question: "Long-term complication of alkali (lye) ingestion with esophageal stricture includes increased risk of:"
+    options:
+      - "Adenocarcinoma of esophagus"
+      - "Squamous cell carcinoma of esophagus"
+      - "Gastric lymphoma"
+      - "Small bowel carcinoid"
+    answer: "Squamous cell carcinoma of esophagus"
+    explanation: >
+      Lye stricture of esophagus carries approximately 1000-fold increased risk of squamous cell carcinoma
+      (not adenocarcinoma). The latency period is typically 40 years. This is different from Barrett's
+      esophagus which predisposes to adenocarcinoma.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.22 (p.477)
+    difficulty: 2

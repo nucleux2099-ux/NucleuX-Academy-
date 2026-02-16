@@ -1,61 +1,90 @@
 # Cervical Plexus
 
 ## Overview
-Cervical Plexus is an important topic in anatomy. Understanding its fundamental concepts, clinical presentation, and management principles is essential for medical students and practitioners.
+
+The cervical plexus is formed by the ventral rami of C1–C4 spinal nerves. It lies deep to the internal jugular vein and SCM, on the surface of scalenus medius and levator scapulae, covered by the prevertebral fascia. It gives off cutaneous (superficial) and muscular (deep) branches. The cutaneous branches emerge around the posterior border of SCM at Erb's point, also called the "nerve point of the neck."
 
 ## Key Points
-- Core concept and definition of Cervical Plexus
-- Classification and types
-- Common clinical presentations
-- Diagnostic approach
-- Management principles
-- Important complications to recognize
 
-## Definition & Classification
-Cervical Plexus encompasses a range of presentations that can be classified based on etiology, severity, and clinical features. Detailed classification systems help guide diagnosis and management.
+- **Formation:** Ventral rami of C1, C2, C3, C4
+- **Location:** Deep to SCM and IJV, on the floor of the posterior triangle
+- **Erb's point (nerve point of neck):** Middle of posterior border of SCM — all cutaneous branches emerge here
+- **Important branches:** Phrenic nerve (C3, C4, C5), ansa cervicalis (C1, C2, C3), lesser occipital, great auricular, transverse cervical, supraclavicular nerves
 
-## Etiology & Pathophysiology
-The pathophysiology involves multiple mechanisms that lead to the clinical manifestations. Understanding the underlying mechanisms is crucial for rational management.
+## Gross Anatomy
 
-## Clinical Features
-### Symptoms
-- Presenting complaints vary based on severity and type
-- History should include onset, duration, progression, and associated features
-- Risk factors and predisposing conditions
+### Cutaneous (Superficial) Branches — All emerge at Erb's point
+1. **Lesser occipital nerve (C2):** Ascends along posterior border of SCM to scalp behind the ear
+2. **Great auricular nerve (C2, C3):** Ascends on SCM to the ear; largest cutaneous branch
+3. **Transverse cervical nerve (C2, C3):** Crosses SCM horizontally to anterior triangle skin
+4. **Supraclavicular nerves (C3, C4):** Descend in posterior triangle; medial, intermediate, lateral branches supply skin over clavicle, shoulder, upper chest
 
-### Signs
-- Physical examination findings
-- Relevant system-specific signs
-- Warning signs requiring urgent attention
+### Muscular (Deep) Branches
+1. **Ansa cervicalis:**
+   - Superior root (descendens hypoglossi) — C1 fibres travelling with hypoglossal nerve
+   - Inferior root (descendens cervicalis) — C2, C3
+   - Loop formed anterior to the carotid sheath
+   - Supplies infrahyoid muscles: sternohyoid, sternothyroid, omohyoid (both bellies)
+   - **Exception:** Thyrohyoid supplied directly by C1 via hypoglossal nerve (NOT ansa cervicalis)
 
-## Diagnosis
-### Investigations
-- Relevant laboratory investigations
-- Imaging studies as indicated
-- Special tests and procedures
+2. **Phrenic nerve (C3, C4, C5):**
+   - Chief motor nerve of the diaphragm
+   - Descends on scalenus anterior, enters thorax between subclavian artery and vein
+   - Sole motor supply to diaphragm; sensory to central diaphragmatic pleura and peritoneum, mediastinal pleura, pericardium
 
-### Differential Diagnosis
-- Important conditions to consider
-- Key distinguishing features
+3. **Segmental muscular branches:**
+   - C1: to geniohyoid (via hypoglossal), thyrohyoid (via hypoglossal), rectus capitis anterior and lateralis
+   - C2, C3, C4: to prevertebral muscles, levator scapulae (C3, C4 with dorsal scapular nerve C5)
+   - C2, C3, C4 proprioceptive fibres join the spinal accessory nerve
 
-## Management
-### Conservative
-- General measures and supportive care
-- Lifestyle modifications where applicable
+### Communicating Branches
+- C1, C2 communicate with vagus, hypoglossal, and sympathetic trunk
 
-### Medical
-- Pharmacological management
-- Drug classes and protocols
+## Relations & Surface Markings
 
-### Surgical (if applicable)
-- Indications for surgical intervention
-- Procedures and approaches
+### Erb's Point
+- Junction of upper 2/3 and lower 1/3 (or middle) of posterior border of SCM
+- All 4 cutaneous branches emerge from this point — key landmark for nerve blocks
 
-## Complications
-- Acute complications
-- Chronic complications
-- Prognosis and follow-up
+### Relations
+- Deep to SCM and investing fascia
+- On the floor: scalenus medius, levator scapulae
+- IJV lies superficial (anterolateral)
+- Phrenic nerve descends on scalenus anterior (not medius)
+
+## Blood Supply & Nerve Supply
+
+- Vasa nervorum from branches of ascending cervical, transverse cervical arteries
+- The plexus itself provides nerve supply to surrounding structures
+
+## Applied / Clinical Anatomy
+
+### Cervical Plexus Block
+- Local anaesthetic injected at Erb's point for procedures on the neck (e.g., carotid endarterectomy, lymph node biopsy)
+- Blocks all 4 cutaneous branches
+
+### Phrenic Nerve Palsy
+- Unilateral: elevated hemidiaphragm on X-ray; usually compensated
+- Bilateral: respiratory failure (complete diaphragm paralysis)
+- Causes: surgery (radical neck dissection), tumour compression, trauma
+- "C3, 4, 5 keeps the diaphragm alive"
+
+### Referred Pain
+- Diaphragmatic irritation (subphrenic abscess, liver pathology) → referred pain to shoulder tip via supraclavicular nerves (C3, C4 — same roots as phrenic nerve)
+- **Kehr's sign:** Left shoulder pain from splenic rupture due to diaphragmatic irritation
+
+### Erb's Point in Surgery
+- Landmark for cervical plexus block
+- Injury at this point can cause anaesthesia of neck skin
 
 ## References
-- Gray's Anatomy for Students
-- BD Chaurasia's Human Anatomy
+
+- Standring S. *Gray's Anatomy*. 42nd ed. Elsevier; 2021. Chapter 28: Neck — Cervical Plexus.
+- Chaurasia BD. *BD Chaurasia's Human Anatomy*. 8th ed. CBS Publishers; 2019.
+  - Volume 3: Head, Neck and Brain — Cervical Plexus.
+- Sinnatamby CS. *Last's Anatomy*. 13th ed. Elsevier; 2018.
+- Datta AK. *Essentials of Human Anatomy: Head and Neck*. 9th ed. Current Books; 2017.
+
+---
+
+*NucleuX Academy — Anatomy Explorer*

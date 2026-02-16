@@ -1,0 +1,158 @@
+topic_id: study-designs
+name: Study Designs (Cohort, Case-Control, RCT)
+description: Types of epidemiological study designs — observational and experimental, their strengths and limitations
+high_yield: true
+
+overview: >
+  Study designs are classified as observational (descriptive and analytical) and experimental (interventional).
+  Analytical studies include cohort (prospective/retrospective) and case-control studies. The RCT is the gold
+  standard for evaluating interventions. Each design has specific measures of association, advantages, and biases.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.100-130)
+
+learning_objectives:
+  - Classify epidemiological study designs
+  - Compare cohort and case-control studies
+  - Describe the design and features of RCT
+  - Explain relative risk, odds ratio, and their applications
+  - Discuss biases and confounding in study designs
+
+content:
+  atoms:
+    - id: classification
+      title: "Classification of Study Designs"
+      text: >
+        Observational: (A) Descriptive — case report, case series, cross-sectional/prevalence study;
+        (B) Analytical — case-control (retrospective), cohort (prospective/retrospective).
+        Experimental: (A) RCT (randomized controlled trial) — individuals randomized;
+        (B) Community trial/field trial — communities as units; (C) Quasi-experimental — no randomization.
+        Hierarchy of evidence: systematic review/meta-analysis > RCT > cohort > case-control > cross-sectional > case reports.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.100-105)
+
+    - id: cohort-study
+      title: "Cohort Study"
+      text: >
+        Cohort = group sharing a common characteristic. Exposed and unexposed groups followed over time for outcome.
+        Direction: exposure → outcome (follows natural history). Prospective (concurrent) or retrospective (historical).
+        Measure of association: RELATIVE RISK (RR) = incidence in exposed / incidence in unexposed.
+        RR >1 = positive association; RR =1 = no association; RR <1 = protective.
+        Advantages: establishes temporal sequence, measures incidence, multiple outcomes from single exposure.
+        Limitations: time-consuming, expensive, loss to follow-up, not suitable for rare diseases.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.110-118)
+
+    - id: case-control
+      title: "Case-Control Study"
+      text: >
+        Starts with outcome (cases vs controls), looks BACKWARD for exposure. Direction: outcome → exposure.
+        Cases = individuals WITH disease; Controls = individuals WITHOUT disease (from same population).
+        Measure of association: ODDS RATIO (OR) = (a×d)/(b×c) from 2×2 table.
+        OR approximates RR when disease is RARE (rare disease assumption).
+        Advantages: quick, inexpensive, good for rare diseases, multiple exposures studied.
+        Limitations: cannot measure incidence, recall bias, selection bias, temporal sequence unclear.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.105-110)
+
+    - id: rct
+      title: "Randomized Controlled Trial (RCT)"
+      text: >
+        GOLD STANDARD for evaluating interventions. Features: (1) Randomization — eliminates selection bias
+        and confounding; (2) Control group — placebo or standard treatment; (3) Blinding — single, double,
+        triple blind. Measures: risk reduction (absolute and relative), NNT (number needed to treat = 1/ARR).
+        Intention-to-treat (ITT) analysis: analyze as randomized regardless of compliance (preserves randomization).
+        Per-protocol analysis: only those who completed the study.
+        Limitations: ethical constraints, expensive, Hawthorne effect, may not be generalizable.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.118-128)
+
+    - id: bias-confounding
+      title: "Bias & Confounding"
+      text: >
+        Selection bias: systematic error in selecting study participants (Berkson's bias — hospital-based selection).
+        Information/measurement bias: recall bias (case-control), interviewer bias, misclassification.
+        Confounding: third variable associated with both exposure and outcome. Control: randomization (best),
+        restriction, matching, stratification, multivariable analysis.
+        Lead-time bias: earlier detection mimics longer survival (screening studies).
+        Length bias: screening detects slow-growing diseases preferentially.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.128-130)
+
+  clinical:
+    - title: "Clinical Correlation: Framingham Heart Study"
+      text: >
+        The Framingham Heart Study (1948-present) is the classic prospective cohort study that identified
+        major cardiovascular risk factors (hypertension, hypercholesterolemia, smoking, diabetes, obesity).
+        It demonstrated the power of long-term cohort follow-up in establishing causal relationships.
+
+high_yield_points:
+  - "Cohort study measures RELATIVE RISK (RR); Case-control measures ODDS RATIO (OR)"
+  - "Cohort: exposure → outcome; Case-control: outcome → exposure (backward)"
+  - "RCT is the GOLD STANDARD for evaluating interventions"
+  - "Randomization eliminates BOTH selection bias and confounding"
+  - "OR approximates RR when disease is RARE"
+  - "NNT = 1/ARR (Number Needed to Treat)"
+  - "Intention-to-treat analysis: analyze as RANDOMIZED regardless of compliance"
+  - "Case-control is BEST for rare diseases"
+  - "Cohort study can measure INCIDENCE; case-control CANNOT"
+  - "Recall bias is the major bias in case-control studies"
+
+mcqs:
+  - question: "The measure of association calculated in a cohort study is:"
+    options:
+      - "Odds ratio"
+      - "Relative risk"
+      - "Prevalence ratio"
+      - "Attributable risk percent"
+    answer: "Relative risk"
+    explanation: >
+      Cohort studies follow exposed and unexposed groups, allowing calculation of incidence in both groups.
+      RR = incidence in exposed / incidence in unexposed. Case-control studies use odds ratio.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.113)
+    difficulty: 1
+
+  - question: "The best study design to investigate a RARE disease is:"
+    options:
+      - "Cohort study"
+      - "Case-control study"
+      - "Cross-sectional study"
+      - "RCT"
+    answer: "Case-control study"
+    explanation: >
+      Case-control studies start with identified cases of disease, making them efficient for rare diseases
+      (don't need to follow a large population waiting for cases to develop, as in cohort studies).
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.106)
+    difficulty: 1
+
+  - question: "Intention-to-treat analysis means:"
+    options:
+      - "Analyzing only patients who completed the study"
+      - "Analyzing patients as originally randomized regardless of compliance"
+      - "Analyzing only those who received the intended treatment"
+      - "Excluding dropouts from analysis"
+    answer: "Analyzing patients as originally randomized regardless of compliance"
+    explanation: >
+      ITT analysis includes all randomized participants in the groups to which they were originally assigned,
+      regardless of whether they completed or adhered to the protocol. This preserves randomization benefits.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.124)
+    difficulty: 2
+
+  - question: "Recall bias is most commonly associated with:"
+    options:
+      - "Cohort study"
+      - "Case-control study"
+      - "RCT"
+      - "Cross-sectional study"
+    answer: "Case-control study"
+    explanation: >
+      In case-control studies, participants recall past exposures. Cases (those with disease) tend to recall
+      exposures more thoroughly than controls, leading to differential recall bias.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.108)
+    difficulty: 1
+
+  - question: "NNT (Number Needed to Treat) is calculated as:"
+    options:
+      - "1/Relative Risk"
+      - "1/Odds Ratio"
+      - "1/Absolute Risk Reduction"
+      - "1/Relative Risk Reduction"
+    answer: "1/Absolute Risk Reduction"
+    explanation: >
+      NNT = 1/ARR, where ARR = risk in control group - risk in treatment group. It tells you how many
+      patients need to be treated to prevent one additional adverse outcome. Lower NNT = more effective treatment.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.122)
+    difficulty: 2

@@ -1,0 +1,159 @@
+topic_id: sexual-offences
+name: Sexual Offences (IPC Sections)
+description: Medicolegal aspects of sexual offences — rape, sodomy, examination of victim and accused, IPC sections
+high_yield: true
+
+overview: >
+  Sexual offences are among the most important medicolegal cases. Rape is defined under Section 375 IPC and
+  punishable under Section 376 IPC. The Criminal Law Amendment Act 2013 (post-Nirbhaya) expanded definitions
+  and increased penalties. Medical examination follows strict protocols for evidence collection. The doctor's role
+  is to document findings objectively — NOT to give opinion on whether "rape occurred" (that is for the court).
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.395-430)
+
+learning_objectives:
+  - Define rape under Section 375 IPC (amended 2013)
+  - Describe the medical examination protocol for rape victim
+  - Discuss examination of the accused in sexual assault cases
+  - Explain the medicolegal significance of various findings
+  - Enumerate IPC sections related to sexual offences
+
+content:
+  atoms:
+    - id: definition-rape
+      title: "Definition of Rape — Section 375 IPC"
+      text: >
+        Section 375 IPC (amended 2013): A man is said to commit rape when he penetrates (penis into vagina/mouth/
+        urethra/anus, or inserts object/body part into vagina/urethra/anus, or manipulates body to cause penetration,
+        or applies mouth to vagina/anus/urethra) against the woman's will, without consent, with consent obtained
+        by fear/fraud, when she is unable to communicate consent, or when she is under 18 years (statutory rape).
+        Marital rape exemption exists for wife above 15 years (controversial).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.395-400)
+
+    - id: examination-victim
+      title: "Examination of Victim"
+      text: >
+        Requires written consent from victim (or guardian if minor). Examine in presence of female attendant.
+        General: demeanor, clothing (tears, stains), injuries on body. Local genital examination: vulval injuries,
+        hymen (tears — fresh or old; position described by clock-face method), vaginal injuries.
+        Evidence collection: (1) Vaginal swab — for spermatozoa (motile sperm = within 6-12 hours),
+        (2) Acid phosphatase — high in seminal fluid, (3) PSA/P30 — prostate-specific antigen,
+        (4) DNA profiling from semen, (5) Pubic hair combing, (6) Nail scrapings.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.400-415)
+
+    - id: examination-accused
+      title: "Examination of Accused"
+      text: >
+        Section 53 CrPC — medical examination of accused at request of police (no consent needed if arrested
+        for rape, Section 53A). Examine for: penile injuries/smegma, blood/body fluid stains on clothing,
+        pubic hair samples, DNA samples. Potency — ability to perform sexual intercourse (erection + ejaculation).
+        A man can commit rape even without ejaculation (penetration alone suffices).
+        Two-finger test is obsolete and should NOT be performed (Supreme Court ruling).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.415-420)
+
+    - id: ipc-sections
+      title: "IPC Sections Related to Sexual Offences"
+      text: >
+        Section 375 — Definition of rape. Section 376 — Punishment for rape (min 10 years to life).
+        Section 376A — Rape causing death or vegetative state (min 20 years to death penalty).
+        Section 376D — Gang rape (min 20 years to life). Section 354 — Assault on woman with intent to outrage modesty.
+        Section 354A — Sexual harassment. Section 354B — Assault with intent to disrobe.
+        Section 377 — Unnatural sexual offences (sodomy, bestiality).
+        POCSO Act 2012 — Protection of Children from Sexual Offences (for victims <18 years).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.420-425)
+
+    - id: sodomy-unnatural
+      title: "Sodomy & Unnatural Offences"
+      text: >
+        Section 377 IPC deals with "carnal intercourse against the order of nature" — includes anal intercourse
+        (sodomy/buggery), bestiality, and oral sex. Supreme Court (Navtej Singh Johar v. UoI, 2018) decriminalized
+        consensual homosexual acts between adults. Examination findings in sodomy: funnel-shaped anus,
+        thickened/fibrosed anal mucosa, loss of rugae, perianal tears, smeared fecal matter on penis of accused.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.425-430)
+
+  clinical:
+    - title: "Clinical Correlation: Evidence Collection Timeline"
+      text: >
+        Motile spermatozoa: up to 6 hours (vagina), up to 24-36 hours (cervical canal).
+        Non-motile spermatozoa: up to 72 hours (vagina), up to 7 days (cervical canal).
+        Acid phosphatase: elevated up to 24-48 hours. DNA can be recovered up to 7 days.
+        Examination should be done as soon as possible — evidence degrades rapidly.
+
+high_yield_points:
+  - "Section 375 IPC = definition of rape; Section 376 = punishment (min 10 years to life)"
+  - "Rape requires PENETRATION only — ejaculation NOT necessary"
+  - "Age of consent in India = 18 years (POCSO Act)"
+  - "Two-finger test is OBSOLETE — Supreme Court has banned it"
+  - "Acid phosphatase = marker for seminal fluid (NOT specific)"
+  - "PSA/P30 = prostate-specific antigen = SPECIFIC marker for semen"
+  - "Motile sperm in vaginal smear indicates intercourse within 6 hours"
+  - "Section 376D = gang rape — minimum 20 years"
+  - "Doctor should NOT give opinion on 'whether rape occurred' — only document findings"
+  - "POCSO Act 2012 = Protection of Children from Sexual Offences (victims <18 years)"
+
+mcqs:
+  - question: "The age of consent for sexual intercourse in India under POCSO Act is:"
+    options:
+      - "14 years"
+      - "16 years"
+      - "18 years"
+      - "21 years"
+    answer: "18 years"
+    explanation: >
+      Under POCSO Act 2012 and amended Section 375 IPC (2013), any sexual activity with a person below 18 years
+      is considered statutory rape regardless of consent.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.398)
+    difficulty: 1
+
+  - question: "The most SPECIFIC marker for presence of semen is:"
+    options:
+      - "Acid phosphatase"
+      - "Choline"
+      - "Prostate-specific antigen (PSA/P30)"
+      - "Fructose"
+    answer: "Prostate-specific antigen (PSA/P30)"
+    explanation: >
+      PSA (P30) is specific to prostatic secretions and is the most specific marker for semen. Acid phosphatase
+      is more sensitive but less specific (also found in vaginal secretions). Fructose is found in seminal vesicle
+      fluid but is not specific.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.410)
+    difficulty: 2
+
+  - question: "Presence of motile spermatozoa in vaginal smear indicates intercourse within:"
+    options:
+      - "1 hour"
+      - "6 hours"
+      - "24 hours"
+      - "72 hours"
+    answer: "6 hours"
+    explanation: >
+      Motile spermatozoa can be found in vaginal fluid for up to 6 hours post-intercourse. Non-motile spermatozoa
+      persist longer (up to 72 hours in vagina, up to 7 days in cervical canal).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.408)
+    difficulty: 2
+
+  - question: "The punishment for gang rape under Section 376D IPC is:"
+    options:
+      - "Minimum 7 years"
+      - "Minimum 10 years"
+      - "Minimum 20 years to life imprisonment"
+      - "Death penalty only"
+    answer: "Minimum 20 years to life imprisonment"
+    explanation: >
+      Section 376D IPC (Criminal Law Amendment 2013) prescribes rigorous imprisonment for not less than 20 years
+      extending to life imprisonment (remainder of natural life) for gang rape.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.422)
+    difficulty: 2
+
+  - question: "In medicolegal examination of a rape victim, the doctor should:"
+    options:
+      - "Give opinion that rape has occurred"
+      - "Document findings objectively without opining on whether rape occurred"
+      - "Refuse to examine without court order"
+      - "Perform two-finger test to assess virginity"
+    answer: "Document findings objectively without opining on whether rape occurred"
+    explanation: >
+      The doctor's role is to document physical findings objectively. Whether rape occurred is a legal conclusion
+      for the court. The two-finger test is obsolete (Supreme Court banned). Examination requires written
+      consent, not a court order.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.17 (p.403)
+    difficulty: 1

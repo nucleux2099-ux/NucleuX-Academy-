@@ -1,0 +1,161 @@
+topic_id: asphyxia
+name: Asphyxia (Types & PM Findings)
+description: Types of asphyxia, mechanisms, postmortem findings, and medicolegal significance of asphyxial deaths
+high_yield: true
+
+overview: >
+  Asphyxia literally means "absence of pulsation" but refers to interference with respiration leading to oxygen
+  deprivation. It is one of the most important causes of unnatural death. Classification includes mechanical
+  asphyxia (hanging, strangulation, drowning, suffocation, throttling) and pathological/toxic asphyxia.
+  PM findings include cyanosis, petechial hemorrhages, congestion, and fluidity of blood.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.305-365)
+
+learning_objectives:
+  - Define asphyxia and describe its general mechanism
+  - Classify types of asphyxia with examples
+  - Differentiate hanging from strangulation (ligature and manual)
+  - Describe postmortem findings in drowning (wet and dry)
+  - Discuss medicolegal significance of asphyxial deaths
+
+content:
+  atoms:
+    - id: general-features
+      title: "General Features of Asphyxia"
+      text: >
+        Classic triad of asphyxia (Tardieu's findings): (1) Cyanosis — bluish discoloration of face/extremities,
+        (2) Petechial hemorrhages (Tardieu spots) — pinpoint hemorrhages on visceral pleura, pericardium, thymus,
+        (3) Congestion and edema of viscera. Blood is dark, fluid, and does not clot easily.
+        Three phases of asphyxia: (1) Dyspnea (1 min), (2) Convulsions (1-2 min), (3) Respiratory failure and death (3-5 min).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.305-310)
+
+    - id: hanging
+      title: "Hanging"
+      text: >
+        Hanging = constriction of neck by a ligature, force applied is body weight. Can be complete (feet off ground)
+        or partial/incomplete. Types: typical (knot at occiput) and atypical (knot elsewhere).
+        PM findings: ligature mark — oblique, non-continuous, above thyroid cartilage, inverted V pattern;
+        face congested (atypical) or pale (typical). Internal: fracture of hyoid bone (>40 yrs), superior horn of
+        thyroid cartilage. Dribbling of saliva from angle of mouth (sign of ante-mortem hanging).
+        Cause of death: asphyxia, venous congestion, vagal inhibition, or fracture-dislocation of C2 (judicial hanging).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.315-335)
+
+    - id: strangulation
+      title: "Strangulation (Ligature & Manual)"
+      text: >
+        Ligature strangulation: force applied by hand, not body weight. Ligature mark is horizontal, continuous,
+        at or below thyroid cartilage (vs oblique, non-continuous, above thyroid in hanging).
+        Manual strangulation (throttling): compression by hands/fingers — finger-tip bruises on neck, nail marks,
+        fracture of hyoid and thyroid cartilage common. Almost ALWAYS homicidal.
+        Bansdola: compression by bamboo stick across throat (India-specific method).
+        Mugging: forearm across throat from behind.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.335-345)
+
+    - id: drowning
+      title: "Drowning"
+      text: >
+        Types: (1) Wet/typical drowning — water aspiration into lungs; (2) Dry drowning — laryngospasm, no water
+        in lungs (10-15%); (3) Secondary drowning — delayed death from pulmonary edema hours later.
+        PM findings: froth at mouth/nostrils (white, copious, tenacious), "emphysema aquosum" (voluminous, edematous lungs),
+        Paltauf hemorrhages (subpleural hemorrhages from ruptured alveoli in freshwater drowning).
+        Diatom test — detection of diatoms in bone marrow/organs confirms ante-mortem drowning.
+        Gettler's test — chloride difference between right and left heart blood (freshwater vs saltwater).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.345-365)
+
+    - id: suffocation-choking
+      title: "Suffocation & Choking"
+      text: >
+        Suffocation: obstruction of external airways. Types — smothering (closure of mouth/nose), overlaying
+        (infant crushed by sleeping adult), gagging (obstruction by material in mouth), burial (earth/sand).
+        Choking: foreign body in internal airway (café coronary — food bolus in larynx during eating, often
+        with alcohol). Postural/positional asphyxia — body position prevents breathing (restrained individuals).
+        Traumatic asphyxia — compression of chest/abdomen by heavy weight (crush asphyxia).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.310-315)
+
+  clinical:
+    - title: "Clinical Correlation: Hanging vs Strangulation — Key Differences"
+      text: >
+        Hanging: ligature mark oblique, non-continuous, above thyroid, often suicidal.
+        Strangulation: ligature mark horizontal, continuous, at/below thyroid, almost always homicidal.
+        Both can cause hyoid bone fracture (more common >40 years). Dribbling of saliva is present in hanging
+        (sign of ante-mortem) but absent in strangulation.
+
+high_yield_points:
+  - "Hanging: ligature mark OBLIQUE, NON-CONTINUOUS, ABOVE thyroid cartilage"
+  - "Strangulation: ligature mark HORIZONTAL, CONTINUOUS, AT/BELOW thyroid cartilage"
+  - "Dribbling of saliva = sign of ANTE-MORTEM hanging"
+  - "Hyoid bone fracture more common >40 years (ossified)"
+  - "Tardieu spots = petechial hemorrhages on serosal surfaces"
+  - "Diatom test = MOST RELIABLE test for drowning (diatoms in bone marrow)"
+  - "Dry drowning = laryngospasm, NO water in lungs (10-15% cases)"
+  - "Café coronary = choking on food (often with alcohol)"
+  - "Paltauf hemorrhages = subpleural hemorrhages in freshwater drowning"
+  - "Throttling (manual strangulation) is ALMOST ALWAYS homicidal"
+
+mcqs:
+  - question: "A ligature mark that is oblique, non-continuous, and situated above the thyroid cartilage is characteristic of:"
+    options:
+      - "Ligature strangulation"
+      - "Hanging"
+      - "Throttling"
+      - "Bansdola"
+    answer: "Hanging"
+    explanation: >
+      In hanging, the ligature mark is oblique (runs upward toward the knot), non-continuous (gap at knot site),
+      and situated above the thyroid cartilage. In strangulation, the mark is horizontal, continuous, and at or
+      below the thyroid cartilage.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.320)
+    difficulty: 1
+
+  - question: "The most reliable test to confirm ante-mortem drowning is:"
+    options:
+      - "Froth at mouth"
+      - "Gettler's test"
+      - "Diatom test"
+      - "Lung histology"
+    answer: "Diatom test"
+    explanation: >
+      Diatom test detects microscopic algae (diatoms) in bone marrow, liver, kidney, and brain. Diatoms reach
+      these organs only through intact circulation (ante-mortem). Froth at mouth can occur post-mortem.
+      Gettler's test is less reliable.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.360)
+    difficulty: 1
+
+  - question: "Dribbling of saliva from the angle of mouth in a case of hanging indicates:"
+    options:
+      - "Post-mortem artifact"
+      - "Ante-mortem hanging"
+      - "Ligature strangulation"
+      - "Poisoning before hanging"
+    answer: "Ante-mortem hanging"
+    explanation: >
+      Dribbling of saliva from the corner of the mouth is a vital sign indicating that the person was alive during
+      hanging. It occurs due to stimulation of salivary glands by pressure on the neck and gravitational flow.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.325)
+    difficulty: 1
+
+  - question: "Café coronary refers to:"
+    options:
+      - "Myocardial infarction during eating"
+      - "Choking on food bolus in larynx"
+      - "Cardiac arrest due to vagal stimulation"
+      - "Carbon monoxide poisoning in restaurants"
+    answer: "Choking on food bolus in larynx"
+    explanation: >
+      Café coronary occurs when a food bolus (usually meat) obstructs the larynx during eating, often facilitated
+      by alcohol. It mimics a heart attack (hence the name) and can cause sudden death from asphyxia.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.313)
+    difficulty: 1
+
+  - question: "Which type of asphyxial death is ALMOST ALWAYS homicidal?"
+    options:
+      - "Hanging"
+      - "Drowning"
+      - "Throttling (manual strangulation)"
+      - "Choking"
+    answer: "Throttling (manual strangulation)"
+    explanation: >
+      Throttling requires sustained manual compression of the neck, which is virtually impossible to self-inflict.
+      Hence it is almost always homicidal. Hanging is usually suicidal, drowning can be any manner,
+      and choking is usually accidental.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.14 (p.340)
+    difficulty: 1

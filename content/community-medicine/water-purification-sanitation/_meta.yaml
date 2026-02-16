@@ -1,0 +1,158 @@
+topic_id: water-purification-sanitation
+name: Water Purification & Sanitation
+description: Water purification methods, water quality standards, sanitation, and sewage disposal
+high_yield: true
+
+overview: >
+  Safe water and sanitation are fundamental to public health. Waterborne diseases (cholera, typhoid, hepatitis A/E,
+  polio) remain major causes of morbidity in developing countries. Water purification includes physical, chemical,
+  and biological methods. The WHO/BIS standards define safe drinking water parameters. Sanitation involves safe
+  disposal of human excreta and solid waste.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.86-100)
+
+learning_objectives:
+  - Describe methods of water purification (large-scale and household)
+  - Explain chlorination and its principles (breakpoint chlorination)
+  - List WHO/BIS standards for drinking water quality
+  - Describe methods of excreta disposal
+  - Discuss the role of sanitation in disease prevention
+
+content:
+  atoms:
+    - id: purification-large-scale
+      title: "Large-Scale Water Purification"
+      text: >
+        Steps in municipal water treatment: (1) Storage/sedimentation — plain sedimentation removes suspended
+        particles; (2) Coagulation — alum (aluminum sulfate) added → floc formation → coagulation-sedimentation;
+        (3) Filtration — slow sand filter (biological, most efficient, removes 99.9% bacteria) or rapid sand filter
+        (mechanical, needs post-chlorination); (4) Disinfection — chlorination (most widely used).
+        Slow sand filter: Schmutzdecke (biological layer) is the active purifying agent.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.88-94)
+
+    - id: chlorination
+      title: "Chlorination"
+      text: >
+        Most widely used method of water disinfection. Free residual chlorine after 1 hour contact = 0.5 mg/L
+        (at point of consumption = 0.2 mg/L minimum). Breakpoint chlorination: adding chlorine until the
+        "breakpoint" is reached (all organic matter and ammonia are oxidized), after which free residual chlorine
+        appears. Double-pot method/Horrock's apparatus used for testing chlorine demand.
+        Superchlorination-dechlorination: used in emergencies — add excess chlorine then remove with Na2S2O3.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.94-97)
+
+    - id: household-methods
+      title: "Household Water Purification"
+      text: >
+        (1) Boiling — most reliable household method (kills all organisms including spores at 100°C for 10-20 min).
+        (2) Chlorination — bleaching powder (1 tsp per 20L), chlorine tablets (Halazone).
+        (3) Filtration — candle filter (Berkefeld/Chamberland), ceramic filter.
+        (4) UV radiation — SODIS (solar disinfection, WHO-approved for developing countries).
+        (5) Iodine tablets — camping/emergencies. Boiling does NOT remove chemical contaminants.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.97-98)
+
+    - id: water-standards
+      title: "Drinking Water Quality Standards"
+      text: >
+        WHO/BIS standards: pH 6.5-8.5, turbidity <1 NTU (ideally), E. coli = 0/100mL (must be absent),
+        total coliform = 0/100mL (treated water), fluoride <1.0 mg/L (BIS; excess → fluorosis),
+        arsenic <0.01 mg/L (WHO; >0.05 → arsenicosis), chloride <250 mg/L, TDS <500 mg/L.
+        MPN (Most Probable Number) test: estimates coliform count. Bacteriological standard: E. coli must
+        be ZERO in any 100mL sample of treated drinking water.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.86-88)
+
+    - id: sanitation-excreta
+      title: "Sanitation & Excreta Disposal"
+      text: >
+        Methods: (1) Service/conservancy system — manual removal (obsolete, banned).
+        (2) Sanitary latrine — water-seal type (prevents fly breeding, most recommended for rural India).
+        (3) Septic tank — household sewage treatment (sedimentation + anaerobic digestion).
+        (4) Sewage treatment plant — for municipal sewage (primary sedimentation → secondary biological
+        treatment → tertiary disinfection).
+        F-diagram: feces → fluids/fields/flies/fingers/food → new host (routes of fecal-oral transmission).
+        Swachh Bharat Mission (2014): open defecation free (ODF) India.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.98-100)
+
+  clinical:
+    - title: "Clinical Correlation: Fluorosis"
+      text: >
+        Excess fluoride in drinking water (>1.5 mg/L) causes dental fluorosis (mottled enamel) and skeletal
+        fluorosis (osteosclerosis, crippling deformity). Endemic in Rajasthan, Andhra Pradesh, Gujarat.
+        Treatment: defluoridation (Nalgonda technique — alum + lime). Prevention: providing safe water sources.
+
+high_yield_points:
+  - "Boiling = MOST RELIABLE household water purification method"
+  - "Slow sand filter: Schmutzdecke is the active biological purifying layer"
+  - "Free residual chlorine after chlorination: 0.5 mg/L (source), 0.2 mg/L (point of use)"
+  - "Breakpoint chlorination: free residual chlorine appears after all combined chlorine is destroyed"
+  - "E. coli must be ZERO in 100mL of treated drinking water"
+  - "MPN test estimates coliform count in water"
+  - "Excess fluoride (>1.5 mg/L) → dental and skeletal fluorosis"
+  - "Nalgonda technique: defluoridation using alum + lime"
+  - "Water-seal latrine: most recommended for rural India"
+  - "F-diagram: fecal-oral transmission routes (fluids, fields, flies, fingers, food)"
+
+mcqs:
+  - question: "The most reliable method of water purification at household level is:"
+    options:
+      - "Chlorination"
+      - "Boiling"
+      - "Candle filtration"
+      - "UV radiation"
+    answer: "Boiling"
+    explanation: >
+      Boiling at 100°C for 10-20 minutes kills all pathogenic organisms including bacterial spores, viruses,
+      cysts, and ova. It is the most reliable household method. Limitation: does not remove chemicals.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.97)
+    difficulty: 1
+
+  - question: "The active purifying agent in a slow sand filter is:"
+    options:
+      - "Sand particles"
+      - "Gravel bed"
+      - "Schmutzdecke (biological layer)"
+      - "Chlorine residual"
+    answer: "Schmutzdecke (biological layer)"
+    explanation: >
+      Schmutzdecke is a gelatinous biological layer that forms on top of the sand bed, containing algae,
+      bacteria, and protozoa that actively purify water. It removes up to 99.9% bacteria. This is why slow
+      sand filters are the most efficient purification method.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.90)
+    difficulty: 2
+
+  - question: "The minimum free residual chlorine at the point of consumption should be:"
+    options:
+      - "0.1 mg/L"
+      - "0.2 mg/L"
+      - "0.5 mg/L"
+      - "1.0 mg/L"
+    answer: "0.2 mg/L"
+    explanation: >
+      At point of consumption, minimum 0.2 mg/L free residual chlorine ensures continued disinfection.
+      At the source (after treatment), 0.5 mg/L is recommended. Contact time should be at least 1 hour.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.95)
+    difficulty: 2
+
+  - question: "Endemic fluorosis is caused by drinking water fluoride levels exceeding:"
+    options:
+      - "0.5 mg/L"
+      - "1.0 mg/L"
+      - "1.5 mg/L"
+      - "5.0 mg/L"
+    answer: "1.5 mg/L"
+    explanation: >
+      Dental fluorosis begins at >1.5 mg/L, skeletal fluorosis at >3-4 mg/L. Optimal fluoride for dental
+      protection is 0.5-1.0 mg/L. Excess fluoride is removed by Nalgonda technique (alum + lime).
+      📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.87)
+    difficulty: 1
+
+  - question: "The recommended type of latrine for rural India is:"
+    options:
+      - "Service/conservancy latrine"
+      - "Water-seal latrine"
+      - "Pit latrine without seal"
+      - "Chemical toilet"
+    answer: "Water-seal latrine"
+    explanation: >
+      Water-seal latrine has a water seal (20mm) that prevents fly breeding, odor, and direct access to
+      excreta. It is the most recommended sanitary latrine for rural India under Swachh Bharat Mission.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.4 (p.99)
+    difficulty: 1
