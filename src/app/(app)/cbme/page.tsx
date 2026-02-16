@@ -199,7 +199,7 @@ export default function CBMEPage() {
               return (
                 <Link
                   key={c.id}
-                  href={c.id === "ms-general-surgery" ? "/cbme/surgery" : `/cbme/${c.id}`}
+                  href={c.id === "ms-general-surgery" ? "/cbme/surgery" : c.id === "md-general-medicine" ? "/cbme/medicine" : c.id === "ms-obgy" ? "/cbme/obgyn" : c.id === "md-pediatrics" ? "/cbme/pediatrics" : c.id === "ms-orthopedics" ? "/cbme/orthopedics" : `/cbme/${c.id}`}
                   className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-cyan-500/30 transition-colors block"
                 >
                   <div className="flex items-center gap-2 mb-2">
@@ -307,6 +307,18 @@ export default function CBMEPage() {
           </Link>
           <Link href="/cbme/ophthalmology" className="px-4 py-2 rounded-lg bg-emerald-600/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-600/20 text-sm font-medium transition-colors">
             👁️ Ophthalmology — OP1–OP9, 5 subspecialties
+          </Link>
+          <Link href="/cbme/medicine" className="px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600/20 text-sm font-medium transition-colors">
+            🩺 Medicine — IM1–IM26, 17 subspecialties
+          </Link>
+          <Link href="/cbme/obgyn" className="px-4 py-2 rounded-lg bg-fuchsia-600/10 border border-fuchsia-500/20 text-fuchsia-400 hover:bg-fuchsia-600/20 text-sm font-medium transition-colors">
+            🤰 OBG — OG1–OG39, 13 subspecialties
+          </Link>
+          <Link href="/cbme/pediatrics" className="px-4 py-2 rounded-lg bg-sky-600/10 border border-sky-500/20 text-sky-400 hover:bg-sky-600/20 text-sm font-medium transition-colors">
+            🧒 Pediatrics — PE1–PE34, 10 subspecialties
+          </Link>
+          <Link href="/cbme/orthopedics" className="px-4 py-2 rounded-lg bg-orange-600/10 border border-orange-500/20 text-orange-400 hover:bg-orange-600/20 text-sm font-medium transition-colors">
+            🦴 Orthopedics — OR1–OR14, 8 subspecialties
           </Link>
           <Link href="/cbme/ent" className="px-4 py-2 rounded-lg bg-indigo-600/10 border border-indigo-500/20 text-indigo-400 hover:bg-indigo-600/20 text-sm font-medium transition-colors">
             👂 ENT — EN1–EN4, 4 subspecialties
