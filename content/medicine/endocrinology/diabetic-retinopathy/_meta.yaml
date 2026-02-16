@@ -1,15 +1,11 @@
-title: Diabetic Retinopathy
+title: "Diabetic Retinopathy"
 slug: diabetic-retinopathy
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM11.15
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM11.15
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetic retinopathy
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM11.13"
+prerequisites:
+  - "diabetes-mellitus"
+related_topics:
+  - "diabetic-nephropathy"
+  - "diabetes-mellitus-type-2"

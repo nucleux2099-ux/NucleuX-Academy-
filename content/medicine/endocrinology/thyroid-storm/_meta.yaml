@@ -1,23 +1,11 @@
-title: Thyroid Storm
+title: "Thyroid Storm"
 slug: thyroid-storm
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM12.11
-  - IM12.2
-  - IM12.7
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM12.11
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid storm
-      domain: KH
-    - code: IM12.2
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid storm
-      domain: KH
-    - code: IM12.7
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid storm
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.12"
+prerequisites:
+  - "hyperthyroidism"
+  - "graves-disease"
+related_topics:
+  - "hypothyroidism"

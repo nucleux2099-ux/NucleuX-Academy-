@@ -1,15 +1,11 @@
-title: Metabolic Syndrome
+title: "Metabolic Syndrome"
 slug: metabolic-syndrome
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM10.1
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM10.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of metabolic syndrome
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM11.1"
+prerequisites:
+  - "diabetes-mellitus-type-2"
+related_topics:
+  - "obesity-medical"
+  - "insulin-therapy"

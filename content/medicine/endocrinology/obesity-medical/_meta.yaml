@@ -1,67 +1,11 @@
-title: Obesity Medical
+title: "Obesity (Medical Management)"
 slug: obesity-medical
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM10.12
-  - IM11.7
-  - IM14.1
-  - IM14.2
-  - IM14.3
-  - IM14.5
-  - IM25.4
-  - IM26.40
-  - IM4.9
-  - IM5.9
-  - IM6.7
-  - IM7.11
-  - IM8.9
-  - IM9.3
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM10.12
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM11.7
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM14.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM14.2
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM14.3
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM14.5
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM25.4
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM26.40
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM4.9
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM5.9
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM6.7
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM7.11
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM8.9
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-    - code: IM9.3
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of obesity medical
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.1"
+prerequisites:
+  - "metabolic-syndrome"
+related_topics:
+  - "diabetes-mellitus-type-2"
+  - "pcos"

@@ -1,15 +1,12 @@
-title: Hypothyroidism
+title: "Hypothyroidism"
 slug: hypothyroidism
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM12.1
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM12.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypothyroidism
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.8"
+  - "IM10.9"
+prerequisites:
+  - "thyroid-physiology"
+related_topics:
+  - "hyperthyroidism"
+  - "graves-disease"

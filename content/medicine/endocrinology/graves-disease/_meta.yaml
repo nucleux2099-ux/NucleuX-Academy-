@@ -1,27 +1,11 @@
-title: Graves Disease
+title: "Graves Disease"
 slug: graves-disease
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM16.15
-  - IM7.1
-  - IM7.10
-  - IM7.2
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM16.15
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
-      domain: KH
-    - code: IM7.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
-      domain: KH
-    - code: IM7.10
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
-      domain: KH
-    - code: IM7.2
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of graves disease
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.7"
+prerequisites:
+  - "hyperthyroidism"
+related_topics:
+  - "thyroid-storm"
+  - "hypothyroidism"

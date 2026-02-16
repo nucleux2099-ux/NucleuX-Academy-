@@ -1,55 +1,13 @@
-title: Insulin Therapy
+title: "Insulin Therapy"
 slug: insulin-therapy
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM10.26
-  - IM10.28
-  - IM11.17
-  - IM12.15
-  - IM18.12
-  - IM18.17
-  - IM20.8
-  - IM20.9
-  - IM3.17
-  - IM7.21
-  - IM9.14
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM10.26
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM10.28
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM11.17
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM12.15
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM18.12
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM18.17
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM20.8
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM20.9
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM3.17
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM7.21
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-    - code: IM9.14
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of insulin therapy
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM11.8"
+  - "IM11.9"
+prerequisites:
+  - "diabetes-mellitus"
+  - "diabetes-mellitus-type-1"
+related_topics:
+  - "diabetic-ketoacidosis"
+  - "diabetes-mellitus-type-2"

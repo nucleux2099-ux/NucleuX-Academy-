@@ -1,26 +1,11 @@
-title: Thyroid Cancer Medical
+title: "Thyroid Cancer (Medical)"
 slug: thyroid-cancer-medical
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM12.2
-  - IM12.7
-  - IM13.17
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM12.2
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid cancer
-        medical
-      domain: KH
-    - code: IM12.7
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid cancer
-        medical
-      domain: KH
-    - code: IM13.17
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid cancer
-        medical
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.10"
+prerequisites:
+  - "thyroid-nodule-evaluation"
+related_topics:
+  - "hyperthyroidism"
+  - "hypothyroidism"

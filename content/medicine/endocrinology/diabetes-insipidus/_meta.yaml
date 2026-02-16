@@ -1,23 +1,10 @@
-title: Diabetes Insipidus
+title: "Diabetes Insipidus"
 slug: diabetes-insipidus
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM11.1
-  - IM11.11
-  - IM11.16
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM11.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes insipidus
-      domain: KH
-    - code: IM11.11
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes insipidus
-      domain: KH
-    - code: IM11.16
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes insipidus
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.3"
+prerequisites:
+  - "pituitary-disorders"
+related_topics:
+  - "calcium-disorders"

@@ -1,15 +1,10 @@
-title: Paget Disease Bone
+title: "Paget Disease of Bone"
 slug: paget-disease-bone
-depth: UG
+depth: "UG"
 highYield: false
 nmc_codes:
-  - IM4.17
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM4.17
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of paget disease bone
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM12.5"
+prerequisites:
+  - "calcium-disorders"
+related_topics:
+  - "metabolic-syndrome"

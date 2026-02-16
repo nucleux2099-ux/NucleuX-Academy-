@@ -1,31 +1,11 @@
-title: Thyroid Nodule Evaluation
+title: "Thyroid Nodule Evaluation"
 slug: thyroid-nodule-evaluation
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM12.11
-  - IM12.2
-  - IM12.7
-  - IM15.2
-prerequisites: []
-related_topics: []
-enrichment:
-  nmcCodes:
-    - code: IM12.11
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid nodule
-        evaluation
-      domain: KH
-    - code: IM12.2
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid nodule
-        evaluation
-      domain: KH
-    - code: IM12.7
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid nodule
-        evaluation
-      domain: KH
-    - code: IM15.2
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of thyroid nodule
-        evaluation
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+  - "IM10.11"
+prerequisites:
+  - "hyperthyroidism"
+related_topics:
+  - "thyroid-cancer-medical"
+  - "graves-disease"
