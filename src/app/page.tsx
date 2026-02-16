@@ -2,14 +2,20 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, LayoutDashboard, GraduationCap, Atom, Brain, Sparkles, Users, Shield } from 'lucide-react';
+import { ArrowRight, BookOpen, LayoutDashboard, GraduationCap, Atom, Brain, Sparkles, Users, Shield, Target, Zap, CheckCircle2, XCircle } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
+
+const stats = [
+  { value: '720+', label: 'MCQs' },
+  { value: '11', label: 'Subjects' },
+  { value: '87', label: 'CBME Specialties' },
+  { value: '25', label: 'Standard Textbooks' },
+];
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      {/* subtle campus blueprint grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
@@ -24,36 +30,35 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-20 pb-16 relative z-10">
-        {/* Radial glow behind hero */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(91,179,179,0.15),transparent_50%)] pointer-events-none" />
         
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <div className="max-w-3xl relative">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB3B3]/30 bg-[#5BB3B3]/10 px-4 py-1.5 text-sm text-[#5BB3B3] font-medium">
               <Sparkles className="w-4 h-4" />
-              AI-Powered Medical Education Platform
+              Not another video platform. An AI that teaches.
             </div>
-            <h1 className="mt-6 text-5xl sm:text-7xl font-bold leading-tight">
-              <span className="text-[#E8E0D5]">NucleuX</span><br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8E0D5] to-[#5BB3B3]">Academy</span>
+            <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+              <span className="text-[#E8E0D5]">The AI-powered medical learning platform that thinks like </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#E879F9]">your best senior.</span>
             </h1>
-            <p className="mt-4 text-xl sm:text-2xl text-[#A0B0BC] leading-relaxed">
-              Learn with structure. Practice with feedback.<br />
-              Progress with <span className="text-[#5BB3B3] font-semibold">AI-calibrated</span> precision.
+            <p className="mt-5 text-xl sm:text-2xl text-[#A0B0BC] leading-relaxed">
+              Active recall. Textbook citations. Spaced repetition.<br />
+              Built by physicians who know that <span className="text-[#5BB3B3] font-semibold">recognition ≠ retrieval</span>.
             </p>
             <p className="mt-4 text-lg text-[#6B7A88]">
-              A virtual campus for MBBS students, Interns, and Junior Residents — powered by ATOM, your AI thinking partner that remembers your journey.
+              For MBBS students, NEET-PG aspirants, and Junior Residents — powered by ATOM, your AI tutor that remembers your journey and cites Bailey &amp; Love, Harrison&apos;s, and Robbins.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link href="/signup" className="w-full sm:w-auto">
                 <span className="inline-flex w-full items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors shadow-lg shadow-[#5BB3B3]/20">
-                  Get Started Free <ArrowRight className="w-5 h-5 ml-2" />
+                  Start Learning Free <ArrowRight className="w-5 h-5 ml-2" />
                 </span>
               </Link>
-              <Link href="/login" className="w-full sm:w-auto">
+              <Link href="/pricing" className="w-full sm:w-auto">
                 <span className="inline-flex w-full items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
-                  Sign In
+                  ₹4,999/year — See Plans
                 </span>
               </Link>
             </div>
@@ -61,9 +66,68 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* 3 Key Features */}
+      {/* Stats Bar */}
+      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((s) => (
+              <div key={s.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center hover:border-[#5BB3B3]/30 transition-all duration-200">
+                <div className="text-3xl sm:text-4xl font-bold text-[#5BB3B3]">{s.value}</div>
+                <div className="mt-1 text-sm text-[#A0B0BC]">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* How It's Different */}
       <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#E8E0D5] mb-3">How We&apos;re Different</h2>
+            <p className="text-[#A0B0BC] max-w-2xl mx-auto">Most platforms give you videos to watch. We give you an AI that teaches, tests, and tracks — because learning happens at <span className="text-[#E879F9] font-semibold">encoding</span>, not review.</p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="text-left p-4 text-[#A0B0BC] font-medium">Feature</th>
+                    <th className="p-4 text-center text-[#5BB3B3] font-bold">NucleuX</th>
+                    <th className="p-4 text-center text-[#A0B0BC] font-medium">Marrow / PrepLadder</th>
+                  </tr>
+                </thead>
+                <tbody className="text-[#E8E0D5]">
+                  {[
+                    ['AI Tutor (remembers your journey)', true, false],
+                    ['Textbook citations (page numbers)', true, false],
+                    ['Active recall first (not videos)', true, false],
+                    ['CBME-mapped (7,288 competencies)', true, false],
+                    ['6 view modes per topic', true, false],
+                    ['Spaced repetition (SM-2)', true, false],
+                    ['Price', '₹4,999/yr', '₹20,000–30,000/yr'],
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-white/5 last:border-0">
+                      <td className="p-4 text-[#A0B0BC]">{row[0]}</td>
+                      <td className="p-4 text-center">
+                        {row[1] === true ? <CheckCircle2 className="w-5 h-5 text-[#5BB3B3] mx-auto" /> : <span className="text-[#5BB3B3] font-semibold">{row[1]}</span>}
+                      </td>
+                      <td className="p-4 text-center">
+                        {row[2] === false ? <XCircle className="w-5 h-5 text-[#475569] mx-auto" /> : <span className="text-[#A0B0BC]">{row[2]}</span>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 3 Spaces */}
+      <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }}>
           <h2 className="text-center text-3xl font-bold text-[#E8E0D5] mb-3">Your Complete Learning Ecosystem</h2>
           <p className="text-center text-[#A0B0BC] mb-12 max-w-2xl mx-auto">Three powerful spaces designed around how physicians actually learn — connected by ATOM, your AI companion.</p>
           
@@ -72,26 +136,26 @@ export default function HomePage() {
               {
                 icon: BookOpen,
                 title: 'Library',
-                description: 'A structured knowledge map — not a dump of pages. Prerequisites, related topics, and mental models all connected.',
+                description: '1,400+ topic files mapped to NMC competencies. Prerequisites, related topics, and 6 view modes — all from standard textbooks with page citations.',
                 color: '#7BA69E',
-                features: ['Curated Content', 'Topic Maps', 'Quick Reference'],
+                features: ['Explorer Mode', 'Exam Prep', 'Case-Based Learning'],
                 delay: 0,
               },
               {
                 icon: LayoutDashboard,
                 title: 'Desk + ATOM',
-                description: 'Your personal workspace with ATOM — an AI companion that remembers your weak areas and adapts to your learning patterns.',
+                description: 'Your personal workspace with ATOM — an AI tutor that knows your weak areas, tracks your spaced repetition schedule, and cites textbooks in every answer.',
                 color: '#5BB3B3',
-                features: ['AI Companion', 'Longitudinal Memory', 'Personalized Study'],
+                features: ['AI Tutor', 'Spaced Repetition', 'Study Plans'],
                 highlight: true,
                 delay: 0.1,
               },
               {
                 icon: GraduationCap,
                 title: 'Training Centre',
-                description: 'PYQs, patient simulators, clinical flows, and OSCE stations — every mistake links back to the concept that fixes it.',
+                description: '720+ MCQs across 11 subjects with explanations that link back to concepts. NEET-PG patterns, clinical cases, and OSCE stations.',
                 color: '#6366F1',
-                features: ['Patient Simulator', 'PYQ Practice', 'Clinical Pathways'],
+                features: ['720+ MCQs', 'Clinical Cases', 'NEET-PG Patterns'],
                 delay: 0.2,
               },
             ].map((feature) => (
@@ -127,7 +191,7 @@ export default function HomePage() {
         </motion.div>
       </section>
 
-      {/* ATOM Highlight */}
+      {/* What Makes ATOM Different */}
       <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}>
           <div className="rounded-3xl border border-[#5BB3B3]/20 bg-gradient-to-br from-[#5BB3B3]/10 to-transparent p-10 sm:p-14">
@@ -136,17 +200,49 @@ export default function HomePage() {
                 <Atom className="w-10 h-10 text-[#5BB3B3]" />
               </div>
               <div className="flex-1">
-                <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Meet ATOM — Your AI Thinking Partner</h2>
-                <p className="text-lg text-[#A0B0BC] leading-relaxed">
-                  Unlike generic AI chatbots, ATOM remembers your weak areas and learning patterns over time. It shows up in every room — Library, Desk, Training Centre — providing contextual help that gets smarter the more you learn.
+                <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Meet ATOM — Not a Chatbot. A Teaching Companion.</h2>
+                <p className="text-lg text-[#A0B0BC] leading-relaxed mb-4">
+                  ATOM knows your weak areas, remembers your learning journey, and cites actual textbook pages. It doesn&apos;t just answer — it teaches using Socratic questioning, spaced repetition triggers, and clinical correlations.
                 </p>
+                <div className="flex flex-wrap gap-3">
+                  {['Cites 25 textbooks', 'Remembers your journey', 'Knows your weak areas', 'Teaches, not answers'].map((tag) => (
+                    <span key={tag} className="text-xs px-3 py-1.5 rounded-full bg-[#5BB3B3]/15 text-[#5BB3B3] border border-[#5BB3B3]/30">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <Link href="/login" className="flex-shrink-0">
+              <Link href="/signup" className="flex-shrink-0">
                 <span className="inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
-                  Try ATOM <ArrowRight className="w-4 h-4 ml-2" />
+                  Try ATOM Free <ArrowRight className="w-4 h-4 ml-2" />
                 </span>
               </Link>
             </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 6 View Modes */}
+      <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}>
+          <h2 className="text-center text-3xl font-bold text-[#E8E0D5] mb-3">One Topic. Six Ways to Learn.</h2>
+          <p className="text-center text-[#A0B0BC] mb-12 max-w-2xl mx-auto">Every topic in the library can be viewed in 6 different modes — because every student learns differently, and every stage of preparation needs a different approach.</p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { icon: '🔍', title: 'Explorer', desc: 'Deep conceptual understanding with clinical correlations', color: '#5BB3B3' },
+              { icon: '📝', title: 'Exam Prep', desc: 'High-yield points formatted for NEET-PG recall', color: '#E879F9' },
+              { icon: '❓', title: 'Quiz', desc: 'Active recall MCQs with textbook-linked explanations', color: '#F97316' },
+              { icon: '🏥', title: 'Cases', desc: 'Clinical scenarios that test application, not just memory', color: '#6366F1' },
+              { icon: '⚡', title: 'Revision', desc: 'Condensed rapid-fire review before exams', color: '#10B981' },
+              { icon: '🧠', title: 'Deep Dive', desc: 'Research-level detail for those who want to go beyond', color: '#F59E0B' },
+            ].map((mode) => (
+              <div key={mode.title} className="rounded-xl border border-white/10 bg-white/[0.03] p-5 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-200">
+                <div className="text-2xl mb-3">{mode.icon}</div>
+                <h3 className="font-bold text-[#E8E0D5] mb-1">{mode.title}</h3>
+                <p className="text-xs text-[#A0B0BC] leading-relaxed">{mode.desc}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -157,11 +253,11 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-[#A0B0BC] mb-6">
               <Shield className="w-4 h-4" />
-              Built by physicians, for physicians
+              Built by a practicing physician, for physicians
             </div>
-            <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Trusted by the Medical Community</h2>
+            <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Why Doctors Trust NucleuX</h2>
             <p className="text-[#A0B0BC] max-w-2xl mx-auto">
-              Created by practicing physicians who understand the challenges of medical education — from MBBS to residency and beyond.
+              Created by Dr. Aditya (MD, General Medicine) who understands firsthand that medical education needs to be smarter, not just more content.
             </p>
           </div>
 
@@ -169,20 +265,20 @@ export default function HomePage() {
             {[
               {
                 icon: Brain,
-                stat: 'Evidence-Based',
-                desc: 'Content sourced from standard textbooks — Bailey, Sabiston, Harrison\'s, and more.',
+                stat: '7,288 NMC Competencies',
+                desc: 'Every topic mapped to CBME competencies across 87 specialties. Your learning is curriculum-aligned.',
                 delay: 0,
               },
               {
                 icon: Users,
-                stat: 'Physician-Designed',
-                desc: 'Every feature built around real clinical learning workflows and exam preparation needs.',
+                stat: 'Textbook-Grounded',
+                desc: 'Content from Bailey & Love, Sabiston, Harrison\'s, Robbins, and 21 more — with actual page citations.',
                 delay: 0.1,
               },
               {
-                icon: Sparkles,
-                stat: 'AI-Enhanced',
-                desc: 'Cutting-edge AI that adapts to your learning patterns for truly personalized education.',
+                icon: Target,
+                stat: '75-80% Cheaper',
+                desc: '₹4,999/year vs ₹20,000-30,000 for Marrow. Premium medical education shouldn\'t require a loan.',
                 delay: 0.2,
               },
             ].map((item) => (
@@ -205,8 +301,8 @@ export default function HomePage() {
       {/* Final CTA */}
       <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
         <div className="rounded-3xl border border-white/10 bg-slate-950/35 p-8 sm:p-12 text-center">
-          <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Ready to transform how you learn medicine?</h2>
-          <p className="text-[#A0B0BC] mb-8 max-w-xl mx-auto">Join NucleuX Academy and experience AI-powered medical education designed for the next generation of physicians.</p>
+          <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Stop watching. Start learning.</h2>
+          <p className="text-[#A0B0BC] mb-8 max-w-xl mx-auto">Join NucleuX Academy — where AI meets active recall, and every answer comes with a textbook citation.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/signup">
               <span className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">

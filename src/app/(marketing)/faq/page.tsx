@@ -6,30 +6,56 @@ import { ChevronDown } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
-const faqs: Array<{ q: string; a: string }> = [
+const faqs: Array<{ q: string; a: string; category: string }> = [
   {
-    q: 'Is this for MBBS students or residents?',
-    a: 'Both. The campus is designed for MBBS + residents. Rooms and modes adapt to how you learn at each stage.',
+    category: 'About NucleuX',
+    q: 'How is NucleuX different from Marrow/PrepLadder?',
+    a: 'Marrow and PrepLadder are primarily video-lecture platforms with MCQ banks. NucleuX takes a fundamentally different approach: active recall first, no passive video watching. We have an AI tutor (ATOM) that remembers your weak areas, cites actual textbook pages (Bailey & Love, Harrison\'s, Robbins, etc.), and adapts to your learning pattern. We also map everything to CBME competencies. And at ₹4,999/year, we\'re 75-80% cheaper.',
   },
   {
-    q: 'Which exams does this help with?',
-    a: 'Designed around NEET-PG/INICET-style workflows (and broadly useful for USMLE-like concept building + recall).',
+    category: 'About NucleuX',
+    q: 'Do you have video lectures?',
+    a: 'No — and that\'s intentional. Learning science research consistently shows that active recall and retrieval practice are 3x more effective than passive video watching. Watching a video creates an "illusion of competence" (recognition), but it doesn\'t build the retrieval pathways you need for exams and clinical practice. Instead, we give you 6 interactive learning modes, AI-guided teaching, and spaced repetition.',
   },
   {
-    q: 'Is ATOM a chatbot?',
-    a: 'No. ATOM changes behaviour based on the room: teaching in Classroom, drilling in Arena, calibration in Backstage, and structure in the Library.',
+    category: 'ATOM (AI Tutor)',
+    q: 'How does the AI tutor work?',
+    a: 'ATOM is not a generic chatbot. It\'s a teaching companion trained on 25 standard medical textbooks. It uses Socratic questioning to guide your thinking (not just give answers), remembers your weak areas across sessions, provides actual textbook citations with page numbers, and adapts its difficulty based on your performance. Think of it as your brilliant senior who actually wants to help.',
   },
   {
-    q: 'Do I need to upload my own notes?',
-    a: 'Optional. You can learn from the built-in library, and you can also attach your own notes/pdfs to personalize learning.',
+    category: 'ATOM (AI Tutor)',
+    q: 'What textbooks does ATOM reference?',
+    a: 'ATOM draws from 25 standard medical textbooks including Bailey & Love\'s Short Practice of Surgery, Sabiston Textbook of Surgery, Harrison\'s Principles of Internal Medicine, Robbins Pathologic Basis of Disease, Guyton & Hall Textbook of Medical Physiology, Harper\'s Illustrated Biochemistry, and more. Every citation includes the specific edition, chapter, and page number.',
   },
   {
-    q: 'When will pricing be available?',
-    a: 'Pricing is coming soon. We are onboarding early users in waves while we polish the campus.',
+    category: 'Exam Preparation',
+    q: 'Is this useful for NEET-PG preparation?',
+    a: 'Absolutely. Our MCQs follow NEET-PG/INICET patterns, our content is mapped to 87 CBME specialties and 7,288 NMC competencies, and ATOM can drill you on high-yield topics. The spaced repetition system (SM-2 algorithm) ensures you review topics at optimal intervals. Pro plan users also get exam simulators and PYQ pattern analysis.',
   },
   {
-    q: 'How do I get early access?',
-    a: 'Take the tour, then request early access from the login page. We enable accounts in waves.',
+    category: 'Exam Preparation',
+    q: 'What subjects are covered?',
+    a: 'Currently 11 subjects with 720+ MCQs and 1,400+ topic files: Anatomy, Physiology, Biochemistry, Pathology, Pharmacology, Microbiology, Forensic Medicine, Community Medicine, Surgery, Medicine, and OBG. More subjects and content are added continuously.',
+  },
+  {
+    category: 'Platform & Access',
+    q: 'Can I use this on my phone?',
+    a: 'Yes! NucleuX Academy is a Progressive Web App (PWA) designed mobile-first. It works on any modern browser — Chrome, Safari, Firefox — on both Android and iOS. You can add it to your home screen for an app-like experience. No download from app stores needed.',
+  },
+  {
+    category: 'Platform & Access',
+    q: 'Is my progress saved across devices?',
+    a: 'Yes. Your study progress, MCQ history, spaced repetition schedule, ATOM conversation history, and all analytics sync across devices in real-time. Start a session on your phone during commute, continue on your laptop at home.',
+  },
+  {
+    category: 'Pricing & Plans',
+    q: 'Is the free tier really free?',
+    a: 'Yes, completely free — no credit card required, no trial period. You get 50 MCQs per day, 3 subjects, basic ATOM (10 queries/day), and community access. It\'s enough to experience the platform and decide if the upgrade is worth it. We believe every Indian medical student deserves access to quality learning tools.',
+  },
+  {
+    category: 'Support',
+    q: 'How do I contact support?',
+    a: 'You can reach us through our Telegram bot @ATOM_2099_bot for quick support, or email us at Nucleux2099@gmail.com. We typically respond within 24 hours. For institutional inquiries, use the contact form on our website.',
   },
 ];
 
@@ -53,9 +79,10 @@ function FAQItem({ faq }: { faq: { q: string; a: string } }) {
 }
 
 export default function FAQPage() {
+  const categories = [...new Set(faqs.map(f => f.category))];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      {/* Grid overlay */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
@@ -73,14 +100,19 @@ export default function FAQPage() {
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
             FAQ
           </div>
-          <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">Quick answers.</h1>
-          <p className="mt-5 text-lg text-[#A0B0BC]">If you still have a question, reach out from the contact page.</p>
+          <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">Got questions?</h1>
+          <p className="mt-5 text-lg text-[#A0B0BC]">Everything you need to know about NucleuX Academy. Can&apos;t find your answer? <Link href="/contact" className="text-[#5BB3B3] underline">Reach out to us</Link>.</p>
 
-          <div className="mt-10 space-y-3">
-            {faqs.map((f) => (
-              <FAQItem key={f.q} faq={f} />
-            ))}
-          </div>
+          {categories.map(category => (
+            <div key={category} className="mt-10">
+              <h2 className="text-lg font-semibold text-[#5BB3B3] mb-4">{category}</h2>
+              <div className="space-y-3">
+                {faqs.filter(f => f.category === category).map((f) => (
+                  <FAQItem key={f.q} faq={f} />
+                ))}
+              </div>
+            </div>
+          ))}
 
           <div className="mt-10 flex gap-3">
             <Link
@@ -93,7 +125,7 @@ export default function FAQPage() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>

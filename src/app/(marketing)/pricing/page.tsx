@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, X, Sparkles, Zap, Crown } from 'lucide-react';
+import { Check, X, Sparkles, Zap, Crown, Building2, CheckCircle2, XCircle } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
@@ -11,98 +11,109 @@ const plans = [
     name: 'Free',
     price: { monthly: '₹0', annual: '₹0' },
     period: { monthly: 'forever', annual: 'forever' },
-    description: 'Get started with the basics',
+    description: 'Start learning with zero commitment',
     icon: Sparkles,
     color: '#5BB3B3',
     cta: 'Start Free',
     ctaHref: '/signup',
     popular: false,
     features: [
-      { text: 'Library access (limited topics)', included: true },
-      { text: 'ATOM Chat (5 messages/day)', included: true },
-      { text: 'MCQ Practice (50/month)', included: true },
-      { text: '1 Patient Simulation', included: true },
-      { text: 'Basic study analytics', included: true },
+      { text: '50 MCQs per day', included: true },
+      { text: '3 subjects', included: true },
+      { text: 'Basic ATOM (10 queries/day)', included: true },
       { text: 'Community access', included: true },
-      { text: 'Full Library', included: false },
-      { text: 'Unlimited ATOM Chat', included: false },
-      { text: 'Desk workspace', included: false },
-      { text: 'Confidence Calibration', included: false },
+      { text: 'Basic study analytics', included: true },
+      { text: 'All subjects', included: false },
+      { text: 'Unlimited ATOM', included: false },
+      { text: 'Spaced repetition', included: false },
+      { text: 'Study plans', included: false },
+      { text: 'CBME tracker', included: false },
     ],
   },
   {
-    name: 'Scholar',
-    price: { monthly: '₹299', annual: '₹249' },
-    period: { monthly: '/month', annual: '/mo (billed yearly)' },
-    description: 'Everything you need to excel',
+    name: 'Premium',
+    price: { monthly: '₹499', annual: '₹4,999' },
+    period: { monthly: '/month', annual: '/year' },
+    description: 'Everything you need to learn smarter',
     icon: Zap,
     color: '#6366F1',
-    cta: 'Start 7-Day Trial',
-    ctaHref: '/signup?plan=scholar',
+    cta: 'Get Premium',
+    ctaHref: '/signup?plan=premium',
     popular: true,
     features: [
-      { text: 'Full Library access (all subjects)', included: true },
-      { text: 'Unlimited ATOM Chat', included: true },
-      { text: 'Unlimited MCQ Practice', included: true },
-      { text: 'All Patient Simulations', included: true },
-      { text: 'My Desk workspace', included: true },
-      { text: 'Community + Study Groups', included: true },
+      { text: 'Unlimited MCQs', included: true },
+      { text: 'All 11 subjects', included: true },
+      { text: 'Unlimited ATOM with textbook citations', included: true },
+      { text: 'Spaced repetition (SM-2)', included: true },
+      { text: 'Personalized study plans', included: true },
       { text: 'Full study analytics', included: true },
-      { text: 'Confidence Calibration', included: true },
-      { text: 'OSCE Stations', included: true },
-      { text: 'Arena + Leaderboards', included: false },
+      { text: '6 view modes per topic', included: true },
+      { text: 'Community + study groups', included: true },
+      { text: 'CBME tracker', included: false },
+      { text: 'Exam simulators', included: false },
     ],
   },
   {
-    name: 'Resident',
-    price: { monthly: '₹599', annual: '₹499' },
-    period: { monthly: '/month', annual: '/mo (billed yearly)' },
-    description: 'For serious exam preparation',
+    name: 'Pro',
+    price: { monthly: '₹999', annual: '₹9,999' },
+    period: { monthly: '/month', annual: '/year' },
+    description: 'For serious NEET-PG preparation',
     icon: Crown,
     color: '#F59E0B',
-    cta: 'Start 7-Day Trial',
-    ctaHref: '/signup?plan=resident',
+    cta: 'Get Pro',
+    ctaHref: '/signup?plan=pro',
     popular: false,
     features: [
-      { text: 'Everything in Scholar', included: true },
-      { text: 'Arena + Leaderboards', included: true },
-      { text: 'Patient Flow Pathways', included: true },
-      { text: 'Guided Learning Modules', included: true },
-      { text: 'Previous Year Questions (all)', included: true },
-      { text: 'Backstage Cognitive OS', included: true },
-      { text: 'NBME Domain Tracking', included: true },
+      { text: 'Everything in Premium', included: true },
+      { text: 'CBME competency tracker', included: true },
+      { text: 'NEET-PG exam simulators', included: true },
       { text: 'Priority ATOM responses', included: true },
-      { text: 'Quests & Achievements', included: true },
-      { text: 'PPT & Flashcard generation', included: true },
+      { text: 'Advanced analytics & weak-area mapping', included: true },
+      { text: 'Clinical case generators', included: true },
+      { text: 'Confidence calibration tools', included: true },
+      { text: 'PYQ pattern analysis', included: true },
+      { text: 'Custom study marathons', included: true },
+      { text: 'Early access to new features', included: true },
     ],
   },
 ];
 
+const comparison = [
+  { feature: 'Price (annual)', nucleux: '₹4,999', marrow: '₹19,999+', prepladder: '₹22,999+', dams: '₹15,000+' },
+  { feature: 'AI tutor', nucleux: true, marrow: false, prepladder: false, dams: false },
+  { feature: 'Textbook citations', nucleux: true, marrow: false, prepladder: false, dams: false },
+  { feature: 'Active recall first', nucleux: true, marrow: false, prepladder: false, dams: false },
+  { feature: 'CBME mapping (87 specialties)', nucleux: true, marrow: false, prepladder: false, dams: false },
+  { feature: 'Spaced repetition (SM-2)', nucleux: true, marrow: false, prepladder: false, dams: false },
+  { feature: '6 view modes per topic', nucleux: true, marrow: false, prepladder: false, dams: false },
+  { feature: 'Video lectures', nucleux: false, marrow: true, prepladder: true, dams: true },
+  { feature: 'MCQ bank', nucleux: true, marrow: true, prepladder: true, dams: true },
+];
+
 const faqs = [
   {
-    q: 'Is there really a free plan?',
-    a: 'Yes! The free plan gives you enough to experience NucleuX Academy. You get limited Library access, 5 ATOM messages per day, and 50 MCQs per month.',
+    q: 'Is the free tier really free?',
+    a: 'Yes! 50 MCQs per day, 3 subjects, and 10 ATOM queries per day — forever free. No credit card required. We believe every medical student deserves access to quality learning.',
   },
   {
     q: 'Can I cancel anytime?',
     a: 'Absolutely. No lock-in contracts. Cancel from your profile settings and you keep access until the end of your billing period.',
   },
   {
-    q: 'Do you offer institutional pricing?',
-    a: 'Yes! We offer special pricing for medical colleges, hospitals, and training programs. Contact us for bulk licensing.',
+    q: 'Why no video lectures?',
+    a: 'Because learning science shows active recall beats passive watching. Every hour spent watching a video could be spent on 3x more effective practice with ATOM. We\'re not anti-video — we\'re pro-learning.',
   },
   {
-    q: 'What happens to my data if I downgrade?',
-    a: 'Your notes, progress, and study history are always yours. Downgrading limits access to premium features but your data stays safe.',
+    q: 'Do you offer institutional pricing?',
+    a: 'Yes! ₹2,999/student/year for colleges and hospitals. Includes admin dashboard, curriculum alignment, and bulk licensing. Contact us for details.',
   },
 ];
 
 export default function PricingPage() {
-  const [billing, setBilling] = useState<'monthly' | 'annual'>('monthly');
+  const [billing, setBilling] = useState<'monthly' | 'annual'>('annual');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      {/* Grid overlay */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.08]"
         style={{
@@ -123,17 +134,17 @@ export default function PricingPage() {
       <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24 relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
-            Simple, transparent pricing
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB3B3]/30 bg-[#5BB3B3]/10 px-4 py-1.5 text-sm text-[#5BB3B3] font-medium">
+            75-80% cheaper than Marrow
           </div>
           <h1 className="mt-5 text-4xl sm:text-5xl font-bold text-[#E8E0D5] leading-tight">
-            Invest in your{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#6BA8C9]">
-              medical career
+            Premium medical education{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BB3B3] to-[#E879F9]">
+              without the premium price.
             </span>
           </h1>
           <p className="mt-4 text-lg text-[#A0B0BC]">
-            Start free, upgrade when you&apos;re ready. Every plan includes ATOM — your AI thinking partner.
+            Start free, upgrade when you&apos;re ready. Every plan includes ATOM — your AI teaching companion.
           </p>
 
           {/* Billing Toggle */}
@@ -152,7 +163,7 @@ export default function PricingPage() {
                 billing === 'annual' ? 'bg-[#5BB3B3] text-slate-950' : 'text-[#A0B0BC] hover:text-[#E8E0D5]'
               }`}
             >
-              Annual <span className="text-xs opacity-75">Save 15%</span>
+              Annual <span className="text-xs opacity-75">Save 17%</span>
             </button>
           </div>
         </div>
@@ -169,7 +180,7 @@ export default function PricingPage() {
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#6366F1] px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-[#6366F1]/30 animate-pulse">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#6366F1] px-4 py-1 text-xs font-semibold text-white shadow-lg shadow-[#6366F1]/30">
                   Most Popular
                 </div>
               )}
@@ -215,11 +226,7 @@ export default function PricingPage() {
                       ) : (
                         <X className="w-4 h-4 text-[#475569] mt-0.5 shrink-0" />
                       )}
-                      <span
-                        className={`text-sm ${
-                          feature.included ? 'text-[#E8E0D5]' : 'text-[#475569]'
-                        }`}
-                      >
+                      <span className={`text-sm ${feature.included ? 'text-[#E8E0D5]' : 'text-[#475569]'}`}>
                         {feature.text}
                       </span>
                     </li>
@@ -231,17 +238,62 @@ export default function PricingPage() {
         </div>
 
         {/* Institutional */}
-        <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.03] p-8 text-center hover:border-white/20 transition-all duration-200">
-          <h2 className="text-2xl font-bold text-[#E8E0D5]">For Medical Colleges & Hospitals</h2>
-          <p className="mt-2 text-[#A0B0BC] max-w-xl mx-auto">
-            Institutional licensing with bulk pricing, admin dashboards, curriculum alignment, and dedicated support.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex items-center rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 px-6 py-3 font-semibold text-[#E8E0D5] transition-colors"
-          >
-            Contact Sales
-          </Link>
+        <div className="mt-12 rounded-2xl border border-[#F97316]/20 bg-[#F97316]/5 p-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div className="w-14 h-14 rounded-xl bg-[#F97316]/20 flex items-center justify-center flex-shrink-0">
+              <Building2 className="w-7 h-7 text-[#F97316]" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-2xl font-bold text-[#E8E0D5]">For Medical Colleges &amp; Hospitals</h2>
+              <p className="mt-1 text-[#A0B0BC]">
+                <span className="text-[#F97316] font-bold text-xl">₹2,999</span>/student/year — Bulk licensing with admin dashboard, curriculum alignment, CBME tracking, and dedicated support.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="flex-shrink-0 inline-flex items-center rounded-xl border border-[#F97316]/30 bg-[#F97316]/10 hover:bg-[#F97316]/20 px-6 py-3 font-semibold text-[#F97316] transition-colors"
+            >
+              Contact for Institutional Pricing
+            </Link>
+          </div>
+        </div>
+
+        {/* Comparison Table */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-[#E8E0D5] text-center mb-3">NucleuX vs The Rest</h2>
+          <p className="text-center text-[#A0B0BC] mb-8">See why active learning beats passive watching — at a fraction of the cost.</p>
+          
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="text-left p-4 text-[#A0B0BC] font-medium">Feature</th>
+                    <th className="p-4 text-center text-[#5BB3B3] font-bold">NucleuX</th>
+                    <th className="p-4 text-center text-[#A0B0BC] font-medium">Marrow</th>
+                    <th className="p-4 text-center text-[#A0B0BC] font-medium">PrepLadder</th>
+                    <th className="p-4 text-center text-[#A0B0BC] font-medium">DAMS</th>
+                  </tr>
+                </thead>
+                <tbody className="text-[#E8E0D5]">
+                  {comparison.map((row, i) => (
+                    <tr key={i} className="border-b border-white/5 last:border-0">
+                      <td className="p-4 text-[#A0B0BC]">{row.feature}</td>
+                      {(['nucleux', 'marrow', 'prepladder', 'dams'] as const).map((col) => (
+                        <td key={col} className="p-4 text-center">
+                          {typeof row[col] === 'boolean' ? (
+                            row[col] ? <CheckCircle2 className="w-5 h-5 text-[#5BB3B3] mx-auto" /> : <XCircle className="w-5 h-5 text-[#475569] mx-auto" />
+                          ) : (
+                            <span className={col === 'nucleux' ? 'text-[#5BB3B3] font-semibold' : 'text-[#A0B0BC]'}>{row[col]}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
         {/* FAQs */}

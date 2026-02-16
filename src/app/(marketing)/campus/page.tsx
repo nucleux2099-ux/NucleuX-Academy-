@@ -1,139 +1,64 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, LayoutDashboard, GraduationCap, Search, FileText, HelpCircle, Stethoscope, Zap, Brain } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
-const slides = [
+const spaces = [
   {
-    id: 'library',
-    title: 'Library',
-    subtitle: 'Modes, structure, and connected understanding.',
-    imageSrc: '/marketing/screens/library.png',
-    accent: '#5BB3B3',
+    icon: BookOpen,
+    title: 'The Library',
+    subtitle: 'Your knowledge base — organized like a medical textbook should be.',
+    color: '#5BB3B3',
+    description: '1,400+ topic files across 11 subjects, mapped to NMC competencies and sourced from 25 standard textbooks. Every topic has prerequisites, related concepts, and clinical correlations linked together.',
+    features: [
+      'Subject-wise organization with topic maps',
+      'Prerequisites & related topics automatically linked',
+      'Content from Bailey & Love, Harrison\'s, Robbins, Sabiston',
+      'CBME competency tags on every topic',
+    ],
   },
   {
-    id: 'classroom',
-    title: 'Classroom',
-    subtitle: 'Live learning with notes, mindmaps, and replay.',
-    imageSrc: '/marketing/screens/classroom.png',
-    accent: '#6BA8C9',
+    icon: LayoutDashboard,
+    title: 'The Desk',
+    subtitle: 'Your personal workspace where ATOM lives.',
+    color: '#E879F9',
+    highlight: true,
+    description: 'This is where the magic happens. ATOM sits at your desk — tracking your spaced repetition schedule, remembering your weak areas, generating personalized study plans, and teaching through Socratic dialogue.',
+    features: [
+      'ATOM AI tutor with longitudinal memory',
+      'Spaced repetition scheduler (SM-2 algorithm)',
+      'Personalized study plans based on your gaps',
+      'Progress tracking and confidence calibration',
+    ],
   },
   {
-    id: 'exam-centre',
-    title: 'Exam Centre',
-    subtitle: 'Exam practice with explanations that teach.',
-    imageSrc: '/marketing/screens/exam-centre.png',
-    accent: '#C9A86C',
+    icon: GraduationCap,
+    title: 'The Training Centre',
+    subtitle: 'Practice that builds retrieval, not recognition.',
+    color: '#F97316',
+    description: '720+ MCQs across 11 subjects with detailed explanations that link back to library topics. Clinical cases, NEET-PG pattern questions, and OSCE stations — every mistake links to the concept that fixes it.',
+    features: [
+      '720+ MCQs with textbook-linked explanations',
+      'NEET-PG/INICET pattern questions',
+      'Clinical case simulations',
+      'Performance analytics & weak-area identification',
+    ],
   },
-  {
-    id: 'arena',
-    title: 'Arena',
-    subtitle: 'Timed drills to pressure-proof recall.',
-    imageSrc: '/marketing/screens/arena.png',
-    accent: '#EC4899',
-  },
-  {
-    id: 'backstage',
-    title: 'Backstage',
-    subtitle: 'Competency, calibration, reflection, and logbook.',
-    imageSrc: '/marketing/screens/backstage.png',
-    accent: '#A78BFA',
-  },
-  {
-    id: 'common-room',
-    title: 'Common Room',
-    subtitle: 'Community discussions that end in clarity.',
-    imageSrc: '/marketing/screens/common-room.png',
-    accent: '#10B981',
-  },
-] as const;
+];
 
-function Slide({
-  id,
-  title,
-  subtitle,
-  imageSrc,
-  accent,
-}: {
-  id: string;
-  title: string;
-  subtitle: string;
-  imageSrc: string;
-  accent: string;
-}) {
-  return (
-    <motion.section
-      id={id}
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.55 }}
-      className="relative min-h-[58vh] sm:min-h-[72vh] lg:min-h-[86vh] py-8 sm:py-10 lg:py-14 scroll-mt-20 lg:snap-start"
-      style={{ scrollSnapAlign: 'start' }}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/35 shadow-matte-lg">
-          <div className="relative aspect-[16/9] lg:aspect-[21/9]">
-            <Image
-              src={imageSrc}
-              alt={`${title} screenshot`}
-              fill
-              className="object-cover"
-              sizes="100vw"
-              priority={title === 'Library'}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/10 to-transparent" />
-            <div className="absolute left-6 bottom-6 right-6">
-              <div
-                className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs"
-                style={{ borderColor: `${accent}33`, color: accent, backgroundColor: `${accent}14` }}
-              >
-                Room preview
-              </div>
-              <div className="mt-3 text-3xl sm:text-4xl font-bold text-[#E8E0D5]">{title}</div>
-              <div className="mt-1 text-sm sm:text-base text-[#A0B0BC] max-w-2xl">{subtitle}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.section>
-  );
-}
+const viewModes = [
+  { icon: Search, title: 'Explorer', desc: 'Deep conceptual understanding — the "why" behind every fact. Clinical correlations, mechanisms, and connections.', color: '#5BB3B3' },
+  { icon: FileText, title: 'Exam Prep', desc: 'High-yield points formatted for NEET-PG. Tables, mnemonics, and must-remember facts — optimized for recall.', color: '#E879F9' },
+  { icon: HelpCircle, title: 'Quiz', desc: 'Active recall MCQs on this specific topic. Each question tests understanding, not just memory.', color: '#F97316' },
+  { icon: Stethoscope, title: 'Cases', desc: 'Clinical scenarios that test application. "A 45-year-old presents with..." — think like a clinician.', color: '#6366F1' },
+  { icon: Zap, title: 'Revision', desc: 'Condensed rapid-fire review. When you have 10 minutes before the exam — this is what you read.', color: '#10B981' },
+  { icon: Brain, title: 'Deep Dive', desc: 'Research-level detail, recent advances, landmark studies. For those who want to go beyond the textbook.', color: '#F59E0B' },
+];
 
 export default function CampusTourPage() {
-  const slideIds = useMemo(() => slides.map((s) => s.id), []);
-  const [activeId, setActiveId] = useState<(typeof slideIds)[number]>(slides[0].id);
-
-  useEffect(() => {
-    const els = slideIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
-    if (!els.length) return;
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
-        if (visible[0]?.target?.id) setActiveId(visible[0].target.id as any);
-      },
-      { threshold: [0.35, 0.5, 0.65] }
-    );
-
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, [slideIds]);
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
       <div
@@ -146,68 +71,141 @@ export default function CampusTourPage() {
       />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
 
-      <MarketingHeader active="campus" subtitle="A virtual campus for medical mastery" primaryCta={{ href: '/campus', label: 'Take the tour' }} secondaryCta={{ href: '/login', label: 'Enter' }} showRooms={true} />
+      <MarketingHeader active="campus" subtitle="A virtual campus for medical mastery" primaryCta={{ href: '/signup', label: 'Start Free' }} secondaryCta={{ href: '/login', label: 'Enter' }} />
 
+      {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-16 pb-8 sm:pb-10 relative z-10">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-[#A0B0BC]">
-            Campus Tour
+            Virtual Campus Tour
           </div>
-          <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">See the campus, room by room.</h1>
+          <h1 className="mt-5 text-4xl sm:text-6xl font-bold text-[#E8E0D5] leading-tight">
+            Three spaces. One learning system.
+          </h1>
           <p className="mt-5 text-lg text-[#A0B0BC]">
-            Want the room-by-room breakdown? Open <Link className="text-[#E8E0D5] underline" href="/rooms">Rooms (detailed)</Link>.
+            NucleuX Academy is organized like a real campus — a Library for knowledge, a Desk for personalized learning with ATOM, and a Training Centre for practice. Every space is connected, and ATOM follows you everywhere.
           </p>
         </div>
       </section>
 
-      <div className="relative z-10 lg:snap-y lg:snap-mandatory" style={{ scrollSnapType: 'y mandatory' }}>
-        <div className="hidden lg:flex fixed right-5 top-1/2 -translate-y-1/2 z-30 flex-col gap-3">
-          {slides.map((s) => {
-            const isActive = activeId === s.id;
-            return (
-              <div key={s.id} className="relative group flex items-center justify-end">
-                <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="rounded-md border border-white/10 bg-slate-950/85 backdrop-blur px-2 py-1 text-[11px] text-[#E8E0D5] shadow-matte-lg whitespace-nowrap">
-                    {s.title}
+      {/* Three Spaces */}
+      <section className="max-w-7xl mx-auto px-6 py-12 relative z-10">
+        <div className="space-y-8">
+          {spaces.map((space, i) => (
+            <motion.div
+              key={space.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className={`rounded-3xl border p-8 sm:p-10 ${
+                space.highlight
+                  ? `border-[${space.color}]/30 bg-gradient-to-br from-[${space.color}]/10 to-transparent`
+                  : 'border-white/10 bg-white/[0.03]'
+              }`}
+              style={space.highlight ? { borderColor: `${space.color}30`, background: `linear-gradient(135deg, ${space.color}10, transparent)` } : {}}
+            >
+              <div className="flex flex-col md:flex-row gap-8">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className="w-14 h-14 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${space.color}20` }}
+                    >
+                      <space.icon className="w-7 h-7" style={{ color: space.color }} />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5]">{space.title}</h2>
+                      <p className="text-[#A0B0BC]">{space.subtitle}</p>
+                    </div>
                   </div>
+                  <p className="text-[#A0B0BC] leading-relaxed mt-4">{space.description}</p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => scrollTo(s.id)}
-                  aria-label={`Go to ${s.title}`}
-                  className="h-3 w-3 rounded-full border transition-all"
-                  style={{
-                    backgroundColor: isActive ? s.accent : 'rgba(255,255,255,0.18)',
-                    borderColor: isActive ? `${s.accent}99` : 'rgba(255,255,255,0.25)',
-                    transform: isActive ? 'scale(1.25)' : 'scale(1)',
-                    boxShadow: isActive ? `0 0 0 6px ${s.accent}22` : 'none',
-                  }}
-                />
+                <div className="md:w-80 flex-shrink-0">
+                  <ul className="space-y-3">
+                    {space.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2 text-sm text-[#E8E0D5]">
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: space.color }} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            );
-          })}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* 6 View Modes */}
+      <section className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#E8E0D5] mb-3">6 View Modes — Same Topic, 6 Ways to Learn</h2>
+          <p className="text-[#A0B0BC] max-w-2xl mx-auto">
+            Every topic in the Library can be viewed in 6 different modes. Because a 1st-year MBBS student and a NEET-PG aspirant need different things from the same topic.
+          </p>
         </div>
 
-        {slides.map((s) => (
-          <Slide key={s.id} {...s} />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {viewModes.map((mode, i) => (
+            <motion.div
+              key={mode.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              className="rounded-xl border border-white/10 bg-white/[0.03] p-6 hover:border-white/20 hover:bg-white/[0.06] transition-all duration-200"
+            >
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                style={{ backgroundColor: `${mode.color}15` }}
+              >
+                <mode.icon className="w-5 h-5" style={{ color: mode.color }} />
+              </div>
+              <h3 className="font-bold text-[#E8E0D5] mb-2">{mode.title}</h3>
+              <p className="text-sm text-[#A0B0BC] leading-relaxed">{mode.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
+      {/* Example Flow */}
+      <section className="max-w-7xl mx-auto px-6 py-12 relative z-10">
+        <div className="rounded-3xl border border-[#5BB3B3]/20 bg-gradient-to-br from-[#5BB3B3]/5 to-transparent p-8 sm:p-10">
+          <h2 className="text-2xl font-bold text-[#E8E0D5] mb-4">Example: Learning &quot;Acute Pancreatitis&quot;</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            <div className="space-y-3">
+              <div className="text-sm font-semibold text-[#5BB3B3]">1. Library (Explorer Mode)</div>
+              <p className="text-sm text-[#A0B0BC]">Read the concept with clinical correlations, pathophysiology flowcharts, and textbook citations from Sabiston Ch.54 and Harrison&apos;s Ch.370.</p>
+            </div>
+            <div className="space-y-3">
+              <div className="text-sm font-semibold text-[#E879F9]">2. Desk (ATOM teaches)</div>
+              <p className="text-sm text-[#A0B0BC]">ATOM quizzes you: &quot;What&apos;s the most common cause of acute pancreatitis? What differentiates it from chronic?&quot; — Socratic, not spoon-fed.</p>
+            </div>
+            <div className="space-y-3">
+              <div className="text-sm font-semibold text-[#F97316]">3. Training Centre (Quiz)</div>
+              <p className="text-sm text-[#A0B0BC]">Solve MCQs on pancreatitis. Get wrong? ATOM shows you exactly which concept you missed — with the page number in Sabiston.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 py-16 relative z-10">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <div className="text-2xl font-bold text-[#E8E0D5]">Want early access?</div>
-            <div className="mt-1 text-sm text-[#A0B0BC]">Pricing is coming soon — we’re onboarding in waves while we polish the campus.</div>
+            <div className="text-2xl font-bold text-[#E8E0D5]">Ready to explore the campus?</div>
+            <div className="mt-1 text-sm text-[#A0B0BC]">Start free — 50 MCQs/day, 3 subjects, and 10 ATOM queries. No credit card needed.</div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <Link href="/rooms" className="w-full sm:w-auto">
               <span className="inline-flex w-full items-center justify-center rounded-xl px-5 py-3 font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
-                Rooms (detailed)
+                Browse Rooms
               </span>
             </Link>
-            <Link href="/login" className="w-full sm:w-auto">
+            <Link href="/signup" className="w-full sm:w-auto">
               <span className="inline-flex w-full items-center justify-center rounded-xl px-5 py-3 font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
-                Request early access
+                Start Learning Free <ArrowRight className="w-4 h-4 ml-2" />
               </span>
             </Link>
           </div>
