@@ -1,0 +1,149 @@
+topic_id: dna-replication-repair
+name: "DNA Replication & Repair"
+description: >
+  Mechanisms of DNA replication, key enzymes, and DNA repair pathways with clinical correlations.
+high_yield: true
+nmc_codes:
+  - code: BI9.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  DNA replication is semiconservative (Meselson-Stahl), bidirectional, and semidiscontinuous
+  (leading strand continuous, lagging strand as Okazaki fragments). Key enzymes: helicase, primase,
+  DNA polymerase III (prokaryotic)/DNA pol δ,ε (eukaryotic), ligase, topoisomerase. DNA repair
+  mechanisms (BER, NER, mismatch repair) prevent mutations; defects cause cancer predisposition syndromes.
+  📚 Harper's Biochemistry, 31st Ed, Ch.35-36; 📚 Stryer Biochemistry, Ch.28
+
+learning_objectives:
+  - Describe the steps of DNA replication and roles of key enzymes
+  - Differentiate leading vs lagging strand synthesis
+  - Compare prokaryotic and eukaryotic DNA polymerases
+  - Explain BER, NER, and mismatch repair mechanisms
+  - Correlate DNA repair defects with clinical syndromes (xeroderma pigmentosum, Lynch syndrome, BRCA)
+
+content:
+  atoms:
+    - id: replication-mechanism
+      title: "DNA Replication Mechanism"
+      text: >
+        Semiconservative (each daughter has one old + one new strand). Starts at origins of replication
+        (oriC in prokaryotes, multiple origins in eukaryotes). Bidirectional replication forks.
+        Steps: (1) Helicase unwinds DNA (creates replication fork); (2) SSB proteins stabilize ssDNA;
+        (3) Topoisomerase (gyrase) relieves supercoiling ahead of fork;
+        (4) Primase synthesizes RNA primer; (5) DNA pol III (prokaryotes) extends from primer 5'→3',
+        has 3'→5' proofreading exonuclease activity; (6) DNA pol I removes RNA primers, fills gaps;
+        (7) DNA ligase seals nicks. Leading strand: continuous synthesis. Lagging strand: Okazaki fragments joined by ligase.
+        📚 Harper's Biochemistry, 31st Ed, Ch.35
+
+    - id: eukaryotic-replication
+      title: "Eukaryotic DNA Replication"
+      text: >
+        Multiple origins of replication (vs single in prokaryotes). DNA pol α: primase activity, starts synthesis.
+        DNA pol δ: lagging strand synthesis, proofreading. DNA pol ε: leading strand, proofreading.
+        Telomerase: RNA-dependent DNA polymerase (reverse transcriptase) that extends telomeres
+        (TTAGGG repeats) to prevent chromosome shortening. Active in stem cells, germ cells, cancer cells.
+        Absent in somatic cells → Hayflick limit → cellular senescence.
+        📚 Stryer Biochemistry, Ch.28
+
+    - id: dna-repair
+      title: "DNA Repair Mechanisms"
+      text: >
+        Base excision repair (BER): fixes single damaged bases (deamination, oxidation).
+        DNA glycosylase removes damaged base → AP endonuclease → DNA pol β fills → ligase seals.
+        Nucleotide excision repair (NER): fixes bulky lesions (thymine dimers from UV).
+        Endonuclease excises ~30nt segment → DNA pol fills → ligase seals. Defect = xeroderma pigmentosum (XP).
+        Mismatch repair (MMR): fixes replication errors. MSH2/MLH1 recognize mismatch → excise → repair.
+        Defect = Lynch syndrome (HNPCC) — hereditary colon cancer. Microsatellite instability is hallmark.
+        Double-strand break repair: NHEJ (error-prone) or homologous recombination (error-free, uses BRCA1/BRCA2).
+        BRCA defects → breast/ovarian cancer.
+        📚 Harper's Biochemistry, 31st Ed, Ch.36
+
+  clinical:
+    - title: "Clinical Correlation: Xeroderma Pigmentosum"
+      text: >
+        Autosomal recessive defect in NER. Cannot repair UV-induced thymine dimers.
+        Extreme sun sensitivity, freckling, multiple skin cancers (BCC, SCC, melanoma) at young age.
+        Must avoid ALL UV exposure.
+    - title: "Clinical Correlation: Lynch Syndrome (HNPCC)"
+      text: >
+        Autosomal dominant defect in mismatch repair genes (MSH2, MLH1). Microsatellite instability.
+        Early-onset colorectal cancer (right-sided), endometrial cancer. Amsterdam criteria for diagnosis.
+
+high_yield_points:
+  - "DNA replication is semiconservative, bidirectional, semidiscontinuous"
+  - "DNA pol III (prokaryotes) has 3'→5' proofreading; pol I removes primers"
+  - "Telomerase = reverse transcriptase; active in cancer/stem cells, absent in somatic cells"
+  - "Xeroderma pigmentosum = NER defect → cannot repair UV thymine dimers"
+  - "Lynch syndrome = mismatch repair defect (MSH2/MLH1) → microsatellite instability → colon cancer"
+  - "BRCA1/2 involved in homologous recombination for double-strand break repair"
+  - "Fluoroquinolones target bacterial topoisomerase II (DNA gyrase)"
+  - "Okazaki fragments are on the lagging strand, joined by DNA ligase"
+
+mcqs:
+  - question: "A child with extreme photosensitivity develops multiple skin cancers. The defect is in which DNA repair mechanism?"
+    options:
+      - "Base excision repair"
+      - "Nucleotide excision repair"
+      - "Mismatch repair"
+      - "Homologous recombination"
+    answer: "Nucleotide excision repair"
+    explanation: >
+      Xeroderma pigmentosum (XP) = defect in NER, which normally repairs UV-induced thymine dimers
+      (bulky lesions). Without NER, UV damage accumulates → multiple skin cancers.
+      📚 Harper's Biochemistry, 31st Ed, Ch.36
+    difficulty: 1
+
+  - question: "Lynch syndrome (HNPCC) is caused by defects in which DNA repair pathway?"
+    options:
+      - "Base excision repair"
+      - "Nucleotide excision repair"
+      - "Mismatch repair"
+      - "Non-homologous end joining"
+    answer: "Mismatch repair"
+    explanation: >
+      Lynch syndrome = autosomal dominant defect in mismatch repair genes (MSH2, MLH1, MSH6, PMS2).
+      Leads to microsatellite instability and early-onset colorectal/endometrial cancer.
+      📚 Harper's Biochemistry, 31st Ed, Ch.36
+    difficulty: 1
+
+  - question: "Which enzyme extends telomeres and is active in cancer cells but not normal somatic cells?"
+    options:
+      - "DNA polymerase α"
+      - "Telomerase"
+      - "Helicase"
+      - "Primase"
+    answer: "Telomerase"
+    explanation: >
+      Telomerase is a reverse transcriptase that adds TTAGGG repeats to telomeres. Active in germ cells,
+      stem cells, and ~90% of cancers (immortalization). Absent in somatic cells → telomere shortening → senescence.
+      📚 Stryer Biochemistry, Ch.28
+    difficulty: 1
+
+  - question: "On the lagging strand of DNA replication, short DNA fragments are synthesized and later joined. These are called:"
+    options:
+      - "Primer fragments"
+      - "Okazaki fragments"
+      - "Restriction fragments"
+      - "Telomeric fragments"
+    answer: "Okazaki fragments"
+    explanation: >
+      The lagging strand is synthesized discontinuously as Okazaki fragments (100-200nt in eukaryotes,
+      1000-2000nt in prokaryotes). RNA primers are removed by DNA pol I/FEN1, gaps filled, and fragments
+      joined by DNA ligase.
+      📚 Harper's Biochemistry, 31st Ed, Ch.35
+    difficulty: 1
+
+  - question: "BRCA1 and BRCA2 are involved in which DNA repair mechanism?"
+    options:
+      - "Nucleotide excision repair"
+      - "Base excision repair"
+      - "Homologous recombination"
+      - "Mismatch repair"
+    answer: "Homologous recombination"
+    explanation: >
+      BRCA1/2 are essential for error-free repair of double-strand breaks via homologous recombination.
+      Mutations → impaired DSB repair → genomic instability → breast and ovarian cancer predisposition.
+      📚 Harper's Biochemistry, 31st Ed, Ch.36
+    difficulty: 2

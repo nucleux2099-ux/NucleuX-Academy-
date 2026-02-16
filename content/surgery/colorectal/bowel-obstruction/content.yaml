@@ -1,0 +1,143 @@
+overview: |
+  Intestinal obstruction is a mechanical or functional blockage preventing normal transit of intestinal contents.
+  Small bowel obstruction (SBO) is most commonly caused by adhesions (post-surgical), while large bowel
+  obstruction (LBO) is most commonly due to colorectal carcinoma. Strangulation is the most feared complication.
+
+learning_objectives:
+  - Classify intestinal obstruction by type, level, and etiology
+  - Differentiate simple from strangulated obstruction clinically and radiologically
+  - Recognize the classic X-ray findings of SBO vs LBO
+  - Apply the management algorithm including conservative vs surgical intervention
+  - Understand closed-loop obstruction and its significance
+
+content:
+  atoms:
+    - title: Classification
+      text: |
+        **By mechanism:** Mechanical (physical blockage) vs Functional/Paralytic (adynamic ileus).
+        **By level:** High (proximal SBO — early vomiting, less distension) vs Low (distal SBO/LBO — late vomiting, more distension).
+        **By completeness:** Complete vs Incomplete (subacute).
+        **By blood supply:** Simple (viable bowel) vs Strangulated (compromised blood supply — emergency).
+        **Closed-loop obstruction:** Obstruction at two points (e.g., volvulus) — high risk of strangulation.
+        📚 Bailey & Love, 28th Ed, Ch.71
+
+    - title: Etiology
+      text: |
+        **SBO causes:** Adhesions (60%, MC in operated abdomen), hernias (MC in non-operated),
+        Crohn's disease, intussusception (children), gallstone ileus, tumours.
+        **LBO causes:** Colorectal carcinoma (60%, MC), volvulus (sigmoid > caecal),
+        diverticular disease, faecal impaction.
+        **Functional:** Post-operative ileus, electrolyte imbalance (hypokalemia), peritonitis, drugs (opioids).
+        📚 Sabiston, 21st Ed, Ch.49
+
+    - title: Clinical Features & Diagnosis
+      text: |
+        **Cardinal symptoms:** Pain (colicky), Vomiting (early in high, late/feculent in low),
+        Distension (more in distal), Absolute constipation (complete obstruction).
+        **Signs:** Visible peristalsis, hyperactive tinkling/high-pitched bowel sounds (mechanical),
+        absent bowel sounds (paralytic ileus). Tenderness with guarding suggests strangulation.
+        **X-ray:** SBO — centrally placed dilated loops, valvulae conniventes (cross entire lumen),
+        >3cm diameter. LBO — peripherally placed, haustral markings (don't cross entire lumen), >6cm (>9cm caecum = impending perforation).
+        📚 Bailey & Love, 28th Ed, Ch.71
+
+    - title: Investigations
+      text: |
+        Plain X-ray erect + supine: Multiple air-fluid levels (step-ladder pattern in SBO).
+        CT abdomen with contrast: Gold standard — identifies site, cause, and signs of strangulation
+        (mesenteric haziness, bowel wall thickening, pneumatosis, portal venous gas).
+        Gastrografin follow-through: Therapeutic + diagnostic in adhesive SBO (appears in colon within 24h = resolving).
+        Labs: Metabolic alkalosis (high obstruction/vomiting), acidosis (strangulation), raised lactate.
+        📚 Sabiston, 21st Ed, Ch.49
+
+    - title: Management
+      text: |
+        **Conservative (Drip & Suck):** NPO, NG decompression, IV fluids, correct electrolytes.
+        Adhesive SBO: Trial of conservative management for 24-72 hours (if no signs of strangulation).
+        Gastrografin challenge: If contrast reaches colon in 24h → continue conservative.
+        **Surgical indications:** Strangulation, complete obstruction not resolving, closed-loop obstruction,
+        hernia causing obstruction, peritonitis, virgin abdomen (first episode without prior surgery).
+        **SBO surgery:** Adhesiolysis (open/laparoscopic), resection-anastomosis if non-viable bowel.
+        **LBO surgery:** Depends on cause — for left-sided Ca colon: Hartmann's procedure (emergency)
+        or on-table lavage + primary anastomosis. Sigmoid volvulus: Flatus tube decompression → elective sigmoidectomy.
+        📚 Maingot's, 12th Ed, Part V; Bailey & Love, 28th Ed, Ch.71
+
+  clinical: |
+    **Management Algorithm:**
+    1. Resuscitate: IV access, fluids, catheter, NG tube
+    2. Assess: Is it mechanical or functional? (History, X-ray, bowel sounds)
+    3. If mechanical: Is there strangulation? (Pain out of proportion, tenderness, tachycardia, fever, leucocytosis, raised lactate)
+    4. Strangulation → Emergency surgery
+    5. Simple adhesive SBO → Conservative trial (48-72h) + Gastrografin challenge
+    6. LBO → CT to identify cause → Plan surgery accordingly
+    7. Closed-loop / Virgin abdomen → Early surgery
+
+  high_yield_points:
+    - "MC cause of SBO in operated abdomen: Adhesions; in non-operated: Hernias"
+    - "MC cause of LBO: Colorectal carcinoma"
+    - "SBO X-ray: Central, valvulae conniventes cross entire lumen, >3cm"
+    - "LBO X-ray: Peripheral, haustra don't cross entire lumen, >6cm; caecum >9cm = impending perforation"
+    - "Strangulation signs: Pain out of proportion, absent bowel sounds, peritonism, raised lactate"
+    - "Gallstone ileus: Air in biliary tree (pneumobilia) + SBO + ectopic gallstone (Rigler's triad)"
+    - "Sigmoid volvulus: Coffee-bean sign on X-ray; treat with flatus tube → elective sigmoidectomy"
+    - "Gastrografin challenge: Contrast in colon at 24h predicts resolution of adhesive SBO"
+    - "Closed-loop obstruction: Obstruction at two points — highest risk of strangulation"
+    - "Paralytic ileus: Absent bowel sounds; treat the cause (correct K+, stop opioids)"
+
+mcqs:
+  - question: "What is the most common cause of small bowel obstruction in a patient with prior abdominal surgery?"
+    options:
+      a: Hernia
+      b: Adhesions
+      c: Crohn's disease
+      d: Intussusception
+    answer: b
+    explanation: |
+      Post-operative adhesions account for ~60% of SBO cases in patients with prior surgery.
+      In patients without prior surgery, hernias are the most common cause. 📚 Bailey & Love, 28th Ed, Ch.71
+
+  - question: "A 70-year-old presents with progressive abdominal distension, absolute constipation for 5 days, and late-onset vomiting. X-ray shows peripherally placed dilated bowel loops with haustral markings. What is the most likely diagnosis?"
+    options:
+      a: Small bowel obstruction
+      b: Large bowel obstruction
+      c: Paralytic ileus
+      d: Sigmoid volvulus
+    answer: b
+    explanation: |
+      Peripherally placed dilated loops with haustra that don't cross the entire lumen are characteristic
+      of LBO. Late vomiting and marked distension also favor large bowel pathology. 📚 Sabiston, 21st Ed, Ch.49
+
+  - question: "Rigler's triad (pneumobilia + SBO + ectopic gallstone) is diagnostic of?"
+    options:
+      a: Bouveret syndrome
+      b: Gallstone ileus
+      c: Mirizzi syndrome
+      d: Cholangitis
+    answer: b
+    explanation: |
+      Gallstone ileus occurs when a large gallstone erodes through a cholecystoduodenal fistula and
+      impacts at the ileocaecal junction. Rigler's triad on X-ray is pathognomonic. Bouveret syndrome
+      is gastric outlet obstruction by gallstone. 📚 Bailey & Love, 28th Ed, Ch.71
+
+  - question: "What is the investigation of choice to identify the site, cause, and complications of intestinal obstruction?"
+    options:
+      a: Plain X-ray abdomen
+      b: Barium meal follow-through
+      c: CT abdomen with contrast
+      d: Ultrasound abdomen
+    answer: c
+    explanation: |
+      CT abdomen is the gold standard — identifies transition point, cause of obstruction,
+      and signs of strangulation (bowel wall thickening, mesenteric haziness, pneumatosis).
+      📚 Sabiston, 21st Ed, Ch.49
+
+  - question: "A patient with sigmoid volvulus is hemodynamically stable with no signs of peritonitis. What is the initial management?"
+    options:
+      a: Emergency Hartmann's procedure
+      b: Endoscopic decompression with flatus tube
+      c: IV antibiotics and observation
+      d: Colonoscopic resection
+    answer: b
+    explanation: |
+      Uncomplicated sigmoid volvulus is initially managed with endoscopic decompression using a flatus tube
+      (success rate ~80%). This is followed by elective sigmoidectomy to prevent recurrence (60% recurrence
+      without surgery). Emergency surgery if signs of gangrene/perforation. 📚 Bailey & Love, 28th Ed, Ch.71

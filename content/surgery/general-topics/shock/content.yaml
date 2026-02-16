@@ -1,0 +1,148 @@
+overview: |
+  Shock is a state of inadequate tissue perfusion and cellular hypoxia. It is classified as hypovolemic (MC surgical),
+  cardiogenic, distributive (septic, neurogenic, anaphylactic), and obstructive. ATLS classifies hemorrhagic shock
+  into 4 classes based on blood loss. Early recognition and goal-directed resuscitation are critical.
+
+learning_objectives:
+  - Classify shock by etiology and pathophysiology
+  - Apply ATLS hemorrhagic shock classification (Classes I-IV)
+  - Recognize the clinical features of different shock types
+  - Describe resuscitation principles including fluid choice and blood transfusion
+  - Differentiate warm shock (septic/neurogenic) from cold shock (hypovolemic/cardiogenic)
+
+content:
+  atoms:
+    - title: Classification
+      text: |
+        **Hypovolemic:** MC type in surgical patients. Blood loss (hemorrhage), fluid loss (burns, vomiting, diarrhea).
+        Cold, clammy, tachycardic, vasoconstricted.
+        **Cardiogenic:** Pump failure (MI, arrhythmia, tamponade mechanism varies). Raised JVP, pulmonary edema.
+        **Distributive:** Vasodilation → maldistribution of blood flow.
+        - Septic (MC cause of death in ICU): Warm shock initially, then cold. Tachycardia, fever, bounding pulse.
+        - Neurogenic: Spinal cord injury above T6 → loss of sympathetic tone. Hypotension + BRADYCARDIA (unique).
+        - Anaphylactic: IgE-mediated. Urticaria, bronchospasm, hypotension. Treat with IM adrenaline.
+        **Obstructive:** Mechanical obstruction to flow (tension pneumothorax, cardiac tamponade, massive PE).
+        📚 Bailey & Love, 28th Ed, Ch.2; Sabiston, 21st Ed, Ch.4
+
+    - title: ATLS Hemorrhagic Shock Classification
+      text: |
+        **Class I:** <15% blood loss (<750 mL). Minimal symptoms. HR <100. Normal BP, RR, urine output.
+        **Class II:** 15-30% (750-1500 mL). Tachycardia >100, narrow pulse pressure, anxiety. Urine 20-30 mL/hr.
+        Crystalloid resuscitation.
+        **Class III:** 30-40% (1500-2000 mL). HR >120, hypotension, tachypnea >30, confused. Urine 5-15 mL/hr.
+        Needs blood transfusion + crystalloid.
+        **Class IV:** >40% (>2000 mL). HR >140, severe hypotension, obtunded, anuria. Massive transfusion protocol.
+        Lethal without immediate intervention.
+        📚 ATLS 10th Ed; Bailey & Love, 28th Ed, Ch.2
+
+    - title: Septic Shock
+      text: |
+        **SIRS criteria (≥2):** Temp >38°C or <36°C, HR >90, RR >20 or PaCO2 <32, WBC >12,000 or <4,000.
+        **Sepsis:** SIRS + documented infection. **Severe sepsis:** Sepsis + organ dysfunction.
+        **Septic shock:** Sepsis + hypotension refractory to fluid resuscitation (requires vasopressors).
+        **qSOFA (≥2):** RR ≥22, altered mentation, SBP ≤100. Predicts poor outcome.
+        **Surviving Sepsis Campaign:** Hour-1 bundle — Lactate, blood cultures, broad-spectrum antibiotics,
+        30 mL/kg crystalloid if hypotensive, vasopressors (noradrenaline first-line) if MAP <65 despite fluids.
+        📚 Sabiston, 21st Ed, Ch.4
+
+    - title: Monitoring & Resuscitation
+      text: |
+        **Endpoints of resuscitation:** Urine output (>0.5 mL/kg/hr), MAP >65 mmHg, lactate clearance,
+        base deficit correction, mental status improvement.
+        **Fluid:** Crystalloids (Ringer's lactate preferred over NS — NS causes hyperchloremic acidosis).
+        **Blood:** Massive Transfusion Protocol (MTP): 1:1:1 ratio (pRBC:FFP:Platelets) for hemorrhagic shock.
+        **Permissive hypotension:** Target SBP 80-90 in trauma (before surgical control) to avoid dilutional
+        coagulopathy and clot disruption. Does NOT apply to head injuries (need MAP >80).
+        📚 ATLS 10th Ed; Sabiston, 21st Ed, Ch.4
+
+    - title: Lethal Triad of Trauma
+      text: |
+        **Hypothermia + Acidosis + Coagulopathy** = Lethal/Vicious triad.
+        Each worsens the other → death spiral. Addressed by damage control surgery (abbreviated surgery
+        to stop bleeding/contamination, pack, ICU resuscitate, return for definitive surgery).
+        **Damage control resuscitation:** Permissive hypotension, minimize crystalloid, early blood products (1:1:1),
+        tranexamic acid (within 3h — CRASH-2 trial), correct hypothermia, calcium supplementation.
+        📚 Bailey & Love, 28th Ed, Ch.2
+
+  clinical: |
+    **Approach to Shock:**
+    1. Recognize: Tachycardia, hypotension, cold extremities, altered mentation, oliguria
+    2. Type: Cold/clammy = hypovolemic/cardiogenic; Warm/vasodilated = septic/neurogenic
+    3. Resuscitate: 2 large-bore IV (16G), crystalloid bolus (20 mL/kg)
+    4. If hemorrhagic: Stop bleeding (pressure, tourniquet, surgery) + blood transfusion
+    5. If septic: Blood cultures → IV antibiotics within 1 hour → fluids → noradrenaline
+    6. Monitor: Urine output, lactate, MAP, mental status
+    7. Investigate and treat cause
+
+  high_yield_points:
+    - "MC type of shock in surgery: Hypovolemic (hemorrhagic)"
+    - "MC cause of death in ICU: Septic shock"
+    - "Neurogenic shock: Hypotension + BRADYCARDIA (unique — all others have tachycardia)"
+    - "Class III hemorrhage (30-40%): First class to show hypotension and need blood"
+    - "Massive Transfusion Protocol: 1:1:1 ratio of pRBC:FFP:Platelets"
+    - "Lethal triad: Hypothermia + Acidosis + Coagulopathy"
+    - "First-line vasopressor in septic shock: Noradrenaline"
+    - "Permissive hypotension: Target SBP 80-90 (NOT for head injuries)"
+    - "Tranexamic acid within 3 hours of injury reduces mortality (CRASH-2 trial)"
+    - "Best resuscitation endpoint: Lactate clearance and urine output"
+
+mcqs:
+  - question: "A trauma patient has HR 130, BP 80/60, RR 35, confused, urine output 5 mL/hr. What class of hemorrhagic shock is this?"
+    options:
+      a: Class I
+      b: Class II
+      c: Class III
+      d: Class IV
+    answer: c
+    explanation: |
+      Class III (30-40% blood loss): HR >120, hypotension, RR >30, confused, decreased urine output.
+      This is the first class to show frank hypotension and requires crystalloid + blood transfusion.
+      📚 ATLS 10th Ed
+
+  - question: "Which type of shock presents with hypotension and bradycardia?"
+    options:
+      a: Hypovolemic
+      b: Septic
+      c: Neurogenic
+      d: Cardiogenic
+    answer: c
+    explanation: |
+      Neurogenic shock (spinal cord injury above T6) causes loss of sympathetic tone → vasodilation
+      + hypotension + BRADYCARDIA (loss of cardiac sympathetic innervation). All other shock types
+      have compensatory tachycardia. 📚 Bailey & Love, 28th Ed, Ch.2
+
+  - question: "The lethal triad in trauma consists of:"
+    options:
+      a: Hypoxia, hypotension, hypothermia
+      b: Hypothermia, acidosis, coagulopathy
+      c: Acidosis, anemia, alkalosis
+      d: Coagulopathy, sepsis, hypotension
+    answer: b
+    explanation: |
+      The lethal/vicious triad (hypothermia + acidosis + coagulopathy) creates a death spiral in trauma.
+      Addressed by damage control surgery and resuscitation. Each component worsens the others.
+      📚 Bailey & Love, 28th Ed, Ch.2
+
+  - question: "The first-line vasopressor for septic shock is:"
+    options:
+      a: Adrenaline
+      b: Dopamine
+      c: Noradrenaline
+      d: Vasopressin
+    answer: c
+    explanation: |
+      Noradrenaline (norepinephrine) is the first-line vasopressor in septic shock per Surviving
+      Sepsis Campaign guidelines. It is a potent alpha-1 agonist causing vasoconstriction.
+      Vasopressin is second-line adjunct. 📚 Sabiston, 21st Ed, Ch.4
+
+  - question: "In massive transfusion protocol, the recommended ratio of pRBC:FFP:Platelets is:"
+    options:
+      a: "3:1:1"
+      b: "1:1:1"
+      c: "2:1:1"
+      d: "1:2:1"
+    answer: b
+    explanation: |
+      The 1:1:1 ratio (pRBC:FFP:Platelets) mimics whole blood and reduces dilutional coagulopathy.
+      This is based on the PROPPR trial. Early balanced resuscitation improves survival in massive
+      hemorrhage. 📚 ATLS 10th Ed; Sabiston, 21st Ed, Ch.4

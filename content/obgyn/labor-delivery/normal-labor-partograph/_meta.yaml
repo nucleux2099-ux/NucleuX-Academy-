@@ -1,0 +1,164 @@
+topic_id: normal-labor-partograph
+name: Normal Labor & Partograph
+description: Stages of normal labor, mechanism of labor, and WHO partograph for monitoring progress
+high_yield: true
+nmc_codes:
+- code: OG12.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG12.2
+  domain: SH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Normal labor is the process by which the fetus, placenta, and membranes are expelled through the birth canal
+  after 28 weeks of gestation. It involves regular uterine contractions leading to progressive cervical
+  dilatation and effacement. The partograph is a graphical record of labor progress and maternal-fetal condition,
+  recommended by WHO to prevent prolonged/obstructed labor. Understanding the stages, mechanism, and monitoring
+  of labor is fundamental to obstetric practice.
+  📚 Williams Obstetrics, 26th Ed, Ch.22-24 | 📚 DC Dutta, 9th Ed, Ch.12-13
+
+learning_objectives:
+  - Define normal labor and describe its four stages with duration
+  - Explain the mechanism of labor (cardinal movements) in vertex presentation
+  - Describe the components and interpretation of the WHO partograph
+  - Differentiate between active and latent phases of labor
+  - Identify indications for intervention based on partograph findings
+
+content:
+  atoms:
+    - id: stages-of-labor
+      title: "Stages of Normal Labor"
+      text: >
+        First stage: Onset of true labor to full cervical dilatation (10 cm).
+        Latent phase — slow dilatation up to 4 cm (primigravida: up to 20 hrs, multigravida: up to 14 hrs).
+        Active phase — rapid dilatation from 4-10 cm (rate ≥1 cm/hr in primigravida, ≥1.5 cm/hr in multigravida).
+        Second stage: Full dilatation to delivery of baby (primigravida: up to 2 hrs, multigravida: up to 1 hr).
+        Third stage: Delivery of baby to delivery of placenta (15-30 min with active management).
+        Fourth stage: First 1-2 hours post-delivery — observation for PPH.
+        📚 DC Dutta, 9th Ed, Ch.12 (p.128-140)
+
+    - id: mechanism-of-labor
+      title: "Mechanism of Labor (Cardinal Movements)"
+      text: >
+        Seven cardinal movements in vertex (LOA) presentation:
+        (1) Engagement — biparietal diameter passes pelvic inlet (station 0).
+        (2) Descent — continuous throughout labor, driven by uterine contractions and maternal pushing.
+        (3) Flexion — chin touches chest, presenting suboccipitobregmatic diameter (9.5 cm).
+        (4) Internal rotation — occiput rotates 45° from LOA to OA (transverse → AP diameter).
+        (5) Extension — head extends under symphysis pubis, occiput pivots, face delivers.
+        (6) Restitution — head rotates 45° back to original position.
+        (7) External rotation — shoulders rotate to AP diameter, anterior then posterior shoulder delivers.
+        📚 Williams Obstetrics, 26th Ed, Ch.22 (p.433-445)
+
+    - id: partograph
+      title: "WHO Partograph"
+      text: >
+        The partograph is started when a woman enters active labor (≥4 cm dilatation).
+        Components: (1) Fetal condition — FHR (plotted every 30 min), amniotic fluid (C=clear, M=meconium,
+        B=blood, A=absent), moulding (0 to +++).
+        (2) Progress of labor — cervical dilatation (plotted on graph with alert and action lines),
+        descent of head (fifths palpable abdominally), contractions (frequency per 10 min).
+        (3) Maternal condition — pulse, BP, temperature, urine output.
+        Alert line: starts at 4 cm, slope 1 cm/hr. Action line: 4 hours to right of alert line.
+        Crossing alert line → evaluate. Crossing action line → intervene (augment/CS).
+        📚 DC Dutta, 9th Ed, Ch.37 (p.581-585)
+
+    - id: true-vs-false-labor
+      title: "True vs False Labor"
+      text: >
+        True labor: contractions regular, increasing frequency/intensity, cervical dilatation and effacement present,
+        show (blood-tinged mucous plug), pain starts in back radiating to front, not relieved by sedation.
+        False labor (Braxton Hicks): contractions irregular, no progressive cervical change, pain mainly in
+        lower abdomen, relieved by sedation/walking.
+        📚 DC Dutta, 9th Ed, Ch.12 (p.126-127)
+
+  clinical:
+    - title: "Clinical Correlation: Prolonged Labor"
+      text: >
+        Prolonged latent phase: >20 hrs (primigravida) or >14 hrs (multigravida). Causes: false labor,
+        unripe cervix, sedation. Management: rest, hydration, or oxytocin augmentation.
+        Arrest of active phase: no cervical change for 2 hours with adequate contractions.
+        Causes: 3Ps — Power (inadequate contractions), Passenger (malposition, large baby),
+        Passage (CPD). Friedman's curve shows expected progress.
+
+  high_yield_points:
+    - "Active labor starts at 4 cm dilatation — this is when partograph plotting begins"
+    - "Alert line slope = 1 cm/hr; Action line is 4 hours to the RIGHT of alert line"
+    - "Suboccipitobregmatic (9.5 cm) is the engaging diameter in a well-flexed vertex"
+    - "Internal rotation brings the occiput from transverse to anteroposterior diameter"
+    - "Active management of 3rd stage (AMTSL): Oxytocin 10 IU IM + CCT + uterine massage"
+    - "Moulding +++ with non-descent = obstructed labor → CS indicated"
+    - "Engagement = 0/5th head palpable abdominally (or 2/5th by some definitions)"
+    - "Normal FHR = 110-160 bpm; baseline tachycardia >160, bradycardia <110"
+
+mcqs:
+  - question: "In the WHO partograph, the action line is drawn:"
+    options:
+      - "At the same position as the alert line"
+      - "2 hours to the right of the alert line"
+      - "4 hours to the right of the alert line"
+      - "4 hours to the left of the alert line"
+    answer: "4 hours to the right of the alert line"
+    explanation: >
+      The action line is drawn 4 hours to the right of the alert line. If cervical dilatation crosses
+      the action line, it indicates need for urgent intervention (augmentation or cesarean section).
+      📚 DC Dutta, 9th Ed, Ch.37 (p.583)
+    difficulty: 1
+
+  - question: "The smallest anteroposterior diameter of the fetal skull presenting in a well-flexed vertex is:"
+    options:
+      - "Suboccipitofrontal (10 cm)"
+      - "Suboccipitobregmatic (9.5 cm)"
+      - "Occipitofrontal (11.5 cm)"
+      - "Mentovertical (13.5 cm)"
+    answer: "Suboccipitobregmatic (9.5 cm)"
+    explanation: >
+      In complete flexion, the suboccipitobregmatic diameter (9.5 cm) presents, which is the most
+      favorable for vaginal delivery. Deflexion increases the presenting diameter progressively.
+      📚 Williams Obstetrics, 26th Ed, Ch.22
+    difficulty: 1
+
+  - question: "Which cardinal movement of labor involves rotation of the fetal occiput from the transverse to the anteroposterior diameter of the pelvis?"
+    options:
+      - "Engagement"
+      - "Flexion"
+      - "Internal rotation"
+      - "External rotation"
+    answer: "Internal rotation"
+    explanation: >
+      Internal rotation occurs as the fetal head descends and the occiput rotates 45° (in LOA)
+      to bring the sagittal suture into the AP diameter of the pelvic outlet. This is necessary
+      because the inlet is widest transversely but the outlet is widest anteroposteriorly.
+      📚 Williams Obstetrics, 26th Ed, Ch.22 (p.438)
+    difficulty: 1
+
+  - question: "Active management of the third stage of labor (AMTSL) includes all EXCEPT:"
+    options:
+      - "Prophylactic uterotonic after delivery of anterior shoulder"
+      - "Controlled cord traction"
+      - "Uterine massage after placental delivery"
+      - "Immediate cord clamping within 15 seconds"
+    answer: "Immediate cord clamping within 15 seconds"
+    explanation: >
+      AMTSL includes: (1) Oxytocin 10 IU IM within 1 min of delivery, (2) controlled cord traction,
+      (3) uterine massage. Current WHO guidelines recommend DELAYED cord clamping (1-3 min)
+      to improve neonatal iron stores, NOT immediate clamping.
+      📚 Williams Obstetrics, 26th Ed, Ch.24
+    difficulty: 2
+
+  - question: "A primigravida in labor has been at 5 cm cervical dilatation for the last 3 hours despite adequate uterine contractions. The most likely diagnosis is:"
+    options:
+      - "Prolonged latent phase"
+      - "Arrest of active phase"
+      - "Prolonged second stage"
+      - "Precipitate labor"
+    answer: "Arrest of active phase"
+    explanation: >
+      Arrest of active phase is defined as no cervical dilatation for ≥2 hours in the presence of
+      adequate contractions (active phase starts at 4 cm). This patient is at 5 cm with no change
+      for 3 hours — classic arrest disorder. Causes include CPD, malposition, or inadequate contractions.
+      📚 DC Dutta, 9th Ed, Ch.26
+    difficulty: 2

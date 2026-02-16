@@ -1,0 +1,161 @@
+topic_id: perineum-pelvic-floor
+name: Perineum & Pelvic Floor
+description: Perineum & Pelvic Floor — Pelvic diaphragm, urogenital triangle, anal triangle, ischioanal fossa
+high_yield: true
+nmc_codes:
+- code: AN48.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN48.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The perineum is the diamond-shaped region below the pelvic diaphragm, bounded by the pubic symphysis anteriorly,
+  coccyx posteriorly, and ischial tuberosities laterally. An imaginary transverse line between the ischial tuberosities
+  divides it into the urogenital triangle (anterior) and anal triangle (posterior). The pelvic floor (pelvic diaphragm)
+  is formed primarily by levator ani and coccygeus muscles, supporting pelvic viscera.
+  📚 BD Chaurasia, Vol.2, Ch.21; 📚 Gray's Anatomy, 42nd Ed, Ch.77
+
+learning_objectives:
+  - Describe the boundaries and subdivisions of the perineum
+  - List the components and attachments of the pelvic diaphragm
+  - Describe the urogenital diaphragm (deep perineal pouch) and its contents
+  - Explain the anatomy of the ischioanal (ischiorectal) fossa
+  - Describe the clinical significance of the perineal body and pudendal nerve
+
+content:
+  atoms:
+    - id: pelvic-diaphragm
+      title: "Pelvic Diaphragm (Pelvic Floor)"
+      text: >
+        Formed by levator ani + coccygeus. Levator ani has 3 parts: pubococcygeus (most important — forms pubovaginalis
+        in females, puboprostaticus in males), puborectalis (maintains anorectal angle ~90° for continence),
+        and iliococcygeus. Origin: pubic body → arcus tendineus (tendinous arch of levator ani) → ischial spine.
+        Insertion: perineal body, anococcygeal ligament, coccyx. Nerve supply: S3,S4 (nerve to levator ani) +
+        inferior rectal nerve. Coccygeus (ischiococcygeus): ischial spine to coccyx/sacrum.
+        📚 BD Chaurasia, Vol.2, Ch.21 (p.312-318)
+
+    - id: urogenital-triangle
+      title: "Urogenital Triangle & Perineal Pouches"
+      text: >
+        Superficial perineal pouch (between perineal membrane and Colles' fascia): contains erectile tissue
+        (corpora cavernosa, corpus spongiosum/bulb of vestibule), ischiocavernosus, bulbospongiosus muscles,
+        superficial transverse perineal muscles, perineal branches of pudendal nerve.
+        Deep perineal pouch (between superior and inferior fascia of urogenital diaphragm): contains sphincter
+        urethrae (external urethral sphincter), deep transverse perineal muscles, membranous urethra (males),
+        bulbourethral glands (Cowper's), internal pudendal vessels and dorsal nerve of penis/clitoris.
+        📚 Gray's Anatomy, 42nd Ed, Ch.77; 📚 Netter's Atlas, 6th Ed, Plates 356-360
+
+    - id: anal-triangle
+      title: "Anal Triangle & Ischioanal Fossa"
+      text: >
+        Contains anal canal and ischioanal (ischiorectal) fossa. Ischioanal fossa: wedge-shaped space lateral
+        to anal canal. Boundaries — medial: levator ani + external anal sphincter; lateral: obturator internus
+        + ischial tuberosity; posterior: sacrotuberous ligament + gluteus maximus.
+        Contents: fat pad, inferior rectal nerve and vessels, pudendal (Alcock's) canal on lateral wall.
+        The two fossae communicate posteriorly behind the anal canal (horseshoe abscess).
+        📚 BD Chaurasia, Vol.2, Ch.21
+
+    - id: pudendal-nerve
+      title: "Pudendal Nerve (S2,S3,S4)"
+      text: >
+        Root value: S2,S3,S4 ("S2,3,4 keeps the pelvic floor off the floor"). Leaves pelvis through greater
+        sciatic foramen below piriformis, hooks around ischial spine (sacrospinous ligament), re-enters through
+        lesser sciatic foramen into pudendal (Alcock's) canal on lateral wall of ischioanal fossa.
+        Branches: inferior rectal nerve, perineal nerve, dorsal nerve of penis/clitoris.
+        Pudendal nerve block: given at ischial spine (transvaginal approach) for perineal anesthesia in childbirth.
+        📚 BD Chaurasia, Vol.2; 📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Perineal Body"
+      text: >
+        Central tendon of perineum — fibromuscular node between vagina/urethra and anal canal. Attachment point for
+        8 muscles: external anal sphincter, bulbospongiosus, superficial and deep transverse perineal muscles,
+        levator ani, and external urethral sphincter fibers. Damage during childbirth (episiotomy/tears) can lead
+        to pelvic organ prolapse and fecal incontinence.
+    - title: "Clinical: Ischiorectal Abscess"
+      text: >
+        Most common perianal abscess. Occurs in ischioanal fossa fat. Can spread to contralateral fossa via
+        posterior communication (horseshoe abscess). Presents as painful perianal swelling with fever.
+        Knowledge of fossa anatomy guides surgical drainage.
+
+high_yield_points:
+  - "Pelvic diaphragm = levator ani + coccygeus"
+  - "Levator ani: pubococcygeus + puborectalis + iliococcygeus"
+  - "Puborectalis maintains anorectal angle (~90°) — key for fecal continence"
+  - "Pudendal nerve: S2,3,4 — hooks around ischial spine — Alcock's canal"
+  - "Pudendal nerve block given at ischial spine"
+  - "Perineal body: central tendon — attachment of 8 muscles — damaged in childbirth"
+  - "Ischioanal fossae communicate posterior to anal canal (horseshoe abscess)"
+  - "Deep perineal pouch contains external urethral sphincter and bulbourethral glands"
+  - "Colles' fascia = superficial perineal fascia — continuous with Scarpa's fascia of abdomen"
+  - "Urogenital triangle anterior, anal triangle posterior — divided by inter-ischial line"
+
+mcqs:
+  - question: "The puborectalis muscle is important for maintaining fecal continence by:"
+    options:
+      - "Constricting the anal canal"
+      - "Maintaining the anorectal angle"
+      - "Compressing the rectum"
+      - "Supporting the bladder neck"
+    answer: "Maintaining the anorectal angle"
+    explanation: >
+      Puborectalis forms a U-shaped sling around the anorectal junction, maintaining the anorectal angle at approximately
+      90°. This kink acts as a valve mechanism for fecal continence. Relaxation during defecation straightens the angle.
+      📚 BD Chaurasia, Vol.2, Ch.21
+    difficulty: 1
+
+  - question: "A pudendal nerve block is administered at which landmark?"
+    options:
+      - "Pubic tubercle"
+      - "Ischial tuberosity"
+      - "Ischial spine"
+      - "Sacral hiatus"
+    answer: "Ischial spine"
+    explanation: >
+      The pudendal nerve (S2,3,4) hooks around the ischial spine as it passes from the greater to lesser sciatic foramen.
+      Pudendal nerve block is administered transvaginally at the ischial spine for perineal anesthesia during childbirth.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The pudendal (Alcock's) canal is located on the lateral wall of which structure?"
+    options:
+      - "Pelvic cavity"
+      - "Urogenital triangle"
+      - "Ischioanal fossa"
+      - "Obturator canal"
+    answer: "Ischioanal fossa"
+    explanation: >
+      Alcock's canal is a fascial canal within the obturator internus fascia on the lateral wall of the ischioanal fossa.
+      It transmits the pudendal nerve and internal pudendal vessels.
+      📚 BD Chaurasia, Vol.2, Ch.21
+    difficulty: 2
+
+  - question: "Which structure forms the roof of the ischioanal fossa?"
+    options:
+      - "Obturator internus"
+      - "Levator ani"
+      - "Perineal membrane"
+      - "Gluteus maximus"
+    answer: "Levator ani"
+    explanation: >
+      The ischioanal fossa has levator ani as its medial wall/roof (sloping), obturator internus as lateral wall,
+      sacrotuberous ligament posteriorly, and posterior edge of perineal membrane anteriorly.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 2
+
+  - question: "The perineal body is located between the:"
+    options:
+      - "Anal canal and coccyx"
+      - "Anal canal and vagina/bulb of penis"
+      - "Urethra and vagina"
+      - "Pubic symphysis and coccyx"
+    answer: "Anal canal and vagina/bulb of penis"
+    explanation: >
+      The perineal body (central tendon of perineum) is a fibromuscular node located between the anal canal posteriorly
+      and the vagina (females) or bulb of penis (males) anteriorly. It is the central anchor point for perineal muscles.
+      📚 BD Chaurasia, Vol.2, Ch.21
+    difficulty: 1

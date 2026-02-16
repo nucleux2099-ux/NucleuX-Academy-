@@ -1,0 +1,175 @@
+topic_id: pharmacodynamics
+name: Pharmacodynamics — Drug-Receptor Interactions
+description: Mechanisms of drug action, receptor types, dose-response relationships, and drug antagonism
+high_yield: true
+nmc_codes:
+- code: PH1.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.4
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Pharmacodynamics is "what the drug does to the body" — the study of drug-receptor interactions, signal transduction,
+  dose-response relationships, and drug antagonism. Understanding concepts like efficacy, potency, therapeutic index,
+  agonism, and antagonism is fundamental to rational therapeutics.
+  📚 KD Tripathi, 8th Ed, Ch.4-5 (p.36-60); 📚 Goodman & Gilman's, 14th Ed, Ch.3
+
+learning_objectives:
+  - Classify drug receptors into four superfamilies with examples
+  - Differentiate agonist, partial agonist, inverse agonist, and antagonist
+  - Explain dose-response curves and the concepts of potency and efficacy
+  - Define therapeutic index and its clinical significance
+  - Distinguish competitive from non-competitive antagonism
+  - Describe tachyphylaxis, tolerance, and drug dependence
+
+content:
+  atoms:
+    - id: receptor-types
+      title: "Drug Receptor Superfamilies"
+      text: >
+        Four major receptor superfamilies:
+        (1) Ligand-gated ion channels (ionotropic) — fastest (milliseconds). Examples: nicotinic ACh receptor (Na+),
+        GABA-A (Cl-), NMDA (Ca2+), 5-HT3 (Na+/K+).
+        (2) G-protein coupled receptors (GPCRs/metabotropic) — seconds. Largest family (~800 genes).
+        Gs → ↑cAMP: β-adrenergic, D1, H2, V2. Gi → ↓cAMP: α2-adrenergic, M2, D2, μ-opioid.
+        Gq → ↑IP3/DAG: α1-adrenergic, M1/M3, H1, AT1, 5-HT2. Mnemonic: "HAVe 1 M&M" for Gq (H1, AT1, V1, α1, M1, M3).
+        (3) Enzyme-linked receptors (kinase-linked) — minutes. Tyrosine kinase: insulin, EGF, PDGF receptors.
+        JAK-STAT: cytokine receptors (GH, EPO, interferons).
+        (4) Nuclear/intracellular receptors — hours (gene transcription). Steroids, thyroid hormone, vitamin D, retinoic acid.
+        📚 KD Tripathi, 8th Ed, Ch.4 (p.36-42)
+
+    - id: agonists-antagonists
+      title: "Agonists, Antagonists & Partial Agonists"
+      text: >
+        Agonist: binds receptor + produces maximal response. Has BOTH affinity and intrinsic activity (IA=1).
+        Partial agonist: binds receptor + produces submaximal response (0<IA<1). Acts as antagonist in presence of full agonist.
+        Examples: pindolol (β-blocker with ISA), buprenorphine (partial μ-agonist), aripiprazole (partial D2 agonist).
+        Antagonist: binds receptor + NO response (IA=0). Blocks agonist action.
+        Competitive antagonist: competes at same site, surmountable (shifts dose-response curve RIGHT without reducing Emax).
+        Example: atropine vs acetylcholine, naloxone vs morphine.
+        Non-competitive antagonist: binds different site or irreversibly, reduces Emax. Example: phenoxybenzamine (irreversible α-blocker).
+        Inverse agonist: binds receptor + produces OPPOSITE effect to agonist. Example: benzodiazepine inverse agonists (DMCM).
+        Physiological antagonism: two drugs with opposite effects via different receptors (histamine vs adrenaline).
+        📚 KD Tripathi, 8th Ed, Ch.4 (p.43-50)
+
+    - id: dose-response-ti
+      title: "Dose-Response Relationships & Therapeutic Index"
+      text: >
+        Graded dose-response curve: increasing dose → increasing response in single tissue. Measures potency (EC50) and efficacy (Emax).
+        Potency = position of curve on x-axis (EC50). More potent = lower EC50 = curve shifted LEFT.
+        Efficacy = maximum effect achievable (Emax). More clinically important than potency.
+        Quantal dose-response: population-based, measures ED50, TD50, LD50.
+        Therapeutic Index (TI) = LD50/ED50. Higher TI = safer drug.
+        Drugs with LOW TI (narrow therapeutic window): Lithium, Digoxin, Warfarin, Phenytoin, Theophylline, Aminoglycosides.
+        Mnemonic: "LDWPTA" — need therapeutic drug monitoring (TDM).
+        Margin of Safety = LD1/ED99 (more conservative than TI).
+        📚 KD Tripathi, 8th Ed, Ch.5 (p.51-58)
+
+    - id: tolerance-tachyphylaxis
+      title: "Tolerance, Tachyphylaxis & Desensitization"
+      text: >
+        Tolerance: gradual decrease in response with repeated drug use. Mechanisms: receptor downregulation,
+        enzyme induction, physiological adaptation.
+        Tachyphylaxis: rapid tolerance developing after few doses. Examples: ephedrine (indirect sympathomimetic —
+        depletes NE stores), nicotine (ganglionic receptor desensitization), nitrates (depletion of sulfhydryl groups).
+        Cross-tolerance: tolerance to one drug extends to related drugs (morphine → other opioids, alcohol → barbiturates/benzodiazepines).
+        Drug dependence: physical (withdrawal symptoms on stopping — opioids, alcohol, benzodiazepines) and
+        psychological (craving — cocaine, amphetamine). Up-regulation: chronic antagonist use → increased receptors
+        (propranolol withdrawal → rebound tachycardia/hypertension).
+        📚 KD Tripathi, 8th Ed, Ch.5 (p.55-60)
+
+  clinical:
+    - title: "Clinical Correlation: Nitrate Tolerance"
+      text: >
+        Continuous use of nitroglycerin patches leads to tolerance within 24-48 hours (tachyphylaxis due to
+        sulfhydryl group depletion). Clinical solution: provide a "nitrate-free interval" of 10-12 hours daily
+        (usually at night). N-acetylcysteine (sulfhydryl donor) may help.
+    - title: "Clinical Correlation: Therapeutic Drug Monitoring"
+      text: >
+        Drugs with narrow therapeutic index require TDM: digoxin (0.5-2 ng/mL), lithium (0.6-1.2 mEq/L),
+        phenytoin (10-20 μg/mL), theophylline (10-20 μg/mL), aminoglycosides (peak/trough), vancomycin.
+        Measure trough levels just before next dose for most drugs.
+
+  high_yield_points:
+    - "GPCRs are the LARGEST receptor family — targets for ~50% of all drugs"
+    - "Gq pathway: HAVe 1 M&M — H1, AT1, V1, α1, M1, M3"
+    - "Gs (↑cAMP): β1, β2, D1, H2, V2 | Gi (↓cAMP): α2, M2, D2, μ-opioid"
+    - "Insulin receptor = Tyrosine Kinase (enzyme-linked); Steroids = Nuclear receptors"
+    - "Competitive antagonism: parallel rightward shift, Emax UNCHANGED"
+    - "Non-competitive/irreversible: Emax REDUCED (phenoxybenzamine)"
+    - "Partial agonist in presence of full agonist acts as ANTAGONIST"
+    - "Therapeutic Index = LD50/ED50 — LOW TI drugs need TDM"
+    - "Tachyphylaxis examples: ephedrine, nitrates, nicotine"
+    - "Up-regulation after chronic β-blocker use → NEVER stop abruptly (rebound HTN/tachycardia)"
+
+mcqs:
+  - question: "A drug produces a parallel rightward shift of the dose-response curve of an agonist without reducing the maximum response. This drug is a:"
+    options:
+      - "Non-competitive antagonist"
+      - "Competitive antagonist"
+      - "Partial agonist"
+      - "Inverse agonist"
+    answer: "Competitive antagonist"
+    explanation: >
+      Competitive antagonists compete with the agonist at the same binding site. Their effect can be overcome by increasing
+      agonist concentration, producing a parallel rightward shift with preserved Emax. Non-competitive antagonists reduce Emax.
+      📚 KD Tripathi, 8th Ed, Ch.4 (p.46)
+    difficulty: 1
+
+  - question: "Which receptor type mediates the action of insulin?"
+    options:
+      - "Ligand-gated ion channel"
+      - "G-protein coupled receptor"
+      - "Enzyme-linked (tyrosine kinase) receptor"
+      - "Nuclear receptor"
+    answer: "Enzyme-linked (tyrosine kinase) receptor"
+    explanation: >
+      Insulin receptor is a receptor tyrosine kinase. Insulin binding activates intrinsic tyrosine kinase activity →
+      autophosphorylation → IRS-1 → PI3K/Akt pathway → GLUT4 translocation. Response occurs in minutes.
+      📚 KD Tripathi, 8th Ed, Ch.4 (p.41)
+    difficulty: 1
+
+  - question: "Aripiprazole is classified as a partial agonist at D2 receptors. In the presence of high dopaminergic activity, it will act as:"
+    options:
+      - "Full agonist"
+      - "Antagonist"
+      - "Inverse agonist"
+      - "Allosteric modulator"
+    answer: "Antagonist"
+    explanation: >
+      A partial agonist has submaximal intrinsic activity. In the presence of a full agonist (or high endogenous ligand),
+      it occupies receptors and produces a LOWER response than the full agonist, effectively acting as a functional antagonist.
+      This is why aripiprazole is useful in schizophrenia (blocks excess dopamine) and depression (augments low dopamine).
+      📚 Goodman & Gilman's, 14th Ed, Ch.3
+    difficulty: 2
+
+  - question: "A patient on chronic propranolol therapy abruptly stops the medication and develops severe tachycardia and hypertension. This is due to:"
+    options:
+      - "Receptor downregulation"
+      - "Receptor upregulation"
+      - "Enzyme induction"
+      - "Tachyphylaxis"
+    answer: "Receptor upregulation"
+    explanation: >
+      Chronic β-blocker use leads to upregulation (increased number) of β-adrenergic receptors. Abrupt discontinuation
+      unmasks these extra receptors, causing supersensitivity to catecholamines → rebound tachycardia, hypertension, angina.
+      Always taper β-blockers gradually.
+      📚 KD Tripathi, 8th Ed, Ch.5 (p.57)
+    difficulty: 2
+
+  - question: "Which of the following G-protein subtypes is correctly paired with its second messenger system?"
+    options:
+      - "Gs — Increased IP3/DAG"
+      - "Gi — Increased cAMP"
+      - "Gq — Increased IP3/DAG"
+      - "Gs — Decreased cAMP"
+    answer: "Gq — Increased IP3/DAG"
+    explanation: >
+      Gq activates phospholipase C → PIP2 hydrolysis → IP3 (releases Ca2+ from ER) + DAG (activates PKC).
+      Gs activates adenylyl cyclase → ↑cAMP. Gi inhibits adenylyl cyclase → ↓cAMP.
+      📚 KD Tripathi, 8th Ed, Ch.4 (p.39)
+    difficulty: 1

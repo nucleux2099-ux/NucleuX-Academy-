@@ -1,0 +1,156 @@
+topic_id: kidney-retroperitoneum
+name: Kidney & Retroperitoneum
+description: Kidney & Retroperitoneum — Renal anatomy, relations, blood supply, and retroperitoneal structures
+high_yield: true
+nmc_codes:
+- code: AN47.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The kidneys are paired retroperitoneal organs at T12-L3 level. The right kidney is slightly lower than the left
+  (due to liver). Each kidney has a hilum (renal vein anterior, renal artery middle, renal pelvis posterior).
+  The retroperitoneum contains kidneys, ureters, adrenals, aorta, IVC, pancreas (except tail), and duodenum (2nd-4th parts).
+  📚 Gray's Anatomy, 42nd Ed, Ch.74; 📚 BD Chaurasia, Vol.2, Ch.20
+
+learning_objectives:
+  - Describe the external and internal anatomy of the kidney
+  - List the anterior and posterior relations of each kidney
+  - Describe the renal blood supply and its segmental pattern
+  - Identify the structures of the retroperitoneum
+  - Explain the surgical approaches to the kidney
+
+content:
+  atoms:
+    - id: external-anatomy
+      title: "External Anatomy & Coverings"
+      text: >
+        Bean-shaped, 11×6×3 cm, ~150g. Hilum on medial border — structures from anterior to posterior:
+        Renal Vein, Artery, Pelvis (mnemonic: VAP). Coverings (inside to outside): fibrous capsule,
+        perinephric fat (in renal fascia), renal fascia (Gerota's fascia), paranephric fat.
+        Right kidney: T12-L3, lower pole palpable. Left kidney: T11-L2 (higher).
+        Renal fascia (Gerota's) is open inferiorly — perinephric abscess may track down to iliac fossa.
+        📚 BD Chaurasia, Vol.2, Ch.20 (p.290-298)
+
+    - id: relations
+      title: "Relations of the Kidneys"
+      text: >
+        Right kidney — anterior: suprarenal gland, liver (large area), 2nd part of duodenum, hepatic flexure of colon,
+        small intestine. Left kidney — anterior: suprarenal gland, stomach, spleen, pancreas (body/tail),
+        splenic flexure of colon, jejunum. Posterior relations (both kidneys, from above downward): diaphragm,
+        medial arcuate ligament, psoas major, quadratus lumborum, transversus abdominis. Subcostal nerve (T12),
+        iliohypogastric and ilioinguinal nerves (L1) cross posterior surface. 12th rib crosses left kidney
+        posteriorly; 11th and 12th ribs cross left kidney.
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed, Plate 326
+
+    - id: blood-supply
+      title: "Renal Blood Supply — Segmental Pattern"
+      text: >
+        Renal artery (from aorta at L1-L2 level, below SMA origin). Right renal artery longer, passes behind IVC.
+        Each renal artery divides into 5 segmental arteries (end arteries — NO anastomosis):
+        apical, upper (anterior), middle (anterior), lower, and posterior. Brödel's line (avascular plane):
+        between anterior and posterior segmental territories, 1 cm behind lateral border — site for nephrotomy.
+        Renal veins: left renal vein longer, crosses anterior to aorta (behind SMA), receives left gonadal vein,
+        left suprarenal vein, and left inferior phrenic vein. Right renal vein: short, drains directly into IVC.
+        📚 BD Chaurasia, Vol.2; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: retroperitoneal-structures
+      title: "Retroperitoneal Structures"
+      text: >
+        Primary retroperitoneal: kidneys, adrenals, ureters, aorta, IVC, sympathetic chains.
+        Secondarily retroperitoneal: duodenum (2nd-4th parts), pancreas (except tail), ascending and descending colon.
+        Mnemonic for retroperitoneal organs: "SAD PUCKER" — Suprarenal glands, Aorta/IVC, Duodenum (2-4),
+        Pancreas (except tail), Ureters, Colon (ascending/descending), Kidneys, Esophagus (thoracic), Rectum.
+        📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Renal Transplant Anatomy"
+      text: >
+        Transplanted kidney placed in iliac fossa (extraperitoneal). Renal artery anastomosed to internal/external
+        iliac artery. Renal vein to external iliac vein. Ureter implanted into bladder. Left kidney preferred
+        as donor — longer renal vein facilitates venous anastomosis.
+    - title: "Clinical: Horseshoe Kidney"
+      text: >
+        Most common renal fusion anomaly. Lower poles fused across midline by isthmus (usually fibrous).
+        Ascent arrested by inferior mesenteric artery (at L3). Usually asymptomatic but increased risk of
+        UPJ obstruction, stones, and infection. Found in Turner syndrome (45,X).
+
+high_yield_points:
+  - "Hilum structures anterior to posterior: Vein, Artery, Pelvis (VAP)"
+  - "Right renal artery passes BEHIND IVC"
+  - "Left renal vein crosses ANTERIOR to aorta, BEHIND SMA"
+  - "Left renal vein receives: left gonadal, left suprarenal, left inferior phrenic veins"
+  - "5 segmental renal arteries — END arteries (no anastomosis)"
+  - "Brödel's avascular line: 1 cm behind lateral border — site for nephrotomy"
+  - "Gerota's fascia open inferiorly — perinephric abscess tracks to iliac fossa"
+  - "Horseshoe kidney: lower pole fusion, arrested ascent by IMA at L3"
+  - "Left kidney preferred for donor nephrectomy — longer renal vein"
+  - "Retroperitoneal mnemonic: SAD PUCKER"
+
+mcqs:
+  - question: "At the hilum of the kidney, from anterior to posterior, the structures are arranged as:"
+    options:
+      - "Artery, vein, pelvis"
+      - "Vein, artery, pelvis"
+      - "Pelvis, artery, vein"
+      - "Vein, pelvis, artery"
+    answer: "Vein, artery, pelvis"
+    explanation: >
+      At the renal hilum, from anterior to posterior: renal Vein, renal Artery, renal Pelvis (VAP).
+      This arrangement is important during nephrectomy — the vein is encountered first anteriorly.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "The left renal vein crosses anterior to which structure?"
+    options:
+      - "Inferior vena cava only"
+      - "Aorta"
+      - "Superior mesenteric artery"
+      - "Left crus of diaphragm"
+    answer: "Aorta"
+    explanation: >
+      The left renal vein crosses anterior to the aorta (and behind the SMA) to drain into the IVC. This longer
+      course makes it preferable for renal transplant donor nephrectomy. Nutcracker syndrome occurs when the
+      left renal vein is compressed between the aorta and SMA.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Horseshoe kidney is arrested in its ascent by which artery?"
+    options:
+      - "Superior mesenteric artery"
+      - "Inferior mesenteric artery"
+      - "Renal artery"
+      - "Common iliac artery"
+    answer: "Inferior mesenteric artery"
+    explanation: >
+      The isthmus of a horseshoe kidney hooks under the inferior mesenteric artery during embryological ascent,
+      preventing normal ascent to T12-L2 level. It remains at L3 level. Associated with Turner syndrome.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The avascular plane of the kidney (Brödel's line) used for nephrotomy is located:"
+    options:
+      - "Along the hilum"
+      - "At the upper pole"
+      - "1 cm behind the lateral border"
+      - "At the lower pole"
+    answer: "1 cm behind the lateral border"
+    explanation: >
+      Brödel's line is the avascular plane between the territories of anterior and posterior segmental arteries.
+      It is located about 1 cm posterior to the lateral convex border. Incision here minimizes vascular injury during nephrotomy.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 2
+
+  - question: "Which of the following is a primary retroperitoneal organ?"
+    options:
+      - "Stomach"
+      - "Jejunum"
+      - "Transverse colon"
+      - "Kidney"
+    answer: "Kidney"
+    explanation: >
+      Kidneys are primary retroperitoneal organs (developed and remain retroperitoneal). Stomach, jejunum, and transverse
+      colon are intraperitoneal. Ascending/descending colon and pancreas are secondarily retroperitoneal.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1

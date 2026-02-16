@@ -1,0 +1,168 @@
+topic_id: leukemia-lymphoma
+name: Leukemia & Lymphoma
+description: Classification, pathogenesis, and key features of leukemias, lymphomas, and plasma cell neoplasms
+high_yield: true
+
+overview: >
+  Leukemias and lymphomas are malignant neoplasms of hematopoietic and lymphoid tissues.
+  Leukemias primarily involve bone marrow and blood; lymphomas primarily involve lymph nodes.
+  Key classifications include ALL vs AML, CLL vs CML, Hodgkin vs Non-Hodgkin lymphoma, and multiple myeloma.
+  📚 Robbins, 10th Ed, Ch.13 (p.579-628)
+
+learning_objectives:
+  - Differentiate ALL from AML by age, markers, and prognosis
+  - Compare CLL and CML in terms of pathogenesis and treatment
+  - Classify Hodgkin lymphoma subtypes and identify Reed-Sternberg cells
+  - Describe key NHL subtypes (Burkitt, follicular, DLBCL, mantle cell, marginal zone)
+  - Explain the pathogenesis and diagnosis of multiple myeloma
+
+content:
+  atoms:
+    - id: acute-leukemias
+      title: "Acute Leukemias (ALL vs AML)"
+      text: >
+        ALL: most common cancer in children (peak 2-5 years). Pre-B ALL most common subtype.
+        Markers: TdT+, CD10+ (CALLA), CD19+, CD20+. Good prognosis in children (>90% cure); worse in adults.
+        Best prognosis: hyperdiploidy (>50 chromosomes), t(12;21). Worst: t(9;22) Philadelphia chromosome.
+        AML: most common acute leukemia in ADULTS. Auer rods (crystallized MPO) = pathognomonic for AML.
+        Key subtypes: APL (M3) = t(15;17) PML-RARA → treat with ATRA (all-trans retinoic acid) + arsenic;
+        presents with DIC. AML with t(8;21) = good prognosis. Monocytic AML = gingival infiltration.
+        📚 Robbins, 10th Ed, Ch.13 (p.593-600)
+
+    - id: chronic-leukemias
+      title: "Chronic Leukemias (CLL vs CML)"
+      text: >
+        CLL: most common leukemia in ADULTS in Western countries (>60 years). Mature B-cells (CD5+, CD20+, CD23+).
+        Smudge cells on peripheral smear. Indolent course. Can transform to DLBCL (Richter transformation).
+        Warm AIHA complication. Hypogammaglobulinemia → recurrent infections.
+        CML: median age 50-60; BCR-ABL fusion from t(9;22) Philadelphia chromosome.
+        Massive splenomegaly, leukocytosis with left shift, basophilia, low LAP score.
+        Chronic phase → accelerated → blast crisis (2/3 myeloid, 1/3 lymphoid). Imatinib (Gleevec) = targeted therapy.
+        📚 Robbins, 10th Ed, Ch.13 (p.600-606)
+
+    - id: hodgkin-lymphoma
+      title: "Hodgkin Lymphoma"
+      text: >
+        Bimodal age distribution (20s and >60). Reed-Sternberg (RS) cells = pathognomonic
+        (large binucleated cells with prominent eosinophilic nucleoli = "owl-eye" appearance).
+        RS cells: CD15+, CD30+, CD45- (negative). Arise from germinal center B cells.
+        Subtypes (best to worst prognosis): Lymphocyte-predominant (LP) = best prognosis → Nodular sclerosis
+        (most common, young women, mediastinal) → Mixed cellularity (EBV associated) → Lymphocyte-depleted = worst.
+        Nodular lymphocyte-predominant HL (NLPHL): different entity, "popcorn cells" (LP cells), CD20+, CD15-, CD30-.
+        Contiguous spread (unlike NHL). B symptoms (fever, night sweats, weight loss) = worse prognosis.
+        📚 Robbins, 10th Ed, Ch.13 (p.606-611)
+
+    - id: non-hodgkin-lymphoma
+      title: "Key Non-Hodgkin Lymphomas"
+      text: >
+        Follicular lymphoma: most common INDOLENT NHL; t(14;18) → BCL-2 overexpression (anti-apoptotic);
+        older adults; painless lymphadenopathy; can transform to DLBCL.
+        DLBCL: most common NHL overall; aggressive but curable with R-CHOP.
+        Burkitt lymphoma: t(8;14) → MYC overexpression; "starry sky" pattern; three forms: endemic (jaw, EBV+, Africa),
+        sporadic (abdomen, children), HIV-associated. Fastest growing human tumor.
+        Mantle cell lymphoma: t(11;14) → cyclin D1; CD5+; aggressive, older males.
+        Marginal zone (MALT) lymphoma: associated with chronic inflammation (H. pylori → gastric MALT; Hashimoto → thyroid).
+        Adult T-cell leukemia/lymphoma: HTLV-1 associated.
+        Mycosis fungoides/Sézary syndrome: cutaneous T-cell lymphoma; Pautrier microabscesses; Sézary cells (cerebriform nuclei in blood).
+        📚 Robbins, 10th Ed, Ch.13 (p.611-625)
+
+    - id: multiple-myeloma
+      title: "Multiple Myeloma"
+      text: >
+        Malignant proliferation of plasma cells in bone marrow (>10% plasma cells).
+        Classic features (CRAB): Calcium elevated, Renal insufficiency, Anemia, Bone lesions (lytic "punched-out").
+        Lab: M-spike on SPEP (monoclonal IgG most common), Bence Jones proteinuria (free light chains),
+        rouleaux formation on smear, elevated ESR. Diagnosis requires ≥10% bone marrow plasma cells + end-organ damage.
+        Bone lesions are LYTIC (not blastic) → normal bone scan (use skeletal survey or PET-CT).
+        Complications: AL amyloidosis, recurrent infections (functional hypogammaglobulinemia), renal failure (cast nephropathy).
+        📚 Robbins, 10th Ed, Ch.13 (p.625-628)
+
+  clinical:
+    - title: "Translocations in Hematologic Malignancies — Must-Know Table"
+      text: >
+        t(9;22) BCR-ABL = CML, some ALL; t(14;18) BCL-2 = follicular lymphoma; t(8;14) MYC = Burkitt;
+        t(11;14) cyclin D1 = mantle cell; t(15;17) PML-RARA = APL (M3); t(8;21) = AML with good prognosis;
+        t(12;21) = ALL (best prognosis in children); inv(16) = AML (good prognosis).
+
+  high_yield_points:
+    - "ALL = most common childhood cancer; AML = most common acute leukemia in adults"
+    - "Auer rods = pathognomonic for AML (especially APL/M3)"
+    - "APL t(15;17): treat with ATRA + arsenic trioxide; presents with DIC"
+    - "CML: t(9;22) BCR-ABL; massive splenomegaly; basophilia; low LAP; treat with imatinib"
+    - "CLL: most common leukemia in adults (West); smudge cells; CD5+ B cells; Richter transformation → DLBCL"
+    - "Reed-Sternberg cells: CD15+, CD30+; owl-eye nucleoli; pathognomonic for Hodgkin lymphoma"
+    - "Burkitt: t(8;14) MYC; starry sky pattern; fastest growing human tumor"
+    - "Follicular lymphoma: t(14;18) BCL-2; most common indolent NHL"
+    - "Multiple myeloma: CRAB (Calcium, Renal, Anemia, Bone); M-spike; lytic lesions; rouleaux"
+    - "Gastric MALT lymphoma: H. pylori associated; may regress with antibiotic therapy alone"
+
+mcqs:
+  - question: "A 4-year-old child presents with bone pain, hepatosplenomegaly, and pancytopenia. Bone marrow shows >90% lymphoblasts that are TdT+, CD10+, CD19+. The most likely diagnosis is:"
+    options:
+      - "AML"
+      - "ALL"
+      - "CLL"
+      - "Burkitt lymphoma"
+    answer: "ALL"
+    explanation: >
+      Pre-B ALL is the most common childhood cancer. TdT (terminal deoxynucleotidyl transferase) is a marker of
+      lymphoid precursors, CD10 (CALLA) and CD19 mark B-lineage. AML would show myeloid markers (MPO, CD13, CD33).
+      CLL occurs in elderly. Burkitt is mature B-cell (TdT negative).
+      📚 Robbins, 10th Ed, Ch.13 (p.594)
+    difficulty: 1
+
+  - question: "A 55-year-old man has WBC count of 150,000/μL with left shift, basophilia, and massive splenomegaly. LAP score is low. Cytogenetics shows t(9;22). The best initial treatment is:"
+    options:
+      - "ATRA (all-trans retinoic acid)"
+      - "Imatinib (Gleevec)"
+      - "R-CHOP chemotherapy"
+      - "Splenectomy"
+    answer: "Imatinib (Gleevec)"
+    explanation: >
+      This is CML with the hallmark Philadelphia chromosome t(9;22) → BCR-ABL fusion tyrosine kinase.
+      Imatinib is a targeted BCR-ABL tyrosine kinase inhibitor that has revolutionized CML treatment.
+      ATRA is for APL. R-CHOP is for DLBCL. Low LAP score differentiates CML from leukemoid reaction (high LAP).
+      📚 Robbins, 10th Ed, Ch.13 (p.604)
+    difficulty: 1
+
+  - question: "A lymph node biopsy shows large binucleated cells with prominent eosinophilic nucleoli ('owl eyes') in a background of lymphocytes, eosinophils, and histiocytes. These cells are CD15+, CD30+. The diagnosis is:"
+    options:
+      - "Non-Hodgkin lymphoma"
+      - "Hodgkin lymphoma"
+      - "Metastatic carcinoma"
+      - "Reactive lymphadenopathy"
+    answer: "Hodgkin lymphoma"
+    explanation: >
+      Reed-Sternberg cells (large, binucleated, owl-eye nucleoli) that are CD15+ and CD30+ are pathognomonic for
+      classical Hodgkin lymphoma. The mixed inflammatory background (lymphocytes, eosinophils, histiocytes) is
+      characteristic. RS cells are typically CD45 negative (unlike NHL cells which are CD45+).
+      📚 Robbins, 10th Ed, Ch.13 (p.607)
+    difficulty: 1
+
+  - question: "A 70-year-old man presents with back pain, anemia, and renal failure. X-ray shows multiple 'punched-out' lytic lesions in the skull. SPEP shows an M-spike. The diagnosis is:"
+    options:
+      - "Metastatic prostate cancer"
+      - "Multiple myeloma"
+      - "Waldenström macroglobulinemia"
+      - "Primary hyperparathyroidism"
+    answer: "Multiple myeloma"
+    explanation: >
+      Classic presentation of multiple myeloma: elderly patient with bone pain (lytic lesions), anemia, renal failure
+      (CRAB criteria), and M-spike on SPEP. Punched-out lytic lesions in skull are characteristic. Prostate cancer
+      causes BLASTIC (not lytic) bone lesions. Waldenström has IgM spike but no bone lesions.
+      📚 Robbins, 10th Ed, Ch.13 (p.625)
+    difficulty: 1
+
+  - question: "A child in Africa presents with a rapidly growing jaw mass. Biopsy shows medium-sized lymphoid cells with high mitotic rate and a 'starry sky' pattern. The characteristic translocation is:"
+    options:
+      - "t(9;22)"
+      - "t(14;18)"
+      - "t(8;14)"
+      - "t(11;14)"
+    answer: "t(8;14)"
+    explanation: >
+      Endemic Burkitt lymphoma (jaw mass in African children, strongly EBV-associated) has t(8;14) translocation
+      placing MYC oncogene under control of the IgH promoter → massive cell proliferation. Starry sky pattern
+      = tingible-body macrophages among sheets of tumor cells. It's the fastest growing human tumor.
+      📚 Robbins, 10th Ed, Ch.13 (p.617)
+    difficulty: 1

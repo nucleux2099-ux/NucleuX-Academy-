@@ -1,0 +1,148 @@
+topic_id: penicillins-cephalosporins
+name: Antibiotics — Penicillins & Cephalosporins
+description: Beta-lactam antibiotics — classification, spectrum, resistance mechanisms, and clinical use
+high_yield: true
+nmc_codes:
+- code: PH1.42
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Beta-lactam antibiotics are the most widely prescribed antibacterial class. They share a beta-lactam ring that inhibits
+  cell wall synthesis by binding penicillin-binding proteins (PBPs). Penicillins, cephalosporins, carbapenems, and
+  monobactams all belong to this family. Resistance via beta-lactamases is a major clinical challenge.
+  📚 KD Tripathi, 8th Ed, Ch.49 (p.704-730); 📚 Goodman & Gilman's, 14th Ed, Ch.45
+
+learning_objectives:
+  - Classify penicillins and cephalosporins by generation and spectrum
+  - Explain the mechanism of action of beta-lactam antibiotics
+  - Describe beta-lactamase resistance and strategies to overcome it
+  - List common side effects including hypersensitivity reactions
+  - Select appropriate beta-lactam for common clinical infections
+
+content:
+  atoms:
+    - id: penicillins
+      title: "Penicillins — Classification & Pharmacology"
+      text: >
+        Mechanism: Bind PBPs → inhibit transpeptidase → block peptidoglycan cross-linking → bactericidal (cell lysis).
+        Classification:
+        Natural penicillins: Penicillin G (IV/IM), Penicillin V (oral). Narrow spectrum: Streptococci, Treponema pallidum (DOC for syphilis).
+        Penicillinase-resistant: Methicillin, Nafcillin, Oxacillin, Cloxacillin, Flucloxacillin. For Staph aureus (not MRSA).
+        Aminopenicillins: Ampicillin, Amoxicillin. Extended spectrum: +Enterococcus, Listeria, H. influenzae, E. coli.
+        Amoxicillin: better oral absorption than ampicillin. Amoxicillin rash with EBV infection (NOT true allergy).
+        Antipseudomonal: Piperacillin, Ticarcillin. + Pseudomonas coverage.
+        Beta-lactamase inhibitor combinations: Amoxicillin-Clavulanate (Augmentin), Ampicillin-Sulbactam,
+        Piperacillin-Tazobactam (Pip-Taz — broadest spectrum, hospital workhorse).
+        Clavulanate, Sulbactam, Tazobactam: suicide inhibitors of beta-lactamase (contain beta-lactam ring but weak antibacterial activity).
+        Side effects: Hypersensitivity (most common ADR — ranges from rash to anaphylaxis; cross-reactivity with cephalosporins 1-2%),
+        Diarrhea, Interstitial nephritis (methicillin), Jarisch-Herxheimer reaction (syphilis treatment), Seizures (high-dose penicillin G).
+        📚 KD Tripathi, 8th Ed, Ch.49 (p.704-718)
+
+    - id: cephalosporins
+      title: "Cephalosporins — Generations & Spectrum"
+      text: >
+        Same mechanism as penicillins (PBP inhibition). More resistant to beta-lactamases. Classified by generations:
+        1st Gen: Cefazolin (IV — surgical prophylaxis), Cephalexin (oral). Best Gram+: Staph, Strep. Poor Gram-.
+        2nd Gen: Cefuroxime (oral/IV), Cefaclor. Improved Gram- (H. influenzae, Moraxella). Cefoxitin/Cefotetan: anti-anaerobic (Bacteroides).
+        3rd Gen: Ceftriaxone (IM/IV — DOC for gonorrhea, meningitis), Cefotaxime, Ceftazidime (anti-Pseudomonal),
+        Cefixime (oral — UTI, gonorrhea). Best Gram- coverage. Crosses BBB (meningitis).
+        Ceftriaxone: biliary excretion, long t½ (once daily), can cause biliary sludge.
+        4th Gen: Cefepime. Extended Gram- + Gram+ (including Pseudomonas). Stable against AmpC beta-lactamases.
+        5th Gen: Ceftaroline. ONLY cephalosporin active against MRSA. Also covers common Gram+/-.
+        Carbapenems: Imipenem (+ cilastatin to prevent renal metabolism), Meropenem, Ertapenem, Doripenem.
+        BROADEST spectrum beta-lactams. Reserve for MDR infections. Ertapenem: NO Pseudomonal coverage.
+        Monobactam: Aztreonam. ONLY Gram- coverage (including Pseudomonas). Safe in penicillin allergy (NO cross-reactivity).
+        📚 KD Tripathi, 8th Ed, Ch.49 (p.718-730)
+
+  clinical:
+    - title: "Clinical Correlation: MRSA Treatment"
+      text: >
+        MRSA has altered PBP2a (encoded by mecA gene) with low affinity for all beta-lactams EXCEPT ceftaroline (5th gen).
+        Treatment: Vancomycin (DOC), Linezolid, Daptomycin, Teicoplanin, Ceftaroline, TMP-SMX (skin/soft tissue).
+    - title: "Clinical Correlation: Penicillin Allergy"
+      text: >
+        True penicillin allergy: ~10% report it, but only 1% have confirmed IgE-mediated allergy on testing.
+        Cross-reactivity with cephalosporins: ~1-2% (historically overestimated at 10%). Aztreonam has NO cross-reactivity.
+        Carbapenems: very low cross-reactivity (<1%). Penicillin skin testing can de-label allergy safely.
+
+  high_yield_points:
+    - "Beta-lactams are BACTERICIDAL — inhibit cell wall synthesis via PBP binding"
+    - "Penicillin G: DOC for syphilis, Streptococcal pharyngitis, rheumatic fever prophylaxis"
+    - "Amoxicillin rash with EBV (infectious mono) = NOT true penicillin allergy"
+    - "Piperacillin-Tazobactam (Pip-Taz): broadest spectrum penicillin combination"
+    - "Ceftriaxone: DOC for gonorrhea, meningitis; biliary sludge is a side effect"
+    - "Ceftazidime and Cefepime: anti-Pseudomonal cephalosporins"
+    - "Ceftaroline: ONLY cephalosporin effective against MRSA (5th generation)"
+    - "Imipenem given with Cilastatin (prevents renal DHP-1 metabolism)"
+    - "Aztreonam (monobactam): ONLY Gram-negative, safe in penicillin allergy"
+    - "Cephalosporin generations: ↑generation = ↑Gram- coverage, ↓Gram+ coverage (except 5th gen)"
+
+mcqs:
+  - question: "The only cephalosporin effective against MRSA is:"
+    options:
+      - "Ceftriaxone"
+      - "Cefepime"
+      - "Ceftaroline"
+      - "Ceftazidime"
+    answer: "Ceftaroline"
+    explanation: >
+      Ceftaroline is a 5th generation cephalosporin with unique affinity for PBP2a (the altered PBP in MRSA).
+      All other cephalosporins are inactive against MRSA. Ceftaroline also covers common Gram-negative organisms.
+      📚 KD Tripathi, 8th Ed, Ch.49 (p.726)
+    difficulty: 2
+
+  - question: "Which beta-lactam antibiotic can safely be given to a patient with confirmed penicillin allergy who needs Gram-negative coverage?"
+    options:
+      - "Amoxicillin-clavulanate"
+      - "Ceftriaxone"
+      - "Aztreonam"
+      - "Imipenem"
+    answer: "Aztreonam"
+    explanation: >
+      Aztreonam (a monobactam) has NO cross-reactivity with penicillins. It covers only Gram-negative bacteria
+      including Pseudomonas. Cephalosporins have ~1-2% cross-reactivity; carbapenems <1%.
+      📚 KD Tripathi, 8th Ed, Ch.49 (p.729)
+    difficulty: 2
+
+  - question: "Ceftriaxone-associated biliary sludge ('pseudolithiasis') occurs because:"
+    options:
+      - "It inhibits bile acid synthesis"
+      - "It is excreted in bile and precipitates with calcium"
+      - "It causes gallbladder inflammation"
+      - "It induces cholesterol supersaturation"
+    answer: "It is excreted in bile and precipitates with calcium"
+    explanation: >
+      Ceftriaxone has significant biliary excretion (~40%). It can form insoluble calcium-ceftriaxone complexes
+      in the gallbladder → biliary sludge/pseudolithiasis. Usually reversible after stopping the drug.
+      📚 KD Tripathi, 8th Ed, Ch.49 (p.722)
+    difficulty: 2
+
+  - question: "Imipenem is co-administered with cilastatin because:"
+    options:
+      - "Cilastatin enhances absorption"
+      - "Cilastatin prevents renal metabolism by DHP-1"
+      - "Cilastatin has synergistic antibacterial activity"
+      - "Cilastatin prevents seizures"
+    answer: "Cilastatin prevents renal metabolism by DHP-1"
+    explanation: >
+      Imipenem is rapidly degraded by renal dehydropeptidase-1 (DHP-1). Cilastatin inhibits DHP-1, preventing
+      imipenem breakdown and also reducing nephrotoxicity from toxic metabolites. Meropenem does NOT need cilastatin
+      (stable to DHP-1).
+      📚 KD Tripathi, 8th Ed, Ch.49 (p.727)
+    difficulty: 1
+
+  - question: "A patient receiving amoxicillin for pharyngitis develops a diffuse maculopapular rash. He is later found to have EBV infection. This rash is:"
+    options:
+      - "Type I hypersensitivity"
+      - "Type III hypersensitivity"
+      - "Non-allergic ampicillin/amoxicillin rash"
+      - "Stevens-Johnson syndrome"
+    answer: "Non-allergic ampicillin/amoxicillin rash"
+    explanation: >
+      EBV (infectious mononucleosis) causes a characteristic non-allergic maculopapular rash when aminopenicillins
+      are given (~70-100% incidence). This is NOT a true penicillin allergy and does not predict future reactions.
+      The mechanism involves polyclonal B-cell activation by EBV.
+      📚 KD Tripathi, 8th Ed, Ch.49 (p.714)
+    difficulty: 1

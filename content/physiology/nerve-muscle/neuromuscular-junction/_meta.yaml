@@ -1,9 +1,182 @@
 topic_id: neuromuscular-junction
 name: Neuromuscular Junction
-description: Neuromuscular Junction — NMC curriculum topic
+description: Neuromuscular Junction — Structure, transmission, and clinical disorders of the NMJ
 high_yield: true
 nmc_codes:
-- code: PY3.4
+- code: PY3.8
   domain: KH
   core: true
   phase: Phase 1
+- code: PY10.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The neuromuscular junction (NMJ) is the synapse between a motor neuron and skeletal muscle fiber.
+  Acetylcholine (ACh) is the neurotransmitter, acting on nicotinic receptors at the motor end plate.
+  AP in motor neuron → Ca2+ entry → ACh vesicle exocytosis → end plate potential (EPP) → muscle AP →
+  contraction. NMJ disorders (myasthenia gravis, Lambert-Eaton) are high-yield clinical topics.
+  📚 Guyton & Hall, 14th Ed, Ch.7 (p.89-96) / 📚 Ganong's, 26th Ed, Ch.4
+
+learning_objectives:
+  - Describe the structural components of the neuromuscular junction
+  - Explain the sequence of events in neuromuscular transmission
+  - Differentiate end plate potential from action potential
+  - Compare myasthenia gravis with Lambert-Eaton syndrome
+  - List drugs acting at the NMJ and their mechanisms
+
+content:
+  atoms:
+    - id: nmj-structure
+      title: "Structure of the Neuromuscular Junction"
+      text: >
+        Pre-synaptic: Motor nerve terminal contains ACh vesicles (~10,000 molecules/vesicle), mitochondria,
+        and voltage-gated Ca2+ channels (P/Q type). Synaptic cleft: ~50 nm wide, contains acetylcholinesterase
+        (AChE) anchored to basal lamina. Post-synaptic: Motor end plate — specialized area of muscle membrane
+        with deep junctional folds containing nicotinic ACh receptors (nAChR) at crests.
+        nAChR is a ligand-gated ion channel with subunit composition α2βδε (adult) or α2βδγ (fetal).
+        📚 Guyton & Hall, 14th Ed, Ch.7 (p.89-91)
+
+    - id: nmj-transmission
+      title: "Steps of Neuromuscular Transmission"
+      text: >
+        1. AP arrives at motor nerve terminal → depolarization.
+        2. Voltage-gated Ca2+ channels (P/Q type) open → Ca2+ influx.
+        3. Ca2+ triggers SNARE-mediated vesicle fusion (synaptobrevin, SNAP-25, syntaxin) → ACh exocytosis (quantal release).
+        4. ACh crosses synaptic cleft → binds α-subunits of nAChR (2 ACh molecules needed per receptor).
+        5. nAChR channel opens → Na+ influx (mainly) + K+ efflux → End Plate Potential (EPP).
+        6. EPP is ALWAYS suprathreshold (safety factor 3-4x) → generates muscle AP.
+        7. ACh rapidly hydrolyzed by AChE → choline recycled by choline transporter.
+        📚 Ganong's, 26th Ed, Ch.4
+
+    - id: epp-vs-ap
+      title: "End Plate Potential vs Action Potential"
+      text: >
+        EPP: graded potential, localized to motor end plate, no refractory period, can summate,
+        produced by ligand-gated channels, amplitude varies with ACh amount.
+        Miniature EPP (MEPP): spontaneous release of single ACh vesicle → ~0.4 mV depolarization.
+        Normal EPP = ~70 mV (sum of ~200 quanta) — well above threshold (~15 mV needed).
+        Safety factor = EPP/threshold ≈ 4x. In myasthenia gravis, fewer receptors → EPP decreases → may fail to reach threshold.
+        AP: all-or-none, propagated, has refractory period, produced by voltage-gated channels.
+        📚 Guyton & Hall, 14th Ed, Ch.7 (p.92-93)
+
+    - id: nmj-pharmacology
+      title: "Drugs Acting at the NMJ"
+      text: >
+        Depolarizing blockers: Succinylcholine — mimics ACh → persistent depolarization → Phase I block (fasciculations then paralysis).
+        With prolonged exposure → Phase II (desensitization) block.
+        Non-depolarizing blockers: Tubocurarine, pancuronium, atracurium, vecuronium — competitive antagonists at nAChR.
+        Reversed by anticholinesterases (neostigmine, edrophonium).
+        Anticholinesterases: Neostigmine, pyridostigmine — inhibit AChE → increase ACh at NMJ (used in myasthenia gravis).
+        Botulinum toxin: cleaves SNARE proteins → prevents ACh release.
+        Hemicholinium: blocks choline uptake. Vesamicol: blocks ACh packaging into vesicles.
+        📚 Ganong's, 26th Ed, Ch.4
+
+    - id: nmj-disorders
+      title: "NMJ Disorders: Myasthenia Gravis vs Lambert-Eaton"
+      text: >
+        Myasthenia Gravis (MG): Autoantibodies against post-synaptic nAChR → fewer functional receptors →
+        EPP fails to reach threshold → fatigable weakness. Improves with rest, worsens with activity.
+        Associated with thymic hyperplasia (65%) or thymoma (15%). Anti-AChR Ab in 85%.
+        Treatment: anticholinesterases, immunosuppression, thymectomy.
+        Lambert-Eaton Myasthenic Syndrome (LEMS): Antibodies against pre-synaptic P/Q-type Ca2+ channels →
+        decreased ACh release. IMPROVES with repeated stimulation (post-tetanic potentiation).
+        Associated with small cell lung cancer. Treatment: 3,4-diaminopyridine (blocks K+ channels → prolongs AP).
+        📚 Guyton & Hall, 14th Ed, Ch.7 (p.95)
+
+  clinical:
+    - title: "Clinical Correlation: Tensilon Test"
+      text: >
+        Edrophonium (Tensilon) is a short-acting AChE inhibitor used diagnostically in myasthenia gravis.
+        IV injection → temporary improvement in muscle strength within seconds (positive test).
+        Now largely replaced by anti-AChR antibody testing and repetitive nerve stimulation (RNS).
+        RNS in MG shows decremental response; in LEMS shows incremental response.
+    - title: "Clinical Correlation: Succinylcholine Complications"
+      text: >
+        Succinylcholine can cause hyperkalemia (especially in burns, denervation, immobilization — upregulated
+        extrajunctional receptors), malignant hyperthermia (in susceptible individuals with RYR1 mutations),
+        and prolonged paralysis in pseudocholinesterase deficiency (atypical butyrylcholinesterase).
+
+  high_yield_points:
+    - "ACh release requires Ca2+ entry through P/Q type voltage-gated Ca2+ channels"
+    - "SNARE complex: synaptobrevin (vesicle) + SNAP-25 + syntaxin (membrane) — Botulinum toxin cleaves these"
+    - "nAChR requires 2 ACh molecules to bind (both α subunits) for channel opening"
+    - "Safety factor at NMJ ≈ 4x (EPP is 4x threshold) — ensures reliable transmission"
+    - "Myasthenia gravis = POST-synaptic (anti-nAChR Ab); Lambert-Eaton = PRE-synaptic (anti-Ca2+ channel Ab)"
+    - "MG: decremental response on RNS; LEMS: incremental response (facilitation)"
+    - "Succinylcholine = depolarizing blocker; Tubocurarine = non-depolarizing (competitive)"
+    - "Neostigmine reverses non-depolarizing block but WORSENS depolarizing (Phase I) block"
+    - "Botulinum toxin = most potent biological toxin — prevents ACh vesicle exocytosis"
+    - "Fetal nAChR has γ subunit (replaced by ε in adult) — denervation causes re-expression of fetal type"
+
+mcqs:
+  - question: "A patient with ptosis and diplopia that worsen with repeated use is found to have anti-acetylcholine receptor antibodies. Repetitive nerve stimulation will most likely show:"
+    options:
+      - "Incremental response"
+      - "Decremental response"
+      - "No change in amplitude"
+      - "Fibrillation potentials"
+    answer: "Decremental response"
+    explanation: >
+      Myasthenia gravis shows decremental response on repetitive nerve stimulation because progressive depletion
+      of ACh vesicles with repeated stimulation, combined with fewer available receptors, causes progressive
+      failure of EPP to reach threshold. Incremental response is seen in Lambert-Eaton syndrome.
+      📚 Guyton & Hall, 14th Ed, Ch.7
+    difficulty: 1
+
+  - question: "Botulinum toxin produces paralysis by:"
+    options:
+      - "Blocking nicotinic ACh receptors"
+      - "Inhibiting acetylcholinesterase"
+      - "Cleaving SNARE proteins to prevent ACh vesicle exocytosis"
+      - "Blocking voltage-gated Ca2+ channels"
+    answer: "Cleaving SNARE proteins to prevent ACh vesicle exocytosis"
+    explanation: >
+      Botulinum toxin is a zinc-dependent endopeptidase that cleaves SNARE proteins (synaptobrevin, SNAP-25, or syntaxin
+      depending on serotype), preventing vesicle fusion and ACh release. This is different from blocking receptors
+      (curare) or Ca2+ channels (Lambert-Eaton antibodies).
+      📚 Ganong's, 26th Ed, Ch.4
+    difficulty: 1
+
+  - question: "Which of the following best differentiates Lambert-Eaton syndrome from myasthenia gravis?"
+    options:
+      - "Weakness improves with repeated stimulation in Lambert-Eaton"
+      - "Lambert-Eaton involves antibodies against ACh receptors"
+      - "Lambert-Eaton shows decremental response on nerve stimulation"
+      - "Thymoma is commonly associated with Lambert-Eaton"
+    answer: "Weakness improves with repeated stimulation in Lambert-Eaton"
+    explanation: >
+      In LEMS, antibodies target pre-synaptic Ca2+ channels reducing ACh release. With repeated stimulation,
+      Ca2+ accumulates in the terminal → increased ACh release → improvement (incremental response/facilitation).
+      In MG, repeated stimulation depletes ACh further → worsening (decremental response).
+      📚 Guyton & Hall, 14th Ed, Ch.7
+    difficulty: 2
+
+  - question: "A patient develops prolonged apnea after succinylcholine administration during surgery. The most likely cause is:"
+    options:
+      - "Myasthenia gravis"
+      - "Malignant hyperthermia"
+      - "Pseudocholinesterase (butyrylcholinesterase) deficiency"
+      - "Hyperkalemia"
+    answer: "Pseudocholinesterase (butyrylcholinesterase) deficiency"
+    explanation: >
+      Succinylcholine is normally rapidly hydrolyzed by plasma pseudocholinesterase (butyrylcholinesterase).
+      Genetic deficiency (atypical enzyme) results in prolonged paralysis and apnea. Detected by dibucaine number
+      (low dibucaine number = atypical enzyme = prolonged block).
+      📚 Ganong's, 26th Ed, Ch.4
+    difficulty: 2
+
+  - question: "The minimum number of ACh molecules that must bind to the nicotinic receptor for channel opening is:"
+    options:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+    answer: "2"
+    explanation: >
+      The nicotinic ACh receptor has 5 subunits (α2βδε in adult). Two ACh molecules must bind simultaneously
+      to the two α subunits for conformational change and channel opening. This is a key structural feature
+      that ensures adequate neurotransmitter concentration for activation.
+      📚 Guyton & Hall, 14th Ed, Ch.7 (p.91)
+    difficulty: 1

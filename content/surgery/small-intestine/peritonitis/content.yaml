@@ -1,0 +1,136 @@
+overview: |
+  Peritonitis is inflammation of the peritoneum, classified as primary (spontaneous), secondary (most common,
+  due to hollow viscus perforation), or tertiary (persistent/recurrent after treatment). The most common cause
+  is perforated duodenal ulcer in India. Emergency laparotomy with source control is the cornerstone of management.
+
+learning_objectives:
+  - Classify peritonitis and identify common causes
+  - Recognize clinical features and radiological signs
+  - Describe the Mannheim Peritonitis Index for prognosis
+  - Apply principles of surgical source control
+  - Manage secondary peritonitis with resuscitation, antibiotics, and surgery
+
+content:
+  atoms:
+    - title: Classification
+      text: |
+        **Primary (Spontaneous Bacterial Peritonitis):** No perforation; occurs in ascites (cirrhosis, nephrotic syndrome).
+        MC organism: E. coli (adults), Strep. pneumoniae (children). Diagnosis: Ascitic fluid PMN >250/mm³.
+        Treatment: IV ceftriaxone/cefotaxime (NO surgery).
+        **Secondary:** MC type. Due to perforation (DU MC in India, appendicitis MC worldwide), gangrenous bowel,
+        post-operative anastomotic leak, trauma. Treatment: Source control surgery + antibiotics.
+        **Tertiary:** Persistent infection after adequate treatment of secondary peritonitis. Often nosocomial organisms
+        (Candida, Enterococcus, MRSA). High mortality.
+        📚 Bailey & Love, 28th Ed, Ch.61; Sabiston, 21st Ed, Ch.46
+
+    - title: Clinical Features
+      text: |
+        **Symptoms:** Severe abdominal pain (sudden if perforation), fever, vomiting, distension.
+        **Signs:** Board-like rigidity (guarding), diffuse tenderness, absent bowel sounds, rebound tenderness.
+        **Facies Hippocratica:** Pinched, anxious expression with sunken eyes — sign of severe peritonitis.
+        **X-ray erect abdomen:** Pneumoperitoneum (air under diaphragm) = hollow viscus perforation.
+        Absent in ~20% (no air under diaphragm doesn't exclude perforation).
+        📚 Bailey & Love, 28th Ed, Ch.61
+
+    - title: Investigations & Scoring
+      text: |
+        **Labs:** Leukocytosis, raised CRP/procalcitonin, metabolic acidosis, raised lactate.
+        **Imaging:** Erect X-ray CXR (pneumoperitoneum), CT scan (identifies source, collections).
+        **Mannheim Peritonitis Index (MPI):** Age >50, female sex, organ failure, malignancy,
+        duration >24h, non-colonic origin, diffuse peritonitis, exudate (clear/purulent/fecal).
+        Score >26 = high mortality (>50%).
+        📚 Sabiston, 21st Ed, Ch.46
+
+    - title: Management
+      text: |
+        **Resuscitation:** IV fluids, NPO, NG tube, urinary catheter, broad-spectrum antibiotics
+        (ceftriaxone + metronidazole or piperacillin-tazobactam).
+        **Surgery (Source Control):** Emergency exploratory laparotomy. DU perforation → Graham's patch.
+        Appendicular perforation → Appendicectomy + lavage. Colonic perforation → Hartmann's procedure or
+        resection with proximal stoma. Thorough peritoneal lavage with warm saline.
+        **Laparoscopic approach:** Increasingly used for perforated DU repair — less wound complications.
+        **Post-op:** ICU if severe, antibiotics, nutritional support.
+        📚 Bailey & Love, 28th Ed, Ch.61; Maingot's, 12th Ed
+
+  clinical: |
+    **Approach to Acute Abdomen with Peritonitis:**
+    1. Resuscitate (ABCDE approach)
+    2. Blood tests + Erect X-ray CXR
+    3. Pneumoperitoneum → Emergency laparotomy (after brief resuscitation)
+    4. No pneumoperitoneum → CT abdomen to identify source
+    5. Source control surgery + thorough lavage
+    6. Broad-spectrum antibiotics (cover gram-negative + anaerobes)
+    7. ICU care if septic shock
+
+  high_yield_points:
+    - "MC cause of secondary peritonitis in India: Perforated DU"
+    - "MC cause of secondary peritonitis worldwide: Perforated appendicitis"
+    - "Primary (SBP): Ascitic fluid PMN >250/mm³; treat medically, NO surgery"
+    - "SBP MC organism: E. coli (adults); Strep. pneumoniae (children)"
+    - "Board-like rigidity = Generalized peritonitis"
+    - "Pneumoperitoneum on erect X-ray = Hollow viscus perforation"
+    - "MC gas under diaphragm: DU perforation (anterior wall)"
+    - "Mannheim Peritonitis Index >26: Mortality >50%"
+    - "Source control is the most important surgical principle in peritonitis"
+    - "Tertiary peritonitis: Nosocomial organisms (Candida, MRSA) — high mortality"
+
+mcqs:
+  - question: "A patient with cirrhosis and ascites develops fever and abdominal pain. Ascitic fluid shows PMN count of 400/mm³. What is the most appropriate treatment?"
+    options:
+      a: Emergency laparotomy
+      b: IV cefotaxime
+      c: Percutaneous drainage
+      d: Metronidazole alone
+    answer: b
+    explanation: |
+      This is spontaneous bacterial peritonitis (SBP) — PMN >250/mm³ in ascitic fluid. Treatment is
+      medical with IV 3rd-generation cephalosporin (cefotaxime/ceftriaxone). Surgery is NOT indicated
+      in primary/spontaneous peritonitis. 📚 Sabiston, 21st Ed, Ch.46
+
+  - question: "What is the most common cause of pneumoperitoneum?"
+    options:
+      a: Perforated appendicitis
+      b: Perforated duodenal ulcer
+      c: Perforated sigmoid diverticulitis
+      d: Traumatic bowel perforation
+    answer: b
+    explanation: |
+      Perforated DU (anterior wall) is the MC cause of pneumoperitoneum. Gas under the diaphragm
+      on erect CXR is seen in ~80% of perforations. Perforated appendicitis rarely causes
+      pneumoperitoneum. 📚 Bailey & Love, 28th Ed, Ch.61
+
+  - question: "Mannheim Peritonitis Index score >26 is associated with mortality greater than:"
+    options:
+      a: 10%
+      b: 25%
+      c: 50%
+      d: 75%
+    answer: c
+    explanation: |
+      MPI >26 predicts mortality >50%. Factors increasing score include age >50, organ failure,
+      malignancy, duration >24h, diffuse peritonitis, and fecal exudate. It is a useful prognostic
+      tool for secondary peritonitis. 📚 Sabiston, 21st Ed, Ch.46
+
+  - question: "A 40-year-old presents with sudden epigastric pain, board-like rigidity, and absent bowel sounds. Erect X-ray shows bilateral air under the diaphragm. The immediate next step is:"
+    options:
+      a: CT scan abdomen
+      b: Upper GI endoscopy
+      c: Resuscitation and emergency laparotomy
+      d: Conservative management with IV antibiotics
+    answer: c
+    explanation: |
+      Pneumoperitoneum with peritonitis = perforated hollow viscus (most likely DU). After brief
+      resuscitation, emergency laparotomy (or laparoscopy) for Graham's omental patch repair is
+      indicated. No further investigations needed. 📚 Bailey & Love, 28th Ed, Ch.61
+
+  - question: "The organism most commonly causing SBP in adults is:"
+    options:
+      a: Staphylococcus aureus
+      b: Escherichia coli
+      c: Streptococcus pneumoniae
+      d: Bacteroides fragilis
+    answer: b
+    explanation: |
+      E. coli is the MC organism in adult SBP (via bacterial translocation from gut). In children,
+      Strep. pneumoniae is MC. SBP is monomicrobial; polymicrobial infection suggests secondary
+      peritonitis (perforation). 📚 Sabiston, 21st Ed, Ch.46

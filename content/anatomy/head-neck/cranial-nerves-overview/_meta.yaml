@@ -1,17 +1,167 @@
 topic_id: cranial-nerves-overview
-name: Cranial Nerves Overview
-description: Cranial Nerves Overview — NMC curriculum topic
+name: Cranial Nerves (Overview + Clinical)
+description: Cranial Nerves — All 12 cranial nerves with origin, course, functions, and clinical correlations
 high_yield: true
 nmc_codes:
-- code: AN23.6
+- code: AN57.1
   domain: KH
-  core: false
-  phase: Phase 1
-- code: AN26.3
-  domain: SH
   core: true
   phase: Phase 1
-- code: AN30.1
-  domain: SH
-  core: true
-  phase: Phase 3
+
+overview: >
+  The 12 cranial nerves emerge from the brain and brainstem, exiting through skull foramina to supply head, neck,
+  and viscera. Types: purely sensory (I, II, VIII), purely motor (III, IV, VI, XI, XII), mixed (V, VII, IX, X).
+  Mnemonic: "Oh Oh Oh To Touch And Feel Very Good Velvet — Such Heaven" (Olfactory, Optic, Oculomotor, Trochlear,
+  Trigeminal, Abducens, Facial, Vestibulocochlear, Glossopharyngeal, Vagus, Spinal Accessory, Hypoglossal).
+  📚 Gray's Anatomy, 42nd Ed, Ch.31-42; 📚 BD Chaurasia, Vol.3, Ch.11
+
+learning_objectives:
+  - List all 12 cranial nerves with their type, foramen of exit, and key functions
+  - Describe the clinical tests for each cranial nerve
+  - Identify common lesion patterns (UMN vs LMN facial palsy, etc.)
+  - Explain the clinical significance of cranial nerve nuclei locations in the brainstem
+  - Describe pupillary reflexes and their cranial nerve components
+
+content:
+  atoms:
+    - id: cn-i-to-iv
+      title: "CN I–IV: Olfactory, Optic, Oculomotor, Trochlear"
+      text: >
+        CN I (Olfactory): sensory — smell. Cribriform plate of ethmoid. Lesion: anosmia (frontal lobe tumor, head trauma).
+        CN II (Optic): sensory — vision. Optic canal. Lesion: visual field defects depending on site.
+        CN III (Oculomotor): motor — all extraocular muscles EXCEPT LR and SO; levator palpebrae; parasympathetic
+        to pupil (constriction) and ciliary muscle. Superior orbital fissure. Lesion: ptosis, "down and out" eye,
+        fixed dilated pupil. CN IV (Trochlear): motor — superior oblique. Thinnest, longest, only CN to exit
+        from posterior brainstem, decussates completely. Lesion: difficulty looking down and medially (trouble descending stairs).
+        📚 BD Chaurasia, Vol.3; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: cn-v-to-viii
+      title: "CN V–VIII: Trigeminal, Abducens, Facial, Vestibulocochlear"
+      text: >
+        CN V (Trigeminal): mixed — largest CN. V1 (ophthalmic, SOF), V2 (maxillary, foramen rotundum),
+        V3 (mandibular, foramen ovale). Sensory to face; motor to muscles of mastication (V3 only).
+        CN VI (Abducens): motor — lateral rectus. SOF. Longest intracranial course → vulnerable to raised ICP.
+        Lesion: medial strabismus (convergent squint).
+        CN VII (Facial): mixed — motor to facial expression muscles; taste anterior 2/3 tongue; parasympathetic to
+        submandibular, sublingual, lacrimal glands. Stylomastoid foramen. UMN lesion: contralateral lower face only;
+        LMN lesion: entire ipsilateral face (Bell's palsy).
+        CN VIII (Vestibulocochlear): sensory — hearing and balance. Internal acoustic meatus. Acoustic neuroma (vestibular schwannoma) → hearing loss, tinnitus.
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed
+
+    - id: cn-ix-to-xii
+      title: "CN IX–XII: Glossopharyngeal, Vagus, Spinal Accessory, Hypoglossal"
+      text: >
+        CN IX (Glossopharyngeal): mixed — taste posterior 1/3 tongue, sensation to pharynx (gag reflex afferent),
+        carotid body/sinus, parotid gland (parasympathetic). Jugular foramen.
+        CN X (Vagus): mixed — longest CN, motor to pharynx/larynx (recurrent laryngeal nerve), parasympathetic
+        to thoracoabdominal viscera (to splenic flexure). Jugular foramen. Lesion: hoarseness (RLN palsy),
+        uvula deviates AWAY from lesion, loss of gag reflex (efferent).
+        CN XI (Spinal Accessory): motor — SCM + trapezius. Jugular foramen. Lesion: shoulder droop, can't shrug.
+        CN XII (Hypoglossal): motor — all tongue muscles except palatoglossus (vagus). Hypoglossal canal.
+        Lesion: tongue deviates TOWARD the lesion side (LMN).
+        📚 BD Chaurasia, Vol.3; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: pupillary-reflexes
+      title: "Pupillary Reflexes & Cranial Nerve Testing"
+      text: >
+        Light reflex: afferent — CN II (optic); efferent — CN III (oculomotor, parasympathetic → Edinger-Westphal
+        nucleus → ciliary ganglion → sphincter pupillae). RAPD (Marcus Gunn pupil): afferent CN II defect.
+        Accommodation reflex: convergence (CN III medial rectus), pupil constriction (CN III), lens thickening.
+        Corneal reflex: afferent — V1 (ophthalmic); efferent — VII (facial → orbicularis oculi).
+        Jaw jerk reflex: afferent and efferent — V3 (mandibular). Brisk in UMN lesion above trigeminal nucleus.
+        📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Bell's Palsy vs UMN Facial Palsy"
+      text: >
+        Bell's palsy (LMN CN VII): ENTIRE ipsilateral face paralyzed — cannot close eye (lagophthalmos),
+        cannot wrinkle forehead, loss of nasolabial fold, mouth deviates away. UMN facial palsy: only
+        LOWER face affected contralaterally (forehead spared due to bilateral cortical innervation of
+        upper face motor neurons). Bell's phenomenon: eyeball rolls up when attempting eye closure.
+    - title: "Clinical: Jugular Foramen Syndrome"
+      text: >
+        CN IX, X, XI pass through jugular foramen. Tumors (glomus jugulare) or fractures at this site
+        cause Vernet's syndrome: loss of gag reflex, hoarseness, palatal palsy, trapezius/SCM weakness,
+        loss of taste posterior 1/3 tongue.
+
+high_yield_points:
+  - "CN IV: thinnest, longest intracranial course, only exits posteriorly, fully decussates"
+  - "CN VI: longest intracranial course → first to be affected by raised ICP (false localizing sign)"
+  - "LMN facial palsy: entire ipsilateral face; UMN: only contralateral lower face"
+  - "Tongue deviates TOWARD lesion in LMN CN XII palsy"
+  - "Uvula deviates AWAY from CN X lesion"
+  - "CN V3 (mandibular) exits foramen ovale — only CN V division with motor fibers"
+  - "Light reflex: afferent CN II, efferent CN III"
+  - "Corneal reflex: afferent V1, efferent VII"
+  - "Vagus is the longest cranial nerve — extends to splenic flexure"
+  - "Jugular foramen: CN IX, X, XI (Vernet's syndrome)"
+
+mcqs:
+  - question: "A patient presents with inability to close the right eye, loss of right nasolabial fold, and inability to wrinkle the forehead on the right side. This is most likely:"
+    options:
+      - "UMN lesion of facial nerve"
+      - "LMN lesion of facial nerve (Bell's palsy)"
+      - "Trigeminal nerve lesion"
+      - "Oculomotor nerve palsy"
+    answer: "LMN lesion of facial nerve (Bell's palsy)"
+    explanation: >
+      Entire ipsilateral face involvement (including forehead) indicates LMN facial nerve palsy. In UMN lesion,
+      forehead is SPARED because the upper face motor neurons receive bilateral cortical innervation.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Which cranial nerve has the longest intracranial course and is a 'false localizing sign' in raised intracranial pressure?"
+    options:
+      - "CN III"
+      - "CN IV"
+      - "CN VI"
+      - "CN VII"
+    answer: "CN VI"
+    explanation: >
+      CN VI (abducens) has the longest intracranial course along the clivus. Raised ICP compresses it against
+      the petrous temporal bone → lateral rectus palsy → medial strabismus. This is a "false localizing sign"
+      as the pathology is not at CN VI itself.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2
+
+  - question: "In a CN XII (hypoglossal) nerve palsy, the tongue deviates:"
+    options:
+      - "Away from the side of lesion"
+      - "Toward the side of lesion"
+      - "Does not deviate"
+      - "Upward"
+    answer: "Toward the side of lesion"
+    explanation: >
+      In LMN hypoglossal palsy, the tongue deviates toward the lesion because the opposite genioglossus
+      (which pushes the tongue contralaterally) is unopposed. Ipsilateral tongue atrophy and fasciculations
+      are also seen.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "The corneal reflex tests the integrity of which two cranial nerves?"
+    options:
+      - "CN II and CN III"
+      - "CN V1 and CN VII"
+      - "CN V2 and CN VII"
+      - "CN V3 and CN VII"
+    answer: "CN V1 and CN VII"
+    explanation: >
+      Corneal reflex: afferent limb = CN V1 (ophthalmic division of trigeminal, via nasociliary nerve);
+      efferent limb = CN VII (facial nerve → orbicularis oculi contraction). Testing involves touching the
+      cornea and observing bilateral eye closure.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Which cranial nerves pass through the jugular foramen?"
+    options:
+      - "CN VII, VIII, IX"
+      - "CN IX, X, XI"
+      - "CN X, XI, XII"
+      - "CN III, IV, V1, VI"
+    answer: "CN IX, X, XI"
+    explanation: >
+      The jugular foramen transmits CN IX (glossopharyngeal), CN X (vagus), and CN XI (spinal accessory),
+      along with the internal jugular vein. CN VII and VIII exit through the internal acoustic meatus.
+      CN III, IV, V1, VI pass through the superior orbital fissure.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1

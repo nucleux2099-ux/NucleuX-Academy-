@@ -1,0 +1,140 @@
+topic_id: pneumonia-children
+name: Pneumonia in Children
+description: WHO classification, age-wise etiology, clinical features, and IMNCI-based management
+high_yield: true
+nmc_codes:
+- code: PE22.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Pneumonia is the leading infectious cause of death in children under 5 worldwide. The WHO/IMNCI classification
+  uses respiratory rate and chest indrawing to categorize severity. Age-specific etiology guides antibiotic
+  choice. Streptococcus pneumoniae is the most common bacterial cause across all ages beyond the neonatal period.
+  📚 OP Ghai, 10th Ed, Ch.20 | 📚 Nelson's, 22nd Ed, Ch.428
+
+learning_objectives:
+  - Classify pneumonia severity using WHO criteria (respiratory rate, danger signs)
+  - List age-wise etiology of pneumonia
+  - Describe the IMNCI approach to pneumonia management
+  - Differentiate bacterial from viral pneumonia
+  - List complications of pneumonia
+
+content:
+  atoms:
+    - id: who-classification
+      title: "WHO Classification of Pneumonia"
+      text: >
+        Based on respiratory rate (tachypnea is the most sensitive sign):
+        <2 months: RR ≥60 = fast breathing. 2-12 months: RR ≥50. 1-5 years: RR ≥40.
+        No pneumonia: cough/cold, no fast breathing, no danger signs.
+        Pneumonia: fast breathing without chest indrawing.
+        Severe pneumonia: chest indrawing (lower chest wall indrawing).
+        Very severe pneumonia/disease: unable to drink, convulsions, lethargic/unconscious,
+        stridor in calm child, severe malnutrition.
+        📚 OP Ghai, 10th Ed, Ch.20 (p.355-358)
+
+    - id: etiology
+      title: "Age-wise Etiology"
+      text: >
+        Neonates (0-28 days): Group B Streptococcus (GBS), E. coli, Klebsiella, Listeria, S. aureus.
+        1-3 months: Chlamydia trachomatis (afebrile pneumonia, staccato cough), RSV, S. pneumoniae.
+        3 months-5 years: S. pneumoniae (most common bacterial), H. influenzae type b, S. aureus,
+        viruses (RSV most common overall in this age group).
+        >5 years: S. pneumoniae, Mycoplasma pneumoniae (atypical — school age), Chlamydophila pneumoniae.
+        Staphylococcal pneumonia: rapidly progressive, pneumatoceles, empyema, pyopneumothorax.
+        📚 Nelson's, 22nd Ed, Ch.428
+
+    - id: management
+      title: "IMNCI-Based Management"
+      text: >
+        Pneumonia (fast breathing only): oral amoxicillin 40-50 mg/kg/day for 5 days. Treat at home.
+        Severe pneumonia (chest indrawing): hospitalize. IV ampicillin + gentamicin for 5-7 days.
+        Switch to oral amoxicillin when improving.
+        Very severe pneumonia: hospitalize. IV ampicillin + gentamicin (or ceftriaxone).
+        If staphylococcal: cloxacillin + aminoglycoside. Duration: 10-14 days (3-4 weeks for staph).
+        Supportive: oxygen if SpO2 <90%, fluids, fever management, nutritional support.
+        Danger signs in young infant (<2 months): ALL cases = severe → refer/hospitalize.
+        📚 OP Ghai, 10th Ed, Ch.20 (p.358-362)
+
+  high_yield_points:
+    - "Tachypnea is the MOST SENSITIVE sign of pneumonia in children"
+    - "RR cutoffs: <2 mo ≥60; 2-12 mo ≥50; 1-5 yr ≥40"
+    - "S. pneumoniae = most common bacterial cause of pneumonia in children (>3 months)"
+    - "RSV = most common viral cause of pneumonia in infants"
+    - "Mycoplasma = most common cause of atypical pneumonia in school-age children"
+    - "Staphylococcal pneumonia: pneumatoceles, empyema, rapid progression"
+    - "Amoxicillin = first-line oral antibiotic for non-severe pneumonia"
+    - "Chest indrawing = severe pneumonia → hospitalization required"
+    - "All pneumonia in <2 months = severe → hospitalize"
+    - "Chlamydial pneumonia in infants: afebrile, staccato cough, bilateral infiltrates, eosinophilia"
+
+mcqs:
+  - question: "Fast breathing in a 3-month-old infant is defined as respiratory rate of:"
+    options:
+      - "≥40/min"
+      - "≥50/min"
+      - "≥60/min"
+      - "≥70/min"
+    answer: "≥50/min"
+    explanation: >
+      WHO cutoffs for tachypnea: <2 months ≥60, 2-12 months ≥50, 1-5 years ≥40. A 3-month-old
+      falls in the 2-12 month category, so fast breathing is ≥50/min.
+      📚 OP Ghai, 10th Ed, Ch.20 (p.356)
+    difficulty: 1
+
+  - question: "The most common bacterial cause of community-acquired pneumonia in children aged 3 months to 5 years is:"
+    options:
+      - "Staphylococcus aureus"
+      - "Haemophilus influenzae"
+      - "Streptococcus pneumoniae"
+      - "Klebsiella pneumoniae"
+    answer: "Streptococcus pneumoniae"
+    explanation: >
+      S. pneumoniae (pneumococcus) is the most common bacterial cause of pneumonia in children
+      beyond the neonatal period. PCV vaccination has reduced its incidence but it remains the
+      leading bacterial pathogen.
+      📚 Nelson's, 22nd Ed, Ch.428
+    difficulty: 1
+
+  - question: "A 4-year-old child with cough, fever, and respiratory rate of 52/min but no chest indrawing should be managed with:"
+    options:
+      - "No antibiotic, only supportive care"
+      - "Oral amoxicillin at home"
+      - "IV ampicillin + gentamicin in hospital"
+      - "Oral azithromycin"
+    answer: "Oral amoxicillin at home"
+    explanation: >
+      This child has pneumonia (fast breathing ≥40 for age 1-5 years) without chest indrawing
+      (not severe). WHO/IMNCI Plan: oral amoxicillin at home for 5 days with follow-up in 2 days.
+      📚 OP Ghai, 10th Ed, Ch.20 (p.359)
+    difficulty: 1
+
+  - question: "Pneumatoceles on chest X-ray are characteristically seen in pneumonia caused by:"
+    options:
+      - "Streptococcus pneumoniae"
+      - "Staphylococcus aureus"
+      - "Mycoplasma pneumoniae"
+      - "Klebsiella pneumoniae"
+    answer: "Staphylococcus aureus"
+    explanation: >
+      Staphylococcal pneumonia is characterized by rapid progression with pneumatoceles
+      (thin-walled air cysts), empyema, pyopneumothorax, and abscess formation. It is more
+      common in malnourished children and infants.
+      📚 OP Ghai, 10th Ed, Ch.20 (p.360)
+    difficulty: 1
+
+  - question: "In IMNCI, a 6-week-old infant with pneumonia is classified as:"
+    options:
+      - "Pneumonia — treat at home"
+      - "Severe pneumonia"
+      - "Very severe disease"
+      - "No pneumonia"
+    answer: "Severe pneumonia"
+    explanation: >
+      In IMNCI, ANY pneumonia in a young infant (<2 months) is classified as severe disease
+      and requires hospitalization with IV antibiotics. There is no "non-severe pneumonia"
+      category for this age group.
+      📚 OP Ghai, 10th Ed, Ch.20 (p.357)
+    difficulty: 2

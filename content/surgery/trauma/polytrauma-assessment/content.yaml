@@ -1,0 +1,149 @@
+overview: |
+  Trauma is the leading cause of death in ages 1-44. The ATLS (Advanced Trauma Life Support) protocol provides
+  a systematic approach: Primary survey (ABCDE), resuscitation, secondary survey, and definitive care. The golden
+  hour concept emphasizes that early intervention saves lives. Damage control surgery is used in the unstable patient.
+
+learning_objectives:
+  - Apply the ATLS primary survey (ABCDE) systematically
+  - Recognize and manage life-threatening injuries in the primary survey
+  - Describe the FAST exam and its role in trauma
+  - Understand damage control surgery principles
+  - Apply the secondary survey for comprehensive injury detection
+
+content:
+  atoms:
+    - title: Primary Survey — ABCDE
+      text: |
+        **A — Airway with C-spine protection:** Assess patency. Chin lift/jaw thrust (not head tilt in trauma).
+        Definitive airway = cuffed tube in trachea. Surgical airway (cricothyroidotomy) if can't intubate.
+        **B — Breathing:** Look-listen-feel. Life-threatening: Tension pneumothorax (needle decompression 2nd ICS MCL),
+        open pneumothorax (3-sided dressing), massive hemothorax (>1500mL or >200mL/hr → thoracotomy),
+        flail chest (paradoxical movement, treat with ventilation).
+        **C — Circulation:** Control hemorrhage (direct pressure, tourniquet). 2 large-bore IV, crystalloid bolus.
+        Assess: HR, BP, capillary refill. Hemorrhage is MC preventable cause of death in trauma.
+        **D — Disability:** GCS (eye 4, verbal 5, motor 6 = 15), pupil size/reactivity, lateralizing signs.
+        **E — Exposure/Environment:** Fully expose, log roll, prevent hypothermia.
+        📚 ATLS 10th Ed; Bailey & Love, 28th Ed, Ch.27
+
+    - title: FAST Exam
+      text: |
+        **Focused Assessment with Sonography in Trauma.** 4 views: Morrison's pouch (hepatorenal, most sensitive),
+        splenorenal, suprapubic (pouch of Douglas), subxiphoid (pericardial).
+        **Positive FAST + unstable = Emergency laparotomy/thoracotomy.**
+        **Positive FAST + stable = CT scan for further evaluation.**
+        **Negative FAST:** Does not exclude injury (sensitivity 85%). Repeat or CT if clinical suspicion.
+        **eFAST:** Extended — adds bilateral anterior chest (for pneumothorax).
+        📚 ATLS 10th Ed; Sabiston, 21st Ed, Ch.18
+
+    - title: Damage Control Surgery
+      text: |
+        For the critically unstable patient with lethal triad (hypothermia + acidosis + coagulopathy).
+        **Phase 1:** Abbreviated surgery — stop bleeding (packing), stop contamination (staple off bowel),
+        temporary abdominal closure (Bogota bag/negative pressure). Time <60 min.
+        **Phase 2:** ICU resuscitation — warm, correct acidosis, reverse coagulopathy, optimize physiology.
+        **Phase 3:** Planned re-exploration (24-72h) — definitive repair, anastomosis, closure.
+        📚 Bailey & Love, 28th Ed, Ch.27; Sabiston, 21st Ed, Ch.18
+
+    - title: Specific Organ Injuries
+      text: |
+        **Spleen (MC injured organ in blunt abdominal trauma):** Non-operative management for hemodynamically
+        stable patients (observation, serial imaging). Splenectomy if unstable. Post-splenectomy: lifelong
+        pneumococcal/meningococcal/H. influenzae vaccination + prophylactic penicillin.
+        **Liver (2nd MC in blunt trauma):** Most managed non-operatively. Pack if surgical.
+        **Kidney:** Most managed conservatively. Nephrectomy for shattered kidney with hemodynamic instability.
+        **Duodenal injury:** Retroperitoneal air on CT. Primary repair if <50% circumference; Roux-en-Y if complex.
+        📚 Sabiston, 21st Ed, Ch.18
+
+    - title: Secondary Survey & Adjuncts
+      text: |
+        **Secondary survey:** Head-to-toe examination AFTER primary survey stabilization. AMPLE history
+        (Allergies, Medications, Past history, Last meal, Events).
+        **Adjuncts to primary survey:** X-rays (C-spine lateral, chest AP, pelvis AP), FAST, urinary catheter
+        (contraindicated if urethral injury — blood at meatus, high-riding prostate, perineal bruising),
+        NG tube (orogastric if basal skull fracture suspected).
+        **Indications for emergency laparotomy:** Hemodynamic instability with positive FAST/DPL,
+        gunshot wound to abdomen, evisceration, diaphragmatic rupture, free air on imaging.
+        📚 ATLS 10th Ed
+
+  clinical: |
+    **ATLS Approach:**
+    1. Scene safety → Primary survey (ABCDE) with simultaneous resuscitation
+    2. Treat life threats as found (don't move on until each is addressed)
+    3. Adjuncts: FAST, X-rays (chest, pelvis, C-spine), blood gases
+    4. If unstable + FAST positive → Emergency laparotomy
+    5. If stable → Secondary survey → CT scan (head, C-spine, chest, abdomen, pelvis)
+    6. Definitive care: OR for surgical injuries, ICU for monitoring
+    7. Tertiary survey within 24h (catch missed injuries)
+
+  high_yield_points:
+    - "MC preventable cause of death in trauma: Hemorrhage"
+    - "MC injured organ in blunt abdominal trauma: Spleen"
+    - "FAST: Most sensitive view is Morrison's pouch (hepatorenal)"
+    - "Positive FAST + unstable = Emergency laparotomy"
+    - "Tension pneumothorax: Immediate needle decompression (2nd ICS MCL), then chest tube"
+    - "Damage control surgery: For lethal triad (hypothermia + acidosis + coagulopathy)"
+    - "Surgical airway in trauma: Cricothyroidotomy (not tracheostomy)"
+    - "Post-splenectomy: Lifelong vaccination (pneumococcal) + penicillin prophylaxis"
+    - "Contraindication for urinary catheter: Blood at meatus (suspect urethral injury)"
+    - "GCS ≤8: Intubate for airway protection"
+
+mcqs:
+  - question: "The most commonly injured organ in blunt abdominal trauma is:"
+    options:
+      a: Liver
+      b: Spleen
+      c: Kidney
+      d: Small bowel
+    answer: b
+    explanation: |
+      The spleen is the MC injured organ in blunt abdominal trauma due to its subcapsular location
+      and friable parenchyma. Liver is 2nd MC. Most splenic injuries in hemodynamically stable
+      patients can be managed non-operatively. 📚 Sabiston, 21st Ed, Ch.18
+
+  - question: "A trauma patient is hypotensive with absent breath sounds and hyperresonance on the left chest. Trachea is deviated to the right. What is the immediate management?"
+    options:
+      a: CT scan chest
+      b: Chest X-ray
+      c: Needle decompression 2nd ICS left MCL
+      d: Emergency thoracotomy
+    answer: c
+    explanation: |
+      This is tension pneumothorax — a clinical diagnosis. Do NOT wait for X-ray. Immediate needle
+      decompression at 2nd intercostal space, midclavicular line, followed by chest tube insertion
+      (5th ICS, anterior axillary line). 📚 ATLS 10th Ed
+
+  - question: "In the FAST exam, which view is the most sensitive for detecting free fluid?"
+    options:
+      a: Subxiphoid
+      b: Splenorenal
+      c: Morrison's pouch (hepatorenal)
+      d: Suprapubic
+    answer: c
+    explanation: |
+      Morrison's pouch (hepatorenal space) is the most dependent area in a supine patient and is
+      the most sensitive view for detecting free intraperitoneal fluid. It should be examined first.
+      📚 ATLS 10th Ed
+
+  - question: "Contraindication for urinary catheterization in trauma includes:"
+    options:
+      a: Pelvic fracture alone
+      b: Blood at the urethral meatus
+      c: Abdominal distension
+      d: Head injury
+    answer: b
+    explanation: |
+      Blood at meatus, high-riding prostate on DRE, and perineal/scrotal bruising suggest urethral
+      injury. Urethral catheterization is contraindicated — perform retrograde urethrogram first.
+      If injury confirmed, suprapubic catheter is placed. 📚 ATLS 10th Ed
+
+  - question: "The principle of damage control surgery involves all EXCEPT:"
+    options:
+      a: Abbreviated initial surgery
+      b: ICU resuscitation
+      c: Definitive repair in first surgery
+      d: Planned re-exploration at 24-72 hours
+    answer: c
+    explanation: |
+      Damage control surgery specifically avoids definitive repair in the first operation. The unstable
+      patient gets abbreviated surgery (stop bleeding, control contamination), ICU resuscitation to
+      correct the lethal triad, then planned re-exploration for definitive repair. 📚 Bailey & Love, 28th Ed, Ch.27

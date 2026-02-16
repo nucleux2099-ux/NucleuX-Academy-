@@ -1,0 +1,163 @@
+topic_id: hemodynamic-disorders
+name: Hemodynamic Disorders (Thrombosis, Embolism, Infarction)
+description: Thrombosis, embolism, infarction, shock — pathophysiology and clinical significance
+high_yield: true
+
+overview: >
+  Hemodynamic disorders encompass edema, thrombosis, embolism, infarction, and shock — all consequences of
+  disrupted blood flow. Virchow's triad (endothelial injury, stasis, hypercoagulability) underlies thrombus formation.
+  These concepts are heavily tested in NEET-PG across multiple clinical scenarios.
+  📚 Robbins, 10th Ed, Ch.4 (p.115-146)
+
+learning_objectives:
+  - Explain Virchow's triad and its role in thrombosis
+  - Differentiate arterial from venous thrombi
+  - Classify types of emboli and their consequences
+  - Distinguish white (pale) from red (hemorrhagic) infarcts
+  - Describe the pathophysiology and stages of shock
+
+content:
+  atoms:
+    - id: virchow-triad
+      title: "Virchow's Triad — Pathogenesis of Thrombosis"
+      text: >
+        Three factors predispose to thrombosis:
+        (1) Endothelial injury — MOST IMPORTANT for arterial and cardiac thrombi (e.g., MI, atherosclerosis, vasculitis).
+        (2) Abnormal blood flow — stasis (venous thrombosis, atrial fibrillation) or turbulence (aneurysms, bifurcations).
+        (3) Hypercoagulability — inherited (Factor V Leiden — most common inherited cause, prothrombin mutation,
+        protein C/S deficiency, antithrombin III deficiency) or acquired (OCP, pregnancy, malignancy, antiphospholipid syndrome, immobilization).
+        📚 Robbins, 10th Ed, Ch.4 (p.122-127)
+
+    - id: arterial-vs-venous-thrombi
+      title: "Arterial vs Venous Thrombi"
+      text: >
+        Arterial thrombi: form at sites of endothelial injury/turbulence; rich in platelets ("white thrombi");
+        grow RETROGRADE from point of attachment; cause infarction (MI, stroke).
+        Venous thrombi: form in areas of stasis; rich in RBCs and fibrin ("red thrombi"); grow in DIRECTION of blood flow;
+        mostly in deep veins of legs (DVT); cause pulmonary embolism.
+        Lines of Zahn = alternating layers of platelets/fibrin and RBCs — indicates ANTEMORTEM thrombus
+        (postmortem clots are homogeneous, no Lines of Zahn).
+        📚 Robbins, 10th Ed, Ch.4 (p.127-129)
+
+    - id: embolism
+      title: "Embolism — Types and Consequences"
+      text: >
+        Thromboembolism: >95% of emboli arise from thrombi. Most pulmonary emboli originate from deep veins of legs.
+        Saddle embolus = straddles bifurcation of pulmonary artery → sudden death.
+        Fat embolism: post long bone fracture; triad of respiratory distress + neurologic symptoms + petechial rash (1-3 days after fracture).
+        Air embolism: >100mL of air; caisson disease (decompression sickness) = nitrogen bubbles.
+        Amniotic fluid embolism: during labor/delivery; DIC + respiratory failure; high mortality; fetal squamous cells in pulmonary vasculature.
+        Paradoxical embolism: venous embolus crosses to arterial circulation via ASD/VSD/PFO.
+        📚 Robbins, 10th Ed, Ch.4 (p.130-134)
+
+    - id: infarction
+      title: "Infarction — White vs Red"
+      text: >
+        White (pale/anemic) infarcts: occur in SOLID organs with END-ARTERIAL circulation (heart, kidney, spleen);
+        wedge-shaped with apex at occluded vessel.
+        Red (hemorrhagic) infarcts: occur in (1) organs with dual blood supply (lung, liver), (2) loose/spongy tissues (intestine),
+        (3) venous occlusion (testicular torsion, ovarian torsion), (4) previously congested tissues, (5) reperfusion injury.
+        Exceptions: Lung infarcts are hemorrhagic (dual supply from pulmonary + bronchial arteries).
+        📚 Robbins, 10th Ed, Ch.4 (p.134-137)
+
+    - id: shock
+      title: "Shock — Types and Pathophysiology"
+      text: >
+        Shock = systemic hypoperfusion due to reduced cardiac output or effective circulating blood volume.
+        Cardiogenic: pump failure (MI, tamponade); Hypovolemic: blood/fluid loss (hemorrhage, burns);
+        Septic: systemic vasodilation + endothelial activation (most common cause of death in ICU);
+        mediated by TNF, IL-1, NO, PAF; "warm shock" initially (peripheral vasodilation) → "cold shock" (vasoconstriction, organ failure).
+        Neurogenic: loss of vascular tone (spinal cord injury); Anaphylactic: systemic vasodilation (IgE-mediated).
+        Stages: (1) Nonprogressive (compensated) → (2) Progressive (tissue hypoperfusion) → (3) Irreversible (multiorgan failure).
+        📚 Robbins, 10th Ed, Ch.4 (p.137-143)
+
+  clinical:
+    - title: "DVT and Pulmonary Embolism"
+      text: >
+        DVT most commonly originates in deep veins of calf → propagates to popliteal/femoral/iliac veins.
+        Risk factors: immobilization, surgery, OCP, malignancy, pregnancy, Factor V Leiden.
+        Most PE are clinically silent. Large PE → sudden death. Medium PE → pulmonary infarction (pleuritic chest pain,
+        hemoptysis). Recurrent small PE → pulmonary hypertension.
+
+  high_yield_points:
+    - "Factor V Leiden = most common INHERITED hypercoagulable state (resistance to activated protein C)"
+    - "Lines of Zahn distinguish antemortem thrombus from postmortem clot"
+    - "Endothelial injury = most important factor for ARTERIAL thrombi; Stasis = most important for VENOUS thrombi"
+    - "Most pulmonary emboli arise from DVT of deep veins of LOWER extremities"
+    - "Fat embolism triad: respiratory distress + neurological symptoms + petechial rash (1-3 days post-fracture)"
+    - "Amniotic fluid embolism = DIC + respiratory failure during labor; fetal squamous cells in maternal pulmonary vessels"
+    - "White infarcts: solid organs with end-arteries (heart, kidney, spleen)"
+    - "Red infarcts: dual blood supply organs (lung, liver), loose tissues (intestine), venous occlusion"
+    - "Septic shock: initially WARM (vasodilation) → then COLD (vasoconstriction, organ failure)"
+    - "Waterhouse-Friderichsen syndrome = bilateral adrenal hemorrhage in meningococcal septicemia"
+
+mcqs:
+  - question: "A 28-year-old woman on oral contraceptives develops sudden-onset dyspnea and pleuritic chest pain after a long flight. CT pulmonary angiogram shows a filling defect in the right pulmonary artery. Where did the embolus most likely originate?"
+    options:
+      - "Right atrium"
+      - "Deep veins of the lower extremity"
+      - "Superior vena cava"
+      - "Portal vein"
+    answer: "Deep veins of the lower extremity"
+    explanation: >
+      >95% of pulmonary emboli originate from deep vein thrombosis of the lower extremities, most commonly the
+      popliteal, femoral, and iliac veins. This patient has multiple risk factors: OCP use and prolonged immobilization
+      (long flight). Right atrial thrombi are rare. Portal vein thrombi go to the liver, not lungs.
+      📚 Robbins, 10th Ed, Ch.4 (p.131)
+    difficulty: 1
+
+  - question: "Which of the following findings on autopsy would differentiate an antemortem thrombus from a postmortem clot?"
+    options:
+      - "Red color"
+      - "Gelatinous consistency"
+      - "Lines of Zahn"
+      - "Smooth surface"
+    answer: "Lines of Zahn"
+    explanation: >
+      Lines of Zahn are alternating pale (platelet/fibrin) and dark (RBC) laminations seen only in thrombi formed
+      DURING LIFE (antemortem). They indicate that the thrombus formed in flowing blood. Postmortem clots are
+      homogeneous, rubbery, and lack these lines.
+      📚 Robbins, 10th Ed, Ch.4 (p.128)
+    difficulty: 2
+
+  - question: "A 70-year-old man with atrial fibrillation suddenly develops left-sided weakness. MRI shows infarction in the right MCA territory. This infarct is most likely:"
+    options:
+      - "White (pale) infarct"
+      - "Red (hemorrhagic) infarct"
+      - "Septic infarct"
+      - "Venous infarct"
+    answer: "White (pale) infarct"
+    explanation: >
+      Brain infarcts from arterial occlusion (thromboembolism from atrial fibrillation) are initially pale infarcts
+      in a solid organ with end-arterial supply. Note: they can become hemorrhagic upon reperfusion. But the primary
+      mechanism in this case is arterial occlusion → pale infarct. Venous infarcts and septic infarcts are different entities.
+      📚 Robbins, 10th Ed, Ch.4 (p.135)
+    difficulty: 2
+
+  - question: "A patient develops sudden respiratory distress, neurological symptoms, and petechial rash 2 days after a femoral fracture. The most likely diagnosis is:"
+    options:
+      - "Pulmonary thromboembolism"
+      - "Fat embolism syndrome"
+      - "Air embolism"
+      - "Amniotic fluid embolism"
+    answer: "Fat embolism syndrome"
+    explanation: >
+      The classic triad of fat embolism syndrome = respiratory distress + neurological symptoms + petechial rash,
+      occurring 1-3 days after long bone fracture. Fat globules from bone marrow enter venous circulation and lodge
+      in pulmonary and cerebral vasculature. PE would present immediately and lacks the petechial rash.
+      📚 Robbins, 10th Ed, Ch.4 (p.133)
+    difficulty: 1
+
+  - question: "Which inherited condition is the MOST COMMON cause of inherited hypercoagulability?"
+    options:
+      - "Antithrombin III deficiency"
+      - "Protein C deficiency"
+      - "Factor V Leiden mutation"
+      - "Prothrombin gene mutation"
+    answer: "Factor V Leiden mutation"
+    explanation: >
+      Factor V Leiden is the most common inherited hypercoagulable state, present in ~5% of Caucasians.
+      The mutation makes Factor V resistant to inactivation by activated Protein C, leading to increased thrombin generation.
+      Heterozygotes have 5x increased risk of DVT; homozygotes have 50x risk.
+      📚 Robbins, 10th Ed, Ch.4 (p.126)
+    difficulty: 1

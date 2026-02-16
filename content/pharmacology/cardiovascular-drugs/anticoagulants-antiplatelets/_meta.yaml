@@ -1,0 +1,176 @@
+topic_id: anticoagulants-antiplatelets
+name: Anticoagulants & Antiplatelets
+description: Heparin, warfarin, DOACs, antiplatelet agents, and thrombolytics — mechanisms, monitoring, and reversal
+high_yield: true
+nmc_codes:
+- code: PH1.21
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Anticoagulants and antiplatelets are essential in managing thromboembolic disorders. Anticoagulants target the coagulation
+  cascade (heparin, warfarin, DOACs), antiplatelets target platelet aggregation (aspirin, clopidogrel, ticagrelor),
+  and thrombolytics dissolve existing clots (streptokinase, alteplase).
+  📚 KD Tripathi, 8th Ed, Ch.44 (p.626-650); 📚 Goodman & Gilman's, 14th Ed, Ch.32
+
+learning_objectives:
+  - Compare UFH and LMWH regarding mechanism, monitoring, and reversal
+  - Describe warfarin's mechanism, drug interactions, and monitoring
+  - Classify direct oral anticoagulants (DOACs) and their advantages
+  - Differentiate antiplatelet mechanisms — aspirin, clopidogrel, ticagrelor, GP IIb/IIIa inhibitors
+  - Describe thrombolytics and indications for fibrinolytic therapy
+
+content:
+  atoms:
+    - id: heparin
+      title: "Heparin — UFH & LMWH"
+      text: >
+        Unfractionated Heparin (UFH): binds antithrombin III (AT-III) → 1000x acceleration of thrombin (IIa) and Xa inactivation.
+        Requires pentasaccharide sequence for AT-III binding AND long chain for thrombin bridging.
+        Given IV/SC (NOT oral — large, charged molecule). Monitor: aPTT (target 1.5-2.5x control).
+        Side effects: bleeding, HIT (heparin-induced thrombocytopenia — type II, antibodies against PF4-heparin complex →
+        paradoxical thrombosis), osteoporosis (long-term), hyperkalemia (↓aldosterone).
+        Antidote: Protamine sulfate (1mg neutralizes ~100U heparin). Protamine is positively charged, binds negatively charged heparin.
+        LMWH: Enoxaparin, Dalteparin. Shorter chains → primarily anti-Xa (less anti-IIa). Advantages: SC, predictable dose-response,
+        no routine monitoring (anti-Xa levels if needed), less HIT, less osteoporosis. Protamine only partially reverses LMWH (~60%).
+        Fondaparinux: synthetic pentasaccharide → pure anti-Xa. No HIT risk. No protamine reversal.
+        📚 KD Tripathi, 8th Ed, Ch.44 (p.627-634)
+
+    - id: warfarin
+      title: "Warfarin — Oral Anticoagulant"
+      text: >
+        Mechanism: inhibits vitamin K epoxide reductase (VKORC1) → ↓synthesis of factors II, VII, IX, X and proteins C, S.
+        Onset: 2-3 days (existing factors must be depleted; factor VII t½ ~6h but full effect needs factor II depletion ~60h).
+        Initial PROCOAGULANT effect: Protein C (t½ 8h) depleted faster than procoagulant factors → transient hypercoagulability
+        → warfarin-induced skin necrosis (especially in Protein C deficiency). Bridge with heparin initially.
+        Monitor: PT/INR (target INR 2-3 for most indications; 2.5-3.5 for mechanical heart valves).
+        Drug interactions (VERY HIGH YIELD): INR INCREASED by: CYP inhibitors (azole antifungals, macrolides, amiodarone,
+        metronidazole), displacement from albumin (NSAIDs, sulfonamides), ↓vitamin K (antibiotics killing gut flora).
+        INR DECREASED by: CYP inducers (rifampicin, phenytoin, carbamazepine, barbiturates), ↑vitamin K intake (green vegetables).
+        Teratogenic: crosses placenta → nasal hypoplasia, stippled epiphyses (1st trimester), CNS abnormalities.
+        Antidote: Vitamin K (phytonadione — takes 6-24h), Fresh frozen plasma/PCC (immediate reversal for life-threatening bleeding).
+        📚 KD Tripathi, 8th Ed, Ch.44 (p.634-641)
+
+    - id: doacs
+      title: "Direct Oral Anticoagulants (DOACs)"
+      text: >
+        Direct thrombin inhibitors: Dabigatran (oral — RE-LY trial for AF). Renal excretion (80%). Antidote: Idarucizumab.
+        Direct Xa inhibitors: Rivaroxaban, Apixaban, Edoxaban. Hepatic metabolism. Antidote: Andexanet alfa.
+        Advantages over warfarin: Predictable pharmacokinetics, no routine monitoring, fewer drug/food interactions,
+        rapid onset (1-3h), shorter t½ (5-17h), fixed dosing.
+        Disadvantages: cost, renal-dependent (dabigatran — avoid if CrCl <30), no reliable monitoring test, limited reversal options.
+        Uses: Non-valvular AF (stroke prevention), DVT/PE treatment and prophylaxis, post-surgical thromboprophylaxis.
+        NOT for mechanical heart valves (RE-ALIGN trial — dabigatran inferior + more bleeding).
+        📚 Goodman & Gilman's, 14th Ed, Ch.32
+
+    - id: antiplatelets-thrombolytics
+      title: "Antiplatelets & Thrombolytics"
+      text: >
+        Aspirin: irreversibly inhibits COX-1 → ↓TXA2 (for platelet's LIFETIME — 7-10 days). Low dose (75-150mg) for antiplatelet.
+        Clopidogrel: irreversibly blocks P2Y12 (ADP receptor). Prodrug → CYP2C19 activation. Resistance in poor metabolizers.
+        Prasugrel: also P2Y12 blocker, more potent, less resistance. More bleeding risk.
+        Ticagrelor: REVERSIBLE P2Y12 blocker (not a prodrug). Twice daily. Side effects: dyspnea, bradycardia.
+        GP IIb/IIIa inhibitors: Abciximab (monoclonal Ab), Eptifibatide, Tirofiban. Block final common pathway of platelet
+        aggregation (fibrinogen binding). Used in ACS/PCI.
+        Dipyridamole: ↑cAMP (PDE inhibitor + adenosine reuptake inhibitor). Used with aspirin for stroke prevention.
+        Thrombolytics: Streptokinase (antigenic, can only use once), Alteplase/tPA (fibrin-specific, preferred in MI/stroke),
+        Reteplase, Tenecteplase (longest t½, single bolus).
+        Window: STEMI <12h, Stroke <4.5h. Contraindicated: recent surgery, active bleeding, history of hemorrhagic stroke.
+        📚 KD Tripathi, 8th Ed, Ch.44 (p.641-650)
+
+  clinical:
+    - title: "Clinical Correlation: HIT (Heparin-Induced Thrombocytopenia)"
+      text: >
+        Type II HIT: immune-mediated (anti-PF4-heparin antibodies) → platelet activation → paradoxical thrombosis.
+        Onset: 5-10 days after starting heparin. Platelet count drops >50%. STOP ALL heparin immediately.
+        Switch to direct thrombin inhibitor: Argatroban (hepatic clearance) or Bivalirudin. Do NOT give warfarin until
+        platelets recover (worsens thrombosis due to Protein C depletion). LMWH has lower risk but cross-reactivity possible.
+    - title: "Clinical Correlation: Dual Antiplatelet Therapy (DAPT)"
+      text: >
+        Aspirin + P2Y12 inhibitor (clopidogrel/ticagrelor/prasugrel) after ACS/PCI. Duration: typically 12 months post-ACS,
+        6 months post-DES, 1 month post-BMS. Ticagrelor preferred over clopidogrel in ACS (PLATO trial).
+
+  high_yield_points:
+    - "UFH: monitor aPTT; Warfarin: monitor PT/INR"
+    - "Heparin antidote: Protamine sulfate; Warfarin antidote: Vitamin K + FFP/PCC"
+    - "Dabigatran antidote: Idarucizumab; Xa inhibitors: Andexanet alfa"
+    - "Warfarin crosses placenta (teratogenic); Heparin does NOT (safe in pregnancy)"
+    - "Warfarin-induced skin necrosis: due to early Protein C depletion → bridge with heparin"
+    - "HIT Type II: paradoxical THROMBOSIS (not just bleeding) → stop heparin, use argatroban"
+    - "Aspirin: irreversible COX-1 inhibition for platelet's LIFETIME (7-10 days)"
+    - "Clopidogrel: prodrug needing CYP2C19; Ticagrelor: active drug, reversible P2Y12 block"
+    - "DOACs NOT for mechanical heart valves (RE-ALIGN trial failure)"
+    - "tPA (alteplase) is fibrin-specific — preferred thrombolytic for MI/stroke"
+
+mcqs:
+  - question: "A patient on heparin develops thrombocytopenia on day 7 with a new DVT. The most likely diagnosis and next step is:"
+    options:
+      - "HIT Type I — continue heparin"
+      - "HIT Type II — switch to argatroban"
+      - "DIC — give FFP"
+      - "ITP — give steroids"
+    answer: "HIT Type II — switch to argatroban"
+    explanation: >
+      HIT Type II occurs 5-10 days after heparin, with >50% platelet drop and paradoxical thrombosis (new DVT).
+      It is immune-mediated (anti-PF4-heparin antibodies). Stop ALL heparin immediately and switch to a direct
+      thrombin inhibitor (argatroban or bivalirudin). Do NOT give warfarin yet.
+      📚 KD Tripathi, 8th Ed, Ch.44 (p.632)
+    difficulty: 2
+
+  - question: "Warfarin-induced skin necrosis occurs due to early depletion of:"
+    options:
+      - "Factor VII"
+      - "Factor X"
+      - "Protein C"
+      - "Antithrombin III"
+    answer: "Protein C"
+    explanation: >
+      Protein C has the shortest half-life (~8h) among vitamin K-dependent factors. Warfarin depletes it first,
+      creating a transient hypercoagulable state → microvascular thrombosis → skin necrosis. More common in
+      Protein C deficiency. Prevented by bridging with heparin.
+      📚 KD Tripathi, 8th Ed, Ch.44 (p.638)
+    difficulty: 2
+
+  - question: "Which anticoagulant is safe during pregnancy?"
+    options:
+      - "Warfarin"
+      - "Enoxaparin"
+      - "Dabigatran"
+      - "Rivaroxaban"
+    answer: "Enoxaparin"
+    explanation: >
+      Heparin (UFH and LMWH like enoxaparin) does NOT cross the placenta — safe in pregnancy.
+      Warfarin crosses the placenta → teratogenic (nasal hypoplasia, stippled epiphyses). DOACs are contraindicated
+      in pregnancy (insufficient safety data + potential teratogenicity).
+      📚 KD Tripathi, 8th Ed, Ch.44 (p.633)
+    difficulty: 1
+
+  - question: "Clopidogrel resistance is most commonly due to:"
+    options:
+      - "Poor compliance"
+      - "CYP2C19 poor metabolizer status"
+      - "Drug interaction with aspirin"
+      - "High platelet count"
+    answer: "CYP2C19 poor metabolizer status"
+    explanation: >
+      Clopidogrel is a prodrug requiring CYP2C19 for conversion to active metabolite. Poor metabolizers
+      (CYP2C19*2/*3 polymorphisms) generate less active drug → reduced antiplatelet effect. This is why
+      ticagrelor (active drug) or prasugrel (less CYP-dependent) may be preferred. Also, PPIs (omeprazole)
+      inhibit CYP2C19, potentially reducing clopidogrel efficacy.
+      📚 KD Tripathi, 8th Ed, Ch.44 (p.644)
+    difficulty: 2
+
+  - question: "The thrombolytic agent of choice for acute ischemic stroke is:"
+    options:
+      - "Streptokinase"
+      - "Alteplase (tPA)"
+      - "Urokinase"
+      - "Aminocaproic acid"
+    answer: "Alteplase (tPA)"
+    explanation: >
+      Alteplase (recombinant tPA) is fibrin-specific and the DOC for acute ischemic stroke (within 4.5h window).
+      Streptokinase is NOT used for stroke (non-fibrin-specific, higher bleeding risk, antigenic).
+      Aminocaproic acid is an antifibrinolytic (opposite effect).
+      📚 KD Tripathi, 8th Ed, Ch.44 (p.648)
+    difficulty: 1

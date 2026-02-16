@@ -1,0 +1,160 @@
+topic_id: nsaids-analgesics
+name: NSAIDs & Analgesics
+description: Non-steroidal anti-inflammatory drugs, opioid analgesics, and non-opioid analgesics — mechanisms, classification, and toxicity
+high_yield: true
+nmc_codes:
+- code: PH1.14
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  NSAIDs are among the most commonly prescribed drugs worldwide. They inhibit cyclooxygenase (COX) enzymes, reducing
+  prostaglandin synthesis. Understanding COX-1 vs COX-2 selectivity, aspirin's unique irreversible mechanism, and
+  opioid pharmacology is essential for NEET-PG.
+  📚 KD Tripathi, 8th Ed, Ch.14-15 (p.189-220); 📚 Goodman & Gilman's, 14th Ed, Ch.37-38
+
+learning_objectives:
+  - Differentiate COX-1 and COX-2 with their physiological roles
+  - Classify NSAIDs by COX selectivity
+  - Describe aspirin's unique mechanism and clinical uses
+  - List common NSAID adverse effects and contraindications
+  - Classify opioid analgesics and describe their receptor pharmacology
+  - Describe opioid toxicity and its management
+
+content:
+  atoms:
+    - id: nsaids-mechanism
+      title: "NSAIDs — Mechanism & Classification"
+      text: >
+        Mechanism: Inhibit COX → ↓prostaglandin synthesis.
+        COX-1: constitutive — gastric mucosal protection (PGE2), platelet aggregation (TXA2), renal blood flow.
+        COX-2: inducible — inflammation, pain, fever. Also constitutive in kidney, brain, endothelium (PGI2).
+        Non-selective COX inhibitors: Aspirin (irreversible), Ibuprofen, Naproxen, Diclofenac, Indomethacin, Piroxicam, Ketorolac.
+        Preferential COX-2: Nimesulide, Meloxicam, Nabumetone.
+        Selective COX-2 (Coxibs): Celecoxib, Etoricoxib. ↓GI side effects but ↑cardiovascular risk (↓PGI2, preserved TXA2 → prothrombotic).
+        Aspirin: ONLY irreversible COX inhibitor — acetylates COX at serine residue. Low-dose (75-150mg) = antiplatelet (COX-1 in platelets);
+        Intermediate dose (300-600mg) = analgesic/antipyretic; High dose (3-6g/day) = anti-inflammatory.
+        📚 KD Tripathi, 8th Ed, Ch.14 (p.189-200)
+
+    - id: nsaid-toxicity
+      title: "NSAID Adverse Effects"
+      text: >
+        GI toxicity: most common — dyspepsia, gastric ulcers, GI bleeding. Due to ↓PGE2 (protective mucus/bicarbonate).
+        Risk factors: elderly, H. pylori, concurrent steroids/anticoagulants, history of PUD.
+        Prevention: co-prescribe PPI or misoprostol (PGE1 analog). Use COX-2 selective if GI risk high.
+        Renal toxicity: ↓PGE2/PGI2 → ↓renal blood flow → AKI (especially dehydrated/CHF patients). Na+/water retention,
+        hyperkalemia, papillary necrosis (chronic use — "analgesic nephropathy"), interstitial nephritis.
+        Cardiovascular: COX-2 inhibitors ↑MI/stroke risk (rofecoxib withdrawn — VIGOR trial). Naproxen safest CV profile.
+        Other: bronchospasm (aspirin-exacerbated respiratory disease — AERD/Samter's triad: asthma + nasal polyps + aspirin sensitivity),
+        Reye syndrome (aspirin in children with viral illness → hepatic encephalopathy — AVOID aspirin in <18 for fever).
+        Aspirin overdose: Respiratory alkalosis (early, central stimulation) → Metabolic acidosis (late, uncoupling of oxidative phosphorylation).
+        Treatment: NaHCO3 (alkalinize urine → ion trapping), Activated charcoal, Hemodialysis (severe).
+        📚 KD Tripathi, 8th Ed, Ch.14 (p.200-208)
+
+    - id: opioid-analgesics
+      title: "Opioid Analgesics"
+      text: >
+        Receptors: μ (mu — analgesia, euphoria, respiratory depression, miosis, constipation, dependence),
+        κ (kappa — spinal analgesia, sedation, dysphoria), δ (delta — analgesia, mood).
+        Strong agonists: Morphine (prototype), Fentanyl (100x morphine, rapid onset — patches, IV), Methadone (long t½, used in
+        opioid substitution/chronic pain, QT prolongation), Pethidine/Meperidine (serotonin syndrome with MAOIs, seizures with accumulation).
+        Weak agonists: Codeine (prodrug → CYP2D6 → morphine), Tramadol (μ agonist + NE/5-HT reuptake inhibitor — seizure risk, serotonin syndrome).
+        Partial agonist: Buprenorphine (partial μ, ceiling effect for respiratory depression — used in opioid dependence with naloxone = Suboxone).
+        Antagonists: Naloxone (IV, short t½ — opioid overdose emergency), Naltrexone (oral, long-acting — relapse prevention in opioid/alcohol dependence).
+        Morphine side effects: Respiratory depression (most dangerous), Constipation (does NOT develop tolerance), Miosis (pinpoint pupils),
+        Nausea/vomiting (CTZ stimulation), Urinary retention, Histamine release (itching, bronchospasm, hypotension).
+        📚 KD Tripathi, 8th Ed, Ch.15 (p.209-220)
+
+  clinical:
+    - title: "Clinical Correlation: Opioid Overdose"
+      text: >
+        Triad: pinpoint pupils + respiratory depression + coma. Treatment: Naloxone 0.4-2mg IV (may need repeated doses,
+        especially for long-acting opioids like methadone). Monitor for 4-6h after last naloxone dose.
+        Buprenorphine overdose: higher naloxone doses needed (high μ-receptor affinity).
+    - title: "Clinical Correlation: Aspirin in Cardiovascular Prevention"
+      text: >
+        Low-dose aspirin (75-150mg) irreversibly inhibits COX-1 in platelets → ↓TXA2 → antiplatelet for life of platelet (7-10 days).
+        Platelets cannot synthesize new COX (no nucleus). Endothelial cells can → PGI2 recovers.
+        Primary prevention: no longer recommended for low-risk individuals (bleeding risk outweighs benefit).
+
+  high_yield_points:
+    - "Aspirin: ONLY irreversible COX inhibitor — effect lasts for platelet's LIFETIME (7-10 days)"
+    - "Low-dose aspirin = antiplatelet; High-dose aspirin = anti-inflammatory"
+    - "COX-2 inhibitors: ↓GI risk but ↑cardiovascular risk (prothrombotic)"
+    - "Reye syndrome: aspirin + viral illness in children → AVOID aspirin <18"
+    - "Aspirin overdose: respiratory alkalosis (early) → metabolic acidosis (late)"
+    - "NSAID GI toxicity prevented by PPI or Misoprostol (PGE1 analog)"
+    - "Morphine: constipation is the ONLY side effect with NO tolerance development"
+    - "Naloxone: opioid antagonist for overdose — short t½, may need repeated doses"
+    - "Tramadol: μ agonist + NE/5-HT reuptake inhibitor — seizure and serotonin syndrome risk"
+    - "Pethidine + MAOI = serotonin syndrome (CONTRAINDICATED combination)"
+
+mcqs:
+  - question: "Aspirin is unique among NSAIDs because it:"
+    options:
+      - "Is the most potent anti-inflammatory"
+      - "Selectively inhibits COX-2"
+      - "Irreversibly inhibits COX by acetylation"
+      - "Does not cause GI side effects"
+    answer: "Irreversibly inhibits COX by acetylation"
+    explanation: >
+      Aspirin covalently acetylates a serine residue in the COX enzyme, causing IRREVERSIBLE inhibition.
+      All other NSAIDs are reversible competitive inhibitors. This is why aspirin's antiplatelet effect lasts
+      for the entire platelet lifespan (7-10 days).
+      📚 KD Tripathi, 8th Ed, Ch.14 (p.192)
+    difficulty: 1
+
+  - question: "The most dangerous side effect of morphine that requires monitoring is:"
+    options:
+      - "Constipation"
+      - "Nausea"
+      - "Respiratory depression"
+      - "Miosis"
+    answer: "Respiratory depression"
+    explanation: >
+      Respiratory depression is the most life-threatening effect of opioids, caused by depression of the
+      brainstem respiratory center (↓sensitivity to CO2). It is dose-dependent and the primary cause of
+      opioid overdose deaths. Constipation, while universal, is not life-threatening.
+      📚 KD Tripathi, 8th Ed, Ch.15 (p.213)
+    difficulty: 1
+
+  - question: "A child with chickenpox should NOT receive aspirin because of the risk of:"
+    options:
+      - "Stevens-Johnson syndrome"
+      - "Reye syndrome"
+      - "Aplastic anemia"
+      - "Nephrotic syndrome"
+    answer: "Reye syndrome"
+    explanation: >
+      Reye syndrome is a rare but potentially fatal condition of acute hepatic encephalopathy associated with
+      aspirin use during viral infections (varicella, influenza) in children. Use paracetamol/ibuprofen instead.
+      📚 KD Tripathi, 8th Ed, Ch.14 (p.205)
+    difficulty: 1
+
+  - question: "COX-2 selective inhibitors increase cardiovascular risk because they:"
+    options:
+      - "Increase platelet aggregation via TXA2"
+      - "Inhibit PGI2 without inhibiting TXA2 → prothrombotic state"
+      - "Directly damage myocardium"
+      - "Cause fluid retention and hypertension only"
+    answer: "Inhibit PGI2 without inhibiting TXA2 → prothrombotic state"
+    explanation: >
+      COX-2 inhibitors block endothelial PGI2 (antithrombotic, COX-2 derived) but do NOT block platelet TXA2
+      (prothrombotic, COX-1 derived). This creates a prothrombotic imbalance → increased MI/stroke risk.
+      📚 KD Tripathi, 8th Ed, Ch.14 (p.203)
+    difficulty: 2
+
+  - question: "The opioid antagonist used in emergency management of opioid overdose is:"
+    options:
+      - "Naltrexone"
+      - "Naloxone"
+      - "Buprenorphine"
+      - "Methadone"
+    answer: "Naloxone"
+    explanation: >
+      Naloxone is a competitive μ-opioid antagonist given IV/IM/IN for acute opioid overdose. It has rapid onset
+      (1-2 min IV) but short duration (30-60 min) — may need repeated doses for long-acting opioids.
+      Naltrexone is oral, long-acting — used for relapse prevention, not emergencies.
+      📚 KD Tripathi, 8th Ed, Ch.15 (p.218)
+    difficulty: 1

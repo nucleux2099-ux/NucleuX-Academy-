@@ -1,0 +1,144 @@
+topic_id: postpartum-hemorrhage
+name: Postpartum Hemorrhage
+description: Causes, prevention, and management of primary and secondary PPH — the 4 T's framework
+high_yield: true
+nmc_codes:
+- code: OG14.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Postpartum hemorrhage (PPH) is blood loss ≥500 mL after vaginal delivery or ≥1000 mL after cesarean section.
+  Primary PPH occurs within 24 hours of delivery; secondary PPH occurs 24 hours to 6 weeks postpartum.
+  PPH is the leading cause of maternal mortality worldwide. The 4 T's mnemonic (Tone, Trauma, Tissue, Thrombin)
+  helps identify causes. Uterine atony accounts for 70-80% of all PPH.
+  📚 Williams Obstetrics, 26th Ed, Ch.41 | 📚 DC Dutta, 9th Ed, Ch.24
+
+learning_objectives:
+  - Define primary and secondary PPH with blood loss thresholds
+  - Enumerate the 4 T's of PPH etiology
+  - Describe stepwise management of atonic PPH
+  - List surgical interventions for intractable PPH
+  - Outline the role of AMTSL in PPH prevention
+
+content:
+  atoms:
+    - id: four-ts
+      title: "Etiology — The 4 T's"
+      text: >
+        Tone (70-80%): Uterine atony — most common cause. Risk factors: overdistended uterus (twins,
+        polyhydramnios, macrosomia), prolonged labor, grand multiparity, chorioamnionitis, uterine relaxants.
+        Trauma (20%): Genital tract lacerations (cervical, vaginal, perineal), uterine rupture, uterine inversion.
+        Tissue (10%): Retained placenta, cotyledon, membranes, or succenturiate lobe.
+        Thrombin (<1%): Coagulation disorders — DIC, thrombocytopenia, anticoagulant therapy, amniotic fluid embolism.
+        📚 DC Dutta, 9th Ed, Ch.24 (p.410-415)
+
+    - id: management-atonic
+      title: "Stepwise Management of Atonic PPH"
+      text: >
+        Step 1: Bimanual uterine massage + empty bladder.
+        Step 2: Uterotonics — Oxytocin 20-40 IU in 1L NS (first-line), Methylergometrine 0.2 mg IM
+        (contraindicated in HTN), Carboprost (PGF2α) 250 µg IM (up to 8 doses, contraindicated in asthma),
+        Misoprostol 800-1000 µg rectal.
+        Step 3: Uterine tamponade — Bakri balloon, condom catheter tamponade.
+        Step 4: Surgical — B-Lynch compression suture, uterine artery ligation, internal iliac artery
+        ligation, hysterectomy (last resort).
+        Tranexamic acid 1g IV within 3 hours of delivery (WOMAN trial — reduces death from bleeding).
+        📚 Williams Obstetrics, 26th Ed, Ch.41 (p.780-790)
+
+    - id: secondary-pph
+      title: "Secondary PPH"
+      text: >
+        Occurs 24 hours to 6 weeks after delivery. Causes: subinvolution of placental site,
+        retained products of conception, endometritis, placental polyp.
+        Management: antibiotics + uterotonic. If retained products → USG-guided evacuation.
+        📚 DC Dutta, 9th Ed, Ch.24 (p.420)
+
+  clinical:
+    - title: "Uterine Inversion"
+      text: >
+        Rare but life-threatening cause of PPH. The uterine fundus collapses into or through the cervix.
+        Caused by excessive cord traction on fundally implanted placenta. Presents with neurogenic shock
+        (disproportionate to blood loss), pain, and a mass at/through the introitus. Treatment: Johnson's
+        maneuver (manual replacement) under GA. Do NOT remove the placenta before reposition.
+
+  high_yield_points:
+    - "Uterine ATONY is the most common cause of PPH (70-80%)"
+    - "PPH defined as blood loss ≥500 mL (vaginal) or ≥1000 mL (CS)"
+    - "4 T's: Tone, Trauma, Tissue, Thrombin"
+    - "Carboprost (PGF2α) contraindicated in ASTHMA; Methylergometrine contraindicated in HTN"
+    - "B-Lynch suture = compression suture for atonic PPH (preserves uterus)"
+    - "Tranexamic acid 1g IV within 3 hours reduces PPH mortality (WOMAN trial)"
+    - "Bakri balloon/condom catheter = uterine tamponade before surgical intervention"
+    - "AMTSL (oxytocin + CCT + uterine massage) reduces PPH risk by 60%"
+    - "Internal iliac artery ligation reduces pulse pressure by 85% in pelvis"
+    - "Secondary PPH: think retained products or endometritis"
+
+mcqs:
+  - question: "The most common cause of primary postpartum hemorrhage is:"
+    options:
+      - "Genital tract trauma"
+      - "Uterine atony"
+      - "Retained placental tissue"
+      - "Coagulation disorder"
+    answer: "Uterine atony"
+    explanation: >
+      Uterine atony accounts for 70-80% of PPH. The uterus fails to contract adequately after
+      placental separation, and the open sinuses at the placental site continue to bleed.
+      📚 DC Dutta, 9th Ed, Ch.24 (p.410)
+    difficulty: 1
+
+  - question: "Carboprost (15-methyl PGF2α) used in PPH is contraindicated in:"
+    options:
+      - "Hypertension"
+      - "Asthma"
+      - "Diabetes mellitus"
+      - "Heart disease"
+    answer: "Asthma"
+    explanation: >
+      Carboprost causes bronchospasm and is contraindicated in asthma. Methylergometrine is
+      contraindicated in hypertension (causes vasoconstriction). Carboprost also causes diarrhea
+      and can raise body temperature.
+      📚 Williams Obstetrics, 26th Ed, Ch.41 (p.785)
+    difficulty: 1
+
+  - question: "The WOMAN trial demonstrated that which drug reduces mortality from PPH when given within 3 hours?"
+    options:
+      - "Oxytocin"
+      - "Tranexamic acid"
+      - "Carboprost"
+      - "Misoprostol"
+    answer: "Tranexamic acid"
+    explanation: >
+      The WOMAN trial (2017) showed tranexamic acid 1g IV given within 3 hours of delivery
+      significantly reduces death due to bleeding without increasing thromboembolic events.
+      📚 Williams Obstetrics, 26th Ed, Ch.41
+    difficulty: 2
+
+  - question: "B-Lynch suture is used for:"
+    options:
+      - "Cervical cerclage"
+      - "Uterine compression in atonic PPH"
+      - "Uterine rupture repair"
+      - "Vaginal laceration repair"
+    answer: "Uterine compression in atonic PPH"
+    explanation: >
+      The B-Lynch brace suture compresses the uterus mechanically when uterotonics and tamponade
+      fail. It preserves the uterus and fertility, unlike hysterectomy. It is applied at laparotomy.
+      📚 DC Dutta, 9th Ed, Ch.24 (p.419)
+    difficulty: 1
+
+  - question: "A woman presents with PPH and neurogenic shock disproportionate to visible blood loss. On examination, a mass is felt at the introitus. The most likely diagnosis is:"
+    options:
+      - "Cervical fibroid polyp"
+      - "Uterine inversion"
+      - "Uterine rupture"
+      - "Prolapsed uterus"
+    answer: "Uterine inversion"
+    explanation: >
+      Neurogenic shock out of proportion to blood loss with a mass at the introitus is classic for
+      acute uterine inversion. Treatment is Johnson's maneuver (manual repositioning) under anesthesia.
+      The placenta should NOT be removed before repositioning as it may worsen hemorrhage.
+      📚 DC Dutta, 9th Ed, Ch.24 (p.425)
+    difficulty: 2

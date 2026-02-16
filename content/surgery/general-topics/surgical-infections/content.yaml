@@ -1,0 +1,145 @@
+overview: |
+  Surgical infections range from wound infections (SSI) to life-threatening necrotizing fasciitis and sepsis.
+  Understanding wound classification (clean/contaminated/dirty), SSI prevention, appropriate antibiotic use,
+  and management of specific infections (gas gangrene, tetanus, necrotizing fasciitis) is critical.
+
+learning_objectives:
+  - Classify surgical wounds and predict SSI risk
+  - Apply SSI prevention bundles including antibiotic prophylaxis
+  - Recognize and manage necrotizing fasciitis and gas gangrene
+  - Understand tetanus prophylaxis and treatment
+  - Apply principles of antibiotic use in surgical practice
+
+content:
+  atoms:
+    - title: Wound Classification & SSI Rates
+      text: |
+        **Clean:** No viscus opened, no inflammation, no break in technique. SSI rate 1-2%. E.g., thyroidectomy, hernia repair.
+        **Clean-contaminated:** Viscus opened under controlled conditions. SSI 5-10%. E.g., cholecystectomy, elective bowel surgery.
+        **Contaminated:** Gross spillage, open traumatic wound <4h, acute inflammation. SSI 10-20%.
+        **Dirty/Infected:** Pus, perforated viscus, traumatic wound >4h. SSI 20-40%.
+        **SSI prevention:** Prophylactic antibiotics (within 60 min before incision), skin preparation (chlorhexidine-alcohol),
+        normothermia, euglycemia, minimize operative time, hair clipping (not shaving).
+        📚 Bailey & Love, 28th Ed, Ch.5; Sabiston, 21st Ed, Ch.11
+
+    - title: Surgical Site Infections
+      text: |
+        **Superficial SSI:** Within 30 days, involves skin/subcutaneous tissue only. MC organism: Staph aureus.
+        **Deep SSI:** Involves fascia/muscle. Within 30 days (or 1 year if implant).
+        **Organ/Space SSI:** Any organ/space opened during surgery (e.g., intra-abdominal abscess).
+        **MC organism overall:** Staphylococcus aureus (clean wounds). GI surgery: E. coli, Bacteroides.
+        **MRSA:** Vancomycin or teicoplanin. Screen high-risk patients preoperatively.
+        📚 Sabiston, 21st Ed, Ch.11
+
+    - title: Necrotizing Fasciitis
+      text: |
+        Rapidly progressive infection of fascia and subcutaneous tissue. Surgical EMERGENCY.
+        **Type I:** Polymicrobial (MC) — synergistic: aerobes + anaerobes. Often in diabetics, post-operative.
+        **Type II:** Monomicrobial — Group A Streptococcus (MC) or Staph aureus. Healthy individuals.
+        **Fournier's gangrene:** Necrotizing fasciitis of perineum/genitalia.
+        **Clinical:** Pain out of proportion, crepitus, dusky skin, bullae, rapid progression, sepsis.
+        **Treatment:** EMERGENCY aggressive surgical debridement (often multiple debridements) +
+        broad-spectrum antibiotics (pip-taz + clindamycin + vancomycin). Mortality 20-40%.
+        📚 Bailey & Love, 28th Ed, Ch.5
+
+    - title: Gas Gangrene & Tetanus
+      text: |
+        **Gas gangrene (Clostridial myonecrosis):** Clostridium perfringens (MC, produces alpha-toxin/lecithinase).
+        Contaminated wounds, war injuries. Crepitus, foul-smelling discharge, rapid progression, toxemia.
+        X-ray: Gas in tissues. Treatment: Radical debridement + high-dose IV penicillin + hyperbaric oxygen.
+        **Tetanus:** Clostridium tetani (exotoxin: tetanospasmin — blocks inhibitory neurotransmitters GABA/glycine).
+        Trismus (lockjaw), risus sardonicus, opisthotonos, generalized spasms.
+        Treatment: Human tetanus immunoglobulin (HTIG), metronidazole (antibiotic of choice for tetanus),
+        wound debridement, benzodiazepines for spasms, supportive ICU care.
+        📚 Bailey & Love, 28th Ed, Ch.5; Sabiston, 21st Ed, Ch.11
+
+    - title: Antibiotic Prophylaxis Principles
+      text: |
+        **Timing:** Within 60 minutes before skin incision (optimal). Redose if surgery >4h or major blood loss.
+        **Duration:** Single dose usually sufficient. Maximum 24 hours post-op.
+        **Choice:** Clean surgery: Cefazolin (1st gen cephalosporin). GI surgery: Cefazolin + metronidazole.
+        Biliary: Cefuroxime or ceftriaxone. MRSA risk: Add vancomycin.
+        **Not indicated:** Clean surgery without implant (thyroidectomy, hernia — though many give it).
+        📚 Sabiston, 21st Ed, Ch.11
+
+  clinical: |
+    **Approach to Surgical Site Infection:**
+    1. Suspect: Fever, wound erythema/warmth/discharge POD 3-7
+    2. Superficial: Open wound, drain pus, wound care (antibiotics only if cellulitis/systemic sepsis)
+    3. Deep/Organ-space: Imaging (CT) → percutaneous drainage or re-exploration
+    4. Necrotizing fasciitis: Emergency debridement — do not delay for imaging
+    5. Send cultures before starting antibiotics
+    6. MRSA screening in high-risk patients
+
+  high_yield_points:
+    - "MC organism in clean wound SSI: Staphylococcus aureus"
+    - "Clean wound SSI rate: 1-2%; Dirty wound: 20-40%"
+    - "Necrotizing fasciitis: Pain out of proportion, crepitus — EMERGENCY debridement"
+    - "Fournier's gangrene: Necrotizing fasciitis of perineum/genitalia"
+    - "Gas gangrene: Clostridium perfringens, alpha-toxin (lecithinase), treat with penicillin + debridement"
+    - "Tetanus toxin: Tetanospasmin blocks GABA/glycine (inhibitory neurotransmitters)"
+    - "Antibiotic of choice for tetanus: Metronidazole (not penicillin — penicillin is GABA antagonist)"
+    - "Prophylactic antibiotic timing: Within 60 min before incision"
+    - "SSI prevention: Chlorhexidine-alcohol skin prep > povidone-iodine"
+    - "Type I NF: Polymicrobial (MC); Type II: Group A Streptococcus"
+
+mcqs:
+  - question: "The antibiotic of choice for treatment of tetanus is:"
+    options:
+      a: Penicillin
+      b: Metronidazole
+      c: Ceftriaxone
+      d: Vancomycin
+    answer: b
+    explanation: |
+      Metronidazole is preferred over penicillin for tetanus because penicillin is a GABA antagonist
+      which can theoretically worsen spasms. Metronidazole kills C. tetani effectively without this risk.
+      📚 Bailey & Love, 28th Ed, Ch.5
+
+  - question: "A diabetic patient develops rapidly spreading erythema of the perineum with crepitus and severe sepsis. The diagnosis is:"
+    options:
+      a: Perianal abscess
+      b: Fournier's gangrene
+      c: Ischiorectal abscess
+      d: Pilonidal sinus infection
+    answer: b
+    explanation: |
+      Fournier's gangrene is necrotizing fasciitis of the perineum and genitalia. Common in diabetics.
+      It is a surgical emergency requiring aggressive debridement, broad-spectrum antibiotics, and
+      often multiple return trips to theatre. Mortality is 20-40%. 📚 Bailey & Love, 28th Ed, Ch.5
+
+  - question: "The optimal timing for prophylactic antibiotic administration in surgery is:"
+    options:
+      a: At the time of skin incision
+      b: Within 60 minutes before skin incision
+      c: 2 hours before surgery
+      d: Post-operatively in recovery
+    answer: b
+    explanation: |
+      Antibiotics should be given within 60 minutes before incision to achieve adequate tissue levels
+      at the time of potential contamination. Giving after incision or too early reduces efficacy.
+      📚 Sabiston, 21st Ed, Ch.11
+
+  - question: "Gas gangrene is most commonly caused by:"
+    options:
+      a: Clostridium tetani
+      b: Clostridium perfringens
+      c: Clostridium difficile
+      d: Clostridium botulinum
+    answer: b
+    explanation: |
+      C. perfringens produces alpha-toxin (lecithinase/phospholipase C) which destroys cell membranes.
+      Gas in tissues on X-ray is characteristic. Treatment: Radical surgical debridement + IV penicillin
+      + hyperbaric oxygen. 📚 Bailey & Love, 28th Ed, Ch.5
+
+  - question: "A clean surgical wound (e.g., thyroidectomy) has an expected SSI rate of:"
+    options:
+      a: 1-2%
+      b: 5-10%
+      c: 10-20%
+      d: 20-40%
+    answer: a
+    explanation: |
+      Clean wounds have the lowest SSI rate (1-2%). Clean-contaminated: 5-10%. Contaminated: 10-20%.
+      Dirty: 20-40%. Wound classification is the most important predictor of SSI.
+      📚 Sabiston, 21st Ed, Ch.11

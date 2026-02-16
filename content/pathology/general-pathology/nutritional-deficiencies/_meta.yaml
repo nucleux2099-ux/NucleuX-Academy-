@@ -1,0 +1,166 @@
+topic_id: nutritional-deficiencies
+name: Nutritional Deficiencies
+description: Vitamin deficiencies, protein-energy malnutrition, and their pathological consequences
+high_yield: true
+
+overview: >
+  Nutritional deficiencies cause specific pathological syndromes based on the nutrient involved.
+  Vitamin deficiencies (A, B1, B3, B12, C, D, K) and protein-energy malnutrition (kwashiorkor, marasmus)
+  are frequently tested in NEET-PG, especially their clinical presentations and pathology.
+  📚 Robbins, 10th Ed, Ch.9 (p.437-462)
+
+learning_objectives:
+  - Describe the clinical features and pathology of major vitamin deficiencies
+  - Differentiate kwashiorkor from marasmus
+  - Explain the pathogenesis of scurvy, rickets, and pellagra
+  - Understand the role of vitamins in metabolic pathways
+
+content:
+  atoms:
+    - id: vitamin-a
+      title: "Vitamin A Deficiency & Excess"
+      text: >
+        Vitamin A (retinol): essential for vision (rhodopsin), epithelial integrity, immune function.
+        Deficiency: night blindness (earliest) → xerophthalmia → Bitot spots (keratinized conjunctival plaques)
+        → keratomalacia → corneal destruction → blindness. Squamous metaplasia of respiratory/urinary epithelium.
+        Also causes immune deficiency (increased susceptibility to measles).
+        Excess: teratogenic (pregnancy contraindication); hepatotoxicity; pseudotumor cerebri.
+        📚 Robbins, 10th Ed, Ch.9 (p.440-443)
+
+    - id: b-vitamins
+      title: "B Vitamin Deficiencies"
+      text: >
+        B1 (Thiamine): Dry beriberi (peripheral neuropathy), Wet beriberi (high-output cardiac failure + edema),
+        Wernicke encephalopathy (confusion, ataxia, ophthalmoplegia — acute, reversible),
+        Korsakoff syndrome (confabulation, memory loss — chronic, irreversible). Common in alcoholics.
+        B2 (Riboflavin): cheilosis (lip fissures), glossitis, corneal vascularization.
+        B3 (Niacin): Pellagra — 3 D's: Dermatitis (sun-exposed, Casal necklace), Diarrhea, Dementia (+Death if untreated).
+        Caused by corn-based diet (niacin bound), Hartnup disease, carcinoid syndrome (tryptophan diverted to serotonin).
+        B6 (Pyridoxine): sideroblastic anemia (isoniazid-induced), peripheral neuropathy, seizures in infants.
+        B9 (Folate): megaloblastic anemia, neural tube defects in fetus. No neurological symptoms (unlike B12).
+        B12 (Cobalamin): megaloblastic anemia + subacute combined degeneration of spinal cord
+        (posterior columns + lateral corticospinal tracts). Causes: pernicious anemia (anti-IF antibodies), strict veganism,
+        Diphyllobothrium latum (fish tapeworm), terminal ileum disease/resection.
+        📚 Robbins, 10th Ed, Ch.9 (p.443-450)
+
+    - id: vitamin-c
+      title: "Vitamin C (Ascorbic Acid) Deficiency — Scurvy"
+      text: >
+        Vitamin C is essential for collagen synthesis (hydroxylation of proline and lysine residues).
+        Scurvy: poor wound healing, bleeding gums (gingival swelling/hemorrhage), perifollicular hemorrhages,
+        petechiae, ecchymoses, subperiosteal hemorrhage (painful limbs in children), loosening of teeth,
+        "corkscrew" hairs. Also impairs iron absorption.
+        📚 Robbins, 10th Ed, Ch.9 (p.450-452)
+
+    - id: vitamin-d
+      title: "Vitamin D Deficiency"
+      text: >
+        Vitamin D: essential for calcium and phosphate homeostasis.
+        Deficiency → decreased calcium absorption → secondary hyperparathyroidism.
+        Children: Rickets — craniotabes, rachitic rosary (costochondral swelling), bowing of legs, widened epiphyses,
+        frontal bossing, Harrison groove.
+        Adults: Osteomalacia — bone pain, fractures, muscle weakness; unmineralized osteoid on biopsy.
+        Lab: ↓Ca, ↓PO4, ↑ALP, ↑PTH, ↓25(OH)D.
+        📚 Robbins, 10th Ed, Ch.9 (p.452-456)
+
+    - id: vitamin-k
+      title: "Vitamin K Deficiency"
+      text: >
+        Vitamin K: essential for γ-carboxylation of clotting factors II, VII, IX, X and proteins C & S.
+        Deficiency causes: neonates (hemorrhagic disease of newborn — sterile gut), malabsorption (biliary obstruction,
+        celiac), prolonged antibiotics (destroy gut flora), warfarin (vitamin K antagonist).
+        Lab: prolonged PT (factor VII has shortest half-life, affected first), then prolonged aPTT.
+        Treatment: vitamin K injection corrects warfarin/deficiency bleeding.
+        📚 Robbins, 10th Ed, Ch.9 (p.456-458)
+
+  clinical:
+    - title: "Kwashiorkor vs Marasmus"
+      text: >
+        Marasmus: total caloric deficiency → severe wasting, loss of muscle and fat, emaciated appearance,
+        growth retardation. NO edema. Serum albumin relatively preserved.
+        Kwashiorkor: PROTEIN deficiency with adequate calories → edema (hypoalbuminemia), fatty liver,
+        skin/hair changes (flag sign — alternating bands of light/dark hair), apathy, moon facies.
+        Kwashiorkor has WORSE prognosis due to impaired immune function.
+
+  high_yield_points:
+    - "Vitamin A deficiency: night blindness (earliest) → Bitot spots → keratomalacia → blindness"
+    - "Wernicke triad: Confusion + Ataxia + Ophthalmoplegia (thiamine/B1 deficiency, alcoholics)"
+    - "Pellagra (B3/niacin): 3 D's — Dermatitis, Diarrhea, Dementia (+ Death)"
+    - "Scurvy (vitamin C): defective collagen → bleeding gums, perifollicular hemorrhage, poor wound healing"
+    - "B12 deficiency: megaloblastic anemia + subacute combined degeneration (posterior + lateral columns)"
+    - "Folate deficiency: megaloblastic anemia WITHOUT neurological symptoms (unlike B12)"
+    - "Vitamin K dependent factors: II, VII, IX, X + Protein C & S (mnemonic: 1972 — factors 10, 9, 7, 2)"
+    - "Kwashiorkor = protein deficiency → edema, fatty liver; Marasmus = total calorie deficiency → wasting, NO edema"
+    - "Rickets (children) / Osteomalacia (adults) = vitamin D deficiency → unmineralized osteoid"
+    - "Carcinoid syndrome can cause pellagra (tryptophan diverted to serotonin instead of niacin)"
+
+mcqs:
+  - question: "A chronic alcoholic presents with confusion, ataxia, and lateral gaze palsy. Which vitamin deficiency is most likely?"
+    options:
+      - "Vitamin B12"
+      - "Vitamin B1 (Thiamine)"
+      - "Vitamin B3 (Niacin)"
+      - "Vitamin C"
+    answer: "Vitamin B1 (Thiamine)"
+    explanation: >
+      This is Wernicke encephalopathy — the classic triad of confusion, ataxia, and ophthalmoplegia (lateral gaze palsy)
+      caused by thiamine (B1) deficiency. Common in alcoholics due to poor diet + impaired absorption. Requires
+      URGENT IV thiamine. If untreated, can progress to irreversible Korsakoff syndrome (confabulation, amnesia).
+      📚 Robbins, 10th Ed, Ch.9 (p.444)
+    difficulty: 1
+
+  - question: "A 2-year-old child from a developing country has edema, fatty liver, flag sign of hair, and skin depigmentation. Serum albumin is 1.5 g/dL. The diagnosis is:"
+    options:
+      - "Marasmus"
+      - "Kwashiorkor"
+      - "Scurvy"
+      - "Rickets"
+    answer: "Kwashiorkor"
+    explanation: >
+      Kwashiorkor = protein deficiency → hypoalbuminemia → edema, fatty liver (impaired lipoprotein synthesis),
+      flag sign (alternating light/dark hair bands), skin changes. Marasmus is total caloric deficiency with severe
+      wasting but NO edema and relatively preserved albumin. The key differentiator is EDEMA.
+      📚 Robbins, 10th Ed, Ch.9 (p.438)
+    difficulty: 1
+
+  - question: "A patient with carcinoid syndrome develops dermatitis in sun-exposed areas, diarrhea, and confusion. Which vitamin is deficient?"
+    options:
+      - "Vitamin A"
+      - "Vitamin B3 (Niacin)"
+      - "Vitamin B6"
+      - "Vitamin D"
+    answer: "Vitamin B3 (Niacin)"
+    explanation: >
+      Carcinoid tumors divert tryptophan to serotonin synthesis, reducing its availability for niacin (B3) production.
+      This causes pellagra — the 3 D's: Dermatitis (photosensitive), Diarrhea, Dementia. The dermatitis characteristically
+      appears in sun-exposed areas (Casal necklace around the neck).
+      📚 Robbins, 10th Ed, Ch.9 (p.446)
+    difficulty: 2
+
+  - question: "A 6-month-old infant presents with irritability, subperiosteal hemorrhages, and poor wound healing. The mother's diet lacks fresh fruits and vegetables. Deficiency of which vitamin is most likely?"
+    options:
+      - "Vitamin A"
+      - "Vitamin C"
+      - "Vitamin D"
+      - "Vitamin K"
+    answer: "Vitamin C"
+    explanation: >
+      Scurvy (vitamin C deficiency) in infants presents with irritability, subperiosteal hemorrhages (painful swelling
+      of limbs), and poor wound healing. Vitamin C is essential for collagen synthesis (proline/lysine hydroxylation).
+      The mother's diet lacking fruits/vegetables → deficient breast milk vitamin C.
+      📚 Robbins, 10th Ed, Ch.9 (p.451)
+    difficulty: 1
+
+  - question: "A patient on isoniazid therapy for tuberculosis develops peripheral neuropathy and sideroblastic anemia. Which vitamin supplementation would prevent this?"
+    options:
+      - "Vitamin B1 (Thiamine)"
+      - "Vitamin B6 (Pyridoxine)"
+      - "Vitamin B12"
+      - "Folic acid"
+    answer: "Vitamin B6 (Pyridoxine)"
+    explanation: >
+      Isoniazid inhibits pyridoxine (B6) metabolism, causing B6 deficiency → peripheral neuropathy and sideroblastic
+      anemia (B6 is a cofactor for ALA synthase, the first step in heme synthesis). Pyridoxine supplementation is
+      routinely given with isoniazid to prevent this complication.
+      📚 Robbins, 10th Ed, Ch.9 (p.447)
+    difficulty: 2

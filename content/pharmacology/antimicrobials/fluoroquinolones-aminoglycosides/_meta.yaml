@@ -1,0 +1,154 @@
+topic_id: fluoroquinolones-aminoglycosides
+name: Antibiotics — Fluoroquinolones & Aminoglycosides
+description: Mechanisms, spectrum, toxicity, and clinical use of fluoroquinolones and aminoglycosides
+high_yield: true
+nmc_codes:
+- code: PH1.44
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Fluoroquinolones and aminoglycosides are important antibiotic classes with distinct mechanisms. Fluoroquinolones inhibit
+  DNA gyrase and topoisomerase IV; aminoglycosides irreversibly bind 30S ribosomal subunit. Both have concentration-dependent
+  killing and significant toxicity profiles that are heavily tested in exams.
+  📚 KD Tripathi, 8th Ed, Ch.50, 52 (p.731-755); 📚 Goodman & Gilman's, 14th Ed, Ch.47, 48
+
+learning_objectives:
+  - Describe mechanism and spectrum of fluoroquinolones and aminoglycosides
+  - List generation-based classification of fluoroquinolones
+  - Explain aminoglycoside nephrotoxicity and ototoxicity
+  - Describe post-antibiotic effect and concentration-dependent killing
+  - List contraindications and drug interactions of each class
+
+content:
+  atoms:
+    - id: fluoroquinolones
+      title: "Fluoroquinolones"
+      text: >
+        Mechanism: Inhibit bacterial DNA gyrase (topoisomerase II, primary target in Gram-) and topoisomerase IV
+        (primary target in Gram+). Bactericidal. Concentration-dependent killing.
+        Generations: 1st: Nalidixic acid (urinary antiseptic only — no systemic use).
+        2nd: Ciprofloxacin (best anti-Pseudomonal quinolone), Ofloxacin, Norfloxacin (UTI only).
+        3rd: Levofloxacin (respiratory quinolone — covers S. pneumoniae), Gatifloxacin.
+        4th: Moxifloxacin (broadest — Gram+, Gram-, anaerobes, atypicals; NO renal excretion → useless for UTI).
+        Respiratory quinolones (Levofloxacin, Moxifloxacin): DOC for atypical pneumonia, TB (second-line).
+        Side effects: Tendon rupture (Achilles — risk with steroids, elderly), QT prolongation,
+        Phototoxicity, CNS effects (seizures — ↓GABA), Cartilage damage (AVOID in children <18 and pregnancy),
+        Aortic aneurysm/dissection (FDA warning), Peripheral neuropathy, Dysglycemia.
+        Drug interactions: Chelation with antacids/Ca2+/Fe2+/Mg2+ (↓absorption), CYP1A2 inhibition (↑theophylline levels).
+        Contraindicated: Children, Pregnancy, Epilepsy, G6PD deficiency, Myasthenia gravis (may worsen).
+        📚 KD Tripathi, 8th Ed, Ch.52 (p.746-755)
+
+    - id: aminoglycosides
+      title: "Aminoglycosides"
+      text: >
+        Mechanism: Irreversibly bind 30S ribosomal subunit → misreading of mRNA + block initiation complex → bactericidal.
+        One of few protein synthesis inhibitors that are BACTERICIDAL (others are mostly bacteriostatic).
+        Require aerobic conditions (oxygen-dependent uptake) → ineffective against anaerobes.
+        Concentration-dependent killing with significant post-antibiotic effect (PAE) → once-daily dosing preferred.
+        Drugs: Streptomycin (TB, plague, tularemia), Gentamicin (most common, serious Gram- infections, synergy with
+        beta-lactams for endocarditis), Amikacin (most resistant to aminoglycoside-modifying enzymes),
+        Tobramycin (Pseudomonal infections, CF — inhaled), Neomycin (topical/oral only — too toxic for parenteral).
+        NOT absorbed orally — given IM/IV. Neomycin oral used for hepatic encephalopathy (↓ammonia-producing gut bacteria)
+        and bowel preparation for surgery.
+        Side effects: Nephrotoxicity (accumulates in proximal tubular cells — reversible), Ototoxicity (cochlear → hearing loss,
+        vestibular → vertigo — IRREVERSIBLE; streptomycin is most vestibulotoxic, neomycin most cochleotoxic),
+        Neuromuscular blockade (potentiates NMJ blockers — caution in myasthenia gravis).
+        Monitoring: Peak (efficacy) and Trough (toxicity) levels. Narrow therapeutic index.
+        Synergy: Aminoglycoside + beta-lactam = synergistic (beta-lactam damages cell wall → ↑aminoglycoside entry).
+        📚 KD Tripathi, 8th Ed, Ch.50 (p.731-740)
+
+  clinical:
+    - title: "Clinical Correlation: Once-Daily Aminoglycoside Dosing"
+      text: >
+        Aminoglycosides show concentration-dependent killing — higher peak:MIC ratio = better efficacy.
+        Once-daily dosing provides higher peak levels (better killing) and drug-free interval (reduced toxicity — kidneys
+        recover during trough). Monitored using Hartford nomogram. Not recommended for endocarditis, burns, or pediatrics.
+    - title: "Clinical Correlation: Fluoroquinolone Tendon Rupture"
+      text: >
+        Risk factors: age >60, concurrent corticosteroids, renal impairment, prior tendon disorders.
+        Achilles tendon most commonly affected. Can occur weeks after starting drug. FDA black box warning.
+        Mechanism: quinolones are toxic to tenocytes, inhibit collagen synthesis, and promote MMP activity.
+
+  high_yield_points:
+    - "Fluoroquinolones target DNA gyrase (Gram-) and topoisomerase IV (Gram+)"
+    - "Ciprofloxacin: best anti-Pseudomonal fluoroquinolone"
+    - "Moxifloxacin: broadest spectrum FQ but NOT useful for UTI (no renal excretion)"
+    - "FQ contraindicated in children (<18) and pregnancy — cartilage damage"
+    - "Aminoglycosides: irreversible 30S binding → BACTERICIDAL (unusual for protein synthesis inhibitors)"
+    - "Aminoglycosides need aerobic conditions — NOT effective against anaerobes"
+    - "Aminoglycoside ototoxicity is IRREVERSIBLE; nephrotoxicity is usually reversible"
+    - "Amikacin: most resistant to aminoglycoside-modifying enzymes"
+    - "Neomycin: topical/oral only (hepatic encephalopathy, bowel prep) — too toxic for IV"
+    - "Aminoglycoside + beta-lactam = SYNERGISTIC (for endocarditis, serious Gram- infections)"
+
+mcqs:
+  - question: "Fluoroquinolones are contraindicated in children because of:"
+    options:
+      - "Hepatotoxicity"
+      - "Nephrotoxicity"
+      - "Cartilage/tendon damage"
+      - "Bone marrow suppression"
+    answer: "Cartilage/tendon damage"
+    explanation: >
+      Fluoroquinolones cause damage to developing cartilage (shown in juvenile animal studies).
+      They are contraindicated in children <18 and pregnant women. In adults, tendon damage (especially Achilles)
+      is a recognized complication.
+      📚 KD Tripathi, 8th Ed, Ch.52 (p.752)
+    difficulty: 1
+
+  - question: "Which aminoglycoside is most resistant to bacterial modifying enzymes?"
+    options:
+      - "Gentamicin"
+      - "Streptomycin"
+      - "Amikacin"
+      - "Neomycin"
+    answer: "Amikacin"
+    explanation: >
+      Amikacin has structural protection against most aminoglycoside-modifying enzymes (acetyltransferases,
+      phosphotransferases, nucleotidyltransferases). It is often effective against gentamicin-resistant organisms
+      and is reserved for resistant Gram-negative infections.
+      📚 KD Tripathi, 8th Ed, Ch.50 (p.736)
+    difficulty: 1
+
+  - question: "Aminoglycosides are ineffective against anaerobes because:"
+    options:
+      - "They cannot penetrate anaerobic cell walls"
+      - "Anaerobes lack 30S ribosomes"
+      - "Oxygen-dependent transport is required for drug uptake"
+      - "Anaerobes produce beta-lactamases"
+    answer: "Oxygen-dependent transport is required for drug uptake"
+    explanation: >
+      Aminoglycoside uptake into bacterial cells requires an oxygen-dependent energy-dependent transport mechanism
+      (electron transport chain). Anaerobes lack this aerobic transport → drug cannot enter → no effect.
+      📚 KD Tripathi, 8th Ed, Ch.50 (p.732)
+    difficulty: 2
+
+  - question: "Which fluoroquinolone is NOT useful for urinary tract infections?"
+    options:
+      - "Ciprofloxacin"
+      - "Norfloxacin"
+      - "Levofloxacin"
+      - "Moxifloxacin"
+    answer: "Moxifloxacin"
+    explanation: >
+      Moxifloxacin is primarily metabolized hepatically with minimal renal excretion — it does not achieve
+      adequate urinary concentrations for treating UTIs. Ciprofloxacin, norfloxacin, and levofloxacin are all
+      renally excreted and effective for UTIs.
+      📚 KD Tripathi, 8th Ed, Ch.52 (p.750)
+    difficulty: 2
+
+  - question: "A 70-year-old patient on gentamicin develops hearing loss. This ototoxicity is:"
+    options:
+      - "Dose-dependent and reversible"
+      - "Idiosyncratic and reversible"
+      - "Dose-dependent and irreversible"
+      - "Immune-mediated"
+    answer: "Dose-dependent and irreversible"
+    explanation: >
+      Aminoglycoside ototoxicity results from destruction of cochlear hair cells (hearing loss) or vestibular
+      hair cells (vertigo). Hair cells do not regenerate → damage is IRREVERSIBLE. Risk increases with
+      dose, duration, concurrent ototoxic drugs (loop diuretics), and renal impairment.
+      📚 KD Tripathi, 8th Ed, Ch.50 (p.738)
+    difficulty: 1

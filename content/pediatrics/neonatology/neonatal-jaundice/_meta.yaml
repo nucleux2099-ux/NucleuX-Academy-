@@ -1,45 +1,164 @@
 topic_id: neonatal-jaundice
 name: Neonatal Jaundice
-description: Neonatal Jaundice — NMC curriculum topic
+description: Physiological vs pathological jaundice, bilirubin metabolism, kernicterus, phototherapy, and exchange transfusion
 high_yield: true
 nmc_codes:
-- code: PE16.1
+- code: PE8.1
   domain: KH
   core: true
-  phase: Phase 2
-- code: PE20.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.15
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.19
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.3
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: PE26.6
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: PE29.11
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: PE33.3
-  domain: SH
-  core: true
-  phase: Phase 2
+  phase: Phase 3
+
+overview: >
+  Neonatal jaundice (hyperbilirubinemia) affects ~60% of term and ~80% of preterm neonates. While physiological
+  jaundice is benign and self-limiting, pathological jaundice can lead to bilirubin encephalopathy (kernicterus)
+  with devastating neurological consequences. Understanding the causes, evaluation (Kramer's zones, TSB),
+  and management (phototherapy, exchange transfusion) is critical.
+  📚 Nelson's, 22nd Ed, Ch.123 | 📚 OP Ghai, 10th Ed, Ch.10
+
+learning_objectives:
+  - Differentiate physiological from pathological jaundice
+  - Describe bilirubin metabolism and causes of neonatal hyperbilirubinemia
+  - Explain Kramer's zones for clinical assessment
+  - List indications for phototherapy and exchange transfusion
+  - Describe kernicterus and its clinical features
+
+content:
+  atoms:
+    - id: physio-vs-patho
+      title: "Physiological vs Pathological Jaundice"
+      text: >
+        Physiological: appears after 24 hours, peaks day 3-5 (term) or day 5-7 (preterm),
+        TSB <15 mg/dL in term, rate of rise <5 mg/dL/day, resolves by day 14 (term) or day 21 (preterm).
+        Pathological (ANY of these): appears within 24 hours, TSB >15 mg/dL,
+        rate of rise >5 mg/dL/day (or >0.5 mg/dL/hr), persists >14 days (term) or >21 days (preterm),
+        direct bilirubin >2 mg/dL (or >20% of TSB), jaundice in a sick neonate.
+        📚 OP Ghai, 10th Ed, Ch.10 (p.160-163)
+
+    - id: causes
+      title: "Causes of Neonatal Hyperbilirubinemia"
+      text: >
+        Unconjugated (indirect): Increased production — hemolytic (Rh/ABO incompatibility, G6PD deficiency,
+        spherocytosis), polycythemia, cephalhematoma, sepsis.
+        Decreased conjugation — physiological immaturity, Crigler-Najjar syndrome, Gilbert syndrome,
+        hypothyroidism, breast milk jaundice.
+        Increased enterohepatic circulation — delayed feeding, intestinal obstruction, pyloric stenosis.
+        Conjugated (direct): biliary atresia (most important surgical cause), neonatal hepatitis,
+        choledochal cyst, TORCH infections, TPN cholestasis, metabolic (galactosemia, alpha-1-AT deficiency).
+        📚 Nelson's, 22nd Ed, Ch.123
+
+    - id: kramers-zones
+      title: "Kramer's Zones"
+      text: >
+        Clinical assessment of jaundice by cephalocaudal progression:
+        Zone 1: Face and neck — TSB ~5 mg/dL.
+        Zone 2: Upper trunk to umbilicus — TSB ~10 mg/dL.
+        Zone 3: Lower abdomen and thighs — TSB ~12 mg/dL.
+        Zone 4: Arms and lower legs — TSB ~15 mg/dL.
+        Zone 5: Palms and soles — TSB >15 mg/dL.
+        Clinical assessment is unreliable — always confirm with TSB measurement.
+        📚 OP Ghai, 10th Ed, Ch.10 (p.164)
+
+    - id: management
+      title: "Phototherapy & Exchange Transfusion"
+      text: >
+        Phototherapy: blue-green light (wavelength 460-490 nm) converts unconjugated bilirubin to
+        water-soluble photoisomers (lumirubin — most important) excreted without conjugation.
+        Side effects: bronze baby syndrome (conjugated hyperbilirubinemia + phototherapy), dehydration,
+        skin rash, retinal damage (shield eyes).
+        Exchange transfusion: indicated when TSB approaches levels risking kernicterus despite intensive
+        phototherapy. Double volume exchange (2 × 80 mL/kg = 160 mL/kg) removes ~85% of bilirubin
+        and antibody-coated RBCs. Uses cross-matched, irradiated, CMV-negative blood.
+        📚 OP Ghai, 10th Ed, Ch.10 (p.167-170)
+
+    - id: kernicterus
+      title: "Kernicterus (Bilirubin Encephalopathy)"
+      text: >
+        Deposition of unconjugated bilirubin in basal ganglia (globus pallidus), hippocampus,
+        subthalamic nuclei, and cranial nerve nuclei.
+        Acute: Phase 1 (1-2 days) — hypotonia, poor feeding, lethargy.
+        Phase 2 (mid-first week) — hypertonia, opisthotonos, retrocollis, fever, high-pitched cry.
+        Phase 3 (after first week) — hypotonia.
+        Chronic: choreoathetoid cerebral palsy, sensorineural hearing loss, upgaze palsy, dental enamel
+        dysplasia. Auditory pathway is most sensitive to bilirubin toxicity.
+        📚 Nelson's, 22nd Ed, Ch.123
+
+  high_yield_points:
+    - "Jaundice within 24 hours of birth is ALWAYS pathological"
+    - "Most common cause of pathological jaundice in first 24 hrs: ABO incompatibility (India), Rh isoimmunization"
+    - "Physiological jaundice peaks day 3-5 (term), day 5-7 (preterm)"
+    - "Kernicterus affects GLOBUS PALLIDUS most commonly"
+    - "Auditory pathway is the MOST SENSITIVE to bilirubin toxicity → sensorineural hearing loss"
+    - "Phototherapy: 460-490 nm blue light; lumirubin is the main excretory photoisomer"
+    - "Exchange transfusion: double volume (160 mL/kg) removes 85% of bilirubin"
+    - "Bronze baby syndrome: phototherapy + conjugated hyperbilirubinemia"
+    - "Breast milk jaundice: peaks at 2 weeks, due to β-glucuronidase → prolonged unconjugated jaundice"
+    - "Biliary atresia: conjugated (direct) hyperbilirubinemia — pale stools, dark urine, hepatomegaly"
+
+mcqs:
+  - question: "Jaundice appearing within the first 24 hours of life is most likely due to:"
+    options:
+      - "Physiological jaundice"
+      - "Breast milk jaundice"
+      - "Hemolytic disease (Rh/ABO incompatibility)"
+      - "Neonatal hepatitis"
+    answer: "Hemolytic disease (Rh/ABO incompatibility)"
+    explanation: >
+      Jaundice within 24 hours is ALWAYS pathological. The most common cause is hemolytic disease
+      (ABO incompatibility > Rh incompatibility in India). Physiological jaundice appears after 24 hours.
+      📚 OP Ghai, 10th Ed, Ch.10 (p.162)
+    difficulty: 1
+
+  - question: "The most sensitive neural structure to bilirubin toxicity is:"
+    options:
+      - "Cerebral cortex"
+      - "Auditory pathway"
+      - "Visual cortex"
+      - "Cerebellum"
+    answer: "Auditory pathway"
+    explanation: >
+      The auditory nerve/brainstem auditory pathway is exquisitely sensitive to bilirubin.
+      Sensorineural hearing loss can occur even at moderate bilirubin levels. BERA (brainstem
+      evoked response audiometry) is used for screening in high-risk neonates.
+      📚 Nelson's, 22nd Ed, Ch.123
+    difficulty: 2
+
+  - question: "Bronze baby syndrome occurs when phototherapy is used in a neonate with:"
+    options:
+      - "Unconjugated hyperbilirubinemia"
+      - "Conjugated (direct) hyperbilirubinemia"
+      - "G6PD deficiency"
+      - "Rh incompatibility"
+    answer: "Conjugated (direct) hyperbilirubinemia"
+    explanation: >
+      Bronze baby syndrome occurs when phototherapy is administered to a neonate with elevated
+      conjugated bilirubin. The conjugated bilirubin and its photoproducts (copper porphyrins)
+      deposit in skin, giving a grayish-brown discoloration. It is reversible.
+      📚 OP Ghai, 10th Ed, Ch.10 (p.169)
+    difficulty: 2
+
+  - question: "In double volume exchange transfusion, the volume exchanged in a term neonate is:"
+    options:
+      - "80 mL/kg"
+      - "120 mL/kg"
+      - "160 mL/kg"
+      - "200 mL/kg"
+    answer: "160 mL/kg"
+    explanation: >
+      Double volume exchange = 2 × blood volume (80 mL/kg) = 160 mL/kg. This removes approximately
+      85% of circulating bilirubin and replaces antibody-coated RBCs with donor cells.
+      📚 OP Ghai, 10th Ed, Ch.10 (p.170)
+    difficulty: 1
+
+  - question: "A 3-week-old exclusively breastfed infant has jaundice with TSB 14 mg/dL (all unconjugated). The baby is thriving, gaining weight, and passing yellow stools. The most likely diagnosis is:"
+    options:
+      - "Biliary atresia"
+      - "Breast milk jaundice"
+      - "Neonatal hepatitis"
+      - "Hypothyroidism"
+    answer: "Breast milk jaundice"
+    explanation: >
+      Breast milk jaundice presents as prolonged unconjugated jaundice in a thriving breastfed infant,
+      peaking at 2 weeks, due to β-glucuronidase in breast milk increasing enterohepatic circulation.
+      It is benign. Biliary atresia causes conjugated hyperbilirubinemia with pale stools.
+      📚 OP Ghai, 10th Ed, Ch.10 (p.163)
+    difficulty: 1

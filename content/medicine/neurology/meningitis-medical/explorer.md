@@ -1,95 +1,125 @@
+# Meningitis & Encephalitis — Explorer
+
 ## Overview
 
-**Meningitis Medical** is an important topic in Neurology. Understanding its pathophysiology, clinical presentation, diagnosis, and management is essential for medical practice and examinations.
+**Meningitis** is inflammation of the meninges presenting with headache, fever, neck stiffness, and photophobia. **Encephalitis** involves brain parenchyma and presents with altered sensorium ± seizures. Distinguishing bacterial from viral meningitis and initiating early empiric antibiotics is life-saving.
+
+📚 Harrison's, 22nd Ed, Ch. 436-437
 
 ## Key Points
 
-- Meningitis Medical is a commonly tested topic in medical examinations
-- Early recognition and appropriate management improve outcomes
-- Understanding the pathophysiology guides rational treatment
-- Knowledge of complications helps in prognostication
-- Multidisciplinary approach may be required in complex cases
+- **Bacterial meningitis** = medical emergency; mortality 15-25% even with treatment
+- **Classic triad:** Fever + headache + neck stiffness (present in ~50% of cases)
+- **Lumbar puncture** = diagnostic gold standard (do CT first only if signs of raised ICP/focal deficits)
+- **N. meningitidis** = most common in adolescents/young adults; petechial rash; Waterhouse-Friderichsen syndrome
+- **S. pneumoniae** = most common cause of bacterial meningitis in adults overall
+- **Empiric treatment:** Ceftriaxone + Vancomycin + Dexamethasone (before or with first antibiotic dose)
+- **HSV encephalitis** = most common sporadic viral encephalitis; temporal lobe involvement; IV acyclovir
 
-## Definition & Classification
+## Etiology by Age
 
-Meningitis Medical encompasses a spectrum of clinical presentations. Classification helps guide management:
+| Age Group | Most Common Organisms |
+|---|---|
+| **Neonates (<1 month)** | Group B Streptococcus, E. coli, Listeria monocytogenes |
+| **1 month - 2 years** | S. pneumoniae, N. meningitidis, H. influenzae |
+| **2-18 years** | N. meningitidis, S. pneumoniae |
+| **18-50 years** | S. pneumoniae (#1), N. meningitidis |
+| **>50 years** | S. pneumoniae, Listeria, GNB |
+| **Immunocompromised** | Listeria, Cryptococcus, TB, GNB |
 
-| Type | Features |
-|------|----------|
-| Acute | Sudden onset, requires urgent management |
-| Chronic | Gradual progression, long-term management needed |
-| Complicated | Associated with significant morbidity |
+## CSF Analysis — Key to Diagnosis
 
-## Etiology & Pathophysiology
+| Parameter | Normal | Bacterial | Viral | TB | Fungal |
+|---|---|---|---|---|---|
+| **Appearance** | Clear | Turbid/purulent | Clear | Clear/turbid | Clear |
+| **Opening pressure** | 10-20 cmH2O | ↑↑ (>30) | Normal/↑ | ↑ | ↑ |
+| **WBC (/μL)** | <5 | 1000-5000 | 50-500 | 100-500 | 50-500 |
+| **Cell type** | — | **Neutrophils** | **Lymphocytes** | **Lymphocytes** | **Lymphocytes** |
+| **Glucose** | 40-70 | ↓↓ (<40) | Normal | ↓ | ↓ |
+| **Protein** | 15-45 | ↑↑ (>200) | Mild ↑ | ↑↑ | ↑ |
+| **Special** | — | Gram stain, culture | PCR | AFB, ADA >10, CBNAAT | India ink (Crypto) |
 
-The etiology of Meningitis Medical is multifactorial. Key pathophysiological mechanisms include:
-
-- **Primary factors**: Direct causative agents or processes
-- **Secondary factors**: Contributing and predisposing conditions
-- **Risk factors**: Modifiable and non-modifiable risk factors should be identified
-
-Understanding the underlying pathophysiology is crucial for:
-1. Rational diagnostic workup
-2. Targeted therapeutic interventions
-3. Prevention of complications
+> **Exam Pearl:** CSF glucose <40 (or CSF:serum glucose ratio <0.4) + neutrophilic pleocytosis = bacterial meningitis until proven otherwise. Start antibiotics IMMEDIATELY.
 
 ## Clinical Features
 
-### Symptoms
-- Cardinal symptoms of Meningitis Medical
-- Associated symptoms that help narrow the differential
-- Red flag symptoms requiring urgent evaluation
+### Meningeal Signs
+- **Neck stiffness** (nuchal rigidity)
+- **Kernig's sign:** Resistance/pain on extending knee with hip flexed at 90°
+- **Brudzinski's sign:** Involuntary hip/knee flexion on passive neck flexion
 
-### Signs
-- General examination findings
-- System-specific examination findings
-- Signs of complications
+### Bacterial Meningitis-Specific
+- Rapid onset (hours), high fever, toxic appearance
+- **N. meningitidis:** Petechial/purpuric rash → Waterhouse-Friderichsen syndrome (adrenal hemorrhage + DIC)
+- **Pneumococcal:** Often following pneumonia/sinusitis/otitis
+- **Listeria:** Elderly, immunocompromised, pregnancy; rhombencephalitis (brainstem)
+
+### Encephalitis Features
+- Altered mental status, personality change, behavioral abnormalities
+- Seizures (focal or generalized)
+- Focal neurological deficits
+- **HSV encephalitis:** Temporal lobe (olfactory/gustatory hallucinations, behavioral changes, aphasia)
 
 ## Diagnosis
 
-### Investigations
+### When to do CT BEFORE LP?
+- Immunocompromised
+- New-onset seizures
+- Papilledema
+- Focal neurological deficits
+- Altered consciousness (GCS <10)
+- **Do NOT delay antibiotics** while waiting for CT — give empiric antibiotics before CT/LP
 
-| Investigation | Purpose |
-|--------------|---------|
-| Basic labs | Screening and baseline assessment |
-| Specific tests | Confirmatory diagnosis |
-| Imaging | Structural assessment |
-| Special tests | When indicated |
-
-### Diagnostic Criteria
-- Established diagnostic criteria should be applied where available
-- Scoring systems aid in risk stratification
+### Special Tests
+| Test | Purpose |
+|---|---|
+| **Gram stain** | Rapid identification (positive in 60-90%) |
+| **CSF culture** | Gold standard; sensitivity ↓ after antibiotics |
+| **Latex agglutination** | Rapid antigen detection |
+| **CSF PCR** | HSV, enterovirus, TB |
+| **India ink / CSF CrAg** | Cryptococcal meningitis |
+| **CSF ADA** | >10 U/L suggestive of TB meningitis |
 
 ## Management
 
-### General Principles
-- Stabilize the patient (ABC approach if acute)
-- Address the underlying cause
-- Symptom management
-- Prevention of complications
+### Empiric Antibiotics (START IMMEDIATELY)
 
-### Specific Treatment
-- **First-line therapy**: Standard of care
-- **Second-line therapy**: When first-line fails or is contraindicated
-- **Supportive care**: Nutrition, rehabilitation, patient education
+| Age/Situation | Empiric Regimen |
+|---|---|
+| **Adults 18-50** | Ceftriaxone 2g IV q12h + Vancomycin 15-20mg/kg q8-12h |
+| **>50 years / immunocompromised** | Ceftriaxone + Vancomycin + **Ampicillin** (for Listeria) |
+| **Neonates** | Ampicillin + Cefotaxime (or Gentamicin) |
+| **Post-neurosurgery** | Vancomycin + Cefepime (or Meropenem) |
 
-### Monitoring
-- Regular follow-up and monitoring parameters
-- Treatment response assessment
-- Screening for complications and drug side effects
+### Adjunctive Dexamethasone
+- **0.15 mg/kg IV q6h × 4 days** — give BEFORE or WITH first antibiotic dose
+- Proven benefit in **pneumococcal meningitis** (reduces mortality + hearing loss)
+- Most beneficial when started early
 
-## Complications & Prognosis
+### Specific Treatments
+| Organism | Drug of Choice |
+|---|---|
+| S. pneumoniae (sensitive) | Penicillin G / Ceftriaxone |
+| N. meningitidis | Penicillin G / Ceftriaxone |
+| Listeria | Ampicillin ± Gentamicin |
+| HSV encephalitis | **IV Acyclovir 10mg/kg q8h × 14-21 days** |
+| TB meningitis | HRZE + steroids × 12 months |
+| Cryptococcal | Amphotericin B + Flucytosine (induction) → Fluconazole (maintenance) |
 
-### Complications
-- Early complications
-- Late complications
-- Treatment-related complications
+### Chemoprophylaxis (N. meningitidis contacts)
+- **Rifampicin** 600mg BD × 2 days OR
+- **Ciprofloxacin** 500mg single dose OR
+- **Ceftriaxone** 250mg IM single dose (preferred in pregnancy)
 
-### Prognosis
-- Prognostic factors
-- Expected outcomes with appropriate management
-- Long-term follow-up requirements
+## Complications
+
+- **SIADH** → hyponatremia (especially in children)
+- **Hearing loss** — most common permanent sequela of bacterial meningitis (especially pneumococcal)
+- **Hydrocephalus** — communicating (inflammatory exudate blocks arachnoid granulations)
+- **Subdural empyema, brain abscess**
+- **Cerebral venous thrombosis**
+- **Seizures** — 20-30% of bacterial meningitis
 
 ---
 
-> 📚 *NucleuX Academy — Neurology*
+> 📚 *NucleuX Academy — Neurology / Infectious Diseases*

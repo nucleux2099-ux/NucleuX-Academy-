@@ -1,0 +1,148 @@
+overview: |
+  Vascular diseases encompass venous (varicose veins, DVT), arterial (peripheral arterial disease), and lymphatic
+  disorders. Varicose veins affect 20-30% of adults due to valvular incompetence. DVT and PE are major causes of
+  perioperative morbidity. Peripheral arterial disease presents with claudication progressing to critical limb ischemia.
+
+learning_objectives:
+  - Classify varicose veins and describe the saphenous system anatomy
+  - Apply clinical tests (Trendelenburg, Brodie-Trendelenburg, tourniquet test) for varicose veins
+  - Recognize DVT and apply Wells score and management protocols
+  - Classify peripheral arterial disease using Fontaine and Rutherford staging
+  - Describe management options from conservative to surgical/endovascular
+
+content:
+  atoms:
+    - title: Varicose Veins
+      text: |
+        Dilated, tortuous superficial veins due to valvular incompetence. Primary (95%) vs Secondary (DVT, pregnancy, pelvic tumour).
+        **Great Saphenous Vein (GSV):** Medial malleolus → anterior to medial condyle → saphenous opening
+        (4cm below and lateral to pubic tubercle) → femoral vein. Saphenofemoral junction (SFJ) incompetence MC.
+        **Small Saphenous Vein (SSV):** Lateral malleolus → posterior calf → popliteal vein.
+        Saphenopopliteal junction (SPJ) incompetence.
+        **Clinical tests:** Trendelenburg test (SFJ competence), tourniquet test (level of perforator incompetence),
+        Perthes test (deep vein patency — DO NOT operate if deep veins occluded).
+        📚 Bailey & Love, 28th Ed, Ch.57; Sabiston, 21st Ed, Ch.64
+
+    - title: Varicose Veins Management
+      text: |
+        **Conservative:** Compression stockings (Class II — 18-24 mmHg), leg elevation, exercise.
+        **Intervention (if symptomatic/complications):**
+        Endovenous laser ablation (EVLA) or radiofrequency ablation (RFA) — now first-line (NICE guidelines).
+        Foam sclerotherapy. High ligation + stripping (Trendelenburg operation — historical gold standard).
+        **Complications:** Skin changes (eczema, lipodermosclerosis, hemosiderin), venous ulcer
+        (MC site: medial malleolus/gaiter area), thrombophlebitis, hemorrhage, DVT.
+        **Venous ulcer:** MC lower limb ulcer. Treat with 4-layer compression bandaging + wound care.
+        📚 Bailey & Love, 28th Ed, Ch.57
+
+    - title: Deep Vein Thrombosis
+      text: |
+        **Virchow's triad:** Stasis + Endothelial injury + Hypercoagulability.
+        **Risk factors:** Surgery (esp. pelvic/orthopedic), immobility, cancer, OCP/HRT, pregnancy,
+        thrombophilia (Factor V Leiden MC inherited), obesity, age.
+        **Presentation:** Calf pain/swelling, warmth, Homan's sign (unreliable). Left leg MC (May-Thurner syndrome — left iliac vein compressed by right iliac artery).
+        **Diagnosis:** Wells score → D-dimer (if low probability) → Duplex USG (gold standard for diagnosis).
+        **Treatment:** Anticoagulation — LMWH/Fondaparinux → Warfarin (INR 2-3) or DOAC (rivaroxaban).
+        Duration: Provoked 3 months, unprovoked 6+ months.
+        **Complications:** PE (MC cause of preventable hospital death), post-thrombotic syndrome, phlegmasia (cerulea/alba dolens).
+        📚 Sabiston, 21st Ed, Ch.64
+
+    - title: Peripheral Arterial Disease
+      text: |
+        **Atherosclerosis MC cause.** Risk factors: Smoking (strongest), diabetes, hypertension, hyperlipidemia.
+        **Fontaine classification:** I — Asymptomatic. II — Intermittent claudication (IIa >200m, IIb <200m).
+        III — Rest pain. IV — Ulceration/gangrene. Stages III-IV = Critical Limb Ischemia (CLI).
+        **6 P's of acute limb ischemia:** Pain, Pallor, Pulselessness, Paraesthesia, Paralysis, Perishing cold.
+        **ABPI (Ankle-Brachial Pressure Index):** Normal >0.9. Claudication 0.5-0.9. CLI <0.5. >1.3 = calcified (diabetics).
+        **Investigations:** Duplex USG (first-line), CT angiography (planning), digital subtraction angiography (gold standard + therapeutic).
+        📚 Bailey & Love, 28th Ed, Ch.56; Sabiston, 21st Ed, Ch.62
+
+    - title: PAD Management
+      text: |
+        **Conservative (all patients):** Smoking cessation (most important), exercise program, statin, antiplatelet (aspirin/clopidogrel),
+        BP control, diabetes control.
+        **Claudication:** Supervised exercise program is first-line. Cilostazol if needed. Endovascular (PTA ± stent) if refractory.
+        **CLI:** Revascularization essential (limb-threatening). Endovascular (PTA, stenting, atherectomy) or
+        surgical bypass (autologous vein graft preferred — reversed saphenous vein). Amputation if non-reconstructable.
+        **Acute limb ischemia:** Emergency embolectomy (Fogarty balloon catheter) if embolic.
+        Thrombolysis (catheter-directed) if thrombotic. Fasciotomy if reperfusion injury/compartment syndrome.
+        📚 Sabiston, 21st Ed, Ch.62
+
+  clinical: |
+    **Approach to Leg Ulcer:**
+    1. Venous ulcer: Medial malleolus/gaiter area, shallow, irregular edges, lipodermosclerosis. ABPI >0.8 → compression.
+    2. Arterial ulcer: Pressure points (toes, heel), punched out, painful, pale base. ABPI <0.5 → revascularize.
+    3. Neuropathic (diabetic): Painless, pressure points, surrounding callus.
+    4. Always check ABPI before compression (compression contraindicated if arterial insufficiency).
+
+  high_yield_points:
+    - "MC cause of varicose veins: Primary valvular incompetence of SFJ"
+    - "Perthes test: Tests deep vein patency — essential before varicose vein surgery"
+    - "Venous ulcer: MC lower limb ulcer, medial malleolus, treat with compression"
+    - "Virchow's triad: Stasis + Endothelial injury + Hypercoagulability"
+    - "MC inherited thrombophilia: Factor V Leiden"
+    - "DVT gold standard diagnosis: Duplex USG"
+    - "ABPI <0.5: Critical limb ischemia"
+    - "6 P's of acute limb ischemia: Pain, Pallor, Pulselessness, Paraesthesia, Paralysis, Perishing cold"
+    - "Smoking cessation: Single most important intervention in PAD"
+    - "Fogarty catheter: For embolectomy in acute limb ischemia"
+
+mcqs:
+  - question: "A patient with varicose veins has a positive Perthes test (varicosities don't empty and become more painful on walking with tourniquet). This indicates:"
+    options:
+      a: Saphenofemoral junction incompetence
+      b: Perforator incompetence
+      c: Deep vein obstruction
+      d: Saphenopopliteal junction incompetence
+    answer: c
+    explanation: |
+      Perthes test assesses deep vein patency. If varicosities become MORE prominent and painful with
+      tourniquet + exercise, deep veins are occluded. Surgery on superficial veins is CONTRAINDICATED
+      as they are the only venous drainage pathway. 📚 Bailey & Love, 28th Ed, Ch.57
+
+  - question: "The most common inherited thrombophilia predisposing to DVT is:"
+    options:
+      a: Protein C deficiency
+      b: Protein S deficiency
+      c: Factor V Leiden mutation
+      d: Antithrombin III deficiency
+    answer: c
+    explanation: |
+      Factor V Leiden (activated protein C resistance) is the MC inherited thrombophilia, present in
+      5% of Caucasians. It causes a 5-fold increased risk of DVT (heterozygous) and 50-fold (homozygous).
+      📚 Sabiston, 21st Ed, Ch.64
+
+  - question: "An ABPI of 0.4 in a patient with rest pain indicates:"
+    options:
+      a: Normal circulation
+      b: Intermittent claudication
+      c: Critical limb ischemia
+      d: Venous insufficiency
+    answer: c
+    explanation: |
+      ABPI <0.5 with rest pain indicates critical limb ischemia (Fontaine stage III-IV).
+      Revascularization is urgent to prevent limb loss. Normal ABPI >0.9, claudication 0.5-0.9.
+      📚 Bailey & Love, 28th Ed, Ch.56
+
+  - question: "The gold standard investigation for diagnosing DVT is:"
+    options:
+      a: D-dimer
+      b: CT venography
+      c: Duplex ultrasonography
+      d: Venography
+    answer: c
+    explanation: |
+      Duplex USG (compression ultrasonography) is the gold standard for DVT diagnosis — non-invasive,
+      readily available, high sensitivity for proximal DVT. Non-compressibility of vein is diagnostic.
+      D-dimer is used to exclude DVT in low-probability patients. 📚 Sabiston, 21st Ed, Ch.64
+
+  - question: "The single most important intervention in management of peripheral arterial disease is:"
+    options:
+      a: Antiplatelet therapy
+      b: Statin therapy
+      c: Smoking cessation
+      d: Exercise program
+    answer: c
+    explanation: |
+      Smoking cessation is the most important modifiable risk factor in PAD. It reduces progression,
+      improves claudication distance, reduces cardiovascular events, and improves graft patency.
+      All other measures are also important but secondary to this. 📚 Bailey & Love, 28th Ed, Ch.56

@@ -1,0 +1,178 @@
+topic_id: renal-tubular-function
+name: Renal Tubular Function
+description: Renal Tubular Function — Segment-wise reabsorption, secretion, and diuretic targets
+high_yield: true
+nmc_codes:
+- code: PY7.3
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The renal tubule processes the 180 L/day filtrate through selective reabsorption and secretion.
+  Each segment has unique transport mechanisms and is the target of specific diuretics.
+  PCT reabsorbs 65-70% of filtered Na+, water, glucose, amino acids. Loop of Henle reabsorbs 25% Na+.
+  DCT and collecting duct perform fine-tuning under hormonal control (aldosterone, ADH, PTH, ANP).
+  📚 Guyton & Hall, 14th Ed, Ch.28 (p.349-366) / 📚 Ganong's, 26th Ed, Ch.37-38
+
+learning_objectives:
+  - Describe the transport mechanisms in each nephron segment (PCT, LOH, DCT, CD)
+  - Explain the role of Na+/K+ ATPase as the driving force for tubular transport
+  - List the hormones regulating tubular function and their sites of action
+  - Correlate diuretic mechanisms with their sites of action
+  - Explain glucose handling, Tm, and the splay phenomenon
+
+content:
+  atoms:
+    - id: pct-function
+      title: "Proximal Convoluted Tubule (PCT)"
+      text: >
+        Reabsorbs 65-70% of filtered Na+, water, K+, HCO3-, phosphate, glucose, amino acids.
+        Na+ reabsorption: apical NHE3 (Na+/H+ exchanger) → drives HCO3- reabsorption; Na+/glucose (SGLT2),
+        Na+/amino acid cotransporters. Basolateral Na+/K+ ATPase maintains gradient.
+        Water follows Na+ passively (iso-osmotic reabsorption via AQP1) — PCT is ALWAYS iso-osmotic.
+        Glucose: SGLT2 (low affinity, high capacity — PCT S1/S2, 90%), SGLT1 (high affinity, low capacity — S3, 10%).
+        SGLT2 inhibitors (empagliflozin, dapagliflozin): block glucose reabsorption → glucosuria → lower blood glucose.
+        PTH: inhibits Na+/phosphate cotransporter → phosphaturia.
+        Organic acid secretion (PAH, urate, penicillin) and organic base secretion occur in PCT.
+        📚 Guyton & Hall, 14th Ed, Ch.28 (p.349-356)
+
+    - id: loh-function
+      title: "Loop of Henle"
+      text: >
+        Thin descending limb: permeable to water (AQP1), impermeable to NaCl → fluid concentrates.
+        Thin ascending limb: permeable to NaCl (passive), impermeable to water.
+        Thick ascending limb (TAL): NKCC2 cotransporter (Na+/K+/2Cl-) — site of furosemide action.
+        Reabsorbs 25% filtered Na+. Impermeable to water → "diluting segment."
+        Lumen-positive potential (K+ recycling via ROMK) drives paracellular reabsorption of Ca2+, Mg2+.
+        Furosemide → blocks NKCC2 → ↓Na+ reabsorption + ↓paracellular Ca2+/Mg2+ reabsorption → hypocalcemia, hypomagnesemia.
+        Bartter syndrome: genetic defect in NKCC2 or ROMK or ClC-Kb → mimics chronic furosemide use.
+        📚 Guyton & Hall, 14th Ed, Ch.28 (p.356-358)
+
+    - id: dct-function
+      title: "Distal Convoluted Tubule (DCT)"
+      text: >
+        NCC (Na+/Cl- cotransporter) — target of thiazide diuretics. Reabsorbs 5% filtered Na+.
+        Impermeable to water → continues dilution. Also called "cortical diluting segment."
+        PTH and calcitriol: stimulate Ca2+ reabsorption via TRPV5 channels (apical) and NCX (basolateral).
+        Thiazides → block NCC → ↓Na+ reabsorption, but INCREASE Ca2+ reabsorption (indirectly via ↑Na+/Ca2+ exchange).
+        Gitelman syndrome: genetic defect in NCC → mimics chronic thiazide use (hypokalemia, hypocalciuria, hypomagnesemia).
+        📚 Ganong's, 26th Ed, Ch.37
+
+    - id: cd-function
+      title: "Collecting Duct"
+      text: >
+        Principal cells: ENaC (epithelial Na+ channel, apical) — Na+ reabsorption. ROMK — K+ secretion.
+        Aldosterone → ↑ENaC and Na+/K+ ATPase → ↑Na+ reabsorption, ↑K+ secretion.
+        Amiloride/triamterene: block ENaC → K+-sparing diuretics. Spironolactone/eplerenone: block mineralocorticoid receptor.
+        Liddle syndrome: gain-of-function mutation in ENaC → excess Na+ reabsorption → HTN + hypokalemia.
+        ADH: V2 receptors → AQP2 insertion → water reabsorption.
+        Intercalated cells: Type A → H+ secretion (acidosis), Type B → HCO3- secretion (alkalosis).
+        ANP: inhibits Na+ reabsorption in collecting duct + inhibits renin/aldosterone → natriuresis.
+        📚 Guyton & Hall, 14th Ed, Ch.28 (p.360-366)
+
+    - id: diuretics-summary
+      title: "Diuretics — Sites of Action Summary"
+      text: >
+        Carbonic anhydrase inhibitors (acetazolamide): PCT → ↓HCO3- reabsorption → metabolic acidosis.
+        Loop diuretics (furosemide): TAL → NKCC2 block → most potent diuretics. Cause hypokalemia, hypocalcemia.
+        Thiazides (hydrochlorothiazide): DCT → NCC block → hypokalemia, HYPERcalcemia (unlike loops).
+        K+-sparing: Collecting duct → amiloride (ENaC block), spironolactone (MR block) → hyperkalemia risk.
+        Osmotic diuretics (mannitol): PCT and LOH → hold water osmotically.
+        Key distinction: Loops cause hypocalcemia; Thiazides cause hypercalcemia.
+        📚 Ganong's, 26th Ed, Ch.38
+
+  clinical:
+    - title: "Clinical Correlation: SGLT2 Inhibitors"
+      text: >
+        Empagliflozin, dapagliflozin block SGLT2 in PCT → glucosuria → lower blood glucose.
+        Benefits beyond glucose: cardioprotective and renoprotective effects (reduce heart failure hospitalization, slow CKD progression).
+        Side effects: UTI, genital fungal infections, euglycemic DKA, Fournier's gangrene (rare).
+    - title: "Clinical Correlation: Bartter vs Gitelman"
+      text: >
+        Both present with hypokalemic metabolic alkalosis but differ in calcium handling.
+        Bartter (TAL defect): hypercalciuria → nephrocalcinosis. Mimics loop diuretics.
+        Gitelman (DCT defect): HYPOcalciuria, hypomagnesemia. Mimics thiazides. Milder presentation.
+
+  high_yield_points:
+    - "PCT reabsorbs 65-70% Na+, 100% glucose/amino acids, 80% HCO3-, ALL water iso-osmotically"
+    - "TAL: NKCC2 (furosemide target) — 'diluting segment' — drives countercurrent multiplication"
+    - "DCT: NCC (thiazide target) — PTH increases Ca2+ reabsorption here"
+    - "Loop diuretics → HYPOcalcemia; Thiazides → HYPERcalcemia (opposite effects on Ca2+)"
+    - "Aldosterone acts on principal cells: ↑ENaC (Na+ reabsorb), ↑ROMK (K+ secrete)"
+    - "Liddle syndrome = gain-of-function ENaC = HTN + hypokalemia (pseudo-hyperaldosteronism)"
+    - "Bartter mimics loop diuretics; Gitelman mimics thiazides"
+    - "SGLT2 (PCT): 90% glucose reabsorption; SGLT1: 10%"
+    - "Na+/K+ ATPase on BASOLATERAL membrane is the universal driving force"
+    - "K+ secretion in CD depends on: aldosterone, distal Na+ delivery, flow rate, urine pH"
+
+mcqs:
+  - question: "A patient on furosemide develops muscle cramps and tetany. Serum calcium is low. The mechanism is:"
+    options:
+      - "Increased calcium reabsorption in PCT"
+      - "Decreased paracellular calcium reabsorption in thick ascending limb"
+      - "Increased calcium secretion in collecting duct"
+      - "Decreased PTH secretion"
+    answer: "Decreased paracellular calcium reabsorption in thick ascending limb"
+    explanation: >
+      Furosemide blocks NKCC2 → abolishes lumen-positive potential in TAL → decreased paracellular
+      Ca2+ and Mg2+ reabsorption → hypocalcemia and hypomagnesemia. This is opposite to thiazides,
+      which increase Ca2+ reabsorption in DCT.
+      📚 Guyton & Hall, 14th Ed, Ch.28
+    difficulty: 2
+
+  - question: "Which transporter is the target of SGLT2 inhibitors used in diabetes mellitus?"
+    options:
+      - "GLUT2 in PCT basolateral membrane"
+      - "SGLT2 in PCT apical membrane"
+      - "SGLT1 in PCT S3 segment"
+      - "Na+/glucose transporter in loop of Henle"
+    answer: "SGLT2 in PCT apical membrane"
+    explanation: >
+      SGLT2 (sodium-glucose cotransporter 2) is located on the apical membrane of PCT S1/S2 segments
+      and reabsorbs 90% of filtered glucose. SGLT2 inhibitors (empagliflozin, dapagliflozin) block this
+      → glucosuria → lower blood glucose + cardiorenal benefits.
+      📚 Ganong's, 26th Ed, Ch.37
+    difficulty: 1
+
+  - question: "Aldosterone increases sodium reabsorption in the collecting duct by upregulating:"
+    options:
+      - "NKCC2"
+      - "NCC"
+      - "ENaC"
+      - "SGLT2"
+    answer: "ENaC"
+    explanation: >
+      Aldosterone binds mineralocorticoid receptors in principal cells → upregulates ENaC (apical Na+ channel)
+      and Na+/K+ ATPase (basolateral) → increased Na+ reabsorption and K+ secretion.
+      NKCC2 is in TAL (loop diuretic target), NCC in DCT (thiazide target).
+      📚 Guyton & Hall, 14th Ed, Ch.28 (p.362)
+    difficulty: 1
+
+  - question: "A child with hypokalemic metabolic alkalosis, hypocalciuria, and hypomagnesemia most likely has:"
+    options:
+      - "Bartter syndrome"
+      - "Gitelman syndrome"
+      - "Liddle syndrome"
+      - "Fanconi syndrome"
+    answer: "Gitelman syndrome"
+    explanation: >
+      Gitelman syndrome = loss-of-function NCC in DCT (mimics chronic thiazide use): hypokalemic metabolic
+      alkalosis + HYPOcalciuria + hypomagnesemia. Bartter syndrome (TAL defect) causes HYPERcalciuria.
+      Liddle syndrome causes HTN with hypokalemia. Fanconi = proximal tubule dysfunction.
+      📚 Ganong's, 26th Ed, Ch.37
+    difficulty: 2
+
+  - question: "The 'diluting segment' of the nephron refers to:"
+    options:
+      - "Proximal convoluted tubule"
+      - "Thin descending limb"
+      - "Thick ascending limb of loop of Henle"
+      - "Collecting duct"
+    answer: "Thick ascending limb of loop of Henle"
+    explanation: >
+      The TAL actively reabsorbs NaCl (via NKCC2) but is impermeable to water → tubular fluid becomes
+      progressively dilute (hypotonic, ~100 mOsm/kg at the end). This is the primary diluting segment.
+      The early DCT continues dilution. The PCT reabsorbs iso-osmotically (not diluting).
+      📚 Guyton & Hall, 14th Ed, Ch.28 (p.358)
+    difficulty: 1

@@ -1,0 +1,150 @@
+topic_id: beta-oxidation-ketogenesis-cholesterol
+name: "Lipid Metabolism (Beta-oxidation, Ketogenesis, Cholesterol)"
+description: >
+  Fatty acid oxidation, ketone body synthesis, and cholesterol metabolism with clinical disorders.
+high_yield: true
+nmc_codes:
+  - code: BI6.1
+    domain: KH
+    core: true
+    phase: Phase 1
+  - code: BI6.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Beta-oxidation breaks down fatty acids to acetyl-CoA in mitochondria (requiring carnitine shuttle).
+  Excess acetyl-CoA in liver produces ketone bodies (acetoacetate, β-hydroxybutyrate, acetone) during
+  fasting/starvation/uncontrolled diabetes. Cholesterol synthesis from acetyl-CoA is regulated by
+  HMG-CoA reductase (target of statins). Dyslipidemias and fatty acid oxidation disorders are
+  high-yield clinical topics.
+  📚 Harper's Biochemistry, 31st Ed, Ch.22-26; 📚 Stryer Biochemistry, Ch.22
+
+learning_objectives:
+  - Describe the carnitine shuttle and steps of beta-oxidation
+  - Calculate ATP yield from complete oxidation of a fatty acid (e.g., palmitate)
+  - Explain ketogenesis pathway, regulation, and clinical significance
+  - Outline cholesterol synthesis pathway and its regulation by HMG-CoA reductase
+  - Correlate lipid metabolism disorders with clinical presentations
+
+content:
+  atoms:
+    - id: beta-oxidation
+      title: "Beta-Oxidation of Fatty Acids"
+      text: >
+        Location: mitochondrial matrix. Long-chain FAs require carnitine shuttle (CPT-I on outer membrane = rate-limiting,
+        inhibited by malonyl-CoA; CPT-II on inner membrane). Each cycle: oxidation→hydration→oxidation→thiolysis,
+        removes 2-carbon acetyl-CoA units. Enzymes: acyl-CoA dehydrogenase (FAD), enoyl-CoA hydratase,
+        β-hydroxyacyl-CoA dehydrogenase (NAD+), thiolase. Each cycle yields: 1 FADH2, 1 NADH, 1 acetyl-CoA.
+        Palmitate (C16): 7 cycles → 8 acetyl-CoA, 7 FADH2, 7 NADH. Total ATP = 106 - 2 (activation) = 106 net.
+        Medium/short-chain FAs enter mitochondria WITHOUT carnitine.
+        📚 Harper's Biochemistry, 31st Ed, Ch.22
+
+    - id: ketogenesis
+      title: "Ketogenesis"
+      text: >
+        Occurs in liver mitochondria when acetyl-CoA exceeds TCA capacity (low OAA from gluconeogenesis).
+        Pathway: 2 acetyl-CoA → acetoacetyl-CoA → HMG-CoA (HMG-CoA synthase, rate-limiting) →
+        acetoacetate (HMG-CoA lyase) → β-hydroxybutyrate (β-HB dehydrogenase) or acetone (spontaneous).
+        Ketone bodies are used by brain, heart, skeletal muscle (NOT liver — lacks thiophorase/succinyl-CoA transferase).
+        Diabetic ketoacidosis: uncontrolled Type 1 DM → ↑lipolysis → ↑β-oxidation → ↑↑ketone bodies → metabolic acidosis.
+        📚 Harper's Biochemistry, 31st Ed, Ch.22
+
+    - id: cholesterol-metabolism
+      title: "Cholesterol Synthesis & Regulation"
+      text: >
+        All 27 carbons from acetyl-CoA. Pathway: acetyl-CoA → HMG-CoA → mevalonate (HMG-CoA reductase,
+        rate-limiting, target of statins) → squalene → lanosterol → cholesterol. Occurs in cytoplasm/ER.
+        Regulation: SREBP-2 (↑transcription when cholesterol ↓), insulin (↑), glucagon/statins (↓).
+        Cholesterol → bile acids (7α-hydroxylase, rate-limiting), steroid hormones, vitamin D.
+        Lipoproteins: chylomicrons (dietary TG), VLDL (liver TG), LDL (cholesterol delivery, "bad"),
+        HDL (reverse cholesterol transport, "good"). LDL receptor deficiency = familial hypercholesterolemia.
+        📚 Harper's Biochemistry, 31st Ed, Ch.26
+
+  clinical:
+    - title: "Clinical Correlation: MCAD Deficiency"
+      text: >
+        Medium-chain acyl-CoA dehydrogenase deficiency — most common fatty acid oxidation disorder.
+        Presents with hypoketotic hypoglycemia during fasting, hepatomegaly, elevated C8-C10 acylcarnitines.
+        Can cause sudden death in infants. Avoid fasting; frequent feeds.
+    - title: "Clinical Correlation: Familial Hypercholesterolemia"
+      text: >
+        Autosomal dominant LDL receptor mutation. Heterozygotes: LDL ~300 mg/dL, tendon xanthomas,
+        premature atherosclerosis. Homozygotes: LDL >600, MI in childhood. Treatment: high-dose statins, PCSK9 inhibitors.
+
+high_yield_points:
+  - "CPT-I is rate-limiting for beta-oxidation; inhibited by malonyl-CoA"
+  - "Liver produces ketone bodies but CANNOT use them (lacks thiophorase)"
+  - "HMG-CoA reductase is rate-limiting for cholesterol synthesis — target of statins"
+  - "MCAD deficiency → hypoketotic hypoglycemia (most common FA oxidation defect)"
+  - "Palmitate (C16) oxidation yields 106 ATP (net, after activation cost)"
+  - "Ketone bodies: acetoacetate, β-hydroxybutyrate, acetone"
+  - "DKA: ↑ketones + ↑anion gap metabolic acidosis + fruity breath (acetone)"
+  - "HDL = reverse cholesterol transport = 'good'; LDL = 'bad' cholesterol"
+
+mcqs:
+  - question: "The rate-limiting enzyme of fatty acid beta-oxidation is:"
+    options:
+      - "Acyl-CoA dehydrogenase"
+      - "Carnitine palmitoyltransferase I (CPT-I)"
+      - "Thiolase"
+      - "HMG-CoA synthase"
+    answer: "Carnitine palmitoyltransferase I (CPT-I)"
+    explanation: >
+      CPT-I on the outer mitochondrial membrane is rate-limiting for long-chain FA entry into
+      mitochondria. It is inhibited by malonyl-CoA (first committed intermediate of FA synthesis).
+      📚 Harper's Biochemistry, 31st Ed, Ch.22
+    difficulty: 1
+
+  - question: "Why can't the liver utilize ketone bodies for energy?"
+    options:
+      - "Lacks HMG-CoA lyase"
+      - "Lacks thiophorase (succinyl-CoA:acetoacetate CoA transferase)"
+      - "Lacks β-hydroxybutyrate dehydrogenase"
+      - "Lacks acetyl-CoA"
+    answer: "Lacks thiophorase (succinyl-CoA:acetoacetate CoA transferase)"
+    explanation: >
+      Thiophorase converts acetoacetate back to acetoacetyl-CoA for utilization. The liver lacks
+      this enzyme, so it produces ketone bodies for export to extrahepatic tissues (brain, heart, muscle).
+      📚 Harper's Biochemistry, 31st Ed, Ch.22
+    difficulty: 2
+
+  - question: "A child presents with hypoketotic hypoglycemia during fasting. The most likely diagnosis is:"
+    options:
+      - "Type 1 diabetes mellitus"
+      - "MCAD deficiency"
+      - "Carnitine deficiency"
+      - "HMG-CoA lyase deficiency"
+    answer: "MCAD deficiency"
+    explanation: >
+      MCAD deficiency is the most common fatty acid oxidation disorder. Impaired beta-oxidation
+      → cannot generate ketone bodies (hypoketotic) and cannot provide fuel during fasting → hypoglycemia.
+      📚 Harper's Biochemistry, 31st Ed, Ch.22
+    difficulty: 2
+
+  - question: "Which lipoprotein is responsible for reverse cholesterol transport?"
+    options:
+      - "LDL"
+      - "VLDL"
+      - "HDL"
+      - "Chylomicrons"
+    answer: "HDL"
+    explanation: >
+      HDL picks up cholesterol from peripheral tissues and transports it back to the liver for
+      excretion as bile acids — reverse cholesterol transport. This is why high HDL is protective.
+      📚 Harper's Biochemistry, 31st Ed, Ch.26
+    difficulty: 1
+
+  - question: "Malonyl-CoA inhibits beta-oxidation by acting on which enzyme?"
+    options:
+      - "CPT-I"
+      - "CPT-II"
+      - "Acyl-CoA dehydrogenase"
+      - "HMG-CoA reductase"
+    answer: "CPT-I"
+    explanation: >
+      Malonyl-CoA (first intermediate of fatty acid synthesis) inhibits CPT-I, preventing FA entry
+      into mitochondria for oxidation. This ensures FA synthesis and oxidation don't occur simultaneously.
+      📚 Stryer Biochemistry, Ch.22
+    difficulty: 1

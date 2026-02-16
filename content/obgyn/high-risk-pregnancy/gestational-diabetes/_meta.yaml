@@ -1,9 +1,154 @@
 topic_id: gestational-diabetes
-name: Gestational Diabetes
-description: Gestational Diabetes — NMC curriculum topic
+name: Gestational Diabetes Mellitus
+description: Screening, diagnosis (DIPSI, IADPSG), maternal-fetal complications, and management of GDM
 high_yield: true
 nmc_codes:
-- code: OG35.5
-  domain: SH
+- code: OG11.1
+  domain: KH
   core: true
   phase: Phase 3
+
+overview: >
+  Gestational diabetes mellitus (GDM) is glucose intolerance first recognized during pregnancy. It affects
+  5-15% of pregnancies and is associated with significant maternal and fetal complications. India has among
+  the highest prevalence rates globally. Screening is recommended for all pregnant women (universal screening
+  in India — DIPSI guidelines). Insulin is the gold standard treatment when medical nutrition therapy fails.
+  📚 Williams Obstetrics, 26th Ed, Ch.57 | 📚 DC Dutta, 9th Ed, Ch.19
+
+learning_objectives:
+  - Define GDM and differentiate from pre-gestational diabetes
+  - Describe screening methods (DIPSI, GCT, OGTT)
+  - List maternal and fetal complications of GDM
+  - Outline management including MNT, insulin, and delivery planning
+  - Describe postpartum follow-up
+
+content:
+  atoms:
+    - id: screening-diagnosis
+      title: "Screening & Diagnosis"
+      text: >
+        DIPSI (Diabetes in Pregnancy Study Group India): single-step, non-fasting 75g OGTT.
+        2-hour plasma glucose ≥140 mg/dL = GDM. Recommended at first visit and 24-28 weeks.
+        IADPSG/WHO criteria (fasting 75g OGTT): Fasting ≥92, 1-hr ≥180, 2-hr ≥153 mg/dL.
+        ANY ONE value abnormal = GDM.
+        Carpenter-Coustan (two-step): Step 1: 50g GCT — if 1-hr ≥140 → Step 2: 100g OGTT.
+        GDM most commonly diagnosed at 24-28 weeks (when diabetogenic hormones peak — hPL, cortisol, progesterone).
+        📚 DC Dutta, 9th Ed, Ch.19 (p.280-283)
+
+    - id: pathophysiology
+      title: "Pathophysiology"
+      text: >
+        Pregnancy is a state of insulin resistance (2nd-3rd trimester) due to:
+        Human placental lactogen (hPL) — main diabetogenic hormone, peaks at 30 weeks.
+        Also: cortisol, progesterone, estrogen, placental growth hormone.
+        In normal pregnancy: pancreatic β-cells compensate with hyperinsulinemia.
+        In GDM: β-cell dysfunction → unable to compensate → hyperglycemia.
+        Maternal hyperglycemia → fetal hyperglycemia (glucose crosses placenta) → fetal hyperinsulinemia
+        → macrosomia, organomegaly (Pedersen hypothesis).
+        📚 Williams Obstetrics, 26th Ed, Ch.57
+
+    - id: complications
+      title: "Maternal & Fetal Complications"
+      text: >
+        Maternal: pre-eclampsia, polyhydramnios, recurrent UTIs, candidiasis, preterm labor,
+        increased CS rate, future risk of T2DM (50% in 20 years).
+        Fetal: macrosomia (>4 kg), shoulder dystocia, birth injuries (Erb's palsy, fractures),
+        congenital malformations (pre-gestational DM — neural tube defects, caudal regression syndrome,
+        cardiac defects), IUGR (in vascular disease).
+        Neonatal: hypoglycemia (most common), hypocalcemia, polycythemia, hyperbilirubinemia, RDS.
+        📚 DC Dutta, 9th Ed, Ch.19 (p.284-286)
+
+    - id: management
+      title: "Management"
+      text: >
+        Medical Nutrition Therapy (MNT): first-line. 30-35 kcal/kg/day, 40% carbs, high fiber.
+        Target: fasting <95, 1-hr postprandial <140, 2-hr postprandial <120 mg/dL.
+        If targets not met in 2 weeks → insulin.
+        Insulin: human insulin preferred. Rapid-acting (lispro, aspart) and NPH are safe.
+        Metformin: second-line alternative (crosses placenta but NICE guidelines allow use).
+        Glyburide: no longer recommended (associated with more neonatal hypoglycemia).
+        Delivery: GDM on diet alone — deliver at 40 weeks. GDM on insulin — deliver at 38-39 weeks.
+        Macrosomia (EFW >4.5 kg) → elective CS.
+        Postpartum: 75g OGTT at 6-12 weeks postpartum to rule out persistent diabetes.
+        📚 Williams Obstetrics, 26th Ed, Ch.57 | 📚 DC Dutta, 9th Ed, Ch.19
+
+  high_yield_points:
+    - "DIPSI: non-fasting 75g OGTT, 2-hr ≥140 mg/dL = GDM (India-specific)"
+    - "hPL is the main diabetogenic hormone of pregnancy"
+    - "Pedersen hypothesis: maternal hyperglycemia → fetal hyperglycemia → fetal hyperinsulinemia → macrosomia"
+    - "Insulin is the GOLD STANDARD treatment for GDM"
+    - "Caudal regression syndrome is the MOST SPECIFIC malformation for diabetic mothers"
+    - "Most common neonatal complication = HYPOGLYCEMIA"
+    - "50% of women with GDM develop T2DM within 20 years"
+    - "GDM diagnosed at 24-28 weeks when insulin resistance peaks"
+    - "Glucose crosses placenta; insulin does NOT"
+    - "Postpartum OGTT at 6-12 weeks mandatory for all GDM women"
+
+mcqs:
+  - question: "The most specific congenital malformation associated with maternal diabetes is:"
+    options:
+      - "Neural tube defect"
+      - "Transposition of great arteries"
+      - "Caudal regression syndrome"
+      - "Ventricular septal defect"
+    answer: "Caudal regression syndrome"
+    explanation: >
+      Caudal regression syndrome (sacral agenesis) is the most specific (pathognomonic) malformation
+      for pre-gestational diabetes, though it is rare. NTDs and cardiac defects are more common but less specific.
+      📚 Williams Obstetrics, 26th Ed, Ch.57
+    difficulty: 2
+
+  - question: "The main diabetogenic hormone in pregnancy is:"
+    options:
+      - "Estrogen"
+      - "Progesterone"
+      - "Human placental lactogen (hPL)"
+      - "Human chorionic gonadotropin (hCG)"
+    answer: "Human placental lactogen (hPL)"
+    explanation: >
+      hPL is the principal diabetogenic hormone, causing insulin resistance by mobilizing free fatty
+      acids and reducing glucose utilization. It peaks around 30 weeks, coinciding with maximal
+      insulin resistance. Cortisol and progesterone also contribute.
+      📚 DC Dutta, 9th Ed, Ch.19 (p.278)
+    difficulty: 1
+
+  - question: "In DIPSI guidelines, GDM is diagnosed when 2-hour plasma glucose after 75g oral glucose (non-fasting) is:"
+    options:
+      - "≥120 mg/dL"
+      - "≥140 mg/dL"
+      - "≥153 mg/dL"
+      - "≥200 mg/dL"
+    answer: "≥140 mg/dL"
+    explanation: >
+      DIPSI (Diabetes in Pregnancy Study Group India) recommends a single-step, non-fasting 75g OGTT.
+      A 2-hour value ≥140 mg/dL diagnoses GDM. This is practical for Indian settings as it does
+      not require fasting.
+      📚 DC Dutta, 9th Ed, Ch.19 (p.282)
+    difficulty: 1
+
+  - question: "The most common neonatal complication of gestational diabetes is:"
+    options:
+      - "Macrosomia"
+      - "Hypoglycemia"
+      - "Polycythemia"
+      - "Respiratory distress syndrome"
+    answer: "Hypoglycemia"
+    explanation: >
+      After delivery, the fetus is cut off from maternal glucose supply but still has high insulin
+      levels (from in-utero hyperinsulinemia) → neonatal hypoglycemia. Blood glucose monitoring is
+      essential in the first 24 hours. Macrosomia is a fetal complication, not neonatal per se.
+      📚 DC Dutta, 9th Ed, Ch.19 (p.285)
+    difficulty: 1
+
+  - question: "A woman with GDM is not achieving glycemic targets after 2 weeks of medical nutrition therapy. The next step is:"
+    options:
+      - "Add metformin"
+      - "Start insulin"
+      - "Increase caloric restriction"
+      - "Plan immediate delivery"
+    answer: "Start insulin"
+    explanation: >
+      Insulin is the gold standard when MNT fails. It does not cross the placenta and allows
+      precise dose titration. Metformin can be used as an alternative but crosses the placenta.
+      📚 Williams Obstetrics, 26th Ed, Ch.57
+    difficulty: 1

@@ -1,0 +1,153 @@
+topic_id: immunization-schedule-india
+name: Immunization Schedule (NIS India)
+description: National Immunization Schedule of India, vaccine types, contraindications, and cold chain
+high_yield: true
+nmc_codes:
+- code: PE19.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  India's National Immunization Schedule (NIS) under the Universal Immunization Programme (UIP) provides free
+  vaccines against 12 diseases. Understanding the schedule, vaccine types (live vs killed), cold chain
+  maintenance, contraindications, and adverse events is crucial for pediatric practice and public health.
+  📚 OP Ghai, 10th Ed, Ch.12 | 📚 Nelson's, 22nd Ed, Ch.170
+
+learning_objectives:
+  - List vaccines in the NIS with their schedule
+  - Classify vaccines as live attenuated vs inactivated
+  - Describe the cold chain system
+  - List true contraindications vs false contraindications
+  - Describe vaccine-preventable diseases and their target elimination
+
+content:
+  atoms:
+    - id: nis-schedule
+      title: "National Immunization Schedule (NIS) — India 2024"
+      text: >
+        Birth: BCG + OPV-0 + Hepatitis B birth dose.
+        6 weeks: Pentavalent-1 (DPT+HepB+Hib) + OPV-1 + Rotavirus-1 + fIPV-1 + PCV-1.
+        10 weeks: Pentavalent-2 + OPV-2 + Rotavirus-2.
+        14 weeks: Pentavalent-3 + OPV-3 + Rotavirus-3 + fIPV-2 + PCV-2.
+        9 months: MR-1 (Measles-Rubella) + JE-1 (in endemic areas) + PCV booster + Vitamin A.
+        16-24 months: DPT booster-1 + MR-2 + OPV booster + JE-2.
+        5-6 years: DPT booster-2.
+        10 years: Td (tetanus-diphtheria).
+        16 years: Td.
+        Pregnant women: Td (2 doses or booster).
+        📚 OP Ghai, 10th Ed, Ch.12 (p.192-195)
+
+    - id: vaccine-types
+      title: "Live vs Killed Vaccines"
+      text: >
+        Live attenuated: BCG, OPV (Sabin), Measles/MR/MMR, Rotavirus, Yellow fever, Varicella, LAV (influenza).
+        Inactivated/killed: IPV (Salk), Hepatitis B, Rabies, Typhoid Vi, Influenza (injectable).
+        Toxoids: DPT (diphtheria and tetanus components), Td.
+        Subunit/conjugate: Hib conjugate, PCV (pneumococcal conjugate), Meningococcal conjugate.
+        Live vaccines: can cause disease in immunocompromised, require cold chain, give longer immunity.
+        Killed vaccines: safe in immunocompromised, need multiple doses/boosters, shorter immunity.
+        Minimum interval between two LIVE vaccines: 4 weeks (if not given on same day).
+        📚 OP Ghai, 10th Ed, Ch.12
+
+    - id: cold-chain
+      title: "Cold Chain"
+      text: >
+        Temperature maintenance: +2°C to +8°C for most vaccines.
+        OPV: most heat-sensitive, kept frozen (-20°C) at district level and above.
+        DPT, Hepatitis B, Pentavalent, Td: NEVER freeze (freeze-sensitive — damages adjuvant).
+        BCG, Measles: can tolerate freezing but stored at 2-8°C.
+        Vaccine Vial Monitor (VVM): heat-sensitive label — inner square lighter than outer circle = usable.
+        If inner square same color or darker = discard.
+        Cold chain equipment: ILR (ice-lined refrigerator), deep freezer, cold box, vaccine carrier, ice packs.
+        📚 OP Ghai, 10th Ed, Ch.12 (p.200-202)
+
+    - id: contraindications
+      title: "Contraindications"
+      text: >
+        True contraindications to ALL vaccines: anaphylaxis to previous dose or vaccine component.
+        Live vaccines contraindicated in: immunodeficiency (primary or acquired), pregnancy,
+        high-dose steroids (>2 mg/kg/day prednisolone for >14 days).
+        FALSE contraindications (NOT reasons to defer): mild illness, low-grade fever, diarrhea,
+        malnutrition, breastfeeding, family history of adverse events, premature birth, recent antibiotic use.
+        BCG contraindicated: symptomatic HIV. OPV: can be given to HIV-exposed; IPV preferred for immunocompromised.
+        📚 OP Ghai, 10th Ed, Ch.12 (p.203-205)
+
+  high_yield_points:
+    - "BCG is the ONLY vaccine that leaves a SCAR (given intradermally at left deltoid)"
+    - "OPV is the most HEAT-SENSITIVE vaccine"
+    - "DPT/Pentavalent/HepB are FREEZE-SENSITIVE — never freeze"
+    - "BCG is the FIRST vaccine given at birth (along with OPV-0 and HepB birth dose)"
+    - "Measles vaccine given at 9 months (MR-1) and 16-24 months (MR-2)"
+    - "Minimum gap between two live vaccines = 4 weeks (if not given same day)"
+    - "VVM: inner square LIGHTER than outer circle = vaccine is usable"
+    - "Malnutrition is NOT a contraindication to vaccination"
+    - "IPV replaced OPV for polio eradication endgame strategy (prevent VAPP)"
+    - "PCV (Pneumococcal Conjugate Vaccine) added to NIS in 2017"
+
+mcqs:
+  - question: "Which vaccine is the most heat-sensitive?"
+    options:
+      - "BCG"
+      - "DPT"
+      - "OPV"
+      - "Hepatitis B"
+    answer: "OPV"
+    explanation: >
+      OPV (Oral Polio Vaccine) is the most heat-sensitive vaccine and must be stored frozen (-20°C)
+      at district level and above. It has a VVM to monitor heat exposure.
+      📚 OP Ghai, 10th Ed, Ch.12 (p.200)
+    difficulty: 1
+
+  - question: "Which of the following vaccines should NEVER be frozen?"
+    options:
+      - "BCG"
+      - "OPV"
+      - "DPT/Pentavalent"
+      - "Measles"
+    answer: "DPT/Pentavalent"
+    explanation: >
+      Vaccines containing aluminum adjuvant (DPT, Pentavalent, Hepatitis B, Td) are freeze-sensitive.
+      Freezing causes aluminum particles to aggregate, reducing immunogenicity and increasing local reactions.
+      📚 OP Ghai, 10th Ed, Ch.12 (p.201)
+    difficulty: 1
+
+  - question: "A 9-month-old malnourished child presents for vaccination. The correct approach is to:"
+    options:
+      - "Defer vaccination until nutritional recovery"
+      - "Give all age-appropriate vaccines"
+      - "Give only killed vaccines"
+      - "Give half doses"
+    answer: "Give all age-appropriate vaccines"
+    explanation: >
+      Malnutrition is NOT a contraindication to vaccination. In fact, malnourished children are
+      at higher risk of vaccine-preventable diseases and should receive all vaccines as per schedule.
+      📚 OP Ghai, 10th Ed, Ch.12 (p.204)
+    difficulty: 1
+
+  - question: "In the Vaccine Vial Monitor (VVM), the vaccine should be discarded when:"
+    options:
+      - "Inner square is lighter than outer circle"
+      - "Inner square is the same color as outer circle"
+      - "Outer circle is lighter than inner square"
+      - "Both are colorless"
+    answer: "Inner square is the same color as outer circle"
+    explanation: >
+      VVM changes color with heat exposure. Usable: inner square lighter than outer circle.
+      Discard point: inner square same color or darker than outer circle (cumulative heat exposure exceeded).
+      📚 OP Ghai, 10th Ed, Ch.12 (p.201)
+    difficulty: 1
+
+  - question: "The minimum interval between two live vaccines if not given on the same day is:"
+    options:
+      - "1 week"
+      - "2 weeks"
+      - "4 weeks"
+      - "8 weeks"
+    answer: "4 weeks"
+    explanation: >
+      If two live vaccines are not given on the same day, a minimum interval of 4 weeks (28 days)
+      is required between them. This prevents interference between immune responses. There is no
+      minimum interval for inactivated vaccines.
+      📚 OP Ghai, 10th Ed, Ch.12 (p.203)
+    difficulty: 2

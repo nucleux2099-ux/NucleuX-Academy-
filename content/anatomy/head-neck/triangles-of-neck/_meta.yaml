@@ -1,21 +1,155 @@
 topic_id: triangles-of-neck
-name: Triangles Of Neck
-description: Triangles Of Neck — NMC curriculum topic
+name: Triangles of Neck
+description: Triangles of Neck — Anterior and posterior triangles with boundaries, contents, and clinical significance
 high_yield: true
 nmc_codes:
-- code: AN17.2
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: AN29.3
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: AN35.10
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: AN35.7
+- code: AN35.1
   domain: KH
   core: true
   phase: Phase 1
+- code: AN35.2
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The neck is divided by the sternocleidomastoid (SCM) into anterior and posterior triangles.
+  The anterior triangle is subdivided into submental, digastric, carotid, and muscular triangles.
+  The posterior triangle is subdivided into occipital and supraclavicular (subclavian) triangles by the inferior belly of omohyoid.
+  These triangles provide surgical landmarks for accessing vital structures.
+  📚 BD Chaurasia, Vol.3, Ch.5; 📚 Gray's Anatomy, 42nd Ed, Ch.28
+
+learning_objectives:
+  - Define the boundaries and contents of the anterior triangle and its subdivisions
+  - Define the boundaries and contents of the posterior triangle and its subdivisions
+  - Describe the clinical significance of each triangle in surgical procedures
+  - Identify structures at risk during surgery in each triangle
+  - Describe the surface anatomy landmarks of the neck triangles
+
+content:
+  atoms:
+    - id: anterior-triangle
+      title: "Anterior Triangle"
+      text: >
+        Boundaries: anterior — midline of neck; posterior — anterior border of SCM; superior — lower border of mandible.
+        Subdivisions: (1) Submental triangle — between anterior bellies of digastric + hyoid body; contains submental lymph nodes.
+        (2) Digastric (submandibular) triangle — between two bellies of digastric + mandible; contains submandibular gland, facial artery/vein, hypoglossal nerve, mylohyoid nerve.
+        (3) Carotid triangle — SCM, superior belly of omohyoid, posterior belly of digastric; contains carotid bifurcation (C3-C4 level), internal jugular vein, vagus nerve, hypoglossal nerve, superior laryngeal nerve.
+        (4) Muscular triangle — SCM, superior belly of omohyoid, midline; contains thyroid gland, parathyroids, infrahyoid muscles.
+        📚 BD Chaurasia, Vol.3, Ch.5 (p.72-86)
+
+    - id: posterior-triangle
+      title: "Posterior Triangle"
+      text: >
+        Boundaries: anterior — posterior border of SCM; posterior — anterior border of trapezius; inferior — middle third of clavicle.
+        Floor: splenius capitis, levator scapulae, scalenus medius, scalenus anterior (partially).
+        Roof: investing layer of deep cervical fascia + platysma.
+        Subdivisions: Occipital triangle (above omohyoid) and supraclavicular triangle (below omohyoid).
+        Contents: spinal accessory nerve (CN XI), trunks of brachial plexus, subclavian artery (3rd part),
+        transverse cervical and suprascapular vessels, external jugular vein, cervical lymph nodes.
+        📚 BD Chaurasia, Vol.3, Ch.5 (p.87-94); 📚 Netter's Atlas, 6th Ed, Plate 26
+
+    - id: carotid-triangle-details
+      title: "Carotid Triangle — Surgical Importance"
+      text: >
+        Most important triangle clinically. Contains carotid bifurcation at upper border of thyroid cartilage (C3-C4).
+        Carotid body (chemoreceptor) and carotid sinus (baroreceptor) located at bifurcation.
+        Internal carotid artery: no branches in neck. External carotid: 8 branches (mnemonic: "Some Anatomists Like
+        Freaking Out Poor Medical Students" — Superior thyroid, Ascending pharyngeal, Lingual, Facial, Occipital,
+        Posterior auricular, Maxillary, Superficial temporal).
+        Vagus nerve lies in carotid sheath between IJV and ICA/CCA.
+        📚 Gray's Anatomy, 42nd Ed, Ch.28
+
+    - id: supraclavicular-triangle
+      title: "Supraclavicular Triangle"
+      text: >
+        Bounded by inferior belly of omohyoid, posterior border of SCM, and middle third of clavicle.
+        Contains: third part of subclavian artery, subclavian vein (below clavicle), brachial plexus trunks,
+        suprascapular artery, transverse cervical artery, external jugular vein (crosses SCM).
+        Clinical: site for subclavian vein catheterization, Virchow's node (left supraclavicular — gastric ca metastasis),
+        cervical rib may compress lower trunk of brachial plexus here.
+        📚 BD Chaurasia, Vol.3
+
+  clinical:
+    - title: "Clinical: Carotid Endarterectomy"
+      text: >
+        Performed in carotid triangle for atherosclerotic carotid stenosis. Incision along anterior border of SCM.
+        Structures at risk: hypoglossal nerve (crosses ECA and ICA), superior laryngeal nerve (external branch — near superior thyroid artery),
+        vagus nerve (in carotid sheath), marginal mandibular branch of facial nerve.
+    - title: "Clinical: Spinal Accessory Nerve Injury"
+      text: >
+        CN XI crosses posterior triangle superficially — vulnerable during lymph node biopsy.
+        Injury causes trapezius paralysis → shoulder droop, inability to abduct arm above 90°, winging of scapula (lateral winging).
+
+high_yield_points:
+  - "SCM divides neck into anterior and posterior triangles"
+  - "Carotid bifurcation at C3-C4 level (upper border of thyroid cartilage)"
+  - "Internal carotid artery has NO branches in the neck"
+  - "Spinal accessory nerve (CN XI) — most superficial structure in posterior triangle — at risk in biopsy"
+  - "Virchow's node = left supraclavicular node — sentinel for gastric carcinoma (Troisier's sign)"
+  - "External jugular vein crosses SCM superficially — landmark for posterior triangle"
+  - "Carotid body = chemoreceptor; Carotid sinus = baroreceptor"
+  - "Erb's point in posterior triangle — C5,C6 junction, 2-3 cm above clavicle"
+  - "Muscular triangle contains thyroid and parathyroid glands"
+  - "Posterior triangle floor: splenius capitis, levator scapulae, scalenus medius"
+
+mcqs:
+  - question: "A surgeon performing lymph node biopsy in the posterior triangle of the neck must be careful to preserve which nerve that crosses superficially?"
+    options:
+      - "Vagus nerve"
+      - "Phrenic nerve"
+      - "Spinal accessory nerve"
+      - "Hypoglossal nerve"
+    answer: "Spinal accessory nerve"
+    explanation: >
+      CN XI (spinal accessory) crosses the posterior triangle superficially from the posterior border of SCM to the anterior border of trapezius. It is the most commonly injured nerve during posterior triangle surgery. Injury causes trapezius paralysis with shoulder droop.
+      📚 BD Chaurasia, Vol.3, Ch.5
+    difficulty: 1
+
+  - question: "The carotid bifurcation is located at the level of which vertebra?"
+    options:
+      - "C2"
+      - "C3-C4"
+      - "C5-C6"
+      - "C7"
+    answer: "C3-C4"
+    explanation: >
+      The common carotid artery bifurcates into internal and external carotid arteries at the level of the upper border of the thyroid cartilage, corresponding to C3-C4 vertebral level. This is located within the carotid triangle.
+      📚 Gray's Anatomy, 42nd Ed, Ch.28
+    difficulty: 1
+
+  - question: "Virchow's node is located in which triangle of the neck?"
+    options:
+      - "Carotid triangle"
+      - "Submental triangle"
+      - "Left supraclavicular triangle"
+      - "Right supraclavicular triangle"
+    answer: "Left supraclavicular triangle"
+    explanation: >
+      Virchow's node (signal node) is located in the left supraclavicular triangle. Enlargement (Troisier's sign) is a classic sign of metastatic gastric carcinoma, as it is the terminal node of the thoracic duct drainage.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "Which of the following is NOT a content of the carotid triangle?"
+    options:
+      - "Common carotid artery"
+      - "Internal jugular vein"
+      - "Spinal accessory nerve"
+      - "Hypoglossal nerve"
+    answer: "Spinal accessory nerve"
+    explanation: >
+      The spinal accessory nerve crosses the posterior triangle, not the carotid triangle. The carotid triangle contains the carotid arteries, IJV, vagus nerve, hypoglossal nerve, and superior laryngeal nerve.
+      📚 BD Chaurasia, Vol.3, Ch.5
+    difficulty: 2
+
+  - question: "The posterior triangle of the neck is bounded posteriorly by which muscle?"
+    options:
+      - "Sternocleidomastoid"
+      - "Trapezius"
+      - "Omohyoid"
+      - "Splenius capitis"
+    answer: "Trapezius"
+    explanation: >
+      Posterior triangle boundaries: anterior — posterior border of SCM; posterior — anterior border of trapezius; inferior — middle third of clavicle. Splenius capitis forms part of the floor, not a boundary. Omohyoid subdivides it.
+      📚 BD Chaurasia, Vol.3, Ch.5
+    difficulty: 1

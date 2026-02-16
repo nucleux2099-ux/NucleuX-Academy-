@@ -1,17 +1,157 @@
-topic_id: diaphragm-anatomy
-name: Diaphragm Anatomy
-description: Diaphragm Anatomy — NMC curriculum topic
+topic_id: diaphragm
+name: Diaphragm
+description: Diaphragm — Origin, insertions, openings, nerve supply, and clinical significance
 high_yield: true
 nmc_codes:
-- code: AN47.14
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: AN48.1
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: AN52.5
+- code: AN21.7
   domain: KH
   core: true
   phase: Phase 1
+
+overview: >
+  The diaphragm is the primary muscle of respiration, a dome-shaped musculotendinous partition separating
+  thorax from abdomen. It has a peripheral muscular part (sternal, costal, lumbar origins) and a central tendon.
+  Three major openings transmit important structures: aortic hiatus (T12), esophageal hiatus (T10), and
+  caval opening (T8). Motor supply: phrenic nerve (C3,4,5 — "C3,4,5 keeps the diaphragm alive").
+  📚 Gray's Anatomy, 42nd Ed, Ch.54; 📚 BD Chaurasia, Vol.1, Ch.18
+
+learning_objectives:
+  - Describe the origin, insertion, and nerve supply of the diaphragm
+  - List the three major openings and their vertebral levels and contents
+  - Explain the crura of the diaphragm and their clinical relevance
+  - Describe the developmental components of the diaphragm
+  - Discuss congenital diaphragmatic hernias
+
+content:
+  atoms:
+    - id: origin-and-parts
+      title: "Origin and Parts of the Diaphragm"
+      text: >
+        Sternal part: two slips from posterior surface of xiphoid process. Costal part: inner surfaces of lower
+        6 ribs and their costal cartilages (interdigitating with transversus abdominis). Lumbar part: right crus
+        (L1-L3 vertebral bodies) and left crus (L1-L2). Median arcuate ligament: bridges aorta over crura (T12).
+        Medial arcuate ligament: over psoas major (medial to lateral arcuate ligament). Lateral arcuate ligament:
+        over quadratus lumborum. All fibers insert into the central tendon (trefoil-shaped).
+        📚 BD Chaurasia, Vol.1, Ch.18 (p.254-260)
+
+    - id: openings
+      title: "Major Openings of the Diaphragm"
+      text: >
+        Caval opening (T8): in central tendon (right leaf), transmits IVC and right phrenic nerve.
+        It is the highest and most anterior opening. Walls do NOT contract during inspiration — IVC remains patent.
+        Esophageal hiatus (T10): in right crus (muscular sling), transmits esophagus, vagal trunks (anterior = left vagus,
+        posterior = right vagus), esophageal branches of left gastric artery. Muscular sling acts as physiological sphincter.
+        Aortic hiatus (T12): BEHIND the diaphragm (between crura + median arcuate ligament), transmits aorta,
+        thoracic duct, azygos vein. Not a true opening — aorta pulsation unaffected by respiration.
+        Mnemonic: "I 8 (ate) 10 Eggs At 12" — IVC at T8, Esophagus at T10, Aorta at T12.
+        📚 Gray's Anatomy, 42nd Ed, Ch.54; 📚 Netter's Atlas, 6th Ed, Plate 191
+
+    - id: nerve-supply
+      title: "Nerve Supply"
+      text: >
+        Motor: phrenic nerve (C3,4,5) — SOLE motor supply. Phrenic nerve injury → paradoxical movement
+        (elevated hemidiaphragm rises on inspiration). Sensory: central part — phrenic nerve (referred pain to
+        shoulder tip, C3-C5 dermatome). Peripheral part — lower intercostal nerves (T7-T12).
+        Right phrenic nerve passes through caval opening with IVC. Left phrenic nerve pierces muscular part.
+        📚 BD Chaurasia, Vol.1
+
+    - id: development
+      title: "Development & Congenital Hernias"
+      text: >
+        Four developmental components: (1) Septum transversum (central tendon — largest contribution);
+        (2) Pleuroperitoneal membranes (close pleuroperitoneal canals); (3) Dorsal mesentery of esophagus
+        (crura); (4) Body wall mesoderm (peripheral muscular rim).
+        Bochdalek hernia: failure of pleuroperitoneal membrane closure — posterolateral defect, LEFT side more common
+        (right closed earlier, liver protects). Presents with respiratory distress in neonates.
+        Morgagni hernia: anterior parasternal defect (foramen of Morgagni), retrosternal, RIGHT side more common.
+        📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Hiatus Hernia"
+      text: >
+        Sliding (Type I, 95%): GE junction slides up through esophageal hiatus into thorax. Associated with GERD.
+        Paraesophageal/Rolling (Type II): gastric fundus herniates alongside esophagus while GE junction remains in place.
+        Risk of strangulation. Mixed (Type III): combination. Right crus forms the sling around esophagus — repaired in surgery.
+    - title: "Clinical: Referred Shoulder Pain"
+      text: >
+        Diaphragmatic irritation (subphrenic abscess, ruptured spleen, liver abscess) causes referred pain to the
+        shoulder tip (C3-C5 dermatome) via the phrenic nerve. Kehr's sign = left shoulder pain from splenic rupture.
+
+high_yield_points:
+  - "Phrenic nerve C3,4,5 — sole motor supply to diaphragm"
+  - "Caval opening T8 (central tendon), Esophageal hiatus T10 (right crus), Aortic hiatus T12 (behind diaphragm)"
+  - "Mnemonic: I 8 10 Eggs At 12"
+  - "Aortic hiatus: aorta + thoracic duct + azygos vein"
+  - "Esophageal hiatus: esophagus + vagal trunks + left gastric artery branches"
+  - "Bochdalek hernia: posterolateral, LEFT side, most common congenital diaphragmatic hernia"
+  - "Morgagni hernia: anterior parasternal, RIGHT side"
+  - "Septum transversum = largest developmental component → central tendon"
+  - "Kehr's sign: left shoulder pain from diaphragmatic irritation (splenic rupture)"
+  - "Caval opening in central tendon — IVC stays patent during inspiration"
+
+mcqs:
+  - question: "Which structure passes through the esophageal hiatus of the diaphragm along with the esophagus?"
+    options:
+      - "Thoracic duct"
+      - "Azygos vein"
+      - "Vagal trunks"
+      - "Inferior vena cava"
+    answer: "Vagal trunks"
+    explanation: >
+      The esophageal hiatus (T10, in right crus) transmits the esophagus and vagal trunks (anterior = left vagus,
+      posterior = right vagus). Thoracic duct and azygos pass through aortic hiatus. IVC through caval opening.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "A neonate presents with respiratory distress immediately after birth. Chest X-ray shows bowel loops in the left hemithorax. What is the most likely diagnosis?"
+    options:
+      - "Morgagni hernia"
+      - "Bochdalek hernia"
+      - "Hiatus hernia"
+      - "Eventration of diaphragm"
+    answer: "Bochdalek hernia"
+    explanation: >
+      Bochdalek hernia is a posterolateral congenital diaphragmatic hernia, more common on the LEFT side (pleuroperitoneal
+      membrane closes later on left). Presents with respiratory distress in neonates. Morgagni is anterior and usually
+      presents later in life.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The phrenic nerve is derived from which cervical segments?"
+    options:
+      - "C1, C2, C3"
+      - "C3, C4, C5"
+      - "C4, C5, C6"
+      - "C5, C6, C7"
+    answer: "C3, C4, C5"
+    explanation: >
+      "C3, 4, 5 keeps the diaphragm alive." The phrenic nerve (primarily C4, with contributions from C3 and C5) is the sole
+      motor nerve to the diaphragm. It also provides sensory supply to the central diaphragm, pericardium, and mediastinal pleura.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 1
+
+  - question: "Referred pain to the shoulder tip from subphrenic abscess is mediated by which nerve?"
+    options:
+      - "Intercostal nerves"
+      - "Vagus nerve"
+      - "Phrenic nerve"
+      - "Splanchnic nerves"
+    answer: "Phrenic nerve"
+    explanation: >
+      The central diaphragm is innervated by the phrenic nerve (C3-C5). Irritation refers pain to the shoulder tip
+      (C3-C5 dermatome — supraclavicular nerves). This is Kehr's sign when caused by splenic rupture.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 1
+
+  - question: "The aortic hiatus of the diaphragm is located at the level of which vertebra?"
+    options:
+      - "T8"
+      - "T10"
+      - "T12"
+      - "L1"
+    answer: "T12"
+    explanation: >
+      The aortic hiatus is at T12 level, behind the diaphragm between the crura and median arcuate ligament. It transmits
+      the aorta, thoracic duct, and azygos vein. T8 = IVC (caval opening), T10 = esophagus.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1

@@ -1,37 +1,153 @@
 topic_id: neonatal-resuscitation
 name: Neonatal Resuscitation
-description: Neonatal Resuscitation — NMC curriculum topic
+description: NRP algorithm, initial steps, positive pressure ventilation, and APGAR scoring
 high_yield: true
 nmc_codes:
-- code: PE16.1
+- code: PE7.1
   domain: KH
   core: true
-  phase: Phase 2
-- code: PE20.1
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.14
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.15
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.16
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.19
-  domain: KH
-  core: true
-  phase: Phase 2
-- code: PE20.3
-  domain: SH
-  core: true
-  phase: Phase 2
-- code: PE33.3
-  domain: SH
-  core: true
-  phase: Phase 2
+  phase: Phase 3
+
+overview: >
+  Approximately 10% of newborns require some assistance at birth, and ~1% need extensive resuscitation.
+  The Neonatal Resuscitation Program (NRP) provides a systematic algorithm: initial steps → PPV → chest
+  compressions → medications. Effective ventilation is the single most important step. Birth asphyxia
+  remains a leading cause of neonatal mortality in developing countries.
+  📚 Nelson's, 22nd Ed, Ch.115 | 📚 OP Ghai, 10th Ed, Ch.9
+
+learning_objectives:
+  - Describe the initial steps of neonatal resuscitation
+  - Explain the NRP algorithm and golden minute concept
+  - Interpret APGAR scores and their clinical significance
+  - List indications for PPV, chest compressions, and epinephrine
+  - Describe the role of therapeutic hypothermia in birth asphyxia
+
+content:
+  atoms:
+    - id: initial-steps
+      title: "Initial Steps (The Golden Minute)"
+      text: >
+        Within 30 seconds (golden minute): (1) Provide warmth (radiant warmer, plastic wrap for preterms).
+        (2) Position — sniffing position (slight neck extension). (3) Clear airway — suction mouth
+        then nose (only if needed). (4) Dry and stimulate — rub back, flick soles.
+        (5) Assess — breathing, heart rate, tone.
+        If gasping/apneic or HR <100 → begin PPV within 60 seconds of birth.
+        Room air (21% FiO2) for term; blended oxygen for preterm. Target SpO2: 60-65% at 1 min,
+        80-85% at 5 min, 85-95% at 10 min (right hand pre-ductal).
+        📚 OP Ghai, 10th Ed, Ch.9 (p.142-145)
+
+    - id: nrp-algorithm
+      title: "NRP Algorithm"
+      text: >
+        Step 1: Initial steps (30 sec) → assess HR and breathing.
+        Step 2: PPV with room air/blended O2 if HR <100 or apneic (rate 40-60/min, "squeeze-two-three").
+        Ventilation corrective steps: MR SOPA (Mask adjustment, Reposition, Suction, Open mouth,
+        Pressure increase, Alternative airway).
+        Step 3: If HR <60 after 30 sec effective PPV → chest compressions + PPV (3:1 ratio,
+        120 events/min = 90 compressions + 30 breaths). Two-thumb encircling technique preferred.
+        Step 4: If HR still <60 → Epinephrine 0.01-0.03 mg/kg IV (UVC preferred) or 0.05-0.1 mg/kg ET.
+        Normal saline 10 mL/kg for suspected blood loss/shock.
+        📚 Nelson's, 22nd Ed, Ch.115 | 📚 OP Ghai, 10th Ed, Ch.9
+
+    - id: apgar
+      title: "APGAR Score"
+      text: >
+        Assessed at 1 and 5 minutes. Five components (0-2 each, max 10):
+        A — Appearance (color): pink=2, acrocyanosis=1, blue/pale=0.
+        P — Pulse (HR): >100=2, <100=1, absent=0.
+        G — Grimace (reflex): cry=2, grimace=1, none=0.
+        A — Activity (tone): active=2, some flexion=1, limp=0.
+        R — Respiration: good cry=2, slow/irregular=1, absent=0.
+        Score 7-10: normal. 4-6: moderate depression. 0-3: severe depression.
+        APGAR should NOT guide resuscitation decisions (HR and breathing guide NRP).
+        1-minute APGAR reflects need for immediate intervention; 5-minute correlates better with outcome.
+        📚 OP Ghai, 10th Ed, Ch.9 (p.140-141)
+
+    - id: therapeutic-hypothermia
+      title: "Therapeutic Hypothermia for HIE"
+      text: >
+        Indicated for moderate-severe hypoxic-ischemic encephalopathy (HIE) in term/near-term (≥36 wks).
+        Target: core temperature 33.5°C for 72 hours, started within 6 hours of birth.
+        Methods: whole body cooling (preferred) or selective head cooling.
+        Reduces death and disability. NNT = 7. Must be done in tertiary NICU.
+        📚 Nelson's, 22nd Ed, Ch.115
+
+  high_yield_points:
+    - "VENTILATION is the single most important step in neonatal resuscitation"
+    - "Golden minute: complete initial steps and begin PPV within 60 seconds"
+    - "Room air (21% O2) for term neonates; blended O2 for preterm"
+    - "Chest compressions: two-thumb technique, 3:1 ratio (90 compressions + 30 breaths = 120/min)"
+    - "Epinephrine dose: 0.01-0.03 mg/kg IV (1:10,000); ET dose is higher (0.05-0.1 mg/kg)"
+    - "MR SOPA = ventilation corrective steps (Mask, Reposition, Suction, Open mouth, Pressure, Airway)"
+    - "APGAR does NOT guide resuscitation — HR and breathing do"
+    - "Therapeutic hypothermia: 33.5°C for 72 hours, within 6 hours, for moderate-severe HIE"
+    - "Pre-ductal SpO2 monitoring from RIGHT hand/wrist"
+    - "Meconium: no routine tracheal suctioning — begin PPV if not breathing (NRP 2020)"
+
+mcqs:
+  - question: "The single most important step in neonatal resuscitation is:"
+    options:
+      - "Chest compressions"
+      - "Epinephrine administration"
+      - "Positive pressure ventilation"
+      - "Endotracheal intubation"
+    answer: "Positive pressure ventilation"
+    explanation: >
+      Effective ventilation is the cornerstone of neonatal resuscitation. Most neonates who require
+      resuscitation respond to adequate ventilation alone. Compressions and drugs are rarely needed.
+      📚 OP Ghai, 10th Ed, Ch.9 (p.143)
+    difficulty: 1
+
+  - question: "In neonatal resuscitation, chest compressions are indicated when heart rate is:"
+    options:
+      - "<100 bpm despite PPV"
+      - "<80 bpm despite PPV"
+      - "<60 bpm despite 30 seconds of effective PPV"
+      - "<60 bpm without PPV"
+    answer: "<60 bpm despite 30 seconds of effective PPV"
+    explanation: >
+      Chest compressions are started only when HR remains <60 bpm after 30 seconds of effective
+      PPV. The emphasis is on ensuring effective ventilation first (MR SOPA corrective steps).
+      📚 Nelson's, 22nd Ed, Ch.115
+    difficulty: 1
+
+  - question: "The compression to ventilation ratio in neonatal resuscitation is:"
+    options:
+      - "15:2"
+      - "5:1"
+      - "3:1"
+      - "30:2"
+    answer: "3:1"
+    explanation: >
+      In neonates, the ratio is 3 compressions to 1 ventilation (3:1), giving 90 compressions
+      and 30 breaths per minute (total 120 events/min). This differs from pediatric/adult ratios
+      because neonatal arrest is almost always respiratory in origin.
+      📚 OP Ghai, 10th Ed, Ch.9 (p.145)
+    difficulty: 1
+
+  - question: "Therapeutic hypothermia for birth asphyxia should be initiated within:"
+    options:
+      - "1 hour of birth"
+      - "6 hours of birth"
+      - "12 hours of birth"
+      - "24 hours of birth"
+    answer: "6 hours of birth"
+    explanation: >
+      Therapeutic hypothermia (33.5°C for 72 hours) must be initiated within 6 hours of birth
+      for maximum benefit. It is indicated for moderate-severe HIE in term/near-term neonates (≥36 weeks).
+      📚 Nelson's, 22nd Ed, Ch.115
+    difficulty: 1
+
+  - question: "For a term neonate requiring resuscitation at birth, the initial FiO2 should be:"
+    options:
+      - "100%"
+      - "60%"
+      - "40%"
+      - "21% (room air)"
+    answer: "21% (room air)"
+    explanation: >
+      NRP 2020 recommends starting with room air (21% FiO2) for term neonates and titrating
+      based on pre-ductal SpO2. High FiO2 (100%) is associated with oxidative stress and delayed
+      time to first breath. Preterm neonates start with 21-30% blended oxygen.
+      📚 OP Ghai, 10th Ed, Ch.9 (p.143)
+    difficulty: 2

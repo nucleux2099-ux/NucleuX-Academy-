@@ -1,0 +1,154 @@
+topic_id: molecular-biology-techniques
+name: "Molecular Biology Techniques (PCR, Blotting, CRISPR)"
+description: >
+  Essential molecular biology laboratory techniques including PCR, blotting, CRISPR, and their clinical applications.
+high_yield: true
+nmc_codes:
+  - code: BI10.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Molecular biology techniques are fundamental tools in diagnostics, research, and gene therapy.
+  PCR amplifies specific DNA sequences exponentially. Blotting techniques detect DNA (Southern),
+  RNA (Northern), and protein (Western). CRISPR-Cas9 enables precise gene editing.
+  These techniques underpin modern diagnostics (COVID PCR, HIV viral load, prenatal diagnosis).
+  📚 Harper's Biochemistry, 31st Ed, Ch.39; 📚 Stryer Biochemistry, Ch.5
+
+learning_objectives:
+  - Describe the principle and steps of PCR and its variants (RT-PCR, real-time PCR)
+  - Differentiate Southern, Northern, and Western blotting
+  - Explain CRISPR-Cas9 mechanism and applications
+  - Apply molecular techniques to clinical diagnostic scenarios
+  - Understand restriction enzymes, gel electrophoresis, and DNA sequencing basics
+
+content:
+  atoms:
+    - id: pcr
+      title: "Polymerase Chain Reaction (PCR)"
+      text: >
+        Amplifies specific DNA segment using two primers, Taq polymerase (thermostable, from Thermus aquaticus),
+        and dNTPs. Three steps per cycle (25-35 cycles): (1) Denaturation (94°C) — separate strands;
+        (2) Annealing (55-65°C) — primers bind; (3) Extension (72°C) — Taq extends.
+        2ⁿ amplification (n = cycles). Variants: RT-PCR (RNA→cDNA first, using reverse transcriptase),
+        Real-time/qPCR (quantitative, uses fluorescent probes), multiplex PCR (multiple primers).
+        Applications: pathogen detection (COVID, TB, HIV), forensics, prenatal diagnosis, HLA typing.
+        📚 Harper's Biochemistry, 31st Ed, Ch.39
+
+    - id: blotting-techniques
+      title: "Blotting Techniques"
+      text: >
+        Southern blot: detects DNA. DNA → restriction enzymes → gel electrophoresis → transfer to membrane → labeled DNA probe.
+        Named after Edward Southern. Used for gene rearrangements, RFLP analysis.
+        Northern blot: detects RNA (mRNA expression levels). Same principle, RNA on gel.
+        Western blot: detects PROTEIN using antibodies. Used as confirmatory test for HIV (detects anti-HIV antibodies).
+        Mnemonic: SNoW DRoP — Southern=DNA, Northern=RNA, Western=Protein.
+        Southwestern blot: detects DNA-binding proteins. ELISA is not a blot but detects antigens/antibodies.
+        📚 Stryer Biochemistry, Ch.5
+
+    - id: crispr-cas9
+      title: "CRISPR-Cas9 Gene Editing"
+      text: >
+        CRISPR = Clustered Regularly Interspaced Short Palindromic Repeats (bacterial adaptive immunity).
+        Components: guide RNA (gRNA, ~20nt complementary to target) + Cas9 nuclease (makes double-strand break).
+        Cell repairs break via NHEJ (knockout, insertions/deletions) or HDR with template (precise edit/knock-in).
+        Applications: gene therapy (sickle cell disease — CASGEVY approved 2023), disease models, agriculture.
+        PAM sequence (NGG for SpCas9) required adjacent to target. Off-target effects are a concern.
+        📚 Harper's Biochemistry, 31st Ed, Ch.39
+
+    - id: other-techniques
+      title: "Other Key Techniques"
+      text: >
+        Restriction enzymes: bacterial endonucleases that cut DNA at palindromic sequences (e.g., EcoRI: GAATTC).
+        Gel electrophoresis: separates DNA/RNA/protein by size (smaller = faster migration). Agarose for nucleic acids, PAGE for proteins.
+        DNA sequencing: Sanger (dideoxy chain termination), Next-gen sequencing (NGS — massively parallel).
+        Microarray: thousands of DNA probes on chip → analyze gene expression profiles simultaneously.
+        FISH: fluorescent probes hybridize to specific chromosomal regions (detects translocations, aneuploidies).
+        📚 Harper's Biochemistry, 31st Ed, Ch.39
+
+  clinical:
+    - title: "Clinical Correlation: COVID-19 RT-PCR"
+      text: >
+        SARS-CoV-2 is an RNA virus. RT-PCR: viral RNA → cDNA (reverse transcriptase) → PCR amplification.
+        Targets: RdRp gene, N gene, E gene. Gold standard for diagnosis. Ct value inversely correlates with viral load.
+    - title: "Clinical Correlation: CRISPR for Sickle Cell Disease"
+      text: >
+        CASGEVY (exagamglogene autotemcel): uses CRISPR to edit BCL11A gene in patient's stem cells →
+        reactivates fetal hemoglobin (HbF) production → reduces sickling. First approved CRISPR therapy (2023).
+
+high_yield_points:
+  - "PCR: denaturation (94°C) → annealing (55-65°C) → extension (72°C); uses Taq polymerase"
+  - "SNoW DRoP: Southern=DNA, Northern=RNA, Western=Protein"
+  - "Western blot is confirmatory test for HIV"
+  - "CRISPR-Cas9: guide RNA directs Cas9 to make double-strand break at target site"
+  - "RT-PCR: first converts RNA to cDNA, then amplifies — used for RNA virus detection"
+  - "Restriction enzymes cut at palindromic sequences"
+  - "FISH uses fluorescent probes to detect chromosomal abnormalities"
+  - "Sanger sequencing = dideoxy chain termination method"
+
+mcqs:
+  - question: "In PCR, the thermostable DNA polymerase used is derived from:"
+    options:
+      - "E. coli"
+      - "Thermus aquaticus"
+      - "Bacillus subtilis"
+      - "Staphylococcus aureus"
+    answer: "Thermus aquaticus"
+    explanation: >
+      Taq polymerase from the thermophilic bacterium Thermus aquaticus is stable at 94°C
+      (denaturation temperature) and functions optimally at 72°C (extension).
+      📚 Harper's Biochemistry, 31st Ed, Ch.39
+    difficulty: 1
+
+  - question: "Which blotting technique is used as a confirmatory test for HIV?"
+    options:
+      - "Southern blot"
+      - "Northern blot"
+      - "Western blot"
+      - "Southwestern blot"
+    answer: "Western blot"
+    explanation: >
+      Western blot detects specific proteins/antibodies. For HIV, it detects antibodies against
+      specific HIV proteins (gp120, gp41, p24) after a positive screening ELISA.
+      📚 Stryer Biochemistry, Ch.5
+    difficulty: 1
+
+  - question: "CRISPR-Cas9 creates a double-strand break in DNA which is repaired by:"
+    options:
+      - "Base excision repair only"
+      - "NHEJ or homology-directed repair"
+      - "Nucleotide excision repair"
+      - "Mismatch repair"
+    answer: "NHEJ or homology-directed repair"
+    explanation: >
+      CRISPR-Cas9 DSBs are repaired by either NHEJ (error-prone → gene knockout) or HDR with a
+      donor template (precise gene editing). The choice determines whether it's a knockout or knock-in.
+      📚 Harper's Biochemistry, 31st Ed, Ch.39
+    difficulty: 2
+
+  - question: "A research lab wants to analyze mRNA expression levels of a gene. Which technique should they use?"
+    options:
+      - "Southern blot"
+      - "Northern blot"
+      - "Western blot"
+      - "FISH"
+    answer: "Northern blot"
+    explanation: >
+      Northern blot detects and quantifies specific mRNA. Southern blot is for DNA,
+      Western blot for proteins. Today, RT-qPCR and RNA-seq have largely replaced Northern blots.
+      📚 Stryer Biochemistry, Ch.5
+    difficulty: 1
+
+  - question: "In RT-PCR for COVID-19 diagnosis, the first step involves:"
+    options:
+      - "DNA denaturation at 94°C"
+      - "Reverse transcription of viral RNA to cDNA"
+      - "Restriction enzyme digestion"
+      - "Gel electrophoresis"
+    answer: "Reverse transcription of viral RNA to cDNA"
+    explanation: >
+      SARS-CoV-2 is an RNA virus. RT (reverse transcriptase) first converts viral RNA to complementary
+      DNA (cDNA), which is then amplified by standard PCR. This is why it's called RT-PCR.
+      📚 Harper's Biochemistry, 31st Ed, Ch.39
+    difficulty: 1

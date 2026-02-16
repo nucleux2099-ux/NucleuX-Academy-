@@ -1,0 +1,152 @@
+topic_id: transcription-translation
+name: "Transcription & Translation"
+description: >
+  Gene expression: DNA→mRNA (transcription) and mRNA→protein (translation) with regulation and drug targets.
+high_yield: true
+nmc_codes:
+  - code: BI9.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Transcription: RNA polymerase synthesizes mRNA from DNA template (5'→3'). Eukaryotes have 3 RNA polymerases.
+  mRNA processing: 5' cap, 3' poly-A tail, splicing. Translation occurs on ribosomes: initiation (AUG, Met),
+  elongation (peptide bond by peptidyl transferase in 23S rRNA), termination (stop codons UAA, UAG, UGA).
+  Antibiotics targeting these steps are clinically critical.
+  📚 Harper's Biochemistry, 31st Ed, Ch.37-38; 📚 Stryer Biochemistry, Ch.29-30
+
+learning_objectives:
+  - Describe the steps of transcription (initiation, elongation, termination) in prokaryotes and eukaryotes
+  - Differentiate the three eukaryotic RNA polymerases and their products
+  - Explain post-transcriptional mRNA processing (capping, polyadenylation, splicing)
+  - Enumerate the steps of translation and key components (tRNA, ribosomes, codons)
+  - Identify antibiotics that target transcription and translation
+
+content:
+  atoms:
+    - id: transcription
+      title: "Transcription"
+      text: >
+        Template strand read 3'→5'; mRNA synthesized 5'→3'. Prokaryotes: single RNA polymerase (core + σ factor for promoter recognition).
+        Eukaryotes: RNA pol I (rRNA 28S,18S,5.8S), RNA pol II (mRNA, snRNA — inhibited by α-amanitin at LOW dose),
+        RNA pol III (tRNA, 5S rRNA — inhibited by α-amanitin at HIGH dose).
+        Promoter elements: TATA box (-25), CAAT box, GC box. TFIID/TBP binds TATA box.
+        Rifampin inhibits prokaryotic RNA polymerase (anti-TB drug). Actinomycin D intercalates DNA, blocks transcription.
+        📚 Harper's Biochemistry, 31st Ed, Ch.37
+
+    - id: mrna-processing
+      title: "Post-Transcriptional mRNA Processing"
+      text: >
+        5' cap: 7-methylguanosine added (protects from degradation, aids ribosome binding).
+        3' poly-A tail: ~200 adenines added by poly-A polymerase (stability, nuclear export).
+        Splicing: introns removed by spliceosome (snRNPs: U1, U2, U4, U5, U6). Lariat intermediate.
+        Exons are expressed, introns are intervening. Alternative splicing → multiple proteins from one gene.
+        Splicing defects: β-thalassemia (some mutations disrupt splice sites in β-globin gene).
+        📚 Stryer Biochemistry, Ch.29
+
+    - id: translation
+      title: "Translation (Protein Synthesis)"
+      text: >
+        Ribosome: 80S eukaryotic (40S + 60S), 70S prokaryotic (30S + 50S).
+        Initiation: small subunit binds mRNA, AUG recognized, Met-tRNA binds (eIF2 in eukaryotes).
+        Elongation: aminoacyl-tRNA enters A site → peptide bond (peptidyl transferase, 23S rRNA = ribozyme)
+        → translocation (EF-G/EF-2). Diptheria toxin ADP-ribosylates EF-2 → stops translation.
+        Termination: stop codons (UAA, UAG, UGA) → release factors → ribosome dissociates.
+        Wobble hypothesis: 3rd position of codon has flexible base pairing → fewer tRNAs needed.
+        📚 Harper's Biochemistry, 31st Ed, Ch.38
+
+    - id: antibiotic-targets
+      title: "Antibiotics Targeting Protein Synthesis"
+      text: >
+        30S subunit: aminoglycosides (misreading), tetracyclines (block A site).
+        50S subunit: chloramphenicol (peptidyl transferase), macrolides (translocation), clindamycin, linezolid.
+        Mnemonic: "Buy AT 30, CELL at 50" — aminoglycosides, tetracyclines at 30S;
+        chloramphenicol, erythromycin, linezolid, lincomycin/clindamycin at 50S.
+        📚 Harper's Biochemistry, 31st Ed, Ch.38
+
+  clinical:
+    - title: "Clinical Correlation: Diphtheria Toxin"
+      text: >
+        Corynebacterium diphtheriae toxin inactivates EF-2 (elongation factor 2) by ADP-ribosylation.
+        Halts protein synthesis → pharyngeal pseudomembrane, myocarditis, neuropathy.
+    - title: "Clinical Correlation: β-Thalassemia"
+      text: >
+        Some β-thalassemia mutations affect splice sites in the β-globin gene, causing abnormal mRNA
+        processing with inclusion of intron sequences → unstable/absent β-globin → microcytic anemia.
+
+high_yield_points:
+  - "RNA pol II makes mRNA; inhibited by α-amanitin (Amanita mushroom poisoning)"
+  - "Rifampin inhibits prokaryotic RNA polymerase — key anti-TB drug"
+  - "5' cap = 7-methylguanosine; 3' poly-A tail = stability and export"
+  - "Introns removed by spliceosome (snRNPs); exons are expressed"
+  - "Peptidyl transferase is a RIBOZYME (23S rRNA catalyzes peptide bond)"
+  - "Diphtheria toxin ADP-ribosylates EF-2 → stops elongation"
+  - "30S targets: aminoglycosides, tetracyclines; 50S targets: chloramphenicol, macrolides, clindamycin"
+  - "Start codon AUG = methionine; Stop codons = UAA, UAG, UGA"
+
+mcqs:
+  - question: "Which RNA polymerase synthesizes mRNA in eukaryotes and is inhibited by α-amanitin?"
+    options:
+      - "RNA polymerase I"
+      - "RNA polymerase II"
+      - "RNA polymerase III"
+      - "Primase"
+    answer: "RNA polymerase II"
+    explanation: >
+      RNA pol II transcribes mRNA (and snRNA). It is sensitive to low doses of α-amanitin
+      (Amanita phalloides mushroom toxin). RNA pol I is resistant; RNA pol III needs high doses.
+      📚 Harper's Biochemistry, 31st Ed, Ch.37
+    difficulty: 1
+
+  - question: "Diphtheria toxin inhibits protein synthesis by inactivating:"
+    options:
+      - "EF-Tu"
+      - "EF-2 (eEF-2)"
+      - "Peptidyl transferase"
+      - "Initiation factor eIF-2"
+    answer: "EF-2 (eEF-2)"
+    explanation: >
+      Diphtheria toxin catalyzes ADP-ribosylation of EF-2, halting translocation during elongation.
+      This is a eukaryotic-specific effect (bacterial EF-G is not affected).
+      📚 Harper's Biochemistry, 31st Ed, Ch.38
+    difficulty: 1
+
+  - question: "Which of the following antibiotics acts on the 30S ribosomal subunit?"
+    options:
+      - "Chloramphenicol"
+      - "Erythromycin"
+      - "Tetracycline"
+      - "Clindamycin"
+    answer: "Tetracycline"
+    explanation: >
+      Tetracycline blocks aminoacyl-tRNA binding to the 30S A site.
+      Chloramphenicol, erythromycin, and clindamycin all act on the 50S subunit.
+      📚 Harper's Biochemistry, 31st Ed, Ch.38
+    difficulty: 1
+
+  - question: "The enzyme that catalyzes peptide bond formation during translation is:"
+    options:
+      - "Aminoacyl-tRNA synthetase"
+      - "Peptidyl transferase (23S rRNA)"
+      - "EF-2"
+      - "Release factor"
+    answer: "Peptidyl transferase (23S rRNA)"
+    explanation: >
+      Peptidyl transferase activity resides in the 23S rRNA of the large ribosomal subunit — it is a
+      ribozyme (RNA with catalytic activity), not a protein enzyme. This was a Nobel Prize-winning discovery.
+      📚 Stryer Biochemistry, Ch.30
+    difficulty: 2
+
+  - question: "A mutation at a splice site in the β-globin gene would most likely cause:"
+    options:
+      - "Sickle cell disease"
+      - "β-Thalassemia"
+      - "α-Thalassemia"
+      - "Hemoglobin C disease"
+    answer: "β-Thalassemia"
+    explanation: >
+      Splice site mutations cause abnormal mRNA processing → reduced or absent β-globin production =
+      β-thalassemia. Sickle cell is a point mutation (Glu→Val). α-Thalassemia involves α-globin gene deletions.
+      📚 Harper's Biochemistry, 31st Ed, Ch.37
+    difficulty: 2

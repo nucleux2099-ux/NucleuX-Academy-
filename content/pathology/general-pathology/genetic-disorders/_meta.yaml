@@ -1,0 +1,174 @@
+topic_id: genetic-disorders
+name: Genetic Disorders
+description: Mendelian disorders, chromosomal abnormalities, and common genetic syndromes
+high_yield: true
+
+overview: >
+  Genetic disorders include single-gene (Mendelian) disorders, chromosomal abnormalities, and multifactorial diseases.
+  Autosomal dominant, autosomal recessive, and X-linked patterns along with key chromosomal anomalies (Down, Turner, Klinefelter)
+  are extremely high-yield for NEET-PG.
+  📚 Robbins, 10th Ed, Ch.5 (p.147-196)
+
+learning_objectives:
+  - Classify genetic disorders by inheritance pattern and give examples
+  - Describe the pathogenesis and clinical features of common autosomal and sex-linked disorders
+  - Explain the cytogenetics and clinical features of trisomy 21, Turner, and Klinefelter syndromes
+  - Understand trinucleotide repeat disorders and anticipation
+  - Describe imprinting and its role in Prader-Willi and Angelman syndromes
+
+content:
+  atoms:
+    - id: autosomal-dominant
+      title: "Autosomal Dominant Disorders"
+      text: >
+        Only ONE mutant allele needed; 50% chance of transmission; often structural protein defects.
+        Key disorders: Marfan syndrome (fibrillin-1, FBN1; tall, arachnodactyly, lens subluxation UP & OUT,
+        aortic root dilation, MVP), Ehlers-Danlos (collagen defects; joint hypermobility, skin hyperextensibility),
+        Familial hypercholesterolemia (LDL receptor; xanthomas, premature atherosclerosis),
+        Hereditary spherocytosis (spectrin/ankyrin), Adult polycystic kidney disease (PKD1/PKD2),
+        von Willebrand disease (most common inherited bleeding disorder), Neurofibromatosis (NF1 — chr 17, café-au-lait spots;
+        NF2 — chr 22, bilateral acoustic neuromas), Huntington disease (chr 4, CAG repeats).
+        📚 Robbins, 10th Ed, Ch.5 (p.149-163)
+
+    - id: autosomal-recessive
+      title: "Autosomal Recessive Disorders"
+      text: >
+        BOTH alleles mutated; usually enzyme deficiencies; carrier parents (25% affected).
+        Key disorders: Cystic fibrosis (CFTR, chr 7; ΔF508 most common mutation; thick secretions, recurrent
+        lung infections with Pseudomonas, pancreatic insufficiency, meconium ileus, infertility in males),
+        Sickle cell disease (HbS, Glu→Val at position 6 of β-globin), Thalassemias,
+        Phenylketonuria (phenylalanine hydroxylase; musty odor, intellectual disability, fair skin),
+        Galactosemia, Glycogen storage diseases, Lysosomal storage diseases (Gaucher, Tay-Sachs, Niemann-Pick),
+        Wilson disease (copper accumulation; ATP7B), Hemochromatosis (HFE gene).
+        📚 Robbins, 10th Ed, Ch.5 (p.163-180)
+
+    - id: x-linked
+      title: "X-Linked Disorders"
+      text: >
+        X-linked recessive: affects MALES; carrier females usually unaffected.
+        Key disorders: Hemophilia A (Factor VIII deficiency), Hemophilia B (Factor IX),
+        Duchenne muscular dystrophy (dystrophin absent; progressive, Gower sign, pseudohypertrophy of calves;
+        die by 20s from cardiac/respiratory failure),
+        Becker MD (dystrophin reduced but present; milder, later onset),
+        G6PD deficiency (hemolytic anemia triggered by oxidative stress — fava beans, drugs; Heinz bodies),
+        Fragile X syndrome (FMR1 gene; 2nd most common genetic cause of intellectual disability after Down syndrome;
+        CGG repeats; long face, large ears, macro-orchidism).
+        X-linked DOMINANT: Rett syndrome, Alport syndrome (some forms), Vitamin D resistant rickets.
+        📚 Robbins, 10th Ed, Ch.5 (p.180-185)
+
+    - id: chromosomal-disorders
+      title: "Chromosomal Abnormalities"
+      text: >
+        Down syndrome (Trisomy 21): most common chromosomal disorder; 95% nondisjunction (risk increases with maternal age),
+        4% Robertsonian translocation (t(14;21) — age independent), 1% mosaic.
+        Features: flat facies, epicanthal folds, simian crease, intellectual disability, ASD/VSD (endocardial cushion defects),
+        duodenal atresia, Hirschsprung, increased risk of ALL (age <5) and Alzheimer (age >40).
+        Turner syndrome (45,X): most common cause of primary amenorrhea; short stature, webbed neck, shield chest,
+        coarctation of aorta, streak gonads, lymphedema (cystic hygroma in fetus).
+        Klinefelter syndrome (47,XXY): most common cause of male hypogonadism; tall, gynecomastia, small testes,
+        infertility, learning difficulties. XXY = most common sex chromosome aneuploidy.
+        Edwards syndrome (Trisomy 18): rocker-bottom feet, clenched fists, micrognathia, heart defects; die within 1 year.
+        Patau syndrome (Trisomy 13): cleft lip/palate, polydactyly, holoprosencephaly; die within 1 year.
+        📚 Robbins, 10th Ed, Ch.5 (p.185-196)
+
+    - id: trinucleotide-imprinting
+      title: "Trinucleotide Repeats & Imprinting"
+      text: >
+        Trinucleotide repeat disorders show ANTICIPATION (worsening severity in successive generations due to expansion of repeats).
+        Huntington (CAG), Fragile X (CGG), Myotonic dystrophy (CTG), Friedreich ataxia (GAA — only AR trinucleotide repeat).
+        Genomic imprinting: differential expression based on parent of origin.
+        Prader-Willi syndrome: deletion of paternal 15q11-13 (obesity, hypotonia, intellectual disability, hypogonadism).
+        Angelman syndrome: deletion of maternal 15q11-13 (happy puppet, seizures, ataxia, severe intellectual disability).
+        Same deletion, different phenotype based on parent of origin = imprinting.
+        📚 Robbins, 10th Ed, Ch.5 (p.186-190)
+
+  clinical:
+    - title: "Cystic Fibrosis — Most Common Lethal AR Disorder in Caucasians"
+      text: >
+        CFTR chloride channel mutation → thick viscid secretions in lungs, pancreas, GI.
+        Sweat chloride >60 mEq/L is diagnostic. Most common mutation = ΔF508 (misfolded protein degraded in ER).
+        Recurrent Pseudomonas aeruginosa lung infections → bronchiectasis. Pancreatic insufficiency → steatorrhea.
+        Males infertile (bilateral absence of vas deferens). Meconium ileus in neonates.
+
+  high_yield_points:
+    - "Down syndrome: most common chromosomal disorder; endocardial cushion defect = most common cardiac anomaly"
+    - "Turner (45,X): most common cause of primary amenorrhea; coarctation of aorta is classic cardiac defect"
+    - "Klinefelter (47,XXY): most common cause of male hypogonadism; small testes + gynecomastia + infertility"
+    - "Marfan: fibrillin-1 (FBN1), chr 15; lens subluxation UP & OUT (vs homocystinuria = DOWN & IN)"
+    - "Cystic fibrosis: most common lethal AR disorder in Caucasians; ΔF508; sweat chloride >60 mEq/L diagnostic"
+    - "Fragile X: 2nd most common genetic cause of intellectual disability (after Down syndrome); CGG repeats"
+    - "Anticipation = trinucleotide repeats expand → earlier onset, worse severity in successive generations"
+    - "Prader-Willi = PATERNAL deletion 15q; Angelman = MATERNAL deletion 15q (same region, different parent)"
+    - "Edwards (T18) = clenched fists, rocker-bottom feet; Patau (T13) = cleft lip, polydactyly, holoprosencephaly"
+    - "Duchenne = dystrophin ABSENT (frameshift); Becker = dystrophin REDUCED (in-frame deletion)"
+
+mcqs:
+  - question: "A newborn presents with flat facial profile, epicanthal folds, single palmar crease, and an endocardial cushion defect. Karyotype would most likely show:"
+    options:
+      - "47,XXY"
+      - "45,X"
+      - "47,XX,+21"
+      - "47,XX,+18"
+    answer: "47,XX,+21"
+    explanation: >
+      This is classic Down syndrome (trisomy 21) — flat facies, epicanthal folds, simian crease, and endocardial cushion
+      defect (the most common cardiac anomaly in Down syndrome). Klinefelter (47,XXY) presents in adolescent males.
+      Turner (45,X) has female phenotype with short stature. Edwards (trisomy 18) has clenched fists, rocker-bottom feet.
+      📚 Robbins, 10th Ed, Ch.5 (p.191)
+    difficulty: 1
+
+  - question: "A 15-year-old boy with intellectual disability has a long face, large ears, and macro-orchidism. His maternal grandfather had mild tremor and cognitive decline. The most likely genetic mechanism is:"
+    options:
+      - "Nondisjunction"
+      - "Trinucleotide repeat expansion"
+      - "Robertsonian translocation"
+      - "Uniparental disomy"
+    answer: "Trinucleotide repeat expansion"
+    explanation: >
+      This is Fragile X syndrome caused by CGG trinucleotide repeat expansion in FMR1 gene on X chromosome.
+      The maternal grandfather likely had a premutation (55-200 repeats → fragile X tremor-ataxia syndrome).
+      The repeat expanded through the mother to a full mutation (>200) in the grandson. This demonstrates anticipation.
+      📚 Robbins, 10th Ed, Ch.5 (p.187)
+    difficulty: 2
+
+  - question: "An obese child with hypotonia, hypogonadism, and intellectual disability is found to have a deletion on chromosome 15. This deletion was inherited from:"
+    options:
+      - "Mother"
+      - "Father"
+      - "Either parent equally"
+      - "Cannot be determined without molecular testing"
+    answer: "Father"
+    explanation: >
+      This is Prader-Willi syndrome — obesity, hypotonia, hypogonadism, intellectual disability — caused by deletion
+      of the PATERNAL copy of 15q11-13. The maternal copy is normally imprinted (silenced), so loss of the paternal
+      copy means no functional gene. If the maternal copy were deleted instead, it would cause Angelman syndrome.
+      📚 Robbins, 10th Ed, Ch.5 (p.189)
+    difficulty: 2
+
+  - question: "A tall 20-year-old male with learning difficulties is found to have small, firm testes, gynecomastia, and azoospermia. Serum FSH and LH are elevated. The karyotype is:"
+    options:
+      - "47,XYY"
+      - "47,XXY"
+      - "45,X/46,XY mosaic"
+      - "46,XX male"
+    answer: "47,XXY"
+    explanation: >
+      This is Klinefelter syndrome (47,XXY) — the most common sex chromosome aneuploidy and most common cause of male
+      hypogonadism. Features: tall stature, gynecomastia, small firm testes, azoospermia, elevated gonadotropins
+      (hypergonadotropic hypogonadism). 47,XYY males are tall but usually fertile.
+      📚 Robbins, 10th Ed, Ch.5 (p.194)
+    difficulty: 1
+
+  - question: "A child with recurrent pulmonary infections is found to have Pseudomonas colonization of the airways and steatorrhea. Sweat chloride is 75 mEq/L. The most common underlying mutation is:"
+    options:
+      - "CFTR G551D"
+      - "CFTR ΔF508"
+      - "CFTR R117H"
+      - "CFTR W1282X"
+    answer: "CFTR ΔF508"
+    explanation: >
+      This is cystic fibrosis. ΔF508 (deletion of phenylalanine at position 508) is the most common CFTR mutation,
+      accounting for ~70% of CF alleles worldwide. It causes misfolding of the CFTR protein, which is then degraded
+      in the ER (class II mutation). Other mutations are less common.
+      📚 Robbins, 10th Ed, Ch.5 (p.168)
+    difficulty: 2

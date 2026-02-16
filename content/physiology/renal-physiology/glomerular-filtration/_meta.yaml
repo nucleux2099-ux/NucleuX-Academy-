@@ -1,9 +1,184 @@
-topic_id: glomerular-filtration
-name: Glomerular Filtration
-description: Glomerular Filtration — NMC curriculum topic
+topic_id: renal-physiology-gfr
+name: Renal Physiology (GFR, Clearance, Countercurrent)
+description: Renal Physiology — Glomerular filtration, clearance concepts, countercurrent mechanism, and concentration/dilution
 high_yield: true
 nmc_codes:
 - code: PY7.2
   domain: KH
   core: true
   phase: Phase 1
+- code: PY7.3
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The kidney filters ~180 L/day (GFR 125 mL/min), reabsorbs 99%, and excretes ~1.5 L urine.
+  GFR is determined by Starling forces across glomerular capillaries. Clearance concept measures
+  renal handling of substances. The countercurrent system in the loop of Henle and vasa recta
+  creates the medullary osmotic gradient essential for urine concentration.
+  📚 Guyton & Hall, 14th Ed, Ch.27-29 (p.339-378) / 📚 Ganong's, 26th Ed, Ch.37-38
+
+learning_objectives:
+  - Describe the determinants of GFR and Starling forces in glomerular filtration
+  - Define clearance and use inulin, PAH, creatinine, and glucose clearance to assess renal function
+  - Explain the countercurrent multiplication and exchange mechanisms
+  - Describe the role of ADH in urine concentration and dilution
+  - Calculate filtration fraction, renal plasma flow, and GFR from clearance data
+
+content:
+  atoms:
+    - id: gfr-starling
+      title: "Glomerular Filtration Rate (GFR)"
+      text: >
+        GFR ≈ 125 mL/min (180 L/day). Determined by net filtration pressure (NFP) × Kf (filtration coefficient).
+        NFP = PGC - PBS - πGC + πBS. Glomerular capillary hydrostatic pressure (PGC) ≈ 60 mmHg (favors filtration).
+        Bowman's space hydrostatic pressure (PBS) ≈ 18 mmHg (opposes). Glomerular oncotic pressure (πGC) ≈ 32 mmHg (opposes).
+        Bowman's space oncotic pressure (πBS) ≈ 0 (negligible — proteins not filtered).
+        NFP ≈ 60 - 18 - 32 = 10 mmHg. Filtration equilibrium nearly reached at efferent end.
+        GFR autoregulated between MAP 80-180 mmHg (myogenic + tubuloglomerular feedback).
+        📚 Guyton & Hall, 14th Ed, Ch.27 (p.339-348)
+
+    - id: clearance-concept
+      title: "Renal Clearance"
+      text: >
+        Clearance (Cx) = (Ux × V)/Px = volume of plasma completely cleared of substance x per unit time.
+        Inulin clearance = GFR (freely filtered, not reabsorbed, not secreted — gold standard).
+        Creatinine clearance ≈ GFR (slightly overestimates — small amount secreted in PCT).
+        PAH clearance = effective renal plasma flow (ERPF) ≈ 625 mL/min (completely cleared in single pass at low conc).
+        Filtration Fraction = GFR/RPF = 125/625 = 0.2 (20%).
+        Glucose: freely filtered, completely reabsorbed until Tm reached (~375 mg/min).
+        Glucose clearance = 0 below Tm; renal threshold = plasma glucose ~180 mg/dL (glucosuria).
+        Free water clearance: CH2O = V - Cosm. Positive = dilute urine; Negative = concentrated urine.
+        📚 Ganong's, 26th Ed, Ch.37
+
+    - id: countercurrent-mechanism
+      title: "Countercurrent Multiplication & Exchange"
+      text: >
+        Countercurrent multiplier (Loop of Henle): creates medullary osmotic gradient (300 → 1200 mOsm/kg from cortex to inner medulla).
+        Descending limb: permeable to water, impermeable to NaCl → water exits → tubular fluid concentrates.
+        Thick ascending limb (TAL): impermeable to water, actively transports NaCl out (NKCC2 transporter — target of furosemide).
+        This "single effect" of 200 mOsm is multiplied by countercurrent flow.
+        Countercurrent exchanger (Vasa recta): hairpin loop capillaries that follow loop of Henle.
+        Blood equilibrates with interstitium but countercurrent flow prevents washout of medullary gradient.
+        Urea recycling: contributes ~50% of medullary osmolality. ADH increases UT-A1 (urea transporter) in inner medullary CD.
+        📚 Guyton & Hall, 14th Ed, Ch.29 (p.367-376)
+
+    - id: adh-concentration
+      title: "ADH and Urine Concentration/Dilution"
+      text: >
+        ADH (vasopressin, from posterior pituitary): binds V2 receptors on collecting duct → inserts AQP2
+        water channels → water reabsorption → concentrated urine (up to 1200 mOsm/kg).
+        Without ADH: collecting duct impermeable to water → dilute urine (as low as 50 mOsm/kg).
+        ADH secretion stimulated by: ↑plasma osmolality (osmoreceptors in hypothalamus — most sensitive),
+        ↓blood volume (detected by low-pressure baroreceptors in atria), angiotensin II.
+        Diabetes insipidus: Central (↓ADH production) or Nephrogenic (renal V2 receptor/AQP2 resistance).
+        Both → polyuria with dilute urine. Central responds to desmopressin; nephrogenic does not.
+        SIADH: excess ADH → water retention → dilutional hyponatremia, concentrated urine, low serum osm.
+        📚 Guyton & Hall, 14th Ed, Ch.29 (p.373-378)
+
+    - id: tubuloglomerular-feedback
+      title: "Tubuloglomerular Feedback (TGF)"
+      text: >
+        Macula densa (early DCT) senses NaCl concentration in tubular fluid.
+        ↑NaCl at macula densa → adenosine/ATP release → afferent arteriole constriction → ↓GFR.
+        ↓NaCl at macula densa → renin release from JG cells → Ang II → efferent constriction → ↑GFR.
+        This feedback stabilizes GFR and distal NaCl delivery.
+        NSAIDs block prostaglandin-mediated afferent dilation → ↓GFR (esp. in volume-depleted patients).
+        ACE inhibitors block Ang II-mediated efferent constriction → ↓GFR (can precipitate AKI in bilateral renal artery stenosis).
+        📚 Guyton & Hall, 14th Ed, Ch.27 (p.346-348)
+
+  clinical:
+    - title: "Clinical Correlation: Diabetes Insipidus"
+      text: >
+        Central DI: water deprivation test → urine remains dilute → give desmopressin → urine concentrates (positive response).
+        Nephrogenic DI: water deprivation → dilute → desmopressin → STILL dilute (no response).
+        Causes of nephrogenic DI: lithium, hypercalcemia, hypokalemia, sickle cell disease.
+    - title: "Clinical Correlation: Estimating GFR"
+      text: >
+        Creatinine clearance (24-hour urine) or eGFR (CKD-EPI or MDRD equations) used clinically.
+        Serum creatinine alone is unreliable — affected by muscle mass, diet, tubular secretion.
+        Cystatin C is a more accurate marker (freely filtered, not affected by muscle mass).
+
+  high_yield_points:
+    - "GFR = 125 mL/min = 180 L/day; Filtration Fraction = GFR/RPF = 20%"
+    - "Inulin clearance = GFR (gold standard); PAH clearance = ERPF"
+    - "Glucose Tm = 375 mg/min; renal threshold = 180 mg/dL"
+    - "Countercurrent multiplier: descending limb permeable to WATER; ascending limb impermeable to water, actively transports NaCl"
+    - "Furosemide blocks NKCC2 in thick ascending limb → abolishes medullary gradient"
+    - "ADH → V2 receptors → AQP2 insertion → water reabsorption → concentrated urine"
+    - "Central DI responds to desmopressin; Nephrogenic DI does NOT"
+    - "Urea contributes ~50% of inner medullary osmolality"
+    - "Macula densa: ↑NaCl → afferent constriction → ↓GFR (tubuloglomerular feedback)"
+    - "ACE inhibitors → ↓efferent tone → ↓GFR (dangerous in bilateral renal artery stenosis)"
+
+mcqs:
+  - question: "Which substance's clearance is used as the gold standard for measuring GFR?"
+    options:
+      - "Creatinine"
+      - "Inulin"
+      - "PAH"
+      - "Urea"
+    answer: "Inulin"
+    explanation: >
+      Inulin is freely filtered at the glomerulus, not reabsorbed, not secreted, and not metabolized by the kidney.
+      Therefore, inulin clearance exactly equals GFR. Creatinine overestimates slightly (tubular secretion).
+      PAH measures renal plasma flow, not GFR.
+      📚 Guyton & Hall, 14th Ed, Ch.27 (p.348)
+    difficulty: 1
+
+  - question: "The thick ascending limb of the loop of Henle is the site of action of:"
+    options:
+      - "Thiazide diuretics"
+      - "Furosemide (loop diuretics)"
+      - "Spironolactone"
+      - "Amiloride"
+    answer: "Furosemide (loop diuretics)"
+    explanation: >
+      Furosemide blocks the NKCC2 (Na+/K+/2Cl- cotransporter) in the thick ascending limb, preventing NaCl
+      reabsorption and abolishing the corticomedullary osmotic gradient → impaired concentrating ability.
+      Thiazides act on DCT (NCC). Spironolactone and amiloride act on collecting duct.
+      📚 Guyton & Hall, 14th Ed, Ch.29 (p.370)
+    difficulty: 1
+
+  - question: "A patient with polyuria and dilute urine is given desmopressin. Urine osmolality increases to 800 mOsm/kg. The diagnosis is:"
+    options:
+      - "Nephrogenic diabetes insipidus"
+      - "Central diabetes insipidus"
+      - "Primary polydipsia"
+      - "SIADH"
+    answer: "Central diabetes insipidus"
+    explanation: >
+      Central DI = ADH deficiency. Desmopressin (ADH analog) replaces missing hormone → collecting duct
+      responds → urine concentrates. In nephrogenic DI, kidneys are resistant to ADH → desmopressin has no effect.
+      Primary polydipsia: urine concentrates even without desmopressin after water deprivation.
+      📚 Guyton & Hall, 14th Ed, Ch.29
+    difficulty: 1
+
+  - question: "Filtration fraction (FF) is calculated as:"
+    options:
+      - "GFR × RPF"
+      - "RPF / GFR"
+      - "GFR / RPF"
+      - "GFR / RBF"
+    answer: "GFR / RPF"
+    explanation: >
+      Filtration Fraction = GFR/RPF = 125/625 = 0.20 (20%). This means 20% of plasma flowing through the
+      kidney is filtered at the glomerulus. Increased FF (efferent constriction by Ang II) → increased
+      peritubular oncotic pressure → increased PCT reabsorption.
+      📚 Ganong's, 26th Ed, Ch.37
+    difficulty: 1
+
+  - question: "Which part of the loop of Henle is permeable to water but NOT to NaCl?"
+    options:
+      - "Thick ascending limb"
+      - "Thin ascending limb"
+      - "Thin descending limb"
+      - "Macula densa"
+    answer: "Thin descending limb"
+    explanation: >
+      The thin descending limb is highly permeable to water (via AQP1) but relatively impermeable to NaCl and urea.
+      Water exits passively down the osmotic gradient → tubular fluid concentrates.
+      The ascending limb (both thin and thick) is impermeable to water.
+      📚 Guyton & Hall, 14th Ed, Ch.29 (p.368)
+    difficulty: 2

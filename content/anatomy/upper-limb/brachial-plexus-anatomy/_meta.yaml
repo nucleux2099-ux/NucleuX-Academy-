@@ -1,13 +1,159 @@
-topic_id: brachial-plexus-anatomy
-name: Brachial Plexus Anatomy
-description: Brachial Plexus Anatomy — NMC curriculum topic
+topic_id: brachial-plexus
+name: Brachial Plexus
+description: Brachial Plexus — Roots, trunks, divisions, cords, branches and clinical correlations
 high_yield: true
 nmc_codes:
-- code: AN10.5
+- code: AN11.1
   domain: KH
   core: true
   phase: Phase 1
-- code: AN48.4
-  domain: KH
-  core: true
-  phase: Phase 1
+
+overview: >
+  The brachial plexus (C5-T1) is the nerve network supplying the upper limb. It is formed by ventral rami of C5-T1
+  and passes through the posterior triangle of the neck and axilla. Organization: Roots → Trunks → Divisions → Cords → Branches
+  (mnemonic: "Robert Taylor Drinks Cold Beer"). The plexus has a supraclavicular part (roots, trunks) and an
+  infraclavicular part (cords, branches) related to the axillary artery.
+  📚 Gray's Anatomy, 42nd Ed, Ch.46; 📚 BD Chaurasia, Vol.1, Ch.4
+
+learning_objectives:
+  - Describe the formation, parts, and relations of the brachial plexus
+  - List branches arising from roots, trunks, and cords
+  - Explain the anatomical basis of Erb-Duchenne palsy and Klumpke's palsy
+  - Describe the clinical features of individual nerve injuries (axillary, radial, median, ulnar, musculocutaneous)
+  - Identify the surface anatomy and applied aspects of the brachial plexus
+
+content:
+  atoms:
+    - id: formation-and-roots
+      title: "Formation and Roots (C5-T1)"
+      text: >
+        Formed by ventral rami of C5, C6, C7, C8, T1. Prefixed plexus: C4-C8. Postfixed plexus: C6-T2.
+        Roots emerge between scalenus anterior and scalenus medius in the posterior triangle.
+        Branches from roots: (1) Dorsal scapular nerve (C5) — rhomboids + levator scapulae;
+        (2) Long thoracic nerve (C5,6,7) — serratus anterior ("nerve of Bell");
+        (3) Nerve to subclavius (C5,6); (4) Contribution to phrenic nerve (C5).
+        📚 BD Chaurasia, Vol.1, Ch.4 (p.56-62)
+
+    - id: trunks-and-divisions
+      title: "Trunks and Divisions"
+      text: >
+        Three trunks: Upper (C5,C6), Middle (C7), Lower (C8,T1).
+        Upper trunk gives: suprascapular nerve (supraspinatus + infraspinatus) and nerve to subclavius.
+        Erb's point: union of C5,C6 — upper trunk, located 2-3 cm above clavicle.
+        Each trunk splits into anterior and posterior divisions. Anterior divisions supply flexors;
+        posterior divisions supply extensors.
+        📚 Gray's Anatomy, 42nd Ed, Ch.46; 📚 Netter's Atlas, 6th Ed, Plate 416
+
+    - id: cords-and-terminal-branches
+      title: "Cords and Terminal Branches"
+      text: >
+        Lateral cord (C5,6,7): lateral pectoral nerve, musculocutaneous nerve, lateral root of median nerve.
+        Medial cord (C8,T1): medial pectoral nerve, medial cutaneous nerve of arm & forearm, ulnar nerve, medial root of median nerve.
+        Posterior cord (C5-T1): upper subscapular, thoracodorsal (latissimus dorsi), lower subscapular,
+        axillary nerve, radial nerve. Cords named by relation to 2nd part of axillary artery.
+        📚 BD Chaurasia, Vol.1, Ch.4 (p.63-68)
+
+    - id: nerve-injuries
+      title: "Nerve Injury Patterns"
+      text: >
+        Erb-Duchenne palsy (C5,C6): upper trunk injury — "policeman's tip" / "waiter's tip" position.
+        Arm adducted, medially rotated, forearm pronated, wrist flexed. Loss of abduction, lateral rotation, supination.
+        Klumpke's palsy (C8,T1): lower trunk injury — claw hand + Horner's syndrome (if T1 sympathetic fibers involved).
+        Winging of scapula: long thoracic nerve (C5,6,7) injury → serratus anterior paralysis.
+        Saturday night palsy: radial nerve compression in spiral groove → wrist drop.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.1
+
+  clinical:
+    - title: "Clinical: Erb's Palsy in Birth Injury"
+      text: >
+        Most common brachial plexus birth injury. Caused by excessive lateral traction on head during delivery
+        (shoulder dystocia). Upper trunk (C5,C6) damaged at Erb's point. Deltoid, biceps, brachialis,
+        supraspinatus, infraspinatus paralyzed. Limb hangs by side in "waiter's tip" position.
+        Loss of Moro reflex on affected side. Biceps and supinator jerks absent.
+    - title: "Clinical: Thoracic Outlet Syndrome"
+      text: >
+        Compression of lower trunk (C8,T1) by cervical rib or fibrous band. Presents with hand weakness (intrinsic muscles),
+        wasting of thenar/hypothenar eminences, sensory loss along medial forearm and hand (T1 dermatome).
+        Vascular compression may cause subclavian artery/vein symptoms.
+
+high_yield_points:
+  - "Roots of brachial plexus: C5,C6,C7,C8,T1 — emerge between scalenus anterior and medius"
+  - "Erb's point = C5+C6 junction (upper trunk) — 2-3 cm above clavicle"
+  - "Long thoracic nerve (C5,6,7) — serratus anterior — winging of scapula"
+  - "Erb-Duchenne palsy (C5,C6): waiter's tip position — loss of abduction, lateral rotation, supination"
+  - "Klumpke's palsy (C8,T1): claw hand ± Horner's syndrome"
+  - "Radial nerve = largest branch of posterior cord — wrist drop when injured"
+  - "Median nerve: lateral root (lateral cord) + medial root (medial cord) = 'M' formation"
+  - "Axillary nerve: posterior cord → deltoid + teres minor; injured in shoulder dislocation/surgical neck fracture"
+  - "Cords named by relation to 2nd part of axillary artery"
+  - "Mnemonic: Robert Taylor Drinks Cold Beer (Roots, Trunks, Divisions, Cords, Branches)"
+
+mcqs:
+  - question: "A newborn delivered after shoulder dystocia presents with the arm adducted, medially rotated, forearm pronated, and wrist flexed. Which nerve roots are most likely injured?"
+    options:
+      - "C5, C6"
+      - "C8, T1"
+      - "C7"
+      - "C5, C6, C7, C8, T1"
+    answer: "C5, C6"
+    explanation: >
+      This is Erb-Duchenne palsy (waiter's tip position) due to upper trunk injury at Erb's point (C5,C6).
+      Klumpke's (C8,T1) causes claw hand. C7 injury would affect wrist/finger extension.
+      📚 BD Chaurasia, Vol.1, Ch.4
+    difficulty: 1
+
+  - question: "Winging of the scapula results from injury to which nerve?"
+    options:
+      - "Dorsal scapular nerve"
+      - "Long thoracic nerve"
+      - "Suprascapular nerve"
+      - "Thoracodorsal nerve"
+    answer: "Long thoracic nerve"
+    explanation: >
+      Long thoracic nerve (C5,6,7) supplies serratus anterior, which holds the scapula against the chest wall.
+      Its injury causes medial winging. Dorsal scapular nerve supplies rhomboids. Suprascapular supplies
+      supraspinatus and infraspinatus. Thoracodorsal supplies latissimus dorsi.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "A patient with a stab wound in the posterior triangle of the neck has loss of shoulder abduction beyond 15° and loss of sensation over the regimental badge area. Which nerve is injured?"
+    options:
+      - "Radial nerve"
+      - "Suprascapular nerve"
+      - "Axillary nerve"
+      - "Musculocutaneous nerve"
+    answer: "Axillary nerve"
+    explanation: >
+      Axillary nerve (C5,C6, posterior cord) supplies deltoid (abduction 15-90°) and teres minor, with
+      cutaneous supply to regimental badge area (lateral aspect of upper arm). Suprascapular nerve
+      supplies supraspinatus (0-15° abduction) and infraspinatus.
+      📚 Netter's Atlas, 6th Ed, Plate 416
+    difficulty: 2
+
+  - question: "The cords of the brachial plexus are named in relation to which structure?"
+    options:
+      - "First part of axillary artery"
+      - "Second part of axillary artery"
+      - "Third part of axillary artery"
+      - "Subclavian artery"
+    answer: "Second part of axillary artery"
+    explanation: >
+      The lateral, medial, and posterior cords are named by their position relative to the second part
+      of the axillary artery (behind pectoralis minor). The first part has no cord relation; the third part
+      has the terminal branches around it.
+      📚 BD Chaurasia, Vol.1, Ch.4
+    difficulty: 1
+
+  - question: "A patient presents with claw hand and Horner's syndrome after a motorcycle accident. Which part of the brachial plexus is most likely damaged?"
+    options:
+      - "Upper trunk"
+      - "Middle trunk"
+      - "Lower trunk"
+      - "Posterior cord"
+    answer: "Lower trunk"
+    explanation: >
+      Klumpke's palsy involves lower trunk (C8,T1) — causes claw hand (loss of intrinsic hand muscles via ulnar + T1 median).
+      Horner's syndrome (miosis, ptosis, anhidrosis) occurs when T1 sympathetic fibers are disrupted.
+      Upper trunk injury causes Erb's palsy.
+      📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.1
+    difficulty: 2

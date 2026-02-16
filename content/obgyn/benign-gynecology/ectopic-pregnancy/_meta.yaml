@@ -1,0 +1,148 @@
+topic_id: ectopic-pregnancy
+name: Ectopic Pregnancy
+description: Implantation outside the uterine cavity — diagnosis, sites, and management options
+high_yield: true
+nmc_codes:
+- code: OG8.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Ectopic pregnancy is implantation of the fertilized ovum outside the endometrial cavity. The ampulla of the
+  fallopian tube is the most common site (70-80%). It is the leading cause of maternal mortality in the first
+  trimester. Risk factors include PID, previous ectopic, tubal surgery, and IUD use. Early diagnosis with
+  serial β-hCG and transvaginal USG has improved outcomes significantly.
+  📚 Williams Obstetrics, 26th Ed, Ch.19 | 📚 DC Dutta, 9th Ed, Ch.10
+
+learning_objectives:
+  - List the sites of ectopic pregnancy in order of frequency
+  - Describe the clinical presentation and classic triad
+  - Explain the role of serial β-hCG and TVS in diagnosis
+  - Compare medical (methotrexate) vs surgical management
+  - Identify risk factors for ectopic pregnancy
+
+content:
+  atoms:
+    - id: sites
+      title: "Sites of Ectopic Pregnancy"
+      text: >
+        Tubal (95-97%): Ampulla (70-80%) > Isthmus (12%) > Fimbria (5%) > Interstitial/cornual (2-3%).
+        Non-tubal: Ovarian (1%), cervical (0.1%), abdominal (1%), cesarean scar ectopic.
+        Heterotopic pregnancy: coexisting intrauterine + ectopic (1:30,000 naturally; 1:100 with ART).
+        Ampullary ectopic usually ruptures at 6-8 weeks; isthmic ruptures earlier (more muscular, constricted).
+        Interstitial/cornual ectopic ruptures late (8-16 wks) with catastrophic hemorrhage.
+        📚 DC Dutta, 9th Ed, Ch.10 (p.117-118)
+
+    - id: clinical-features
+      title: "Clinical Presentation"
+      text: >
+        Classic triad: amenorrhea + vaginal bleeding + abdominal pain (present in ~50%).
+        Unruptured: lower abdominal pain, vaginal spotting, adnexal mass/tenderness.
+        Ruptured: sudden severe abdominal pain, shoulder tip pain (diaphragmatic irritation from
+        hemoperitoneum), signs of hypovolemic shock, cervical excitation (Chandelier sign),
+        fullness in pouch of Douglas, cullen sign (periumbilical ecchymosis — rare).
+        📚 Williams Obstetrics, 26th Ed, Ch.19 (p.371-375)
+
+    - id: diagnosis
+      title: "Diagnosis"
+      text: >
+        β-hCG: in normal IUP, β-hCG doubles every 48 hours. Suboptimal rise (<66% in 48h) suggests
+        ectopic or non-viable pregnancy. Discriminatory zone: β-hCG level at which IUP should be
+        visible on TVS (1500-2000 mIU/mL for TVS).
+        TVS: empty uterus + adnexal mass ± free fluid. "Tubal ring" or "blob sign."
+        Culdocentesis: aspiration of non-clotting blood from pouch of Douglas = hemoperitoneum.
+        📚 DC Dutta, 9th Ed, Ch.10 (p.120-122)
+
+    - id: management
+      title: "Management"
+      text: >
+        Expectant: β-hCG <1000 and declining, hemodynamically stable, reliable follow-up.
+        Medical — Methotrexate (MTX): single dose 50 mg/m² IM or multi-dose protocol.
+        Criteria: hemodynamically stable, unruptured, mass <3.5 cm, no cardiac activity,
+        β-hCG <5000 (best response), no contraindications (liver/renal disease, immunodeficiency).
+        Monitor: β-hCG on days 4 and 7 — should drop ≥15% between day 4-7.
+        Surgical: Salpingectomy (ruptured, no desire for fertility, recurrent ectopic in same tube)
+        or salpingostomy (unruptured, desire for fertility, contralateral tube damaged).
+        Ruptured ectopic = SURGICAL EMERGENCY → laparotomy/laparoscopy + salpingectomy.
+        📚 Williams Obstetrics, 26th Ed, Ch.19 (p.377-385)
+
+  high_yield_points:
+    - "AMPULLA is the most common site of ectopic pregnancy (70-80%)"
+    - "Most common site of RUPTURE = ampulla; earliest rupture = isthmic"
+    - "Classic triad: amenorrhea + vaginal bleeding + lower abdominal pain"
+    - "Discriminatory zone: β-hCG 1500-2000 mIU/mL (should see IUP on TVS)"
+    - "β-hCG doubling time <48 hrs = normal IUP; suboptimal rise suggests ectopic"
+    - "Methotrexate criteria: stable, unruptured, <3.5 cm, no FH, β-hCG <5000"
+    - "Ruptured ectopic = SURGICAL EMERGENCY"
+    - "Shoulder tip pain = hemoperitoneum irritating diaphragm (phrenic nerve C3-C5)"
+    - "Cervical ectopic: hemorrhage risk highest — may need UAE or hysterectomy"
+    - "IUD prevents intrauterine pregnancy more than ectopic → relative increase in ectopic risk"
+
+mcqs:
+  - question: "The most common site of ectopic pregnancy is:"
+    options:
+      - "Isthmus of fallopian tube"
+      - "Ampulla of fallopian tube"
+      - "Interstitial portion of tube"
+      - "Ovary"
+    answer: "Ampulla of fallopian tube"
+    explanation: >
+      The ampulla is the most common site (70-80%) because fertilization normally occurs here and
+      any delay in tubal transport leads to implantation at this site.
+      📚 DC Dutta, 9th Ed, Ch.10 (p.117)
+    difficulty: 1
+
+  - question: "Which of the following is NOT a criterion for medical management of ectopic pregnancy with methotrexate?"
+    options:
+      - "Hemodynamically stable patient"
+      - "Unruptured ectopic"
+      - "Fetal cardiac activity present"
+      - "β-hCG <5000 mIU/mL"
+    answer: "Fetal cardiac activity present"
+    explanation: >
+      Presence of fetal cardiac activity is a CONTRAINDICATION for methotrexate treatment (lower
+      success rate). Criteria include: stable patient, unruptured, mass <3.5 cm, NO cardiac activity,
+      and preferably β-hCG <5000. Cardiac activity requires surgical management.
+      📚 Williams Obstetrics, 26th Ed, Ch.19 (p.379)
+    difficulty: 2
+
+  - question: "In a suspected ectopic pregnancy, the discriminatory zone for transvaginal ultrasound is β-hCG level of:"
+    options:
+      - "500 mIU/mL"
+      - "1500-2000 mIU/mL"
+      - "5000 mIU/mL"
+      - "10,000 mIU/mL"
+    answer: "1500-2000 mIU/mL"
+    explanation: >
+      The discriminatory zone is the β-hCG level at which an intrauterine pregnancy should be
+      visible on TVS. If β-hCG is above this level and no IUP is seen, ectopic pregnancy is likely.
+      📚 Williams Obstetrics, 26th Ed, Ch.19 (p.373)
+    difficulty: 1
+
+  - question: "Shoulder tip pain in ruptured ectopic pregnancy is due to irritation of:"
+    options:
+      - "Intercostal nerves"
+      - "Phrenic nerve (C3-C5)"
+      - "Vagus nerve"
+      - "Obturator nerve"
+    answer: "Phrenic nerve (C3-C5)"
+    explanation: >
+      Blood in the peritoneal cavity irritates the diaphragm, which is innervated by the phrenic
+      nerve (C3-C5). This causes referred pain to the shoulder tip (dermatomal distribution of C3-C5).
+      📚 DC Dutta, 9th Ed, Ch.10 (p.119)
+    difficulty: 2
+
+  - question: "A 25-year-old woman with amenorrhea of 7 weeks, vaginal spotting, and β-hCG of 3000 mIU/mL has an empty uterus on TVS with a 2 cm adnexal mass. She is hemodynamically stable. The best management is:"
+    options:
+      - "Expectant management"
+      - "Methotrexate single dose"
+      - "Laparoscopic salpingectomy"
+      - "Repeat β-hCG after 48 hours"
+    answer: "Methotrexate single dose"
+    explanation: >
+      She meets all criteria for medical management: stable, unruptured, mass <3.5 cm (2 cm),
+      β-hCG <5000 (3000). Expectant management requires declining β-hCG. Surgery is reserved for
+      ruptured ectopic or failed medical management.
+      📚 Williams Obstetrics, 26th Ed, Ch.19 (p.380)
+    difficulty: 2

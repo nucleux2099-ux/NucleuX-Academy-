@@ -1,0 +1,160 @@
+topic_id: heart-failure-drugs
+name: Heart Failure Drugs
+description: Pharmacotherapy of heart failure — ACEIs, ARBs, β-blockers, diuretics, digoxin, sacubitril-valsartan, and inotropes
+high_yield: true
+nmc_codes:
+- code: PH1.19
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Heart failure (HF) management has evolved from symptom relief to disease modification. Cornerstone therapies that reduce
+  mortality: ACEIs/ARBs, β-blockers (carvedilol, bisoprolol, metoprolol succinate), mineralocorticoid receptor antagonists (MRAs),
+  and ARNI (sacubitril-valsartan). Newer additions: SGLT2 inhibitors (dapagliflozin, empagliflozin). Digoxin improves
+  symptoms but does NOT reduce mortality.
+  📚 KD Tripathi, 8th Ed, Ch.37 (p.515-529); 📚 Goodman & Gilman's, 14th Ed, Ch.29
+
+learning_objectives:
+  - List drugs proven to reduce mortality in heart failure with reduced EF (HFrEF)
+  - Describe the mechanism and toxicity of digoxin
+  - Explain the rationale for using β-blockers in heart failure
+  - Discuss the role of sacubitril-valsartan (ARNI) in HF management
+  - Describe acute heart failure management with inotropes and vasodilators
+
+content:
+  atoms:
+    - id: mortality-reducing-drugs
+      title: "Mortality-Reducing Drugs in HFrEF"
+      text: >
+        The "Fantastic Four" of HFrEF (guideline-directed medical therapy/GDMT):
+        (1) ACEIs/ARBs or ARNI: ↓preload, ↓afterload, ↓aldosterone, prevent remodeling. ARNI (sacubitril-valsartan) superior
+        to enalapril (PARADIGM-HF trial). Sacubitril = neprilysin inhibitor → ↑BNP/ANP → vasodilation, natriuresis.
+        Do NOT combine ARNI with ACEI (36h washout needed — angioedema risk).
+        (2) β-blockers: ONLY carvedilol, bisoprolol, metoprolol succinate proven. Start LOW, go SLOW. Contraindicated in
+        acute decompensated HF. Mechanism: block chronic sympathetic activation, prevent remodeling, ↓sudden cardiac death.
+        (3) MRAs: Spironolactone (RALES trial), Eplerenone (EMPHASIS-HF). ↓mortality, ↓hospitalization. Monitor K+ (hyperkalemia risk).
+        (4) SGLT2 inhibitors: Dapagliflozin (DAPA-HF), Empagliflozin (EMPEROR-Reduced). Benefit INDEPENDENT of diabetes status.
+        Mechanism: osmotic diuresis, ↓preload, ↓interstitial edema, metabolic effects.
+        📚 KD Tripathi, 8th Ed, Ch.37 (p.517-524)
+
+    - id: digoxin
+      title: "Digoxin — Cardiac Glycoside"
+      text: >
+        Mechanism: inhibits Na+/K+ ATPase → ↑intracellular Na+ → ↑intracellular Ca2+ (via Na+/Ca2+ exchanger) → ↑contractility (positive inotrope).
+        Also: ↑vagal tone → ↓HR, ↓AV conduction.
+        Uses: HF (symptom relief, ↓hospitalization but NOT mortality — DIG trial), Rate control in AF.
+        Narrow therapeutic index: 0.5-2 ng/mL (ideal 0.5-0.9 ng/mL for HF).
+        Toxicity precipitated by: Hypokalemia (most important — K+ competes with digoxin for Na+/K+ ATPase),
+        Hypercalcemia, Hypomagnesemia, Renal failure (80% renal excretion), Hypothyroidism.
+        Toxicity manifestations: GI (nausea, vomiting, anorexia), Visual (yellow vision/xanthopsia, halos),
+        Cardiac (ANY arrhythmia — classic: bidirectional VT, atrial tachycardia with block, accelerated junctional rhythm).
+        Treatment of toxicity: Stop drug, correct K+/Mg2+, Digoxin-specific antibody fragments (Digibind/DigiFab),
+        Atropine for bradycardia, Phenytoin/Lidocaine for ventricular arrhythmias. AVOID: DC cardioversion (may cause VF), Calcium (potentiates toxicity).
+        Drug interactions: ↑levels with Amiodarone, Verapamil, Quinidine, Erythromycin, Tetracycline (reduce dose by 50%).
+        📚 KD Tripathi, 8th Ed, Ch.37 (p.515-519)
+
+    - id: acute-hf-inotropes
+      title: "Acute Heart Failure — Inotropes & Vasodilators"
+      text: >
+        Dobutamine: β1 selective agonist → ↑contractility, mild ↓PVR. DOC for acute cardiogenic shock (without severe hypotension).
+        Milrinone: PDE3 inhibitor → ↑cAMP → inotrope + vasodilator ("inodilator"). Risk: arrhythmias, thrombocytopenia.
+        Levosimendan: Ca2+ sensitizer + K+ channel opener. ↑contractility without ↑O2 demand + vasodilation.
+        Does not increase intracellular Ca2+ (unlike dobutamine). Used in acute decompensated HF.
+        Vasodilators: IV nitroglycerin (↓preload in pulmonary congestion), Sodium nitroprusside (↓preload + afterload).
+        Nesiritide: recombinant BNP — vasodilation, natriuresis. Limited use due to hypotension risk.
+        IV Loop diuretics (Furosemide): rapid relief of congestion — does NOT improve mortality.
+        📚 KD Tripathi, 8th Ed, Ch.37 (p.524-529)
+
+  clinical:
+    - title: "Clinical Correlation: PARADIGM-HF Trial"
+      text: >
+        Sacubitril-valsartan (Entresto) vs Enalapril in HFrEF. ARNI reduced cardiovascular death by 20% and HF hospitalization
+        by 21% compared to enalapril. Now recommended as preferred over ACEI/ARB in symptomatic HFrEF.
+        MUST have 36-hour washout from ACEI before starting (angioedema risk).
+    - title: "Clinical Correlation: Digoxin Toxicity"
+      text: >
+        An elderly patient on digoxin + furosemide develops nausea, yellow vision, and irregular pulse. Furosemide causes
+        hypokalemia → ↑digoxin binding to Na+/K+ ATPase → toxicity. Always co-prescribe K+-sparing diuretic or KCl supplements.
+        Check K+ and digoxin levels. Treat with Digibind if severe.
+
+  high_yield_points:
+    - "GDMT for HFrEF: ACEI/ARB/ARNI + β-blocker + MRA + SGLT2i — all reduce mortality"
+    - "Only 3 β-blockers proven in HF: Carvedilol, Bisoprolol, Metoprolol succinate (NOT tartrate)"
+    - "Digoxin: improves symptoms but does NOT reduce mortality (DIG trial)"
+    - "Digoxin toxicity precipitated by HYPOKALEMIA — most important risk factor"
+    - "Digoxin toxicity: xanthopsia (yellow vision), bidirectional VT, atrial tach with block"
+    - "Digibind (anti-digoxin antibodies) = antidote for severe digoxin toxicity"
+    - "ARNI: sacubitril (neprilysin inhibitor) + valsartan — superior to enalapril (PARADIGM-HF)"
+    - "Do NOT combine ARNI with ACEI — 36h washout needed (angioedema risk)"
+    - "SGLT2 inhibitors benefit HFrEF regardless of diabetes (DAPA-HF, EMPEROR-Reduced)"
+    - "Levosimendan: Ca2+ sensitizer — ↑contractility WITHOUT ↑intracellular Ca2+ or O2 demand"
+
+mcqs:
+  - question: "Digoxin toxicity is most commonly precipitated by:"
+    options:
+      - "Hyperkalemia"
+      - "Hypokalemia"
+      - "Hypernatremia"
+      - "Hypocalcemia"
+    answer: "Hypokalemia"
+    explanation: >
+      K+ and digoxin compete for the same binding site on Na+/K+ ATPase. Hypokalemia → more digoxin binds →
+      toxicity even at 'therapeutic' levels. Common scenario: patient on digoxin + furosemide (causes K+ loss).
+      📚 KD Tripathi, 8th Ed, Ch.37 (p.518)
+    difficulty: 1
+
+  - question: "Which of the following drugs reduces mortality in heart failure with reduced ejection fraction?"
+    options:
+      - "Digoxin"
+      - "Furosemide"
+      - "Carvedilol"
+      - "Dobutamine"
+    answer: "Carvedilol"
+    explanation: >
+      Among listed drugs, only carvedilol reduces mortality in HFrEF. Digoxin reduces hospitalization but NOT mortality.
+      Furosemide provides symptom relief without mortality benefit. Dobutamine is for acute HF and may increase mortality long-term.
+      📚 KD Tripathi, 8th Ed, Ch.37 (p.521)
+    difficulty: 1
+
+  - question: "Sacubitril-valsartan should NOT be combined with:"
+    options:
+      - "Metoprolol"
+      - "Enalapril"
+      - "Spironolactone"
+      - "Furosemide"
+    answer: "Enalapril"
+    explanation: >
+      ARNI (sacubitril-valsartan) must NOT be given with ACEIs due to high risk of angioedema.
+      Sacubitril inhibits neprilysin which also degrades bradykinin; combined with ACEI (which also ↑bradykinin),
+      excessive bradykinin causes angioedema. A 36-hour washout from ACEI is mandatory before starting ARNI.
+      📚 KD Tripathi, 8th Ed, Ch.37 (p.523)
+    difficulty: 2
+
+  - question: "The specific antidote for severe digoxin toxicity is:"
+    options:
+      - "Atropine"
+      - "Phenytoin"
+      - "Digoxin-specific antibody fragments (Digibind)"
+      - "Calcium gluconate"
+    answer: "Digoxin-specific antibody fragments (Digibind)"
+    explanation: >
+      Digibind/DigiFab binds free digoxin, rendering it inactive. Indicated for life-threatening arrhythmias,
+      K+ >5 mEq/L, or digoxin level >10 ng/mL. Atropine is used for bradycardia but is not specific.
+      Calcium is CONTRAINDICATED (potentiates digoxin toxicity — "stone heart").
+      📚 KD Tripathi, 8th Ed, Ch.37 (p.519)
+    difficulty: 1
+
+  - question: "An inotropic agent that works by calcium sensitization without increasing intracellular calcium is:"
+    options:
+      - "Dobutamine"
+      - "Milrinone"
+      - "Levosimendan"
+      - "Digoxin"
+    answer: "Levosimendan"
+    explanation: >
+      Levosimendan binds to troponin C and sensitizes the contractile apparatus to existing Ca2+, increasing
+      contractility WITHOUT raising intracellular Ca2+ (unlike dobutamine, milrinone, digoxin). This avoids
+      increased oxygen demand and arrhythmia risk.
+      📚 KD Tripathi, 8th Ed, Ch.37 (p.527)
+    difficulty: 2

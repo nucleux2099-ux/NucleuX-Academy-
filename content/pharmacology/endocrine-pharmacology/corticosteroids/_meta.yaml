@@ -1,0 +1,163 @@
+topic_id: corticosteroids
+name: Corticosteroids
+description: Glucocorticoids and mineralocorticoids — mechanisms, therapeutic uses, adverse effects, and withdrawal
+high_yield: true
+nmc_codes:
+- code: PH1.36
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Corticosteroids are among the most widely used drugs in medicine. Understanding their classification (glucocorticoid vs
+  mineralocorticoid activity), mechanism of action, vast therapeutic uses, and serious adverse effects is essential.
+  The HPA axis suppression and steroid withdrawal syndrome are important clinical concepts.
+  📚 KD Tripathi, 8th Ed, Ch.32 (p.470-490); 📚 Goodman & Gilman's, 14th Ed, Ch.42
+
+learning_objectives:
+  - Classify corticosteroids by glucocorticoid and mineralocorticoid potency
+  - Describe the mechanism of anti-inflammatory and immunosuppressive action
+  - List therapeutic uses across organ systems
+  - Describe adverse effects of chronic corticosteroid use
+  - Explain HPA axis suppression and guidelines for steroid withdrawal
+
+content:
+  atoms:
+    - id: classification-mechanism
+      title: "Classification & Mechanism of Action"
+      text: >
+        Mechanism: Bind intracellular glucocorticoid receptor (GR) → GR-drug complex translocates to nucleus →
+        binds glucocorticoid response elements (GRE) → ↑anti-inflammatory proteins (lipocortin-1/annexin A1 → inhibits PLA2 →
+        ↓arachidonic acid release → ↓ALL prostaglandins and leukotrienes). Also ↓COX-2, ↓iNOS, ↓cytokines (IL-1, TNF, IL-6).
+        NF-κB inhibition is a key mechanism of immunosuppression.
+        Classification by potency (relative to cortisol/hydrocortisone = 1):
+        Short-acting: Cortisone (0.8), Hydrocortisone (1) — highest mineralocorticoid activity, physiologic replacement.
+        Intermediate: Prednisolone (4), Prednisone (4 — prodrug), Methylprednisolone (5), Triamcinolone (5 — no Na retention).
+        Long-acting: Dexamethasone (30 — NO mineralocorticoid activity, longest acting), Betamethasone (30).
+        Mineralocorticoid: Fludrocortisone (10x cortisol MC activity — DOC for Addison disease replacement, mineralocorticoid component).
+        Duration: Hydrocortisone 8-12h, Prednisolone 12-36h, Dexamethasone 36-72h.
+        📚 KD Tripathi, 8th Ed, Ch.32 (p.470-476)
+
+    - id: therapeutic-uses
+      title: "Therapeutic Uses of Corticosteroids"
+      text: >
+        Replacement therapy: Addison disease (hydrocortisone + fludrocortisone), Congenital adrenal hyperplasia (dexamethasone — suppresses ACTH).
+        Anti-inflammatory/Immunosuppressive: Rheumatoid arthritis, SLE, Inflammatory bowel disease, Asthma (inhaled: beclomethasone, budesonide, fluticasone),
+        Allergic rhinitis, Organ transplant rejection (methylprednisolone pulse), Nephrotic syndrome (minimal change disease — excellent response).
+        Hematologic: Autoimmune hemolytic anemia, ITP, ALL (dexamethasone — crosses BBB, CNS leukemia), Lymphomas (part of CHOP).
+        CNS: Cerebral edema (dexamethasone — vasogenic edema around tumors; NOT for cytotoxic edema of stroke).
+        Emergency: Anaphylaxis (adjunct — NOT first-line, that's adrenaline), Acute adrenal crisis, Status asthmaticus.
+        Respiratory: Antenatal betamethasone (lung maturity — accelerates surfactant production in preterm labor).
+        Diagnostic: Dexamethasone suppression test (Cushing syndrome).
+        Topical: Eczema, contact dermatitis (use lowest potency, shortest duration).
+        📚 KD Tripathi, 8th Ed, Ch.32 (p.476-483)
+
+    - id: adverse-effects-withdrawal
+      title: "Adverse Effects & Withdrawal"
+      text: >
+        Cushingoid features: Moon facies, buffalo hump, central obesity, striae, thin skin, easy bruising.
+        Metabolic: Hyperglycemia/steroid diabetes, Dyslipidemia, Osteoporosis (↓bone formation, ↑resorption — most common cause
+        of drug-induced osteoporosis), Avascular necrosis of femoral head.
+        GI: Peptic ulcers (especially with NSAIDs), Pancreatitis.
+        CVS: Hypertension, Na+/water retention (mineralocorticoid effect).
+        Infection: ↑susceptibility (masks signs — "silent perforation"), TB reactivation, Oral/vaginal candidiasis (inhaled steroids).
+        Musculoskeletal: Proximal myopathy, Growth retardation in children.
+        Eye: Posterior subcapsular cataract, Glaucoma.
+        Psychiatric: Euphoria, psychosis, depression, insomnia.
+        HPA axis suppression: Chronic use >2 weeks → adrenal atrophy → CANNOT stop abruptly (acute adrenal crisis).
+        Taper gradually. Stress dosing needed during surgery/illness in patients on chronic steroids.
+        Inhaled corticosteroid side effects: Oral candidiasis (prevent with mouth rinsing), Dysphonia.
+        📚 KD Tripathi, 8th Ed, Ch.32 (p.483-490)
+
+  clinical:
+    - title: "Clinical Correlation: Steroid Withdrawal"
+      text: >
+        Abrupt withdrawal after chronic use → acute adrenal insufficiency (hypotension, shock, death).
+        Rule: if steroids used >2 weeks at supraphysiologic dose → must taper. Taper by 5-10mg prednisolone equivalent
+        every 1-2 weeks. Perioperative stress dosing: hydrocortisone 100mg IV before major surgery.
+    - title: "Clinical Correlation: Antenatal Corticosteroids"
+      text: >
+        Betamethasone 12mg IM × 2 doses (24h apart) or Dexamethasone 6mg IM × 4 doses (12h apart) given to mothers
+        at 24-34 weeks with threatened preterm labor. Accelerates fetal lung maturity by inducing surfactant production.
+        Reduces RDS, IVH, and NEC in premature neonates.
+
+  high_yield_points:
+    - "Steroids inhibit PLA2 (via lipocortin) → block ALL eicosanoids (PGs + LTs); NSAIDs only block COX"
+    - "Dexamethasone: HIGHEST anti-inflammatory potency (30x cortisol), NO mineralocorticoid activity"
+    - "Hydrocortisone: HIGHEST mineralocorticoid activity among glucocorticoids — physiologic replacement"
+    - "Fludrocortisone: synthetic mineralocorticoid — Addison disease replacement"
+    - "Antenatal betamethasone: accelerates fetal lung surfactant (24-34 weeks preterm labor)"
+    - "Most common cause of drug-induced osteoporosis = CORTICOSTEROIDS"
+    - "Posterior subcapsular cataract and glaucoma = ocular effects of chronic steroids"
+    - "NEVER stop chronic steroids abruptly — risk of adrenal crisis (HPA suppression)"
+    - "Inhaled steroids: oral candidiasis (prevent by mouth rinsing after inhalation)"
+    - "Dexamethasone crosses BBB — used for cerebral edema and CNS leukemia (ALL)"
+
+mcqs:
+  - question: "Which corticosteroid has the HIGHEST anti-inflammatory potency with NO mineralocorticoid activity?"
+    options:
+      - "Hydrocortisone"
+      - "Prednisolone"
+      - "Dexamethasone"
+      - "Fludrocortisone"
+    answer: "Dexamethasone"
+    explanation: >
+      Dexamethasone has 30x the anti-inflammatory potency of hydrocortisone with virtually zero mineralocorticoid
+      activity. This makes it ideal when salt/water retention must be avoided (cerebral edema, diagnostic testing).
+      📚 KD Tripathi, 8th Ed, Ch.32 (p.474)
+    difficulty: 1
+
+  - question: "Antenatal corticosteroids for fetal lung maturity are given at:"
+    options:
+      - "16-20 weeks"
+      - "24-34 weeks"
+      - "35-37 weeks"
+      - "After 37 weeks"
+    answer: "24-34 weeks"
+    explanation: >
+      Betamethasone/dexamethasone given to mothers at 24-34 weeks with anticipated preterm delivery accelerates
+      fetal surfactant production, reducing respiratory distress syndrome (RDS) by ~50%.
+      📚 KD Tripathi, 8th Ed, Ch.32 (p.481)
+    difficulty: 1
+
+  - question: "The most common cause of drug-induced osteoporosis is:"
+    options:
+      - "Methotrexate"
+      - "Heparin"
+      - "Corticosteroids"
+      - "Phenytoin"
+    answer: "Corticosteroids"
+    explanation: >
+      Chronic corticosteroid use is the most common cause of drug-induced and secondary osteoporosis.
+      Mechanisms: ↓osteoblast function, ↑osteoclast activity, ↓Ca2+ absorption, ↓sex steroids.
+      Bisphosphonates recommended for prevention if steroids used ≥3 months.
+      📚 KD Tripathi, 8th Ed, Ch.32 (p.486)
+    difficulty: 1
+
+  - question: "A patient on long-term prednisolone develops oral white patches. The most likely cause is:"
+    options:
+      - "Leukoplakia"
+      - "Oral candidiasis"
+      - "Lichen planus"
+      - "Aphthous ulcers"
+    answer: "Oral candidiasis"
+    explanation: >
+      Immunosuppression from corticosteroids predisposes to opportunistic infections including oral candidiasis (thrush).
+      Especially common with inhaled steroids — prevented by rinsing mouth after inhalation.
+      Systemic steroids also increase risk.
+      📚 KD Tripathi, 8th Ed, Ch.32 (p.488)
+    difficulty: 1
+
+  - question: "Abrupt withdrawal of chronic corticosteroid therapy can cause:"
+    options:
+      - "Cushing syndrome"
+      - "Acute adrenal insufficiency"
+      - "Diabetes mellitus"
+      - "Osteoporosis"
+    answer: "Acute adrenal insufficiency"
+    explanation: >
+      Chronic exogenous corticosteroids suppress the HPA axis → adrenal cortex atrophies. Abrupt withdrawal →
+      inability to mount cortisol response → acute adrenal crisis (hypotension, shock, hypoglycemia, hyperkalemia).
+      Always taper steroids gradually after >2 weeks of supraphysiologic use.
+      📚 KD Tripathi, 8th Ed, Ch.32 (p.489)
+    difficulty: 1

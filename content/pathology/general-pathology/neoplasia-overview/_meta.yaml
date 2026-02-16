@@ -1,9 +1,173 @@
 topic_id: neoplasia-overview
-name: Neoplasia Overview
-description: Neoplasia Overview — NMC curriculum topic
+name: Neoplasia (Benign vs Malignant)
+description: Classification, biology, and molecular basis of neoplasia — benign vs malignant tumors
 high_yield: true
 nmc_codes:
-- code: PA7.1
+- code: PA4.1
   domain: KH
   core: true
   phase: Phase 1
+
+overview: >
+  Neoplasia ("new growth") is uncontrolled proliferation due to genetic alterations in growth-regulating genes.
+  Tumors are classified as benign (localized, non-invasive) or malignant (invasive, metastatic).
+  Understanding tumor nomenclature, grading, staging, molecular basis, and carcinogenesis is fundamental for NEET-PG.
+  📚 Robbins, 10th Ed, Ch.7-8 (p.233-310)
+
+learning_objectives:
+  - Classify tumors using standard nomenclature for benign and malignant neoplasms
+  - Differentiate benign from malignant tumors based on differentiation, growth rate, invasion, and metastasis
+  - Describe the hallmarks of cancer and molecular basis of carcinogenesis
+  - Explain the mechanisms of metastasis
+  - Understand tumor grading vs staging and their clinical significance
+
+content:
+  atoms:
+    - id: tumor-nomenclature
+      title: "Tumor Nomenclature"
+      text: >
+        Benign: tissue of origin + "-oma" (e.g., fibroma, adenoma, leiomyoma, chondroma).
+        Malignant epithelial: Carcinoma (adenocarcinoma if glandular, squamous cell carcinoma if squamous).
+        Malignant mesenchymal: Sarcoma (fibrosarcoma, leiomyosarcoma, osteosarcoma).
+        Exceptions to remember: Lymphoma, melanoma, mesothelioma, hepatoma, seminoma = ALL MALIGNANT despite "-oma" suffix.
+        Mixed tumors: pleomorphic adenoma (benign mixed tumor of salivary gland), teratoma (all 3 germ layers).
+        Hamartoma = disorganized benign mass of tissue native to the site; Choristoma = normal tissue in abnormal location.
+        📚 Robbins, 10th Ed, Ch.7 (p.235-238)
+
+    - id: benign-vs-malignant
+      title: "Benign vs Malignant — Key Differences"
+      text: >
+        Differentiation: Benign = well-differentiated; Malignant = variable (well to poorly differentiated/anaplastic).
+        Growth rate: Benign = slow; Malignant = rapid (but exceptions exist).
+        Local invasion: Benign = encapsulated, expansile, no invasion; Malignant = infiltrative, no capsule.
+        Metastasis: Benign = NEVER metastasizes; Malignant = frequently metastasizes.
+        Anaplasia markers: pleomorphism, abnormal mitoses, loss of polarity, tumor giant cells, high N:C ratio.
+        📚 Robbins, 10th Ed, Ch.7 (p.238-244)
+
+    - id: hallmarks-of-cancer
+      title: "Hallmarks of Cancer"
+      text: >
+        The 8 hallmarks (Hanahan & Weinberg): (1) Self-sufficiency in growth signals (oncogenes: RAS, MYC, EGFR),
+        (2) Insensitivity to growth-inhibitory signals (loss of tumor suppressors: RB, p53),
+        (3) Evasion of apoptosis (BCL-2 overexpression), (4) Limitless replicative potential (telomerase activation),
+        (5) Sustained angiogenesis (VEGF), (6) Ability to invade and metastasize (E-cadherin loss, MMPs),
+        (7) Reprogramming of energy metabolism (Warburg effect — aerobic glycolysis),
+        (8) Evasion of immune destruction (PD-L1).
+        Enabling characteristics: genomic instability and tumor-promoting inflammation.
+        📚 Robbins, 10th Ed, Ch.7 (p.280-290)
+
+    - id: metastasis
+      title: "Routes and Patterns of Metastasis"
+      text: >
+        Routes: (1) Lymphatic spread — most common initial route for CARCINOMAS; (2) Hematogenous spread —
+        favored by SARCOMAS (lung and liver most common sites); (3) Seeding of body cavities (ovarian cancer → peritoneum).
+        Organ tropism: Lung cancer → brain, adrenals, bone; Breast → bone, lung, liver, brain;
+        Prostate → bone (osteoblastic); Kidney (RCC) → lung; Follicular thyroid → lung, bone (hematogenous).
+        Sentinel lymph node: first node to receive drainage — if negative, further dissection may be avoided.
+        📚 Robbins, 10th Ed, Ch.7 (p.244-248)
+
+    - id: grading-staging
+      title: "Tumor Grading and Staging"
+      text: >
+        Grading: based on histologic differentiation (G1=well, G2=moderate, G3=poor, G4=anaplastic).
+        Staging: based on extent of spread (TNM system: T=tumor size, N=node involvement, M=distant metastasis).
+        STAGING is MORE IMPORTANT than grading for prognosis.
+        Example: Breast cancer Stage I (T1N0M0) has much better prognosis than Stage IV (any T, any N, M1)
+        regardless of histologic grade.
+        📚 Robbins, 10th Ed, Ch.7 (p.249-250)
+
+  clinical:
+    - title: "Tumor Markers"
+      text: >
+        PSA — prostate cancer (screening + monitoring), AFP — hepatocellular carcinoma & yolk sac tumors,
+        CEA — colorectal cancer (monitoring, NOT screening), CA-125 — ovarian cancer,
+        CA 19-9 — pancreatic cancer, hCG — choriocarcinoma & testicular germ cell tumors.
+        Tumor markers are best for MONITORING treatment response, not for primary diagnosis.
+    - title: "Paraneoplastic Syndromes"
+      text: >
+        SIADH — small cell lung cancer; Cushing syndrome — small cell lung cancer (ectopic ACTH);
+        Hypercalcemia — squamous cell lung cancer (PTHrP); Lambert-Eaton — small cell lung cancer;
+        Acanthosis nigricans — gastric carcinoma; Erythrocytosis — RCC, HCC.
+
+  high_yield_points:
+    - "Staging (TNM) is MORE important than grading for prognosis"
+    - "Lymphoma, melanoma, mesothelioma, seminoma = MALIGNANT despite '-oma' ending"
+    - "Sarcomas spread hematogenously; Carcinomas spread lymphatically (initially)"
+    - "p53 is the 'guardian of the genome' — most commonly mutated gene in human cancers"
+    - "RB gene = first tumor suppressor discovered (retinoblastoma)"
+    - "Warburg effect = cancer cells prefer aerobic glycolysis over oxidative phosphorylation"
+    - "Two-hit hypothesis (Knudson): both alleles of a tumor suppressor must be inactivated"
+    - "Oncogenes are DOMINANT (one allele sufficient); Tumor suppressors are RECESSIVE (both alleles needed)"
+    - "Teratoma in female = usually benign (mature cystic); in male = usually malignant"
+    - "Most common site of metastasis overall = LIVER (via portal drainage) and LUNG"
+
+mcqs:
+  - question: "A 60-year-old smoker has a lung mass. Biopsy shows keratin pearls and intercellular bridges. What is the diagnosis?"
+    options:
+      - "Adenocarcinoma"
+      - "Squamous cell carcinoma"
+      - "Small cell carcinoma"
+      - "Large cell carcinoma"
+    answer: "Squamous cell carcinoma"
+    explanation: >
+      Keratin pearls and intercellular bridges (desmosomes) are hallmarks of squamous cell carcinoma.
+      Adenocarcinoma shows glandular differentiation. Small cell has small round blue cells with crush artifact.
+      Large cell is a diagnosis of exclusion.
+      📚 Robbins, 10th Ed, Ch.15 (p.697)
+    difficulty: 1
+
+  - question: "A tumor suppressor gene requires inactivation of BOTH alleles to lose function. This is explained by:"
+    options:
+      - "Warburg effect"
+      - "Knudson two-hit hypothesis"
+      - "Philadelphia chromosome theory"
+      - "Oncogene addiction"
+    answer: "Knudson two-hit hypothesis"
+    explanation: >
+      Knudson's two-hit hypothesis states that both copies of a tumor suppressor gene must be inactivated for loss of
+      function. In hereditary retinoblastoma, one hit is inherited (germline), the second is somatic. In sporadic cases,
+      both hits are somatic (hence later onset, usually unilateral).
+      📚 Robbins, 10th Ed, Ch.7 (p.268)
+    difficulty: 1
+
+  - question: "A 45-year-old woman with ovarian cancer presents with progressive abdominal distension and peritoneal studding. This pattern of spread is called:"
+    options:
+      - "Lymphatic metastasis"
+      - "Hematogenous metastasis"
+      - "Transcoelomic (seeding) spread"
+      - "Perineural invasion"
+    answer: "Transcoelomic (seeding) spread"
+    explanation: >
+      Ovarian carcinoma characteristically spreads by seeding the peritoneal cavity (transcoelomic spread),
+      producing widespread peritoneal implants and malignant ascites. This is different from lymphatic or
+      hematogenous spread. Other cancers that seed cavities: mesothelioma, CNS tumors (via CSF).
+      📚 Robbins, 10th Ed, Ch.7 (p.246)
+    difficulty: 2
+
+  - question: "Which oncogene is associated with the t(9;22) Philadelphia chromosome translocation?"
+    options:
+      - "MYC"
+      - "RAS"
+      - "BCR-ABL"
+      - "RET"
+    answer: "BCR-ABL"
+    explanation: >
+      The Philadelphia chromosome results from t(9;22) translocation creating the BCR-ABL fusion gene,
+      which produces a constitutively active tyrosine kinase. Found in >95% of CML and some ALL.
+      Targeted by imatinib (Gleevec). MYC is associated with t(8;14) in Burkitt lymphoma.
+      📚 Robbins, 10th Ed, Ch.7 (p.260)
+    difficulty: 1
+
+  - question: "A tumor is classified as T3N1M0. What does the 'N1' indicate?"
+    options:
+      - "No lymph node involvement"
+      - "Regional lymph node metastasis"
+      - "Distant metastasis present"
+      - "Tumor is well-differentiated"
+    answer: "Regional lymph node metastasis"
+    explanation: >
+      In TNM staging: T = primary tumor size/extent, N = regional lymph node involvement (N0=none, N1-3=increasing involvement),
+      M = distant metastasis (M0=none, M1=present). N1 indicates regional lymph node metastasis is present.
+      Staging is the most important prognostic factor.
+      📚 Robbins, 10th Ed, Ch.7 (p.249)
+    difficulty: 1

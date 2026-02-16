@@ -1,0 +1,149 @@
+topic_id: acute-diarrheal-disease
+name: Acute Diarrheal Disease & ORS
+description: Assessment, classification, ORS composition, zinc supplementation, and management of dehydration
+high_yield: true
+nmc_codes:
+- code: PE20.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Diarrheal disease is the second leading cause of death in children under 5 globally. Most deaths are
+  preventable with ORS and zinc supplementation. WHO/UNICEF recommend low-osmolarity ORS (245 mOsm/L)
+  and zinc for 14 days. Assessment of dehydration status guides management (Plan A, B, or C).
+  📚 OP Ghai, 10th Ed, Ch.18 | 📚 Nelson's, 22nd Ed, Ch.366
+
+learning_objectives:
+  - Classify dehydration as no, some, or severe
+  - Describe the composition of WHO-ORS (low osmolarity)
+  - Outline Plan A, B, and C for diarrhea management
+  - Explain the role of zinc supplementation
+  - List indications for antibiotics in diarrhea
+
+content:
+  atoms:
+    - id: dehydration-assessment
+      title: "Assessment of Dehydration (WHO Classification)"
+      text: >
+        No dehydration (<5% weight loss): alert, normal eyes, drinks normally, skin pinch instant recoil.
+        Some dehydration (5-10%): restless/irritable, sunken eyes, drinks eagerly, skin pinch slow (<2 sec).
+        Severe dehydration (>10%): lethargic/unconscious, very sunken eyes, unable to drink,
+        skin pinch very slow (>2 sec), absent tears, dry mucous membranes, weak/absent pulses.
+        📚 OP Ghai, 10th Ed, Ch.18 (p.310-312)
+
+    - id: ors-composition
+      title: "WHO Low-Osmolarity ORS"
+      text: >
+        WHO-ORS (2002, low osmolarity — 245 mOsm/L):
+        Sodium 75 mEq/L, Potassium 20 mEq/L, Chloride 65 mEq/L, Citrate 10 mmol/L, Glucose 75 mmol/L.
+        Osmolarity: 245 mOsm/L (reduced from old formula's 311 mOsm/L).
+        Advantages of low-osmolarity: reduced stool output by 25%, reduced vomiting by 30%,
+        reduced need for IV fluids by 33%.
+        Preparation: 1 packet dissolved in 1 liter of clean water. Do NOT boil after mixing.
+        📚 OP Ghai, 10th Ed, Ch.18 (p.313-314)
+
+    - id: management-plans
+      title: "Plan A, B, C"
+      text: >
+        Plan A (no dehydration): Treat at home. Give extra fluids (ORS after each loose stool:
+        <2 yr: 50-100 mL, 2-10 yr: 100-200 mL). Continue breastfeeding. Zinc 10 mg/day (<6 mo)
+        or 20 mg/day (6 mo-5 yr) for 14 days. Return if danger signs appear.
+        Plan B (some dehydration): ORS 75 mL/kg over 4 hours at health facility. Reassess after 4 hours.
+        Plan C (severe dehydration): IV fluids IMMEDIATELY. Ringer's lactate preferred (or NS).
+        30 mL/kg in first 30 min (infants: 1 hour), then 70 mL/kg over 2.5 hours (infants: 5 hours).
+        Total 100 mL/kg over 3 hours (children) or 6 hours (infants). Reassess frequently.
+        📚 OP Ghai, 10th Ed, Ch.18 (p.315-318)
+
+    - id: zinc-antibiotics
+      title: "Zinc & Antibiotics"
+      text: >
+        Zinc supplementation: reduces duration by 25%, reduces stool volume, reduces future episodes
+        for 2-3 months. Dose: <6 months: 10 mg/day; ≥6 months: 20 mg/day for 14 days.
+        Antibiotics indicated ONLY for: bloody diarrhea (dysentery — ciprofloxacin/azithromycin),
+        suspected cholera (doxycycline/azithromycin), proven shigellosis, amebiasis (metronidazole),
+        giardiasis. Antibiotics NOT indicated for routine watery diarrhea.
+        Anti-motility drugs (loperamide) are CONTRAINDICATED in children.
+        📚 OP Ghai, 10th Ed, Ch.18 (p.318-320)
+
+  high_yield_points:
+    - "ORS and zinc = cornerstones of diarrhea management (NOT antibiotics)"
+    - "WHO-ORS osmolarity: 245 mOsm/L (low osmolarity formula)"
+    - "Sodium in ORS: 75 mEq/L; Glucose: 75 mmol/L (equimolar Na:glucose ratio)"
+    - "Zinc for 14 days: <6 mo = 10 mg/day; ≥6 mo = 20 mg/day"
+    - "Plan C: IV Ringer's lactate 100 mL/kg — 30 mL/kg fast + 70 mL/kg slow"
+    - "Skin pinch >2 seconds = SEVERE dehydration"
+    - "Loperamide is CONTRAINDICATED in children"
+    - "Antibiotics in diarrhea: ONLY for dysentery, cholera, proven infections"
+    - "Rotavirus is the most common cause of severe dehydrating diarrhea in children"
+    - "Rice-based ORS may reduce stool output more than standard ORS"
+
+mcqs:
+  - question: "The osmolarity of WHO low-osmolarity ORS is:"
+    options:
+      - "211 mOsm/L"
+      - "245 mOsm/L"
+      - "311 mOsm/L"
+      - "330 mOsm/L"
+    answer: "245 mOsm/L"
+    explanation: >
+      The current WHO-ORS (2002) has reduced osmolarity of 245 mOsm/L, which is associated with
+      decreased stool output, vomiting, and need for IV fluids compared to the older 311 mOsm/L formula.
+      📚 OP Ghai, 10th Ed, Ch.18 (p.313)
+    difficulty: 1
+
+  - question: "In Plan C for severe dehydration, the IV fluid of choice is:"
+    options:
+      - "5% dextrose"
+      - "Normal saline"
+      - "Ringer's lactate"
+      - "Half-normal saline"
+    answer: "Ringer's lactate"
+    explanation: >
+      Ringer's lactate is the preferred IV fluid for severe dehydration as its composition most
+      closely resembles plasma. Normal saline is an alternative. Dextrose solutions are NOT
+      appropriate for volume resuscitation.
+      📚 OP Ghai, 10th Ed, Ch.18 (p.317)
+    difficulty: 1
+
+  - question: "The duration of zinc supplementation recommended in acute diarrhea is:"
+    options:
+      - "3 days"
+      - "7 days"
+      - "14 days"
+      - "21 days"
+    answer: "14 days"
+    explanation: >
+      WHO/UNICEF recommend zinc for 14 days to reduce the duration and severity of diarrhea
+      and to prevent future episodes for 2-3 months. This recommendation applies to ALL children
+      with diarrhea, regardless of dehydration status.
+      📚 OP Ghai, 10th Ed, Ch.18 (p.318)
+    difficulty: 1
+
+  - question: "Which drug is CONTRAINDICATED in childhood diarrhea?"
+    options:
+      - "Zinc"
+      - "ORS"
+      - "Loperamide"
+      - "Probiotics"
+    answer: "Loperamide"
+    explanation: >
+      Loperamide (anti-motility agent) is contraindicated in children due to risk of paralytic
+      ileus, abdominal distension, and CNS toxicity (especially in infants). It can also mask
+      fluid loss in the gut lumen.
+      📚 OP Ghai, 10th Ed, Ch.18 (p.320)
+    difficulty: 1
+
+  - question: "The most common cause of severe dehydrating diarrhea in children under 5 is:"
+    options:
+      - "Escherichia coli"
+      - "Rotavirus"
+      - "Shigella"
+      - "Vibrio cholerae"
+    answer: "Rotavirus"
+    explanation: >
+      Rotavirus is the most common cause of severe dehydrating gastroenteritis in children
+      worldwide. It accounts for ~40% of hospitalizations for diarrhea in under-5s.
+      Rotavirus vaccine is now included in India's NIS.
+      📚 Nelson's, 22nd Ed, Ch.366
+    difficulty: 1

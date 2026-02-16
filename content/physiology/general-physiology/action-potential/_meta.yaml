@@ -1,9 +1,177 @@
 topic_id: action-potential
-name: Action Potential
-description: Action Potential — NMC curriculum topic
+name: Action Potential & Nerve Conduction
+description: Action Potential & Nerve Conduction — Ionic basis of action potentials, phases, propagation, and conduction velocity
 high_yield: true
 nmc_codes:
 - code: PY3.8
   domain: KH
   core: true
   phase: Phase 1
+
+overview: >
+  The action potential (AP) is a rapid, transient reversal of membrane potential that propagates along excitable cells
+  (neurons, muscle). Resting membrane potential (~-70 mV) is maintained by Na+/K+ ATPase and K+ leak channels.
+  When threshold (~-55 mV) is reached, voltage-gated Na+ channels open → rapid depolarization → followed by K+ channel
+  opening → repolarization. Propagation occurs by local circuit currents; myelination increases conduction velocity
+  via saltatory conduction. Understanding AP is fundamental to neuropharmacology and clinical neurophysiology.
+  📚 Guyton & Hall, 14th Ed, Ch.5 (p.63-78) / 📚 Ganong's, 26th Ed, Ch.4
+
+learning_objectives:
+  - Describe the ionic basis of resting membrane potential and the role of Na+/K+ ATPase
+  - Explain the phases of the action potential including depolarization, repolarization, and hyperpolarization
+  - Define threshold, all-or-none law, and refractory periods (absolute and relative)
+  - Compare continuous conduction with saltatory conduction in myelinated fibers
+  - Classify nerve fibers (A, B, C) and correlate with conduction velocity and function
+
+content:
+  atoms:
+    - id: resting-membrane-potential
+      title: "Resting Membrane Potential"
+      text: >
+        RMP is approximately -70 mV in neurons, -90 mV in skeletal muscle, -85 mV in cardiac muscle.
+        Maintained by: (1) Na+/K+ ATPase (3 Na+ out, 2 K+ in — electrogenic pump);
+        (2) K+ leak channels — membrane is 50-100x more permeable to K+ than Na+ at rest;
+        (3) Gibbs-Donnan equilibrium — intracellular proteins create fixed negative charges.
+        Nernst equation calculates equilibrium potential for individual ions: E_K = -94 mV, E_Na = +61 mV.
+        Goldman equation considers all permeant ions for actual RMP.
+        📚 Guyton & Hall, 14th Ed, Ch.5 (p.63-67)
+
+    - id: phases-of-action-potential
+      title: "Phases of the Action Potential"
+      text: >
+        Phase 0 (Depolarization): Stimulus reaches threshold → voltage-gated Na+ channels open (m-gate opens) →
+        rapid Na+ influx → membrane potential rises to +30 to +40 mV. Duration ~0.5 ms.
+        Phase 1 (Early repolarization): Na+ channels inactivate (h-gate closes).
+        Phase 2 (Repolarization): Voltage-gated K+ channels (delayed rectifier) open → K+ efflux → returns to RMP.
+        Phase 3 (Hyperpolarization/Undershoot): K+ channels close slowly → transient hyperpolarization below RMP.
+        Na+ channels have TWO gates: activation (m) gate and inactivation (h) gate. Both must be open for Na+ flow.
+        📚 Guyton & Hall, 14th Ed, Ch.5 (p.67-72)
+
+    - id: refractory-periods
+      title: "Refractory Periods"
+      text: >
+        Absolute Refractory Period (ARP): Na+ channels are inactivated (h-gate closed) — NO stimulus, however strong,
+        can elicit another AP. Corresponds to depolarization + initial repolarization. Duration ~1 ms in neurons.
+        Relative Refractory Period (RRP): Some Na+ channels have recovered — a STRONGER-than-normal stimulus can elicit AP.
+        Corresponds to late repolarization + hyperpolarization. AP generated during RRP has smaller amplitude.
+        Clinical significance: ARP ensures unidirectional propagation and limits maximum firing frequency.
+        Cardiac muscle has prolonged ARP (~250 ms) — prevents tetanus of heart muscle.
+        📚 Guyton & Hall, 14th Ed, Ch.5 (p.72-73)
+
+    - id: nerve-fiber-classification
+      title: "Nerve Fiber Classification & Conduction Velocity"
+      text: >
+        Erlanger-Gasser classification:
+        Aα fibers: largest diameter (12-20 μm), fastest (70-120 m/s) — proprioception, motor neurons.
+        Aβ fibers: 5-12 μm, 30-70 m/s — touch, pressure.
+        Aγ fibers: 3-6 μm, 15-30 m/s — muscle spindle (intrafusal) motor.
+        Aδ fibers: 2-5 μm, 12-30 m/s — fast pain, temperature, crude touch.
+        B fibers: 1-3 μm, 3-15 m/s — preganglionic autonomic (myelinated).
+        C fibers: 0.4-1.2 μm, 0.5-2 m/s — slow pain, postganglionic autonomic (UNMYELINATED).
+        Conduction velocity ∝ fiber diameter. In myelinated fibers: velocity (m/s) ≈ 6 × diameter (μm).
+        📚 Ganong's, 26th Ed, Ch.4
+
+    - id: saltatory-conduction
+      title: "Saltatory Conduction"
+      text: >
+        In myelinated fibers, myelin acts as an insulator. Ion channels are concentrated at Nodes of Ranvier.
+        AP jumps from node to node (saltatory = "to leap") → conduction velocity increases 5-50x.
+        Energy efficient: fewer ions cross membrane → less Na+/K+ ATPase work needed.
+        Demyelinating diseases (Multiple Sclerosis, Guillain-Barré): loss of myelin → conduction block or slowing →
+        weakness, sensory loss. Nerve conduction studies (NCS) measure conduction velocity clinically.
+        Local anesthetics (lidocaine) block Na+ channels → prevent AP propagation → anesthesia.
+        📚 Guyton & Hall, 14th Ed, Ch.5 (p.73-76)
+
+  clinical:
+    - title: "Clinical Correlation: Local Anesthetics"
+      text: >
+        Local anesthetics (lidocaine, bupivacaine) block voltage-gated Na+ channels from the INSIDE.
+        They preferentially block small unmyelinated C fibers first (pain), then Aδ (temperature),
+        then larger fibers. Order of blockade: pain → temperature → touch → pressure → motor.
+        This explains why patients lose pain sensation before motor function.
+    - title: "Clinical Correlation: Demyelinating Diseases"
+      text: >
+        Multiple Sclerosis (CNS) and Guillain-Barré Syndrome (PNS) cause demyelination.
+        Nerve conduction studies show reduced conduction velocity and temporal dispersion.
+        Positive symptoms (tingling, Lhermitte's sign) occur due to ectopic impulse generation at demyelinated segments.
+
+  high_yield_points:
+    - "RMP is closest to K+ equilibrium potential (-94 mV) because membrane is most permeable to K+ at rest"
+    - "Na+/K+ ATPase is ELECTROGENIC (3 Na+ out, 2 K+ in) — contributes -4 mV to RMP"
+    - "All-or-none law: AP amplitude is INDEPENDENT of stimulus strength (once threshold is reached)"
+    - "Absolute refractory period = Na+ h-gate CLOSED; ensures unidirectional propagation"
+    - "Conduction velocity: Aα (fastest, 120 m/s) > Aβ > Aγ > Aδ > B > C (slowest, 0.5 m/s)"
+    - "Saltatory conduction in myelinated fibers — AP jumps between Nodes of Ranvier"
+    - "Local anesthetics block SMALL fibers FIRST: pain > temp > touch > motor"
+    - "Cardiac muscle has longest ARP (~250 ms) — prevents tetanus"
+    - "Hyperkalemia → depolarizes RMP → inactivates Na+ channels → decreased excitability"
+    - "Hypocalcemia → increases Na+ channel permeability → increased excitability → tetany"
+
+mcqs:
+  - question: "During the absolute refractory period of an action potential, which of the following is true?"
+    options:
+      - "Voltage-gated K+ channels are closed"
+      - "Na+ channels are in the inactivated state with h-gate closed"
+      - "The membrane is hyperpolarized beyond resting potential"
+      - "A stronger-than-normal stimulus can generate an action potential"
+    answer: "Na+ channels are in the inactivated state with h-gate closed"
+    explanation: >
+      During the ARP, Na+ channel inactivation gates (h-gates) are closed. No stimulus can reopen them until
+      they recover (reset to resting state). A stronger stimulus generating AP describes the relative refractory period.
+      📚 Guyton & Hall, 14th Ed, Ch.5 (p.72)
+    difficulty: 1
+
+  - question: "A nerve conduction study shows markedly reduced conduction velocity in a patient with progressive limb weakness. Which pathological process best explains this finding?"
+    options:
+      - "Axonal degeneration"
+      - "Demyelination"
+      - "Neuromuscular junction block"
+      - "Anterior horn cell loss"
+    answer: "Demyelination"
+    explanation: >
+      Demyelination reduces conduction velocity because saltatory conduction is impaired. Axonal degeneration
+      reduces amplitude (fewer fibers conducting) but velocity in surviving fibers remains normal.
+      NMJ block and anterior horn cell loss affect different parts of the motor unit.
+      📚 Ganong's, 26th Ed, Ch.4
+    difficulty: 2
+
+  - question: "Which nerve fiber type carries slow pain and is unmyelinated?"
+    options:
+      - "Aα fibers"
+      - "Aδ fibers"
+      - "B fibers"
+      - "C fibers"
+    answer: "C fibers"
+    explanation: >
+      C fibers are unmyelinated, smallest diameter (0.4-1.2 μm), slowest conduction (0.5-2 m/s), and carry
+      slow/burning pain and postganglionic autonomic signals. Aδ fibers carry fast/sharp pain and are myelinated.
+      📚 Guyton & Hall, 14th Ed, Ch.5
+    difficulty: 1
+
+  - question: "Resting membrane potential is closest to the equilibrium potential of which ion?"
+    options:
+      - "Na+"
+      - "K+"
+      - "Ca2+"
+      - "Cl-"
+    answer: "K+"
+    explanation: >
+      RMP (~-70 mV) is closest to E_K (-94 mV) because the resting membrane is most permeable to K+.
+      E_Na is +61 mV. The difference between RMP and E_K is due to slight Na+ permeability and
+      electrogenic Na+/K+ ATPase contribution.
+      📚 Guyton & Hall, 14th Ed, Ch.5 (p.65)
+    difficulty: 1
+
+  - question: "A patient with hypocalcemia develops carpopedal spasm. The mechanism is:"
+    options:
+      - "Decreased K+ permeability"
+      - "Increased Na+ channel permeability at resting state"
+      - "Blockade of voltage-gated Ca2+ channels"
+      - "Increased Na+/K+ ATPase activity"
+    answer: "Increased Na+ channel permeability at resting state"
+    explanation: >
+      Ca2+ normally stabilizes Na+ channels by screening surface charges. Hypocalcemia removes this stabilization,
+      increasing Na+ channel opening probability → threshold is lowered → spontaneous firing → tetany/carpopedal spasm.
+      This is different from Ca2+'s role in neurotransmitter release.
+      📚 Ganong's, 26th Ed, Ch.4
+    difficulty: 2

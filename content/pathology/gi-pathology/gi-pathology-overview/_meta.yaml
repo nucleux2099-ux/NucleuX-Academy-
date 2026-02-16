@@ -1,0 +1,160 @@
+topic_id: gi-pathology-overview
+name: GI Pathology (IBD, Celiac, Tumors)
+description: Inflammatory bowel disease, celiac disease, and GI neoplasms
+high_yield: true
+
+overview: >
+  GI pathology encompasses inflammatory conditions (IBD, celiac disease), peptic ulcers, and neoplasms (colorectal,
+  gastric, esophageal). Differentiating Crohn's from UC, understanding celiac disease pathology, and knowing the
+  adenoma-carcinoma sequence are essential for NEET-PG.
+  📚 Robbins, 10th Ed, Ch.17 (p.763-830)
+
+learning_objectives:
+  - Differentiate Crohn disease from ulcerative colitis
+  - Describe the pathogenesis and diagnosis of celiac disease
+  - Explain the adenoma-carcinoma sequence in colorectal cancer
+  - Compare familial polyposis syndromes (FAP, Lynch, Peutz-Jeghers)
+  - Describe key GI tumors (esophageal, gastric, colorectal, carcinoid)
+
+content:
+  atoms:
+    - id: crohn-vs-uc
+      title: "Crohn Disease vs Ulcerative Colitis"
+      text: >
+        Crohn disease: ANY part of GI tract (mouth to anus); terminal ileum most common; SKIP lesions;
+        TRANSMURAL inflammation; non-caseating granulomas; cobblestone mucosa; creeping fat;
+        complications: fistulas, strictures, abscesses. Smoking WORSENS Crohn.
+        UC: COLON ONLY; starts from RECTUM and extends proximally; CONTINUOUS (no skip lesions);
+        LIMITED TO MUCOSA and submucosa; crypt abscesses; pseudopolyps; bloody diarrhea.
+        Complications: toxic megacolon, increased colorectal cancer risk (more than Crohn).
+        Smoking PROTECTS against UC (but don't recommend!).
+        Key distinction: Crohn = transmural, skip lesions, granulomas, fistulas; UC = mucosal, continuous, from rectum.
+        📚 Robbins, 10th Ed, Ch.17 (p.793-806)
+
+    - id: celiac-disease
+      title: "Celiac Disease"
+      text: >
+        Immune-mediated reaction to gluten (gliadin) in genetically susceptible individuals (HLA-DQ2/DQ8).
+        Pathology: villous atrophy, crypt hyperplasia, increased intraepithelial lymphocytes in PROXIMAL small intestine
+        (duodenum/jejunum).
+        Serology: anti-tTG IgA (best screening), anti-endomysial IgA (most specific), anti-DGP.
+        Complications: malabsorption, iron deficiency anemia, dermatitis herpetiformis (IgA deposits in skin),
+        increased risk of T-cell lymphoma (enteropathy-associated T-cell lymphoma, EATL) and small bowel adenocarcinoma.
+        Treatment: lifelong gluten-free diet.
+        📚 Robbins, 10th Ed, Ch.17 (p.784-788)
+
+    - id: colorectal-cancer
+      title: "Colorectal Cancer and Polyposis Syndromes"
+      text: >
+        Adenoma-carcinoma sequence: APC mutation (early) → KRAS → p53 loss (late) → carcinoma.
+        Most CRCs arise from adenomatous polyps. Villous adenomas have highest malignant potential.
+        FAP (Familial Adenomatous Polyposis): APC gene (chr 5q); >100 adenomatous polyps; 100% cancer risk without
+        colectomy. Gardner syndrome = FAP + osteomas + desmoid tumors + epidermoid cysts.
+        Turcot syndrome = FAP + CNS tumors (medulloblastoma with APC; glioblastoma with Lynch).
+        Lynch syndrome (HNPCC): mismatch repair gene defects (MLH1, MSH2); microsatellite instability;
+        right-sided colon cancer; increased risk of endometrial, ovarian cancer. Amsterdam criteria.
+        Peutz-Jeghers: hamartomatous polyps + mucocutaneous pigmentation (lips); STK11 mutation; increased overall cancer risk.
+        Right-sided CRC: polypoid, iron deficiency anemia, occult blood. Left-sided: annular ("napkin ring"), obstruction, altered bowel habits.
+        📚 Robbins, 10th Ed, Ch.17 (p.813-825)
+
+    - id: gastric-tumors
+      title: "Gastric and Esophageal Pathology"
+      text: >
+        Gastric adenocarcinoma: intestinal type (H. pylori → chronic gastritis → intestinal metaplasia → dysplasia → carcinoma;
+        better prognosis) vs diffuse type (signet ring cells, linitis plastica/"leather bottle stomach"; CDH1/E-cadherin loss;
+        worse prognosis; Krukenberg tumor = metastasis to ovary).
+        Gastric lymphoma (MALT): H. pylori associated; may regress with antibiotics alone.
+        GIST: most common mesenchymal GI tumor; KIT/CD117+ (c-KIT mutation); treat with imatinib.
+        Esophageal cancer: SCC (upper/middle third; alcohol + smoking; developing world) vs adenocarcinoma
+        (lower third; Barrett's esophagus; developed world; rising incidence).
+        📚 Robbins, 10th Ed, Ch.17 (p.766-780, 806-812)
+
+  clinical:
+    - title: "H. pylori — The Versatile Pathogen"
+      text: >
+        H. pylori causes: chronic gastritis → peptic ulcer (duodenal > gastric) → gastric adenocarcinoma (intestinal type)
+        → gastric MALT lymphoma. CagA and VacA are virulence factors. Urease-positive (urea breath test).
+        Duodenal ulcers: ↑acid secretion; ANTERIOR duodenal ulcers perforate; POSTERIOR ulcers bleed (GDA).
+
+  high_yield_points:
+    - "Crohn = transmural, skip lesions, granulomas, fistulas, terminal ileum; UC = mucosal, continuous, rectum, crypt abscesses"
+    - "Smoking worsens Crohn but protects against UC"
+    - "Celiac: villous atrophy + crypt hyperplasia + ↑IELs; anti-tTG IgA (best screen); HLA-DQ2/DQ8"
+    - "Celiac → dermatitis herpetiformis (IgA in dermal papillae) and T-cell lymphoma (EATL)"
+    - "Adenoma-carcinoma sequence: APC → KRAS → p53 → carcinoma"
+    - "FAP: APC gene, >100 polyps, 100% cancer risk; Gardner = FAP + osteomas + desmoids"
+    - "Lynch syndrome: mismatch repair genes (MLH1, MSH2); MSI; right-sided CRC + endometrial cancer"
+    - "Villous adenoma = highest malignant potential among polyps"
+    - "Gastric diffuse type: signet ring cells, linitis plastica, E-cadherin loss, Krukenberg tumor to ovary"
+    - "GIST: CD117/KIT positive; most common mesenchymal GI tumor; treat with imatinib"
+
+mcqs:
+  - question: "A 25-year-old man presents with chronic diarrhea, RLQ pain, and perianal fistulas. Colonoscopy shows skip lesions with cobblestone mucosa. Biopsy shows transmural inflammation with non-caseating granulomas. The diagnosis is:"
+    options:
+      - "Ulcerative colitis"
+      - "Crohn disease"
+      - "Intestinal tuberculosis"
+      - "Celiac disease"
+    answer: "Crohn disease"
+    explanation: >
+      Skip lesions + cobblestone mucosa + transmural inflammation + non-caseating granulomas + perianal fistulas
+      = Crohn disease. UC would be continuous from rectum, mucosal only, no granulomas, no fistulas.
+      Intestinal TB has caseating granulomas. Celiac affects proximal small bowel with villous atrophy.
+      📚 Robbins, 10th Ed, Ch.17 (p.795)
+    difficulty: 1
+
+  - question: "A child with chronic diarrhea and failure to thrive has anti-tTG IgA positive. Duodenal biopsy shows villous atrophy, crypt hyperplasia, and increased intraepithelial lymphocytes. The HLA association is:"
+    options:
+      - "HLA-B27"
+      - "HLA-DQ2/DQ8"
+      - "HLA-DR4"
+      - "HLA-A3"
+    answer: "HLA-DQ2/DQ8"
+    explanation: >
+      Celiac disease is strongly associated with HLA-DQ2 (>90%) and HLA-DQ8. These MHC class II molecules present
+      deamidated gliadin peptides to CD4+ T cells, initiating the immune response. Anti-tTG IgA with characteristic
+      biopsy findings (villous atrophy, crypt hyperplasia, IELs) confirms the diagnosis.
+      📚 Robbins, 10th Ed, Ch.17 (p.785)
+    difficulty: 1
+
+  - question: "A patient with FAP undergoes genetic testing showing APC gene mutation. Which additional finding would classify this as Gardner syndrome?"
+    options:
+      - "CNS medulloblastoma"
+      - "Osteomas of the mandible"
+      - "Hamartomatous polyps"
+      - "Mucocutaneous pigmentation"
+    answer: "Osteomas of the mandible"
+    explanation: >
+      Gardner syndrome = FAP (APC mutation, >100 adenomatous polyps) + osteomas (jaw/skull) + desmoid tumors +
+      epidermoid cysts + dental abnormalities. CNS tumors with APC = Turcot syndrome (medulloblastoma variant).
+      Hamartomatous polyps + mucocutaneous pigmentation = Peutz-Jeghers (STK11).
+      📚 Robbins, 10th Ed, Ch.17 (p.818)
+    difficulty: 2
+
+  - question: "A gastric biopsy shows signet ring cells with intracellular mucin pushing the nucleus to the periphery. The stomach wall is thick and rigid. This is:"
+    options:
+      - "Gastric intestinal-type adenocarcinoma"
+      - "Gastric diffuse-type adenocarcinoma (linitis plastica)"
+      - "Gastric MALT lymphoma"
+      - "GIST"
+    answer: "Gastric diffuse-type adenocarcinoma (linitis plastica)"
+    explanation: >
+      Signet ring cells (mucin displaces nucleus) + rigid thick stomach (linitis plastica/"leather bottle") = diffuse
+      type gastric adenocarcinoma. Associated with E-cadherin (CDH1) loss. Worse prognosis than intestinal type.
+      Can metastasize to ovaries (Krukenberg tumor). Intestinal type has glandular differentiation.
+      📚 Robbins, 10th Ed, Ch.17 (p.810)
+    difficulty: 1
+
+  - question: "A 55-year-old woman is diagnosed with right-sided colon cancer. She has a family history of endometrial cancer in her mother and colon cancer in her brother. Tumor shows microsatellite instability. The most likely genetic defect is:"
+    options:
+      - "APC gene mutation"
+      - "Mismatch repair gene mutation (MLH1/MSH2)"
+      - "KRAS mutation"
+      - "STK11 mutation"
+    answer: "Mismatch repair gene mutation (MLH1/MSH2)"
+    explanation: >
+      Right-sided CRC + family history of CRC and endometrial cancer + MSI = Lynch syndrome (HNPCC).
+      Caused by germline mutations in DNA mismatch repair genes (MLH1, MSH2, MSH6, PMS2) → microsatellite
+      instability. APC = FAP (hundreds of polyps). STK11 = Peutz-Jeghers.
+      📚 Robbins, 10th Ed, Ch.17 (p.820)
+    difficulty: 2

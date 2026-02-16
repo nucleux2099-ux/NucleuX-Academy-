@@ -1,0 +1,180 @@
+topic_id: ans-drugs
+name: Autonomic Nervous System Drugs — Cholinergic & Adrenergic
+description: Cholinomimetics, anticholinergics, sympathomimetics, and sympatholytics — the pharmacological backbone of ANS modulation
+high_yield: true
+nmc_codes:
+- code: PH1.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.13
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  The autonomic nervous system (ANS) controls involuntary functions via sympathetic (adrenergic) and parasympathetic (cholinergic) divisions.
+  ANS pharmacology is one of the highest-yield topics in NEET-PG, covering cholinomimetics (direct/indirect), anticholinergics,
+  adrenergic agonists (α and β), and adrenergic antagonists. Understanding neurotransmitter synthesis, storage, release,
+  and receptor subtypes is essential.
+  📚 KD Tripathi, 8th Ed, Ch.6-11 (p.61-140); 📚 Goodman & Gilman's, 14th Ed, Ch.8-12
+
+learning_objectives:
+  - Classify cholinergic and adrenergic receptors with their locations and effector mechanisms
+  - List direct and indirect cholinomimetics with clinical uses
+  - Describe the pharmacology of atropine including actions, uses, and toxicity
+  - Classify sympathomimetics based on receptor selectivity
+  - Differentiate selective and non-selective adrenergic antagonists with clinical applications
+  - Describe the pharmacology of neuromuscular blocking agents
+
+content:
+  atoms:
+    - id: cholinergic-receptors-drugs
+      title: "Cholinergic Pharmacology"
+      text: >
+        Cholinergic receptors: Muscarinic (M1-M5, GPCRs) and Nicotinic (Nm at NMJ, Nn at ganglia — ligand-gated ion channels).
+        M1 (gastric), M2 (heart — Gi, ↓HR), M3 (smooth muscle, glands — Gq), M4/M5 (CNS).
+        Direct cholinomimetics: Methacholine (M3, M2 — bronchial challenge test), Bethanechol (M3 — urinary retention, post-op ileus),
+        Pilocarpine (M3 — glaucoma, Sjögren syndrome), Carbachol (resistant to AChE).
+        Indirect cholinomimetics (anticholinesterases): Reversible — Physostigmine (crosses BBB — atropine poisoning),
+        Neostigmine (does NOT cross BBB — myasthenia gravis, reversal of NMJ block), Donepezil/Rivastigmine (Alzheimer's),
+        Pyridostigmine (myasthenia gravis — longest acting oral). Edrophonium — ultra-short acting, Tensilon test for MG.
+        Irreversible (organophosphates): Malathion, Parathion — phosphorylate AChE. Treatment: Atropine (muscarinic block) +
+        Pralidoxime/2-PAM (reactivates AChE before "aging"). Aging = permanent bond.
+        📚 KD Tripathi, 8th Ed, Ch.7-8 (p.73-98)
+
+    - id: anticholinergics
+      title: "Anticholinergic Drugs (Muscarinic Antagonists)"
+      text: >
+        Atropine: prototype antimuscarinic. Actions (dose-dependent): low dose → ↓salivation/sweating;
+        moderate → mydriasis, cycloplegia, tachycardia, bronchodilation; high → urinary retention, ↓GI motility, CNS effects.
+        Uses: preanaesthetic medication, organophosphate poisoning, bradycardia, mydriasis/cycloplegia.
+        Atropine DOES NOT block nicotinic receptors.
+        Contraindications: BPH, glaucoma (narrow angle), paralytic ileus.
+        "Hot as a hare, Dry as a bone, Red as a beet, Blind as a bat, Mad as a hatter" — atropine toxicity.
+        Other antimuscarinics: Ipratropium/Tiotropium (inhaled for COPD/asthma), Oxybutynin/Tolterodine (overactive bladder),
+        Tropicamide/Cyclopentolate (short-acting mydriatics), Glycopyrrolate (does NOT cross BBB — preanesthetic),
+        Hyoscine/Scopolamine (motion sickness — crosses BBB), Benztropine/Trihexyphenidyl (Parkinsonism).
+        📚 KD Tripathi, 8th Ed, Ch.8 (p.99-110)
+
+    - id: adrenergic-drugs
+      title: "Adrenergic Agonists (Sympathomimetics)"
+      text: >
+        Receptors: α1 (Gq — vasoconstriction, mydriasis), α2 (Gi — presynaptic feedback inhibition, ↓NE release),
+        β1 (Gs — ↑HR, ↑contractility, ↑renin), β2 (Gs — bronchodilation, vasodilation, ↑glycogenolysis, tocolysis),
+        β3 (Gs — lipolysis, bladder relaxation — mirabegron).
+        Catecholamines: Adrenaline (α1, α2, β1, β2) — anaphylaxis, cardiac arrest; Noradrenaline (α1, α2, β1, weak β2) — septic shock;
+        Dopamine (D1, β1, α1 dose-dependent) — cardiogenic shock; Dobutamine (β1 selective) — acute heart failure;
+        Isoproterenol (β1, β2 pure) — largely replaced.
+        Selective α1 agonists: Phenylephrine (nasal decongestant, mydriatic), Methoxamine.
+        Selective α2 agonists: Clonidine (HTN, opioid withdrawal, ADHD), Methyldopa (HTN in pregnancy).
+        Selective β2 agonists: Salbutamol/Terbutaline (asthma), Salmeterol/Formoterol (LABA), Ritodrine (tocolysis).
+        Indirect sympathomimetics: Amphetamine, Tyramine, Ephedrine (releases stored NE).
+        📚 KD Tripathi, 8th Ed, Ch.9-10 (p.111-130)
+
+    - id: adrenergic-antagonists
+      title: "Adrenergic Antagonists (Sympatholytics)"
+      text: >
+        α-blockers: Non-selective — Phenoxybenzamine (irreversible, pheochromocytoma pre-op), Phentolamine (reversible, pheo crisis).
+        α1-selective — Prazosin, Terazosin, Doxazosin (HTN, BPH). Side effect: first-dose orthostatic hypotension.
+        Tamsulosin (α1A selective — BPH, less hypotension).
+        β-blockers: Non-selective (β1+β2) — Propranolol (prototype), Nadolol, Timolol, Sotalol (also Class III antiarrhythmic).
+        β1-selective (cardioselective) — Atenolol, Metoprolol, Bisoprolol, Esmolol (ultra-short IV), Nebivolol (also releases NO).
+        β-blockers with ISA (intrinsic sympathomimetic activity/partial agonism): Pindolol, Acebutolol — less bradycardia.
+        β-blockers with α-blocking activity: Carvedilol, Labetalol (3:1 to 7:1 α:β block) — HTN in pregnancy, heart failure.
+        Contraindications: asthma (β2 block), severe bradycardia, decompensated HF, Prinzmetal angina (unopposed α spasm).
+        📚 KD Tripathi, 8th Ed, Ch.10-11 (p.130-145)
+
+  clinical:
+    - title: "Clinical Correlation: Organophosphate Poisoning"
+      text: >
+        Presentation: DUMBBBELLS — Diarrhea, Urination, Miosis, Bradycardia, Bronchospasm/Bronchorrhea, Emesis,
+        Lacrimation, Lethargy, Salivation/Sweating. Plus nicotinic effects: muscle fasciculations, paralysis.
+        Treatment: Decontamination + Atropine (large doses, titrated to secretions) + Pralidoxime (within 24-36h before aging).
+    - title: "Clinical Correlation: Adrenaline in Anaphylaxis"
+      text: >
+        Adrenaline (epinephrine) is the FIRST-LINE drug in anaphylaxis. Given IM (anterolateral thigh), 0.3-0.5mg (1:1000).
+        α1 → reverses hypotension and angioedema; β1 → ↑cardiac output; β2 → bronchodilation + mast cell stabilization.
+        NEVER give IV adrenaline undiluted for anaphylaxis (risk of fatal arrhythmias).
+
+  high_yield_points:
+    - "Neostigmine does NOT cross BBB; Physostigmine CROSSES BBB — use physostigmine for atropine poisoning"
+    - "Pralidoxime must be given within 24-36h (before 'aging' of phosphorylated AChE)"
+    - "Atropine toxicity mnemonic: Hot, Dry, Red, Blind, Mad"
+    - "Methyldopa and Labetalol — safe antihypertensives in pregnancy"
+    - "Adrenaline is FIRST-LINE in anaphylaxis (IM, NOT IV for initial dose)"
+    - "Dopamine effects are dose-dependent: low (D1 renal) → moderate (β1 cardiac) → high (α1 vasoconstriction)"
+    - "Phenoxybenzamine: IRREVERSIBLE α-blocker — pre-op for pheochromocytoma"
+    - "β1-selective blockers (cardioselective): A to M — Atenolol, Bisoprolol, Esmolol, Metoprolol, Nebivolol"
+    - "Carvedilol and Labetalol have BOTH α and β blocking activity"
+    - "Tamsulosin: α1A selective — BPH without significant hypotension"
+
+mcqs:
+  - question: "A 30-year-old farmer is brought unconscious with pinpoint pupils, excessive salivation, and muscle fasciculations. The antidote that reactivates acetylcholinesterase is:"
+    options:
+      - "Atropine"
+      - "Pralidoxime"
+      - "Physostigmine"
+      - "Neostigmine"
+    answer: "Pralidoxime"
+    explanation: >
+      This is organophosphate poisoning. Pralidoxime (2-PAM) reactivates phosphorylated AChE by cleaving the
+      organophosphate-enzyme bond (before aging). Atropine blocks muscarinic effects but does NOT reactivate AChE.
+      Physostigmine and neostigmine are anticholinesterases — would worsen toxicity.
+      📚 KD Tripathi, 8th Ed, Ch.7 (p.92)
+    difficulty: 1
+
+  - question: "Which anticholinergic drug is preferred as preanesthetic medication because it does NOT cross the blood-brain barrier?"
+    options:
+      - "Atropine"
+      - "Scopolamine"
+      - "Glycopyrrolate"
+      - "Benztropine"
+    answer: "Glycopyrrolate"
+    explanation: >
+      Glycopyrrolate is a quaternary ammonium compound that cannot cross the BBB, avoiding CNS side effects.
+      It is preferred over atropine for preanesthetic use. Atropine and scopolamine cross the BBB.
+      Benztropine crosses the BBB (used for Parkinsonism).
+      📚 KD Tripathi, 8th Ed, Ch.8 (p.107)
+    difficulty: 2
+
+  - question: "A patient with pheochromocytoma is being prepared for surgery. Which drug should be started FIRST?"
+    options:
+      - "Propranolol"
+      - "Phenoxybenzamine"
+      - "Atenolol"
+      - "Prazosin"
+    answer: "Phenoxybenzamine"
+    explanation: >
+      In pheochromocytoma, α-blockade MUST be established before β-blockade (to prevent unopposed α-mediated
+      vasoconstriction causing hypertensive crisis). Phenoxybenzamine (irreversible α-blocker) is the classic choice.
+      β-blocker is added only AFTER adequate α-blockade to control reflex tachycardia.
+      📚 KD Tripathi, 8th Ed, Ch.10 (p.136)
+    difficulty: 2
+
+  - question: "Dopamine at low doses (1-3 μg/kg/min) acts primarily on which receptors?"
+    options:
+      - "α1-adrenergic receptors"
+      - "β1-adrenergic receptors"
+      - "D1 dopaminergic receptors"
+      - "D2 dopaminergic receptors"
+    answer: "D1 dopaminergic receptors"
+    explanation: >
+      Dopamine's effects are dose-dependent: Low dose (1-3 μg/kg/min) → D1 receptors → renal and mesenteric vasodilation.
+      Moderate dose (3-10 μg/kg/min) → β1 → ↑cardiac output. High dose (>10 μg/kg/min) → α1 → vasoconstriction.
+      📚 KD Tripathi, 8th Ed, Ch.9 (p.120)
+    difficulty: 1
+
+  - question: "Which β-blocker has additional nitric oxide-releasing vasodilatory property?"
+    options:
+      - "Carvedilol"
+      - "Labetalol"
+      - "Nebivolol"
+      - "Esmolol"
+    answer: "Nebivolol"
+    explanation: >
+      Nebivolol is a highly β1-selective blocker that also stimulates endothelial NO synthase (eNOS), causing
+      NO-mediated vasodilation. This gives it a unique hemodynamic profile. Carvedilol and labetalol have α-blocking
+      (not NO-mediated) vasodilatory properties. Esmolol is ultra-short-acting β1-selective without vasodilation.
+      📚 Goodman & Gilman's, 14th Ed, Ch.12
+    difficulty: 2

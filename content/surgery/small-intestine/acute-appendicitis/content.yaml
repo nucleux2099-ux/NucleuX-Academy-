@@ -1,0 +1,134 @@
+overview: |
+  Acute appendicitis is the most common surgical emergency worldwide, with a lifetime risk of 7-8%.
+  It results from luminal obstruction (faecolith, lymphoid hyperplasia) leading to inflammation, ischemia,
+  and perforation if untreated. Early diagnosis and appendicectomy remain the gold standard of management.
+
+learning_objectives:
+  - Understand the pathophysiology of acute appendicitis from obstruction to perforation
+  - Recognize classical and atypical presentations including retrocaecal and pelvic appendix
+  - Apply the Alvarado scoring system for clinical decision-making
+  - Differentiate appendicitis from common mimics (ectopic pregnancy, Meckel's, mesenteric lymphadenitis)
+  - Describe open vs laparoscopic appendicectomy techniques and complications
+
+content:
+  atoms:
+    - title: Pathophysiology
+      text: |
+        Luminal obstruction (faecolith 40%, lymphoid hyperplasia 60% in children) → increased intraluminal
+        pressure → venous congestion → bacterial invasion → transmural inflammation → gangrene → perforation.
+        Sequence: Mucosal → Phlegmonous → Gangrenous → Perforated (typically within 24-72 hours).
+        📚 Bailey & Love, 28th Ed, Ch.72
+
+    - title: Clinical Features
+      text: |
+        Classic presentation: Periumbilical colicky pain migrating to RIF (visceral → somatic).
+        Murphy's sequence: Pain → Anorexia → Nausea/Vomiting (PAN). Fever is low-grade initially.
+        Signs: McBurney's point tenderness (junction of lateral 1/3 and medial 2/3 of line from ASIS to umbilicus),
+        Rovsing's sign (LIF pressure causes RIF pain), Psoas sign (retrocaecal), Obturator sign (pelvic appendix).
+        📚 Sabiston, 21st Ed, Ch.50
+
+    - title: Alvarado Score (MANTRELS)
+      text: |
+        Migration of pain (1), Anorexia (1), Nausea/vomiting (1), Tenderness in RIF (2),
+        Rebound tenderness (1), Elevated temperature (1), Leukocytosis (2), Shift to left (1). Total = 10.
+        Score 1-4: Appendicitis unlikely. 5-6: Possible, observe. 7-8: Probable, operate. 9-10: Definite.
+        📚 Bailey & Love, 28th Ed, Ch.72
+
+    - title: Investigations
+      text: |
+        Blood: Raised WBC with neutrophilia. CRP elevated. Urinalysis to exclude UTI.
+        USG abdomen: Non-compressible tubular structure >6mm, aperistaltic, target sign.
+        CT abdomen: Gold standard in adults — sensitivity 94%, specificity 95%. Dilated appendix >6mm,
+        periappendiceal fat stranding, appendicolith. MRI preferred in pregnancy.
+        📚 Sabiston, 21st Ed, Ch.50
+
+    - title: Management
+      text: |
+        Laparoscopic appendicectomy is the gold standard — less wound infection, better cosmesis,
+        diagnostic advantage (especially in women of reproductive age). Open appendicectomy via
+        Lanz incision (cosmetic) or McBurney's (Grid-iron) incision. Appendicular mass: Ochsner-Sherren
+        conservative regimen (IV antibiotics, nil orally, monitor) → interval appendicectomy at 6-8 weeks.
+        Appendicular abscess: USG/CT-guided percutaneous drainage → interval appendicectomy.
+        📚 Bailey & Love, 28th Ed, Ch.72; Maingot's, 12th Ed, Part V
+
+  clinical: |
+    **Clinical Approach Algorithm:**
+    1. History & Examination → Calculate Alvarado score
+    2. Score ≥7: Proceed to surgery (lap appendicectomy)
+    3. Score 5-6: USG abdomen → if inconclusive, CT scan
+    4. Score <5: Observe, repeat assessment in 6-12 hours
+    5. Appendicular mass: Conservative (Ochsner-Sherren) → interval appendicectomy
+    6. Appendicular abscess: Drainage → interval appendicectomy
+    7. Always send specimen for histopathology (carcinoid found in 1%)
+
+  high_yield_points:
+    - "Most common position of appendix: Retrocaecal (74%)"
+    - "Most common cause of acute abdomen requiring surgery: Acute appendicitis"
+    - "Faecolith is the most common cause of appendicitis in adults; lymphoid hyperplasia in children"
+    - "Alvarado score ≥7 has high sensitivity for appendicitis"
+    - "McBurney's point: Junction of lateral 1/3 and medial 2/3 of line from ASIS to umbilicus"
+    - "Appendicitis in pregnancy: Pain shifts upward with gestational age; MRI is investigation of choice"
+    - "Appendicular mass: Ochsner-Sherren regimen → interval appendicectomy at 6-8 weeks"
+    - "Laparoscopic appendicectomy is gold standard — diagnostic + therapeutic advantage"
+    - "Carcinoid tumour <2cm at tip: Appendicectomy alone is sufficient"
+    - "Negative appendicectomy rate: ~15-20% (acceptable)"
+
+mcqs:
+  - question: "A 22-year-old male presents with periumbilical pain that migrated to the right iliac fossa over 12 hours, associated with anorexia and low-grade fever. What is the most likely diagnosis?"
+    options:
+      a: Acute mesenteric lymphadenitis
+      b: Acute appendicitis
+      c: Right ureteric colic
+      d: Meckel's diverticulitis
+    answer: b
+    explanation: |
+      The classic presentation of acute appendicitis includes periumbilical pain migrating to RIF
+      (Murphy's sequence: Pain → Anorexia → Nausea/Vomiting). Mesenteric lymphadenitis can mimic
+      but usually follows a viral URTI. 📚 Bailey & Love, 28th Ed, Ch.72
+
+  - question: "Which investigation is the gold standard for diagnosing acute appendicitis in adults?"
+    options:
+      a: Ultrasound abdomen
+      b: Plain X-ray abdomen
+      c: CT scan abdomen
+      d: Diagnostic laparoscopy
+    answer: c
+    explanation: |
+      CT abdomen has sensitivity of 94% and specificity of 95% for acute appendicitis. USG is
+      operator-dependent and preferred in children/pregnant women. MRI is used in pregnancy.
+      📚 Sabiston, 21st Ed, Ch.50
+
+  - question: "A 30-year-old male presents with RIF pain for 5 days. Examination reveals a palpable, tender mass in RIF. Temperature is 38°C. What is the most appropriate initial management?"
+    options:
+      a: Emergency appendicectomy
+      b: Ochsner-Sherren conservative regimen
+      c: CT-guided drainage
+      d: Right hemicolectomy
+    answer: b
+    explanation: |
+      An appendicular mass (not abscess) is managed conservatively with the Ochsner-Sherren regimen:
+      IV antibiotics, nil by mouth, regular monitoring. Interval appendicectomy at 6-8 weeks.
+      If abscess forms, percutaneous drainage is indicated. 📚 Bailey & Love, 28th Ed, Ch.72
+
+  - question: "What is the most common position of the appendix?"
+    options:
+      a: Pelvic
+      b: Retrocaecal
+      c: Subcaecal
+      d: Pre-ileal
+    answer: b
+    explanation: |
+      Retrocaecal is the most common position (74%), followed by pelvic (21%). Retrocaecal appendicitis
+      may present atypically with flank pain and positive Psoas sign. 📚 Bailey & Love, 28th Ed, Ch.72
+
+  - question: "A carcinoid tumour of 1.5 cm is found at the tip of the appendix during appendicectomy. What is the appropriate management?"
+    options:
+      a: Right hemicolectomy
+      b: Appendicectomy alone is sufficient
+      c: Chemotherapy
+      d: Radiotherapy
+    answer: b
+    explanation: |
+      Carcinoid tumour <2 cm at the tip of the appendix: appendicectomy alone is sufficient.
+      Right hemicolectomy is indicated when tumour is >2 cm, at the base, has lymph node involvement,
+      or shows mesoappendicular invasion. 📚 Sabiston, 21st Ed, Ch.50

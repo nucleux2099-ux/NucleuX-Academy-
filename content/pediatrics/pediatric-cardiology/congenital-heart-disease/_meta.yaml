@@ -1,0 +1,161 @@
+topic_id: congenital-heart-disease
+name: Congenital Heart Disease (Classification)
+description: Acyanotic vs cyanotic CHD, common defects, hemodynamics, and initial management
+high_yield: true
+nmc_codes:
+- code: PE23.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Congenital heart disease (CHD) affects 8-10 per 1000 live births and is the most common congenital anomaly.
+  Classification into acyanotic (left-to-right shunts, obstructive) and cyanotic (right-to-left shunts) guides
+  clinical approach. VSD is the most common CHD overall, while Tetralogy of Fallot is the most common cyanotic CHD.
+  📚 OP Ghai, 10th Ed, Ch.22 | 📚 Nelson's, 22nd Ed, Ch.457
+
+learning_objectives:
+  - Classify CHD into acyanotic and cyanotic types
+  - Describe the hemodynamics of common acyanotic lesions (VSD, ASD, PDA)
+  - Explain the pathophysiology and clinical features of TOF
+  - List duct-dependent lesions and the role of PGE1
+  - Describe Eisenmenger syndrome
+
+content:
+  atoms:
+    - id: classification
+      title: "Classification of CHD"
+      text: >
+        Acyanotic (left-to-right shunts): VSD (most common CHD), ASD, PDA, AVSD (endocardial cushion defect).
+        Acyanotic (obstructive): Coarctation of aorta, aortic stenosis, pulmonary stenosis.
+        Cyanotic (decreased pulmonary blood flow): TOF (most common cyanotic CHD), tricuspid atresia,
+        Ebstein anomaly, pulmonary atresia.
+        Cyanotic (increased pulmonary blood flow): TGA, TAPVR, truncus arteriosus, hypoplastic left heart.
+        The 5 T's of cyanotic CHD: Tetralogy of Fallot, TGA, Truncus arteriosus, TAPVR, Tricuspid atresia.
+        📚 OP Ghai, 10th Ed, Ch.22 (p.390-392)
+
+    - id: vsd
+      title: "Ventricular Septal Defect (VSD)"
+      text: >
+        Most common CHD (25-30%). Types: perimembranous (most common, 80%), muscular, inlet, outlet.
+        Small VSD (maladie de Roger): loud pansystolic murmur at LLSB, no symptoms, may close spontaneously.
+        Large VSD: left-to-right shunt → volume overload of LA and LV → CHF in infancy (6-8 weeks),
+        failure to thrive, recurrent respiratory infections.
+        Untreated large VSD → Eisenmenger syndrome (irreversible pulmonary hypertension → reversal of
+        shunt to right-to-left → cyanosis). At this stage, surgery is contraindicated.
+        Small VSDs: 30-50% close spontaneously (especially muscular type). Surgical closure for large VSDs.
+        📚 OP Ghai, 10th Ed, Ch.22 (p.393-397)
+
+    - id: tof
+      title: "Tetralogy of Fallot (TOF)"
+      text: >
+        Most common cyanotic CHD (10% of all CHD). Four components: (1) VSD (large, nonrestrictive),
+        (2) Overriding aorta, (3) RVOT obstruction (infundibular > valvular), (4) RVH.
+        The degree of RVOT obstruction determines severity of cyanosis.
+        Boot-shaped heart on CXR (coeur en sabot) due to RVH + upturned apex + decreased pulmonary vascularity.
+        Tet spells (hypercyanotic spells): paroxysmal cyanosis, irritability → knee-chest position
+        (increases SVR, decreases R-to-L shunt), morphine, IV fluids, phenylephrine, propranolol.
+        Squatting in older children (same mechanism as knee-chest position).
+        Definitive: intracardiac repair (VSD closure + RVOT relief) at 4-6 months.
+        📚 Nelson's, 22nd Ed, Ch.457 (p.2290-2295)
+
+    - id: tga
+      title: "Transposition of Great Arteries (TGA)"
+      text: >
+        Most common cyanotic CHD presenting in the NEWBORN period. Aorta arises from RV, PA from LV →
+        two parallel circulations. Incompatible with life unless mixing occurs (ASD, VSD, PDA).
+        "Egg-on-a-string" appearance on CXR (narrow mediastinum due to AP relationship of great vessels).
+        Management: PGE1 to keep ductus open → Rashkind balloon atrial septostomy (emergency mixing) →
+        Arterial switch operation (Jatene) within first 2 weeks (definitive).
+        📚 OP Ghai, 10th Ed, Ch.22 (p.410-413)
+
+    - id: duct-dependent
+      title: "Duct-Dependent Lesions & PGE1"
+      text: >
+        Duct-dependent for pulmonary blood flow: pulmonary atresia, critical PS, severe TOF, tricuspid atresia.
+        Duct-dependent for systemic blood flow: hypoplastic left heart, critical CoA, interrupted aortic arch.
+        Duct-dependent for mixing: TGA.
+        PGE1 (prostaglandin E1 / alprostadil): keeps ductus arteriosus open. Dose: 0.05-0.1 µg/kg/min IV.
+        Side effects: apnea (most important — keep ready for intubation), fever, hypotension, flushing.
+        📚 Nelson's, 22nd Ed, Ch.457
+
+  high_yield_points:
+    - "VSD is the MOST COMMON congenital heart disease overall"
+    - "TOF is the MOST COMMON cyanotic CHD"
+    - "TGA is the most common cyanotic CHD presenting at BIRTH"
+    - "TOF: boot-shaped heart on CXR; TGA: egg-on-a-string"
+    - "Eisenmenger syndrome: irreversible PAH with shunt reversal → surgery CONTRAINDICATED"
+    - "Tet spell management: knee-chest position + O2 + morphine + fluids + phenylephrine"
+    - "PGE1 keeps ductus open; most important side effect = APNEA"
+    - "Arterial switch (Jatene) operation: definitive for TGA, done within 2 weeks"
+    - "Small muscular VSD has the highest rate of spontaneous closure"
+    - "Down syndrome: AVSD (endocardial cushion defect) is the most common associated CHD"
+
+mcqs:
+  - question: "The most common congenital heart disease is:"
+    options:
+      - "Atrial septal defect"
+      - "Ventricular septal defect"
+      - "Patent ductus arteriosus"
+      - "Tetralogy of Fallot"
+    answer: "Ventricular septal defect"
+    explanation: >
+      VSD accounts for 25-30% of all CHD, making it the most common congenital heart defect.
+      ASD is second most common. TOF is the most common CYANOTIC CHD.
+      📚 OP Ghai, 10th Ed, Ch.22 (p.393)
+    difficulty: 1
+
+  - question: "A cyanotic neonate with 'egg-on-a-string' appearance on chest X-ray most likely has:"
+    options:
+      - "Tetralogy of Fallot"
+      - "Transposition of great arteries"
+      - "Total anomalous pulmonary venous return"
+      - "Tricuspid atresia"
+    answer: "Transposition of great arteries"
+    explanation: >
+      The 'egg-on-a-string' (or 'egg-on-its-side') appearance is characteristic of TGA,
+      caused by a narrow mediastinum due to the anteroposterior relationship of the great vessels.
+      TOF shows boot-shaped heart. TAPVR shows snowman/figure-of-8.
+      📚 OP Ghai, 10th Ed, Ch.22 (p.411)
+    difficulty: 1
+
+  - question: "The most important side effect of PGE1 (prostaglandin E1) used in duct-dependent CHD is:"
+    options:
+      - "Hypertension"
+      - "Apnea"
+      - "Hyperglycemia"
+      - "Thrombocytosis"
+    answer: "Apnea"
+    explanation: >
+      Apnea is the most important and common side effect of PGE1 infusion, occurring in ~12% of neonates.
+      Intubation equipment must be readily available. Other effects include fever, hypotension, and flushing.
+      📚 Nelson's, 22nd Ed, Ch.457
+    difficulty: 1
+
+  - question: "Knee-chest position in a child with Tetralogy of Fallot relieves cyanotic spells by:"
+    options:
+      - "Decreasing systemic vascular resistance"
+      - "Increasing systemic vascular resistance"
+      - "Decreasing pulmonary vascular resistance"
+      - "Increasing heart rate"
+    answer: "Increasing systemic vascular resistance"
+    explanation: >
+      Knee-chest position (or squatting) kinks the femoral arteries, increasing SVR. This increases
+      pressure in the left heart, reducing the right-to-left shunt across the VSD, thus improving
+      pulmonary blood flow and oxygenation.
+      📚 OP Ghai, 10th Ed, Ch.22 (p.407)
+    difficulty: 2
+
+  - question: "Which congenital heart defect is most commonly associated with Down syndrome?"
+    options:
+      - "VSD"
+      - "ASD"
+      - "Atrioventricular septal defect (AVSD)"
+      - "Tetralogy of Fallot"
+    answer: "Atrioventricular septal defect (AVSD)"
+    explanation: >
+      AVSD (endocardial cushion defect) is the most common CHD in Down syndrome (40-50%).
+      It involves defects in the atrial septum, ventricular septum, and AV valves. VSD is the
+      most common CHD overall but AVSD is specific to Down syndrome.
+      📚 OP Ghai, 10th Ed, Ch.22 (p.400)
+    difficulty: 1

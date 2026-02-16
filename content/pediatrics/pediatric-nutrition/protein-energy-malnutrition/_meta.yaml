@@ -1,0 +1,160 @@
+topic_id: protein-energy-malnutrition
+name: Protein Energy Malnutrition (Kwashiorkor & Marasmus)
+description: Classification (IAP, WHO), clinical features of kwashiorkor vs marasmus, and WHO 10-step management
+high_yield: true
+nmc_codes:
+- code: PE10.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Protein-energy malnutrition (PEM) remains a major public health problem in India, affecting ~35% of
+  children under 5. It encompasses a spectrum from mild undernutrition to severe acute malnutrition (SAM).
+  Kwashiorkor (edematous malnutrition) and marasmus (non-edematous, severe wasting) are the two clinical
+  forms of SAM. WHO's 10-step protocol for management of SAM has significantly reduced mortality.
+  📚 OP Ghai, 10th Ed, Ch.7 | 📚 Nelson's, 22nd Ed, Ch.57
+
+learning_objectives:
+  - Classify PEM using IAP and WHO criteria
+  - Differentiate kwashiorkor from marasmus
+  - Describe the pathophysiology and clinical features of each
+  - Outline the WHO 10-step management protocol for SAM
+  - List complications and their management
+
+content:
+  atoms:
+    - id: classification
+      title: "Classification of PEM"
+      text: >
+        IAP classification (weight for age): Grade I: 71-80% of median. Grade II: 61-70%.
+        Grade III: 51-60%. Grade IV: ≤50%.
+        WHO classification: Moderate acute malnutrition (MAM): WHZ -2 to -3 SD or MUAC 11.5-12.5 cm.
+        Severe acute malnutrition (SAM): WHZ <-3 SD OR MUAC <11.5 cm (6 mo-5 yr) OR bilateral
+        pedal edema OR visible severe wasting.
+        Stunting (chronic): height-for-age <-2 SD. Wasting (acute): weight-for-height <-2 SD.
+        Underweight: weight-for-age <-2 SD.
+        📚 OP Ghai, 10th Ed, Ch.7 (p.88-92)
+
+    - id: kwashiorkor-vs-marasmus
+      title: "Kwashiorkor vs Marasmus"
+      text: >
+        MARASMUS: severe wasting of fat and muscle, weight <60% of expected, "old man's face,"
+        alert and hungry, NO edema, skin loose and wrinkled, subcutaneous fat absent,
+        ribs visible, limbs like sticks. Due to overall caloric deficiency.
+        KWASHIORKOR: edema (hallmark, bilateral pedal → generalized), weight 60-80% (may be masked
+        by edema), "moon face," miserable/apathetic, flag sign (alternating bands of depigmented
+        and normal hair), flaky paint/crazy pavement dermatosis (hyperpigmented patches that peel off),
+        fatty liver (hepatomegaly), muscle wasting preserved fat. Due to protein deficiency with
+        adequate calories.
+        MARASMIC KWASHIORKOR: features of both — severe wasting + edema.
+        📚 OP Ghai, 10th Ed, Ch.7 (p.92-97)
+
+    - id: who-10-steps
+      title: "WHO 10-Step Management of SAM"
+      text: >
+        Phase 1 (Stabilization, Day 1-7):
+        Step 1: Treat/prevent HYPOGLYCEMIA — feed 2-hourly, 10% dextrose if needed.
+        Step 2: Treat/prevent HYPOTHERMIA — warm, kangaroo care, cap.
+        Step 3: Treat/prevent DEHYDRATION — ReSoMal (low sodium ORS: Na 45 mEq/L) orally/NG.
+        Step 4: Correct ELECTROLYTE imbalance — potassium, magnesium supplementation.
+        Step 5: Treat INFECTION — broad-spectrum antibiotics empirically (amoxicillin + gentamicin).
+        Step 6: Correct MICRONUTRIENT deficiency — vitamin A, folic acid, zinc, copper. NO iron in phase 1.
+        Step 7: Start cautious FEEDING — F-75 formula (75 kcal/100 mL, low protein) every 2-3 hours.
+        Phase 2 (Rehabilitation, Week 2-6):
+        Step 8: Achieve CATCH-UP growth — F-100 formula (100 kcal/100 mL, higher protein).
+        Step 9: Provide SENSORY stimulation and emotional support.
+        Step 10: Prepare for FOLLOW-UP after discharge.
+        📚 OP Ghai, 10th Ed, Ch.7 (p.100-106)
+
+    - id: refeeding-syndrome
+      title: "Refeeding Syndrome"
+      text: >
+        Occurs when malnourished patients are fed too rapidly. Insulin surge causes intracellular shift
+        of phosphate, potassium, magnesium → severe hypophosphatemia (most characteristic),
+        hypokalemia, hypomagnesemia → cardiac arrhythmias, heart failure, respiratory failure, death.
+        Prevention: start with low-calorie feeds (F-75), increase gradually, supplement electrolytes.
+        This is why F-75 (not F-100) is used in stabilization phase and iron is withheld initially.
+        📚 Nelson's, 22nd Ed, Ch.57
+
+  high_yield_points:
+    - "EDEMA is the hallmark of kwashiorkor (present) vs marasmus (absent)"
+    - "Flag sign = alternating bands of depigmented hair — pathognomonic of kwashiorkor"
+    - "Flaky paint dermatosis/crazy pavement dermatosis = kwashiorkor"
+    - "SAM: WHZ <-3 SD or MUAC <11.5 cm or bilateral pedal edema"
+    - "ReSoMal (NOT standard ORS) for rehydration in SAM — lower sodium (45 mEq/L)"
+    - "F-75 in stabilization (Phase 1); F-100 in rehabilitation (Phase 2)"
+    - "Do NOT give IRON in Phase 1 — increases infection risk and oxidative stress"
+    - "All SAM children receive empirical ANTIBIOTICS (assume infection)"
+    - "Refeeding syndrome: hypophosphatemia is the hallmark"
+    - "Kwashiorkor has fatty liver (decreased lipoprotein synthesis); marasmus does NOT"
+
+mcqs:
+  - question: "The hallmark clinical feature that differentiates kwashiorkor from marasmus is:"
+    options:
+      - "Muscle wasting"
+      - "Bilateral pedal edema"
+      - "Growth retardation"
+      - "Anemia"
+    answer: "Bilateral pedal edema"
+    explanation: >
+      Edema is the defining feature of kwashiorkor. It is caused by hypoalbuminemia leading to
+      decreased oncotic pressure. Marasmus shows severe wasting WITHOUT edema.
+      📚 OP Ghai, 10th Ed, Ch.7 (p.94)
+    difficulty: 1
+
+  - question: "In WHO management of SAM, which formula is used during the stabilization phase?"
+    options:
+      - "F-100"
+      - "F-75"
+      - "Standard infant formula"
+      - "High-protein diet"
+    answer: "F-75"
+    explanation: >
+      F-75 (75 kcal/100 mL) is used in Phase 1 (stabilization) to prevent refeeding syndrome.
+      It has lower calories and protein. F-100 (100 kcal/100 mL) with higher protein is introduced
+      in Phase 2 (rehabilitation) for catch-up growth.
+      📚 OP Ghai, 10th Ed, Ch.7 (p.103)
+    difficulty: 1
+
+  - question: "Iron supplementation in SAM is withheld during Phase 1 because:"
+    options:
+      - "Iron is not absorbed in malnutrition"
+      - "Iron increases infection risk and oxidative stress"
+      - "Iron causes diarrhea"
+      - "Iron stores are adequate"
+    answer: "Iron increases infection risk and oxidative stress"
+    explanation: >
+      Free iron promotes bacterial growth (bacteria need iron for multiplication) and generates
+      free radicals causing oxidative damage. Iron is started only in Phase 2 when the child
+      is improving, appetite returns, and infection is controlled.
+      📚 OP Ghai, 10th Ed, Ch.7 (p.104)
+    difficulty: 2
+
+  - question: "ReSoMal differs from standard ORS mainly by having:"
+    options:
+      - "Higher sodium concentration"
+      - "Lower sodium concentration"
+      - "Higher glucose concentration"
+      - "No potassium"
+    answer: "Lower sodium concentration"
+    explanation: >
+      ReSoMal has sodium 45 mEq/L (vs 75 mEq/L in standard ORS) because SAM children have
+      excess body sodium (despite low serum sodium) and are at risk of heart failure from
+      sodium overload. It also has added potassium and sugar.
+      📚 OP Ghai, 10th Ed, Ch.7 (p.102)
+    difficulty: 2
+
+  - question: "Flag sign of hair is characteristically seen in:"
+    options:
+      - "Marasmus"
+      - "Kwashiorkor"
+      - "Rickets"
+      - "Scurvy"
+    answer: "Kwashiorkor"
+    explanation: >
+      Flag sign refers to alternating bands of light (depigmented) and dark hair, reflecting
+      alternating periods of adequate and inadequate protein intake. It is pathognomonic of
+      kwashiorkor. Hair is also sparse, easily pluckable, and silky.
+      📚 OP Ghai, 10th Ed, Ch.7 (p.95)
+    difficulty: 1

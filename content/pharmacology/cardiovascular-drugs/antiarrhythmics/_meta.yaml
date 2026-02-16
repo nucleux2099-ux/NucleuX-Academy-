@@ -1,0 +1,160 @@
+topic_id: antiarrhythmics
+name: Antiarrhythmic Drugs
+description: Vaughan-Williams classification, mechanisms, and clinical use of antiarrhythmic agents
+high_yield: true
+nmc_codes:
+- code: PH1.17
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Antiarrhythmic drugs are classified by the Vaughan-Williams system into four classes based on their primary mechanism.
+  Class I (Na+ channel blockers), Class II (β-blockers), Class III (K+ channel blockers), Class IV (Ca2+ channel blockers).
+  Amiodarone is the most versatile, having properties of all four classes. Many antiarrhythmics can paradoxically cause
+  arrhythmias (proarrhythmic effect).
+  📚 KD Tripathi, 8th Ed, Ch.39 (p.545-560); 📚 Goodman & Gilman's, 14th Ed, Ch.30
+
+learning_objectives:
+  - Classify antiarrhythmics using the Vaughan-Williams classification
+  - Describe the mechanism and clinical uses of each class
+  - Explain the concept of proarrhythmia and drugs at risk
+  - Detail the pharmacology, toxicity, and monitoring of amiodarone
+  - Select appropriate antiarrhythmic for specific arrhythmias
+
+content:
+  atoms:
+    - id: class-i-na-blockers
+      title: "Class I — Sodium Channel Blockers"
+      text: >
+        Block fast Na+ channels, slowing phase 0 depolarization.
+        Class IA: Quinidine, Procainamide, Disopyramide. Moderate Na+ block + ↑APD (K+ block). Use: AF, VT.
+        Quinidine: cinchonism (tinnitus, headache), thrombocytopenia, diarrhea, QT prolongation → Torsades de Pointes (TdP).
+        Procainamide: SLE-like syndrome (especially slow acetylators). Disopyramide: strong anticholinergic, negative inotrope.
+        Class IB: Lidocaine, Mexiletine, Phenytoin. Weak Na+ block + ↓APD. Bind preferentially to INACTIVATED channels.
+        Lidocaine: IV only for ventricular arrhythmias (post-MI), minimal effect on atrial tissue. Mexiletine: oral lidocaine equivalent.
+        Phenytoin: digitalis-induced arrhythmias.
+        Class IC: Flecainide, Propafenone. Strong Na+ block, minimal effect on APD. Most potent Na+ blockers.
+        AVOID in structural heart disease / post-MI (CAST trial — increased mortality).
+        Propafenone: also has weak β-blocking activity. Use: AF in structurally normal hearts ("pill in pocket").
+        📚 KD Tripathi, 8th Ed, Ch.39 (p.547-553)
+
+    - id: class-ii-iii-iv
+      title: "Class II, III & IV Antiarrhythmics"
+      text: >
+        Class II — β-blockers: ↓SA node automaticity, ↓AV conduction, ↑refractory period of AV node.
+        Propranolol, Metoprolol, Esmolol (ultra-short, IV — perioperative). Use: sinus tachycardia, rate control in AF/flutter, SVT.
+        Class III — K+ channel blockers: Prolong APD and refractory period (↑QT interval).
+        Amiodarone: MOST EFFECTIVE antiarrhythmic. Has properties of ALL 4 classes. Long t½ (40-55 days).
+        Uses: AF, VF, VT, virtually all arrhythmias. Toxicity: Pulmonary fibrosis, Thyroid dysfunction (both hypo/hyper —
+        contains 37% iodine), Corneal microdeposits (vortex keratopathy — almost 100%), Hepatotoxicity, Slate-grey skin
+        discoloration, Peripheral neuropathy, Photosensitivity. Mnemonic: "Amiodarone has Too many side effects."
+        Dronedarone: amiodarone analogue without iodine, shorter t½, fewer thyroid effects. Contraindicated in NYHA III-IV HF.
+        Sotalol: β-blocker + Class III properties. Risk of TdP (dose-dependent QT prolongation).
+        Dofetilide, Ibutilide: pure Class III. Ibutilide: IV for acute AF conversion. Both risk TdP.
+        Class IV — Ca2+ channel blockers: Verapamil, Diltiazem. ↓AV conduction, ↓SA node automaticity.
+        Use: SVT (terminate AVNRT/AVRT), rate control in AF. Contraindicated in WPW with AF (may accelerate conduction via accessory pathway).
+        📚 KD Tripathi, 8th Ed, Ch.39 (p.553-560)
+
+    - id: other-antiarrhythmics
+      title: "Other Antiarrhythmic Agents"
+      text: >
+        Adenosine: ultra-short acting (t½ <10 sec). Activates A1 receptors → ↑K+ outflow → hyperpolarization of AV node.
+        Drug of choice for acute SVT (AVNRT). Given rapid IV push. Side effects: flushing, chest tightness, transient asystole.
+        Potentiated by dipyridamole (blocks adenosine uptake). Antagonized by theophylline/caffeine (adenosine receptor blockade).
+        Contraindicated: asthma (bronchoconstriction), heart transplant (denervated heart — hypersensitive).
+        Digoxin: ↑vagal tone → ↓AV conduction. Rate control in AF. NOT for conversion.
+        Magnesium sulfate: drug of choice for Torsades de Pointes.
+        Ivabradine: selective If (funny current) blocker → ↓HR without affecting contractility or BP. Use: stable angina, HF with high HR.
+        📚 KD Tripathi, 8th Ed, Ch.39 (p.558-560)
+
+  clinical:
+    - title: "Clinical Correlation: CAST Trial"
+      text: >
+        The Cardiac Arrhythmia Suppression Trial (CAST) showed that Class IC drugs (flecainide, encainide) increased mortality
+        in post-MI patients despite suppressing PVCs. This revolutionized antiarrhythmic therapy — never use Class IC in
+        structural heart disease. Amiodarone and β-blockers are safe post-MI.
+    - title: "Clinical Correlation: Torsades de Pointes"
+      text: >
+        QT prolongation → polymorphic VT with "twisting of points" on ECG. Causes: Class IA, Class III drugs, hypokalemia,
+        hypomagnesemia, congenital long QT syndrome. Treatment: IV Magnesium sulfate (first-line), temporary overdrive pacing,
+        Isoproterenol. AVOID further QT-prolonging drugs.
+
+  high_yield_points:
+    - "Vaughan-Williams: I=Na+, II=β-block, III=K+, IV=Ca2+"
+    - "Amiodarone has properties of ALL 4 classes — most effective antiarrhythmic"
+    - "Amiodarone t½ = 40-55 DAYS — takes weeks to reach steady state"
+    - "Amiodarone: 37% iodine → thyroid dysfunction (both hypo AND hyper)"
+    - "Class IC (flecainide) CONTRAINDICATED post-MI (CAST trial)"
+    - "Lidocaine: ONLY for ventricular arrhythmias, IV only, binds inactivated Na+ channels"
+    - "Adenosine: DOC for acute SVT (AVNRT), t½ <10 sec, antagonized by theophylline"
+    - "MgSO4 = DOC for Torsades de Pointes"
+    - "Sotalol = β-blocker + Class III — risk of TdP"
+    - "Verapamil/Diltiazem CONTRAINDICATED in WPW with AF"
+
+mcqs:
+  - question: "A patient presents with acute SVT. The drug of choice for immediate termination is:"
+    options:
+      - "Amiodarone"
+      - "Lidocaine"
+      - "Adenosine"
+      - "Verapamil"
+    answer: "Adenosine"
+    explanation: >
+      Adenosine (6mg rapid IV push, followed by 12mg if needed) is the DOC for acute SVT (AVNRT/AVRT).
+      Its ultra-short half-life (<10 sec) makes it safe. Verapamil is second-line. Lidocaine is for ventricular arrhythmias only.
+      📚 KD Tripathi, 8th Ed, Ch.39 (p.558)
+    difficulty: 1
+
+  - question: "Amiodarone-induced thyroid dysfunction is due to:"
+    options:
+      - "Direct thyroid cell destruction"
+      - "High iodine content (37%)"
+      - "CYP450 inhibition"
+      - "Autoimmune thyroiditis"
+    answer: "High iodine content (37%)"
+    explanation: >
+      Amiodarone contains 37% iodine by weight. Each 200mg tablet releases ~6mg iodine (50x daily requirement).
+      Can cause hypothyroidism (Wolff-Chaikoff effect, especially in iodine-sufficient areas) or hyperthyroidism
+      (Jod-Basedow effect, especially in iodine-deficient areas). Monitor TFTs every 6 months.
+      📚 KD Tripathi, 8th Ed, Ch.39 (p.555)
+    difficulty: 2
+
+  - question: "Which antiarrhythmic drug is CONTRAINDICATED in patients with structural heart disease/post-MI?"
+    options:
+      - "Amiodarone"
+      - "Flecainide"
+      - "Metoprolol"
+      - "Sotalol"
+    answer: "Flecainide"
+    explanation: >
+      The CAST trial demonstrated increased mortality with Class IC drugs (flecainide, encainide) in post-MI patients.
+      These drugs are only safe in structurally normal hearts. Amiodarone and β-blockers are safe post-MI.
+      📚 KD Tripathi, 8th Ed, Ch.39 (p.553)
+    difficulty: 1
+
+  - question: "The drug of choice for Torsades de Pointes is:"
+    options:
+      - "Lidocaine"
+      - "Amiodarone"
+      - "IV Magnesium sulfate"
+      - "Procainamide"
+    answer: "IV Magnesium sulfate"
+    explanation: >
+      MgSO4 is the first-line treatment for Torsades de Pointes regardless of serum Mg levels. It stabilizes cardiac
+      membrane and shortens QT interval. Amiodarone and procainamide would further prolong QT and worsen TdP.
+      📚 KD Tripathi, 8th Ed, Ch.39 (p.559)
+    difficulty: 1
+
+  - question: "Procainamide on long-term use can cause:"
+    options:
+      - "Pulmonary fibrosis"
+      - "SLE-like syndrome"
+      - "Corneal deposits"
+      - "Thyroid dysfunction"
+    answer: "SLE-like syndrome"
+    explanation: >
+      Procainamide causes drug-induced SLE (anti-histone antibodies positive) in up to 30% of patients on long-term therapy,
+      especially slow acetylators. Pulmonary fibrosis, corneal deposits, and thyroid dysfunction are amiodarone side effects.
+      📚 KD Tripathi, 8th Ed, Ch.39 (p.549)
+    difficulty: 1

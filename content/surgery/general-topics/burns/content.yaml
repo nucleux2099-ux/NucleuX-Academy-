@@ -1,0 +1,146 @@
+overview: |
+  Burns are tissue injuries caused by thermal, chemical, electrical, or radiation exposure. Assessment involves
+  TBSA calculation (Rule of Nines/Lund-Browder chart) and depth classification. Fluid resuscitation using the
+  Parkland formula is critical in the first 48 hours. Burns >20% TBSA in adults require IV fluid resuscitation.
+
+learning_objectives:
+  - Classify burns by depth and assess TBSA using Rule of Nines
+  - Apply the Parkland formula for fluid resuscitation
+  - Recognize inhalation injury and its management
+  - Describe wound management including escharotomy and skin grafting
+  - Understand the metabolic response to burns and nutritional requirements
+
+content:
+  atoms:
+    - title: Classification by Depth
+      text: |
+        **Superficial (1st degree):** Epidermis only. Erythema, pain, no blisters. Heals in 7 days. E.g., sunburn.
+        **Superficial partial thickness (2nd degree):** Epidermis + upper dermis. Blisters, moist, very painful,
+        blanches on pressure. Heals in 14-21 days from adnexae. No grafting needed.
+        **Deep partial thickness (2nd degree):** Epidermis + deep dermis. Mottled, less pain (nerve endings destroyed),
+        sluggish capillary refill. Heals slowly with scarring. May need grafting.
+        **Full thickness (3rd degree):** All skin layers destroyed. White/waxy/charred, painless, leathery, no blanching.
+        Requires skin grafting. **4th degree:** Involves muscle, bone, tendons.
+        📚 Bailey & Love, 28th Ed, Ch.30; Sabiston, 21st Ed, Ch.20
+
+    - title: TBSA Assessment
+      text: |
+        **Rule of Nines (Wallace):** Head 9%, each upper limb 9%, anterior trunk 18%, posterior trunk 18%,
+        each lower limb 18%, perineum 1%. Modified for children: Head is larger proportion.
+        **Lund-Browder chart:** Most accurate — adjusts for age. Used in children.
+        **Palmer surface:** Patient's palm (including fingers) ≈ 1% TBSA. Useful for scattered/small burns.
+        **Fluid resuscitation threshold:** Adults >20% TBSA, Children >10% TBSA.
+        📚 Bailey & Love, 28th Ed, Ch.30
+
+    - title: Fluid Resuscitation — Parkland Formula
+      text: |
+        **Parkland formula:** 4 mL × body weight (kg) × %TBSA (burn).
+        Fluid: Ringer's lactate. Half in first 8 hours (from time of burn, NOT admission), rest in next 16 hours.
+        **Monitoring:** Urine output (best indicator of adequacy) — Adults: 0.5-1 mL/kg/hr, Children: 1-2 mL/kg/hr.
+        **No colloids in first 24h** (capillary leak phase). Colloids (albumin) may be added after 24h.
+        **Muir & Barclay formula (UK):** Uses colloid; each period = %TBSA × weight / 2.
+        📚 Sabiston, 21st Ed, Ch.20
+
+    - title: Inhalation Injury & Escharotomy
+      text: |
+        **Suspect when:** Enclosed space fire, facial burns, singed nasal hairs, carbonaceous sputum, hoarseness.
+        **Diagnosis:** Direct laryngoscopy/bronchoscopy (gold standard).
+        **Management:** Early intubation (before edema peaks at 24-48h), 100% humidified O2,
+        bronchoscopic toilet, monitor for CO poisoning (treat with 100% O2; hyperbaric if severe).
+        **Escharotomy:** For circumferential full-thickness burns compromising circulation (limbs) or
+        ventilation (chest). Incision through eschar into subcutaneous fat. No anesthesia needed (insensate).
+        📚 Bailey & Love, 28th Ed, Ch.30
+
+    - title: Wound Management & Grafting
+      text: |
+        **First aid:** Cool running water for 20 minutes (within 3h of injury). Remove clothing/jewelry.
+        **Topical agents:** Silver sulfadiazine (1% SSD — MC used, broad spectrum), mafenide acetate
+        (penetrates eschar — for ears/nose cartilage), silver nitrate (0.5% — stains black).
+        **Grafting:** Split-thickness skin graft (STSG) for full-thickness burns after wound bed preparation.
+        Autograft is gold standard. Mesh grafting (1:1.5 to 1:6 ratio) for large burns.
+        **Nutritional support:** Curreri formula: 25 kcal/kg + 40 kcal/%TBSA burn. High protein needed.
+        📚 Sabiston, 21st Ed, Ch.20
+
+  clinical: |
+    **Burns Management Algorithm:**
+    1. Primary survey (ABCDE) — suspect inhalation injury, early intubation
+    2. Stop the burning process, cool with running water
+    3. Assess TBSA (Rule of Nines) and depth
+    4. If >20% TBSA: Parkland formula fluid resuscitation
+    5. Escharotomy for circumferential full-thickness burns
+    6. Wound care: Debridement + topical antimicrobials (SSD)
+    7. Early excision and grafting (within 72h improves outcomes)
+    8. Nutritional support (Curreri formula), physiotherapy, psychological support
+
+  high_yield_points:
+    - "Rule of Nines: Head 9%, each arm 9%, each leg 18%, trunk anterior 18%, posterior 18%, perineum 1%"
+    - "Parkland formula: 4 mL × kg × %TBSA; half in first 8h FROM TIME OF BURN"
+    - "Best indicator of fluid resuscitation adequacy: Urine output (0.5-1 mL/kg/hr)"
+    - "Inhalation injury: Singed nasal hairs, carbonaceous sputum → early intubation"
+    - "Escharotomy: For circumferential full-thickness burns; no anesthesia needed"
+    - "Silver sulfadiazine (SSD): MC used topical agent for burns"
+    - "Curling's ulcer: Acute stress ulcer in burns patients (duodenal)"
+    - "Pseudomonas: MC organism causing burn wound sepsis"
+    - "Lund-Browder chart: Most accurate TBSA assessment (especially children)"
+    - "Marjolin's ulcer: SCC developing in chronic burn scar (latent period 10-25 yrs)"
+
+mcqs:
+  - question: "A 70 kg man has 40% TBSA burns. Using the Parkland formula, what is the total fluid requirement in the first 24 hours?"
+    options:
+      a: 5600 mL
+      b: 8400 mL
+      c: 11200 mL
+      d: 14000 mL
+    answer: c
+    explanation: |
+      Parkland formula: 4 × 70 × 40 = 11,200 mL of Ringer's lactate in 24 hours.
+      Half (5600 mL) in the first 8 hours from time of burn, remaining 5600 mL over next 16 hours.
+      📚 Sabiston, 21st Ed, Ch.20
+
+  - question: "The most accurate method for TBSA assessment in children is:"
+    options:
+      a: Rule of Nines
+      b: Lund-Browder chart
+      c: Palmer method
+      d: Rule of Tens
+    answer: b
+    explanation: |
+      Lund-Browder chart adjusts body surface area proportions for age (children have proportionally
+      larger heads). It is the most accurate method for all ages but especially important in pediatric burns.
+      📚 Bailey & Love, 28th Ed, Ch.30
+
+  - question: "Marjolin's ulcer is:"
+    options:
+      a: Basal cell carcinoma in burn scar
+      b: Squamous cell carcinoma in chronic burn scar
+      c: Melanoma in burn scar
+      d: Verrucous carcinoma
+    answer: b
+    explanation: |
+      Marjolin's ulcer is an aggressive SCC arising in a chronic burn scar or non-healing wound
+      after a latent period of 10-25 years. It has a higher metastatic potential than regular SCC
+      and requires wide excision. 📚 Bailey & Love, 28th Ed, Ch.30
+
+  - question: "The best indicator of adequate fluid resuscitation in a burns patient is:"
+    options:
+      a: Heart rate
+      b: Blood pressure
+      c: Urine output
+      d: Central venous pressure
+    answer: c
+    explanation: |
+      Urine output is the single best indicator of end-organ perfusion and fluid resuscitation adequacy.
+      Target: 0.5-1 mL/kg/hr in adults, 1-2 mL/kg/hr in children. More reliable than BP or HR
+      in burns patients. 📚 Sabiston, 21st Ed, Ch.20
+
+  - question: "Which organism is the most common cause of burn wound sepsis?"
+    options:
+      a: Staphylococcus aureus
+      b: Streptococcus pyogenes
+      c: Pseudomonas aeruginosa
+      d: E. coli
+    answer: c
+    explanation: |
+      Pseudomonas aeruginosa is the MC organism causing burn wound sepsis. It produces a characteristic
+      blue-green exudate and fruity odor. Early wound excision and grafting reduces infection risk.
+      Initially Staph aureus colonizes, but Pseudomonas predominates by day 5-7. 📚 Bailey & Love, 28th Ed, Ch.30

@@ -1,0 +1,162 @@
+topic_id: circle-of-willis
+name: Circle of Willis & Brain Blood Supply
+description: Circle of Willis & Brain Blood Supply — Arterial circle, cerebral arteries, territories, and stroke correlations
+high_yield: true
+nmc_codes:
+- code: AN57.3
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The brain receives blood from 4 arteries: 2 internal carotid arteries (anterior circulation, 80%) and
+  2 vertebral arteries (posterior circulation, 20%). The circle of Willis is an anastomotic ring at the base
+  of the brain connecting these two systems. Components: ACA, AComA, MCA, PComA, PCA (+ ICA and basilar artery
+  contributions). Only 20-25% of people have a complete, symmetrical circle.
+  📚 Gray's Anatomy, 42nd Ed, Ch.26; 📚 Netter's Atlas, 6th Ed, Plate 136
+
+learning_objectives:
+  - Describe the formation and components of the circle of Willis
+  - List the cerebral arteries and their territories of supply
+  - Correlate vascular territories with stroke syndromes
+  - Describe the blood supply to the internal capsule and its clinical significance
+  - Explain the concept of watershed (border zone) infarction
+
+content:
+  atoms:
+    - id: circle-of-willis
+      title: "Circle of Willis — Components"
+      text: >
+        Formed by: anterior communicating artery (AComA) connecting the two ACAs; posterior communicating arteries
+        (PComAs) connecting ICA to PCA on each side. Components (anterior to posterior): ACA → AComA → ACA;
+        ICA → PComA → PCA; basilar artery bifurcation → PCA. ICA enters cranium through carotid canal, passes
+        through cavernous sinus, gives ophthalmic artery, then divides into ACA and MCA (terminal branches).
+        Vertebral arteries unite at pontomedullary junction to form basilar artery, which bifurcates into PCAs.
+        The most common site of circle aneurysm: AComA (40%).
+        📚 Gray's Anatomy, 42nd Ed, Ch.26; 📚 Netter's Atlas, 6th Ed, Plate 136
+
+    - id: cerebral-artery-territories
+      title: "Cerebral Artery Territories"
+      text: >
+        ACA: medial surface of frontal and parietal lobes (leg area of motor/sensory cortex).
+        Occlusion → contralateral leg weakness/numbness, personality changes (frontal lobe).
+        MCA: lateral surface of hemisphere (face and arm area of motor/sensory cortex, Broca's area, Wernicke's area).
+        Most commonly occluded in stroke. Occlusion → contralateral face+arm weakness > leg, aphasia (dominant hemisphere).
+        PCA: occipital lobe (visual cortex), inferior temporal lobe, thalamus (via perforators).
+        Occlusion → contralateral homonymous hemianopia with macular sparing.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.3
+
+    - id: internal-capsule-supply
+      title: "Blood Supply to Internal Capsule"
+      text: >
+        The internal capsule is supplied primarily by lenticulostriate arteries (branches of MCA — "arteries of
+        stroke" or "arteries of Charcot"). These are end arteries with no anastomosis. Rupture causes hemorrhagic
+        stroke → contralateral hemiplegia (pyramidal fibers pass through posterior limb).
+        Anterior choroidal artery (from ICA) supplies part of the posterior limb and optic tract.
+        Medial striate artery (recurrent artery of Heubner, from ACA) supplies head of caudate and anterior
+        limb of internal capsule.
+        📚 Gray's Anatomy, 42nd Ed
+
+    - id: posterior-circulation
+      title: "Vertebrobasilar System"
+      text: >
+        Vertebral arteries → PICA (posterior inferior cerebellar artery) → basilar artery.
+        Basilar branches: AICA, superior cerebellar artery (SCA), pontine branches, labyrinthine artery.
+        PICA occlusion → lateral medullary syndrome (Wallenberg's): dysphagia, hoarseness, ipsilateral Horner's,
+        loss of pain/temperature on ipsilateral face + contralateral body, cerebellar ataxia.
+        Basilar artery thrombosis → "locked-in" syndrome (intact consciousness but quadriplegia, only vertical
+        eye movements preserved).
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed
+
+  clinical:
+    - title: "Clinical: Berry Aneurysms"
+      text: >
+        Saccular (berry) aneurysms occur at arterial bifurcations of the circle of Willis due to defects in the
+        tunica media. Most common site: AComA (40%), then PComA (30%), then MCA bifurcation (20%).
+        Rupture causes subarachnoid hemorrhage (sudden "thunderclap" headache). Associated with ADPKD, Ehlers-Danlos,
+        coarctation of aorta.
+    - title: "Clinical: Watershed Infarction"
+      text: >
+        Border zone between ACA-MCA territory (superior) and MCA-PCA territory (posterior) are vulnerable during
+        systemic hypotension. Results in "man in a barrel" syndrome (bilateral proximal arm weakness with spared legs/face)
+        for ACA-MCA watershed. PCA-MCA watershed → cortical blindness patterns.
+
+high_yield_points:
+  - "Circle of Willis: AComA, ACA, ICA, PComA, PCA, basilar artery"
+  - "Most common site of berry aneurysm: AComA (40%)"
+  - "MCA is most commonly occluded artery in stroke"
+  - "Lenticulostriate arteries (MCA) = 'arteries of stroke' — supply internal capsule"
+  - "ACA occlusion → contralateral leg weakness (medial cortex)"
+  - "MCA occlusion → contralateral face + arm weakness + aphasia"
+  - "PCA occlusion → contralateral homonymous hemianopia with macular sparing"
+  - "Lateral medullary syndrome (Wallenberg's) = PICA occlusion"
+  - "Locked-in syndrome = basilar artery thrombosis"
+  - "Only 20-25% have a complete, symmetrical circle of Willis"
+
+mcqs:
+  - question: "The most common site of berry aneurysm in the circle of Willis is:"
+    options:
+      - "Middle cerebral artery bifurcation"
+      - "Posterior communicating artery"
+      - "Anterior communicating artery"
+      - "Basilar artery tip"
+    answer: "Anterior communicating artery"
+    explanation: >
+      AComA is the most common site (40%) for berry aneurysms. PComA is second (30%), MCA bifurcation third (20%).
+      Rupture causes subarachnoid hemorrhage with sudden severe headache.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "A patient presents with contralateral weakness predominantly affecting the face and arm, with Broca's aphasia. Which artery is most likely occluded?"
+    options:
+      - "Anterior cerebral artery"
+      - "Middle cerebral artery"
+      - "Posterior cerebral artery"
+      - "Basilar artery"
+    answer: "Middle cerebral artery"
+    explanation: >
+      MCA supplies the lateral surface of the hemisphere including face/arm motor cortex and Broca's area.
+      Occlusion causes contralateral face+arm weakness (greater than leg) with aphasia in the dominant hemisphere.
+      ACA occlusion would primarily affect the leg.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The 'arteries of stroke' (lenticulostriate arteries) are branches of:"
+    options:
+      - "Anterior cerebral artery"
+      - "Middle cerebral artery"
+      - "Posterior cerebral artery"
+      - "Anterior choroidal artery"
+    answer: "Middle cerebral artery"
+    explanation: >
+      Lenticulostriate arteries are perforating branches of the MCA that supply the internal capsule and basal
+      ganglia. They are end arteries prone to rupture in hypertension, causing hemorrhagic stroke with
+      contralateral hemiplegia.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Lateral medullary syndrome (Wallenberg's syndrome) results from occlusion of:"
+    options:
+      - "AICA"
+      - "PICA"
+      - "Superior cerebellar artery"
+      - "Basilar artery"
+    answer: "PICA"
+    explanation: >
+      PICA (posterior inferior cerebellar artery) occlusion causes lateral medullary syndrome: dysphagia, hoarseness,
+      ipsilateral Horner's syndrome, loss of pain/temp on ipsilateral face and contralateral body, cerebellar ataxia.
+      📚 Netter's Atlas, 6th Ed
+    difficulty: 2
+
+  - question: "Occlusion of the posterior cerebral artery causes:"
+    options:
+      - "Contralateral hemiplegia"
+      - "Contralateral homonymous hemianopia with macular sparing"
+      - "Broca's aphasia"
+      - "Contralateral leg weakness"
+    answer: "Contralateral homonymous hemianopia with macular sparing"
+    explanation: >
+      PCA supplies the occipital lobe (primary visual cortex). Occlusion causes contralateral homonymous hemianopia.
+      Macular sparing occurs because the macular cortex has dual supply from PCA and MCA.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2

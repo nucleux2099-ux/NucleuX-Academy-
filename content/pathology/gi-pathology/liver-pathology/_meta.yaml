@@ -1,0 +1,165 @@
+topic_id: liver-pathology
+name: Liver Pathology (Hepatitis, Cirrhosis)
+description: Viral hepatitis, alcoholic liver disease, cirrhosis, and hepatocellular carcinoma
+high_yield: true
+
+overview: >
+  Liver pathology encompasses viral hepatitis (A-E), alcoholic and non-alcoholic liver disease, cirrhosis,
+  and hepatocellular carcinoma. Understanding the serology of hepatitis B, patterns of liver injury,
+  and complications of cirrhosis is critical for NEET-PG.
+  📚 Robbins, 10th Ed, Ch.18 (p.831-882)
+
+learning_objectives:
+  - Interpret hepatitis B serology (acute, chronic, recovered, vaccinated)
+  - Differentiate the hepatitis viruses by transmission, chronicity, and complications
+  - Describe the pathology of alcoholic liver disease
+  - Explain the pathogenesis and complications of cirrhosis
+  - Describe hepatocellular carcinoma and its risk factors
+
+content:
+  atoms:
+    - id: hepatitis-viruses
+      title: "Hepatitis Viruses — Key Features"
+      text: >
+        Hep A: RNA, fecal-oral, NO chronicity, no carrier state. Self-limited.
+        Hep B: DNA (only DNA hepatitis virus), parenteral/sexual/vertical; 5% chronic in adults, 90% in neonates;
+        associated with HCC, PAN (polyarteritis nodosa), membranous nephropathy. Ground-glass hepatocytes.
+        Hep C: RNA, parenteral (IVDU #1 cause); 80% chronic (highest chronicity); associated with cryoglobulinemia,
+        membranoproliferative GN, porphyria cutanea tarda, HCC. No vaccine.
+        Hep D: defective RNA virus; REQUIRES HBV (HBsAg) for replication; coinfection (self-limited) vs
+        superinfection (severe, high chronicity). Worst hepatitis prognosis.
+        Hep E: RNA, fecal-oral (contaminated water); high mortality in PREGNANT women (20%); no chronicity in immunocompetent.
+        📚 Robbins, 10th Ed, Ch.18 (p.839-852)
+
+    - id: hbv-serology
+      title: "Hepatitis B Serology"
+      text: >
+        HBsAg: first marker to appear; indicates current infection (acute or chronic). Persists >6 months = chronic.
+        Anti-HBs: indicates recovery or vaccination (immunity).
+        HBeAg: indicates active viral replication and HIGH infectivity.
+        Anti-HBe: indicates LOW infectivity.
+        Anti-HBc IgM: indicates ACUTE infection (best marker for acute HBV during window period).
+        Anti-HBc IgG: indicates past exposure (present in both recovered and chronic).
+        Window period: HBsAg gone, anti-HBs not yet appeared; only anti-HBc IgM is positive.
+        Vaccinated: ONLY anti-HBs positive (nothing else).
+        📚 Robbins, 10th Ed, Ch.18 (p.843-846)
+
+    - id: alcoholic-liver-disease
+      title: "Alcoholic Liver Disease"
+      text: >
+        Three stages: (1) Hepatic steatosis (fatty liver) — most common, reversible with abstinence;
+        (2) Alcoholic hepatitis — Mallory-Denk bodies (damaged cytokeratin), neutrophilic infiltration, hepatocyte
+        ballooning, fever, jaundice, painful hepatomegaly, AST:ALT >2:1 (B6 depleted → ↓ALT);
+        (3) Cirrhosis — irreversible micronodular cirrhosis.
+        Mechanism: alcohol → acetaldehyde (via ADH) → acetate (via ALDH); acetaldehyde is directly toxic,
+        promotes ROS, impairs mitochondria, stimulates collagen synthesis.
+        📚 Robbins, 10th Ed, Ch.18 (p.855-862)
+
+    - id: cirrhosis
+      title: "Cirrhosis — Pathogenesis and Complications"
+      text: >
+        Cirrhosis = diffuse fibrosis + regenerative nodules + disrupted architecture. End-stage of many liver diseases.
+        Causes: alcohol (most common in West), HBV/HCV (worldwide), NAFLD, autoimmune hepatitis, Wilson, hemochromatosis,
+        primary biliary cholangitis (anti-mitochondrial antibody), primary sclerosing cholangitis (UC association, pANCA+).
+        Complications: portal hypertension (esophageal varices, splenomegaly, ascites, caput medusae),
+        hepatic encephalopathy (↑ammonia), hepatorenal syndrome, coagulopathy, HCC.
+        📚 Robbins, 10th Ed, Ch.18 (p.862-872)
+
+    - id: hcc
+      title: "Hepatocellular Carcinoma"
+      text: >
+        Most common primary liver malignancy. Risk factors: cirrhosis (any cause), HBV (even without cirrhosis!),
+        HCV, aflatoxin B1 (Aspergillus, p53 mutation), hemochromatosis, α1-antitrypsin deficiency.
+        Tumor marker: AFP (alpha-fetoprotein) — elevated in >70%.
+        Gross: may invade hepatic veins → IVC → right atrium (Budd-Chiari syndrome).
+        Most common liver tumor overall = metastasis (NOT primary HCC).
+        📚 Robbins, 10th Ed, Ch.18 (p.876-880)
+
+  clinical:
+    - title: "Budd-Chiari Syndrome"
+      text: >
+        Hepatic vein thrombosis → hepatomegaly, ascites, abdominal pain. Causes: polycythemia vera (most common),
+        PNH, HCC invasion, hypercoagulable states, OCPs.
+
+  high_yield_points:
+    - "HBV = only DNA hepatitis virus; HCV = highest rate of chronicity (80%)"
+    - "Hep E: high mortality in PREGNANT women (20%)"
+    - "HBsAg = current infection; Anti-HBs = immunity; Anti-HBc IgM = acute; HBeAg = high infectivity"
+    - "Vaccinated person: ONLY anti-HBs positive"
+    - "Window period: only anti-HBc IgM positive"
+    - "Alcoholic hepatitis: AST:ALT >2:1; Mallory-Denk bodies; neutrophilic infiltration"
+    - "Cirrhosis complications: varices, ascites, encephalopathy, hepatorenal syndrome, HCC"
+    - "Primary biliary cholangitis: anti-mitochondrial antibody (AMA); middle-aged women; pruritus, jaundice"
+    - "Primary sclerosing cholangitis: associated with UC; pANCA+; 'onion-skin' fibrosis; cholangiocarcinoma risk"
+    - "HCC risk factors: cirrhosis, HBV (can cause HCC WITHOUT cirrhosis), HCV, aflatoxin B1; marker = AFP"
+
+mcqs:
+  - question: "A patient's hepatitis B serology shows: HBsAg negative, Anti-HBs positive, Anti-HBc IgG positive, Anti-HBc IgM negative. This pattern indicates:"
+    options:
+      - "Acute hepatitis B"
+      - "Chronic hepatitis B"
+      - "Recovered from hepatitis B (immune)"
+      - "Vaccinated against hepatitis B"
+    answer: "Recovered from hepatitis B (immune)"
+    explanation: >
+      Anti-HBs (immunity) + Anti-HBc IgG (past exposure) + negative HBsAg (cleared virus) + negative IgM (not acute)
+      = recovered from natural infection. Vaccinated individuals have ONLY anti-HBs (no anti-HBc because they were
+      never infected). Chronic would have HBsAg still positive. Acute would have anti-HBc IgM positive.
+      📚 Robbins, 10th Ed, Ch.18 (p.845)
+    difficulty: 1
+
+  - question: "A chronic alcoholic presents with fever, jaundice, tender hepatomegaly, and leukocytosis. AST is 300, ALT is 100. Liver biopsy shows hepatocyte ballooning, neutrophilic infiltration, and Mallory-Denk bodies. The diagnosis is:"
+    options:
+      - "Alcoholic steatosis"
+      - "Alcoholic hepatitis"
+      - "Viral hepatitis C"
+      - "Primary biliary cholangitis"
+    answer: "Alcoholic hepatitis"
+    explanation: >
+      AST:ALT ratio >2:1 + Mallory-Denk bodies + neutrophilic infiltration + hepatocyte ballooning in an alcoholic
+      = alcoholic hepatitis. AST>ALT because alcohol depletes B6 (pyridoxine), which is needed for ALT synthesis.
+      Viral hepatitis typically has ALT>AST. Steatosis is just fat without inflammation.
+      📚 Robbins, 10th Ed, Ch.18 (p.857)
+    difficulty: 1
+
+  - question: "Which hepatitis virus can cause infection ONLY in the presence of hepatitis B?"
+    options:
+      - "Hepatitis A"
+      - "Hepatitis C"
+      - "Hepatitis D"
+      - "Hepatitis E"
+    answer: "Hepatitis D"
+    explanation: >
+      Hepatitis D (delta virus) is a defective RNA virus that requires HBsAg for its envelope. It can only replicate
+      in patients who are also infected with HBV. Coinfection (HBV+HDV simultaneously) is usually self-limited.
+      Superinfection (HDV in chronic HBV carrier) is severe with high risk of fulminant hepatitis and progression to cirrhosis.
+      📚 Robbins, 10th Ed, Ch.18 (p.848)
+    difficulty: 1
+
+  - question: "A 50-year-old man with known cirrhosis presents with a rapidly enlarging liver mass. AFP is 800 ng/mL. He has a history of chronic hepatitis B. The most likely diagnosis is:"
+    options:
+      - "Liver metastasis from colon cancer"
+      - "Hepatocellular carcinoma"
+      - "Cholangiocarcinoma"
+      - "Hepatic adenoma"
+    answer: "Hepatocellular carcinoma"
+    explanation: >
+      Cirrhosis + chronic HBV + rising AFP + liver mass = HCC. AFP >400 ng/mL in the setting of cirrhosis is
+      virtually diagnostic. HBV is unique among hepatitis viruses — it can cause HCC even WITHOUT cirrhosis
+      (due to insertional mutagenesis of HBV DNA). Cholangiocarcinoma is associated with PSC, not HBV.
+      📚 Robbins, 10th Ed, Ch.18 (p.877)
+    difficulty: 1
+
+  - question: "A middle-aged woman presents with pruritus, fatigue, and elevated alkaline phosphatase. Anti-mitochondrial antibody (AMA) is positive. Liver biopsy shows granulomatous destruction of interlobular bile ducts. The diagnosis is:"
+    options:
+      - "Primary sclerosing cholangitis"
+      - "Primary biliary cholangitis"
+      - "Autoimmune hepatitis"
+      - "Drug-induced cholestasis"
+    answer: "Primary biliary cholangitis"
+    explanation: >
+      Middle-aged woman + pruritus + elevated ALP + positive AMA (anti-mitochondrial antibody, >95% specific) +
+      granulomatous destruction of bile ducts = primary biliary cholangitis (PBC). PSC is associated with UC and
+      shows onion-skin fibrosis, not granulomas. Autoimmune hepatitis has anti-smooth muscle and anti-LKM antibodies.
+      📚 Robbins, 10th Ed, Ch.18 (p.866)
+    difficulty: 2

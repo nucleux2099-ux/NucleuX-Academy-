@@ -1,17 +1,165 @@
-topic_id: inguinal-region-anatomy
-name: Inguinal Region Anatomy
-description: Inguinal Region Anatomy — NMC curriculum topic
+topic_id: inguinal-canal-hernia
+name: Inguinal Canal & Hernia Anatomy
+description: Inguinal Canal & Hernia Anatomy — Walls, rings, contents, and anatomical basis of inguinal hernias
 high_yield: true
 nmc_codes:
-- code: AN20.4
-  domain: KH
-  core: false
-  phase: Phase 1
-- code: AN44.4
-  domain: SH
-  core: true
-  phase: Phase 1
 - code: AN44.5
   domain: KH
   core: true
   phase: Phase 1
+- code: AN44.6
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The inguinal canal is an oblique passage (~4 cm) in the lower anterior abdominal wall, transmitting the
+  spermatic cord (males) or round ligament (females). It extends from the deep inguinal ring (midpoint of
+  inguinal ligament) to the superficial inguinal ring (above pubic tubercle). Understanding its anatomy is
+  essential for hernia surgery — the most common general surgical procedure.
+  📚 Gray's Anatomy, 42nd Ed, Ch.61; 📚 BD Chaurasia, Vol.2, Ch.14
+
+learning_objectives:
+  - Describe the boundaries (walls) of the inguinal canal
+  - Differentiate the deep and superficial inguinal rings
+  - List the contents of the spermatic cord and its coverings
+  - Distinguish direct from indirect inguinal hernia anatomically
+  - Describe Hesselbach's triangle and its clinical significance
+
+content:
+  atoms:
+    - id: inguinal-canal-walls
+      title: "Walls of the Inguinal Canal"
+      text: >
+        Anterior wall: external oblique aponeurosis (entire length) + internal oblique (lateral 1/3).
+        Posterior wall: transversalis fascia (entire length) + conjoint tendon (medial 1/3).
+        Roof: arching fibers of internal oblique and transversus abdominis (conjoint tendon).
+        Floor: inguinal ligament (Poupart's ligament — lower rolled edge of external oblique aponeurosis)
+        + lacunar ligament (medially).
+        Mnemonic for posterior wall: "2T" — Transversalis fascia + conjoint Tendon.
+        📚 BD Chaurasia, Vol.2, Ch.14 (p.186-192)
+
+    - id: inguinal-rings
+      title: "Deep and Superficial Inguinal Rings"
+      text: >
+        Deep (internal) ring: opening in transversalis fascia, located at midpoint of inguinal ligament
+        (midway between ASIS and pubic tubercle). Lateral to inferior epigastric vessels.
+        Superficial (external) ring: triangular opening in external oblique aponeurosis, located just above
+        and lateral to the pubic tubercle. Has superior (medial) and inferior (lateral) crura.
+        The deep ring is the site of indirect hernia entry.
+        📚 Gray's Anatomy, 42nd Ed, Ch.61; 📚 Netter's Atlas, 6th Ed, Plate 252
+
+    - id: spermatic-cord
+      title: "Spermatic Cord Contents & Coverings"
+      text: >
+        Contents (3 arteries, 3 veins, 3 others): Arteries — testicular, cremasteric, artery to vas.
+        Veins — pampiniform plexus, cremasteric, artery to vas. Others — vas deferens, genital branch of
+        genitofemoral nerve, lymphatics, processus vaginalis remnant.
+        Coverings (from deep to superficial): internal spermatic fascia (from transversalis fascia),
+        cremasteric fascia + muscle (from internal oblique), external spermatic fascia (from external oblique).
+        📚 BD Chaurasia, Vol.2, Ch.14
+
+    - id: hesselbach-triangle
+      title: "Hesselbach's Triangle & Hernia Types"
+      text: >
+        Hesselbach's (inguinal) triangle boundaries: medial — lateral border of rectus abdominis;
+        lateral — inferior epigastric vessels; inferior — inguinal ligament.
+        DIRECT hernia: passes through Hesselbach's triangle (weakness in posterior wall), MEDIAL to inferior
+        epigastric vessels. Acquired, older males, rarely enters scrotum, rarely strangulates.
+        INDIRECT hernia: enters through deep ring, LATERAL to inferior epigastric vessels. Congenital (patent
+        processus vaginalis), can descend into scrotum, more prone to strangulation.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.2
+
+  clinical:
+    - title: "Clinical: Differentiating Direct vs Indirect Hernia"
+      text: >
+        Deep ring occlusion test: with finger over deep ring (midpoint of inguinal ligament), ask patient to cough.
+        If hernia controlled = indirect; if hernia still appears = direct (exits medial to deep ring).
+        Indirect hernia: more common (70%), follows spermatic cord, can be congenital, enters scrotum.
+        Direct hernia: through posterior wall weakness, does not enter scrotum usually, bilateral often.
+    - title: "Clinical: Structures at Risk in Hernia Surgery"
+      text: >
+        Ilioinguinal nerve (L1): runs on spermatic cord, may be trapped → chronic groin pain post-surgery.
+        Vas deferens: closely related to cord, may be inadvertently divided. Inferior epigastric vessels:
+        landmark separating direct from indirect hernia. Femoral vessels: lie lateral and deep to inguinal ligament.
+
+high_yield_points:
+  - "Inguinal canal length ~4 cm, runs downward, forward, and medially"
+  - "Deep ring = midpoint of inguinal ligament; Superficial ring = above pubic tubercle"
+  - "Indirect hernia: LATERAL to inferior epigastric vessels, through deep ring"
+  - "Direct hernia: MEDIAL to inferior epigastric vessels, through Hesselbach's triangle"
+  - "Hesselbach's triangle: rectus (medial), inferior epigastric vessels (lateral), inguinal ligament (inferior)"
+  - "Indirect hernia is MORE common (70%) and can descend into scrotum"
+  - "Coverings of spermatic cord derived from 3 layers of abdominal wall (outside-in)"
+  - "Conjoint tendon = fused aponeuroses of internal oblique + transversus abdominis"
+  - "Inguinal ligament = rolled lower edge of external oblique aponeurosis (ASIS to pubic tubercle)"
+  - "Femoral hernia: below and lateral to inguinal ligament, more common in females"
+
+mcqs:
+  - question: "A 25-year-old male presents with a swelling in the groin that extends into the scrotum and is controlled by pressure over the midpoint of the inguinal ligament. What type of hernia is this?"
+    options:
+      - "Direct inguinal hernia"
+      - "Indirect inguinal hernia"
+      - "Femoral hernia"
+      - "Spigelian hernia"
+    answer: "Indirect inguinal hernia"
+    explanation: >
+      The hernia extends into the scrotum (follows spermatic cord) and is controlled by deep ring occlusion
+      (midpoint of inguinal ligament). These are classic features of indirect inguinal hernia, which exits
+      lateral to the inferior epigastric vessels through the deep ring.
+      📚 BD Chaurasia, Vol.2, Ch.14
+    difficulty: 1
+
+  - question: "Hesselbach's triangle is bounded laterally by which structure?"
+    options:
+      - "Inguinal ligament"
+      - "Lateral border of rectus abdominis"
+      - "Inferior epigastric vessels"
+      - "Deep inguinal ring"
+    answer: "Inferior epigastric vessels"
+    explanation: >
+      Hesselbach's triangle: medial — rectus abdominis; lateral — inferior epigastric vessels; inferior — inguinal ligament.
+      Direct inguinal hernias protrude through this triangle.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Which layer of the abdominal wall gives rise to the cremasteric fascia of the spermatic cord?"
+    options:
+      - "External oblique"
+      - "Internal oblique"
+      - "Transversus abdominis"
+      - "Transversalis fascia"
+    answer: "Internal oblique"
+    explanation: >
+      Coverings of spermatic cord are derived from abdominal wall layers: external spermatic fascia (external oblique),
+      cremasteric fascia and muscle (internal oblique), internal spermatic fascia (transversalis fascia).
+      📚 BD Chaurasia, Vol.2, Ch.14
+    difficulty: 2
+
+  - question: "An indirect inguinal hernia enters the inguinal canal at the deep ring, which is located in relation to the inferior epigastric vessels:"
+    options:
+      - "Medial"
+      - "Lateral"
+      - "Superior"
+      - "Posterior"
+    answer: "Lateral"
+    explanation: >
+      The deep inguinal ring is located lateral to the inferior epigastric vessels. Indirect hernias pass through
+      the deep ring (lateral to vessels). Direct hernias pass medial to the vessels through Hesselbach's triangle.
+      This is the key anatomical distinction between the two types.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The floor of the inguinal canal is formed by which structure?"
+    options:
+      - "External oblique aponeurosis"
+      - "Inguinal ligament"
+      - "Transversalis fascia"
+      - "Conjoint tendon"
+    answer: "Inguinal ligament"
+    explanation: >
+      The floor (inferior wall) of the inguinal canal is formed by the inguinal ligament (Poupart's ligament)
+      with the lacunar ligament medially. The inguinal ligament is the rolled lower edge of the external
+      oblique aponeurosis extending from ASIS to the pubic tubercle.
+      📚 BD Chaurasia, Vol.2, Ch.14
+    difficulty: 1

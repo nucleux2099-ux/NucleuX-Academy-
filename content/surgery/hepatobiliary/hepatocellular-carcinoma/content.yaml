@@ -1,0 +1,139 @@
+overview: |
+  Hepatocellular carcinoma (HCC) is the most common primary liver malignancy, strongly associated with
+  cirrhosis (80%), hepatitis B & C, and aflatoxin exposure. AFP is the tumour marker. Barcelona Clinic
+  Liver Cancer (BCLC) staging guides treatment from resection/transplant to palliative sorafenib.
+
+learning_objectives:
+  - Identify risk factors and the role of cirrhosis in HCC development
+  - Interpret AFP and imaging for diagnosis (LIRADS)
+  - Apply BCLC staging for treatment allocation
+  - Compare resection vs transplant (Milan criteria) vs locoregional therapy
+  - Describe the role of sorafenib and newer systemic therapies
+
+content:
+  atoms:
+    - title: Etiology & Risk Factors
+      text: |
+        **Cirrhosis** underlies 80% of HCC. Major risk factors: Hepatitis B (MC worldwide, can cause HCC
+        without cirrhosis), Hepatitis C (MC in West/Japan, always via cirrhosis), Alcohol, NAFLD/NASH (rising),
+        Aflatoxin B1 (Aspergillus flavus — p53 mutation at codon 249), hemochromatosis, Wilson's disease,
+        alpha-1 antitrypsin deficiency.
+        **Screening:** High-risk patients: USG + AFP every 6 months.
+        📚 Bailey & Love, 28th Ed, Ch.66; Sabiston, 21st Ed, Ch.54
+
+    - title: Diagnosis
+      text: |
+        **AFP >400 ng/mL** is highly suggestive (but only elevated in 50-70% of HCC).
+        **Imaging:** Triphasic CT/MRI: Arterial phase enhancement + portal venous/delayed washout = diagnostic
+        for HCC in cirrhotic liver (no biopsy needed if typical). LIRADS classification (LR-1 to LR-5).
+        **Biopsy:** Only if imaging indeterminate; risk of seeding along needle tract.
+        **Other markers:** Des-gamma-carboxyprothrombin (DCP/PIVKA-II), AFP-L3 fraction.
+        📚 Sabiston, 21st Ed, Ch.54
+
+    - title: BCLC Staging & Treatment
+      text: |
+        **Very early (0):** Single <2cm, Child A → Resection/ablation (>90% 5-year survival).
+        **Early (A):** Single or ≤3 nodules ≤3cm, Child A-B → Resection, Transplant (Milan), or Ablation (RFA/MWA).
+        **Intermediate (B):** Multinodular, no vascular invasion, Child A-B → TACE (transarterial chemoembolization).
+        **Advanced (C):** Vascular invasion/extrahepatic spread, Child A-B → Systemic therapy (sorafenib/atezolizumab-bevacizumab).
+        **Terminal (D):** Child C, ECOG >2 → Best supportive care.
+        📚 Bailey & Love, 28th Ed, Ch.66
+
+    - title: Surgical Treatment & Milan Criteria
+      text: |
+        **Resection:** For non-cirrhotic or Child A cirrhosis with adequate FLR (future liver remnant >40% in cirrhosis).
+        Anatomical resection preferred. Portal vein embolization to increase FLR if needed.
+        **Transplant — Milan criteria:** Single tumour ≤5cm OR ≤3 tumours each ≤3cm, no vascular invasion,
+        no extrahepatic disease. 4-year survival 75%. UCSF criteria are expanded (single ≤6.5cm or ≤3 each ≤4.5cm, total ≤8cm).
+        **Locoregional:** RFA (best for <3cm), MWA, TACE, TARE (Y90 radioembolization).
+        📚 Sabiston, 21st Ed, Ch.54; Blumgart's, 7th Ed
+
+    - title: Fibrolamellar Variant
+      text: |
+        Young patients (20-40 yrs), NO cirrhosis, NO hepatitis, AFP usually normal.
+        Large central scar on imaging (DDx: FNH). Better prognosis than typical HCC.
+        Treatment: Surgical resection (often resectable due to lack of cirrhosis).
+        📚 Sabiston, 21st Ed, Ch.54
+
+  clinical: |
+    **Approach to Liver Mass in Cirrhosis:**
+    1. USG screening detects nodule → Triphasic CT/MRI
+    2. Typical enhancement (arterial uptake + washout) = HCC diagnosis (no biopsy needed)
+    3. AFP level (>400 highly suggestive)
+    4. Assess liver function: Child-Pugh score, MELD
+    5. BCLC staging → Treatment allocation
+    6. Child A + early stage → Resection or Transplant (if within Milan)
+    7. Intermediate → TACE; Advanced → Systemic therapy
+
+  high_yield_points:
+    - "MC primary liver malignancy: HCC; MC liver malignancy overall: Metastases"
+    - "MC cause worldwide: Hepatitis B; MC in West: Hepatitis C"
+    - "Hep B can cause HCC WITHOUT cirrhosis; Hep C always via cirrhosis"
+    - "Aflatoxin B1: p53 mutation at codon 249 (Aspergillus flavus in stored grains)"
+    - "AFP >400 ng/mL: Highly suggestive of HCC"
+    - "Triphasic CT: Arterial enhancement + washout = diagnostic (no biopsy needed in cirrhosis)"
+    - "Milan criteria for transplant: Single ≤5cm OR ≤3 tumours each ≤3cm"
+    - "Fibrolamellar HCC: Young, no cirrhosis, AFP normal, central scar, better prognosis"
+    - "TACE: Standard for intermediate stage (BCLC B)"
+    - "Sorafenib/Atezolizumab-Bevacizumab: First-line systemic therapy for advanced HCC"
+
+mcqs:
+  - question: "A 55-year-old cirrhotic patient has a 4 cm liver mass showing arterial enhancement and portal venous washout on CT. AFP is 500 ng/mL. What is the diagnosis?"
+    options:
+      a: Hepatic adenoma
+      b: Focal nodular hyperplasia
+      c: Hepatocellular carcinoma
+      d: Hemangioma
+    answer: c
+    explanation: |
+      In a cirrhotic liver, a mass with arterial enhancement and portal venous washout on triphasic CT
+      is diagnostic of HCC (LIRADS 5). AFP >400 further supports the diagnosis. No biopsy is needed.
+      📚 Sabiston, 21st Ed, Ch.54
+
+  - question: "Milan criteria for liver transplantation in HCC include:"
+    options:
+      a: Single tumour ≤3cm
+      b: Single tumour ≤5cm OR ≤3 tumours each ≤3cm
+      c: Single tumour ≤7cm
+      d: Any number of tumours if no vascular invasion
+    answer: b
+    explanation: |
+      Milan criteria: single tumour ≤5cm OR up to 3 tumours each ≤3cm, no macrovascular invasion,
+      no extrahepatic disease. Meeting Milan criteria gives ~75% 4-year survival after transplant.
+      📚 Sabiston, 21st Ed, Ch.54
+
+  - question: "Which variant of HCC occurs in young patients without cirrhosis and has a better prognosis?"
+    options:
+      a: Clear cell variant
+      b: Fibrolamellar variant
+      c: Scirrhous variant
+      d: Sarcomatoid variant
+    answer: b
+    explanation: |
+      Fibrolamellar HCC occurs in young adults (20-40), without cirrhosis or hepatitis. AFP is usually
+      normal. It shows a central fibrous scar on imaging. Better prognosis because it is often resectable.
+      📚 Sabiston, 21st Ed, Ch.54
+
+  - question: "What is the recommended screening strategy for HCC in high-risk patients?"
+    options:
+      a: CT scan annually
+      b: USG + AFP every 6 months
+      c: MRI every year
+      d: AFP alone every 3 months
+    answer: b
+    explanation: |
+      Surveillance with USG + AFP every 6 months is recommended for high-risk patients (cirrhosis,
+      chronic HBV, chronic HCV). This detects HCC at an early, potentially curable stage.
+      📚 Bailey & Love, 28th Ed, Ch.66
+
+  - question: "Aflatoxin B1 exposure causes HCC through mutation of which gene?"
+    options:
+      a: APC
+      b: K-ras
+      c: p53 (codon 249)
+      d: RB1
+    answer: c
+    explanation: |
+      Aflatoxin B1 (from Aspergillus flavus contaminating stored grains/nuts) causes a specific
+      G→T transversion at codon 249 of the p53 tumour suppressor gene, leading to HCC.
+      📚 Sabiston, 21st Ed, Ch.54

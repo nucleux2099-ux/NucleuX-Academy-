@@ -1,25 +1,183 @@
-topic_id: arterial-blood-pressure
-name: Arterial Blood Pressure
-description: Arterial Blood Pressure — NMC curriculum topic
+topic_id: blood-pressure-regulation
+name: Blood Pressure Regulation (Baroreceptors, RAAS)
+description: Blood Pressure Regulation — Baroreceptor reflex, RAAS, and short/long-term mechanisms of BP control
 high_yield: true
 nmc_codes:
-- code: PY2.11
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: PY2.9
+- code: PY5.8
   domain: KH
   core: true
   phase: Phase 1
-- code: PY5.12
-  domain: SH
-  core: true
-  phase: Phase 1
-- code: PY5.16
-  domain: SH
-  core: false
-  phase: Phase 1
-- code: PY6.2
+- code: PY5.9
   domain: KH
   core: true
   phase: Phase 1
+
+overview: >
+  Blood pressure is regulated by short-term (neural — seconds to minutes), intermediate (hormonal — minutes to hours),
+  and long-term (renal — hours to days) mechanisms. Baroreceptor reflex provides rapid buffering of BP changes.
+  RAAS (Renin-Angiotensin-Aldosterone System) provides intermediate/long-term regulation through volume and
+  vasoconstriction. Mean arterial pressure (MAP) = CO × TPR = DBP + 1/3(SBP - DBP).
+  📚 Guyton & Hall, 14th Ed, Ch.18-19 (p.217-242) / 📚 Ganong's, 26th Ed, Ch.32
+
+learning_objectives:
+  - Explain the baroreceptor reflex arc and its role in short-term BP regulation
+  - Describe the components of RAAS and the actions of angiotensin II and aldosterone
+  - Differentiate short-term, intermediate, and long-term BP regulatory mechanisms
+  - Explain the role of kidneys in long-term BP control (pressure natriuresis)
+  - List the vasodilators and vasoconstrictors involved in BP regulation
+
+content:
+  atoms:
+    - id: baroreceptor-reflex
+      title: "Baroreceptor Reflex"
+      text: >
+        Baroreceptors are stretch receptors in carotid sinus (CN IX — glossopharyngeal) and aortic arch (CN X — vagus).
+        ↑BP → ↑baroreceptor firing → NTS (nucleus tractus solitarius) in medulla →
+        ↑parasympathetic (vagal) tone + ↓sympathetic tone → ↓HR, ↓contractility, vasodilation → ↓BP.
+        ↓BP → opposite response → ↑HR, vasoconstriction → ↑BP.
+        Baroreceptors adapt ("reset") in chronic hypertension — they operate at a higher set point.
+        Carotid sinus massage → ↑vagal tone → ↓HR (used to terminate SVT).
+        Carotid body chemoreceptors (different from baroreceptors) respond to ↓PaO2, ↑PaCO2, ↓pH.
+        📚 Guyton & Hall, 14th Ed, Ch.18 (p.217-222)
+
+    - id: raas-system
+      title: "Renin-Angiotensin-Aldosterone System (RAAS)"
+      text: >
+        Renin release from juxtaglomerular cells stimulated by: (1) ↓renal perfusion pressure,
+        (2) ↓NaCl at macula densa, (3) ↑sympathetic activity (β1 receptors).
+        Renin cleaves angiotensinogen (liver) → angiotensin I → ACE (lung endothelium) → angiotensin II.
+        Angiotensin II actions: (1) Potent vasoconstriction (AT1 receptors), (2) Aldosterone secretion (zona glomerulosa),
+        (3) ADH release, (4) Thirst stimulation, (5) Na+ reabsorption in PCT, (6) Cardiac/vascular remodeling.
+        Aldosterone: acts on principal cells of collecting duct → ↑ENaC (Na+ reabsorption) + ↑ROMK (K+ secretion).
+        ACE also degrades bradykinin (vasodilator) — ACE inhibitor side effects include cough (↑bradykinin).
+        📚 Guyton & Hall, 14th Ed, Ch.19 (p.231-238)
+
+    - id: short-vs-long-term
+      title: "Short-term vs Long-term BP Regulation"
+      text: >
+        Short-term (seconds-minutes): Baroreceptor reflex, chemoreceptor reflex, CNS ischemic response
+        (Cushing reflex: ↑ICP → ↑BP + ↓HR + irregular breathing).
+        Intermediate (minutes-hours): RAAS, ADH (vasopressin — V1 receptors on vascular smooth muscle),
+        capillary fluid shift (↑BP → fluid moves to interstitium → ↓blood volume).
+        Long-term (hours-days): Renal pressure natriuresis — ↑BP → ↑Na+ and water excretion → ↓blood volume → ↓BP.
+        Guyton's concept: kidney is the ULTIMATE long-term regulator of BP. All forms of chronic hypertension
+        involve impaired renal pressure natriuresis (shifted rightward).
+        📚 Guyton & Hall, 14th Ed, Ch.19 (p.238-242)
+
+    - id: vasoactive-substances
+      title: "Vasoactive Substances in BP Regulation"
+      text: >
+        Vasoconstrictors: Angiotensin II, norepinephrine (α1), ADH/vasopressin (V1), endothelin-1,
+        thromboxane A2, serotonin.
+        Vasodilators: Nitric oxide (NO — via cGMP), prostacyclin (PGI2), bradykinin, ANP/BNP,
+        histamine, adenosine (coronary), acetylcholine (via NO release from endothelium).
+        NO is synthesized by eNOS in endothelium → activates guanylyl cyclase → ↑cGMP → smooth muscle relaxation.
+        ANP (atrium) and BNP (ventricles): released by myocardial stretch → natriuresis, vasodilation, suppress RAAS.
+        BNP is a clinical marker of heart failure.
+        📚 Ganong's, 26th Ed, Ch.32
+
+    - id: autoregulation
+      title: "Autoregulation of Blood Flow"
+      text: >
+        Autoregulation: ability to maintain constant blood flow despite changes in perfusion pressure.
+        Myogenic theory: ↑pressure → smooth muscle stretch → reflex contraction → constant flow.
+        Metabolic theory: ↑metabolism → local metabolites (adenosine, CO2, K+, H+) → vasodilation → ↑flow.
+        Organs with excellent autoregulation: brain, kidney, heart (MAP 60-160 mmHg range).
+        Autoregulation fails below MAP ~60 mmHg → ischemia.
+        In chronic HTN, autoregulation curve shifts rightward → higher MAP needed to maintain flow.
+        📚 Guyton & Hall, 14th Ed, Ch.17 (p.209-212)
+
+  clinical:
+    - title: "Clinical Correlation: Antihypertensive Drugs and RAAS"
+      text: >
+        ACE inhibitors (enalapril, ramipril): block AT-I → AT-II conversion + prevent bradykinin degradation.
+        Side effects: cough (bradykinin), hyperkalemia, angioedema. Contraindicated in pregnancy.
+        ARBs (losartan, telmisartan): block AT1 receptors. No cough (bradykinin unaffected).
+        Aldosterone antagonists (spironolactone): block mineralocorticoid receptors → K+-sparing diuretic.
+    - title: "Clinical Correlation: Cushing Reflex"
+      text: >
+        ↑ICP → brainstem ischemia → massive sympathetic discharge → ↑BP (to perfuse brain).
+        Baroreceptors detect ↑BP → reflex bradycardia (vagal). Irregular breathing from brainstem compression.
+        Cushing triad (↑BP + ↓HR + irregular breathing) = sign of imminent brainstem herniation — neurosurgical emergency.
+
+  high_yield_points:
+    - "MAP = CO × TPR = DBP + 1/3(pulse pressure)"
+    - "Baroreceptors: carotid sinus (CN IX) and aortic arch (CN X) → NTS in medulla"
+    - "Baroreceptors ADAPT in chronic hypertension — reset to higher set point"
+    - "RAAS activation: ↓renal perfusion, ↓NaCl at macula densa, ↑sympathetic (β1)"
+    - "ACE converts Ang I→II AND degrades bradykinin — ACE inhibitor cough = ↑bradykinin"
+    - "Angiotensin II: vasoconstriction + aldosterone + ADH + thirst + Na+ reabsorption + remodeling"
+    - "Long-term BP regulation = KIDNEY (pressure natriuresis) — Guyton's concept"
+    - "Cushing triad: ↑BP + ↓HR + irregular breathing = ↑ICP emergency"
+    - "NO → cGMP → vasodilation; ANP/BNP → natriuresis + vasodilation + suppress RAAS"
+    - "Autoregulation fails below MAP ~60 mmHg in brain, kidney, heart"
+
+mcqs:
+  - question: "A patient with acute blood loss shows tachycardia, vasoconstriction, and increased renin secretion. The initial tachycardia is primarily mediated by:"
+    options:
+      - "RAAS activation"
+      - "ADH release"
+      - "Baroreceptor reflex"
+      - "Chemoreceptor activation"
+    answer: "Baroreceptor reflex"
+    explanation: >
+      Acute blood loss → ↓BP → ↓baroreceptor firing → ↓vagal tone + ↑sympathetic tone → tachycardia
+      (within seconds). RAAS takes minutes-hours. The baroreceptor reflex is the fastest compensatory mechanism.
+      📚 Guyton & Hall, 14th Ed, Ch.18 (p.220)
+    difficulty: 1
+
+  - question: "Which of the following is NOT an action of angiotensin II?"
+    options:
+      - "Vasoconstriction"
+      - "Aldosterone secretion from zona glomerulosa"
+      - "Inhibition of ADH release"
+      - "Stimulation of thirst"
+    answer: "Inhibition of ADH release"
+    explanation: >
+      Angiotensin II STIMULATES ADH release (not inhibits). Its actions include vasoconstriction, aldosterone
+      secretion, ADH release, thirst, Na+ reabsorption in PCT, and cardiac remodeling — all aimed at
+      increasing blood pressure and volume.
+      📚 Guyton & Hall, 14th Ed, Ch.19 (p.234)
+    difficulty: 1
+
+  - question: "The cough associated with ACE inhibitors is due to accumulation of:"
+    options:
+      - "Angiotensin II"
+      - "Aldosterone"
+      - "Bradykinin"
+      - "Substance P"
+    answer: "Bradykinin"
+    explanation: >
+      ACE (kininase II) normally degrades bradykinin. ACE inhibitors prevent this degradation → bradykinin
+      accumulates in airways → stimulates C fibers → cough. ARBs don't cause this because they block AT1
+      receptors without affecting bradykinin metabolism.
+      📚 Ganong's, 26th Ed, Ch.32
+    difficulty: 1
+
+  - question: "Cushing triad (hypertension, bradycardia, irregular breathing) is a sign of:"
+    options:
+      - "Cardiac tamponade"
+      - "Raised intracranial pressure"
+      - "Pulmonary embolism"
+      - "Aortic dissection"
+    answer: "Raised intracranial pressure"
+    explanation: >
+      Cushing triad results from brainstem ischemia due to raised ICP. The CNS ischemic response causes massive
+      sympathetic discharge → hypertension. Baroreceptor-mediated reflex bradycardia follows. Irregular breathing
+      indicates brainstem compression. This is a neurosurgical emergency.
+      📚 Guyton & Hall, 14th Ed, Ch.18
+    difficulty: 1
+
+  - question: "According to Guyton's concept, the ultimate long-term regulator of blood pressure is:"
+    options:
+      - "Baroreceptor reflex"
+      - "RAAS"
+      - "Renal pressure natriuresis"
+      - "Autonomic nervous system"
+    answer: "Renal pressure natriuresis"
+    explanation: >
+      Guyton demonstrated that the kidney's ability to excrete sodium and water in response to elevated pressure
+      (pressure natriuresis) is the only mechanism with infinite gain for long-term BP control. All forms of
+      chronic hypertension involve a rightward shift in the pressure-natriuresis curve.
+      📚 Guyton & Hall, 14th Ed, Ch.19 (p.239)
+    difficulty: 2

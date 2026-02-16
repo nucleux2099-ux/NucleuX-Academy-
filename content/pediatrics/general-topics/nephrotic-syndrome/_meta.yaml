@@ -1,0 +1,154 @@
+topic_id: nephrotic-syndrome-children
+name: Nephrotic Syndrome in Children
+description: Minimal change disease, diagnosis, steroid therapy, classification by steroid response, and complications
+high_yield: true
+nmc_codes:
+- code: PE24.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Nephrotic syndrome is characterized by massive proteinuria (>40 mg/m²/hr or urine protein/creatinine >2),
+  hypoalbuminemia (<2.5 g/dL), generalized edema, and hyperlipidemia. Minimal change disease (MCD) accounts
+  for 80% of childhood nephrotic syndrome and is exquisitely responsive to steroids. Classification based on
+  steroid response guides prognosis and further management.
+  📚 OP Ghai, 10th Ed, Ch.25 | 📚 Nelson's, 22nd Ed, Ch.545
+
+learning_objectives:
+  - Define nephrotic syndrome and its diagnostic criteria
+  - Describe the features of minimal change disease
+  - Outline the ISKDC steroid protocol
+  - Classify based on steroid response (SSNS, SDNS, SRNS, FRNS)
+  - List complications and their management
+
+content:
+  atoms:
+    - id: definition-types
+      title: "Definition & Types"
+      text: >
+        Diagnostic criteria: (1) Massive proteinuria >40 mg/m²/hr (3+ or 4+ on dipstick),
+        (2) Hypoalbuminemia <2.5 g/dL, (3) Edema, (4) Hyperlipidemia (hypercholesterolemia).
+        MCD (80%): peak age 2-6 years, male > female (2:1), selective proteinuria (albumin loss),
+        normal complement (C3), excellent steroid response (>90%), no hematuria/hypertension usually.
+        FSGS (7-10%): often steroid-resistant, progressive to CKD.
+        Membranous nephropathy: rare in children, associated with Hepatitis B, SLE.
+        Membranoproliferative GN: low C3, poor prognosis.
+        📚 OP Ghai, 10th Ed, Ch.25 (p.480-483)
+
+    - id: steroid-protocol
+      title: "ISKDC Steroid Protocol"
+      text: >
+        Initial episode: Prednisolone 2 mg/kg/day (max 60 mg) for 6 weeks →
+        1.5 mg/kg alternate days (max 40 mg) for 6 weeks → taper and stop.
+        Modified Sanjad protocol (longer initial therapy): 2 mg/kg/day × 6 weeks → 1.5 mg/kg AD × 6 weeks.
+        Response: >90% of MCD respond within 4 weeks (most within 2 weeks).
+        Remission: urine protein nil/trace for 3 consecutive days.
+        Relapse: proteinuria ≥2+ for 3 consecutive days or edema recurrence.
+        📚 OP Ghai, 10th Ed, Ch.25 (p.485-487)
+
+    - id: steroid-response
+      title: "Classification by Steroid Response"
+      text: >
+        Steroid-sensitive (SSNS): remission within 4 weeks of standard therapy. Best prognosis.
+        Steroid-resistant (SRNS): no remission after 4 weeks of daily prednisolone. Renal biopsy indicated.
+        Frequently relapsing (FRNS): ≥2 relapses in first 6 months or ≥4 relapses in any 12 months.
+        Steroid-dependent (SDNS): relapse while tapering or within 14 days of stopping steroids.
+        FRNS/SDNS steroid-sparing agents: levamisole, cyclophosphamide, mycophenolate, tacrolimus, rituximab.
+        SRNS: biopsy + calcineurin inhibitors (tacrolimus/cyclosporine) + ACE inhibitors.
+        📚 OP Ghai, 10th Ed, Ch.25 (p.487-490)
+
+    - id: complications
+      title: "Complications"
+      text: >
+        Infections: spontaneous bacterial peritonitis (SBP — S. pneumoniae most common, NOT E. coli),
+        cellulitis, sepsis. Due to urinary loss of immunoglobulins + complement + opsonins.
+        Thromboembolism: renal vein thrombosis, pulmonary embolism. Due to loss of antithrombin III,
+        protein C/S + hemoconcentration + hyperlipidemia.
+        Hypovolemic crisis: acute intravascular volume depletion → shock, especially with aggressive diuresis.
+        Steroid toxicity: Cushing's, growth retardation, osteoporosis, cataracts, hypertension.
+        Hyperlipidemia: increased hepatic lipoprotein synthesis due to hypoalbuminemia.
+        📚 Nelson's, 22nd Ed, Ch.545
+
+  high_yield_points:
+    - "Minimal change disease = 80% of childhood nephrotic syndrome"
+    - "MCD: normal complement (C3), selective proteinuria, >90% steroid response"
+    - "Diagnostic tetrad: proteinuria + hypoalbuminemia + edema + hyperlipidemia"
+    - "Initial steroid: Prednisolone 2 mg/kg/day × 6 weeks → 1.5 mg/kg AD × 6 weeks"
+    - "Steroid-resistant → RENAL BIOPSY indicated (most likely FSGS)"
+    - "SBP in nephrotic syndrome: S. pneumoniae (NOT E. coli as in cirrhosis)"
+    - "Thromboembolism due to loss of antithrombin III in urine"
+    - "Frequently relapsing: ≥2 relapses in 6 months or ≥4 in 12 months"
+    - "Steroid-sparing: levamisole (first), cyclophosphamide, MMF, tacrolimus, rituximab"
+    - "Renal biopsy NOT needed for typical first episode of nephrotic syndrome in 1-8 yr age group"
+
+mcqs:
+  - question: "The most common histological type of nephrotic syndrome in children is:"
+    options:
+      - "Focal segmental glomerulosclerosis"
+      - "Membranous nephropathy"
+      - "Minimal change disease"
+      - "Membranoproliferative GN"
+    answer: "Minimal change disease"
+    explanation: >
+      MCD accounts for ~80% of childhood nephrotic syndrome. It has the best prognosis with
+      >90% response to steroids. Light microscopy is normal; electron microscopy shows fusion
+      of podocyte foot processes.
+      📚 OP Ghai, 10th Ed, Ch.25 (p.481)
+    difficulty: 1
+
+  - question: "Renal biopsy in childhood nephrotic syndrome is indicated for:"
+    options:
+      - "First episode in a 4-year-old"
+      - "Steroid-resistant nephrotic syndrome"
+      - "First relapse"
+      - "Frequently relapsing nephrotic syndrome"
+    answer: "Steroid-resistant nephrotic syndrome"
+    explanation: >
+      Renal biopsy is indicated for: steroid resistance (most important), age <1 year or >12 years,
+      low C3, persistent hypertension/hematuria, renal failure. First episode in typical age (1-8 years)
+      does not require biopsy — empirical steroid therapy is started.
+      📚 OP Ghai, 10th Ed, Ch.25 (p.488)
+    difficulty: 1
+
+  - question: "The most common organism causing spontaneous bacterial peritonitis in nephrotic syndrome is:"
+    options:
+      - "Escherichia coli"
+      - "Streptococcus pneumoniae"
+      - "Staphylococcus aureus"
+      - "Klebsiella pneumoniae"
+    answer: "Streptococcus pneumoniae"
+    explanation: >
+      In nephrotic syndrome, SBP is most commonly caused by S. pneumoniae (unlike cirrhotic SBP
+      where E. coli predominates). This is due to urinary loss of complement and opsonins that
+      normally protect against encapsulated organisms.
+      📚 OP Ghai, 10th Ed, Ch.25 (p.490)
+    difficulty: 2
+
+  - question: "Frequently relapsing nephrotic syndrome (FRNS) is defined as:"
+    options:
+      - "≥1 relapse in 6 months"
+      - "≥2 relapses in first 6 months or ≥4 in any 12 months"
+      - "Relapse while on steroids"
+      - "No response to 4 weeks of steroids"
+    answer: "≥2 relapses in first 6 months or ≥4 in any 12 months"
+    explanation: >
+      FRNS: ≥2 relapses in the first 6 months of disease or ≥4 relapses in any 12-month period.
+      SDNS: relapse during taper or within 14 days of stopping steroids. SRNS: no remission after
+      4 weeks of standard daily prednisolone.
+      📚 OP Ghai, 10th Ed, Ch.25 (p.487)
+    difficulty: 2
+
+  - question: "Thromboembolism in nephrotic syndrome is primarily due to urinary loss of:"
+    options:
+      - "Albumin"
+      - "IgG"
+      - "Antithrombin III"
+      - "Complement C3"
+    answer: "Antithrombin III"
+    explanation: >
+      Antithrombin III is a natural anticoagulant that is lost in urine along with other proteins in
+      nephrotic syndrome. Its loss, combined with hemoconcentration and hyperlipidemia, creates a
+      hypercoagulable state predisposing to renal vein thrombosis and PE.
+      📚 Nelson's, 22nd Ed, Ch.545
+    difficulty: 2

@@ -1,85 +1,88 @@
 # Heart Failure — Exam Prep
 
-## NMC Competencies
-**[UG]** IM3.1-IM3.3, IM3.5-IM3.14 (K/KH) | **[PG]** IM3.4 (SH)
+## High Yield Points
+
+- ★ **S3 gallop** = most specific sign of systolic HF (volume overload)
+- ★ **BNP <100 pg/mL** essentially RULES OUT heart failure (high NPV)
+- ★ **Echocardiography** is the gold standard investigation for HF
+- ★ **ARNI > ACEi** in HFrEF (PARADIGM-HF: sacubitril/valsartan ↓ CV death by 20%)
+- ★ Only 3 beta-blockers proven in HF: **carvedilol, metoprolol succinate, bisoprolol**
+- ★ **SGLT2 inhibitors** benefit ALL EF categories — newest pillar of HF therapy
+- ★ **Digoxin** reduces hospitalizations but NOT mortality; toxicity ↑ with hypokalemia
+- ★ **CRT indication:** EF ≤35% + LBBB + QRS ≥150ms
+- ★ **Avoid in HF:** Verapamil, diltiazem, NSAIDs, pioglitazone, doxorubicin
+- ★ **Hyponatremia** in HF = poor prognosis (dilutional, from ADH excess)
+
+## MCQs
+
+### MCQ 1
+A 60-year-old male with HFrEF (EF 30%) is on enalapril, carvedilol, and spironolactone. His BP is 110/70, HR 68. Which additional medication has proven mortality benefit?
+
+a) Digoxin
+b) Furosemide
+c) Dapagliflozin
+d) Ivabradine
+
+**Answer: c) Dapagliflozin**
+
+*SGLT2 inhibitors are the 4th pillar of HFrEF therapy (DAPA-HF trial). Digoxin and furosemide do NOT reduce mortality. Ivabradine is for HR ≥70 on max beta-blocker. 📚 Harrison's, 22nd Ed, Ch. 257*
 
 ---
 
-## 🧠 Mnemonics
+### MCQ 2
+Which is the MOST common cause of death in HFrEF patients?
 
-### Framingham Major Criteria: **PND Can Cause A Stuffy Heart**
-- **P** — PND
-- **N** — Neck vein distension
-- **D** — (weight loss with Diuretics >4.5kg)
-- **C** — Cardiomegaly
-- **C** — Crepitations (rales)
-- **A** — Acute pulmonary edema
-- **S** — S3 gallop
-- **H** — Hepatojugular reflux
+a) Acute MI
+b) Ventricular arrhythmia / Sudden cardiac death
+c) Progressive pump failure
+d) Pulmonary embolism
 
-### HFrEF Survival Drugs: **BAMS**
-- **B** — Beta-blocker
-- **A** — ACE-I/ARB/ARNI
-- **M** — MRA (spironolactone)
-- **S** — SGLT2 inhibitor
+**Answer: b) Ventricular arrhythmia / Sudden cardiac death**
 
-### CXR in HF: **ABCDE**
-- **A** — Alveolar edema (bat-wing)
-- **B** — Kerley **B** lines
-- **C** — Cardiomegaly
-- **D** — Dilated upper lobe vessels (cephalization)
-- **E** — Effusion (pleural)
+*SCD from VT/VF accounts for ~50% of HF deaths (especially NYHA II-III). This is why ICDs are indicated for primary prevention when EF ≤35%. In NYHA IV, pump failure predominates. 📚 Harrison's, 22nd Ed, Ch. 257*
 
-## ⚡ High-Yield Facts
+---
 
-1. **Most common cause of HF** = CAD (ischemic cardiomyopathy)
-2. **Most common cause of right HF** = Left heart failure
-3. **S3 gallop** = Volume overload (systolic HF). **S4 gallop** = Stiff ventricle (diastolic HF, HTN)
-4. **BNP <100** essentially rules out HF (high negative predictive value)
-5. **Beta-blockers in HF**: Only Carvedilol, Bisoprolol, Metoprolol succinate — NOT atenolol
-6. **Start beta-blocker when euvolemic** — Never initiate during acute decompensation
-7. **ARNI (Sacubitril/Valsartan)** > ACE-I in reducing mortality (PARADIGM-HF trial)
-8. **SGLT2 inhibitors** benefit HF patients even WITHOUT diabetes (DAPA-HF, EMPEROR-Reduced)
-9. **Digoxin** — Reduces hospitalization but NOT mortality; narrow therapeutic index
-10. **Spironolactone** side effect = gynecomastia → switch to Eplerenone
+### MCQ 3
+A patient with HF presents with serum Na 125 mEq/L and is not improving with loop diuretics. The pathophysiology of this hyponatremia is:
 
-## 📋 HFrEF vs HFpEF
+a) Renal sodium wasting
+b) Excess ADH secretion (dilutional)
+c) Adrenal insufficiency
+d) Thiazide diuretic use
 
-| Feature | HFrEF | HFpEF |
-|---|---|---|
-| EF | ≤40% | ≥50% |
-| Mechanism | Systolic dysfunction | Diastolic dysfunction |
-| Common cause | Post-MI, DCM | HTN, HCM, aging |
-| S3 | Present | Absent |
-| S4 | Absent | Present |
-| Treatment | BAMS + diuretics | Diuretics + treat cause; SGLT2i |
+**Answer: b) Excess ADH secretion (dilutional)**
 
-## 🔥 Exam-Style Questions
+*In HF, reduced cardiac output triggers non-osmotic ADH release → water retention → dilutional hyponatremia. This is a hypervolemic hyponatremia. Tolvaptan (V2 receptor antagonist) can be used. 📚 Harrison's, 22nd Ed, Ch. 257*
 
-### Q1
-A 65-year-old with EF 30% is on ACE-I and diuretics. What should be added to improve survival?
+---
 
-> **Beta-blocker (bisoprolol/carvedilol) + MRA (spironolactone) + SGLT2 inhibitor**. All four pillars should be initiated.
+### MCQ 4
+Which of the following is an indication for cardiac resynchronization therapy (CRT)?
 
-### Q2
-Which drug reduces HF hospitalization but NOT mortality?
+a) EF 45%, RBBB, QRS 140ms
+b) EF 30%, LBBB, QRS 160ms, NYHA III
+c) EF 50%, normal QRS, NYHA II
+d) EF 40%, LBBB, QRS 110ms
 
-> **Digoxin** (DIG trial)
+**Answer: b) EF 30%, LBBB, QRS 160ms, NYHA III**
 
-### Q3
-A patient on spironolactone develops painful gynecomastia. What is the alternative?
+*CRT criteria: EF ≤35% + LBBB + QRS ≥150ms + NYHA II-IV on optimal medical therapy. LBBB responds better than RBBB. QRS >150ms has strongest evidence. 📚 Harrison's, 22nd Ed, Ch. 257*
 
-> **Eplerenone** — selective MRA without anti-androgen effects.
+---
 
-### Q4
-What is the indication for CRT in heart failure?
+### MCQ 5
+All of the following medications improve survival in HFrEF EXCEPT:
 
-> EF ≤35% + **LBBB** + **QRS ≥150ms** + NYHA II-IV despite optimal medical therapy.
+a) Carvedilol
+b) Spironolactone
+c) Furosemide
+d) Sacubitril/Valsartan
 
-## 🎯 Clinical Pearls
+**Answer: c) Furosemide**
 
-> [!tip] **Acute HF: Wet/Warm vs Wet/Cold**
-> Classify by perfusion and congestion. **Wet/warm** (congested, adequate perfusion) → diuretics + vasodilators. **Wet/cold** (congested, poor perfusion) → inotropes ± vasopressors.
+*Furosemide is essential for symptom relief (congestion) but has NEVER been shown to reduce mortality. All others — beta-blockers, MRAs, and ARNI — have proven mortality benefits in landmark trials. 📚 Harrison's, 22nd Ed, Ch. 257*
 
-> [!warning] **Never Stop Beta-Blockers Abruptly**
-> In chronic HF, if patient decompensates, **halve the dose** rather than stopping — abrupt withdrawal increases mortality.
+---
+
+> 📚 *NucleuX Academy — Cardiology Exam Prep*
