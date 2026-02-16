@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM26.20"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "cad-factors-relationship-risk"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.20"
       text: "Inherited and Modifiable Risk Factors — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "cad-factors-relationship-risk"
       reason: "Clinically related"

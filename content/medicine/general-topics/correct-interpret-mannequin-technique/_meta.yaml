@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM26.14"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "establishes-examination-perform-systematic"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.14"
       text: "Clinical Skills — Mannequin Techniques — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "establishes-examination-perform-systematic"
       reason: "Clinically related"

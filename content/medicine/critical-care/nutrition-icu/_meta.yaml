@@ -6,8 +6,7 @@ nmc_codes:
   - "IM24.21"
 prerequisites:
   - "fluid-resuscitation"
-related_topics:
-  []
+related_topics: []
 enrichment:
   nmcCodes:
     - code: "IM24.21"
@@ -16,5 +15,4 @@ enrichment:
   prerequisite_details:
     - slug: "fluid-resuscitation"
       reason: "Foundation knowledge"
-  related_details:
-  []
+  related_details: []

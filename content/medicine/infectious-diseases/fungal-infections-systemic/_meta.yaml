@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM8.11"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "opportunistic-infections-hiv"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM8.11"
       text: "Systemic Fungal Infections — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "opportunistic-infections-hiv"
       reason: "Clinically related"

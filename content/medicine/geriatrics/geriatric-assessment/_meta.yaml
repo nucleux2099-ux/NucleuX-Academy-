@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM23.3"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "delirium-geriatric"
   - "falls-in-elderly"
@@ -14,8 +13,7 @@ enrichment:
     - code: "IM23.3"
       text: "Comprehensive Geriatric Assessment — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "delirium-geriatric"
       reason: "Clinically related"

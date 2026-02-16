@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM22.2"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "alcohol-use-disorder"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM22.2"
       text: "Cannabis Use Disorder — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "alcohol-use-disorder"
       reason: "Clinically related"

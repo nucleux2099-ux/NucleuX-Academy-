@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM26.5"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "area-poisonous-snakes-your"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.5"
       text: "Plant Poisons — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "area-poisonous-snakes-your"
       reason: "Clinically related"

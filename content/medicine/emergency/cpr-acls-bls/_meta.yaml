@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM24.6"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "primary-survey-atls"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM24.6"
       text: "CPR / ACLS / BLS — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "primary-survey-atls"
       reason: "Clinically related"

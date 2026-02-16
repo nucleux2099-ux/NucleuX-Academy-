@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM5.14"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "alcoholic-liver-disease"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM5.14"
       text: "Chronic Pancreatitis — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "alcoholic-liver-disease"
       reason: "Clinically related"

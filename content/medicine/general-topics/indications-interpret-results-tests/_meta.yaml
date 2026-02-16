@@ -6,8 +6,7 @@ nmc_codes:
   - "IM26.23"
 prerequisites:
   - "diagnostic-work"
-related_topics:
-  []
+related_topics: []
 enrichment:
   nmcCodes:
     - code: "IM26.23"
@@ -16,5 +15,4 @@ enrichment:
   prerequisite_details:
     - slug: "diagnostic-work"
       reason: "Foundation knowledge"
-  related_details:
-  []
+  related_details: []

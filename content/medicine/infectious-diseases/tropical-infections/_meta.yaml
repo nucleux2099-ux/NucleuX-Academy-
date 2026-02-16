@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM8.2"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "malaria"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM8.2"
       text: "Tropical Infections — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "malaria"
       reason: "Clinically related"

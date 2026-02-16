@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM8.13"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "catheter-related-infections"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM8.13"
       text: "Ventilator-Associated Pneumonia — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "catheter-related-infections"
       reason: "Clinically related"

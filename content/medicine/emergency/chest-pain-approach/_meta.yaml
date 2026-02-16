@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM24.4"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "acute-coronary-syndrome-em"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM24.4"
       text: "Approach to Chest Pain — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "acute-coronary-syndrome-em"
       reason: "Clinically related"

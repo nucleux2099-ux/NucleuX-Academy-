@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM22.7"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "bipolar-disorder"
   - "delusional-disorder"
@@ -14,8 +13,7 @@ enrichment:
     - code: "IM22.7"
       text: "Schizoaffective Disorder — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "bipolar-disorder"
       reason: "Clinically related"

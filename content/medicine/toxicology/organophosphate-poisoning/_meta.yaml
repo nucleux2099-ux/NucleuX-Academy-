@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM24.11"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "paracetamol-overdose"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM24.11"
       text: "Organophosphate Poisoning — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "paracetamol-overdose"
       reason: "Clinically related"

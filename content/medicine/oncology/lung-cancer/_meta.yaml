@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM26.30"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "chemotherapy-principles"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.30"
       text: "Lung Cancer — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "chemotherapy-principles"
       reason: "Clinically related"

@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM19.1"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "lupus-skin"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM19.1"
       text: "Dermatomyositis — Skin Manifestations — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "lupus-skin"
       reason: "Clinically related"

@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM24.13"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "nutrition-icu"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM24.13"
       text: "Fluid Resuscitation — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "nutrition-icu"
       reason: "Clinically related"

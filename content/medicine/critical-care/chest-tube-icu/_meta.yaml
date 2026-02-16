@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM24.16"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "non-invasive-ventilation"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM24.16"
       text: "Chest Tube in ICU — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "non-invasive-ventilation"
       reason: "Clinically related"

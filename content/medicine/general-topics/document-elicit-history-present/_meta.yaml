@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM26.17"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "establishes-examination-perform-systematic"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.17"
       text: "History Taking and Documentation — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "establishes-examination-perform-systematic"
       reason: "Clinically related"

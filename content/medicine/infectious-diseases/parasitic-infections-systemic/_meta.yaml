@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM8.12"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "malaria"
   - "tropical-infections"
@@ -14,8 +13,7 @@ enrichment:
     - code: "IM8.12"
       text: "Systemic Parasitic Infections — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "malaria"
       reason: "Clinically related"

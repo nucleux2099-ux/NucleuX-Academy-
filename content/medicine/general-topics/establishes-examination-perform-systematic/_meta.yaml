@@ -6,8 +6,7 @@ nmc_codes:
   - "IM26.19"
 prerequisites:
   - "document-elicit-history-present"
-related_topics:
-  []
+related_topics: []
 enrichment:
   nmcCodes:
     - code: "IM26.19"
@@ -16,5 +15,4 @@ enrichment:
   prerequisite_details:
     - slug: "document-elicit-history-present"
       reason: "Foundation knowledge"
-  related_details:
-  []
+  related_details: []

@@ -4,16 +4,12 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM24.19"
-prerequisites:
-  []
-related_topics:
-  []
+prerequisites: []
+related_topics: []
 enrichment:
   nmcCodes:
     - code: "IM24.19"
       text: "Lumbar Puncture — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
-  related_details:
-  []
+  prerequisite_details: []
+  related_details: []

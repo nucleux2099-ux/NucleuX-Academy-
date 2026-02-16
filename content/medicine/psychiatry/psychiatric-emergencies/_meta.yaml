@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM22.6"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "bipolar-disorder"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM22.6"
       text: "Psychiatric Emergencies — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "bipolar-disorder"
       reason: "Clinically related"

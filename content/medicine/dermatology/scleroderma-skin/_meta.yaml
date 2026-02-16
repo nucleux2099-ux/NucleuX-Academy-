@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM19.3"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "lupus-skin"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM19.3"
       text: "Scleroderma — Skin Manifestations — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "lupus-skin"
       reason: "Clinically related"

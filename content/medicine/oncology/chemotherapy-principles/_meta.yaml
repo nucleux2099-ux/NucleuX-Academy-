@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM26.36"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "tumor-markers"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.36"
       text: "Chemotherapy Principles — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "tumor-markers"
       reason: "Clinically related"

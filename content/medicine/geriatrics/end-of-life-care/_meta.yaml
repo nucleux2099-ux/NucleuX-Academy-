@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM23.6"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "pressure-ulcers"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM23.6"
       text: "End-of-Life Care — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "pressure-ulcers"
       reason: "Clinically related"

@@ -4,8 +4,7 @@ depth: "UG"
 highYield: false
 nmc_codes:
   - "IM26.7"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "aetiology"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.7"
       text: "Biochemical and Physiologic Basis of Disease — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "aetiology"
       reason: "Clinically related"

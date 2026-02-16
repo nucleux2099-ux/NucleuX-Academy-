@@ -6,8 +6,7 @@ nmc_codes:
   - "IM26.12"
 prerequisites:
   - "choose-diagnose-diagnostic-interpret"
-related_topics:
-  []
+related_topics: []
 enrichment:
   nmcCodes:
     - code: "IM26.12"
@@ -16,5 +15,4 @@ enrichment:
   prerequisite_details:
     - slug: "choose-diagnose-diagnostic-interpret"
       reason: "Foundation knowledge"
-  related_details:
-  []
+  related_details: []

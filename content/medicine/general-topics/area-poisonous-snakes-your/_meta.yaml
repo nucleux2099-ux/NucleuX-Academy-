@@ -4,8 +4,7 @@ depth: "UG"
 highYield: true
 nmc_codes:
   - "IM26.6"
-prerequisites:
-  []
+prerequisites: []
 related_topics:
   - "area-plant-poisons-seen"
 enrichment:
@@ -13,8 +12,7 @@ enrichment:
     - code: "IM26.6"
       text: "Snake Bite Management — NMC competency"
       domain: "KH"
-  prerequisite_details:
-  []
+  prerequisite_details: []
   related_details:
     - slug: "area-plant-poisons-seen"
       reason: "Clinically related"
