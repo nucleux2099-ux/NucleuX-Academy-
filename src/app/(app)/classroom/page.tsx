@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Play, Clock, BookOpen, CheckCircle2, Filter, Search, User, BarChart3, PenTool } from 'lucide-react';
+import { Play, Clock, BookOpen, CheckCircle2, Filter, Search, User, BarChart3, PenTool, Brain, Mic } from 'lucide-react';
 import Link from 'next/link';
 
 const ROOM = '#6BA8C9';
@@ -28,6 +28,58 @@ export default function ClassroomPage() {
 
   return (
     <div className="min-h-screen p-6 space-y-6">
+      {/* ATOM AI Classroom Tools */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Link href="/classroom/mindmap">
+          <Card className="bg-gradient-to-br from-teal-900/40 to-[#253545] border-teal-500/20 rounded-xl p-5 hover:border-teal-500/40 transition-all cursor-pointer group">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 rounded-lg bg-teal-500/20"><Brain size={20} className="text-teal-400" /></div>
+              <div>
+                <h3 className="font-semibold text-[#E8E0D5] group-hover:text-teal-400 transition-colors">ATOM Mind Map</h3>
+                <p className="text-xs text-[#A0B0BC]">AI draws visual mind maps as it teaches</p>
+              </div>
+            </div>
+            <div className="flex gap-2 mt-3">
+              <Badge className="text-[10px] bg-teal-500/10 text-teal-400 border-teal-500/20">Teach Mode</Badge>
+              <Badge className="text-[10px] bg-amber-500/10 text-amber-400 border-amber-500/20">Quiz Mode</Badge>
+              <Badge className="text-[10px] bg-purple-500/10 text-purple-400 border-purple-500/20">Viva Mode</Badge>
+            </div>
+          </Card>
+        </Link>
+
+        <Link href="/classroom/canvas">
+          <Card className="bg-gradient-to-br from-blue-900/40 to-[#253545] border-blue-500/20 rounded-xl p-5 hover:border-blue-500/40 transition-all cursor-pointer group">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 rounded-lg bg-blue-500/20"><PenTool size={20} className="text-blue-400" /></div>
+              <div>
+                <h3 className="font-semibold text-[#E8E0D5] group-hover:text-blue-400 transition-colors">ATOM Canvas</h3>
+                <p className="text-xs text-[#A0B0BC]">Draw diagrams, ATOM analyzes your work</p>
+              </div>
+            </div>
+            <div className="flex gap-2 mt-3">
+              <Badge className="text-[10px] bg-blue-500/10 text-blue-400 border-blue-500/20">Free Draw</Badge>
+              <Badge className="text-[10px] bg-amber-500/10 text-amber-400 border-amber-500/20">Templates</Badge>
+            </div>
+          </Card>
+        </Link>
+
+        <Link href="/classroom/live-ai">
+          <Card className="bg-gradient-to-br from-purple-900/40 to-[#253545] border-purple-500/20 rounded-xl p-5 hover:border-purple-500/40 transition-all cursor-pointer group">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="p-2 rounded-lg bg-purple-500/20"><Mic size={20} className="text-purple-400" /></div>
+              <div>
+                <h3 className="font-semibold text-[#E8E0D5] group-hover:text-purple-400 transition-colors">Live AI Class</h3>
+                <p className="text-xs text-[#A0B0BC]">Voice-powered teaching in Telugu, Hindi, English</p>
+              </div>
+            </div>
+            <div className="flex gap-2 mt-3">
+              <Badge className="text-[10px] bg-purple-500/10 text-purple-400 border-purple-500/20">Voice</Badge>
+              <Badge className="text-[10px] bg-green-500/10 text-green-400 border-green-500/20">Bilingual</Badge>
+            </div>
+          </Card>
+        </Link>
+      </div>
+
       {/* Stats Row */}
       <div className="flex items-center gap-6 text-sm text-[#A0B0BC]">
         <div className="flex items-center gap-2"><BookOpen size={16} style={{ color: ROOM }} /> <span><strong className="text-[#E8E0D5]">47</strong> Lectures Available</span></div>

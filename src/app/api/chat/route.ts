@@ -174,7 +174,7 @@ You will receive relevant textbook content as context. Ground your answers in th
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages, context = 'surgery', deskSources = [] } = await request.json()
+    const { messages, context = 'surgery', deskSources = [], systemOverride } = await request.json()
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return new Response(JSON.stringify({ error: 'Messages required' }), { 
@@ -185,13 +185,19 @@ export async function POST(request: NextRequest) {
 
     // Get the latest user message for content retrieval
     const lastUserMessage = [...messages].reverse().find((m: { role: string }) => m.role === 'user')
-    const query = lastUserMessage?.content || ''
+    const rawContent = lastUserMessage?.content || ''
+    // Handle multimodal content (array of blocks) — extract text for search
+    const query = typeof rawContent === 'string'
+      ? rawContent
+      : Array.isArray(rawContent)
+        ? rawContent.filter((b: any) => b.type === 'text').map((b: any) => b.text).join(' ')
+        : ''
 
     // Find relevant content from the library
     const relevantContent = await findRelevantContent(query, context)
 
     // Build system prompt with context
-    let systemPrompt = ATOM_SYSTEM_PROMPT
+    let systemPrompt = systemOverride || ATOM_SYSTEM_PROMPT
     
     // Add desk sources context if provided
     if (deskSources && deskSources.length > 0) {
