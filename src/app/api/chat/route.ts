@@ -215,11 +215,33 @@ export async function POST(request: NextRequest) {
 
     const client = new Anthropic({ apiKey })
 
-    // Format messages for Anthropic
-    const formattedMessages = messages.map((m: { role: string; content: string }) => ({
-      role: m.role as 'user' | 'assistant',
-      content: m.content,
-    }))
+    // Format messages for Anthropic (supports text and vision)
+    const formattedMessages = messages.map((m: { role: string; content: any }) => {
+      // If content is an array (multimodal — text + image), format for Claude Vision
+      if (Array.isArray(m.content)) {
+        const blocks: any[] = []
+        for (const part of m.content) {
+          if (part.type === 'text') {
+            blocks.push({ type: 'text', text: part.text })
+          } else if (part.type === 'image' && part.source) {
+            blocks.push({
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: part.source.media_type || 'image/png',
+                data: part.source.data,
+              },
+            })
+          }
+        }
+        return { role: m.role as 'user' | 'assistant', content: blocks }
+      }
+      // Plain text message
+      return {
+        role: m.role as 'user' | 'assistant',
+        content: m.content,
+      }
+    })
 
     // Stream the response
     const stream = await client.messages.stream({

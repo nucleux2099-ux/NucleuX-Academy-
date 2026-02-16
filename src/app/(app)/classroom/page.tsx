@@ -5,7 +5,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Play, Clock, BookOpen, CheckCircle2, Filter, Search, User, BarChart3 } from 'lucide-react';
+import { Play, Clock, BookOpen, CheckCircle2, Filter, Search, User, BarChart3, PenTool } from 'lucide-react';
+import Link from 'next/link';
 
 const ROOM = '#6BA8C9';
 
@@ -84,8 +85,23 @@ export default function ClassroomPage() {
           </div>
         </div>
 
-        {/* Playlist Sidebar */}
+        {/* Sidebar */}
         <div className="space-y-3">
+          {/* ATOM Canvas Card */}
+          <Link href="/classroom/canvas">
+            <Card className="p-4 rounded-xl bg-gradient-to-br from-teal-500/10 to-[#253545] border-teal-500/20 hover:border-teal-500/40 transition-all cursor-pointer group">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-teal-500/20 flex items-center justify-center group-hover:bg-teal-500/30 transition-colors">
+                  <PenTool size={20} className="text-teal-400" />
+                </div>
+                <div>
+                  <h3 className="text-[#E8E0D5] font-semibold text-sm">ATOM Canvas</h3>
+                  <p className="text-[#A0B0BC] text-xs">Draw diagrams. Get AI feedback.</p>
+                </div>
+              </div>
+            </Card>
+          </Link>
+
           <div className="flex items-center justify-between">
             <h3 className="text-[#E8E0D5] font-semibold flex items-center gap-2"><BarChart3 size={16} style={{ color: ROOM }} /> Playlist</h3>
             <span className="text-xs text-[#A0B0BC]">{filtered.length} lectures</span>
