@@ -1,26 +1,32 @@
-title: Diabetes Mellitus Type 2
+title: "Diabetes Mellitus Type 2"
 slug: diabetes-mellitus-type-2
-depth: UG
+depth: "UG"
 highYield: true
 nmc_codes:
-  - IM11.1
-  - IM11.11
-  - IM11.16
-prerequisites: []
-related_topics: []
+  - "IM11.1"
+  - "IM11.11"
+  - "IM11.16"
+prerequisites:
+  - "diabetes-mellitus"
+  - "metabolic-syndrome"
+related_topics:
+  - "obesity-medical"
+  - "insulin-therapy"
+  - "diabetic-nephropathy"
 enrichment:
   nmcCodes:
-    - code: IM11.1
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
-        type 2
-      domain: KH
-    - code: IM11.11
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
-        type 2
-      domain: KH
-    - code: IM11.16
-      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of diabetes mellitus
-        type 2
-      domain: KH
-  prerequisite_details: []
-  related_details: []
+    - code: "IM11.1"
+      text: "Describe the aetiology, pathophysiology and management of Type 2 DM"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "diabetes-mellitus"
+      reason: "General DM classification and diagnostic criteria"
+    - slug: "metabolic-syndrome"
+      reason: "T2DM is a key component of metabolic syndrome"
+  related_details:
+    - slug: "obesity-medical"
+      reason: "Obesity drives insulin resistance in T2DM"
+      relationship: "clinical"
+    - slug: "insulin-therapy"
+      reason: "Many T2DM patients eventually require insulin"
+      relationship: "clinical"
