@@ -14,13 +14,14 @@ export type SSCurriculum = {
   description: string;
   hasRevised: boolean;
   librarySubject?: string;
+  libraryPath?: string;    // Optional deep link (e.g. /library/surgery/urology)
   parentDegree?: string;   // e.g., "MD General Medicine" → DM Cardiology
   tags: string[];
 };
 
 export const SS_CURRICULA: SSCurriculum[] = [
   // ═══════════════════════════════════════
-  // DM (Doctorate of Medicine) — 18 curricula
+  // DM (Doctorate of Medicine) — 17 curricula
   // ═══════════════════════════════════════
   {
     id: "dm-clinical-immunology-rheumatology",
@@ -30,6 +31,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Clinical Immunology & Rheumatology",
     description: "Autoimmune diseases, immunodeficiency, rheumatic disorders",
     hasRevised: false,
+    librarySubject: "medicine",
     parentDegree: "MD General Medicine",
     tags: ["medical-ss"],
   },
@@ -53,6 +55,8 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Critical Care Medicine",
     description: "ICU management, ventilation, hemodynamics, sepsis, organ support",
     hasRevised: false,
+    librarySubject: "medicine",
+    libraryPath: "/library/medicine/critical-care",
     parentDegree: "MD General Medicine / Anesthesia",
     tags: ["medical-ss"],
   },
@@ -64,6 +68,8 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Endocrinology",
     description: "Diabetes, thyroid, adrenal, pituitary, metabolic bone disease",
     hasRevised: false,
+    librarySubject: "medicine",
+    libraryPath: "/library/medicine/endocrinology",
     parentDegree: "MD General Medicine",
     tags: ["medical-ss"],
   },
@@ -75,6 +81,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Geriatric Mental Health",
     description: "Dementia, depression in elderly, psychogeriatrics",
     hasRevised: false,
+    librarySubject: "psychiatry",
     parentDegree: "MD Psychiatry",
     tags: ["medical-ss"],
   },
@@ -99,6 +106,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "Tropical infections, HIV, antimicrobial stewardship, travel medicine",
     hasRevised: true,
     librarySubject: "microbiology",
+    libraryPath: "/library/medicine/infectious-diseases",
     parentDegree: "MD General Medicine / Microbiology",
     tags: ["medical-ss"],
   },
@@ -110,6 +118,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Medical Genetics",
     description: "Genetic counseling, chromosomal disorders, molecular diagnostics",
     hasRevised: false,
+    librarySubject: "pediatrics",
     parentDegree: "MD Pediatrics / General Medicine",
     tags: ["medical-ss"],
   },
@@ -122,6 +131,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "Newborn care, NICU, prematurity, neonatal ventilation",
     hasRevised: false,
     librarySubject: "pediatrics",
+    libraryPath: "/library/pediatrics",
     parentDegree: "MD Pediatrics",
     tags: ["medical-ss"],
   },
@@ -133,6 +143,8 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Neuroanesthesia",
     description: "Anesthesia for neurosurgery, neuro-critical care, neurophysiology monitoring",
     hasRevised: false,
+    librarySubject: "anesthesia",
+    libraryPath: "/library/anesthesia",
     parentDegree: "MD Anesthesia",
     tags: ["medical-ss"],
   },
@@ -144,6 +156,8 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM Neuroradiology",
     description: "Brain & spine imaging, neuro-interventional procedures",
     hasRevised: false,
+    librarySubject: "radiology",
+    libraryPath: "/library/radiology",
     parentDegree: "MD Radiodiagnosis",
     tags: ["medical-ss"],
   },
@@ -155,6 +169,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "DM OTACCC",
     description: "Anesthesia for cancer surgery, pain management in oncology",
     hasRevised: false,
+    librarySubject: "anesthesia",
     parentDegree: "MD Anesthesia",
     tags: ["medical-ss"],
   },
@@ -231,6 +246,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "Thyroid, parathyroid, adrenal, pancreatic endocrine surgery",
     hasRevised: false,
     librarySubject: "surgery",
+    libraryPath: "/library/surgery/endocrine",
     parentDegree: "MS General Surgery",
     tags: ["surgical-ss"],
   },
@@ -267,6 +283,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "Liver resection, pancreatic surgery, biliary reconstruction, transplant",
     hasRevised: false,
     librarySubject: "surgery",
+    libraryPath: "/library/surgery/hepatobiliary",
     parentDegree: "MS General Surgery",
     tags: ["surgical-ss"],
   },
@@ -290,6 +307,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "MCh Plastic & Reconstructive Surgery",
     description: "Burns, flaps, microsurgery, craniofacial, aesthetic surgery",
     hasRevised: false,
+    librarySubject: "surgery",
     parentDegree: "MS General Surgery",
     tags: ["surgical-ss"],
   },
@@ -314,6 +332,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "GI oncology, bariatric surgery, advanced laparoscopy, transplant",
     hasRevised: false,
     librarySubject: "surgery",
+    libraryPath: "/library/surgery/hepatobiliary",
     parentDegree: "MS General Surgery",
     tags: ["surgical-ss"],
   },
@@ -326,6 +345,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "Endourology, uro-oncology, renal transplant, reconstructive urology. See /cbme/surgery for UG→PG→SS progression.",
     hasRevised: false,
     librarySubject: "surgery",
+    libraryPath: "/library/surgery/urology",
     parentDegree: "MS General Surgery",
     tags: ["surgical-ss"],
   },
@@ -338,12 +358,13 @@ export const SS_CURRICULA: SSCurriculum[] = [
     description: "Aortic surgery, endovascular procedures, venous surgery, dialysis access. See /cbme/surgery for UG→PG→SS progression.",
     hasRevised: false,
     librarySubject: "surgery",
+    libraryPath: "/library/surgery/vascular",
     parentDegree: "MS General Surgery",
     tags: ["surgical-ss"],
   },
 
   // ═══════════════════════════════════════
-  // Diploma — 21 curricula
+  // Diploma — 19 curricula
   // ═══════════════════════════════════════
   {
     id: "dip-allergy-immunology",
@@ -353,6 +374,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Allergy & Clinical Immunology",
     description: "Allergic disorders, immunotherapy, diagnostic immunology",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["diploma"],
   },
   {
@@ -363,6 +385,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Anesthesia (DA)",
     description: "Basic anesthesia, regional blocks, perioperative care",
     hasRevised: false,
+    librarySubject: "anesthesia",
     tags: ["diploma"],
   },
   {
@@ -384,6 +407,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Dermatology, Venereology & Leprosy (DDVL)",
     description: "Common skin diseases, STIs, leprosy management",
     hasRevised: false,
+    librarySubject: "dermatology",
     tags: ["diploma"],
   },
   {
@@ -394,6 +418,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Otorhinolaryngology (DLO)",
     description: "Basic ENT procedures, audiometry, common ear/nose/throat conditions",
     hasRevised: false,
+    librarySubject: "ent",
     tags: ["diploma"],
   },
   {
@@ -404,6 +429,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Health Education (DHE)",
     description: "Health promotion, IEC strategies, community health education",
     hasRevised: false,
+    librarySubject: "community-medicine",
     tags: ["diploma"],
   },
   {
@@ -414,6 +440,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Immunohaematology & Blood Transfusion",
     description: "Blood banking, transfusion reactions, component therapy",
     hasRevised: false,
+    librarySubject: "pathology",
     tags: ["diploma"],
   },
   {
@@ -435,6 +462,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Industrial Health (DIH)",
     description: "Occupational diseases, workplace safety, industrial hygiene",
     hasRevised: false,
+    librarySubject: "preventive-medicine",
     tags: ["diploma"],
   },
   {
@@ -445,6 +473,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Ophthalmology (DO)",
     description: "Basic ophthalmology, refraction, cataract, common eye diseases",
     hasRevised: false,
+    librarySubject: "ophthalmology",
     tags: ["diploma"],
   },
   {
@@ -477,6 +506,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Physical Medicine & Rehabilitation (DPMR)",
     description: "Basic rehabilitation, physiotherapy, disability assessment",
     hasRevised: true,
+    librarySubject: "orthopedics",
     tags: ["diploma"],
   },
   {
@@ -487,6 +517,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Psychological Medicine (DPM)",
     description: "Common psychiatric disorders, psychopharmacology basics",
     hasRevised: true,
+    librarySubject: "psychiatry",
     tags: ["diploma"],
   },
   {
@@ -497,6 +528,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Tuberculosis & Chest Diseases (DTCD)",
     description: "TB management, COPD, asthma, basic bronchoscopy",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["diploma"],
   },
   {
@@ -507,6 +539,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Radiation Medicine (DRM)",
     description: "Radiation protection, dosimetry, basic radiation therapy",
     hasRevised: false,
+    librarySubject: "radiology",
     tags: ["diploma"],
   },
   {
@@ -517,6 +550,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Medical Radio-Diagnosis (DMRD)",
     description: "Basic radiology, X-ray interpretation, ultrasound, CT basics",
     hasRevised: false,
+    librarySubject: "radiology",
     tags: ["diploma"],
   },
   {
@@ -527,6 +561,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Sports Medicine",
     description: "Sports injuries, exercise prescription, doping control",
     hasRevised: false,
+    librarySubject: "orthopedics",
     tags: ["diploma"],
   },
   {
@@ -537,6 +572,7 @@ export const SS_CURRICULA: SSCurriculum[] = [
     title: "Diploma in Tropical Medicine & Hygiene (DTM&H)",
     description: "Malaria, dengue, leishmaniasis, tropical parasitology",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["diploma"],
   },
 ];

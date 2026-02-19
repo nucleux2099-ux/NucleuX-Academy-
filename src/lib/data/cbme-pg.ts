@@ -16,12 +16,13 @@ export type PGCurriculum = {
   description: string;      // One-liner
   hasRevised: boolean;      // Whether revised curriculum exists
   librarySubject?: string;  // Maps to our /library/<subject> if applicable
+  libraryPath?: string;     // Optional deep link (e.g. /library/medicine/cardiology)
   tags: string[];
 };
 
 export const PG_CURRICULA: PGCurriculum[] = [
   // ═══════════════════════════════════════
-  // MD (Doctor of Medicine) — 37 curricula
+  // MD (Doctor of Medicine) — 30 curricula
   // ═══════════════════════════════════════
   {
     id: "md-aerospace-medicine",
@@ -31,6 +32,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Aerospace Medicine",
     description: "Aviation physiology, flight fitness, occupational hazards in aerospace",
     hasRevised: false,
+    librarySubject: "preventive-medicine",
     tags: ["clinical"],
   },
   {
@@ -52,6 +54,8 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Anesthesia",
     description: "General & regional anesthesia, critical care, pain management",
     hasRevised: false,
+    librarySubject: "anesthesia",
+    libraryPath: "/library/anesthesia",
     tags: ["clinical"],
   },
   {
@@ -73,6 +77,8 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Community Medicine",
     description: "Epidemiology, biostatistics, public health, preventive medicine",
     hasRevised: false,
+    librarySubject: "community-medicine",
+    libraryPath: "/library/community-medicine",
     tags: ["clinical"],
   },
   {
@@ -83,6 +89,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Dermatology, Venereology & Leprosy",
     description: "Skin diseases, STIs, leprosy, dermatopathology, cosmetology",
     hasRevised: false,
+    librarySubject: "dermatology",
     tags: ["clinical"],
   },
   {
@@ -93,6 +100,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Emergency Medicine",
     description: "Acute care, trauma, resuscitation, disaster medicine, toxicology",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["clinical"],
   },
   {
@@ -103,6 +111,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Family Medicine",
     description: "Primary care, continuity of care, preventive health, community orientation",
     hasRevised: false,
+    librarySubject: "community-medicine",
     tags: ["clinical"],
   },
   {
@@ -125,6 +134,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     description: "Internal medicine — cardiology, nephrology, neurology, endocrinology, rheumatology, infectious diseases",
     hasRevised: true,
     librarySubject: "medicine",
+    libraryPath: "/library/medicine",
     tags: ["clinical"],
   },
   {
@@ -135,6 +145,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Geriatric Medicine",
     description: "Age-related diseases, frailty, polypharmacy, palliative geriatrics",
     hasRevised: true,
+    librarySubject: "medicine",
     tags: ["clinical"],
   },
   {
@@ -145,6 +156,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Health Administration",
     description: "Health systems management, policy, planning, quality assurance",
     hasRevised: false,
+    librarySubject: "community-medicine",
     tags: ["administrative"],
   },
   {
@@ -155,6 +167,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Hospital Administration",
     description: "Hospital management, operations, HR, finance, accreditation",
     hasRevised: false,
+    librarySubject: "community-medicine",
     tags: ["administrative"],
   },
   {
@@ -165,6 +178,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Immunohaematology & Blood Transfusion",
     description: "Transfusion medicine, blood banking, immunohematology",
     hasRevised: true,
+    librarySubject: "pathology",
     tags: ["clinical"],
   },
   {
@@ -175,6 +189,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Laboratory Medicine",
     description: "Clinical lab management, diagnostic services, quality control",
     hasRevised: false,
+    librarySubject: "pathology",
     tags: ["clinical"],
   },
   {
@@ -185,6 +200,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Marine Medicine",
     description: "Diving medicine, hyperbaric therapy, maritime health",
     hasRevised: false,
+    librarySubject: "preventive-medicine",
     tags: ["clinical"],
   },
   {
@@ -206,6 +222,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Nuclear Medicine",
     description: "Radioisotope diagnostics, PET/CT, radionuclide therapy",
     hasRevised: true,
+    librarySubject: "radiology",
     tags: ["clinical"],
   },
   {
@@ -216,6 +233,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Palliative Medicine",
     description: "End-of-life care, symptom management, psychosocial support",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["clinical"],
   },
   {
@@ -238,6 +256,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     description: "Child health, neonatology, developmental pediatrics, pediatric emergencies",
     hasRevised: true,
     librarySubject: "pediatrics",
+    libraryPath: "/library/pediatrics",
     tags: ["clinical"],
   },
   {
@@ -259,6 +278,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Physical Medicine & Rehabilitation",
     description: "Rehabilitation, prosthetics, electrophysiology, disability management",
     hasRevised: true,
+    librarySubject: "orthopedics",
     tags: ["clinical"],
   },
   {
@@ -280,6 +300,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Psychiatry",
     description: "Clinical psychiatry, psychopharmacology, psychotherapy, community psychiatry",
     hasRevised: true,
+    librarySubject: "psychiatry",
     tags: ["clinical"],
   },
   {
@@ -290,6 +311,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Pulmonary Medicine",
     description: "Respiratory diseases, bronchoscopy, critical care pulmonology, sleep medicine",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["clinical"],
   },
   {
@@ -300,6 +322,8 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Radiodiagnosis",
     description: "Diagnostic radiology, CT, MRI, ultrasound, interventional radiology",
     hasRevised: false,
+    librarySubject: "radiology",
+    libraryPath: "/library/radiology",
     tags: ["clinical"],
   },
   {
@@ -310,6 +334,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Radiotherapy",
     description: "Radiation oncology, brachytherapy, treatment planning",
     hasRevised: false,
+    librarySubject: "radiology",
     tags: ["clinical"],
   },
   {
@@ -320,6 +345,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Sports Medicine",
     description: "Sports injuries, exercise medicine, doping, rehabilitation",
     hasRevised: false,
+    librarySubject: "orthopedics",
     tags: ["clinical"],
   },
   {
@@ -330,11 +356,12 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MD Tropical Medicine",
     description: "Endemic infections, vector-borne diseases, tropical parasitology",
     hasRevised: false,
+    librarySubject: "medicine",
     tags: ["clinical"],
   },
 
   // ═══════════════════════════════════════
-  // MS (Master of Surgery) — 7 curricula
+  // MS (Master of Surgery) — 6 curricula
   // ═══════════════════════════════════════
   {
     id: "ms-surgery",
@@ -345,6 +372,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     description: "18 subspecialties — GI, HPB, trauma, breast, endocrine, vascular, urology, head & neck, thoracic, anorectal, hernia, laparoscopic surgery. See /cbme/surgery for full UG→PG→SS map.",
     hasRevised: false,
     librarySubject: "surgery",
+    libraryPath: "/library/surgery",
     tags: ["surgical"],
   },
   {
@@ -356,6 +384,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     description: "Maternal care, high-risk pregnancy, gynecologic surgery, reproductive medicine",
     hasRevised: false,
     librarySubject: "obgyn",
+    libraryPath: "/library/obgyn",
     tags: ["surgical"],
   },
   {
@@ -366,6 +395,8 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MS Otorhinolaryngology (ENT)",
     description: "Ear, nose, throat surgery, audiology, head & neck oncology",
     hasRevised: false,
+    librarySubject: "ent",
+    libraryPath: "/library/ent",
     tags: ["surgical"],
   },
   {
@@ -376,6 +407,8 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MS Ophthalmology",
     description: "Cataract, glaucoma, retina, oculoplasty, neuro-ophthalmology",
     hasRevised: false,
+    librarySubject: "ophthalmology",
+    libraryPath: "/library/ophthalmology",
     tags: ["surgical"],
   },
   {
@@ -387,6 +420,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     description: "Fractures, joint replacement, spine surgery, sports orthopedics, pediatric orthopedics",
     hasRevised: true,
     librarySubject: "orthopedics",
+    libraryPath: "/library/orthopedics",
     tags: ["surgical"],
   },
   {
@@ -397,6 +431,7 @@ export const PG_CURRICULA: PGCurriculum[] = [
     title: "MS Traumatology & Surgery",
     description: "Polytrauma, emergency surgery, disaster management",
     hasRevised: false,
+    librarySubject: "surgery",
     tags: ["surgical"],
   },
 ];

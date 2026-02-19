@@ -8,7 +8,8 @@ import { CBME_MBBS_Y4_BLOCKS } from "@/lib/data/cbme-mbbs-y4";
 import { PG_CURRICULA, type PGDegree } from "@/lib/data/cbme-pg";
 import { SS_CURRICULA, type SSDegree } from "@/lib/data/cbme-ss";
 import type { CBMEBlock } from "@/lib/data/cbme-types";
-import { ALL_CURRICULA, NMC_STATS, getCurriculumBySlug } from "@/lib/data/nmc-vault";
+import { NMC_STATS, getCurriculumBySlug } from "@/lib/data/nmc-vault";
+import { getCurriculumRoute } from "@/lib/data/cbme-aliases";
 import Link from "next/link";
 
 /* ─── tab types ─── */
@@ -54,6 +55,27 @@ function subjectColor(subject: string) {
     bme: "border-violet-500/40",
   };
   return map[subject] ?? "border-zinc-500/40";
+}
+
+function getMappingConfidence(curriculum: { librarySubject?: string; libraryPath?: string }) {
+  if (curriculum.libraryPath) {
+    return {
+      label: "High link confidence",
+      className: "bg-emerald-600/10 text-emerald-400 border border-emerald-500/20",
+    };
+  }
+
+  if (curriculum.librarySubject) {
+    return {
+      label: "Subject-level mapping",
+      className: "bg-amber-600/10 text-amber-400 border border-amber-500/20",
+    };
+  }
+
+  return {
+    label: "No library mapping",
+    className: "bg-zinc-600/10 text-zinc-400 border border-zinc-500/20",
+  };
 }
 
 /* ─── search filter ─── */
@@ -196,10 +218,11 @@ export default function CBMEPage() {
               const totalComp = nmc
                 ? nmc.competencies.cognitive.length + nmc.competencies.psychomotor.length + nmc.competencies.affective.length
                 : 0;
+              const mapping = getMappingConfidence(c);
               return (
                 <Link
                   key={c.id}
-                  href={c.id === "ms-general-surgery" ? "/cbme/surgery" : c.id === "md-general-medicine" ? "/cbme/medicine" : c.id === "ms-obgy" ? "/cbme/obgyn" : c.id === "md-pediatrics" ? "/cbme/pediatrics" : c.id === "ms-orthopedics" ? "/cbme/orthopedics" : `/cbme/${c.id}`}
+                  href={getCurriculumRoute(c.id)}
                   className="bg-zinc-800/50 border border-zinc-700 rounded-lg p-4 hover:border-cyan-500/30 transition-colors block"
                 >
                   <div className="flex items-center gap-2 mb-2">
@@ -219,10 +242,15 @@ export default function CBMEPage() {
                   </div>
                   <h3 className="text-white font-medium text-sm">{c.title}</h3>
                   <p className="text-zinc-500 text-xs mt-1">{c.description}</p>
-                  {c.librarySubject && (
-                    <span className="inline-block mt-2 text-xs text-blue-400">
-                      📚 Library →
-                    </span>
+                  {(c.librarySubject || c.libraryPath) && (
+                    <div className="mt-2 flex flex-wrap items-center gap-2">
+                      <span className="inline-block text-xs text-blue-400">
+                        📚 {c.libraryPath ? "Deep link ready" : "Library mapped"}
+                      </span>
+                      <span className={`px-1.5 py-0.5 text-[10px] rounded ${mapping.className}`}>
+                        {mapping.label}
+                      </span>
+                    </div>
                   )}
                 </Link>
               );
@@ -259,6 +287,7 @@ export default function CBMEPage() {
               const totalComp = nmc
                 ? nmc.competencies.cognitive.length + nmc.competencies.psychomotor.length + nmc.competencies.affective.length
                 : 0;
+              const mapping = getMappingConfidence(c);
               return (
                 <Link
                   key={c.id}
@@ -285,10 +314,15 @@ export default function CBMEPage() {
                   {c.parentDegree && (
                     <p className="text-zinc-600 text-xs mt-1">← {c.parentDegree}</p>
                   )}
-                  {c.librarySubject && (
-                    <span className="inline-block mt-2 text-xs text-purple-400">
-                      📚 Library →
-                    </span>
+                  {(c.librarySubject || c.libraryPath) && (
+                    <div className="mt-2 flex flex-wrap items-center gap-2">
+                      <span className="inline-block text-xs text-purple-400">
+                        📚 {c.libraryPath ? "Deep link ready" : "Library mapped"}
+                      </span>
+                      <span className={`px-1.5 py-0.5 text-[10px] rounded ${mapping.className}`}>
+                        {mapping.label}
+                      </span>
+                    </div>
                   )}
                 </Link>
               );
