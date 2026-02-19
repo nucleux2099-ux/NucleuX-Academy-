@@ -12,6 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import type { Page } from 'playwright';
 
 const baseUrl = process.env.BASE_URL || 'http://localhost:3100';
 const email = process.env.DEMO_EMAIL ?? "";
@@ -25,7 +26,7 @@ if (!email || !password) {
 const outDir = path.join(process.cwd(), 'public', 'marketing', 'screens');
 fs.mkdirSync(outDir, { recursive: true });
 
-async function shot(page: any, urlPath: string, outName: string) {
+async function shot(page: Page, urlPath: string, outName: string) {
   const url = `${baseUrl}${urlPath}`;
   console.log(`→ ${urlPath}  =>  ${outName}`);
   await page.goto(url, { waitUntil: 'networkidle' });
@@ -66,8 +67,8 @@ async function main() {
   for (const [p, file] of targets) {
     try {
       await shot(page, p, file);
-    } catch (e: any) {
-      console.warn(`! Failed to capture ${p}: ${e?.message || e}`);
+    } catch (e: unknown) {
+      console.warn(`! Failed to capture ${p}: ${e instanceof Error ? e.message : String(e)}`);
     }
   }
 

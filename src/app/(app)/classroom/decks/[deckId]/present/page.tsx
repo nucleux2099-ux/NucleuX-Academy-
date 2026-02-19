@@ -14,6 +14,25 @@ export default function DeckPresentPage() {
   const deck = useMemo(() => getDeck(deckId), [deckId]);
   const [idx, setIdx] = useState(0);
 
+  useEffect(() => {
+    if (!deck) return;
+    logDeckView({ deckId: deck.deckId, deckTitle: deck.title, topicId: deck.topicId });
+  }, [deck]);
+
+  useEffect(() => {
+    if (!deck) return;
+    const slides = [...deck.slides].sort((a, b) => a.order - b.order);
+    const current = slides[Math.max(0, Math.min(idx, slides.length - 1))];
+    if (!current) return;
+    logSlideView({
+      deckId: deck.deckId,
+      deckTitle: deck.title,
+      slideOrder: current.order,
+      slideHeading: current.heading,
+      topicId: deck.topicId,
+    });
+  }, [deck, idx]);
+
   if (!deck) {
     return (
       <div className="space-y-4">
@@ -25,24 +44,6 @@ export default function DeckPresentPage() {
 
   const slides = [...deck.slides].sort((a, b) => a.order - b.order);
   const slide = slides[Math.max(0, Math.min(idx, slides.length - 1))];
-
-  useEffect(() => {
-    logDeckView({ deckId: deck.deckId, deckTitle: deck.title, topicId: deck.topicId });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [deck.deckId]);
-
-  useEffect(() => {
-    const current = slides[Math.max(0, Math.min(idx, slides.length - 1))];
-    if (!current) return;
-    logSlideView({
-      deckId: deck.deckId,
-      deckTitle: deck.title,
-      slideOrder: current.order,
-      slideHeading: current.heading,
-      topicId: deck.topicId,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [idx]);
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">

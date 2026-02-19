@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,21 +12,16 @@ import { defaultTemplates } from "@/lib/templates/seed";
 import type { Template } from "@/lib/templates/types";
 
 export default function TemplatesPage() {
-  const [templates, setTemplates] = useState<Template[]>([]);
+  const [templates, setTemplates] = useState<Template[]>(() => {
+    const existing = loadTemplates();
+    if (existing.length > 0) return existing;
+    saveTemplates(defaultTemplates);
+    return defaultTemplates;
+  });
   const [title, setTitle] = useState("");
   const [heading, setHeading] = useState("");
   const [bulletsText, setBulletsText] = useState("Bullet 1\nBullet 2\nBullet 3");
   const [speakerNotes, setSpeakerNotes] = useState("");
-
-  useEffect(() => {
-    const existing = loadTemplates();
-    if (existing.length === 0) {
-      saveTemplates(defaultTemplates);
-      setTemplates(defaultTemplates);
-    } else {
-      setTemplates(existing);
-    }
-  }, []);
 
   const slideTemplates = useMemo(() => templates.filter((t) => t.kind === "slide"), [templates]);
 
@@ -35,7 +30,7 @@ export default function TemplatesPage() {
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
           <h1 className="text-2xl font-bold text-[#E8E0D5]">🧩 Templates</h1>
-          <p className="text-sm text-[#A0B0BC]">Reusable blocks ("common placebo") for decks and notes</p>
+          <p className="text-sm text-[#A0B0BC]">Reusable blocks (&quot;common placebo&quot;) for decks and notes</p>
         </div>
         <div className="flex gap-2">
           <Link href="/classroom/decks"><Button variant="outline">Back to Decks</Button></Link>

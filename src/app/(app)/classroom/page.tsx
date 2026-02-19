@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Play, Clock, BookOpen, CheckCircle2, Filter, Search, User, BarChart3, PenTool, Brain, Mic } from 'lucide-react';

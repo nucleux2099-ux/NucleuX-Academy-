@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, type ComponentType } from 'react';
 import { cn } from '@/lib/utils';
 import {
   Send,
@@ -36,6 +36,15 @@ interface ChatMessage {
 
 type Mode = 'teach' | 'quiz' | 'build' | 'viva';
 
+type ExcalidrawElement = Record<string, unknown>;
+type ScenePayload = { elements: ExcalidrawElement[] };
+interface ExcalidrawAPI {
+  resetScene: () => void;
+  updateScene: (scene: ScenePayload) => void;
+  scrollToContent: (elements?: ExcalidrawElement[] | undefined, options?: { fitToContent?: boolean; animate?: boolean }) => void;
+  getSceneElements: () => ExcalidrawElement[];
+}
+
 const MIND_MAP_SYSTEM_PROMPT = `You are ATOM, a medical teaching AI. When asked to teach a topic, respond with TWO parts:
 
 1. A JSON mind map in a \`\`\`json code block with this exact structure:
@@ -69,15 +78,15 @@ Rules:
 - Be medically accurate, cite standard textbooks mentally`;
 
 export default function AtomMindMap() {
-  const [excalidrawAPI, setExcalidrawAPI] = useState<any>(null);
-  const [ExcalidrawComp, setExcalidrawComp] = useState<any>(null);
+  const [excalidrawAPI, setExcalidrawAPI] = useState<ExcalidrawAPI | null>(null);
+  const [ExcalidrawComp, setExcalidrawComp] = useState<ComponentType<Record<string, unknown>> | null>(null);
   const [chatOpen, setChatOpen] = useState(true);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState<Mode>('teach');
   const [currentMap, setCurrentMap] = useState<MindMapNode | null>(null);
-  const [progressiveSteps, setProgressiveSteps] = useState<any[][]>([]);
+  const [progressiveSteps, setProgressiveSteps] = useState<ExcalidrawElement[][]>([]);
   const [currentStep, setCurrentStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -283,7 +292,7 @@ export default function AtomMindMap() {
         <div className="flex-1 min-h-0">
           {ExcalidrawComp ? (
             <ExcalidrawComp
-              ref={(api: any) => setExcalidrawAPI(api)}
+              ref={(api: unknown) => setExcalidrawAPI(api as ExcalidrawAPI)}
               theme="dark"
               initialData={{ appState: { viewBackgroundColor: '#0F1A24', currentItemStrokeColor: '#5EEAD4', currentItemFontFamily: 1 } }}
               UIOptions={{ canvasActions: { saveToActiveFile: false, loadScene: false, export: false } }}

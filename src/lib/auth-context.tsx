@@ -24,6 +24,7 @@ const publicRoutes = [
   '/login',
   '/signup',
   '/forgot-password',
+  '/reset-password',
   '/auth/callback',
 
   // Marketing/public pages
@@ -40,6 +41,7 @@ const publicRoutes = [
   '/demo',
   '/terms',
   '/privacy',
+  '/offline',
 ];
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {

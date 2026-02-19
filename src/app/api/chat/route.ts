@@ -5,6 +5,29 @@ import path from 'path'
 
 const CONTENT_BASE = path.join(process.cwd(), 'content')
 
+type IncomingMessage = {
+  role: string
+  content: unknown
+}
+
+type SupportedImageMediaType = 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp'
+
+function normalizeImageMediaType(input: unknown): SupportedImageMediaType {
+  if (typeof input !== 'string') return 'image/png'
+
+  const normalized = input.toLowerCase().trim()
+  if (normalized === 'image/jpg') return 'image/jpeg'
+  if (
+    normalized === 'image/png' ||
+    normalized === 'image/jpeg' ||
+    normalized === 'image/gif' ||
+    normalized === 'image/webp'
+  ) {
+    return normalized
+  }
+  return 'image/png'
+}
+
 // Context mapping: which folders to search for each context option
 const contextFolders: Record<string, string[]> = {
   full: ['surgery', 'medicine', 'anatomy', 'pathology', 'physiology', 'biochemistry', 'pharmacology', 'obgyn', 'pediatrics', 'orthopedics', 'microbiology', 'forensic'],
@@ -184,13 +207,21 @@ export async function POST(request: NextRequest) {
     }
 
     // Get the latest user message for content retrieval
-    const lastUserMessage = [...messages].reverse().find((m: { role: string }) => m.role === 'user')
+    const lastUserMessage = [...messages].reverse().find((m: IncomingMessage) => m.role === 'user')
     const rawContent = lastUserMessage?.content || ''
     // Handle multimodal content (array of blocks) — extract text for search
     const query = typeof rawContent === 'string'
       ? rawContent
       : Array.isArray(rawContent)
-        ? rawContent.filter((b: any) => b.type === 'text').map((b: any) => b.text).join(' ')
+        ? rawContent
+            .filter((b): b is { type: string; text?: string } => (
+              typeof b === 'object' &&
+              b !== null &&
+              'type' in b
+            ))
+            .filter((b) => b.type === 'text')
+            .map((b) => (typeof b.text === 'string' ? b.text : ''))
+            .join(' ')
         : ''
 
     // Find relevant content from the library
@@ -222,30 +253,61 @@ export async function POST(request: NextRequest) {
     const client = new Anthropic({ apiKey })
 
     // Format messages for Anthropic (supports text and vision)
-    const formattedMessages = messages.map((m: { role: string; content: any }) => {
+    const formattedMessages: Anthropic.MessageParam[] = messages.map((m: IncomingMessage) => {
+      const role: 'user' | 'assistant' = m.role === 'assistant' ? 'assistant' : 'user'
+
       // If content is an array (multimodal — text + image), format for Claude Vision
       if (Array.isArray(m.content)) {
-        const blocks: any[] = []
+        const blocks: Array<
+          | { type: 'text'; text: string }
+          | {
+              type: 'image'
+              source: {
+                type: 'base64'
+                media_type: SupportedImageMediaType
+                data: string
+              }
+            }
+        > = []
         for (const part of m.content) {
-          if (part.type === 'text') {
+          if (
+            typeof part === 'object' &&
+            part !== null &&
+            'type' in part &&
+            part.type === 'text' &&
+            'text' in part &&
+            typeof part.text === 'string'
+          ) {
             blocks.push({ type: 'text', text: part.text })
-          } else if (part.type === 'image' && part.source) {
+          } else if (
+            typeof part === 'object' &&
+            part !== null &&
+            'type' in part &&
+            part.type === 'image' &&
+            'source' in part &&
+            typeof part.source === 'object' &&
+            part.source !== null &&
+            'data' in part.source &&
+            typeof part.source.data === 'string'
+          ) {
             blocks.push({
               type: 'image',
               source: {
                 type: 'base64',
-                media_type: part.source.media_type || 'image/png',
+                media_type: normalizeImageMediaType(
+                  'media_type' in part.source ? part.source.media_type : undefined
+                ),
                 data: part.source.data,
               },
             })
           }
         }
-        return { role: m.role as 'user' | 'assistant', content: blocks }
+        return { role, content: blocks }
       }
       // Plain text message
       return {
-        role: m.role as 'user' | 'assistant',
-        content: m.content,
+        role,
+        content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content),
       }
     })
 

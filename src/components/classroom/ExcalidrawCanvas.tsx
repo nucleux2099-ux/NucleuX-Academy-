@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect, type ComponentType } from 'react';
 import { cn } from '@/lib/utils';
 import {
   Send,
@@ -37,7 +37,18 @@ interface ChatMessage {
 
 type CanvasMode = 'teach' | 'quiz' | 'build' | 'viva';
 
-const MODE_INFO: Record<CanvasMode, { label: string; icon: any; desc: string; color: string }> = {
+type ExcalidrawElement = Record<string, unknown>;
+interface ExcalidrawAPI {
+  resetScene: () => void;
+  updateScene: (scene: { elements: ExcalidrawElement[] }) => void;
+  scrollToContent: (elements?: ExcalidrawElement[] | undefined, options?: { fitToContent?: boolean; padding?: number }) => void;
+  getSceneElements: () => ExcalidrawElement[];
+  getAppState: () => Record<string, unknown>;
+  getFiles: () => Record<string, unknown>;
+}
+type ExportToBlobFn = (payload: Record<string, unknown>) => Promise<Blob>;
+
+const MODE_INFO: Record<CanvasMode, { label: string; icon: ComponentType<{ className?: string }>; desc: string; color: string }> = {
   teach: {
     label: 'Teach Mode',
     icon: BookOpen,
@@ -144,9 +155,9 @@ When giving the model answer at the end, include the mindmap JSON block.`,
 // =============================================================================
 
 export default function ExcalidrawCanvas() {
-  const [excalidrawAPI, setExcalidrawAPI] = useState<any>(null);
-  const [ExcalidrawComp, setExcalidrawComp] = useState<any>(null);
-  const [exportToBlob, setExportToBlob] = useState<any>(null);
+  const [excalidrawAPI, setExcalidrawAPI] = useState<ExcalidrawAPI | null>(null);
+  const [ExcalidrawComp, setExcalidrawComp] = useState<ComponentType<Record<string, unknown>> | null>(null);
+  const [exportToBlob, setExportToBlob] = useState<ExportToBlobFn | null>(null);
   const [chatOpen, setChatOpen] = useState(true);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
@@ -154,7 +165,7 @@ export default function ExcalidrawCanvas() {
   const [capturing, setCapturing] = useState(false);
   const [mode, setMode] = useState<CanvasMode | null>(null);
   const [revealStage, setRevealStage] = useState(0);
-  const [revealStages, setRevealStages] = useState<any[][] | null>(null);
+  const [revealStages, setRevealStages] = useState<ExcalidrawElement[][] | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Dynamic import of Excalidraw
@@ -602,7 +613,7 @@ export default function ExcalidrawCanvas() {
         <div className="flex-1 min-h-0">
           {ExcalidrawComp ? (
             <ExcalidrawComp
-              ref={(api: any) => setExcalidrawAPI(api)}
+              ref={(api: unknown) => setExcalidrawAPI(api as ExcalidrawAPI)}
               theme="dark"
               initialData={{
                 appState: {

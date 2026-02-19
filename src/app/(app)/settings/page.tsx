@@ -1,108 +1,229 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { Settings, User, Palette, Bell, BookOpen, Atom, Save } from "lucide-react"
+import { useState } from 'react';
+import { Settings, User, Palette, Bell, BookOpen, Atom, Save } from 'lucide-react';
+import { useProfile, useTrackEvent, useUpdateProfile, type UserProfile } from '@/lib/api/hooks';
+import { ApiStateBoundary } from '@/components/api-state-boundary';
 
-const subjectsList = ["Anatomy", "Surgery", "Medicine", "Pathology", "Pharmacology", "OBG", "Pediatrics", "Biochemistry", "Microbiology", "Forensic Medicine"]
+type SettingsDraft = Partial<UserProfile> & {
+  daily_goal_minutes?: number;
+  mcq_daily_target?: number;
+  preferred_study_time?: string;
+  notification_email?: boolean;
+  notification_telegram?: boolean;
+  atom_proactive?: boolean;
+  theme?: string;
+};
+
+function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+  return (
+    <button
+      onClick={onToggle}
+      className={`w-11 h-6 rounded-full relative transition-colors ${on ? 'bg-[#A0B0BC]' : 'bg-[#2D3E50]'}`}
+    >
+      <div className={`w-5 h-5 rounded-full bg-white absolute top-0.5 transition-all ${on ? 'left-5.5' : 'left-0.5'}`} />
+    </button>
+  );
+}
 
 export default function SettingsPage() {
-  const [theme, setTheme] = useState("dark")
-  const [emailNotif, setEmailNotif] = useState(true)
-  const [pushNotif, setPushNotif] = useState(true)
-  const [studyReminders, setStudyReminders] = useState(true)
-  const [weeklyDigest, setWeeklyDigest] = useState(false)
-  const [dailyGoal, setDailyGoal] = useState(4)
-  const [selectedSubjects, setSelectedSubjects] = useState(["Anatomy", "Surgery", "Medicine", "Pathology"])
-  const [difficulty, setDifficulty] = useState("moderate")
-  const [responseStyle, setResponseStyle] = useState("detailed")
-  const [autoSuggestions, setAutoSuggestions] = useState(true)
+  const { data: profile, isLoading, error } = useProfile();
+  const { updateProfile, isUpdating } = useUpdateProfile();
+  const { trackEvent } = useTrackEvent();
+  const [draft, setDraft] = useState<SettingsDraft>({});
+  const [status, setStatus] = useState<string>('');
 
-  const Toggle = ({ on, onToggle }: { on: boolean; onToggle: () => void }) => (
-    <button onClick={onToggle} className={`w-11 h-6 rounded-full relative transition-colors ${on ? "bg-[#A0B0BC]" : "bg-[#2D3E50]"}`}>
-      <div className={`w-5 h-5 rounded-full bg-white absolute top-0.5 transition-all ${on ? "left-5.5" : "left-0.5"}`} />
-    </button>
-  )
+  const value = <T,>(key: keyof SettingsDraft, fallback: T): T => {
+    const next = draft[key];
+    return (next !== undefined ? (next as T) : fallback);
+  };
 
-  const toggleSubject = (s: string) => setSelectedSubjects(prev => prev.includes(s) ? prev.filter(x => x !== s) : [...prev, s])
+  const setField = <T,>(key: keyof SettingsDraft, next: T) => {
+    setDraft((prev) => ({ ...prev, [key]: next }));
+  };
+
+  const handleSave = async () => {
+    setStatus('');
+    try {
+      await updateProfile(draft);
+      setDraft({});
+      setStatus('Saved successfully');
+      void trackEvent('task_completed', {
+        source: 'settings_save',
+        updated_fields: Object.keys(draft),
+      });
+    } catch {
+      setStatus('Failed to save settings');
+    }
+  };
+
+  if (!profile) {
+    return (
+      <ApiStateBoundary
+        isLoading={isLoading}
+        error={error}
+        data={profile}
+        loadingText="Loading settings..."
+        errorText="Unable to load settings right now."
+        className="bg-[#2D3E50]"
+      >
+        <div />
+      </ApiStateBoundary>
+    );
+  }
+
+  const dailyGoal = value('daily_goal_minutes', profile.preferences.daily_goal_minutes || 60);
+  const mcqTarget = value('mcq_daily_target', profile.preferences.mcq_daily_target || 20);
+  const preferredStudyTime = value('preferred_study_time', profile.preferences.preferred_study_time || 'evening');
+  const emailNotif = value('notification_email', profile.preferences.notification_email ?? true);
+  const telegramNotif = value('notification_telegram', profile.preferences.notification_telegram ?? true);
+  const atomProactive = value('atom_proactive', true);
+  const theme = value('theme', profile.preferences.theme || 'dark');
 
   return (
+    <ApiStateBoundary
+      isLoading={isLoading}
+      error={error}
+      data={profile}
+      loadingText="Loading settings..."
+      errorText="Unable to load settings right now."
+      className="bg-[#2D3E50]"
+    >
     <div className="min-h-screen bg-[#2D3E50] p-6 space-y-6">
       <div className="flex items-center gap-3">
         <Settings className="w-6 h-6 text-[#A0B0BC]" />
         <h1 className="text-2xl font-bold text-[#E8E0D5]">Settings</h1>
       </div>
 
-      {/* Account */}
       <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20 space-y-4">
-        <div className="flex items-center gap-2 mb-2"><User className="w-5 h-5 text-[#A0B0BC]" /><h2 className="text-lg font-semibold text-[#E8E0D5]">Account</h2></div>
-        {[["Name", "Aditya Chandra Bhatla"], ["Email", "aditya@nucleux.academy"], ["Institution", "Gandhi Medical College"]].map(([l, v]) => (
-          <div key={l}><label className="text-xs text-[#A0B0BC]">{l}</label><div className="mt-1 bg-[#2D3E50] rounded-lg px-4 py-2.5 text-[#E8E0D5] text-sm">{v}</div></div>
-        ))}
+        <div className="flex items-center gap-2 mb-2">
+          <User className="w-5 h-5 text-[#A0B0BC]" />
+          <h2 className="text-lg font-semibold text-[#E8E0D5]">Account</h2>
+        </div>
+        <div>
+          <label className="text-xs text-[#A0B0BC]">Name</label>
+          <input
+            value={value('full_name', profile.full_name || '')}
+            onChange={(e) => setField('full_name', e.target.value)}
+            className="mt-1 w-full bg-[#2D3E50] rounded-lg px-4 py-2.5 text-[#E8E0D5] text-sm border border-transparent focus:border-[#5BB3B3] focus:outline-none"
+          />
+        </div>
+        <div>
+          <label className="text-xs text-[#A0B0BC]">Email</label>
+          <div className="mt-1 bg-[#2D3E50] rounded-lg px-4 py-2.5 text-[#E8E0D5] text-sm">{profile.email}</div>
+        </div>
+        <div>
+          <label className="text-xs text-[#A0B0BC]">Institution</label>
+          <input
+            value={value('institution', profile.institution || '')}
+            onChange={(e) => setField('institution', e.target.value)}
+            className="mt-1 w-full bg-[#2D3E50] rounded-lg px-4 py-2.5 text-[#E8E0D5] text-sm border border-transparent focus:border-[#5BB3B3] focus:outline-none"
+          />
+        </div>
       </div>
 
-      {/* Appearance */}
       <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20">
-        <div className="flex items-center gap-2 mb-4"><Palette className="w-5 h-5 text-[#A0B0BC]" /><h2 className="text-lg font-semibold text-[#E8E0D5]">Appearance</h2></div>
+        <div className="flex items-center gap-2 mb-4">
+          <Palette className="w-5 h-5 text-[#A0B0BC]" />
+          <h2 className="text-lg font-semibold text-[#E8E0D5]">Appearance</h2>
+        </div>
         <div className="flex gap-2">
-          {["dark", "light", "system"].map(t => (
-            <button key={t} onClick={() => setTheme(t)} className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${theme === t ? "bg-[#A0B0BC] text-[#253545]" : "bg-[#2D3E50] text-[#A0B0BC] hover:text-[#E8E0D5]"}`}>{t}</button>
+          {['dark', 'light', 'system'].map((nextTheme) => (
+            <button
+              key={nextTheme}
+              onClick={() => setField('theme', nextTheme)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${
+                theme === nextTheme ? 'bg-[#A0B0BC] text-[#253545]' : 'bg-[#2D3E50] text-[#A0B0BC] hover:text-[#E8E0D5]'
+              }`}
+            >
+              {nextTheme}
+            </button>
           ))}
         </div>
       </div>
 
-      {/* Notifications */}
       <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20 space-y-4">
-        <div className="flex items-center gap-2 mb-2"><Bell className="w-5 h-5 text-[#A0B0BC]" /><h2 className="text-lg font-semibold text-[#E8E0D5]">Notifications</h2></div>
-        {([["Email Notifications", emailNotif, () => setEmailNotif(!emailNotif)], ["Push Notifications", pushNotif, () => setPushNotif(!pushNotif)], ["Study Reminders", studyReminders, () => setStudyReminders(!studyReminders)], ["Weekly Digest", weeklyDigest, () => setWeeklyDigest(!weeklyDigest)]] as [string, boolean, () => void][]).map(([label, on, toggle]) => (
-          <div key={label as string} className="flex items-center justify-between"><span className="text-sm text-[#E8E0D5]">{label as string}</span><Toggle on={on as boolean} onToggle={toggle as () => void} /></div>
-        ))}
-      </div>
-
-      {/* Study Preferences */}
-      <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20 space-y-4">
-        <div className="flex items-center gap-2 mb-2"><BookOpen className="w-5 h-5 text-[#A0B0BC]" /><h2 className="text-lg font-semibold text-[#E8E0D5]">Study Preferences</h2></div>
-        <div>
-          <label className="text-sm text-[#A0B0BC]">Daily Goal: {dailyGoal} hours</label>
-          <input type="range" min={1} max={12} value={dailyGoal} onChange={e => setDailyGoal(Number(e.target.value))} className="w-full mt-2 accent-[#A0B0BC]" />
-        </div>
-        <div>
-          <label className="text-sm text-[#A0B0BC] block mb-2">Preferred Subjects</label>
-          <div className="flex flex-wrap gap-2">
-            {subjectsList.map(s => (
-              <button key={s} onClick={() => toggleSubject(s)} className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${selectedSubjects.includes(s) ? "bg-[#A0B0BC] text-[#253545]" : "bg-[#2D3E50] text-[#A0B0BC]"}`}>{s}</button>
-            ))}
-          </div>
-        </div>
-        <div>
-          <label className="text-sm text-[#A0B0BC] block mb-2">Difficulty Preference</label>
-          <div className="flex gap-2">
-            {["easy", "moderate", "hard"].map(d => (
-              <button key={d} onClick={() => setDifficulty(d)} className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${difficulty === d ? "bg-[#A0B0BC] text-[#253545]" : "bg-[#2D3E50] text-[#A0B0BC]"}`}>{d}</button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ATOM Settings */}
-      <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20 space-y-4">
-        <div className="flex items-center gap-2 mb-2"><Atom className="w-5 h-5 text-[#A0B0BC]" /><h2 className="text-lg font-semibold text-[#E8E0D5]">ATOM Settings</h2></div>
-        <div>
-          <label className="text-sm text-[#A0B0BC] block mb-2">Response Style</label>
-          <div className="flex gap-2">
-            {["concise", "detailed", "socratic"].map(s => (
-              <button key={s} onClick={() => setResponseStyle(s)} className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${responseStyle === s ? "bg-[#A0B0BC] text-[#253545]" : "bg-[#2D3E50] text-[#A0B0BC]"}`}>{s}</button>
-            ))}
-          </div>
+        <div className="flex items-center gap-2 mb-2">
+          <Bell className="w-5 h-5 text-[#A0B0BC]" />
+          <h2 className="text-lg font-semibold text-[#E8E0D5]">Notifications</h2>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-sm text-[#E8E0D5]">Auto-suggestions</span>
-          <Toggle on={autoSuggestions} onToggle={() => setAutoSuggestions(!autoSuggestions)} />
+          <span className="text-sm text-[#E8E0D5]">Email Notifications</span>
+          <Toggle on={emailNotif} onToggle={() => setField('notification_email', !emailNotif)} />
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-sm text-[#E8E0D5]">Telegram Notifications</span>
+          <Toggle on={telegramNotif} onToggle={() => setField('notification_telegram', !telegramNotif)} />
         </div>
       </div>
 
-      <button className="w-full flex items-center justify-center gap-2 bg-[#A0B0BC] text-[#253545] font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity">
-        <Save className="w-5 h-5" /> Save Settings
+      <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20 space-y-4">
+        <div className="flex items-center gap-2 mb-2">
+          <BookOpen className="w-5 h-5 text-[#A0B0BC]" />
+          <h2 className="text-lg font-semibold text-[#E8E0D5]">Study Preferences</h2>
+        </div>
+        <div>
+          <label className="text-sm text-[#A0B0BC]">Daily Goal: {dailyGoal} minutes</label>
+          <input
+            type="range"
+            min={15}
+            max={240}
+            step={15}
+            value={dailyGoal}
+            onChange={(e) => setField('daily_goal_minutes', Number(e.target.value))}
+            className="w-full mt-2 accent-[#A0B0BC]"
+          />
+        </div>
+        <div>
+          <label className="text-sm text-[#A0B0BC]">MCQ Target: {mcqTarget}/day</label>
+          <input
+            type="range"
+            min={5}
+            max={100}
+            step={5}
+            value={mcqTarget}
+            onChange={(e) => setField('mcq_daily_target', Number(e.target.value))}
+            className="w-full mt-2 accent-[#A0B0BC]"
+          />
+        </div>
+        <div>
+          <label className="text-sm text-[#A0B0BC] block mb-2">Preferred Study Time</label>
+          <div className="flex gap-2">
+            {['morning', 'afternoon', 'evening', 'night'].map((slot) => (
+              <button
+                key={slot}
+                onClick={() => setField('preferred_study_time', slot)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium capitalize transition-colors ${
+                  preferredStudyTime === slot ? 'bg-[#A0B0BC] text-[#253545]' : 'bg-[#2D3E50] text-[#A0B0BC]'
+                }`}
+              >
+                {slot}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#253545] rounded-xl p-5 border border-[#A0B0BC]/20 space-y-4">
+        <div className="flex items-center gap-2 mb-2">
+          <Atom className="w-5 h-5 text-[#A0B0BC]" />
+          <h2 className="text-lg font-semibold text-[#E8E0D5]">ATOM Settings</h2>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-sm text-[#E8E0D5]">Proactive Suggestions</span>
+          <Toggle on={atomProactive} onToggle={() => setField('atom_proactive', !atomProactive)} />
+        </div>
+      </div>
+
+      <button
+        onClick={handleSave}
+        disabled={isUpdating}
+        className="w-full flex items-center justify-center gap-2 bg-[#A0B0BC] text-[#253545] font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-60"
+      >
+        <Save className="w-5 h-5" /> {isUpdating ? 'Saving...' : 'Save Settings'}
       </button>
+      {status && <p className="text-center text-sm text-[#A0B0BC]">{status}</p>}
     </div>
-  )
+    </ApiStateBoundary>
+  );
 }

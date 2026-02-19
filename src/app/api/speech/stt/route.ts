@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { sarvamSpeechToText } from '@/lib/speech/sarvam';
+import { sarvamSpeechToText, type SarvamLanguageCode, type SarvamSttMode } from '@/lib/speech/sarvam';
 
 export const runtime = 'nodejs';
 
@@ -20,13 +20,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing audio file' }, { status: 400 });
     }
 
-    const language_code = (form.get('language_code') as string | null) ?? 'unknown';
-    const mode = (form.get('mode') as string | null) ?? 'codemix';
+    const rawLanguage = (form.get('language_code') as string | null) ?? 'unknown';
+    const rawMode = (form.get('mode') as string | null) ?? 'codemix';
+    const language_code: SarvamLanguageCode = ['en-IN', 'te-IN', 'hi-IN', 'unknown'].includes(rawLanguage)
+      ? (rawLanguage as SarvamLanguageCode)
+      : 'unknown';
+    const mode: SarvamSttMode = ['transcribe', 'translate', 'verbatim', 'translit', 'codemix'].includes(rawMode)
+      ? (rawMode as SarvamSttMode)
+      : 'codemix';
 
     const result = await sarvamSpeechToText(file, {
       model: 'saaras:v3',
-      mode: mode as any,
-      language_code: language_code as any,
+      mode,
+      language_code,
     });
 
     return NextResponse.json({
@@ -36,8 +42,11 @@ export async function POST(req: NextRequest) {
       request_id: result.request_id ?? null,
       timestamps: result.timestamps ?? null,
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error('STT error:', e);
-    return NextResponse.json({ error: e.message ?? 'STT failed' }, { status: 500 });
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : 'STT failed' },
+      { status: 500 }
+    );
   }
 }

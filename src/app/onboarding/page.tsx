@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,32 +11,16 @@ import {
   ArrowRight,
   ArrowLeft,
   Sparkles,
-  Stethoscope,
   FlaskConical,
   Brain,
-  Heart,
   Bone,
-  Eye,
-  Baby,
-  Pill,
   Target,
   GraduationCap,
   Clock,
   MessageCircle,
   CheckCircle,
   Loader2,
-  Layers,
 } from "lucide-react";
-
-const tracks = [
-  {
-    id: "mbbs_y1_cbme",
-    title: "MBBS Year 1 (NMC CBME)",
-    description: "Block-wise curriculum, theory + practical + viva, tightly interlinked",
-    icon: Layers,
-    color: "#5BB3B3",
-  },
-];
 
 const specialties = [
   // v1: keep it focused for MBBS Y1
@@ -70,7 +53,7 @@ const exams = [
 
 export default function OnboardingPage() {
   const router = useRouter();
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -117,7 +100,7 @@ export default function OnboardingPage() {
     };
 
     loadUserData();
-  }, []);
+  }, [router, supabase]);
 
   const handleNext = async () => {
     if (step < totalSteps) {

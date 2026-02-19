@@ -1,9 +1,8 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -13,26 +12,21 @@ import {
   ChevronRight,
   ChevronDown,
   ChevronUp,
-  CheckCircle,
   XCircle,
   AlertTriangle,
   Lightbulb,
   Clock,
   ArrowLeft,
   Play,
-  Pause,
   RotateCcw,
   Square,
   Eye,
   EyeOff,
   BookOpen,
   Award,
-  Timer,
   ClipboardList,
   Stethoscope,
-  GraduationCap,
   Check,
-  X,
   User,
   FileText,
   Mic,
@@ -44,14 +38,10 @@ import {
 } from '@/lib/data/templates/osce-template';
 
 export default function OSCEStationPage() {
-  const params = useParams();
-  const stationId = params.stationId as string;
-  
   const [timerActive, setTimerActive] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(thyroidExaminationOSCE.timeLimit * 60);
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
   const [showAnswers, setShowAnswers] = useState(false);
-  const [showChecklist, setShowChecklist] = useState(true);
   const [showModelAnswers, setShowModelAnswers] = useState(false);
   const [examCompleted, setExamCompleted] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -126,7 +116,7 @@ export default function OSCEStationPage() {
       grouped[item.category].push(item);
     });
     return grouped;
-  }, [station.checklist]);
+  }, [station]);
   
   const categoryProgress = useMemo(() => {
     const progress: Record<string, { checked: number; total: number; marks: number; maxMarks: number }> = {};

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
 
@@ -74,6 +74,7 @@ export interface UserProfile {
   level?: string;
   institution?: string;
   target_exam?: string;
+  created_at?: string;
   plan: string;
   onboarding_completed: boolean;
   preferences: {
@@ -81,6 +82,8 @@ export interface UserProfile {
     mcq_daily_target: number;
     preferred_study_time: string;
     notification_email: boolean;
+    notification_telegram?: boolean;
+    atom_proactive?: boolean;
     theme: string;
   };
   streak: {
@@ -154,6 +157,7 @@ export function useUpdateStreak() {
 export interface Analytics {
   currentStreak: number;
   longestStreak: number;
+  lastStudyDate?: string;
   totalStudyMinutes: number;
   topicsCompleted: number;
   totalQuestions: number;
@@ -161,12 +165,20 @@ export interface Analytics {
   avgAccuracy: number;
   weeklyStudyMinutes: number[];
   weeklyMcqs: number[];
-  recentSessions: Array<Record<string, unknown>>;
-  dailyStats: Array<{
-    date?: string;
-    day?: string;
-    study_minutes?: number;
+  recentSessions: Array<{
+    id: string;
+    started_at?: string;
+    duration_minutes?: number;
     mcqs_attempted?: number;
+    mcqs_correct?: number;
+    source?: string;
+  }>;
+  dailyStats: Array<{
+    date: string;
+    study_minutes: number;
+    mcqs_attempted: number;
+    mcqs_correct: number;
+    atoms_completed: number;
   }>;
 }
 
@@ -271,6 +283,7 @@ export interface StudyPlan {
     study_minutes: number;
     mcqs_attempted: number;
     mcqs_correct: number;
+    topics_completed?: number;
     goal_progress: number;
     mcq_progress: number;
   };
@@ -352,7 +365,7 @@ export function useUpdateProgress() {
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
 
   useEffect(() => {
     // Get initial session
@@ -369,7 +382,7 @@ export function useAuth() {
     );
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [supabase]);
 
   const signIn = async (email: string, password: string) => {
     const { data, error } = await supabase.auth.signInWithPassword({

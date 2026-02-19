@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,17 +12,14 @@ import type { Deck } from "@/lib/decks/types";
 
 export default function DecksIndexPage() {
   const [title, setTitle] = useState("");
-  const [decks, setDecks] = useState<Deck[]>([]);
-
-  useEffect(() => {
+  const [decks, setDecks] = useState<Deck[]>(() => {
     const existing = loadDecks();
     if (existing.length === 0) {
       saveDecks(demoDecks);
-      setDecks(demoDecks);
-    } else {
-      setDecks(existing);
+      return demoDecks;
     }
-  }, []);
+    return existing;
+  });
 
   const sorted = useMemo(() => {
     return [...decks].sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));

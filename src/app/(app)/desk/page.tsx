@@ -1,13 +1,17 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Card } from "@/components/ui/card";
 import {
-  Flame, BookOpen, Clock, ChevronRight, Target, TrendingUp,
+  Flame, BookOpen, ChevronRight, Target,
   Bookmark, Brain, Zap, CheckCircle2, Circle, Play,
-  BarChart3, Award, Activity, Star, MessageSquare, AlertTriangle,
+  Star, AlertTriangle,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAnalytics, useProfile, useStudyPlan, useTrackEvent } from "@/lib/api/hooks";
+import { ApiStateBoundary } from "@/components/api-state-boundary";
 
 // --- Helpers ---
 function getGreeting() {
@@ -33,20 +37,34 @@ interface BackstageEvent {
   [key: string]: unknown;
 }
 
-function loadBackstageEvents(): BackstageEvent[] {
-  if (typeof window === 'undefined') return [];
-  try {
-    const raw = localStorage.getItem('nx_backstage_events');
-    return raw ? JSON.parse(raw) : [];
-  } catch { return []; }
-}
+function buildEventsFromAnalytics(
+  analytics: ReturnType<typeof useAnalytics>["data"]
+): BackstageEvent[] {
+  if (!analytics) return [];
+  const events: BackstageEvent[] = [];
 
-function loadPocketNotes(): unknown[] {
-  if (typeof window === 'undefined') return [];
-  try {
-    const raw = localStorage.getItem('nx_pocket_notes');
-    return raw ? JSON.parse(raw) : [];
-  } catch { return []; }
+  for (const session of analytics.recentSessions || []) {
+    events.push({
+      type: session.source || "study",
+      timestamp: session.started_at || new Date().toISOString(),
+      duration: session.duration_minutes || 0,
+      score: session.mcqs_correct || 0,
+      total: session.mcqs_attempted || 0,
+    });
+  }
+
+  for (const stat of analytics.dailyStats || []) {
+    events.push({
+      type: "mcq",
+      timestamp: `${stat.date}T00:00:00.000Z`,
+      duration: stat.study_minutes || 0,
+      score: stat.mcqs_correct || 0,
+      total: stat.mcqs_attempted || 0,
+      topic: "Daily practice",
+    });
+  }
+
+  return events;
 }
 
 function computeStats(events: BackstageEvent[]) {
@@ -129,8 +147,19 @@ function computeRecentActivity(events: BackstageEvent[]) {
     });
 }
 
+type DeskTask = {
+  icon: LucideIcon;
+  title: string;
+  badge: string;
+  badgeColor: string;
+  subtitle: string;
+  time: string;
+  done: boolean;
+  actionPath?: string;
+};
+
 // Fallback empty data
-const emptyStudyPlanTasks = [
+const emptyStudyPlanTasks: DeskTask[] = [
   { icon: BookOpen, title: "Start your first topic", badge: "Get Started", badgeColor: "bg-teal-500/20 text-teal-400", subtitle: "Head to the Library to begin", time: "—", done: false },
 ];
 
@@ -166,60 +195,248 @@ function StatCard({ label, value, change, extra }: { label: string; value: strin
 }
 
 export default function DeskPage() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<"overview" | "graph">("overview");
   const [statsPeriod, setStatsPeriod] = useState<"week" | "month">("week");
-  const [events, setEvents] = useState<BackstageEvent[]>([]);
-  const [mounted, setMounted] = useState(false);
+  const { data: profile, isLoading: profileLoading, error: profileError } = useProfile();
+  const { data: studyPlan, isLoading: studyPlanLoading, error: studyPlanError } = useStudyPlan();
+  const { data: analytics, isLoading: analyticsLoading, error: analyticsError } = useAnalytics(30);
+  const { trackEvent } = useTrackEvent();
 
-  useEffect(() => {
-    setEvents(loadBackstageEvents());
-    setMounted(true);
-  }, []);
+  const events = useMemo(() => buildEventsFromAnalytics(analytics), [analytics]);
 
   const stats = useMemo(() => computeStats(events), [events]);
   const weeklyChart = useMemo(() => computeWeeklyChart(events), [events]);
   const recentActivity = useMemo(() => computeRecentActivity(events), [events]);
 
-  const hasData = events.length > 0;
-  const studyPlanTasks = hasData ? events
-    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
-    .slice(0, 4)
-    .map(e => ({
-      icon: e.type === 'mcq' ? Target : e.type === 'review' ? Brain : BookOpen,
-      title: e.topic || e.subject || 'Study Session',
-      badge: e.type || 'Study',
-      badgeColor: e.type === 'mcq' ? "bg-orange-500/20 text-orange-400" : "bg-teal-500/20 text-teal-400",
-      subtitle: e.subject || 'General',
-      time: `${e.duration || 15} min`,
-      done: true,
-    })) : emptyStudyPlanTasks;
+  const hasData =
+    (analytics?.totalStudyMinutes || 0) > 0 ||
+    (studyPlan?.tasks?.length || 0) > 0 ||
+    (studyPlan?.continue_learning?.length || 0) > 0;
 
-  const continueItems = emptyContinueItems;
-  const focusAreas = emptyFocusAreas;
+  const studyPlanTasks = useMemo<DeskTask[]>(() => {
+    const tasks = studyPlan?.tasks || [];
+    if (tasks.length === 0) return emptyStudyPlanTasks;
+    return tasks.slice(0, 4).map((task) => {
+      const type = typeof task.type === "string" ? task.type : "study";
+      const estimated = typeof task.estimated_minutes === "number" ? task.estimated_minutes : 15;
+      const atomId = typeof task.atom_id === "string" ? task.atom_id : undefined;
+      const slug = typeof task.slug === "string" ? task.slug : undefined;
+      const actionPath =
+        type === "mcq"
+          ? "/mcqs?mode=practice&type=mixed"
+          : type === "review"
+            ? "/mcqs?mode=quiz&type=retrieval"
+            : slug
+              ? `/read/${slug}`
+              : atomId
+                ? `/read/${atomId}`
+                : "/library";
+      return {
+        icon: type === "mcq" ? Target : type === "review" ? Brain : BookOpen,
+        title: typeof task.title === "string" ? task.title : "Study Task",
+        badge: type,
+        badgeColor: type === "mcq" ? "bg-orange-500/20 text-orange-400" : "bg-teal-500/20 text-teal-400",
+        subtitle: typeof task.description === "string" ? task.description : "From your learning plan",
+        time: `${estimated} min`,
+        done: false,
+        actionPath,
+      };
+    });
+  }, [studyPlan?.tasks]);
+
+  const continueItems = useMemo(() => {
+    const items = studyPlan?.continue_learning || [];
+    if (items.length === 0) return emptyContinueItems;
+    return items.slice(0, 3).map((item) => ({
+      title: typeof item.title === "string" ? item.title : "Continue topic",
+      subtitle: typeof item.topic === "string" ? item.topic : "In progress",
+      badge: typeof item.type === "string" ? item.type : "Study",
+      badgeColor: "bg-indigo-500/20 text-indigo-400",
+      progress: typeof item.progress_percent === "number" ? item.progress_percent : 0,
+      time: typeof item.estimated_time === "number" ? `${item.estimated_time} min` : "Pending",
+    }));
+  }, [studyPlan?.continue_learning]);
+
+  const focusAreas = useMemo(() => {
+    const rows = (analytics?.dailyStats || [])
+      .filter((d) => d.mcqs_attempted >= 5)
+      .map((d) => ({
+        topic: new Date(`${d.date}T00:00:00`).toLocaleDateString("en-US", { weekday: "short" }),
+        accuracy: d.mcqs_attempted > 0 ? Math.round((d.mcqs_correct / d.mcqs_attempted) * 100) : 0,
+        attempts: d.mcqs_attempted,
+      }))
+      .filter((d) => d.accuracy < 70)
+      .sort((a, b) => a.accuracy - b.accuracy)
+      .slice(0, 3)
+      .map((d) => ({
+        ...d,
+        color: d.accuracy < 60 ? "bg-red-500/20 text-red-400" : "bg-orange-500/20 text-orange-400",
+      }));
+    return rows.length > 0 ? rows : emptyFocusAreas;
+  }, [analytics?.dailyStats]);
 
   const maxHours = Math.max(...weeklyChart.map((d) => d.hours), 1);
+  const displayName = profile?.full_name || profile?.username || "User";
+  const isLoading = profileLoading || studyPlanLoading || analyticsLoading;
+  const error = profileError || studyPlanError || analyticsError;
+  const activePathway = studyPlan?.active_pathway;
+  const todayTotalMinutes = studyPlanTasks.reduce((total, task) => {
+    const raw = Number.parseInt(task.time, 10);
+    return total + (Number.isNaN(raw) ? 0 : raw);
+  }, 0);
+  const targetExam = profile?.target_exam || "Exam not set";
+  const coachConfidence = hasData ? Math.min(95, 55 + Math.round(stats.mcqAccuracy * 0.4)) : 0;
+  const coachFocusLabel = stats.mcqAccuracy < 70 ? "Weak Area" : "On Track";
+  const recommendedChips = (studyPlan?.recommended || []).slice(0, 3).map((item, index) => {
+    const title = typeof item.title === "string" ? item.title : `Recommendation ${index + 1}`;
+    const minutes = typeof item.estimated_time === "number" ? `${item.estimated_time} min` : "15 min";
+    const source = typeof item.specialty === "string" ? item.specialty : "Nucleux";
+    return { title, minutes, source };
+  });
+  const primaryTaskMinutes = Number.parseInt(studyPlanTasks[0]?.time || "", 10);
+  const coachSessionMinutes = Number.isNaN(primaryTaskMinutes) ? 20 : primaryTaskMinutes;
+  const lastStudyText = analytics?.lastStudyDate
+    ? new Date(analytics.lastStudyDate).toLocaleDateString("en-US", { day: "numeric", month: "short" })
+    : "No recent session";
+  const pathwayStatus = activePathway ? "In Progress" : "Not Started";
+  const hasFocusAreas = focusAreas.length > 0;
+  const primaryTaskPath = studyPlanTasks[0]?.actionPath;
+
+  const handleStartTodayPlan = () => {
+    void trackEvent("task_started", {
+      source: "desk_start_today_plan",
+      target_path: primaryTaskPath || "/library",
+      task_title: studyPlanTasks[0]?.title || null,
+    });
+    if (primaryTaskPath) {
+      router.push(primaryTaskPath);
+      return;
+    }
+    router.push("/library");
+  };
+
+  const handleContinueLearning = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_continue_learning",
+      has_active_pathway: !!activePathway,
+      continue_items: continueItems.length,
+    });
+    if (activePathway) {
+      router.push("/pathways");
+      return;
+    }
+    if (continueItems.length > 0) {
+      router.push("/library");
+      return;
+    }
+    router.push("/library");
+  };
+
+  const handlePracticeWeakAreas = () => {
+    if (!hasFocusAreas) return;
+    void trackEvent("recommendation_clicked", {
+      source: "desk_practice_weak_areas",
+      weak_area_count: focusAreas.length,
+    });
+    router.push("/mcqs?mode=practice&type=mixed&focus=weak");
+  };
+
+  const handleAskWhy = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_ask_why",
+      accuracy: stats.mcqAccuracy,
+    });
+    router.push(`/chat?context=desk-coach&accuracy=${stats.mcqAccuracy}`);
+  };
+
+  const handleOpenConnectedTopics = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_graph_connected_topics",
+      topics_week: stats.weekTopics,
+    });
+    router.push("/library");
+  };
+
+  const handleOpenRetrievalStrength = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_graph_retrieval_strength",
+      retrieval_accuracy: stats.mcqAccuracy,
+    });
+    router.push("/mcqs?mode=quiz&type=retrieval");
+  };
+
+  const handleOpenPathwayProgress = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_graph_pathway_progress",
+      has_active_pathway: !!activePathway,
+      pathway_progress: activePathway?.progress_percent || 0,
+    });
+    router.push(activePathway ? "/pathways" : "/library");
+  };
+
+  const handleOpenWeeklySignal = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_graph_open_analytics",
+    });
+    router.push("/analytics");
+  };
+
+  const handleStartFirstTopic = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_empty_start_first_topic",
+    });
+    router.push("/library");
+  };
+
+  const handleStartFirstPathway = () => {
+    void trackEvent("recommendation_clicked", {
+      source: "desk_empty_start_first_pathway",
+    });
+    router.push("/pathways");
+  };
 
   return (
+    <ApiStateBoundary
+      isLoading={isLoading}
+      error={error}
+      data={studyPlan || analytics || profile}
+      loadingText="Loading your desk..."
+      errorText="Unable to load your desk right now."
+      className="bg-[#2D3E50]"
+    >
     <div className="min-h-screen bg-[#2D3E50] p-4 md:p-6 lg:p-8 space-y-6 max-w-6xl mx-auto">
       {/* 1. Greeting Header */}
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#E8E0D5]">{getGreeting()}, User! 👋</h1>
-          <p className="text-[#A0B0BC] text-sm mt-1">Ready to continue your Surgery pathway? · {formatDate()}</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-[#E8E0D5]">{getGreeting()}, {displayName}! 👋</h1>
+          <p className="text-[#A0B0BC] text-sm mt-1">Ready to continue your learning pathway? · {formatDate()}</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <Badge className="bg-orange-500/20 text-orange-400 flex items-center gap-1"><Flame className="w-3 h-3" /> {stats.streak} Day Streak</Badge>
-          <Badge className="bg-indigo-500/20 text-indigo-400">NEET PG 202X</Badge>
+          <Badge className="bg-indigo-500/20 text-indigo-400">{targetExam}</Badge>
         </div>
       </div>
       <div className="flex gap-2">
         {(["overview", "graph"] as const).map((t) => (
-          <button key={t} onClick={() => setActiveTab(t)} className={cn("px-4 py-1.5 rounded-full text-sm font-medium transition-colors", activeTab === t ? "bg-[#5BB3B3] text-white" : "bg-[#1B2838] text-[#A0B0BC] hover:text-[#E8E0D5]")}>
+          <button
+            key={t}
+            onClick={() => {
+              setActiveTab(t);
+              void trackEvent("recommendation_clicked", {
+                source: "desk_tab_switch",
+                tab: t,
+              });
+            }}
+            className={cn("px-4 py-1.5 rounded-full text-sm font-medium transition-colors", activeTab === t ? "bg-[#5BB3B3] text-white" : "bg-[#1B2838] text-[#A0B0BC] hover:text-[#E8E0D5]")}
+          >
             {t === "overview" ? "Overview" : "Knowledge Graph"}
           </button>
         ))}
       </div>
 
+      {activeTab === "overview" ? (
+      <>
       {/* 2. ATOM Study Coach */}
       <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
         <div className="flex items-start gap-4">
@@ -229,24 +446,32 @@ export default function DeskPage() {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h2 className="text-[#E8E0D5] font-semibold">ATOM Study Coach</h2>
-              <Badge className="bg-orange-500/20 text-orange-400">Weak Area</Badge>
-              <span className="ml-auto text-sm text-[#A0B0BC]">84% confidence</span>
+              <Badge className={stats.mcqAccuracy < 70 ? "bg-orange-500/20 text-orange-400" : "bg-green-500/20 text-green-400"}>{coachFocusLabel}</Badge>
+              <span className="ml-auto text-sm text-[#A0B0BC]">{coachConfidence}% confidence</span>
             </div>
             <ProgressBar value={stats.mcqAccuracy || 0} className="mt-2 h-2" barClass={stats.mcqAccuracy < 60 ? "bg-[#F97316]" : "bg-[#5BB3B3]"} />
             <p className="text-[#A0B0BC] text-sm mt-2 italic">{hasData ? `&quot;Your overall accuracy is ${stats.mcqAccuracy}%. ${stats.mcqAccuracy < 70 ? "Let's strengthen this together." : "Great progress!"}&quot;` : `&quot;Start studying to see your personalized insights here.&quot;`}</p>
             <div className="flex flex-wrap gap-2 mt-3">
-              {[{ name: "Variceal Bleeding", time: "15 min", src: "Shackelford Ch.35" }, { name: "Child-Pugh Score", time: "10 min", src: "Harrison's Ch.12" }, { name: "TIPS Procedure", time: "20 min", src: "Sabiston Ch.54" }].map((t) => (
-                <span key={t.name} className="bg-[#253545] text-[#E8E0D5] text-xs px-3 py-1.5 rounded-lg border border-[rgba(232,224,213,0.06)]">
-                  {t.name} · <span className="text-[#6B7A88]">{t.time} · {t.src}</span>
+              {recommendedChips.map((t) => (
+                <span key={t.title} className="bg-[#253545] text-[#E8E0D5] text-xs px-3 py-1.5 rounded-lg border border-[rgba(232,224,213,0.06)]">
+                  {t.title} · <span className="text-[#6B7A88]">{t.minutes} · {t.source}</span>
                 </span>
               ))}
+              {recommendedChips.length === 0 && (
+                <span className="bg-[#253545] text-[#E8E0D5] text-xs px-3 py-1.5 rounded-lg border border-[rgba(232,224,213,0.06)]">
+                  Complete more sessions to unlock targeted recommendations.
+                </span>
+              )}
             </div>
             <div className="flex items-center gap-4 mt-3 text-xs text-[#6B7A88]">
-              <span>+50 coins</span><span>+5 XP</span><span>45 min</span><span>Last reviewed: 3 days ago</span>
+              <span>{studyPlan?.today?.study_minutes || 0} min studied today</span>
+              <span>{studyPlan?.today?.mcqs_attempted || 0} MCQs today</span>
+              <span>{coachSessionMinutes} min suggested</span>
+              <span>Last studied: {lastStudyText}</span>
             </div>
             <div className="flex gap-3 mt-4">
-              <button className="bg-[#10B981] hover:bg-[#059669] text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors">Start 45-min Review</button>
-              <button className="border border-[rgba(232,224,213,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5] px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-1.5 transition-colors"><Bookmark className="w-3.5 h-3.5" /> Ask Why</button>
+              <button className="bg-[#10B981] hover:bg-[#059669] text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors">Start {coachSessionMinutes}-min Review</button>
+              <button onClick={handleAskWhy} className="border border-[rgba(232,224,213,0.15)] text-[#A0B0BC] hover:text-[#E8E0D5] px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-1.5 transition-colors"><Bookmark className="w-3.5 h-3.5" /> Ask Why</button>
             </div>
           </div>
         </div>
@@ -257,13 +482,29 @@ export default function DeskPage() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <h2 className="text-[#E8E0D5] font-semibold text-lg">Today&apos;s Study Plan</h2>
-            <span className="text-[#6B7A88] text-sm">~70 min</span>
+            <span className="text-[#6B7A88] text-sm">~{todayTotalMinutes} min</span>
           </div>
           <Badge className="bg-orange-500/20 text-orange-400 flex items-center gap-1"><Flame className="w-3 h-3" /> {stats.streak} day streak</Badge>
         </div>
         <div className="space-y-2">
           {studyPlanTasks.map((task, i) => (
-            <div key={i} className={cn("flex items-center gap-3 p-3 rounded-xl transition-colors", task.done ? "bg-[#253545]/50 opacity-60" : "bg-[#253545] hover:bg-[#2a3f52]")}>
+            <div
+              key={i}
+              onClick={() => {
+                if (!task.actionPath) return;
+                void trackEvent("task_started", {
+                  source: "desk_task_card",
+                  task_title: task.title,
+                  target_path: task.actionPath,
+                });
+                router.push(task.actionPath);
+              }}
+              className={cn(
+                "flex items-center gap-3 p-3 rounded-xl transition-colors",
+                task.done ? "bg-[#253545]/50 opacity-60" : "bg-[#253545] hover:bg-[#2a3f52]",
+                task.actionPath ? "cursor-pointer" : ""
+              )}
+            >
               {task.done ? <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> : <Circle className="w-5 h-5 text-[#6B7A88] shrink-0" />}
               <task.icon className="w-4 h-4 text-[#5BB3B3] shrink-0" />
               <div className="flex-1 min-w-0">
@@ -278,9 +519,9 @@ export default function DeskPage() {
           ))}
         </div>
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-[rgba(232,224,213,0.06)]">
-          <div className="text-xs text-[#6B7A88]">Complete all tasks: <span className="text-[#F97316]">+100 coins bonus</span>, <span className="text-[#5BB3B3]">+15 XP total</span></div>
+          <div className="text-xs text-[#6B7A88]">{studyPlan?.tasks?.length || 0} tasks generated for today based on your goals.</div>
         </div>
-        <button className="w-full mt-3 bg-[#5BB3B3] hover:bg-[#4a9e9e] text-white py-2.5 rounded-xl text-sm font-medium transition-colors">Start Today&apos;s Plan (145 coins available)</button>
+          <button onClick={handleStartTodayPlan} className="w-full mt-3 bg-[#5BB3B3] hover:bg-[#4a9e9e] text-white py-2.5 rounded-xl text-sm font-medium transition-colors">Start Today&apos;s Plan</button>
         <p className="text-[10px] text-[#6B7A88] mt-2 text-center">💡 Interleaved learning: Topics mix review, new content, and retrieval for optimal retention</p>
       </Card>
 
@@ -289,6 +530,15 @@ export default function DeskPage() {
         <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
           <h3 className="text-[#E8E0D5] font-semibold mb-3">Continue Where You Left</h3>
           <div className="space-y-3">
+            {continueItems.length === 0 && (
+              <div className="bg-[#253545] rounded-xl p-4">
+                <p className="text-sm text-[#E8E0D5]">No in-progress topics yet.</p>
+                <p className="text-xs text-[#6B7A88] mt-1">Start one topic and it will appear here for fast resume.</p>
+                <button onClick={handleStartFirstTopic} className="mt-3 text-xs text-[#5BB3B3] hover:underline">
+                  Start from Library
+                </button>
+              </div>
+            )}
             {continueItems.map((item, i) => (
               <div key={i} className="bg-[#253545] rounded-xl p-3">
                 <div className="flex items-center justify-between mb-1">
@@ -322,11 +572,15 @@ export default function DeskPage() {
               </div>
             ))}
           </div>
-          <div className="bg-[#253545] rounded-xl p-3 mt-3 flex gap-2 items-start">
+            <div className="bg-[#253545] rounded-xl p-3 mt-3 flex gap-2 items-start">
             <Star className="w-4 h-4 text-[#F97316] shrink-0 mt-0.5" />
             <div>
               <p className="text-xs text-[#E8E0D5] font-medium">Key Insight</p>
-              <p className="text-xs text-[#A0B0BC]">Your retrieval accuracy peaks during morning sessions. Consider scheduling weak areas before noon.</p>
+              <p className="text-xs text-[#A0B0BC]">
+                {analytics?.avgAccuracy
+                  ? `Current rolling accuracy is ${analytics.avgAccuracy}%. Keep logging MCQs for sharper recommendations.`
+                  : "Complete a few MCQ sets to unlock stronger accuracy guidance."}
+              </p>
             </div>
           </div>
           <button className="text-xs text-[#5BB3B3] mt-2 hover:underline">Why these metrics?</button>
@@ -377,30 +631,49 @@ export default function DeskPage() {
         <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-[#E8E0D5] font-semibold">Current Pathway</h3>
-            <Badge className="bg-teal-500/20 text-teal-400">In Progress</Badge>
+            <Badge className={activePathway ? "bg-teal-500/20 text-teal-400" : "bg-[#253545] text-[#A0B0BC]"}>{pathwayStatus}</Badge>
           </div>
-          <p className="text-[#A0B0BC] text-sm">Surgical GI Mastery · 16/24 topics</p>
-          <ProgressBar value={85} className="mt-2 h-2" />
-          <p className="text-xs text-[#6B7A88] mt-1 text-right">85%</p>
+          <p className="text-[#A0B0BC] text-sm">
+            {activePathway ? `${activePathway.title} · ${activePathway.current_atom_index}/${activePathway.total_atoms} topics` : "No active pathway yet"}
+          </p>
+          <ProgressBar value={activePathway?.progress_percent || 0} className="mt-2 h-2" />
+          <p className="text-xs text-[#6B7A88] mt-1 text-right">{activePathway?.progress_percent || 0}%</p>
           <div className="mt-4 space-y-2">
             <div className="flex items-center gap-2 text-sm">
               <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
               <span className="text-[#6B7A88]">Reading:</span>
-              <span className="text-[#E8E0D5]">Hepatobiliary Anatomy</span>
+              <span className="text-[#E8E0D5]">{continueItems[0]?.title || "Start a new topic"}</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <ChevronRight className="w-4 h-4 text-[#6B7A88]" />
               <span className="text-[#6B7A88]">Up Next:</span>
-              <span className="text-[#A0B0BC]">Biliary Tract Surgery</span>
+              <span className="text-[#A0B0BC]">{continueItems[1]?.title || "Follow your recommended plan"}</span>
             </div>
           </div>
-          <button className="mt-4 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1">Continue Learning <ChevronRight className="w-4 h-4" /></button>
+          {!activePathway && (
+            <div className="mt-3 bg-[#253545] rounded-xl p-3">
+              <p className="text-xs text-[#A0B0BC]">No active pathway is currently tracking your progress.</p>
+              <button onClick={handleStartFirstPathway} className="mt-2 text-xs text-[#5BB3B3] hover:underline">
+                Start your first pathway
+              </button>
+            </div>
+          )}
+          <button onClick={handleContinueLearning} className="mt-4 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1">Continue Learning <ChevronRight className="w-4 h-4" /></button>
         </Card>
 
         <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
           <h3 className="text-[#E8E0D5] font-semibold mb-1">Focus Areas</h3>
           <p className="text-xs text-[#6B7A88] mb-3">ATOM flagged these topics based on your MCQ performance:</p>
           <div className="space-y-3">
+            {focusAreas.length === 0 && (
+              <div className="bg-[#253545] rounded-xl p-4">
+                <p className="text-sm text-[#E8E0D5]">No weak areas detected yet.</p>
+                <p className="text-xs text-[#6B7A88] mt-1">Take a retrieval quiz to generate targeted weak-area insights.</p>
+                <button onClick={handleOpenRetrievalStrength} className="mt-3 text-xs text-[#5BB3B3] hover:underline">
+                  Take diagnostic quiz
+                </button>
+              </div>
+            )}
             {focusAreas.map((a, i) => (
               <div key={i} className="bg-[#253545] rounded-xl p-3">
                 <div className="flex items-center justify-between mb-1">
@@ -412,7 +685,7 @@ export default function DeskPage() {
               </div>
             ))}
           </div>
-          <button className="mt-3 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1"><AlertTriangle className="w-3.5 h-3.5" /> Practice Weak Areas</button>
+          <button onClick={handlePracticeWeakAreas} className="mt-3 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed" disabled={!hasFocusAreas}><AlertTriangle className="w-3.5 h-3.5" /> Practice Weak Areas</button>
         </Card>
       </div>
 
@@ -437,6 +710,97 @@ export default function DeskPage() {
           ))}
         </div>
       </Card>
+      </>
+      ) : (
+      <>
+      <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-[#E8E0D5] font-semibold text-lg">Knowledge Graph Snapshot</h2>
+          <Badge className="bg-[#253545] text-[#A0B0BC]">Live from your activity</Badge>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <button onClick={handleOpenConnectedTopics} className="bg-[#253545] rounded-xl p-4 text-left hover:bg-[#2a3f52] transition-colors">
+            <p className="text-[10px] text-[#6B7A88] uppercase tracking-wider">Connected Topics</p>
+            <p className="text-2xl font-bold text-[#E8E0D5] mt-1">{stats.weekTopics}</p>
+            <p className="text-xs text-[#A0B0BC] mt-1">Topics touched in the last 7 days</p>
+          </button>
+          <button onClick={handleOpenRetrievalStrength} className="bg-[#253545] rounded-xl p-4 text-left hover:bg-[#2a3f52] transition-colors">
+            <p className="text-[10px] text-[#6B7A88] uppercase tracking-wider">Retrieval Strength</p>
+            <p className="text-2xl font-bold text-[#E8E0D5] mt-1">{stats.mcqAccuracy}%</p>
+            <p className="text-xs text-[#A0B0BC] mt-1">Current signal from MCQ attempts</p>
+          </button>
+          <button onClick={handleOpenPathwayProgress} className="bg-[#253545] rounded-xl p-4 text-left hover:bg-[#2a3f52] transition-colors">
+            <p className="text-[10px] text-[#6B7A88] uppercase tracking-wider">Active Pathway</p>
+            <p className="text-2xl font-bold text-[#E8E0D5] mt-1">{activePathway?.progress_percent || 0}%</p>
+            <p className="text-xs text-[#A0B0BC] mt-1">{activePathway?.title || "No active pathway"}</p>
+          </button>
+        </div>
+      </Card>
+
+      <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-[#E8E0D5] font-semibold">Weekly Signal Flow</h3>
+          <button onClick={handleOpenWeeklySignal} className="text-xs text-[#5BB3B3] hover:underline">Open full analytics</button>
+        </div>
+        <div className="flex items-end gap-2 h-44">
+          {weeklyChart.map((d) => (
+            <div key={d.day} className="flex-1 flex flex-col items-center gap-1">
+              <div className="w-full flex flex-col items-center justify-end h-36 relative">
+                <div className="w-full max-w-8 bg-[#5BB3B3] rounded-t-md transition-all" style={{ height: `${(d.hours / (maxHours + 1)) * 100}%` }} />
+                <div className="absolute top-0 w-2 h-2 rounded-full bg-[#E879F9]" style={{ bottom: `${(d.mcqs / 100) * 100}%`, top: "auto" }} />
+              </div>
+              <span className="text-[10px] text-[#6B7A88]">{d.day}</span>
+            </div>
+          ))}
+        </div>
+      </Card>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <h3 className="text-[#E8E0D5] font-semibold mb-1">Weak Links</h3>
+          <p className="text-xs text-[#6B7A88] mb-3">Low-accuracy areas detected from recent attempts.</p>
+          <div className="space-y-3">
+            {focusAreas.length === 0 && (
+              <p className="text-sm text-[#6B7A88]">No weak links detected this week.</p>
+            )}
+            {focusAreas.map((a, i) => (
+              <div key={i} className="bg-[#253545] rounded-xl p-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-sm text-[#E8E0D5]">{a.topic}</span>
+                  <Badge className={a.color}>{a.accuracy}%</Badge>
+                </div>
+                <p className="text-[10px] text-[#6B7A88] mb-1.5">{a.attempts} attempts</p>
+                <ProgressBar value={a.accuracy} barClass={a.accuracy < 60 ? "bg-red-400" : "bg-orange-400"} />
+              </div>
+            ))}
+          </div>
+          <button onClick={handlePracticeWeakAreas} className="mt-3 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed" disabled={!hasFocusAreas}><AlertTriangle className="w-3.5 h-3.5" /> Practice Weak Areas</button>
+        </Card>
+
+        <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <h3 className="text-[#E8E0D5] font-semibold mb-4">Recent Activity</h3>
+          <div className="space-y-3">
+            {recentActivity.length === 0 && (
+              <p className="text-sm text-[#6B7A88] text-center py-4">No activity yet. Start studying to populate your graph.</p>
+            )}
+            {recentActivity.map((a, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="mt-0.5"><a.icon className={cn("w-4 h-4", a.color)} /></div>
+                <div className="flex-1">
+                  <p className="text-sm text-[#E8E0D5]">{a.text}</p>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-xs text-[#6B7A88]">{a.time}</span>
+                    <Badge className="bg-[#253545] text-[#A0B0BC]">{a.type}</Badge>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+      </>
+      )}
     </div>
+    </ApiStateBoundary>
   );
 }

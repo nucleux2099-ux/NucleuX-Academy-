@@ -141,6 +141,7 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json();
     const { event, data } = body;
+    const eventPayload = data && typeof data === 'object' ? data : {};
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -150,7 +151,7 @@ export async function POST(request: NextRequest) {
         await supabase.rpc('increment_study_time', {
           p_user_id: user.id,
           p_date: today,
-          p_minutes: data.minutes
+          p_minutes: (eventPayload as { minutes?: number }).minutes
         });
         break;
 
@@ -160,7 +161,7 @@ export async function POST(request: NextRequest) {
           p_user_id: user.id,
           p_date: today,
           p_attempted: 1,
-          p_correct: data.correct ? 1 : 0
+          p_correct: (eventPayload as { correct?: boolean }).correct ? 1 : 0
         });
         break;
 
@@ -173,13 +174,22 @@ export async function POST(request: NextRequest) {
         break;
 
       default:
-        return NextResponse.json(
-          { error: 'Unknown event type' },
-          { status: 400 }
-        );
+        // Generic product telemetry event
+        const { error: eventInsertError } = await supabase
+          .from('analytics_events')
+          .insert({
+            user_id: user.id,
+            event_name: event,
+            event_data: eventPayload,
+          });
+        if (eventInsertError) {
+          console.warn('Analytics event insert failed:', eventInsertError.message);
+          return NextResponse.json({ success: true, event, stored: false }, { status: 202 });
+        }
+        break;
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, event, stored: true });
   } catch (error) {
     console.error('Analytics POST error:', error);
     return NextResponse.json(

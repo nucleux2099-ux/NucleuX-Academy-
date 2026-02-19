@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -110,7 +110,7 @@ type MobileTab = "sources" | "chat" | "actions";
 export default function DeskPage() {
   const [sources, setSources] = useState<Source[]>(initialSources);
   const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
-  const [outputs, setOutputs] = useState<OutputCard[]>(mockOutputs);
+  const [outputs] = useState<OutputCard[]>(mockOutputs);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);

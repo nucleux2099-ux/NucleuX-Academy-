@@ -60,7 +60,7 @@ function makeId(): string {
 function makeRectangle(
   x: number, y: number, w: number, h: number,
   opts: { bg: string; stroke: string; rounded?: boolean; groupId?: string }
-): any {
+): ExcalidrawElement {
   return {
     id: makeId(),
     type: 'rectangle',
@@ -88,7 +88,7 @@ function makeRectangle(
 function makeEllipse(
   x: number, y: number, w: number, h: number,
   opts: { bg: string; stroke: string; groupId?: string }
-): any {
+): ExcalidrawElement {
   return {
     id: makeId(),
     type: 'ellipse',
@@ -115,7 +115,7 @@ function makeEllipse(
 function makeDiamond(
   x: number, y: number, w: number, h: number,
   opts: { bg: string; stroke: string; groupId?: string }
-): any {
+): ExcalidrawElement {
   return {
     id: makeId(),
     type: 'diamond',
@@ -142,7 +142,7 @@ function makeDiamond(
 function makeText(
   x: number, y: number, text: string,
   opts: { color: string; fontSize?: number; groupId?: string; bold?: boolean; align?: string }
-): any {
+): ExcalidrawElement {
   return {
     id: makeId(),
     type: 'text',
@@ -174,7 +174,7 @@ function makeText(
 function makeArrow(
   startX: number, startY: number, endX: number, endY: number,
   opts: { stroke: string; groupId?: string }
-): any {
+): ExcalidrawElement {
   return {
     id: makeId(),
     type: 'arrow',
@@ -215,6 +215,8 @@ interface PositionedNode {
   height: number;
   children: PositionedNode[];
 }
+
+type ExcalidrawElement = Record<string, unknown>;
 
 const NODE_PADDING = 20;
 const NODE_MIN_WIDTH = 140;
@@ -328,8 +330,8 @@ function generateNodeElements(
   positioned: PositionedNode,
   parentCenter?: { x: number; y: number },
   depth: number = 0
-): any[] {
-  const elements: any[] = [];
+): ExcalidrawElement[] {
+  const elements: ExcalidrawElement[] = [];
   const { node, x, y, width, height } = positioned;
   const colors = node.blank
     ? BLANK_STYLE
@@ -421,7 +423,7 @@ export function generateMindMapScene(
   definition: MindMapDefinition,
   canvasWidth: number = 1200,
   canvasHeight: number = 800
-): any[] {
+): ExcalidrawElement[] {
   elementCounter = 0;
   const layout = definition.layout || 'tree-right';
 
@@ -445,7 +447,7 @@ export function generateProgressiveReveal(
   definition: MindMapDefinition,
   canvasWidth: number = 1200,
   canvasHeight: number = 800
-): any[][] {
+): ExcalidrawElement[][] {
   elementCounter = 0;
   const layout = definition.layout || 'tree-right';
 
@@ -456,7 +458,7 @@ export function generateProgressiveReveal(
     positioned = layoutTreeRight(definition.root, 60, canvasHeight / 2 - 25, 0);
   }
 
-  const stages: any[][] = [];
+  const stages: ExcalidrawElement[][] = [];
   
   // Stage 0: Root node only
   const rootElements = generateNodeElements({ ...positioned, children: [] });

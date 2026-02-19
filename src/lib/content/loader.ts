@@ -11,7 +11,8 @@
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import type { LibraryTopic, NmcCode } from '@/lib/types/library';
+import type { LibraryTopic, NmcCode, RetrievalCard } from '@/lib/types/library';
+import type { TopicRoadmap, RoadmapLink } from '@/lib/data/roadmap-types';
 import { SUBSPECIALTY_CONTENT_MAP } from '@/lib/data/content-mapping';
 
 /**
@@ -138,7 +139,7 @@ interface TopicMeta {
   related_topics?: string[];
   exam_tags?: string[];
   tags?: string[];
-  sources?: any;
+  sources?: unknown;
   nmc_codes?: Array<{
     code: string;
     domain: 'K' | 'KH' | 'SH' | 'P';
@@ -227,7 +228,11 @@ export function getSubspecialtiesFromContent(subject: string): string[] {
  * Load subspecialty index
  */
 export function loadSubspecialtyIndex(subject: string, subspecialty: string): ContentIndex | null {
-  const indexPath = path.join(CONTENT_DIR, subject, subspecialty, '_index.yaml');
+  const dirPath = resolveContentDir(subject, subspecialty);
+  if (!dirPath) {
+    return null;
+  }
+  const indexPath = path.join(dirPath, '_index.yaml');
   
   if (!fs.existsSync(indexPath)) {
     return null;
@@ -248,9 +253,14 @@ export function loadSubspecialtyIndex(subject: string, subspecialty: string): Co
 export function loadTopicFromMarkdownFile(
   subject: string,
   subspecialty: string,
-  filename: string
+  filename: string,
+  baseDir?: string
 ): LibraryTopic | null {
-  const filePath = path.join(CONTENT_DIR, subject, subspecialty, filename);
+  const dirPath = baseDir || resolveContentDir(subject, subspecialty);
+  if (!dirPath) {
+    return null;
+  }
+  const filePath = path.join(dirPath, filename);
 
   if (!fs.existsSync(filePath)) {
     return null;
@@ -303,9 +313,14 @@ export function loadTopicFromMarkdownFile(
 export function loadTopicFromFolder(
   subject: string,
   subspecialty: string,
-  topicSlug: string
+  topicSlug: string,
+  baseDir?: string
 ): LibraryTopic | null {
-  const topicDir = path.join(CONTENT_DIR, subject, subspecialty, topicSlug);
+  const dirPath = baseDir || resolveContentDir(subject, subspecialty);
+  if (!dirPath) {
+    return null;
+  }
+  const topicDir = path.join(dirPath, topicSlug);
   if (!fs.existsSync(topicDir) || !fs.statSync(topicDir).isDirectory()) {
     return null;
   }
@@ -332,24 +347,57 @@ export function loadTopicFromFolder(
     const roadmapMd = fs.existsSync(roadmapPath) ? fs.readFileSync(roadmapPath, 'utf-8') : undefined;
 
     // Parse retrieval cards if present (preferred JSON; fallback markdown)
-    let retrievalCards: any[] | undefined;
+    let retrievalCards: RetrievalCard[] | undefined;
     if (fs.existsSync(cardsPath)) {
       try {
-        const parsed = JSON.parse(fs.readFileSync(cardsPath, 'utf-8'));
+        const parsed: unknown = JSON.parse(fs.readFileSync(cardsPath, 'utf-8'));
         const arr = Array.isArray(parsed)
           ? parsed
-          : Array.isArray((parsed as any)?.cards)
-            ? (parsed as any).cards
+          : (
+              typeof parsed === 'object' &&
+              parsed !== null &&
+              'cards' in parsed &&
+              Array.isArray((parsed as { cards?: unknown }).cards)
+            )
+            ? (parsed as { cards: unknown[] }).cards
             : undefined;
 
         // Normalize to {question, answer}
-        retrievalCards = arr?.map((c: any) => ({
-          id: c.id,
-          question: c.question ?? c.front,
-          answer: c.answer ?? c.back,
-          difficulty: c.difficulty,
-          tags: c.tags,
-        }));
+        const normalizedCards = (arr ?? []).reduce<RetrievalCard[]>((acc, c) => {
+          const card = (typeof c === 'object' && c !== null ? c : {}) as Record<string, unknown>;
+          const question = typeof card.question === 'string'
+            ? card.question
+            : typeof card.front === 'string'
+              ? card.front
+              : undefined;
+          const answer = typeof card.answer === 'string'
+            ? card.answer
+            : typeof card.back === 'string'
+              ? card.back
+              : undefined;
+          const difficulty =
+            typeof card.difficulty === 'number' &&
+            Number.isInteger(card.difficulty) &&
+            card.difficulty >= 1 &&
+            card.difficulty <= 5
+              ? (card.difficulty as RetrievalCard['difficulty'])
+              : undefined;
+          const tags = Array.isArray(card.tags)
+            ? card.tags.filter((tag): tag is string => typeof tag === 'string')
+            : undefined;
+
+          if (!question || !answer) return acc;
+
+          acc.push({
+            id: typeof card.id === 'string' ? card.id : undefined,
+            question,
+            answer,
+            difficulty,
+            tags,
+          });
+          return acc;
+        }, []);
+        retrievalCards = normalizedCards.length > 0 ? normalizedCards : undefined;
       } catch {
         retrievalCards = undefined;
       }
@@ -359,12 +407,40 @@ export function loadTopicFromFolder(
     }
 
     // Load roadmap JSON files (UG/PG/SS)
-    const roadmapJsonData: any[] = [];
+    const roadmapJsonData: TopicRoadmap[] = [];
     for (const [rPath, level] of [[roadmapUgPath, 'UG'], [roadmapPgPath, 'PG'], [roadmapSsPath, 'SS']] as const) {
       if (fs.existsSync(rPath)) {
         try {
           const parsed = JSON.parse(fs.readFileSync(rPath, 'utf-8'));
-          roadmapJsonData.push({ ...parsed, level });
+          if (typeof parsed === 'object' && parsed !== null) {
+            const raw = parsed as Record<string, unknown>;
+            const toLinks = (value: unknown): RoadmapLink[] =>
+              Array.isArray(value)
+                ? value
+                    .map((item) => (typeof item === 'object' && item !== null ? (item as Record<string, unknown>) : null))
+                    .filter((item): item is Record<string, unknown> => item !== null)
+                    .map((item) => ({
+                      subject: typeof item.subject === 'string' ? item.subject : '',
+                      topic: typeof item.topic === 'string' ? item.topic : '',
+                      nmcCode: typeof item.nmcCode === 'string' ? item.nmcCode : undefined,
+                      reason: typeof item.reason === 'string' ? item.reason : '',
+                      exists: Boolean(item.exists),
+                    }))
+                : [];
+            const toStrings = (value: unknown): string[] =>
+              Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : [];
+
+            roadmapJsonData.push({
+              level,
+              foundations: toLinks(raw.foundations),
+              clinical: toLinks(raw.clinical),
+              extensions: toLinks(raw.extensions),
+              objectives: toStrings(raw.objectives),
+              nextTopics: toStrings(raw.nextTopics),
+              prevTopics: toStrings(raw.prevTopics),
+              integration: typeof raw.integration === 'string' ? raw.integration : '',
+            });
+          }
         } catch { /* skip malformed */ }
       }
     }
@@ -429,7 +505,12 @@ export function loadTopicsForSubspecialty(
   const entries = fs.readdirSync(dirPath);
 
   // Load index for ordering (supports both categories[] and topics[])
-  const index = loadSubspecialtyIndex(subject, subspecialty) as any;
+  const index = loadSubspecialtyIndex(subject, subspecialty) as
+    | {
+        categories?: Array<{ topics?: string[] }>;
+        topics?: unknown[];
+      }
+    | null;
   const orderedSlugs: string[] = [];
 
   if (index?.categories) {
@@ -459,7 +540,7 @@ export function loadTopicsForSubspecialty(
     const hasExplorer = fs.existsSync(path.join(full, 'explorer.md'));
     if (!hasMeta && !hasExplorer) continue;
 
-    const topic = loadTopicFromFolder(subject, subspecialty, entry);
+    const topic = loadTopicFromFolder(subject, subspecialty, entry, dirPath);
     if (topic) {
       topicsBySlug.set(topic.slug, topic);
     }
@@ -468,7 +549,7 @@ export function loadTopicsForSubspecialty(
   // 2) Load flat markdown files at root (legacy)
   const mdFiles = entries.filter(f => f.endsWith('.md') && !f.startsWith('_'));
   for (const file of mdFiles) {
-    const topic = loadTopicFromMarkdownFile(subject, subspecialty, file);
+    const topic = loadTopicFromMarkdownFile(subject, subspecialty, file, dirPath);
     if (topic && !topicsBySlug.has(topic.slug)) {
       topicsBySlug.set(topic.slug, topic);
     }
@@ -598,7 +679,6 @@ export function getContentStats(subject: string, subspecialty: string): {
   completeness: number;
 } {
   const topics = loadTopicsForSubspecialty(subject, subspecialty);
-  const index = loadSubspecialtyIndex(subject, subspecialty);
   
   const topicCount = topics.length;
   const hasContent = topicCount > 0;

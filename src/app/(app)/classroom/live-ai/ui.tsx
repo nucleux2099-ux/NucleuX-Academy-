@@ -56,8 +56,8 @@ export default function LiveAIClassroomClient() {
       if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
       if (!json?.audio_base64) throw new Error('No audio returned');
       setAudioDataUrl(`data:audio/wav;base64,${json.audio_base64}`);
-    } catch (e: any) {
-      setTtsError(e?.message || 'TTS failed');
+    } catch (e: unknown) {
+      setTtsError(e instanceof Error ? e.message : 'TTS failed');
     } finally {
       setTtsLoading(false);
     }
@@ -113,8 +113,8 @@ export default function LiveAIClassroomClient() {
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`);
       setTranscript(json?.transcript || '');
-    } catch (e: any) {
-      setSttError(e?.message || 'STT failed');
+    } catch (e: unknown) {
+      setSttError(e instanceof Error ? e.message : 'STT failed');
     } finally {
       setSttLoading(false);
     }

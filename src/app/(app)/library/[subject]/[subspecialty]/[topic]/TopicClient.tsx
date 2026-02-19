@@ -150,15 +150,13 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   // Optional reading aid: Bionic Reader (persisted per-device)
-  const [bionicReader, setBionicReader] = useState(false);
-  useEffect(() => {
+  const [bionicReader, setBionicReader] = useState(() => {
     try {
-      const v = localStorage.getItem('nx_bionic_reader');
-      if (v === '1') setBionicReader(true);
+      return localStorage.getItem('nx_bionic_reader') === '1';
     } catch {
-      // ignore
+      return false;
     }
-  }, []);
+  });
   useEffect(() => {
     try {
       localStorage.setItem('nx_bionic_reader', bionicReader ? '1' : '0');
@@ -358,6 +356,16 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
                   <MedicalMarkdown content={richContent} bionic={bionicReader} />
                 </CardContent>
               </Card>
+            </div>
+          );
+        }
+
+        if (richContentError) {
+          return (
+            <div className="text-center py-12">
+              <BookOpen className="w-12 h-12 text-[#6B7280] mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-[#E5E7EB] mb-2">Unable to load full content</h3>
+              <p className="text-[#9CA3AF]">{richContentError}</p>
             </div>
           );
         }

@@ -12,7 +12,6 @@ import {
   Sparkles,
   GraduationCap,
   Library,
-  Compass,
   Stethoscope
 } from "lucide-react";
 import { SUBJECTS } from "@/lib/data/subjects";

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Brain, Atom, CheckCircle2, Star, Users, Shield, Sparkles } from 'lucide-react';
+import { ArrowRight, Atom, Star, Users, Sparkles } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 

@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json()
-    const { mcqAttempts, readingSessions, videoSessions, dailyStats, topicMemories } = body
+    const { mcqAttempts, dailyStats } = body
 
     // Sync MCQ attempts
     if (mcqAttempts?.length > 0) {
@@ -44,13 +44,27 @@ export async function POST(request: Request) {
         created_at: attempt.timestamp,
       }))
 
-      // Upsert to avoid duplicates (based on user_id + created_at)
-      const { error: mcqError } = await supabase
+      const attemptTimestamps = mcqData.map((attempt) => attempt.created_at)
+      const { data: existingAttempts } = await supabase
         .from('mcq_attempts')
-        .upsert(mcqData, { 
-          onConflict: 'id',
-          ignoreDuplicates: true 
-        })
+        .select('mcq_id, created_at')
+        .eq('user_id', user.id)
+        .in('created_at', attemptTimestamps)
+
+      const existingKeys = new Set(
+        (existingAttempts || []).map((attempt) => `${attempt.mcq_id}:${attempt.created_at}`)
+      )
+      const newAttempts = mcqData.filter(
+        (attempt) => !existingKeys.has(`${attempt.mcq_id}:${attempt.created_at}`)
+      )
+
+      let mcqError: unknown = null
+      if (newAttempts.length > 0) {
+        const result = await supabase
+          .from('mcq_attempts')
+          .insert(newAttempts)
+        mcqError = result.error
+      }
 
       if (mcqError) {
         console.error('MCQ sync error:', mcqError)

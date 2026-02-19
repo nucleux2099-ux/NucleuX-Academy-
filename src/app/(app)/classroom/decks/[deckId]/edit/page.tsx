@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,7 +19,12 @@ export default function DeckEditPage() {
   const initial = useMemo(() => getDeck(deckId), [deckId]);
   const [deck, setDeck] = useState(initial);
   const [selectedId, setSelectedId] = useState(initial?.slides[0]?.slideId);
-  const [templates, setTemplates] = useState<Template[]>([]);
+  const [templates] = useState<Template[]>(() => {
+    const existing = loadTemplates();
+    if (existing.length > 0) return existing;
+    saveTemplates(defaultTemplates);
+    return defaultTemplates;
+  });
   const [templateId, setTemplateId] = useState<string>("");
 
   if (!deck) {
@@ -33,16 +38,6 @@ export default function DeckEditPage() {
 
   const slides = [...deck.slides].sort((a, b) => a.order - b.order);
   const slide = slides.find((s) => s.slideId === selectedId) ?? slides[0];
-
-  useEffect(() => {
-    const existing = loadTemplates();
-    if (existing.length === 0) {
-      saveTemplates(defaultTemplates);
-      setTemplates(defaultTemplates);
-    } else {
-      setTemplates(existing);
-    }
-  }, []);
 
   return (
     <div className="space-y-6">

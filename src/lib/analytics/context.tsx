@@ -67,6 +67,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   const [isSyncing, setIsSyncing] = useState(false);
   const syncTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pendingSyncRef = useRef(false);
+  const syncToCloudRef = useRef<() => Promise<void>>(async () => {});
   
   // Sync to Supabase
   const syncToCloud = useCallback(async () => {
@@ -108,6 +109,10 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     }, SYNC_DEBOUNCE_MS);
   }, [syncToCloud]);
 
+  useEffect(() => {
+    syncToCloudRef.current = syncToCloud;
+  }, [syncToCloud]);
+
   // Load on mount + try to merge from cloud
   useEffect(() => {
     const loadData = async () => {
@@ -142,7 +147,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
           saveAnalytics(updated);
           setAnalytics({ ...updated });
         }
-      } catch (error) {
+      } catch {
         // Not logged in or network error - continue with localStorage
         console.log('Cloud analytics not available, using localStorage');
       }
@@ -157,7 +162,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
       }
       // Sync any pending changes before unmount
       if (pendingSyncRef.current) {
-        syncToCloud();
+        void syncToCloudRef.current();
       }
     };
   }, []);

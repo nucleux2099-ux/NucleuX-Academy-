@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Target,
-  BookOpen,
   MessageSquare,
   SkipForward,
   Clock,
@@ -151,8 +150,8 @@ export function ATOMStudyCoach() {
   const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [completedToday, setCompletedToday] = useState(0);
-  const [totalCoinsToday, setTotalCoinsToday] = useState(0);
+  const [completedToday] = useState(0);
+  const isAnimatingRef = useRef(false);
 
   const recommendations = mockRecommendations;
   const timeContext = mockTimeContext;
@@ -162,25 +161,37 @@ export function ATOMStudyCoach() {
   const allThreeBonus = completedToday === 2 ? 200 : 0; // Bonus if completing 3rd
 
   // Navigation
-  const goToPrev = () => {
-    if (isAnimating) return;
+  useEffect(() => {
+    isAnimatingRef.current = isAnimating;
+  }, [isAnimating]);
+
+  const goToPrev = useCallback(() => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev === 0 ? recommendations.length - 1 : prev - 1));
-    setTimeout(() => setIsAnimating(false), 300);
-  };
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+      setIsAnimating(false);
+    }, 300);
+  }, [recommendations.length]);
 
-  const goToNext = () => {
-    if (isAnimating) return;
+  const goToNext = useCallback(() => {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
     setIsAnimating(true);
     setCurrentIndex((prev) => (prev === recommendations.length - 1 ? 0 : prev + 1));
-    setTimeout(() => setIsAnimating(false), 300);
-  };
+    setTimeout(() => {
+      isAnimatingRef.current = false;
+      setIsAnimating(false);
+    }, 300);
+  }, [recommendations.length]);
 
   // Auto-rotate carousel every 10 seconds
   useEffect(() => {
     const timer = setInterval(goToNext, 10000);
     return () => clearInterval(timer);
-  }, []);
+  }, [goToNext]);
 
   const handleStartReview = () => {
     // In real app: track start, navigate to curated session

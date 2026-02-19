@@ -1,6 +1,6 @@
 'use client';
 
-import { Atom, Heart, BookOpen, Brain, Users, Stethoscope, Target, Lightbulb, GraduationCap } from 'lucide-react';
+import { Atom, Heart, BookOpen, Brain, Stethoscope, Target, GraduationCap } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 

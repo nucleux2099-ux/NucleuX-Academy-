@@ -14,6 +14,8 @@ import yaml from 'js-yaml';
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
 type Problem = { level: 'error' | 'warn'; where: string; message: string };
+type TopicCategory = { topics?: string[] };
+type SubspecialtyIndex = { categories?: TopicCategory[]; topics?: string[] };
 
 function isDir(p: string) {
   try {
@@ -23,7 +25,7 @@ function isDir(p: string) {
   }
 }
 
-function readYaml(filePath: string): any {
+function readYaml(filePath: string): unknown {
   const raw = fs.readFileSync(filePath, 'utf8');
   return yaml.load(raw);
 }
@@ -71,10 +73,11 @@ function validateTopicDir(topicDir: string, problems: Problem[]) {
           });
         }
       }
-    } catch (e: any) {
-      problems.push({ level: 'warn', where: cards, message: `Invalid JSON: ${e.message}` });
-    }
-  }
+	    } catch (e: unknown) {
+	      const message = e instanceof Error ? e.message : 'unknown parse error';
+	      problems.push({ level: 'warn', where: cards, message: `Invalid JSON: ${message}` });
+	    }
+	  }
 }
 
 function validateSubspecialty(subDir: string, problems: Problem[]) {
@@ -84,7 +87,9 @@ function validateSubspecialty(subDir: string, problems: Problem[]) {
     return;
   }
 
-  const idx = readYaml(indexPath) as any;
+  const idxRaw = readYaml(indexPath);
+  const idx: SubspecialtyIndex =
+    idxRaw && typeof idxRaw === 'object' ? (idxRaw as SubspecialtyIndex) : {};
 
   // Collect topic slugs listed in index
   const listed: string[] = [];

@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 
 // GET /api/streaks - Get user's streak data
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = await createClient();
     
@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
 }
 
 // POST /api/streaks - Update streak (called when user studies)
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
     const supabase = await createClient();
     

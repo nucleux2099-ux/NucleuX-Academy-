@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Broken/incomplete bulk-content generator snapshots kept for reference.
+    "scripts/batch3-generate.mjs",
+    "scripts/generate-content.mjs",
   ]),
 ]);
 

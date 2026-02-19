@@ -1,8 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { sarvamTextToSpeech } from '@/lib/speech/sarvam';
+import { sarvamTextToSpeech, type SarvamTtsOptions } from '@/lib/speech/sarvam';
 
 export const runtime = 'nodejs';
+const ALLOWED_LANGUAGE_CODES = ['en-IN', 'te-IN', 'hi-IN'] as const;
+
+function isAllowedLanguageCode(value: unknown): value is SarvamTtsOptions['target_language_code'] {
+  return typeof value === 'string' && ALLOWED_LANGUAGE_CODES.includes(value as (typeof ALLOWED_LANGUAGE_CODES)[number]);
+}
 
 // POST /api/speech/tts
 // body: { text, target_language_code, speaker?, pace?, temperature? }
@@ -21,26 +26,33 @@ export async function POST(req: NextRequest) {
     if (!text || typeof text !== 'string') {
       return NextResponse.json({ error: 'Missing text' }, { status: 400 });
     }
-    if (!target_language_code || typeof target_language_code !== 'string') {
+    if (!target_language_code) {
       return NextResponse.json({ error: 'Missing target_language_code' }, { status: 400 });
     }
+    if (!isAllowedLanguageCode(target_language_code)) {
+      return NextResponse.json({ error: 'Invalid target_language_code' }, { status: 400 });
+    }
 
-    const result = await sarvamTextToSpeech(text, {
+    const options: SarvamTtsOptions = {
       model: 'bulbul:v3',
-      target_language_code: target_language_code as any,
+      target_language_code,
       speaker: body?.speaker,
       pace: body?.pace,
       temperature: body?.temperature,
       speech_sample_rate: body?.speech_sample_rate,
-    });
+    };
+    const result = await sarvamTextToSpeech(text, options);
 
     return NextResponse.json({
       request_id: result.request_id ?? null,
       audio_base64: result.audios?.[0] ?? null,
       audios: result.audios ?? [],
     });
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error('TTS error:', e);
-    return NextResponse.json({ error: e.message ?? 'TTS failed' }, { status: 500 });
+    return NextResponse.json(
+      { error: e instanceof Error ? e.message : 'TTS failed' },
+      { status: 500 }
+    );
   }
 }

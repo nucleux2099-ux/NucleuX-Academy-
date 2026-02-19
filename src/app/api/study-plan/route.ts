@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 
 type AtomLite = {
@@ -19,7 +19,7 @@ type ProgressAtom = {
 };
 
 // GET /api/study-plan - Get user's study plan for today
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const supabase = await createClient();
     
@@ -112,7 +112,7 @@ export async function GET(request: NextRequest) {
         study_minutes: studiedToday,
         mcqs_attempted: mcqsToday,
         mcqs_correct: todayStats?.mcqs_correct || 0,
-        topics_completed: todayStats?.topics_completed || 0,
+        topics_completed: todayStats?.atoms_completed || 0,
         goal_progress: Math.round((studiedToday / dailyGoalMinutes) * 100),
         mcq_progress: Math.round((mcqsToday / mcqTarget) * 100),
       },

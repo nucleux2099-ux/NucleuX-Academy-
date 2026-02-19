@@ -39,6 +39,8 @@ interface LayoutNode {
   parentId?: string;
 }
 
+type ExcalidrawElement = Record<string, unknown>;
+
 function measureText(text: string) {
   const lines = text.split('\n');
   const maxLen = Math.max(...lines.map(l => l.length));
@@ -97,7 +99,7 @@ function getColors(node: MindMapNode) {
   return (node.category && COLORS[node.category]) || COLORS.default;
 }
 
-function makeRect(ln: LayoutNode, colors: ReturnType<typeof getColors>, isBlank: boolean): any[] {
+function makeRect(ln: LayoutNode, colors: ReturnType<typeof getColors>, isBlank: boolean): ExcalidrawElement[] {
   const c = isBlank ? COLORS.blank : colors;
   const rectId = `rect-${ln.node.id}`;
   const textId = `text-${ln.node.id}`;
@@ -131,7 +133,7 @@ function makeRect(ln: LayoutNode, colors: ReturnType<typeof getColors>, isBlank:
   ];
 }
 
-function makeArrow(from: LayoutNode, to: LayoutNode, color: string): any {
+function makeArrow(from: LayoutNode, to: LayoutNode, color: string): ExcalidrawElement {
   const fx = from.x + from.width/2, fy = from.y + from.height/2;
   const tx = to.x + to.width/2, ty = to.y + to.height/2;
   const seed = Math.floor(Math.random() * 100000);
@@ -150,20 +152,20 @@ function makeArrow(from: LayoutNode, to: LayoutNode, color: string): any {
   };
 }
 
-export function generateMindMap(root: MindMapNode, config: MindMapConfig = { mode: 'teach' }, w = 1200, h = 800): any[] {
+export function generateMindMap(root: MindMapNode, config: MindMapConfig = { mode: 'teach' }, w = 1200, h = 800): ExcalidrawElement[] {
   const lns = layoutRadial(root, w/2, h/2);
   const map = new Map(lns.map(ln => [ln.node.id, ln]));
-  const els: any[] = [];
+  const els: ExcalidrawElement[] = [];
 
   lns.forEach(ln => { if (ln.parentId) { const p = map.get(ln.parentId); if (p) els.push(makeArrow(p, ln, getColors(ln.node).stroke)); } });
   lns.forEach(ln => els.push(...makeRect(ln, getColors(ln.node), config.mode === 'quiz' && !!ln.node.blank)));
   return els;
 }
 
-export function generateProgressiveSteps(root: MindMapNode, config: MindMapConfig = { mode: 'teach' }, w = 1200, h = 800): any[][] {
+export function generateProgressiveSteps(root: MindMapNode, config: MindMapConfig = { mode: 'teach' }, w = 1200, h = 800): ExcalidrawElement[][] {
   const lns = layoutRadial(root, w/2, h/2);
   const map = new Map(lns.map(ln => [ln.node.id, ln]));
-  const steps: any[][] = [];
+  const steps: ExcalidrawElement[][] = [];
 
   // Step 0: root
   const rootLn = lns.find(ln => ln.node.level === 0)!;
@@ -180,7 +182,7 @@ export function generateProgressiveSteps(root: MindMapNode, config: MindMapConfi
   const groups = new Map<string, LayoutNode[]>();
   l2.forEach(ln => { const g = groups.get(ln.parentId!) || []; g.push(ln); groups.set(ln.parentId!, g); });
   groups.forEach(group => {
-    const step: any[] = [];
+    const step: ExcalidrawElement[] = [];
     group.forEach(ln => { const p = map.get(ln.parentId!)!; step.push(makeArrow(p, ln, getColors(ln.node).stroke), ...makeRect(ln, getColors(ln.node), config.mode === 'quiz' && !!ln.node.blank)); });
     steps.push(step);
   });
@@ -188,7 +190,7 @@ export function generateProgressiveSteps(root: MindMapNode, config: MindMapConfi
   // L3
   const l3 = lns.filter(ln => ln.node.level === 3);
   if (l3.length) {
-    const step: any[] = [];
+    const step: ExcalidrawElement[] = [];
     l3.forEach(ln => { const p = map.get(ln.parentId!)!; step.push(makeArrow(p, ln, getColors(ln.node).stroke), ...makeRect(ln, getColors(ln.node), config.mode === 'quiz' && !!ln.node.blank)); });
     steps.push(step);
   }
@@ -199,7 +201,11 @@ export function generateProgressiveSteps(root: MindMapNode, config: MindMapConfi
 export function parseMindMapFromJSON(json: string): MindMapNode | null {
   try {
     const match = json.match(/```(?:json)?\s*([\s\S]*?)```/);
-    return JSON.parse((match ? match[1] : json).trim());
+    const parsed: unknown = JSON.parse((match ? match[1] : json).trim());
+    if (typeof parsed === 'object' && parsed !== null && 'id' in parsed && 'text' in parsed && 'level' in parsed) {
+      return parsed as MindMapNode;
+    }
+    return null;
   } catch { return null; }
 }
 

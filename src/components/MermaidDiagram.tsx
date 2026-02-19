@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mermaid from 'mermaid';
 import { ZoomIn } from 'lucide-react';
 import { ImageViewer } from './ImageViewer';
@@ -60,9 +60,9 @@ export function MermaidDiagram({ chart }: { chart: string }) {
         const blob = new Blob([svg], { type: 'image/svg+xml' });
         const url = URL.createObjectURL(blob);
         setSvgDataUrl(url);
-      } catch (e: any) {
+      } catch (e: unknown) {
         if (!cancelled) {
-          setError(e?.message || 'Failed to render diagram');
+          setError(e instanceof Error ? e.message : 'Failed to render diagram');
           // Clean up any error elements mermaid may have inserted
           const errEl = document.getElementById('d' + id);
           errEl?.remove();

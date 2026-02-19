@@ -1,14 +1,8 @@
 import type { Plugin } from 'unified';
 import { visit } from 'unist-util-visit';
+import type { Parent, Root, RootContent, Strong, Text } from 'mdast';
 
-// Minimal MDAST node shapes we touch
-type Parent = { type: string; children: any[] };
-
-type Text = { type: 'text'; value: string };
-
-type Strong = { type: 'strong'; children: Text[] };
-
-type Node = any;
+type Node = RootContent;
 
 const SKIP_PARENTS = new Set([
   'link',
@@ -68,10 +62,10 @@ function bionicizeText(value: string): Node[] {
  * - Skips code/inlineCode/links/headings/html
  * - Preserves whitespace
  */
-export const remarkBionic: Plugin = () => {
-  return (tree: Node) => {
+export const remarkBionic: Plugin<[], Root> = () => {
+  return (tree) => {
     // visit typing is strict; we mutate in-place and rely on parent-type skips to avoid double-processing
-    visit(tree as any, 'text' as any, (node: Text, index: any, parent: Parent | null) => {
+    visit(tree, 'text', (node: Text, index: number | undefined, parent: Parent | undefined) => {
       if (!parent || typeof index !== 'number') return;
       if (SKIP_PARENTS.has(parent.type)) return;
 

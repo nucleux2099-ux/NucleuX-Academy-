@@ -23,8 +23,8 @@ export interface SarvamSttResponse {
   transcript: string;
   language_code?: string | null;
   language_probability?: number | null;
-  timestamps?: any;
-  diarized_transcript?: any;
+  timestamps?: unknown;
+  diarized_transcript?: unknown;
 }
 
 export interface SarvamTtsOptions {
@@ -54,7 +54,7 @@ export async function sarvamSpeechToText(file: File, opts: SarvamSttOptions = {}
   const apiKey = getApiKey();
 
   const form = new FormData();
-  form.append('file', file, (file as any).name || 'audio.wav');
+  form.append('file', file, file.name || 'audio.wav');
 
   const model = opts.model ?? 'saaras:v3';
   form.append('model', model);
@@ -86,7 +86,7 @@ export async function sarvamSpeechToText(file: File, opts: SarvamSttOptions = {}
 export async function sarvamTextToSpeech(text: string, opts: SarvamTtsOptions): Promise<SarvamTtsResponse> {
   const apiKey = getApiKey();
 
-  const payload: Record<string, any> = {
+  const payload: Record<string, string | number> = {
     text,
     target_language_code: opts.target_language_code,
     model: opts.model ?? 'bulbul:v3',

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, BookOpen, Brain, MessageCircle, FileText, Video, Filter } from "lucide-react";
+import { Clock, BookOpen, Brain, MessageCircle, FileText, Video } from "lucide-react";
 
 const filters = ["All", "Reading", "MCQ", "Chat", "Notes", "Lectures"];
 const filterIcons: Record<string, React.ElementType> = { All: Clock, Reading: BookOpen, MCQ: Brain, Chat: MessageCircle, Notes: FileText, Lectures: Video };

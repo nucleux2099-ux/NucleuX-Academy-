@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import type { User } from '@supabase/supabase-js';
 
@@ -45,9 +45,9 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
   const [streak, setStreak] = useState<Streak | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
 
-  const fetchUserData = async () => {
+  const fetchUserData = useCallback(async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       setUser(user);
@@ -74,14 +74,14 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [supabase]);
 
-  const refreshUser = async () => {
+  const refreshUser = useCallback(async () => {
     setIsLoading(true);
     await fetchUserData();
-  };
+  }, [fetchUserData]);
 
-  const updateProfile = async (updates: Partial<Profile>) => {
+  const updateProfile = useCallback(async (updates: Partial<Profile>) => {
     if (!user) return;
 
     const { data, error } = await supabase
@@ -99,14 +99,14 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     if (data) {
       setProfile(data);
     }
-  };
+  }, [supabase, user]);
 
   useEffect(() => {
     fetchUserData();
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      async (event) => {
         if (event === 'SIGNED_IN') {
           await fetchUserData();
         } else if (event === 'SIGNED_OUT') {
@@ -120,7 +120,7 @@ export function UserProvider({ children }: { children: React.ReactNode }) {
     return () => {
       subscription.unsubscribe();
     };
-  }, []);
+  }, [fetchUserData, supabase]);
 
   return (
     <UserContext.Provider

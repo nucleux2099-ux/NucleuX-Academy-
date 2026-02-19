@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Trophy, Medal, Crown, Flame, Target, TrendingUp, User } from "lucide-react";
+import { Trophy, Medal, Crown, TrendingUp, User } from "lucide-react";
 
 const periods = ["This Week", "This Month", "All Time"];
 const subjectTabs = ["Overall", "Surgery", "Medicine"];
