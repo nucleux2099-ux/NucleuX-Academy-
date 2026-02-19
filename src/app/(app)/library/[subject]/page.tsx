@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Library, BookOpen } from "lucide-react";
 import { getSubjectBySlug } from "@/lib/data/subjects";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
+import { resolveCanonicalSubjectSlug } from "@/lib/data/cbme-aliases";
 import SurgeryHub from "@/components/library/SurgeryHub";
 
 export default function SubjectPage() {
@@ -14,7 +15,8 @@ export default function SubjectPage() {
   const searchParams = useSearchParams();
 
   const subjectSlug = params.subject as string;
-  const subject = getSubjectBySlug(subjectSlug);
+  const canonicalSubjectSlug = resolveCanonicalSubjectSlug(subjectSlug);
+  const subject = getSubjectBySlug(canonicalSubjectSlug);
 
   if (!subject) {
     return (

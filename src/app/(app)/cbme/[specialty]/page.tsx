@@ -7,6 +7,7 @@ import {
   type NMCCurriculum,
   type NMCBook,
 } from "@/lib/data/nmc-vault";
+import { resolveCanonicalCurriculumId } from "@/lib/data/cbme-aliases";
 import { SpecialtyClient } from "./client";
 
 interface Props {
@@ -21,7 +22,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const { specialty } = await params;
-  const curriculum = getCurriculumBySlug(specialty);
+  const canonicalSpecialty = resolveCanonicalCurriculumId(specialty);
+  const curriculum = getCurriculumBySlug(canonicalSpecialty);
   if (!curriculum) return { title: "Not Found" };
   const total =
     curriculum.competencies.cognitive.length +
@@ -35,13 +37,18 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function SpecialtyPage({ params }: Props) {
   const { specialty } = await params;
+  const canonicalSpecialty = resolveCanonicalCurriculumId(specialty);
 
   // Surgery has its own dedicated page
-  if (specialty === "surgery" || specialty === "ms-general-surgery") {
+  if (canonicalSpecialty === "ms-surgery") {
     redirect("/cbme/surgery");
   }
 
-  const curriculum = getCurriculumBySlug(specialty);
+  if (specialty !== canonicalSpecialty) {
+    redirect(`/cbme/${canonicalSpecialty}`);
+  }
+
+  const curriculum = getCurriculumBySlug(canonicalSpecialty);
   if (!curriculum) notFound();
 
   const books = getBooksForSpecialty(curriculum.title);
