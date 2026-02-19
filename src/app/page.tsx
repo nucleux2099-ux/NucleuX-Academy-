@@ -4,185 +4,172 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Sparkles,
   Atom,
+  Brain,
+  GitBranch,
   BookOpen,
   GraduationCap,
   LayoutDashboard,
   Users,
   Swords,
   BarChart3,
+  ShieldCheck,
   CheckCircle2,
 } from 'lucide-react';
 import { MarketingHeader } from '@/components/marketing/MarketingHeader';
 import { SupportFooter } from '@/components/marketing/SupportFooter';
 
-const rooms = [
+const principles = [
   {
-    title: 'Room 01 — Welcome Center',
-    desc: 'Set your stage, identify weak zones, and start with a focused path instead of random studying.',
-    icon: Sparkles,
+    title: 'From memory load to mental models',
+    body: 'Understand mechanisms first. Then compress for revision. This prevents fragile rote learning.',
+    icon: Brain,
   },
   {
-    title: 'Room 02 — Library',
-    desc: 'Structured topics by subject/subspecialty/prerequisites with textbook-grounded explanations.',
-    icon: BookOpen,
+    title: 'From isolated topics to connected graphs',
+    body: 'Each topic sits in a prerequisite chain so you see why a concept exists and where it applies.',
+    icon: GitBranch,
   },
   {
-    title: 'Room 03 — Exam Center',
-    desc: 'MCQs, cases, timed tests, and feedback that points to exact concept gaps.',
+    title: 'From passive exposure to retrieval pressure',
+    body: 'You are repeatedly asked to recall, explain, and apply under constraints.',
     icon: GraduationCap,
   },
   {
-    title: 'Room 04 — AI Tutor (ATOM Chamber)',
-    desc: 'Socratic learning: ATOM challenges assumptions before giving answers.',
-    icon: Atom,
-  },
-  {
-    title: 'Room 05 — Dashboard (Desk)',
-    desc: 'Mission control for progress, weak clusters, revision queue, and next best action.',
-    icon: LayoutDashboard,
-  },
-  {
-    title: 'Room 06 — Common Room',
-    desc: 'Reflect, connect, and consolidate with notes, discussion, and integration.',
-    icon: Users,
-  },
-  {
-    title: 'Room 07 — Arena',
-    desc: 'Pressure-tested application through clinical drills and decision-focused practice.',
-    icon: Swords,
-  },
-  {
-    title: 'Room 08 — Backstage',
-    desc: 'Your feedback engine: analytics, error-pattern clusters, confidence calibration, and next-best intervention triggers.',
+    title: 'From false confidence to calibrated performance',
+    body: 'Backstage compares confidence vs correctness and surfaces blind spots early.',
     icon: BarChart3,
   },
 ];
 
+const rooms = [
+  ['Room 01 — Welcome Center', 'Set context, define goals, and choose your learning path.', BookOpen],
+  ['Room 02 — Library', 'Structured concept map with prerequisites and linked understanding.', BookOpen],
+  ['Room 03 — Exam Center', 'Retrieval-first MCQ/case practice with diagnosis-focused feedback.', GraduationCap],
+  ['Room 04 — AI Tutor (ATOM Chamber)', 'Socratic tutoring that challenges assumptions before answers.', Atom],
+  ['Room 05 — Desk', 'Daily command center for priorities, review queues, and next action.', LayoutDashboard],
+  ['Room 06 — Common Room', 'Collaborative consolidation and reflective synthesis.', Users],
+  ['Room 07 — Arena', 'Decision pressure drills for speed, clarity, and resilience.', Swords],
+  ['Room 08 — Backstage', 'Performance analytics, error clusters, and calibration loops.', BarChart3],
+] as const;
+
 const loop = [
-  'Plan — choose target competency/topic',
-  'Encode — build first principles with ATOM',
-  'Retrieve — active recall through questioning',
-  'Apply — solve MCQ/case with reasoning',
-  'Diagnose (Backstage) — identify exact weak nodes from your error patterns',
-  'Reinforce — spaced return at the right interval',
+  'Plan — select a competency or clinical target',
+  'Encode — build first-principles understanding with ATOM',
+  'Retrieve — active recall through guided challenge',
+  'Apply — solve questions/cases with reasoning',
+  'Diagnose — inspect error pattern + confidence mismatch',
+  'Reinforce — spaced revisit until stable retrieval',
 ];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.08]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(91,179,179,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(91,179,179,0.15) 1px, transparent 1px)',
-          backgroundSize: '44px 44px',
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-slate-950/30 to-slate-950/70" />
-
+    <div className="min-h-screen bg-[#0B1220] text-[#E8E0D5]">
       <MarketingHeader
         active="home"
         subtitle="Medical learning OS powered by ATOM"
-        primaryCta={{ href: '/signup', label: 'Start Free with ATOM' }}
+        primaryCta={{ href: '/signup', label: 'Start with ATOM' }}
         secondaryCta={{ href: '/campus', label: 'Campus Tour' }}
       />
 
-      <section className="max-w-7xl mx-auto px-6 pt-10 sm:pt-20 pb-16 relative z-10">
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB3B3]/30 bg-[#5BB3B3]/10 px-4 py-1.5 text-sm text-[#5BB3B3] font-medium">
-            <Sparkles className="w-4 h-4" />
-            Built for MBBS, NEET-PG, and Residency
+      <section className="max-w-7xl mx-auto px-6 pt-12 sm:pt-20 pb-14">
+        <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="max-w-5xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#5BB3B3]/35 bg-[#5BB3B3]/10 px-4 py-1.5 text-sm text-[#5BB3B3]">
+            <ShieldCheck className="w-4 h-4" /> Learning design over content overload
           </div>
-          <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight text-[#E8E0D5]">
-            Learn like a clinician.
+
+          <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight">
+            Build clinical thinking,
             <br />
-            Not like a content consumer.
+            <span className="text-[#5BB3B3]">not just exam memory.</span>
           </h1>
-          <p className="mt-5 text-xl sm:text-2xl text-[#A0B0BC] leading-relaxed">
-            NucleuX Academy is a medical learning OS where ATOM teaches through first principles, active retrieval, and textbook-grounded reasoning.
+
+          <p className="mt-6 text-xl text-[#A0B0BC] max-w-4xl leading-relaxed">
+            NucleuX Academy is a connected learning campus where ATOM helps you learn in layers:
+            concept, retrieval, application, and calibration. You don&apos;t just finish topics — you build usable judgment.
           </p>
-          <p className="mt-3 text-lg text-[#6B7A88]">Because recognition is not mastery. Retrieval is.</p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link href="/signup" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
-              Start Free with ATOM <ArrowRight className="w-5 h-5 ml-2" />
+              Start with ATOM <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
-            <Link href="/campus" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
-              Take the Campus Tour
+            <Link href="/rooms" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
+              Explore Library Rooms
             </Link>
           </div>
         </motion.div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
-        <div className="rounded-3xl border border-[#E879F9]/20 bg-[#E879F9]/5 p-8 sm:p-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5] mb-4">Most platforms optimize watch-time. We optimize understanding.</h2>
-          <p className="text-[#A0B0BC] text-lg leading-relaxed">
-            Watching content can feel productive. But “I&apos;ve seen it” is not “I can explain it under pressure.”
+      <section className="max-w-7xl mx-auto px-6 pb-14">
+        <div className="rounded-3xl border border-[#E879F9]/25 bg-[#E879F9]/10 p-8 sm:p-10">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3">Core Learning Truth</h2>
+          <p className="text-lg text-[#A0B0BC] leading-relaxed">
+            Recognition feels like progress. Retrieval proves progress.
             <br />
-            NucleuX is built on encoding, retrieval, and application — not passive review loops.
+            ATOM and the campus are engineered around this truth.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
-        <div className="rounded-3xl border border-[#5BB3B3]/20 bg-gradient-to-br from-[#5BB3B3]/10 to-transparent p-8 sm:p-10">
-          <div className="flex items-start gap-4 mb-4">
-            <Atom className="w-8 h-8 text-[#5BB3B3] mt-1" />
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5]">Meet ATOM — your teaching companion</h2>
-              <p className="mt-3 text-[#A0B0BC] leading-relaxed">
-                ATOM is not a chatbot wrapper. It is a learning framework in action: break to atomic concepts, connect across subjects,
-                test retrieval, diagnose gaps, and schedule reinforcement.
-              </p>
-            </div>
-          </div>
+      <section className="max-w-7xl mx-auto px-6 pb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-8">The NucleuX Shift</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {principles.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: i * 0.04 }}
+              className="rounded-xl border border-white/10 bg-white/[0.03] p-6"
+            >
+              <p.icon className="w-5 h-5 text-[#5BB3B3] mb-3" />
+              <h3 className="font-semibold text-lg mb-2">{p.title}</h3>
+              <p className="text-sm text-[#A0B0BC]">{p.body}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#E8E0D5] mb-3">Welcome to the NucleuX Campus</h2>
-        <p className="text-[#A0B0BC] mb-8 max-w-3xl">One campus. Eight rooms. One coherent learning loop.</p>
-
+      <section className="max-w-7xl mx-auto px-6 pb-16">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-2">NucleuX Campus Architecture</h2>
+        <p className="text-[#A0B0BC] mb-7">Eight rooms. One continuous learning pipeline.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {rooms.map((room) => (
-            <div key={room.title} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+          {rooms.map(([title, desc, Icon]) => (
+            <div key={title} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
               <div className="flex items-center gap-3 mb-2">
-                <room.icon className="w-5 h-5 text-[#5BB3B3]" />
-                <h3 className="font-semibold text-[#E8E0D5]">{room.title}</h3>
+                <Icon className="w-5 h-5 text-[#5BB3B3]" />
+                <h3 className="font-semibold">{title}</h3>
               </div>
-              <p className="text-sm text-[#A0B0BC]">{room.desc}</p>
+              <p className="text-sm text-[#A0B0BC]">{desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-16 relative z-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#E8E0D5] mb-8">The NucleuX Learning Loop</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {loop.map((item) => (
-            <div key={item} className="rounded-lg border border-white/10 bg-white/[0.03] p-4 flex items-start gap-3">
-              <CheckCircle2 className="w-4 h-4 text-[#5BB3B3] mt-0.5" />
-              <span className="text-[#A0B0BC] text-sm">{item}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 pb-20 relative z-10">
-        <div className="rounded-3xl border border-white/10 bg-slate-950/35 p-8 sm:p-12 text-center">
-          <h2 className="text-3xl font-bold text-[#E8E0D5] mb-3">Serious about becoming a better doctor?</h2>
-          <p className="text-[#A0B0BC] mb-8 max-w-2xl mx-auto">Enter the campus. Pick one topic. Let ATOM run the loop with you.</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/signup" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
-              Start Free <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-            <Link href="/rooms" className="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-semibold text-[#E8E0D5] border border-white/15 bg-white/5 hover:bg-white/10 transition-colors">
-              Explore All Rooms
-            </Link>
+      <section className="max-w-7xl mx-auto px-6 pb-16">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">The ATOM Loop</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {loop.map((step) => (
+              <div key={step} className="flex gap-3 items-start rounded-lg border border-white/10 bg-white/[0.02] p-4">
+                <CheckCircle2 className="w-4 h-4 text-[#5BB3B3] mt-0.5" />
+                <span className="text-sm text-[#A0B0BC]">{step}</span>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="rounded-3xl border border-[#5BB3B3]/30 bg-gradient-to-br from-[#5BB3B3]/12 to-transparent p-9 sm:p-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Start with one topic. Build a system for life.</h2>
+          <p className="text-[#A0B0BC] max-w-2xl mx-auto mb-8">
+            ATOM helps you think better today and compounds that thinking across your medical journey.
+          </p>
+          <Link href="/signup" className="inline-flex items-center justify-center rounded-xl px-10 py-4 text-lg font-semibold text-slate-950 bg-[#5BB3B3] hover:bg-[#4A9E9E] transition-colors">
+            Enter NucleuX <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
         </div>
       </section>
 
