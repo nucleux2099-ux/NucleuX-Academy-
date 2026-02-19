@@ -7,7 +7,6 @@ import {
   Swords,
   Gauge,
   Users,
-  ArrowRight,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -59,7 +58,7 @@ function RoleCard({
 export default function AtomPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      <MarketingHeader active="atom" subtitle="Learn atomically and grow exponentially" primaryCta={{ href: '/campus', label: 'Take the tour' }} secondaryCta={{ href: '/login', label: 'Enter' }} showRooms={true} />
+      <MarketingHeader active="atom" subtitle="Medical learning OS powered by ATOM" primaryCta={{ href: '/signup', label: 'Start with ATOM' }} secondaryCta={{ href: '/campus', label: 'Campus Tour' }} showRooms={true} />
 
       <main className="max-w-6xl mx-auto px-6 py-14">
         <Badge className="bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
@@ -276,8 +275,8 @@ export default function AtomPage() {
             <div className="text-lg font-bold text-[#E8E0D5]">Ready to enter the campus?</div>
             <div className="text-sm text-[#A0B0BC]">Start with Library, or jump into Classroom — ATOM follows.</div>
           </div>
-          <Link href="/login">
-            <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white px-6">Enter Campus</Button>
+          <Link href="/signup">
+            <Button className="bg-[#5BB3B3] hover:bg-[#4A9E9E] text-white px-6">Start with ATOM</Button>
           </Link>
         </div>
       </main>

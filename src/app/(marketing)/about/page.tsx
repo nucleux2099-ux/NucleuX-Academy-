@@ -65,9 +65,9 @@ export default function AboutPage() {
 
       <MarketingHeader
         active="about"
-        subtitle="Learn atomically and grow exponentially"
-        primaryCta={{ href: '/campus', label: 'Take the tour' }}
-        secondaryCta={{ href: '/login', label: 'Enter' }}
+        subtitle="Medical learning OS powered by ATOM"
+        primaryCta={{ href: '/signup', label: 'Start with ATOM' }}
+        secondaryCta={{ href: '/campus', label: 'Campus Tour' }}
       />
 
       <main className="max-w-6xl mx-auto px-6 pt-10 sm:pt-16 pb-20 sm:pb-24 relative z-10">
