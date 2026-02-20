@@ -1,42 +1,25 @@
----
-title: "Learning Roadmap: Acute Pancreatitis"
-description: "Guided study path for Acute Pancreatitis — prerequisites, core learning, and clinical extensions"
----
+# Acute Pancreatitis — Roadmap
 
-## 📐 Foundations
+## UG
+- Recognize emergency pattern and immediate danger signs.
+- Start first-line stabilization and order correct first investigations.
 
-Study these **before** diving into Acute Pancreatitis:
+## PG
+- Run full diagnostic-management algorithm with justification.
+- Identify intervention timing and avoid common sequencing errors.
 
-| Subject | Topic | NMC Code | Why It Matters |
-|---------|-------|----------|----------------|
-| Anatomy | Pancreatic anatomy & ductal system | — | The pancreatic duct joins the CBD at the ampulla — shared pathway explains gallstone pancreatitis mechanism |
-| Anatomy | Lesser sac — pancreatic collections | — | The lesser sac is the anatomical space where peripancreatic collections accumulate |
-| Physiology | Pancreatic enzyme secretion & activation | PY4.5 | Premature trypsinogen activation within the pancreas triggers autodigestion — the core pathological event |
+## SS (DM Gastroenterology)
+- Execute complex pathway selection with multidisciplinary logic.
+- Defend decisions using evidence + patient-context modifiers.
 
-## 🎯 Core Learning Objectives
+## Milestones
+1. Foundation: definitions + mechanism + severity framing
+2. Clinical flow: diagnosis ladder + management ladder
+3. Advanced: escalation, complications, edge-case handling
+4. Mastery: viva defense + citation-complete notes
 
-- Apply the revised Atlanta classification — mild, moderately severe, and severe pancreatitis
-- Determine timing of intervention — early ERCP for cholangitis, delayed necrosectomy (step-up approach)
-- Manage local complications — acute peripancreatic fluid collection, walled-off necrosis, pseudocyst
-
-## 🔬 Clinical Science Connections
-
-| Subject | Topic | NMC Code | Connection |
-|---------|-------|----------|------------|
-| Pathology | Acute pancreatitis pathology — fat necrosis, hemorrhagic | PA25.1 | Fat necrosis (saponification) and hemorrhagic necrosis are pathognomonic — explain the grey-turner and cullen signs |
-| Radiology | CT severity index (Balthazar/modified CTSI) | — | CTSI combines necrosis extent with peripancreatic changes — guides prognosis and intervention timing |
-| Pathology | SIRS & organ failure in severe pancreatitis | — | Persistent organ failure (>48h) defines severe pancreatitis — drives ICU management decisions |
-
-## ➡️ What's Next
-
-After mastering this topic, progress to:
-
-1. **Chronic Pancreatitis** — Recurrent acute pancreatitis can progress to chronic pancreatitis
-
-### Prerequisites
-
-- **Cholelithiasis** — Gallstones are the most common cause of acute pancreatitis (40-60%)
-
-## 🔗 Cross-Subject Integration Points
-
-Acute pancreatitis integrates pancreatic anatomy (ductal system, lesser sac), physiology (enzyme activation), pathology (fat necrosis, SIRS), radiology (CT severity), and surgery (step-up approach to necrosectomy). The evolution from early surgery to minimally invasive step-up approach reflects how understanding natural history changes surgical timing.
+## Deliverables
+- Citation-complete `textbook.md`
+- Algorithm-complete `explorer.md`
+- Viva-ready `exam-prep.md`
+- Updated `_meta.yaml` with status shift to `quality-upgraded`

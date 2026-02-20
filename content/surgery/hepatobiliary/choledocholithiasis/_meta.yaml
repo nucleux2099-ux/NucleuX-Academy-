@@ -1,48 +1,17 @@
-title: "Choledocholithiasis"
+title: Choledocholithiasis
 slug: choledocholithiasis
-depth: "UG"
-highYield: true
-nmc_codes:
-  - "SU28.12"
-  - "IM5.8"
-  - "IM5.13"
-prerequisites:
-  - "cholelithiasis"
-  - "obstructive-jaundice"
-  - "liver-anatomy"
-related_topics:
-  - "cholangitis"
-  - "acute-cholecystitis"
-  - "biliary-stricture"
-  - "bile-duct-injury"
-enrichment:
-  nmcCodes:
-    - code: "SU28.12"
-      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
-      domain: "KH"
-    - code: "IM5.8"
-      text: "Describe and discuss the pathophysiology, clinical evolution and complications cholelithiasis and cholecystitis"
-      domain: "K"
-    - code: "IM5.13"
-      text: "Enumerate the indications for ultrasound and other imaging studies including MRCP and ERCP and describe the findings in liver disease"
-      domain: "K"
-  prerequisite_details:
-    - slug: "cholelithiasis"
-      reason: "Most CBD stones are secondary, migrating from the gallbladder; understanding gallstone pathogenesis explains stone composition and recurrence"
-    - slug: "obstructive-jaundice"
-      reason: "Choledocholithiasis is the prototype cause of surgical obstructive jaundice; the diagnostic workup algorithm directly applies"
-    - slug: "liver-anatomy"
-      reason: "CBD anatomy, its relationship to the portal vein and hepatic artery, and the ampulla of Vater are essential for understanding stone impaction sites and ERCP"
-  related_details:
-    - slug: "cholangitis"
-      reason: "CBD stone obstruction with bacterial superinfection causes ascending cholangitis — the most dangerous complication requiring emergency ERCP"
-      relationship: "complication"
-    - slug: "acute-cholecystitis"
-      reason: "Cholecystitis and choledocholithiasis frequently coexist; management strategy depends on whether CBD stones are present at cholecystectomy"
-      relationship: "clinical"
-    - slug: "biliary-stricture"
-      reason: "Post-ERCP or post-surgical biliary stricture is a differential for recurrent obstructive symptoms after CBD stone clearance"
-      relationship: "differential"
-    - slug: "bile-duct-injury"
-      reason: "CBD exploration and ERCP carry risk of bile duct injury; recognizing and managing iatrogenic injury is a critical surgical competency"
-      relationship: "complication"
+subject: surgery
+track: "DM Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "Syllabus - DM  M Ch INI.gi-polished.md"
+quality_phase: "phase2-next5"
+competency_focus: "diagnostic precision + timing + escalation"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

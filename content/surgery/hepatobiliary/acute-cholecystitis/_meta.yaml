@@ -1,41 +1,17 @@
-title: "Acute Cholecystitis"
+title: Acute Cholecystitis
 slug: acute-cholecystitis
-depth: "UG"
-highYield: true
-nmc_codes:
-  - "SU28.12"
-  - "IM5.8"
-prerequisites:
-  - "cholelithiasis"
-  - "liver-anatomy"
-related_topics:
-  - "choledocholithiasis"
-  - "cholangitis"
-  - "gallbladder-cancer"
-  - "bile-duct-injury"
-enrichment:
-  nmcCodes:
-    - code: "SU28.12"
-      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
-      domain: "KH"
-    - code: "IM5.8"
-      text: "Describe and discuss the pathophysiology, clinical evolution and complications cholelithiasis and cholecystitis"
-      domain: "K"
-  prerequisite_details:
-    - slug: "cholelithiasis"
-      reason: "Over 90% of acute cholecystitis is caused by gallstone impaction in the cystic duct; understanding stone types and pathogenesis is foundational"
-    - slug: "liver-anatomy"
-      reason: "Knowledge of Calot's triangle, cystic artery variants, and the critical view of safety is essential for cholecystectomy and avoiding bile duct injury"
-  related_details:
-    - slug: "choledocholithiasis"
-      reason: "Concomitant CBD stones occur in 10-15% of cholecystitis cases and must be investigated with LFTs and imaging before surgery"
-      relationship: "clinical"
-    - slug: "cholangitis"
-      reason: "Ascending cholangitis can complicate cholecystitis when stones migrate into the CBD causing biliary sepsis (Charcot's triad/Reynolds' pentad)"
-      relationship: "complication"
-    - slug: "gallbladder-cancer"
-      reason: "Chronic cholecystitis is a risk factor for gallbladder carcinoma; incidental cancer may be discovered at cholecystectomy"
-      relationship: "clinical"
-    - slug: "bile-duct-injury"
-      reason: "Bile duct injury is the most feared complication of cholecystectomy, especially in inflamed Calot's triangle with obscured anatomy"
-      relationship: "complication"
+subject: surgery
+track: "MCh Surgical Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "MCh-SGE-NMC-Curriculum-2021.polished.md"
+quality_phase: "phase2-next5"
+competency_focus: "diagnostic precision + timing + escalation"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

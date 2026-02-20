@@ -1,95 +1,46 @@
-# 🔍 Intestinal Obstruction — Explorer Mode
+# Intestinal Obstruction — Explorer
 
-> **The Big Picture:** Blocked gut = surgical emergency (usually). The key questions: Small bowel or large bowel? Simple or strangulated? What's the cause?
+## Curriculum Position
+- **Track:** MCh Surgical Gastroenterology
+- **Competency focus:** Strangulation risk detection and operative urgency
+- **Primary source:** `MCh-SGE-NMC-Curriculum-2021.polished.md`
 
----
+## Atomic learning model (ATOM)
+1. Mechanism: what fails first?
+2. Pattern: what clinical picture should appear?
+3. Signal: which test confirms/refutes quickly?
+4. Action: what is first safe intervention?
+5. Escalation: when to move to procedure/surgery?
 
-## 🧬 Core Concept Map
+## Clinical reasoning scaffold
+### A. Presentation archetypes
+- Typical presentation
+- Atypical/high-risk presentation
+- Mimics and dangerous differentials
 
-```
-            INTESTINAL OBSTRUCTION
-                     │
-     ┌───────────────┼───────────────┐
-     ▼               ▼               ▼
-  MECHANICAL      FUNCTIONAL      VASCULAR
-  (Physical       (Paralytic      (Mesenteric
-   block)          ileus)          ischemia)
-     │               │               │
-     │               ▼               ▼
-     │          Post-op,         Emergency!
-     │          electrolyte      Surgery
-     │          disturbance
-     │
-     ├─────────────────────┐
-     ▼                     ▼
-SMALL BOWEL            LARGE BOWEL
-• Adhesions (#1)       • Cancer (#1)
-• Hernia               • Volvulus
-• Tumor                • Diverticulitis
-     │                     │
-     ▼                     ▼
-┌─────────────┐    ┌─────────────┐
-│ SIMPLE      │    │ CLOSED LOOP │
-│ (One point) │    │ (Two points)│
-└─────────────┘    └─────────────┘
-     │                     │
-     │                     ▼
-     │              HIGH RISK OF
-     │              STRANGULATION
-     │                     │
-     └──────────┬──────────┘
-                ▼
-         STRANGULATION
-         (Blood supply
-          compromised)
-                │
-                ▼
-           EMERGENCY
-           SURGERY
-```
+### B. Diagnostic ladder
+- Bedside clues
+- Baseline labs
+- First-line imaging/endoscopy
+- Definitive diagnostic criterion
 
----
+### C. Management ladder
+- Immediate stabilization bundle
+- Disease-specific definitive plan
+- Failure triggers for escalation
+- Post-acute follow-up checkpoints
 
-## 🎨 Small vs Large Bowel Obstruction
+## Socratic prompts
+- What diagnosis is most dangerous to miss in first 30 minutes?
+- Which finding would force urgent intervention today?
+- What common treatment is harmful if done too early?
+- How does this condition intersect with HPB/luminal pathways?
 
-| Feature | Small Bowel | Large Bowel |
-|---------|-------------|-------------|
-| **Pain** | Colicky, central | Colicky, lower |
-| **Vomiting** | Early, profuse, bilious | Late, feculent |
-| **Distension** | Moderate | Marked |
-| **Constipation** | Late | Early, absolute |
-| **X-ray** | Central, valvulae conniventes | Peripheral, haustra |
-| **Loops** | <3 cm | >6 cm (cecum >9 cm = danger) |
+## Cross-links
+- Emergency surgery decision node
+- GI endoscopy/imaging interpretation
+- Oncology/MDT referral logic (where relevant)
 
----
-
-## 💡 Key Atomic Concepts
-
-### Atom 1: The Rule of 3, 6, 9
-> Small bowel >3 cm = dilated
-> Large bowel >6 cm = dilated
-> Cecum >9 cm = imminent perforation risk
-
-### Atom 2: Absolute Constipation
-> No passage of flatus OR feces = complete obstruction. Passage of some flatus/feces = partial obstruction.
-
-### Atom 3: Strangulation Signs
-> FEVER + TACHYCARDIA + LOCALIZED TENDERNESS + REBOUND = Blood supply compromised. Needs urgent surgery.
-
----
-
-## 📊 Causes (Most Common)
-
-**Small Bowel:**
-1. Adhesions (60%)
-2. Hernias (20%)
-3. Tumors (10%)
-
-**Large Bowel:**
-1. Colorectal cancer (60%)
-2. Volvulus (15%)
-3. Diverticular disease (10%)
-
----
-
-📚 **Sources:** Bailey & Love Ch 70 | Sabiston Ch 50 | Schwartz Ch 28
+## Citation targets
+- 📚 `MCh-SGE-NMC-Curriculum-2021.polished.md` (section-level anchors)
+- 📚 Standard surgery/GI textbooks from ATOM-GI source layer

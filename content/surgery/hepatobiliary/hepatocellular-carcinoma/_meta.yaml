@@ -1,41 +1,17 @@
-title: "Hepatocellular Carcinoma"
+title: Hepatocellular Carcinoma
 slug: hepatocellular-carcinoma
-depth: "UG"
-highYield: true
-nmc_codes:
-  - "SU28.10"
-  - "IM5.6"
-prerequisites:
-  - "liver-anatomy"
-  - "portal-hypertension"
-related_topics:
-  - "liver-metastases"
-  - "liver-abscess"
-  - "liver-transplant-indications"
-  - "obstructive-jaundice"
-enrichment:
-  nmcCodes:
-    - code: "SU28.10"
-      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
-      domain: "KH"
-    - code: "IM5.6"
-      text: "Describe and discuss the pathophysiology, clinical evolution and complications of cirrhosis and portal hypertension including ascites, spontaneous bacterial peritonitis, hepatorenal syndrome and hepatic encephalopathy"
-      domain: "K"
-  prerequisite_details:
-    - slug: "liver-anatomy"
-      reason: "Couinaud segmental anatomy determines resectability; understanding hepatic vein and portal pedicle anatomy is essential for surgical planning"
-    - slug: "portal-hypertension"
-      reason: "HCC almost always arises in cirrhotic livers with portal hypertension; HVPG >10mmHg contraindicates major hepatic resection (BCLC criteria)"
-  related_details:
-    - slug: "liver-metastases"
-      reason: "Key differential diagnosis; multiphase CT/MRI arterial enhancement pattern distinguishes HCC from metastatic deposits"
-      relationship: "differential"
-    - slug: "liver-abscess"
-      reason: "Necrotic HCC can mimic liver abscess on imaging; AFP and contrast enhancement pattern help differentiate"
-      relationship: "differential"
-    - slug: "liver-transplant-indications"
-      reason: "Milan criteria (single ≤5cm or up to 3 lesions ≤3cm) define transplant eligibility for HCC with underlying cirrhosis"
-      relationship: "management"
-    - slug: "obstructive-jaundice"
-      reason: "Large or hilar HCC can cause biliary obstruction; jaundice in HCC indicates advanced disease and poor prognosis"
-      relationship: "clinical"
+subject: surgery
+track: "MCh Surgical Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "MCh-SGE-NMC-Curriculum-2021.polished.md"
+quality_phase: "phase2-final5"
+competency_focus: "resectability/stage logic + escalation + MDT integration"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

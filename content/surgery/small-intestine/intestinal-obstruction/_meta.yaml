@@ -1,5 +1,18 @@
 title: Intestinal Obstruction
 slug: intestinal-obstruction
-depth: PG
-nmc_codes:
-- SU28.14
+subject: surgery
+track: "MCh Surgical Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "MCh-SGE-NMC-Curriculum-2021.polished.md"
+competency_focus: "Strangulation risk detection and operative urgency"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_complete
+  - algorithm_present
+  - escalation_rules_defined
+last_updated: "2026-02-19"
+
+quality_phase: "phase2-final5"

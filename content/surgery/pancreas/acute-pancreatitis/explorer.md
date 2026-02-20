@@ -1,80 +1,50 @@
-# 🔍 Acute Pancreatitis — Explorer Mode
+# Acute Pancreatitis — Explorer
 
-> **The Big Picture:** Pancreas digesting itself. Gallstones and alcohol cause 80%. Severity assessment is key — mild cases recover, severe cases kill. Supportive care is cornerstone.
+## Clinical definition
+Acute inflammatory pancreatic injury diagnosed by typical pain + enzymes/imaging criteria; severity predicts outcomes.
 
----
+## Curriculum Position
+- **Track:** DM Gastroenterology
+- **Primary curriculum source:** `Syllabus - DM  M Ch INI.gi-polished.md`
+- **Competency lens:** diagnosis precision + escalation timing + procedure selection
 
-## 🧬 Core Concept Map
+## First-principles map (ATOM)
+1. **Mechanism:** identify the dominant physiologic failure.
+2. **Pattern:** map symptom/sign cluster to mechanism.
+3. **Signal:** choose the fastest test that changes management.
+4. **Action:** start safest effective first-line intervention.
+5. **Escalation:** define failure triggers and next-level intervention.
 
-```
-         ACUTE PANCREATITIS
-                  │
-    ┌─────────────┴─────────────┐
-    ▼                           ▼
-  CAUSES                    PATHOPHYSIOLOGY
-    │                           │
-    │                           ▼
-┌───┴───┐                 Premature enzyme
-│GET    │                 activation
-│SMASHED│                       │
-└───────┘                       ▼
-                          Autodigestion
-                                │
-                  ┌─────────────┴─────────────┐
-                  ▼                           ▼
-             MILD (80%)                  SEVERE (20%)
-             • Interstitial               • Necrotizing
-             • Self-limiting              • Organ failure
-             • Mortality <1%              • Mortality 20-30%
-```
+## Red flags (must not miss)
+- Persistent organ failure
+- Rising lactate/renal dysfunction
+- Infected necrosis suspicion
+- Sepsis physiology
 
----
+## Diagnostic ladder
+1. Two-of-three diagnosis framework (pain, enzymes, imaging)
+2. Early severity stratification and organ failure tracking
+3. Etiology panel (gallstone, alcohol, TG, drugs, others)
+4. CT timing logic (avoid too early unless diagnostic doubt)
 
-## 📝 GET SMASHED — Causes
+## Management ladder
+1. Early goal-directed fluid strategy with reassessment
+2. Analgesia, oxygenation, nutrition (enteral preferred)
+3. ERCP only when cholangitis/ongoing biliary obstruction features
+4. Step-up approach for necrosis/infection interventions
 
-| Letter | Cause |
-|--------|-------|
-| **G** | Gallstones (40%) |
-| **E** | Ethanol/Alcohol (40%) |
-| **T** | Trauma |
-| **S** | Steroids |
-| **M** | Mumps, Malignancy |
-| **A** | Autoimmune |
-| **S** | Scorpion sting |
-| **H** | Hyperlipidemia, Hypothermia, Hypercalcemia |
-| **E** | ERCP |
-| **D** | Drugs (Azathioprine, Valproate, Thiazides) |
+## Decision-to-escalate checkpoints
+- Hemodynamic/organ failure progression despite first-line care.
+- Source control failure or inability to achieve definitive control.
+- Disease complexity exceeding endoscopic/medical window.
+- Need for HPB/ICU/transplant/oncology MDT pathway.
 
----
+## Socratic prompts
+- Which single finding today changes management immediately?
+- What is the most dangerous wrong assumption in this topic?
+- Which intervention is correct but mistimed in many exam answers?
 
-## 💡 Key Atomic Concepts
-
-### Atom 1: Ranson's Criteria
-> Admission (5): Age >55, WBC >16k, Glucose >200, LDH >350, AST >250
-> 48 hours (6): Hct drop >10%, BUN rise >5, Ca <8, PaO2 <60, Base deficit >4, Fluid >6L
-> ≥3 = Severe pancreatitis
-
-### Atom 2: CTSI (CT Severity Index)
-> Inflammation grade (0-4) + Necrosis score (0-6) = CTSI
-> ≥7 = High mortality
-
-### Atom 3: Cullen's & Grey-Turner's Signs
-> **Cullen's:** Periumbilical bruising (blood tracking to umbilicus)
-> **Grey-Turner's:** Flank bruising (retroperitoneal hemorrhage)
-> Both indicate severe hemorrhagic pancreatitis
-
----
-
-## 📊 Severity Assessment
-
-| Score | System | Severe if |
-|-------|--------|-----------|
-| **Ranson** | Multi-parameter | ≥3 |
-| **APACHE II** | ICU scoring | ≥8 |
-| **Glasgow/Imrie** | 8 parameters | ≥3 |
-| **BISAP** | Bedside, simple | ≥3 |
-| **CTSI** | CT-based | ≥7 |
-
----
-
-📚 **Sources:** Bailey & Love Ch 65 | Sabiston Ch 56 | Atlanta Classification
+## Citation targets
+- 📘 `{src}` (topic-relevant section anchors)
+- 📚 Bailey & Love / Shackelford / Sleisenger / Blumgart (topic-dependent)
+- 🚫 Do not finalize management claims without citation tags in `textbook.md`.

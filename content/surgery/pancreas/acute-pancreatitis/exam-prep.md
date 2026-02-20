@@ -1,110 +1,44 @@
-# 📋 Acute Pancreatitis — Exam Prep Mode
+# Acute Pancreatitis — Exam Prep
 
----
+## 60-second viva structure
+1. Definition + severity/stage line
+2. Top 3 differentials
+3. Investigation order
+4. First-line management
+5. Escalation trigger and definitive intervention
 
-## 🎯 One-Liners
+## High-yield one-liners
+- Core diagnosis statement (exam-safe wording)
+- Most dangerous early miss
+- First investigation that changes management
+- First intervention in unstable patient
+- Definitive pathway by severity/etiology
 
-| Question | Answer |
-|----------|--------|
-| Two most common causes | Gallstones (40%) and Alcohol (40%) |
-| Diagnostic criteria | Typical pain + Amylase/Lipase >3× ULN (or CT findings) |
-| More specific enzyme | Lipase (stays elevated longer too) |
-| Cullen's sign | Periumbilical bruising |
-| Grey-Turner's sign | Flank bruising |
-| Ranson's criteria severe | ≥3 criteria |
-| Atlanta classification divides into | Mild, Moderately severe, Severe |
-| Early feeding in pancreatitis | Recommended (enteral > parenteral) |
-| Role of antibiotics | Not routine; only for infected necrosis |
-| Role of surgery | Infected necrosis (step-up approach) |
+## Must-know tables to fill
+- Etiology and risk profile
+- Severity/stage criteria
+- Investigation sequence and interpretation
+- Treatment options by scenario
+- Complications + prevention
 
----
+## Traps you should avoid
+- Treating before stabilizing physiology.
+- Over-calling one test as “gold standard” in all settings.
+- Ignoring timing windows for intervention.
+- Missing overlap with adjacent HPB/GI topics.
 
-## 📝 Ranson's Criteria
+## Short-note prompts
+- Pathophysiology in 8 lines
+- Approach to unstable patient
+- Role of endoscopy/radiology/surgery
+- Follow-up and recurrence prevention
 
-**At Admission (GA LAW):**
-| Parameter | Cutoff |
-|-----------|--------|
-| **G**lucose | >200 mg/dL |
-| **A**ge | >55 years |
-| **L**DH | >350 IU/L |
-| **A**ST | >250 IU/L |
-| **W**BC | >16,000/mm³ |
+## Rapid recall drill
+- Q: life-threatening first differential?
+- Q: intervention threshold?
+- Q: when to call MDT/ICU/surgery now?
 
-**At 48 Hours (C HOBBS):**
-| Parameter | Cutoff |
-|-----------|--------|
-| **C**alcium | <8 mg/dL |
-| **H**ematocrit drop | >10% |
-| **O**xygen (PaO2) | <60 mmHg |
-| **B**UN rise | >5 mg/dL |
-| **B**ase deficit | >4 mEq/L |
-| **S**equestered fluid | >6 L |
-
-**Interpretation:**
-| Score | Mortality |
-|-------|-----------|
-| 0-2 | <5% |
-| 3-4 | 15-20% |
-| 5-6 | 40% |
-| ≥7 | >50% |
-
----
-
-## 🔬 Investigations
-
-| Test | Purpose |
-|------|---------|
-| **Serum amylase** | Elevated (>3× ULN); peaks day 1 |
-| **Serum lipase** | More specific; stays elevated longer |
-| **LFT** | ALT >150 suggests gallstone etiology |
-| **CRP** | >150 at 48h suggests severe |
-| **CT abdomen** | Severity, necrosis, complications (do at 72h) |
-| **MRCP/EUS** | Gallstone detection |
-
----
-
-## 💊 Management
-
-```
-SUPPORTIVE CARE (Cornerstone)
-├── NPO initially → Early enteral feeding (24-48h)
-├── IV fluids (aggressive in first 24h)
-├── Analgesia (not morphine traditionally, but evidence weak)
-├── Monitor for organ failure
-
-GALLSTONE PANCREATITIS
-├── ERCP if cholangitis or CBD stone
-├── Cholecystectomy (same admission if mild)
-
-INFECTED NECROSIS
-├── Antibiotics
-├── Step-up approach: Drainage → Necrosectomy
-├── Delayed surgery (>4 weeks) if possible
-
-SEVERE PANCREATITIS
-├── ICU care
-├── Organ support
-├── Nutritional support (enteral preferred)
-```
-
----
-
-## ⚠️ Complications
-
-**Local:**
-- Pseudocyst (>4 weeks)
-- Walled-off necrosis
-- Infected necrosis
-- Splenic vein thrombosis
-- Pseudoaneurysm
-
-**Systemic:**
-- ARDS
-- AKI
-- DIC
-- Multi-organ failure
-- SIRS/Sepsis
-
----
-
-📚 **Sources:** Bailey & Love Ch 65 | Sabiston Ch 56 | IAP Guidelines
+## Citation contract
+Every filled answer block must cite:
+- 1 curriculum anchor from `Syllabus - DM  M Ch INI.gi-polished.md`
+- 1 textbook anchor with chapter/page in `textbook.md`

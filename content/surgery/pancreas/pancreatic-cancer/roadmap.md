@@ -1,40 +1,25 @@
----
-title: "Learning Roadmap: Pancreatic Cancer"
-description: "Guided study path for Pancreatic Cancer — prerequisites, core learning, and clinical extensions"
----
+# Pancreatic Cancer — Roadmap
 
-## 📐 Foundations
+## UG
+- Recognize syndrome and urgent danger signs.
+- Initiate stabilization and first diagnostic pathway.
 
-Study these **before** diving into Pancreatic Cancer:
+## PG
+- Execute full pathway: diagnosis -> stage/severity -> treatment lane.
+- Apply escalation criteria and avoid timing mistakes.
 
-| Subject | Topic | NMC Code | Why It Matters |
-|---------|-------|----------|----------------|
-| Anatomy | Pancreatic head & periampullary anatomy | — | Head tumors present with obstructive jaundice; understanding the periampullary region (pancreas, ampulla, CBD, duodenum) is critical |
-| Anatomy | SMA/SMV — vascular involvement | — | Vascular involvement determines resectability — SMA/celiac axis encasement usually precludes curative surgery |
-| Pathology | Ductal adenocarcinoma pathology | — | Pancreatic ductal adenocarcinoma (PDAC) has dense desmoplastic stroma — explains poor drug penetration and aggressive behavior |
+## SS (MCh Surgical Gastroenterology)
+- Defend complex pathway choices with MDT evidence.
+- Balance physiology, anatomy, and long-term outcomes in decisions.
 
-## 🎯 Core Learning Objectives
+## Milestones
+1. Foundation: definitions + stage/severity logic
+2. Clinical execution: diagnostics + lane assignment
+3. Advanced: escalation, rescue, complication handling
+4. Mastery: viva defense + citation-complete documentation
 
-- Apply NCCN resectability criteria — resectable, borderline resectable, locally advanced, metastatic
-- Describe the Whipple procedure (pancreaticoduodenectomy) and its key steps
-- Understand the role of neoadjuvant therapy in borderline resectable disease
-
-## 🔬 Clinical Science Connections
-
-| Subject | Topic | NMC Code | Connection |
-|---------|-------|----------|------------|
-| Radiology | CT: pancreatic protocol, vascular encasement | — | Pancreatic protocol CT (arterial and venous phases) assesses tumor extent and vascular involvement — determines resectability |
-| Pharmacology | FOLFIRINOX, gemcitabine + nab-paclitaxel | — | Neoadjuvant/adjuvant chemotherapy improves survival — regimen depends on performance status |
-
-## ➡️ What's Next
-
-*This is an advanced/terminal topic — review and consolidate your knowledge.*
-
-### Prerequisites
-
-- **Obstructive Jaundice** — Painless progressive jaundice is the hallmark presentation of pancreatic head cancer
-- **Chronic Pancreatitis** — CP is a risk factor for PDAC; differentiating mass-forming CP from cancer is challenging
-
-## 🔗 Cross-Subject Integration Points
-
-Pancreatic cancer exemplifies how anatomy determines surgical resectability — the relationship of tumor to the SMA, celiac axis, and SMV dictates whether curative surgery is possible. It integrates radiology (CT staging), pathology (PDAC biology, desmoplasia), pharmacology (chemotherapy), and complex surgical technique (Whipple procedure).
+## Deliverables
+- Citation-complete `textbook.md`
+- Algorithm-complete `explorer.md`
+- Viva-ready `exam-prep.md`
+- `_meta.yaml` updated to final phase2 batch status

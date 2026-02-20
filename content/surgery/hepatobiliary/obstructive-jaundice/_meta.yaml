@@ -1,57 +1,17 @@
-title: "Obstructive Jaundice"
+title: Obstructive Jaundice
 slug: obstructive-jaundice
-depth: "UG"
-highYield: true
-nmc_codes:
-  - "SU28.12"
-  - "PA25.1"
-  - "PA25.6"
-  - "IM5.13"
-  - "IM5.14"
-prerequisites:
-  - "liver-anatomy"
-  - "acute-cholecystitis"
-related_topics:
-  - "choledocholithiasis"
-  - "cholangitis"
-  - "gallbladder-cancer"
-  - "biliary-stricture"
-  - "choledochal-cyst"
-enrichment:
-  nmcCodes:
-    - code: "SU28.12"
-      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
-      domain: "KH"
-    - code: "PA25.1"
-      text: "Describe bilirubin metabolism, enumerate the etiology and pathogenesis of jaundice, distinguish between direct and indirect hyperbilirubinemia"
-      domain: "KH"
-    - code: "PA25.6"
-      text: "Interpret a liver function and viral hepatitis serology panel. Distinguish obstructive from non obstructive jaundice based on clinical features and liver function tests"
-      domain: "P"
-    - code: "IM5.13"
-      text: "Enumerate the indications for ultrasound and other imaging studies including MRCP and ERCP and describe the findings in liver disease"
-      domain: "K"
-    - code: "IM5.14"
-      text: "Outline a diagnostic approach to liver disease based on hyperbilirubinemia, liver function changes and hepatitis serology"
-      domain: "SH"
-  prerequisite_details:
-    - slug: "liver-anatomy"
-      reason: "Understanding the intrahepatic and extrahepatic biliary tree anatomy is essential to localize the level and cause of obstruction"
-    - slug: "acute-cholecystitis"
-      reason: "Cholecystitis workup often reveals concomitant biliary obstruction; understanding gallbladder inflammation contextualizes the jaundice evaluation"
-  related_details:
-    - slug: "choledocholithiasis"
-      reason: "CBD stones are the most common cause of surgical obstructive jaundice and the primary differential in acute presentations"
-      relationship: "clinical"
-    - slug: "cholangitis"
-      reason: "Biliary obstruction complicated by infection leads to cholangitis — a surgical emergency requiring urgent biliary decompression"
-      relationship: "complication"
-    - slug: "gallbladder-cancer"
-      reason: "Periampullary and gallbladder malignancies present as painless obstructive jaundice with Courvoisier's sign"
-      relationship: "differential"
-    - slug: "biliary-stricture"
-      reason: "Post-surgical and inflammatory biliary strictures are important benign causes of obstructive jaundice requiring differentiation from malignancy"
-      relationship: "differential"
-    - slug: "choledochal-cyst"
-      reason: "Congenital choledochal cysts present with the classic triad of jaundice, pain, and abdominal mass, especially in children"
-      relationship: "differential"
+subject: surgery
+track: "DM Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "Syllabus - DM  M Ch INI.gi-polished.md"
+quality_phase: "phase2-top5"
+competency_focus: "diagnostic precision + escalation timing + intervention selection"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

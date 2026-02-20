@@ -1,44 +1,17 @@
-title: "Cholangitis"
+title: Cholangitis
 slug: cholangitis
-depth: "UG"
-highYield: true
-nmc_codes:
-  - "SU28.12"
-  - "IM5.6"
-prerequisites:
-  - "obstructive-jaundice"
-  - "choledocholithiasis"
-  - "liver-anatomy"
-related_topics:
-  - "cholelithiasis"
-  - "biliary-stricture"
-  - "bile-duct-injury"
-  - "cholecystitis"
-enrichment:
-  nmcCodes:
-    - code: "SU28.12"
-      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
-      domain: "KH"
-    - code: "IM5.6"
-      text: "Describe and discuss the pathophysiology, clinical evolution and complications of cirrhosis and portal hypertension including ascites, spontaneous bacterial peritonitis, hepatorenal syndrome and hepatic encephalopathy"
-      domain: "K"
-  prerequisite_details:
-    - slug: "obstructive-jaundice"
-      reason: "Cholangitis presents as infected obstructive jaundice; understanding biliary obstruction pathophysiology is essential for recognizing Charcot triad and Reynolds pentad"
-    - slug: "choledocholithiasis"
-      reason: "CBD stones are the most common cause of acute cholangitis; stone impaction leads to biliary stasis and subsequent bacterial infection"
-    - slug: "liver-anatomy"
-      reason: "Knowledge of biliary tree anatomy (hepatic ducts, CBD, ampulla) is critical for understanding obstruction sites and planning ERCP or surgical drainage"
-  related_details:
-    - slug: "cholelithiasis"
-      reason: "Gallstones migrate from gallbladder to CBD causing obstructive cholangitis; shared risk factors and management pathway"
-      relationship: "etiological"
-    - slug: "biliary-stricture"
-      reason: "Benign and malignant strictures are the second most common cause of cholangitis after stones"
-      relationship: "etiological"
-    - slug: "bile-duct-injury"
-      reason: "Post-cholecystectomy bile duct injury can lead to stricture formation and recurrent cholangitis"
-      relationship: "complication"
-    - slug: "cholecystitis"
-      reason: "Often coexists with cholangitis in gallstone disease; both require assessment of the biliary tree"
-      relationship: "clinical"
+subject: surgery
+track: "DM Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "Syllabus - DM  M Ch INI.gi-polished.md"
+quality_phase: "phase2-next5"
+competency_focus: "diagnostic precision + timing + escalation"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

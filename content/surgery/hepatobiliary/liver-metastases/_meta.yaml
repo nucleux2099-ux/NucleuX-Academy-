@@ -1,41 +1,17 @@
-title: "Liver Metastases"
+title: Liver Metastases
 slug: liver-metastases
-depth: "UG"
-highYield: true
-nmc_codes:
-  - "SU28.10"
-  - "PA25.2"
-prerequisites:
-  - "liver-anatomy"
-  - "hepatocellular-carcinoma"
-related_topics:
-  - "liver-abscess"
-  - "obstructive-jaundice"
-  - "portal-hypertension"
-  - "liver-transplant-indications"
-enrichment:
-  nmcCodes:
-    - code: "SU28.10"
-      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
-      domain: "KH"
-    - code: "PA25.2"
-      text: "Describe the pathophysiology and pathologic changes seen in hepatic failure and their clinical manifestations, complications and consequences"
-      domain: "KH"
-  prerequisite_details:
-    - slug: "liver-anatomy"
-      reason: "Couinaud segmental anatomy is the basis for assessing resectability and planning hepatectomy for metastatic disease"
-    - slug: "hepatocellular-carcinoma"
-      reason: "Distinguishing primary HCC from metastatic disease is fundamental; imaging characteristics, AFP levels, and biopsy differentiate them"
-  related_details:
-    - slug: "liver-abscess"
-      reason: "Necrotic liver metastases can mimic abscess on imaging; clinical context and tumor markers help differentiate"
-      relationship: "differential"
-    - slug: "obstructive-jaundice"
-      reason: "Hilar metastases or extensive hepatic replacement causes obstructive or hepatocellular jaundice indicating advanced disease"
-      relationship: "complication"
-    - slug: "portal-hypertension"
-      reason: "Extensive metastatic infiltration can cause sinusoidal portal hypertension and its sequelae"
-      relationship: "complication"
-    - slug: "liver-transplant-indications"
-      reason: "Select patients with unresectable colorectal liver metastases are now candidates for transplant in emerging protocols"
-      relationship: "management"
+subject: surgery
+track: "MCh Surgical Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "MCh-SGE-NMC-Curriculum-2021.polished.md"
+quality_phase: "phase2-final5"
+competency_focus: "resectability/stage logic + escalation + MDT integration"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

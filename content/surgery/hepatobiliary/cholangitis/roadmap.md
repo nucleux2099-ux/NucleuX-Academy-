@@ -1,41 +1,25 @@
----
-title: "Learning Roadmap: Cholangitis"
-description: "Guided study path for Cholangitis — prerequisites, core learning, and clinical extensions"
----
+# Cholangitis — Roadmap
 
-## 📐 Foundations
+## UG
+- Recognize syndrome and red-flag signs.
+- Start stabilization and correct first investigations.
 
-Study these **before** diving into Cholangitis:
+## PG
+- Execute full diagnosis-treatment flow with timing rationale.
+- Prevent sequencing mistakes in intervention pathways.
 
-| Subject | Topic | NMC Code | Why It Matters |
-|---------|-------|----------|----------------|
-| Anatomy | Biliary tree anatomy | — | Understanding the biliary tree from intrahepatic ducts to the ampulla explains the routes of ascending infection |
-| Pathology | Ascending biliary sepsis | — | Biliary obstruction → bile stasis → bacterial overgrowth → ascending cholangitis — this cascade explains Charcot's triad |
+## SS (DM Gastroenterology)
+- Run advanced escalation pathways with MDT integration.
+- Defend interventions with evidence and context modifiers.
 
-## 🎯 Core Learning Objectives
+## Milestones
+1. Core understanding: mechanism + definition + staging
+2. Clinical execution: diagnosis ladder + treatment ladder
+3. Advanced control: escalation + rescue + complications
+4. Mastery: exam defense + citation-complete documentation
 
-- Recognize Charcot triad (fever, jaundice, RUQ pain) and Reynolds pentad (+ shock, confusion)
-- Apply Tokyo Guidelines severity grading and determine need for urgent biliary drainage
-- Compare drainage methods — ERCP (first-line), PTBD (when ERCP fails), surgical exploration
-
-## 🔬 Clinical Science Connections
-
-| Subject | Topic | NMC Code | Connection |
-|---------|-------|----------|------------|
-| Microbiology | Biliary organisms — E. coli, Klebsiella, Enterococcus | — | Gram-negative rods and enterococci are the primary pathogens — guides empirical antibiotic choice |
-| Radiology | USG: dilated CBD; ERCP | — | USG shows dilated CBD (>6mm); ERCP provides both diagnosis and therapeutic drainage |
-| Pathology | Septic shock in cholangitis | — | Reynolds pentad adds altered mental status and shock to Charcot triad — indicates severe cholangitis needing urgent decompression |
-
-## ➡️ What's Next
-
-After mastering this topic, progress to:
-
-1. **Obstructive Jaundice** — Cholangitis is a consequence of biliary obstruction
-
-### Prerequisites
-
-- **Choledocholithiasis** — CBD stones are the most common cause of cholangitis
-
-## 🔗 Cross-Subject Integration Points
-
-Cholangitis integrates microbiology (biliary pathogens), pathology (ascending infection, septic shock), radiology (USG, ERCP), and surgery (biliary drainage). It's a time-critical condition where understanding the pathophysiology of obstructed infected bile dictates the urgency and method of intervention.
+## Deliverables
+- Citation-complete `textbook.md`
+- Algorithm-complete `explorer.md`
+- Viva-ready `exam-prep.md`
+- `_meta.yaml` updated to phase2 status

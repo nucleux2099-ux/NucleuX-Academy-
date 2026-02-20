@@ -1,35 +1,44 @@
-# 📋 Portal Hypertension — Exam Prep Mode
+# Portal Hypertension — Exam Prep
 
-## 🎯 One-Liners
-| Question | Answer |
-|----------|--------|
-| Definition | Portal pressure >10 mmHg or gradient >5 mmHg |
-| Most common cause worldwide | Cirrhosis |
-| Most common cause in India | Non-cirrhotic portal fibrosis |
-| Varices form at gradient | >10-12 mmHg |
-| Varices bleed at gradient | >12 mmHg |
-| Sites of portosystemic anastomosis | Esophageal, umbilical, rectal, retroperitoneal |
-| Caput medusae | Periumbilical collaterals |
-| First-line for acute variceal bleed | Resuscitation + Vasoactive drugs + Urgent endoscopy |
-| Band ligation vs Sclerotherapy | Banding preferred (fewer complications) |
-| TIPS indication | Refractory bleeding, refractory ascites |
+## 60-second viva structure
+1. Definition + severity/stage line
+2. Top 3 differentials
+3. Investigation order
+4. First-line management
+5. Escalation trigger and definitive intervention
 
-## 📊 Classification
-| Type | Site | Examples |
-|------|------|----------|
-| Pre-hepatic | Portal vein | Portal vein thrombosis |
-| Hepatic (pre-sinusoidal) | Within liver | Schistosomiasis, NCPF |
-| Hepatic (sinusoidal) | Sinusoids | Cirrhosis |
-| Hepatic (post-sinusoidal) | Hepatic veins | Budd-Chiari |
-| Post-hepatic | IVC/Heart | Constrictive pericarditis |
+## High-yield one-liners
+- Core diagnosis statement (exam-safe wording)
+- Most dangerous early miss
+- First investigation that changes management
+- First intervention in unstable patient
+- Definitive pathway by severity/etiology
 
-## 💊 Management of Variceal Bleed
-1. Resuscitate (IV access, transfuse)
-2. Vasoactive drugs (Octreotide/Terlipressin)
-3. Antibiotics (prevent SBP)
-4. Urgent endoscopy (<12 hours)
-5. Band ligation (preferred)
-6. TIPS if refractory
-7. Secondary prophylaxis (beta-blockers + repeated banding)
+## Must-know tables to fill
+- Etiology and risk profile
+- Severity/stage criteria
+- Investigation sequence and interpretation
+- Treatment options by scenario
+- Complications + prevention
 
-📚 **Sources:** Bailey & Love Ch 64 | Baveno Guidelines
+## Traps you should avoid
+- Treating before stabilizing physiology.
+- Over-calling one test as “gold standard” in all settings.
+- Ignoring timing windows for intervention.
+- Missing overlap with adjacent HPB/GI topics.
+
+## Short-note prompts
+- Pathophysiology in 8 lines
+- Approach to unstable patient
+- Role of endoscopy/radiology/surgery
+- Follow-up and recurrence prevention
+
+## Rapid recall drill
+- Q: life-threatening first differential?
+- Q: intervention threshold?
+- Q: when to call MDT/ICU/surgery now?
+
+## Citation contract
+Every filled answer block must cite:
+- 1 curriculum anchor from `Syllabus - DM  M Ch INI.gi-polished.md`
+- 1 textbook anchor with chapter/page in `textbook.md`
