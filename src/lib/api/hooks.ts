@@ -186,6 +186,98 @@ export function useAnalytics(days = 7) {
   return useQuery<Analytics>(`/api/analytics?days=${days}`);
 }
 
+export interface BackstageSummary {
+  lastUpdatedAt: string;
+  stats: {
+    weeklyStudyHours: number;
+    topicsMastered: number;
+    mcqsAttemptedMonth: number;
+    avgSessionLength: number;
+  };
+  calibration: {
+    confidence: number;
+    accuracy: number;
+    gap: number;
+    status: string;
+    overconfidentTopics: Array<{
+      name: string;
+      confidence: number;
+      accuracy: number;
+    }>;
+  };
+  streak: {
+    current: number;
+    longest: number;
+    activeDaysIn28: number;
+    heatmap: number[][];
+  };
+  subjects: Array<{
+    name: string;
+    accuracy: number;
+    mcqs: number;
+    topics: number;
+  }>;
+  insights: string[];
+  trend7d?: Array<{
+    date: string;
+    studyMinutes: number;
+    mcqAccuracy: number;
+    mcqAttempts: number;
+  }>;
+  topicMastery?: Array<{
+    name: string;
+    mastery: number;
+    accuracy: number;
+    attempts: number;
+  }>;
+  weakTopics?: Array<{
+    name: string;
+    mastery: number;
+    accuracy: number;
+    attempts: number;
+  }>;
+  weeklyReport?: {
+    headline: string;
+    wins: string[];
+    focus: string[];
+  };
+  nextActions?: Array<{
+    title: string;
+    reason: string;
+    priority: 'high' | 'medium' | 'low';
+    href: string;
+  }>;
+  quests?: {
+    active: Array<{
+      title: string;
+      progress: number;
+      total: number;
+      done: boolean;
+      reward: string;
+    }>;
+    weeklyGoals: Array<{
+      title: string;
+      current: number;
+      target: number;
+      unit: string;
+      ok: boolean;
+    }>;
+  };
+}
+
+export function useBackstageSummary() {
+  return useQuery<BackstageSummary>('/api/backstage/summary', { refetchInterval: 120000 });
+}
+
+export interface BackstageReport {
+  generatedAt: string;
+  reportMarkdown: string;
+}
+
+export function useBackstageReport() {
+  return useQuery<BackstageReport>('/api/backstage/report');
+}
+
 export function useTrackEvent() {
   const trackEvent = async (event: string, data: Record<string, unknown>) => {
     try {
