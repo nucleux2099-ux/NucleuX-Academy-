@@ -4,7 +4,7 @@
  * Complete with concepts, exam prep, retrieval cards, and cases
  */
 
-import type { LibraryTopic, RetrievalCard, CaseScenario, TextbookReference } from '../../types/library';
+import type { LibraryTopic } from '../../types/library';
 
 // =============================================================================
 // HEART FAILURE

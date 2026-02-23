@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -18,26 +18,15 @@ import {
   ChevronRight,
   ChevronLeft,
   List,
-  Settings,
   Minus,
   Plus,
-  Moon,
-  Sun,
-  Volume2,
-  VolumeX,
   Maximize2,
   Minimize2,
   StickyNote,
-  Brain,
   Target,
   Highlighter,
-  MessageCircle,
   Quote,
-  Share2,
-  MoreVertical,
-  Eye,
   Sparkles,
-  FileText,
   Atom,
   PanelLeftClose,
   PanelLeft,

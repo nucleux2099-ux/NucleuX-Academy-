@@ -8,19 +8,19 @@ import {
   Lightbulb, 
   Target, 
   Brain, 
-  BookOpen, 
+
   Stethoscope,
   ChevronRight,
   ChevronLeft,
   CheckCircle2,
   XCircle,
-  RotateCcw,
+
   Sparkles,
   FileText,
-  Map
+
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { ViewMode, LibraryTopic, RetrievalCard as RetrievalCardType, CaseScenario } from "@/lib/types/library";
+import type { LibraryTopic, RetrievalCard as RetrievalCardType, CaseScenario } from "@/lib/types/library";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 
 // =============================================================================

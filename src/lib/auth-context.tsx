@@ -111,7 +111,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   
   const login = useCallback(async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
@@ -121,7 +121,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
       
       return { success: true };
-    } catch (err) {
+    } catch (_err) {
       return { success: false, error: 'An unexpected error occurred' };
     }
   }, [supabase]);
@@ -164,7 +164,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
       
       return { success: true };
-    } catch (err) {
+    } catch (_err) {
       return { success: false, error: 'An unexpected error occurred' };
     }
   }, [supabase]);

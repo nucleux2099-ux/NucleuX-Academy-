@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Activity,
   ChevronRight,
@@ -18,11 +17,9 @@ import {
   Lightbulb,
   Clock,
   ArrowLeft,
-  Play,
   RotateCcw,
   CheckCircle,
   XCircle,
-  Zap,
   AlertCircle,
   CircleDot,
   Target,
@@ -32,8 +29,6 @@ import {
   Droplets,
   Stethoscope,
   Syringe,
-  Pill,
-  FileText,
   TrendingUp,
 } from 'lucide-react';
 import { 
@@ -62,7 +57,7 @@ const nodeTypeColors: Record<string, string> = {
 
 export default function PatientFlowPage() {
   const params = useParams();
-  const flowId = params.flowId as string;
+  const _flowId = params.flowId as string;
   
   const [currentNodeId, setCurrentNodeId] = useState('N1');
   const [visitedNodes, setVisitedNodes] = useState<string[]>(['N1']);
@@ -505,7 +500,7 @@ export default function PatientFlowPage() {
                 <p className="text-sm text-gray-400 mb-3">{pathway.description}</p>
                 <div className="flex flex-wrap gap-1">
                   {pathway.nodeSequence.map((nodeId, nidx) => {
-                    const node = flow.nodes.find(n => n.id === nodeId);
+                    const _node = flow.nodes.find(n => n.id === nodeId);
                     return (
                       <div key={nodeId} className="flex items-center">
                         <Badge 

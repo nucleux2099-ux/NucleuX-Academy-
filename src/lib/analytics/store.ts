@@ -5,9 +5,9 @@ import {
   ReadingSession, 
   VideoSession, 
   TopicMemory,
-  CalibrationData,
+
   DailyStats,
-  CONFIDENCE_EXPECTED,
+
   calculateMemoryStrength,
   calculateOptimalReviewDays,
 } from './types';
@@ -333,7 +333,7 @@ export function getTopicsNeedingReview(analytics: UserAnalytics): TopicMemory[] 
 
 // Get weekly activity data
 export function getWeeklyActivity(analytics: UserAnalytics): DailyStats[] {
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const _days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const result: DailyStats[] = [];
   
   for (let i = 6; i >= 0; i--) {

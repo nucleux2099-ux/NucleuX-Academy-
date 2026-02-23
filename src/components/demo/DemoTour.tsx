@@ -130,7 +130,7 @@ interface DemoTourProps {
 }
 
 export function DemoTour({ onComplete, onSkip }: DemoTourProps) {
-  const [tour, setTour] = useState<Tour | null>(null)
+  const [_tour, setTour] = useState<Tour | null>(null)
 
   useEffect(() => {
     // Inject custom styles

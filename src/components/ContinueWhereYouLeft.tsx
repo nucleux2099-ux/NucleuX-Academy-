@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import {
   Clock,
@@ -104,7 +103,7 @@ function getTypeLabel(type: RecentItem["type"]) {
 }
 
 export function ContinueWhereYouLeft() {
-  const [recents, setRecents] = useState(mockRecents);
+  const [recents, _setRecents] = useState(mockRecents);
   const [dismissed, setDismissed] = useState<string[]>([]);
 
   const visibleRecents = recents.filter(r => !dismissed.includes(r.id));

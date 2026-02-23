@@ -23,7 +23,7 @@ import {
   parseMindMapFromJSON,
   EXAMPLE_MAPS,
   type MindMapNode,
-  type MindMapConfig,
+
 } from '@/lib/mindmap-engine';
 
 interface ChatMessage {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
-import { useState, useEffect, useCallback, useRef } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState, useEffect, useRef } from "react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -20,19 +20,11 @@ import {
   Target,
   Brain,
   Zap,
-  TrendingUp,
   AlertTriangle,
-  HelpCircle,
-  ThumbsUp,
-  ThumbsDown,
-  BarChart3,
   Award,
   Atom,
   Eye,
-  EyeOff,
   Volume2,
-  Bookmark,
-  Share2,
   MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
@@ -244,7 +236,7 @@ type ConfidenceLevel = "guessing" | "unsure" | "sure" | "very-sure" | null;
 type QuizMode = "practice" | "results" | "review";
 
 export default function MCQPracticePage() {
-  const params = useParams();
+  const _params = useParams();
   const router = useRouter();
   const { trackMCQAttempt } = useAnalytics();
   
@@ -264,8 +256,8 @@ export default function MCQPracticePage() {
   const questionStartTime = useRef(0);
   
   // Settings
-  const [showConfidenceSelector, setShowConfidenceSelector] = useState(true);
-  const [instantFeedback, setInstantFeedback] = useState(false);
+  const [showConfidenceSelector, _setShowConfidenceSelector] = useState(true);
+  const [instantFeedback, _setInstantFeedback] = useState(false);
   
   const question = questions[currentQuestion];
   
@@ -646,6 +638,7 @@ export default function MCQPracticePage() {
           {/* Question Image (if present) */}
           {question.image && (
             <div className="rounded-lg overflow-hidden border border-[rgba(91,179,179,0.15)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src={question.image} 
                 alt={question.imageCaption || "Clinical image"} 

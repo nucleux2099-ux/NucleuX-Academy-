@@ -2,11 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   ClipboardList,
   BookOpen,
@@ -29,7 +27,7 @@ import {
   ThumbsDown,
   Meh,
 } from 'lucide-react';
-import { mcqRansonsCriteria, calculateRansonsScore } from '@/lib/data/templates/mcq-template';
+import { mcqRansonsCriteria } from '@/lib/data/templates/mcq-template';
 import { addBackstageEvent, normalizeSubject } from '@/lib/backstage/store';
 import { updateBackstageEvent } from '@/lib/backstage/update';
 

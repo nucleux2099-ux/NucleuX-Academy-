@@ -10,7 +10,6 @@
 
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { SUBJECTS } from "@/lib/data/subjects";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
 import { 
@@ -90,7 +89,7 @@ export default async function SubspecialtyPage({ params }: PageProps) {
   const topics = getTopics(subjectSlug, subspecialtySlug);
   
   // Get content index for additional metadata (optional)
-  const contentIndex = subspecialtyExists(subjectSlug, subspecialtySlug) 
+  const _contentIndex = subspecialtyExists(subjectSlug, subspecialtySlug) 
     ? loadSubspecialtyIndex(subjectSlug, subspecialtySlug)
     : null;
   

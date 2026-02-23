@@ -25,7 +25,7 @@ import Link from "next/link";
 // =============================================================================
 
 export function StreakCard() {
-  const { user, updateStreak } = useUser();
+  const { user, updateStreak: _updateStreak } = useUser();
   
   if (!user) return null;
 

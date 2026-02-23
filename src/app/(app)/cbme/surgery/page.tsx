@@ -12,7 +12,6 @@ import {
   getTotalUGCompetencies,
   type SurgeryLevel,
   type NMCDomain,
-  type SurgerySubspecialtyMap,
 } from "@/lib/data/cbme-surgery";
 
 /* ─── Domain badge colours ─── */

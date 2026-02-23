@@ -3,7 +3,7 @@
 
 import { createClient } from '@supabase/supabase-js';
 import { readFileSync, readdirSync, existsSync } from 'fs';
-import { join, basename, extname } from 'path';
+import { join, basename } from 'path';
 import yaml from 'js-yaml';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://qwkuoygcvkbomunazpce.supabase.co';
@@ -30,7 +30,7 @@ function parseMarkdownFrontmatter(content) {
       const frontmatter = yaml.load(frontmatterMatch[1]);
       const body = content.slice(frontmatterMatch[0].length).trim();
       return { frontmatter, body };
-    } catch (e) {
+    } catch (_e) {
       return { frontmatter: {}, body: content };
     }
   }
@@ -114,7 +114,7 @@ async function importTopicFolder(subject, topicPath, topicSlug) {
     
     try {
       // Upsert to handle re-imports
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('atoms')
         .upsert(atom, { onConflict: 'slug' })
         .select();

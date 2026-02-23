@@ -37,6 +37,7 @@ function ClickableImage({
           className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2D3E50]"
           onClick={() => setIsOpen(true)}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={src}
             alt={alt || ""}
@@ -125,14 +126,14 @@ export function MedicalMarkdown({ content, className, bionic }: MedicalMarkdownP
               {children}
             </ol>
           ),
-          li: ({ children, ...props }) => (
+          li: ({ children, ..._props }) => (
             <li className="text-[#D1D5DB] flex items-start gap-2">
               <span className="flex-1">{children}</span>
             </li>
           ),
 
           // Code blocks
-          code: ({ className, children, ...props }) => {
+          code: ({ className, children, ..._props }) => {
             // Mermaid diagrams
             if (className?.includes('language-mermaid')) {
               const chart = String(children).replace(/\n$/, '');

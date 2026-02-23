@@ -224,7 +224,7 @@ const NODE_MAX_WIDTH = 220;
 const NODE_HEIGHT = 50;
 const DETAIL_HEIGHT = 20;
 const LEVEL_GAP_X = 200;
-const LEVEL_GAP_Y = 80;
+const _LEVEL_GAP_Y = 80;
 const SIBLING_GAP = 20;
 
 function measureNode(node: MindMapNode): { width: number; height: number } {

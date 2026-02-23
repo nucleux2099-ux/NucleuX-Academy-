@@ -66,6 +66,7 @@ const overconfidentTopics = [
   { name: "Pancreatic Pseudocyst", confidence: 72, accuracy: 61 },
 ]
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const stats = [
   { label: "Weekly Study Hours", value: "24.5", unit: "hrs", change: "+17%", icon: Clock },
   { label: "Topics Mastered", value: "15", unit: "/ 20", change: null, icon: Target },

@@ -249,7 +249,7 @@ export function TodaysStudyPlan() {
 
       <CardContent className="space-y-3">
         {/* Task List */}
-        {tasks.map((task, index) => {
+        {tasks.map((task, _index) => {
           const colors = getTaskColor(task.type);
           const isActive = task.status === "current";
           const isCompleted = task.status === "completed";

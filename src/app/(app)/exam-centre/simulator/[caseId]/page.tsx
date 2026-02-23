@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Users,
@@ -18,7 +17,6 @@ import {
   ChevronLeft,
   Clock,
   DollarSign,
-  AlertTriangle,
   CheckCircle2,
   XCircle,
   BookOpen,
@@ -34,8 +32,6 @@ import {
   Timer,
   Award,
   TrendingUp,
-  Info,
-  ArrowRight,
   RotateCcw,
   Home,
   Loader2,
@@ -135,7 +131,7 @@ export default function PatientSimulatorPage() {
   const [selectedExamSystem, setSelectedExamSystem] = useState('abdomen');
   const [selectedInvCategory, setSelectedInvCategory] = useState('laboratory');
   const [showResults, setShowResults] = useState(false);
-  const [showReference, setShowReference] = useState<string | null>(null);
+  const [_showReference, _setShowReference] = useState<string | null>(null);
   
   // Timer
   useEffect(() => {

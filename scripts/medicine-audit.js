@@ -10,11 +10,13 @@
 
 const fs = require('fs');
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const yaml = require('js-yaml'); // need to handle yaml manually
 
 const MEDICINE_DIR = path.join(__dirname, '..', 'content', 'medicine');
 
 // NMC IM code mapping by subspecialty
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NMC_MAP = {
   cardiology: { prefix: 'IM1', codes: range(1, 30) },
   pulmonology: { prefix: 'IM2', codes: range(1, 20) },

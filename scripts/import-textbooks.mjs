@@ -2,8 +2,7 @@
 // Imports textbook chapters with images to Supabase
 
 import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
-import { join, basename, dirname, extname } from 'path';
-import { writeFileSync } from 'fs';
+import { join, basename, extname } from 'path';
 
 // We don't need Supabase client for SQL generation
 // const supabaseUrl = 'https://qwkuoygcvkbomunazpce.supabase.co';
@@ -92,10 +91,11 @@ function findImages(mdDir) {
   return images;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function uploadImage(imagePath, bucket, remotePath) {
   try {
     const fileBuffer = readFileSync(imagePath);
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from(bucket)
       .upload(remotePath, fileBuffer, {
         contentType: `image/${extname(imagePath).slice(1)}`,
@@ -107,12 +107,13 @@ async function uploadImage(imagePath, bucket, remotePath) {
     // Get public URL
     const { data: urlData } = supabase.storage.from(bucket).getPublicUrl(remotePath);
     return urlData.publicUrl;
-  } catch (e) {
+  } catch (_e) {
     console.error(`Failed to upload ${imagePath}: ${e.message}`);
     return null;
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function processMarkdownImages(content, imageUrlMap) {
   // Replace local image references with Supabase URLs
   // Pattern: ![](_page_0_Figure_3.jpeg) or ![alt](image.png)

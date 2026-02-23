@@ -4,7 +4,6 @@
  * Tracks learning state, attempts, and achievements
  */
 
-import type { Depth, Difficulty } from './content';
 
 // =============================================================================
 // USER PROGRESS (per topic)

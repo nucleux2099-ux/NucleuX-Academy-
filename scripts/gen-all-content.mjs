@@ -9,7 +9,7 @@
  * Without argument: generates for all subspecialties
  */
 
-import { writeFileSync, readFileSync, existsSync, readdirSync, statSync, mkdirSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 import YAML from 'yaml';
 
@@ -37,6 +37,7 @@ function getTopics(filterSub) {
 }
 
 // Write files
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function writeContent(topic) {
   const data = CONTENT[`${topic.sub}/${topic.slug}`];
   if (!data) {
@@ -63,6 +64,7 @@ function writeContent(topic) {
 // ============================================================================
 const CONTENT = {};
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function add(key, explorer, examPrep) {
   CONTENT[key] = { explorer, examPrep };
 }

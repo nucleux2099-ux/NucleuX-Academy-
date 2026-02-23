@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Swords, Trophy, Lock, CheckCircle2, Star } from "lucide-react";
+import { ArrowLeft, Swords, Lock, CheckCircle2, Star } from "lucide-react";
 import { ApiStateBoundary } from "@/components/api-state-boundary";
 import { useBackstageSummary } from "@/lib/api/hooks";
 

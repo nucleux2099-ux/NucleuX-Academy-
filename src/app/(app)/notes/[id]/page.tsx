@@ -24,7 +24,6 @@ import {
   BookOpen,
   MessageCircle,
   Share2,
-  MoreHorizontal,
   Plus,
   Atom,
   ChevronRight,

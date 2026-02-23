@@ -8,7 +8,6 @@ import {
   MessageSquare,
   X,
   Loader2,
-  Sparkles,
   GraduationCap,
   PenTool,
   RotateCcw,
@@ -663,6 +662,7 @@ export default function ExcalidrawCanvas() {
           {messages.map((msg) => (
             <div key={msg.id} className={cn('flex flex-col gap-1', msg.role === 'user' ? 'items-end' : 'items-start')}>
               {msg.imageUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img src={msg.imageUrl} alt="Drawing" className="w-48 rounded-lg border border-[#2D3E50]" />
               )}
               <div className={cn(

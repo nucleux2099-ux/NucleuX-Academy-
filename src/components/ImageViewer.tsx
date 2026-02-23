@@ -75,6 +75,7 @@ export function ImageViewer({ src, alt, caption, isOpen, onClose }: ImageViewerP
         className="max-w-[90vw] max-h-[85vh] overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={src}
           alt={alt || ""}
@@ -132,6 +133,7 @@ export function MedicalImage({
           className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2D3E50]"
           onClick={() => setIsViewerOpen(true)}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={src}
             alt={alt || ""}
@@ -204,6 +206,7 @@ export function Diagram({ src, title, caption, layout = "full" }: DiagramProps) 
             className="p-4 cursor-zoom-in"
             onClick={() => setIsViewerOpen(true)}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={src}
               alt={title}
@@ -260,6 +263,7 @@ export function ImageComparison({ images, title }: ComparisonProps) {
                 className="relative group cursor-zoom-in overflow-hidden rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#2D3E50]"
                 onClick={() => setSelectedImage(img.src)}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={img.src}
                   alt={img.label}

@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   FileQuestion,
   BookOpen,
@@ -20,14 +19,12 @@ import {
   Clock,
   Target,
   ArrowLeft,
-  Eye,
-  EyeOff,
   Bookmark,
   Share2,
   RotateCcw,
   GraduationCap,
 } from 'lucide-react';
-import { pyqAcuteAppendicitisTemplate, pyqAcuteAppendicitis_AnatomyVariant, calculateAlvaradoScore } from '@/lib/data/templates/pyq-template';
+import { pyqAcuteAppendicitisTemplate, pyqAcuteAppendicitis_AnatomyVariant } from '@/lib/data/templates/pyq-template';
 
 type PYQQuestion = typeof pyqAcuteAppendicitisTemplate;
 

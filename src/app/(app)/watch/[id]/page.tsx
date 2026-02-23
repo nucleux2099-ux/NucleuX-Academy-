@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import {
   ArrowLeft,
   Play,
@@ -14,15 +13,15 @@ import {
   Volume2,
   VolumeX,
   Maximize2,
-  Minimize2,
+
   SkipBack,
   SkipForward,
-  Settings,
+
   Bookmark,
   BookmarkCheck,
   StickyNote,
   List,
-  ChevronRight,
+
   Clock,
   Star,
   CheckCircle,
@@ -37,7 +36,7 @@ import {
   Plus,
   X,
   Sparkles,
-  Brain,
+
 } from "lucide-react";
 
 // Mock video data
@@ -96,18 +95,18 @@ export default function VideoLessonPage() {
   // Video state
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(2732); // 45:32 in seconds
+  const [duration, _setDuration] = useState(2732); // 45:32 in seconds
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
   const [playbackSpeed, setPlaybackSpeed] = useState(1);
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [_isFullscreen, _setIsFullscreen] = useState(false);
   const [showControls, setShowControls] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   
   // UI state
   const [showChapters, setShowChapters] = useState(true);
   const [isBookmarked, setIsBookmarked] = useState(videoData.isBookmarked);
-  const [showNotes, setShowNotes] = useState(false);
+  const [_showNotes, _setShowNotes] = useState(false);
   const [notes, setNotes] = useState<TimestampNote[]>([]);
   const [newNote, setNewNote] = useState("");
   const [activeChapter, setActiveChapter] = useState(videoData.chapters[0].id);

@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   GraduationCap,
   FileQuestion,
@@ -15,9 +14,7 @@ import {
   Activity,
   BookOpen,
   ClipboardList,
-  Brain,
   Target,
-  TrendingUp,
   Clock,
   Award,
   Play,
@@ -34,15 +31,13 @@ import {
   Bone,
   Eye,
   Ear,
-  ShieldCheck,
-  AlertTriangle,
   CheckCircle,
   Lock,
   Star,
 } from 'lucide-react';
 
 // Exam Centre Theme - Deep Purple/Indigo
-const themeColor = '#6366F1';
+const _themeColor = '#6366F1';
 
 // ============================================================================
 // EXAM TYPES
@@ -240,7 +235,7 @@ const recentActivity = [
 // ============================================================================
 
 export default function ExamCentrePage() {
-  const [selectedExamType, setSelectedExamType] = useState<string | null>(null);
+  const [_selectedExamType, _setSelectedExamType] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState('overview');
 
   return (

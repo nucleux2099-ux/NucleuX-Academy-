@@ -79,7 +79,7 @@ function standardizeMeta(topic) {
   const metaPath = join(topic.path, '_meta.yaml');
   let existing = {};
   if (existsSync(metaPath)) {
-    try { existing = YAML.parse(readFileSync(metaPath, 'utf-8')) || {}; } catch(e) { existing = {}; }
+    try { existing = YAML.parse(readFileSync(metaPath, 'utf-8')) || {}; } catch(_e) { existing = {}; }
   }
   
   const title = existing.title || existing.name || slugToTitle(topic.slug);

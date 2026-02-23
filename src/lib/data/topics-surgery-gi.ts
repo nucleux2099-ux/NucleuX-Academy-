@@ -4,7 +4,7 @@
  * Sample topic structure for Gastrointestinal Surgery
  */
 
-import type { Topic, Content, MCQ, Flashcard } from '../types';
+import type { Topic, MCQ, Flashcard } from '../types';
 
 // =============================================================================
 // TOPICS

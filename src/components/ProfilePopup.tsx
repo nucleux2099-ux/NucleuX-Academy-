@@ -45,7 +45,7 @@ interface ProfilePopupProps {
 
 export function ProfilePopup({ isOpen, onClose }: ProfilePopupProps) {
   const popupRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+  const _router = useRouter();
   const { user, logout } = useAuth();
 
   useEffect(() => {

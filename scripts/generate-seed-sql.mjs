@@ -22,7 +22,7 @@ function parseMarkdownFrontmatter(content) {
       const frontmatter = yaml.load(match[1]);
       const body = content.slice(match[0].length).trim();
       return { frontmatter, body };
-    } catch (e) {
+    } catch (_e) {
       return { frontmatter: {}, body: content };
     }
   }

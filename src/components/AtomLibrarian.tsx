@@ -1,24 +1,24 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+// import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
   Atom,
   X,
   Send,
-  Sparkles,
-  BookOpen,
+
+
   Brain,
   Clock,
-  Target,
+
   ChevronRight,
   Lightbulb,
-  GraduationCap,
-  Zap,
-  MessageSquare
+
+
+
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { LibraryTopic } from "@/lib/types/library";
@@ -128,7 +128,7 @@ export function AtomChatPanel({
   currentTopic,
   allTopics = [],
   completedTopics = [],
-  userLevel = 'pg'
+  userLevel: _userLevel = 'pg'
 }: AtomLibrarianProps & { isOpen: boolean; onClose: () => void }) {
   const [messages, setMessages] = useState<AtomMessage[]>([
     {
@@ -270,7 +270,7 @@ export function AtomChatPanel({
     setInput(prompt);
     // Trigger send after a brief delay for UX
     setTimeout(() => {
-      const fakeEvent = { target: { value: prompt } };
+      const _fakeEvent = { target: { value: prompt } };
       handleSend();
     }, 100);
   };
@@ -451,6 +451,7 @@ function getNextTopicSuggestions(
   return suggestions.slice(0, 3);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getSimpleAnalogy(topicName: string): string {
   const analogies: Record<string, string> = {
     'Achalasia Cardia': 'Imagine a door that won\'t open properly — food gets stuck because the "doorway" (LES) forgot how to relax.',

@@ -30,7 +30,7 @@ function overconfidentTopicsLiveCount(items: Array<{ name: string; confidence: n
   return items.filter((t) => t.confidence - t.accuracy >= 8).length;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   try {
     const supabase = await createClient();
     const {

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronRight, Library, Search, BookOpen, GraduationCap, Stethoscope } from "lucide-react";
+import { ChevronRight, Search, BookOpen, GraduationCap, Stethoscope } from "lucide-react";
 import { getSubspecialtiesBySubject } from "@/lib/data/subspecialties";
 import { SURGERY_SUBSPECIALTIES, getTotalUGCompetencies } from "@/lib/data/cbme-surgery";
 
@@ -88,7 +88,7 @@ export default function SurgeryHub({ mode }: { mode?: string | null }) {
   const filtered = allSubspecs.filter(
     (s) => !search || matches(s.name, search) || matches(s.description, search) || matches(s.slug, search)
   );
-  const filteredSlugs = new Set(filtered.map((s) => s.slug));
+  const _filteredSlugs = new Set(filtered.map((s) => s.slug));
 
   return (
     <div className="space-y-6">

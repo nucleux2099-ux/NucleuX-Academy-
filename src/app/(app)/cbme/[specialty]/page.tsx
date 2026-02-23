@@ -4,8 +4,6 @@ import {
   ALL_CURRICULA,
   getCurriculumBySlug,
   getBooksForSpecialty,
-  type NMCCurriculum,
-  type NMCBook,
 } from "@/lib/data/nmc-vault";
 import { resolveCanonicalCurriculumId } from "@/lib/data/cbme-aliases";
 import { SpecialtyClient } from "./client";
