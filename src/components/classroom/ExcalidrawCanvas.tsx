@@ -21,6 +21,14 @@ import {
   generateProgressiveReveal,
   type MindMapDefinition,
 } from '@/lib/canvas/mindmap-generator';
+import {
+  generateDiagramScene,
+  generateDiagramSteps,
+  parseDiagramFromResponse,
+  type DiagramDefinition,
+} from '@/lib/canvas/diagram-generator';
+import { evaluateDiagram } from '@/lib/canvas/diagram-evaluator';
+import { getDiagramTemplate } from '@/lib/canvas/diagram-templates';
 
 // =============================================================================
 // TYPES
@@ -34,7 +42,7 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-type CanvasMode = 'teach' | 'quiz' | 'build' | 'viva';
+type CanvasMode = 'teach' | 'quiz' | 'build' | 'viva' | 'diagram';
 
 type ExcalidrawElement = Record<string, unknown>;
 interface ExcalidrawAPI {
@@ -71,6 +79,12 @@ const MODE_INFO: Record<CanvasMode, { label: string; icon: ComponentType<{ class
     icon: GraduationCap,
     desc: 'Blank canvas + viva prompt — you draw everything, ATOM grades',
     color: 'red',
+  },
+  diagram: {
+    label: 'Diagram Mode',
+    icon: PenTool,
+    desc: 'AI draws anatomical diagrams step-by-step with shapes, arrows & labels',
+    color: 'teal',
   },
 };
 
@@ -147,6 +161,46 @@ Wait for the student to submit their drawing, then analyze it with vision and gr
 - Model answer as a mind map JSON
 
 When giving the model answer at the end, include the mindmap JSON block.`,
+
+  diagram: `You are ATOM, a medical professor teaching via anatomical diagrams on a whiteboard.
+
+When the student asks you to teach a topic, draw it using shape primitives — NOT mind maps.
+Generate a diagram JSON block using this exact format:
+
+\`\`\`diagram
+{
+  "title": "Topic Name",
+  "steps": [
+    {
+      "explanation": "Step explanation text",
+      "draw": [
+        { "type": "circle", "id": "shape-id", "label": "Label", "x": 400, "y": 200, "radius": 50, "color": "core" },
+        { "type": "rectangle", "id": "shape-id", "label": "Label", "x": 300, "y": 300, "width": 120, "height": 60, "color": "organ" },
+        { "type": "arrow", "from": "source-id", "to": "target-id", "label": "Connection", "color": "vessel" },
+        { "type": "text", "label": "Annotation", "x": 400, "y": 100, "color": "label", "fontSize": 12 }
+      ],
+      "question": "Optional question for the student",
+      "hints": ["Hint 1", "Hint 2"]
+    }
+  ]
+}
+\`\`\`
+
+Shape types: circle, rectangle, diamond, arrow, line, text
+Color categories: core (teal), clinical (blue), basic (green), highyield (red), mechanism (purple), vessel (pink), organ (sky blue), flow (yellow), label (gray)
+
+RULES:
+- Use coordinates between 50-800 for x, 50-600 for y
+- Every shape with a connection must have an "id"
+- Arrows use "from" and "to" referencing shape ids
+- Break teaching into 2-5 steps, each revealing new structures
+- Each step should have an explanation
+- Ask the student to draw something after key steps
+- Provide hints for student tasks
+- Focus on anatomical/spatial relationships
+- Labels should be medically accurate
+
+After the diagram JSON, write a brief teaching explanation for the current step.`,
 };
 
 // =============================================================================
@@ -165,6 +219,10 @@ export default function ExcalidrawCanvas() {
   const [mode, setMode] = useState<CanvasMode | null>(null);
   const [revealStage, setRevealStage] = useState(0);
   const [revealStages, setRevealStages] = useState<ExcalidrawElement[][] | null>(null);
+  const [diagramSteps, setDiagramSteps] = useState<{ elements: ExcalidrawElement[]; explanation: string; question?: string; hints?: string[] }[] | null>(null);
+  const [diagramStepIndex, setDiagramStepIndex] = useState(0);
+  const [currentHints, setCurrentHints] = useState<string[]>([]);
+  const [hintIndex, setHintIndex] = useState(0);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Dynamic import of Excalidraw
@@ -219,6 +277,81 @@ export default function ExcalidrawCanvas() {
   }, [revealStages, revealStage, excalidrawAPI]);
 
   // ==========================================================================
+  // DIAGRAM RENDERING
+  // ==========================================================================
+
+  const renderDiagram = useCallback((definition: DiagramDefinition, stepByStep: boolean = true) => {
+    if (!excalidrawAPI) return;
+
+    if (stepByStep) {
+      const steps = generateDiagramSteps(definition);
+      setDiagramSteps(steps);
+      setDiagramStepIndex(0);
+      setCurrentHints(steps[0]?.hints || []);
+      setHintIndex(0);
+      // Render first step
+      excalidrawAPI.updateScene({ elements: steps[0]?.elements || [] });
+      excalidrawAPI.scrollToContent(steps[0]?.elements, { fitToContent: true, padding: 50 });
+      // Show explanation as chat message
+      if (steps[0]?.explanation) {
+        const msg = {
+          id: crypto.randomUUID(),
+          role: 'atom' as const,
+          content: steps[0].explanation + (steps[0].question ? '\n\n🎯 ' + steps[0].question : ''),
+          timestamp: new Date(),
+        };
+        setMessages(prev => [...prev, msg]);
+      }
+    } else {
+      const elements = generateDiagramScene(definition);
+      excalidrawAPI.updateScene({ elements });
+      excalidrawAPI.scrollToContent(elements, { fitToContent: true, padding: 50 });
+      setDiagramSteps(null);
+      setDiagramStepIndex(0);
+    }
+  }, [excalidrawAPI]);
+
+  const revealNextDiagramStep = useCallback(() => {
+    if (!diagramSteps || !excalidrawAPI) return;
+    const nextIdx = diagramStepIndex + 1;
+    if (nextIdx >= diagramSteps.length) return;
+
+    const currentElements = excalidrawAPI.getSceneElements();
+    const newElements = [...currentElements, ...diagramSteps[nextIdx].elements];
+    excalidrawAPI.updateScene({ elements: newElements });
+    excalidrawAPI.scrollToContent(newElements, { fitToContent: true, padding: 50 });
+    setDiagramStepIndex(nextIdx);
+    setCurrentHints(diagramSteps[nextIdx]?.hints || []);
+    setHintIndex(0);
+
+    // Show step explanation
+    const step = diagramSteps[nextIdx];
+    if (step.explanation) {
+      const msg = {
+        id: crypto.randomUUID(),
+        role: 'atom' as const,
+        content: step.explanation + (step.question ? '\n\n🎯 ' + step.question : ''),
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, msg]);
+    }
+  }, [diagramSteps, diagramStepIndex, excalidrawAPI]);
+
+  const showNextHint = useCallback(() => {
+    if (!currentHints.length) return;
+    const nextHint = hintIndex;
+    if (nextHint >= currentHints.length) return;
+    setHintIndex(nextHint + 1);
+    const msg = {
+      id: crypto.randomUUID(),
+      role: 'atom' as const,
+      content: '💡 Hint: ' + currentHints[nextHint],
+      timestamp: new Date(),
+    };
+    setMessages(prev => [...prev, msg]);
+  }, [currentHints, hintIndex]);
+
+  // ==========================================================================
   // PARSE MIND MAP FROM AI RESPONSE
   // ==========================================================================
 
@@ -252,6 +385,16 @@ export default function ExcalidrawCanvas() {
 
     setLoading(true);
     try {
+      // Check for pre-built diagram template (diagram mode only)
+      if (mode === 'diagram') {
+        const template = getDiagramTemplate(text);
+        if (template) {
+          renderDiagram(template, true);
+          setLoading(false);
+          return;
+        }
+      }
+
       const systemPrompt = mode ? MODE_SYSTEM_PROMPTS[mode] : MODE_SYSTEM_PROMPTS.teach;
       
       const apiMessages = messages
@@ -308,19 +451,25 @@ export default function ExcalidrawCanvas() {
         }
       }
 
-      // Check for mind map in response and render it
+      // Check for diagram or mind map in response and render it
       if (fullContent) {
-        const mindmap = parseMindMapFromResponse(fullContent);
-        if (mindmap) {
-          // In teach mode, use progressive reveal
-          const useProgressive = mode === 'teach';
-          renderMindMap(mindmap, useProgressive);
-          
-          // Clean the mindmap JSON block from displayed text
-          const cleanContent = fullContent.replace(/```mindmap\s*\n[\s\S]*?\n```/g, '').trim();
+        const diagram = parseDiagramFromResponse(fullContent);
+        if (diagram) {
+          renderDiagram(diagram, mode === 'diagram');
+          const cleanContent = fullContent.replace(/```diagram\s*\n[\s\S]*?\n```/g, '').trim();
           setMessages(prev => prev.map(m =>
             m.id === atomMsgId ? { ...m, content: cleanContent || fullContent } : m
           ));
+        } else {
+          const mindmap = parseMindMapFromResponse(fullContent);
+          if (mindmap) {
+            const useProgressive = mode === 'teach';
+            renderMindMap(mindmap, useProgressive);
+            const cleanContent = fullContent.replace(/```mindmap\s*\n[\s\S]*?\n```/g, '').trim();
+            setMessages(prev => prev.map(m =>
+              m.id === atomMsgId ? { ...m, content: cleanContent || fullContent } : m
+            ));
+          }
         }
       }
     } catch (error) {
@@ -334,7 +483,7 @@ export default function ExcalidrawCanvas() {
     } finally {
       setLoading(false);
     }
-  }, [input, loading, messages, mode, parseMindMapFromResponse, renderMindMap]);
+  }, [input, loading, messages, mode, parseMindMapFromResponse, renderMindMap, renderDiagram]);
 
   // ==========================================================================
   // SUBMIT DRAWING (VISION)
@@ -379,10 +528,34 @@ export default function ExcalidrawCanvas() {
       setMessages(prev => [...prev, userMsg]);
       setLoading(true);
 
+      // Vector-based evaluation for diagram mode
+      let vectorFeedback = '';
+      if (mode === 'diagram' && diagramSteps) {
+        const studentElements = excalidrawAPI.getSceneElements() as Record<string, unknown>[];
+        // Collect all expected shapes from diagram steps as structures
+        const expectedStructures = diagramSteps.flatMap(step =>
+          step.elements
+            .filter(el => (el.type as string) !== 'arrow' && (el.type as string) !== 'line' && (el.type as string) !== 'text')
+            .map(el => ({
+              id: (el.id as string) || '',
+              label: (el.text as string) || 'structure',
+              type: 'any' as const,
+              x: ((el.x as number) || 0) + ((el.width as number) || 0) / 2,
+              y: ((el.y as number) || 0) + ((el.height as number) || 0) / 2,
+            }))
+        );
+        if (expectedStructures.length > 0) {
+          const evalResult = evaluateDiagram(studentElements, expectedStructures);
+          vectorFeedback = '\n\n[Vector analysis: ' + evalResult.feedback + ' Score: ' + evalResult.score + '/100]';
+        }
+      }
+
       const modeContext = mode === 'viva'
         ? 'VIVA EXAM: Grade this drawing strictly. Score /10. List what\'s correct, missing, and incorrect. Then provide a model answer as a mindmap JSON block.'
         : mode === 'build'
         ? 'The student added to the mind map. Analyze their additions — what\'s correct? What needs correction? Generate an updated complete mindmap JSON.'
+        : mode === 'diagram'
+        ? 'Analyze this medical diagram drawing. Compare against the expected anatomy.' + vectorFeedback + ' Give specific feedback on what\'s correct, missing, and how to improve. If providing a corrected version, use a diagram JSON block.'
         : 'Analyze this medical drawing. What\'s correct? What\'s missing? Suggest improvements.';
 
       const response = await fetch('/api/chat', {
@@ -511,7 +684,9 @@ export default function ExcalidrawCanvas() {
                         ? "Quiz mode active! Name a topic and I'll draw a partial mind map with blanks for you to fill in. Can you complete the picture?"
                         : key === 'build'
                         ? "Let's build together! Name a topic and I'll draw the backbone — then you tell me what branches to add. We'll create a complete map collaboratively."
-                        : "Viva mode! I'll give you a topic prompt. You draw the diagram on the canvas, then submit it. I'll grade your work and show the model answer. Ready? Name a subject area.",
+                        : key === 'viva'
+                        ? "Viva mode! I'll give you a topic prompt. You draw the diagram on the canvas, then submit it. I'll grade your work and show the model answer. Ready? Name a subject area."
+                        : "Diagram mode! I'll teach by drawing anatomical diagrams step-by-step — real shapes, arrows, and labels on the canvas. Try: \"Draw the nephron\" or \"Show me portal hypertension anatomy\"",
                       timestamp: new Date(),
                     };
                     setMessages([welcomeMsg]);
@@ -577,14 +752,32 @@ export default function ExcalidrawCanvas() {
                 Reveal Next ({revealStage + 1}/{revealStages.length - 1})
               </button>
             )}
+            {/* Diagram step-by-step controls */}
+            {diagramSteps && diagramStepIndex < diagramSteps.length - 1 && (
+              <button
+                onClick={revealNextDiagramStep}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-500/20 text-teal-400 text-sm hover:bg-teal-500/30 transition-all border border-teal-500/30"
+              >
+                <Eye className="w-4 h-4" />
+                Next Step ({diagramStepIndex + 1}/{diagramSteps.length})
+              </button>
+            )}
+            {currentHints.length > 0 && hintIndex < currentHints.length && (
+              <button
+                onClick={showNextHint}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-400 text-sm hover:bg-amber-500/30 transition-all border border-amber-500/30"
+              >
+                💡 Hint ({hintIndex}/{currentHints.length})
+              </button>
+            )}
             <button
-              onClick={() => { excalidrawAPI?.resetScene(); setRevealStages(null); setRevealStage(0); }}
+              onClick={() => { excalidrawAPI?.resetScene(); setRevealStages(null); setRevealStage(0); setDiagramSteps(null); setDiagramStepIndex(0); setCurrentHints([]); setHintIndex(0); }}
               className="p-2 rounded-lg text-[#A0B0BC] hover:bg-[#2D3E50] hover:text-[#E8E0D5] transition-all"
               title="Clear canvas"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
-            {(mode === 'viva' || mode === 'build') && (
+            {(mode === 'viva' || mode === 'build' || mode === 'diagram') && (
               <button
                 onClick={handleSubmitDrawing}
                 disabled={capturing || loading}
@@ -687,6 +880,19 @@ export default function ExcalidrawCanvas() {
               <button
                 key={topic}
                 onClick={() => handleSendMessage(`Teach me ${topic.toLowerCase()}`)}
+                className="px-3 py-1.5 rounded-full text-xs bg-[#2D3E50] text-[#A0B0BC] hover:bg-teal-500/20 hover:text-teal-400 transition-all border border-[#2D3E50] hover:border-teal-500/30"
+              >
+                {topic}
+              </button>
+            ))}
+          </div>
+        )}
+        {mode === 'diagram' && messages.length <= 1 && (
+          <div className="px-3 pb-2 flex flex-wrap gap-2">
+            {['Nephron structure', 'Cardiac cycle', 'Portal hypertension anatomy', "Calot's triangle", 'Action potential'].map(topic => (
+              <button
+                key={topic}
+                onClick={() => handleSendMessage(`Draw ${topic.toLowerCase()}`)}
                 className="px-3 py-1.5 rounded-full text-xs bg-[#2D3E50] text-[#A0B0BC] hover:bg-teal-500/20 hover:text-teal-400 transition-all border border-[#2D3E50] hover:border-teal-500/30"
               >
                 {topic}
