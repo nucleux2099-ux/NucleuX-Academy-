@@ -1,0 +1,21 @@
+topic_id: cm13-define-and-describe-the-concept-of-disaster-management
+name: Define and describe the concept of Disaster management
+description: Define and describe the concept of Disaster management — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM13.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM13.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM13.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM13.4
+  domain: KH
+  core: true
+  phase: Phase 2

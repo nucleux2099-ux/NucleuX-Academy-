@@ -1,0 +1,17 @@
+topic_id: ovarian-cancer-staging
+name: Ovarian Cancer Staging
+description: Ovarian Cancer Staging — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG34.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG34.3
+  domain: KH
+  core: true
+  phase: Phase 3

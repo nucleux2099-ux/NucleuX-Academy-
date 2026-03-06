@@ -1,0 +1,30 @@
+id: pediatric-nutrition
+title: "Pediatric Nutrition"
+subject: pediatrics
+description: |
+  Infant feeding, malnutrition, and nutritional disorders.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - breastfeeding
+      - complementary-feeding
+      - protein-energy-malnutrition
+      - kwashiorkor
+      - marasmus
+      - vitamin-a-deficiency
+      - vitamin-d-deficiency-rickets
+      - iron-deficiency-pediatric
+      - zinc-deficiency
+      - iodine-deficiency
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,9 @@
+topic_id: hiatal-hernia
+name: "Hiatal Hernia"
+description: "Sliding vs paraesophageal, GERD association, indications for repair"
+high_yield: true
+difficulty: 3
+estimated_minutes: 15
+exam_tags: [NEET_PG, MRCS]
+prerequisites: []
+related_topics: [gerd, fundoplication]

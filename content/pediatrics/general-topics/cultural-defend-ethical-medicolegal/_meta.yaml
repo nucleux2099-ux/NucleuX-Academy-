@@ -1,0 +1,9 @@
+topic_id: cultural-defend-ethical-medicolegal
+name: Identify, discuss and defend medicolegal, socio-cultural and ethical
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE35.1
+  domain: KH
+  core: true
+  phase: Phase 2

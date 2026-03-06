@@ -1,0 +1,12 @@
+topic_id: soft-tissue-sarcoma
+name: Soft Tissue Sarcoma
+description: Soft Tissue Sarcoma — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OR1.3
+  core: false
+  phase: Phase 3
+- code: OR1.4
+  domain: KH
+  core: true
+  phase: Phase 3

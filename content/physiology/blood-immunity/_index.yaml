@@ -1,0 +1,31 @@
+id: blood-immunity
+title: "Blood & Immunity"
+subject: physiology
+description: |
+  Hematopoiesis, coagulation, and immune physiology.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - hematopoiesis
+      - red-blood-cells-physiology
+      - white-blood-cells-physiology
+      - platelets-physiology
+      - coagulation-cascade-physiology
+      - fibrinolysis
+      - blood-groups
+      - innate-immunity
+      - adaptive-immunity
+      - complement-system
+      - hypersensitivity-reactions-physiology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

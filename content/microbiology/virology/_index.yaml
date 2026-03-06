@@ -1,0 +1,54 @@
+id: virology
+title: "Virology"
+subject: microbiology
+description: |
+  DNA viruses, RNA viruses, and viral infections.
+
+stats:
+  total_topics: 28
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: dna
+    title: "DNA Viruses"
+    topics:
+      - herpes-simplex-virus
+      - varicella-zoster-virus
+      - epstein-barr-virus
+      - cytomegalovirus
+      - human-papillomavirus
+      - hepatitis-b-virus
+      - adenovirus
+      - parvovirus-b19
+      - poxviruses
+  - id: rna
+    title: "RNA Viruses"
+    topics:
+      - influenza-virus
+      - hiv-virology
+      - hepatitis-a-virus
+      - hepatitis-c-virus
+      - hepatitis-e-virus
+      - dengue-virus-micro
+      - rabies-virus
+      - measles-virus
+      - mumps-virus
+      - rubella-virus
+      - rotavirus
+      - coronavirus-sars-cov2
+      - ebola-virus
+      - chikungunya-virus
+      - zika-virus
+  - id: general
+    title: "General Virology"
+    topics:
+      - viral-replication
+      - viral-pathogenesis
+      - antiviral-mechanisms
+      - viral-vaccines
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

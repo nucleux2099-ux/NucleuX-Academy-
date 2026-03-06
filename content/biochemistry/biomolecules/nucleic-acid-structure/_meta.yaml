@@ -1,0 +1,9 @@
+topic_id: nucleic-acid-structure
+name: Nucleic Acid Structure
+description: Nucleic Acid Structure — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI5.2
+  domain: KH
+  core: true
+  phase: Phase 1

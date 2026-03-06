@@ -1,0 +1,32 @@
+id: respiratory-physiology
+title: "Respiratory Physiology"
+subject: physiology
+description: |
+  Lung mechanics, gas exchange, and control of breathing.
+
+stats:
+  total_topics: 12
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - lung-volumes-capacities
+      - mechanics-of-breathing
+      - compliance-resistance
+      - surfactant
+      - ventilation-perfusion
+      - gas-exchange-diffusion
+      - oxygen-transport
+      - carbon-dioxide-transport
+      - oxygen-hemoglobin-dissociation
+      - control-of-breathing
+      - high-altitude-physiology
+      - diving-physiology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

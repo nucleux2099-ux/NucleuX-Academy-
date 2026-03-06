@@ -1,0 +1,23 @@
+title: "Huntington Disease"
+slug: huntington-disease
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM16.15"
+prerequisites:
+  - "basal-ganglia-physiology"
+related_topics:
+  - "parkinson-disease"
+  - "motor-neuron-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM16.15"
+      text: "Describe and discuss the aetiology, clinical features and management of movement disorders including Huntington disease"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "basal-ganglia-physiology"
+      reason: "Caudate nucleus atrophy is the hallmark"
+  related_details:
+    - slug: "parkinson-disease"
+      reason: "Another basal ganglia disorder; hypokinetic vs hyperkinetic"
+      relationship: "clinical"

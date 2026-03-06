@@ -1,0 +1,12 @@
+title: "Adrenal Disorders"
+slug: adrenal-disorders
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM12.1"
+  - "IM12.2"
+prerequisites:
+  - "pituitary-disorders"
+related_topics:
+  - "metabolic-syndrome"
+  - "calcium-disorders"

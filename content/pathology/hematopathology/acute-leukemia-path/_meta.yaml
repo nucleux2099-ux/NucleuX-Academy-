@@ -1,0 +1,13 @@
+topic_id: acute-leukemia-path
+name: Acute Leukemia Path
+description: Acute Leukemia Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA27.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PA4.1
+  domain: KH
+  core: true
+  phase: Phase 1

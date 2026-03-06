@@ -1,0 +1,29 @@
+topic_id: as3-describe-the-principles-of-preoperative-evaluation
+name: Describe the principles of preoperative evaluation
+description: Describe the principles of preoperative evaluation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AS3.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: AS3.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: AS3.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: AS3.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: AS3.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: AS3.6
+  domain: SH
+  core: true
+  phase: Phase 1

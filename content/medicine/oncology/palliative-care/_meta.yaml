@@ -1,0 +1,15 @@
+title: "Palliative Care"
+slug: palliative-care
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.35"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.35"
+      text: "Palliative Care — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

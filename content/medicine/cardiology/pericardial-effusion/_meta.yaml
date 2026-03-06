@@ -1,0 +1,15 @@
+title: Pericardial Effusion
+slug: pericardial-effusion
+depth: UG
+highYield: true
+nmc_codes:
+  - IM12.10
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM12.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pericardial effusion
+      domain: KH
+  prerequisite_details: []
+  related_details: []

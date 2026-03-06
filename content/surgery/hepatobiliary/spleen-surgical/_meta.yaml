@@ -1,0 +1,29 @@
+title: "Spleen — Surgical Conditions"
+slug: spleen-surgical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.11"
+prerequisites:
+  - "liver-anatomy"
+  - "portal-hypertension"
+related_topics:
+  - "hepatocellular-carcinoma"
+  - "cholelithiasis"
+enrichment:
+  nmcCodes:
+    - code: "SU28.11"
+      text: "Describe the applied anatomy of Spleen. Describe the clinical features, Investigations and principles of management of splenic injuries. Describe the Post-splenectomy sepsis- prophylaxis."
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Splenic anatomy shares peritoneal ligaments with the left lobe of liver; understanding is needed for splenectomy mobilization"
+    - slug: "portal-hypertension"
+      reason: "Splenomegaly from portal hypertension is a major indication for splenectomy and causes hypersplenism"
+  related_details:
+    - slug: "hepatocellular-carcinoma"
+      reason: "Hypersplenism secondary to cirrhosis-related portal hypertension impacts platelet counts affecting HCC treatment decisions"
+      relationship: "clinical"
+    - slug: "cholelithiasis"
+      reason: "Pigment gallstones from chronic hemolysis in hereditary spherocytosis often necessitate concurrent cholecystectomy with splenectomy"
+      relationship: "clinical"

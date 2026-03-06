@@ -1,0 +1,143 @@
+overview: |
+  Gastric cancer is the 5th most common cancer globally with highest incidence in Japan and Korea.
+  Adenocarcinoma accounts for 95% of cases. The Lauren classification divides it into intestinal (better prognosis)
+  and diffuse (signet ring cells, linitis plastica) types. Surgery with D2 lymphadenectomy is the treatment of choice.
+
+learning_objectives:
+  - Classify gastric cancer by Lauren and Borrmann classifications
+  - Recognize risk factors including H. pylori, diet, and genetic predisposition
+  - Describe the Virchow's node and other metastatic signs
+  - Apply surgical principles including extent of gastrectomy and lymphadenectomy
+  - Understand the role of neoadjuvant and adjuvant chemotherapy
+
+content:
+  atoms:
+    - title: Epidemiology & Risk Factors
+      text: |
+        MC site: Antrum/pylorus. Declining incidence (intestinal type) but diffuse type stable.
+        **Risk factors:** H. pylori (Group 1 carcinogen — intestinal type), atrophic gastritis,
+        intestinal metaplasia, pernicious anemia, previous partial gastrectomy (stump cancer after 15-20 yrs),
+        blood group A (diffuse type), smoking, nitrosamines, Ménétrier's disease, adenomatous polyps.
+        **Correa cascade:** H. pylori → chronic gastritis → atrophy → intestinal metaplasia → dysplasia → cancer.
+        📚 Bailey & Love, 28th Ed, Ch.64; Sabiston, 21st Ed, Ch.48
+
+    - title: Classifications
+      text: |
+        **Lauren:** Intestinal (well-differentiated, polypoid, better prognosis, H. pylori related, elderly males,
+        hematogenous spread to liver) vs Diffuse (poorly differentiated, signet ring cells, linitis plastica,
+        younger patients, peritoneal spread, blood group A).
+        **Borrmann:** Type I (polypoid), II (ulcerated with raised margins), III (ulcerated with infiltration, MC),
+        IV (diffuse infiltration — linitis plastica/leather bottle stomach).
+        **Early gastric cancer:** Confined to mucosa/submucosa regardless of node status (Japanese classification).
+        Excellent prognosis (>90% 5-year survival).
+        📚 Sabiston, 21st Ed, Ch.48
+
+    - title: Clinical Features & Metastatic Signs
+      text: |
+        **Symptoms:** Dyspepsia, weight loss, early satiety, vomiting, dysphagia (cardia), GI bleeding (melena).
+        **Alarm symptoms:** Weight loss, dysphagia, persistent vomiting, GI bleeding, anemia, epigastric mass.
+        **Metastatic signs (all named):** Virchow's node (left supraclavicular — Troisier's sign),
+        Sister Mary Joseph nodule (periumbilical), Krukenberg tumour (bilateral ovarian — transcoelomic),
+        Blumer's shelf (pelvic peritoneal deposit on PR), Irish's node (left axillary).
+        📚 Bailey & Love, 28th Ed, Ch.64
+
+    - title: Surgical Management
+      text: |
+        **Subtotal/Distal gastrectomy:** Antral/body tumours with 5cm proximal margin.
+        **Total gastrectomy:** Proximal/diffuse/linitis plastica tumours. Roux-en-Y esophagojejunostomy reconstruction.
+        **D2 lymphadenectomy:** Standard (perigastric + nodes along celiac trunk branches). D1 = perigastric only.
+        Minimum 16 lymph nodes for adequate staging.
+        **Palliative:** Bypass gastrojejunostomy, stenting, palliative chemo.
+        **Neoadjuvant:** FLOT regimen (5-FU, leucovorin, oxaliplatin, docetaxel) for locally advanced.
+        📚 Maingot's, 12th Ed, Part IV; Sabiston, 21st Ed, Ch.48
+
+    - title: Staging & Prognosis
+      text: |
+        **Staging:** CT chest/abdomen/pelvis, diagnostic laparoscopy (to exclude peritoneal disease),
+        EUS (for T staging). PET-CT for distant metastases.
+        **TNM:** T1a (mucosa), T1b (submucosa), T2 (muscularis), T3 (subserosa), T4a (serosa), T4b (adjacent organs).
+        **5-year survival:** Stage I: 70%, II: 45%, III: 20%, IV: <5%.
+        Tumour markers: CEA, CA 72-4, CA 19-9 (none specific).
+        📚 Sabiston, 21st Ed, Ch.48
+
+  clinical: |
+    **Approach:**
+    1. Upper GI endoscopy + biopsy (gold standard for diagnosis)
+    2. CT staging + diagnostic laparoscopy (exclude peritoneal disease)
+    3. MDT discussion
+    4. Resectable: Neoadjuvant chemo (FLOT) → gastrectomy + D2 lymphadenectomy → adjuvant chemo
+    5. Unresectable: Palliative chemo (FOLFOX/XELOX) ± targeted therapy (trastuzumab if HER2+)
+    6. Follow-up: Surveillance endoscopy, CT, tumour markers
+
+  high_yield_points:
+    - "MC site of gastric cancer: Antrum; MC histology: Adenocarcinoma (95%)"
+    - "H. pylori: Group 1 carcinogen for gastric cancer (intestinal type)"
+    - "Linitis plastica (leather bottle stomach): Diffuse type, signet ring cells, poor prognosis"
+    - "Virchow's node: Left supraclavicular LN metastasis (Troisier's sign)"
+    - "Krukenberg tumour: Bilateral ovarian metastasis via transcoelomic spread (signet ring cells)"
+    - "Sister Mary Joseph nodule: Periumbilical metastasis"
+    - "Early gastric cancer: Limited to mucosa/submucosa — >90% 5-year survival"
+    - "D2 lymphadenectomy: Standard for curative gastric cancer surgery"
+    - "Blood group A: Associated with diffuse-type gastric cancer"
+    - "Correa cascade: H. pylori → gastritis → atrophy → metaplasia → dysplasia → cancer"
+
+mcqs:
+  - question: "A gastric cancer specimen shows signet ring cells with diffuse thickening of the stomach wall. This is characteristic of:"
+    options:
+      a: Borrmann Type I
+      b: Lauren intestinal type
+      c: Linitis plastica (Lauren diffuse type)
+      d: GIST
+    answer: c
+    explanation: |
+      Linitis plastica (leather bottle stomach) is the diffuse type (Lauren classification) with
+      signet ring cells, diffuse mural infiltration, and poor prognosis. It corresponds to Borrmann
+      Type IV. It is associated with blood group A and peritoneal spread (Krukenberg tumour). 📚 Sabiston, 21st Ed, Ch.48
+
+  - question: "Virchow's node is located in the:"
+    options:
+      a: Right supraclavicular fossa
+      b: Left supraclavicular fossa
+      c: Left axilla
+      d: Periumbilical region
+    answer: b
+    explanation: |
+      Virchow's node (Troisier's sign) is an enlarged left supraclavicular lymph node, typically
+      from gastric cancer metastasis via the thoracic duct. Irish's node = left axillary.
+      Sister Mary Joseph = periumbilical. 📚 Bailey & Love, 28th Ed, Ch.64
+
+  - question: "What is the standard lymphadenectomy for curative gastric cancer surgery?"
+    options:
+      a: D1
+      b: D2
+      c: D3
+      d: Para-aortic
+    answer: b
+    explanation: |
+      D2 lymphadenectomy (perigastric nodes + nodes along celiac trunk branches) is the
+      standard for curative intent. At least 16 nodes should be harvested for adequate staging.
+      D1 alone has higher recurrence. 📚 Sabiston, 21st Ed, Ch.48
+
+  - question: "Krukenberg tumour is a metastasis to the:"
+    options:
+      a: Liver
+      b: Lung
+      c: Ovaries bilaterally
+      d: Brain
+    answer: c
+    explanation: |
+      Krukenberg tumour = bilateral ovarian metastasis, classically from gastric cancer (diffuse/signet ring type)
+      via transcoelomic spread. Characterized by mucin-secreting signet ring cells. Also seen from
+      colon and breast primary. 📚 Bailey & Love, 28th Ed, Ch.64
+
+  - question: "The sequential pathway of gastric carcinogenesis (Correa cascade) starts with:"
+    options:
+      a: Intestinal metaplasia
+      b: H. pylori chronic gastritis
+      c: Dysplasia
+      d: Atrophic gastritis
+    answer: b
+    explanation: |
+      Correa cascade: H. pylori infection → chronic superficial gastritis → atrophic gastritis →
+      intestinal metaplasia → dysplasia → invasive carcinoma. This applies to the intestinal type
+      of gastric cancer. 📚 Sabiston, 21st Ed, Ch.48

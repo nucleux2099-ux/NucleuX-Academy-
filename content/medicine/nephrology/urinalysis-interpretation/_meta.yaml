@@ -1,0 +1,37 @@
+title: Urinalysis Interpretation
+slug: urinalysis-interpretation
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+prerequisites: []
+related_topics:
+  - glomerulonephritis
+  - urinary-tract-infection
+  - nephrotic-syndrome
+  - nephritic-syndrome
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of urinalysis
+        interpretation
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of urinalysis
+        interpretation
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: glomerulonephritis
+      reason: Clinically related to urinalysis interpretation
+      relationship: clinical
+    - slug: urinary-tract-infection
+      reason: Clinically related to urinalysis interpretation
+      relationship: clinical
+    - slug: nephrotic-syndrome
+      reason: Clinically related to urinalysis interpretation
+      relationship: clinical
+    - slug: nephritic-syndrome
+      reason: Clinically related to urinalysis interpretation
+      relationship: clinical

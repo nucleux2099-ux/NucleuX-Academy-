@@ -1,0 +1,622 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  
+  /* NucleuX ATOM Matte Colors */
+  --color-atom-teal: #5BB3B3;
+  --color-atom-gold: #C9A86C;
+  --color-atom-sage: #7BA69E;
+  --color-atom-slate: #2D3E50;
+  --color-atom-cream: #E8E0D5;
+}
+
+/* ===========================================
+   NucleuX Academy - ATOM Matte Theme
+   Inspired by ATOM Clinics branding
+   Deep slate + Teal + Gold + Matte finish
+   =========================================== */
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Base Colors - Deep Slate Matte */
+  --background: #2D3E50;
+  --foreground: #E8E0D5;
+  
+  /* Card & Surface Colors */
+  --card: #364A5E;
+  --card-foreground: #E8E0D5;
+  --popover: #364A5E;
+  --popover-foreground: #E8E0D5;
+  
+  /* Primary - Teal */
+  --primary: #5BB3B3;
+  --primary-foreground: #1E2D3D;
+  
+  /* Secondary - Darker Slate */
+  --secondary: #253545;
+  --secondary-foreground: #E8E0D5;
+  
+  /* Muted */
+  --muted: #3A4D5F;
+  --muted-foreground: #A0B0BC;
+  
+  /* Accent - Gold */
+  --accent: #C9A86C;
+  --accent-foreground: #1E2D3D;
+  
+  /* Destructive */
+  --destructive: #E57373;
+  
+  /* Borders - Subtle matte lines */
+  --border: rgba(232, 224, 213, 0.08);
+  --input: #3A4D5F;
+  --ring: #5BB3B3;
+  
+  /* Chart Colors - Matte palette */
+  --chart-1: #5BB3B3;
+  --chart-2: #C9A86C;
+  --chart-3: #7BA69E;
+  --chart-4: #8B7355;
+  --chart-5: #E57373;
+  
+  /* Room Colors - ATOM themed */
+  --room-dashboard: #5BB3B3;
+  --room-library: #7BA69E;
+  --room-classroom: #6BA8C9;
+  --room-exam: #5BB3B3;
+  --room-community: #C9A86C;
+  --room-arena: #D4AF37;
+  --room-atom: #5BB3B3;
+  
+  /* Sidebar - Deep slate matte */
+  --sidebar: #253545;
+  --sidebar-foreground: #E8E0D5;
+  --sidebar-primary: #5BB3B3;
+  --sidebar-primary-foreground: #1E2D3D;
+  --sidebar-accent: rgba(232, 224, 213, 0.05);
+  --sidebar-accent-foreground: #E8E0D5;
+  --sidebar-border: rgba(232, 224, 213, 0.06);
+  --sidebar-ring: #5BB3B3;
+}
+
+/* Light theme for marketing/auth pages */
+.theme-light {
+  --background: #F5F3EF;
+  --foreground: #2D3E50;
+  --card: #FFFFFF;
+  --card-foreground: #2D3E50;
+  --popover: #FFFFFF;
+  --popover-foreground: #2D3E50;
+  --primary: #5BB3B3;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E8E0D5;
+  --secondary-foreground: #2D3E50;
+  --muted: #D9D1C5;
+  --muted-foreground: #5A6B7A;
+  --accent: #C9A86C;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E57373;
+  --border: rgba(45, 62, 80, 0.1);
+  --input: #E8E0D5;
+  --ring: #5BB3B3;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: dark;
+  }
+  html,
+  body {
+    min-height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: var(--background);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ===========================================
+   ATOM Matte Utility Classes
+   =========================================== */
+
+@layer utilities {
+  /* Matte shadows - soft, no glow */
+  .shadow-matte {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+  .shadow-matte-md {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  .shadow-matte-lg {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* Subtle teal glow for interactive elements */
+  .shadow-teal-subtle {
+    box-shadow: 0 0 4px rgba(91, 179, 179, 0.15), 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Gold accent glow */
+  .shadow-gold-subtle {
+    box-shadow: 0 0 4px rgba(201, 168, 108, 0.2), 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Room-specific borders - subtle outline style */
+  .glow-dashboard { box-shadow: none; outline: 1px solid rgba(91, 179, 179, 0.35); outline-offset: 0px; }
+  .glow-library { box-shadow: none; outline: 1px solid rgba(123, 166, 158, 0.35); outline-offset: 0px; }
+  .glow-classroom { box-shadow: none; outline: 1px solid rgba(107, 168, 201, 0.35); outline-offset: 0px; }
+  .glow-exam { box-shadow: none; outline: 1px solid rgba(91, 179, 179, 0.35); outline-offset: 0px; }
+  .glow-community { box-shadow: none; outline: 1px solid rgba(201, 168, 108, 0.35); outline-offset: 0px; }
+  .glow-arena { box-shadow: none; outline: 1px solid rgba(212, 175, 55, 0.35); outline-offset: 0px; }
+  
+  /* Text colors - ATOM palette */
+  .text-atom-teal { color: #5BB3B3; }
+  .text-atom-gold { color: #C9A86C; }
+  .text-atom-sage { color: #7BA69E; }
+  .text-atom-cream { color: #E8E0D5; }
+  .text-atom-slate { color: #2D3E50; }
+  
+  /* Background colors - ATOM palette */
+  .bg-atom-slate { background: #2D3E50; }
+  .bg-atom-slate-light { background: #364A5E; }
+  .bg-atom-slate-dark { background: #253545; }
+  .bg-atom-elevated { background: #3A4D5F; }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-atom {
+    background: linear-gradient(135deg, #2D3E50 0%, #364A5E 100%);
+  }
+  .bg-gradient-teal-gold {
+    background: linear-gradient(135deg, #5BB3B3 0%, #C9A86C 100%);
+  }
+  
+  /* Border utilities */
+  .border-teal-subtle { border-color: rgba(91, 179, 179, 0.2); }
+  .border-gold-subtle { border-color: rgba(201, 168, 108, 0.2); }
+  .border-matte { border-color: rgba(232, 224, 213, 0.08); }
+  
+  /* Matte card component */
+  .matte-card {
+    background: #364A5E;
+    border: 1px solid rgba(232, 224, 213, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+  }
+  
+  /* Matte input component */
+  .matte-input {
+    background: #3A4D5F;
+    border: 1px solid rgba(232, 224, 213, 0.08);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .matte-input:focus {
+    border-color: rgba(91, 179, 179, 0.4);
+    outline: none;
+  }
+  
+  /* Noise texture overlay for matte effect */
+  .noise-overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    /* Removed aggressive noise background image here for legibility */
+    background-color: transparent;
+    opacity: 0;
+    mix-blend-mode: overlay;
+  }
+  
+  /* Room transition class */
+  .room-transition {
+    transition: border-color 0.25s ease, 
+                background-color 0.25s ease, 
+                box-shadow 0.3s ease;
+  }
+  
+  /* Gold highlight for premium elements */
+  .gold-highlight {
+    border: 1px solid rgba(201, 168, 108, 0.3);
+    background: linear-gradient(135deg, rgba(201, 168, 108, 0.05) 0%, transparent 100%);
+  }
+  
+  /* Teal highlight for primary actions */
+  .teal-highlight {
+    border: 1px solid rgba(91, 179, 179, 0.3);
+    background: linear-gradient(135deg, rgba(91, 179, 179, 0.08) 0%, transparent 100%);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================================
+   Animations
+   =========================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-5px) rotate(-1deg); }
+  75% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 15px rgba(91, 179, 179, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(91, 179, 179, 0.35); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glow-gold {
+  0%, 100% { box-shadow: 0 0 10px rgba(201, 168, 108, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(201, 168, 108, 0.4); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-teal {
+  animation: pulse-teal 2s ease-in-out infinite;
+}
+
+.animate-glow-gold {
+  animation: glow-gold 2s ease-in-out infinite;
+}
+
+/* ===========================================
+   Card Hover Effects - Matte theme
+   =========================================== */
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(91, 179, 179, 0.25) !important;
+}
+
+/* Gold card hover for premium content */
+.card-hover-gold:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(201, 168, 108, 0.3) !important;
+}
+
+/* ===========================================
+   Skeleton Loading - Matte theme
+   =========================================== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #3A4D5F 0%,
+    #4A5D6F 50%,
+    #3A4D5F 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+.skeleton-text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  width: 60%;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  height: 200px;
+  border-radius: 0.75rem;
+}
+
+/* Mobile safe area for bottom nav */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===========================================
+   Mobile-specific fixes
+   =========================================== */
+
+@media (max-width: 640px) {
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  h1 {
+    font-size: 1.75rem !important;
+  }
+  
+  button, a {
+    min-height: 44px;
+  }
+  
+  .mobile-compact {
+    padding: 0.75rem !important;
+  }
+}
+
+/* ===========================================
+   Custom Scrollbar - Matte theme
+   =========================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #253545;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A5D6F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 179, 179, 0.4);
+}
+
+/* Smooth page transitions */
+.page-transition {
+  transition: background-color 0.3s ease, color 0.2s ease;
+}
+
+/* ===========================================
+   ATOM Logo Animation
+   =========================================== */
+
+.atom-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Metallic text effect for branding */
+.text-metallic-gold {
+  background: linear-gradient(135deg, #C9A86C 0%, #E8D5A8 50%, #C9A86C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-metallic-teal {
+  background: linear-gradient(135deg, #5BB3B3 0%, #8CD4D4 50%, #5BB3B3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===========================================
+   Dashboard UX Primitives
+   =========================================== */
+
+:root {
+  --ui-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ui-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ui-surface-1: rgba(54, 74, 94, 0.88);
+  --ui-surface-2: rgba(37, 53, 69, 0.76);
+  --ui-surface-3: rgba(27, 40, 56, 0.7);
+  --ui-border-soft: rgba(232, 224, 213, 0.08);
+  --ui-border-strong: rgba(91, 179, 179, 0.24);
+}
+
+.app-shell {
+  background:
+    radial-gradient(1100px 520px at 12% -12%, rgba(91, 179, 179, 0.12), transparent 62%),
+    radial-gradient(980px 480px at 92% -18%, rgba(201, 168, 108, 0.1), transparent 60%),
+    linear-gradient(180deg, #2d3e50 0%, #293949 52%, #243445 100%);
+}
+
+.ui-shell {
+  background: transparent;
+}
+
+.ui-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+}
+
+.ui-panel {
+  background: var(--ui-surface-1);
+  border: 1px solid var(--ui-border-soft);
+  border-radius: 1.125rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 180ms var(--ui-ease-in-out),
+    box-shadow 220ms var(--ui-ease-out),
+    transform 220ms var(--ui-ease-out);
+}
+
+.ui-subpanel {
+  background: var(--ui-surface-3);
+  border: 1px solid var(--ui-border-soft);
+  border-radius: 0.875rem;
+}
+
+.ui-stat-card {
+  background: var(--ui-surface-2);
+  border: 1px solid var(--ui-border-soft);
+  border-radius: 0.875rem;
+}
+
+.ui-interactive {
+  transition:
+    transform 220ms var(--ui-ease-out),
+    border-color 160ms var(--ui-ease-in-out),
+    background-color 160ms var(--ui-ease-in-out),
+    box-shadow 220ms var(--ui-ease-out);
+}
+
+.ui-interactive:hover {
+  transform: translateY(-2px);
+  border-color: var(--ui-border-strong);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
+}
+
+.ui-pill {
+  border-radius: 999px;
+  border: 1px solid rgba(232, 224, 213, 0.12);
+  background: rgba(37, 53, 69, 0.68);
+  color: #a0b0bc;
+  backdrop-filter: blur(8px);
+}
+
+.ui-pill-active {
+  border-color: rgba(91, 179, 179, 0.34);
+  background: rgba(91, 179, 179, 0.14);
+  color: #e8e0d5;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+@keyframes ui-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ui-reveal-up {
+  animation: ui-reveal-up 260ms var(--ui-ease-out) both;
+}
+
+.ui-reveal-delay-1 {
+  animation-delay: 40ms;
+}
+
+.ui-reveal-delay-2 {
+  animation-delay: 80ms;
+}
+
+.ui-reveal-delay-3 {
+  animation-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-interactive,
+  .ui-reveal-up {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

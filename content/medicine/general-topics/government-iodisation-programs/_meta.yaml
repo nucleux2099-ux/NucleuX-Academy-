@@ -1,0 +1,15 @@
+title: "Iodisation Programs"
+slug: government-iodisation-programs
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.21"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.21"
+      text: "Iodisation Programs — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

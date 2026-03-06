@@ -1,0 +1,16 @@
+title: Adult Onset Stills Disease
+slug: adult-onset-stills-disease
+depth: PG
+highYield: true
+nmc_codes:
+  - IM23.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM23.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of adult onset stills
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

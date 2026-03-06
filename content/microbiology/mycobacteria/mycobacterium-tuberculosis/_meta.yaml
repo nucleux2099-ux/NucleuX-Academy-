@@ -1,0 +1,151 @@
+topic_id: mycobacterium-tuberculosis
+name: "Mycobacterium tuberculosis"
+description: >
+  TB microbiology, pathogenesis, diagnosis (Mantoux, AFB, CBNAAT), and treatment (DOTS).
+high_yield: true
+nmc_codes:
+  - code: MI3.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  M. tuberculosis is an acid-fast, obligate aerobe, slow-growing (2-6 weeks), non-spore-forming bacillus.
+  Mycolic acid-rich cell wall confers acid-fastness and resistance to Gram staining. Transmitted by
+  respiratory droplets. Granulomatous inflammation with caseous necrosis is the hallmark. India has the
+  highest TB burden globally. DOTS (Directly Observed Treatment, Short-course) is the standard treatment.
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.23; 📚 Ananthanarayan, 11th Ed, Ch.37
+
+learning_objectives:
+  - Describe the structure and unique features of M. tuberculosis cell wall
+  - Explain the pathogenesis of primary vs secondary (reactivation) TB
+  - List diagnostic methods (smear, culture, Mantoux, IGRA, CBNAAT/GeneXpert)
+  - Outline the DOTS regimen and mechanism of anti-TB drugs
+  - Differentiate TB from NTM infections
+
+content:
+  atoms:
+    - id: microbiology
+      title: "Microbiology of M. tuberculosis"
+      text: >
+        Acid-fast bacilli (Ziehl-Neelsen: red on blue background). Mycolic acid (60% of cell wall) → acid-fastness,
+        hydrophobicity, slow growth. Obligate aerobe (prefers apex of lung — highest PO2).
+        Growth: Lowenstein-Jensen (LJ) medium, 2-6 weeks, rough buff tough colonies.
+        Cord factor (trehalose 6,6'-dimycolate): virulence factor, inhibits macrophage killing.
+        Niacin test: M. tuberculosis is niacin-positive (differentiates from other mycobacteria).
+        Cell-mediated immunity (Th1/CD4 T cells, IFN-γ, activated macrophages) is key defense — NOT antibodies.
+        📚 Ananthanarayan, 11th Ed, Ch.37
+
+    - id: pathogenesis
+      title: "Pathogenesis of TB"
+      text: >
+        Primary TB: initial infection, usually mid/lower lung (Ghon focus). Ghon focus + hilar lymphadenopathy = Ghon complex.
+        Most cases controlled by CMI → latent TB (positive Mantoux, no symptoms).
+        If progressive: miliary TB (hematogenous dissemination), TB meningitis.
+        Secondary (reactivation) TB: apical lung cavities (high O2), fibrocaseous disease.
+        Symptoms: chronic cough >2 weeks, hemoptysis, night sweats, weight loss, fever.
+        Granuloma: epithelioid cells, Langhans giant cells (horseshoe nuclei), caseous necrosis, surrounded by lymphocytes.
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.23
+
+    - id: diagnosis-treatment
+      title: "Diagnosis & Treatment"
+      text: >
+        Smear: ZN stain of sputum (3 samples). Need 10,000 bacilli/mL for positivity.
+        Culture: LJ medium (gold standard), MGIT/BACTEC (liquid, faster 1-3 weeks).
+        Mantoux test (TST): 0.1mL PPD intradermally → read induration at 48-72h. ≥10mm positive (general),
+        ≥5mm in HIV/close contacts. Measures Type IV hypersensitivity. False+ with BCG, NTM.
+        IGRA (QuantiFERON): IFN-γ release by T cells to TB antigens (ESAT-6, CFP-10). Not affected by BCG.
+        CBNAAT (GeneXpert): detects M.tb DNA + rifampicin resistance in 2 hours. WHO-endorsed rapid test.
+        DOTS: 2HRZE + 4HR (2 months intensive: isoniazid, rifampicin, pyrazinamide, ethambutol;
+        4 months continuation: isoniazid, rifampicin). Category II for retreatment adds streptomycin.
+        📚 Ananthanarayan, 11th Ed, Ch.37
+
+  clinical:
+    - title: "Clinical Correlation: MDR-TB and XDR-TB"
+      text: >
+        MDR-TB: resistant to isoniazid AND rifampicin. XDR-TB: MDR + resistant to fluoroquinolone + ≥1 injectable.
+        Treatment: 18-24 months with second-line drugs (bedaquiline, linezolid, cycloserine). India has high MDR burden.
+    - title: "Clinical Correlation: TB Drug Side Effects"
+      text: >
+        Isoniazid: peripheral neuropathy (↓B6), hepatotoxicity, SLE-like syndrome. Give B6 prophylaxis.
+        Rifampicin: hepatotoxicity, red-orange body fluids, CYP450 inducer (drug interactions!).
+        Pyrazinamide: hyperuricemia, hepatotoxicity. Ethambutol: optic neuritis (red-green color blindness).
+        Streptomycin: ototoxicity, nephrotoxicity.
+
+high_yield_points:
+  - "Acid-fastness due to MYCOLIC ACID in cell wall"
+  - "Ghon focus (primary lesion) + hilar lymph nodes = Ghon complex"
+  - "Reactivation TB → apical cavitary lesions (highest O2)"
+  - "Caseous necrosis + Langhans giant cells = hallmark granuloma"
+  - "CBNAAT/GeneXpert: detects M.tb + rifampicin resistance in 2 hours"
+  - "Mantoux measures Type IV (delayed) hypersensitivity; IGRA not affected by BCG"
+  - "DOTS: 2HRZE/4HR; isoniazid needs B6 supplementation"
+  - "Rifampicin: CYP450 inducer, red-orange secretions, hepatotoxic"
+  - "MDR-TB = resistant to INH + RIF"
+  - "Cord factor (trehalose dimycolate) = major virulence factor"
+
+mcqs:
+  - question: "Acid-fastness of M. tuberculosis is due to:"
+    options:
+      - "Capsule"
+      - "Endotoxin"
+      - "Mycolic acid in cell wall"
+      - "Protein A"
+    answer: "Mycolic acid in cell wall"
+    explanation: >
+      Mycolic acid (long-chain fatty acids, C60-C90) constitutes ~60% of the mycobacterial cell wall.
+      It resists decolorization by acid-alcohol in ZN staining, hence "acid-fast."
+      📚 Ananthanarayan, 11th Ed, Ch.37
+    difficulty: 1
+
+  - question: "A patient's Mantoux test shows 12mm induration at 72 hours. This test measures which type of hypersensitivity?"
+    options:
+      - "Type I (immediate)"
+      - "Type II (cytotoxic)"
+      - "Type III (immune complex)"
+      - "Type IV (delayed/cell-mediated)"
+    answer: "Type IV (delayed/cell-mediated)"
+    explanation: >
+      Mantoux test (TST) measures delayed-type (Type IV) hypersensitivity. Sensitized T cells react
+      to PPD → cytokine release → induration at 48-72 hours. It indicates prior exposure, not active disease.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.23
+    difficulty: 1
+
+  - question: "GeneXpert (CBNAAT) for TB diagnosis can detect rifampicin resistance by identifying mutations in:"
+    options:
+      - "katG gene"
+      - "rpoB gene"
+      - "inhA gene"
+      - "embB gene"
+    answer: "rpoB gene"
+    explanation: >
+      GeneXpert detects mutations in the rpoB gene (encodes RNA polymerase β subunit). >95% of
+      rifampicin-resistant strains have rpoB mutations. Rifampicin resistance is a proxy for MDR-TB.
+      📚 Ananthanarayan, 11th Ed, Ch.37
+    difficulty: 2
+
+  - question: "Which anti-TB drug causes optic neuritis?"
+    options:
+      - "Isoniazid"
+      - "Rifampicin"
+      - "Ethambutol"
+      - "Pyrazinamide"
+    answer: "Ethambutol"
+    explanation: >
+      Ethambutol causes dose-dependent optic neuritis → decreased visual acuity, red-green color
+      blindness. Baseline and monthly eye exams recommended. Avoid in young children who cannot report visual symptoms.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.23
+    difficulty: 1
+
+  - question: "The standard DOTS regimen for new pulmonary TB consists of:"
+    options:
+      - "2 months HRZE + 4 months HR"
+      - "6 months HRZ"
+      - "2 months HR + 4 months HRE"
+      - "9 months isoniazid alone"
+    answer: "2 months HRZE + 4 months HR"
+    explanation: >
+      DOTS Category I: intensive phase (2 months of HRZE — isoniazid, rifampicin, pyrazinamide,
+      ethambutol) followed by continuation phase (4 months of HR). Total 6 months for drug-sensitive TB.
+      📚 Ananthanarayan, 11th Ed, Ch.37
+    difficulty: 1

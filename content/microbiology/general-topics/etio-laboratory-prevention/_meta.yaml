@@ -1,0 +1,9 @@
+topic_id: etio-laboratory-prevention
+name: The etio-pathogenesis, laboratory diagnosis and prevention
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: MI6.1
+  domain: KH
+  core: true
+  phase: Phase 1

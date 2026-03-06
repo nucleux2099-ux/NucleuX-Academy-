@@ -1,0 +1,21 @@
+topic_id: physiological-jaundice
+name: Physiological Jaundice
+description: Physiological Jaundice — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE24.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE26.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE6.2
+  domain: KH
+  core: true
+  phase: Phase 2

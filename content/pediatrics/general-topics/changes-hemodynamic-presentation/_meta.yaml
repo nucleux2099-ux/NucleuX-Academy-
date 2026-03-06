@@ -1,0 +1,57 @@
+topic_id: changes-hemodynamic-presentation
+name: The Hemodynamic changes, clinical presentation
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE23.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE23.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.13
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: PE23.15
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.16
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE23.17
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE23.18
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE23.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE23.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE23.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE23.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE23.6
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,29 @@
+topic_id: ps19-describe-the-relevance-role-and-status-of-community-psychiat
+name: Describe the relevance, role and status of community psychiatry
+description: Describe the relevance, role and status of community psychiatry — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS19.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS19.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS19.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PS19.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS19.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS19.6
+  domain: KH
+  core: true
+  phase: Phase 2

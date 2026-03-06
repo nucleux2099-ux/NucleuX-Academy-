@@ -1,0 +1,158 @@
+topic_id: antihypertensives
+name: Antihypertensive Drugs
+description: Classification, mechanisms, and clinical use of antihypertensive agents — ACE inhibitors, ARBs, CCBs, diuretics, and newer agents
+high_yield: true
+nmc_codes:
+- code: PH1.16
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Hypertension is the most common cardiovascular disease. Antihypertensives act by reducing cardiac output, peripheral
+  vascular resistance, or blood volume. Major classes include ACE inhibitors, ARBs, calcium channel blockers, diuretics,
+  β-blockers, and centrally acting agents. Choice depends on comorbidities, race, age, and compelling indications.
+  📚 KD Tripathi, 8th Ed, Ch.40 (p.561-585); 📚 Goodman & Gilman's, 14th Ed, Ch.28
+
+learning_objectives:
+  - Classify antihypertensives by mechanism of action
+  - Describe the RAAS pathway and drugs acting on it
+  - Compare ACE inhibitors with ARBs regarding efficacy, side effects, and clinical use
+  - Explain the pharmacology of calcium channel blockers (DHPs vs non-DHPs)
+  - Select appropriate antihypertensives for special populations (pregnancy, diabetes, CKD, heart failure)
+
+content:
+  atoms:
+    - id: raas-inhibitors
+      title: "RAAS Inhibitors — ACEIs & ARBs"
+      text: >
+        ACE inhibitors: Captopril, Enalapril, Ramipril, Lisinopril, Perindopril. Block ACE → ↓Angiotensin II + ↑Bradykinin.
+        Effects: vasodilation, ↓aldosterone, natriuresis, cardioprotective, nephroprotective (↓efferent arteriolar tone → ↓intraglomerular pressure).
+        Side effects: Dry cough (10-15% — due to bradykinin accumulation), Angioedema, Hyperkalemia, Teratogenicity, First-dose hypotension.
+        Contraindications: Pregnancy (Category X — renal agenesis), Bilateral renal artery stenosis, Hyperkalemia.
+        ARBs: Losartan, Valsartan, Telmisartan, Olmesartan, Candesartan. Block AT1 receptors → similar effects to ACEIs but NO cough/angioedema.
+        Losartan: also uricosuric. Telmisartan: longest acting, PPARγ agonist. Do NOT combine ACEI + ARB (ONTARGET trial — no benefit, more harm).
+        Direct Renin Inhibitor: Aliskiren — blocks renin → ↓angiotensinogen conversion.
+        Aldosterone antagonists: Spironolactone, Eplerenone — discussed under diuretics/heart failure.
+        📚 KD Tripathi, 8th Ed, Ch.40 (p.563-572)
+
+    - id: calcium-channel-blockers
+      title: "Calcium Channel Blockers (CCBs)"
+      text: >
+        Block L-type voltage-gated Ca2+ channels. Two subgroups:
+        Dihydropyridines (DHPs): Amlodipine, Nifedipine, Felodipine, Cilnidipine. Primarily vascular smooth muscle relaxation →
+        ↓PVR, reflex tachycardia. Amlodipine: long-acting, no reflex tachycardia, safe in HF. Nifedipine: rapid-acting,
+        significant reflex tachycardia (immediate-release NOT recommended for HTN crisis anymore).
+        Cilnidipine: blocks both L-type and N-type Ca2+ channels → ↓sympathetic nerve activity, less reflex tachycardia.
+        Non-DHPs: Verapamil (cardiac > vascular) — ↓HR, ↓contractility, ↓AV conduction. Uses: SVT, rate control in AF.
+        Diltiazem (intermediate) — moderate cardiac and vascular effects. Uses: HTN, angina, rate control.
+        Side effects: DHPs — ankle edema, flushing, headache; Verapamil — constipation, bradycardia, AV block;
+        Avoid verapamil + β-blocker (severe bradycardia, heart block).
+        📚 KD Tripathi, 8th Ed, Ch.40 (p.572-578)
+
+    - id: other-antihypertensives
+      title: "Other Antihypertensives"
+      text: >
+        Centrally acting: Clonidine (α2 agonist — ↓sympathetic outflow), Methyldopa (false transmitter — safe in pregnancy,
+        Coombs-positive hemolytic anemia). Moxonidine (imidazoline I1 agonist).
+        Direct vasodilators: Hydralazine (arteriolar — reflex tachycardia, SLE-like syndrome), Sodium nitroprusside
+        (arterial + venous — hypertensive emergency, cyanide toxicity with prolonged use), Minoxidil (K+ channel opener —
+        severe resistant HTN, hypertrichosis — used topically for alopecia).
+        Ganglionic blockers: Trimethaphan — rarely used (postural hypotension).
+        Special populations: Pregnancy → Methyldopa (1st line), Labetalol, Nifedipine. AVOID: ACEIs, ARBs, Atenolol.
+        Diabetes/CKD → ACEIs/ARBs (renoprotective). Elderly/Black patients → CCBs, Diuretics preferred.
+        Hypertensive emergency: Sodium nitroprusside, Labetalol IV, Nicardipine IV, Esmolol, Fenoldopam.
+        📚 KD Tripathi, 8th Ed, Ch.40 (p.578-585)
+
+  clinical:
+    - title: "Clinical Correlation: Hypertension in Pregnancy"
+      text: >
+        Methyldopa is the MOST TESTED and safest antihypertensive in pregnancy (first-line). Labetalol is second-line.
+        Nifedipine (long-acting) is alternative. ACEIs/ARBs are ABSOLUTELY CONTRAINDICATED (renal agenesis, Potter sequence).
+        For eclampsia: IV MgSO4 (seizure prophylaxis) + Labetalol/Hydralazine IV (BP control).
+    - title: "Clinical Correlation: Resistant Hypertension"
+      text: >
+        Defined as BP uncontrolled despite ≥3 drugs (including a diuretic) at optimal doses. Exclude pseudoresistance
+        (non-compliance, white-coat). Add spironolactone (PATHWAY-2 trial) as 4th drug. Consider secondary causes:
+        renal artery stenosis, pheochromocytoma, primary aldosteronism, Cushing's.
+
+  high_yield_points:
+    - "ACE inhibitor cough is due to BRADYKININ accumulation — switch to ARB"
+    - "ACEIs/ARBs are TERATOGENIC — Category X in pregnancy"
+    - "ACEIs/ARBs contraindicated in bilateral renal artery stenosis (precipitates renal failure)"
+    - "Methyldopa = SAFEST antihypertensive in pregnancy"
+    - "Verapamil + β-blocker = DANGEROUS combination (severe bradycardia/heart block)"
+    - "Amlodipine: longest acting CCB, safe in heart failure (unlike verapamil)"
+    - "Sodium nitroprusside: both arterial and venous dilator — cyanide toxicity with prolonged use"
+    - "Hydralazine: SLE-like syndrome (slow acetylators at higher risk)"
+    - "Cilnidipine: L+N type CCB — less reflex tachycardia"
+    - "Spironolactone: best 4th drug for resistant hypertension (PATHWAY-2 trial)"
+
+mcqs:
+  - question: "A 28-year-old pregnant woman at 20 weeks gestation presents with BP 160/100 mmHg. Which antihypertensive is MOST appropriate?"
+    options:
+      - "Enalapril"
+      - "Losartan"
+      - "Methyldopa"
+      - "Atenolol"
+    answer: "Methyldopa"
+    explanation: >
+      Methyldopa is the first-line antihypertensive in pregnancy — most extensively studied and proven safe.
+      ACEIs (enalapril) and ARBs (losartan) are absolutely contraindicated in pregnancy (teratogenic — renal agenesis).
+      Atenolol is associated with IUGR.
+      📚 KD Tripathi, 8th Ed, Ch.40 (p.583)
+    difficulty: 1
+
+  - question: "A patient on enalapril develops persistent dry cough. The mechanism is:"
+    options:
+      - "Increased angiotensin II levels"
+      - "Accumulation of bradykinin"
+      - "Direct bronchial irritation"
+      - "Histamine release"
+    answer: "Accumulation of bradykinin"
+    explanation: >
+      ACE also degrades bradykinin. ACE inhibition → bradykinin accumulation → stimulates prostaglandin and substance P
+      production in lungs → cough. This occurs in 10-15% of patients. ARBs do not cause cough (no effect on bradykinin).
+      📚 KD Tripathi, 8th Ed, Ch.40 (p.566)
+    difficulty: 1
+
+  - question: "Which calcium channel blocker should be AVOIDED in combination with β-blockers?"
+    options:
+      - "Amlodipine"
+      - "Nifedipine"
+      - "Verapamil"
+      - "Felodipine"
+    answer: "Verapamil"
+    explanation: >
+      Verapamil has significant cardiac depressant effects (↓HR, ↓conduction, ↓contractility). Combined with β-blockers,
+      it can cause severe bradycardia, heart block, and cardiac failure. DHPs (amlodipine, nifedipine, felodipine) can be
+      safely combined with β-blockers.
+      📚 KD Tripathi, 8th Ed, Ch.40 (p.576)
+    difficulty: 2
+
+  - question: "Sodium nitroprusside toxicity on prolonged use is due to release of:"
+    options:
+      - "Nitric oxide"
+      - "Cyanide"
+      - "Carbon monoxide"
+      - "Free radicals"
+    answer: "Cyanide"
+    explanation: >
+      Sodium nitroprusside releases NO (therapeutic) and cyanide ions. Cyanide is normally detoxified to thiocyanate
+      by rhodanese (using thiosulfate). Prolonged use or high doses → cyanide accumulation → metabolic acidosis, confusion,
+      seizures. Treatment: sodium thiosulfate, hydroxocobalamin.
+      📚 KD Tripathi, 8th Ed, Ch.40 (p.581)
+    difficulty: 2
+
+  - question: "Which ARB has additional uricosuric properties?"
+    options:
+      - "Valsartan"
+      - "Telmisartan"
+      - "Losartan"
+      - "Candesartan"
+    answer: "Losartan"
+    explanation: >
+      Losartan is the only ARB with significant uricosuric action — it inhibits URAT1 transporter in renal tubules,
+      increasing uric acid excretion. This makes it particularly useful in hypertensive patients with hyperuricemia/gout.
+      📚 KD Tripathi, 8th Ed, Ch.40 (p.570)
+    difficulty: 2

@@ -1,0 +1,12 @@
+title: "Hypothyroidism"
+slug: hypothyroidism
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.8"
+  - "IM10.9"
+prerequisites:
+  - "thyroid-physiology"
+related_topics:
+  - "hyperthyroidism"
+  - "graves-disease"

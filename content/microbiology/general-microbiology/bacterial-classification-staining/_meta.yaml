@@ -1,0 +1,152 @@
+topic_id: bacterial-classification-staining
+name: "Bacterial Classification & Staining"
+description: >
+  Bacterial morphology, classification schemes, Gram stain, Ziehl-Neelsen, and special stains.
+high_yield: true
+nmc_codes:
+  - code: MI1.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Bacteria are classified by morphology (cocci, bacilli, spirochetes), Gram stain reaction (positive vs negative),
+  oxygen requirements (aerobic, anaerobic, facultative), and special staining properties. The Gram stain
+  differentiates based on cell wall structure: thick peptidoglycan (Gram+, purple) vs thin peptidoglycan +
+  outer membrane with LPS (Gram−, pink). Special stains include Ziehl-Neelsen (acid-fast), Albert's (diphtheria),
+  India ink (Cryptococcus), and silver stain (spirochetes).
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.2-3; 📚 Ananthanarayan, 11th Ed, Ch.2
+
+learning_objectives:
+  - Describe the principle and steps of Gram staining
+  - Differentiate Gram-positive and Gram-negative cell wall structures
+  - Classify medically important bacteria by Gram reaction and morphology
+  - Identify indications for special stains (ZN, Albert's, India ink, darkfield)
+  - Explain the clinical significance of bacterial classification
+
+content:
+  atoms:
+    - id: gram-stain
+      title: "Gram Stain"
+      text: >
+        Steps: (1) Crystal violet (primary stain) — all bacteria purple;
+        (2) Gram's iodine (mordant) — forms CV-I complex;
+        (3) Alcohol/acetone (decolorizer) — Gram− lose stain (thin PG, lipid-rich outer membrane dissolved);
+        Gram+ retain (thick PG traps dye);
+        (4) Safranin (counterstain) — Gram− appear pink/red.
+        Gram+: thick peptidoglycan (20-80nm), teichoic acids, no outer membrane, no LPS.
+        Gram−: thin peptidoglycan (2-7nm), outer membrane with LPS (endotoxin), periplasmic space, porins.
+        LPS = Lipid A (toxic moiety) + core polysaccharide + O-antigen (serotyping).
+        📚 Ananthanarayan, 11th Ed, Ch.2
+
+    - id: bacterial-classification
+      title: "Classification of Medically Important Bacteria"
+      text: >
+        Gram+ cocci: Staphylococcus (clusters), Streptococcus (chains), Enterococcus.
+        Gram+ bacilli: Bacillus, Clostridium (spore-forming), Corynebacterium, Listeria, Actinomyces.
+        Gram− cocci: Neisseria (diplococci — N. meningitidis, N. gonorrhoeae), Moraxella.
+        Gram− bacilli: Enterobacteriaceae (E.coli, Klebsiella, Salmonella, Shigella), Pseudomonas, Vibrio, H.influenzae.
+        Acid-fast: Mycobacterium (TB, leprosy), Nocardia (partially/weakly acid-fast).
+        No cell wall: Mycoplasma (smallest free-living, cholesterol in membrane).
+        Intracellular: Chlamydia, Rickettsia.
+        Spirochetes: Treponema, Borrelia, Leptospira (darkfield microscopy).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.2
+
+    - id: special-stains
+      title: "Special Stains in Microbiology"
+      text: >
+        Ziehl-Neelsen (ZN): acid-fast stain for Mycobacterium. Carbol fuchsin → heat fix → acid-alcohol decolorize →
+        methylene blue counterstain. Acid-fast = red bacilli on blue background. Mycolic acid in cell wall resists decolorization.
+        Albert's stain: metachromatic granules (volutin) in Corynebacterium diphtheriae (green bacilli, blue-black granules).
+        India ink: negative staining for Cryptococcus neoformans capsule (clear halo on dark background) in CSF.
+        Silver stain (Warthin-Starry): Treponema, Bartonella, Helicobacter, Legionella.
+        Giemsa: Borrelia, Plasmodium, Chlamydia inclusions.
+        Modified ZN (1% H2SO4): Nocardia, Cryptosporidium, Isospora.
+        📚 Ananthanarayan, 11th Ed, Ch.2
+
+  clinical:
+    - title: "Clinical Correlation: Gram Stain in Clinical Practice"
+      text: >
+        Gram stain of CSF, sputum, wound swabs provides rapid presumptive diagnosis within minutes.
+        Gram+ diplococci in CSF → S. pneumoniae meningitis. Gram− diplococci in CSF → N. meningitidis.
+        Gram− rods in urine → E. coli UTI. Guides empirical antibiotic choice before culture results.
+    - title: "Clinical Correlation: LPS and Gram-Negative Sepsis"
+      text: >
+        LPS (endotoxin) from Gram− bacteria activates TLR4 → macrophage TNF-α, IL-1, IL-6 release →
+        SIRS/sepsis/septic shock. Lipid A is the toxic component. Gram− sepsis: fever, hypotension, DIC.
+
+high_yield_points:
+  - "Gram+ = thick peptidoglycan, teichoic acid, NO outer membrane, NO LPS"
+  - "Gram− = thin peptidoglycan, outer membrane with LPS (endotoxin = Lipid A)"
+  - "Crystal violet → Iodine → Decolorizer → Safranin (Gram stain steps)"
+  - "Acid-fast staining: mycolic acid in Mycobacterium resists decolorization"
+  - "Mycoplasma: NO cell wall → not visible on Gram stain, resistant to β-lactams"
+  - "India ink: Cryptococcus capsule; Albert's stain: C. diphtheriae granules"
+  - "Darkfield microscopy for spirochetes (Treponema pallidum)"
+  - "LPS Lipid A → TLR4 activation → septic shock"
+
+mcqs:
+  - question: "The mordant used in Gram staining is:"
+    options:
+      - "Crystal violet"
+      - "Safranin"
+      - "Gram's iodine"
+      - "Acetone-alcohol"
+    answer: "Gram's iodine"
+    explanation: >
+      Gram's iodine acts as a mordant — forms crystal violet-iodine (CV-I) complex within the cell,
+      making the dye harder to remove. Gram+ bacteria with thick PG retain this complex after decolorization.
+      📚 Ananthanarayan, 11th Ed, Ch.2
+    difficulty: 1
+
+  - question: "Which component of Gram-negative bacteria is responsible for endotoxic shock?"
+    options:
+      - "Teichoic acid"
+      - "Peptidoglycan"
+      - "Lipid A of LPS"
+      - "Porins"
+    answer: "Lipid A of LPS"
+    explanation: >
+      Lipid A is the toxic moiety of lipopolysaccharide (LPS). It activates TLR4 on macrophages →
+      TNF-α, IL-1, IL-6 release → fever, hypotension, DIC, septic shock.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.2
+    difficulty: 1
+
+  - question: "A CSF sample shows encapsulated yeast with clear halo on India ink preparation. The organism is:"
+    options:
+      - "Candida albicans"
+      - "Cryptococcus neoformans"
+      - "Aspergillus fumigatus"
+      - "Histoplasma capsulatum"
+    answer: "Cryptococcus neoformans"
+    explanation: >
+      India ink is a negative stain that highlights the thick polysaccharide capsule of Cryptococcus
+      as a clear halo against a dark background. Classic finding in cryptococcal meningitis (AIDS patients).
+      📚 Ananthanarayan, 11th Ed, Ch.2
+    difficulty: 1
+
+  - question: "Which organism lacks a cell wall and is therefore not visible on Gram stain?"
+    options:
+      - "Chlamydia"
+      - "Rickettsia"
+      - "Mycoplasma"
+      - "Treponema"
+    answer: "Mycoplasma"
+    explanation: >
+      Mycoplasma has NO cell wall (no peptidoglycan) → not stained by Gram stain, resistant to
+      β-lactams and vancomycin. Contains cholesterol in its membrane (unique among bacteria).
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.2
+    difficulty: 1
+
+  - question: "Albert's stain is used to demonstrate metachromatic granules in:"
+    options:
+      - "Mycobacterium tuberculosis"
+      - "Corynebacterium diphtheriae"
+      - "Neisseria meningitidis"
+      - "Clostridium tetani"
+    answer: "Corynebacterium diphtheriae"
+    explanation: >
+      Albert's stain shows metachromatic (volutin/polyphosphate) granules as blue-black bodies in
+      green-colored C. diphtheriae bacilli. These granules are also called Babes-Ernst granules.
+      📚 Ananthanarayan, 11th Ed, Ch.2
+    difficulty: 1

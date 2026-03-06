@@ -1,0 +1,21 @@
+topic_id: thyroid-function-tests-biochemistry
+name: Thyroid Function Tests Biochemistry
+description: Thyroid Function Tests Biochemistry — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.15
+  domain: KH
+  core: true
+  phase: Phase 1

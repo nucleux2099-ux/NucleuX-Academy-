@@ -1,0 +1,13 @@
+topic_id: respiratory-tract-infections-micro
+name: Respiratory Tract Infections Micro
+description: Respiratory Tract Infections Micro — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI6.2
+  domain: P
+  core: true
+  phase: Phase 1
+- code: MI6.3
+  domain: P
+  core: true
+  phase: Phase 1

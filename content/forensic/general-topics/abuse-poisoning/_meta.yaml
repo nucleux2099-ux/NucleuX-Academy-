@@ -1,0 +1,9 @@
+topic_id: abuse-poisoning
+name: Features and management of abuse/poisoning with K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM12.1
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,66 @@
+# Pancreas Topic Index
+# NucleuX Academy Content Library
+
+id: pancreas
+title: "Pancreas"
+subject: surgery
+subspecialty: hepatobiliary
+system: hepatopancreatobiliary
+
+description: |
+  Comprehensive coverage of pancreatic anatomy, inflammatory conditions,
+  neoplasms, and surgical management. Primary sources: Blumgart 7th Ed, 
+  Sleisenger 11th Ed.
+
+stats:
+  total_chapters: 28
+  chapters_covered: 4
+  coverage_percent: 14
+  concept_notes: 3
+  grinde_maps: 0
+  retrieval_cards: 0
+  case_scenarios: 0
+
+categories:
+  - id: inflammatory
+    title: "Inflammatory Conditions"
+    topics:
+      - acute-pancreatitis
+      - chronic-pancreatitis
+  - id: neoplasms
+    title: "Pancreatic Neoplasms"
+    topics:
+      - pancreatic-cancer
+      - pancreatic-cystic-neoplasms
+  - id: procedures
+    title: "Surgical Procedures"
+    topics:
+      - pancreaticoduodenectomy
+      - distal-pancreatectomy
+
+priority: high
+exam_relevance:
+  - NEET_PG
+  - USMLE_Step2
+  - MRCS
+
+study_order:
+  - inflammatory (emergencies first)
+  - neoplasms (high-yield)
+  - procedures (advanced)
+
+sources:
+  primary:
+    - book: "Blumgart's Surgery of the Liver, Biliary Tract and Pancreas"
+      edition: "7th"
+      chapters: "54-81"
+  supplementary:
+    - book: "Sleisenger & Fordtran's GI and Liver Disease"
+      edition: "11th"
+      topic: "Pancreatitis, Pancreatic Cancer"
+    - book: "Maingot's Abdominal Operations"
+      edition: "12th"
+      chapters: "54-58"
+
+last_updated: "2025-02-08"
+status: seeding

@@ -1,0 +1,360 @@
+{
+  "upper-gi-bleed-variceal-bleed": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch66 - The oesophagus.md",
+        "Ch38 - The upper limb.md",
+        "Ch21 - Preoperative care including the high-risk surgical patient.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "5. Radiology of the Esophagus: Barium, Computed Tomography Scan, Positron Emission Tomography Scan, Magnetic Resonance Imaging - ClinicalKey.md",
+        "31. Esophageal Cancer Diagnosis and Staging - ClinicalKey.md",
+        "27. Medical and Surgical Therapy for Gastroesophageal Reflux Disease and Barrett\u2019s Esophagus - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "80. Medical management of bleeding varices Primary and secondary prophylaxis for variceal bleeding.md",
+        "80. Medical management of bleeding varices Primary and secondary prophylaxis for variceal bleeding.md",
+        "74. Cirrhosis and portal hypertension Pathologic aspects.md"
+      ]
+    ]
+  ],
+  "portal-hypertension": [
+    [
+      "Shackelford 9th Ed",
+      [
+        "150_Nonhepatic Surgery in Patients With Cirrhosis.md",
+        "150. Nonhepatic Surgery in Patients With Cirrhosis - ClinicalKey.md",
+        "148_Management of Portal Hypertension.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "79. Management of ascites in cirrhosis and portal hypertension.md",
+        "79. Management of ascites in cirrhosis and portal hypertension.md",
+        "74. Cirrhosis and portal hypertension Pathologic aspects.md"
+      ]
+    ]
+  ],
+  "acute-pancreatitis": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch90 - Pancreas transplantation.md",
+        "Ch72 - The pancreas.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "93. Acute Pancreatitis - ClinicalKey.md",
+        "093_Acute Pancreatitis.md",
+        "96. Endoscopic and Minimally Invasive Therapy for Complications of Pancreatitis - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "56. Management of acute pancreatitis and pancreatitis-related complications.md",
+        "56. Management of acute pancreatitis and pancreatitis-related complications.md",
+        "55. Etiology, pathogenesis, and diagnostic assessment of acute pancreatitis.md"
+      ]
+    ]
+  ],
+  "chronic-pancreatitis": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch71 - The gallbladder and bile ducts.md",
+        "Ch26 - Introduction to trauma.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "94. Chronic Pancreatitis - ClinicalKey.md",
+        "094_Chronic Pancreatitis.md",
+        "96. Endoscopic and Minimally Invasive Therapy for Complications of Pancreatitis - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "58. Management of chronic pancreatitis Conservative, endoscopic, surgical.md",
+        "58. Management of chronic pancreatitis Conservative, endoscopic, surgical.md",
+        "57. Etiology, pathogenesis, and diagnosis of chronic pancreatitis.md"
+      ]
+    ]
+  ],
+  "obstructive-jaundice": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch78 - Intestinal obstruction.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "75. Small Bowel Obstruction - ClinicalKey.md",
+        "163_Obstructive Defecation Syndrome and Pelvic Floor D.md",
+        "163. Obstructive Defecation Syndrome and Pelvic Floor Dysfunction - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "8. Bile secretion and pathophysiology of biliary tract obstruction.md",
+        "8. Bile secretion and pathophysiology of biliary tract obstruction.md",
+        "Hepatobiliary and pancreatic surgery Historical perspective.md"
+      ]
+    ]
+  ],
+  "cholangitis": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch71 - The gallbladder and bile ducts.md",
+        "Ch43 - Infection of the bones and joints.md",
+        "Ch26 - Introduction to trauma.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "124_Recurrent Pyogenic Cholangitis and Intrahepatic St.md",
+        "124. Recurrent Pyogenic Cholangitis and Intrahepatic Stone Diseases - ClinicalKey.md",
+        "123. Surgical Treatment of Primary Sclerosing Cholangitis - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "44. Recurrent pyogenic cholangitis.md",
+        "44. Recurrent pyogenic cholangitis.md",
+        "43. Cholangitis.md"
+      ]
+    ]
+  ],
+  "choledocholithiasis": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch71 - The gallbladder and bile ducts.md",
+        "Ch26 - Introduction to trauma.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "116_Management of Common Bile Duct Stones.md",
+        "116. Management of Common Bile Duct Stones - ClinicalKey.md",
+        "122_Cystic Disorders of the Bile Ducts.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "38. Cholecystolithiasis and stones in the common bile duct Which approach and when.md",
+        "38. Cholecystolithiasis and stones in the common bile duct Which approach and when.md",
+        "37. Stones in the bile duct Minimally invasive surgical approaches 2.md"
+      ]
+    ]
+  ],
+  "liver-abscess": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch89 - Liver transplantation.md",
+        "Ch69 - The liver.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "172_Perirectal Abscess and Fistula-in-Ano.md",
+        "172. Perirectal Abscess and Fistula-in-Ano - ClinicalKey.md",
+        "124_Recurrent Pyogenic Cholangitis and Intrahepatic St.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "70. Pyogenic liver abscess.md",
+        "70. Pyogenic liver abscess.md",
+        "94. Hepatic artery embolization and chemoembolization of liver tumors 1.md"
+      ]
+    ]
+  ],
+  "acute-cholecystitis": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch71 - The gallbladder and bile ducts.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "115_Management of Cholecystitis and Cholelithiasis.md",
+        "115. Management of Cholecystitis and Cholelithiasis - ClinicalKey.md",
+        "118_Management of Gallbladder Cancer and Premalignant .md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "34. Cholecystitis.md",
+        "34. Cholecystitis.md",
+        "9. Advances in the molecular characterization of biliary tract and gallbladder cancer 5.md"
+      ]
+    ]
+  ],
+  "gallbladder-cancer": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch71 - The gallbladder and bile ducts.md",
+        "Ch53 - Oral cavity cancer.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "118_Management of Gallbladder Cancer and Premalignant .md",
+        "118. Management of Gallbladder Cancer and Premalignant Gallbladder Lesions - ClinicalKey.md",
+        "146. Management of Primary Malignant Hepatic Neoplasms Other Than Hepatocellular Cancer - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "9. Advances in the molecular characterization of biliary tract and gallbladder cancer 5.md",
+        "9. Advances in the molecular characterization of biliary tract and gallbladder cancer 5.md",
+        "119. Hepatic resection for biliary tract cancer Gallbladder cancer 1.md"
+      ]
+    ]
+  ],
+  "hepatocellular-carcinoma": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch89 - Liver transplantation.md",
+        "Ch69 - The liver.md",
+        "Ch53 - Oral cavity cancer.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "145_Management of Hepatocellular Carcinoma.md",
+        "145. Management of Hepatocellular Carcinoma - ClinicalKey.md",
+        "146. Management of Primary Malignant Hepatic Neoplasms Other Than Hepatocellular Cancer - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "108. Liver transplantation for hepatocellular carcinoma 1.md",
+        "108. Liver transplantation for hepatocellular carcinoma 1.md",
+        "99. Advances in systemic therapy for hepatocellular carcinoma.md"
+      ]
+    ]
+  ],
+  "liver-metastases": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch89 - Liver transplantation.md",
+        "Ch69 - The liver.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "147_Management of Noncolorectal Liver Metastases.md",
+        "147. Management of Noncolorectal Liver Metastases - ClinicalKey.md",
+        "136_Management of Colorectal Liver Metastases.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "100. Isolated hepatic perfusion for unresectable hepatic metastases.md",
+        "100. Isolated hepatic perfusion for unresectable hepatic metastases.md",
+        "98. Systemic chemotherapy for colorectal liver metastasis Impact on surgical management.md"
+      ]
+    ]
+  ],
+  "pancreatic-cancer": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch53 - Oral cavity cancer.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "98. Pancreatic Cancer - ClinicalKey.md",
+        "107_Landmark Trials for Pancreatic Cancer.md",
+        "107. Landmark Trials for Pancreatic Cancer - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "9. Advances in the molecular characterization of pancreatic cancer and pre-malignant lesions 4.md",
+        "9. Advances in the molecular characterization of pancreatic cancer and pre-malignant lesions 4.md",
+        "66. Chemotherapy and radiotherapy for pancreatic cancer Adjuvant, neoadjuvant, and palliative.md"
+      ]
+    ]
+  ],
+  "intestinal-obstruction": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "Ch78 - Intestinal obstruction.md",
+        "Ch75 - Infammatory bowel disease.md",
+        "Ch91 - Intestinal and multivisceral transplantation.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "75. Small Bowel Obstruction - ClinicalKey.md",
+        "075_Small Bowel Obstruction.md",
+        "78. Small Bowel Diverticula - ClinicalKey.md"
+      ]
+    ],
+    [
+      "Blumgart 7th Ed",
+      [
+        "8. Bile secretion and pathophysiology of biliary tract obstruction.md",
+        "8. Bile secretion and pathophysiology of biliary tract obstruction.md"
+      ]
+    ]
+  ],
+  "perforation-peritonitis": [
+    [
+      "Bailey & Love 28th Ed",
+      [
+        "source_library_index.md"
+      ]
+    ],
+    [
+      "Shackelford 9th Ed",
+      [
+        "39. Management of Esophageal Perforation - ClinicalKey.md",
+        "039_Management of Esophageal Perforation.md"
+      ]
+    ]
+  ]
+}

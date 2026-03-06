@@ -1,0 +1,13 @@
+topic_id: cm20-list-important-public-health-events-of-last-five-years
+name: List important public health events of last five years
+description: List important public health events of last five years — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM20.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM20.2
+  domain: KH
+  core: true
+  phase: Phase 2

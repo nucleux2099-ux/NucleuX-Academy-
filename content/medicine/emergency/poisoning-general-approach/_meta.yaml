@@ -1,0 +1,23 @@
+title: "Poisoning — General Approach"
+slug: poisoning-general-approach
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.8"
+prerequisites: []
+related_topics:
+  - "organophosphate-poisoning"
+  - "paracetamol-overdose"
+enrichment:
+  nmcCodes:
+    - code: "IM24.8"
+      text: "Poisoning — General Approach — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "organophosphate-poisoning"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "paracetamol-overdose"
+      reason: "Clinically related"
+      relationship: "clinical"

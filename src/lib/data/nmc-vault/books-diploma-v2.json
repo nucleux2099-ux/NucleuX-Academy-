@@ -1,0 +1,2522 @@
+[
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Kuby Immunology",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Janeway CA Jr (Ed) Immunobiology. The immune system in health and disease",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Rich RR. Clinical Immunology principles and practice",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Middleton's allergy",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Manual of molecular and clinical Immunology",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Principles and practice",
+    "authors": "Leung DYM Pediatric allergy",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Allergy Clinical Immunology",
+    "book_title": "Immunological diseases of infancy and childhood",
+    "authors": "Steihm",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Lee's Synopsis of Anaesthesia",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Clinical Anesthesiology",
+    "authors": "Morgan",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Cardiac Anaesthesia",
+    "authors": "Joel Kaplan",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Clinical Anaesthesia",
+    "authors": "Barash, Cullen and Stoelting",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Anaesthesia for neonates and infants",
+    "authors": "Smith",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Longneckers Anaesthesiology-",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Pharmacology and Physiology for Anaesthetists",
+    "authors": "Stoelting",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Physics, Pharmacology and Physiology for Anaesthetists (FRCA)",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Principles of Obstetric Anaesthesia",
+    "authors": "Craford",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Miller's Anesthesia",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Stoelting RK, Miller RD Basics of Anaesthesia",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "ICU Book, Paul Marino",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Regional Anaesthesia, P Prithviraj",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Practical Management of Pain, Raj",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Anaesthesia and Co-existing Disease",
+    "authors": "Stoelting and Dierdorf",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Understanding Anaesthesia Equipments",
+    "authors": "Dorsch and Dorsch",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Anatomy for Anaesthetists",
+    "authors": "Harold Ellis",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Anesthesia",
+    "book_title": "Must refer:",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Clinical Immunology Rheumatolog",
+    "book_title": "Kuby Immunology",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Clinical Immunology Rheumatolog",
+    "book_title": "Immunological diseases of infancy and childhood",
+    "authors": "Steihm",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Clinical Pathology",
+    "book_title": "Todd and Stanford's Clinical Diagnosis and Lab Management",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Clinical Pathology",
+    "book_title": "Atlas and Text of Haematology",
+    "authors": "Tejinder Singh",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Clinical Pathology",
+    "book_title": "Robbins Pathology",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Robbins & Cotran Pathologic Basis of Disease",
+    "notes": ""
+  },
+  {
+    "specialty": "Community Medicine",
+    "book_title": "Practical epidemiology",
+    "authors": "Barker D J P",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Sexually Transmitted Diseases - Sharma V K",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Histopathology of the Skin, Walter - F. Lever- Gundula Schaumburg Lever",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Atlas of Dermatology, 2 Volumes, Bhalani Publishing House, Dadar",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Diseases of the skin, I Iarry L Arnold Richard 13-Dom William D. James, Andrews",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Differential Diagnosis in Dermtology, Satish S. Savant, Radha Atalshah, Deepak Gore, Richard Ashan, Barbara Lepdard",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Leprosy, Dharmendra, 2 Volumes, Samant and Company",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Recent Advances in Dermatology, Champion, R.H. Pye, R.J. 8 th Volumes",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Venereal Diseases, Amborse King Claude Nicol Philip Rodin, EL.BS English Language Book Society/ Baillere Tindal, East Sussex",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Sexually Transmitted Diseases, King K Holmes, McGraw-Hill Health profession",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Dermatology in General Medicine, Thomas B.Fitzpatrick, McGraw hill Book Company",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Dermatology",
+    "book_title": " Fundamentals of Pathology of skin, Mysore Venkataram",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "ENT",
+    "book_title": " Scott-Brown's Otorhinolaryngology and Head and Neck Surgery",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "ENT",
+    "book_title": " Cummings Otolaryngology - Head and Neck Surgery",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "ENT",
+    "book_title": " Otolaryngology, Otology & Neurotalogy",
+    "authors": "Paprella & Micheal",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "ENT",
+    "book_title": " Glasscock-Shambaugh's Surgery of the Ear",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "ENT",
+    "book_title": " Essentials of Functional Sinus Surgery",
+    "authors": "Heinz Stammberger MD",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "ENT",
+    "book_title": " Color Atlas of Head & Neck Surgery",
+    "authors": "Jatin P Shah",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Family Medicine",
+    "book_title": "Harrison's Principles of Internal Medicine",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Geriatric Mental Health",
+    "book_title": "Lishman's Organic Psychiatry, The Psychological consequences of cerebral disorder",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Epidemiology and Management of Healthcare for all; Popular Prakashan",
+    "authors": "Sathe P V and Sathe A P",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Epidemiology; WB Saunders Company",
+    "authors": "Gordis Leon",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Maxcy-Rosenau: Public Health and Preventive Medicine; Appleton-CenturyCrofts, New York",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Hanlon J J, Picket G E. Public Health Administration and Practice; St. Louis",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Practical epidemiology",
+    "authors": "Barker D J P",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Occupational health in Developing Countries; Oxford University",
+    "authors": "Jeyartram J",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Press, UK",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Clinical epidemiology - The essentials; M/S Williams and Wilkins",
+    "authors": "Fletcher R H, Fletcher S W",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Methods in Biostatistics; M/S Jaypee Bros., NewDelhi",
+    "authors": "Mahajan B K",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Essential Pediatrics",
+    "authors": "Ghai O P",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Nutrition in Children in Developing country concerns; Department of Pediatrics, MAMC",
+    "authors": "Sachdev H P S and Chowdhury P",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Essentials of Food and Nutrition; Bangalore Printing and Publishing Company Limited, Bangalore",
+    "authors": "Swaminathan M",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Women and Nutrition in India; NIN, India",
+    "authors": "Gopalan C and Kaul S",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Nutritive value of Indian foods; NIN, India",
+    "authors": "ICMR",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Kavonew M and Mikheer M I (WHO): Epidemiology of Occupational health",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Health Education",
+    "authors": "Dr. Dharama Lingam",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Education for Health - WHO Publication",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Health Education",
+    "book_title": "Communicating Health - John Hubley",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Clinical Principles and Practice, Mintz P.D. AABB Press",
+    "authors": "Transfusion therapy",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Technical Manual, Mark E Brecher, AABB Bethesda, Maryland",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Transfusion Medicine Technical manual, R. K. Saran, Directorate General of Health Services, Ministry of Health and Family Welfare, Govt. of India",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Mollison's Blood Transfusion in Clinical Medicine. Harvey G. Klein. David J. Anstee, Blackwell publishing, Oxford",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Oxford Handbook of Clinical Specialties",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Rossi's Principles of Transfusion Medicine, T.L.Simon, W.H. Dzik, E.L.Snyder, C.P.Stowell, R.G. Strauss, Lipincott Williams and Wilkins",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Modern Blood Banking & Transfusion Practices, Denise M Harmening, FA Davis Company, Philadelphia",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Blood Transfusion Therapy, Gotschall J. L. AABB press, Maryland",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Tips, Techniques and Tales, Perkins S, AABB Press, Maryland",
+    "authors": "Donor recruitment",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Basic Principles and Practices, C.D. Hillver. L.L. Silberstejn. P.M.Ness, K.C.Anderson",
+    "authors": "Blood Banking and Transfusion Medicine",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Practical Transfusion Medicine, M.F.Murphy. D.H.Pamphilton, Blackwell Science",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Human Blood Groups, Geoff Daniels, Blackwell Science",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Dacie and Lewis's Practical Hematology, S.M. Levis. BJ. Bain. l. Bales",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Principles and Practices, B.C. McLeod. R. Weinstein, AABB Press Bethesda, Maryland",
+    "authors": "Apheresis",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Transfusion Medicine, Jeffrey McCullough",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "DGHS Standards",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Drugs and Cosmetic Act 1940, Amended Drug Rules 1945",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "NACO Standards for Blood Banks",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Applied Blood Group Serology, P.D. Issit, Anstee, D.J. Winters, Montgomery Scientific Publication",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Immunohaematology",
+    "book_title": "Principles and Practices, Eva D. Quinley, Lippincott Williams and Wilkins",
+    "authors": "Immunohematology",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Laboratory Medicine",
+    "book_title": "Harrison's Principles of Internal Medicine",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Microbiology",
+    "book_title": "Rich RR. Clinical Immunology principles and practice",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "OBGY",
+    "book_title": "High risk Obstetrics - James",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "OBGY",
+    "book_title": "High risk pregnancy - Ian Donald",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "OBGY",
+    "book_title": "High risk pregnancy - Arias",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "OBGY",
+    "book_title": "Manual of Gynaecological Oncology - Disai",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Parkes WR - Occupational lung disorders, Butterworths, London",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "International Labour Organisation - Encyclopaedia of Occupational Safety and Health, Geneva",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "National Institute of Occupational Safety and Health - Occupational respiratory diseases, US Dept. of Health and Human Service, Washington D C (Revised), USA",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "World Health Organisaion - Harmful exposure to mineral dusts, World Health Forum, 15(2)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Gardner AW - Current approaches to Occupational Health 2, John Wright & Sons Ltd, Bristol, London, Boston",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "International Labour Organisation - Guidelines for the use of ILO International classification of Radiographs of Pneumoconiosis, Occup Saf Health Series No 22, Geneva",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "The Diseases of Occupations - Donald Hunter, Hodder and Stoughton, London/Toronto",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Occupational Health - Harrington and Gill, Blackwell Scientific Publication, Oxford",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Epidemiology of Occupational Health - WHO, European Series No 20",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Monitoring for Health Hazards at Work - Gill and Ashton, Grant Mclntyre, London",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Recent Advances in Occupational Health - MacDonald, Churchill Livingstone, London",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "A Guide to Their Recognition -National Institute of Occupational Safety and Health, NIOSH, Cincinnati",
+    "authors": "Occupational Diseases",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Occupational Health Practice - Schilling, Butterworths, London",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Current Approaches to Occupational Medicine - Ward Gardner, J. Wright, Bristol",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Occupational Medicine - Zenz, Yearbook Publication, Chicago",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Epidemiology in Medical Practice - Barker and Rose, Churchill Livingstone, Edinburgh",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Occupational Epidemiology - Monson, CRC Press, Boca Raton",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Early Detection of Occupational Diseases -WHO, Geneva",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Occupational Health",
+    "book_title": "Principle and Methods - MacMohan and Pugh, Little Brown, Boston",
+    "authors": "Epidemiology",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Ophthalmology",
+    "book_title": "Diagnosis and management of ocular tumours. Jerry Shields -",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Campbell's Operative Orthopaedics, Vols 1,2, 3 & 4",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "The Art Of Aesthetic Plastic Surgery - John R Levis, Vol 1",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Current Concepts In Orthopaedics - Dr. D. K. Tareja",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Custom Mega Prosthesis & Limb Salvage Surgery - Dr. Mayilvahanan",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Mercer's Orthopaedic Surgery",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Rockwood And Greens - Fractures In Adults, Vol 1& 2",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Fractures In Children - Rockwood & Wilkins",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Physiological Basis Of Medical Practice - Best And Taylor's",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Arthroscopic Surgery Of The Knee - Johannes",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Paediatric Orthopaedics - Tachidjian, Vol 4",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Concise System Of Orthopaedics and Fractures - Graham Apley",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Orthopaedics And Traumatology - Natarajan",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Outline Of Fractures Adams - Hamblen",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "B.D. Chaurasia's Human Anatomy, Vol1,Vol 2, Vol 3",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "BD Chaurasia's Human Anatomy",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Pharmacology and Pharmacotherapeutics - Satoskar",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Orthopaedics Anatomy and Surgical Approaches - Frederick Wreckling",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Netter's Surgical Anatomy and Approaches",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Advances In Operative Orthopaedics",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Green's Operative Hand Surgery-Vol. 1, Vol. 2 - Green, David P; Hotchkiss, Robert N",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Tachdjian's Pediatric Orthopaedics-Vol. 1, Vol 2, Vol 3 - Herring, John Anthony",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "The Anatomic Approach - Hoppenfeld, Stanley; De Boer, Piet",
+    "authors": "Surgical Exposures In Orthopedics",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Adams's Outline Of Orthopaedics - Hamblen, David L; Simpson, Hamish R",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Current Techniques In Total Knee Arthroplasty - Sawhney G S",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Applied Orthopaedic Biomechanics - Dutta, Santosh; Datta,Debasis",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Essential Orthopaedics And Trauma - Dandy, David J; Edwards, Dennis J",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Adams's Outlines Of Fractures;Including Joint Injuries - Hamblen, David L; Simpson, A Hamish R W",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopaedics",
+    "book_title": "Orthoapedics Surgical Approach - Miller",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Campbell's Operative Orthopaedics, Vols 1,2, 3 & 4",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "The Art Of Aesthetic Plastic Surgery - John R Levis, Vol 1",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Current Concepts In Orthopaedics - Dr. D. K. Tareja",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Custom Mega Prosthesis & Limb Salvage Surgery - Dr. Mayilvahanan",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Mercer's Orthopaedic Surgery",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Rockwood And Greens - Fractures In Adults, Vol 1& 2",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Fractures In Children - Rockwood & Wilkins",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Physiological Basis Of Medical Practice - Best And Taylor's",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Arthroscopic Surgery Of The Knee - Johannes",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Paediatric Orthopaedics - Tachidjian, Vol 4",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Concise System Of Orthopaedics and Fractures - Graham Apley",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Orthopaedics And Traumatology - Natarajan",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Outline Of Fractures Adams - Hamblen",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "B.D. Chaurasia's Human Anatomy, Vol1,Vol 2, Vol 3",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "BD Chaurasia's Human Anatomy",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Pharmacology and Pharmacotherapeutics - Satoskar",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Orthopaedics Anatomy and Surgical Approaches - Frederick Wreckling",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Netter's Surgical Anatomy and Approaches",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Advances In Operative Orthopaedics",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Green's Operative Hand Surgery-Vol. 1, Vol. 2 - Green, David P; Hotchkiss, Robert N",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Tachdjian's Pediatric Orthopaedics-Vol. 1, Vol 2, Vol 3 - Herring, John Anthony",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "The Anatomic Approach - Hoppenfeld, Stanley; De Boer, Piet",
+    "authors": "Surgical Exposures In Orthopedics",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Adams's Outline Of Orthopaedics - Hamblen, David L; Simpson, Hamish R",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Current Techniques In Total Knee Arthroplasty - Sawhney G S",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Applied Orthopaedic Biomechanics - Dutta, Santosh; Datta,Debasis",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Essential Orthopaedics And Trauma - Dandy, David J; Edwards, Dennis J",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Adams's Outlines Of Fractures;Including Joint Injuries - Hamblen, David L; Simpson, A Hamish R W",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Orthopedics",
+    "book_title": "Orthoapedics Surgical Approach - Miller",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "PMR",
+    "book_title": "Recent Advances as applied to Physical Medicine and Rehabilitation etc",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "PMR",
+    "book_title": "Principles and Practice of Physical Medicine; Rehabilitation Management of important Musculoskeletal, Surgical Conditions, Pain, Cancers etc",
+    "authors": "Paper II",
+    "edition": "",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "PMR",
+    "book_title": "Paper III:",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "PMR",
+    "book_title": "Principles and Practice of Rehabilitation Management of important Medical, Neurological, Cardio-pulmonary and other Conditions including Paediatric and Geriatric Rehabilitation",
+    "authors": "",
+    "edition": "",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Paediatrics",
+    "book_title": "Manual of Neonatal care, Cloherty",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Paediatrics",
+    "book_title": "Nada's Pediatric Cardiology, Kaene",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Paediatrics",
+    "book_title": "Clinical Methods in Pediatrics, P Gupta",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Hutchison's Clinical Methods in Pediatrics",
+    "notes": ""
+  },
+  {
+    "specialty": "Paediatrics",
+    "book_title": "Care of the newborn, Meharban Singh",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Pediatrics",
+    "book_title": "Manual of Neonatal care, Cloherty",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Pediatrics",
+    "book_title": "Nada's Pediatric Cardiology, Kaene",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Pediatrics",
+    "book_title": "Clinical Methods in Pediatrics, P Gupta",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Hutchison's Clinical Methods in Pediatrics",
+    "notes": ""
+  },
+  {
+    "specialty": "Pediatrics",
+    "book_title": "Care of the newborn, Meharban Singh",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Braddom RL. Physical Medicine and Rehabilitation",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Principles and Practice. Lippincott",
+    "authors": "DeLisa JA. Rehabilitation Medicine",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Rusk HA. Rehabilitation Medicine. CV",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Helander E, Mendis P, Nelson G, Goerdt A. Training in the Community for People with Disabilities WHO, Geneva",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Helander E. Prejudice and Dignity - An Introduction to Community-Based Rehabilitation. UNDP",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Solomon L. Apley's System of Orthopaedics and Fractures. Arnold London",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Fauci, Braunwald, Kasper, Hauser et al. Harrison's Principles of Internal Medicine McGraw-Hill Company",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Physical Medicine Rehabilitatio",
+    "book_title": "Vernon W Lin. Spinal Cord Medicine - Principles and Practice. Demos",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "given in",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Stahl's Essential Psychopharmacology: Neuroscientific Basis and Practical",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Stephen M Stahl, Publisher: Cambridge",
+    "authors": "Applications, Editor",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Kaplan and Sadock's Synopsis of Psychiatry, Editor: RJ Boland, ML Verduin, P Ruiz; Publisher: Wolters Kluver India",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Clifford T Morgan, Richard A King, John R Weiss, John Schopler, Publisher: MC Graw Hill",
+    "authors": "Introduction to Psychology by Clifford T. Morgan Editors",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Stahl's Essential Psychopharmacology: Neuroscientific Basis and Practical Applications, Editor: Stephen M Stahl, Publisher: Cambridge",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "RC Jiloha, D Kataria, P Kukreti (Jaypee)",
+    "authors": "Forensic Psychiatry",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Bangalore N Gangadhar, A Shyam Sundar, Jagadisha Thirthalli, Shivarama Varambally, Kesavan Muralidharan, C Naveen Kumar, Preeti Sinha, Biju Viswanath, Publisher: NIMHANS",
+    "authors": "ECT administration manual, NIMHANS Editors",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Community Psychiatry in India (Eds Chavan, Gupta, Arun, Sidana, Jadav)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Fish's Clinical Psychopathology - Signs and Symptoms In Psychiatry",
+    "authors": "Patricia",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Patricia Casey, Brendan Kelly, Publisher: Tree Life Media",
+    "authors": "Casey, Editor",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Kaplan and Saddock 's Synopsis of Psychiatry",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Fish Clinical Psychopathology",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Lishman's Organic Psychiatry, The Psychological consequences of cerebral disorder",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Clinical practice guidelines of Psychiatric disorders in India",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Stahl Psychopharmacology",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Psychiatry",
+    "book_title": "Mental Health Act, Person with Disability Act (India)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Pulmonary Medicine",
+    "book_title": "Harrison's Principles of Internal Medicine",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Pulmonary Medicine",
+    "book_title": "(McGraw Hill)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Pulmonary Medicine",
+    "book_title": "Clinical pulmonary medicine including medical emergencies;",
+    "authors": "Paper II",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Kumar & Clark's Clinical Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Pulmonary Medicine",
+    "book_title": "Critical care medicine and recent advances in pulmonary medicine",
+    "authors": "Paper III",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Paper III:",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Neuro PET",
+    "authors": "Herholz",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Molecular anatomic Imaging",
+    "authors": "Von Schulthess",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Principles and Practice of Nuclear Medicine",
+    "authors": "Paul J, Early D, Bruce Sodee",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Paper I:",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Basic Science aspects of Nuclear Medicine",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Paper II:",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Diagnostic Nuclear Medicine",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Therapeutic Nuclear Medicine and Recent Advances",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "A teaching File",
+    "authors": "Debelke, Martin, Patton,",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Nuclear Medicine in Clinical Diagnosis and Treatment",
+    "authors": "Ell and Gambhir",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Kumar & Clark's Clinical Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Positron Emission Tomography",
+    "authors": "Valk, Bailey, Townsend",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Functional Cerebral SPECT and PE Imaging",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "CT and MR Imaging of the whole body",
+    "authors": "Haaga, Lanzieri, Gilkeson",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Principle Techniques and Clinical Applications",
+    "authors": "Fishman Jeffrey",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiation Medicine",
+    "book_title": "Normal Lymph node Topography. CT atlas",
+    "authors": "Richter Feyerabind",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "of Anatomy",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "Caffey's Pediatric Radiology",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "CTI and MRI of the whole body - John R. Haaga",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "Diagnostic ultrasound - Carol C. Rumack",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "MRI of Brain and Spine - Scott Atlas (LWW)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "Diagnosis of Diseases of the Chest -Fraser",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "(Amirsys, Elsevier) Abdominal Imaging, Orthopedics, Head and Neck, Neuroradiology, Pediatric Radiology Chest, Obstetrics, Breast",
+    "authors": "Diagnostic Imaging Series",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "MRI in Orthopedics and Sport Injuries - Stoller",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "Skeletal Radiology - Greenspan",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "Abdominal-Pelvic MRI - Semelka (lWW)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radio Diagnosis",
+    "book_title": "Volumes 1, 2, 3",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "Caffey's Pediatric Radiology",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "CTI and MRI of the whole body - John R. Haaga",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "Diagnostic ultrasound - Carol C. Rumack",
+    "authors": "",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "MRI of Brain and Spine - Scott Atlas (LWW)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "Diagnosis of Diseases of the Chest -Fraser",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "(Amirsys, Elsevier) Abdominal Imaging, Orthopedics, Head and Neck, Neuroradiology, Pediatric Radiology Chest, Obstetrics, Breast",
+    "authors": "Diagnostic Imaging Series",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "MRI in Orthopedics and Sport Injuries - Stoller",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "Skeletal Radiology - Greenspan",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Radiodiagnosis",
+    "book_title": "Abdominal-Pelvic MRI - Semelka (lWW)",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Skill Training",
+    "book_title": "Clinical Methods in Pediatrics, P Gupta",
+    "authors": "",
+    "edition": "latest edition",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Hutchison's Clinical Methods in Pediatrics",
+    "notes": ""
+  },
+  {
+    "specialty": "Sports Medicine",
+    "book_title": "Current Therapy in Sports Medicine III -",
+    "authors": "Torg, Welsh and Shephard",
+    "edition": "latest edition",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Lopez AD, Mathers CD, Ezzati M, Jamison DT, Murray CJL, editors. Global Burden of Disease and Risk Factors. Published",
+    "authors": "World Bank Publications",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Jamison DT, Breman JG, Measham AR, Alleyne G, Claeson M, Evans DB, Jha P, Mills A, Musgrove P, editors. Disease Control Priorities in Developing Countries. Published",
+    "authors": "World Bank Publications",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Bonita R, Beaglehole R, Kjellstrom T. Basic Epidemiology. Published",
+    "authors": "the World Health Organization",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Cook GC, Zumla A, editors. Manson's Tropical Diseases. Published",
+    "authors": "WB Saunders",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Guerrant RL, Walker DH, Weller PF, editors. Tropical Infectious Diseases: Principles, Pathogens &Practice Published",
+    "authors": "Churchill, Livingstone",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Fauci AS, Braunwald E, Kasper DL, Hauser SL, Longo DL, Jameson JL, Loscalzo J, editors. Harrison's Principles of Internal Medicine. Published",
+    "authors": "McGraw-Hill",
+    "edition": "",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Harrison's Principles of Internal Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Boon NA, Colledge NR, Walker BR, Hunter J, editors. Davidson's Principles and Practice of Medicine. Published",
+    "authors": "Churchill Livingstone",
+    "edition": "",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Strachan M, Sharma SK, Hunter JA, editors. Davidson's Clinical Cases. Published",
+    "authors": "Churchill Livingstone",
+    "edition": "",
+    "we_have": "YES",
+    "format": "Markdown",
+    "location": "Davidson's Principles and Practice of Medicine",
+    "notes": ""
+  },
+  {
+    "specialty": "Tropical Medicine",
+    "book_title": "Peters W, Pasvol G. Atlas of Tropical Medicine and Parasitology. Published",
+    "authors": "Mosby",
+    "edition": "",
+    "we_have": "NO",
+    "format": "",
+    "location": "",
+    "notes": ""
+  }
+]

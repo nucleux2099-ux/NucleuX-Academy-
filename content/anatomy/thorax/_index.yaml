@@ -1,0 +1,48 @@
+id: thorax
+title: "Thorax"
+subject: anatomy
+description: |
+  Chest wall, lungs, heart, and mediastinum.
+
+stats:
+  total_topics: 19
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: wall
+    title: "Chest Wall"
+    topics:
+      - thoracic-wall
+      - intercostal-muscles
+      - diaphragm-anatomy
+      - thoracic-vertebrae
+  - id: lungs
+    title: "Lungs & Pleura"
+    topics:
+      - lung-anatomy
+      - bronchopulmonary-segments
+      - pleura
+      - hilum-of-lung
+      - trachea-bronchi
+  - id: heart
+    title: "Heart"
+    topics:
+      - heart-anatomy
+      - coronary-arteries
+      - cardiac-conduction-system
+      - pericardium
+      - great-vessels
+  - id: mediastinum
+    title: "Mediastinum"
+    topics:
+      - mediastinum-divisions
+      - superior-mediastinum
+      - posterior-mediastinum
+      - thoracic-duct
+      - esophagus-thoracic
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,13 @@
+topic_id: dr4-identify-and-distinguish-lichen-planus-lesions-from-other-ca
+name: Identify and distinguish lichen planus lesions from other causes
+description: Identify and distinguish lichen planus lesions from other causes — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DR4.1
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: DR4.2
+  domain: KH
+  core: true
+  phase: Phase 2

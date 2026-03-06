@@ -1,0 +1,37 @@
+topic_id: cm5-describe-the-common-sources-of-various-nutrients-and-special
+name: Describe the common sources of various nutrients and special
+description: Describe the common sources of various nutrients and special — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM5.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM5.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: CM5.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM5.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: CM5.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM5.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM5.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: CM5.8
+  domain: KH
+  core: true
+  phase: Phase 2

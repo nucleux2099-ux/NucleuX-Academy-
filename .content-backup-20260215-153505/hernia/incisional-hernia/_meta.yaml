@@ -1,0 +1,9 @@
+topic_id: incisional-hernia
+name: "Incisional Hernia"
+description: "Risk factors, prevention, component separation, mesh principles"
+high_yield: true
+difficulty: 4
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: []
+related_topics: [umbilical-hernia]

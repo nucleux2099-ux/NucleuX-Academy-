@@ -1,0 +1,22 @@
+title: "Arterial Line"
+slug: arterial-line
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM24.15"
+prerequisites:
+  - "fluid-resuscitation"
+related_topics:
+  - "non-invasive-ventilation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.15"
+      text: "Arterial Line — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "fluid-resuscitation"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "non-invasive-ventilation"
+      reason: "Clinically related"
+      relationship: "clinical"

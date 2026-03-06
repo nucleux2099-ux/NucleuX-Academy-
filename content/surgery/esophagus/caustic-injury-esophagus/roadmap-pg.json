@@ -1,0 +1,50 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Esophageal wall layers and sites of narrowing determine depth and distribution of caustic burns",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "Progressive dysphagia from stricture formation is the hallmark late complication of caustic injury",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-perforation",
+      "nmcCode": "",
+      "reason": "Full-thickness caustic burns can cause acute perforation requiring emergency management",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-reconstruction",
+      "nmcCode": "",
+      "reason": "Severe caustic strictures unresponsive to dilatation require esophageal replacement (colon/gastric interposition)",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-cancer",
+      "nmcCode": "",
+      "reason": "Caustic strictures carry long-term risk of squamous cell carcinoma (1000x increased risk)",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "SU28.5: Describe the applied anatomy and physiology of esophagus"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Caustic Injury of Esophagus across foundational sciences and clinical applications."
+}

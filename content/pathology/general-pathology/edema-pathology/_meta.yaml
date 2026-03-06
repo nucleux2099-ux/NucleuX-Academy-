@@ -1,0 +1,9 @@
+topic_id: edema-pathology
+name: Edema Pathology
+description: Edema Pathology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA6.1
+  domain: KH
+  core: true
+  phase: Phase 2

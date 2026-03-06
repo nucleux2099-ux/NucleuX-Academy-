@@ -1,0 +1,9 @@
+topic_id: umbilical-hernia
+name: "Umbilical Hernia"
+description: "Congenital vs acquired, indications, mesh vs suture repair"
+high_yield: true
+difficulty: 3
+estimated_minutes: 15
+exam_tags: [NEET_PG, MRCS]
+prerequisites: []
+related_topics: [incisional-hernia]

@@ -1,0 +1,9 @@
+topic_id: achalasia-lhm-vs-poem
+name: "Achalasia: LHM vs POEM"
+description: "Comparative outcomes, reflux risk, patient selection"
+high_yield: true
+difficulty: 3
+estimated_minutes: 15
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [heller-myotomy, poem-procedure]
+related_topics: [achalasia]

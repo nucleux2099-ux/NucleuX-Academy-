@@ -1,0 +1,150 @@
+topic_id: growth-development-milestones
+name: Growth & Development Milestones
+description: Normal developmental milestones — gross motor, fine motor, language, and social — with growth parameters
+high_yield: true
+nmc_codes:
+- code: PE2.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Growth refers to quantitative increase in body size (height, weight, head circumference), while development
+  refers to qualitative maturation of function (motor, language, cognitive, social). Knowledge of normal
+  milestones is essential for early identification of developmental delay. Development follows a predictable
+  sequence (cephalocaudal, proximodistal) though the rate may vary.
+  📚 OP Ghai, 10th Ed, Ch.3-4 | 📚 Nelson's, 22nd Ed, Ch.13-14
+
+learning_objectives:
+  - List key developmental milestones at 3, 6, 9, 12, 18, and 24 months
+  - Describe normal growth parameters (weight, height, head circumference) at different ages
+  - Identify red flags for developmental delay
+  - Explain the principles of development
+  - Describe screening tools for developmental assessment
+
+content:
+  atoms:
+    - id: growth-parameters
+      title: "Normal Growth Parameters"
+      text: >
+        Weight: Birth ~3 kg. Doubles by 5 months, triples by 1 year, quadruples by 2 years.
+        Daily gain: 30 g/day (0-3 mo), 20 g/day (3-6 mo), 10 g/day (6-12 mo).
+        Height: Birth ~50 cm. 75 cm at 1 year, 87 cm at 2 years. Adult height = 2 × height at 2 years.
+        Head circumference: Birth ~35 cm. 47 cm at 1 year. Increases 2 cm/month (0-3 mo), 1 cm/month (3-6 mo),
+        0.5 cm/month (6-12 mo). HC > chest circumference until 1 year.
+        Anterior fontanelle: closes 12-18 months. Posterior fontanelle: closes 2-3 months.
+        📚 OP Ghai, 10th Ed, Ch.3 (p.18-25)
+
+    - id: motor-milestones
+      title: "Motor Milestones"
+      text: >
+        Gross motor: Head control 3 mo → rolls over 5 mo → sits without support 8 mo →
+        stands with support 9 mo → cruising 10 mo → walks alone 12 mo → runs 18 mo →
+        climbs stairs (one step at a time) 2 yr → rides tricycle 3 yr → hops on one foot 4 yr.
+        Fine motor: Palmar grasp 3-4 mo → transfers objects 6 mo → immature pincer 9 mo →
+        mature pincer grasp 12 mo → tower of 2 cubes 15 mo → tower of 6 cubes 2 yr →
+        tower of 9 cubes 3 yr → copies circle 3 yr → copies cross 4 yr → copies triangle 5 yr.
+        📚 OP Ghai, 10th Ed, Ch.4 (p.34-42)
+
+    - id: language-social
+      title: "Language & Social Milestones"
+      text: >
+        Language: Social smile 2 mo → cooing 3 mo → babbling (da-da, ma-ma) 6 mo →
+        monosyllables with meaning 9 mo → 2-3 words with meaning 12 mo → 10 words 18 mo →
+        2-word sentences 2 yr → 3-word sentences 3 yr → asks "why?" 4 yr → fluent speech 5 yr.
+        Social/adaptive: Recognizes mother 3 mo → stranger anxiety 8 mo → waves bye-bye 9 mo →
+        drinks from cup 12 mo → feeds self with spoon 18 mo → parallel play 2 yr →
+        group play 3 yr → dresses/undresses 4 yr → ties shoelaces 5 yr.
+        📚 OP Ghai, 10th Ed, Ch.4 (p.42-48)
+
+    - id: red-flags
+      title: "Red Flags for Developmental Delay"
+      text: >
+        No social smile by 2 months. No head control by 5 months. Not sitting by 9 months.
+        Not standing by 12 months. Not walking by 18 months. No words by 18 months.
+        No 2-word phrases by 2 years. Loss of previously acquired milestones at any age (regression).
+        Persistent fisting beyond 3 months. Not reaching for objects by 5 months.
+        Screening tools: Denver Developmental Screening Test (DDST-II), Ages & Stages Questionnaire (ASQ),
+        Trivandrum Development Screening Chart (TDSC — India).
+        📚 OP Ghai, 10th Ed, Ch.4
+
+  high_yield_points:
+    - "Birth weight DOUBLES by 5 months, TRIPLES by 1 year, QUADRUPLES by 2 years"
+    - "Anterior fontanelle closes by 12-18 months; posterior by 2-3 months"
+    - "Social smile: 2 months (EARLIEST social milestone)"
+    - "Pincer grasp: 9 months (immature), 12 months (mature)"
+    - "Walking alone: 12 months; running: 18 months"
+    - "First meaningful words: 12 months; 2-word sentences: 2 years"
+    - "Stranger anxiety: 8 months (attachment milestone)"
+    - "Copies circle: 3 yr; cross: 4 yr; triangle: 5 yr; diamond: 6 yr"
+    - "Head circumference > chest circumference until 1 year; after 1 year, chest > head"
+    - "Tower of cubes: age in years × 3 (approximately) — 3 cubes at 1 yr, 6 at 2 yr, 9 at 3 yr"
+
+mcqs:
+  - question: "A normal infant doubles its birth weight by:"
+    options:
+      - "3 months"
+      - "5 months"
+      - "8 months"
+      - "12 months"
+    answer: "5 months"
+    explanation: >
+      Birth weight doubles by 5 months, triples by 12 months, and quadruples by 2 years.
+      This is one of the most frequently tested growth facts in pediatrics.
+      📚 OP Ghai, 10th Ed, Ch.3 (p.19)
+    difficulty: 1
+
+  - question: "The anterior fontanelle normally closes by:"
+    options:
+      - "2-3 months"
+      - "6-8 months"
+      - "12-18 months"
+      - "24-36 months"
+    answer: "12-18 months"
+    explanation: >
+      The anterior fontanelle (diamond-shaped, at junction of sagittal, coronal, and frontal sutures)
+      closes by 12-18 months. Premature closure suggests craniosynostosis; delayed closure suggests
+      hypothyroidism, rickets, or raised ICP.
+      📚 OP Ghai, 10th Ed, Ch.3 (p.22)
+    difficulty: 1
+
+  - question: "Stranger anxiety in an infant typically appears at:"
+    options:
+      - "3 months"
+      - "6 months"
+      - "8 months"
+      - "12 months"
+    answer: "8 months"
+    explanation: >
+      Stranger anxiety (8-month anxiety) appears when the infant can distinguish familiar from
+      unfamiliar faces, indicating development of object permanence and attachment. It is a
+      normal developmental milestone, not a pathological finding.
+      📚 OP Ghai, 10th Ed, Ch.4 (p.45)
+    difficulty: 1
+
+  - question: "A child who can copy a triangle is most likely aged:"
+    options:
+      - "3 years"
+      - "4 years"
+      - "5 years"
+      - "6 years"
+    answer: "5 years"
+    explanation: >
+      Geometric copying sequence: circle at 3 years, cross at 4 years, triangle at 5 years,
+      diamond at 6 years. This tests fine motor skills and visuospatial ability.
+      📚 OP Ghai, 10th Ed, Ch.4 (p.40)
+    difficulty: 1
+
+  - question: "Which of the following is a RED FLAG requiring immediate developmental evaluation?"
+    options:
+      - "Not walking at 14 months"
+      - "Not talking in sentences at 18 months"
+      - "Loss of previously acquired milestones"
+      - "Stranger anxiety at 10 months"
+    answer: "Loss of previously acquired milestones"
+    explanation: >
+      Developmental regression (loss of milestones) at any age is always pathological and suggests
+      neurodegenerative disease, metabolic disorder, or CNS pathology. It requires urgent evaluation.
+      Not walking at 14 months is within normal range.
+      📚 OP Ghai, 10th Ed, Ch.4
+    difficulty: 1

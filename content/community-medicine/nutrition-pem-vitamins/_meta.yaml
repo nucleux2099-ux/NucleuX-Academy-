@@ -1,0 +1,161 @@
+topic_id: nutrition-pem-vitamins
+name: Nutrition (PEM, Vitamins, ICDS)
+description: Protein-energy malnutrition, vitamin deficiencies, nutritional programs (ICDS), and dietary guidelines
+high_yield: true
+
+overview: >
+  Malnutrition remains a major public health problem in India. Protein-energy malnutrition (PEM) manifests as
+  kwashiorkor, marasmus, and marasmic-kwashiorkor. Vitamin deficiencies (A, D, B-complex, C) cause specific
+  clinical syndromes. ICDS (Integrated Child Development Services) is the largest program addressing malnutrition
+  in children and pregnant/lactating mothers.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.100-130)
+
+learning_objectives:
+  - Classify PEM and differentiate kwashiorkor from marasmus
+  - Describe clinical features and management of common vitamin deficiencies
+  - Explain the components and services of ICDS
+  - Know the classification systems for malnutrition (IAP, WHO)
+  - Discuss national nutrition programs and policies
+
+content:
+  atoms:
+    - id: pem
+      title: "Protein-Energy Malnutrition (PEM)"
+      text: >
+        Kwashiorkor: protein deficiency with adequate calories. Features: edema (hallmark), growth retardation,
+        moon face, flaky-paint dermatosis, flag sign (alternating bands in hair), fatty liver, irritability,
+        low serum albumin. Marasmus: total calorie deficiency. Features: severe wasting, "old man" face,
+        NO edema, skinfold thickness reduced, alert/hungry look, baggy pants appearance.
+        Marasmic-kwashiorkor: combined features. IAP classification (weight for age): Grade I (71-80%),
+        Grade II (61-70%), Grade III (51-60%), Grade IV (<50%). WHO: moderate (Z-score -2 to -3),
+        severe (<-3 Z-score or bilateral edema).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.620-635)
+
+    - id: vitamin-a
+      title: "Vitamin A Deficiency"
+      text: >
+        Most common cause of preventable blindness in children. WHO classification of xerophthalmia:
+        XN (night blindness) → X1A (conjunctival xerosis) → X1B (Bitot's spots — foamy white patches on
+        conjunctiva) → X2 (corneal xerosis) → X3A (corneal ulceration <1/3) → X3B (keratomalacia >1/3) →
+        XS (corneal scar) → XF (xerophthalmic fundus).
+        Treatment: Vitamin A schedule — 100,000 IU (<6 months), 200,000 IU (>1 year).
+        Prevention: National Vitamin A Prophylaxis Programme — 9 months, then every 6 months until 5 years.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.605-615)
+
+    - id: other-vitamins
+      title: "Other Vitamin Deficiencies"
+      text: >
+        Vitamin D: rickets (children — bow legs, craniotabes, rachitic rosary, Harrison's sulcus),
+        osteomalacia (adults). Vitamin B1 (thiamine): beriberi (wet = cardiac, dry = neurological).
+        Wernicke's encephalopathy (triad: confusion, ataxia, ophthalmoplegia).
+        Vitamin B3 (niacin): pellagra (3Ds — dermatitis, diarrhea, dementia; 4th D = death).
+        Vitamin C: scurvy (bleeding gums, petechiae, poor wound healing, corkscrew hair).
+        Vitamin B12/folate: megaloblastic anemia, neural tube defects (folate).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.595-620)
+
+    - id: icds
+      title: "ICDS (Integrated Child Development Services)"
+      text: >
+        Launched: 1975. LARGEST program for child development in the world.
+        Target: children <6 years, pregnant and lactating mothers, adolescent girls.
+        Six services: (1) Supplementary nutrition, (2) Immunization, (3) Health checkup,
+        (4) Referral services, (5) Non-formal preschool education, (6) Nutrition & health education.
+        Delivered through Anganwadi Centers (AWC) by Anganwadi Workers (AWW).
+        Of 6 services, 3 are delivered by health staff (immunization, health checkup, referral)
+        and 3 by AWW (nutrition, preschool education, health education).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.640-645)
+
+    - id: anthropometry
+      title: "Nutritional Assessment & Anthropometry"
+      text: >
+        Weight for age: underweight (acute + chronic malnutrition). Height for age: stunting (chronic).
+        Weight for height: wasting (acute). MUAC (mid-upper arm circumference): <11.5 cm = severe acute
+        malnutrition (SAM) in children 6-59 months. BMI: <18.5 underweight, 18.5-24.9 normal,
+        25-29.9 overweight, ≥30 obese. WHO Growth Standards (2006): Z-scores based on breastfed infants.
+        Gomez classification: weight for age.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.580-590)
+
+  clinical:
+    - title: "Clinical Correlation: SAM Management (CMAM)"
+      text: >
+        Community-based Management of Acute Malnutrition (CMAM): SAM without complications treated at home
+        with Ready-to-Use Therapeutic Food (RUTF). SAM with complications (anorexia, edema, medical illness)
+        → facility-based care (NRC — Nutrition Rehabilitation Centre). WHO 10 steps for inpatient SAM management.
+
+high_yield_points:
+  - "Kwashiorkor: EDEMA (hallmark), flaky-paint skin, flag sign hair, fatty liver"
+  - "Marasmus: severe WASTING, NO edema, old man face, baggy pants"
+  - "Bitot's spots (X1B) = foamy white patches on conjunctiva — Vitamin A deficiency"
+  - "Pellagra = 3Ds: Dermatitis, Diarrhea, Dementia (niacin/B3 deficiency)"
+  - "Wernicke's encephalopathy: confusion + ataxia + ophthalmoplegia (thiamine/B1 deficiency)"
+  - "MUAC <11.5 cm = SAM in children 6-59 months"
+  - "ICDS provides 6 services through Anganwadi Centers — LARGEST child development program"
+  - "Weight-for-age = underweight; Height-for-age = stunting; Weight-for-height = wasting"
+  - "Vitamin A prophylaxis: 200,000 IU every 6 months from 9 months to 5 years"
+  - "Rickets: craniotabes, rachitic rosary, Harrison's sulcus, bow legs (Vitamin D deficiency)"
+
+mcqs:
+  - question: "The HALLMARK feature differentiating kwashiorkor from marasmus is:"
+    options:
+      - "Growth retardation"
+      - "Edema"
+      - "Muscle wasting"
+      - "Irritability"
+    answer: "Edema"
+    explanation: >
+      Edema (bilateral pitting edema starting from feet) is the hallmark of kwashiorkor due to hypoalbuminemia.
+      Marasmus has severe wasting but NO edema. Both have growth retardation.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.622)
+    difficulty: 1
+
+  - question: "Bitot's spots are a feature of which vitamin deficiency?"
+    options:
+      - "Vitamin A"
+      - "Vitamin B12"
+      - "Vitamin C"
+      - "Vitamin D"
+    answer: "Vitamin A"
+    explanation: >
+      Bitot's spots (X1B) are foamy, triangular, whitish patches on the bulbar conjunctiva, pathognomonic
+      of Vitamin A deficiency. They represent keratinized epithelium with Corynebacterium xerosis.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.608)
+    difficulty: 1
+
+  - question: "MUAC cut-off for severe acute malnutrition (SAM) in children 6-59 months is:"
+    options:
+      - "<12.5 cm"
+      - "<11.5 cm"
+      - "<13.5 cm"
+      - "<10.5 cm"
+    answer: "<11.5 cm"
+    explanation: >
+      MUAC <11.5 cm = SAM, 11.5-12.5 cm = MAM (moderate acute malnutrition), >12.5 cm = normal.
+      MUAC is a quick, reliable field screening tool for acute malnutrition in children.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.586)
+    difficulty: 1
+
+  - question: "The number of services provided under ICDS is:"
+    options:
+      - "4"
+      - "5"
+      - "6"
+      - "8"
+    answer: "6"
+    explanation: >
+      ICDS provides 6 services: supplementary nutrition, immunization, health checkup, referral services,
+      non-formal preschool education, and nutrition & health education. Delivered through Anganwadi Centers.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.641)
+    difficulty: 1
+
+  - question: "Pellagra (niacin deficiency) classically presents with:"
+    options:
+      - "Night blindness and Bitot's spots"
+      - "Dermatitis, diarrhea, and dementia"
+      - "Bleeding gums and petechiae"
+      - "Beriberi and peripheral neuropathy"
+    answer: "Dermatitis, diarrhea, and dementia"
+    explanation: >
+      Pellagra (niacin/B3 deficiency) presents with the classic 3Ds: Dermatitis (photosensitive, Casal's
+      necklace), Diarrhea, and Dementia. The 4th D is Death if untreated.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.5 (p.615)
+    difficulty: 1

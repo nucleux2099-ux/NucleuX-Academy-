@@ -1,0 +1,41 @@
+title: "Surgical Nutrition"
+slug: surgical-nutrition
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU12.1"
+  - "SU12.2"
+  - "SU12.3"
+prerequisites:
+  - "homeostasis"
+  - "fluid-electrolytes"
+related_topics:
+  - "wound-healing"
+  - "surgical-infections"
+  - "perioperative-management"
+enrichment:
+  nmcCodes:
+    - code: "SU12.1"
+      text: "Enumerate the causes and consequences of malnutrition in the surgical patient."
+      domain: "K"
+    - code: "SU12.2"
+      text: "Describe and discuss the methods of estimation and replacement of the fluid and electrolyte requirements in the surgical patient."
+      domain: "K"
+    - code: "SU12.3"
+      text: "Discuss the nutritional requirements of surgical patients, the methods of providing nutritional support and their complications."
+      domain: "K"
+  prerequisite_details:
+    - slug: "homeostasis"
+      reason: "Surgical nutrition addresses the catabolic phase of the metabolic response to injury; understanding ebb and flow phases of homeostasis guides when and how to initiate nutritional support"
+    - slug: "fluid-electrolytes"
+      reason: "Enteral and parenteral nutrition require concurrent fluid and electrolyte management; refeeding syndrome causes dangerous hypophosphatemia and hypokalemia"
+  related_details:
+    - slug: "wound-healing"
+      reason: "Protein-calorie malnutrition impairs collagen synthesis and immune function, directly delaying wound healing and increasing dehiscence risk"
+      relationship: "clinical"
+    - slug: "surgical-infections"
+      reason: "Malnutrition is the strongest modifiable risk factor for surgical site infections; albumin <3 g/dL significantly increases SSI rates"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "ERAS protocols mandate preoperative carbohydrate loading and early postoperative enteral feeding as core perioperative nutritional interventions"
+      relationship: "clinical"

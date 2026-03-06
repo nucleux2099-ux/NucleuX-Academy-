@@ -1,0 +1,17 @@
+topic_id: anatomy-auditory-ear-functional
+name: And discuss functional anatomy of ear and auditory pathways
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY10.15
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PY10.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.19
+  domain: KH
+  core: true
+  phase: Phase 1

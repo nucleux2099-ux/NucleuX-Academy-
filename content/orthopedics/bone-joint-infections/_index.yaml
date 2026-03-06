@@ -1,0 +1,26 @@
+id: bone-joint-infections
+title: "Bone & Joint Infections"
+subject: orthopedics
+description: |
+  Osteomyelitis and septic arthritis.
+
+stats:
+  total_topics: 6
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - acute-osteomyelitis
+      - chronic-osteomyelitis
+      - septic-arthritis
+      - tuberculosis-bone-joint
+      - brodie-abscess
+      - prosthetic-joint-infection-ortho
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

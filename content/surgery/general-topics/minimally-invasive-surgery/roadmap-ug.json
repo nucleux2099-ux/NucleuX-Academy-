@@ -1,0 +1,49 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Understanding pneumoperitoneum physiology and perioperative care specific to laparoscopic procedures",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "asepsis-sterilization",
+      "nmcCode": "",
+      "reason": "Sterilization of laparoscopic instruments and port-site infection prevention require specific aseptic protocols",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "investigations-imaging",
+      "nmcCode": "",
+      "reason": "Intraoperative imaging and preoperative CT/MRI planning are integral to laparoscopic and robotic surgery",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-nutrition",
+      "nmcCode": "",
+      "reason": "Enhanced recovery after surgery (ERAS) protocols in MIS emphasize early enteral nutrition",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-audit",
+      "nmcCode": "",
+      "reason": "MIS outcomes require systematic audit for quality assurance including conversion rates and complications",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU16.1: Minimally invasive General Surgery: Describe indications"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Minimally Invasive Surgery across foundational sciences and clinical applications."
+}

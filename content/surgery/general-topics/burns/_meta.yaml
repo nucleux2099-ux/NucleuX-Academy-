@@ -1,0 +1,45 @@
+title: "Burns"
+slug: burns
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU4.1"
+  - "SU4.2"
+  - "SU4.3"
+  - "SU4.4"
+prerequisites:
+  - "fluid-electrolytes"
+  - "wound-healing"
+related_topics:
+  - "shock"
+  - "surgical-infections"
+  - "skin-subcutaneous-tumors"
+enrichment:
+  nmcCodes:
+    - code: "SU4.1"
+      text: "Elicit, document and present history in a case of Burns and perform physical examination. Describe Pathophysiology of Burns."
+      domain: "K"
+    - code: "SU4.2"
+      text: "Describe Clinical features, Diagnose type and extent of burns and plan appropriate treatment."
+      domain: "K"
+    - code: "SU4.3"
+      text: "Discuss the Medicolegal aspects in burn injuries."
+      domain: "K"
+    - code: "SU4.4"
+      text: "Communicate and counsel patients and families on the outcome and rehabilitation demonstrating empathy and care."
+      domain: "S"
+  prerequisite_details:
+    - slug: "fluid-electrolytes"
+      reason: "Burns cause massive fluid shifts and third-spacing; Parkland formula-based fluid resuscitation requires understanding of fluid compartment physiology"
+    - slug: "wound-healing"
+      reason: "Burn wound management depends on understanding healing phases, granulation tissue formation, and factors affecting graft take"
+  related_details:
+    - slug: "shock"
+      reason: "Major burns cause hypovolemic and distributive shock from capillary leak syndrome requiring aggressive early fluid resuscitation"
+      relationship: "clinical"
+    - slug: "surgical-infections"
+      reason: "Burn wound sepsis (Pseudomonas, MRSA, fungal) is the leading cause of late mortality in burn patients"
+      relationship: "clinical"
+    - slug: "skin-subcutaneous-tumors"
+      reason: "Chronic burn scars can undergo malignant transformation to squamous cell carcinoma (Marjolin's ulcer)"
+      relationship: "clinical"

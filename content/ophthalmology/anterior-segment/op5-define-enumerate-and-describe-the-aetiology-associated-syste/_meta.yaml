@@ -1,0 +1,13 @@
+topic_id: op5-define-enumerate-and-describe-the-aetiology-associated-syste
+name: Define, enumerate and describe the aetiology, associated systemic
+description: Define, enumerate and describe the aetiology, associated systemic — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OP5.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP5.2
+  domain: KH
+  core: true
+  phase: Phase 2

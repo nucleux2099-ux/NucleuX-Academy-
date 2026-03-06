@@ -1,0 +1,152 @@
+topic_id: inborn-errors-of-metabolism
+name: "Inborn Errors of Metabolism"
+description: >
+  Genetic metabolic disorders including amino acid, carbohydrate, lipid storage, and glycogen storage diseases.
+high_yield: true
+nmc_codes:
+  - code: BI10.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Inborn errors of metabolism (IEM) are genetic defects in enzymes or transport proteins causing
+  accumulation of substrates or deficiency of products. Archibald Garrod first described "one gene-one enzyme"
+  concept. Most are autosomal recessive. Categories: amino acid disorders (PKU, maple syrup urine disease,
+  homocystinuria, alkaptonuria), lysosomal storage diseases (Gaucher's, Tay-Sachs, Fabry's, Niemann-Pick),
+  glycogen storage diseases (Von Gierke, Pompe, McArdle). Newborn screening detects several.
+  📚 Harper's Biochemistry, 31st Ed, Ch.29,44; 📚 Stryer Biochemistry, Ch.23
+
+learning_objectives:
+  - Define inborn errors of metabolism and explain Garrod's concept
+  - Describe PKU, MSUD, homocystinuria, alkaptonuria with enzyme defects and clinical features
+  - List major lysosomal storage diseases with accumulated substrates
+  - Classify glycogen storage diseases by enzyme defect and presentation
+  - Explain newborn screening principles and tandem mass spectrometry
+
+content:
+  atoms:
+    - id: amino-acid-disorders
+      title: "Amino Acid Metabolism Disorders"
+      text: >
+        PKU: phenylalanine hydroxylase deficiency → ↑Phe → intellectual disability, musty odor, fair skin
+        (↓melanin from ↓tyrosine), eczema. Screen: Guthrie test/tandem MS. Treatment: low-Phe diet, BH4 supplementation.
+        Maple syrup urine disease: branched-chain α-ketoacid dehydrogenase deficiency → ↑Leu, Ile, Val →
+        sweet urine, neurological damage, ketoacidosis. Treatment: dietary restriction of BCAAs.
+        Homocystinuria: cystathionine β-synthase deficiency → ↑homocysteine → marfanoid habitus, downward lens
+        subluxation (vs upward in Marfan), thromboembolism, intellectual disability. Treatment: B6, folate, B12.
+        Alkaptonuria: homogentisic acid oxidase deficiency → dark urine on standing, ochronosis (dark cartilage), arthritis.
+        📚 Harper's Biochemistry, 31st Ed, Ch.29
+
+    - id: lysosomal-storage-diseases
+      title: "Lysosomal Storage Diseases"
+      text: >
+        Defective lysosomal enzymes → substrate accumulation.
+        Gaucher's disease: glucocerebrosidase deficiency → glucocerebroside accumulates in macrophages
+        ("Gaucher cells" = crinkled paper). Hepatosplenomegaly, bone crises. Most common LSD. Treatment: enzyme replacement.
+        Tay-Sachs: hexosaminidase A deficiency → GM2 ganglioside in neurons. Cherry-red macula, progressive
+        neurodegeneration, death by age 3-4. Ashkenazi Jewish population.
+        Niemann-Pick: sphingomyelinase deficiency → sphingomyelin accumulates. Hepatosplenomegaly, cherry-red macula, foam cells.
+        Fabry's: α-galactosidase A deficiency → ceramide trihexoside. X-linked. Angiokeratomas, corneal dystrophy, renal failure.
+        Krabbe: galactocerebrosidase deficiency → galactocerebroside. Globoid cells. Progressive neurodegeneration.
+        📚 Stryer Biochemistry, Ch.23
+
+    - id: glycogen-storage-diseases
+      title: "Glycogen Storage Diseases"
+      text: >
+        Von Gierke (Type I): glucose-6-phosphatase deficiency → severe fasting hypoglycemia, hepatomegaly,
+        lactic acidosis, hyperuricemia, hyperlipidemia. Hepato-renal type.
+        Pompe (Type II): acid maltase (α-1,4-glucosidase) deficiency → glycogen in lysosomes. Cardiomegaly,
+        hypotonia, respiratory failure. Only GSD with lysosomal involvement.
+        Cori (Type III): debranching enzyme deficiency → limit dextrin accumulates. Milder than Von Gierke.
+        McArdle (Type V): muscle glycogen phosphorylase deficiency → exercise intolerance, myoglobinuria,
+        no rise in blood lactate after exercise. Second wind phenomenon.
+        📚 Harper's Biochemistry, 31st Ed, Ch.44
+
+  clinical:
+    - title: "Clinical Correlation: Newborn Screening"
+      text: >
+        Tandem mass spectrometry screens for 30+ IEMs from a heel-prick blood spot. PKU, galactosemia,
+        congenital hypothyroidism, MSUD among those detected. Early detection prevents intellectual disability.
+    - title: "Clinical Correlation: Enzyme Replacement Therapy"
+      text: >
+        Gaucher's (imiglucerase), Fabry's (agalsidase), Pompe (alglucosidase alfa) — recombinant enzymes
+        given IV. Substrate reduction therapy (miglustat for Gaucher's) is an alternative oral approach.
+
+high_yield_points:
+  - "PKU: ↑Phe, musty odor, fair skin, intellectual disability; Guthrie test for screening"
+  - "MSUD: branched-chain AA (Leu, Ile, Val) accumulation; sweet-smelling urine"
+  - "Homocystinuria: DOWNWARD lens subluxation (Marfan = upward)"
+  - "Alkaptonuria: dark urine on standing + ochronosis; first IEM described by Garrod"
+  - "Gaucher's: most common LSD, crinkled paper macrophages, glucocerebrosidase deficiency"
+  - "Tay-Sachs: cherry-red macula, hexosaminidase A deficiency, GM2 ganglioside"
+  - "Pompe: only GSD with LYSOSOMAL glycogen accumulation; cardiomegaly"
+  - "McArdle: no rise in blood lactate after exercise; second wind phenomenon"
+  - "Von Gierke: glucose-6-phosphatase deficiency; severe fasting hypoglycemia"
+
+mcqs:
+  - question: "A newborn screening test shows elevated phenylalanine levels. The enzyme deficiency is:"
+    options:
+      - "Tyrosinase"
+      - "Phenylalanine hydroxylase"
+      - "Homogentisic acid oxidase"
+      - "Cystathionine β-synthase"
+    answer: "Phenylalanine hydroxylase"
+    explanation: >
+      PKU = phenylalanine hydroxylase deficiency → cannot convert Phe to Tyr → ↑Phe.
+      Without dietary restriction, causes severe intellectual disability.
+      📚 Harper's Biochemistry, 31st Ed, Ch.29
+    difficulty: 1
+
+  - question: "Which lysosomal storage disease is characterized by 'crinkled paper' macrophages?"
+    options:
+      - "Tay-Sachs disease"
+      - "Niemann-Pick disease"
+      - "Gaucher's disease"
+      - "Fabry's disease"
+    answer: "Gaucher's disease"
+    explanation: >
+      Gaucher's disease: glucocerebrosidase deficiency → glucocerebroside accumulates in macrophages
+      giving them a characteristic "crinkled tissue paper" appearance on histology.
+      📚 Stryer Biochemistry, Ch.23
+    difficulty: 1
+
+  - question: "A child with exercise intolerance has no rise in blood lactate after ischemic forearm exercise. The diagnosis is:"
+    options:
+      - "Von Gierke disease"
+      - "Pompe disease"
+      - "McArdle disease"
+      - "Cori disease"
+    answer: "McArdle disease"
+    explanation: >
+      McArdle disease (GSD V) = muscle glycogen phosphorylase deficiency. Muscle cannot break down
+      glycogen → no pyruvate → no lactate production during exercise. Second wind phenomenon occurs
+      when fatty acids are mobilized as alternative fuel.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 2
+
+  - question: "Downward subluxation of the lens is characteristic of:"
+    options:
+      - "Marfan syndrome"
+      - "Homocystinuria"
+      - "Ehlers-Danlos syndrome"
+      - "PKU"
+    answer: "Homocystinuria"
+    explanation: >
+      Homocystinuria → downward lens subluxation (inferonasal). Marfan syndrome → upward (superotemporal).
+      Both have marfanoid habitus but are distinguished by lens direction and thrombotic tendency (homocystinuria).
+      📚 Harper's Biochemistry, 31st Ed, Ch.29
+    difficulty: 2
+
+  - question: "Which is the ONLY glycogen storage disease with lysosomal glycogen accumulation?"
+    options:
+      - "Von Gierke (Type I)"
+      - "Pompe (Type II)"
+      - "Cori (Type III)"
+      - "McArdle (Type V)"
+    answer: "Pompe (Type II)"
+    explanation: >
+      Pompe disease = acid maltase (lysosomal α-1,4-glucosidase) deficiency. Glycogen accumulates
+      INSIDE lysosomes (unlike other GSDs where it's cytoplasmic). Presents with cardiomegaly and hypotonia.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 1

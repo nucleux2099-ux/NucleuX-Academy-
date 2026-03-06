@@ -1,0 +1,13 @@
+topic_id: cervical-screening
+name: Cervical Screening
+description: Cervical Screening — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.7
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG33.3
+  domain: SH
+  core: true
+  phase: Phase 2

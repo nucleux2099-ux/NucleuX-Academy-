@@ -1,0 +1,11 @@
+title: "Traumatology"
+description: "Study of wounds and injuries - mechanical, firearm, injury classification"
+icon: "🔪"
+order: 2
+subspecialty: "forensic"
+topics:
+  - mechanical-injuries
+  - firearm-injuries
+  - injury-classification
+  - regional-injuries
+  - thermal-injuries

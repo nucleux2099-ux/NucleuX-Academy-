@@ -1,0 +1,164 @@
+topic_id: glycolysis-tca-gluconeogenesis
+name: "Carbohydrate Metabolism (Glycolysis, TCA, Gluconeogenesis)"
+description: >
+  Complete overview of central carbohydrate metabolic pathways — glycolysis, TCA cycle,
+  and gluconeogenesis — with regulatory enzymes, energy yield, and clinical correlations.
+high_yield: true
+nmc_codes:
+  - code: BI5.1
+    domain: KH
+    core: true
+    phase: Phase 1
+  - code: BI5.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Glycolysis converts glucose to pyruvate (cytoplasm), yielding 2 ATP and 2 NADH per glucose.
+  Pyruvate enters mitochondria → acetyl-CoA → TCA cycle (8 steps, generates 3 NADH, 1 FADH2, 1 GTP per turn).
+  Gluconeogenesis synthesizes glucose from non-carbohydrate precursors (lactate, amino acids, glycerol)
+  primarily in liver and kidney cortex using 4 bypass enzymes. Total aerobic ATP yield from 1 glucose ≈ 30-32 ATP.
+  📚 Harper's Biochemistry, 31st Ed, Ch.17-20; 📚 Stryer Biochemistry, Ch.16-17
+
+learning_objectives:
+  - List the 10 steps of glycolysis with key regulatory enzymes (hexokinase, PFK-1, pyruvate kinase)
+  - Describe the fate of pyruvate under aerobic vs anaerobic conditions
+  - Enumerate the 8 reactions of the TCA cycle and identify regulatory steps
+  - Explain the 4 bypass reactions of gluconeogenesis and their regulation
+  - Calculate net ATP yield from complete oxidation of glucose
+
+content:
+  atoms:
+    - id: glycolysis-pathway
+      title: "Glycolysis — The Embden-Meyerhof Pathway"
+      text: >
+        10-step cytoplasmic pathway. Investment phase (steps 1-5): 2 ATP consumed.
+        Payoff phase (steps 6-10): 4 ATP + 2 NADH produced. Net: 2 ATP, 2 NADH, 2 pyruvate.
+        Three irreversible regulatory steps: (1) Hexokinase (glucose→G6P), inhibited by G6P;
+        (2) PFK-1 (F6P→F1,6BP) — RATE-LIMITING, activated by AMP, F2,6BP; inhibited by ATP, citrate;
+        (3) Pyruvate kinase (PEP→pyruvate), inhibited by ATP, alanine; activated by F1,6BP (feedforward).
+        Anaerobic: pyruvate → lactate (lactate dehydrogenase, regenerates NAD+).
+        📚 Harper's Biochemistry, 31st Ed, Ch.17
+
+    - id: tca-cycle
+      title: "TCA (Krebs/Citric Acid) Cycle"
+      text: >
+        Mitochondrial matrix. Acetyl-CoA + OAA → citrate (citrate synthase).
+        8 enzymes, 2 decarboxylation steps (isocitrate→α-KG, α-KG→succinyl-CoA).
+        Per turn: 3 NADH, 1 FADH2, 1 GTP. Rate-limiting: isocitrate dehydrogenase (activated by ADP, inhibited by ATP, NADH).
+        Key intermediates: α-ketoglutarate (amino acid metabolism), succinyl-CoA (heme synthesis, odd-chain FA),
+        OAA (gluconeogenesis), citrate (fatty acid synthesis).
+        Anaplerotic reactions replenish OAA: pyruvate carboxylase (pyruvate→OAA, requires biotin).
+        📚 Harper's Biochemistry, 31st Ed, Ch.18
+
+    - id: gluconeogenesis
+      title: "Gluconeogenesis"
+      text: >
+        Synthesis of glucose from non-carbohydrate sources. Primarily liver (90%) and kidney cortex (10%).
+        4 bypass enzymes replace 3 irreversible glycolytic steps:
+        (1) Pyruvate carboxylase: pyruvate→OAA (mitochondrial, requires biotin, activated by acetyl-CoA)
+        (2) PEPCK: OAA→PEP (requires GTP)
+        (3) Fructose-1,6-bisphosphatase: F1,6BP→F6P (inhibited by AMP, F2,6BP)
+        (4) Glucose-6-phosphatase: G6P→glucose (ER membrane, absent in muscle and brain — they cannot export glucose).
+        Substrates: lactate (Cori cycle), alanine (glucose-alanine cycle), glycerol (from lipolysis), propionyl-CoA (odd-chain FA).
+        📚 Harper's Biochemistry, 31st Ed, Ch.20
+
+    - id: regulation-and-energy
+      title: "Regulation and Energy Yield"
+      text: >
+        Reciprocal regulation: insulin activates glycolysis (↑PFK-1, ↑pyruvate kinase);
+        glucagon activates gluconeogenesis (↑PEPCK, ↑F1,6BPase, ↑G6Pase) via cAMP-PKA.
+        F2,6BP is the most potent activator of PFK-1 and inhibitor of F1,6BPase.
+        PFK-2/FBPase-2 bifunctional enzyme: insulin → ↑PFK-2 → ↑F2,6BP → glycolysis;
+        glucagon → ↑FBPase-2 → ↓F2,6BP → gluconeogenesis.
+        Complete oxidation of 1 glucose: 30-32 ATP (malate-aspartate shuttle = 32, glycerol-3P shuttle = 30).
+        📚 Stryer Biochemistry, Ch.16
+
+  clinical:
+    - title: "Clinical Correlation: Pyruvate Dehydrogenase Deficiency"
+      text: >
+        PDH deficiency prevents pyruvate→acetyl-CoA conversion. Presents with lactic acidosis,
+        neurological deficits. Treatment: ketogenic diet (bypasses glycolysis), thiamine supplementation.
+    - title: "Clinical Correlation: Von Gierke Disease (GSD Type I)"
+      text: >
+        Glucose-6-phosphatase deficiency. Cannot perform final step of gluconeogenesis/glycogenolysis.
+        Severe fasting hypoglycemia, hepatomegaly, lactic acidosis, hyperuricemia, hyperlipidemia.
+
+high_yield_points:
+  - "PFK-1 is the RATE-LIMITING enzyme of glycolysis; F2,6BP is its most potent activator"
+  - "Isocitrate dehydrogenase is the rate-limiting enzyme of TCA cycle"
+  - "Pyruvate carboxylase requires BIOTIN and is activated by acetyl-CoA"
+  - "Glucose-6-phosphatase is ABSENT in muscle and brain — they cannot release free glucose"
+  - "Cori cycle: muscle lactate → liver glucose; Glucose-alanine cycle: muscle alanine → liver glucose"
+  - "Complete oxidation of glucose = 30-32 ATP (depends on shuttle used)"
+  - "Glucagon ↑cAMP → activates gluconeogenesis; Insulin → activates glycolysis"
+  - "F2,6BP is the master switch between glycolysis and gluconeogenesis"
+
+mcqs:
+  - question: "Which enzyme catalyzes the rate-limiting step of glycolysis?"
+    options:
+      - "Hexokinase"
+      - "Phosphofructokinase-1"
+      - "Pyruvate kinase"
+      - "Aldolase"
+    answer: "Phosphofructokinase-1"
+    explanation: >
+      PFK-1 catalyzes F6P→F1,6BP and is the committed/rate-limiting step of glycolysis.
+      It is allosterically activated by AMP and F2,6BP, and inhibited by ATP and citrate.
+      📚 Harper's Biochemistry, 31st Ed, Ch.17
+    difficulty: 1
+
+  - question: "A patient with Von Gierke disease has severe fasting hypoglycemia because of deficiency of:"
+    options:
+      - "Glucose-6-phosphatase"
+      - "Liver phosphorylase"
+      - "Debranching enzyme"
+      - "Pyruvate carboxylase"
+    answer: "Glucose-6-phosphatase"
+    explanation: >
+      Von Gierke disease (GSD Type I) = glucose-6-phosphatase deficiency. This enzyme catalyzes
+      the final step of both gluconeogenesis and glycogenolysis. Without it, the liver cannot
+      release free glucose into the blood.
+      📚 Harper's Biochemistry, 31st Ed, Ch.20
+    difficulty: 1
+
+  - question: "Which TCA cycle intermediate is used for heme synthesis?"
+    options:
+      - "Citrate"
+      - "α-Ketoglutarate"
+      - "Succinyl-CoA"
+      - "Oxaloacetate"
+    answer: "Succinyl-CoA"
+    explanation: >
+      Succinyl-CoA + glycine → δ-aminolevulinic acid (ALA), the first step of heme synthesis
+      catalyzed by ALA synthase. This is a key drain on TCA cycle intermediates.
+      📚 Harper's Biochemistry, 31st Ed, Ch.18,31
+    difficulty: 2
+
+  - question: "The most potent activator of PFK-1 and inhibitor of fructose-1,6-bisphosphatase is:"
+    options:
+      - "ATP"
+      - "Citrate"
+      - "Fructose-2,6-bisphosphate"
+      - "AMP"
+    answer: "Fructose-2,6-bisphosphate"
+    explanation: >
+      F2,6BP is the master regulator that reciprocally controls glycolysis (activates PFK-1) and
+      gluconeogenesis (inhibits F1,6BPase). Its levels are controlled by the bifunctional enzyme PFK-2/FBPase-2.
+      📚 Stryer Biochemistry, Ch.16
+    difficulty: 2
+
+  - question: "In the Cori cycle, which substrate is transported from muscle to liver?"
+    options:
+      - "Alanine"
+      - "Lactate"
+      - "Pyruvate"
+      - "Glucose-6-phosphate"
+    answer: "Lactate"
+    explanation: >
+      The Cori cycle: muscle produces lactate (anaerobic glycolysis) → lactate travels to liver →
+      liver converts lactate back to glucose (gluconeogenesis) → glucose returns to muscle.
+      Alanine is transported in the glucose-alanine cycle (different cycle).
+      📚 Harper's Biochemistry, 31st Ed, Ch.20
+    difficulty: 1

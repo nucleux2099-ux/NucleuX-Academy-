@@ -1,0 +1,41 @@
+title: Infective Endocarditis
+slug: endocarditis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.12
+  - IM1.13
+  - IM1.14
+prerequisites:
+  - valvular-heart-disease
+related_topics:
+  - mitral-stenosis
+  - heart-failure
+  - acute-coronary-syndrome
+enrichment:
+  nmcCodes:
+    - code: IM1.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of infective
+        endocarditis
+      domain: KH
+    - code: IM1.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of infective
+        endocarditis
+      domain: KH
+    - code: IM1.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of infective
+        endocarditis
+      domain: KH
+  prerequisite_details:
+    - slug: valvular-heart-disease
+      reason: Foundation knowledge for infective endocarditis
+  related_details:
+    - slug: mitral-stenosis
+      reason: Clinically related to infective endocarditis
+      relationship: clinical
+    - slug: heart-failure
+      reason: Clinically related to infective endocarditis
+      relationship: clinical
+    - slug: acute-coronary-syndrome
+      reason: Clinically related to infective endocarditis
+      relationship: clinical

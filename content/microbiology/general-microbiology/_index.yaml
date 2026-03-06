@@ -1,0 +1,30 @@
+id: general-microbiology
+title: "General Microbiology"
+subject: microbiology
+description: |
+  Bacterial structure, culture, and sterilization.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - bacterial-cell-structure
+      - bacterial-growth-culture
+      - sterilization-disinfection
+      - bacterial-genetics
+      - bacterial-pathogenesis
+      - normal-flora
+      - specimen-collection
+      - staining-techniques
+      - culture-media
+      - antimicrobial-sensitivity-testing
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

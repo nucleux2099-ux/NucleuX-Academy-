@@ -1,0 +1,17 @@
+topic_id: male-urethra
+name: Male Urethra
+description: Male Urethra — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN49.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN51.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN52.8
+  domain: KH
+  core: true
+  phase: Phase 1

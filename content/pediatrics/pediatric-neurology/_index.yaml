@@ -1,0 +1,30 @@
+id: pediatric-neurology
+title: "Pediatric Neurology"
+subject: pediatrics
+description: |
+  Seizures, meningitis, and neurodevelopmental disorders.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - febrile-seizures-peds
+      - epilepsy-pediatric
+      - status-epilepticus-peds
+      - meningitis-pediatric
+      - encephalitis-pediatric
+      - hydrocephalus-peds
+      - neural-tube-defects-peds
+      - neurocutaneous-syndromes
+      - muscular-dystrophy
+      - spinal-muscular-atrophy
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

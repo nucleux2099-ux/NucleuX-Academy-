@@ -1,0 +1,49 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Improper waste disposal directly increases risk of nosocomial and surgical site infections",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Perioperative protocols include biomedical waste handling standards for sharps, blood products, and disposables",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-ethics",
+      "nmcCode": "",
+      "reason": "Safe waste disposal is an ethical obligation to healthcare workers and the community",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Chemical and thermal waste hazards can cause burns; burn dressings generate biohazardous waste",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-audit",
+      "nmcCode": "",
+      "reason": "Waste management compliance is a key auditable quality indicator in hospitals",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU15.1: Describe classification of hospital waste and appropriate methods of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Hospital Waste Management across foundational sciences and clinical applications."
+}

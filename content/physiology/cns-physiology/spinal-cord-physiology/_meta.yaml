@@ -1,0 +1,9 @@
+topic_id: spinal-cord-physiology
+name: Spinal Cord Physiology
+description: Spinal Cord Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.6
+  domain: KH
+  core: true
+  phase: Phase 1

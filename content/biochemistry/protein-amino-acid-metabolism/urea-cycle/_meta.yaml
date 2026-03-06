@@ -1,0 +1,13 @@
+topic_id: urea-cycle
+name: Urea Cycle
+description: Urea Cycle — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.21
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: BI3.6
+  domain: KH
+  core: true
+  phase: Phase 1

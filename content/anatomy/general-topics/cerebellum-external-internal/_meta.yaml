@@ -1,0 +1,17 @@
+topic_id: cerebellum-external-internal
+name: '& demonstrate external & internal features of cerebellum'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN60.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN60.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN60.3
+  domain: KH
+  core: false
+  phase: Phase 1

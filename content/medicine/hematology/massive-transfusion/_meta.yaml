@@ -1,0 +1,23 @@
+title: Massive Transfusion
+slug: massive-transfusion
+depth: UG
+highYield: true
+nmc_codes:
+  - IM15.13
+  - IM9.17
+  - IM9.19
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM15.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of massive transfusion
+      domain: KH
+    - code: IM9.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of massive transfusion
+      domain: KH
+    - code: IM9.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of massive transfusion
+      domain: KH
+  prerequisite_details: []
+  related_details: []

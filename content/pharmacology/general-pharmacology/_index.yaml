@@ -1,0 +1,35 @@
+id: general-pharmacology
+title: "General Pharmacology"
+subject: pharmacology
+description: |
+  Pharmacokinetics, pharmacodynamics, and drug interactions.
+
+stats:
+  total_topics: 15
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - pharmacokinetics
+      - absorption
+      - distribution
+      - metabolism-drugs
+      - excretion-drugs
+      - bioavailability
+      - half-life
+      - volume-of-distribution
+      - clearance
+      - drug-receptors
+      - dose-response
+      - drug-interactions
+      - adverse-drug-reactions
+      - pharmacogenomics
+      - drug-development-phases
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

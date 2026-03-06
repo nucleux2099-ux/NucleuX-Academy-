@@ -1,0 +1,27 @@
+title: "Raised Intracranial Pressure"
+slug: raised-intracranial-pressure
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM18.1"
+prerequisites:
+  - "csf-physiology"
+related_topics:
+  - "brain-tumors-medical"
+  - "hemorrhagic-stroke"
+  - "brain-abscess"
+enrichment:
+  nmcCodes:
+    - code: "IM18.1"
+      text: "Describe and discuss the clinical features and management of raised intracranial pressure"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "csf-physiology"
+      reason: "Understanding CSF dynamics essential for ICP management"
+  related_details:
+    - slug: "brain-tumors-medical"
+      reason: "Common cause of raised ICP"
+      relationship: "clinical"
+    - slug: "hemorrhagic-stroke"
+      reason: "ICH causes acute raised ICP"
+      relationship: "clinical"

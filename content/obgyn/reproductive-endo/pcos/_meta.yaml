@@ -1,0 +1,150 @@
+topic_id: pcos
+name: Polycystic Ovary Syndrome (PCOS)
+description: Diagnosis (Rotterdam criteria), pathophysiology, and management of PCOS
+high_yield: true
+nmc_codes:
+- code: OG25.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  PCOS is the most common endocrine disorder in women of reproductive age (6-10% prevalence).
+  It is characterized by hyperandrogenism, ovulatory dysfunction, and polycystic ovarian morphology.
+  PCOS is a leading cause of anovulatory infertility and is associated with metabolic syndrome,
+  insulin resistance, type 2 diabetes, and endometrial carcinoma risk.
+  📚 Williams Obstetrics, 26th Ed | 📚 DC Dutta, 9th Ed, Ch.28
+
+learning_objectives:
+  - State the Rotterdam diagnostic criteria for PCOS
+  - Explain the role of insulin resistance and hyperandrogenism in pathophysiology
+  - Describe the hormonal profile in PCOS
+  - Outline management strategies for different presentations
+  - List long-term complications of PCOS
+
+content:
+  atoms:
+    - id: diagnosis
+      title: "Rotterdam Criteria (2003)"
+      text: >
+        Diagnosis requires ANY 2 of 3 (after excluding other causes):
+        (1) Oligo-ovulation or anovulation (oligomenorrhea or amenorrhea).
+        (2) Clinical and/or biochemical hyperandrogenism (hirsutism, acne, elevated testosterone/DHEAS).
+        (3) Polycystic ovaries on USG (≥12 follicles of 2-9 mm per ovary OR ovarian volume >10 mL).
+        Must exclude: thyroid disease, CAH, Cushing's, hyperprolactinemia, androgen-secreting tumors.
+        📚 DC Dutta, 9th Ed, Ch.28 (p.460-462)
+
+    - id: pathophysiology
+      title: "Pathophysiology"
+      text: >
+        Central defect: increased GnRH pulse frequency → elevated LH (relative to FSH) → LH:FSH ratio >2:1.
+        Theca cells (stimulated by LH): excess androgen production (testosterone, androstenedione).
+        Granulosa cells: inadequate FSH → impaired aromatization → androgens NOT converted to estrogens.
+        Insulin resistance → hyperinsulinemia → (1) stimulates ovarian androgen production,
+        (2) decreases SHBG → more free testosterone, (3) inhibits hepatic IGFBP-1.
+        Peripheral conversion of androgens to estrone (E1) in adipose tissue → chronic anovulation
+        (positive feedback on LH, negative on FSH). Unopposed estrogen → endometrial hyperplasia risk.
+        📚 DC Dutta, 9th Ed, Ch.28 (p.457-460)
+
+    - id: hormonal-profile
+      title: "Hormonal Profile in PCOS"
+      text: >
+        Elevated: LH, testosterone, androstenedione, DHEAS, estrone (E1), insulin, fasting glucose.
+        Decreased: FSH, SHBG, progesterone (anovulation), IGFBP-1.
+        LH:FSH ratio >2:1 (classic but not required for diagnosis).
+        Estradiol (E2) may be normal; estrone (E1) is elevated (from peripheral conversion).
+        Anti-Müllerian hormone (AMH) elevated — correlates with antral follicle count.
+        📚 DC Dutta, 9th Ed, Ch.28
+
+    - id: management
+      title: "Management"
+      text: >
+        Lifestyle: weight loss of 5-10% improves ovulation, insulin sensitivity, and androgens.
+        Not desiring fertility: OCPs (first-line for menstrual regulation + anti-androgen effect),
+        metformin (insulin sensitizer), spironolactone (anti-androgen for hirsutism).
+        Desiring fertility: Letrozole (first-line ovulation induction — NEJM 2014 trial),
+        clomiphene citrate (second-line), gonadotropins, LOD (laparoscopic ovarian drilling), IVF.
+        Metformin as adjunct improves ovulation rates. Endometrial protection with cyclic progestins.
+        Cosmetic: laser, electrolysis for hirsutism; topical eflornithine.
+        📚 DC Dutta, 9th Ed, Ch.28 (p.463-467)
+
+  high_yield_points:
+    - "Rotterdam criteria: ANY 2 of 3 — oligo/anovulation, hyperandrogenism, polycystic ovaries on USG"
+    - "LH:FSH ratio >2:1 is characteristic (but NOT required for diagnosis)"
+    - "PCOS = most common cause of ANOVULATORY infertility"
+    - "Insulin resistance is central to pathophysiology — drives hyperandrogenism"
+    - "Letrozole is now FIRST-LINE for ovulation induction in PCOS (superior to clomiphene)"
+    - "Unopposed estrogen → risk of endometrial hyperplasia and carcinoma"
+    - "SHBG is decreased → more free (bioavailable) testosterone"
+    - "AMH is elevated in PCOS — correlates with disease severity"
+    - "Weight loss of 5-10% can restore ovulation in obese PCOS women"
+    - "Necklace sign on USG: peripherally arranged follicles in polycystic ovary"
+
+mcqs:
+  - question: "Which of the following is the first-line drug for ovulation induction in PCOS?"
+    options:
+      - "Clomiphene citrate"
+      - "Letrozole"
+      - "Metformin"
+      - "Gonadotropins"
+    answer: "Letrozole"
+    explanation: >
+      Letrozole (aromatase inhibitor) is now first-line for ovulation induction in PCOS, as shown
+      by the NEJM 2014 trial — higher ovulation and live birth rates than clomiphene with lower
+      risk of multiple pregnancies.
+      📚 DC Dutta, 9th Ed, Ch.28 (p.465)
+    difficulty: 1
+
+  - question: "The Rotterdam criteria for PCOS diagnosis require:"
+    options:
+      - "All 3 criteria must be present"
+      - "Any 2 of 3 criteria"
+      - "Hyperandrogenism is mandatory"
+      - "Polycystic ovaries on USG is mandatory"
+    answer: "Any 2 of 3 criteria"
+    explanation: >
+      Rotterdam criteria (2003) require any 2 of 3: (1) oligo/anovulation, (2) hyperandrogenism,
+      (3) polycystic ovaries on USG, after excluding other causes. No single criterion is mandatory.
+      📚 DC Dutta, 9th Ed, Ch.28 (p.460)
+    difficulty: 1
+
+  - question: "In PCOS, the risk of endometrial carcinoma is increased due to:"
+    options:
+      - "Excess progesterone"
+      - "Unopposed estrogen stimulation"
+      - "Elevated FSH levels"
+      - "Low insulin levels"
+    answer: "Unopposed estrogen stimulation"
+    explanation: >
+      Chronic anovulation means no corpus luteum → no progesterone. Peripheral conversion of
+      androgens to estrone provides continuous estrogenic stimulation of the endometrium without
+      progesterone opposition → endometrial hyperplasia → carcinoma risk.
+      📚 DC Dutta, 9th Ed, Ch.28 (p.459)
+    difficulty: 2
+
+  - question: "Which hormone is characteristically DECREASED in PCOS?"
+    options:
+      - "LH"
+      - "Testosterone"
+      - "SHBG"
+      - "Insulin"
+    answer: "SHBG"
+    explanation: >
+      Sex hormone-binding globulin (SHBG) is decreased due to hyperinsulinemia (insulin suppresses
+      hepatic SHBG production). Low SHBG increases free testosterone, worsening hyperandrogenism.
+      📚 DC Dutta, 9th Ed, Ch.28 (p.458)
+    difficulty: 2
+
+  - question: "A 24-year-old obese woman with PCOS wants to conceive. Her BMI is 34. The most appropriate first step is:"
+    options:
+      - "Start letrozole immediately"
+      - "Lifestyle modification and weight loss"
+      - "Laparoscopic ovarian drilling"
+      - "In vitro fertilization"
+    answer: "Lifestyle modification and weight loss"
+    explanation: >
+      Weight loss of 5-10% is the FIRST step in obese PCOS patients — it improves insulin
+      sensitivity, restores ovulation, and improves response to ovulation induction drugs.
+      Letrozole is first-line pharmacotherapy AFTER lifestyle modification.
+      📚 DC Dutta, 9th Ed, Ch.28 (p.463)
+    difficulty: 1

@@ -1,0 +1,25 @@
+topic_id: op9-demonstrate-the-correct-technique-to-examine-extra-ocular
+name: Demonstrate the correct technique to examine extra ocular
+description: Demonstrate the correct technique to examine extra ocular — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OP9.1
+  domain: P
+  core: true
+  phase: Phase 3
+- code: OP9.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OP9.3
+  domain: K
+  core: true
+  phase: Phase 2
+- code: OP9.4
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OP9.5
+  domain: KH
+  core: true
+  phase: Phase 3

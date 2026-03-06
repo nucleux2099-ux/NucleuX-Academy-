@@ -1,0 +1,50 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Embryological development and tracheoesophageal septation defects underlie atresia classification (Gross types)",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-reconstruction",
+      "nmcCode": "",
+      "reason": "Long-gap atresia requires delayed reconstruction techniques (Foker process, gastric pull-up)",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-perforation",
+      "nmcCode": "",
+      "reason": "Anastomotic leak is a major post-operative complication of EA repair",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Post-repair GERD is nearly universal due to disrupted LES and esophageal dysmotility",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "Anastomotic stricture causing dysphagia is the most common long-term complication",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "SU28.5: Describe the applied anatomy and physiology of esophagus"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Esophageal Atresia across foundational sciences and clinical applications."
+}

@@ -1,0 +1,21 @@
+topic_id: autonomic-nervous-system-physiology
+name: Autonomic Nervous System Physiology
+description: Autonomic Nervous System Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY10.11
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PY5.14
+  domain: SH
+  core: false
+  phase: Phase 1

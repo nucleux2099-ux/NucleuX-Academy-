@@ -1,0 +1,153 @@
+topic_id: febrile-seizures
+name: Febrile Seizures
+description: Simple vs complex febrile seizures, risk factors, management, and prognosis
+high_yield: true
+nmc_codes:
+- code: PE25.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Febrile seizures are the most common seizure disorder in children, occurring in 2-5% of children
+  aged 6 months to 5 years. They are defined as seizures associated with fever (≥38°C) without evidence
+  of CNS infection or other defined cause. Classification into simple and complex guides management
+  and prognosis. Most febrile seizures are benign with excellent long-term outcomes.
+  📚 OP Ghai, 10th Ed, Ch.26 | 📚 Nelson's, 22nd Ed, Ch.611
+
+learning_objectives:
+  - Define febrile seizures and the age group affected
+  - Differentiate simple from complex febrile seizures
+  - List risk factors for recurrence and epilepsy
+  - Describe acute management and role of prophylaxis
+  - Counsel parents about prognosis
+
+content:
+  atoms:
+    - id: definition-classification
+      title: "Definition & Classification"
+      text: >
+        Febrile seizure: seizure associated with fever (≥38°C/100.4°F) in a child 6 months to 5 years,
+        without CNS infection, metabolic disturbance, or history of afebrile seizures.
+        Simple febrile seizure (70-75%): generalized (tonic-clonic), duration <15 minutes,
+        does NOT recur within 24 hours, no post-ictal focal deficits.
+        Complex febrile seizure: focal onset, duration >15 minutes, recurs within 24 hours,
+        OR post-ictal Todd's paralysis. Higher risk of future epilepsy.
+        Febrile status epilepticus: febrile seizure lasting >30 minutes.
+        📚 OP Ghai, 10th Ed, Ch.26 (p.520-522)
+
+    - id: risk-factors
+      title: "Risk Factors for Recurrence & Epilepsy"
+      text: >
+        Recurrence risk (overall 30-35%): age <18 months at first episode (strongest factor),
+        family history of febrile seizures, low grade fever at onset, brief duration of fever before seizure.
+        Risk of future epilepsy: overall 2-4% (vs 1% general population).
+        Higher risk: complex febrile seizure, neurodevelopmental abnormality, family history of epilepsy,
+        multiple complex febrile seizures. Simple febrile seizure: epilepsy risk ~1% (nearly same as general population).
+        📚 Nelson's, 22nd Ed, Ch.611
+
+    - id: management
+      title: "Management"
+      text: >
+        Acute: ABCs, position safely, do NOT restrain. If seizure continues >5 minutes:
+        diazepam 0.5 mg/kg rectal or midazolam 0.2 mg/kg buccal/intranasal.
+        Antipyretics for comfort (paracetamol/ibuprofen) — do NOT prevent febrile seizures.
+        Investigations: Simple FS in child >18 months — NO investigation needed.
+        LP indications: <12 months (strong consideration), 12-18 months (consider), meningeal signs,
+        prior antibiotics (partially treated meningitis), complex FS.
+        EEG: NOT recommended for simple FS. Neuroimaging: NOT routinely indicated.
+        📚 OP Ghai, 10th Ed, Ch.26 (p.523-525)
+
+    - id: prophylaxis
+      title: "Prophylaxis"
+      text: >
+        Intermittent prophylaxis: diazepam 0.33 mg/kg/dose q8h during febrile illness (oral or rectal).
+        Given at onset of fever for children with high recurrence risk.
+        Continuous prophylaxis (rarely indicated): valproate or levetiracetam.
+        Indications for continuous prophylaxis: febrile status epilepticus, multiple complex FS with
+        risk factors for epilepsy, parental anxiety after counseling.
+        Phenobarbital and phenytoin are NOT effective for febrile seizure prophylaxis.
+        Most children do NOT need prophylaxis — parental reassurance is key.
+        📚 OP Ghai, 10th Ed, Ch.26 (p.525-526)
+
+  high_yield_points:
+    - "Febrile seizures: most common seizure disorder in children (6 months to 5 years)"
+    - "Simple FS: generalized, <15 min, once in 24 hrs — BENIGN prognosis"
+    - "Complex FS: focal, >15 min, recurrent in 24 hrs, or post-ictal deficit"
+    - "Recurrence risk: 30-35% overall; highest if age <18 months at first FS"
+    - "Epilepsy risk: 2-4% overall; simple FS = ~1% (nearly normal)"
+    - "Antipyretics do NOT prevent febrile seizures (evidence from multiple RCTs)"
+    - "LP recommended for <12 months with first FS (rule out meningitis)"
+    - "EEG and neuroimaging NOT indicated for simple febrile seizures"
+    - "Intermittent diazepam prophylaxis during febrile illness = most common approach"
+    - "Phenobarbital is NOT effective for FS prophylaxis"
+
+mcqs:
+  - question: "A simple febrile seizure is characterized by all EXCEPT:"
+    options:
+      - "Generalized tonic-clonic seizure"
+      - "Duration less than 15 minutes"
+      - "Focal onset"
+      - "Does not recur within 24 hours"
+    answer: "Focal onset"
+    explanation: >
+      Simple febrile seizures are generalized (not focal), last <15 minutes, and do not recur
+      within 24 hours. Focal onset makes it a complex febrile seizure with higher risk of
+      future epilepsy.
+      📚 OP Ghai, 10th Ed, Ch.26 (p.521)
+    difficulty: 1
+
+  - question: "The strongest risk factor for recurrence of febrile seizures is:"
+    options:
+      - "Complex febrile seizure"
+      - "Age <18 months at first episode"
+      - "Family history of epilepsy"
+      - "Male gender"
+    answer: "Age <18 months at first episode"
+    explanation: >
+      Age <18 months at the first febrile seizure is the strongest predictor of recurrence.
+      About 50% of children with first FS before 12 months will have recurrence, compared
+      to ~20% if first FS after 3 years.
+      📚 Nelson's, 22nd Ed, Ch.611
+    difficulty: 2
+
+  - question: "Which of the following is TRUE about antipyretics and febrile seizures?"
+    options:
+      - "Antipyretics prevent febrile seizures"
+      - "Antipyretics reduce the recurrence of febrile seizures"
+      - "Antipyretics do NOT prevent febrile seizures"
+      - "Ibuprofen is more effective than paracetamol in preventing FS"
+    answer: "Antipyretics do NOT prevent febrile seizures"
+    explanation: >
+      Multiple randomized controlled trials have shown that antipyretics (paracetamol, ibuprofen)
+      do NOT prevent febrile seizures. They are given for comfort but do not alter seizure risk.
+      📚 OP Ghai, 10th Ed, Ch.26 (p.524)
+    difficulty: 1
+
+  - question: "LP should be strongly considered in a child with first febrile seizure if age is:"
+    options:
+      - "<6 months"
+      - "<12 months"
+      - "<24 months"
+      - "<36 months"
+    answer: "<12 months"
+    explanation: >
+      LP is strongly recommended for infants <12 months with first febrile seizure because
+      clinical signs of meningitis may be subtle or absent at this age. For 12-18 months,
+      LP should be considered. Above 18 months, LP only if meningeal signs are present.
+      📚 OP Ghai, 10th Ed, Ch.26 (p.524)
+    difficulty: 1
+
+  - question: "The risk of developing epilepsy after a simple febrile seizure is approximately:"
+    options:
+      - "0.1%"
+      - "1%"
+      - "5%"
+      - "10%"
+    answer: "1%"
+    explanation: >
+      Simple febrile seizures carry an epilepsy risk of ~1%, which is nearly the same as the
+      general population risk (1%). Complex febrile seizures carry a higher risk (4-6%).
+      This information is crucial for parental reassurance.
+      📚 Nelson's, 22nd Ed, Ch.611
+    difficulty: 2

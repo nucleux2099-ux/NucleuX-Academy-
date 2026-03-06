@@ -1,0 +1,22 @@
+title: "HIV Prevention"
+slug: hiv-prevention
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.6"
+prerequisites:
+  - "hiv-aids"
+related_topics:
+  - "antiretroviral-therapy"
+enrichment:
+  nmcCodes:
+    - code: "IM8.6"
+      text: "HIV Prevention — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "hiv-aids"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "antiretroviral-therapy"
+      reason: "Clinically related"
+      relationship: "clinical"

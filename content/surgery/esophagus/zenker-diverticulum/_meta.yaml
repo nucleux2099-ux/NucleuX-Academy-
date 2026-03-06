@@ -1,0 +1,33 @@
+title: "Zenker Diverticulum"
+slug: zenker-diverticulum
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "esophageal-anatomy"
+  - "dysphagia"
+related_topics:
+  - "esophageal-cancer"
+  - "motility-disorders"
+  - "esophageal-manometry"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Killian dehiscence between thyropharyngeus and cricopharyngeus is the anatomical basis for Zenker formation"
+    - slug: "dysphagia"
+      reason: "Oropharyngeal dysphagia with regurgitation of undigested food is the hallmark presentation"
+  related_details:
+    - slug: "esophageal-cancer"
+      reason: "Long-standing Zenker diverticulum carries a small risk of squamous cell carcinoma within the pouch"
+      relationship: "clinical"
+    - slug: "motility-disorders"
+      reason: "Cricopharyngeal dysfunction (failed UES relaxation) is the underlying motility defect causing Zenker"
+      relationship: "foundation"
+    - slug: "esophageal-manometry"
+      reason: "Pharyngeal manometry can document UES dysfunction and incomplete relaxation"
+      relationship: "clinical"

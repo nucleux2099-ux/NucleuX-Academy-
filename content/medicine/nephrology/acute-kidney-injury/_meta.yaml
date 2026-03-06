@@ -1,0 +1,51 @@
+title: Acute Kidney Injury
+slug: acute-kidney-injury
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.2
+  - IM9.3
+  - IM9.4
+  - IM9.5
+  - IM9.6
+  - IM9.7
+  - IM9.8
+  - IM9.9
+  - IM9.10
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+    - code: IM9.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute kidney injury
+      domain: KH
+  prerequisite_details: []
+  related_details: []

@@ -1,0 +1,22 @@
+title: "Organ Donation"
+slug: organ-donation
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM24.22"
+prerequisites:
+  - "brain-death"
+related_topics:
+  - "end-of-life-icu"
+enrichment:
+  nmcCodes:
+    - code: "IM24.22"
+      text: "Organ Donation — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "brain-death"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "end-of-life-icu"
+      reason: "Clinically related"
+      relationship: "clinical"

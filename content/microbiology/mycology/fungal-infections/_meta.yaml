@@ -1,0 +1,156 @@
+topic_id: fungal-infections
+name: "Fungal Infections (Candida, Aspergillus, Cryptococcus)"
+description: >
+  Medically important fungi — Candida, Aspergillus, Cryptococcus — morphology, diseases, diagnosis, treatment.
+high_yield: true
+nmc_codes:
+  - code: MI6.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Fungal infections (mycoses) range from superficial to life-threatening systemic disease, especially in
+  immunocompromised patients. Candida (yeast, oral thrush, candidemia), Aspergillus (mold, invasive
+  aspergillosis, ABPA, aspergilloma), and Cryptococcus (encapsulated yeast, meningitis in AIDS).
+  Diagnosis uses KOH mount, culture (Sabouraud's dextrose agar), and specific tests. Antifungals target
+  ergosterol (cell membrane) or β-glucan (cell wall).
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.45; 📚 Ananthanarayan, 11th Ed, Ch.70-72
+
+learning_objectives:
+  - Classify fungi as yeasts vs molds vs dimorphic
+  - Describe Candida species, virulence factors, and clinical presentations
+  - Differentiate invasive aspergillosis, ABPA, and aspergilloma
+  - Explain Cryptococcus pathogenesis and diagnosis in AIDS
+  - List antifungal drug mechanisms (azoles, amphotericin B, echinocandins)
+
+content:
+  atoms:
+    - id: candida
+      title: "Candida"
+      text: >
+        Yeast with pseudohyphae. C. albicans most common. Normal flora (GI, vagina, skin).
+        Germ tube test: C. albicans forms germ tubes in serum at 37°C (distinguishes from other Candida spp).
+        Chlamydospores on cornmeal agar. Infections: oral thrush (white plaques, scrape off → bleeding),
+        vulvovaginal candidiasis, diaper rash, esophageal candidiasis (AIDS-defining, CD4 <200),
+        candidemia/invasive candidiasis (ICU, central lines, TPN, broad-spectrum antibiotics).
+        Risk factors: immunosuppression, diabetes, antibiotics, steroids, pregnancy.
+        Treatment: fluconazole (mild), echinocandins/amphotericin B (invasive). C. auris: emerging, multi-drug resistant.
+        📚 Ananthanarayan, 11th Ed, Ch.70
+
+    - id: aspergillus
+      title: "Aspergillus"
+      text: >
+        Mold with septate hyphae branching at 45° (acute angles). A. fumigatus most common pathogen.
+        Not dimorphic (always mold). Ubiquitous in environment (soil, decaying vegetation).
+        Clinical forms: (1) Invasive aspergillosis: neutropenic patients, hematologic malignancy, transplant.
+        Angioinvasive → hemorrhagic infarction. CT: halo sign (early), air-crescent sign (recovery).
+        Galactomannan assay for diagnosis. (2) Aspergilloma: fungal ball in pre-existing cavity (TB cavity).
+        Hemoptysis. (3) ABPA (allergic bronchopulmonary aspergillosis): asthma + eosinophilia + ↑IgE +
+        central bronchiectasis. Type I + III hypersensitivity. (4) Otomycosis: fungal ear infection.
+        Treatment: voriconazole (drug of choice for invasive), itraconazole (ABPA).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.45
+
+    - id: cryptococcus
+      title: "Cryptococcus neoformans"
+      text: >
+        Encapsulated yeast (thick polysaccharide capsule — major virulence factor). NOT dimorphic.
+        Found in pigeon droppings/soil. Inhalation → pulmonary → hematogenous → CNS.
+        Cryptococcal meningitis: #1 cause of fungal meningitis, especially in AIDS (CD4 <100).
+        Subacute onset, headache, confusion, minimal meningeal signs.
+        Diagnosis: India ink (capsule = clear halo), cryptococcal antigen (CrAg) in CSF/serum (latex agglutination,
+        most sensitive), CSF: ↑opening pressure, ↑protein, ↓glucose, lymphocytic pleocytosis.
+        Culture: Sabouraud's agar, produces urease. Mucoid colonies.
+        Treatment: amphotericin B + flucytosine (induction, 2 weeks) → fluconazole (consolidation/maintenance).
+        📚 Ananthanarayan, 11th Ed, Ch.72
+
+  clinical:
+    - title: "Clinical Correlation: Invasive Aspergillosis in Neutropenic Patient"
+      text: >
+        Post-chemotherapy neutropenia (ANC <500) + fever + pleuritic chest pain + hemoptysis.
+        CT: halo sign (ground-glass opacity around nodule). Galactomannan positive.
+        Start voriconazole empirically. Mortality 30-90% depending on immune status.
+    - title: "Clinical Correlation: Cryptococcal Meningitis in AIDS"
+      text: >
+        Insidious onset headache in HIV patient with CD4 <100. CSF India ink positive, CrAg positive.
+        Elevated opening pressure (>25 cmH2O) — may need serial lumbar punctures for pressure relief.
+        Lifelong fluconazole maintenance until immune reconstitution on ART.
+
+high_yield_points:
+  - "Candida albicans: germ tube test positive, pseudohyphae"
+  - "Aspergillus: septate hyphae, 45° branching; invasive in neutropenic patients"
+  - "Cryptococcus: India ink (capsule), CrAg test, meningitis in AIDS (CD4 <100)"
+  - "Aspergilloma: fungal ball in pre-existing cavity; hemoptysis"
+  - "ABPA: asthma + eosinophilia + ↑IgE + central bronchiectasis"
+  - "Voriconazole: drug of choice for invasive aspergillosis"
+  - "Amphotericin B + flucytosine: induction for cryptococcal meningitis"
+  - "C. auris: emerging multidrug-resistant Candida species"
+  - "Galactomannan assay: diagnostic for invasive aspergillosis"
+  - "Mucormycosis (Rhizopus): non-septate, 90° branching — rhinocerebral in diabetic ketoacidosis"
+
+mcqs:
+  - question: "The diagnostic test that demonstrates a clear halo around yeast cells in CSF is:"
+    options:
+      - "Gram stain"
+      - "KOH mount"
+      - "India ink preparation"
+      - "Giemsa stain"
+    answer: "India ink preparation"
+    explanation: >
+      India ink is a negative stain that highlights the thick polysaccharide capsule of Cryptococcus
+      neoformans as a clear halo against a dark background. Used for CSF examination in suspected
+      cryptococcal meningitis.
+      📚 Ananthanarayan, 11th Ed, Ch.72
+    difficulty: 1
+
+  - question: "Septate hyphae with 45° angle branching on tissue biopsy is characteristic of:"
+    options:
+      - "Candida"
+      - "Mucor"
+      - "Aspergillus"
+      - "Cryptococcus"
+    answer: "Aspergillus"
+    explanation: >
+      Aspergillus has septate hyphae with acute-angle (45°/dichotomous) branching. Mucor/Rhizopus has
+      non-septate (ribbon-like) hyphae with wide-angle (90°) branching. This distinction is critical on histopathology.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.45
+    difficulty: 1
+
+  - question: "An AIDS patient with CD4 of 50/μL presents with subacute headache. CSF shows elevated opening pressure, lymphocytic pleocytosis, and positive CrAg. The most likely pathogen is:"
+    options:
+      - "Mycobacterium tuberculosis"
+      - "Toxoplasma gondii"
+      - "Cryptococcus neoformans"
+      - "Listeria monocytogenes"
+    answer: "Cryptococcus neoformans"
+    explanation: >
+      Cryptococcal meningitis: subacute onset, CD4 <100, elevated CSF opening pressure,
+      positive CrAg (cryptococcal antigen). Most common fungal meningitis in AIDS.
+      📚 Ananthanarayan, 11th Ed, Ch.72
+    difficulty: 1
+
+  - question: "The drug of choice for invasive aspergillosis is:"
+    options:
+      - "Fluconazole"
+      - "Amphotericin B"
+      - "Voriconazole"
+      - "Caspofungin"
+    answer: "Voriconazole"
+    explanation: >
+      Voriconazole is the first-line treatment for invasive aspergillosis (superior to amphotericin B
+      in clinical trials). It inhibits 14α-demethylase → blocks ergosterol synthesis.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.45
+    difficulty: 2
+
+  - question: "Germ tube test is used to identify:"
+    options:
+      - "Cryptococcus neoformans"
+      - "Candida albicans"
+      - "Aspergillus fumigatus"
+      - "Histoplasma capsulatum"
+    answer: "Candida albicans"
+    explanation: >
+      C. albicans produces germ tubes (short hyphal projections without constriction at the base)
+      when incubated in serum at 37°C for 2-3 hours. This differentiates it from other Candida species.
+      📚 Ananthanarayan, 11th Ed, Ch.70
+    difficulty: 1

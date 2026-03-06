@@ -1,0 +1,145 @@
+overview: |
+  Gallstone disease affects 10-15% of the Western population. Stones are classified as cholesterol (80%),
+  pigment (black/brown), or mixed. Cholecystitis, choledocholithiasis, cholangitis, and gallstone pancreatitis
+  are major complications. Laparoscopic cholecystectomy is the gold standard treatment for symptomatic gallstones.
+
+learning_objectives:
+  - Classify gallstones and understand their pathogenesis
+  - Recognize biliary colic vs acute cholecystitis clinically
+  - Apply the Tokyo Guidelines for cholangitis and cholecystitis severity
+  - Describe the Strasberg classification of bile duct injuries
+  - Manage choledocholithiasis and its complications
+
+content:
+  atoms:
+    - title: Types of Gallstones
+      text: |
+        **Cholesterol stones (80%):** Yellow-green, radiolucent. Risk factors: 5F's (Fat, Female, Forty, Fertile, Fair).
+        Due to cholesterol supersaturation of bile.
+        **Black pigment stones:** Found in hemolytic anemias (sickle cell, spherocytosis, thalassemia), cirrhosis.
+        Composed of calcium bilirubinate. Radiopaque. Form in gallbladder.
+        **Brown pigment stones:** Associated with biliary stasis and infection (E. coli producing β-glucuronidase).
+        Form in bile ducts. Common in Asia.
+        📚 Bailey & Love, 28th Ed, Ch.67; Sabiston, 21st Ed, Ch.55
+
+    - title: Acute Cholecystitis
+      text: |
+        90% due to gallstone impaction in cystic duct → distension → inflammation → secondary infection.
+        **Presentation:** RUQ pain >6 hours (vs biliary colic <6h), fever, Murphy's sign positive
+        (arrest of inspiration on palpation of RUQ). WBC raised, USG: thickened GB wall >3mm,
+        pericholecystic fluid, distended GB, impacted stone in neck.
+        **HIDA scan:** Gold standard for acute cholecystitis (non-visualization of GB = cystic duct obstruction).
+        **Complications:** Empyema, gangrene, perforation, Mirizzi syndrome, cholecystoenteric fistula → gallstone ileus.
+        📚 Bailey & Love, 28th Ed, Ch.67
+
+    - title: Management
+      text: |
+        **Symptomatic gallstones:** Laparoscopic cholecystectomy (gold standard).
+        Early cholecystectomy (within 72h of onset) is preferred for acute cholecystitis — reduces
+        total hospital stay, same complication rate as delayed.
+        **Critical View of Safety (CVS — Strasberg):** Hepatocystic triangle cleared, lower 1/3 of GB
+        separated from liver bed, only 2 structures entering GB (cystic duct + cystic artery).
+        **Difficult gallbladder:** Subtotal cholecystectomy, fundus-first approach, or bail-out cholecystostomy.
+        **Choledocholithiasis:** ERCP + sphincterotomy (before or after lap chole), or laparoscopic CBD exploration.
+        📚 Maingot's, 12th Ed, Part VI; Sabiston, 21st Ed, Ch.55
+
+    - title: Bile Duct Injury — Strasberg Classification
+      text: |
+        Type A: Cystic duct stump leak or leak from minor duct in GB bed
+        Type B: Occlusion of aberrant right hepatic duct
+        Type C: Transection of aberrant duct (with leak)
+        Type D: Lateral injury to CBD
+        Type E: Complete transection/stricture of CBD (E1-E5 = Bismuth classification)
+        **Management:** Type A — ERCP + stent. Type E — Roux-en-Y hepaticojejunostomy.
+        📚 Sabiston, 21st Ed, Ch.55
+
+    - title: Cholangitis & Mirizzi Syndrome
+      text: |
+        **Charcot's triad:** Fever with chills + Jaundice + RUQ pain (cholangitis). Present in 50-70%.
+        **Reynold's pentad:** Charcot's + Hypotension + Altered mental status (suppurative cholangitis — emergency).
+        Management: Resuscitate + IV antibiotics + Urgent biliary drainage (ERCP).
+        **Mirizzi syndrome:** Gallstone impacted in Hartmann's pouch/cystic duct compressing CHD → obstructive jaundice.
+        Type I: External compression. Type II-IV: Cholecystocholedochal fistula (increasing size).
+        📚 Bailey & Love, 28th Ed, Ch.67
+
+  clinical: |
+    **Approach to RUQ Pain:**
+    1. History: Duration of pain (<6h biliary colic, >6h cholecystitis), fever, jaundice
+    2. Murphy's sign, labs (WBC, LFTs, amylase/lipase)
+    3. USG abdomen: First investigation for all biliary pathology
+    4. Biliary colic + stones: Elective lap cholecystectomy
+    5. Acute cholecystitis: Early lap cholecystectomy (<72h)
+    6. CBD stones (raised bilirubin/dilated CBD): MRCP → ERCP + lap chole
+    7. Cholangitis: Resuscitate → urgent ERCP drainage
+
+  high_yield_points:
+    - "MC type of gallstone: Cholesterol (80%); MC gallstone overall: Mixed"
+    - "MC radiopaque gallstones: Black pigment stones (calcium bilirubinate)"
+    - "Murphy's sign: Arrest of inspiration on RUQ palpation — pathognomonic of acute cholecystitis"
+    - "HIDA scan: Gold standard for acute cholecystitis"
+    - "USG: First investigation for gallstone disease"
+    - "Critical View of Safety (Strasberg): Must be achieved before clipping any structure"
+    - "Charcot's triad: Fever + Jaundice + RUQ pain = Cholangitis"
+    - "Reynold's pentad: Charcot's + Hypotension + Confusion = Suppurative cholangitis"
+    - "Mirizzi syndrome: Stone in Hartmann's pouch compressing CHD"
+    - "Courvoisier's law: Palpable non-tender GB with jaundice = unlikely gallstones (think malignancy)"
+
+mcqs:
+  - question: "A 45-year-old obese female presents with RUQ pain for 8 hours, fever, and positive Murphy's sign. USG shows thickened GB wall with pericholecystic fluid. What is the best management?"
+    options:
+      a: Conservative management with antibiotics and elective cholecystectomy at 6 weeks
+      b: Early laparoscopic cholecystectomy within 72 hours
+      c: ERCP with sphincterotomy
+      d: Percutaneous cholecystostomy
+    answer: b
+    explanation: |
+      Current evidence supports early laparoscopic cholecystectomy (<72h) for acute cholecystitis.
+      It reduces total hospital stay and morbidity without increasing complications compared to delayed
+      surgery. 📚 Bailey & Love, 28th Ed, Ch.67
+
+  - question: "Which type of gallstone is most commonly associated with hemolytic anemia?"
+    options:
+      a: Cholesterol stones
+      b: Mixed stones
+      c: Black pigment stones
+      d: Brown pigment stones
+    answer: c
+    explanation: |
+      Black pigment stones (calcium bilirubinate) form due to excess unconjugated bilirubin in hemolytic
+      anemias (sickle cell, thalassemia, spherocytosis). Brown pigment stones are associated with biliary
+      infection and stasis. 📚 Sabiston, 21st Ed, Ch.55
+
+  - question: "Reynold's pentad consists of Charcot's triad plus:"
+    options:
+      a: Jaundice and hepatomegaly
+      b: Hypotension and altered mental status
+      c: Courvoisier's sign and weight loss
+      d: Palpable mass and ascites
+    answer: b
+    explanation: |
+      Reynold's pentad = Charcot's triad (fever + jaundice + RUQ pain) + hypotension + altered mental status.
+      Indicates acute suppurative cholangitis requiring emergency biliary decompression. 📚 Bailey & Love, 28th Ed, Ch.67
+
+  - question: "During laparoscopic cholecystectomy, what must be achieved before clipping any structure?"
+    options:
+      a: Intraoperative cholangiogram
+      b: Critical View of Safety
+      c: Fundus-first dissection
+      d: Identification of Rouviere's sulcus
+    answer: b
+    explanation: |
+      Strasberg's Critical View of Safety requires: hepatocystic triangle cleared of fat/fibrous tissue,
+      lower 1/3 of GB separated from liver bed, only two structures seen entering GB (cystic duct and artery).
+      This prevents bile duct injuries. 📚 Sabiston, 21st Ed, Ch.55
+
+  - question: "A patient with gallstones presents with obstructive jaundice. MRCP shows a stone impacted in Hartmann's pouch compressing the common hepatic duct. What is the diagnosis?"
+    options:
+      a: Choledocholithiasis
+      b: Mirizzi syndrome
+      c: Cholangiocarcinoma
+      d: Gallbladder cancer
+    answer: b
+    explanation: |
+      Mirizzi syndrome occurs when a stone impacted in Hartmann's pouch or cystic duct externally
+      compresses the CHD causing obstructive jaundice. Type I is external compression; Types II-IV
+      involve cholecystocholedochal fistula of increasing size. 📚 Bailey & Love, 28th Ed, Ch.67

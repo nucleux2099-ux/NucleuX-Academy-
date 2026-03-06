@@ -1,0 +1,149 @@
+overview: |
+  Thyroid swellings are extremely common and range from benign goitres to malignant neoplasms. FNAC is the
+  single most important investigation for thyroid nodules, classified by the Bethesda system. Thyroid cancers
+  include papillary (MC), follicular, medullary (from C cells), and anaplastic (worst prognosis).
+
+learning_objectives:
+  - Classify thyroid swellings and apply the Bethesda system for FNAC reporting
+  - Differentiate types of thyroid cancer by histology, spread, and prognosis
+  - Describe surgical options (hemithyroidectomy vs total thyroidectomy) with indications
+  - Recognize and manage post-thyroidectomy complications
+  - Understand the role of radioactive iodine and thyroid function in cancer management
+
+content:
+  atoms:
+    - title: Classification of Thyroid Swellings
+      text: |
+        **Diffuse:** Simple goitre (endemic/sporadic), Graves' disease, Hashimoto's thyroiditis, De Quervain's.
+        **Nodular:** Multinodular goitre (MNG), Solitary thyroid nodule (STN).
+        **Neoplastic:** Benign (follicular adenoma), Malignant (papillary, follicular, medullary, anaplastic, lymphoma).
+        **Approach to STN:** FNAC is the FIRST and MOST IMPORTANT investigation.
+        USG features of malignancy: hypoechoic, microcalcifications, irregular margins, taller-than-wide,
+        increased vascularity, suspicious cervical lymph nodes.
+        📚 Bailey & Love, 28th Ed, Ch.50; Sabiston, 21st Ed, Ch.37
+
+    - title: Bethesda System for Thyroid FNAC
+      text: |
+        I — Non-diagnostic/Unsatisfactory (repeat FNAC)
+        II — Benign (0-3% malignancy risk — follow-up)
+        III — Atypia of undetermined significance (5-15% — repeat FNAC/molecular testing)
+        IV — Follicular neoplasm (15-30% — hemithyroidectomy for histology)
+        V — Suspicious for malignancy (60-75% — hemithyroidectomy or total)
+        VI — Malignant (97-99% — total thyroidectomy)
+        **Key:** FNAC cannot differentiate follicular adenoma from carcinoma (need capsular/vascular invasion on histology).
+        📚 Sabiston, 21st Ed, Ch.37
+
+    - title: Thyroid Cancers
+      text: |
+        **Papillary (70-80%, MC):** Young females, Orphan Annie eye nuclei, psammoma bodies, nuclear grooves.
+        Spread: Lymphatic (cervical nodes). Treatment: Total thyroidectomy + RAI. Best prognosis.
+        **Follicular (10-15%):** Capsular/vascular invasion on histology (FNAC cannot diagnose). Spread: Hematogenous
+        (lung, bone — cannonball metastases). Iodine-avid. Treatment: Total thyroidectomy + RAI.
+        **Medullary (5-10%):** From parafollicular C cells. Produces calcitonin (tumour marker).
+        Amyloid stroma. Associated with MEN 2A (medullary + pheo + parathyroid hyperplasia) and
+        MEN 2B (medullary + pheo + marfanoid + mucosal neuromas). RET proto-oncogene mutation.
+        Treatment: Total thyroidectomy + central neck dissection. RAI NOT effective (not from follicular cells).
+        **Anaplastic (<5%):** Elderly, rapidly growing, worst prognosis. Often inoperable → palliative RT/chemo.
+        📚 Bailey & Love, 28th Ed, Ch.50; Sabiston, 21st Ed, Ch.37
+
+    - title: Surgical Management
+      text: |
+        **Hemithyroidectomy:** Bethesda IV (follicular neoplasm), small papillary microcarcinoma (<1cm, low risk).
+        **Total thyroidectomy:** All thyroid cancers >1cm, bilateral disease, high-risk features, medullary cancer.
+        Followed by RAI ablation for DTC (papillary/follicular) and TSH suppression with levothyroxine.
+        **Complications:** Recurrent laryngeal nerve injury (hoarseness — MC complication of clinical significance),
+        Superior laryngeal nerve injury (loss of high pitch), Hypoparathyroidism (transient 20%, permanent 1-2%),
+        hemorrhage/hematoma (airway emergency), thyroid storm.
+        📚 Maingot's, 12th Ed; Bailey & Love, 28th Ed, Ch.50
+
+    - title: Post-thyroidectomy Complications
+      text: |
+        **RLN injury:** Unilateral — hoarseness (cord in paramedian position). Bilateral — stridor/aphonia
+        (cords in midline — emergency, needs tracheostomy).
+        **Hypoparathyroidism:** Numbness, tingling, Chvostek's sign (facial twitching on tapping),
+        Trousseau's sign (carpopedal spasm with BP cuff). Treat: IV calcium gluconate (acute), oral calcium + vitamin D (chronic).
+        **Thyroid storm post-op:** Treat with beta-blockers, Lugol's iodine, PTU, steroids, cooling.
+        **Wound hematoma:** Can cause airway compromise — open wound at bedside, evacuate clot.
+        📚 Bailey & Love, 28th Ed, Ch.50
+
+  clinical: |
+    **Approach to Thyroid Nodule:**
+    1. Thyroid function tests (TSH first)
+    2. If TSH low → thyroid scan (hot nodule = likely benign; cold nodule = FNAC)
+    3. If TSH normal/high → USG + FNAC (Bethesda classification)
+    4. Bethesda I → repeat FNAC. II → follow up. III → repeat/molecular. IV → hemithyroidectomy.
+    5. Bethesda V-VI → surgery (hemi or total based on risk)
+    6. If cancer confirmed: Total thyroidectomy + RAI (DTC) + TSH suppression + follow-up with thyroglobulin
+
+  high_yield_points:
+    - "MC thyroid cancer: Papillary; MC spread: Lymphatic"
+    - "Follicular cancer: Hematogenous spread (lung, bone); FNAC CANNOT diagnose (needs capsular invasion)"
+    - "Medullary cancer: C cells, calcitonin marker, amyloid stroma, MEN 2A/2B, RET oncogene"
+    - "Psammoma bodies: Papillary thyroid cancer (also meningioma, serous cystadenocarcinoma ovary)"
+    - "Orphan Annie eye nuclei = Papillary thyroid cancer"
+    - "FNAC is the single most important investigation for thyroid nodule"
+    - "Bethesda IV: Cannot differentiate adenoma vs carcinoma — hemithyroidectomy needed"
+    - "RLN injury: MC nerve injured in thyroidectomy; unilateral = hoarseness, bilateral = stridor"
+    - "Hypoparathyroidism: Chvostek's and Trousseau's signs; treat with IV calcium gluconate"
+    - "Anaplastic thyroid cancer: Worst prognosis, elderly, rapidly growing mass"
+
+mcqs:
+  - question: "A 25-year-old female has a thyroid nodule. FNAC shows Orphan Annie eye nuclei with psammoma bodies. What is the diagnosis?"
+    options:
+      a: Follicular carcinoma
+      b: Papillary carcinoma
+      c: Medullary carcinoma
+      d: Anaplastic carcinoma
+    answer: b
+    explanation: |
+      Orphan Annie eye nuclei (clear, ground-glass), psammoma bodies, nuclear grooves, and
+      intranuclear inclusions are pathognomonic of papillary thyroid carcinoma. It is the MC
+      thyroid cancer with best prognosis. 📚 Bailey & Love, 28th Ed, Ch.50
+
+  - question: "Which thyroid cancer is associated with MEN 2A syndrome?"
+    options:
+      a: Papillary
+      b: Follicular
+      c: Medullary
+      d: Anaplastic
+    answer: c
+    explanation: |
+      Medullary thyroid cancer (from C cells) is the thyroid component of MEN 2A (medullary ca +
+      pheochromocytoma + parathyroid hyperplasia) and MEN 2B (medullary ca + pheochromocytoma +
+      marfanoid habitus + mucosal neuromas). RET proto-oncogene mutation. 📚 Sabiston, 21st Ed, Ch.37
+
+  - question: "FNAC of a thyroid nodule shows Bethesda category IV (follicular neoplasm). What is the next step?"
+    options:
+      a: Total thyroidectomy
+      b: Hemithyroidectomy
+      c: Repeat FNAC in 3 months
+      d: Radioactive iodine therapy
+    answer: b
+    explanation: |
+      Bethesda IV (follicular neoplasm) has 15-30% malignancy risk. FNAC cannot differentiate
+      follicular adenoma from carcinoma (needs capsular/vascular invasion on histology).
+      Hemithyroidectomy provides tissue for definitive histological diagnosis. 📚 Sabiston, 21st Ed, Ch.37
+
+  - question: "After total thyroidectomy, a patient develops numbness and tingling in hands with carpopedal spasm. What is the cause?"
+    options:
+      a: Recurrent laryngeal nerve injury
+      b: Hypoparathyroidism
+      c: Thyroid storm
+      d: Superior laryngeal nerve injury
+    answer: b
+    explanation: |
+      Post-thyroidectomy hypocalcemia due to hypoparathyroidism presents with perioral/extremity
+      numbness, Chvostek's sign, Trousseau's sign (carpopedal spasm). Treatment: IV calcium
+      gluconate (acute), oral calcium + vitamin D (long-term). 📚 Bailey & Love, 28th Ed, Ch.50
+
+  - question: "Which thyroid cancer does NOT take up radioactive iodine?"
+    options:
+      a: Papillary
+      b: Follicular
+      c: Medullary
+      d: Hurthle cell variant of follicular
+    answer: c
+    explanation: |
+      Medullary thyroid cancer arises from parafollicular C cells (not follicular cells),
+      hence does NOT concentrate iodine. RAI is ineffective. Treatment is surgical —
+      total thyroidectomy with central neck dissection. Calcitonin is the tumour marker. 📚 Sabiston, 21st Ed, Ch.37

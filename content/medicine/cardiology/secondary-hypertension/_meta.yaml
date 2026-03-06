@@ -1,0 +1,36 @@
+title: Secondary Hypertension
+slug: secondary-hypertension
+depth: UG
+highYield: true
+nmc_codes:
+  - IM8.14
+  - IM8.19
+  - IM8.2
+  - IM8.3
+  - IM8.4
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM8.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of secondary
+        hypertension
+      domain: KH
+    - code: IM8.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of secondary
+        hypertension
+      domain: KH
+    - code: IM8.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of secondary
+        hypertension
+      domain: KH
+    - code: IM8.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of secondary
+        hypertension
+      domain: KH
+    - code: IM8.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of secondary
+        hypertension
+      domain: KH
+  prerequisite_details: []
+  related_details: []

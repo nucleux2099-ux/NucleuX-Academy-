@@ -1,0 +1,23 @@
+title: "Bipolar Disorder"
+slug: bipolar-disorder
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM22.3"
+prerequisites: []
+related_topics:
+  - "schizoaffective-disorder"
+  - "psychiatric-emergencies"
+enrichment:
+  nmcCodes:
+    - code: "IM22.3"
+      text: "Bipolar Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "schizoaffective-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "psychiatric-emergencies"
+      reason: "Clinically related"
+      relationship: "clinical"

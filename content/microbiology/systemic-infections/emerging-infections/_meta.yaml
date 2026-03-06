@@ -1,0 +1,25 @@
+topic_id: emerging-infections
+name: Emerging Infections
+description: Emerging Infections — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI4.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI8.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI8.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI8.5
+  domain: KH
+  core: true
+  phase: Phase 1

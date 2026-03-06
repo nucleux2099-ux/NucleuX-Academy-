@@ -1,0 +1,19 @@
+title: "Urinary Tract Infections"
+slug: urinary-tract-infections
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.9"
+prerequisites: []
+related_topics:
+  - "catheter-related-infections"
+enrichment:
+  nmcCodes:
+    - code: "IM8.9"
+      text: "Urinary Tract Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "catheter-related-infections"
+      reason: "Clinically related"
+      relationship: "clinical"

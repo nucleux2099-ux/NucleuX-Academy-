@@ -1,0 +1,50 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Audit parameters (SSI rates, mortality, readmissions) are derived from perioperative outcomes data",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Surgical site infection rate is the most commonly audited outcome metric in surgical departments",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-ethics",
+      "nmcCode": "",
+      "reason": "Audit findings raise ethical obligations for disclosure, informed consent improvements, and practice change",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hospital-waste-management",
+      "nmcCode": "",
+      "reason": "Waste segregation compliance is a key auditable quality indicator under hospital accreditation standards",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "preoperative-assessment",
+      "nmcCode": "",
+      "reason": "Preoperative risk scoring (ASA, P-POSSUM) provides the denominator data for risk-adjusted audit outcomes",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU7.1: Describe the Planning and conduct of Surgical audit",
+    "SU7.2: Describe the principles and steps of clinical research in surgery"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Surgical Audit across foundational sciences and clinical applications."
+}

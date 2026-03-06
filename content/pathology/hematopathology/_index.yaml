@@ -1,0 +1,49 @@
+id: hematopathology
+title: "Hematopathology"
+subject: pathology
+description: |
+  Anemias, leukemias, and lymphomas.
+
+stats:
+  total_topics: 20
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: rbc
+    title: "Red Cell Disorders"
+    topics:
+      - iron-deficiency-anemia-path
+      - megaloblastic-anemia-path
+      - hemolytic-anemias-path
+      - sickle-cell-path
+      - thalassemia-path
+      - aplastic-anemia-path
+      - g6pd-deficiency-path
+  - id: wbc
+    title: "White Cell Disorders"
+    topics:
+      - leukocytosis-leukopenia
+      - acute-leukemia-path
+      - chronic-leukemia-path
+      - myeloproliferative-neoplasms-path
+      - myelodysplastic-path
+  - id: lymphoid
+    title: "Lymphoid"
+    topics:
+      - hodgkin-lymphoma-path
+      - non-hodgkin-lymphoma-path
+      - multiple-myeloma-path
+      - lymphadenopathy-approach
+  - id: coagulation
+    title: "Bleeding & Coagulation"
+    topics:
+      - platelet-disorders-path
+      - coagulation-disorders-path
+      - dic-path
+      - thrombotic-microangiopathies
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

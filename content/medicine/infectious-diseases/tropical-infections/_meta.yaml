@@ -1,0 +1,19 @@
+title: "Tropical Infections"
+slug: tropical-infections
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.2"
+prerequisites: []
+related_topics:
+  - "malaria"
+enrichment:
+  nmcCodes:
+    - code: "IM8.2"
+      text: "Tropical Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "malaria"
+      reason: "Clinically related"
+      relationship: "clinical"

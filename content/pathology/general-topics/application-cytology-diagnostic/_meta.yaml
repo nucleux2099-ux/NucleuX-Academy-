@@ -1,0 +1,17 @@
+topic_id: application-cytology-diagnostic
+name: The diagnostic role of cytology and its application in clinical
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA8.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PA8.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PA8.3
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,25 @@
+topic_id: pelvic-joints
+name: Pelvic Joints
+description: Pelvic Joints — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN14.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN2.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN20.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN21.10
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN8.2
+  domain: SH
+  core: true
+  phase: Phase 1

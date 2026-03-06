@@ -1,0 +1,60 @@
+id: abdomen
+title: "Abdomen"
+subject: anatomy
+description: |
+  Abdominal wall, GI tract, and retroperitoneum.
+
+stats:
+  total_topics: 28
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: wall
+    title: "Abdominal Wall"
+    topics:
+      - anterior-abdominal-wall
+      - inguinal-region-anatomy
+      - rectus-sheath
+      - umbilical-region
+      - lumbar-region
+  - id: gi
+    title: "GI Tract"
+    topics:
+      - stomach-anatomy
+      - duodenum-anatomy
+      - jejunum-ileum
+      - large-intestine-anatomy
+      - appendix-anatomy
+      - rectum-anal-canal
+  - id: solid
+    title: "Solid Organs"
+    topics:
+      - liver-anatomy
+      - gallbladder-biliary-anatomy
+      - spleen-anatomy
+      - pancreas-anatomy
+      - kidney-anatomy
+  - id: vessels
+    title: "Vessels & Nerves"
+    topics:
+      - abdominal-aorta
+      - inferior-vena-cava
+      - portal-vein-anatomy
+      - celiac-trunk
+      - superior-mesenteric-artery
+      - inferior-mesenteric-artery
+      - autonomic-nerves-abdomen
+  - id: peritoneum
+    title: "Peritoneum"
+    topics:
+      - peritoneum-anatomy
+      - lesser-sac
+      - greater-omentum
+      - mesentery
+      - retroperitoneum
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

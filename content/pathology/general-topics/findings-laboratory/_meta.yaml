@@ -1,0 +1,37 @@
+topic_id: findings-laboratory
+name: The etiology, pathogenesis, pathology, laboratory findings
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA28.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA28.11
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA28.13
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: PA28.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA28.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA28.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA28.7
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA28.9
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,17 @@
+topic_id: fetal-growth-assessment
+name: Fetal Growth Assessment
+description: Fetal Growth Assessment — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG18.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG28.2
+  domain: K
+  core: false
+  phase: Phase 3
+- code: OG8.5
+  domain: SH
+  core: true
+  phase: Phase 3

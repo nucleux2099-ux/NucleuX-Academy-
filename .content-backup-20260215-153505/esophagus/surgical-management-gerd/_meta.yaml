@@ -1,0 +1,9 @@
+topic_id: surgical-management-gerd
+name: "Surgical Management of GERD"
+description: "Workup, patient selection, operative options, post-op issues"
+high_yield: true
+difficulty: 4
+estimated_minutes: 25
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [gerd, esophageal-manometry]
+related_topics: [fundoplication]

@@ -1,0 +1,8 @@
+topic_id: proximal-humerus-fracture
+name: Proximal Humerus Fracture
+description: Proximal Humerus Fracture — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR2.2
+  core: false
+  phase: Phase 3

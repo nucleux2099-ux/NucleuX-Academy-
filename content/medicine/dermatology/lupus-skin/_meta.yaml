@@ -1,0 +1,23 @@
+title: "Lupus — Skin Manifestations"
+slug: lupus-skin
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM19.2"
+prerequisites: []
+related_topics:
+  - "scleroderma-skin"
+  - "dermatomyositis-skin"
+enrichment:
+  nmcCodes:
+    - code: "IM19.2"
+      text: "Lupus — Skin Manifestations — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "scleroderma-skin"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "dermatomyositis-skin"
+      reason: "Clinically related"
+      relationship: "clinical"

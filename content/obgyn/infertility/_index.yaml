@@ -1,0 +1,28 @@
+id: infertility
+title: "Infertility & ART"
+subject: obgyn
+description: |
+  Infertility workup, IUI, IVF, and assisted reproduction.
+
+stats:
+  total_topics: 8
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - infertility-evaluation
+      - male-infertility
+      - female-infertility
+      - ovulation-induction
+      - intrauterine-insemination
+      - ivf-icsi
+      - ovarian-hyperstimulation-syndrome
+      - surrogacy-legal-aspects
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

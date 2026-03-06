@@ -1,0 +1,53 @@
+title: "Preoperative Assessment"
+slug: preoperative-assessment
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU11.1"
+  - "SU11.2"
+  - "SU11.3"
+  - "SU11.4"
+  - "SU11.5"
+  - "SU11.6"
+prerequisites:
+  - "homeostasis"
+  - "surgical-ethics"
+related_topics:
+  - "perioperative-management"
+  - "blood-transfusion"
+  - "investigations-imaging"
+enrichment:
+  nmcCodes:
+    - code: "SU11.1"
+      text: "Describe principles of Preoperative assessment."
+      domain: "K"
+    - code: "SU11.2"
+      text: "Enumerate the principles of general, regional, and local Anaesthesia."
+      domain: "K"
+    - code: "SU11.3"
+      text: "Demonstrate maintenance of an airway in a mannequin or equivalent."
+      domain: "S"
+    - code: "SU11.4"
+      text: "Enumerate the indications and principles of day care General Surgery."
+      domain: "K"
+    - code: "SU11.5"
+      text: "Describe principles of providing post-operative pain relief and management of chronic pain."
+      domain: "K"
+    - code: "SU11.6"
+      text: "Describe Principles of safe General Surgery."
+      domain: "K"
+  prerequisite_details:
+    - slug: "homeostasis"
+      reason: "Preoperative assessment evaluates the patient's metabolic and physiological reserve; understanding homeostatic mechanisms helps identify patients at risk for decompensation under surgical stress"
+    - slug: "surgical-ethics"
+      reason: "Informed consent is a mandatory ethical and legal prerequisite before any surgical procedure; understanding autonomy, beneficence, and capacity assessment is integral to preoperative evaluation"
+  related_details:
+    - slug: "perioperative-management"
+      reason: "Preoperative assessment findings directly dictate the perioperative plan including monitoring level, fluid strategy, and anesthesia choice"
+      relationship: "clinical"
+    - slug: "blood-transfusion"
+      reason: "Preoperative hemoglobin assessment and blood typing/crossmatching determine transfusion readiness for anticipated surgical blood loss"
+      relationship: "clinical"
+    - slug: "investigations-imaging"
+      reason: "Preoperative workup relies on interpreting baseline blood tests (CBC, RFT, LFT, coagulation), ECG, chest X-ray, and risk-specific imaging to stratify surgical risk"
+      relationship: "clinical"

@@ -1,0 +1,19 @@
+title: "CAD Risk Factors"
+slug: cad-factors-relationship-risk
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.8"
+prerequisites: []
+related_topics:
+  - "factors-inherited-modifiable-risk"
+enrichment:
+  nmcCodes:
+    - code: "IM26.8"
+      text: "CAD Risk Factors — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "factors-inherited-modifiable-risk"
+      reason: "Clinically related"
+      relationship: "clinical"

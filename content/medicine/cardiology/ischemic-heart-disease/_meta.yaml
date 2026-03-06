@@ -1,0 +1,36 @@
+title: Ischemic Heart Disease
+slug: ischemic-heart-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.19
+  - IM1.2
+  - IM1.20
+  - IM1.28
+  - IM1.7
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic heart
+        disease
+      domain: KH
+    - code: IM1.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic heart
+        disease
+      domain: KH
+    - code: IM1.20
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic heart
+        disease
+      domain: KH
+    - code: IM1.28
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic heart
+        disease
+      domain: KH
+    - code: IM1.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic heart
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

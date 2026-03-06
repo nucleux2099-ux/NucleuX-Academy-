@@ -1,0 +1,19 @@
+title: "Generating Differential Diagnosis"
+slug: differential-generate-prioritise
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.16"
+prerequisites: []
+related_topics:
+  - "diagnostic-work"
+enrichment:
+  nmcCodes:
+    - code: "IM26.16"
+      text: "Generating Differential Diagnosis — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "diagnostic-work"
+      reason: "Clinically related"
+      relationship: "clinical"

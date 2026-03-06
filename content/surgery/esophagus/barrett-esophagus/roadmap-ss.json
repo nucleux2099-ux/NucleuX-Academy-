@@ -1,0 +1,56 @@
+{
+  "level": "SS",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Chronic GERD is the primary risk factor driving intestinal metaplasia in Barrett's",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Understanding the squamocolumnar junction and Z-line is essential for Barrett's diagnosis",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-cancer",
+      "nmcCode": "",
+      "reason": "Barrett's is the premalignant precursor to esophageal adenocarcinoma — dysplasia-carcinoma sequence",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-management-gerd",
+      "nmcCode": "",
+      "reason": "Anti-reflux surgery may halt Barrett's progression by controlling acid exposure",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fundoplication",
+      "nmcCode": "",
+      "reason": "Nissen/Toupet fundoplication considered in Barrett's patients with refractory GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "Stricture formation in long-segment Barrett's presents with dysphagia",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This superspecialty-level roadmap connects Barrett's Esophagus across foundational sciences and clinical applications."
+}

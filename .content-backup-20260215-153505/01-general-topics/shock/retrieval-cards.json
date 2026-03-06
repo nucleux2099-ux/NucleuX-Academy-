@@ -1,0 +1,146 @@
+{
+  "topic_id": "shock",
+  "version": "1.0",
+  "cards": [
+    {
+      "id": "sh-001",
+      "type": "basic",
+      "front": "What is the definition of shock?",
+      "back": "Inadequate tissue perfusion and oxygenation leading to cellular hypoxia",
+      "tags": ["definition", "high-yield"]
+    },
+    {
+      "id": "sh-002",
+      "type": "basic",
+      "front": "What are the four types of shock?",
+      "back": "1. Hypovolemic (↓ volume)\n2. Cardiogenic (↓ pump)\n3. Distributive (↓ SVR)\n4. Obstructive (obstruction to flow)",
+      "tags": ["classification", "high-yield"]
+    },
+    {
+      "id": "sh-003",
+      "type": "basic",
+      "front": "What is the first clinical sign of hemorrhagic shock?",
+      "back": "Tachycardia (NOT hypotension - BP drops late)",
+      "tags": ["clinical", "high-yield"]
+    },
+    {
+      "id": "sh-004",
+      "type": "basic",
+      "front": "What is the Shock Index formula?",
+      "back": "Shock Index = Heart Rate ÷ Systolic BP\nNormal: 0.5-0.7\n>1.0 = Significant shock",
+      "tags": ["clinical", "high-yield"]
+    },
+    {
+      "id": "sh-005",
+      "type": "basic",
+      "front": "In which class of hemorrhage does blood pressure begin to fall?",
+      "back": "Class III (30-40% blood loss, 1500-2000 mL)",
+      "tags": ["ATLS", "high-yield"]
+    },
+    {
+      "id": "sh-006",
+      "type": "basic",
+      "front": "What is the blood loss in Class IV hemorrhagic shock?",
+      "back": ">2000 mL or >40% of blood volume",
+      "tags": ["ATLS"]
+    },
+    {
+      "id": "sh-007",
+      "type": "basic",
+      "front": "What is the hemodynamic profile of hypovolemic shock?",
+      "back": "CVP: ↓, CO: ↓, SVR: ↑, SvO2: ↓",
+      "tags": ["hemodynamics"]
+    },
+    {
+      "id": "sh-008",
+      "type": "basic",
+      "front": "What is the hemodynamic profile of cardiogenic shock?",
+      "back": "CVP: ↑, CO: ↓, SVR: ↑, SvO2: ↓",
+      "tags": ["hemodynamics"]
+    },
+    {
+      "id": "sh-009",
+      "type": "basic",
+      "front": "What is the hemodynamic profile of septic (distributive) shock?",
+      "back": "CVP: ↓/N, CO: ↑/N, SVR: ↓, SvO2: ↑",
+      "tags": ["hemodynamics", "high-yield"]
+    },
+    {
+      "id": "sh-010",
+      "type": "basic",
+      "front": "Which type of shock has LOW SVR?",
+      "back": "Distributive shock (septic, anaphylactic, neurogenic) - due to vasodilation",
+      "tags": ["hemodynamics", "high-yield"]
+    },
+    {
+      "id": "sh-011",
+      "type": "basic",
+      "front": "What is the best marker of tissue perfusion?",
+      "back": "Lactate (>2 mmol/L indicates hypoperfusion)",
+      "tags": ["monitoring", "high-yield"]
+    },
+    {
+      "id": "sh-012",
+      "type": "basic",
+      "front": "What is the first-line vasopressor in septic shock?",
+      "back": "Norepinephrine",
+      "tags": ["treatment", "high-yield"]
+    },
+    {
+      "id": "sh-013",
+      "type": "basic",
+      "front": "What is the drug of choice in anaphylactic shock?",
+      "back": "Epinephrine (adrenaline) IM",
+      "tags": ["treatment", "high-yield"]
+    },
+    {
+      "id": "sh-014",
+      "type": "basic",
+      "front": "What is the target MAP in shock resuscitation?",
+      "back": "≥65 mmHg",
+      "tags": ["treatment"]
+    },
+    {
+      "id": "sh-015",
+      "type": "basic",
+      "front": "What is the target urine output in resuscitation?",
+      "back": "0.5 mL/kg/hour in adults",
+      "tags": ["treatment"]
+    },
+    {
+      "id": "sh-016",
+      "type": "basic",
+      "front": "What is the fluid of choice in shock resuscitation?",
+      "back": "Crystalloids (Ringer's Lactate or Normal Saline)",
+      "tags": ["treatment", "high-yield"]
+    },
+    {
+      "id": "sh-017",
+      "type": "basic",
+      "front": "What defines septic shock (Sepsis-3)?",
+      "back": "Sepsis + Vasopressor requirement to maintain MAP ≥65 + Lactate >2 mmol/L despite adequate fluid resuscitation",
+      "tags": ["sepsis", "high-yield"]
+    },
+    {
+      "id": "sh-018",
+      "type": "basic",
+      "front": "What is included in the Hour-1 Bundle for sepsis?",
+      "back": "1. Measure lactate\n2. Blood cultures before antibiotics\n3. Broad-spectrum antibiotics within 1 hour\n4. 30 mL/kg crystalloid for hypotension\n5. Vasopressors if hypotension persists",
+      "tags": ["sepsis"]
+    },
+    {
+      "id": "sh-019",
+      "type": "basic",
+      "front": "What is the Parkland formula for burns?",
+      "back": "4 mL × Weight (kg) × %TBSA\nHalf in first 8 hours, half in next 16 hours",
+      "tags": ["burns"]
+    },
+    {
+      "id": "sh-020",
+      "type": "basic",
+      "front": "What is the treatment for tension pneumothorax?",
+      "back": "Immediate needle decompression (2nd ICS MCL) followed by chest tube insertion",
+      "tags": ["obstructive", "high-yield"]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+id: urogynecology
+title: "Urogynecology"
+subject: obgyn
+description: |
+  Pelvic organ prolapse, urinary incontinence, and pelvic floor.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - pelvic-organ-prolapse
+      - stress-urinary-incontinence
+      - urge-incontinence
+      - overactive-bladder
+      - pelvic-floor-rehabilitation
+      - pessary-management
+      - surgical-repair-prolapse
+      - vesicovaginal-fistula
+      - rectovaginal-fistula
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

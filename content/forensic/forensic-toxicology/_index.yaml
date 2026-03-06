@@ -1,0 +1,40 @@
+id: forensic-toxicology
+title: "Forensic Toxicology"
+subject: forensic
+description: |
+  Poisoning, drug overdose, and medicolegal aspects.
+
+stats:
+  total_topics: 20
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - general-toxicology
+      - corrosive-poisoning
+      - organophosphate-poisoning-forensic
+      - carbamate-poisoning
+      - aluminum-phosphide
+      - arsenic-poisoning
+      - mercury-poisoning
+      - lead-poisoning
+      - copper-poisoning
+      - cyanide-poisoning
+      - carbon-monoxide-poisoning
+      - alcohol-forensic
+      - barbiturate-poisoning
+      - opium-poisoning
+      - dhatura-poisoning
+      - oleander-poisoning
+      - abrus-precatorius
+      - snake-bite-forensic
+      - scorpion-sting
+      - food-poisoning-forensic
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,12 @@
+id: general-dentistry
+title: "General Dentistry"
+subject: dentistry
+description: |
+  Basic dental conditions and oral health.
+stats:
+  total_topics: 5
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

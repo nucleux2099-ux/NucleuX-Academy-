@@ -1,0 +1,30 @@
+id: sexual-offenses
+title: "Sexual Offenses"
+subject: forensic
+description: |
+  Sexual assault, examination, and legal aspects.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - rape-definition-law
+      - examination-of-victim
+      - examination-of-accused
+      - sexual-assault-evidence-collection
+      - age-of-consent
+      - unnatural-sexual-offenses
+      - sexual-harassment-law
+      - pocso-act
+      - virginity-examination
+      - impotence-sterility
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

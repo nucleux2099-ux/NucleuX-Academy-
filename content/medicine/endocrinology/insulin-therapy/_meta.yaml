@@ -1,0 +1,13 @@
+title: "Insulin Therapy"
+slug: insulin-therapy
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM11.8"
+  - "IM11.9"
+prerequisites:
+  - "diabetes-mellitus"
+  - "diabetes-mellitus-type-1"
+related_topics:
+  - "diabetic-ketoacidosis"
+  - "diabetes-mellitus-type-2"

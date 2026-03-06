@@ -1,0 +1,19 @@
+title: "Malaria"
+slug: malaria
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.1"
+prerequisites: []
+related_topics:
+  - "tropical-infections"
+enrichment:
+  nmcCodes:
+    - code: "IM8.1"
+      text: "Malaria — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "tropical-infections"
+      reason: "Clinically related"
+      relationship: "clinical"

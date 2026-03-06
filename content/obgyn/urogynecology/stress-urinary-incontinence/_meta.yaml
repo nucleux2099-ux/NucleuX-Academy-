@@ -1,0 +1,9 @@
+topic_id: stress-urinary-incontinence
+name: Stress Urinary Incontinence
+description: Stress Urinary Incontinence — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG35.17
+  domain: SH
+  core: true
+  phase: Phase 3

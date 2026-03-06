@@ -1,0 +1,37 @@
+topic_id: anterior-abdominal-wall
+name: Anterior Abdominal Wall
+description: Anterior Abdominal Wall — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN10.11
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN21.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN37.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN44.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN44.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN44.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN47.12
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN52.4
+  domain: KH
+  core: false
+  phase: Phase 1

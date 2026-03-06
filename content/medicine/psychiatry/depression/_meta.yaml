@@ -1,0 +1,15 @@
+title: Depression
+slug: depression
+depth: UG
+highYield: true
+nmc_codes:
+  - IM22.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM22.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of depression
+      domain: KH
+  prerequisite_details: []
+  related_details: []

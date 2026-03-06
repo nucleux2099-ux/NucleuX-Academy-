@@ -1,0 +1,184 @@
+topic_id: cell-injury
+name: Cell Injury & Adaptation
+description: Cell Injury & Adaptation — Mechanisms of cellular response to stress, reversible and irreversible injury, and adaptive changes
+high_yield: true
+nmc_codes:
+- code: PA2.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA2.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PA20.1
+  domain: SH
+  core: true
+  phase: Phase 1
+
+overview: >
+  Cell injury occurs when cells are stressed beyond their adaptive capacity or exposed to inherently damaging agents.
+  It can be reversible (cellular swelling, fatty change) or irreversible (necrosis, apoptosis).
+  Cellular adaptations (hypertrophy, hyperplasia, atrophy, metaplasia) represent controlled responses to altered physiological or pathological stimuli.
+  📚 Robbins, 10th Ed, Ch.2 (p.31-68)
+
+learning_objectives:
+  - Differentiate reversible from irreversible cell injury and list morphologic features of each
+  - Describe the mechanisms of cell injury including ATP depletion, mitochondrial damage, calcium influx, and oxidative stress
+  - Compare and contrast the types of necrosis (coagulative, liquefactive, caseous, fat, fibrinoid, gangrenous)
+  - Distinguish apoptosis from necrosis by mechanism and morphology
+  - Define and give examples of hypertrophy, hyperplasia, atrophy, metaplasia, and dysplasia
+
+content:
+  atoms:
+    - id: mechanisms-cell-injury
+      title: "Mechanisms of Cell Injury"
+      text: >
+        The principal biochemical mechanisms of cell injury are:
+        (1) ATP depletion — from ischemia/hypoxia, impairs Na+/K+ ATPase → cellular swelling;
+        (2) Mitochondrial damage — opens mPTP → cytochrome c release → apoptosis;
+        (3) Calcium influx — activates phospholipases, proteases, endonucleases;
+        (4) Oxidative stress — ROS (superoxide, H2O2, hydroxyl radical) damage lipids, proteins, DNA;
+        (5) Membrane damage — loss of phospholipid asymmetry, blebs.
+        The "point of no return" is marked by mitochondrial dysfunction and membrane damage.
+        📚 Robbins, 10th Ed, Ch.2 (p.39-46)
+
+    - id: reversible-vs-irreversible
+      title: "Reversible vs Irreversible Injury"
+      text: >
+        Reversible injury: cellular swelling (hydropic change), fatty change (steatosis), plasma membrane blebbing,
+        ER swelling, myelin figures. Nuclear changes are ABSENT.
+        Irreversible injury markers: (1) inability to reverse mitochondrial dysfunction, (2) profound membrane disturbance.
+        Morphologic hallmarks of irreversible injury: pyknosis (nuclear shrinkage), karyorrhexis (fragmentation),
+        karyolysis (dissolution). Calcium deposits in mitochondria are a hallmark of irreversible injury.
+        📚 Robbins, 10th Ed, Ch.2 (p.35-38)
+
+    - id: types-of-necrosis
+      title: "Types of Necrosis"
+      text: >
+        Coagulative necrosis — protein denaturation predominates, tissue architecture preserved (heart, kidney, spleen infarcts).
+        Liquefactive necrosis — enzymatic digestion predominates (brain infarcts, abscesses).
+        Caseous necrosis — granular, amorphous appearance, seen in TB.
+        Fat necrosis — lipase action on adipose (acute pancreatitis); chalky white areas due to saponification with calcium.
+        Fibrinoid necrosis — immune complex deposition in vessel walls (vasculitis, malignant HTN).
+        Gangrenous necrosis — coagulative necrosis + superimposed liquefactive (wet gangrene) in limbs/bowel.
+        📚 Robbins, 10th Ed, Ch.2 (p.47-50)
+
+    - id: apoptosis
+      title: "Apoptosis — Programmed Cell Death"
+      text: >
+        Apoptosis is energy-dependent programmed cell death without inflammation.
+        Two pathways: (1) Intrinsic (mitochondrial) — BAX/BAK create pores → cytochrome c → apoptosome → caspase-9;
+        regulated by BCL-2 (anti-apoptotic) and BAX/BAD (pro-apoptotic).
+        (2) Extrinsic (death receptor) — FAS-FASL or TNF-TNFR → caspase-8.
+        Both converge on executioner caspases (caspase-3, -6, -7).
+        Morphology: cell shrinkage, chromatin condensation, apoptotic bodies, NO inflammation.
+        📚 Robbins, 10th Ed, Ch.2 (p.52-58)
+
+    - id: cellular-adaptations
+      title: "Cellular Adaptations"
+      text: >
+        Hypertrophy — increase in cell SIZE (not number); physiologic (uterus in pregnancy) or pathologic (LVH in HTN).
+        Hyperplasia — increase in cell NUMBER; physiologic (endometrium in menstrual cycle) or pathologic (BPH).
+        Atrophy — decrease in cell size; causes include disuse, denervation, decreased blood supply, inadequate nutrition, loss of endocrine stimulation, pressure.
+        Metaplasia — reversible replacement of one differentiated cell type by another; Barrett's esophagus (squamous → columnar), bronchial (columnar → squamous in smokers).
+        Dysplasia — disordered growth, pre-neoplastic; loss of uniformity and architectural orientation.
+        📚 Robbins, 10th Ed, Ch.2 (p.31-35)
+
+  clinical:
+    - title: "Clinical Correlation: Myocardial Infarction"
+      text: >
+        MI is the classic example of coagulative necrosis from ischemia. Reversible changes (wavy fibers) appear in 1-2 hours.
+        Irreversible injury with contraction bands appears by 4-12 hours. Coagulative necrosis is fully established by 24 hours.
+        Neutrophilic infiltration peaks at 1-3 days; macrophages and granulation tissue by 7-10 days.
+    - title: "Clinical Correlation: Barrett's Esophagus"
+      text: >
+        Chronic GERD causes squamous-to-columnar metaplasia in the lower esophagus. This is an adaptation to acid exposure
+        but carries risk of progression to dysplasia and adenocarcinoma. Demonstrates metaplasia → dysplasia → carcinoma sequence.
+
+  high_yield_points:
+    - "Coagulative necrosis preserves tissue architecture — seen in ALL organs EXCEPT the brain"
+    - "Brain infarcts → liquefactive necrosis (due to high lipid content and microglial digestion)"
+    - "Caseous necrosis is PATHOGNOMONIC of tuberculosis"
+    - "Fat necrosis with saponification (chalky white deposits) = acute pancreatitis"
+    - "Fibrinoid necrosis = vessel wall necrosis in malignant HTN and vasculitis"
+    - "Apoptosis = cell shrinkage + apoptotic bodies + NO inflammation; Necrosis = cell swelling + inflammation"
+    - "BCL-2 is ANTI-apoptotic (overexpressed in follicular lymphoma → t(14;18))"
+    - "Pyknosis → Karyorrhexis → Karyolysis = sequence of nuclear changes in necrosis"
+    - "Metaplasia is REVERSIBLE; Dysplasia is potentially reversible if stimulus removed"
+    - "Hypertrophy = permanent cells (cardiac, skeletal muscle); Hyperplasia = labile/stable cells"
+
+mcqs:
+  - question: "A 55-year-old man with long-standing GERD undergoes endoscopy showing salmon-colored mucosa in the lower esophagus. Biopsy shows columnar epithelium with goblet cells replacing squamous epithelium. Which cellular adaptation is demonstrated?"
+    options:
+      - "Hyperplasia"
+      - "Metaplasia"
+      - "Dysplasia"
+      - "Hypertrophy"
+    answer: "Metaplasia"
+    explanation: >
+      Barrett's esophagus is the classic example of metaplasia — replacement of normal squamous epithelium by columnar
+      epithelium with goblet cells due to chronic acid reflux. This is an adaptive but pre-malignant change.
+      Dysplasia would show disordered, atypical cells. Hyperplasia is increase in cell number. Hypertrophy is increase in cell size.
+      📚 Robbins, 10th Ed, Ch.2 (p.33)
+    difficulty: 1
+
+  - question: "A patient with acute myocardial infarction dies 3 days after symptom onset. Histopathology of the infarcted area would most likely show:"
+    options:
+      - "Coagulative necrosis with neutrophilic infiltration"
+      - "Liquefactive necrosis with macrophage infiltration"
+      - "Granulation tissue with fibroblasts"
+      - "Dense fibrous scar"
+    answer: "Coagulative necrosis with neutrophilic infiltration"
+    explanation: >
+      At 1-3 days post-MI, coagulative necrosis is established with heavy neutrophilic infiltration (acute inflammation).
+      Liquefactive necrosis occurs in brain, not heart. Macrophages and granulation tissue appear at 7-10 days.
+      Dense scar forms by 2-3 months.
+      📚 Robbins, 10th Ed, Ch.2 (p.48) & Ch.12 (p.547)
+    difficulty: 2
+
+  - question: "Which of the following is the 'point of no return' in cell injury?"
+    options:
+      - "Cellular swelling and ER dilation"
+      - "Mitochondrial dysfunction with membrane damage"
+      - "Ribosomal detachment from ER"
+      - "Myelin figure formation"
+    answer: "Mitochondrial dysfunction with membrane damage"
+    explanation: >
+      The point of no return in cell injury is marked by severe mitochondrial dysfunction (inability to generate ATP,
+      opening of mPTP) and profound membrane damage. Cellular swelling, ER dilation, ribosomal detachment, and
+      myelin figures are all features of REVERSIBLE injury.
+      📚 Robbins, 10th Ed, Ch.2 (p.38)
+    difficulty: 2
+
+  - question: "A 40-year-old woman with SLE presents with proteinuria. Renal biopsy shows eosinophilic deposits in arteriolar walls. What type of necrosis is this?"
+    options:
+      - "Coagulative necrosis"
+      - "Caseous necrosis"
+      - "Fibrinoid necrosis"
+      - "Fat necrosis"
+    answer: "Fibrinoid necrosis"
+    explanation: >
+      Fibrinoid necrosis occurs when antigen-antibody complexes deposit in vessel walls, appearing as bright pink
+      (eosinophilic) amorphous material on H&E stain. It is characteristic of immune-mediated vasculitis (SLE, PAN)
+      and malignant hypertension. Caseous necrosis is seen in TB; fat necrosis in pancreatitis.
+      📚 Robbins, 10th Ed, Ch.2 (p.50)
+    difficulty: 2
+
+  - question: "Which of the following correctly pairs the cellular adaptation with its example?"
+    options:
+      - "Hypertrophy — Endometrial thickening in menstrual cycle"
+      - "Hyperplasia — Left ventricular enlargement in hypertension"
+      - "Atrophy — Thymus in elderly"
+      - "Metaplasia — Cervical dysplasia"
+    answer: "Atrophy — Thymus in elderly"
+    explanation: >
+      The thymus undergoes age-related (involution) atrophy with replacement by adipose tissue.
+      Endometrial thickening is hyperplasia (increase in cell number, not size). LVH in HTN is hypertrophy
+      (cardiac myocytes cannot divide). Dysplasia is disordered growth, not metaplasia.
+      📚 Robbins, 10th Ed, Ch.2 (p.31-34)
+    difficulty: 1

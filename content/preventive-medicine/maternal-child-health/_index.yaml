@@ -1,0 +1,12 @@
+id: maternal-child-health
+title: "Maternal & Child Health"
+subject: preventive-medicine
+description: |
+  MCH services and programs.
+stats:
+  total_topics: 1
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

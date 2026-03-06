@@ -1,0 +1,13 @@
+topic_id: inferior-mesenteric-artery
+name: Inferior Mesenteric Artery
+description: Inferior Mesenteric Artery — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AN29.4
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN35.9
+  domain: KH
+  core: false
+  phase: Phase 1

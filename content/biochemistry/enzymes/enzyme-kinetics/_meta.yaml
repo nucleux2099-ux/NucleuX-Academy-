@@ -1,0 +1,168 @@
+topic_id: enzyme-kinetics
+name: "Enzyme Kinetics (Michaelis-Menten, Lineweaver-Burk)"
+description: >
+  Comprehensive review of enzyme kinetics including Michaelis-Menten equation, Lineweaver-Burk plots,
+  enzyme inhibition types, and clinical applications of enzyme assays.
+high_yield: true
+nmc_codes:
+  - code: BI2.1
+    domain: KH
+    core: true
+    phase: Phase 1
+  - code: BI2.3
+    domain: KH
+    core: true
+    phase: Phase 1
+  - code: BI2.4
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Enzyme kinetics studies the rates of enzyme-catalyzed reactions and how they change in response to
+  substrate concentration, inhibitors, and other factors. The Michaelis-Menten model describes the
+  hyperbolic relationship between substrate concentration [S] and reaction velocity (V). The
+  Lineweaver-Burk (double-reciprocal) plot linearizes this relationship for easier determination of
+  Km and Vmax. Understanding inhibition patterns (competitive, non-competitive, uncompetitive) is
+  critical for pharmacology and clinical biochemistry.
+  📚 Harper's Biochemistry, 31st Ed, Ch.8; 📚 Stryer Biochemistry, Ch.8
+
+learning_objectives:
+  - Derive and explain the Michaelis-Menten equation (V = Vmax[S] / (Km + [S]))
+  - Define Km (substrate concentration at half-Vmax) and its clinical significance
+  - Construct and interpret Lineweaver-Burk plots (1/V vs 1/[S])
+  - Differentiate competitive, non-competitive, and uncompetitive inhibition on LB plots
+  - Apply enzyme kinetics to clinical enzyme assays (LDH, CK, amylase)
+
+content:
+  atoms:
+    - id: michaelis-menten-equation
+      title: "Michaelis-Menten Equation"
+      text: >
+        V = Vmax × [S] / (Km + [S]). Assumptions: steady-state ([ES] constant), [S] >> [E].
+        When [S] = Km, V = Vmax/2 — this defines Km. Low Km = high affinity for substrate.
+        At very high [S], V approaches Vmax (enzyme saturated, zero-order kinetics).
+        At low [S], reaction is first-order (proportional to [S]).
+        Kcat (turnover number) = Vmax/[Et] = molecules of substrate converted per enzyme per second.
+        Catalytic efficiency = Kcat/Km — measure of enzyme perfection.
+        📚 Harper's Biochemistry, 31st Ed, Ch.8 (p.72-76)
+
+    - id: lineweaver-burk-plot
+      title: "Lineweaver-Burk (Double-Reciprocal) Plot"
+      text: >
+        Takes reciprocal of Michaelis-Menten: 1/V = (Km/Vmax)(1/[S]) + 1/Vmax.
+        Y-intercept = 1/Vmax; X-intercept = -1/Km; Slope = Km/Vmax.
+        Useful for distinguishing inhibition types:
+        Competitive inhibitor — lines intersect on Y-axis (same Vmax, increased apparent Km).
+        Non-competitive inhibitor — lines intersect on X-axis (same Km, decreased Vmax).
+        Uncompetitive inhibitor — parallel lines (both Km and Vmax decreased proportionally).
+        📚 Stryer Biochemistry, Ch.8 (p.230-235)
+
+    - id: enzyme-inhibition-types
+      title: "Types of Enzyme Inhibition"
+      text: >
+        Competitive: inhibitor resembles substrate, binds active site. Overcome by increasing [S].
+        Example: methotrexate vs. folate for DHFR; statins vs. HMG-CoA for HMG-CoA reductase.
+        Non-competitive: inhibitor binds allosteric site, doesn't compete with substrate. NOT overcome by ↑[S].
+        Example: heavy metals (Pb, Hg) binding enzyme sulfhydryl groups.
+        Uncompetitive: inhibitor binds only ES complex. Rare in single-substrate reactions.
+        Irreversible: covalent modification. Example: aspirin acetylates COX; organophosphates inhibit AChE.
+        📚 Harper's Biochemistry, 31st Ed, Ch.8 (p.77-82)
+
+    - id: clinical-enzyme-assays
+      title: "Clinical Applications of Enzyme Kinetics"
+      text: >
+        Serum enzyme levels diagnose tissue damage: CK-MB (myocardial infarction), LDH (tissue necrosis),
+        amylase/lipase (pancreatitis), ALT/AST (liver damage), ALP (cholestasis/bone disease).
+        Isoenzymes: LDH has 5 isoforms (LDH1 = heart, LDH5 = liver). CK has 3 (CK-MM skeletal, CK-MB cardiac, CK-BB brain).
+        Therapeutic drug design exploits kinetics: competitive inhibitors designed as substrate analogs.
+        📚 Harper's Biochemistry, 31st Ed, Ch.7,8
+
+  clinical:
+    - title: "Clinical Correlation: Statin Therapy"
+      text: >
+        Statins (atorvastatin, rosuvastatin) are competitive inhibitors of HMG-CoA reductase,
+        the rate-limiting enzyme in cholesterol synthesis. They structurally resemble HMG-CoA.
+        On Lineweaver-Burk plot: increased apparent Km, unchanged Vmax.
+    - title: "Clinical Correlation: Organophosphate Poisoning"
+      text: >
+        Organophosphates (malathion, parathion) irreversibly inhibit acetylcholinesterase by
+        phosphorylating the serine residue at the active site. Treatment: atropine (muscarinic blocker)
+        + pralidoxime (reactivates AChE if given before "aging" of the phosphorylated enzyme).
+
+high_yield_points:
+  - "Km = substrate concentration at half-Vmax; LOW Km = HIGH affinity"
+  - "Competitive inhibition: ↑Km, same Vmax; overcome by ↑[S]"
+  - "Non-competitive inhibition: same Km, ↓Vmax; NOT overcome by ↑[S]"
+  - "Uncompetitive inhibition: ↓Km AND ↓Vmax; parallel lines on LB plot"
+  - "Lineweaver-Burk: Y-intercept = 1/Vmax, X-intercept = -1/Km"
+  - "Statins = competitive inhibitors of HMG-CoA reductase"
+  - "Aspirin = irreversible inhibitor of COX (acetylation)"
+  - "Catalytic efficiency = Kcat/Km — higher = better enzyme"
+
+mcqs:
+  - question: "In a Lineweaver-Burk plot, a competitive inhibitor causes lines that intersect at which point?"
+    options:
+      - "X-axis"
+      - "Y-axis"
+      - "Origin"
+      - "Lines are parallel"
+    answer: "Y-axis"
+    explanation: >
+      Competitive inhibitors increase apparent Km but do not change Vmax. On a Lineweaver-Burk plot,
+      1/Vmax (Y-intercept) remains the same, so lines converge on the Y-axis. The X-intercept (-1/Km)
+      shifts closer to zero (apparent Km increases).
+      📚 Stryer Biochemistry, Ch.8
+    difficulty: 1
+
+  - question: "An enzyme has a Km of 2 mM. At what substrate concentration will the reaction velocity be 75% of Vmax?"
+    options:
+      - "2 mM"
+      - "4 mM"
+      - "6 mM"
+      - "8 mM"
+    answer: "6 mM"
+    explanation: >
+      Using V = Vmax[S]/(Km+[S]): 0.75Vmax = Vmax[S]/(2+[S]). Solving: 0.75(2+[S]) = [S];
+      1.5 + 0.75[S] = [S]; 1.5 = 0.25[S]; [S] = 6 mM.
+      📚 Harper's Biochemistry, 31st Ed, Ch.8
+    difficulty: 2
+
+  - question: "Which type of enzyme inhibition shows parallel lines on a Lineweaver-Burk plot?"
+    options:
+      - "Competitive"
+      - "Non-competitive"
+      - "Uncompetitive"
+      - "Mixed"
+    answer: "Uncompetitive"
+    explanation: >
+      Uncompetitive inhibitors bind only the ES complex, decreasing both apparent Km and Vmax
+      by the same factor. This produces parallel lines on Lineweaver-Burk plot (same slope = Km/Vmax).
+      📚 Stryer Biochemistry, Ch.8
+    difficulty: 2
+
+  - question: "Methotrexate inhibits dihydrofolate reductase. This inhibition can be overcome by increasing substrate concentration. What type of inhibition is this?"
+    options:
+      - "Non-competitive"
+      - "Uncompetitive"
+      - "Competitive"
+      - "Irreversible"
+    answer: "Competitive"
+    explanation: >
+      Methotrexate is a structural analog of folic acid and competes for the active site of DHFR.
+      Competitive inhibition can be overcome by increasing [S], restoring Vmax.
+      📚 Harper's Biochemistry, 31st Ed, Ch.8
+    difficulty: 1
+
+  - question: "The turnover number (Kcat) of an enzyme is defined as:"
+    options:
+      - "Km/Vmax"
+      - "Vmax/[Et]"
+      - "Vmax × Km"
+      - "[S] at half-Vmax"
+    answer: "Vmax/[Et]"
+    explanation: >
+      Kcat = Vmax/[Et] where [Et] is total enzyme concentration. It represents the number of
+      substrate molecules converted to product per enzyme molecule per unit time when enzyme is saturated.
+      📚 Stryer Biochemistry, Ch.8
+    difficulty: 2

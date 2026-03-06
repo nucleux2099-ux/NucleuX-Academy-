@@ -1,0 +1,171 @@
+topic_id: pre-eclampsia-eclampsia
+name: Pre-eclampsia & Eclampsia
+description: Hypertensive disorders of pregnancy — pathophysiology, diagnosis, management, and prevention of pre-eclampsia and eclampsia
+high_yield: true
+nmc_codes:
+- code: OG9.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Pre-eclampsia is a multisystem disorder of pregnancy characterized by new-onset hypertension (≥140/90 mmHg)
+  and proteinuria (≥300 mg/24h) after 20 weeks of gestation. Eclampsia is the occurrence of generalized
+  tonic-clonic seizures in a pre-eclamptic woman not attributable to other causes. It remains a leading cause
+  of maternal and perinatal morbidity/mortality worldwide. The underlying pathology involves defective
+  trophoblastic invasion leading to endothelial dysfunction.
+  📚 Williams Obstetrics, 26th Ed, Ch.40 | 📚 DC Dutta, 9th Ed, Ch.17
+
+learning_objectives:
+  - Define and classify hypertensive disorders of pregnancy
+  - Explain the two-stage pathophysiology of pre-eclampsia
+  - List the diagnostic criteria for pre-eclampsia and severe features
+  - Describe the management of severe pre-eclampsia and eclampsia including MgSO4 regimen
+  - Outline prevention strategies for pre-eclampsia
+
+content:
+  atoms:
+    - id: classification
+      title: "Classification of Hypertensive Disorders in Pregnancy"
+      text: >
+        (1) Gestational hypertension — HTN after 20 wks without proteinuria, resolves by 12 wks postpartum.
+        (2) Pre-eclampsia — HTN + proteinuria (or end-organ dysfunction) after 20 wks.
+        (3) Eclampsia — Pre-eclampsia + seizures.
+        (4) Chronic hypertension — HTN before 20 wks or pre-existing.
+        (5) Superimposed pre-eclampsia — chronic HTN with new proteinuria/end-organ damage after 20 wks.
+        HELLP syndrome: Hemolysis + Elevated Liver enzymes + Low Platelets — a severe variant.
+        📚 Williams Obstetrics, 26th Ed, Ch.40 (p.710-715)
+
+    - id: pathophysiology
+      title: "Two-Stage Pathophysiology"
+      text: >
+        Stage 1 (Placental): Defective remodeling of spiral arteries by trophoblasts → failure to convert
+        from high-resistance to low-resistance vessels → placental ischemia/hypoxia.
+        Stage 2 (Maternal): Ischemic placenta releases anti-angiogenic factors (sFlt-1, sEndoglin) →
+        decreased VEGF and PlGF → widespread endothelial dysfunction → vasoconstriction, increased
+        permeability, proteinuria, edema, coagulopathy. sFlt-1/PlGF ratio is emerging as a diagnostic marker.
+        Risk factors: nulliparity, extremes of age, family history, chronic HTN, diabetes, obesity, twin pregnancy,
+        molar pregnancy, antiphospholipid syndrome.
+        📚 Williams Obstetrics, 26th Ed, Ch.40 (p.715-720)
+
+    - id: diagnosis-severity
+      title: "Diagnosis & Severe Features"
+      text: >
+        Pre-eclampsia: BP ≥140/90 on two occasions 4 hrs apart + proteinuria ≥300 mg/24h (or protein/creatinine
+        ratio ≥0.3, or dipstick ≥1+). Can diagnose WITHOUT proteinuria if end-organ dysfunction present.
+        Severe features: BP ≥160/110, platelets <100,000, liver transaminases >2x normal, creatinine >1.1 mg/dL,
+        pulmonary edema, new-onset cerebral/visual disturbances, severe persistent RUQ/epigastric pain.
+        Imminent eclampsia signs: headache, visual disturbances, epigastric pain, hyperreflexia, clonus.
+        📚 DC Dutta, 9th Ed, Ch.17 (p.221-225)
+
+    - id: management
+      title: "Management of Pre-eclampsia & Eclampsia"
+      text: >
+        Definitive treatment: DELIVERY (only cure).
+        Mild pre-eclampsia (<37 wks): expectant management, BP monitoring, labs twice weekly, fetal surveillance.
+        Severe pre-eclampsia: MgSO4 for seizure prophylaxis + antihypertensives + delivery planning.
+        MgSO4 (Pritchard regimen): Loading — 4g IV slow (20 min) + 10g IM (5g each buttock).
+        Maintenance — 5g IM every 4 hrs. Therapeutic level: 4-7 mEq/L.
+        Toxicity monitoring: patellar reflex (absent = stop), RR (≥16/min), urine output (≥25 mL/hr).
+        Antidote: Calcium gluconate 1g IV slow.
+        Antihypertensives: Labetalol IV (first-line), hydralazine IV, nifedipine oral.
+        Eclampsia: ABC → left lateral position → MgSO4 → control BP → deliver.
+        📚 Williams Obstetrics, 26th Ed, Ch.40 (p.730-745)
+
+    - id: prevention
+      title: "Prevention"
+      text: >
+        Low-dose aspirin (75-150 mg/day) started before 16 weeks in high-risk women reduces pre-eclampsia risk by ~17%.
+        Calcium supplementation (1.5-2 g/day) in areas of low dietary calcium intake.
+        No proven benefit: vitamin C, E, salt restriction, bed rest.
+        📚 Williams Obstetrics, 26th Ed, Ch.40
+
+  clinical:
+    - title: "HELLP Syndrome"
+      text: >
+        Hemolysis (schistocytes, elevated LDH, decreased haptoglobin), Elevated Liver enzymes (AST >70),
+        Low Platelets (<100,000). Can occur without significant hypertension or proteinuria.
+        Complications: DIC, placental abruption, hepatic rupture, renal failure. Management: stabilize + deliver.
+
+  high_yield_points:
+    - "MgSO4 is the DRUG OF CHOICE for seizure prophylaxis AND treatment in eclampsia (NOT diazepam)"
+    - "Pritchard regimen: 4g IV + 10g IM loading → 5g IM q4h maintenance"
+    - "Therapeutic MgSO4 level: 4-7 mEq/L; First sign of toxicity = loss of patellar reflex (9-12 mEq/L)"
+    - "Antidote for MgSO4 toxicity: Calcium gluconate 1g IV"
+    - "HELLP = Hemolysis + Elevated Liver enzymes + Low Platelets"
+    - "Pre-eclampsia can be diagnosed WITHOUT proteinuria if severe features present"
+    - "Only CURE for pre-eclampsia is DELIVERY of the placenta"
+    - "Low-dose aspirin before 16 weeks prevents pre-eclampsia in high-risk women"
+    - "sFlt-1/PlGF ratio — emerging biomarker for pre-eclampsia diagnosis"
+    - "Eclampsia can occur antepartum (46%), intrapartum (16%), or postpartum (38%)"
+
+mcqs:
+  - question: "The drug of choice for prevention and treatment of seizures in eclampsia is:"
+    options:
+      - "Diazepam"
+      - "Phenytoin"
+      - "Magnesium sulfate"
+      - "Levetiracetam"
+    answer: "Magnesium sulfate"
+    explanation: >
+      MgSO4 is the gold standard for both prophylaxis and treatment of eclamptic seizures
+      (Magpie trial). It is superior to diazepam and phenytoin with fewer maternal side effects
+      and better neonatal outcomes.
+      📚 Williams Obstetrics, 26th Ed, Ch.40 (p.735)
+    difficulty: 1
+
+  - question: "The first sign of magnesium sulfate toxicity is:"
+    options:
+      - "Respiratory depression"
+      - "Cardiac arrest"
+      - "Loss of patellar reflex"
+      - "Oliguria"
+    answer: "Loss of patellar reflex"
+    explanation: >
+      Loss of deep tendon reflexes (patellar reflex) occurs at 9-12 mEq/L and is the earliest
+      clinical sign of MgSO4 toxicity. Respiratory depression occurs at 15-17 mEq/L, and cardiac
+      arrest at >30 mEq/L. Checking reflexes before each dose is mandatory.
+      📚 DC Dutta, 9th Ed, Ch.17 (p.230)
+    difficulty: 1
+
+  - question: "Which of the following is NOT a severe feature of pre-eclampsia?"
+    options:
+      - "BP ≥160/110 mmHg"
+      - "Platelet count <100,000/µL"
+      - "Proteinuria ≥5 g/24 hours"
+      - "Serum creatinine >1.1 mg/dL"
+    answer: "Proteinuria ≥5 g/24 hours"
+    explanation: >
+      As per ACOG 2013 criteria, massive proteinuria (≥5g) is NO longer a criterion for severe
+      pre-eclampsia. Severe features include: BP ≥160/110, thrombocytopenia (<100,000), elevated
+      liver enzymes, renal insufficiency, pulmonary edema, and cerebral/visual symptoms.
+      📚 Williams Obstetrics, 26th Ed, Ch.40 (p.725)
+    difficulty: 2
+
+  - question: "The antidote for magnesium sulfate toxicity is:"
+    options:
+      - "Calcium chloride"
+      - "Calcium gluconate"
+      - "Sodium bicarbonate"
+      - "Protamine sulfate"
+    answer: "Calcium gluconate"
+    explanation: >
+      Calcium gluconate (10%, 10 mL = 1g IV over 3 minutes) is the specific antidote for MgSO4
+      toxicity. It antagonizes the neuromuscular blockade caused by excess magnesium. Calcium chloride
+      can also work but is more irritating to veins.
+      📚 DC Dutta, 9th Ed, Ch.17 (p.231)
+    difficulty: 1
+
+  - question: "A 28-year-old primigravida at 34 weeks presents with BP 170/115, headache, and epigastric pain. Labs show platelets 80,000, AST 250, LDH 800 with schistocytes on peripheral smear. The most likely diagnosis is:"
+    options:
+      - "Acute fatty liver of pregnancy"
+      - "HELLP syndrome"
+      - "Thrombotic thrombocytopenic purpura"
+      - "Hemolytic uremic syndrome"
+    answer: "HELLP syndrome"
+    explanation: >
+      This triad of hemolysis (schistocytes, elevated LDH), elevated liver enzymes (AST 250),
+      and low platelets (80,000) in a hypertensive pregnant woman is classic HELLP syndrome.
+      TTP typically has more severe thrombocytopenia and neurological symptoms without hypertension.
+      📚 Williams Obstetrics, 26th Ed, Ch.40 (p.747)
+    difficulty: 2

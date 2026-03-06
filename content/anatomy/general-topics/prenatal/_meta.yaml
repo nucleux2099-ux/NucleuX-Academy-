@@ -1,0 +1,17 @@
+topic_id: prenatal
+name: Various methods of prenatal diagnosis
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN81.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN81.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN81.3
+  domain: KH
+  core: true
+  phase: Phase 1

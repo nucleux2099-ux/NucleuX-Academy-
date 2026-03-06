@@ -1,0 +1,9 @@
+topic_id: cystometrogram-cystometry
+name: Cystometry and discuss the normal cystometrogram
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY7.9
+  domain: KH
+  core: true
+  phase: Phase 1

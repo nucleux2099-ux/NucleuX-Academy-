@@ -1,0 +1,56 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Bismuth-Strasberg classification of strictures requires precise knowledge of biliary confluence anatomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Cholecystectomy for gallstones is the most common cause of iatrogenic biliary stricture",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "bile-duct-injury",
+      "nmcCode": "",
+      "reason": "Post-cholecystectomy bile duct injury is the primary etiology leading to benign biliary stricture formation",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Biliary strictures present with progressive obstructive jaundice requiring structured evaluation with MRCP/ERCP",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Strictures cause biliary stasis predisposing to recurrent cholangitis episodes requiring drainage",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gallbladder-cancer",
+      "nmcCode": "",
+      "reason": "Malignant strictures from gallbladder cancer must be differentiated from benign post-surgical strictures",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Biliary Stricture across foundational sciences and clinical applications."
+}

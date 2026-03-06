@@ -1,0 +1,17 @@
+topic_id: etio-laboratory
+name: The etio-pathogenesis and discuss the laboratory diagnosis
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: MI7.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI7.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: MI7.3
+  domain: KH
+  core: true
+  phase: Phase 1

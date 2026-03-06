@@ -1,0 +1,41 @@
+title: "Diabetes Mellitus"
+slug: diabetes-mellitus
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM11.1"
+  - "IM11.2"
+  - "IM11.3"
+  - "IM11.4"
+  - "IM11.5"
+  - "IM11.6"
+  - "IM11.7"
+  - "IM11.8"
+prerequisites:
+  - "glucose-metabolism"
+related_topics:
+  - "diabetes-mellitus-type-1"
+  - "diabetes-mellitus-type-2"
+  - "diabetic-ketoacidosis"
+  - "insulin-therapy"
+enrichment:
+  nmcCodes:
+    - code: "IM11.1"
+      text: "Describe and discuss the epidemiology, aetiology and classification of diabetes mellitus"
+      domain: "KH"
+    - code: "IM11.2"
+      text: "Describe and discuss the pathophysiology of diabetes mellitus"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "glucose-metabolism"
+      reason: "Understanding insulin signaling and glucose homeostasis"
+  related_details:
+    - slug: "diabetes-mellitus-type-1"
+      reason: "Specific subtype with autoimmune pathology"
+      relationship: "clinical"
+    - slug: "diabetes-mellitus-type-2"
+      reason: "Most common type with insulin resistance"
+      relationship: "clinical"
+    - slug: "diabetic-ketoacidosis"
+      reason: "Acute metabolic complication of DM"
+      relationship: "clinical"

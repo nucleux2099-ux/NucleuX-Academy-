@@ -1,0 +1,19 @@
+title: "Delusional Disorder"
+slug: delusional-disorder
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM22.4"
+prerequisites: []
+related_topics:
+  - "schizoaffective-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.4"
+      text: "Delusional Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "schizoaffective-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

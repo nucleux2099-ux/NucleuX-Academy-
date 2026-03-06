@@ -1,0 +1,15 @@
+title: "Mushroom Poisoning"
+slug: mushroom-poisoning
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM24.25"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM24.25"
+      text: "Mushroom Poisoning — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

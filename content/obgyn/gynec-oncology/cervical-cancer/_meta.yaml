@@ -1,0 +1,13 @@
+topic_id: cervical-cancer
+name: Cervical Cancer
+description: Cervical Cancer — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG33.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: OG33.4
+  domain: K
+  core: true
+  phase: Phase 3

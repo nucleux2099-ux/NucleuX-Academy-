@@ -1,0 +1,79 @@
+# Colon Topic Index
+# NucleuX Academy Content Library
+
+id: colon
+title: "Colon & Small Bowel"
+subject: surgery
+subspecialty: gi_surgery
+system: lower_gi
+
+description: |
+  Comprehensive coverage of colonic anatomy, inflammatory conditions,
+  bowel obstruction, GI bleeding, and colorectal cancer.
+  Primary sources: Shackelford 9th Ed, Sleisenger 11th Ed.
+
+stats:
+  total_chapters: 42
+  chapters_covered: 4
+  coverage_percent: 10
+  concept_notes: 4
+  grinde_maps: 0
+  retrieval_cards: 0
+  case_scenarios: 0
+
+categories:
+  - id: anatomy
+    title: "Anatomy & Physiology"
+    topics:
+      - colonic-anatomy
+      - small-bowel-anatomy
+  - id: emergencies
+    title: "Surgical Emergencies"
+    topics:
+      - bowel-obstruction
+      - lower-gi-bleeding
+      - acute-abdomen
+  - id: inflammatory
+    title: "Inflammatory Conditions"
+    topics:
+      - diverticulitis
+      - appendicitis
+  - id: neoplasms
+    title: "Colorectal Neoplasms"
+    topics:
+      - colorectal-cancer
+      - colonic-polyps
+  - id: procedures
+    title: "Surgical Procedures"
+    topics:
+      - colectomy
+      - small-bowel-resection
+
+priority: high
+exam_relevance:
+  - NEET_PG
+  - USMLE_Step2
+  - MRCS
+
+study_order:
+  - anatomy (foundation)
+  - emergencies (critical)
+  - inflammatory (common)
+  - neoplasms (high-yield)
+  - procedures (advanced)
+
+sources:
+  primary:
+    - book: "Shackelford's Surgery of the Alimentary Tract"
+      edition: "9th"
+      chapters: "78-119"
+  supplementary:
+    - book: "Sleisenger & Fordtran's GI and Liver Disease"
+      edition: "11th"
+      topic: "Intestinal Disorders"
+    - book: "Maingot's Abdominal Operations"
+      edition: "12th"
+      chapters: "29-39"
+
+last_updated: "2025-02-08"
+status: seeding

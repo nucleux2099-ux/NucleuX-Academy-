@@ -1,0 +1,54 @@
+id: antimicrobials
+title: "Antimicrobials"
+subject: pharmacology
+description: |
+  Antibiotics, antivirals, antifungals, and antiparasitics.
+
+stats:
+  total_topics: 25
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: antibacterial
+    title: "Antibacterial"
+    topics:
+      - penicillins
+      - cephalosporins
+      - carbapenems
+      - aminoglycosides
+      - macrolides
+      - fluoroquinolones
+      - tetracyclines
+      - sulfonamides-trimethoprim
+      - glycopeptides-vancomycin
+      - linezolid-oxazolidinones
+      - metronidazole
+      - anti-tubercular-drugs
+      - anti-leprosy-drugs
+  - id: antiviral
+    title: "Antiviral"
+    topics:
+      - antiretrovirals
+      - anti-hepatitis-drugs
+      - anti-herpes-drugs
+      - anti-influenza-drugs
+  - id: antifungal
+    title: "Antifungal"
+    topics:
+      - antifungal-drugs
+      - azoles
+      - amphotericin-b
+      - echinocandins
+  - id: antiparasitic
+    title: "Antiparasitic"
+    topics:
+      - antimalarials
+      - antiamoebic-drugs
+      - antihelminthics
+      - antifilarial-drugs
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

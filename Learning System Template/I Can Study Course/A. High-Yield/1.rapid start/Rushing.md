@@ -1,0 +1,350 @@
+---
+title: "Rushing - Increasing your success rate | iCanStudy"
+source: "https://learning.icanstudy.com/learning/pr-academic/ph-high-yield/st-rapid-start/ls-increasing-your-success-rate/sl-rushing/slp-rushing"
+author:
+published:
+created: 2025-05-02
+description:
+tags:
+  - "clippings"
+---
+# Rushing
+~ [[_Rapid Start]]
+
+> [!map] [[Rushing]] | [[Selective learning]] | [[Rapid Start quiz]] |[[Rapid Start checkpoint]] | [[Recommended tasks - Rapid start]]
+
+## Rushing
+
+Key principles
+
+- Rushing is often due to insufficient time invested into practice
+- Rushing almost always leads to failure (usually while being overconfident)
+- One of the most common features of a rusher is thinking “I’m different” and justifying ignoring advice or skipping steps
+
+> [!transcript]- Transcript
+> An extremely high risk way of going through this program and learning these skills is rushing.
+>
+> The system that we've created and the techniques that we've created are very complex.
+>
+> They are not something that you will be able to pick up in a very short period of time.
+>
+> The techniques we teach you in the high yield phase and these fundamentals, they're relatively quick.
+>
+> You can pick them up in a matter of hours to days or at most a couple of weeks of practice.
+>
+> The things in the growth phase, we have some of the highest achieving students in the world, top 0.001% students ranking first, second and third internationally, postdoctoral students still taking four to six months to learn how to do the techniques.
+>
+> And this is them really trying very hard.
+>
+> Now, the thing is that you don't have to be discouraged.
+>
+> The path is there for you.
+>
+> It's just that that path is difficult for everyone that walks down it.
+>
+> It was difficult for me trying to figure it out by myself.
+>
+> It took me several years and tens of thousands of hours and thousands of iterations and more mistakes than you can even count to figure it all out.
+>
+> For you, it will be a fraction of the effort and a fraction of the time.
+>
+> And a fraction of the number of mistakes.
+>
+> But a fraction of a lot is still a little bit of a lot.
+>
+> So there's going to be some effort.
+>
+> There's going to be some time that it takes for you to learn a lot of the growth phase techniques.
+>
+> Throughout the course, there are lots of points where it says, don't do this too quickly.
+>
+> Practice a certain amount.
+>
+> Don't rush this.
+>
+> We have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And then we have activities that we recommend that you do, a certain amount of time that you should spend on a certain lesson.
+>
+> And these rushes tend to have essentially the same problems.
+>
+> They're very predictable problems, actually.
+>
+> They will get through the course, two to three months into the course, they'll submit something for feedback, and then while they submit for feedback, they'll be informed that their technique is frankly terrible, that they have reaped only maybe 5% of the benefit of the techniques.
+>
+> Usually these students are feeling very confident with their level of work.
+>
+> They're usually feeling like they've learned a lot and they've got a high level of mastery.
+>
+> And there's a very strong relationship between the amount you know and how confident you are.
+>
+> And this has been demonstrated across multiple fields of research.
+>
+> The most famous version of this, which is called the Dunning-Kruger effect, which basically says that the less you know, the more confident you are.
+>
+> The more confident you tend to be.
+>
+> But there's variations of this and other types of findings that essentially say the exact same thing, which is that when you don't have a lot of expertise, you think that you're really good at something.
+>
+> So the dangerous thing is that you wouldn't be aware of it.
+>
+> If you were the person that went through and rushed the course, you would genuinely not realize that you screwed up because you would not have the insight and knowledge to know enough that you had actually screwed up.
+>
+> So it's actually impossible to know unless someone else tells you.
+>
+> And that's usually what happens.
+>
+> Two or three months in, someone will tell them.
+>
+> Now at that point you might think, well, you know, they've gone through, they've got a big picture understanding of all the techniques and the course, blah, blah, blah.
+>
+> So now they can go through and start fixing that.
+>
+> That's not actually the case.
+>
+> It's kind of like if you had no instructions and someone said build a house and then you were like, okay, I'm just gonna build a house and you really quickly built this house.
+>
+> You just googled some things, you watched some YouTube videos and you built a house.
+>
+> And then in the building inspection, it fails the building inspection and it says your plumbing is terrible, your electric work is terrible, the walls are terrible, the paint is toxic, the walls aren't set up correctly, the roof is leaking, everything is non-compliant.
+>
+> You essentially need to pretty much rebuild this house.
+>
+> At that point, it would actually take more work and it's more confusing to realize where and how and why you made a mistake than it would have been to just literally do it, probably the first time.
+>
+> And so for these students that rush through the course two or three months later, they actually end up having to spend maybe an additional two or three months literally just unlearning the things they learned incorrectly so that they have the opportunity to start from zero.
+>
+> Let me say that again.
+>
+> It takes them two or three extra months just to start all over again because your brain, your brain doesn't have a reset button.
+>
+> If you screw it up, we can't just be like, okay, that didn't work.
+>
+> Let's load it from the last save point and just try it again.
+>
+> It doesn't work that way.
+>
+> By that point, you will consume more information.
+>
+> There are more variables.
+>
+> Instead of it being a cleaner canvas to work with, we now have multiple other variables that are making the picture more confusing.
+>
+> The reason you make a mistake is no longer very simple.
+>
+> And for us to give feedback on it, it is much more confusing.
+>
+> To the point where it's almost impossible because instead of four or five or six mistakes that you've made that led you to this picture, it could now be legitimately 12, 15, 20, 30 possible mistakes because we don't know how much of the latest stuff was in your mind, maybe subconsciously affecting you when you're trying to do the technique.
+>
+> It's extremely complicated to do that.
+>
+> And in fact, most people that rush through the course, they will eventually just give up and they will never learn the technique.
+>
+> That's actually frankly the case.
+>
+> It is extremely, extremely rare for someone to rush through the course and then be able to pick themselves up off the floor again.
+>
+> We have a few of these phoenixes that are in the course.
+>
+> And if you go through the Discord and you see some of the messages, you'll see that there are like these long comments and posts from people that went through and rushed.
+>
+> And then they are coming back to tell new students, please don't make the mistake that I made.
+>
+> And we're not telling them to do this.
+>
+> They are of their own volition out there making these posts.
+>
+> Just warning other people not to make these mistakes.
+>
+> It is serious.
+>
+> And this is a rarity.
+>
+> People rushing through the course and not really taking it properly is pretty common.
+>
+> And if you were to take a group of like a hundred of these people, 99 of them actually know all a hundred of them will actually fail to use the technique correctly.
+>
+> In the thousands of students we've taught across the world of all different ages and ranges and stages, we've never actually had someone that's rushed through and learned it correctly.
+>
+> Never.
+>
+> Like not even once.
+>
+> Never.
+>
+> Never. once ever, to the best of my knowledge.
+>
+> So if we were to take that group of 100, 90 of them would just quit.
+>
+> And then 10 of those have the willpower and the grit, I guess, to say, okay, I screwed up, let me go back again.
+>
+> None of them do better than the people that just went through slowly.
+>
+> Yeah.
+>
+> So it's very much a case of the, you know, tortoise and hare situation, but except the tortoise just absolutely completely dominates the hare without any possible chance of the hare ever in any universe doing better than the tortoise.
+>
+> So please do not rush.
+>
+> Now, there are actually two different ways that you can rush.
+>
+> Most people, when I say don't rush, they think about it just in terms of time.
+>
+> So for example, if we say, hey, you should spend maybe a month or so at fundamentals, then they might say, okay, cool.
+>
+> Well, I've spent two months at fundamentals, so I should be all good to go.
+>
+> And that makes sense.
+>
+> But actually, it's more complicated than that.
+>
+> Because there is another way to rush, which is simply getting insufficient practice.
+>
+> So what's important is actually not the passage of time.
+>
+> It's what you're doing in that time.
+>
+> For example, if two months have passed, but you haven't actually practiced any of the techniques at all, it's really the same as no time has passed.
+>
+> So what's important here is actually getting sufficient practice in.
+>
+> And likewise, you could spend two weeks at a certain lesson instead of one month.
+>
+> But you might be practicing 10 hours a day, in which case it might be okay for you to move on.
+>
+> This is the reason why feedback is very important, because it takes an experienced eye to say, yep, I think it's okay for you to move on.
+>
+> And it's important for you to be honest with yourself as well.
+>
+> So we have the practice predictor.
+>
+> We have various tools that allow you to figure out how much you need to practice.
+>
+> But the rule of thumb is that for every single technique that you learn, you should try to get to a level of competency where you're not having to try very hard to do it correctly.
+>
+> So if you're not doing it correctly, you're not going to be able to do it correctly anymore, which actually means a few things.
+>
+> Number one, you actually need to know what correct looks like.
+>
+> Again, feedback is important here.
+>
+> There are examples that are given.
+>
+> There are more examples as you go later on throughout the course.
+>
+> But there are examples, but there's only so much you can infer from an example, especially in these early stages, because in the early stages, people come into the course with all sorts of different types of techniques.
+>
+> And there are many, many different ways to do it.
+>
+> And so you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> And then you have to be able to get to the right level of competency.
+>
+> So they're going to look more similar because they're applying the same fundamental principles.
+>
+> But at the beginning, we're just trying to get you closer and closer to a good point, which is why feedback is just much faster and more effective than just having examples to look through.
+>
+> I mean, you'd have to look through hundreds of examples to get a good idea of whether what you're doing is correct or not.
+>
+> But you want to get that feedback, understand whether you're on the right track, and then get to the point where you can replicate that type of success without really having to try too hard.
+>
+> Now, the thing is this, is that you need to do this for every single technique because learning is not a single isolated thing.
+>
+> It happens in systems.
+>
+> And so if you have one technique that you can use and then you have another technique that you can use, when you do both techniques at the same time, it doesn't mean that you can actually straightaway do it correctly.
+>
+> For each new technique, that gets added on, each technique influences each other.
+>
+> So if you've got three techniques, they're all influencing each other.
+>
+> You get a three to four techniques that individually you can use each of these techniques with good accuracy.
+>
+> And when you try to do all four of them simultaneously, it can feel like learning to walk all over again.
+>
+> So every time you add a new technique onto your system, you need to test the whole system again to make sure it's still stable.
+>
+> It's one of the things that beginners often overlook.
+>
+> It implodes on them because a month down the line, they look back, they've learned like 12 new techniques.
+>
+> They've practiced each one only in isolation without integrating it into their everyday system.
+>
+> And then for the first time, they try doing it all together and it just completely crumbles.
+>
+> They fail on all fronts and it's very demotivating.
+>
+> So lots and lots and lots and lots of practice, right?
+>
+> Take a little bit of theory, do a lot of practice.
+>
+> If you follow that, then you should be relatively in good stead.
+>
+> And the general rule of thumb that we give here is that one to five ratio is that for every hour of theory, you will need at least five hours of practice for what you learned in that theory.
+>
+> Later in the more advanced stages, you may learn one hour of theory and you might actually need to practice like 40 to 100 hours just for that one hour of theory, partly because we teach like a lot in a short period of time.
+>
+> And also because later on, the techniques become more advanced.
+>
+> So that's another reason why.
+>
+> Before you get into the growth phases, the fundamentals and the high yield stuff needs to be super, super dialed in.
+>
+> Like you need to have a high level of competency with the fundamentals.
+>
+> Otherwise, you will really struggle.
+>
+> I mean, you may go through one hour in the growth phase and you might need two, 300 hours of practice to be able to learn it.
+>
+> If the fundamentals are shaky, because it's really hard to think about why something isn't happening correctly.
+>
+> If it was because of 14 steps back, there was this thing.
+>
+> That was the weakness.
+>
+> This is that very sequential method that I told you about before is that it does require very strict step by step progression to make sure that you're not running into errors.
+>
+> Now, I'll leave you with one thing that I think is very ironic.
+>
+> You know how I said that these rushes are essentially the sort of group of people and they all make very similar mistakes.
+>
+> The ironic thing is that every rusher will listen to this and what they think is I'm different.
+>
+> So if you're listening to this and you're thinking I'm different, you're a rusher.
+>
+> Thank you.
+>
+> Thank you.
+>
+> Bye. you
+

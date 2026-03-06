@@ -1,0 +1,162 @@
+topic_id: hand-anatomy
+name: Hand Anatomy (Spaces, Tendons)
+description: Hand Anatomy — Fascial spaces, tendons, nerve supply, and clinical correlations
+high_yield: true
+nmc_codes:
+- code: AN13.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The hand has complex anatomy with intricate tendons, muscles, fascial spaces, and neurovascular structures.
+  The palmar aponeurosis (from palmaris longus) covers the central compartment. Deep fascial spaces allow
+  infection spread. Flexor and extensor tendons have unique arrangements. The two main nerves (median and ulnar)
+  supply hand muscles, with the median nerve entering through the carpal tunnel.
+  📚 Gray's Anatomy, 42nd Ed, Ch.50; 📚 BD Chaurasia, Vol.1, Ch.7
+
+learning_objectives:
+  - Describe the fascial spaces of the hand and routes of infection spread
+  - List the tendons in the carpal tunnel and their arrangement
+  - Describe the intrinsic muscles of the hand and their nerve supply
+  - Explain the anatomical basis of claw hand, ape hand, and wrist drop
+  - Describe the blood supply of the hand (arterial arches)
+
+content:
+  atoms:
+    - id: fascial-spaces
+      title: "Fascial Spaces of the Hand"
+      text: >
+        Thenar space: between adductor pollicis (deep) and flexor tendons + 1st lumbrical (superficial).
+        Midpalmar space: between 3rd-5th metacarpals (deep) and flexor tendons + 2nd-4th lumbricals (superficial).
+        Separated by midpalmar septum from oblique head of adductor pollicis to 3rd metacarpal.
+        Web spaces: between fingers, communicate with dorsal subcutaneous space. Pulp space: closed space in
+        fingertip (felon when infected). Infections of little finger tendon sheath (ulnar bursa) or thumb
+        sheath (radial bursa) can spread to the space of Parona (in the forearm, anterior to pronator quadratus)
+        forming a "horseshoe abscess."
+        📚 BD Chaurasia, Vol.1, Ch.7 (p.110-118)
+
+    - id: carpal-tunnel
+      title: "Carpal Tunnel — Contents and Syndrome"
+      text: >
+        Boundaries: floor — carpal bones (scaphoid, trapezium laterally; pisiform, hamate medially); roof —
+        flexor retinaculum (transverse carpal ligament). Contents: 4 FDS tendons, 4 FDP tendons, FPL tendon
+        (total 9 tendons) + median nerve. Median nerve is most SUPERFICIAL (just deep to retinaculum) and LATERAL.
+        Structures NOT in carpal tunnel: ulnar nerve and artery (in Guyon's canal), palmaris longus tendon
+        (superficial to retinaculum). Carpal tunnel syndrome: median nerve compression → thenar atrophy,
+        numbness in lateral 3.5 fingers, positive Tinel's and Phalen's tests.
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed, Plate 449
+
+    - id: intrinsic-muscles
+      title: "Intrinsic Hand Muscles & Nerve Supply"
+      text: >
+        Thenar muscles: opponens pollicis, abductor pollicis brevis, flexor pollicis brevis (superficial head)
+        — all median nerve (recurrent branch). Adductor pollicis + FPB deep head — ulnar nerve.
+        Hypothenar muscles: opponens digiti minimi, abductor digiti minimi, flexor digiti minimi brevis — ulnar nerve.
+        Lumbricals: 1st and 2nd — median nerve; 3rd and 4th — ulnar nerve (mnemonic: "1,2 — Median; 3,4 — Ulnar").
+        All interossei (palmar and dorsal): ulnar nerve. PAD (Palmar ADduct) and DAB (Dorsal ABduct).
+        📚 BD Chaurasia, Vol.1; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: nerve-injury-patterns
+      title: "Nerve Injury Patterns in the Hand"
+      text: >
+        Median nerve (high lesion): ape/simian hand — loss of thenar opposition, cannot pinch. Hand of benediction
+        (when making a fist — index + middle stay extended). Pen test positive (cannot pick up pen with pulp-to-pulp pinch).
+        Ulnar nerve: claw hand — hyperextension of MCP + flexion of IP joints of ring and little fingers (unopposed
+        EDC at MCP, FDP still works for ring/little via ulnar part). Ulnar paradox: the higher the lesion, the
+        LESS the clawing (FDP to ring/little also lost). Froment's sign positive (flexion of thumb IP during paper grip
+        — loss of adductor pollicis). Radial nerve: wrist drop — cannot extend wrist/fingers/thumb.
+        📚 BD Chaurasia, Vol.1; 📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Horseshoe Abscess"
+      text: >
+        Infection in the radial bursa (thumb flexor sheath) can spread to the space of Parona and then to the
+        ulnar bursa (little finger sheath), or vice versa. This creates a horseshoe-shaped abscess.
+        Kanavel's signs of flexor sheath infection: fusiform swelling, flexed posture, tenderness along sheath,
+        pain on passive extension.
+    - title: "Clinical: Dupuytren's Contracture"
+      text: >
+        Fibrosis and thickening of palmar aponeurosis → progressive flexion contracture of MCP and PIP joints,
+        most commonly ring and little fingers. Associated with alcoholism, diabetes, epilepsy (phenytoin),
+        manual labor. Palmar aponeurosis receives slip from palmaris longus tendon.
+
+high_yield_points:
+  - "Carpal tunnel: 9 tendons (4 FDS + 4 FDP + FPL) + median nerve"
+  - "Median nerve most superficial in carpal tunnel — first compressed"
+  - "Ulnar nerve passes through Guyon's canal, NOT carpal tunnel"
+  - "Lumbricals 1,2 = median nerve; 3,4 = ulnar nerve"
+  - "All interossei supplied by ulnar nerve — PAD (palmar adduct), DAB (dorsal abduct)"
+  - "Claw hand = ulnar nerve injury; Ape hand = median nerve injury; Wrist drop = radial nerve"
+  - "Ulnar paradox: higher lesion → less clawing"
+  - "Froment's sign: loss of adductor pollicis (ulnar nerve) — thumb IP flexes during paper grip"
+  - "Horseshoe abscess: radial bursa → space of Parona → ulnar bursa"
+  - "Dupuytren's contracture: palmar aponeurosis fibrosis → ring + little finger flexion"
+
+mcqs:
+  - question: "The carpal tunnel contains all of the following EXCEPT:"
+    options:
+      - "Flexor digitorum superficialis tendons"
+      - "Median nerve"
+      - "Ulnar nerve"
+      - "Flexor pollicis longus tendon"
+    answer: "Ulnar nerve"
+    explanation: >
+      The ulnar nerve passes through Guyon's canal (between pisiform and hook of hamate), NOT the carpal tunnel.
+      The carpal tunnel contains 9 tendons (4 FDS, 4 FDP, 1 FPL) and the median nerve.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 1
+
+  - question: "Ulnar nerve injury at the wrist causes claw hand affecting which fingers?"
+    options:
+      - "Index and middle"
+      - "Ring and little"
+      - "All fingers"
+      - "Thumb only"
+    answer: "Ring and little"
+    explanation: >
+      Ulnar nerve supplies the 3rd and 4th lumbricals (ring and little fingers). Loss of lumbrical action →
+      unopposed EDC at MCP (hyperextension) with intact FDP at IP (flexion) → clawing of ring and little fingers.
+      Index and middle lumbricals (median nerve) are intact.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Froment's sign tests for paralysis of which muscle?"
+    options:
+      - "First dorsal interosseous"
+      - "Adductor pollicis"
+      - "Opponens pollicis"
+      - "Flexor pollicis brevis"
+    answer: "Adductor pollicis"
+    explanation: >
+      Froment's sign: patient grips paper between thumb and index finger. With adductor pollicis paralysis
+      (ulnar nerve), the thumb IP joint flexes (FPL, median nerve substitutes) instead of adducting at MCP.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 2
+
+  - question: "The 'ulnar paradox' refers to:"
+    options:
+      - "More clawing with higher ulnar nerve lesion"
+      - "Less clawing with higher ulnar nerve lesion"
+      - "Clawing only in median nerve injury"
+      - "No clawing in combined nerve injury"
+    answer: "Less clawing with higher ulnar nerve lesion"
+    explanation: >
+      In high ulnar nerve lesion (above elbow), FDP to ring and little fingers is also paralyzed (in addition
+      to intrinsic muscles). Without FDP action, the IP joints cannot flex → less obvious clawing.
+      Low lesion (at wrist): lumbricals lost but FDP intact → more pronounced clawing.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2
+
+  - question: "Infection in the radial bursa can spread to form a horseshoe abscess by communicating through:"
+    options:
+      - "Midpalmar space"
+      - "Thenar space"
+      - "Space of Parona"
+      - "Dorsal subaponeurotic space"
+    answer: "Space of Parona"
+    explanation: >
+      The radial bursa (thumb flexor sheath) and ulnar bursa (little finger sheath) can communicate through the
+      space of Parona (anterior to pronator quadratus in the distal forearm), forming a horseshoe abscess.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 2

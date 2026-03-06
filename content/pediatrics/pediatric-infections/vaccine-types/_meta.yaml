@@ -1,0 +1,17 @@
+topic_id: vaccine-types
+name: Vaccine Types
+description: Vaccine Types — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE19.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE19.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE19.9
+  domain: KH
+  core: true
+  phase: Phase 2

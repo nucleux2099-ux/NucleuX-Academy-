@@ -1,0 +1,21 @@
+topic_id: coverings-determination-internal-side
+name: '& demonstrate coverings, internal structure, side determination'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN46.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN46.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN46.4
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN46.5
+  domain: KH
+  core: false
+  phase: Phase 1

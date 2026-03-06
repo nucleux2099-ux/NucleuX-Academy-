@@ -1,0 +1,21 @@
+topic_id: ps1-establish-rapport-and-empathy-with-patients-ac
+name: Establish rapport and empathy with patients A/C
+description: Establish rapport and empathy with patients A/C — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS1.1
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS1.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS1.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS1.4
+  domain: SH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,26 @@
+title: "Febrile Seizures"
+slug: febrile-seizures
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM16.1"
+prerequisites:
+  - "seizure-disorders"
+related_topics:
+  - "antiepileptic-drugs"
+  - "meningitis"
+enrichment:
+  nmcCodes:
+    - code: "IM16.1"
+      text: "Describe and discuss the classification, aetiology and management of febrile seizures"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "seizure-disorders"
+      reason: "Febrile seizures are a specific seizure syndrome"
+  related_details:
+    - slug: "antiepileptic-drugs"
+      reason: "Acute management may require benzodiazepines"
+      relationship: "clinical"
+    - slug: "meningitis"
+      reason: "Must exclude as cause of fever with seizures"
+      relationship: "clinical"

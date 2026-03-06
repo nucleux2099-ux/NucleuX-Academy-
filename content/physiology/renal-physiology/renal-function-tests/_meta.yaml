@@ -1,0 +1,41 @@
+topic_id: renal-function-tests
+name: Renal Function Tests
+description: Renal Function Tests — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY4.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.14
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: PY6.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY8.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.10
+  domain: KH
+  core: true
+  phase: Phase 1

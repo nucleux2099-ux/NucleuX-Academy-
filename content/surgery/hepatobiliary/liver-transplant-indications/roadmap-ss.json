@@ -1,0 +1,51 @@
+{
+  "level": "SS",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Couinaud segmental anatomy is critical for living donor hepatectomy planning and graft size matching",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "portal-hypertension",
+      "nmcCode": "",
+      "reason": "Decompensated cirrhosis with portal hypertension (MELD scoring) is the primary indication for transplant listing",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "Milan criteria determine transplant eligibility for HCC — curative option for early-stage tumors in cirrhotic livers",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-abscess",
+      "nmcCode": "",
+      "reason": "Fulminant hepatic failure from amoebic liver abscess may rarely require emergent transplant evaluation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Secondary biliary cirrhosis from chronic obstruction can progress to end-stage liver disease requiring transplant",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU13.1: Describe the immunological basis of organ transplantation",
+    "SU13.2: Discuss the Principles of immunosuppressive therapy. Enumerate",
+    "IM5.18: Enumerate the indications for hepatic transplantation"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This superspecialty-level roadmap connects Liver Transplant Indications across foundational sciences and clinical applications."
+}

@@ -1,0 +1,9 @@
+topic_id: appendages-correlate-microscope-skin
+name: The skin and its appendages under the microscope and correlate
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN72.1
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,22 @@
+title: "GI Motility Disorders"
+slug: gi-motility-disorders
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM5.15"
+prerequisites:
+  - "gerd-medical"
+related_topics:
+  - "inflammatory-bowel-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM5.15"
+      text: "GI Motility Disorders — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "gerd-medical"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "inflammatory-bowel-disease"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,147 @@
+topic_id: amino-acid-metabolism-urea-cycle
+name: "Amino Acid Metabolism & Urea Cycle"
+description: >
+  Amino acid catabolism, transamination, deamination, and the urea cycle for ammonia disposal.
+high_yield: true
+nmc_codes:
+  - code: BI7.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Amino acids are catabolized by transamination (ALT, AST) and oxidative deamination (glutamate dehydrogenase).
+  The resulting ammonia is toxic and must be converted to urea via the urea cycle (5 enzymes, 2 mitochondrial +
+  3 cytoplasmic) in hepatocytes. Defects cause hyperammonemia. Amino acids are classified as glucogenic,
+  ketogenic, or both based on their catabolic products.
+  📚 Harper's Biochemistry, 31st Ed, Ch.28-29; 📚 Stryer Biochemistry, Ch.23
+
+learning_objectives:
+  - Describe transamination and its clinical significance (ALT, AST)
+  - Explain the glucose-alanine cycle and its role in nitrogen transport
+  - Enumerate the 5 steps of the urea cycle with enzymes and cellular locations
+  - Classify amino acids as glucogenic, ketogenic, or both
+  - Recognize clinical features of urea cycle defects and hyperammonemia
+
+content:
+  atoms:
+    - id: transamination-deamination
+      title: "Transamination & Deamination"
+      text: >
+        Transamination: amino group transferred to α-ketoglutarate → glutamate (by aminotransferases, require PLP/B6).
+        ALT (alanine aminotransferase): alanine + α-KG ↔ pyruvate + glutamate (liver-specific marker).
+        AST (aspartate aminotransferase): aspartate + α-KG ↔ OAA + glutamate (heart, liver, muscle).
+        Oxidative deamination: glutamate → α-KG + NH4+ (glutamate dehydrogenase, mitochondrial, uses NAD+/NADP+).
+        Ammonia transport: as glutamine (glutamine synthetase) in most tissues; as alanine (glucose-alanine cycle) from muscle.
+        📚 Harper's Biochemistry, 31st Ed, Ch.28
+
+    - id: urea-cycle
+      title: "The Urea Cycle"
+      text: >
+        5 enzymes, starts in mitochondria (steps 1-2), continues in cytoplasm (steps 3-5).
+        (1) CPS-I (carbamoyl phosphate synthetase I): NH4+ + CO2 + 2ATP → carbamoyl phosphate
+        (rate-limiting, activated by N-acetylglutamate).
+        (2) OTC (ornithine transcarbamylase): carbamoyl phosphate + ornithine → citrulline.
+        (3) ASS (argininosuccinate synthetase): citrulline + aspartate + ATP → argininosuccinate.
+        (4) ASL (argininosuccinate lyase): argininosuccinate → arginine + fumarate.
+        (5) Arginase: arginine → urea + ornithine (recycled).
+        Net: 2NH4+ + CO2 + 3ATP → urea + 2H2O. One nitrogen from free NH4+, one from aspartate.
+        📚 Harper's Biochemistry, 31st Ed, Ch.28
+
+    - id: amino-acid-classification
+      title: "Glucogenic vs Ketogenic Amino Acids"
+      text: >
+        Glucogenic: degraded to pyruvate, OAA, α-KG, succinyl-CoA, fumarate → can make glucose.
+        Ketogenic: degraded to acetyl-CoA or acetoacetyl-CoA → can make ketone bodies, NOT glucose.
+        Purely ketogenic: leucine, lysine (mnemonic: "LL" = Leucine, Lysine).
+        Both glucogenic + ketogenic: isoleucine, phenylalanine, tryptophan, tyrosine, threonine.
+        All other amino acids are purely glucogenic.
+        Essential amino acids (PVT TIM HALL): Phe, Val, Thr, Trp, Ile, Met, His, Arg, Leu, Lys.
+        📚 Stryer Biochemistry, Ch.23
+
+  clinical:
+    - title: "Clinical Correlation: OTC Deficiency"
+      text: >
+        Most common urea cycle defect. X-linked. Presents with hyperammonemia, vomiting, lethargy
+        in neonates. ↑Orotic acid in urine (carbamoyl phosphate diverted to pyrimidine synthesis).
+        Distinguishes from CPS-I deficiency (no orotic aciduria). Treatment: low-protein diet, sodium benzoate/phenylbutyrate.
+    - title: "Clinical Correlation: Hepatic Encephalopathy"
+      text: >
+        Liver failure → impaired urea cycle → hyperammonemia → astrocyte swelling (glutamine accumulation),
+        cerebral edema. Treatment: lactulose (traps NH4+ in gut), rifaximin (↓gut bacteria producing NH3).
+
+high_yield_points:
+  - "CPS-I is rate-limiting enzyme of urea cycle; activated by N-acetylglutamate"
+  - "OTC deficiency = most common urea cycle defect, X-linked, ↑orotic acid in urine"
+  - "Purely ketogenic amino acids: Leucine and Lysine ONLY"
+  - "ALT is more specific for LIVER damage than AST"
+  - "One nitrogen in urea comes from free NH4+, the other from aspartate"
+  - "All aminotransferases require pyridoxal phosphate (vitamin B6) as cofactor"
+  - "Ammonia is transported as glutamine (most tissues) or alanine (muscle)"
+  - "N-acetylglutamate is the obligatory activator of CPS-I"
+
+mcqs:
+  - question: "The rate-limiting enzyme of the urea cycle is:"
+    options:
+      - "Ornithine transcarbamylase"
+      - "Carbamoyl phosphate synthetase I"
+      - "Arginase"
+      - "Argininosuccinate synthetase"
+    answer: "Carbamoyl phosphate synthetase I"
+    explanation: >
+      CPS-I catalyzes the first committed step of the urea cycle and is the rate-limiting enzyme.
+      It requires N-acetylglutamate as an obligatory activator.
+      📚 Harper's Biochemistry, 31st Ed, Ch.28
+    difficulty: 1
+
+  - question: "A neonate with hyperammonemia has elevated orotic acid in urine. The most likely enzyme deficiency is:"
+    options:
+      - "CPS-I"
+      - "Ornithine transcarbamylase (OTC)"
+      - "Arginase"
+      - "Argininosuccinate lyase"
+    answer: "Ornithine transcarbamylase (OTC)"
+    explanation: >
+      OTC deficiency → carbamoyl phosphate accumulates → diverted to pyrimidine synthesis pathway →
+      ↑orotic acid in urine. CPS-I deficiency also causes hyperammonemia but WITHOUT orotic aciduria.
+      📚 Harper's Biochemistry, 31st Ed, Ch.28
+    difficulty: 2
+
+  - question: "Which amino acids are purely ketogenic?"
+    options:
+      - "Leucine and isoleucine"
+      - "Leucine and lysine"
+      - "Lysine and tryptophan"
+      - "Phenylalanine and tyrosine"
+    answer: "Leucine and lysine"
+    explanation: >
+      Only leucine and lysine are purely ketogenic (degraded exclusively to acetyl-CoA/acetoacetyl-CoA).
+      Isoleucine, Phe, Trp, Tyr, Thr are both glucogenic and ketogenic.
+      📚 Stryer Biochemistry, Ch.23
+    difficulty: 1
+
+  - question: "In the glucose-alanine cycle, alanine is transported from muscle to liver where it is converted to:"
+    options:
+      - "Glutamate"
+      - "Pyruvate"
+      - "Oxaloacetate"
+      - "α-Ketoglutarate"
+    answer: "Pyruvate"
+    explanation: >
+      In liver, ALT transaminates alanine + α-KG → pyruvate + glutamate. Pyruvate is then used for
+      gluconeogenesis, and the glucose returns to muscle. The amino group goes to urea cycle.
+      📚 Harper's Biochemistry, 31st Ed, Ch.28
+    difficulty: 2
+
+  - question: "All aminotransferases require which vitamin as a cofactor?"
+    options:
+      - "Thiamine (B1)"
+      - "Riboflavin (B2)"
+      - "Pyridoxine (B6)"
+      - "Cobalamin (B12)"
+    answer: "Pyridoxine (B6)"
+    explanation: >
+      Pyridoxal phosphate (PLP), the active form of vitamin B6, is the essential cofactor for all
+      aminotransferases. It temporarily accepts the amino group during the transamination reaction.
+      📚 Harper's Biochemistry, 31st Ed, Ch.28
+    difficulty: 1

@@ -1,0 +1,145 @@
+overview: |
+  Breast cancer is the most common cancer in women worldwide. Invasive ductal carcinoma (IDC) is the MC type (70-80%).
+  Triple assessment (clinical, radiological, pathological) is the cornerstone of diagnosis. Management involves
+  surgery (BCS/mastectomy), chemotherapy, radiotherapy, hormonal therapy, and targeted therapy based on molecular subtypes.
+
+learning_objectives:
+  - Apply triple assessment for breast lumps
+  - Classify breast cancer by histological type and molecular subtype
+  - Describe TNM staging and its impact on management
+  - Compare breast-conserving surgery vs mastectomy with indications
+  - Understand the role of sentinel lymph node biopsy and adjuvant therapy
+
+content:
+  atoms:
+    - title: Risk Factors & Screening
+      text: |
+        **Risk factors:** Female sex, age >50, early menarche, late menopause, nulliparity, late first
+        pregnancy (>30), HRT, BRCA1/2 mutations (BRCA1 — breast + ovarian; BRCA2 — breast + male breast cancer),
+        family history, previous breast cancer, atypical ductal hyperplasia, LCIS.
+        **Protective:** Early pregnancy, breastfeeding, exercise, oophorectomy.
+        **Screening:** Mammography — gold standard. BIRADS classification (0-6). MRI for high-risk (BRCA carriers).
+        📚 Bailey & Love, 28th Ed, Ch.53; Sabiston, 21st Ed, Ch.34
+
+    - title: Triple Assessment
+      text: |
+        1. **Clinical:** History + examination (lump, skin changes, nipple retraction/discharge, axillary nodes)
+        2. **Radiological:** Mammography (<35 yrs: USG first, >35: mammography). Microcalcifications on mammography
+        suggest DCIS. Spiculated mass with architectural distortion suggests invasive cancer.
+        3. **Pathological:** FNAC (C1-C5 classification) or Core needle biopsy (preferred — gives histology, grade, ER/PR/HER2 status).
+        Core biopsy is gold standard for tissue diagnosis.
+        📚 Bailey & Love, 28th Ed, Ch.53
+
+    - title: Histological Types & Molecular Subtypes
+      text: |
+        **Non-invasive:** DCIS (comedo type worst prognosis), LCIS (bilateral, marker for risk, not precancer).
+        **Invasive:** IDC/NST (70-80%, MC), ILC (10-15%, bilateral, diffuse, E-cadherin loss),
+        Medullary (good prognosis, BRCA1-associated), Mucinous/Colloid (good prognosis, elderly),
+        Tubular (excellent prognosis), Inflammatory (worst prognosis, peau d'orange, T4d).
+        **Molecular subtypes:** Luminal A (ER+/PR+/HER2−, Ki67 low — best prognosis, hormonal therapy),
+        Luminal B (ER+/PR+/HER2+/−, Ki67 high), HER2-enriched (ER−/PR−/HER2+ — trastuzumab),
+        Triple negative/Basal-like (ER−/PR−/HER2− — worst prognosis, only chemotherapy).
+        📚 Sabiston, 21st Ed, Ch.34
+
+    - title: Surgical Management
+      text: |
+        **BCS (Breast Conserving Surgery/Wide Local Excision/Lumpectomy):** Tumour <4cm, single lesion,
+        adequate breast volume, patient preference. MUST be followed by whole breast radiotherapy.
+        Contraindications: Multicentric disease, large tumour:breast ratio, previous RT, pregnancy.
+        **Modified Radical Mastectomy (Patey's):** Removes breast + axillary nodes, preserves pectoralis major
+        (removes minor). Standard for most invasive cancers not suitable for BCS.
+        **Sentinel Lymph Node Biopsy (SLNB):** Blue dye + radiocolloid. If negative → no axillary clearance needed.
+        If positive → axillary clearance or radiotherapy to axilla (AMAROS trial).
+        📚 Bailey & Love, 28th Ed, Ch.53; Sabiston, 21st Ed, Ch.34
+
+    - title: Adjuvant Therapy
+      text: |
+        **Chemotherapy:** AC (adriamycin + cyclophosphamide) ± Taxane. For node-positive, high-grade, triple negative.
+        **Hormonal therapy:** ER+: Tamoxifen (premenopausal — SERM, 5 years) or Aromatase inhibitors
+        (postmenopausal — letrozole, anastrozole). **HER2-targeted:** Trastuzumab (Herceptin) — monitor cardiac function.
+        **Radiotherapy:** Mandatory after BCS. Post-mastectomy if tumour >5cm, >4 positive nodes, chest wall involvement.
+        **Paget's disease of nipple:** DCIS/invasive cancer involving nipple epidermis — eczematous nipple changes.
+        📚 Sabiston, 21st Ed, Ch.34
+
+  clinical: |
+    **Approach to Breast Lump:**
+    1. Triple assessment: Clinical + Imaging + Tissue diagnosis
+    2. Age <35: USG first. Age >35: Mammography + USG
+    3. Core biopsy (preferred over FNAC) → Histology + ER/PR/HER2
+    4. Staging: CT chest/abdomen, bone scan if indicated
+    5. MDT discussion → Treatment plan
+    6. Early stage: BCS + RT or MRM + adjuvant therapy
+    7. Locally advanced (T3/T4): Neoadjuvant chemotherapy → surgery → adjuvant therapy
+
+  high_yield_points:
+    - "MC cancer in women: Breast cancer; MC type: Invasive ductal carcinoma (IDC)"
+    - "MC site: Upper outer quadrant (axillary tail of Spence)"
+    - "Triple assessment: Clinical + Radiological + Pathological"
+    - "Core biopsy preferred over FNAC — gives histology and receptor status"
+    - "BRCA1: Breast + Ovarian cancer; BRCA2: Breast + Male breast cancer"
+    - "BCS MUST be followed by whole breast radiotherapy (equivalent survival to mastectomy)"
+    - "SLNB: If negative, no axillary clearance needed"
+    - "Tamoxifen: Premenopausal ER+ breast cancer; AI: Postmenopausal"
+    - "Triple negative breast cancer: Worst prognosis, only chemotherapy works"
+    - "Paget's disease of nipple: Always has underlying DCIS/invasive cancer"
+
+mcqs:
+  - question: "A 50-year-old woman presents with a hard, fixed 3 cm lump in the upper outer quadrant with ipsilateral axillary lymphadenopathy. Core biopsy shows ER+/PR+/HER2−. What is the molecular subtype?"
+    options:
+      a: Luminal A
+      b: Luminal B
+      c: HER2-enriched
+      d: Triple negative
+    answer: a
+    explanation: |
+      ER+/PR+/HER2− with low Ki67 is Luminal A (best prognosis). If Ki67 were high, it would be
+      Luminal B. This subtype responds well to hormonal therapy (tamoxifen/aromatase inhibitors).
+      📚 Sabiston, 21st Ed, Ch.34
+
+  - question: "What is the most important contraindication for breast-conserving surgery?"
+    options:
+      a: Age >70 years
+      b: Multicentric disease
+      c: Tumour size 2 cm
+      d: Axillary lymph node involvement
+    answer: b
+    explanation: |
+      Multicentric disease (cancer in multiple quadrants) is an absolute contraindication for BCS.
+      Other contraindications: previous chest wall RT, pregnancy, large tumour:breast ratio,
+      inflammatory breast cancer. 📚 Bailey & Love, 28th Ed, Ch.53
+
+  - question: "Which histological type of breast cancer is associated with loss of E-cadherin?"
+    options:
+      a: Invasive ductal carcinoma
+      b: Invasive lobular carcinoma
+      c: Medullary carcinoma
+      d: Mucinous carcinoma
+    answer: b
+    explanation: |
+      ILC shows loss of E-cadherin (cell adhesion molecule), leading to diffuse infiltrative pattern
+      (Indian file pattern). It is the 2nd MC type, tends to be bilateral, and may be missed on
+      mammography due to its infiltrative nature. 📚 Sabiston, 21st Ed, Ch.34
+
+  - question: "Sentinel lymph node biopsy is performed using:"
+    options:
+      a: Blue dye only
+      b: Radiocolloid only
+      c: Combined blue dye and radiocolloid
+      d: CT lymphangiography
+    answer: c
+    explanation: |
+      Dual technique (blue dye + Tc99m radiocolloid) gives the highest detection rate (>95%).
+      The sentinel node is the first node to receive lymphatic drainage from the tumour.
+      If negative on frozen section/H&E, axillary clearance is avoided. 📚 Bailey & Love, 28th Ed, Ch.53
+
+  - question: "Paget's disease of the nipple is associated with:"
+    options:
+      a: Benign eczema of the nipple
+      b: Underlying DCIS or invasive carcinoma
+      c: Fibroadenoma
+      d: Fat necrosis
+    answer: b
+    explanation: |
+      Paget's disease presents as eczematous changes of the nipple and ALWAYS has underlying
+      DCIS (with or without invasive component). Paget cells (large, clear, PAS-positive) are
+      found in nipple epidermis. Treatment involves mastectomy or central excision + RT. 📚 Sabiston, 21st Ed, Ch.34

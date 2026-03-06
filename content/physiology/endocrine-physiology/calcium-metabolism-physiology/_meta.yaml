@@ -1,0 +1,9 @@
+topic_id: calcium-metabolism-physiology
+name: Calcium Metabolism Physiology
+description: Calcium Metabolism Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY8.1
+  domain: KH
+  core: true
+  phase: Phase 1

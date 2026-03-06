@@ -1,0 +1,51 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "preoperative-assessment",
+      "nmcCode": "",
+      "reason": "Investigations are ordered based on preoperative clinical assessment and risk stratification",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Interpreting biochemical investigations requires understanding of fluid-electrolyte and acid-base homeostasis",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "minimally-invasive-surgery",
+      "nmcCode": "",
+      "reason": "Preoperative imaging (CT, MRI) is essential for planning laparoscopic and robotic surgical approaches",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "organ-transplantation",
+      "nmcCode": "",
+      "reason": "Donor evaluation and post-transplant surveillance rely heavily on imaging and laboratory investigations",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-audit",
+      "nmcCode": "",
+      "reason": "Appropriate investigation ordering and diagnostic accuracy are key surgical audit metrics",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU9.1: Choose appropriate biochemical, microbiological, pathological, imaging",
+    "SU9.2: Biological basis for early detection of cancer and multidisciplinary C",
+    "SU9.3: Communicate the results of surgical investigations and counsel the C"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Investigations & Imaging across foundational sciences and clinical applications."
+}

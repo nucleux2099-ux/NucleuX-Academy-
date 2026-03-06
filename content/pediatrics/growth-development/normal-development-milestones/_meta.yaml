@@ -1,0 +1,17 @@
+topic_id: normal-development-milestones
+name: Normal Development Milestones
+description: Normal Development Milestones — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE1.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE1.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE1.6
+  domain: KH
+  core: true
+  phase: Phase 2

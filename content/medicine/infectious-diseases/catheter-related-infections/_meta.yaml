@@ -1,0 +1,19 @@
+title: "Catheter-Related Infections"
+slug: catheter-related-infections
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM8.14"
+prerequisites: []
+related_topics:
+  - "ventilator-associated-pneumonia"
+enrichment:
+  nmcCodes:
+    - code: "IM8.14"
+      text: "Catheter-Related Infections — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "ventilator-associated-pneumonia"
+      reason: "Clinically related"
+      relationship: "clinical"

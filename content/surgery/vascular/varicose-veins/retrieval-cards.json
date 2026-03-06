@@ -1,0 +1,21 @@
+{
+  "topic_id": "varicose-veins",
+  "version": "1.0",
+  "cards": [
+    {"id": "vv-001", "front": "What are varicose veins?", "back": "Dilated, tortuous superficial veins due to valve incompetence", "tags": ["definition", "high-yield"]},
+    {"id": "vv-002", "front": "Which vein is most commonly affected in varicose veins?", "back": "Great saphenous vein (GSV)", "tags": ["anatomy", "high-yield"]},
+    {"id": "vv-003", "front": "Where is the saphenofemoral junction (SFJ)?", "back": "4 cm below and lateral to the pubic tubercle", "tags": ["anatomy", "high-yield"]},
+    {"id": "vv-004", "front": "What is the Trendelenburg test?", "back": "Test for SFJ incompetence: elevate leg → tourniquet at SFJ → stand → observe filling", "tags": ["examination", "high-yield"]},
+    {"id": "vv-005", "front": "What does CEAP C6 indicate?", "back": "Active venous ulcer", "tags": ["classification"]},
+    {"id": "vv-006", "front": "What is the gold standard investigation for varicose veins?", "back": "Duplex ultrasound", "tags": ["investigation", "high-yield"]},
+    {"id": "vv-007", "front": "What is EVLA?", "back": "Endovenous Laser Ablation — minimally invasive treatment for varicose veins", "tags": ["treatment"]},
+    {"id": "vv-008", "front": "What is the tap test (Schwartz test)?", "back": "Tapping vein proximally transmits impulse distally if valves incompetent", "tags": ["examination"]},
+    {"id": "vv-009", "front": "What is Perthe's test?", "back": "Tests deep vein patency: tourniquet + walking → if pain/more prominent = DVT", "tags": ["examination"]},
+    {"id": "vv-010", "front": "Where do venous ulcers typically occur?", "back": "Medial malleolus (gaiter area)", "tags": ["clinical", "high-yield"]},
+    {"id": "vv-011", "front": "What causes skin changes in chronic venous disease?", "back": "Venous hypertension → capillary leakage → hemosiderin deposition, lipodermatosclerosis", "tags": ["pathophysiology"]},
+    {"id": "vv-012", "front": "What is saphena varix?", "back": "Dilation at SFJ — has cough impulse, disappears on lying down", "tags": ["clinical"]},
+    {"id": "vv-013", "front": "Conservative management of varicose veins?", "back": "Compression stockings, leg elevation, weight loss, exercise", "tags": ["treatment"]},
+    {"id": "vv-014", "front": "What is foam sclerotherapy?", "back": "Injection of sclerosant foam to obliterate varicose veins", "tags": ["treatment"]},
+    {"id": "vv-015", "front": "What is the surgical treatment for GSV incompetence?", "back": "SFJ ligation + stripping (or endovenous ablation)", "tags": ["surgery"]}
+  ]
+}

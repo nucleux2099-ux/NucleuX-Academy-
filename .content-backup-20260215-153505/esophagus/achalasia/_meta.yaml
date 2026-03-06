@@ -1,0 +1,9 @@
+topic_id: achalasia
+name: "Achalasia"
+description: "Presentation, diagnosis, barium/manometry, treatment options"
+high_yield: true
+difficulty: 4
+estimated_minutes: 25
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [esophageal-manometry]
+related_topics: [heller-myotomy, poem-procedure, achalasia-lhm-vs-poem]

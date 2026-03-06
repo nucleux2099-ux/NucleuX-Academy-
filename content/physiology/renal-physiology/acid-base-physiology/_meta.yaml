@@ -1,0 +1,178 @@
+topic_id: acid-base-physiology
+name: Acid-Base Physiology
+description: Acid-Base Physiology — Buffer systems, Henderson-Hasselbalch equation, respiratory and metabolic disorders, compensation
+high_yield: true
+nmc_codes:
+- code: PY7.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  Acid-base balance maintains blood pH at 7.35-7.45. Three lines of defense: (1) Chemical buffers (seconds),
+  (2) Respiratory compensation (minutes), (3) Renal compensation (hours-days). The bicarbonate buffer system
+  (CO2/HCO3-) is the most important physiological buffer. Disorders classified as metabolic or respiratory,
+  acidosis or alkalosis, with appropriate compensatory responses.
+  📚 Guyton & Hall, 14th Ed, Ch.31 (p.399-416) / 📚 Ganong's, 26th Ed, Ch.39
+
+learning_objectives:
+  - Describe the major buffer systems and their relative importance
+  - Apply the Henderson-Hasselbalch equation to clinical acid-base problems
+  - Classify acid-base disorders using ABG interpretation
+  - Calculate anion gap and its clinical significance
+  - Explain renal mechanisms of acid-base regulation (HCO3- reabsorption, H+ secretion, NH4+ excretion)
+
+content:
+  atoms:
+    - id: buffer-systems
+      title: "Buffer Systems"
+      text: >
+        Bicarbonate buffer (ECF): CO2 + H2O ⇌ H2CO3 ⇌ H+ + HCO3-. Most important PHYSIOLOGICAL buffer
+        because both components are independently regulated (CO2 by lungs, HCO3- by kidneys).
+        Phosphate buffer (ICF, urine): HPO4²- + H+ ⇌ H2PO4-. Important in renal tubular buffering.
+        Protein buffer (ICF): Hemoglobin is the most important intracellular buffer.
+        Bone buffer: in chronic acidosis, bone releases CaCO3 and CaPO4 → buffering but → osteoporosis.
+        Henderson-Hasselbalch: pH = 6.1 + log([HCO3-]/[0.03 × PCO2]).
+        Normal values: pH 7.4, HCO3- 24 mEq/L, PCO2 40 mmHg.
+        📚 Guyton & Hall, 14th Ed, Ch.31 (p.399-404)
+
+    - id: abg-interpretation
+      title: "ABG Interpretation — Stepwise Approach"
+      text: >
+        Step 1: pH — acidemia (<7.35) or alkalemia (>7.45)?
+        Step 2: Primary disorder — is it respiratory (PCO2 abnormal) or metabolic (HCO3- abnormal)?
+        Step 3: Compensation — is it appropriate?
+        Metabolic acidosis: ↓HCO3- → respiratory compensation: expected PCO2 = 1.5 × [HCO3-] + 8 (Winter's formula).
+        Metabolic alkalosis: ↑HCO3- → expected PCO2 = 0.7 × [HCO3-] + 21.
+        Respiratory acidosis (acute): ↑PCO2 → HCO3- rises 1 mEq/L per 10 mmHg ↑PCO2.
+        Respiratory acidosis (chronic): HCO3- rises 3.5 mEq/L per 10 mmHg ↑PCO2.
+        Step 4: Calculate anion gap if metabolic acidosis present.
+        📚 Ganong's, 26th Ed, Ch.39
+
+    - id: anion-gap
+      title: "Anion Gap"
+      text: >
+        AG = Na+ - (Cl- + HCO3-). Normal = 8-12 mEq/L (with albumin correction: add 2.5 for each 1 g/dL ↓albumin).
+        High AG metabolic acidosis (MUDPILES): Methanol, Uremia, DKA, Propylene glycol, Isoniazid/Iron,
+        Lactic acidosis, Ethylene glycol, Salicylates.
+        Normal AG (hyperchloremic) metabolic acidosis: Diarrhea, RTA (types 1, 2, 4), saline infusion,
+        carbonic anhydrase inhibitors, ureteral diversions.
+        Delta-delta (Δ/Δ): ΔAG/ΔHCO3-. If >2: concurrent metabolic alkalosis. If <1: concurrent non-AG metabolic acidosis.
+        📚 Guyton & Hall, 14th Ed, Ch.31 (p.410-414)
+
+    - id: renal-acid-base
+      title: "Renal Mechanisms of Acid-Base Regulation"
+      text: >
+        PCT: reabsorbs ~80% filtered HCO3- via Na+/H+ exchanger (NHE3) and H+-ATPase.
+        H+ secreted into lumen combines with filtered HCO3- → H2CO3 → CO2 + H2O (carbonic anhydrase IV on brush border).
+        CO2 enters cell → CA II → H2CO3 → H+ (recycled) + HCO3- (enters blood via basolateral Na+/HCO3- cotransporter).
+        Intercalated cells (collecting duct): Type A (α): secrete H+ (H+-ATPase), reabsorb HCO3- — active in acidosis.
+        Type B (β): secrete HCO3-, reabsorb H+ — active in alkalosis.
+        New HCO3- generation: glutamine metabolism in PCT → NH4+ excretion (most important mechanism for excreting acid load).
+        Titratable acid: H+ buffered by phosphate (HPO4²- → H2PO4-).
+        📚 Guyton & Hall, 14th Ed, Ch.31 (p.404-410)
+
+    - id: rta-types
+      title: "Renal Tubular Acidosis — Types"
+      text: >
+        Type 1 (Distal RTA): defective H+ secretion in collecting duct → urine pH >5.5, hypokalemia,
+        nephrocalcinosis, nephrolithiasis. Cannot acidify urine.
+        Type 2 (Proximal RTA): defective HCO3- reabsorption in PCT → urine pH initially >5.5, then <5.5
+        after HCO3- falls below threshold. Hypokalemia. Associated with Fanconi syndrome.
+        Type 4 (Hyperkalemic RTA): aldosterone deficiency/resistance → ↓Na+ reabsorption, ↓K+ secretion,
+        ↓NH4+ excretion → hyperkalemia + metabolic acidosis. Urine pH <5.5.
+        All RTAs cause normal anion gap (hyperchloremic) metabolic acidosis.
+        📚 Ganong's, 26th Ed, Ch.39
+
+  clinical:
+    - title: "Clinical Correlation: DKA"
+      text: >
+        DKA: insulin deficiency → lipolysis → ketoacids (β-hydroxybutyrate, acetoacetate) → high AG metabolic acidosis.
+        Kussmaul breathing (deep, rapid) = respiratory compensation for metabolic acidosis.
+        ABG: pH ↓, HCO3- ↓, PCO2 ↓ (compensatory), AG ↑. Treatment: insulin, fluids, K+ replacement.
+    - title: "Clinical Correlation: Vomiting vs Diarrhea"
+      text: >
+        Vomiting: loss of H+ and Cl- → metabolic alkalosis + hypokalemia + hypochloremia.
+        Diarrhea: loss of HCO3- → normal AG metabolic acidosis + hypokalemia.
+        Both cause hypokalemia but through different mechanisms.
+
+  high_yield_points:
+    - "pH 7.35-7.45; HCO3- 24 mEq/L; PCO2 40 mmHg — know these cold"
+    - "Henderson-Hasselbalch: pH = 6.1 + log([HCO3-]/[0.03 × PCO2])"
+    - "Winter's formula (metabolic acidosis compensation): expected PCO2 = 1.5[HCO3-] + 8 ± 2"
+    - "Anion gap = Na+ - (Cl- + HCO3-); normal 8-12; MUDPILES for high AG"
+    - "Normal AG metabolic acidosis: diarrhea, RTA, saline infusion"
+    - "Renal compensation takes 3-5 DAYS for full effect (unlike respiratory: minutes)"
+    - "PCT reabsorbs 80% of filtered HCO3-; NH4+ excretion = main mechanism for new HCO3- generation"
+    - "Type 1 RTA: can't acidify urine (pH >5.5); Type 4 RTA: hyperkalemia"
+    - "Respiratory acidosis acute: HCO3- ↑1 per PCO2 ↑10; Chronic: HCO3- ↑3.5 per PCO2 ↑10"
+    - "Delta-delta ratio: >2 = concurrent met alkalosis; <1 = concurrent non-AG met acidosis"
+
+mcqs:
+  - question: "A patient with DKA has pH 7.25, HCO3- 10 mEq/L, PCO2 25 mmHg. Using Winter's formula, is the respiratory compensation appropriate?"
+    options:
+      - "Yes, compensation is appropriate"
+      - "No, there is concurrent respiratory acidosis"
+      - "No, there is concurrent respiratory alkalosis"
+      - "Cannot determine from given data"
+    answer: "Yes, compensation is appropriate"
+    explanation: >
+      Winter's formula: expected PCO2 = 1.5(10) + 8 ± 2 = 23 ± 2 mmHg (range 21-25).
+      Actual PCO2 = 25, which is within the expected range. Therefore, compensation is appropriate
+      and this is a simple metabolic acidosis with appropriate respiratory compensation.
+      📚 Guyton & Hall, 14th Ed, Ch.31
+    difficulty: 2
+
+  - question: "Which type of Renal Tubular Acidosis is associated with HYPERKALEMIA?"
+    options:
+      - "Type 1 (Distal)"
+      - "Type 2 (Proximal)"
+      - "Type 3 (Mixed)"
+      - "Type 4 (Hyperkalemic)"
+    answer: "Type 4 (Hyperkalemic)"
+    explanation: >
+      Type 4 RTA is caused by aldosterone deficiency or resistance → decreased K+ secretion → hyperkalemia.
+      Also decreases NH4+ excretion → metabolic acidosis. Types 1 and 2 RTA cause HYPOkalemia
+      (increased distal Na+ delivery and K+ wasting).
+      📚 Ganong's, 26th Ed, Ch.39
+    difficulty: 1
+
+  - question: "The most important buffer system in the body is the bicarbonate system because:"
+    options:
+      - "It has the highest pKa"
+      - "Both components are independently regulated by lungs and kidneys"
+      - "It is the most concentrated buffer in ICF"
+      - "It has the fastest reaction time"
+    answer: "Both components are independently regulated by lungs and kidneys"
+    explanation: >
+      Although bicarbonate's pKa (6.1) is far from blood pH (7.4), making it a poor chemical buffer,
+      it is the most important physiological buffer because CO2 is regulated by lungs (ventilation)
+      and HCO3- by kidneys (reabsorption/generation). This open system gives it virtually infinite buffering capacity.
+      📚 Guyton & Hall, 14th Ed, Ch.31 (p.401)
+    difficulty: 2
+
+  - question: "A patient with chronic vomiting has pH 7.52, HCO3- 38, PCO2 48. The acid-base disorder is:"
+    options:
+      - "Metabolic alkalosis with respiratory compensation"
+      - "Respiratory acidosis"
+      - "Mixed metabolic alkalosis and respiratory acidosis"
+      - "Metabolic alkalosis without compensation"
+    answer: "Metabolic alkalosis with respiratory compensation"
+    explanation: >
+      Chronic vomiting → loss of H+/Cl- → metabolic alkalosis (↑pH, ↑HCO3-). Expected PCO2 = 0.7(38) + 21 = 47.6 ≈ 48.
+      Actual PCO2 matches expected → appropriate respiratory compensation (hypoventilation to retain CO2).
+      📚 Ganong's, 26th Ed, Ch.39
+    difficulty: 2
+
+  - question: "MUDPILES is a mnemonic for causes of:"
+    options:
+      - "Normal anion gap metabolic acidosis"
+      - "High anion gap metabolic acidosis"
+      - "Metabolic alkalosis"
+      - "Respiratory acidosis"
+    answer: "High anion gap metabolic acidosis"
+    explanation: >
+      MUDPILES: Methanol, Uremia, DKA, Propylene glycol, Isoniazid/Iron, Lactic acidosis, Ethylene glycol,
+      Salicylates. These unmeasured anions replace HCO3- → high AG. Normal AG causes include diarrhea and RTA.
+      📚 Guyton & Hall, 14th Ed, Ch.31
+    difficulty: 1

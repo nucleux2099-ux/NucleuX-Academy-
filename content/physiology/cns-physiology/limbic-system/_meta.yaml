@@ -1,0 +1,9 @@
+topic_id: limbic-system
+name: Limbic System
+description: Limbic System — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY5.7
+  domain: KH
+  core: true
+  phase: Phase 1

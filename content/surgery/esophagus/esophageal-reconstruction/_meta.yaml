@@ -1,0 +1,33 @@
+title: "Esophageal Reconstruction"
+slug: esophageal-reconstruction
+depth: "SS"
+highYield: false
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "esophageal-anatomy"
+  - "esophageal-cancer"
+related_topics:
+  - "caustic-injury-esophagus"
+  - "esophageal-perforation"
+  - "esophageal-atresia"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Reconstruction requires detailed knowledge of esophageal blood supply, cervical/thoracic/abdominal segments, and adjacent structures"
+    - slug: "esophageal-cancer"
+      reason: "Esophagectomy for cancer is the most common indication for esophageal reconstruction"
+  related_details:
+    - slug: "caustic-injury-esophagus"
+      reason: "Caustic strictures are a major benign indication for esophageal reconstruction with conduit interposition"
+      relationship: "clinical"
+    - slug: "esophageal-perforation"
+      reason: "Extensive esophageal perforation with necrosis may require reconstruction"
+      relationship: "clinical"
+    - slug: "esophageal-atresia"
+      reason: "Long-gap esophageal atresia requires reconstruction techniques in pediatric surgery"
+      relationship: "clinical"

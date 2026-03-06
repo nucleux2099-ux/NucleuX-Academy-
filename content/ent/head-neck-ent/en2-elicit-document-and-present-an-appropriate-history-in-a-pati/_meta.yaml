@@ -1,0 +1,65 @@
+topic_id: en2-elicit-document-and-present-an-appropriate-history-in-a-pati
+name: Elicit document and present an appropriate history in a patient K/S/A/C
+description: Elicit document and present an appropriate history in a patient K/S/A/C — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: EN2.1
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.10
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.11
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.12
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.13
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.14
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.15
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: EN2.2
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.3
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.4
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.5
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.6
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.7
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.8
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: EN2.9
+  domain: SH
+  core: true
+  phase: Phase 3

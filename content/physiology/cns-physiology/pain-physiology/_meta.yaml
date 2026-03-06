@@ -1,0 +1,37 @@
+topic_id: pain-physiology
+name: Pain Physiology
+description: Pain Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY11.6
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PY11.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PY4.9
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY7.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY8.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.8
+  domain: KH
+  core: true
+  phase: Phase 1

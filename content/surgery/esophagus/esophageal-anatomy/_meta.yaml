@@ -1,0 +1,43 @@
+title: "Esophageal Anatomy"
+slug: esophageal-anatomy
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.5"
+  - "AN23.1"
+prerequisites:
+  - "diaphragm-anatomy"
+  - "thoracic-duct"
+related_topics:
+  - "les-physiology"
+  - "dysphagia"
+  - "hiatal-hernia"
+  - "esophageal-perforation"
+enrichment:
+  nmcCodes:
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+    - code: "AN23.1"
+      text: "Describe & demonstrate the external appearance, relations, blood supply, nerve supply, lymphatic drainage and applied anatomy of oesophagus"
+      domain: "SH"
+  prerequisite_details:
+    - slug: "diaphragm-anatomy"
+      reason: "Esophageal hiatus and diaphragmatic crura"
+    - slug: "thoracic-duct"
+      reason: "Thoracic duct relation to esophagus — surgical significance"
+  related_details:
+    - slug: "les-physiology"
+      reason: "LES function depends on esophageal anatomy"
+      relationship: "builds-on"
+    - slug: "dysphagia"
+      reason: "Anatomical constrictions are key to understanding dysphagia"
+      relationship: "clinical"
+    - slug: "hiatal-hernia"
+      reason: "Hiatal hernia relates to esophageal hiatus anatomy"
+      relationship: "clinical"
+    - slug: "esophageal-perforation"
+      reason: "Anatomical weak points predispose to perforation"
+      relationship: "clinical"
+  gaps:
+    - "anatomy/thorax/mediastinum — needed for mediastinal relations of esophagus"

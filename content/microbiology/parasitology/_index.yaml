@@ -1,0 +1,42 @@
+id: parasitology
+title: "Parasitology"
+subject: microbiology
+description: |
+  Protozoa, helminths, and parasitic infections.
+
+stats:
+  total_topics: 19
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: protozoa
+    title: "Protozoa"
+    topics:
+      - entamoeba-histolytica
+      - giardia-lamblia
+      - plasmodium-species
+      - leishmania
+      - trypanosoma
+      - toxoplasma-gondii
+      - cryptosporidium
+      - trichomonas-vaginalis
+      - free-living-amoebae
+  - id: helminths
+    title: "Helminths"
+    topics:
+      - ascaris-lumbricoides
+      - ancylostoma-duodenale
+      - wuchereria-bancrofti
+      - enterobius-vermicularis
+      - strongyloides
+      - trichuris-trichiura
+      - taenia-solium
+      - echinococcus
+      - schistosoma
+      - dracunculus-medinensis
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

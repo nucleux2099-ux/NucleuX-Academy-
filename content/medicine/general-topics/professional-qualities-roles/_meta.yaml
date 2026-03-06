@@ -1,0 +1,15 @@
+title: "Professional Qualities and Roles"
+slug: professional-qualities-roles
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.25"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.25"
+      text: "Professional Qualities and Roles — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

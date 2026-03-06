@@ -1,0 +1,21 @@
+topic_id: blood-glucose-regulation
+name: Blood Glucose Regulation
+description: Blood Glucose Regulation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI3.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI3.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI3.9
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.8
+  domain: KH
+  core: true
+  phase: Phase 1

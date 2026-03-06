@@ -1,0 +1,9 @@
+topic_id: anti-body-defence-oxidant
+name: The anti-oxidant defence systems in the body.
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI7.6
+  domain: KH
+  core: true
+  phase: Phase 1

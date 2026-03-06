@@ -1,0 +1,11 @@
+title: "Polycystic Ovary Syndrome"
+slug: pcos
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.2"
+prerequisites:
+  - "metabolic-syndrome"
+related_topics:
+  - "obesity-medical"
+  - "diabetes-mellitus-type-2"

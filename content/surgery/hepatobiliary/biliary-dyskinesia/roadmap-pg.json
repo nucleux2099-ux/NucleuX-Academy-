@@ -1,0 +1,56 @@
+{
+  "level": "PG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Understanding cystic duct anatomy and gallbladder motor physiology is essential for diagnosing functional biliary disorders",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Must exclude gallstones before diagnosing functional gallbladder ejection fraction abnormalities",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholecystitis",
+      "nmcCode": "",
+      "reason": "Acalculous cholecystitis shares overlapping presentation and must be differentiated from biliary dyskinesia",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "choledocholithiasis",
+      "nmcCode": "",
+      "reason": "Sphincter of Oddi dysfunction (Type II/III) may mimic or coexist with CBD stone symptoms",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Biliary stasis from dyskinesia can predispose to ascending infection requiring differentiation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "acute-cholecystitis",
+      "nmcCode": "",
+      "reason": "CCK-HIDA scan used in dyskinesia workup also evaluates for acute cholecystitis",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This postgraduate-level roadmap connects Biliary Dyskinesia across foundational sciences and clinical applications."
+}

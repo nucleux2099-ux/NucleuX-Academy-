@@ -1,0 +1,9 @@
+topic_id: inborn-errors-metabolism-overview
+name: Inborn Errors Metabolism Overview
+description: Inborn Errors Metabolism Overview — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI11.5
+  domain: KH
+  core: true
+  phase: Phase 1

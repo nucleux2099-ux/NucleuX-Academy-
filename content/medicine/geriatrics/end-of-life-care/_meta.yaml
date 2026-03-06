@@ -1,0 +1,19 @@
+title: "End-of-Life Care"
+slug: end-of-life-care
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM23.6"
+prerequisites: []
+related_topics:
+  - "pressure-ulcers"
+enrichment:
+  nmcCodes:
+    - code: "IM23.6"
+      text: "End-of-Life Care — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "pressure-ulcers"
+      reason: "Clinically related"
+      relationship: "clinical"

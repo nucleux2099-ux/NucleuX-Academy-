@@ -1,0 +1,276 @@
+{
+  "priority_topics": [
+    "acute-cholecystitis",
+    "cholangitis",
+    "obstructive-jaundice",
+    "choledocholithiasis",
+    "gallbladder-cancer",
+    "portal-hypertension",
+    "liver-abscess",
+    "liver-metastases",
+    "hepatocellular-carcinoma",
+    "acute-pancreatitis",
+    "chronic-pancreatitis",
+    "pancreatic-cancer",
+    "upper-gi-bleed-variceal-bleed",
+    "intestinal-obstruction",
+    "perforation-peritonitis"
+  ],
+  "audit": [
+    {
+      "topic": "acute-cholecystitis",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "textbook.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md",
+        "exam-prep.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 2,
+      "json_files_count": 1
+    },
+    {
+      "topic": "cholangitis",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "explorer.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "exam-prep.md",
+        "textbook.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 2,
+      "json_files_count": 1
+    },
+    {
+      "topic": "obstructive-jaundice",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 0,
+      "json_files_count": 1
+    },
+    {
+      "topic": "choledocholithiasis",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "explorer.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "exam-prep.md",
+        "textbook.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 2,
+      "json_files_count": 1
+    },
+    {
+      "topic": "gallbladder-cancer",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 0,
+      "json_files_count": 1
+    },
+    {
+      "topic": "portal-hypertension",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 3,
+      "json_files_count": 1
+    },
+    {
+      "topic": "liver-abscess",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 0,
+      "json_files_count": 1
+    },
+    {
+      "topic": "liver-metastases",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 0,
+      "json_files_count": 1
+    },
+    {
+      "topic": "hepatocellular-carcinoma",
+      "found": true,
+      "subspecialty": "hepatobiliary",
+      "present_required": [
+        "explorer.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "exam-prep.md",
+        "textbook.md"
+      ],
+      "has_roadmap_ug": true,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 2,
+      "json_files_count": 1
+    },
+    {
+      "topic": "acute-pancreatitis",
+      "found": true,
+      "subspecialty": "pancreas",
+      "present_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [],
+      "has_roadmap_ug": false,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 4,
+      "json_files_count": 1
+    },
+    {
+      "topic": "chronic-pancreatitis",
+      "found": true,
+      "subspecialty": "pancreas",
+      "present_required": [
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md"
+      ],
+      "has_roadmap_ug": false,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 0,
+      "json_files_count": 0
+    },
+    {
+      "topic": "pancreatic-cancer",
+      "found": true,
+      "subspecialty": "pancreas",
+      "present_required": [
+        "explorer.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [
+        "exam-prep.md",
+        "textbook.md"
+      ],
+      "has_roadmap_ug": false,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 2,
+      "json_files_count": 0
+    },
+    {
+      "topic": "upper-gi-bleed-variceal-bleed",
+      "found": false,
+      "missing": "topic-folder"
+    },
+    {
+      "topic": "intestinal-obstruction",
+      "found": true,
+      "subspecialty": "small-intestine",
+      "present_required": [
+        "explorer.md",
+        "exam-prep.md",
+        "textbook.md",
+        "roadmap.md",
+        "_meta.yaml"
+      ],
+      "missing_required": [],
+      "has_roadmap_ug": false,
+      "has_roadmap_pg": false,
+      "has_roadmap_ss": false,
+      "md_files_count": 4,
+      "json_files_count": 1
+    },
+    {
+      "topic": "perforation-peritonitis",
+      "found": false,
+      "missing": "topic-folder"
+    }
+  ]
+}

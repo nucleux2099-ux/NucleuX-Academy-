@@ -1,0 +1,41 @@
+title: "Surgical Ethics"
+slug: surgical-ethics
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU8.1"
+  - "SU8.2"
+  - "SU8.3"
+prerequisites:
+  - "surgical-infections"
+  - "perioperative-management"
+related_topics:
+  - "surgical-audit"
+  - "organ-transplantation"
+  - "hospital-waste-management"
+enrichment:
+  nmcCodes:
+    - code: "SU8.1"
+      text: "Describe the principles of Ethics as it pertains to General Surgery"
+      domain: "K"
+    - code: "SU8.2"
+      text: "Demonstrate Professionalism and empathy to the patient"
+      domain: "A/C"
+    - code: "SU8.3"
+      text: "Discuss Medico-legal issues in surgical practice"
+      domain: "A/C"
+  prerequisite_details:
+    - slug: "surgical-infections"
+      reason: "Ethical obligations around disclosure of HAIs and SSIs require foundational knowledge of surgical infections"
+    - slug: "perioperative-management"
+      reason: "Ethical dilemmas (DNR, futility, withdrawal of care) arise in the perioperative and ICU setting"
+  related_details:
+    - slug: "surgical-audit"
+      reason: "Ethical practice mandates audit-based accountability and transparent outcome reporting"
+      relationship: "foundational"
+    - slug: "organ-transplantation"
+      reason: "Transplant ethics (brain death declaration, organ allocation, living donor consent) are core medicolegal issues"
+      relationship: "clinical"
+    - slug: "hospital-waste-management"
+      reason: "Proper biomedical waste disposal is an ethical and legal obligation under the BMW Act"
+      relationship: "foundational"

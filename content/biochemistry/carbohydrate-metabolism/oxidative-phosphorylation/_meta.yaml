@@ -1,0 +1,9 @@
+topic_id: oxidative-phosphorylation
+name: Oxidative Phosphorylation
+description: Oxidative Phosphorylation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI7.7
+  domain: KH
+  core: true
+  phase: Phase 1

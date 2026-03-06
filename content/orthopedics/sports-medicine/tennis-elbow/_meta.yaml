@@ -1,0 +1,8 @@
+topic_id: tennis-elbow
+name: Tennis Elbow
+description: Tennis Elbow — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR13.1
+  core: false
+  phase: Phase 3

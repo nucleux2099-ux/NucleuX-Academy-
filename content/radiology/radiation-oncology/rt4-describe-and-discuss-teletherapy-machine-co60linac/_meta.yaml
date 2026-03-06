@@ -1,0 +1,41 @@
+topic_id: rt4-describe-and-discuss-teletherapy-machine-co60linac
+name: Describe and discuss teletherapy machine (Co60/LINAC)
+description: Describe and discuss teletherapy machine (Co60/LINAC) — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: RT4.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.5
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: RT4.7
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.8
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: RT4.9
+  domain: SH
+  core: false
+  phase: Phase 3

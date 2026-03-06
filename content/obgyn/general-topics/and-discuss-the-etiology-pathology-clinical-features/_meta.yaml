@@ -1,0 +1,21 @@
+topic_id: and-discuss-the-etiology-pathology-clinical-features
+name: And discuss the etiology, pathology, clinical features
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG27.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG27.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG27.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG27.4
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,31 @@
+id: endocrine-pathology
+title: "Endocrine Pathology"
+subject: pathology
+description: |
+  Thyroid, adrenal, and pituitary disorders.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - thyroid-pathology-overview
+      - hashimoto-thyroiditis-path
+      - graves-disease-path
+      - thyroid-nodules-path
+      - thyroid-cancer-path
+      - parathyroid-pathology
+      - pituitary-adenomas-path
+      - adrenal-cortex-pathology
+      - pheochromocytoma-path
+      - diabetes-mellitus-path
+      - men-syndromes-path
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,25 @@
+topic_id: childhood-asthma
+name: Childhood Asthma
+description: Childhood Asthma — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE28.20
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE31.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE31.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE31.9
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE34.2
+  domain: KH
+  core: true
+  phase: Phase 1

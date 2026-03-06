@@ -1,0 +1,22 @@
+title: "Antiretroviral Therapy"
+slug: antiretroviral-therapy
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.5"
+prerequisites:
+  - "hiv-aids"
+related_topics:
+  - "opportunistic-infections-hiv"
+enrichment:
+  nmcCodes:
+    - code: "IM8.5"
+      text: "Antiretroviral Therapy — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "hiv-aids"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "opportunistic-infections-hiv"
+      reason: "Clinically related"
+      relationship: "clinical"

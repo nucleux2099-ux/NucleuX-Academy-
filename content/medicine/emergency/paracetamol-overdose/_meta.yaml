@@ -1,0 +1,22 @@
+title: "Paracetamol Overdose"
+slug: paracetamol-overdose
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.12"
+prerequisites:
+  - "poisoning-general-approach"
+related_topics:
+  - "organophosphate-poisoning"
+enrichment:
+  nmcCodes:
+    - code: "IM24.12"
+      text: "Paracetamol Overdose — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "poisoning-general-approach"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "organophosphate-poisoning"
+      reason: "Clinically related"
+      relationship: "clinical"

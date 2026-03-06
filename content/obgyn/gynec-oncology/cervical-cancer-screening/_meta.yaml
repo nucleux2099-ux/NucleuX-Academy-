@@ -1,0 +1,154 @@
+topic_id: cervical-cancer-screening
+name: Cervical Cancer Screening & Management
+description: HPV, Pap smear, VIA, colposcopy, and staging/management of cervical cancer
+high_yield: true
+nmc_codes:
+- code: OG29.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Cervical cancer is the second most common cancer in Indian women. Nearly all cases (99.7%) are caused by
+  persistent high-risk HPV infection (types 16 and 18 account for 70%). Screening with Pap smear, HPV DNA
+  testing, and VIA has dramatically reduced incidence in screened populations. The disease progresses through
+  well-defined precancerous stages (CIN 1-3) amenable to treatment, making it one of the most preventable cancers.
+  📚 DC Dutta, 9th Ed, Ch.22 | 📚 Williams Obstetrics, 26th Ed
+
+learning_objectives:
+  - Describe the natural history of HPV infection and cervical carcinogenesis
+  - Compare screening methods (Pap smear, VIA, HPV DNA testing)
+  - Classify CIN and interpret Bethesda system reporting
+  - Outline FIGO staging of cervical cancer
+  - Describe management options for CIN and invasive cervical cancer
+
+content:
+  atoms:
+    - id: hpv-role
+      title: "Role of HPV"
+      text: >
+        HPV types 16 and 18 cause ~70% of cervical cancers. HPV 16 → squamous cell carcinoma (most common).
+        HPV 18 → adenocarcinoma. Other high-risk types: 31, 33, 45, 52, 58.
+        HPV E6 protein degrades p53 (tumor suppressor). HPV E7 protein inactivates Rb (retinoblastoma protein).
+        E6 + E7 → loss of cell cycle control → dysplasia → carcinoma.
+        Risk factors: early sexual debut, multiple partners, smoking, immunosuppression (HIV), long-term OCP use.
+        HPV vaccines: Bivalent (16,18), Quadrivalent (6,11,16,18), Nonavalent (6,11,16,18,31,33,45,52,58).
+        📚 DC Dutta, 9th Ed, Ch.22 (p.350-352)
+
+    - id: screening-methods
+      title: "Screening Methods"
+      text: >
+        Pap smear (Papanicolaou): cytology-based, sensitivity 50-80%. Start age 21 or 3 years after
+        sexual debut. Every 3 years (21-29 yrs), every 5 years with co-testing (30-65 yrs).
+        VIA (Visual Inspection with Acetic Acid): low-resource settings, apply 5% acetic acid →
+        acetowhite areas = positive. Screen-and-treat approach (VIA + cryotherapy).
+        HPV DNA testing: highest sensitivity (>95%), best negative predictive value.
+        Recommended by WHO (2021) as primary screening method. Screen every 5-10 years.
+        Bethesda System: ASC-US, ASC-H, LSIL, HSIL, AGC, SCC.
+        📚 DC Dutta, 9th Ed, Ch.22 (p.353-356)
+
+    - id: cin-classification
+      title: "CIN Classification & Management"
+      text: >
+        CIN 1 (LSIL): mild dysplasia, lower 1/3 of epithelium. 60% regress spontaneously → observe.
+        CIN 2: moderate dysplasia, lower 2/3. CIN 3 (HSIL): severe dysplasia/CIS, full thickness.
+        CIN 2/3 → treatment: ablation (cryotherapy, laser) or excision (LEEP/LLETZ, cold knife conization).
+        LEEP (Loop Electrosurgical Excision Procedure) = most commonly used treatment for CIN 2/3.
+        Colposcopy: examination of cervix with magnification after acetic acid. Guided biopsy of abnormal areas.
+        📚 DC Dutta, 9th Ed, Ch.22 (p.357-360)
+
+    - id: staging-treatment
+      title: "FIGO Staging & Treatment of Cervical Cancer"
+      text: >
+        Cervical cancer is CLINICALLY staged (NOT surgically).
+        Stage I: confined to cervix. IA: microscopic. IB: clinically visible.
+        Stage II: extends beyond cervix but not to pelvic wall/lower 1/3 vagina. IIA: no parametrial. IIB: parametrial.
+        Stage III: extends to pelvic wall or lower 1/3 vagina or hydronephrosis.
+        Stage IV: extends beyond true pelvis or involves bladder/rectum mucosa.
+        Treatment: IA1: conization/simple hysterectomy. IA2-IB1: radical hysterectomy (Wertheim's).
+        IB2-IIA: radical hysterectomy or concurrent chemoradiation (CCRT).
+        IIB-IVA: CCRT (cisplatin-based). IVB: palliative chemotherapy.
+        Most common histology: squamous cell carcinoma (80-85%).
+        📚 DC Dutta, 9th Ed, Ch.22 (p.362-370)
+
+  high_yield_points:
+    - "HPV 16 = squamous cell carcinoma; HPV 18 = adenocarcinoma"
+    - "E6 degrades p53; E7 inactivates Rb — both are tumor suppressors"
+    - "Cervical cancer is CLINICALLY staged (NOT surgical staging)"
+    - "Most common histology = squamous cell carcinoma (80-85%)"
+    - "LEEP/LLETZ is the most common treatment for CIN 2/3"
+    - "VIA (visual inspection with acetic acid) = best screening for low-resource settings"
+    - "HPV DNA testing has the HIGHEST sensitivity among screening methods"
+    - "Wertheim's hysterectomy = radical hysterectomy for early invasive cervical cancer"
+    - "Stage IIB onwards = chemoradiation (surgery NOT primary treatment)"
+    - "Nonavalent HPV vaccine covers 9 types including HPV 6,11,16,18,31,33,45,52,58"
+
+mcqs:
+  - question: "HPV E6 oncoprotein causes cervical carcinogenesis by degrading:"
+    options:
+      - "Rb protein"
+      - "p53 protein"
+      - "BRCA1 protein"
+      - "APC protein"
+    answer: "p53 protein"
+    explanation: >
+      HPV E6 binds to and promotes ubiquitin-mediated degradation of p53, removing a key tumor
+      suppressor. E7 inactivates Rb protein. Together, they disable cell cycle checkpoints.
+      📚 DC Dutta, 9th Ed, Ch.22 (p.351)
+    difficulty: 1
+
+  - question: "The most sensitive screening method for cervical cancer is:"
+    options:
+      - "Pap smear"
+      - "VIA"
+      - "HPV DNA testing"
+      - "Colposcopy"
+    answer: "HPV DNA testing"
+    explanation: >
+      HPV DNA testing has sensitivity >95% and the best negative predictive value. WHO (2021)
+      recommends it as the primary screening method. A negative HPV test allows longer screening
+      intervals (5-10 years).
+      📚 DC Dutta, 9th Ed, Ch.22 (p.355)
+    difficulty: 1
+
+  - question: "Cervical cancer staging is done by:"
+    options:
+      - "Surgical staging"
+      - "Clinical staging"
+      - "Pathological staging"
+      - "Radiological staging"
+    answer: "Clinical staging"
+    explanation: >
+      Cervical cancer follows FIGO clinical staging (exam under anesthesia, cystoscopy, proctoscopy,
+      X-ray, IVP). This allows staging even in resource-limited settings without surgery. Once assigned,
+      the stage does not change.
+      📚 DC Dutta, 9th Ed, Ch.22 (p.363)
+    difficulty: 1
+
+  - question: "The treatment of choice for CIN 2/3 is:"
+    options:
+      - "Cryotherapy"
+      - "LEEP (Loop Electrosurgical Excision Procedure)"
+      - "Radical hysterectomy"
+      - "Radiation therapy"
+    answer: "LEEP (Loop Electrosurgical Excision Procedure)"
+    explanation: >
+      LEEP/LLETZ is the most commonly used excisional procedure for CIN 2/3. It provides a tissue
+      specimen for histopathological examination (unlike ablative methods) and can be done as an
+      outpatient procedure under local anesthesia.
+      📚 DC Dutta, 9th Ed, Ch.22 (p.359)
+    difficulty: 1
+
+  - question: "A 45-year-old woman with cervical cancer has parametrial involvement bilaterally but has not reached the pelvic wall. Her FIGO stage is:"
+    options:
+      - "Stage IIA"
+      - "Stage IIB"
+      - "Stage IIIA"
+      - "Stage IIIB"
+    answer: "Stage IIB"
+    explanation: >
+      Stage II = extends beyond cervix. IIA = no parametrial involvement. IIB = parametrial
+      involvement present but not reaching the pelvic wall. Stage III involves pelvic wall
+      or lower 1/3 vagina. Treatment for IIB is concurrent chemoradiation.
+      📚 DC Dutta, 9th Ed, Ch.22 (p.364)
+    difficulty: 2

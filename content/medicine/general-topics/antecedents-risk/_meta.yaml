@@ -1,0 +1,19 @@
+title: "Risk Factors and Antecedents"
+slug: antecedents-risk
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.4"
+prerequisites: []
+related_topics:
+  - "factors-inherited-modifiable-risk"
+enrichment:
+  nmcCodes:
+    - code: "IM26.4"
+      text: "Risk Factors and Antecedents — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "factors-inherited-modifiable-risk"
+      reason: "Clinically related"
+      relationship: "clinical"

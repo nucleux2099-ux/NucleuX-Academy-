@@ -1,0 +1,49 @@
+topic_id: drug-interactions
+name: Drug Interactions
+description: Drug Interactions — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PH1.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.23
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH1.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.63
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH2.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH3.3
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PH3.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH5.2
+  domain: SH
+  core: true
+  phase: Phase 1

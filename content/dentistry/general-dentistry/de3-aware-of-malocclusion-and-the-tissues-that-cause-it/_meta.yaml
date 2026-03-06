@@ -1,0 +1,21 @@
+topic_id: de3-aware-of-malocclusion-and-the-tissues-that-cause-it
+name: Aware of malocclusion and the tissues that cause it
+description: Aware of malocclusion and the tissues that cause it — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DE3.1
+  domain: K
+  core: false
+  phase: Phase 3
+- code: DE3.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: DE3.3
+  domain: SH
+  core: false
+  phase: Phase 3
+- code: DE3.4
+  domain: SH
+  core: true
+  phase: Phase 3

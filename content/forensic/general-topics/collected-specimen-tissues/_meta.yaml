@@ -1,0 +1,17 @@
+topic_id: collected-specimen-tissues
+name: Different types of specimen and tissues to be collected K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM6.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM6.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM6.3
+  domain: SH
+  core: true
+  phase: Phase 1

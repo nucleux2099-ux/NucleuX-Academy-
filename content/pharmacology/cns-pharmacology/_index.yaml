@@ -1,0 +1,34 @@
+id: cns-pharmacology
+title: "CNS Pharmacology"
+subject: pharmacology
+description: |
+  Anesthetics, antiepileptics, antipsychotics, and antidepressants.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - general-anesthetics
+      - intravenous-anesthetics
+      - opioid-analgesics
+      - non-opioid-analgesics
+      - antiepileptic-drugs-pharmacology
+      - antipsychotics
+      - antidepressants
+      - anxiolytics-hypnotics
+      - anti-parkinsonian-drugs
+      - drugs-of-abuse
+      - alcohol-pharmacology
+      - anti-emetics
+      - drugs-for-migraine
+      - drugs-for-dementia
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

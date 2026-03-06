@@ -1,0 +1,155 @@
+topic_id: hepatitis-viruses
+name: "Hepatitis Viruses (A-E)"
+description: >
+  Comprehensive comparison of hepatitis A through E — virology, transmission, clinical features, serology, and prevention.
+high_yield: true
+nmc_codes:
+  - code: MI4.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Five hepatotropic viruses (A-E) cause viral hepatitis. HAV and HEV are fecal-oral (no chronicity).
+  HBV, HCV, HDV are parenteral (blood/sexual/vertical) and can cause chronic hepatitis, cirrhosis,
+  and hepatocellular carcinoma. HBV serology is extremely high-yield. HDV requires HBV for replication
+  (defective virus). HEV is dangerous in pregnancy (20% mortality). Vaccines exist for HAV and HBV.
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.35; 📚 Ananthanarayan, 11th Ed, Ch.58
+
+learning_objectives:
+  - Compare hepatitis viruses A-E by genome, transmission, and chronicity
+  - Interpret HBV serologic markers (HBsAg, anti-HBs, HBeAg, anti-HBc IgM/IgG, HBV DNA)
+  - Differentiate HDV coinfection from superinfection
+  - Explain why HEV is particularly dangerous in pregnancy
+  - Describe available vaccines and post-exposure prophylaxis
+
+content:
+  atoms:
+    - id: hav-hev
+      title: "Fecal-Oral Hepatitis (HAV & HEV)"
+      text: >
+        HAV: Picornavirus (ssRNA, non-enveloped). Fecal-oral, shellfish. NO chronicity.
+        Anti-HAV IgM = acute; IgG = immunity. Vaccine: inactivated (killed) virus. Self-limited.
+        HEV: Hepevirus (ssRNA, non-enveloped). Fecal-oral, waterborne outbreaks (contaminated water).
+        NO chronicity (except immunocompromised). DANGEROUS in pregnancy: fulminant hepatitis, 20% mortality
+        in 3rd trimester. Genotype 1 most common in India.
+        📚 Ananthanarayan, 11th Ed, Ch.58
+
+    - id: hbv
+      title: "Hepatitis B Virus"
+      text: >
+        Hepadnavirus (partially dsDNA, enveloped). Smallest DNA virus genome.
+        Transmission: parenteral, sexual, vertical (perinatal most common route globally).
+        Serology: HBsAg (surface antigen, first marker, present = infected/carrier).
+        Anti-HBs (surface antibody = immunity/recovery/vaccination).
+        HBeAg (envelope antigen = high infectivity, active replication).
+        Anti-HBc IgM (core antibody = acute infection/window period). Anti-HBc IgG = past infection.
+        Window period: HBsAg cleared, anti-HBs not yet appeared; only anti-HBc IgM is positive.
+        Chronic hepatitis B: HBsAg+ >6 months. Risk: neonatal infection (90% chronicity) vs adult (5%).
+        Complications: cirrhosis, HCC (integrates into host DNA). HCC without cirrhosis possible (unlike HCV).
+        Treatment: tenofovir, entecavir (NRTIs), PEG-IFN-α. Vaccine: recombinant HBsAg (3 doses: 0, 1, 6 months).
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.35
+
+    - id: hcv-hdv
+      title: "Hepatitis C & D"
+      text: >
+        HCV: Flavivirus (ssRNA, enveloped). Parenteral (IVDU #1 route). HIGH chronicity (80%).
+        No vaccine (hypervariable region). Chronic HCV → cirrhosis → HCC (always through cirrhosis, unlike HBV).
+        Diagnosis: anti-HCV antibody (screening), HCV RNA PCR (confirmatory/viral load).
+        Treatment: DAAs (direct-acting antivirals) — sofosbuvir + velpatasvir (pan-genotypic), >95% cure rate.
+        HDV: Deltavirus (defective ssRNA, needs HBV envelope/HBsAg for replication).
+        Coinfection (HBV + HDV simultaneously): self-limited, low chronicity.
+        Superinfection (HDV on chronic HBV): severe, high chronicity, fulminant hepatitis risk.
+        HDV = most severe form of viral hepatitis. Diagnosed by anti-HDV antibody.
+        📚 Ananthanarayan, 11th Ed, Ch.58
+
+  clinical:
+    - title: "Clinical Correlation: HBV Serology Interpretation"
+      text: >
+        Acute HBV: HBsAg+, anti-HBc IgM+, HBeAg+.
+        Window period: HBsAg−, anti-HBs−, anti-HBc IgM+ (ONLY marker positive).
+        Recovery: HBsAg−, anti-HBs+, anti-HBc IgG+.
+        Chronic carrier: HBsAg+ >6 months, anti-HBc IgG+, HBeAg+ (active) or anti-HBe+ (inactive).
+        Vaccination: anti-HBs+ ONLY (no anti-HBc, no HBsAg).
+    - title: "Clinical Correlation: HEV in Pregnancy"
+      text: >
+        HEV genotype 1 in pregnant women (esp. 3rd trimester) → fulminant hepatic failure in up to 20%.
+        Mechanism may involve immune/hormonal changes. Major concern in South Asia during monsoon season
+        waterborne outbreaks. No specific treatment; supportive care.
+
+high_yield_points:
+  - "Fecal-oral: HAV, HEV; Parenteral: HBV, HCV, HDV"
+  - "HBsAg = first marker of HBV; anti-HBs = immunity"
+  - "Window period: only anti-HBc IgM is positive"
+  - "Vaccination: ONLY anti-HBs positive (no anti-HBc)"
+  - "HCV: 80% chronicity, no vaccine, DAAs cure >95%"
+  - "HDV needs HBV (HBsAg) for replication; superinfection worse than coinfection"
+  - "HEV: 20% mortality in pregnant women (3rd trimester)"
+  - "Neonatal HBV infection → 90% chronicity (vs 5% in adults)"
+  - "HBV can cause HCC without cirrhosis; HCV always through cirrhosis → HCC"
+
+mcqs:
+  - question: "During the 'window period' of HBV infection, the only positive serologic marker is:"
+    options:
+      - "HBsAg"
+      - "Anti-HBs"
+      - "Anti-HBc IgM"
+      - "HBeAg"
+    answer: "Anti-HBc IgM"
+    explanation: >
+      Window period: HBsAg has been cleared but anti-HBs has not yet appeared. The only detectable
+      marker is anti-HBc IgM (core antibody, IgM class indicates recent/acute infection).
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.35
+    difficulty: 1
+
+  - question: "A person has anti-HBs positive with all other HBV markers negative. This indicates:"
+    options:
+      - "Acute HBV infection"
+      - "Chronic HBV carrier"
+      - "Prior HBV vaccination"
+      - "Window period"
+    answer: "Prior HBV vaccination"
+    explanation: >
+      Vaccination produces ONLY anti-HBs antibodies (against recombinant HBsAg). No exposure to
+      whole virus, so anti-HBc is absent. This pattern is unique to vaccination.
+      📚 Ananthanarayan, 11th Ed, Ch.58
+    difficulty: 1
+
+  - question: "Hepatitis D virus requires which component of HBV for its replication?"
+    options:
+      - "HBcAg"
+      - "HBsAg"
+      - "HBeAg"
+      - "HBV DNA polymerase"
+    answer: "HBsAg"
+    explanation: >
+      HDV is a defective virus that requires HBsAg (surface antigen) from HBV as its envelope.
+      HDV can only infect patients who are HBsAg-positive (coinfection or superinfection).
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.35
+    difficulty: 1
+
+  - question: "A pregnant woman in her third trimester develops fulminant hepatic failure. The most likely viral etiology is:"
+    options:
+      - "HAV"
+      - "HBV"
+      - "HCV"
+      - "HEV"
+    answer: "HEV"
+    explanation: >
+      HEV causes fulminant hepatitis with up to 20% mortality in pregnant women (especially 3rd trimester).
+      This high mortality in pregnancy is unique to HEV among all hepatitis viruses.
+      📚 Ananthanarayan, 11th Ed, Ch.58
+    difficulty: 1
+
+  - question: "Which hepatitis virus has the highest rate of chronicity?"
+    options:
+      - "HAV"
+      - "HBV"
+      - "HCV"
+      - "HEV"
+    answer: "HCV"
+    explanation: >
+      HCV has ~80% chronicity rate (highest among hepatitis viruses). HBV chronicity depends on
+      age at infection (90% neonatal, 5% adult). HAV and HEV do not cause chronic hepatitis.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.35
+    difficulty: 1

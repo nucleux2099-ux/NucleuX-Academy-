@@ -1,0 +1,9 @@
+topic_id: poem-procedure
+name: "POEM Procedure"
+description: "Peroral endoscopic myotomy, indications, advantages, complications"
+high_yield: true
+difficulty: 4
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [achalasia]
+related_topics: [heller-myotomy, achalasia-lhm-vs-poem]

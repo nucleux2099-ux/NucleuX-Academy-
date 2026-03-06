@@ -1,0 +1,13 @@
+topic_id: laws-ossification
+name: Laws of ossification
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: AN2.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN2.3
+  domain: KH
+  core: false
+  phase: Phase 1

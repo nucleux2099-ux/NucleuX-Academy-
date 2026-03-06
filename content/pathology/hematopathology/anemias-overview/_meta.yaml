@@ -1,0 +1,161 @@
+topic_id: anemias-overview
+name: Anemia (Iron Deficiency, Megaloblastic, Hemolytic)
+description: Classification, pathogenesis, and diagnosis of major anemias
+high_yield: true
+
+overview: >
+  Anemia is a reduction in hemoglobin concentration or red cell mass resulting in decreased oxygen-carrying capacity.
+  Classification by MCV (microcytic, normocytic, macrocytic) and by mechanism (decreased production, increased destruction,
+  blood loss) is essential. Iron deficiency, megaloblastic, and hemolytic anemias are the most tested categories.
+  📚 Robbins, 10th Ed, Ch.14 (p.629-670)
+
+learning_objectives:
+  - Classify anemias by MCV and etiology
+  - Describe the lab profile and pathophysiology of iron deficiency anemia
+  - Differentiate B12 from folate deficiency megaloblastic anemia
+  - Classify hemolytic anemias and describe key features of each
+  - Interpret peripheral smear findings in various anemias
+
+content:
+  atoms:
+    - id: iron-deficiency
+      title: "Iron Deficiency Anemia"
+      text: >
+        Most common anemia worldwide. Causes: chronic blood loss (GI in adults, menorrhagia in women),
+        increased demand (pregnancy, growth), decreased intake/absorption (celiac, gastrectomy).
+        Lab: ↓MCV (microcytic hypochromic), ↓serum iron, ↓ferritin (BEST indicator of iron stores),
+        ↑TIBC, ↓transferrin saturation, ↑RDW.
+        Peripheral smear: microcytic hypochromic RBCs, target cells, pencil cells (elliptocytes).
+        Plummer-Vinson syndrome: IDA + esophageal web + dysphagia (increased risk of SCC of esophagus).
+        📚 Robbins, 10th Ed, Ch.14 (p.639-642)
+
+    - id: megaloblastic-anemia
+      title: "Megaloblastic Anemia (B12 & Folate Deficiency)"
+      text: >
+        Impaired DNA synthesis → nuclear-cytoplasmic asynchrony → large cells (megaloblasts).
+        Both cause: macrocytic anemia (MCV >100), hypersegmented neutrophils (≥5 lobes = pathognomonic),
+        megaloblastic erythroid precursors in bone marrow, pancytopenia.
+        B12 deficiency: pernicious anemia (anti-IF antibodies + anti-parietal cell antibodies), strict vegans,
+        terminal ileum disease, Diphyllobothrium latum. UNIQUE feature: subacute combined degeneration
+        (posterior columns → loss of position/vibration sense; lateral corticospinal tracts → spasticity, weakness).
+        Folate deficiency: poor diet, alcoholism, pregnancy, methotrexate, phenytoin. NO neurological symptoms.
+        Lab: B12 low → ↑methylmalonic acid + ↑homocysteine; Folate low → ↑homocysteine only (normal MMA).
+        📚 Robbins, 10th Ed, Ch.14 (p.642-648)
+
+    - id: hemolytic-anemias-intrinsic
+      title: "Intrinsic (Intracorpuscular) Hemolytic Anemias"
+      text: >
+        Membrane defects: Hereditary spherocytosis (spectrin/ankyrin; spherocytes, ↑MCHC, osmotic fragility ↑;
+        splenectomy curative); PNH (acquired GPI anchor defect → CD55/CD59 absent → complement-mediated lysis;
+        Ham test/flow cytometry; risk of Budd-Chiari, aplastic anemia, AML).
+        Enzyme defects: G6PD deficiency (X-linked; oxidative stress → Heinz bodies → bite cells;
+        triggered by fava beans, sulfonamides, primaquine, infections).
+        Hemoglobinopathies: Sickle cell (HbS, Glu→Val β6; dactylitis in children, vaso-occlusive crises,
+        autosplenectomy, aplastic crisis with Parvovirus B19; HbF is protective — hydroxyurea increases HbF).
+        Thalassemias: α-thal (gene deletion → Hb Barts/HbH); β-thal major (Cooley anemia — absent β chains,
+        target cells, crew-cut skull, chipmunk facies, hepatosplenomegaly, iron overload).
+        📚 Robbins, 10th Ed, Ch.14 (p.648-665)
+
+    - id: hemolytic-anemias-extrinsic
+      title: "Extrinsic (Extracorpuscular) Hemolytic Anemias"
+      text: >
+        Autoimmune hemolytic anemia (AIHA): Warm type (IgG, extravascular hemolysis in spleen; SLE, CLL, drugs)
+        vs Cold type (IgM, intravascular + extravascular; Mycoplasma, EBV; complement-mediated).
+        Diagnosis: Direct Coombs test (DAT) positive = antibodies ON RBCs.
+        Microangiopathic hemolytic anemia (MAHA): TTP, HUS, DIC, malignant HTN, HELLP;
+        schistocytes (fragmented RBCs) on smear.
+        TTP pentad: thrombocytopenia, MAHA, neurological symptoms, renal failure, fever (ADAMTS13 deficiency).
+        HUS: MAHA + renal failure + thrombocytopenia (E. coli O157:H7 Shiga toxin in children).
+        📚 Robbins, 10th Ed, Ch.14 (p.665-670)
+
+  clinical:
+    - title: "Approach to Anemia — Peripheral Smear Clues"
+      text: >
+        Spherocytes → hereditary spherocytosis or AIHA. Target cells → thalassemia, IDA, liver disease, HbC.
+        Schistocytes → MAHA (TTP, HUS, DIC). Sickle cells → sickle cell disease. Bite cells → G6PD deficiency.
+        Hypersegmented neutrophils → megaloblastic anemia (B12/folate). Rouleaux → multiple myeloma.
+        Howell-Jolly bodies → asplenia/hyposplenia.
+
+  high_yield_points:
+    - "Ferritin = BEST indicator of iron stores (low in IDA, high in anemia of chronic disease)"
+    - "↓Iron, ↓Ferritin, ↑TIBC = Iron deficiency; ↓Iron, ↑Ferritin, ↓TIBC = Anemia of chronic disease"
+    - "Hypersegmented neutrophils (≥5 lobes) = pathognomonic for megaloblastic anemia"
+    - "B12 deficiency = ↑MMA + ↑homocysteine; Folate deficiency = ↑homocysteine ONLY (normal MMA)"
+    - "B12 causes neurological symptoms (SACD); Folate does NOT"
+    - "Hereditary spherocytosis: osmotic fragility ↑, MCHC ↑, Coombs NEGATIVE; treat with splenectomy"
+    - "G6PD: Heinz bodies (denatured Hb) + bite cells; enzyme levels can be NORMAL during acute crisis"
+    - "Sickle cell: autosplenectomy by age 5 → Howell-Jolly bodies; aplastic crisis = Parvovirus B19"
+    - "Schistocytes on smear = MAHA → think TTP, HUS, DIC"
+    - "PNH: only ACQUIRED intrinsic hemolytic anemia; triad of hemolytic anemia + pancytopenia + thrombosis"
+
+mcqs:
+  - question: "A 30-year-old vegetarian woman presents with fatigue, glossitis, and numbness in her feet. CBC shows MCV 115 fL, pancytopenia, and hypersegmented neutrophils. Serum methylmalonic acid is elevated. The most likely diagnosis is:"
+    options:
+      - "Folate deficiency"
+      - "Vitamin B12 deficiency"
+      - "Iron deficiency anemia"
+      - "Aplastic anemia"
+    answer: "Vitamin B12 deficiency"
+    explanation: >
+      Megaloblastic anemia (MCV >100, hypersegmented neutrophils) with neurological symptoms (numbness = peripheral neuropathy)
+      and elevated methylmalonic acid points to B12 deficiency. Folate deficiency also causes megaloblastic anemia but does NOT
+      elevate MMA and does NOT cause neurological symptoms. Vegetarian diet = risk for B12 deficiency.
+      📚 Robbins, 10th Ed, Ch.14 (p.644)
+    difficulty: 1
+
+  - question: "A child of African descent develops acute hemolytic anemia after taking an antimalarial drug. Peripheral smear shows bite cells and Heinz body preparation is positive. The most likely diagnosis is:"
+    options:
+      - "Sickle cell disease"
+      - "Hereditary spherocytosis"
+      - "G6PD deficiency"
+      - "Autoimmune hemolytic anemia"
+    answer: "G6PD deficiency"
+    explanation: >
+      G6PD deficiency (X-linked recessive) causes episodic hemolytic anemia triggered by oxidative stress (antimalarials
+      like primaquine, sulfonamides, fava beans, infections). Heinz bodies (denatured hemoglobin inclusions) are removed
+      by splenic macrophages creating "bite cells." Common in African and Mediterranean populations.
+      📚 Robbins, 10th Ed, Ch.14 (p.654)
+    difficulty: 1
+
+  - question: "A 40-year-old woman with SLE presents with jaundice and anemia. Lab: reticulocyte count elevated, indirect bilirubin elevated, LDH elevated, haptoglobin low. Direct Coombs test is positive. The hemolysis is most likely:"
+    options:
+      - "Intravascular, IgM-mediated"
+      - "Extravascular, IgG-mediated (warm AIHA)"
+      - "Mechanical (microangiopathic)"
+      - "Hereditary spherocytosis"
+    answer: "Extravascular, IgG-mediated (warm AIHA)"
+    explanation: >
+      SLE is associated with warm AIHA — IgG antibodies coat RBCs → recognized by splenic macrophages →
+      extravascular hemolysis. Positive DAT (direct Coombs) confirms antibodies on RBCs. Warm AIHA is the
+      most common type of AIHA. Cold AIHA (IgM) is associated with Mycoplasma and EBV, not SLE.
+      📚 Robbins, 10th Ed, Ch.14 (p.666)
+    difficulty: 2
+
+  - question: "A 3-year-old child presents with sudden pallor and reticulocyte count of 0%. He has known sickle cell disease. The most likely cause of this aplastic crisis is:"
+    options:
+      - "Folate deficiency"
+      - "Splenic sequestration"
+      - "Parvovirus B19 infection"
+      - "G6PD deficiency"
+    answer: "Parvovirus B19 infection"
+    explanation: >
+      Aplastic crisis in sickle cell disease (sudden drop in hemoglobin with reticulocyte count near ZERO) is caused
+      by Parvovirus B19, which infects erythroid precursors and halts RBC production. In patients with chronic hemolysis,
+      this is devastating because they depend on high reticulocyte production. Splenic sequestration would show
+      splenomegaly and reticulocytosis, not aplasia.
+      📚 Robbins, 10th Ed, Ch.14 (p.660)
+    difficulty: 2
+
+  - question: "A woman with menorrhagia has the following labs: serum iron 30 μg/dL (low), TIBC 450 μg/dL (high), ferritin 8 ng/mL (low). These findings are most consistent with:"
+    options:
+      - "Anemia of chronic disease"
+      - "Iron deficiency anemia"
+      - "Sideroblastic anemia"
+      - "Thalassemia trait"
+    answer: "Iron deficiency anemia"
+    explanation: >
+      The classic iron profile of IDA: ↓serum iron, ↑TIBC (body tries to absorb more iron), ↓ferritin (depleted stores).
+      Anemia of chronic disease shows ↓iron, ↓TIBC, ↑ferritin (iron trapped in macrophages by hepcidin).
+      Sideroblastic anemia has ↑iron, ↑ferritin, ring sideroblasts. Thalassemia has normal iron studies.
+      📚 Robbins, 10th Ed, Ch.14 (p.641)
+    difficulty: 1

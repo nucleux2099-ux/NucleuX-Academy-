@@ -1,0 +1,150 @@
+topic_id: antimalarials
+name: Antimalarial Drugs
+description: Classification, mechanisms, and clinical use of antimalarial agents — targeting different stages of Plasmodium lifecycle
+high_yield: true
+nmc_codes:
+- code: PH1.47
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Antimalarials target different stages of the Plasmodium lifecycle: blood schizonticides (chloroquine, artemisinin),
+  tissue schizonticides (primaquine), gametocytocides, and sporontocides. Artemisinin-based combination therapy (ACT) is
+  now the standard for P. falciparum malaria. Understanding which drugs target which life-cycle stage is crucial for NEET-PG.
+  📚 KD Tripathi, 8th Ed, Ch.57 (p.811-830); 📚 Goodman & Gilman's, 14th Ed, Ch.53
+
+learning_objectives:
+  - Classify antimalarials by their site of action in Plasmodium lifecycle
+  - Describe mechanism and toxicity of chloroquine
+  - Explain why primaquine is essential for P. vivax radical cure
+  - Describe artemisinin-based combination therapy and its rationale
+  - List drugs used for malaria prophylaxis
+
+content:
+  atoms:
+    - id: blood-schizonticides
+      title: "Blood Schizonticides"
+      text: >
+        Chloroquine: Concentrates in parasite food vacuole → inhibits heme polymerase → toxic heme accumulates → parasite death.
+        Effective against erythrocytic stages of P. vivax, P. ovale, P. malariae, and sensitive P. falciparum.
+        Side effects: Retinopathy (bull's eye maculopathy — irreversible, with chronic use in RA/SLE), GI upset,
+        Pruritus (especially dark-skinned individuals), QT prolongation, Hemolysis in G6PD deficiency.
+        Also used in: RA, SLE (hydroxychloroquine preferred — less retinal toxicity), Amoebic liver abscess.
+        Chloroquine-resistant P. falciparum: treat with ACTs.
+        Artemisinin derivatives: Artesunate (IV — DOC for severe/complicated malaria), Artemether, Dihydroartemisinin.
+        Mechanism: endoperoxide bridge → free radical generation in presence of heme iron → parasite damage.
+        Fastest-acting antimalarials. Short t½ → must combine with longer-acting partner (ACT principle).
+        ACTs: Artemether-Lumefantrine, Artesunate-Mefloquine, Artesunate-Amodiaquine, Dihydroartemisinin-Piperaquine.
+        Quinine: alkaloid from cinchona bark. For chloroquine-resistant malaria. Side effects: cinchonism (tinnitus,
+        headache, visual disturbance), hypoglycemia (stimulates insulin release), blackwater fever. IV for severe malaria if no artesunate.
+        📚 KD Tripathi, 8th Ed, Ch.57 (p.813-822)
+
+    - id: tissue-schizonticides-prophylaxis
+      title: "Tissue Schizonticides, Gametocytocides & Prophylaxis"
+      text: >
+        Primaquine: ONLY drug that kills hepatic hypnozoites (dormant forms of P. vivax/P. ovale → prevent relapse).
+        Also the ONLY effective gametocytocide for P. falciparum (blocks transmission).
+        Mechanism: generates reactive oxygen species in parasite.
+        CRITICAL: Causes hemolytic anemia in G6PD-deficient patients → CHECK G6PD BEFORE prescribing.
+        Other side effects: methemoglobinemia, GI upset. Contraindicated in pregnancy.
+        Radical cure of P. vivax: Chloroquine (blood stages) + Primaquine (14 days — hypnozoites).
+        Tafenoquine: newer 8-aminoquinoline, single-dose alternative to 14-day primaquine for anti-relapse. Also needs G6PD testing.
+        Prophylaxis:
+        Chloroquine-sensitive areas: Chloroquine weekly (start 1 week before → 4 weeks after).
+        Chloroquine-resistant areas: Mefloquine (weekly), Doxycycline (daily), Atovaquone-Proguanil (Malarone — daily,
+        start 1 day before → 7 days after, best-tolerated).
+        Causal prophylaxis: Atovaquone-Proguanil, Primaquine (kill liver-stage schizonts — can stop 7 days after return).
+        Suppressive prophylaxis: Chloroquine, Mefloquine (kill only blood stages — must continue 4 weeks after return).
+        📚 KD Tripathi, 8th Ed, Ch.57 (p.822-830)
+
+  clinical:
+    - title: "Clinical Correlation: Severe Falciparum Malaria"
+      text: >
+        IV Artesunate is DOC (SEAQUAMAT and AQUAMAT trials — superior to quinine). If unavailable, IV quinine.
+        Complications: cerebral malaria, severe anemia, ARDS, hypoglycemia (quinine-induced), DIC, renal failure.
+        Exchange transfusion considered if parasitemia >10%.
+    - title: "Clinical Correlation: G6PD Deficiency and Antimalarials"
+      text: >
+        Primaquine and tafenoquine cause oxidative hemolysis in G6PD-deficient patients. G6PD testing is MANDATORY before prescribing.
+        Other drugs causing hemolysis in G6PD deficiency: dapsone, sulfonamides, nitrofurantoin, chloroquine (mild risk).
+
+  high_yield_points:
+    - "Chloroquine: inhibits heme polymerase in parasite food vacuole"
+    - "Primaquine: ONLY drug killing hypnozoites (P. vivax/ovale radical cure) and P. falciparum gametocytes"
+    - "Primaquine: CHECK G6PD before prescribing — causes hemolytic anemia in G6PD deficiency"
+    - "IV Artesunate: DOC for severe/complicated malaria (NOT quinine anymore)"
+    - "ACTs: artemisinin + longer-acting partner — standard for uncomplicated P. falciparum"
+    - "Chloroquine retinopathy: bull's eye maculopathy — irreversible"
+    - "Quinine causes hypoglycemia (stimulates insulin release) and cinchonism"
+    - "Radical cure of P. vivax = Chloroquine + 14-day Primaquine"
+    - "Causal prophylaxis (Atovaquone-Proguanil): stop 7 days after return"
+    - "Suppressive prophylaxis (Chloroquine, Mefloquine): continue 4 weeks after return"
+
+mcqs:
+  - question: "Which antimalarial drug is essential for preventing relapse of P. vivax malaria?"
+    options:
+      - "Chloroquine"
+      - "Artesunate"
+      - "Primaquine"
+      - "Mefloquine"
+    answer: "Primaquine"
+    explanation: >
+      P. vivax and P. ovale form dormant hypnozoites in the liver that cause relapse. Primaquine is the ONLY drug
+      that kills hypnozoites. Radical cure requires chloroquine (blood stages) + primaquine 14 days (hypnozoites).
+      📚 KD Tripathi, 8th Ed, Ch.57 (p.824)
+    difficulty: 1
+
+  - question: "The drug of choice for severe complicated falciparum malaria is:"
+    options:
+      - "Chloroquine IV"
+      - "Quinine IV"
+      - "Artesunate IV"
+      - "Mefloquine oral"
+    answer: "Artesunate IV"
+    explanation: >
+      IV artesunate is superior to IV quinine for severe malaria (SEAQUAMAT trial — 35% mortality reduction).
+      It acts faster, is better tolerated, and causes less hypoglycemia than quinine.
+      📚 KD Tripathi, 8th Ed, Ch.57 (p.819)
+    difficulty: 1
+
+  - question: "Before prescribing primaquine, which test is MANDATORY?"
+    options:
+      - "Complete blood count"
+      - "Liver function tests"
+      - "G6PD enzyme assay"
+      - "Renal function tests"
+    answer: "G6PD enzyme assay"
+    explanation: >
+      Primaquine causes severe oxidative hemolysis in G6PD-deficient individuals. G6PD testing is mandatory
+      before starting primaquine or tafenoquine. In G6PD deficiency, use weekly primaquine (0.75mg/kg) for
+      8 weeks instead of daily dosing, or consider no anti-relapse therapy if severe deficiency.
+      📚 KD Tripathi, 8th Ed, Ch.57 (p.825)
+    difficulty: 1
+
+  - question: "Chloroquine resistance in P. falciparum is due to:"
+    options:
+      - "Mutation in heme polymerase"
+      - "Mutation in PfCRT (chloroquine resistance transporter)"
+      - "Increased drug metabolism"
+      - "Decreased drug absorption"
+    answer: "Mutation in PfCRT (chloroquine resistance transporter)"
+    explanation: >
+      PfCRT mutation causes efflux of chloroquine from the parasite food vacuole, preventing accumulation
+      to toxic levels. This is the primary mechanism of chloroquine resistance in P. falciparum.
+      📚 KD Tripathi, 8th Ed, Ch.57 (p.817)
+    difficulty: 2
+
+  - question: "Which antimalarial drug causes cinchonism and hypoglycemia?"
+    options:
+      - "Chloroquine"
+      - "Quinine"
+      - "Primaquine"
+      - "Artesunate"
+    answer: "Quinine"
+    explanation: >
+      Quinine causes cinchonism (tinnitus, headache, nausea, visual disturbance) and hypoglycemia
+      (stimulates pancreatic β-cell insulin release). Hypoglycemia is particularly dangerous in severe
+      malaria and pregnancy. Artesunate has largely replaced quinine for severe malaria.
+      📚 KD Tripathi, 8th Ed, Ch.57 (p.820)
+    difficulty: 1

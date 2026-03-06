@@ -1,0 +1,19 @@
+title: "Snake Bite Management"
+slug: area-poisonous-snakes-your
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.6"
+prerequisites: []
+related_topics:
+  - "area-plant-poisons-seen"
+enrichment:
+  nmcCodes:
+    - code: "IM26.6"
+      text: "Snake Bite Management — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "area-plant-poisons-seen"
+      reason: "Clinically related"
+      relationship: "clinical"

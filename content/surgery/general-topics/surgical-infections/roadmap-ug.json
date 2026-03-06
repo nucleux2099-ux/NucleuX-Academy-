@@ -1,0 +1,64 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "asepsis-sterilization",
+      "nmcCode": "",
+      "reason": "Understanding sterilization, disinfection and aseptic technique is fundamental to preventing surgical site infections",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Understanding the immune response, inflammatory cascade and body defense mechanisms is fundamental to comprehending surgical infection pathogenesis",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Uncontrolled surgical infections progress to sepsis and septic shock requiring source control, antibiotics and hemodynamic support",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Burn wounds are highly susceptible to infection (Pseudomonas, MRSA) which is the leading cause of mortality in burn patients",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "wound-healing",
+      "nmcCode": "",
+      "reason": "Surgical infections disrupt normal wound healing; SSI is the most common cause of wound dehiscence and delayed healing",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gas-gangrene",
+      "nmcCode": "",
+      "reason": "Gas gangrene (Clostridial myonecrosis) is a life-threatening surgical infection requiring emergency debridement and high-dose penicillin",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Surgical antibiotic prophylaxis timing and choice is a key perioperative intervention to reduce SSI rates",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU6.1: Define and describe the aetiology and pathogenesis of surgical",
+    "SU6.2: Enumerate Prophylactic and therapeutic antibiotics"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Surgical Infections across foundational sciences and clinical applications."
+}

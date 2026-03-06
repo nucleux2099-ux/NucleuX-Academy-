@@ -1,0 +1,34 @@
+title: "Diabetes Mellitus Type 1"
+slug: diabetes-mellitus-type-1
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM11.1"
+  - "IM11.11"
+  - "IM11.16"
+prerequisites:
+  - "diabetes-mellitus"
+  - "autoimmunity"
+related_topics:
+  - "diabetic-ketoacidosis"
+  - "insulin-therapy"
+enrichment:
+  nmcCodes:
+    - code: "IM11.1"
+      text: "Describe the aetiology, pathophysiology and clinical features of Type 1 DM"
+      domain: "KH"
+    - code: "IM11.16"
+      text: "Describe the management of diabetes including insulin therapy"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "diabetes-mellitus"
+      reason: "General DM knowledge including diagnostic criteria"
+    - slug: "autoimmunity"
+      reason: "T1DM is autoimmune beta-cell destruction"
+  related_details:
+    - slug: "diabetic-ketoacidosis"
+      reason: "DKA is the most dangerous acute complication of T1DM"
+      relationship: "clinical"
+    - slug: "insulin-therapy"
+      reason: "Insulin is mandatory treatment for T1DM"
+      relationship: "clinical"

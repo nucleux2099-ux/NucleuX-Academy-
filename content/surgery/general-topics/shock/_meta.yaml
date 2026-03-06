@@ -1,0 +1,45 @@
+title: "Shock"
+slug: shock
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU2.1"
+  - "SU2.2"
+  - "SU2.3"
+prerequisites:
+  - "fluid-electrolytes"
+  - "homeostasis"
+related_topics:
+  - "blood-transfusion"
+  - "burns"
+  - "perioperative-management"
+  - "surgical-infections"
+enrichment:
+  nmcCodes:
+    - code: "SU2.1"
+      text: "Describe Pathophysiology of shock, types of shock & principles of resuscitation including fluid replacement and monitoring."
+      domain: "K"
+    - code: "SU2.2"
+      text: "Describe the clinical features of shock and its appropriate treatment."
+      domain: "K"
+    - code: "SU2.3"
+      text: "Communicate and counsel patients and families about the treatment and prognosis of shock demonstrating empathy and care"
+      domain: "S"
+  prerequisite_details:
+    - slug: "fluid-electrolytes"
+      reason: "Fluid resuscitation is the cornerstone of shock management; understanding fluid compartments and electrolyte shifts is essential for rational volume replacement"
+    - slug: "homeostasis"
+      reason: "Shock represents a failure of homeostatic mechanisms; understanding normal compensatory responses (baroreceptor reflexes, RAAS) is needed to comprehend shock pathophysiology"
+  related_details:
+    - slug: "blood-transfusion"
+      reason: "Hemorrhagic shock requires blood product resuscitation; massive transfusion protocols are critical in managing class III/IV hemorrhagic shock"
+      relationship: "clinical"
+    - slug: "burns"
+      reason: "Major burns cause distributive and hypovolemic shock through massive fluid shifts and capillary leak requiring Parkland formula-guided resuscitation"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "Intraoperative and postoperative shock recognition and management is a core perioperative competency"
+      relationship: "clinical"
+    - slug: "surgical-infections"
+      reason: "Septic shock is a major type of distributive shock encountered in surgical practice requiring source control and antimicrobial therapy"
+      relationship: "clinical"

@@ -1,0 +1,36 @@
+title: Hypertrophic Cardiomyopathy
+slug: hypertrophic-cardiomyopathy
+depth: UG
+highYield: true
+nmc_codes:
+  - IM3.1
+  - IM3.5
+prerequisites:
+  - heart-failure
+related_topics:
+  - dilated-cardiomyopathy
+  - heart-failure
+  - heart-block
+enrichment:
+  nmcCodes:
+    - code: IM3.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypertrophic
+        cardiomyopathy
+      domain: KH
+    - code: IM3.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypertrophic
+        cardiomyopathy
+      domain: KH
+  prerequisite_details:
+    - slug: heart-failure
+      reason: Foundation knowledge for hypertrophic cardiomyopathy
+  related_details:
+    - slug: dilated-cardiomyopathy
+      reason: Clinically related to hypertrophic cardiomyopathy
+      relationship: clinical
+    - slug: heart-failure
+      reason: Clinically related to hypertrophic cardiomyopathy
+      relationship: clinical
+    - slug: heart-block
+      reason: Clinically related to hypertrophic cardiomyopathy
+      relationship: clinical

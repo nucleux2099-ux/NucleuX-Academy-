@@ -1,0 +1,9 @@
+topic_id: viral-pathogenesis
+name: Viral Pathogenesis
+description: Viral Pathogenesis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI3.8
+  domain: KH
+  core: true
+  phase: Phase 1

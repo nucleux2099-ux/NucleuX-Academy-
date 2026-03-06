@@ -1,0 +1,82 @@
+id: cardiology
+title: "Cardiology"
+subject: medicine
+description: |
+  Heart diseases, arrhythmias, and cardiovascular medicine.
+
+stats:
+  total_topics: 44
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: ihd
+    title: "Ischemic Heart Disease"
+    topics:
+      - ischemic-heart-disease
+      - acute-coronary-syndrome
+      - stemi
+      - nstemi
+      - stable-angina
+      - pci-and-cabg
+  - id: failure
+    title: "Heart Failure"
+    topics:
+      - heart-failure
+      - hfref-vs-hfpef
+      - cardiomyopathy-dilated
+      - cardiomyopathy-hypertrophic
+      - cardiomyopathy-restrictive
+      - cardiac-transplant
+  - id: rhythm
+    title: "Arrhythmias"
+    topics:
+      - atrial-fibrillation
+      - supraventricular-tachycardia
+      - ventricular-tachycardia
+      - heart-block
+      - sick-sinus-syndrome
+      - long-qt-syndrome
+      - pacemakers-icds
+  - id: valvular
+    title: "Valvular Heart Disease"
+    topics:
+      - mitral-stenosis
+      - mitral-regurgitation
+      - aortic-stenosis
+      - aortic-regurgitation
+      - tricuspid-valve-disease
+      - infective-endocarditis
+      - rheumatic-heart-disease
+      - prosthetic-valves
+  - id: hypertension
+    title: "Hypertension"
+    topics:
+      - hypertension
+      - hypertensive-emergency
+      - secondary-hypertension
+      - resistant-hypertension
+      - pulmonary-hypertension
+  - id: pericardial
+    title: "Pericardial Disease"
+    topics:
+      - pericarditis-acute
+      - cardiac-tamponade
+      - constrictive-pericarditis
+      - pericardial-effusion
+  - id: congenital
+    title: "Congenital & Other"
+    topics:
+      - asd
+      - vsd
+      - pda
+      - coarctation-aorta
+      - tetralogy-fallot
+      - aortic-diseases
+      - peripheral-vascular-disease-medical
+      - dvt-pe-medical
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

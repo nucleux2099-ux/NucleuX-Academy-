@@ -1,0 +1,22 @@
+title: "Lower GI Bleeding"
+slug: lower-gi-bleeding-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.13"
+prerequisites:
+  - "inflammatory-bowel-disease"
+related_topics:
+  - "upper-gi-bleeding-medical"
+enrichment:
+  nmcCodes:
+    - code: "IM5.13"
+      text: "Lower GI Bleeding — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "inflammatory-bowel-disease"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "upper-gi-bleeding-medical"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,13 @@
+topic_id: aspects-environment-legal-medico
+name: Toxic pollution of environment, its medico-legal aspects & K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM13.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM13.2
+  domain: KH
+  core: true
+  phase: Phase 1

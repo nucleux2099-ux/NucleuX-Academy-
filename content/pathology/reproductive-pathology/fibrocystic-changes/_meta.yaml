@@ -1,0 +1,9 @@
+topic_id: fibrocystic-changes
+name: Fibrocystic Changes
+description: Fibrocystic Changes — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA25.2
+  domain: KH
+  core: true
+  phase: Phase 1

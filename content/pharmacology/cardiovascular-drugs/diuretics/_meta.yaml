@@ -1,0 +1,165 @@
+topic_id: diuretics
+name: Diuretics
+description: Classification, mechanisms, and clinical pharmacology of diuretic agents
+high_yield: true
+nmc_codes:
+- code: PH1.20
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Diuretics increase urine output by acting on different segments of the nephron. They are essential in managing
+  hypertension, heart failure, edema, and electrolyte disorders. Classification by site of action: carbonic anhydrase
+  inhibitors (PCT), osmotic diuretics (PCT/LOH), loop diuretics (TAL), thiazides (DCT), and potassium-sparing diuretics (CCT).
+  📚 KD Tripathi, 8th Ed, Ch.41 (p.586-602); 📚 Goodman & Gilman's, 14th Ed, Ch.25
+
+learning_objectives:
+  - Classify diuretics by site of action in the nephron
+  - Compare the efficacy and side effects of loop vs thiazide diuretics
+  - Explain the mechanism of action of potassium-sparing diuretics
+  - Describe electrolyte abnormalities caused by each diuretic class
+  - Select appropriate diuretics for clinical conditions
+
+content:
+  atoms:
+    - id: loop-diuretics
+      title: "Loop Diuretics (High-Ceiling Diuretics)"
+      text: >
+        Site: Thick ascending limb of Loop of Henle. Block Na+/K+/2Cl- cotransporter (NKCC2).
+        Drugs: Furosemide (prototype), Bumetanide, Torsemide, Ethacrynic acid.
+        MOST POTENT diuretics (can excrete up to 25% filtered Na+). Abolish medullary hypertonicity → impair concentrating ability.
+        Also: ↑Ca2+ and Mg2+ excretion, venodilation (acute → rapid pulmonary edema relief before diuresis).
+        Uses: Acute pulmonary edema (IV furosemide — immediate relief), CHF, Acute renal failure, Hypercalcemia,
+        Cerebral edema (along with mannitol), Hyperkalemia (acute).
+        Side effects: Hypokalemia, Hyponatremia, Hypocalcemia, Hypomagnesemia, Metabolic alkalosis,
+        Ototoxicity (especially ethacrynic acid — only non-sulfonamide, safe in sulfa allergy), Hyperuricemia, Hyperglycemia.
+        📚 KD Tripathi, 8th Ed, Ch.41 (p.590-594)
+
+    - id: thiazide-diuretics
+      title: "Thiazide Diuretics"
+      text: >
+        Site: Early distal convoluted tubule. Block Na+/Cl- cotransporter (NCC).
+        Drugs: Hydrochlorothiazide, Chlorthalidone (longer acting, preferred for HTN), Indapamide, Metolazone.
+        Moderate efficacy (excrete 5-10% filtered Na+). Unique: INCREASE Ca2+ reabsorption (↓urinary Ca2+).
+        Uses: Hypertension (first-line, especially elderly/black patients), Edema, Nephrolithiasis (calcium stones — ↓urinary Ca2+),
+        Nephrogenic diabetes insipidus (paradoxical antidiuretic effect).
+        Side effects: Hypokalemia, Hyponatremia (most common cause of drug-induced hyponatremia), Hypercalcemia,
+        Hyperuricemia, Hyperglycemia, Hyperlipidemia — "Hyper GLUC" (Glucose, Lipids, Uric acid, Calcium) + HypoKNa.
+        Metolazone: works even in renal failure (unlike other thiazides) — synergistic with loop diuretics.
+        📚 KD Tripathi, 8th Ed, Ch.41 (p.594-598)
+
+    - id: k-sparing-diuretics
+      title: "Potassium-Sparing Diuretics"
+      text: >
+        Site: Collecting duct (CCT).
+        (A) Aldosterone antagonists: Spironolactone, Eplerenone. Block mineralocorticoid receptor → ↓ENaC expression.
+        Spironolactone: also anti-androgen → gynecomastia, menstrual irregularities. Eplerenone: selective, no anti-androgen effects.
+        Uses: Primary hyperaldosteronism (Conn syndrome), Heart failure (RALES — mortality reduction), Resistant HTN,
+        Cirrhotic ascites, Hirsutism/PCOS (spironolactone).
+        (B) ENaC blockers: Amiloride, Triamterene. Directly block epithelial Na+ channels. Weak diuretics alone.
+        Amiloride: used in Liddle syndrome (gain-of-function ENaC mutation).
+        Side effects (all): HYPERKALEMIA (most dangerous — avoid with ACEIs/ARBs/K+ supplements), Metabolic acidosis.
+        📚 KD Tripathi, 8th Ed, Ch.41 (p.598-601)
+
+    - id: other-diuretics
+      title: "Osmotic Diuretics & Carbonic Anhydrase Inhibitors"
+      text: >
+        Osmotic diuretics: Mannitol (prototype). Freely filtered, NOT reabsorbed → osmotic effect → water retention in lumen.
+        Given IV only. Uses: Raised ICP/ICO (cerebral edema, glaucoma), Acute renal failure (maintain urine flow),
+        Dialysis disequilibrium syndrome. Side effects: Volume expansion initially (contraindicated in CHF/pulmonary edema).
+        Carbonic anhydrase inhibitors: Acetazolamide. Block CA in PCT → ↓HCO3- reabsorption → bicarbonaturia + mild diuresis.
+        Uses: Glaucoma (↓aqueous humor), Acute mountain sickness (metabolic acidosis → ↑ventilation), Metabolic alkalosis,
+        Epilepsy (adjunctive), Idiopathic intracranial hypertension.
+        Side effects: Metabolic acidosis (hyperchloremic), Hypokalemia, Paresthesias, Renal stones (alkaline urine + ↓citrate).
+        📚 KD Tripathi, 8th Ed, Ch.41 (p.586-590)
+
+  clinical:
+    - title: "Clinical Correlation: Diuretic Resistance in Heart Failure"
+      text: >
+        Sequential nephron blockade: Add metolazone (thiazide-like, works in low GFR) to furosemide for synergistic
+        diuresis. Monitor K+ closely. Continuous IV furosemide infusion may be more effective than bolus doses.
+    - title: "Clinical Correlation: Thiazides in Calcium Nephrolithiasis"
+      text: >
+        Thiazides decrease urinary calcium excretion by enhancing Ca2+ reabsorption in DCT (via Na+ depletion →
+        compensatory Ca2+ reabsorption in PCT). Used for recurrent calcium oxalate stones. Opposite to loop diuretics which increase Ca2+ excretion.
+
+  high_yield_points:
+    - "Loop diuretics: MOST POTENT — act on TAL, block NKCC2 → waste Ca2+ and Mg2+"
+    - "Thiazides: INCREASE Ca2+ reabsorption — use for calcium nephrolithiasis"
+    - "Thiazide side effects: Hyper-GLUC (Glucose, Lipids, Uric acid, Calcium) + HypoKNa"
+    - "Loop diuretics: HypoKNaCaMg + metabolic alkalosis + ototoxicity"
+    - "Ethacrynic acid: only NON-SULFONAMIDE loop diuretic — safe in sulfa allergy"
+    - "Spironolactone: anti-androgen effects → gynecomastia; Eplerenone does NOT"
+    - "ALL K+-sparing diuretics → risk of HYPERKALEMIA (avoid with ACEIs/ARBs)"
+    - "Mannitol: contraindicated in CHF and pulmonary edema (initial volume expansion)"
+    - "Acetazolamide: acute mountain sickness, glaucoma, metabolic alkalosis"
+    - "Metolazone: works in renal failure — synergistic with furosemide for diuretic resistance"
+
+mcqs:
+  - question: "A patient with recurrent calcium oxalate kidney stones should be prescribed:"
+    options:
+      - "Furosemide"
+      - "Hydrochlorothiazide"
+      - "Spironolactone"
+      - "Mannitol"
+    answer: "Hydrochlorothiazide"
+    explanation: >
+      Thiazides decrease urinary calcium excretion, reducing the risk of calcium stone recurrence.
+      Loop diuretics (furosemide) INCREASE urinary calcium and would worsen stone risk.
+      📚 KD Tripathi, 8th Ed, Ch.41 (p.596)
+    difficulty: 1
+
+  - question: "Which diuretic causes ototoxicity as a significant side effect?"
+    options:
+      - "Hydrochlorothiazide"
+      - "Spironolactone"
+      - "Ethacrynic acid"
+      - "Acetazolamide"
+    answer: "Ethacrynic acid"
+    explanation: >
+      All loop diuretics can cause ototoxicity, but ethacrynic acid has the highest risk. It is the only
+      non-sulfonamide loop diuretic, making it the choice in sulfa-allergic patients despite ototoxicity risk.
+      📚 KD Tripathi, 8th Ed, Ch.41 (p.593)
+    difficulty: 2
+
+  - question: "Acetazolamide is used in acute mountain sickness because it causes:"
+    options:
+      - "Metabolic alkalosis → hyperventilation"
+      - "Metabolic acidosis → compensatory hyperventilation"
+      - "Respiratory alkalosis → vasodilation"
+      - "Direct stimulation of respiratory center"
+    answer: "Metabolic acidosis → compensatory hyperventilation"
+    explanation: >
+      Acetazolamide inhibits carbonic anhydrase → bicarbonaturia → metabolic acidosis. This acidosis stimulates
+      compensatory hyperventilation, improving O2 saturation at high altitude. Also reduces CSF formation.
+      📚 KD Tripathi, 8th Ed, Ch.41 (p.589)
+    difficulty: 2
+
+  - question: "Gynecomastia is a side effect of:"
+    options:
+      - "Furosemide"
+      - "Spironolactone"
+      - "Amiloride"
+      - "Hydrochlorothiazide"
+    answer: "Spironolactone"
+    explanation: >
+      Spironolactone is a non-selective mineralocorticoid receptor antagonist that also blocks androgen receptors
+      and inhibits testosterone synthesis → gynecomastia, impotence, menstrual irregularities. Eplerenone is selective
+      and does not cause anti-androgen effects.
+      📚 KD Tripathi, 8th Ed, Ch.41 (p.599)
+    difficulty: 1
+
+  - question: "Which diuretic is effective even in severe renal insufficiency (GFR <10 mL/min) and is synergistic with loop diuretics?"
+    options:
+      - "Hydrochlorothiazide"
+      - "Metolazone"
+      - "Amiloride"
+      - "Acetazolamide"
+    answer: "Metolazone"
+    explanation: >
+      Metolazone is a thiazide-like diuretic that retains efficacy in low GFR states (unlike true thiazides).
+      When combined with loop diuretics, it blocks compensatory Na+ reabsorption in DCT, producing synergistic
+      diuresis — "sequential nephron blockade." Monitor potassium closely.
+      📚 KD Tripathi, 8th Ed, Ch.41 (p.597)
+    difficulty: 2

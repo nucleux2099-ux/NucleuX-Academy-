@@ -1,0 +1,17 @@
+topic_id: circulation-pulmonary-systemic
+name: Differentiate between pulmonary and systemic circulation
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN5.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN5.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN5.8
+  domain: KH
+  core: false
+  phase: Phase 1

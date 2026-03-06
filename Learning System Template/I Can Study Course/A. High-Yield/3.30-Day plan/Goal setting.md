@@ -1,0 +1,183 @@
+# Goal setting
+_This lesson relates to the “Goal Analysis” section of the 30-day plan form._
+
+Key principles
+
+- Don’t sacrifice medium to long-term success for short-term outcomes. You may sometimes need to sacrifice short-term outcomes to set yourself up for more meaningful success later. Avoid always playing catch-up for short-term, urgent tasks.
+- Hard work alone is not enough to achieve uncommon results. The method and direction of your hard work are critical.
+- Long-term directions are more important than specific goals. This is because many things can change as you gain more information and experience.
+- Make your goals specific and measurable. Using SMART goals here is appropriate.
+
+> [!transcript]- Transcript
+> So the first thing we're going to start with is a medium term goal.
+>
+> Now we start with a medium term goal that is within the next 6 to 12 months because setting goals that are too short term means that you may not actually be able to do that much to change the actual outcome.
+>
+> For example, if you have an exam coming up in a month from now or you've got an important job interview in a few weeks, there may not be that much you can do between now and then to actually achieve that goal.
+>
+> And that may be disheartening for you if that was one of the most important things for you to achieve.
+>
+> And you can certainly try your best to achieve whatever you can in that time.
+>
+> However, you have to understand that also if you're not able to reach the bar in that short period of time because you missed out on doing months of prep work before that or if you don't have the skills or the experiences to hit a certain goal, you're not likely to be able to develop those skills.
+>
+> So, the best thing to do may actually be to say, "Well, I may not do well in this immediate goal.
+>
+> Let's try to do well in the next goal instead and not make the same mistakes."
+>
+> One of the saddest things that I see is a student going through, especially university, they've come from high school, they did pretty well in high school, they went into university very confident, they went into a heavily academic program and they just got hit in the face with a shovel with the amount of content that they were thrown at.
+>
+> And they were completely overwhelmed and they didn't do well in their first semester test or exam results.
+>
+> And then they don't actually do anything to overcompensate for that.
+>
+> They don't try to fix the underlying issue.
+>
+> Everything is just a band-aid solution.
+>
+> So after the first semester, they think, "Okay, I'm just going to double down.
+>
+> I'm going to try even harder, work even more."
+>
+> And the second semester, they do maybe a little bit better or sometimes even worse.
+>
+> And so going into this.
+>
+> If you did poorly in the first semester, we have to think, "Well, what was the reason I did poorly?
+>
+> What was the reason I did poorly?"
+>
+> Especially if you're putting in a decent amount of effort, why did that effort not translate into the result?
+>
+> And what can I do moving on beyond that to make sure I don't make the same mistake again?
+>
+> A real critical dissection and a reflection is necessary.
+>
+> And in some cases, it may not be that you can overcome that in the second semester.
+>
+> It may be something that you have to think, "Well, let's try to overcome that.
+>
+> Let's try to overcome that by next year."
+>
+> So at the beginning of next year, I'm not making the same mistakes that I made this year, underestimating the content, feeling overconfident.
+>
+> Because what I see often is that people will go through, for example, their first year of university, and they'll go into their second year feeling they learned so much from their first year.
+>
+> They made heaps of mistakes.
+>
+> They didn't do very well.
+>
+> But second year onwards, that's going to be where they turn things around and they realize that second year is actually harder than the first year and they run into the exact same problems that they ran into in first year.
+>
+> And so, I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about.
+>
+> And I think that's a really important thing to think about. semester's first test that comes up in the next five to six weeks well actually you may need to learn a whole new system of studying and for many of you this will legitimately be the case you may need to learn a whole new system of studying to be able to achieve that goal and learning that system of studying might mean that for the first two or three weeks you're not going to be making those huge massive gains in efficiency because you need to lay the groundwork to build more effective techniques on top of later so in order for you to succeed six to nine months from now you actually need to sacrifice a little bit in that immediate short term most of the students that i talk to are very unwilling to make that decision they're not willing to give up anything in that short term even if they know it's unlikely to help fix things in the long term and as a result they're always living short term to short term to short term just trying to keep up just trying to meet the immediate next challenge and always when the challenge after that comes along they're always just the same level of unprepared because they're only just meeting the minimum requirement or sometimes even unfortunately failing to meet that minimum requirement for each challenge most people do not go through this pathway and then do well and what happens to them they simply lower their standards they do something else they choose different pathways whatever it is and this is why uncommon results are uncommon not because people are not willing to work hard but because it's about where you're working hard the direction you're working hard in and what that goal is and the time scale how much you're willing to put in to develop a strong foundation that you can build on year after year after year so that every year it gets easier and more consistent and predictable to achieve your goals not the other way around that's why we start with a medium-term goal six to twelve months it and really build up something that's solid and dependable, not just for 6 to 12 months from now, but for life going on after that.
+>
+> Why don't we do long-term goals that are even further than 12 months?
+>
+> Because it's unpredictable, especially going through this program.
+>
+> You're going to learn lots of new skills and your perspective on things is going to change.
+>
+> It's hard to predict how you're going to think about things, how the way you tackle different goals and the types of challenges you perceive are going to be 6 to 12 months from now.
+>
+> You can spend time to create a plan for 3 years later.
+>
+> However, there's an almost guaranteed chance that that plan is going to change as you learn more information about what it is you're about to go into.
+>
+> If you think about it, it would be really weird for you to set a plan and then 2, 3 years later, literally every single thing happened exactly as you thought because that would have meant that you had all the information or every experience for the next 2, 3 years.
+>
+> From the onset.
+>
+> And that is just not likely.
+>
+> So long-term, it's better to have general directions, a general vision, just a path that you're kind of traveling in the general direction of.
+>
+> But in terms of planning, really detailed long-term planning is often not a great investment of time because it just changes so much and it's not going to be reliable.
+>
+> When it comes to creating solid plans, we want to start at that medium.
+>
+> And then work our way backwards to short-term, which is what we're doing here.
+>
+> So set that medium-term goal.
+>
+> You can pick a couple that you think are important enough for you.
+>
+> Keep them relatively simple.
+>
+> It could be as simple as saying, I want to get a certain grade at the end of the year.
+>
+> It could be, I want to get this particular job or position at this company that I really want to work at.
+>
+> It could be something a little bit more holistic.
+>
+> And you want to be really fluent at another language or pick up a new skill and be really fluent at it.
+>
+> Pick some kind of goal and just try to make it relatively specific and relatively measurable.
+>
+> Specific meaning that it's not something very abstract.
+>
+> So for example, setting a goal like, I want to be a better learner is very abstract.
+>
+> We don't really know what it means to be a better learner.
+>
+> We don't know exactly what that is actually going to entail.
+>
+> When we try to break that down as the plans to reach it, it's a little bit confusing what direction we need to take.
+>
+> It's also not very measurable.
+>
+> Because how do we measure that?
+>
+> Because how will we know when we reach the threshold of better?
+>
+> Getting a grade is very measurable.
+>
+> Getting a promotion, getting a position, these are very measurable.
+>
+> If it's just for your own learning, you can set your own metric.
+>
+> So it could be, I would like to be able to hold a basic conversation where I'm using another language 80% of the time when I'm talking with my family, friends.
+>
+> That could be something, and that is relatively measurable.
+>
+> You don't have to get super, super nitty-gritty on this.
+>
+> Some people are very obsessed with this.
+>
+> Some people are very obsessed about creating goals that are extremely specific and extremely measurable.
+>
+> I don't feel that there is the equivalent amount of value from going that extensively.
+>
+> I think as long as it's specific enough that you can really visualize it and you know how to break it down, and it's measurable enough that you know if you've actually succeeded or not, that is enough.
+>
+> So pick that goal, write that down in your plan, and then we're going to move down into the performance goals.
+>
+> Thank you.
+>
+> Thank you.
+

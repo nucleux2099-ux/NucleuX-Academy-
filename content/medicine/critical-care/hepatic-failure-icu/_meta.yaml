@@ -1,0 +1,19 @@
+title: "Hepatic Failure in ICU"
+slug: hepatic-failure-icu
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.17"
+prerequisites: []
+related_topics:
+  - "fluid-resuscitation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.17"
+      text: "Hepatic Failure in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "fluid-resuscitation"
+      reason: "Clinically related"
+      relationship: "clinical"

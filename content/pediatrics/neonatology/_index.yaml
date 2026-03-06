@@ -1,0 +1,61 @@
+id: neonatology
+title: "Neonatology"
+subject: pediatrics
+description: |
+  Newborn care, resuscitation, and neonatal disorders.
+
+stats:
+  total_topics: 26
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: resuscitation
+    title: "Resuscitation & Assessment"
+    topics:
+      - neonatal-resuscitation
+      - apgar-score
+      - newborn-examination
+      - gestational-age-assessment
+  - id: respiratory
+    title: "Respiratory"
+    topics:
+      - respiratory-distress-syndrome
+      - transient-tachypnea
+      - meconium-aspiration
+      - persistent-pulmonary-hypertension
+      - congenital-diaphragmatic-hernia-neo
+  - id: jaundice
+    title: "Jaundice"
+    topics:
+      - neonatal-jaundice
+      - physiological-jaundice
+      - pathological-jaundice
+      - kernicterus
+      - exchange-transfusion
+  - id: infections
+    title: "Infections"
+    topics:
+      - neonatal-sepsis
+      - congenital-infections-torch
+      - neonatal-meningitis
+  - id: gi
+    title: "GI & Surgical"
+    topics:
+      - necrotizing-enterocolitis
+      - neonatal-intestinal-obstruction
+      - tracheoesophageal-fistula
+      - hirschsprung-disease
+  - id: other
+    title: "Other"
+    topics:
+      - prematurity
+      - low-birth-weight
+      - birth-asphyxia
+      - birth-injuries
+      - inborn-errors-screening
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

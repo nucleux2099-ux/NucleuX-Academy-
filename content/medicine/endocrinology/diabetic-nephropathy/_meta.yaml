@@ -1,0 +1,11 @@
+title: "Diabetic Nephropathy"
+slug: diabetic-nephropathy
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM11.12"
+prerequisites:
+  - "diabetes-mellitus"
+related_topics:
+  - "diabetic-retinopathy"
+  - "diabetes-mellitus-type-2"

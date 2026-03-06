@@ -1,0 +1,346 @@
+# Spacing, interleaving and retrieval
+## Excuse me, SIR
+
+Spaced, interleaved retrieval is one of the core foundational techniques of any learning system. Even as we teach you more learning techniques later in the program, SIR will remain.
+
+Important notes about training SIR
+
+- SIR is not one technique - it is a method. The difficulty of using SIR depends on the difficulty of the interleaved retrieval techniques you use.
+- Retrieval techniques are generally easier to master than encoding techniques. You can expect to master each technique with only 3 to 5 hours of experience.
+- The consequence of not using SIR is very high. This is explained further below.
+
+Spaced retrieval is an easy strategy to implement straightaway, so if you aren’t doing it already, you should start now. If you already use spaced retrieval, improve your interleaving with our guidelines.
+
+## Encoding vs retrieval
+
+Systems that rely on spaced retrieval lead to repetition and time wasting. Spaced retrieval alone is insufficient to give you a competitive advantage or to produce your desired results reliably.
+
+**However, retrieval practice is still necessary for a complete study system.**
+
+![[03 Spaces/Medical Hub/🏥 Clinical Rotations/Clinical skills/Clinical cases/Attachments/Image 2.jpg|Graph showing relationship between encoding and retrieval]]
+
+Graph showing relationship between encoding and retrieval
+
+Notice that as the encoding skill increases, retrieval requirements never become zero. We always need some level of retrieval because our brain is never leak-proof (i.e. there is always some knowledge decay). 
+
+Read our article on encoding vs. retrieval [here](https://learning.icanstudy.com/learning-resources/98) for a more detailed explanation.
+
+### Two sides of the learning coin
+
+You cannot be efficient and accurate without both encoding and retrieval. Outside of inadequate encoding, "retrieval failure" is a common cause of knowledge decay of previously encoded information.
+
+**When information is encoded to a higher quality, we need less retrieval.**
+
+### Table of contents
+
+Sublesson
+
+#### [[Spacing tips]]
+
+
+Sublesson
+
+#### [[Interleaving tips]]
+
+Sublesson
+
+#### [[Retrieval tips]]
+
+
+#### [[Recommended tasks - Fundamentals - SIR]]
+
+
+Quiz
+
+#### [[SIR checkpoint]]
+
+
+> [!transcript]- Transcript
+> Learning is complicated and kind of stressful sometimes, especially when you're sacrificing your sleep, your hobbies, your friends, or your family, or just the bliss of not needing to study.
+>
+> I would know.
+>
+> I'm Dr.
+>
+> Justin Sung, and I'm no stranger to studying.
+>
+> In fact, my first year of university, I memorized this textbook as in almost every single page.
+>
+> And if that was it, it probably would have been okay.
+>
+> I made over 4,000 flashcards that year, and I studied an average of 120 hours per week, which meant I was only getting around three to four hours of sleep per night.
+>
+> I didn't take weekends.
+>
+> I didn't take holidays.
+>
+> In fact, in that one year, I actually studied more than most students would have studied in their entire life combined.
+>
+> But I guess it worked out for me because I entered into medical school.
+>
+> I did become a doctor, even got my own little fancy doctor stamp with my name on it.
+>
+> That's fun.
+>
+> But there were some issues that I realized once I entered into medical school.
+>
+> And the problem was that med school was way harder than I thought.
+>
+> It wasn't going to be possible for me to study 20 hours a day anymore if I wanted to maintain even semi-reasonable grades when there was literally double to triple the amount of content that I would have to study.
+>
+> So I researched, and I read papers.
+>
+> I read thousands of research articles, and I experimented almost endlessly.
+>
+> Any technique that you can think of, I tried it, probably dozens of times.
+>
+> In fact, I've done it over and over again.
+>
+> I've done it over and over again.
+>
+> And slowly, but eventually, I got there.
+>
+> And I was able to reduce my hours of study from around 100 hours a week to around 10 hours a week with no change in raw intelligence.
+>
+> Purely through learning the skills and the techniques, I was able to reduce my studying time significantly.
+>
+> And I was doing just as well.
+>
+> In fact, I was doing even better.
+>
+> I had so much more time, that I was healthier and happier overall.
+>
+> In fact, during that time at university, on top of studying, I set up two businesses, helped found one of the university's largest student clubs.
+>
+> I picked up new hobbies.
+>
+> I went to the gym.
+>
+> In fact, I even competitively power lifted.
+>
+> I learned to dance, got proper sleep, and most importantly for you, I taught what I had learned to be a good student. other students and I taught students again it's just here and today we're talking up and again and again and after teaching thousands of students for almost 10 years now I'm here to teach you so why wait so go get some pen and paper or Word document or something because we're gonna start with some fundamentals of learning theory and some of the techniques that I think every student should know so feel free to pause this video while you get that and you get all set up and then once you're set up we will start getting going and you can unpause this video so let's first understand a little bit more about memory and how human memory works when we talk about memory scientists usually divide it into three different stages the stages that we're focusing on is the step going from working memory to long-term memory and that process is called encoding now what happens when we learn is that information comes in as sensory information this is just something that you might be reading or listening to so right now when you're watching this video that's sensory information that you're getting and it goes into sensory memory now your brains ability to process sensory memory is very rapid and your brains ability to forget it is also very rapid so after understanding what's being said after reacting to a car moving towards you after seeing an animal walk by it's processed by your sensory memory and then it's straightaway forgotten in fact so quickly that you don't even remember remembering it in order for us to actually put that into our working memory it needs to be a little bit more relevant we need to then do something with it now everything that we do with information comes from our working memory so we retrieve it from our long-term memory and we use it through our working memory so this is a very important step when you're answering an exam or a test paper it comes through your working memory now the thing is though usually students are very bad at the process of encoding the information from working memory to go towards the long-term memory and so this is problematic for a number of reasons the first of which is that it reduces the amount of retention which increases the amount of revision that you need so for example if everything that goes into your working memory is forgotten except for let's say 50% of it which research would suggest is actually an overestimate with most students forgetting over half of what they learn but if we try to be optimistic and say 50% of everything in working memory is encoded into long-term memory then that means we have to start all the way from the beginning at sensory information bringing the information back to the working memory and then again trying to encode it into the long-term memory so we have to go through this entire process multiple times just to take in the information that we've forgotten already this is why you can study something and after you've learnt it you still feel like you don't really know it a week later you've forgotten half of it you have to go back through your notes read them again and again and again and this is a very repetitive process now for the modern student this is a problem because the curriculum is usually packed full which means that if you're spending time to re-learn material that you've forgotten you often don't have time to learn the material that you're learning on that day properly and in university this becomes a huge challenge which is the reason why a lot of top achieving students at the high school level fail to get those same results at university because the volume of content increases so much so if everything you learn you need to repeat it three to five times for it to stick then that becomes very time-consuming very quickly but there's another aspect of this which is called the learning time. which is called retrieval and retrieval actually produces a lot of learning so it's not just the act of pulling something from long-term memory and bringing it into our working memory it's actually consolidating that pathway so the more times we retrieve the stronger our knowledge becomes but again it depends on what was encoded in the first place if there isn't a lot encoded to begin with we don't have much to retrieve so yes it consolidates information we did learn however it means that we're still limited by what we encoded so hopefully you can see that there's this balance here on one hand we need to encode in such a way that lots of what we learn goes from our working memory into our long-term memory so that we can retrieve it either during revision or for our tests and exams and it's this balance of good encoding with frequent retrieval which produces really effective and efficient learning where you're not spending all this time constantly repeating and revising and rereading your notes and you are getting those grades at the top level by studying less and these are some of the changes that I made through that decade of trial and error so that you don't have to which actually brings me to another really important point see the process of going from working memory to long-term memory and then back and then forth this encoding retrieval cycle is actually cognitively and when I say cognitively I'm talking about what goes inside your brain quite difficult and challenging it doesn't feel comfortable there is a level of difficulty associated with that and that difficulty can be perceived by us as confusion or maybe just trying to get your head around something if you ever felt the discomfort of trying to figure something out or trying to remember something that's just on the tip of your tongue that type of difficulty is actually an inherent part of encoding and retrieval so what that means is that if you don't feel that if it feels like when you're studying it's easy and it's comfortable and it doesn't take too much effort it means what you're doing is you're not encoding and retrieving properly which actually means you're not getting learning which is the worst situation because it means that you feel like you are studying effectively and you're not getting the information that you need but in actual fact you're not holding on to that information and so this is a really good indicator that we can use for ourselves when we are studying it should feel a little bit difficult and uncomfortable and if it doesn't there's a strong chance almost a guarantee in fact that it means that the way that you're studying is not correct now obviously it's the right type of difficulty that we want we don't want to just be randomly you know with you know half of our clothes hanging off from a pull-up bar that's unnecessary difficulty that's not going to help us with our learning or at least I don't think it's going to help with the learning but don't try that the type of difficulty that we do want is the cognitive difficulty that comes with trying to encode and retrieve in an effective way and so all the techniques that we teach you in this course are going to be based around increasing your ability to either encode or increasing your ability to retrieve as well as the note-taking listening and reading skills associated with that and it can at times get quite complicated but we will do it step by step so that you will build the foundations first and you will eventually be able to do this very smoothly and very seamlessly and so the best place to start is with these three fundamental rules of learning and when I say rule it's different to a technique because these rules apply almost universally whatever technique you're using these rules will apply to you and you will be able to do it in a very simple way and that's the first thing that we're going to talk about today when we teach you other techniques keep these rules in mind always try to apply these rules and I say this now right at the beginning before you've even started the course properly because you need to be aware of this because we're not always going to repeat it otherwise it'll get pretty repetitive pretty fast after every new technique saying make sure to apply these three rules from now on you can assume that for virtually every technique unless we explicitly say otherwise and we can remember these rules with a mnemonic sir s I are so we'll start with the first one s stands for spacing now a common form of spacing that lots of people know about is called spaced repetition spacing just means that when we learn something we should learn at once we should give it some time for us to forget a little bit and then we learn it again now if you're really thinking about this you can see that this is allowing us to have multiple points of retrieval and this is a good thing generally speaking you should try to space your learning out so this could look like pre-studying some material with a variety of pre-study techniques before class and then going into class and in class consolidating it asking questions so that would have been a space you may have learned it on one day and then one or two days later you go in class and you're learning it again but this time a slightly different angle and it means a slightly different thing because you've already gone through it once and then maybe a week later you go through it again and revise it with a different technique now a lot of you will already be using spacing in which case good job you've already got a fundamental but a lot of people don't use spacing correctly or don't know about it so that's why it's fundamental if you're not using spacing make sure to use it and check below this to see some guidelines on how to apply spacing effectively and some ideas just to get you started they're all very easy the second rule is called interleaving and interleaving means hitting some topic or a concept from multiple different angles and when I say multiple different angles there are a lot of ways to think about angles of learning it could be taking a concept and asking yourself a question about it and then asking a question that is slightly varied it could be taking two different concepts and asking a question that relates both of them and links them to each other for maths it could be taking an equation and seeing if you can create a question that puts it in context like a real-world application for English it could be writing an essay or creating a very challenging essay question for you with interleaving the idea is that there is something that you want to learn which is in the center and then there is this range on either side of it that you also want to learn and by learning something not just directly in the way it was taught to you but also by looking around it a little bit and learning it from multiple different ways challenging challenging yourself in different ways and trying to retrieve the information or encode the information in different ways either writing it out or drawing a diagram or both or summarizing it or teaching it all of these different forms of using the information is a form of interleaving and interleaving is incredibly evidence-based and there's lots of research to show that more interleaving produces better learning and actually this occurs across sports as well which is where some of the original studies were done people found that you're a better athlete when instead of just practicing your free throw from one point you practice that free throw from above that line or below that line or to the left or to the right of that line and so we will talk about interleaving more later on as a form of spacing to allow you to reconsolidate this but see again below for some ideas on how you can incorporate interleaving into your learning some ideas that you can take with you and again it's not a matter of whether you do it right or wrong because interleaving is easy enough to do as long as you do it the the biggest issue is that people often don't do it to begin with and the third thing R stands for retrieval and obviously retrieval is talking about taking information and recalling it from your long-term memory and there are multiple ways of retrieving and again we'll have some ideas in the text below on different retrieval techniques that you can start using straight away but again all of these fundamentals apply for other techniques so for example let's say we teach you a mind map technique in that case you want to apply retrieval as much as possible so by drawing a mind map and maybe using symbols or diagrams instead of words that's a form of interleaving your learning but if we read the passage of text we try to turn it into a diagram or a mind map and then we try to make that mind map from memory that is using both interleaving and retrieval and that combination is always a great pairing so whenever you're doing a mind map you're So, whenever you're reading notes, don't just read and write straight away.
+>
+> Always give yourself a gap for retrieval.
+>
+> Read it, think about it, hold on to it, cover it up, then write your notes.
+>
+> And when you're writing your notes, experiment a little with different ways of using the information.
+>
+> Turning words into an image requires a different part of your brain.
+>
+> This increases your level of learning and improves the rate of encoding that occurs, which obviously, when you retrieve it, makes it easier because there's more to retrieve.
+>
+> So hopefully you can see how retrieval fits in everywhere.
+>
+> So look at the way that you're studying and look for opportunities for retrieval.
+>
+> Before class, if you're pre-studying, do you read, wait, and retrieve before you write?
+>
+> How much do you retrieve and how frequently?
+>
+> You want to make it as frequently as possible.
+>
+> When you're sitting there in class, how often do you retrieve?
+>
+> Do you listen, think about it, process it, and then put your notes down?
+>
+> Or do you write as they are talking?
+>
+> Again, this is another form of retrieval.
+>
+> When you combine spacing with interleaving and retrieving as much as possible, your learning will start going up.
+>
+> Now again, these are very fundamental ideas and it's not a unique idea either.
+>
+> In fact, it's a very common idea.
+>
+> Pretty much any educational psychologist or anyone that knows anything about studying efficiently will know about the ideas of spacing, interleaving, and retrieval.
+>
+> So these, again, are just the fundamentals and we will be building on this as you learn more and more advanced techniques.
+>
+> But just always remember, whatever technique we teach you, you can always find a way to space it, interleave it, or retrieve it.
+>
+> And if you can't, we will tell you that this is not suitable for spacing, interleaving.
+>
+> Again, we're going to revisit a lot of these concepts throughout the course.
+>
+> We're going to look at more advanced variations of it.
+>
+> We're simply going to teach you it again, but in a different way.
+>
+> Just in case you missed it, you'll be able to reconsolidate your knowledge and make sure that you don't have a huge gaping hole in one of your three fundamentals.
+>
+> And just to finish off with an example of how we know that this works, you actually have plenty of examples in your own life where you learn through spacing, interleaving, and retrieval.
+>
+> So let's start with the first one.
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+>
+> How do you know that you know how to do this?
+

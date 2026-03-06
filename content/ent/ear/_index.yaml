@@ -1,0 +1,12 @@
+id: ear
+title: "Ear"
+subject: ent
+description: |
+  Diseases of the ear and hearing.
+stats:
+  total_topics: 3
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

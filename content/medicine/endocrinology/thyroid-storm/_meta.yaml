@@ -1,0 +1,11 @@
+title: "Thyroid Storm"
+slug: thyroid-storm
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.12"
+prerequisites:
+  - "hyperthyroidism"
+  - "graves-disease"
+related_topics:
+  - "hypothyroidism"

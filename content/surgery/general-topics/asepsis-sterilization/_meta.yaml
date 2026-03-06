@@ -1,0 +1,45 @@
+title: "Asepsis & Sterilization"
+slug: asepsis-sterilization
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU14.1"
+  - "SU14.2"
+  - "SU14.3"
+  - "SU14.4"
+prerequisites:
+  - "wound-healing"
+  - "hospital-waste-management"
+related_topics:
+  - "surgical-infections"
+  - "perioperative-management"
+  - "surgical-ethics"
+enrichment:
+  nmcCodes:
+    - code: "SU14.1"
+      text: "Describe Aseptic techniques, sterilization and disinfection."
+      domain: "K"
+    - code: "SU14.2"
+      text: "Describe Surgical approaches, incisions and the use of appropriate instruments in surgery."
+      domain: "K"
+    - code: "SU14.3"
+      text: "Describe the materials and methods used for surgical wound closure."
+      domain: "K"
+    - code: "SU14.4"
+      text: "Demonstrate the techniques of asepsis and suturing in a simulated environment."
+      domain: "S"
+  prerequisite_details:
+    - slug: "wound-healing"
+      reason: "Understanding wound biology and contamination classification is foundational to aseptic practice"
+    - slug: "hospital-waste-management"
+      reason: "Proper disposal of contaminated materials is integral to maintaining asepsis in the OT"
+  related_details:
+    - slug: "surgical-infections"
+      reason: "Aseptic technique is the primary preventive strategy against surgical site infections"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "Asepsis protocols are a core component of perioperative infection prevention bundles"
+      relationship: "procedural"
+    - slug: "surgical-ethics"
+      reason: "Maintaining sterility standards is an ethical obligation to patient safety"
+      relationship: "foundational"

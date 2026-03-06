@@ -1,0 +1,23 @@
+title: "Schizoaffective Disorder"
+slug: schizoaffective-disorder
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM22.7"
+prerequisites: []
+related_topics:
+  - "bipolar-disorder"
+  - "delusional-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.7"
+      text: "Schizoaffective Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "bipolar-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "delusional-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

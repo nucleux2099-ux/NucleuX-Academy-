@@ -1,0 +1,9 @@
+topic_id: fetal-hydrops
+name: Fetal Hydrops
+description: Fetal Hydrops — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.8
+  domain: KH
+  core: true
+  phase: Phase 3

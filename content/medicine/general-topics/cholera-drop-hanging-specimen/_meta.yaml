@@ -1,0 +1,15 @@
+title: "Cholera — Diagnosis and Management"
+slug: cholera-drop-hanging-specimen
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.10"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.10"
+      text: "Cholera — Diagnosis and Management — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

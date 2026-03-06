@@ -1,0 +1,13 @@
+topic_id: human-life-stages
+name: The stages of human life
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN76.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN76.2
+  domain: KH
+  core: true
+  phase: Phase 1

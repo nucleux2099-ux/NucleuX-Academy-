@@ -1,0 +1,160 @@
+topic_id: mechanical-injuries
+name: Injuries — Mechanical (Blunt & Sharp)
+description: Classification and characteristics of mechanical injuries from blunt and sharp force trauma
+high_yield: true
+
+overview: >
+  Mechanical injuries result from physical force applied to the body. They are classified as blunt force injuries
+  (abrasion, contusion, laceration) and sharp force injuries (incised wound, stab wound, chop wound).
+  Distinguishing ante-mortem from post-mortem injuries and correlating injury patterns with weapons is central
+  to forensic practice. The nature, severity, and pattern of injuries help determine the weapon used and
+  manner of death.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.195-250)
+
+learning_objectives:
+  - Classify mechanical injuries into blunt and sharp force types
+  - Differentiate abrasion, contusion, and laceration
+  - Distinguish incised wound from laceration
+  - Describe characteristics of stab wounds and chop wounds
+  - Explain medicolegal significance of wound characteristics
+
+content:
+  atoms:
+    - id: abrasion
+      title: "Abrasion"
+      text: >
+        Abrasion = superficial injury involving removal of epidermis by friction/rubbing. Bleeds minimally (capillary).
+        Types: (1) Scratch/linear, (2) Graze/sliding, (3) Pressure/crush (patterned — imprint of weapon/object),
+        (4) Impact abrasion. Patterned abrasion is most forensically significant — reproduces the surface pattern
+        (e.g., tire marks, ligature pattern, teeth marks). Heals WITHOUT scarring (epidermis only).
+        Important: nail marks (crescentic abrasions) in throttling.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.200-210)
+
+    - id: contusion
+      title: "Contusion (Bruise)"
+      text: >
+        Contusion = extravasation of blood into tissues due to rupture of blood vessels by blunt force.
+        Epidermis intact. Color changes indicate age: Red/blue (fresh) → Blue-black (1-3 days) → Green (4-5 days)
+        → Yellow (7-10 days) → Normal (2-3 weeks). Cannot accurately date bruises by color alone.
+        Factors affecting: age (elderly bruise easily), sex (females > males), disease (coagulopathy),
+        site (loose tissue bruises more easily). Contusion can be distant from impact site (black eye from
+        forehead blow — tracking of blood).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.210-220)
+
+    - id: laceration
+      title: "Laceration"
+      text: >
+        Laceration = tear/split of skin and underlying tissue by blunt force (crushing/shearing).
+        Key features: irregular margins, bruised edges, bridging of blood vessels/nerves/tissue strands
+        (pathognomonic), hair bulbs intact/crushed. Differentiation from incised wound is crucial.
+        Laceration: irregular margins, bridging tissue, crushed hair, minimal bleeding.
+        Incised wound: clean-cut margins, NO bridging tissue, clean-cut hair, profuse bleeding.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.220-230)
+
+    - id: incised-wound
+      title: "Incised Wound"
+      text: >
+        Incised wound = wound produced by sharp cutting edge (knife, blade, glass). Clean-cut margins, no bridging
+        tissue, gaping (due to cut elastic tissue), profuse bleeding. Length > depth.
+        Types: (1) Slash/cut (length > depth), (2) Stab/puncture (depth > length).
+        Defense wounds — on palmar aspect of hands/forearms, ulnar border — indicate victim tried to ward off attack.
+        Hesitation marks/tentative cuts — superficial parallel cuts, usually suicidal (commonly on wrist/neck).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.230-240)
+
+    - id: stab-wound
+      title: "Stab Wound & Chop Wound"
+      text: >
+        Stab wound: depth > surface length. The wound shape reflects the cross-section of the weapon.
+        Single-edged blade: one angle sharp, one blunt (fish-tail). Double-edged: both angles sharp.
+        Beveling/shelving may indicate direction of thrust.
+        Chop wound: caused by heavy weapon with sharp cutting edge (axe, machete). Combines features of
+        incised wound and laceration. May cut through bone. Linear fracture of underlying bone is characteristic.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.240-250)
+
+  clinical:
+    - title: "Clinical Correlation: Incised vs Laceration — Forensic Significance"
+      text: >
+        Misidentifying laceration as incised wound (or vice versa) can change the legal interpretation entirely.
+        Key differentiator: BRIDGING TISSUE — present in laceration (blunt force), absent in incised wound (sharp force).
+        Also: laceration margins are irregular and bruised; incised wound margins are clean-cut and everted.
+
+high_yield_points:
+  - "Patterned abrasion = reproduces surface pattern of weapon — most forensically significant"
+  - "Contusion color: Red→Blue-black(1-3d)→Green(4-5d)→Yellow(7-10d)→Normal(2-3wk)"
+  - "BRIDGING TISSUE = pathognomonic of LACERATION (distinguishes from incised wound)"
+  - "Laceration: irregular margins, bruised edges; Incised: clean-cut margins, gaping"
+  - "Defense wounds = palmar aspect of hands/forearms (ulnar border)"
+  - "Hesitation marks = multiple superficial parallel cuts — typically SUICIDAL"
+  - "Stab wound: depth > surface length; Incised wound: length > depth"
+  - "Single-edged blade → one sharp and one blunt angle (fish-tail)"
+  - "Chop wound = heavy sharp weapon (axe) — cuts through bone"
+  - "Abrasion heals WITHOUT scar (epidermis only); laceration heals WITH scar"
+
+mcqs:
+  - question: "The pathognomonic feature that distinguishes laceration from incised wound is:"
+    options:
+      - "Gaping of wound"
+      - "Profuse bleeding"
+      - "Bridging of blood vessels and tissue strands"
+      - "Irregular margins"
+    answer: "Bridging of blood vessels and tissue strands"
+    explanation: >
+      Bridging tissue (intact blood vessels, nerves, tissue strands crossing the wound) is pathognomonic of
+      laceration. In incised wounds, all structures are cleanly divided. Irregular margins and minimal bleeding
+      are also seen in laceration but are not pathognomonic.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.225)
+    difficulty: 1
+
+  - question: "Hesitation marks (multiple superficial parallel cuts) are typically seen in:"
+    options:
+      - "Homicidal injuries"
+      - "Suicidal injuries"
+      - "Accidental injuries"
+      - "Self-defense injuries"
+    answer: "Suicidal injuries"
+    explanation: >
+      Hesitation marks (tentative cuts) are multiple superficial, parallel incised wounds, typically on the wrist
+      or neck. They indicate the person was "testing" before making deeper cuts — characteristic of suicide.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.235)
+    difficulty: 1
+
+  - question: "A greenish discoloration of a contusion suggests it is approximately:"
+    options:
+      - "Fresh (few hours)"
+      - "1-3 days old"
+      - "4-5 days old"
+      - "7-10 days old"
+    answer: "4-5 days old"
+    explanation: >
+      Color changes in contusion: Red/blue (fresh) → Blue-black (1-3 days) → Green (4-5 days, due to biliverdin)
+      → Yellow (7-10 days, due to bilirubin) → Normal (2-3 weeks). However, aging by color is not precise.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.215)
+    difficulty: 1
+
+  - question: "Defense wounds are typically found on:"
+    options:
+      - "Back of head"
+      - "Palmar aspect of hands and ulnar border of forearms"
+      - "Anterior chest wall"
+      - "Dorsum of feet"
+    answer: "Palmar aspect of hands and ulnar border of forearms"
+    explanation: >
+      Defense wounds are injuries sustained while trying to ward off an attack. They are typically incised wounds
+      or abrasions on the palms, fingers, and ulnar aspect of forearms — indicating the victim raised their
+      hands/arms to protect themselves.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.237)
+    difficulty: 1
+
+  - question: "A wound with depth greater than surface length, caused by a single-edged knife, would show:"
+    options:
+      - "Both angles sharp"
+      - "One angle sharp, one blunt (fish-tail)"
+      - "Bridging of tissue"
+      - "Irregular margins"
+    answer: "One angle sharp, one blunt (fish-tail)"
+    explanation: >
+      A stab wound from a single-edged blade has one sharp angle (corresponding to cutting edge) and one
+      blunt/squared angle with a tail (fish-tail, corresponding to the back of the blade). A double-edged
+      blade produces sharp angles at both ends.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.10 (p.242)
+    difficulty: 2

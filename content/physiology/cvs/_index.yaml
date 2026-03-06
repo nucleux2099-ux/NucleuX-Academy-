@@ -1,0 +1,19 @@
+title: Cardiovascular System Physiology
+description: Complete physiology of the heart and circulatory system
+icon: ❤️
+order: 2
+topics:
+  - cardiac-cycle
+  - blood-pressure-regulation
+  - cardiac-output
+  - ecg-basics
+  - heart-sounds
+tags:
+  - cardiology
+  - circulation
+  - hemodynamics
+level: UG
+sources:
+  - "Guyton & Hall Textbook of Medical Physiology, 14th Ed"
+  - "Ganong's Review of Medical Physiology, 26th Ed"
+  - "Costanzo Physiology, 7th Ed"

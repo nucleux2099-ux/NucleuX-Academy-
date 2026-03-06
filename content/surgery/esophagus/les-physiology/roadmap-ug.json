@@ -1,0 +1,64 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Diaphragmatic crural anatomy and GEJ structure form the anatomical basis of the anti-reflux barrier",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gastric-motility",
+      "nmcCode": "",
+      "reason": "",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "LES hypotension and transient LES relaxations are the primary pathophysiological mechanisms of GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Failed LES relaxation due to myenteric plexus degeneration defines achalasia",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "LES dysfunction manifests as dysphagia — understanding physiology explains symptom mechanisms",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fundoplication",
+      "nmcCode": "",
+      "reason": "Fundoplication augments the LES anti-reflux barrier by wrapping gastric fundus around the GEJ",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "heller-myotomy",
+      "nmcCode": "",
+      "reason": "Myotomy disrupts hypertensive LES in achalasia — directly targets LES pathology",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.5: Describe the applied anatomy and physiology of esophagus",
+    "PY4.9: Discuss the physiology aspects of: peptic ulcer, gastro-oesophageal"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects LES Physiology across foundational sciences and clinical applications."
+}

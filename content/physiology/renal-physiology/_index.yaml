@@ -1,0 +1,34 @@
+id: renal-physiology
+title: "Renal Physiology"
+subject: physiology
+description: |
+  GFR, tubular function, and acid-base balance.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - glomerular-filtration
+      - renal-blood-flow
+      - tubular-reabsorption
+      - tubular-secretion
+      - countercurrent-mechanism
+      - urine-concentration-dilution
+      - acid-base-physiology
+      - bicarbonate-reabsorption
+      - potassium-handling
+      - sodium-water-balance
+      - ras-system
+      - adh-aldosterone
+      - diuretics-physiology
+      - renal-function-tests
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

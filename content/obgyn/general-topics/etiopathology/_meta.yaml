@@ -1,0 +1,9 @@
+topic_id: etiopathology
+name: The etiopathology, clinical features; diagnosis and
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG11.1
+  domain: KH
+  core: true
+  phase: Phase 3

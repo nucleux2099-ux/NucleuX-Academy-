@@ -1,0 +1,53 @@
+topic_id: ps3-describe-the-growth-of-psychiatry-as-a-medical-specialty-its
+name: Describe the growth of psychiatry as a medical specialty, its history
+description: Describe the growth of psychiatry as a medical specialty, its history — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS3.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS3.10
+  domain: 
+  core: false
+  phase: Phase 2
+- code: PS3.11
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PS3.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS3.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS3.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS3.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS3.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS3.6
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS3.7
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS3.8
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS3.9
+  domain: SH
+  core: true
+  phase: Phase 2

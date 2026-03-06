@@ -1,0 +1,142 @@
+topic_id: staphylococcus-streptococcus
+name: "Staphylococcus & Streptococcus"
+description: >
+  Gram-positive cocci — Staphylococcus (clusters) and Streptococcus (chains), their virulence, diseases, and diagnosis.
+high_yield: true
+nmc_codes:
+  - code: MI2.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Staphylococci are catalase-positive, grape-like clusters. S. aureus (coagulase+) causes skin infections,
+  bacteremia, endocarditis, osteomyelitis, food poisoning, toxic shock. MRSA is a major concern.
+  Streptococci are catalase-negative, chains/pairs. Classified by hemolysis (α, β, γ) and Lancefield groups.
+  S. pyogenes (Group A) causes pharyngitis, rheumatic fever, glomerulonephritis. S. pneumoniae (α-hemolytic)
+  causes pneumonia, meningitis, otitis media.
+  📚 Jawetz Medical Microbiology, 28th Ed, Ch.13-14; 📚 Ananthanarayan, 11th Ed, Ch.24-25
+
+learning_objectives:
+  - Differentiate Staphylococcus from Streptococcus using catalase test
+  - Distinguish S. aureus from CoNS using coagulase test
+  - Classify Streptococci by hemolysis pattern and Lancefield grouping
+  - List diseases caused by S. aureus, S. pyogenes, and S. pneumoniae
+  - Describe MRSA and its clinical significance
+
+content:
+  atoms:
+    - id: staphylococcus
+      title: "Staphylococcus"
+      text: >
+        Gram+ cocci in clusters, catalase+ (distinguishes from Streptococcus), facultative anaerobes.
+        S. aureus: coagulase+, golden pigment, mannitol-fermenting, protein A (binds IgG Fc → anti-opsonization).
+        Toxins: α-toxin (hemolysin), TSST-1 (superantigen → toxic shock syndrome), exfoliatin (scalded skin syndrome),
+        enterotoxins (preformed → food poisoning, vomiting 1-6h, heat-stable). PVL (Panton-Valentine leukocidin) → necrotizing pneumonia.
+        MRSA: mecA gene → altered PBP2a → resistant to all β-lactams. Treatment: vancomycin, linezolid, daptomycin.
+        S. epidermidis: coagulase−, biofilm former, prosthetic device infections.
+        S. saprophyticus: coagulase−, UTI in young sexually active women, novobiocin-resistant.
+        📚 Ananthanarayan, 11th Ed, Ch.24
+
+    - id: streptococcus
+      title: "Streptococcus"
+      text: >
+        Gram+ cocci in chains, catalase− (distinguishes from Staphylococcus).
+        S. pyogenes (Group A, β-hemolytic): pharyngitis, cellulitis, necrotizing fasciitis, scarlet fever.
+        Post-streptococcal: rheumatic fever (Jones criteria, molecular mimicry with M protein) and
+        post-streptococcal glomerulonephritis (PSGN). ASO titer diagnostic. Bacitracin-sensitive, PYR+.
+        S. agalactiae (Group B, β-hemolytic): neonatal meningitis/sepsis, CAMP test+, hippurate hydrolysis+.
+        S. pneumoniae (α-hemolytic): lancet-shaped diplococci, optochin-sensitive, bile-soluble, capsulated (quellung reaction).
+        #1 cause of community-acquired pneumonia, bacterial meningitis (adults), otitis media. Vaccine: PCV13, PPSV23.
+        Enterococcus (Group D): vancomycin-resistant Enterococcus (VRE) — nosocomial threat, bile esculin+, 6.5% NaCl tolerant.
+        📚 Jawetz Medical Microbiology, 28th Ed, Ch.14
+
+  clinical:
+    - title: "Clinical Correlation: Rheumatic Fever"
+      text: >
+        Post-pharyngeal (NOT skin) S. pyogenes infection. Molecular mimicry: anti-M protein antibodies
+        cross-react with cardiac myosin. Jones criteria: major (carditis, polyarthritis, chorea, erythema marginatum,
+        subcutaneous nodules) + minor (fever, arthralgia, ↑ESR/CRP, prolonged PR interval).
+        Prophylaxis: penicillin V or benzathine penicillin G.
+    - title: "Clinical Correlation: MRSA Management"
+      text: >
+        Community-acquired MRSA (CA-MRSA): skin abscesses, PVL+. Treat with I&D + TMP-SMX or doxycycline.
+        Hospital-acquired MRSA (HA-MRSA): bacteremia, pneumonia. IV vancomycin is drug of choice.
+        VRSA: vanA gene acquisition from Enterococcus → vancomycin resistance. Extremely rare.
+
+high_yield_points:
+  - "Catalase test: Staphylococcus (+) vs Streptococcus (−)"
+  - "Coagulase test: S. aureus (+) vs S. epidermidis/saprophyticus (−)"
+  - "S. aureus food poisoning: PREFORMED enterotoxin, vomiting within 1-6 hours"
+  - "MRSA: mecA gene → altered PBP2a; treat with vancomycin"
+  - "S. pyogenes: bacitracin-sensitive, PYR+; causes rheumatic fever (pharyngitis only, NOT skin)"
+  - "S. pneumoniae: optochin-sensitive, bile-soluble, quellung reaction +"
+  - "S. agalactiae (GBS): neonatal sepsis/meningitis; screen pregnant women at 36 weeks"
+  - "S. saprophyticus: UTI in young women, novobiocin-resistant"
+  - "Rheumatic fever: Jones criteria; molecular mimicry with M protein"
+
+mcqs:
+  - question: "Which test differentiates Staphylococcus from Streptococcus?"
+    options:
+      - "Coagulase test"
+      - "Catalase test"
+      - "Optochin sensitivity"
+      - "Bacitracin sensitivity"
+    answer: "Catalase test"
+    explanation: >
+      Staphylococcus is catalase-positive (breaks down H2O2 → O2 + H2O with bubbling).
+      Streptococcus is catalase-negative. This is the first-line differentiating test for Gram+ cocci.
+      📚 Ananthanarayan, 11th Ed, Ch.24
+    difficulty: 1
+
+  - question: "A 6-year-old develops migratory polyarthritis, carditis, and erythema marginatum 3 weeks after pharyngitis. The causative agent is:"
+    options:
+      - "S. aureus"
+      - "S. pyogenes"
+      - "S. pneumoniae"
+      - "S. agalactiae"
+    answer: "S. pyogenes"
+    explanation: >
+      Rheumatic fever follows Group A streptococcal (S. pyogenes) pharyngitis. Molecular mimicry
+      between M protein and cardiac myosin. Jones criteria are met (polyarthritis + carditis + erythema marginatum).
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.14
+    difficulty: 1
+
+  - question: "MRSA resistance to β-lactams is mediated by:"
+    options:
+      - "β-lactamase production"
+      - "Altered PBP2a (mecA gene)"
+      - "Efflux pumps"
+      - "Porin mutations"
+    answer: "Altered PBP2a (mecA gene)"
+    explanation: >
+      mecA gene encodes PBP2a, an altered penicillin-binding protein with low affinity for all β-lactams.
+      This is distinct from β-lactamase production (which only affects penicillin, overcome by β-lactamase inhibitors).
+      📚 Ananthanarayan, 11th Ed, Ch.24
+    difficulty: 2
+
+  - question: "An α-hemolytic, optochin-sensitive, bile-soluble Gram-positive diplococcus is:"
+    options:
+      - "S. pyogenes"
+      - "S. pneumoniae"
+      - "Enterococcus faecalis"
+      - "Viridans streptococci"
+    answer: "S. pneumoniae"
+    explanation: >
+      S. pneumoniae: α-hemolytic, lancet-shaped diplococci, optochin-SENSITIVE, bile-SOLUBLE.
+      Viridans streptococci are also α-hemolytic but optochin-RESISTANT and bile-INSOLUBLE.
+      📚 Jawetz Medical Microbiology, 28th Ed, Ch.14
+    difficulty: 1
+
+  - question: "S. aureus food poisoning differs from other bacterial food poisoning because:"
+    options:
+      - "It has a long incubation period (>24 hours)"
+      - "It causes bloody diarrhea"
+      - "It is caused by preformed heat-stable enterotoxin"
+      - "It requires antibiotic treatment"
+    answer: "It is caused by preformed heat-stable enterotoxin"
+    explanation: >
+      S. aureus produces preformed, heat-stable enterotoxins in food → rapid onset (1-6h) nausea and
+      vomiting (emetic type). Self-limiting. Reheating food does NOT destroy the toxin.
+      📚 Ananthanarayan, 11th Ed, Ch.24
+    difficulty: 1

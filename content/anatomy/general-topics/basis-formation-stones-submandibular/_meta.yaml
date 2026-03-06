@@ -1,0 +1,9 @@
+topic_id: basis-formation-stones-submandibular
+name: The basis of formation of submandibular stones
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: AN34.2
+  domain: KH
+  core: false
+  phase: Phase 1

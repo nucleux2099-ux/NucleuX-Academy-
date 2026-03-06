@@ -1,0 +1,148 @@
+overview: |
+  Wound healing is a dynamic process occurring in four overlapping phases: hemostasis, inflammation, proliferation,
+  and remodeling. Understanding the types of wound healing (primary, secondary, tertiary), factors affecting healing,
+  and abnormalities (keloid, hypertrophic scar) is fundamental to surgical practice.
+
+learning_objectives:
+  - Describe the four phases of wound healing with key cellular events
+  - Differentiate primary, secondary, and tertiary intention healing
+  - Identify local and systemic factors that impair wound healing
+  - Distinguish keloid from hypertrophic scar
+  - Understand the role of collagen in wound strength
+
+content:
+  atoms:
+    - title: Phases of Wound Healing
+      text: |
+        **1. Hemostasis (minutes):** Vasoconstriction, platelet aggregation, fibrin clot formation. Platelets release
+        PDGF and TGF-β initiating healing.
+        **2. Inflammation (Day 1-4):** Neutrophils (first cells, peak at 24-48h, predominant cell), then Macrophages
+        (by Day 3 — MOST IMPORTANT cell in wound healing, orchestrate healing, secrete growth factors).
+        **3. Proliferation (Day 4-21):** Fibroblasts (MC cell in granulation tissue), collagen synthesis (Type III initially),
+        angiogenesis (granulation tissue), epithelialization, wound contraction (myofibroblasts).
+        **4. Remodeling (3 weeks - 1 year):** Type III collagen replaced by Type I. Cross-linking increases.
+        Maximum wound strength: 80% of original (never 100%). Collagen remodeled by MMPs.
+        📚 Bailey & Love, 28th Ed, Ch.26; Sabiston, 21st Ed, Ch.6
+
+    - title: Types of Healing
+      text: |
+        **Primary intention (1st):** Clean wound, edges approximated (e.g., surgical incision). Minimal scarring.
+        **Secondary intention (2nd):** Wound left open, heals by granulation, contraction, and epithelialization.
+        More scarring (e.g., abscess cavity after drainage).
+        **Tertiary intention (Delayed primary closure):** Wound initially left open (contaminated/infected),
+        then closed after 4-7 days when clean. Combines benefits of both.
+        📚 Sabiston, 21st Ed, Ch.6
+
+    - title: Factors Affecting Wound Healing
+      text: |
+        **Local factors:** Infection (MC cause of delayed healing), blood supply, foreign bodies, radiation,
+        hematoma, wound tension, denervation.
+        **Systemic factors:** Malnutrition (Vitamin C deficiency → scurvy/impaired collagen cross-linking;
+        Zinc deficiency → impaired cell proliferation), diabetes, steroids (inhibit inflammatory phase),
+        smoking (vasoconstriction, CO), aging, immunosuppression, jaundice, uremia, chemotherapy.
+        **Key nutrients:** Vitamin C (hydroxylation of proline/lysine in collagen), Zinc (cell division, DNA synthesis),
+        Vitamin A (reverses steroid-induced healing impairment), Iron (oxygen transport).
+        📚 Bailey & Love, 28th Ed, Ch.26
+
+    - title: Keloid vs Hypertrophic Scar
+      text: |
+        **Hypertrophic scar:** Within wound boundaries, develops within weeks, may regress spontaneously,
+        has Type III collagen in parallel bundles. Responds to pressure garments.
+        **Keloid:** Extends BEYOND wound boundaries, may develop months-years later, does NOT regress,
+        Type I and III collagen in whorls. MC in dark-skinned individuals, earlobes/sternum/deltoid.
+        **Treatment:** Keloid — Intralesional triamcinolone, silicone sheets, excision + adjuvant (radiation/steroid
+        injection). High recurrence rate. Hypertrophic — Pressure garments, silicone, usually self-limiting.
+        📚 Bailey & Love, 28th Ed, Ch.26
+
+    - title: Collagen Biology
+      text: |
+        **Type I:** MC collagen in body (80% of skin). Predominates in mature scars, bone, tendon.
+        **Type III:** Predominates in early wound healing (granulation tissue), blood vessels, fetal skin.
+        Replaced by Type I during remodeling.
+        **Type IV:** Basement membrane. **Type II:** Cartilage.
+        Rate-limiting step in collagen synthesis: Hydroxylation of proline (requires Vitamin C, Fe²⁺, O₂).
+        Maximum collagen deposition at 3 weeks (when sutures can be removed from abdominal wounds).
+        📚 Sabiston, 21st Ed, Ch.6
+
+  clinical: |
+    **Approach to Non-Healing Wound:**
+    1. Rule out infection (swab for C&S, debride if needed)
+    2. Assess vascularity (ABPI for lower limb)
+    3. Optimize nutrition (protein, Vitamin C, Zinc)
+    4. Control systemic factors (diabetes, smoking cessation)
+    5. Wound bed preparation (debridement, negative pressure wound therapy)
+    6. Consider biopsy if non-healing >3 months (Marjolin's ulcer)
+    7. Skin grafting if wound bed is healthy but won't epithelize
+
+  high_yield_points:
+    - "Most important cell in wound healing: Macrophage"
+    - "First cell to arrive at wound: Neutrophil (24-48h); then Macrophage (Day 3)"
+    - "MC cell in granulation tissue: Fibroblast"
+    - "Maximum wound strength: 80% of original (never regains 100%)"
+    - "Vitamin C: Essential for collagen cross-linking (hydroxylation of proline/lysine)"
+    - "Type III collagen → Type I collagen during remodeling phase"
+    - "Keloid: Extends BEYOND wound margins; Hypertrophic scar: Stays WITHIN margins"
+    - "MC cause of impaired wound healing: Infection"
+    - "Wound contraction: Mediated by myofibroblasts (actin)"
+    - "Vitamin A reverses steroid-induced impairment of wound healing"
+
+mcqs:
+  - question: "Which is the most important cell in wound healing?"
+    options:
+      a: Neutrophil
+      b: Macrophage
+      c: Fibroblast
+      d: Platelet
+    answer: b
+    explanation: |
+      Macrophages are the most important cells — they orchestrate the entire healing process by
+      phagocytosis, secreting growth factors (PDGF, TGF-β, FGF, VEGF), and recruiting fibroblasts.
+      Wound healing is impaired in macrophage depletion but NOT in neutrophil depletion. 📚 Sabiston, 21st Ed, Ch.6
+
+  - question: "A scar that extends beyond the original wound margins and does not regress is called:"
+    options:
+      a: Hypertrophic scar
+      b: Keloid
+      c: Contracture
+      d: Atrophic scar
+    answer: b
+    explanation: |
+      Keloid extends beyond wound boundaries, does not regress, and has high recurrence after excision.
+      Hypertrophic scar stays within wound margins and may regress spontaneously.
+      📚 Bailey & Love, 28th Ed, Ch.26
+
+  - question: "Which vitamin deficiency causes impaired collagen cross-linking leading to scurvy?"
+    options:
+      a: Vitamin A
+      b: Vitamin B12
+      c: Vitamin C
+      d: Vitamin D
+    answer: c
+    explanation: |
+      Vitamin C (ascorbic acid) is essential for hydroxylation of proline and lysine residues in
+      collagen. Deficiency causes scurvy with impaired wound healing, bleeding gums, and easy bruising.
+      📚 Bailey & Love, 28th Ed, Ch.26
+
+  - question: "During wound healing, Type III collagen is replaced by Type I collagen during which phase?"
+    options:
+      a: Inflammation
+      b: Proliferation
+      c: Remodeling
+      d: Hemostasis
+    answer: c
+    explanation: |
+      During remodeling (3 weeks to 1 year), Type III collagen (initial, weaker) is replaced by
+      Type I collagen (mature, stronger) with increased cross-linking, giving the wound 80% of
+      original tensile strength. 📚 Sabiston, 21st Ed, Ch.6
+
+  - question: "Which vitamin reverses steroid-induced impairment of wound healing?"
+    options:
+      a: Vitamin C
+      b: Vitamin A
+      c: Vitamin E
+      d: Vitamin K
+    answer: b
+    explanation: |
+      Vitamin A reverses the anti-inflammatory and healing-impairment effects of steroids.
+      It promotes inflammatory phase and collagen synthesis. Steroids inhibit all phases of
+      wound healing, especially inflammation. 📚 Sabiston, 21st Ed, Ch.6

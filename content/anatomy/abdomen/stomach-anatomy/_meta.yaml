@@ -1,0 +1,160 @@
+topic_id: stomach-duodenum
+name: Stomach & Duodenum Anatomy
+description: Stomach & Duodenum — Parts, blood supply, relations, and surgical anatomy
+high_yield: true
+nmc_codes:
+- code: AN52.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN52.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The stomach is the most dilated part of the GI tract, located in the left hypochondrium and epigastrium.
+  Parts: cardia, fundus, body, pyloric antrum, pyloric canal. The duodenum (25 cm, C-shaped) is the first part
+  of the small intestine, divided into 4 parts (D1-D4). It is almost entirely retroperitoneal (except D1 proximal).
+  The stomach has the richest blood supply in the GI tract, with vessels from all 3 branches of the celiac trunk.
+  📚 Gray's Anatomy, 42nd Ed, Ch.63; 📚 BD Chaurasia, Vol.2, Ch.16
+
+learning_objectives:
+  - Describe the parts, relations, and peritoneal attachments of the stomach
+  - Explain the arterial supply along the lesser and greater curvatures
+  - Describe the four parts of the duodenum and their relations
+  - Explain the blood supply of the duodenum and its watershed area
+  - Describe the surgical anatomy relevant to gastrectomy and duodenal ulcer surgery
+
+content:
+  atoms:
+    - id: stomach-parts-relations
+      title: "Stomach — Parts and Relations"
+      text: >
+        Cardia: at GE junction (T11, left of midline). Fundus: dome above cardia, related to left dome of diaphragm
+        (gas bubble on X-ray). Body: between fundus and angular incisure. Pyloric antrum: between angular incisure
+        and pylorus. Pylorus: thick circular muscle, at L1 level (transpyloric plane), to the RIGHT of midline.
+        Anterior relations: left lobe of liver, anterior abdominal wall. Posterior relations (stomach bed):
+        left suprarenal, upper pole of left kidney, splenic artery, pancreas, transverse mesocolon, splenic flexure.
+        📚 BD Chaurasia, Vol.2, Ch.16 (p.220-230)
+
+    - id: stomach-blood-supply
+      title: "Blood Supply of the Stomach"
+      text: >
+        Lesser curvature: left gastric artery (celiac trunk — largest contributor) + right gastric artery (hepatic artery proper).
+        Greater curvature: left gastroepiploic (splenic artery) + right gastroepiploic (gastroduodenal artery).
+        Fundus: short gastric arteries (5-7, from splenic artery). All derived from celiac trunk branches.
+        Venous drainage mirrors arteries → portal vein. Left gastric vein (coronary vein) — important site of
+        portosystemic anastomosis (esophageal varices in portal hypertension).
+        📚 Netter's Atlas, 6th Ed, Plate 296; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: duodenum-parts
+      title: "Four Parts of the Duodenum"
+      text: >
+        D1 (superior, 5 cm): from pylorus to superior duodenal flexure. Duodenal cap/bulb (anterior surface) —
+        most common site of duodenal ulcer. Posterior to D1: gastroduodenal artery (GDA), portal vein, CBD.
+        D2 (descending, 7.5 cm): receives CBD and main pancreatic duct at ampulla of Vater (major duodenal papilla)
+        on posteromedial wall. Accessory pancreatic duct opens at minor papilla (2 cm proximal).
+        D3 (horizontal, 10 cm): crosses L3, anterior to aorta/IVC, posterior to SMA/SMV.
+        D4 (ascending, 2.5 cm): ascends to duodenojejunal flexure, supported by ligament of Treitz.
+        📚 BD Chaurasia, Vol.2; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: duodenal-blood-supply
+      title: "Duodenal Blood Supply"
+      text: >
+        Proximal to major papilla (D1-proximal D2): supplied by celiac trunk branches — superior
+        pancreaticoduodenal arteries (from GDA). Distal to major papilla (distal D2-D4): supplied by SMA branches —
+        inferior pancreaticoduodenal arteries. The junction around the major papilla is a watershed area
+        (potential ischemia zone). GDA runs behind D1 — posterior duodenal ulcer erodes GDA → massive hemorrhage.
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed
+
+  clinical:
+    - title: "Clinical: Posterior Duodenal Ulcer Bleeding"
+      text: >
+        Posterior wall D1 ulcer erodes the gastroduodenal artery (GDA) → life-threatening hemorrhage.
+        Anterior wall D1 ulcer → perforation into peritoneal cavity (not bleeding, as no major vessel anterior).
+        Treatment of GDA bleed: suture ligation above and below + GDA takedown.
+    - title: "Clinical: SMA Syndrome"
+      text: >
+        D3 (horizontal part) crosses between aorta (posterior) and SMA (anterior). In thin patients, loss of
+        mesenteric fat reduces the aortomesenteric angle → SMA compresses D3 → obstruction. Cast syndrome
+        after spinal surgery. Treatment: postural (left lateral/prone), nasojejunal tube, or surgery (duodenojejunostomy).
+
+high_yield_points:
+  - "Stomach has richest blood supply in GI — from all 3 branches of celiac trunk"
+  - "Left gastric artery = largest arterial supply to stomach"
+  - "Posterior D1 ulcer erodes GDA → hemorrhage; Anterior D1 ulcer → perforation"
+  - "Major papilla (ampulla of Vater) on posteromedial wall of D2"
+  - "Duodenal blood supply: above papilla = celiac (superior PDA); below = SMA (inferior PDA)"
+  - "D3 crosses L3, between aorta and SMA → SMA syndrome"
+  - "Ligament of Treitz supports duodenojejunal flexure — landmark for upper/lower GI bleed"
+  - "Left gastric vein (coronary vein) → esophageal varices in portal HTN"
+  - "Pylorus at L1 (transpyloric plane) — to the right of midline"
+  - "Duodenal cap/bulb (D1) — most common site of peptic ulcer"
+
+mcqs:
+  - question: "A posterior duodenal ulcer causes massive hematemesis. Which artery is most likely eroded?"
+    options:
+      - "Left gastric artery"
+      - "Splenic artery"
+      - "Gastroduodenal artery"
+      - "Superior mesenteric artery"
+    answer: "Gastroduodenal artery"
+    explanation: >
+      The GDA runs directly behind the first part of the duodenum. Posterior D1 ulcers erode into the GDA causing
+      massive upper GI hemorrhage. Anterior D1 ulcers perforate into the peritoneal cavity instead.
+      📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "The ampulla of Vater (major duodenal papilla) opens into which part of the duodenum?"
+    options:
+      - "First part (D1)"
+      - "Second part (D2)"
+      - "Third part (D3)"
+      - "Fourth part (D4)"
+    answer: "Second part (D2)"
+    explanation: >
+      The CBD and main pancreatic duct join to form the ampulla of Vater, which opens on the posteromedial wall
+      of D2. The minor papilla (accessory pancreatic duct) opens 2 cm proximal to it.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "Which artery provides the largest blood supply to the stomach?"
+    options:
+      - "Right gastric artery"
+      - "Left gastric artery"
+      - "Right gastroepiploic artery"
+      - "Short gastric arteries"
+    answer: "Left gastric artery"
+    explanation: >
+      The left gastric artery (direct branch of celiac trunk) is the largest arterial contributor to the stomach,
+      supplying the lesser curvature. It also gives esophageal branches and is the source of the left gastric
+      (coronary) vein — important in portal hypertension.
+      📚 Netter's Atlas, 6th Ed
+    difficulty: 1
+
+  - question: "SMA syndrome causes obstruction of which part of the duodenum?"
+    options:
+      - "First part"
+      - "Second part"
+      - "Third part"
+      - "Fourth part"
+    answer: "Third part"
+    explanation: >
+      D3 (horizontal part) crosses between the aorta posteriorly and the SMA anteriorly. In patients with reduced
+      mesenteric fat, the aortomesenteric angle narrows and SMA compresses D3, causing obstruction.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2
+
+  - question: "The ligament of Treitz is attached to which structure?"
+    options:
+      - "Pylorus"
+      - "Duodenojejunal flexure"
+      - "Ileocecal junction"
+      - "Hepatic flexure"
+    answer: "Duodenojejunal flexure"
+    explanation: >
+      The ligament of Treitz (suspensory muscle of duodenum) is a musculofibrous band extending from the right crus
+      of the diaphragm to the duodenojejunal flexure. It is the landmark dividing upper from lower GI tract.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1

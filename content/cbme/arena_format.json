@@ -1,0 +1,1394 @@
+{
+  "metadata": {
+    "title": "CBME Arena - NucleuX Academy",
+    "version": "1.0",
+    "total_competencies": 4559,
+    "total_phases": 4,
+    "total_subjects": 18,
+    "difficulty_levels": 3,
+    "generated": "2026-02-08"
+  },
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Foundation Explorer",
+      "description": "Master the basic sciences that form the foundation of medicine",
+      "difficulty": 1,
+      "color": "#4CAF50",
+      "icon": "🔬",
+      "unlock_requirement": "Complete orientation",
+      "completion_reward": 1000,
+      "subjects": [
+        {
+          "id": "physiology",
+          "name": "Physiology",
+          "competency_count": 207,
+          "xp_per_competency": 10,
+          "total_xp": 2070,
+          "estimated_hours": 103.5,
+          "difficulty_distribution": {
+            "must_know": 124,
+            "should_know": 62,
+            "nice_to_know": 20
+          }
+        },
+        {
+          "id": "anatomy",
+          "name": "Anatomy",
+          "competency_count": 654,
+          "xp_per_competency": 10,
+          "total_xp": 6540,
+          "estimated_hours": 327.0,
+          "difficulty_distribution": {
+            "must_know": 392,
+            "should_know": 196,
+            "nice_to_know": 65
+          }
+        },
+        {
+          "id": "biochemistry",
+          "name": "Biochemistry",
+          "competency_count": 191,
+          "xp_per_competency": 10,
+          "total_xp": 1910,
+          "estimated_hours": 95.5,
+          "difficulty_distribution": {
+            "must_know": 114,
+            "should_know": 57,
+            "nice_to_know": 19
+          }
+        }
+      ],
+      "total_competencies": 1052,
+      "total_xp_available": 10520
+    },
+    {
+      "id": "phase_3b",
+      "name": "Clinical Champion",
+      "description": "Master major clinical subjects and patient management",
+      "difficulty": 4,
+      "color": "#9C27B0",
+      "icon": "🏥",
+      "unlock_requirement": "Complete Phase-3A with 90% mastery",
+      "completion_reward": 3000,
+      "subjects": [
+        {
+          "id": "medicine",
+          "name": "Medicine",
+          "competency_count": 893,
+          "xp_per_competency": 10,
+          "total_xp": 8930,
+          "estimated_hours": 446.5,
+          "difficulty_distribution": {
+            "must_know": 535,
+            "should_know": 267,
+            "nice_to_know": 89
+          }
+        },
+        {
+          "id": "obg",
+          "name": "OBG",
+          "competency_count": 158,
+          "xp_per_competency": 10,
+          "total_xp": 1580,
+          "estimated_hours": 79.0,
+          "difficulty_distribution": {
+            "must_know": 94,
+            "should_know": 47,
+            "nice_to_know": 15
+          }
+        },
+        {
+          "id": "surgery",
+          "name": "Surgery",
+          "competency_count": 189,
+          "xp_per_competency": 10,
+          "total_xp": 1890,
+          "estimated_hours": 94.5,
+          "difficulty_distribution": {
+            "must_know": 113,
+            "should_know": 56,
+            "nice_to_know": 18
+          }
+        },
+        {
+          "id": "pediatrics",
+          "name": "Pediatrics",
+          "competency_count": 657,
+          "xp_per_competency": 10,
+          "total_xp": 6570,
+          "estimated_hours": 328.5,
+          "difficulty_distribution": {
+            "must_know": 394,
+            "should_know": 197,
+            "nice_to_know": 65
+          }
+        }
+      ],
+      "total_competencies": 1897,
+      "total_xp_available": 18970
+    },
+    {
+      "id": "phase_2",
+      "name": "Pathology Detective",
+      "description": "Investigate diseases and understand diagnostic principles",
+      "difficulty": 2,
+      "color": "#FF9800",
+      "icon": "🧬",
+      "unlock_requirement": "Complete Phase-1 with 80% mastery",
+      "completion_reward": 1500,
+      "subjects": [
+        {
+          "id": "pathology",
+          "name": "Pathology",
+          "competency_count": 411,
+          "xp_per_competency": 10,
+          "total_xp": 4110,
+          "estimated_hours": 205.5,
+          "difficulty_distribution": {
+            "must_know": 246,
+            "should_know": 123,
+            "nice_to_know": 41
+          }
+        },
+        {
+          "id": "microbiology",
+          "name": "Microbiology",
+          "competency_count": 152,
+          "xp_per_competency": 10,
+          "total_xp": 1520,
+          "estimated_hours": 76.0,
+          "difficulty_distribution": {
+            "must_know": 91,
+            "should_know": 45,
+            "nice_to_know": 15
+          }
+        },
+        {
+          "id": "forensic_medicine",
+          "name": "Forensic Medicine",
+          "competency_count": 269,
+          "xp_per_competency": 10,
+          "total_xp": 2690,
+          "estimated_hours": 134.5,
+          "difficulty_distribution": {
+            "must_know": 161,
+            "should_know": 80,
+            "nice_to_know": 26
+          }
+        },
+        {
+          "id": "pharmacology",
+          "name": "Pharmacology",
+          "competency_count": 143,
+          "xp_per_competency": 10,
+          "total_xp": 1430,
+          "estimated_hours": 71.5,
+          "difficulty_distribution": {
+            "must_know": 85,
+            "should_know": 42,
+            "nice_to_know": 14
+          }
+        },
+        {
+          "id": "community_medicine",
+          "name": "Community Medicine",
+          "competency_count": 187,
+          "xp_per_competency": 10,
+          "total_xp": 1870,
+          "estimated_hours": 93.5,
+          "difficulty_distribution": {
+            "must_know": 112,
+            "should_know": 56,
+            "nice_to_know": 18
+          }
+        }
+      ],
+      "total_competencies": 1162,
+      "total_xp_available": 11620
+    },
+    {
+      "id": "phase_3a",
+      "name": "Specialist Scholar",
+      "description": "Explore clinical specialties and advanced diagnostics",
+      "difficulty": 3,
+      "color": "#2196F3",
+      "icon": "🩺",
+      "unlock_requirement": "Complete Phase-2 with 85% mastery",
+      "completion_reward": 2000,
+      "subjects": [
+        {
+          "id": "ent",
+          "name": "ENT",
+          "competency_count": 79,
+          "xp_per_competency": 10,
+          "total_xp": 790,
+          "estimated_hours": 39.5,
+          "difficulty_distribution": {
+            "must_know": 47,
+            "should_know": 23,
+            "nice_to_know": 7
+          }
+        },
+        {
+          "id": "ophthalmology",
+          "name": "Ophthalmology",
+          "competency_count": 73,
+          "xp_per_competency": 10,
+          "total_xp": 730,
+          "estimated_hours": 36.5,
+          "difficulty_distribution": {
+            "must_know": 43,
+            "should_know": 21,
+            "nice_to_know": 7
+          }
+        },
+        {
+          "id": "dermatology",
+          "name": "Dermatology",
+          "competency_count": 36,
+          "xp_per_competency": 10,
+          "total_xp": 360,
+          "estimated_hours": 18.0,
+          "difficulty_distribution": {
+            "must_know": 21,
+            "should_know": 10,
+            "nice_to_know": 3
+          }
+        },
+        {
+          "id": "orthopedics",
+          "name": "Orthopedics",
+          "competency_count": 76,
+          "xp_per_competency": 10,
+          "total_xp": 760,
+          "estimated_hours": 38.0,
+          "difficulty_distribution": {
+            "must_know": 45,
+            "should_know": 22,
+            "nice_to_know": 7
+          }
+        },
+        {
+          "id": "psychiatry",
+          "name": "Psychiatry",
+          "competency_count": 169,
+          "xp_per_competency": 10,
+          "total_xp": 1690,
+          "estimated_hours": 84.5,
+          "difficulty_distribution": {
+            "must_know": 101,
+            "should_know": 50,
+            "nice_to_know": 16
+          }
+        },
+        {
+          "id": "radiodiagnosis",
+          "name": "Radiodiagnosis",
+          "competency_count": 15,
+          "xp_per_competency": 10,
+          "total_xp": 150,
+          "estimated_hours": 7.5,
+          "difficulty_distribution": {
+            "must_know": 9,
+            "should_know": 4,
+            "nice_to_know": 1
+          }
+        }
+      ],
+      "total_competencies": 448,
+      "total_xp_available": 4480
+    }
+  ],
+  "achievements": [
+    {
+      "id": "first_competency",
+      "name": "First Steps",
+      "description": "Complete your first competency",
+      "icon": "🎯",
+      "xp_reward": 50,
+      "rarity": "common"
+    },
+    {
+      "id": "anatomy_master",
+      "name": "Anatomy Master",
+      "description": "Complete all 654 Anatomy competencies",
+      "icon": "🦴",
+      "xp_reward": 1000,
+      "rarity": "legendary"
+    },
+    {
+      "id": "speed_learner",
+      "name": "Speed Learner",
+      "description": "Complete 50 competencies in one day",
+      "icon": "⚡",
+      "xp_reward": 200,
+      "rarity": "rare"
+    },
+    {
+      "id": "phase_1_graduate",
+      "name": "Pre-Clinical Graduate",
+      "description": "Complete all Phase-1 competencies",
+      "icon": "🎓",
+      "xp_reward": 2000,
+      "rarity": "epic"
+    },
+    {
+      "id": "perfect_streak",
+      "name": "Perfect Scholar",
+      "description": "Get 100% on 20 competencies in a row",
+      "icon": "💎",
+      "xp_reward": 500,
+      "rarity": "epic"
+    },
+    {
+      "id": "cbme_champion",
+      "name": "CBME Champion",
+      "description": "Complete the entire CBME curriculum",
+      "icon": "👑",
+      "xp_reward": 10000,
+      "rarity": "mythic"
+    }
+  ],
+  "quests": [
+    {
+      "id": "daily_practice",
+      "name": "Daily Practice",
+      "description": "Complete 5 competencies today",
+      "type": "daily",
+      "requirements": {
+        "competencies_count": 5
+      },
+      "rewards": {
+        "xp": 100,
+        "coins": 50
+      },
+      "icon": "📅"
+    },
+    {
+      "id": "subject_focus",
+      "name": "Subject Mastery Sprint",
+      "description": "Complete 20 competencies from a single subject",
+      "type": "challenge",
+      "requirements": {
+        "competencies_count": 20,
+        "same_subject": true
+      },
+      "rewards": {
+        "xp": 300,
+        "coins": 150
+      },
+      "icon": "🎯"
+    },
+    {
+      "id": "knowledge_explorer",
+      "name": "Knowledge Explorer",
+      "description": "Complete at least one competency from 5 different subjects",
+      "type": "exploration",
+      "requirements": {
+        "subjects_count": 5,
+        "min_per_subject": 1
+      },
+      "rewards": {
+        "xp": 250,
+        "coins": 100,
+        "badge": "Explorer"
+      },
+      "icon": "🗺️"
+    }
+  ],
+  "leaderboard_categories": [
+    {
+      "id": "total_xp",
+      "name": "Overall Champion",
+      "description": "Total XP earned across all competencies",
+      "icon": "👑",
+      "reset_period": "never"
+    },
+    {
+      "id": "monthly_progress",
+      "name": "Monthly Achiever",
+      "description": "Competencies completed this month",
+      "icon": "📈",
+      "reset_period": "monthly"
+    },
+    {
+      "id": "streak_master",
+      "name": "Streak Master",
+      "description": "Longest daily learning streak",
+      "icon": "🔥",
+      "reset_period": "never"
+    },
+    {
+      "id": "subject_specialist",
+      "name": "Subject Specialist",
+      "description": "Highest competency count in any single subject",
+      "icon": "🎯",
+      "reset_period": "never"
+    }
+  ],
+  "competency_tree": {
+    "Phase-1": {
+      "Physiology": [
+        {
+          "id": "PY1.1",
+          "name": "functions of a Elict document and present a medica...",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        }
+      ],
+      "Anatomy": [
+        {
+          "id": "AN1.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN1.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN2.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN2.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN2.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN2.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN2.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN2.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN3.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN3.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN3.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN4.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN4.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN4.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN4.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN4.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.7",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN5.8",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN6.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN6.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN6.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.7",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN7.8",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN8.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN8.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN8.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN8.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN8.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN8.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN9.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN9.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN9.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.7",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.8",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.9",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.10",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.11",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.12",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN10.13",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN11.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN11.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN11.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN11.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN11.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN11.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.1",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.5",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.6",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.7",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.8",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.9",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.10",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "AN12.11",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        }
+      ]
+    },
+    "Phase-3B": {
+      "Medicine": [
+        {
+          "id": "IM25.4",
+          "name": "that helps delineate the",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        }
+      ]
+    },
+    "Phase-2": {
+      "Pathology": [
+        {
+          "id": "PA42.3*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.1*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.3",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.4*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.3* Identify the etiology of meningitis based on",
+          "name": "given CSF parameters",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.1*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.2*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.3*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.4*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.3*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.1*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.2",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.3*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "PA42.4*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        }
+      ],
+      "Microbiology": [
+        {
+          "id": "MI2.4",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.1*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.2*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.3*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.4*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.5*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.6*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.7*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        },
+        {
+          "id": "MI2.8*",
+          "name": "",
+          "type": "K",
+          "level": "Must Know",
+          "xp_value": 20,
+          "prerequisites": [],
+          "unlocks": []
+        }
+      ]
+    }
+  },
+  "game_mechanics": {
+    "xp_system": {
+      "base_xp_per_competency": 10,
+      "must_know_multiplier": 2.0,
+      "should_know_multiplier": 1.5,
+      "nice_to_know_multiplier": 1.0,
+      "perfect_score_bonus": 5,
+      "streak_bonus_per_day": 2
+    },
+    "level_system": {
+      "xp_per_level": [
+        100,
+        250,
+        500,
+        1000,
+        2000,
+        3500,
+        5500,
+        8000,
+        12000,
+        17500
+      ],
+      "level_titles": [
+        "Medical Novice",
+        "Aspiring Doctor",
+        "Clinical Student",
+        "Advanced Learner",
+        "Medical Scholar",
+        "Clinical Expert",
+        "Medical Specialist",
+        "Healthcare Master",
+        "Medical Authority",
+        "CBME Champion"
+      ]
+    },
+    "coin_system": {
+      "coins_per_competency": 5,
+      "daily_bonus": 20,
+      "achievement_bonus": 100,
+      "uses": [
+        "unlock_hints",
+        "buy_power_ups",
+        "customize_avatar"
+      ]
+    }
+  }
+}

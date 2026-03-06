@@ -1,0 +1,9 @@
+topic_id: zenker-diverticulum
+name: "Zenker Diverticulum"
+description: "Pathophysiology, symptoms, diagnosis, endoscopic vs open repair"
+high_yield: true
+difficulty: 3
+estimated_minutes: 15
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [esophageal-anatomy]
+related_topics: []

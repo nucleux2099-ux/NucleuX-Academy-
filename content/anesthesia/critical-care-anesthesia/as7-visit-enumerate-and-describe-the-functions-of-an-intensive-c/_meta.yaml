@@ -1,0 +1,25 @@
+topic_id: as7-visit-enumerate-and-describe-the-functions-of-an-intensive-c
+name: Visit, enumerate and describe the functions of an Intensive Care
+description: Visit, enumerate and describe the functions of an Intensive Care — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AS7.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS7.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: AS7.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: AS7.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS7.5
+  domain: KH
+  core: true
+  phase: Phase 2

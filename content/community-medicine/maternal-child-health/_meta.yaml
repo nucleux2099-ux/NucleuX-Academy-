@@ -1,0 +1,158 @@
+topic_id: maternal-child-health
+name: Maternal & Child Health
+description: MCH services, indicators, programs (JSSK, JSY), antenatal care, and child health initiatives
+high_yield: true
+
+overview: >
+  Maternal and child health (MCH) is a priority area in public health. India has made significant progress
+  in reducing maternal mortality (MMR) and infant mortality (IMR) through programs like JSY, JSSK, and
+  RBSK. Antenatal care, skilled birth attendance, postnatal care, and child health services are the key
+  components. Understanding MCH indicators and national programs is essential.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.300-335)
+
+learning_objectives:
+  - Define key MCH indicators (MMR, IMR, NMR, U5MR)
+  - Describe components of antenatal care
+  - Enumerate MCH programs (JSY, JSSK, RBSK, LaQshya)
+  - Explain the role of ASHA, ANM in MCH service delivery
+  - Discuss strategies to reduce maternal and neonatal mortality
+
+content:
+  atoms:
+    - id: indicators
+      title: "MCH Indicators"
+      text: >
+        MMR (Maternal Mortality Ratio) = maternal deaths / 100,000 live births. India: 97 (SRS 2018-20).
+        SDG target: <70 by 2030. IMR (Infant Mortality Rate) = deaths <1 year / 1000 live births. India: 28.
+        NMR (Neonatal Mortality Rate) = deaths <28 days / 1000 live births. Perinatal mortality = stillbirths +
+        early neonatal deaths (<7 days). U5MR (Under-5 Mortality Rate). TFR (Total Fertility Rate): India 2.0.
+        Causes of maternal death: hemorrhage (most common), hypertensive disorders, sepsis, unsafe abortion.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.300-310)
+
+    - id: antenatal-care
+      title: "Antenatal Care"
+      text: >
+        Minimum 4 ANC visits (WHO); India recommends at least 4 visits (1st visit early, then 2nd trimester,
+        3rd trimester × 2). Components: (1) History and examination, (2) Weight, BP, fundal height monitoring,
+        (3) Hemoglobin — IFA tablets (iron 60mg + folic acid 500μg daily × 180 days),
+        (4) Blood group, Rh typing, (5) Urine for albumin/sugar, (6) VDRL, HIV testing,
+        (7) TT vaccination (2 doses), (8) Birth preparedness, danger sign education.
+        High-risk pregnancy: age <18 or >35, height <145cm, Hb <7, bad obstetric history, PIH, GDM.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.310-320)
+
+    - id: programs
+      title: "MCH Programs"
+      text: >
+        JSY (Janani Suraksha Yojana): conditional cash transfer for institutional delivery — ₹1400 (rural),
+        ₹1000 (urban). JSSK (Janani Shishu Suraksha Karyakram): free delivery, C-section, drugs, diagnostics,
+        blood, transport (mother + sick newborn up to 30 days). RBSK (Rashtriya Bal Swasthya Karyakram):
+        child health screening for 4Ds — Defects at birth, Diseases, Deficiencies, Developmental delays.
+        LaQshya: quality improvement in labor rooms and maternity OTs. PMSMA (PM's Safe Motherhood Abhiyan):
+        9th of every month — free ANC checkup.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.320-330)
+
+    - id: service-delivery
+      title: "MCH Service Delivery — ASHA & ANM"
+      text: >
+        ASHA (Accredited Social Health Activist): community health worker, link between community and health
+        system. Roles: facilitates institutional delivery, promotes immunization, DOTS provider, distributes
+        ORS/IFA/contraceptives. One ASHA per 1000 population.
+        ANM (Auxiliary Nurse Midwife): key functionary at sub-center. Conducts deliveries, immunization, ANC.
+        Sub-center: most peripheral health institution (5000 population in plains, 3000 in hilly areas).
+        PHC: 30,000 population. CHC: 120,000 population (30-bed hospital).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.330-335)
+
+    - id: neonatal-care
+      title: "Neonatal & Child Health"
+      text: >
+        Essential newborn care: warmth (skin-to-skin), breathing (stimulation/resuscitation), breastfeeding
+        (within 1 hour), clean cord care. Home-Based Newborn Care (HBNC): ASHA visits — 6 visits in first
+        42 days. IMNCI (Integrated Management of Neonatal and Childhood Illnesses): color-coded classification
+        (pink = urgent referral, yellow = treat at home, green = home care). Kangaroo Mother Care (KMC):
+        for LBW babies — skin-to-skin contact.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.325-330)
+
+  clinical:
+    - title: "Clinical Correlation: Three Delays Model"
+      text: >
+        Thaddeus & Maine's Three Delays Model for maternal mortality: (1) Delay in deciding to seek care,
+        (2) Delay in reaching health facility, (3) Delay in receiving adequate care at facility.
+        Programs address each delay: education (delay 1), transport (delay 2), EmOC (delay 3).
+
+high_yield_points:
+  - "Hemorrhage is the MOST COMMON cause of maternal death in India"
+  - "MMR = maternal deaths per 100,000 live births; SDG target: <70 by 2030"
+  - "IMR is the most sensitive single indicator of health status"
+  - "JSY: cash incentive for institutional delivery (₹1400 rural, ₹1000 urban)"
+  - "JSSK: FREE delivery, C-section, blood, transport for mother and newborn"
+  - "RBSK screens for 4Ds: Defects, Diseases, Deficiencies, Developmental delays"
+  - "ASHA: 1 per 1000 population — link worker between community and health system"
+  - "IFA supplementation: iron 60mg + folic acid 500μg × 180 days in pregnancy"
+  - "Breastfeeding should be initiated within 1 HOUR of birth"
+  - "HBNC: 6 home visits by ASHA in first 42 days of life"
+
+mcqs:
+  - question: "The most common cause of maternal mortality in India is:"
+    options:
+      - "Sepsis"
+      - "Hemorrhage"
+      - "Hypertensive disorders"
+      - "Unsafe abortion"
+    answer: "Hemorrhage"
+    explanation: >
+      Hemorrhage (antepartum and postpartum) is the leading cause of maternal death in India, accounting
+      for approximately 30% of maternal deaths. PPH is the most common type.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.305)
+    difficulty: 1
+
+  - question: "JSSK provides all of the following FREE services EXCEPT:"
+    options:
+      - "Normal delivery and C-section"
+      - "Blood transfusion"
+      - "Cash incentive for institutional delivery"
+      - "Free transport from home to facility"
+    answer: "Cash incentive for institutional delivery"
+    explanation: >
+      Cash incentive is provided under JSY, not JSSK. JSSK provides free delivery (normal + C-section),
+      free drugs, diagnostics, blood, diet, and transport for pregnant women and sick neonates up to 30 days.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.323)
+    difficulty: 2
+
+  - question: "RBSK screens children for:"
+    options:
+      - "3Ds: Defects, Diseases, Deficiencies"
+      - "4Ds: Defects, Diseases, Deficiencies, Developmental delays"
+      - "5Ds: Defects, Diseases, Deficiencies, Delays, Disabilities"
+      - "2Ds: Defects and Diseases"
+    answer: "4Ds: Defects, Diseases, Deficiencies, Developmental delays"
+    explanation: >
+      RBSK screens children 0-18 years for 4Ds: birth Defects (30 conditions), childhood Diseases,
+      nutritional Deficiencies, and Developmental delays including disabilities.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.326)
+    difficulty: 1
+
+  - question: "One ASHA is appointed per population of:"
+    options:
+      - "500"
+      - "1000"
+      - "3000"
+      - "5000"
+    answer: "1000"
+    explanation: >
+      Under NRHM/NHM, one ASHA (Accredited Social Health Activist) is selected per 1000 population
+      (could be less in tribal areas). She is a trained community health volunteer, not a government employee.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.331)
+    difficulty: 1
+
+  - question: "Breastfeeding should be initiated within what time after birth?"
+    options:
+      - "30 minutes"
+      - "1 hour"
+      - "4 hours"
+      - "24 hours"
+    answer: "1 hour"
+    explanation: >
+      WHO and India recommend initiation of breastfeeding within 1 hour of birth. Early breastfeeding provides
+      colostrum (rich in antibodies), promotes bonding, and reduces neonatal mortality.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.11 (p.327)
+    difficulty: 1

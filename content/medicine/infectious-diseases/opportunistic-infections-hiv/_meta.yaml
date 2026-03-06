@@ -1,0 +1,22 @@
+title: "Opportunistic Infections in HIV"
+slug: opportunistic-infections-hiv
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.7"
+prerequisites:
+  - "hiv-aids"
+related_topics:
+  - "fungal-infections-systemic"
+enrichment:
+  nmcCodes:
+    - code: "IM8.7"
+      text: "Opportunistic Infections in HIV — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "hiv-aids"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "fungal-infections-systemic"
+      reason: "Clinically related"
+      relationship: "clinical"

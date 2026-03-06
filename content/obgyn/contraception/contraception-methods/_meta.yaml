@@ -1,0 +1,154 @@
+topic_id: contraception-methods
+name: Contraception Methods
+description: Classification, mechanism, efficacy, and contraindications of modern contraceptive methods
+high_yield: true
+nmc_codes:
+- code: OG31.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Contraception is the deliberate prevention of pregnancy using various methods. Understanding the spectrum
+  from natural methods to permanent sterilization, their efficacy (Pearl index), mechanism of action,
+  and contraindications is essential for family planning counseling. India's National Family Planning
+  Program emphasizes spacing and limiting methods.
+  📚 DC Dutta, 9th Ed, Ch.30 | 📚 Williams Obstetrics, 26th Ed, Ch.38
+
+learning_objectives:
+  - Classify contraceptive methods (barrier, hormonal, IUCD, permanent)
+  - Compare Pearl index of different methods
+  - Describe mechanisms of action of OCPs, IUCDs, and injectable contraceptives
+  - List absolute contraindications for combined OCPs
+  - Outline emergency contraception options
+
+content:
+  atoms:
+    - id: classification
+      title: "Classification of Contraceptive Methods"
+      text: >
+        Natural: calendar/rhythm, basal body temperature, cervical mucus (Billings), LAM, coitus interruptus.
+        Barrier: male condom, female condom, diaphragm, cervical cap, spermicides.
+        Hormonal: COCs, POPs, injectables (DMPA), implants (etonogestrel), patches, vaginal rings.
+        Intrauterine: Cu-T 380A (most common IUCD), LNG-IUS (Mirena).
+        Permanent: tubectomy (female), vasectomy (male).
+        Emergency: levonorgestrel 1.5 mg, ulipristal acetate, Cu-T insertion within 5 days.
+        📚 DC Dutta, 9th Ed, Ch.30 (p.506-530)
+
+    - id: combined-ocps
+      title: "Combined Oral Contraceptive Pills (COCs)"
+      text: >
+        Contain estrogen (ethinylestradiol) + progestin. Mechanism: (1) suppress ovulation (primary),
+        (2) thicken cervical mucus, (3) thin endometrium, (4) alter tubal motility.
+        Pearl index: 0.3 (perfect use), 8 (typical use). 21 active pills + 7 placebo.
+        Benefits: menstrual regulation, reduced dysmenorrhea, decreased ovarian/endometrial cancer risk,
+        reduced PID, treatment of acne/hirsutism.
+        Absolute contraindications (WHO Category 4): history of VTE/PE, cerebrovascular disease,
+        ischemic heart disease, migraine with aura, breast cancer, liver disease, age >35 + smoking >15/day,
+        uncontrolled HTN (≥160/100), <3 weeks postpartum.
+        📚 DC Dutta, 9th Ed, Ch.30 (p.515-520)
+
+    - id: iucd
+      title: "Intrauterine Contraceptive Devices"
+      text: >
+        Cu-T 380A: copper-containing, effective for 10 years. Mechanism: sterile inflammatory reaction
+        in endometrium (spermicidal), copper ions are toxic to sperm and ova.
+        NOT an abortifacient — acts BEFORE implantation.
+        LNG-IUS (Mirena): releases levonorgestrel locally, effective 5 years.
+        Additional effects: thins endometrium (reduces menstrual bleeding), thickens cervical mucus.
+        Best IUCD for menorrhagia.
+        Side effects (Cu-T): heavy periods, dysmenorrhea, increased risk of PID (first 20 days).
+        Contraindications: active PID, distorted uterine cavity, pregnancy, unexplained vaginal bleeding.
+        📚 DC Dutta, 9th Ed, Ch.30 (p.508-514)
+
+    - id: emergency-contraception
+      title: "Emergency Contraception"
+      text: >
+        Levonorgestrel 1.5 mg single dose: within 72 hours (most effective <24 hrs). Delays/inhibits ovulation.
+        Ulipristal acetate 30 mg: effective up to 120 hours (5 days). Progesterone receptor modulator.
+        Yuzpe regimen: ethinylestradiol + levonorgestrel, within 72 hrs (older method, more side effects).
+        Cu-T insertion: most effective emergency method (failure rate <0.1%), can be inserted up to
+        5 days after unprotected intercourse. Added benefit: continues as long-term contraception.
+        📚 DC Dutta, 9th Ed, Ch.30 (p.527-529)
+
+  high_yield_points:
+    - "Cu-T 380A is effective for 10 years; LNG-IUS (Mirena) for 5 years"
+    - "Cu-T mechanism: sterile inflammatory reaction → spermicidal; NOT an abortifacient"
+    - "LNG-IUS is the BEST IUCD for menorrhagia (reduces menstrual blood loss by 90%)"
+    - "COCs are CONTRAINDICATED in migraine with aura (stroke risk)"
+    - "Most effective emergency contraception = Cu-T insertion (failure rate <0.1%)"
+    - "Levonorgestrel EC: most effective within 24 hours; up to 72 hours"
+    - "COCs reduce risk of ovarian and endometrial cancer"
+    - "DMPA (Depo-Provera): 150 mg IM every 3 months; causes amenorrhea, weight gain, bone loss"
+    - "Male condom is the ONLY contraceptive that also prevents STIs"
+    - "LAM (Lactational Amenorrhea Method): effective for 6 months if exclusive breastfeeding + amenorrhea"
+
+mcqs:
+  - question: "The most effective method of emergency contraception is:"
+    options:
+      - "Levonorgestrel 1.5 mg"
+      - "Ulipristal acetate"
+      - "Yuzpe regimen"
+      - "Copper-T insertion"
+    answer: "Copper-T insertion"
+    explanation: >
+      Cu-T insertion within 5 days of unprotected intercourse has the lowest failure rate (<0.1%)
+      among all emergency contraceptive methods. It also provides ongoing long-term contraception.
+      📚 DC Dutta, 9th Ed, Ch.30 (p.528)
+    difficulty: 1
+
+  - question: "Combined oral contraceptive pills are absolutely contraindicated in all EXCEPT:"
+    options:
+      - "History of deep vein thrombosis"
+      - "Migraine with aura"
+      - "Controlled hypertension on medication"
+      - "Active breast cancer"
+    answer: "Controlled hypertension on medication"
+    explanation: >
+      Controlled HTN on medication is WHO Category 3 (relative contraindication), not absolute.
+      DVT, migraine with aura, and breast cancer are all Category 4 (absolute contraindications).
+      Uncontrolled HTN (≥160/100) is Category 4.
+      📚 DC Dutta, 9th Ed, Ch.30 (p.518)
+    difficulty: 2
+
+  - question: "The mechanism of action of Copper-T IUCD is:"
+    options:
+      - "Prevents ovulation"
+      - "Creates sterile inflammatory reaction toxic to sperm"
+      - "Prevents implantation by hormonal action"
+      - "Blocks fallopian tubes"
+    answer: "Creates sterile inflammatory reaction toxic to sperm"
+    explanation: >
+      Cu-T causes a sterile foreign body inflammatory reaction with increased prostaglandins,
+      macrophages, and copper ions in the endometrium. These are toxic to sperm and ova, preventing
+      fertilization. It acts primarily BEFORE implantation.
+      📚 DC Dutta, 9th Ed, Ch.30 (p.509)
+    difficulty: 1
+
+  - question: "Which IUCD is the best choice for a woman with menorrhagia?"
+    options:
+      - "Cu-T 380A"
+      - "Multiload 375"
+      - "LNG-IUS (Mirena)"
+      - "Lippes loop"
+    answer: "LNG-IUS (Mirena)"
+    explanation: >
+      LNG-IUS releases levonorgestrel locally, causing endometrial atrophy and reducing menstrual
+      blood loss by up to 90%. Cu-T actually increases menstrual bleeding. Mirena is both a
+      contraceptive and therapeutic for menorrhagia.
+      📚 DC Dutta, 9th Ed, Ch.30 (p.513)
+    difficulty: 1
+
+  - question: "Levonorgestrel emergency contraception is most effective when taken within:"
+    options:
+      - "12 hours"
+      - "24 hours"
+      - "72 hours"
+      - "120 hours"
+    answer: "24 hours"
+    explanation: >
+      Levonorgestrel's efficacy is highest when taken within 24 hours (95% effective), decreasing
+      to 85% at 24-48 hours and 58% at 48-72 hours. Ulipristal acetate maintains higher efficacy
+      up to 120 hours. Cu-T can be inserted up to 5 days.
+      📚 DC Dutta, 9th Ed, Ch.30 (p.528)
+    difficulty: 1

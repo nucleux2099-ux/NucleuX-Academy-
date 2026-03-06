@@ -1,0 +1,13 @@
+topic_id: eeg-basics
+name: Eeg Basics
+description: Eeg Basics — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.12
+  domain: S
+  core: true
+  phase: Phase 1
+- code: PY10.8
+  domain: KH
+  core: true
+  phase: Phase 1

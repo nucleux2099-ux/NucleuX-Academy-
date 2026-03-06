@@ -1,0 +1,22 @@
+title: "Osteoporosis in Elderly"
+slug: osteoporosis-geriatric
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM23.4"
+prerequisites:
+  - "geriatric-assessment"
+related_topics:
+  - "falls-in-elderly"
+enrichment:
+  nmcCodes:
+    - code: "IM23.4"
+      text: "Osteoporosis in Elderly — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "geriatric-assessment"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "falls-in-elderly"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,11 @@
+title: "Metabolic Syndrome"
+slug: metabolic-syndrome
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM11.1"
+prerequisites:
+  - "diabetes-mellitus-type-2"
+related_topics:
+  - "obesity-medical"
+  - "insulin-therapy"

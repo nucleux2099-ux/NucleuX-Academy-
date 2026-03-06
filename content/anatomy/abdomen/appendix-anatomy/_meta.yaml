@@ -1,0 +1,25 @@
+topic_id: appendix-anatomy
+name: Appendix Anatomy
+description: Appendix Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN23.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN35.5
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN37.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN49.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN56.2
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,57 @@
+{
+  "level": "SS",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Understanding esophageal muscle layers (striated vs smooth) is key to localizing motility disorders",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "Many motility disorders involve LES dysfunction — hypertensive or hypotensive LES patterns",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "High-resolution manometry with Chicago classification is the diagnostic standard for all esophageal motility disorders",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Achalasia is the most common and clinically significant esophageal motility disorder",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "Dysphagia is the cardinal presenting symptom of esophageal motility disorders",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Ineffective esophageal motility is a common finding in GERD and affects surgical planning",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "SU28.5: Describe the applied anatomy and physiology of esophagus"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This superspecialty-level roadmap connects Motility Disorders across foundational sciences and clinical applications."
+}

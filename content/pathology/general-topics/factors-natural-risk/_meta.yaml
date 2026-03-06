@@ -1,0 +1,17 @@
+topic_id: factors-natural-risk
+name: The risk factors, pathogenesis, pathology and natural
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PA34.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA34.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PA34.3
+  domain: KH
+  core: false
+  phase: Phase 1

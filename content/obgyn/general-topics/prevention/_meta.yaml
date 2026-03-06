@@ -1,0 +1,13 @@
+topic_id: prevention
+name: And discuss causes, prevention, diagnosis
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG16.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG16.3
+  domain: KH
+  core: true
+  phase: Phase 3

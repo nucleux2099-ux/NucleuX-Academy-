@@ -1,0 +1,51 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Ethical obligations around disclosure of HAIs and SSIs require foundational knowledge of surgical infections",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Ethical dilemmas (DNR, futility, withdrawal of care) arise in the perioperative and ICU setting",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-audit",
+      "nmcCode": "",
+      "reason": "Ethical practice mandates audit-based accountability and transparent outcome reporting",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "organ-transplantation",
+      "nmcCode": "",
+      "reason": "Transplant ethics (brain death declaration, organ allocation, living donor consent) are core medicolegal issues",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hospital-waste-management",
+      "nmcCode": "",
+      "reason": "Proper biomedical waste disposal is an ethical and legal obligation under the BMW Act",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU8.1: Describe the principles of Ethics as it pertains to General Surgery",
+    "SU8.2: Demonstrate Professionalism and empathy to the patient A/C",
+    "SU8.3: Discuss Medico legal issues in surgical practice A/C"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Surgical Ethics across foundational sciences and clinical applications."
+}

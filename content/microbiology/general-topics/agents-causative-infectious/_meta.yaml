@@ -1,0 +1,13 @@
+topic_id: agents-causative-infectious
+name: The different causative agents of Infectious
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: MI1.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: MI1.2
+  domain: P
+  core: true
+  phase: Phase 1

@@ -1,0 +1,91 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Anatomical thirds, lymphatic drainage, and relations — critical for staging and surgery",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "dysphagia",
+      "nmcCode": "",
+      "reason": "Progressive dysphagia is the cardinal presenting symptom",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "neoplasia-overview",
+      "nmcCode": "",
+      "reason": "TNM staging, tumor biology, metastasis principles",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "barrett-esophagus",
+      "nmcCode": "",
+      "reason": "Barrett's metaplasia-dysplasia-carcinoma sequence for adenocarcinoma",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "GERD → Barrett's → adenocarcinoma pathway",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-reconstruction",
+      "nmcCode": "",
+      "reason": "Conduit options after esophagectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "caustic-injury-esophagus",
+      "nmcCode": "",
+      "reason": "Caustic stricture is a risk factor for squamous cell carcinoma",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-nutrition",
+      "nmcCode": "",
+      "reason": "Nutritional optimization in esophageal cancer patients",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Complex perioperative care for esophagectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gastric-anatomy-physiology",
+      "nmcCode": "",
+      "reason": "Gastric pull-up is the commonest conduit for reconstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "thoracic-duct",
+      "nmcCode": "",
+      "reason": "Chylothorax risk during esophagectomy",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Esophageal Cancer across foundational sciences and clinical applications."
+}

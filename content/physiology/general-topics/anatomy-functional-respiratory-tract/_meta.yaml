@@ -1,0 +1,25 @@
+topic_id: anatomy-functional-respiratory-tract
+name: The functional anatomy of respiratory tract
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY6.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY6.10
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PY6.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY6.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PY6.9
+  domain: P
+  core: true
+  phase: Phase 1

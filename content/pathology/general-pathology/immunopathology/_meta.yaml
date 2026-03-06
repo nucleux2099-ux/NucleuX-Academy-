@@ -1,0 +1,165 @@
+topic_id: immunopathology
+name: Immunopathology (Hypersensitivity & Autoimmune Disorders)
+description: Hypersensitivity reactions, autoimmune diseases, and immunodeficiency disorders
+high_yield: true
+
+overview: >
+  Immunopathology deals with diseases caused by immune system dysfunction — hypersensitivity (excessive response),
+  autoimmunity (response against self), and immunodeficiency (inadequate response).
+  The four types of hypersensitivity reactions and major autoimmune diseases are core NEET-PG topics.
+  📚 Robbins, 10th Ed, Ch.6 (p.197-232)
+
+learning_objectives:
+  - Classify and describe the four types of hypersensitivity reactions with examples
+  - Explain the pathogenesis of SLE, RA, and other major autoimmune diseases
+  - Differentiate primary from secondary immunodeficiency
+  - Describe the pathogenesis and stages of HIV/AIDS
+
+content:
+  atoms:
+    - id: type-1-hypersensitivity
+      title: "Type I — Immediate (Anaphylactic) Hypersensitivity"
+      text: >
+        Mechanism: IgE-mediated mast cell/basophil degranulation.
+        First exposure → sensitization (IgE production, binds FcεRI on mast cells).
+        Re-exposure → crosslinking of IgE → degranulation → immediate phase (minutes: histamine, tryptase)
+        and late phase (6-24h: leukotrienes, prostaglandins, cytokines, eosinophil recruitment).
+        Examples: anaphylaxis, allergic asthma, allergic rhinitis, food allergy, atopic dermatitis.
+        Tryptase is the best marker for mast cell activation (elevated in serum after anaphylaxis).
+        📚 Robbins, 10th Ed, Ch.6 (p.200-206)
+
+    - id: type-2-hypersensitivity
+      title: "Type II — Antibody-Mediated (Cytotoxic) Hypersensitivity"
+      text: >
+        Mechanism: IgG/IgM antibodies against cell surface or extracellular matrix antigens.
+        Three mechanisms: (1) Opsonization + phagocytosis (autoimmune hemolytic anemia, transfusion reactions),
+        (2) Complement + Fc receptor-mediated inflammation (Goodpasture syndrome — anti-GBM, linear IF),
+        (3) Antibody-mediated cellular dysfunction — stimulatory (Graves — anti-TSH receptor) or inhibitory
+        (myasthenia gravis — anti-AChR).
+        Examples: AIHA, ITP, Goodpasture, Graves, MG, rheumatic fever, hemolytic disease of newborn.
+        📚 Robbins, 10th Ed, Ch.6 (p.206-209)
+
+    - id: type-3-hypersensitivity
+      title: "Type III — Immune Complex-Mediated Hypersensitivity"
+      text: >
+        Mechanism: antigen-antibody (immune) complexes deposit in tissues → complement activation → neutrophil recruitment → tissue damage.
+        Systemic: SLE (anti-dsDNA), polyarteritis nodosa (HBV-related), serum sickness, post-streptococcal GN.
+        Local: Arthus reaction (localized immune complex vasculitis at injection site).
+        IF pattern: GRANULAR ("lumpy-bumpy") deposition along basement membranes (vs LINEAR in Type II Goodpasture).
+        SLE: anti-dsDNA and anti-Smith antibodies are most specific; anti-dsDNA correlates with disease activity
+        and lupus nephritis severity.
+        📚 Robbins, 10th Ed, Ch.6 (p.209-213)
+
+    - id: type-4-hypersensitivity
+      title: "Type IV — Cell-Mediated (Delayed) Hypersensitivity"
+      text: >
+        Mechanism: T-cell mediated; NO antibodies involved. Takes 24-72 hours.
+        CD4+ T cells (Th1) → activate macrophages → granuloma formation (TB, sarcoidosis, contact dermatitis).
+        CD8+ T cells → direct cytotoxicity (transplant rejection, viral hepatitis).
+        Examples: TB skin test (Mantoux), contact dermatitis (poison ivy, nickel), type 1 diabetes (T cells destroy
+        β-cells), MS, transplant rejection (acute cellular), Hashimoto thyroiditis.
+        Granulomatous inflammation is a form of Type IV hypersensitivity.
+        📚 Robbins, 10th Ed, Ch.6 (p.213-216)
+
+    - id: autoimmune-diseases
+      title: "Major Autoimmune Diseases"
+      text: >
+        SLE: young women, butterfly rash, anti-dsDNA, anti-Smith; Type III immune complex disease;
+        wire-loop lesion in kidney (diffuse proliferative GN = most common and severe renal lesion).
+        RA: symmetric joint inflammation, pannus formation, rheumatoid factor + anti-CCP.
+        Sjögren syndrome: dry eyes + dry mouth; anti-SSA (Ro) + anti-SSB (La); increased risk of B-cell lymphoma.
+        Scleroderma: diffuse (anti-Scl-70/topoisomerase) vs limited (CREST — anti-centromere).
+        Mixed connective tissue disease: anti-U1 RNP; overlap features of SLE, scleroderma, polymyositis.
+        📚 Robbins, 10th Ed, Ch.6 (p.216-230)
+
+  clinical:
+    - title: "HIV/AIDS"
+      text: >
+        HIV infects CD4+ T cells (via gp120 binding CD4, gp41 fusion; coreceptors CCR5 for macrophage-tropic,
+        CXCR4 for T-cell tropic). Progressive CD4 depletion → AIDS when CD4 <200/μL.
+        AIDS-defining illnesses: Pneumocystis pneumonia (most common), Kaposi sarcoma (HHV-8),
+        CMV retinitis, Toxoplasma encephalitis, Cryptococcal meningitis, Mycobacterium avium complex.
+        Window period: antibodies detectable 3-12 weeks after infection; p24 antigen detectable earlier.
+
+  high_yield_points:
+    - "Type I = IgE + mast cells (immediate); Type II = IgG/IgM against cell surface; Type III = immune complexes; Type IV = T-cell mediated (delayed)"
+    - "Goodpasture = LINEAR IF (anti-GBM, Type II); SLE nephritis = GRANULAR IF (immune complexes, Type III)"
+    - "Anti-dsDNA and anti-Smith = most specific for SLE; anti-dsDNA correlates with nephritis activity"
+    - "Anti-centromere = limited scleroderma (CREST); Anti-Scl-70 = diffuse scleroderma"
+    - "Anti-SSA (Ro) = Sjögren + neonatal lupus + congenital heart block"
+    - "Graves = stimulatory antibody against TSH receptor (Type II hypersensitivity)"
+    - "Myasthenia gravis = inhibitory antibody against AChR (Type II hypersensitivity)"
+    - "Contact dermatitis (poison ivy) = Type IV (T-cell mediated, delayed)"
+    - "SLE wire-loop lesion = diffuse proliferative GN (Class IV) = most severe lupus nephritis"
+    - "HIV: CD4 <200 = AIDS; most common opportunistic infection = Pneumocystis jirovecii pneumonia"
+
+mcqs:
+  - question: "A patient develops urticaria, bronchospasm, and hypotension within minutes of a penicillin injection. This reaction is mediated by:"
+    options:
+      - "IgG antibodies against penicillin-modified RBCs"
+      - "IgE antibodies on mast cells"
+      - "Immune complex deposition"
+      - "CD8+ T cell-mediated cytotoxicity"
+    answer: "IgE antibodies on mast cells"
+    explanation: >
+      Anaphylaxis is Type I (immediate) hypersensitivity. Prior sensitization produced IgE antibodies that coat mast
+      cells via FcεRI. Re-exposure to penicillin crosslinks IgE → mast cell degranulation → histamine release →
+      vasodilation, bronchospasm, hypotension. Type II penicillin reaction would cause hemolytic anemia (days later).
+      📚 Robbins, 10th Ed, Ch.6 (p.200)
+    difficulty: 1
+
+  - question: "A renal biopsy shows granular ('lumpy-bumpy') deposits of IgG and C3 along the glomerular basement membrane on immunofluorescence. The most likely diagnosis is:"
+    options:
+      - "Goodpasture syndrome"
+      - "Lupus nephritis"
+      - "Minimal change disease"
+      - "IgA nephropathy"
+    answer: "Lupus nephritis"
+    explanation: >
+      Granular (lumpy-bumpy) IF pattern indicates immune complex deposition (Type III hypersensitivity) — classic for
+      SLE/lupus nephritis. Goodpasture shows LINEAR IF (anti-GBM antibodies, Type II). Minimal change disease has
+      normal IF. IgA nephropathy shows mesangial IgA deposits.
+      📚 Robbins, 10th Ed, Ch.6 (p.211)
+    difficulty: 2
+
+  - question: "A 35-year-old woman presents with dry eyes, dry mouth, and bilateral parotid enlargement. Which antibodies are most specific?"
+    options:
+      - "Anti-dsDNA and anti-Smith"
+      - "Anti-SSA (Ro) and anti-SSB (La)"
+      - "Anti-centromere"
+      - "Anti-mitochondrial"
+    answer: "Anti-SSA (Ro) and anti-SSB (La)"
+    explanation: >
+      This is Sjögren syndrome (keratoconjunctivitis sicca + xerostomia). Anti-SSA (Ro) and anti-SSB (La) are
+      characteristic. Anti-SSB (La) is more specific for Sjögren. Anti-SSA is also seen in SLE and neonatal lupus.
+      Anti-dsDNA/Smith = SLE. Anti-centromere = CREST. Anti-mitochondrial = primary biliary cholangitis.
+      📚 Robbins, 10th Ed, Ch.6 (p.226)
+    difficulty: 1
+
+  - question: "A tuberculin skin test becomes positive (indurated) 48-72 hours after injection. This is an example of:"
+    options:
+      - "Type I hypersensitivity"
+      - "Type II hypersensitivity"
+      - "Type III hypersensitivity"
+      - "Type IV hypersensitivity"
+    answer: "Type IV hypersensitivity"
+    explanation: >
+      The Mantoux/tuberculin test is the classic example of Type IV (delayed-type/cell-mediated) hypersensitivity.
+      Previously sensitized CD4+ Th1 cells recognize tuberculin antigens → release cytokines → macrophage activation
+      → induration at 48-72 hours. No antibodies are involved. Type I is immediate (minutes); Types II and III involve antibodies.
+      📚 Robbins, 10th Ed, Ch.6 (p.214)
+    difficulty: 1
+
+  - question: "A woman with SLE has proteinuria and hematuria. Kidney biopsy shows thickened capillary walls with a 'wire-loop' appearance. What WHO class of lupus nephritis is this?"
+    options:
+      - "Class II (Mesangial proliferative)"
+      - "Class III (Focal proliferative)"
+      - "Class IV (Diffuse proliferative)"
+      - "Class V (Membranous)"
+    answer: "Class IV (Diffuse proliferative)"
+    explanation: >
+      Wire-loop lesion = subendothelial immune complex deposits causing thickened capillary walls, seen in Class IV
+      (diffuse proliferative) lupus nephritis — the MOST COMMON and MOST SEVERE form. It has the worst prognosis
+      among lupus nephritis classes and correlates with high anti-dsDNA titers and low complement.
+      📚 Robbins, 10th Ed, Ch.6 (p.222)
+    difficulty: 3

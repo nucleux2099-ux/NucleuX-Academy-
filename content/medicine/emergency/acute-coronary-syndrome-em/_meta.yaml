@@ -1,0 +1,22 @@
+title: "Acute Coronary Syndrome — Emergency"
+slug: acute-coronary-syndrome-em
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.1"
+prerequisites:
+  - "chest-pain-approach"
+related_topics:
+  - "cpr-acls-bls"
+enrichment:
+  nmcCodes:
+    - code: "IM24.1"
+      text: "Acute Coronary Syndrome — Emergency — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "chest-pain-approach"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "cpr-acls-bls"
+      reason: "Clinically related"
+      relationship: "clinical"

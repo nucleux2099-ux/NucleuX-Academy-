@@ -1,0 +1,148 @@
+topic_id: breast-pathology
+name: Breast Pathology
+description: Benign and malignant breast diseases — classification, pathology, and prognostic factors
+high_yield: true
+
+overview: >
+  Breast pathology spans benign conditions (fibrocystic changes, fibroadenoma) to malignant neoplasms.
+  Invasive ductal carcinoma (NST) is the most common breast cancer. Understanding molecular subtypes,
+  prognostic markers (ER, PR, HER2), and special types is essential for NEET-PG.
+  📚 Robbins, 10th Ed, Ch.23 (p.1043-1072)
+
+learning_objectives:
+  - Classify benign breast diseases and their cancer risk
+  - Describe the types and features of breast carcinoma
+  - Explain the role of ER, PR, HER2, and molecular subtypes in prognosis
+  - Describe BRCA1/2 and hereditary breast cancer
+  - Understand breast cancer staging and spread patterns
+
+content:
+  atoms:
+    - id: benign-breast
+      title: "Benign Breast Conditions"
+      text: >
+        Fibrocystic changes: most common breast condition in women 25-50; lumpy, painful, cyclic mastalgia.
+        Nonproliferative = cysts, fibrosis (NO cancer risk). Proliferative without atypia = epithelial hyperplasia,
+        sclerosing adenosis, papilloma (slight ↑ risk 1.5-2x). Proliferative WITH atypia = atypical ductal/lobular
+        hyperplasia (↑risk 4-5x).
+        Fibroadenoma: most common benign tumor in women <30; firm, mobile, rubbery ("breast mouse"); NOT premalignant.
+        Phyllodes tumor: large, leaf-like; can be benign, borderline, or malignant; older women vs fibroadenoma.
+        Intraductal papilloma: most common cause of bloody nipple discharge in reproductive-age women.
+        Fat necrosis: painless lump post-trauma; can mimic cancer on mammography.
+        📚 Robbins, 10th Ed, Ch.23 (p.1044-1053)
+
+    - id: breast-carcinoma
+      title: "Breast Carcinoma — Types"
+      text: >
+        In situ: DCIS (ductal carcinoma in situ — comedonecrosis subtype worst; detected by microcalcifications on mammography;
+        precursor to invasive ductal); LCIS (lobular carcinoma in situ — bilateral risk marker, not a direct precursor;
+        incidental finding; E-cadherin NEGATIVE).
+        Invasive: Invasive ductal carcinoma (NST) — most common (70-80%); hard, gritty mass.
+        Invasive lobular — 10-15%; single-file "Indian file" pattern; E-cadherin negative; bilateral.
+        Special types with GOOD prognosis: tubular, mucinous (colloid), medullary-like (lymphocytic infiltrate,
+        BRCA1-associated, triple negative but better prognosis), papillary.
+        Inflammatory breast cancer: dermal lymphatic invasion → peau d'orange; worst prognosis; not a histologic type.
+        Paget disease of nipple: DCIS extending to nipple skin; eczematous nipple lesion; Paget cells in epidermis.
+        📚 Robbins, 10th Ed, Ch.23 (p.1053-1065)
+
+    - id: molecular-subtypes
+      title: "Molecular Subtypes and Prognostic Markers"
+      text: >
+        ER/PR positive (Luminal A/B): most common; best prognosis; responds to hormonal therapy (tamoxifen, AI).
+        HER2 positive: aggressive but treatable with trastuzumab (Herceptin). HER2 = ERBB2 on chr 17.
+        Triple negative (ER-, PR-, HER2-): worst prognosis; no targeted therapy; often BRCA1-associated.
+        Ki-67: proliferation marker; high Ki-67 = aggressive.
+        BRCA1 (chr 17): breast + ovarian cancer risk; often triple negative.
+        BRCA2 (chr 13): breast cancer (also male breast cancer) + ovarian; often ER positive.
+        📚 Robbins, 10th Ed, Ch.23 (p.1065-1068)
+
+  clinical:
+    - title: "Breast Cancer Spread"
+      text: >
+        Lymphatic: axillary nodes (most common, lateral quadrant); internal mammary nodes (medial lesions).
+        Sentinel lymph node biopsy guides axillary management.
+        Hematogenous: bone (most common distant site), lung, liver, brain.
+        Breast cancer and prostate cancer are the most common cancers to metastasize to bone.
+
+  high_yield_points:
+    - "Invasive ductal carcinoma (NST) = most common breast cancer (70-80%)"
+    - "LCIS = bilateral risk marker, E-cadherin NEGATIVE, NOT a direct precursor"
+    - "DCIS = precursor to invasive ductal; detected by mammographic microcalcifications"
+    - "Inflammatory breast cancer = dermal lymphatic invasion → peau d'orange; worst prognosis"
+    - "Paget disease of nipple = DCIS extending to nipple epidermis; eczematous lesion"
+    - "Fibroadenoma = most common benign breast tumor in young women (<30)"
+    - "Intraductal papilloma = most common cause of bloody nipple discharge"
+    - "BRCA1 (chr 17): triple negative breast cancer + ovarian; BRCA2 (chr 13): ER+ breast + male breast cancer"
+    - "Triple negative = worst prognosis; Luminal A (ER+/PR+/HER2-/low Ki-67) = best prognosis"
+    - "Atypical hyperplasia increases breast cancer risk 4-5 fold"
+
+mcqs:
+  - question: "A 28-year-old woman presents with a firm, mobile, rubbery 2 cm mass in the upper outer quadrant of the breast. Biopsy shows a well-circumscribed proliferation of stroma and glands. The most likely diagnosis is:"
+    options:
+      - "Invasive ductal carcinoma"
+      - "Fibroadenoma"
+      - "Phyllodes tumor"
+      - "Fat necrosis"
+    answer: "Fibroadenoma"
+    explanation: >
+      Fibroadenoma is the most common benign breast tumor in women under 30. It presents as a firm, mobile,
+      rubbery, well-circumscribed mass ("breast mouse"). Histology shows a mixture of stromal and glandular
+      (epithelial) elements. Phyllodes tumors are similar but occur in older women and have leaf-like projections.
+      📚 Robbins, 10th Ed, Ch.23 (p.1050)
+    difficulty: 1
+
+  - question: "A breast biopsy shows malignant cells infiltrating in a single-file ('Indian file') pattern. Immunohistochemistry shows E-cadherin NEGATIVE. This is most likely:"
+    options:
+      - "Invasive ductal carcinoma (NST)"
+      - "Invasive lobular carcinoma"
+      - "Medullary-like carcinoma"
+      - "Tubular carcinoma"
+    answer: "Invasive lobular carcinoma"
+    explanation: >
+      Invasive lobular carcinoma has a characteristic single-file (Indian file) infiltration pattern and is
+      E-cadherin NEGATIVE (loss of CDH1 gene). This distinguishes it from ductal carcinoma which is E-cadherin positive.
+      Lobular carcinoma has a higher tendency for bilateral involvement and peritoneal metastasis.
+      📚 Robbins, 10th Ed, Ch.23 (p.1060)
+    difficulty: 2
+
+  - question: "A 55-year-old woman presents with eczematous changes of the nipple. Biopsy of the nipple skin shows large cells with clear halos in the epidermis. What is the underlying breast pathology?"
+    options:
+      - "Invasive lobular carcinoma"
+      - "DCIS extending to the nipple (Paget disease)"
+      - "Eczema"
+      - "Intraductal papilloma"
+    answer: "DCIS extending to the nipple (Paget disease)"
+    explanation: >
+      Paget disease of the nipple presents as eczematous/crusting changes of the nipple. Biopsy shows Paget cells
+      (large, clear halo cells) in the nipple epidermis. It represents extension of underlying DCIS (or invasive
+      carcinoma) to the nipple skin. Always search for underlying breast carcinoma.
+      📚 Robbins, 10th Ed, Ch.23 (p.1063)
+    difficulty: 2
+
+  - question: "A breast cancer is found to be ER negative, PR negative, and HER2 negative. It is most likely associated with mutation in:"
+    options:
+      - "BRCA2"
+      - "BRCA1"
+      - "p53 alone"
+      - "RB"
+    answer: "BRCA1"
+    explanation: >
+      Triple-negative breast cancers (ER-, PR-, HER2-) are strongly associated with BRCA1 mutations (chr 17).
+      They have the worst prognosis due to lack of targeted therapy options. BRCA2-associated cancers tend to be
+      ER-positive. Triple negative cancers often show a basal-like molecular subtype.
+      📚 Robbins, 10th Ed, Ch.23 (p.1067)
+    difficulty: 2
+
+  - question: "A 45-year-old woman presents with a red, swollen, warm breast with peau d'orange skin changes. Biopsy shows carcinoma cells in dermal lymphatics. This is:"
+    options:
+      - "Acute mastitis"
+      - "Inflammatory breast cancer"
+      - "Paget disease"
+      - "Phyllodes tumor"
+    answer: "Inflammatory breast cancer"
+    explanation: >
+      Inflammatory breast cancer presents with diffuse erythema, warmth, and peau d'orange (resembling mastitis)
+      due to carcinoma cells blocking dermal lymphatics. It is NOT a histologic type but a clinical presentation.
+      It has the worst prognosis of all breast cancers. Must biopsy to differentiate from infection.
+      📚 Robbins, 10th Ed, Ch.23 (p.1064)
+    difficulty: 1

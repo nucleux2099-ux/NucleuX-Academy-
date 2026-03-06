@@ -1,0 +1,9 @@
+topic_id: b-cell-immunity
+name: B Cell Immunity
+description: B Cell Immunity — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI1.8
+  domain: KH
+  core: true
+  phase: Phase 1

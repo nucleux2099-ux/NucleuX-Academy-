@@ -1,0 +1,9 @@
+topic_id: indications
+name: The indications and describe the principles and K K/
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: FM7.1
+  domain: KH
+  core: false
+  phase: Phase 1

@@ -1,0 +1,42 @@
+id: pediatric-cardiology
+title: "Pediatric Cardiology"
+subject: pediatrics
+description: |
+  Congenital heart diseases and rheumatic fever.
+
+stats:
+  total_topics: 16
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: acyanotic
+    title: "Acyanotic CHD"
+    topics:
+      - asd-pediatric
+      - vsd-pediatric
+      - pda-pediatric
+      - coarctation-aorta-peds
+      - atrioventricular-septal-defect
+  - id: cyanotic
+    title: "Cyanotic CHD"
+    topics:
+      - tetralogy-fallot-peds
+      - transposition-great-arteries
+      - tricuspid-atresia
+      - total-anomalous-pulmonary-venous-return
+      - truncus-arteriosus
+      - ebstein-anomaly
+  - id: acquired
+    title: "Acquired"
+    topics:
+      - rheumatic-fever
+      - kawasaki-disease-peds
+      - infective-endocarditis-peds
+      - myocarditis-peds
+      - pericarditis-peds
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

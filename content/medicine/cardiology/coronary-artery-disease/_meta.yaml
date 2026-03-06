@@ -1,0 +1,131 @@
+title: Coronary Artery Disease
+slug: coronary-artery-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM2.1
+  - IM2.2
+  - IM2.3
+  - IM2.4
+  - IM2.5
+  - IM2.6
+  - IM2.7
+  - IM2.8
+  - IM2.9
+  - IM2.10
+  - IM2.11
+  - IM2.12
+  - IM2.13
+  - IM10.1
+  - IM10.2
+  - IM10.3
+  - IM10.4
+  - IM10.5
+  - IM10.6
+  - IM10.7
+  - IM10.8
+  - IM10.9
+  - IM10.10
+  - IM10.11
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM2.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM2.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+    - code: IM10.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of coronary artery
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

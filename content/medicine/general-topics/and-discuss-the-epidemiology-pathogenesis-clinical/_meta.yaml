@@ -1,0 +1,19 @@
+title: "Epidemiology and Pathogenesis"
+slug: and-discuss-the-epidemiology-pathogenesis-clinical
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.3"
+prerequisites: []
+related_topics:
+  - "aetiology"
+enrichment:
+  nmcCodes:
+    - code: "IM26.3"
+      text: "Epidemiology and Pathogenesis — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "aetiology"
+      reason: "Clinically related"
+      relationship: "clinical"

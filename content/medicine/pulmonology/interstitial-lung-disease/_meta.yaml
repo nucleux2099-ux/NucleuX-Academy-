@@ -1,0 +1,38 @@
+title: Interstitial Lung Disease
+slug: interstitial-lung-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM2.1
+  - IM2.3
+  - IM2.5
+prerequisites: []
+related_topics:
+  - pulmonary-hypertension
+  - lung-cancer
+  - copd
+enrichment:
+  nmcCodes:
+    - code: IM2.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of interstitial lung
+        disease
+      domain: KH
+    - code: IM2.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of interstitial lung
+        disease
+      domain: KH
+    - code: IM2.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of interstitial lung
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: pulmonary-hypertension
+      reason: Clinically related to interstitial lung disease
+      relationship: clinical
+    - slug: lung-cancer
+      reason: Clinically related to interstitial lung disease
+      relationship: clinical
+    - slug: copd
+      reason: Clinically related to interstitial lung disease
+      relationship: clinical

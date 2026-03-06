@@ -1,0 +1,34 @@
+topic_id: parathyroid-disorders
+name: "Parathyroid Disorders"
+description: "Primary, secondary, and tertiary hyperparathyroidism — diagnosis, localization, and surgical management"
+high_yield: true
+difficulty: 3
+estimated_minutes: 25
+exam_tags: [NEET_PG, INICET, MRCS]
+prerequisites:
+  - thyroid-disorders-surgical
+related_topics:
+  - thyroid-disorders-surgical
+  - calcium-metabolism
+tags: [endocrine, head-neck, high-yield]
+nmc_codes:
+  - code: SU23.2
+    domain: KH
+    core: true
+    phase: Phase 3
+  - code: SU23.3
+    domain: SH
+    core: true
+    phase: Phase 3
+sources:
+  primary:
+    - book: "Sabiston Textbook of Surgery"
+      edition: "22nd"
+      chapter: "Ch. 38"
+  supplementary:
+    - book: "Bailey & Love's Short Practice of Surgery"
+      edition: "28th"
+      chapter: "Ch. 51"
+    - book: "Schwartz's Principles of Surgery"
+      edition: "11th"
+      chapter: "Ch. 38"

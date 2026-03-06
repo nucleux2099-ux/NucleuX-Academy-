@@ -1,0 +1,9 @@
+topic_id: vaccines-immunology
+name: Vaccines Immunology
+description: Vaccines Immunology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI1.9
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,110 @@
+{
+  "id": "anatomy-upper-limb",
+  "title": "Upper Limb Mastery",
+  "phase": "Phase-1",
+  "subject": "Anatomy",
+  "description": "Comprehensive understanding of upper limb anatomy including bones, joints, muscles, vessels, nerves, and clinical correlations for surgical and diagnostic applications.",
+  "competencies": ["AN2.1", "AN2.2", "AN2.3", "AN2.4", "AN2.5", "AN2.6"],
+  "prerequisites": ["anatomy-general"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Upper Limb Bones & Joints",
+      "libraryTopic": "upper-limb",
+      "sections": ["bones", "joints", "shoulder-joint", "elbow-joint", "wrist-joint"],
+      "duration": "60min",
+      "xp": 20
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Osteology Quiz",
+      "mcqCount": 12,
+      "passingScore": 70,
+      "xp": 30,
+      "competency": "AN2.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Shoulder Region & Axilla",
+      "libraryTopic": "upper-limb",
+      "sections": ["shoulder-region", "axilla-anatomy", "rotator-cuff-anatomy"],
+      "duration": "55min",
+      "xp": 25
+    },
+    {
+      "order": 4,
+      "type": "reading", 
+      "title": "Arm & Forearm Muscles",
+      "libraryTopic": "upper-limb",
+      "sections": ["arm-muscles", "forearm-flexors", "forearm-extensors", "cubital-fossa"],
+      "duration": "65min",
+      "xp": 30
+    },
+    {
+      "order": 5,
+      "type": "quiz",
+      "title": "Muscles Assessment",
+      "mcqCount": 15,
+      "passingScore": 72,
+      "xp": 35,
+      "competency": "AN2.2"
+    },
+    {
+      "order": 6,
+      "type": "reading",
+      "title": "Hand Anatomy",
+      "libraryTopic": "upper-limb",
+      "sections": ["hand-muscles", "hand-spaces", "carpal-tunnel", "anatomical-snuffbox"],
+      "duration": "50min",
+      "xp": 25
+    },
+    {
+      "order": 7,
+      "type": "skill",
+      "title": "Surface Anatomy Identification",
+      "competency": "AN2.3",
+      "xp": 50,
+      "duration": "40min"
+    },
+    {
+      "order": 8,
+      "type": "reading",
+      "title": "Neurovascular Supply",
+      "libraryTopic": "upper-limb", 
+      "sections": ["median-nerve", "ulnar-nerve", "radial-nerve", "brachial-artery", "radial-ulnar-arteries"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 9,
+      "type": "quiz",
+      "title": "Neurovascular Quiz",
+      "mcqCount": 20,
+      "passingScore": 75,
+      "xp": 45,
+      "competency": "AN2.4"
+    },
+    {
+      "order": 10,
+      "type": "case",
+      "title": "Clinical Correlations",
+      "competency": "AN2.5",
+      "xp": 60,
+      "duration": "45min"
+    }
+  ],
+  "totalXP": 355,
+  "estimatedTime": "7 hours",
+  "unlocks": ["anatomy-thorax", "surgery-upper-limb-trauma"],
+  "textbooks": [
+    {"title": "Gray's Anatomy", "chapters": ["Upper Limb"], "edition": "41st"},
+    {"title": "Netter Atlas of Human Anatomy", "chapters": ["Upper Limb"], "edition": "7th"},
+    {"title": "Clinically Oriented Anatomy", "chapters": ["Upper Limb"], "edition": "8th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical"],
+  "difficulty": 3,
+  "lastUpdated": "2024-02-08"
+}

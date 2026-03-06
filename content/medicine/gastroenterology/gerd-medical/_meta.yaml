@@ -1,0 +1,19 @@
+title: "GERD (Gastroesophageal Reflux Disease)"
+slug: gerd-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.2"
+prerequisites: []
+related_topics:
+  - "acid-peptic-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM5.2"
+      text: "GERD (Gastroesophageal Reflux Disease) — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "acid-peptic-disease"
+      reason: "Clinically related"
+      relationship: "clinical"

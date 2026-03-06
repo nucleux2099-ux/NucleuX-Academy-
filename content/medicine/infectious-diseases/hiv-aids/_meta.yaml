@@ -1,0 +1,23 @@
+title: "HIV/AIDS"
+slug: hiv-aids
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.4"
+prerequisites: []
+related_topics:
+  - "antiretroviral-therapy"
+  - "opportunistic-infections-hiv"
+enrichment:
+  nmcCodes:
+    - code: "IM8.4"
+      text: "HIV/AIDS — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "antiretroviral-therapy"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "opportunistic-infections-hiv"
+      reason: "Clinically related"
+      relationship: "clinical"

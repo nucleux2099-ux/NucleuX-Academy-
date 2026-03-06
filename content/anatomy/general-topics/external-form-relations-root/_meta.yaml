@@ -1,0 +1,9 @@
+topic_id: external-form-relations-root
+name: Side, external features and relations of structures which form root
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN24.2
+  domain: SH
+  core: true
+  phase: Phase 1

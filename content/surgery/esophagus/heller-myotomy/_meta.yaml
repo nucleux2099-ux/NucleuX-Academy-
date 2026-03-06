@@ -1,0 +1,51 @@
+title: "Heller Myotomy"
+slug: heller-myotomy
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "achalasia"
+  - "esophageal-anatomy"
+  - "les-physiology"
+  - "esophageal-manometry"
+related_topics:
+  - "poem-procedure"
+  - "achalasia-lhm-vs-poem"
+  - "fundoplication"
+  - "gerd"
+  - "minimally-invasive-surgery"
+  - "motility-disorders"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "achalasia"
+      reason: "Heller myotomy is the definitive surgical treatment for achalasia"
+    - slug: "esophageal-anatomy"
+      reason: "LES anatomy, muscle layers, and GEJ relations — critical for safe myotomy"
+    - slug: "les-physiology"
+      reason: "Understanding LES hypertension and failure of relaxation"
+    - slug: "esophageal-manometry"
+      reason: "Pre-operative manometry confirms diagnosis and guides myotomy length"
+  related_details:
+    - slug: "poem-procedure"
+      reason: "POEM is the competing endoscopic alternative to Heller myotomy"
+      relationship: "clinical"
+    - slug: "achalasia-lhm-vs-poem"
+      reason: "Head-to-head comparison of LHM vs POEM outcomes"
+      relationship: "clinical"
+    - slug: "fundoplication"
+      reason: "Partial fundoplication (Dor/Toupet) added to prevent post-myotomy reflux"
+      relationship: "clinical"
+    - slug: "gerd"
+      reason: "Post-myotomy GERD is the main long-term complication"
+      relationship: "clinical"
+    - slug: "minimally-invasive-surgery"
+      reason: "Laparoscopic approach is standard for Heller myotomy"
+      relationship: "clinical"
+    - slug: "motility-disorders"
+      reason: "Myotomy may be used for other spastic motility disorders"
+      relationship: "clinical"

@@ -1,0 +1,61 @@
+topic_id: apparatus-commonly-equipments-good
+name: Commonly used laboratory apparatus and equipments, good
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI11.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.10
+  domain: P
+  core: true
+  phase: Phase 1
+- code: BI11.12
+  domain: P
+  core: true
+  phase: Phase 1
+- code: BI11.13
+  domain: P
+  core: true
+  phase: Phase 1
+- code: BI11.14
+  domain: P
+  core: true
+  phase: Phase 1
+- code: BI11.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.19
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.22
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: BI11.23
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.24
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI11.7
+  domain: P
+  core: true
+  phase: Phase 1
+- code: BI11.8
+  domain: P
+  core: true
+  phase: Phase 1

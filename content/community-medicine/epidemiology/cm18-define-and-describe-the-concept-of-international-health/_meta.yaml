@@ -1,0 +1,13 @@
+topic_id: cm18-define-and-describe-the-concept-of-international-health
+name: Define and describe the concept of International health
+description: Define and describe the concept of International health — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM18.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM18.2
+  domain: KH
+  core: true
+  phase: Phase 2

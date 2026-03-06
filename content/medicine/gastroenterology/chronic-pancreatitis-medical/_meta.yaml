@@ -1,0 +1,19 @@
+title: "Chronic Pancreatitis"
+slug: chronic-pancreatitis-medical
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM5.14"
+prerequisites: []
+related_topics:
+  - "alcoholic-liver-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM5.14"
+      text: "Chronic Pancreatitis — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "alcoholic-liver-disease"
+      reason: "Clinically related"
+      relationship: "clinical"

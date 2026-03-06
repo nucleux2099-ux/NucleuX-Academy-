@@ -1,0 +1,9 @@
+topic_id: components-ecm-extracellular-functions
+name: The functions and components of the extracellular matrix (ECM).
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI9.1
+  domain: KH
+  core: true
+  phase: Phase 1

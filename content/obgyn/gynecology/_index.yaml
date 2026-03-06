@@ -1,0 +1,40 @@
+id: gynecology
+title: "Gynecology"
+subject: obgyn
+description: |
+  Female reproductive disorders and gynecologic surgery.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: menstrual
+    title: "Menstrual Disorders"
+    topics:
+      - amenorrhea
+      - abnormal-uterine-bleeding
+      - dysmenorrhea
+      - premenstrual-syndrome
+      - menopause
+  - id: infection
+    title: "Infections"
+    topics:
+      - pelvic-inflammatory-disease
+      - vulvovaginal-candidiasis
+      - bacterial-vaginosis
+      - sexually-transmitted-infections-gyn
+  - id: surgery
+    title: "Gynecologic Surgery"
+    topics:
+      - hysterectomy
+      - laparoscopy-gyn
+      - hysteroscopy
+      - dilation-curettage
+      - endometrial-ablation
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

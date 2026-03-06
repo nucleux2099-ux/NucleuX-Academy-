@@ -1,0 +1,19 @@
+title: "Non-Invasive Ventilation"
+slug: non-invasive-ventilation
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.14"
+prerequisites: []
+related_topics:
+  - "chest-tube-icu"
+enrichment:
+  nmcCodes:
+    - code: "IM24.14"
+      text: "Non-Invasive Ventilation — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "chest-tube-icu"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,21 @@
+topic_id: etio
+name: And describe the etio-pathogenesis, classify including WHO
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE10.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE10.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE10.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE10.6
+  domain: K
+  core: false
+  phase: Phase 2

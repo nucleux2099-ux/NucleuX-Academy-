@@ -1,0 +1,34 @@
+title: Myocarditis
+slug: myocarditis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM3.1
+  - IM2.16
+prerequisites:
+  - heart-failure
+related_topics:
+  - dilated-cardiomyopathy
+  - pericarditis-acute
+  - heart-failure
+enrichment:
+  nmcCodes:
+    - code: IM3.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocarditis
+      domain: KH
+    - code: IM2.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of myocarditis
+      domain: KH
+  prerequisite_details:
+    - slug: heart-failure
+      reason: Foundation knowledge for myocarditis
+  related_details:
+    - slug: dilated-cardiomyopathy
+      reason: Clinically related to myocarditis
+      relationship: clinical
+    - slug: pericarditis-acute
+      reason: Clinically related to myocarditis
+      relationship: clinical
+    - slug: heart-failure
+      reason: Clinically related to myocarditis
+      relationship: clinical

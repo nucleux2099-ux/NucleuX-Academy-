@@ -1,0 +1,21 @@
+topic_id: de4-discuss-the-prevalence-of-oral-cancer-and-enumerate-the-comm
+name: Discuss the prevalence of oral cancer and enumerate the common
+description: Discuss the prevalence of oral cancer and enumerate the common — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DE4.1
+  domain: K
+  core: false
+  phase: Phase 3
+- code: DE4.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: DE4.3
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: DE4.4
+  domain: SH
+  core: true
+  phase: Phase 3

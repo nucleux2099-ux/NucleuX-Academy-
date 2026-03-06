@@ -1,0 +1,19 @@
+title: "Laboratory Investigations"
+slug: laboratory
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.24"
+prerequisites: []
+related_topics:
+  - "indications-interpret-results-tests"
+enrichment:
+  nmcCodes:
+    - code: "IM26.24"
+      text: "Laboratory Investigations — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "indications-interpret-results-tests"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,63 @@
+id: hematology
+title: "Hematology"
+subject: medicine
+description: |
+  Blood disorders, anemias, leukemias, and coagulation.
+
+stats:
+  total_topics: 34
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: anemia
+    title: "Anemias"
+    topics:
+      - iron-deficiency-anemia
+      - megaloblastic-anemia
+      - hemolytic-anemia-overview
+      - sickle-cell-disease
+      - thalassemia
+      - aplastic-anemia
+      - anemia-of-chronic-disease
+      - g6pd-deficiency
+      - hereditary-spherocytosis
+      - autoimmune-hemolytic-anemia
+  - id: malignancy
+    title: "Hematologic Malignancies"
+    topics:
+      - acute-lymphoblastic-leukemia
+      - acute-myeloid-leukemia
+      - chronic-myeloid-leukemia
+      - chronic-lymphocytic-leukemia
+      - hodgkin-lymphoma
+      - non-hodgkin-lymphoma
+      - multiple-myeloma
+      - myelodysplastic-syndrome
+      - polycythemia-vera
+      - essential-thrombocythemia
+      - myelofibrosis
+  - id: coagulation
+    title: "Coagulation"
+    topics:
+      - dic
+      - hemophilia
+      - von-willebrand-disease
+      - itp
+      - ttp-hus
+      - heparin-induced-thrombocytopenia
+      - antiphospholipid-syndrome
+      - dvt-pe-hematology
+      - warfarin-management
+      - anticoagulation-overview
+  - id: transfusion
+    title: "Transfusion"
+    topics:
+      - blood-component-therapy
+      - transfusion-reactions
+      - massive-transfusion
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

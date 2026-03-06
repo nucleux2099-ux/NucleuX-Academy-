@@ -1,0 +1,33 @@
+title: "Hospital Waste Management"
+slug: hospital-waste-management
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU15.1"
+prerequisites:
+  - "surgical-infections"
+  - "perioperative-management"
+related_topics:
+  - "surgical-ethics"
+  - "burns"
+  - "surgical-audit"
+enrichment:
+  nmcCodes:
+    - code: "SU15.1"
+      text: "Describe classification of hospital waste and appropriate methods of disposal"
+      domain: "K"
+  prerequisite_details:
+    - slug: "surgical-infections"
+      reason: "Improper waste disposal directly increases risk of nosocomial and surgical site infections"
+    - slug: "perioperative-management"
+      reason: "Perioperative protocols include biomedical waste handling standards for sharps, blood products, and disposables"
+  related_details:
+    - slug: "surgical-ethics"
+      reason: "Safe waste disposal is an ethical obligation to healthcare workers and the community"
+      relationship: "foundational"
+    - slug: "burns"
+      reason: "Chemical and thermal waste hazards can cause burns; burn dressings generate biohazardous waste"
+      relationship: "clinical"
+    - slug: "surgical-audit"
+      reason: "Waste management compliance is a key auditable quality indicator in hospitals"
+      relationship: "quality"

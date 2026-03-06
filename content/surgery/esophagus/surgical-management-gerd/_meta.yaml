@@ -1,0 +1,40 @@
+title: "Surgical Management of GERD"
+slug: surgical-management-gerd
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+  - "SU28.5"
+prerequisites:
+  - "gerd"
+  - "esophageal-manometry"
+  - "les-physiology"
+related_topics:
+  - "fundoplication"
+  - "barrett-esophagus"
+  - "esophageal-anatomy"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "gerd"
+      reason: "Must understand GERD pathophysiology, diagnosis, and failed medical therapy criteria before considering surgery"
+    - slug: "esophageal-manometry"
+      reason: "Pre-operative manometry is mandatory to rule out motility disorders and guide choice of fundoplication (Nissen vs Toupet)"
+    - slug: "les-physiology"
+      reason: "Anti-reflux surgery aims to restore LES competence — requires understanding of normal LES mechanics"
+  related_details:
+    - slug: "fundoplication"
+      reason: "Fundoplication (Nissen, Toupet, Dor) is the primary surgical procedure for GERD"
+      relationship: "therapeutic"
+    - slug: "barrett-esophagus"
+      reason: "Barrett's esophagus from chronic GERD is a key indication for considering anti-reflux surgery"
+      relationship: "clinical"
+    - slug: "esophageal-anatomy"
+      reason: "Hiatal dissection and crural repair require detailed knowledge of GEJ and diaphragmatic anatomy"
+      relationship: "anatomical"

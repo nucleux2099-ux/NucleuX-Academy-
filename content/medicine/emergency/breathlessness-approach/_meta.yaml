@@ -1,0 +1,19 @@
+title: "Approach to Breathlessness"
+slug: breathlessness-approach
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.5"
+prerequisites: []
+related_topics:
+  - "chest-pain-approach"
+enrichment:
+  nmcCodes:
+    - code: "IM24.5"
+      text: "Approach to Breathlessness — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "chest-pain-approach"
+      reason: "Clinically related"
+      relationship: "clinical"

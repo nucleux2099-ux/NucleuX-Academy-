@@ -1,0 +1,37 @@
+title: "Esophageal Perforation"
+slug: esophageal-perforation
+depth: "SS"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+  - "SU28.5"
+prerequisites:
+  - "esophageal-anatomy"
+  - "esophageal-manometry"
+related_topics:
+  - "caustic-injury-esophagus"
+  - "esophageal-reconstruction"
+  - "esophageal-cancer"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Lack of serosa and anatomical relations determine perforation sites (Killian's triangle, left posterolateral for Boerhaave's)"
+    - slug: "esophageal-manometry"
+      reason: "Forceful vomiting against a closed glottis (Boerhaave's) involves pressure dynamics assessed by manometry"
+  related_details:
+    - slug: "caustic-injury-esophagus"
+      reason: "Full-thickness caustic burns and post-dilatation perforation are common aetiologies"
+      relationship: "clinical"
+    - slug: "esophageal-reconstruction"
+      reason: "Delayed or extensive perforations may require esophagectomy with reconstruction"
+      relationship: "clinical"
+    - slug: "esophageal-cancer"
+      reason: "Perforation during endoscopic staging or stenting of esophageal cancer is an iatrogenic cause"
+      relationship: "clinical"

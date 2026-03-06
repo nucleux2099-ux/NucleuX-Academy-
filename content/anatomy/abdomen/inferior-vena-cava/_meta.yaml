@@ -1,0 +1,13 @@
+topic_id: inferior-vena-cava
+name: Inferior Vena Cava
+description: Inferior Vena Cava — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN29.4
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN61.2
+  domain: KH
+  core: true
+  phase: Phase 1

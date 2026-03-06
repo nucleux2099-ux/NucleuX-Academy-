@@ -1,0 +1,23 @@
+title: Nephrotic Syndrome
+slug: nephrotic-syndrome
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+prerequisites: []
+related_topics:
+  - glomerulonephritis
+  - diabetic-nephropathy
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of nephrotic syndrome
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: glomerulonephritis
+      reason: Clinically related to nephrotic syndrome
+      relationship: clinical
+    - slug: diabetic-nephropathy
+      reason: Clinically related to nephrotic syndrome
+      relationship: clinical

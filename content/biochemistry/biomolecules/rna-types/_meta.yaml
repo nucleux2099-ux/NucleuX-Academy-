@@ -1,0 +1,9 @@
+topic_id: rna-types
+name: Rna Types
+description: Rna Types — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI7.1
+  domain: KH
+  core: true
+  phase: Phase 1

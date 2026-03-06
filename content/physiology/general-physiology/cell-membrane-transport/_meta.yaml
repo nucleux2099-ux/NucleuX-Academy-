@@ -1,0 +1,21 @@
+topic_id: cell-membrane-transport
+name: Cell Membrane Transport
+description: Cell Membrane Transport — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY1.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY1.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY1.8
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY6.3
+  domain: KH
+  core: true
+  phase: Phase 1

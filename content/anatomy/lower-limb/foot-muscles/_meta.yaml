@@ -1,0 +1,21 @@
+topic_id: foot-muscles
+name: Foot Muscles
+description: Foot Muscles — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN14.4
+  domain: SH
+  core: false
+  phase: Phase 1
+- code: AN18.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN19.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN19.6
+  domain: KH
+  core: false
+  phase: Phase 1

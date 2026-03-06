@@ -1,0 +1,29 @@
+topic_id: illnesses-mental-post-stress
+name: Classify common mental illnesses including post-traumatic stress K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM5.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM5.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM5.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM5.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM5.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM5.6
+  domain: KH
+  core: false
+  phase: Phase 1

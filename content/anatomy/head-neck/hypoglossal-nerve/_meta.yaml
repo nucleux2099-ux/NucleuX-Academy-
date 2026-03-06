@@ -1,0 +1,9 @@
+topic_id: hypoglossal-nerve
+name: Hypoglossal Nerve
+description: Hypoglossal Nerve — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AN39.2
+  domain: KH
+  core: false
+  phase: Phase 1

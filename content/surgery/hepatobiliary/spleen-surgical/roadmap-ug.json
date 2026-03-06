@@ -1,0 +1,42 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Splenic anatomy shares peritoneal ligaments with the left lobe of liver; understanding is needed for splenectomy mobilization",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "portal-hypertension",
+      "nmcCode": "",
+      "reason": "Splenomegaly from portal hypertension is a major indication for splenectomy and causes hypersplenism",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "Hypersplenism secondary to cirrhosis-related portal hypertension impacts platelet counts affecting HCC treatment decisions",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Pigment gallstones from chronic hemolysis in hereditary spherocytosis often necessitate concurrent cholecystectomy with splenectomy",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.11: Describe the applied anatomy of Spleen. Describe the clinical features,"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Spleen — Surgical Conditions across foundational sciences and clinical applications."
+}

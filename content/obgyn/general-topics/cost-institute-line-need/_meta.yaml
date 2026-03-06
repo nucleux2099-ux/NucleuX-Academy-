@@ -1,0 +1,13 @@
+topic_id: cost-institute-line-need
+name: Plan and institute a line of treatment, which is need based, cost
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG36.1
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OG36.3
+  domain: SH
+  core: true
+  phase: Phase 3

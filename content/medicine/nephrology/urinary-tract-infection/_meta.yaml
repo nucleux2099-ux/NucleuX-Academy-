@@ -1,0 +1,29 @@
+title: Urinary Tract Infection
+slug: urinary-tract-infection
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.3
+prerequisites: []
+related_topics:
+  - acute-kidney-injury
+  - urinalysis-interpretation
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of urinary tract
+        infection
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of urinary tract
+        infection
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: acute-kidney-injury
+      reason: Clinically related to urinary tract infection
+      relationship: clinical
+    - slug: urinalysis-interpretation
+      reason: Clinically related to urinary tract infection
+      relationship: clinical

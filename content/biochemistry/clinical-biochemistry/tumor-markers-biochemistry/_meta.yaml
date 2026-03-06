@@ -1,0 +1,9 @@
+topic_id: tumor-markers-biochemistry
+name: Tumor Markers Biochemistry
+description: Tumor Markers Biochemistry — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI10.2
+  domain: KH
+  core: true
+  phase: Phase 1

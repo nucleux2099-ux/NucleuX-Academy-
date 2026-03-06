@@ -1,0 +1,19 @@
+title: "Approach to Etiology of Disease"
+slug: aetiology
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.1"
+prerequisites: []
+related_topics:
+  - "diagnostic-work"
+enrichment:
+  nmcCodes:
+    - code: "IM26.1"
+      text: "Approach to Etiology of Disease — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "diagnostic-work"
+      reason: "Clinically related"
+      relationship: "clinical"

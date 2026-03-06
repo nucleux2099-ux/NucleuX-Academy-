@@ -1,0 +1,11 @@
+title: "Pituitary Disorders"
+slug: pituitary-disorders
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.4"
+prerequisites:
+  - "hypothalamic-pituitary-axis"
+related_topics:
+  - "adrenal-disorders"
+  - "diabetes-insipidus"

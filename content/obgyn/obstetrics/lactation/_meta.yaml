@@ -1,0 +1,9 @@
+topic_id: lactation
+name: Lactation
+description: Lactation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG17.1
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,33 @@
+topic_id: ps11-enumerate-and-describe-the-magnitude-and-etiology-of-persona
+name: Enumerate and describe the magnitude and etiology of personality
+description: Enumerate and describe the magnitude and etiology of personality — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS11.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS11.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS11.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS11.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PS11.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS11.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PS11.7
+  domain: K
+  core: true
+  phase: Phase 2

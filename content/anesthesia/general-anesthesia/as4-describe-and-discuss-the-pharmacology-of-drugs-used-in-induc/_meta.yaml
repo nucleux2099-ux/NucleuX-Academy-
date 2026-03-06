@@ -1,0 +1,33 @@
+topic_id: as4-describe-and-discuss-the-pharmacology-of-drugs-used-in-induc
+name: Describe and discuss the pharmacology of drugs used in induction
+description: Describe and discuss the pharmacology of drugs used in induction — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AS4.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS4.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AS4.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS4.5
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS4.6
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: AS4.7
+  domain: KH
+  core: true
+  phase: Phase 3

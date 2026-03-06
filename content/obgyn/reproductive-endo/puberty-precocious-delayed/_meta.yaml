@@ -1,0 +1,17 @@
+topic_id: puberty-precocious-delayed
+name: Puberty Precocious Delayed
+description: Puberty Precocious Delayed — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG23.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG23.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG23.3
+  domain: K
+  core: false
+  phase: Phase 3

@@ -1,0 +1,19 @@
+title: "Opioid Use Disorder"
+slug: opioid-use-disorder
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM22.5"
+prerequisites: []
+related_topics:
+  - "alcohol-use-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.5"
+      text: "Opioid Use Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "alcohol-use-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,56 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "homeostasis",
+      "nmcCode": "",
+      "reason": "Understanding normal body fluid compartments, osmolality regulation and renal handling of electrolytes is the physiological foundation for fluid therapy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "preoperative-assessment",
+      "nmcCode": "",
+      "reason": "Preoperative fluid status assessment and correction of electrolyte imbalances is essential before any surgical procedure",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Hypovolemic shock results from uncorrected fluid deficits; rational fluid resuscitation requires understanding of crystalloid vs colloid physiology",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "burns",
+      "nmcCode": "",
+      "reason": "Major burns cause massive third-space fluid losses requiring formula-based IV fluid resuscitation (Parkland formula) and electrolyte monitoring",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-nutrition",
+      "nmcCode": "",
+      "reason": "Parenteral nutrition requires careful electrolyte supplementation; refeeding syndrome causes dangerous hypophosphatemia and hypokalemia",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Perioperative fluid management (maintenance, replacement, deficit correction) is a core daily surgical skill",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU12.2: Describe and discuss the methods of estimation and replacement of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Fluid & Electrolyte Balance across foundational sciences and clinical applications."
+}

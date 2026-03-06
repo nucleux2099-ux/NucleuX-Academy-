@@ -1,0 +1,19 @@
+title: "Diagnostic Workup"
+slug: diagnostic-work
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.15"
+prerequisites: []
+related_topics:
+  - "choose-diagnose-diagnostic-interpret"
+enrichment:
+  nmcCodes:
+    - code: "IM26.15"
+      text: "Diagnostic Workup — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "choose-diagnose-diagnostic-interpret"
+      reason: "Clinically related"
+      relationship: "clinical"

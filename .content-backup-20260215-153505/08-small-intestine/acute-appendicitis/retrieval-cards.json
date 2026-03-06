@@ -1,0 +1,205 @@
+{
+  "topic_id": "acute-appendicitis",
+  "version": "1.0",
+  "cards": [
+    {
+      "id": "aa-001",
+      "type": "basic",
+      "front": "What is the most common surgical emergency?",
+      "back": "Acute appendicitis",
+      "tags": ["definition", "high-yield"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-002",
+      "type": "basic",
+      "front": "What is the lifetime risk of developing appendicitis?",
+      "back": "7-8%",
+      "tags": ["epidemiology"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-003",
+      "type": "basic",
+      "front": "What is the most common position of the appendix?",
+      "back": "Retrocaecal (65%)",
+      "tags": ["anatomy", "high-yield"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-004",
+      "type": "basic",
+      "front": "What is the blood supply of the appendix?",
+      "back": "Appendicular artery (branch of ileocolic artery, which is a branch of superior mesenteric artery)",
+      "tags": ["anatomy", "high-yield"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-005",
+      "type": "basic",
+      "front": "Where is McBurney's point located?",
+      "back": "Junction of lateral 1/3 and medial 2/3 of the line joining the anterior superior iliac spine (ASIS) to the umbilicus",
+      "tags": ["clinical", "high-yield", "anatomy"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-006",
+      "type": "basic",
+      "front": "What is pathognomonic for acute appendicitis?",
+      "back": "Migration of pain from periumbilical region to right iliac fossa",
+      "tags": ["clinical", "high-yield", "diagnosis"],
+      "source": "Schwartz Ch 30"
+    },
+    {
+      "id": "aa-007",
+      "type": "basic",
+      "front": "What is Rovsing's sign?",
+      "back": "Pain in the right iliac fossa when pressure is applied to the left iliac fossa (indicates peritoneal irritation)",
+      "tags": ["clinical-signs", "examination"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-008",
+      "type": "basic",
+      "front": "What is the Psoas sign and what does it indicate?",
+      "back": "Pain on extension of the right hip. Indicates retrocaecal appendicitis (appendix lying on psoas muscle)",
+      "tags": ["clinical-signs", "examination", "high-yield"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-009",
+      "type": "basic",
+      "front": "What is the Obturator sign?",
+      "back": "Pain on internal rotation of the flexed right hip. Indicates pelvic appendicitis",
+      "tags": ["clinical-signs", "examination"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-010",
+      "type": "cloze",
+      "text": "The ALVARADO score uses the mnemonic {{MANTRELS}} and has a maximum score of {{10}}",
+      "tags": ["scoring", "high-yield"],
+      "source": "Original paper: Alvarado 1986"
+    },
+    {
+      "id": "aa-011",
+      "type": "basic",
+      "front": "What does MANTRELS stand for in Alvarado score?",
+      "back": "M - Migration of pain\\nA - Anorexia\\nN - Nausea/Vomiting\\nT - Tenderness in RIF (2 points)\\nR - Rebound tenderness\\nE - Elevated temperature\\nL - Leukocytosis (2 points)\\nS - Shift to left",
+      "tags": ["scoring", "high-yield", "mnemonic"],
+      "source": "Alvarado 1986"
+    },
+    {
+      "id": "aa-012",
+      "type": "basic",
+      "front": "What Alvarado score indicates high probability of appendicitis requiring surgery?",
+      "back": "Score ≥7",
+      "tags": ["scoring", "high-yield", "management"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-013",
+      "type": "basic",
+      "front": "What is the most common complication of acute appendicitis?",
+      "back": "Perforation (20-30%)",
+      "tags": ["complications", "high-yield"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-014",
+      "type": "basic",
+      "front": "What is an appendicular mass?",
+      "back": "Inflamed appendix walled off by omentum and adjacent loops of bowel, forming a palpable mass in RIF. Usually forms after 48-72 hours of onset",
+      "tags": ["complications", "management"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-015",
+      "type": "basic",
+      "front": "What is the Ochsner-Sherren regimen?",
+      "back": "Conservative management of appendicular mass: NPO, IV fluids, antibiotics, monitoring. If mass resolves, interval appendicectomy at 6-8 weeks",
+      "tags": ["management", "high-yield"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-016",
+      "type": "basic",
+      "front": "When is immediate surgery indicated in appendicular mass?",
+      "back": "Signs of peritonitis, mass increasing in size, sepsis, failure of conservative management",
+      "tags": ["management", "complications"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-017",
+      "type": "basic",
+      "front": "What is the gold standard investigation for appendicitis?",
+      "back": "CT scan of abdomen (sensitivity >95%, specificity >95%)",
+      "tags": ["investigation", "high-yield"],
+      "source": "Schwartz Ch 30"
+    },
+    {
+      "id": "aa-018",
+      "type": "basic",
+      "front": "What is the preferred surgical approach for appendicitis?",
+      "back": "Laparoscopic appendicectomy (less wound infection, faster recovery, better cosmesis)",
+      "tags": ["surgery", "high-yield"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-019",
+      "type": "basic",
+      "front": "What antibiotic regimen is used for complicated appendicitis?",
+      "back": "Ceftriaxone + Metronidazole for 5-7 days (covers gram-negative and anaerobes)",
+      "tags": ["antibiotics", "management"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-020",
+      "type": "basic",
+      "front": "What is the most common surgical emergency in pregnancy?",
+      "back": "Acute appendicitis",
+      "tags": ["special-situations", "high-yield"],
+      "source": "Schwartz Ch 30"
+    },
+    {
+      "id": "aa-021",
+      "type": "basic",
+      "front": "What investigation is preferred for suspected appendicitis in pregnancy?",
+      "back": "USG first, MRI if inconclusive (avoid CT due to radiation)",
+      "tags": ["special-situations", "investigation"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-022",
+      "type": "basic",
+      "front": "Why does pain migrate from periumbilical to RIF in appendicitis?",
+      "back": "Initial visceral pain (from appendix stretching) is referred to T10 dermatome (periumbilical). When inflammation reaches parietal peritoneum, localized somatic pain occurs in RIF",
+      "tags": ["pathophysiology", "high-yield"],
+      "source": "Schwartz Ch 30"
+    },
+    {
+      "id": "aa-023",
+      "type": "basic",
+      "front": "What is the most common cause of appendiceal obstruction?",
+      "back": "Faecolith (fecalite) - hardened fecal matter",
+      "tags": ["pathophysiology"],
+      "source": "Bailey Ch 72"
+    },
+    {
+      "id": "aa-024",
+      "type": "basic",
+      "front": "What is pylephlebitis?",
+      "back": "Suppurative thrombophlebitis of the portal vein - a rare but serious complication of appendicitis",
+      "tags": ["complications"],
+      "source": "Sabiston Ch 51"
+    },
+    {
+      "id": "aa-025",
+      "type": "basic",
+      "front": "What is the incision used for open appendicectomy?",
+      "back": "Gridiron (McBurney's) incision - oblique incision at McBurney's point, muscle-splitting approach",
+      "tags": ["surgery", "technique"],
+      "source": "Bailey Ch 72"
+    }
+  ]
+}

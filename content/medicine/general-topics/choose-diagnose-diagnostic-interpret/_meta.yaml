@@ -1,0 +1,19 @@
+title: "Choosing Diagnostic Tests"
+slug: choose-diagnose-diagnostic-interpret
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.11"
+prerequisites: []
+related_topics:
+  - "diagnostic-work"
+enrichment:
+  nmcCodes:
+    - code: "IM26.11"
+      text: "Choosing Diagnostic Tests — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "diagnostic-work"
+      reason: "Clinically related"
+      relationship: "clinical"

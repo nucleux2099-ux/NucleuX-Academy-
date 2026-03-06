@@ -1,0 +1,29 @@
+topic_id: dorsal-groups-important-muscle
+name: Important muscle groups of dorsal
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN12.11
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.12
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.15
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN12.9
+  domain: SH
+  core: true
+  phase: Phase 1

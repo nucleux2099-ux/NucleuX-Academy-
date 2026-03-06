@@ -1,0 +1,161 @@
+topic_id: antitubercular-drugs
+name: Antitubercular Drugs
+description: First-line and second-line anti-TB drugs — RIPES regimen, mechanisms, toxicity, and MDR-TB management
+high_yield: true
+nmc_codes:
+- code: PH1.46
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Tuberculosis requires prolonged multi-drug therapy to prevent resistance. First-line drugs (RIPES): Rifampicin, Isoniazid,
+  Pyrazinamide, Ethambutol, Streptomycin. The DOTS strategy uses standardized regimens. MDR-TB (resistant to INH + Rifampicin)
+  and XDR-TB require second-line agents.
+  📚 KD Tripathi, 8th Ed, Ch.55 (p.783-800); 📚 Goodman & Gilman's, 14th Ed, Ch.56
+
+learning_objectives:
+  - List first-line anti-TB drugs with mechanisms of action
+  - Describe the side effect profile of each first-line drug
+  - Explain the rationale for multi-drug therapy and DOTS regimen
+  - Define MDR-TB and XDR-TB and their management
+  - Describe INH hepatotoxicity and its mechanism
+
+content:
+  atoms:
+    - id: first-line-atd
+      title: "First-Line Anti-TB Drugs"
+      text: >
+        Isoniazid (INH/H): Most potent bactericidal for actively growing bacilli. Prodrug — activated by KatG (catalase-peroxidase)
+        → inhibits InhA (enoyl-ACP reductase) → blocks mycolic acid synthesis. Penetrates caseous tissue and intracellular bacilli.
+        Toxicity: Hepatotoxicity (most serious — reactive metabolite acetylhydrazine; risk ↑ with age, alcohol, rifampicin),
+        Peripheral neuropathy (↓pyridoxine/B6 — INH inhibits pyridoxal phosphokinase; prevent with B6 supplementation),
+        SLE-like syndrome, Sideroblastic anemia, Seizures (overdose — treat with pyridoxine IV).
+        Acetylation polymorphism: Fast acetylators (short t½, need higher dose) vs Slow acetylators (more toxicity, more neuropathy/SLE).
+        Rifampicin (R): Inhibits bacterial DNA-dependent RNA polymerase → blocks mRNA synthesis. Bactericidal.
+        Most important sterilizing drug (kills semi-dormant bacilli). Colors body fluids ORANGE-RED.
+        MOST POTENT CYP450 inducer → ↓levels of OCP, warfarin, cyclosporine, protease inhibitors, steroids.
+        Toxicity: Hepatotoxicity, flu-like syndrome (intermittent therapy), thrombocytopenia, renal failure.
+        Pyrazinamide (Z): Active in ACIDIC pH (inside macrophages/caseous lesions). Sterilizing drug.
+        Toxicity: Hepatotoxicity (dose-dependent), Hyperuricemia (inhibits uric acid excretion — can precipitate gout),
+        Arthralgia. Most hepatotoxic of the first-line drugs.
+        📚 KD Tripathi, 8th Ed, Ch.55 (p.783-792)
+
+    - id: ethambutol-streptomycin
+      title: "Ethambutol, Streptomycin & Second-Line Drugs"
+      text: >
+        Ethambutol (E): Inhibits arabinosyl transferase → blocks arabinogalactan synthesis (cell wall). BACTERIOSTATIC.
+        Toxicity: Optic neuritis (retrobulbar — loss of red-green color discrimination first, dose-dependent, usually reversible).
+        Monthly visual acuity testing required. Avoid in children <6 (can't report visual symptoms).
+        Streptomycin (S): Aminoglycoside → 30S ribosomal binding. First anti-TB drug discovered. IM only.
+        Toxicity: Ototoxicity (vestibular > cochlear), Nephrotoxicity. Avoid in pregnancy.
+        Second-line drugs: Fluoroquinolones (Levofloxacin, Moxifloxacin — most important 2nd line),
+        Aminoglycosides (Amikacin, Kanamycin), Ethionamide, Cycloserine, PAS, Bedaquiline, Delamanid, Linezolid, Clofazimine.
+        Bedaquiline: inhibits mycobacterial ATP synthase. QT prolongation risk. For MDR-TB.
+        MDR-TB: resistant to INH + Rifampicin. XDR-TB: MDR + resistant to fluoroquinolone + injectable (amikacin/kanamycin).
+        📚 KD Tripathi, 8th Ed, Ch.55 (p.792-800)
+
+    - id: dots-regimen
+      title: "DOTS Regimen & Treatment Principles"
+      text: >
+        RNTCP/NTEP (National TB Elimination Programme) regimen:
+        New cases: 2HRZE/4HRE (Intensive phase 2 months: HRZE daily + Continuation phase 4 months: HRE daily).
+        Previously treated: same + culture/DST to guide therapy.
+        Why multi-drug therapy: Different drugs target different bacterial populations —
+        Rapidly multiplying (cavitary) → INH (most bactericidal), Slow/intermittent growers → Rifampicin (best sterilizer),
+        Acidic pH intracellular → Pyrazinamide, Persisters → Rifampicin.
+        Single-drug therapy → resistance in 1 in 10^6-10^8 bacilli (cavitary lesion has ~10^9 organisms → monotherapy = guaranteed resistance).
+        Prophylaxis: INH alone for 6-9 months for latent TB (positive TST/IGRA, no active disease).
+        📚 KD Tripathi, 8th Ed, Ch.55 (p.796-800)
+
+  clinical:
+    - title: "Clinical Correlation: INH Hepatotoxicity"
+      text: >
+        INH is metabolized by N-acetyltransferase (NAT2) → acetyl-INH → acetylhydrazine (hepatotoxic metabolite).
+        Risk factors: age >35, alcohol use, pre-existing liver disease, concurrent rifampicin (induces INH metabolism →
+        more acetylhydrazine). Monitor LFTs monthly. Stop if ALT >5x ULN or >3x with symptoms.
+    - title: "Clinical Correlation: Rifampicin Drug Interactions"
+      text: >
+        Rifampicin is the most potent CYP450 inducer. Critical interactions: ↓OCP efficacy (unplanned pregnancy — use
+        barrier contraception), ↓warfarin (↑INR monitoring/dose), ↓cyclosporine (graft rejection), ↓protease inhibitors
+        (TB-HIV co-infection — use rifabutin instead, weaker inducer).
+
+  high_yield_points:
+    - "INH: most bactericidal for actively growing TB; activated by KatG, inhibits mycolic acid synthesis"
+    - "INH toxicity: Hepatotoxicity + Peripheral neuropathy (prevent with pyridoxine/B6)"
+    - "Rifampicin: most potent sterilizing drug + most potent CYP450 inducer"
+    - "Rifampicin colors body fluids ORANGE-RED (tears, urine, sweat)"
+    - "Pyrazinamide: works in ACIDIC pH (intracellular/caseous); causes hyperuricemia"
+    - "Ethambutol: optic neuritis (red-green color blindness first) — BACTERIOSTATIC"
+    - "MDR-TB = resistant to INH + Rifampicin; XDR-TB = MDR + FQ + injectable"
+    - "Bedaquiline: ATP synthase inhibitor — newest drug for MDR-TB"
+    - "INH acetylation: slow acetylators → more neuropathy/SLE; fast acetylators → need higher dose"
+    - "New TB regimen: 2HRZE/4HRE (daily doses under NTEP)"
+
+mcqs:
+  - question: "A patient on anti-TB therapy develops peripheral neuropathy. The most likely causative drug and its prevention is:"
+    options:
+      - "Rifampicin — Vitamin K"
+      - "Isoniazid — Pyridoxine (Vitamin B6)"
+      - "Ethambutol — Vitamin A"
+      - "Pyrazinamide — Folic acid"
+    answer: "Isoniazid — Pyridoxine (Vitamin B6)"
+    explanation: >
+      INH inhibits pyridoxal phosphokinase → ↓active pyridoxine → peripheral neuropathy.
+      Prevention: co-administer pyridoxine (B6) 10mg/day. High-risk groups: malnourished, diabetics, HIV, alcoholics, slow acetylators.
+      📚 KD Tripathi, 8th Ed, Ch.55 (p.786)
+    difficulty: 1
+
+  - question: "Ethambutol toxicity manifests as:"
+    options:
+      - "Ototoxicity"
+      - "Optic neuritis with red-green color blindness"
+      - "Peripheral neuropathy"
+      - "Hepatotoxicity"
+    answer: "Optic neuritis with red-green color blindness"
+    explanation: >
+      Ethambutol causes dose-dependent retrobulbar optic neuritis. Earliest sign is loss of red-green color
+      discrimination, followed by decreased visual acuity. Usually reversible if detected early and drug stopped.
+      Monthly visual acuity testing is recommended.
+      📚 KD Tripathi, 8th Ed, Ch.55 (p.793)
+    difficulty: 1
+
+  - question: "MDR-TB is defined as resistance to:"
+    options:
+      - "Isoniazid only"
+      - "Isoniazid + Rifampicin"
+      - "All first-line drugs"
+      - "Isoniazid + Ethambutol"
+    answer: "Isoniazid + Rifampicin"
+    explanation: >
+      MDR-TB is defined as Mycobacterium tuberculosis resistant to at least Isoniazid AND Rifampicin
+      (the two most important first-line drugs). XDR-TB is MDR-TB plus resistance to a fluoroquinolone
+      and at least one injectable agent.
+      📚 KD Tripathi, 8th Ed, Ch.55 (p.798)
+    difficulty: 1
+
+  - question: "Which anti-TB drug is most likely to cause hyperuricemia?"
+    options:
+      - "Isoniazid"
+      - "Rifampicin"
+      - "Pyrazinamide"
+      - "Ethambutol"
+    answer: "Pyrazinamide"
+    explanation: >
+      Pyrazinamide inhibits renal tubular secretion of uric acid → hyperuricemia → may precipitate gout.
+      This is a common and expected side effect. Asymptomatic hyperuricemia does not require treatment cessation.
+      📚 KD Tripathi, 8th Ed, Ch.55 (p.791)
+    difficulty: 1
+
+  - question: "A TB patient on oral contraceptive pills should be counseled about potential OCP failure due to which anti-TB drug?"
+    options:
+      - "Isoniazid"
+      - "Rifampicin"
+      - "Pyrazinamide"
+      - "Ethambutol"
+    answer: "Rifampicin"
+    explanation: >
+      Rifampicin is the most potent CYP450 inducer → increases metabolism of OCPs → reduces estrogen/progestin levels →
+      risk of unplanned pregnancy. Patients must use barrier contraception concurrently.
+      📚 KD Tripathi, 8th Ed, Ch.55 (p.789)
+    difficulty: 1

@@ -1,0 +1,160 @@
+topic_id: kidney-pathology-overview
+name: Kidney Pathology (Nephrotic, Nephritic, RCC)
+description: Glomerular diseases (nephrotic vs nephritic), tubulointerstitial disease, and renal tumors
+high_yield: true
+
+overview: >
+  Kidney pathology centers on glomerular diseases (nephrotic syndrome vs nephritic syndrome), tubulointerstitial
+  diseases, and renal tumors. Understanding the histologic patterns on light microscopy, immunofluorescence,
+  and electron microscopy is key. RCC is the most common renal malignancy in adults.
+  📚 Robbins, 10th Ed, Ch.20 (p.907-960)
+
+learning_objectives:
+  - Differentiate nephrotic from nephritic syndrome
+  - Describe the key glomerular diseases by LM, IF, and EM findings
+  - Explain the pathogenesis of diabetic nephropathy and hypertensive nephrosclerosis
+  - Describe renal cell carcinoma and Wilms tumor
+
+content:
+  atoms:
+    - id: nephrotic-vs-nephritic
+      title: "Nephrotic vs Nephritic Syndrome"
+      text: >
+        Nephrotic: massive proteinuria (>3.5 g/day), hypoalbuminemia, generalized edema, hyperlipidemia, lipiduria,
+        fatty casts. Damage to glomerular CHARGE BARRIER or podocytes.
+        Nephritic: hematuria (RBC casts), oliguria, azotemia, hypertension, mild-moderate proteinuria.
+        Damage to glomerular BASEMENT MEMBRANE → inflammatory cells → proliferation.
+        Some diseases overlap: membranoproliferative GN, lupus nephritis, IgA nephropathy.
+        📚 Robbins, 10th Ed, Ch.20 (p.913-915)
+
+    - id: nephrotic-diseases
+      title: "Key Nephrotic Syndrome Diseases"
+      text: >
+        Minimal Change Disease (MCD): most common nephrotic syndrome in CHILDREN. LM: normal. IF: negative.
+        EM: podocyte foot process effacement. Responds dramatically to steroids. Associated with Hodgkin lymphoma, NSAIDs.
+        Focal Segmental Glomerulosclerosis (FSGS): most common nephrotic syndrome in ADULTS and African Americans.
+        HIV-associated nephropathy (collapsing variant). Secondary to obesity, sickle cell, heroin.
+        Membranous nephropathy: most common nephrotic syndrome in Caucasian ADULTS. LM: thick GBM ("spike and dome" on silver stain).
+        IF: granular IgG + C3. EM: subepithelial deposits. Anti-PLA2R antibodies (70%). Associated with HBV, SLE (class V),
+        malignancy, penicillamine, gold.
+        Diabetic nephropathy: most common cause of ESRD. Kimmelstiel-Wilson nodules (nodular glomerulosclerosis).
+        Amyloidosis: Congo red positive; nephrotic syndrome.
+        📚 Robbins, 10th Ed, Ch.20 (p.916-930)
+
+    - id: nephritic-diseases
+      title: "Key Nephritic Syndrome Diseases"
+      text: >
+        Post-streptococcal GN (PSGN): 2-3 weeks after Group A Strep (pharyngitis/impetigo). Children.
+        LM: hypercellular, neutrophils. IF: granular ("starry sky") IgG/C3. EM: SUBEPITHELIAL humps.
+        ↑ASO, ↓C3. Self-limited in children.
+        IgA nephropathy (Berger disease): MOST COMMON glomerulonephritis WORLDWIDE.
+        Recurrent gross hematuria 1-2 DAYS after URI (synpharyngitic — vs PSGN which is 2-3 weeks AFTER).
+        IF: mesangial IgA deposits. Associated with Henoch-Schönlein purpura (IgA vasculitis).
+        Rapidly progressive (crescentic) GN: crescents (proliferating parietal cells + macrophages) in Bowman's space.
+        Type I: anti-GBM (Goodpasture — linear IF); Type II: immune complex (SLE, PSGN); Type III: pauci-immune (ANCA+: GPA, MPA).
+        Alport syndrome: defective type IV collagen (X-linked); hematuria + sensorineural deafness + ocular abnormalities;
+        EM: basket-weave GBM.
+        📚 Robbins, 10th Ed, Ch.20 (p.930-942)
+
+    - id: renal-tumors
+      title: "Renal Tumors"
+      text: >
+        Renal Cell Carcinoma (RCC): most common renal malignancy in adults; clear cell type most common (70%).
+        Associated with VHL gene (chr 3p) — VHL syndrome (bilateral RCC + hemangioblastoma + pheochromocytoma).
+        Classic triad (only 10%): hematuria + flank mass + flank pain. Spreads via renal vein → IVC (can extend to right atrium).
+        Paraneoplastic: erythrocytosis (EPO), hypercalcemia (PTHrP), Stauffer syndrome (hepatic dysfunction without metastasis).
+        Wilms tumor (nephroblastoma): most common renal malignancy in CHILDREN (2-5 years).
+        Associated with WAGR (WT1 deletion 11p13) — Wilms, Aniridia, GU anomalies, mental Retardation.
+        Histology: triphasic — blastema + stroma + epithelium.
+        Angiomyolipoma: benign, associated with tuberous sclerosis; blood vessels + smooth muscle + fat.
+        📚 Robbins, 10th Ed, Ch.20 (p.952-960)
+
+  clinical:
+    - title: "Diabetic Nephropathy"
+      text: >
+        Most common cause of ESRD in developed countries. Progression: hyperfiltration → microalbuminuria →
+        overt proteinuria → nephrotic syndrome → ESRD. Kimmelstiel-Wilson nodules (nodular glomerulosclerosis)
+        are pathognomonic. ACE inhibitors/ARBs slow progression (reduce glomerular pressure).
+
+  high_yield_points:
+    - "Minimal change disease = most common nephrotic in CHILDREN; normal LM; foot process effacement on EM; steroid-responsive"
+    - "FSGS = most common nephrotic in ADULTS and African Americans; HIV-associated nephropathy"
+    - "Membranous nephropathy = thick GBM, subepithelial deposits ('spike and dome'); anti-PLA2R antibodies"
+    - "IgA nephropathy = most common GN worldwide; hematuria 1-2 DAYS after URI (synpharyngitic)"
+    - "PSGN: hematuria 2-3 WEEKS after strep; subepithelial humps on EM; ↓C3"
+    - "Goodpasture: anti-GBM → LINEAR IF; lungs + kidneys; young males"
+    - "Diabetic nephropathy: Kimmelstiel-Wilson nodules; most common cause of ESRD"
+    - "RCC: clear cell type, VHL gene (3p); renal vein invasion; erythrocytosis, hypercalcemia"
+    - "Wilms tumor: children; WAGR syndrome (WT1, 11p13); triphasic histology"
+    - "Alport syndrome: type IV collagen defect; basket-weave GBM on EM; hematuria + deafness"
+
+mcqs:
+  - question: "A 5-year-old child develops periorbital edema and frothy urine. Urine shows 4+ protein and no RBCs. Serum albumin is 1.8 g/dL. Kidney biopsy shows normal light microscopy. EM shows foot process effacement. The diagnosis is:"
+    options:
+      - "FSGS"
+      - "Minimal change disease"
+      - "Membranous nephropathy"
+      - "IgA nephropathy"
+    answer: "Minimal change disease"
+    explanation: >
+      Child with nephrotic syndrome + normal LM + negative IF + podocyte foot process effacement on EM = minimal change
+      disease (the most common cause of nephrotic syndrome in children). Responds dramatically to corticosteroids.
+      FSGS would show sclerosis in some glomeruli. Membranous has thick GBM.
+      📚 Robbins, 10th Ed, Ch.20 (p.917)
+    difficulty: 1
+
+  - question: "A 20-year-old man develops gross hematuria and sore throat simultaneously. Renal biopsy shows mesangial IgA deposits on immunofluorescence. The most likely diagnosis is:"
+    options:
+      - "Post-streptococcal GN"
+      - "IgA nephropathy"
+      - "Goodpasture syndrome"
+      - "Lupus nephritis"
+    answer: "IgA nephropathy"
+    explanation: >
+      Gross hematuria SIMULTANEOUS with URI (synpharyngitic, 1-2 days) + mesangial IgA deposits = IgA nephropathy
+      (Berger disease), the most common GN worldwide. PSGN occurs 2-3 WEEKS after strep infection and shows
+      subepithelial humps, not mesangial IgA. This timing difference is a classic NEET-PG question.
+      📚 Robbins, 10th Ed, Ch.20 (p.933)
+    difficulty: 2
+
+  - question: "A young man presents with hemoptysis and rapidly progressive renal failure. Renal biopsy shows crescents in >50% of glomeruli and LINEAR IgG deposits along the GBM on immunofluorescence. The diagnosis is:"
+    options:
+      - "IgA nephropathy"
+      - "Goodpasture syndrome"
+      - "Granulomatosis with polyangiitis (Wegener)"
+      - "Lupus nephritis"
+    answer: "Goodpasture syndrome"
+    explanation: >
+      Hemoptysis + rapidly progressive GN + LINEAR IgG deposits on IF = Goodpasture syndrome (anti-GBM disease,
+      Type II hypersensitivity). Anti-GBM antibodies attack type IV collagen in glomerular and pulmonary basement
+      membranes. Crescents indicate RPGN. GPA would be pauci-immune (negative IF). SLE shows granular deposits.
+      📚 Robbins, 10th Ed, Ch.20 (p.937)
+    difficulty: 2
+
+  - question: "A 60-year-old smoker presents with painless hematuria, flank mass, and polycythemia. CT shows a renal mass with extension into the renal vein. The most likely diagnosis is:"
+    options:
+      - "Wilms tumor"
+      - "Renal cell carcinoma"
+      - "Transitional cell carcinoma"
+      - "Angiomyolipoma"
+    answer: "Renal cell carcinoma"
+    explanation: >
+      Older adult + hematuria + flank mass + polycythemia (ectopic EPO) + renal vein invasion = classic RCC.
+      Clear cell type is most common and associated with VHL gene deletion (3p). RCC characteristically invades
+      the renal vein and can extend into IVC. Wilms tumor is in children. TCC involves renal pelvis.
+      📚 Robbins, 10th Ed, Ch.20 (p.953)
+    difficulty: 1
+
+  - question: "A child with aniridia, genitourinary anomalies, and mental retardation develops an abdominal mass. The genetic locus involved is:"
+    options:
+      - "VHL (3p)"
+      - "WT1 (11p13)"
+      - "RB (13q)"
+      - "APC (5q)"
+    answer: "WT1 (11p13)"
+    explanation: >
+      WAGR syndrome = Wilms tumor + Aniridia + Genitourinary anomalies + mental Retardation. Caused by deletion
+      of WT1 gene at chromosome 11p13. Wilms tumor is the most common renal malignancy in children (2-5 years),
+      with triphasic histology (blastema, stroma, epithelium). VHL is associated with adult RCC.
+      📚 Robbins, 10th Ed, Ch.20 (p.955)
+    difficulty: 1

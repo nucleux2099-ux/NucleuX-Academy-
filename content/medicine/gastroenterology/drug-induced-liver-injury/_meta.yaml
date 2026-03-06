@@ -1,0 +1,22 @@
+title: "Drug-Induced Liver Injury"
+slug: drug-induced-liver-injury
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.11"
+prerequisites:
+  - "acute-liver-failure"
+related_topics:
+  - "liver-cirrhosis"
+enrichment:
+  nmcCodes:
+    - code: "IM5.11"
+      text: "Drug-Induced Liver Injury — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "acute-liver-failure"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "liver-cirrhosis"
+      reason: "Clinically related"
+      relationship: "clinical"

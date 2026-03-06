@@ -1,0 +1,9 @@
+topic_id: hyperemia-congestion
+name: Hyperemia Congestion
+description: Hyperemia Congestion — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA6.2
+  domain: KH
+  core: true
+  phase: Phase 1

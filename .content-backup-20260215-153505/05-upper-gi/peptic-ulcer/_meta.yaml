@@ -1,0 +1,11 @@
+topic_id: peptic-ulcer
+system: 05-upper-gi
+name: "Peptic Ulcer Disease"
+nmc_competency: "SU28.7"
+sources:
+  primary:
+    bailey: "Ch 62"
+    sabiston: "Ch 49"
+tags: [common, high-yield]
+difficulty: medium
+priority: high

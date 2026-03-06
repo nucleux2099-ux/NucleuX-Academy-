@@ -1,0 +1,63 @@
+id: dermatology
+title: "Dermatology"
+subject: medicine
+description: |
+  Skin diseases, infections, and dermatologic manifestations.
+
+stats:
+  total_topics: 31
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: infection
+    title: "Skin Infections"
+    topics:
+      - fungal-skin-infections
+      - bacterial-skin-infections
+      - viral-skin-infections
+      - scabies
+      - leprosy
+      - cutaneous-tb
+  - id: inflammatory
+    title: "Inflammatory"
+    topics:
+      - psoriasis
+      - eczema-dermatitis
+      - urticaria
+      - lichen-planus
+      - pemphigus
+      - bullous-pemphigoid
+      - erythema-multiforme
+      - stevens-johnson-syndrome
+  - id: autoimmune
+    title: "Autoimmune & Pigment"
+    topics:
+      - vitiligo
+      - alopecia-areata
+      - lupus-skin
+      - dermatomyositis-skin
+      - scleroderma-skin
+      - morphea
+  - id: tumors
+    title: "Skin Tumors"
+    topics:
+      - melanoma
+      - basal-cell-carcinoma
+      - squamous-cell-carcinoma-skin
+      - kaposi-sarcoma
+      - mycosis-fungoides
+  - id: other
+    title: "Other"
+    topics:
+      - acne-vulgaris
+      - rosacea
+      - drug-eruptions
+      - photodermatoses
+      - nail-disorders
+      - hair-disorders
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

@@ -1,0 +1,22 @@
+title: "Falls in the Elderly"
+slug: falls-in-elderly
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM23.2"
+prerequisites:
+  - "geriatric-assessment"
+related_topics:
+  - "osteoporosis-geriatric"
+enrichment:
+  nmcCodes:
+    - code: "IM23.2"
+      text: "Falls in the Elderly — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "geriatric-assessment"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "osteoporosis-geriatric"
+      reason: "Clinically related"
+      relationship: "clinical"

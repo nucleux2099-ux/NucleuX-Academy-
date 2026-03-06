@@ -1,0 +1,179 @@
+topic_id: ecg-basics
+name: ECG Basics & Interpretation
+description: ECG Basics & Interpretation — Lead systems, normal ECG waves, intervals, and common abnormalities
+high_yield: true
+nmc_codes:
+- code: PY5.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.11
+  domain: SH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The electrocardiogram (ECG) records electrical activity of the heart from the body surface.
+  Standard 12-lead ECG uses limb leads (I, II, III, aVR, aVL, aVF) and precordial leads (V1-V6).
+  Each wave represents specific phases of cardiac electrical activity: P wave (atrial depolarization),
+  QRS complex (ventricular depolarization), T wave (ventricular repolarization).
+  📚 Guyton & Hall, 14th Ed, Ch.11-13 (p.131-162) / 📚 Ganong's, 26th Ed, Ch.29
+
+learning_objectives:
+  - Describe Einthoven's triangle and the 12-lead ECG system
+  - Identify normal ECG waves, segments, and intervals with their durations
+  - Calculate heart rate and determine cardiac axis from ECG
+  - Recognize ECG patterns of common arrhythmias, MI, and conduction blocks
+  - Correlate ECG changes with electrolyte abnormalities
+
+content:
+  atoms:
+    - id: ecg-lead-system
+      title: "ECG Lead System"
+      text: >
+        Einthoven's triangle: Lead I (RA→LA), Lead II (RA→LL), Lead III (LA→LL). Bipolar limb leads.
+        Augmented leads: aVR, aVL, aVF — unipolar, reference is Wilson's central terminal.
+        Precordial leads V1-V6: unipolar chest leads. V1 (4th ICS right sternal border) → V6 (mid-axillary line).
+        Lead II: best for rhythm analysis (P wave most visible). V1: best for differentiating SVT vs VT.
+        Normal cardiac axis: -30° to +90°. Lead I positive + aVF positive = normal axis.
+        Left axis deviation: -30° to -90° (Lead I+, aVF-). Right axis deviation: +90° to +180° (Lead I-, aVF+).
+        📚 Guyton & Hall, 14th Ed, Ch.11 (p.131-138)
+
+    - id: ecg-waves-intervals
+      title: "ECG Waves, Intervals, and Segments"
+      text: >
+        P wave: atrial depolarization. Duration <0.12s (3 small squares), amplitude <2.5 mm.
+        PR interval: onset of P to onset of QRS. Normal 0.12-0.20s (3-5 small squares).
+        Prolonged PR = first-degree AV block. Short PR = WPW syndrome or junctional rhythm.
+        QRS complex: ventricular depolarization. Normal <0.12s (3 small squares). Wide QRS = bundle branch block or VT.
+        ST segment: isoelectric, between QRS end and T wave onset. Elevation = MI/pericarditis. Depression = ischemia.
+        T wave: ventricular repolarization. Normally upright in I, II, V3-V6.
+        QT interval: onset of QRS to end of T wave. Corrected QTc (Bazett's) = QT/√RR. Normal QTc <0.44s.
+        Prolonged QT → risk of Torsades de Pointes.
+        📚 Guyton & Hall, 14th Ed, Ch.11 (p.138-142)
+
+    - id: ecg-rate-axis
+      title: "Heart Rate and Axis Calculation"
+      text: >
+        Heart rate (regular rhythm): 300/number of large squares between two R waves.
+        Sequence method: 300, 150, 100, 75, 60, 50 for 1, 2, 3, 4, 5, 6 large squares.
+        Irregular rhythm: count R waves in 6 seconds (30 large squares) × 10.
+        Axis determination: Quick method — Lead I and aVF.
+        Both positive = normal axis. Lead I+, aVF- = left axis. Lead I-, aVF+ = right axis.
+        Left axis: LAFB, inferior MI. Right axis: LPFB, RVH, PE, COPD.
+        📚 Ganong's, 26th Ed, Ch.29
+
+    - id: ecg-conduction-blocks
+      title: "Bundle Branch Blocks"
+      text: >
+        RBBB: QRS >0.12s, rsR' (M-shaped) in V1-V2, wide S in I and V6. "MaRRoW" (M in V1-R, W in V5-6).
+        Causes: RV strain, PE, ASD, normal variant.
+        LBBB: QRS >0.12s, broad R in I, aVL, V5-V6, rS in V1. "WiLLiaM" (W in V1, M in V6).
+        LBBB is ALWAYS pathologic. Causes: IHD, HTN, cardiomyopathy.
+        LBBB causes paradoxical splitting of S2 (delayed LV activation → A2 delayed).
+        New LBBB + chest pain = STEMI equivalent (Sgarbossa criteria).
+        📚 Guyton & Hall, 14th Ed, Ch.12 (p.147-150)
+
+    - id: ecg-electrolytes
+      title: "ECG Changes with Electrolyte Abnormalities"
+      text: >
+        Hyperkalemia (progressive): Peaked T waves → widened QRS → loss of P waves → sine wave → VF/asystole.
+        Hypokalemia: Flattened T waves, U waves, ST depression, prolonged QT.
+        Hypercalcemia: Shortened QT interval (shortened ST segment).
+        Hypocalcemia: Prolonged QT interval (prolonged ST segment).
+        Digitalis effect: Reverse tick/Salvador Dali mustache ST depression, shortened QT.
+        Digitalis toxicity: any arrhythmia, classically bidirectional VT, PAT with block.
+        📚 Guyton & Hall, 14th Ed, Ch.13 (p.155-160)
+
+  clinical:
+    - title: "Clinical Correlation: STEMI ECG Patterns"
+      text: >
+        Anterior MI (LAD): ST elevation V1-V4. Lateral MI (LCx): ST elevation I, aVL, V5-V6.
+        Inferior MI (RCA): ST elevation II, III, aVF. Posterior MI: ST depression V1-V3 (mirror image),
+        tall R waves in V1-V2. Right ventricular MI: ST elevation V4R.
+    - title: "Clinical Correlation: WPW Syndrome"
+      text: >
+        Pre-excitation via accessory pathway (Bundle of Kent): Short PR (<0.12s), delta wave (slurred QRS upstroke),
+        wide QRS. Risk of rapid AF conducting down accessory pathway → VF. Avoid AV nodal blockers (digoxin,
+        verapamil, adenosine) in AF with WPW.
+
+  high_yield_points:
+    - "PR interval normal = 0.12-0.20s; prolonged = 1st degree AV block; short = WPW"
+    - "QRS <0.12s = normal; >0.12s = BBB or ventricular origin"
+    - "RBBB = rsR' in V1 (MaRRoW); LBBB = broad R in V6 (WiLLiaM)"
+    - "LBBB is ALWAYS pathologic; RBBB can be normal variant"
+    - "Hyperkalemia: peaked T → wide QRS → no P → sine wave → death"
+    - "Hypercalcemia = short QT; Hypocalcemia = long QT"
+    - "Normal axis: Lead I (+) and aVF (+)"
+    - "New LBBB + chest pain = STEMI equivalent"
+    - "QTc prolongation → Torsades de Pointes risk"
+    - "Lead II = best for rhythm; V1 = best for BBB and SVT vs VT differentiation"
+
+mcqs:
+  - question: "A patient's ECG shows absent P waves, irregularly irregular rhythm, and normal QRS complexes. The diagnosis is:"
+    options:
+      - "Atrial flutter"
+      - "Atrial fibrillation"
+      - "Complete heart block"
+      - "Ventricular tachycardia"
+    answer: "Atrial fibrillation"
+    explanation: >
+      Atrial fibrillation is characterized by absent P waves (replaced by fibrillatory baseline), irregularly
+      irregular RR intervals, and normal narrow QRS complexes (unless pre-existing BBB). Atrial flutter shows
+      sawtooth flutter waves. Complete heart block shows regular but dissociated P waves and QRS.
+      📚 Guyton & Hall, 14th Ed, Ch.13
+    difficulty: 1
+
+  - question: "An ECG shows peaked T waves, widened QRS, and absent P waves. The most likely electrolyte abnormality is:"
+    options:
+      - "Hypocalcemia"
+      - "Hyperkalemia"
+      - "Hypokalemia"
+      - "Hypomagnesemia"
+    answer: "Hyperkalemia"
+    explanation: >
+      Progressive hyperkalemia produces: peaked T waves (K+ 6-7) → widened QRS and flattened P waves (K+ 7-8) →
+      loss of P waves → sine wave pattern → VF/asystole. This is a medical emergency requiring emergent
+      treatment with calcium gluconate, insulin/glucose, and dialysis.
+      📚 Guyton & Hall, 14th Ed, Ch.13 (p.157)
+    difficulty: 1
+
+  - question: "rsR' pattern in V1 with wide QRS (>0.12s) and wide S wave in Lead I indicates:"
+    options:
+      - "Left bundle branch block"
+      - "Right bundle branch block"
+      - "Left anterior fascicular block"
+      - "WPW syndrome"
+    answer: "Right bundle branch block"
+    explanation: >
+      RBBB shows rsR' (M-shaped) pattern in V1-V2 and wide slurred S wave in lateral leads (I, V6) with QRS >0.12s.
+      Remember "MaRRoW" — M in V1 (right), W in V6 (left). LBBB shows the opposite: W in V1, M in V6 ("WiLLiaM").
+      📚 Guyton & Hall, 14th Ed, Ch.12 (p.148)
+    difficulty: 1
+
+  - question: "Which ECG finding is associated with hypocalcemia?"
+    options:
+      - "Shortened QT interval"
+      - "Prolonged QT interval"
+      - "Peaked T waves"
+      - "U waves"
+    answer: "Prolonged QT interval"
+    explanation: >
+      Hypocalcemia prolongs the QT interval by lengthening the ST segment (Phase 2 of cardiac AP depends on Ca2+).
+      Hypercalcemia shortens QT. Peaked T waves = hyperkalemia. U waves = hypokalemia.
+      📚 Guyton & Hall, 14th Ed, Ch.13
+    difficulty: 1
+
+  - question: "A young patient with recurrent palpitations has ECG showing short PR interval and delta wave. Which drug is CONTRAINDICATED if this patient develops atrial fibrillation?"
+    options:
+      - "Procainamide"
+      - "Amiodarone"
+      - "Verapamil"
+      - "Flecainide"
+    answer: "Verapamil"
+    explanation: >
+      WPW with atrial fibrillation: AV nodal blockers (verapamil, diltiazem, digoxin, adenosine) are
+      contraindicated because blocking the AV node forces conduction down the accessory pathway, which has
+      no decremental conduction → rapid ventricular rate → VF. Procainamide or amiodarone are preferred.
+      📚 Ganong's, 26th Ed, Ch.29
+    difficulty: 2

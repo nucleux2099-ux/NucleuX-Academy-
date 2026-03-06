@@ -1,0 +1,45 @@
+title: "Liver Anatomy"
+slug: liver-anatomy
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.10"
+  - "AN55.2"
+  - "PY4.7"
+prerequisites:
+  - "homeostasis"
+  - "fluid-electrolytes"
+related_topics:
+  - "liver-abscess"
+  - "hepatocellular-carcinoma"
+  - "portal-hypertension"
+  - "obstructive-jaundice"
+enrichment:
+  nmcCodes:
+    - code: "SU28.10"
+      text: "Describe the applied anatomy of liver. Describe the Clinical features, Investigations and principles of management of Liver abscess, hydatid disease, Injuries and Tumors of the liver."
+      domain: "KH"
+    - code: "AN55.2"
+      text: "Demonstrate the surface projections of: Stomach, Liver, Fundus of gall bladder, Spleen, Duodenum, Pancreas, Ileocaecal junction, Kidneys & Root of mesentery"
+      domain: "SH"
+    - code: "PY4.7"
+      text: "Describe & discuss the structure and functions of liver and gall bladder"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "homeostasis"
+      reason: "Liver is central to metabolic homeostasis — understanding fluid/metabolic balance provides foundation"
+    - slug: "fluid-electrolytes"
+      reason: "Liver regulates albumin synthesis affecting fluid balance; portal circulation affects electrolyte handling"
+  related_details:
+    - slug: "liver-abscess"
+      reason: "Segmental anatomy determines the approach to percutaneous or surgical drainage of hepatic abscesses"
+      relationship: "clinical"
+    - slug: "hepatocellular-carcinoma"
+      reason: "Couinaud segmental anatomy is the basis for planning hepatic resections in HCC"
+      relationship: "clinical"
+    - slug: "portal-hypertension"
+      reason: "Portal venous anatomy and hepatic sinusoidal structure underpin portal hypertension pathophysiology"
+      relationship: "clinical"
+    - slug: "obstructive-jaundice"
+      reason: "Biliary anatomy — intrahepatic ducts, confluence, CBD — is the basis for understanding obstructive jaundice"
+      relationship: "clinical"

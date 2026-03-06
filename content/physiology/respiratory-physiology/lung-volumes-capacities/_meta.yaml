@@ -1,0 +1,181 @@
+topic_id: respiratory-physiology
+name: Respiratory Physiology (Volumes, Capacities, Gas Exchange)
+description: Respiratory Physiology — Lung volumes, capacities, spirometry, dead space, and gas exchange mechanisms
+high_yield: true
+nmc_codes:
+- code: PY6.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY6.3
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  Respiratory physiology encompasses ventilation, gas exchange, and transport. Lung volumes (TV, IRV, ERV, RV)
+  and capacities (IC, FRC, VC, TLC) are measured by spirometry and body plethysmography. Gas exchange occurs
+  across the alveolar-capillary membrane by diffusion (Fick's law). V/Q matching determines efficiency of
+  gas exchange. Understanding these concepts is essential for interpreting PFTs and managing respiratory disease.
+  📚 Guyton & Hall, 14th Ed, Ch.38-40 (p.497-530) / 📚 Ganong's, 26th Ed, Ch.34-36
+
+learning_objectives:
+  - Define the four lung volumes and four lung capacities
+  - Explain spirometry and identify volumes that cannot be measured by spirometry
+  - Describe anatomical and physiological dead space and their clinical significance
+  - Explain Fick's law of diffusion and factors affecting gas exchange
+  - Define V/Q ratio and describe its variation from apex to base of lung
+
+content:
+  atoms:
+    - id: lung-volumes
+      title: "Lung Volumes and Capacities"
+      text: >
+        VOLUMES (4, non-overlapping): Tidal Volume (TV) = 500 mL; Inspiratory Reserve Volume (IRV) = 3000 mL;
+        Expiratory Reserve Volume (ERV) = 1100 mL; Residual Volume (RV) = 1200 mL.
+        CAPACITIES (4, sum of 2+ volumes): Inspiratory Capacity (IC) = TV + IRV = 3500 mL;
+        Functional Residual Capacity (FRC) = ERV + RV = 2300 mL;
+        Vital Capacity (VC) = TV + IRV + ERV = 4600 mL;
+        Total Lung Capacity (TLC) = VC + RV = 5800 mL.
+        RV, FRC, and TLC CANNOT be measured by spirometry (contain RV). Measured by helium dilution,
+        nitrogen washout, or body plethysmography.
+        📚 Guyton & Hall, 14th Ed, Ch.38 (p.497-500)
+
+    - id: dead-space
+      title: "Dead Space"
+      text: >
+        Anatomical dead space: conducting airways (nose → terminal bronchioles) ≈ 150 mL. No gas exchange.
+        Physiological dead space = anatomical + alveolar dead space (ventilated but not perfused alveoli).
+        In healthy person, physiological ≈ anatomical dead space.
+        Bohr equation: VD/VT = (PaCO2 - PECO2)/PaCO2. Normal VD/VT ≈ 0.3 (30%).
+        Alveolar ventilation = (TV - VD) × RR = (500 - 150) × 12 = 4200 mL/min.
+        Conditions increasing dead space: PE (zone 1 ventilation), COPD, positive pressure ventilation.
+        📚 Ganong's, 26th Ed, Ch.34
+
+    - id: gas-exchange
+      title: "Gas Exchange — Fick's Law of Diffusion"
+      text: >
+        Fick's law: Diffusion rate ∝ (Area × Solubility × ΔP) / (Thickness × √MW).
+        Alveolar surface area ≈ 70 m². Alveolar-capillary membrane thickness ≈ 0.5 μm.
+        CO2 diffuses 20x faster than O2 (higher solubility despite larger MW).
+        O2 is perfusion-limited (normally); CO is diffusion-limited (used for DLCO testing).
+        DLCO decreased in: emphysema (↓area), fibrosis (↑thickness), anemia (↓Hb).
+        DLCO increased in: polycythemia, exercise (↑capillary recruitment), alveolar hemorrhage (↑Hb in alveoli).
+        Alveolar gas equation: PAO2 = FiO2(PB - PH2O) - PaCO2/R = 0.21(760-47) - 40/0.8 = 100 mmHg.
+        📚 Guyton & Hall, 14th Ed, Ch.40 (p.517-524)
+
+    - id: vq-mismatch
+      title: "Ventilation-Perfusion (V/Q) Ratio"
+      text: >
+        Normal overall V/Q ≈ 0.8 (alveolar ventilation 4L/min, cardiac output 5L/min).
+        V/Q varies from apex to base of upright lung:
+        Apex: V/Q ≈ 3 (high V, low Q) — relative "dead space." PO2 highest here. TB preferentially affects apex.
+        Base: V/Q ≈ 0.6 (low V, high Q) — relative "shunt."
+        V/Q = 0: shunt (perfused, not ventilated) — PaO2 ↓, does NOT correct with 100% O2.
+        V/Q = ∞: dead space (ventilated, not perfused) — wasted ventilation.
+        Hypoxic pulmonary vasoconstriction: low alveolar PO2 → local vasoconstriction → diverts blood to
+        better-ventilated areas. Unique to pulmonary circulation (systemic vessels dilate with hypoxia).
+        📚 Guyton & Hall, 14th Ed, Ch.40 (p.524-530)
+
+    - id: spirometry-patterns
+      title: "Spirometry: Obstructive vs Restrictive"
+      text: >
+        Obstructive (asthma, COPD): FEV1 ↓↓, FVC ↓ or normal, FEV1/FVC <0.7. TLC ↑ (air trapping), RV ↑.
+        Restrictive (fibrosis, kyphoscoliosis): FEV1 ↓, FVC ↓↓, FEV1/FVC normal or ↑ (>0.7). TLC ↓, RV ↓.
+        FEV1: volume expired in first second of forced expiration. Normal ≈ 80% of FVC.
+        Peak Expiratory Flow Rate (PEFR): effort-dependent, used for asthma monitoring.
+        Flow-volume loop: obstructive = scooped out expiratory limb; restrictive = normal shape but reduced.
+        📚 Ganong's, 26th Ed, Ch.34
+
+  clinical:
+    - title: "Clinical Correlation: DLCO in Disease"
+      text: >
+        DLCO is the most sensitive test for early interstitial lung disease. Decreased DLCO with normal
+        spirometry may be the first sign of pulmonary fibrosis or emphysema. Isolated decreased DLCO with
+        otherwise normal PFTs: consider pulmonary vascular disease (pulmonary HTN, PE).
+    - title: "Clinical Correlation: A-a Gradient"
+      text: >
+        A-a gradient = PAO2 - PaO2. Normal = 5-15 mmHg (increases with age: expected = age/4 + 4).
+        Normal A-a gradient: hypoventilation, high altitude. Increased A-a gradient: V/Q mismatch, shunt,
+        diffusion impairment. Shunt does NOT correct with 100% O2; V/Q mismatch partially corrects.
+
+  high_yield_points:
+    - "RV, FRC, TLC CANNOT be measured by spirometry — need body plethysmography"
+    - "FRC = lung volume at end of normal expiration (equilibrium between lung elastic recoil and chest wall expansion)"
+    - "Physiological dead space = anatomical + alveolar dead space (Bohr equation)"
+    - "CO2 diffuses 20x faster than O2 (higher solubility despite higher MW)"
+    - "DLCO uses CO because it is DIFFUSION-LIMITED (not perfusion-limited like O2)"
+    - "V/Q highest at apex (≈3); lowest at base (≈0.6) — TB affects apex (high PO2)"
+    - "Shunt (V/Q=0) does NOT correct with 100% O2; dead space (V/Q=∞) = wasted ventilation"
+    - "Hypoxic pulmonary vasoconstriction is UNIQUE to pulmonary circulation"
+    - "Obstructive: FEV1/FVC <0.7, TLC ↑; Restrictive: FEV1/FVC normal/↑, TLC ↓"
+    - "Alveolar gas equation: PAO2 = FiO2(PB-47) - PaCO2/R"
+
+mcqs:
+  - question: "Which of the following lung volumes CANNOT be measured by simple spirometry?"
+    options:
+      - "Tidal volume"
+      - "Inspiratory reserve volume"
+      - "Residual volume"
+      - "Expiratory reserve volume"
+    answer: "Residual volume"
+    explanation: >
+      Residual volume is the air remaining in lungs after maximal expiration — it cannot be exhaled and therefore
+      cannot be measured by spirometry. It requires helium dilution, nitrogen washout, or body plethysmography.
+      Consequently, FRC and TLC (which contain RV) also cannot be measured by spirometry.
+      📚 Guyton & Hall, 14th Ed, Ch.38 (p.499)
+    difficulty: 1
+
+  - question: "A patient's arterial blood gas shows PaO2 55 mmHg. After breathing 100% O2, PaO2 rises to only 65 mmHg. This suggests:"
+    options:
+      - "V/Q mismatch"
+      - "Right-to-left shunt"
+      - "Hypoventilation"
+      - "Diffusion impairment"
+    answer: "Right-to-left shunt"
+    explanation: >
+      Shunt (V/Q = 0) blood bypasses ventilated alveoli and does not contact inhaled O2, so supplemental O2
+      has minimal effect. V/Q mismatch and diffusion impairment respond partially to 100% O2.
+      Hypoventilation responds well to supplemental O2.
+      📚 Guyton & Hall, 14th Ed, Ch.40 (p.528)
+    difficulty: 2
+
+  - question: "In an upright lung, tuberculosis preferentially affects the apex because:"
+    options:
+      - "Blood flow is highest at the apex"
+      - "Ventilation is lowest at the apex"
+      - "PO2 is highest at the apex due to high V/Q ratio"
+      - "Lymphatic drainage is poor at the apex"
+    answer: "PO2 is highest at the apex due to high V/Q ratio"
+    explanation: >
+      The apex has high V/Q ratio (≈3) → high alveolar PO2 → favorable environment for the obligate aerobe
+      Mycobacterium tuberculosis. The base has lower V/Q and lower PO2.
+      📚 Ganong's, 26th Ed, Ch.34
+    difficulty: 2
+
+  - question: "DLCO is INCREASED in which of the following conditions?"
+    options:
+      - "Emphysema"
+      - "Pulmonary fibrosis"
+      - "Pulmonary hemorrhage"
+      - "Anemia"
+    answer: "Pulmonary hemorrhage"
+    explanation: >
+      In pulmonary hemorrhage (e.g., Goodpasture syndrome), hemoglobin in alveoli absorbs CO, falsely
+      increasing DLCO. Emphysema (↓surface area), fibrosis (↑thickness), and anemia (↓Hb) all decrease DLCO.
+      📚 Ganong's, 26th Ed, Ch.34
+    difficulty: 2
+
+  - question: "Functional Residual Capacity (FRC) is the sum of:"
+    options:
+      - "Tidal volume + Inspiratory reserve volume"
+      - "Expiratory reserve volume + Residual volume"
+      - "Tidal volume + Expiratory reserve volume"
+      - "Inspiratory reserve volume + Tidal volume + Expiratory reserve volume"
+    answer: "Expiratory reserve volume + Residual volume"
+    explanation: >
+      FRC = ERV + RV. It represents the volume of air in the lungs at the end of normal passive expiration,
+      where the inward recoil of the lung equals the outward recoil of the chest wall. FRC is the lung's
+      resting volume and serves as an oxygen reserve between breaths.
+      📚 Guyton & Hall, 14th Ed, Ch.38 (p.498)
+    difficulty: 1

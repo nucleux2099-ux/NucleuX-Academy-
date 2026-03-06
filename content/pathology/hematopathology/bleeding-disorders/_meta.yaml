@@ -1,0 +1,156 @@
+topic_id: bleeding-disorders
+name: Bleeding Disorders
+description: Platelet disorders, coagulation factor deficiencies, and DIC
+high_yield: true
+
+overview: >
+  Bleeding disorders result from defects in platelets (number/function), coagulation factors, or blood vessels.
+  Platelet disorders cause mucocutaneous bleeding (petechiae, purpura); coagulation factor disorders cause
+  deep tissue/joint bleeding (hemarthrosis). DIC is a consumptive coagulopathy that is heavily tested.
+  📚 Robbins, 10th Ed, Ch.14 (p.670-690)
+
+learning_objectives:
+  - Differentiate platelet disorders from coagulation factor disorders clinically
+  - Describe ITP, TTP, HUS, and DIC
+  - Explain the coagulation cascade and interpret PT/aPTT
+  - Describe hemophilia A and B and von Willebrand disease
+
+content:
+  atoms:
+    - id: platelet-vs-coagulation
+      title: "Platelet vs Coagulation Defects"
+      text: >
+        Platelet defects (primary hemostasis): petechiae, purpura, mucosal bleeding (epistaxis, gingival, GI, menorrhagia),
+        prolonged bleeding time, immediate bleeding after injury.
+        Coagulation defects (secondary hemostasis): hemarthrosis, deep tissue hematomas, delayed bleeding after injury,
+        prolonged PT/aPTT.
+        PT tests EXTRINSIC pathway (VII) + common (X, V, II, fibrinogen); aPTT tests INTRINSIC (XII, XI, IX, VIII) + common.
+        📚 Robbins, 10th Ed, Ch.14 (p.670-672)
+
+    - id: platelet-disorders
+      title: "Key Platelet Disorders"
+      text: >
+        ITP (Immune Thrombocytopenic Purpura): anti-platelet antibodies (anti-GPIIb/IIIa); children (post-viral, self-limited)
+        vs adults (chronic, F>M). Isolated thrombocytopenia, normal PT/aPTT, increased megakaryocytes in marrow.
+        TTP: ADAMTS13 deficiency → uncleaved vWF multimers → platelet microthrombi.
+        Pentad: thrombocytopenia, MAHA (schistocytes), neurological symptoms, renal failure, fever.
+        HUS: Shiga toxin (E. coli O157:H7) → endothelial damage → microthrombi; triad: MAHA + renal failure + thrombocytopenia.
+        HUS predominantly affects children; renal failure is MORE prominent (vs TTP = neuro more prominent).
+        Bernard-Soulier: ↓GPIb → defective platelet adhesion; large platelets.
+        Glanzmann thrombasthenia: ↓GPIIb/IIIa → defective platelet aggregation; normal platelet count + size.
+        📚 Robbins, 10th Ed, Ch.14 (p.672-680)
+
+    - id: coagulation-disorders
+      title: "Coagulation Factor Disorders"
+      text: >
+        Hemophilia A: Factor VIII deficiency (X-linked recessive); most common severe coagulation disorder.
+        Prolonged aPTT, normal PT, normal bleeding time. Hemarthrosis is hallmark.
+        Hemophilia B: Factor IX deficiency (Christmas disease); clinically identical to A.
+        von Willebrand Disease: most common INHERITED bleeding disorder overall (autosomal dominant).
+        vWF functions: platelet adhesion to endothelium (via GPIb) + carrier/stabilizer of Factor VIII.
+        Type 1 (most common, 70%): partial quantitative decrease; mild.
+        Type 2: qualitative defect. Type 3: severe quantitative (AR); resembles hemophilia.
+        Lab: ↑bleeding time, ↑aPTT (↓VIII), ↓ristocetin cofactor activity.
+        📚 Robbins, 10th Ed, Ch.14 (p.680-686)
+
+    - id: dic
+      title: "Disseminated Intravascular Coagulation (DIC)"
+      text: >
+        DIC = widespread activation of coagulation → consumption of platelets + clotting factors → simultaneous
+        thrombosis AND bleeding. It is ALWAYS secondary to an underlying condition.
+        Causes: obstetric complications (abruptio placentae, amniotic fluid embolism), sepsis (gram-negative),
+        malignancy (APL, mucin-secreting adenocarcinomas), massive trauma, snake bites.
+        Lab: ↓platelets, ↑PT, ↑aPTT, ↓fibrinogen, ↑D-dimer (BEST test for DIC), ↑FDP, schistocytes on smear.
+        Acute DIC: bleeding predominates. Chronic DIC (e.g., Trousseau syndrome in cancer): thrombosis predominates.
+        📚 Robbins, 10th Ed, Ch.14 (p.686-690)
+
+  clinical:
+    - title: "Trousseau Syndrome"
+      text: >
+        Migratory superficial thrombophlebitis associated with visceral malignancy (especially pancreatic adenocarcinoma).
+        Represents chronic/compensated DIC. Mucin-secreting adenocarcinomas produce tissue factor and mucin that
+        activate coagulation.
+
+  high_yield_points:
+    - "Platelet defects = petechiae, mucosal bleeding; Coagulation defects = hemarthrosis, deep hematomas"
+    - "ITP: isolated thrombocytopenia + normal PT/aPTT + increased megakaryocytes in marrow"
+    - "TTP pentad: thrombocytopenia, MAHA, neuro symptoms, renal failure, fever (ADAMTS13 deficiency)"
+    - "HUS triad in children: MAHA + renal failure + thrombocytopenia (E. coli O157:H7)"
+    - "DO NOT give platelets in TTP (worsens microthrombi); treat with plasmapheresis"
+    - "von Willebrand disease = most common inherited bleeding disorder (AD); ↑BT + ↑aPTT + ↓ristocetin activity"
+    - "Hemophilia A (VIII) and B (IX): ↑aPTT, normal PT, normal BT; X-linked recessive; hemarthrosis"
+    - "DIC: ↑D-dimer (best test), ↓fibrinogen, ↓platelets, ↑PT, ↑aPTT, schistocytes"
+    - "DIC is always secondary; most common obstetric cause = abruptio placentae"
+    - "Bernard-Soulier = defective GPIb (adhesion); Glanzmann = defective GPIIb/IIIa (aggregation)"
+
+mcqs:
+  - question: "A 5-year-old boy presents with hemarthrosis of the knee after minor trauma. His aPTT is prolonged but PT and bleeding time are normal. The most likely diagnosis is:"
+    options:
+      - "von Willebrand disease"
+      - "Hemophilia A"
+      - "ITP"
+      - "DIC"
+    answer: "Hemophilia A"
+    explanation: >
+      Hemarthrosis with isolated prolonged aPTT (normal PT, normal BT) in a young boy = hemophilia A (Factor VIII
+      deficiency, X-linked recessive). vWD would also show prolonged BT and ↓ristocetin activity. ITP has
+      thrombocytopenia + mucosal bleeding, not hemarthrosis. DIC would have abnormal PT, aPTT, and platelets.
+      📚 Robbins, 10th Ed, Ch.14 (p.681)
+    difficulty: 1
+
+  - question: "A woman develops massive bleeding after abruptio placentae. Lab: platelets 40,000, PT 22 sec, aPTT 55 sec, fibrinogen 80 mg/dL, D-dimer markedly elevated. Peripheral smear shows schistocytes. The diagnosis is:"
+    options:
+      - "ITP"
+      - "TTP"
+      - "DIC"
+      - "Hemophilia A"
+    answer: "DIC"
+    explanation: >
+      DIC = consumptive coagulopathy: ↓platelets + ↑PT + ↑aPTT + ↓fibrinogen + ↑↑D-dimer + schistocytes,
+      triggered by obstetric complication (abruptio placentae). ITP has isolated thrombocytopenia with normal
+      coagulation. TTP has ADAMTS13 deficiency and neuro symptoms. The combination of ALL abnormal values + D-dimer
+      elevation is classic DIC.
+      📚 Robbins, 10th Ed, Ch.14 (p.687)
+    difficulty: 2
+
+  - question: "A woman with easy bruising and menorrhagia has a bleeding time of 12 min (prolonged), aPTT 45 sec (prolonged), and ristocetin cofactor activity of 20% (low). Platelet count is normal. The most likely diagnosis is:"
+    options:
+      - "Hemophilia A"
+      - "von Willebrand disease"
+      - "Bernard-Soulier syndrome"
+      - "Glanzmann thrombasthenia"
+    answer: "von Willebrand disease"
+    explanation: >
+      vWD: prolonged BT (platelet adhesion defect due to ↓vWF-GPIb interaction) + prolonged aPTT (vWF carries/stabilizes
+      Factor VIII) + ↓ristocetin cofactor activity (ristocetin requires vWF for platelet agglutination).
+      Normal platelet count. Hemophilia A has normal BT. Bernard-Soulier has large platelets + ↓count.
+      📚 Robbins, 10th Ed, Ch.14 (p.683)
+    difficulty: 2
+
+  - question: "A child develops bloody diarrhea followed by acute renal failure, hemolytic anemia, and thrombocytopenia. Peripheral smear shows schistocytes. The most likely causative organism is:"
+    options:
+      - "Staphylococcus aureus"
+      - "Escherichia coli O157:H7"
+      - "Neisseria meningitidis"
+      - "Streptococcus pneumoniae"
+    answer: "Escherichia coli O157:H7"
+    explanation: >
+      This is classic HUS (hemolytic uremic syndrome) — the triad of MAHA + thrombocytopenia + acute renal failure
+      following bloody diarrhea. E. coli O157:H7 produces Shiga-like toxin that damages endothelial cells,
+      particularly in glomeruli. HUS is the most common cause of acute renal failure in children.
+      📚 Robbins, 10th Ed, Ch.14 (p.678)
+    difficulty: 1
+
+  - question: "Which of the following is the BEST screening test for DIC?"
+    options:
+      - "Prothrombin time (PT)"
+      - "Bleeding time"
+      - "D-dimer"
+      - "Platelet count"
+    answer: "D-dimer"
+    explanation: >
+      D-dimer is the BEST test for DIC. It is a fibrin degradation product formed when cross-linked fibrin is broken
+      down by plasmin. Elevated D-dimer confirms that both coagulation and fibrinolysis are activated simultaneously,
+      which is the hallmark of DIC. PT and platelet count are abnormal in DIC but are less specific.
+      📚 Robbins, 10th Ed, Ch.14 (p.688)
+    difficulty: 1

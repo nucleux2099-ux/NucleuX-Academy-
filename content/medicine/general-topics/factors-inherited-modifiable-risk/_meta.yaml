@@ -1,0 +1,19 @@
+title: "Inherited and Modifiable Risk Factors"
+slug: factors-inherited-modifiable-risk
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.20"
+prerequisites: []
+related_topics:
+  - "cad-factors-relationship-risk"
+enrichment:
+  nmcCodes:
+    - code: "IM26.20"
+      text: "Inherited and Modifiable Risk Factors — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "cad-factors-relationship-risk"
+      reason: "Clinically related"
+      relationship: "clinical"

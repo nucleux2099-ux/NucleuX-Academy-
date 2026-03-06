@@ -1,0 +1,9 @@
+topic_id: dna-repair-mechanisms
+name: Dna Repair Mechanisms
+description: Dna Repair Mechanisms — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI7.2
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,72 @@
+# Introduction - 30-Day Plan
+## Accessing your 30-day planner
+
+Open our guided planning form [here](https://learning.icanstudy.com/30-day-plan) and fill it in as you learn about each section in the upcoming lessons. You may return to this stage and use this form for future planning as many times as you like!
+
+Key principles
+
+1. Don’t confuse intention setting with goal setting. Goals involve plans.
+2. SMART goal setting is a good starting point but isn’t enough to optimise success.
+
+> [!transcript]- Transcript
+> So what we're going to do now is start creating our perfect plan.
+>
+> Now planning is obviously very important but what we found is that a lot of people no matter what age and stage they're at don't plan very effectively.
+>
+> You may have heard of smart goal-setting, specific, measurable, attainable or achievable, realistic, measurable, time bound and these are good basic guidelines to follow if you're completely new with goal-setting but I've often found in my personal and professional experience working with a variety of people that this isn't really enough to help someone lock in a high propensity plan and when I say high propensity plan what I'm talking about here is a plan that is optimized for success.
+>
+> That has the highest chance of success.
+>
+> A lot of people instead of creating a plan or instead of doing proper goal-setting they actually just do intention-setting and they are two completely different things.
+>
+> One of them is a lot less effective than the other.
+>
+> Intention-setting would involve simply saying I want to achieve this thing and let's just try to do it.
+>
+> Most people don't have goals they have intentions.
+>
+> And intentions make you feel good because they're new or maybe novel or you feel like you're really committed and you can make a poster out of it and stick it on your wall to remind yourself.
+>
+> It can help with motivation, things like that.
+>
+> However, it doesn't actually mean that you're going to necessarily achieve your goal.
+>
+> You can want something as much as you want but it doesn't actually mean that you're going to get the outcome that you wanted.
+>
+> So when we ask them what their goal is they may have a goal of achieving the top 1% grade in their cohort.
+>
+> When we ask them well what's your plan of achieving that it's often just I'm going to study really hard and then I'm going to try my best.
+>
+> And then if we asked well what are you going to actually do when you are trying your best?
+>
+> What will you be trying your best with?
+>
+> It's often met with a question.
+>
+> It's kind of a blank face and they've never really thought about this before.
+>
+> The concept of actually thinking about the actual tasks, actionables, things that will turn that intention into something in reality is often not thought through because it's much more difficult and much more complex to think through.
+>
+> It can feel overwhelming at first.
+>
+> Even for professionals and you would think that someone that is much older and more mature would be better at this but actually it's pretty much the same thing.
+>
+> It's not.
+>
+> Someone may say that they are wanting to do really well in a job interview or get into a certain particular profession or be promoted or whatever it is that they want to achieve and it's mostly just intentions.
+>
+> There are some very very loose action plans in place but they haven't really been evaluated to see is that the best course of action compared to the alternatives is it actually what's going to produce the right result.
+>
+> And so the way that we go through our goal setting is very strategic and systematic.
+>
+> You can not only do it in a very strategic way but you can also do it in a very strategic way.
+>
+> You can not only go through this now to see how you can make the most out of the opportunity that you've got now with this course and the program but you can also come back to this in the future.
+>
+> Anytime that you have a goal that you want to achieve that you feel is complicated or maybe overwhelming and you're not sure exactly how you want to get there but it's important enough that you want to set aside some time to make sure that you can really hit that goal.
+>
+> You can come back, go through this again, make a new plan and use this as a template for you to work off of in the future.
+>
+> So without any further ado let's get into the first few stages.
+>
+> Thank you.

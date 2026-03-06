@@ -1,0 +1,12 @@
+id: diagnostic-radiology
+title: "Diagnostic Radiology"
+subject: radiology
+description: |
+  Imaging modalities and interpretation.
+stats:
+  total_topics: 2
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

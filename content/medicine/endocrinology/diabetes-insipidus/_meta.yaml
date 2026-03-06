@@ -1,0 +1,10 @@
+title: "Diabetes Insipidus"
+slug: diabetes-insipidus
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.3"
+prerequisites:
+  - "pituitary-disorders"
+related_topics:
+  - "calcium-disorders"

@@ -1,0 +1,21 @@
+topic_id: borders-location-parts-relations
+name: '& demonstrate location, parts, borders, surfaces, relations &'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN35.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN35.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN35.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN35.6
+  domain: SH
+  core: true
+  phase: Phase 1

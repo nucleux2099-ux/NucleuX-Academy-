@@ -1,0 +1,25 @@
+topic_id: ps2-define-stress-and-describe-its-components-and-causes
+name: Define stress and describe its components and causes
+description: Define stress and describe its components and causes — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS2.1
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PS2.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS2.3
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PS2.4
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PS2.5
+  domain: K
+  core: true
+  phase: Phase 2

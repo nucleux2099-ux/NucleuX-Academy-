@@ -1,0 +1,9 @@
+topic_id: gastric-motility
+name: Gastric Motility
+description: Gastric Motility — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY4.8
+  domain: KH
+  core: true
+  phase: Phase 1

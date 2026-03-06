@@ -1,0 +1,19 @@
+title: "Inflammatory Bowel Disease"
+slug: inflammatory-bowel-disease
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.4"
+prerequisites: []
+related_topics:
+  - "lower-gi-bleeding-medical"
+enrichment:
+  nmcCodes:
+    - code: "IM5.4"
+      text: "Inflammatory Bowel Disease — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "lower-gi-bleeding-medical"
+      reason: "Clinically related"
+      relationship: "clinical"

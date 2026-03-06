@@ -1,0 +1,46 @@
+title: Mitral Stenosis
+slug: mitral-stenosis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.1
+  - IM1.5
+  - IM1.7
+  - IM1.9
+prerequisites:
+  - valvular-heart-disease
+related_topics:
+  - atrial-fibrillation
+  - heart-failure
+  - endocarditis
+  - pulmonary-hypertension
+enrichment:
+  nmcCodes:
+    - code: IM1.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of mitral stenosis
+      domain: KH
+    - code: IM1.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of mitral stenosis
+      domain: KH
+    - code: IM1.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of mitral stenosis
+      domain: KH
+    - code: IM1.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of mitral stenosis
+      domain: KH
+  prerequisite_details:
+    - slug: valvular-heart-disease
+      reason: Foundation knowledge for mitral stenosis
+  related_details:
+    - slug: atrial-fibrillation
+      reason: Clinically related to mitral stenosis
+      relationship: clinical
+    - slug: heart-failure
+      reason: Clinically related to mitral stenosis
+      relationship: clinical
+    - slug: endocarditis
+      reason: Clinically related to mitral stenosis
+      relationship: clinical
+    - slug: pulmonary-hypertension
+      reason: Clinically related to mitral stenosis
+      relationship: clinical

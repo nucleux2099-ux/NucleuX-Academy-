@@ -1,0 +1,23 @@
+title: "Comprehensive Geriatric Assessment"
+slug: geriatric-assessment
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM23.3"
+prerequisites: []
+related_topics:
+  - "delirium-geriatric"
+  - "falls-in-elderly"
+enrichment:
+  nmcCodes:
+    - code: "IM23.3"
+      text: "Comprehensive Geriatric Assessment — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "delirium-geriatric"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "falls-in-elderly"
+      reason: "Clinically related"
+      relationship: "clinical"

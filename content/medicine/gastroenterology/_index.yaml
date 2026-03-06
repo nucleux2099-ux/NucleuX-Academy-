@@ -1,0 +1,65 @@
+id: gastroenterology
+title: "Gastroenterology"
+subject: medicine
+description: |
+  GI disorders, liver diseases, and digestive physiology.
+
+stats:
+  total_topics: 33
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: esophagus
+    title: "Esophagus & Stomach"
+    topics:
+      - gerd-medical
+      - peptic-ulcer-disease-medical
+      - h-pylori-management
+      - dyspepsia
+      - gastroparesis-medical
+      - eosinophilic-esophagitis
+  - id: liver
+    title: "Liver Disease"
+    topics:
+      - liver-cirrhosis
+      - hepatitis-b
+      - hepatitis-c
+      - alcoholic-liver-disease
+      - nafld-nash
+      - autoimmune-hepatitis
+      - wilson-disease
+      - hemochromatosis
+      - drug-induced-liver-injury
+      - acute-liver-failure
+      - hepatorenal-syndrome
+  - id: ibd
+    title: "IBD & Intestinal"
+    topics:
+      - inflammatory-bowel-disease
+      - ulcerative-colitis-medical
+      - crohns-disease-medical
+      - irritable-bowel-syndrome
+      - celiac-disease
+      - microscopic-colitis
+      - intestinal-tuberculosis
+  - id: pancreas
+    title: "Pancreas"
+    topics:
+      - acute-pancreatitis-medical
+      - chronic-pancreatitis-medical
+      - pancreatic-cancer-medical
+      - autoimmune-pancreatitis
+  - id: gi-bleeding
+    title: "GI Bleeding & Other"
+    topics:
+      - upper-gi-bleeding-medical
+      - lower-gi-bleeding-medical
+      - gi-malabsorption
+      - small-bowel-bacterial-overgrowth
+      - gi-motility-disorders
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

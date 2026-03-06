@@ -1,0 +1,15 @@
+title: "Heavy Metal Poisoning"
+slug: heavy-metal-poisoning
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.28"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM24.28"
+      text: "Heavy Metal Poisoning — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

@@ -1,0 +1,9 @@
+topic_id: fetal-wellbeing-monitoring
+name: Fetal Wellbeing Monitoring
+description: Fetal Wellbeing Monitoring — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG8.4
+  domain: SH
+  core: true
+  phase: Phase 3

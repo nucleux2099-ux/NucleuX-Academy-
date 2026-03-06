@@ -1,0 +1,9 @@
+topic_id: acute-diarrhea-peds
+name: Acute Diarrhea Peds
+description: Acute Diarrhea Peds — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PE29.8
+  domain: KH
+  core: false
+  phase: Phase 2

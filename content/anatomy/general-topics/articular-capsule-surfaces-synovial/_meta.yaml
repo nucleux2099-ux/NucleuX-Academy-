@@ -1,0 +1,9 @@
+topic_id: articular-capsule-surfaces-synovial
+name: '& describe the type, articular surfaces, capsule, synovial'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN13.3
+  domain: SH
+  core: true
+  phase: Phase 1

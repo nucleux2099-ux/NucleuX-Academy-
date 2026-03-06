@@ -1,0 +1,11 @@
+title: "Obesity (Medical Management)"
+slug: obesity-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.1"
+prerequisites:
+  - "metabolic-syndrome"
+related_topics:
+  - "diabetes-mellitus-type-2"
+  - "pcos"

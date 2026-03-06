@@ -1,0 +1,25 @@
+topic_id: de5-enumerate-the-parts-of-the-tooth-and-supporting-structures
+name: Enumerate the parts of the tooth and supporting structures
+description: Enumerate the parts of the tooth and supporting structures — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: DE5.1
+  domain: K
+  core: false
+  phase: Phase 1
+- code: DE5.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: DE5.3
+  domain: SH
+  core: false
+  phase: Phase 3
+- code: DE5.4
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: DE5.5
+  domain: SH
+  core: true
+  phase: Phase 3

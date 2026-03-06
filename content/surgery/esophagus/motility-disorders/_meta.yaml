@@ -1,0 +1,40 @@
+title: "Motility Disorders"
+slug: motility-disorders
+depth: "SS"
+highYield: false
+nmc_codes:
+  - "SU28.6"
+  - "SU28.5"
+prerequisites:
+  - "esophageal-anatomy"
+  - "les-physiology"
+  - "esophageal-manometry"
+related_topics:
+  - "achalasia"
+  - "dysphagia"
+  - "gerd"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Understanding esophageal muscle layers (striated vs smooth) is key to localizing motility disorders"
+    - slug: "les-physiology"
+      reason: "Many motility disorders involve LES dysfunction — hypertensive or hypotensive LES patterns"
+    - slug: "esophageal-manometry"
+      reason: "High-resolution manometry with Chicago classification is the diagnostic standard for all esophageal motility disorders"
+  related_details:
+    - slug: "achalasia"
+      reason: "Achalasia is the most common and clinically significant esophageal motility disorder"
+      relationship: "clinical"
+    - slug: "dysphagia"
+      reason: "Dysphagia is the cardinal presenting symptom of esophageal motility disorders"
+      relationship: "clinical"
+    - slug: "gerd"
+      reason: "Ineffective esophageal motility is a common finding in GERD and affects surgical planning"
+      relationship: "clinical"

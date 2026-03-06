@@ -1,0 +1,38 @@
+id: gram-negative-bacteria
+title: "Gram-Negative Bacteria"
+subject: microbiology
+description: |
+  Enterobacteriaceae, Pseudomonas, and other GN organisms.
+
+stats:
+  total_topics: 18
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - escherichia-coli
+      - klebsiella
+      - salmonella
+      - shigella
+      - proteus
+      - pseudomonas-aeruginosa
+      - acinetobacter
+      - neisseria-meningitidis
+      - neisseria-gonorrhoeae
+      - haemophilus-influenzae
+      - bordetella-pertussis
+      - brucella
+      - vibrio-cholerae
+      - campylobacter
+      - helicobacter-pylori-micro
+      - legionella
+      - yersinia
+      - bacteroides
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

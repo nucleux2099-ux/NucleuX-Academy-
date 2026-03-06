@@ -1,0 +1,119 @@
+{
+  "id": "anatomy-head-neck",
+  "title": "Head & Neck Anatomy Mastery", 
+  "phase": "Phase-1",
+  "subject": "Anatomy",
+  "description": "Detailed study of head and neck anatomy including skull, brain, cranial nerves, facial structures, neck triangles, and specialized sensory organs for ENT and neurology foundations.",
+  "competencies": ["AN5.1", "AN5.2", "AN5.3", "AN5.4", "AN5.5", "AN5.6"],
+  "prerequisites": ["anatomy-general"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Skull & Cranial Cavity",
+      "libraryTopic": "head-neck-anatomy", 
+      "sections": ["skull-bones", "cranial-cavity", "foramina", "sutures"],
+      "duration": "65min",
+      "xp": 30
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Skull Osteology Quiz",
+      "mcqCount": 15,
+      "passingScore": 70,
+      "xp": 35,
+      "competency": "AN5.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Brain & Meninges",
+      "libraryTopic": "head-neck-anatomy",
+      "sections": ["cerebrum", "cerebellum", "brainstem", "meninges", "ventricular-system"],
+      "duration": "80min",
+      "xp": 40
+    },
+    {
+      "order": 4,
+      "type": "reading",
+      "title": "Cranial Nerves",
+      "libraryTopic": "head-neck-anatomy",
+      "sections": ["cn-overview", "cn-motor", "cn-sensory", "cn-mixed", "cn-testing"],
+      "duration": "90min",
+      "xp": 45
+    },
+    {
+      "order": 5,
+      "type": "quiz",
+      "title": "Cranial Nerves Assessment",
+      "mcqCount": 25,
+      "passingScore": 75,
+      "xp": 55,
+      "competency": "AN5.2"
+    },
+    {
+      "order": 6,
+      "type": "reading",
+      "title": "Facial Structures & Orbit",
+      "libraryTopic": "head-neck-anatomy",
+      "sections": ["facial-muscles", "orbital-anatomy", "paranasal-sinuses", "temporomandibular-joint"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 7,
+      "type": "skill",
+      "title": "Cranial Nerve Examination",
+      "competency": "AN5.3",
+      "xp": 60,
+      "duration": "45min"
+    },
+    {
+      "order": 8,
+      "type": "reading",
+      "title": "Neck Triangles & Fascial Spaces",
+      "libraryTopic": "head-neck-anatomy",
+      "sections": ["anterior-triangle", "posterior-triangle", "deep-cervical-fascia", "neck-muscles"],
+      "duration": "75min",
+      "xp": 38
+    },
+    {
+      "order": 9,
+      "type": "reading",
+      "title": "Special Sensory Organs",
+      "libraryTopic": "head-neck-anatomy",
+      "sections": ["eye-anatomy", "ear-anatomy", "nose-anatomy", "tongue-taste"],
+      "duration": "85min",
+      "xp": 42
+    },
+    {
+      "order": 10,
+      "type": "quiz",
+      "title": "Neck & Sensory Organs Quiz",
+      "mcqCount": 20,
+      "passingScore": 75,
+      "xp": 45,
+      "competency": "AN5.4"
+    },
+    {
+      "order": 11,
+      "type": "case",
+      "title": "Head & Neck Clinical Applications",
+      "competency": "AN5.5",
+      "xp": 65,
+      "duration": "50min"
+    }
+  ],
+  "totalXP": 490,
+  "estimatedTime": "9 hours",
+  "unlocks": ["neurology-fundamentals", "ent-anatomy", "ophthalmology-basics"],
+  "textbooks": [
+    {"title": "Gray's Anatomy", "chapters": ["Head and Neck"], "edition": "41st"},
+    {"title": "Netter Atlas of Human Anatomy", "chapters": ["Head and Neck"], "edition": "7th"},
+    {"title": "Snell's Clinical Anatomy", "chapters": ["Head and Neck"], "edition": "10th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical", "procedures"],
+  "difficulty": 5,
+  "lastUpdated": "2024-02-08"
+}

@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Couinaud segmental anatomy is the basis for assessing resectability and planning hepatectomy for metastatic disease",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "Distinguishing primary HCC from metastatic disease is fundamental; imaging characteristics, AFP levels, and biopsy differentiate them",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "liver-abscess",
+      "nmcCode": "",
+      "reason": "Necrotic liver metastases can mimic abscess on imaging; clinical context and tumor markers help differentiate",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Hilar metastases or extensive hepatic replacement causes obstructive or hepatocellular jaundice indicating advanced disease",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "portal-hypertension",
+      "nmcCode": "",
+      "reason": "Extensive metastatic infiltration can cause sinusoidal portal hypertension and its sequelae",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-transplant-indications",
+      "nmcCode": "",
+      "reason": "Select patients with unresectable colorectal liver metastases are now candidates for transplant in emerging protocols",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.10: Describe the applied anatomy of liver. Describe the Clinical features,",
+    "PA25.2: Describe the pathophysiology and pathologic changes seen in"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Liver Metastases across foundational sciences and clinical applications."
+}

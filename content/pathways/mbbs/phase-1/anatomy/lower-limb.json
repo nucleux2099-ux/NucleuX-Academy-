@@ -1,0 +1,118 @@
+{
+  "id": "anatomy-lower-limb", 
+  "title": "Lower Limb Comprehensive Study",
+  "phase": "Phase-1",
+  "subject": "Anatomy",
+  "description": "Complete exploration of lower limb anatomy including hip, thigh, knee, leg, ankle, and foot with emphasis on locomotion, weight-bearing, and clinical applications.",
+  "competencies": ["AN3.1", "AN3.2", "AN3.3", "AN3.4", "AN3.5", "AN3.6"],
+  "prerequisites": ["anatomy-general"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Lower Limb Bones & Joints",
+      "libraryTopic": "lower-limb",
+      "sections": ["bones", "hip-joint", "knee-joint", "ankle-joint"],
+      "duration": "65min",
+      "xp": 25
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Skeletal Framework Quiz",
+      "mcqCount": 15,
+      "passingScore": 70,
+      "xp": 35,
+      "competency": "AN3.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Hip Region & Gluteal Anatomy",
+      "libraryTopic": "lower-limb",
+      "sections": ["gluteal-region", "hip-muscles", "femoral-triangle"],
+      "duration": "55min",
+      "xp": 30
+    },
+    {
+      "order": 4,
+      "type": "reading",
+      "title": "Thigh Compartments",
+      "libraryTopic": "lower-limb",
+      "sections": ["anterior-thigh", "medial-thigh", "posterior-thigh"],
+      "duration": "60min",
+      "xp": 28
+    },
+    {
+      "order": 5,
+      "type": "quiz",
+      "title": "Thigh Muscles Assessment",
+      "mcqCount": 18,
+      "passingScore": 72,
+      "xp": 40,
+      "competency": "AN3.2"
+    },
+    {
+      "order": 6,
+      "type": "reading",
+      "title": "Leg Compartments & Foot",
+      "libraryTopic": "lower-limb",
+      "sections": ["anterior-leg", "posterior-leg", "lateral-leg", "foot-anatomy"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 7,
+      "type": "skill",
+      "title": "Gait Analysis & Surface Anatomy",
+      "competency": "AN3.3",
+      "xp": 55,
+      "duration": "45min"
+    },
+    {
+      "order": 8,
+      "type": "reading",
+      "title": "Neurovascular Supply",
+      "libraryTopic": "lower-limb",
+      "sections": ["femoral-artery", "popliteal-vessels", "sciatic-nerve", "femoral-nerve"],
+      "duration": "75min",
+      "xp": 38
+    },
+    {
+      "order": 9,
+      "type": "quiz",
+      "title": "Neurovascular Comprehensive",
+      "mcqCount": 22,
+      "passingScore": 75,
+      "xp": 50,
+      "competency": "AN3.4"
+    },
+    {
+      "order": 10,
+      "type": "integration",
+      "title": "Locomotion & Weight Bearing",
+      "competency": "AN3.5",
+      "xp": 45,
+      "duration": "40min"
+    },
+    {
+      "order": 11,
+      "type": "case",
+      "title": "Lower Limb Clinical Cases",
+      "competency": "AN3.6", 
+      "xp": 65,
+      "duration": "50min"
+    }
+  ],
+  "totalXP": 446,
+  "estimatedTime": "8 hours",
+  "unlocks": ["anatomy-pelvis", "orthopedics-lower-limb"],
+  "textbooks": [
+    {"title": "Gray's Anatomy", "chapters": ["Lower Limb"], "edition": "41st"},
+    {"title": "Netter Atlas of Human Anatomy", "chapters": ["Lower Limb"], "edition": "7th"},
+    {"title": "Clinically Oriented Anatomy", "chapters": ["Lower Limb"], "edition": "8th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical"],
+  "difficulty": 3,
+  "lastUpdated": "2024-02-08"
+}

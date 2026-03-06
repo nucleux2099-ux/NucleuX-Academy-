@@ -1,0 +1,100 @@
+{
+  "id": "physiology-respiratory",
+  "title": "Respiratory Physiology Complete",
+  "phase": "Phase-1",
+  "subject": "Physiology",
+  "description": "Comprehensive study of respiratory system physiology including ventilation mechanics, gas exchange, oxygen transport, acid-base balance, and respiratory control mechanisms.",
+  "competencies": ["PY6.1", "PY6.2", "PY6.3", "PY6.4", "PY6.5"],
+  "prerequisites": ["physiology-general", "anatomy-thorax"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Mechanics of Breathing",
+      "libraryTopic": "respiratory-physiology",
+      "sections": ["ventilation", "lung-volumes", "compliance", "airway-resistance"],
+      "duration": "65min",
+      "xp": 30
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Pulmonary Mechanics Quiz",
+      "mcqCount": 14,
+      "passingScore": 70,
+      "xp": 35,
+      "competency": "PY6.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Gas Exchange & Transport",
+      "libraryTopic": "respiratory-physiology",
+      "sections": ["alveolar-gas", "diffusion", "oxygen-transport", "hemoglobin"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 4,
+      "type": "skill",
+      "title": "Spirometry & PFTs",
+      "competency": "PY6.2", 
+      "xp": 50,
+      "duration": "40min"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Acid-Base Balance",
+      "libraryTopic": "respiratory-physiology",
+      "sections": ["ph-regulation", "buffers", "respiratory-compensation", "metabolic-acidosis"],
+      "duration": "75min",
+      "xp": 38
+    },
+    {
+      "order": 6,
+      "type": "quiz",
+      "title": "Acid-Base Assessment",
+      "mcqCount": 20,
+      "passingScore": 75,
+      "xp": 45,
+      "competency": "PY6.3"
+    },
+    {
+      "order": 7,
+      "type": "reading",
+      "title": "Respiratory Control",
+      "libraryTopic": "respiratory-physiology",
+      "sections": ["respiratory-center", "chemoreceptors", "neural-control", "sleep-breathing"],
+      "duration": "60min",
+      "xp": 32
+    },
+    {
+      "order": 8,
+      "type": "case",
+      "title": "Respiratory Pathophysiology",
+      "competency": "PY6.4",
+      "xp": 55,
+      "duration": "45min"
+    },
+    {
+      "order": 9,
+      "type": "integration",
+      "title": "Cardiopulmonary Integration",
+      "competency": "PY6.5",
+      "xp": 40,
+      "duration": "35min"
+    }
+  ],
+  "totalXP": 360,
+  "estimatedTime": "6 hours",
+  "unlocks": ["medicine-pulmonology", "anesthesia-basics", "critical-care"],
+  "textbooks": [
+    {"title": "Guyton and Hall Textbook of Medical Physiology", "chapters": ["Respiration"], "edition": "14th"},
+    {"title": "West's Respiratory Physiology", "chapters": ["All"], "edition": "11th"},
+    {"title": "Ganong's Review of Medical Physiology", "chapters": ["Respiratory System"], "edition": "26th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "clinical", "emergency"],
+  "difficulty": 4,
+  "lastUpdated": "2024-02-08"
+}

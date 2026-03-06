@@ -1,0 +1,9 @@
+topic_id: growth-hormone
+name: Growth Hormone
+description: Growth Hormone — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PY11.9
+  domain: KH
+  core: false
+  phase: Phase 1

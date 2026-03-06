@@ -1,0 +1,13 @@
+topic_id: specimen-collection
+name: Specimen Collection
+description: Specimen Collection — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI8.10
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: MI8.9
+  domain: KH
+  core: true
+  phase: Phase 1

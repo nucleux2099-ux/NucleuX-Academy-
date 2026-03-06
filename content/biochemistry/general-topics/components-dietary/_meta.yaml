@@ -1,0 +1,17 @@
+topic_id: components-dietary
+name: The importance of various dietary components and explain
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI8.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI8.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI8.5
+  domain: KH
+  core: true
+  phase: Phase 1

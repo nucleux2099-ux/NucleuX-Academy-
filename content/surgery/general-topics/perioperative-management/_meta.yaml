@@ -1,0 +1,45 @@
+title: "Perioperative Management"
+slug: perioperative-management
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU10.1"
+  - "SU10.2"
+  - "SU10.3"
+  - "SU10.4"
+prerequisites:
+  - "preoperative-assessment"
+  - "fluid-electrolytes"
+related_topics:
+  - "blood-transfusion"
+  - "surgical-infections"
+  - "shock"
+enrichment:
+  nmcCodes:
+    - code: "SU10.1"
+      text: "Describe the principles of perioperative management of common surgical procedures."
+      domain: "K"
+    - code: "SU10.2"
+      text: "Describe the steps and obtain informed consent in a simulated environment."
+      domain: "S"
+    - code: "SU10.3"
+      text: "Observe common surgical procedures and assist in minor surgical procedures."
+      domain: "K"
+    - code: "SU10.4"
+      text: "Perform basic surgical skills such as first aid including suturing and minor surgical procedures in simulated environment."
+      domain: "P"
+  prerequisite_details:
+    - slug: "preoperative-assessment"
+      reason: "Systematic preoperative assessment (ASA grading, airway evaluation, cardiac risk stratification) directly determines the perioperative management plan"
+    - slug: "fluid-electrolytes"
+      reason: "Perioperative fluid management requires understanding of maintenance requirements, deficit replacement, and third-space losses to prevent hypovolemia or fluid overload"
+  related_details:
+    - slug: "blood-transfusion"
+      reason: "Intraoperative and postoperative transfusion decisions based on hemoglobin triggers and coagulation status are core perioperative skills"
+      relationship: "clinical"
+    - slug: "surgical-infections"
+      reason: "Surgical site infection prevention through antibiotic prophylaxis timing, skin preparation, and aseptic technique is integral to perioperative care"
+      relationship: "clinical"
+    - slug: "shock"
+      reason: "Recognition and management of intraoperative and postoperative shock (hemorrhagic, septic, anaphylactic) is a critical perioperative emergency"
+      relationship: "clinical"

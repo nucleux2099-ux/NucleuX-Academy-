@@ -1,0 +1,86 @@
+---
+title: Introduction to Rapid Start - Rapid Start | iCanStudy
+source: https://learning.icanstudy.com/learning/pr-academic/ph-high-yield/st-rapid-start/ls-introduction-to-rapid-start/pg-introduction-to-rapid-start-overview
+author: 
+published: 
+created: 2025-05-01
+description: 
+tags:
+  - clippings
+---
+# Introduction to Rapid Start
+~ [[_Rapid Start]]
+
+## The purpose of Rapid Start
+
+Spending time to unblock our future barriers is crucial to learning new skills quickly. Unfortunately, it's a step that is often overlooked. As a result, learners can encounter more obstacles than needed. This can be frustrating and eventually demotivating as overcoming each obstacle takes time, energy, and attention away from making further strides.
+
+> [!leaf] Key principle
+> It's always worth investing time now to make things easier for yourself later. Your future self will have their hands full. Finding ways to make it easier for ourselves later means we give ourselves the space to adapt and overcome new and harder challenges.
+
+![[03 Spaces/Learning System/attachments/Image.png]]
+Removing obstacles early on allows rapid progress later.
+
+
+> [!Video]-
+> <div style="position:relative;width:100%;padding-top:56.25%;"><iframe src="https://drive.google.com/file/d/15RmNKhKWQhEwEiYq0vOF9G6CnU3vlAZx/preview" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+
+> [!transcript]- Transcript
+> We're going to get started now with some of our rapid start modules which is designed to get you rapidly started.
+>
+> You're going to be seeing a lot of me throughout the course so I thought I'd hand it over to Archer who is one of our experienced mentors and student advisors.
+>
+> He's going to take you through some of these very important modules to start with and then you'll see me a lot more, a lot more in the rest of the course.
+>
+> So I'll see you soon.
+>
+> Thanks Justin and hi.
+>
+> As Justin said, my name is Archer.
+>
+> I'm an iPad study mentor and student advisor and my job is to really make sure that you get the most out of this course.
+>
+> If you're able to learn a lot and succeed, that means that we've done our job.
+>
+> When you win, we win and so it's my job to get you there.
+>
+> To get you started, I want to let you know about some of the most important techniques that every single student on this course should know about.
+>
+> Without these, winning is going to be a very long and tiring struggle.
+>
+> If you have ever felt like you've never had enough time or you have a really busy day and despite that you get nothing actually important done, then these techniques are going to help you fix that.
+>
+> If you're able to use some of these techniques, you'll notice that the time that you spend will be more meaningful.
+>
+> You're able to be more motivated and it would actually give you the time you need to focus on the other skills that we'll be teaching throughout this course.
+>
+> But what you'll realize is, or maybe you already realize, is that if you don't work on the skills you need to become more efficient in your course, you'll become more efficient now early on, it may be too late by the time that you need it.
+>
+> Sometimes investing time into something now is going to be that thing that saves you time later on.
+>
+> After all, we've always known that efficiency is a key factor of creating success.
+>
+> I'm reminded of a quote from Henry Ford, the founder of Ford Company, and what he said is that if I had asked people what they really wanted, they would have asked for faster horses.
+>
+> And I think this really summarizes how often we can get so much better at what we're doing.
+>
+> Often we can get so invested in what we have right now that we don't even think about the change that could change the game entirely.
+>
+> I'm sure that the people who are laying roads for the horses, making better horse saddles, or finding the better ways of grooming a horse would have been far too busy to build a car.
+>
+> So if you're really busy with studying and trying to learn using the current techniques that you have, you're so busy that you can't even work on the course, then that is the biggest sign that you even have to work on this course even more.
+>
+> If we're too busy with what doesn't work, we'll never have time to learn what does work.
+>
+> And I can guarantee you that if you change nothing, nothing will change.
+>
+> You can't solve the problem the same way that you created the problem.
+>
+> So let's get into a few quick modules to get you building your car, fixing the problem, and changing what needs to be changed.
+>
+> How to build a car.
+>
+> How to build a car.
+>
+> How to build a car.
+

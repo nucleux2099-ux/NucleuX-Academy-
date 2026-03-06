@@ -1,0 +1,33 @@
+topic_id: rheumatic-fever
+name: Rheumatic Fever
+description: Rheumatic Fever — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE34.14
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.15
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.16
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.17
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.18
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.19
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.20
+  domain: KH
+  core: true
+  phase: Phase 2

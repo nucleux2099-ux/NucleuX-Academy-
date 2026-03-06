@@ -1,0 +1,154 @@
+topic_id: bone-tumors
+name: Bone Tumors
+description: Classification, age distribution, location, and histologic features of bone neoplasms
+high_yield: true
+
+overview: >
+  Bone tumors are classified by the tissue they produce (osteoid, cartilage, fibrous) and by biologic behavior.
+  Age and anatomic location are crucial diagnostic clues. Osteosarcoma is the most common primary malignant bone
+  tumor overall, while metastasis is the most common malignant tumor of bone.
+  📚 Robbins, 10th Ed, Ch.26 (p.1179-1200)
+
+learning_objectives:
+  - Classify bone tumors by tissue of origin and behavior
+  - Associate bone tumors with age groups and anatomic locations
+  - Describe the histologic and radiographic features of major bone tumors
+  - Differentiate osteosarcoma from Ewing sarcoma and chondrosarcoma
+
+content:
+  atoms:
+    - id: osteosarcoma
+      title: "Osteosarcoma"
+      text: >
+        Most common PRIMARY malignant bone tumor (excluding myeloma). Bimodal: 10-20 years (primary) and >65 years (secondary — Paget's, radiation).
+        Location: METAPHYSIS of long bones — distal femur (most common), proximal tibia, proximal humerus.
+        Histology: malignant osteoblasts producing OSTEOID (bone matrix).
+        Radiology: Codman triangle (periosteal elevation), sunburst pattern, mixed lytic/scite.
+        Elevated alkaline phosphatase. Hematogenous spread to LUNGS.
+        Risk factors: retinoblastoma (RB gene), Li-Fraumeni (p53), Paget disease, radiation.
+        📚 Robbins, 10th Ed, Ch.26 (p.1188-1191)
+
+    - id: ewing-sarcoma
+      title: "Ewing Sarcoma"
+      text: >
+        Children and adolescents (5-15 years); DIAPHYSIS of long bones (femur most common) or flat bones.
+        Histology: small round blue cells (differential: lymphoma, neuroblastoma, rhabdomyosarcoma).
+        PAS positive (glycogen). CD99 (MIC2) positive.
+        Translocation: t(11;22) → EWS-FLI1 fusion.
+        Radiology: "onion-skin" periosteal reaction (lamellated).
+        Aggressive but responds to chemotherapy.
+        📚 Robbins, 10th Ed, Ch.26 (p.1194-1196)
+
+    - id: chondrosarcoma
+      title: "Chondrosarcoma"
+      text: >
+        Malignant cartilage-producing tumor. Adults 40-60 years.
+        Location: pelvis, proximal femur, shoulder.
+        Histology: malignant chondrocytes in lacunae; doesn't produce osteoid (unlike osteosarcoma).
+        Resistant to chemotherapy and radiation — surgery is primary treatment.
+        Secondary chondrosarcoma can arise from pre-existing enchondroma or osteochondroma.
+        📚 Robbins, 10th Ed, Ch.26 (p.1191-1194)
+
+    - id: benign-bone-tumors
+      title: "Benign Bone Tumors"
+      text: >
+        Osteochondroma: MOST COMMON benign bone tumor; bony exostosis with cartilaginous cap;
+        grows AWAY from joint; risk of chondrosarcoma if multiple (hereditary multiple exostoses).
+        Osteoid osteoma: <2 cm; severe nocturnal pain RELIEVED BY ASPIRIN (prostaglandin-mediated); cortex of tibia/femur;
+        nidus on CT. Osteoblastoma: >2 cm version of osteoid osteoma; vertebral column; NOT relieved by aspirin.
+        Giant cell tumor (osteoclastoma): 20-40 years; EPIPHYSIS of long bones (distal femur/proximal tibia);
+        "soap bubble" appearance on X-ray; multinucleated giant cells on histology; locally aggressive.
+        Enchondroma: benign intramedullary cartilage tumor; most common in small bones of hands/feet.
+        Multiple enchondromas = Ollier disease; with soft tissue hemangiomas = Maffucci syndrome (high malignancy risk).
+        📚 Robbins, 10th Ed, Ch.26 (p.1179-1188)
+
+  clinical:
+    - title: "Age and Location — Diagnostic Clues"
+      text: >
+        <20 years, metaphysis: osteosarcoma. <15 years, diaphysis: Ewing sarcoma.
+        20-40 years, epiphysis: giant cell tumor. 40-60 years, pelvis/axial: chondrosarcoma.
+        >40 years, vertebral body: metastasis or myeloma.
+        Most common malignant bone tumor overall = METASTASIS (breast, prostate, lung, kidney, thyroid).
+
+  high_yield_points:
+    - "Osteosarcoma: most common primary malignant bone tumor; metaphysis; 10-20 years; Codman triangle + sunburst"
+    - "Ewing sarcoma: diaphysis; t(11;22) EWS-FLI1; CD99+; onion-skin periosteal reaction; small round blue cells"
+    - "Giant cell tumor: epiphysis; 20-40 years; soap bubble on X-ray; multinucleated giant cells"
+    - "Osteochondroma: most common benign bone tumor; grows AWAY from joint; cartilaginous cap"
+    - "Osteoid osteoma: <2 cm; nocturnal pain relieved by ASPIRIN; cortical nidus"
+    - "Chondrosarcoma: adults; pelvis/proximal femur; resistant to chemo/radiation; surgery only"
+    - "Most common malignant bone tumor = METASTASIS (not primary); prostate = osteoBLASTIC; most others = osteolytic"
+    - "Maffucci syndrome: multiple enchondromas + hemangiomas → high risk of chondrosarcoma"
+    - "Paget disease → secondary osteosarcoma in elderly"
+    - "Ewing differential (small round blue cells): Ewing, lymphoma, neuroblastoma, rhabdomyosarcoma"
+
+mcqs:
+  - question: "A 15-year-old boy presents with pain and swelling around the knee. X-ray shows a destructive lesion in the distal femoral metaphysis with periosteal elevation (Codman triangle) and a sunburst pattern. Biopsy shows osteoid production by malignant cells. The diagnosis is:"
+    options:
+      - "Ewing sarcoma"
+      - "Osteosarcoma"
+      - "Chondrosarcoma"
+      - "Giant cell tumor"
+    answer: "Osteosarcoma"
+    explanation: >
+      Adolescent + metaphysis of distal femur + Codman triangle + sunburst pattern + malignant osteoid production
+      = osteosarcoma. Ewing sarcoma would be in the diaphysis with onion-skin pattern. Chondrosarcoma is in older
+      adults. Giant cell tumor is in the epiphysis of young adults.
+      📚 Robbins, 10th Ed, Ch.26 (p.1189)
+    difficulty: 1
+
+  - question: "A 12-year-old boy has a painful swelling in the femoral diaphysis. Biopsy shows small round blue cells that are PAS-positive and CD99+. Cytogenetics shows t(11;22). The diagnosis is:"
+    options:
+      - "Osteosarcoma"
+      - "Ewing sarcoma"
+      - "Lymphoma"
+      - "Neuroblastoma"
+    answer: "Ewing sarcoma"
+    explanation: >
+      Child + diaphysis + small round blue cells + PAS+ (glycogen) + CD99+ + t(11;22) EWS-FLI1 = Ewing sarcoma.
+      CD99 is highly sensitive (though not specific) for Ewing. The diaphyseal location differentiates it from
+      osteosarcoma (metaphysis). Lymphoma would be CD45+. Neuroblastoma arises from adrenal/sympathetic chain.
+      📚 Robbins, 10th Ed, Ch.26 (p.1195)
+    difficulty: 1
+
+  - question: "A 25-year-old woman has pain around the knee. X-ray shows an eccentric, lytic 'soap bubble' lesion in the epiphysis of the distal femur. Biopsy shows multinucleated giant cells with mononuclear stromal cells. The diagnosis is:"
+    options:
+      - "Osteosarcoma"
+      - "Aneurysmal bone cyst"
+      - "Giant cell tumor"
+      - "Osteochondroma"
+    answer: "Giant cell tumor"
+    explanation: >
+      Young adult + epiphysis + soap bubble lytic lesion + multinucleated giant cells = giant cell tumor
+      (osteoclastoma). It is locally aggressive with tendency for recurrence. Located in epiphysis
+      (unlike osteosarcoma in metaphysis). The neoplastic cells are the stromal cells, not the giant cells.
+      📚 Robbins, 10th Ed, Ch.26 (p.1196)
+    difficulty: 1
+
+  - question: "A 16-year-old boy complains of severe nocturnal bone pain in the tibia that is completely relieved by aspirin. CT shows a small (<2 cm) radiolucent nidus in the cortex. The diagnosis is:"
+    options:
+      - "Osteosarcoma"
+      - "Osteoid osteoma"
+      - "Osteoblastoma"
+      - "Stress fracture"
+    answer: "Osteoid osteoma"
+    explanation: >
+      Nocturnal pain + relief by aspirin/NSAIDs + small cortical nidus (<2 cm) = osteoid osteoma. The pain is
+      prostaglandin-mediated, hence aspirin relief. Osteoblastoma is similar but >2 cm, usually in the spine,
+      and NOT relieved by aspirin. Osteosarcoma would show aggressive features.
+      📚 Robbins, 10th Ed, Ch.26 (p.1185)
+    difficulty: 1
+
+  - question: "Metastatic bone disease from prostate cancer typically produces which type of bone lesion?"
+    options:
+      - "Lytic lesions"
+      - "Blastic (sclerotic) lesions"
+      - "Mixed lytic and blastic"
+      - "Expansile 'soap bubble' lesions"
+    answer: "Blastic (sclerotic) lesions"
+    explanation: >
+      Prostate cancer produces osteoBLASTIC (sclerotic) metastases — increased bone formation appearing as
+      white/dense lesions on X-ray. Elevated PSA + blastic bone lesions = prostate cancer metastasis.
+      Most other cancers (breast, lung, kidney, thyroid) produce osteolytic lesions. Breast can be mixed.
+      📚 Robbins, 10th Ed, Ch.26 (p.1200)
+    difficulty: 1

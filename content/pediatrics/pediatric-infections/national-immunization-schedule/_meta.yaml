@@ -1,0 +1,45 @@
+topic_id: national-immunization-schedule
+name: National Immunization Schedule
+description: National Immunization Schedule — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE13.10
+  domain: K
+  core: true
+  phase: Phase 1
+- code: PE13.6
+  domain: K
+  core: true
+  phase: Phase 1
+- code: PE19.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE19.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.15
+  domain: K
+  core: true
+  phase: Phase 2
+- code: PE19.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE19.6
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE19.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.8
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.5
+  domain: KH
+  core: true
+  phase: Phase 2

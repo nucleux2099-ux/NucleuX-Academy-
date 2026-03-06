@@ -1,0 +1,9 @@
+topic_id: bone-findings-indications-marrow
+name: The indications and describe the findings in bone marrow
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: PA17.2
+  domain: K
+  core: false
+  phase: Phase 2

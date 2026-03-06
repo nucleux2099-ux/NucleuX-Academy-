@@ -1,0 +1,9 @@
+topic_id: bronchopulmonary-segments
+name: Bronchopulmonary Segments
+description: Bronchopulmonary Segments — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN24.3
+  domain: KH
+  core: true
+  phase: Phase 1

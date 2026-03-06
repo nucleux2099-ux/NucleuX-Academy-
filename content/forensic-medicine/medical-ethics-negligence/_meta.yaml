@@ -1,0 +1,162 @@
+topic_id: medical-ethics-negligence
+name: Medical Ethics & Negligence
+description: Medical ethics principles, medical negligence, consumer protection, and professional misconduct
+high_yield: true
+
+overview: >
+  Medical ethics governs the moral principles guiding medical practice. Key principles include autonomy,
+  beneficence, non-maleficence, and justice (Beauchamp & Childress). Medical negligence is a breach of duty of
+  care resulting in harm to the patient. The Consumer Protection Act 2019 (replacing CPA 1986) covers medical
+  services. Understanding informed consent, therapeutic privilege, and professional misconduct is essential.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.25-52)
+
+learning_objectives:
+  - Enumerate the four principles of medical ethics
+  - Define medical negligence and its essential elements
+  - Explain informed consent and its exceptions
+  - Describe the Consumer Protection Act and its application to medical services
+  - Discuss professional misconduct and disciplinary actions by MCI/NMC
+
+content:
+  atoms:
+    - id: principles-ethics
+      title: "Four Principles of Medical Ethics"
+      text: >
+        Beauchamp & Childress framework: (1) Autonomy — respect patient's right to make informed decisions;
+        (2) Beneficence — act in patient's best interest; (3) Non-maleficence — "primum non nocere" (first do no harm);
+        (4) Justice — fair distribution of resources, treat equals equally.
+        Additional principles: Veracity (truthfulness), Fidelity (keeping promises), Confidentiality.
+        Hippocratic Oath — oldest code of medical ethics. Declaration of Geneva (1948) — modern version.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.25-30)
+
+    - id: informed-consent
+      title: "Informed Consent"
+      text: >
+        Valid consent requires: (1) Given by competent person (>18 years, sound mind), (2) Given voluntarily
+        (no coercion/fraud), (3) Informed — explained in understandable language (nature of procedure, risks,
+        benefits, alternatives). Types: implied (routine examination), expressed (oral/written — surgical procedures).
+        Written consent mandatory for: surgery, invasive procedures, research, medicolegal examination.
+        Exceptions: (1) Emergency (doctrine of necessity), (2) Therapeutic privilege (withholding info that would
+        harm patient), (3) Waiver (patient voluntarily waives right to information).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.30-38)
+
+    - id: medical-negligence
+      title: "Medical Negligence"
+      text: >
+        Negligence = breach of duty of care causing harm. Three essential elements (Bolam test):
+        (1) Duty — doctor-patient relationship established, (2) Dereliction — breach of standard of care
+        (not meeting the standard of a reasonable competent doctor), (3) Direct causation — breach directly
+        caused harm, (4) Damage — actual harm/injury occurred.
+        Bolam test (1957): a doctor is not negligent if they acted in accordance with a practice accepted as
+        proper by a responsible body of medical opinion. Res ipsa loquitur — "the thing speaks for itself"
+        (sponge left in abdomen, wrong limb amputated).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.38-45)
+
+    - id: consumer-protection
+      title: "Consumer Protection Act 2019"
+      text: >
+        CPA 2019 replaced CPA 1986. Medical services are included under "service." Patient = consumer.
+        Deficiency in service = negligence. Three-tier system: District Commission (<₹1 crore),
+        State Commission (₹1-10 crore), National Commission (>₹10 crore).
+        Important: Services rendered FREE at government hospitals are NOT covered under CPA.
+        Private hospitals and paid services at government hospitals ARE covered.
+        Limitation period: 2 years from date of cause of action.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.45-48)
+
+    - id: professional-misconduct
+      title: "Professional Misconduct"
+      text: >
+        Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002.
+        Now under NMC (National Medical Commission). Examples of misconduct: adultery with patient,
+        performing criminal abortion, issuing false certificates, advertising/soliciting patients,
+        covering for unqualified persons, fee splitting, secret commissions, refusing emergency treatment.
+        Punishment: warning, censure, temporary/permanent removal from register.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.48-52)
+
+  clinical:
+    - title: "Clinical Correlation: Res Ipsa Loquitur Cases"
+      text: >
+        "The thing speaks for itself" — applied when negligence is obvious: surgical sponge left in abdomen,
+        wrong limb amputated, wrong patient operated, burns from cautery. In such cases, burden of proof
+        shifts to the doctor to show they were NOT negligent.
+
+high_yield_points:
+  - "Four principles: Autonomy, Beneficence, Non-maleficence, Justice"
+  - "Bolam test: standard of a reasonable competent doctor in that specialty"
+  - "Res ipsa loquitur: 'the thing speaks for itself' — sponge in abdomen, wrong limb amputated"
+  - "Valid consent requires: competent person (>18 yrs), voluntary, informed"
+  - "Written consent mandatory for surgery, invasive procedures, research"
+  - "Emergency exception: treatment without consent under doctrine of necessity"
+  - "CPA 2019: FREE government hospital services NOT covered"
+  - "Four Ds of negligence: Duty, Dereliction, Direct causation, Damage"
+  - "Therapeutic privilege: withholding information that would harm the patient"
+  - "NMC (replacing MCI) handles professional misconduct cases"
+
+mcqs:
+  - question: "The Bolam test in medical negligence establishes that:"
+    options:
+      - "A doctor must never make any mistake"
+      - "A doctor is not negligent if they acted per accepted medical practice"
+      - "The patient must prove the doctor intended harm"
+      - "Only specialists can be held liable for negligence"
+    answer: "A doctor is not negligent if they acted per accepted medical practice"
+    explanation: >
+      Bolam test (Bolam v Friern Hospital, 1957): A doctor is not guilty of negligence if they have acted in
+      accordance with a practice accepted as proper by a responsible body of medical opinion, even if others
+      may disagree. Modified by Bolitho test (must be logical/defensible).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.40)
+    difficulty: 2
+
+  - question: "Which of the following is NOT a valid exception to informed consent?"
+    options:
+      - "Emergency (doctrine of necessity)"
+      - "Therapeutic privilege"
+      - "Patient's family requests not to inform"
+      - "Waiver by patient"
+    answer: "Patient's family requests not to inform"
+    explanation: >
+      Valid exceptions are emergency, therapeutic privilege, and patient waiver. A family member's request
+      to withhold information from a competent adult patient does NOT override the patient's right to
+      autonomy and informed decision-making.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.35)
+    difficulty: 2
+
+  - question: "Under Consumer Protection Act 2019, which is NOT covered?"
+    options:
+      - "Private hospital treatment"
+      - "Free treatment at government hospital"
+      - "Paid treatment at government hospital"
+      - "Private nursing home services"
+    answer: "Free treatment at government hospital"
+    explanation: >
+      Services rendered completely free of charge at government hospitals are NOT considered "services" under CPA.
+      However, if any payment is made (even partial), CPA applies. All private hospital services are covered.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.46)
+    difficulty: 1
+
+  - question: "Res ipsa loquitur applies in which scenario?"
+    options:
+      - "Diagnostic disagreement between two doctors"
+      - "Surgical sponge left in the abdomen"
+      - "Failure to diagnose a rare disease"
+      - "Drug allergy not anticipated"
+    answer: "Surgical sponge left in the abdomen"
+    explanation: >
+      Res ipsa loquitur applies when negligence is self-evident and needs no expert testimony — like leaving
+      a surgical instrument/sponge inside a patient, operating on the wrong limb, or operating on the wrong patient.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.42)
+    difficulty: 1
+
+  - question: "The minimum age for giving valid consent for medical procedures in India is:"
+    options:
+      - "12 years"
+      - "14 years"
+      - "16 years"
+      - "18 years"
+    answer: "18 years"
+    explanation: >
+      A person must be at least 18 years of age and of sound mind to give valid consent for medical procedures.
+      For minors, consent is given by parent/legal guardian. The Indian Majority Act, 1875 sets the age of
+      majority at 18 years.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.2 (p.31)
+    difficulty: 1

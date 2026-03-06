@@ -1,0 +1,160 @@
+topic_id: liver-anatomy
+name: Liver Anatomy (Segments, Portal Triad)
+description: Liver Anatomy — Lobes, Couinaud segments, portal triad, blood supply, and peritoneal relations
+high_yield: true
+nmc_codes:
+- code: AN55.2
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The liver is the largest solid organ (~1500g), occupying the right hypochondrium and extending into the epigastrium.
+  It has anatomical lobes (right, left, caudate, quadrate) and functional segments (Couinaud classification — 8 segments
+  based on portal vein and hepatic vein distribution). The portal triad (portal vein, hepatic artery, bile duct) enters
+  at the porta hepatis. Dual blood supply: 75% portal vein, 25% hepatic artery.
+  📚 Gray's Anatomy, 42nd Ed, Ch.65; 📚 Netter's Atlas, 6th Ed, Plates 280-285
+
+learning_objectives:
+  - Describe the anatomical and functional lobes of the liver
+  - Explain Couinaud's segmental anatomy and its surgical significance
+  - Describe the portal triad and its relation at the porta hepatis
+  - Explain the dual blood supply and venous drainage of the liver
+  - Describe the peritoneal attachments and ligaments of the liver
+
+content:
+  atoms:
+    - id: lobes-and-surfaces
+      title: "Anatomical Lobes and Surfaces"
+      text: >
+        Diaphragmatic surface: smooth, dome-shaped. Visceral surface: has H-shaped arrangement of fossae.
+        Right sagittal fossa: gallbladder fossa (anterior), IVC fossa (posterior). Left sagittal fossa:
+        fissure for ligamentum teres (anterior), fissure for ligamentum venosum (posterior).
+        Transverse fissure = porta hepatis (connects the two sagittal fossae).
+        Anatomical lobes: right (largest), left, caudate (segment I — between IVC and ligamentum venosum),
+        quadrate (between gallbladder fossa and ligamentum teres — functionally part of left lobe).
+        📚 BD Chaurasia, Vol.2, Ch.17 (p.242-250)
+
+    - id: couinaud-segments
+      title: "Couinaud Segmental Classification"
+      text: >
+        8 functionally independent segments (I-VIII), each with its own portal pedicle (portal vein, hepatic artery,
+        bile duct) and hepatic venous drainage. Cantlie's line (from gallbladder fossa to IVC) divides liver into
+        functional right and left lobes. Right lobe: segments V, VI, VII, VIII. Left lobe: segments II, III, IV.
+        Caudate lobe: segment I (unique — receives blood from both right and left portal vein, drains directly into IVC
+        via hepatic veins). Segment IV = quadrate lobe (IVa superior, IVb inferior).
+        Right hepatic vein: between anterior (V,VIII) and posterior (VI,VII) sectors.
+        Middle hepatic vein: along Cantlie's line (between right and left lobes).
+        Left hepatic vein: between segments II and III.
+        📚 Gray's Anatomy, 42nd Ed, Ch.65; 📚 Netter's Atlas, 6th Ed
+
+    - id: portal-triad
+      title: "Portal Triad & Porta Hepatis"
+      text: >
+        Portal triad (hepatoduodenal ligament contents): portal vein (posterior), hepatic artery proper (left),
+        common bile duct (right). Mnemonic: "Portal vein is Posterior, Duct is to the Right, Artery is to the Left."
+        At porta hepatis: portal vein divides into right and left branches. Hepatic artery proper → right and left
+        hepatic arteries. Right hepatic artery crosses BEHIND the common hepatic duct (Calot's triangle).
+        Pringle maneuver: clamping the hepatoduodenal ligament to control hepatic bleeding (compresses portal triad).
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.2
+
+    - id: peritoneal-relations
+      title: "Peritoneal Attachments & Ligaments"
+      text: >
+        Falciform ligament: attaches liver to anterior abdominal wall, contains ligamentum teres (obliterated
+        left umbilical vein) in its free edge. Coronary ligaments: attach liver to diaphragm, enclose the bare area.
+        Left and right triangular ligaments: extremities of coronary ligaments. Lesser omentum: hepatogastric +
+        hepatoduodenal ligaments. The bare area of liver: between layers of coronary ligament, directly on diaphragm,
+        no peritoneal covering — liver abscesses can spread to right pleural cavity here.
+        📚 BD Chaurasia, Vol.2
+
+  clinical:
+    - title: "Clinical: Liver Resection"
+      text: >
+        Couinaud's classification allows anatomical liver resections. Right hepatectomy: segments V-VIII.
+        Left hepatectomy: segments II-IV. Right posterior sectionectomy: segments VI-VII. Caudate lobe (segment I)
+        is the most difficult to resect due to direct IVC drainage. Segment IV resection performed in hilar cholangiocarcinoma.
+    - title: "Clinical: Pringle Maneuver"
+      text: >
+        Compression of the hepatoduodenal ligament (portal triad) in the free edge of the lesser omentum.
+        Controls hepatic arterial and portal venous inflow. Used in liver trauma and surgery. If bleeding continues
+        after Pringle → source is hepatic veins or IVC (retrohepatic).
+
+high_yield_points:
+  - "Couinaud: 8 segments (I-VIII), each with independent portal pedicle"
+  - "Cantlie's line (gallbladder fossa to IVC) divides functional right and left lobes"
+  - "Portal triad in hepatoduodenal ligament: portal vein (posterior), artery (left), bile duct (right)"
+  - "Dual blood supply: 75% portal vein, 25% hepatic artery"
+  - "Caudate lobe (segment I): receives blood from both portal branches, drains directly into IVC"
+  - "Pringle maneuver: clamp hepatoduodenal ligament to control hepatic hemorrhage"
+  - "Bare area: between coronary ligaments, no peritoneum — route for abscess spread to pleura"
+  - "Ligamentum teres = obliterated left umbilical vein (in falciform ligament)"
+  - "Ligamentum venosum = obliterated ductus venosus"
+  - "3 hepatic veins (right, middle, left) drain into IVC — NO extrahepatic course (except left)"
+
+mcqs:
+  - question: "Cantlie's line, which divides the liver into functional right and left lobes, runs from:"
+    options:
+      - "Porta hepatis to ligamentum teres"
+      - "Gallbladder fossa to IVC"
+      - "Falciform ligament to bare area"
+      - "Right triangular ligament to left triangular ligament"
+    answer: "Gallbladder fossa to IVC"
+    explanation: >
+      Cantlie's line runs from the gallbladder fossa to the IVC, corresponding to the plane of the middle hepatic vein.
+      It divides the liver into functional right (segments V-VIII) and left (segments II-IV) lobes.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Which segment of the liver receives portal blood from both right and left portal vein branches?"
+    options:
+      - "Segment IV"
+      - "Segment I (caudate lobe)"
+      - "Segment V"
+      - "Segment VIII"
+    answer: "Segment I (caudate lobe)"
+    explanation: >
+      The caudate lobe (segment I) is unique — it receives portal blood from both right and left portal vein branches
+      and drains directly into the IVC via short hepatic veins, independent of the three main hepatic veins.
+      📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed
+    difficulty: 2
+
+  - question: "The Pringle maneuver involves clamping which structure?"
+    options:
+      - "Hepatic veins"
+      - "Inferior vena cava"
+      - "Hepatoduodenal ligament"
+      - "Falciform ligament"
+    answer: "Hepatoduodenal ligament"
+    explanation: >
+      The Pringle maneuver is compression of the hepatoduodenal ligament (free edge of lesser omentum) containing
+      the portal triad (portal vein, hepatic artery, bile duct). It controls hepatic inflow bleeding.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "In the portal triad, the common bile duct is located:"
+    options:
+      - "Posterior to portal vein"
+      - "To the left of hepatic artery"
+      - "To the right in the free edge"
+      - "Anterior to all structures"
+    answer: "To the right in the free edge"
+    explanation: >
+      In the hepatoduodenal ligament: bile duct is to the RIGHT, hepatic artery proper is to the LEFT,
+      and portal vein is POSTERIOR. This arrangement is critical during cholecystectomy and bile duct surgery.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "The bare area of the liver is located between the layers of which ligament?"
+    options:
+      - "Falciform ligament"
+      - "Coronary ligament"
+      - "Triangular ligament"
+      - "Hepatoduodenal ligament"
+    answer: "Coronary ligament"
+    explanation: >
+      The bare area is the posterior surface of the liver between the superior and inferior layers of the coronary
+      ligament, in direct contact with the diaphragm without peritoneal covering. Liver abscesses can spread
+      transdiaphragmatically to the right pleural cavity through this area.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 2

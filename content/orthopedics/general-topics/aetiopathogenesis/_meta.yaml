@@ -1,0 +1,9 @@
+topic_id: aetiopathogenesis
+name: And discuss the aetiopathogenesis, clinical features, K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OR10.1
+  domain: KH
+  core: true
+  phase: Phase 1

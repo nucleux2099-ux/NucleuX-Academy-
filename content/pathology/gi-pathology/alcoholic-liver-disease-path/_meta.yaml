@@ -1,0 +1,9 @@
+topic_id: alcoholic-liver-disease-path
+name: Alcoholic Liver Disease Path
+description: Alcoholic Liver Disease Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA25.6
+  domain: P
+  core: true
+  phase: Phase 2

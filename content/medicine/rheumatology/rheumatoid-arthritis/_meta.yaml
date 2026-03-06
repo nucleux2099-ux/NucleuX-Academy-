@@ -1,0 +1,15 @@
+title: Rheumatoid Arthritis
+slug: rheumatoid-arthritis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM7.6
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM7.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatoid arthritis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

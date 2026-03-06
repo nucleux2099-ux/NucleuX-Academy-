@@ -1,0 +1,157 @@
+topic_id: antianginals
+name: Antianginal Drugs
+description: Nitrates, β-blockers, calcium channel blockers, and newer agents for ischemic heart disease
+high_yield: true
+nmc_codes:
+- code: PH1.18
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Angina pectoris results from myocardial oxygen demand exceeding supply. Antianginal drugs work by reducing oxygen demand
+  (↓HR, ↓contractility, ↓preload/afterload) and/or increasing oxygen supply (coronary vasodilation). Three main classes:
+  nitrates, β-blockers, and calcium channel blockers. Newer agents include ranolazine, ivabradine, and trimetazidine.
+  📚 KD Tripathi, 8th Ed, Ch.38 (p.530-544)
+
+learning_objectives:
+  - Explain the mechanism of action of nitrates in angina
+  - Compare treatment strategies for stable, variant, and unstable angina
+  - Describe nitrate tolerance and methods to prevent it
+  - List contraindications of each antianginal class
+  - Discuss newer antianginal agents and their mechanisms
+
+content:
+  atoms:
+    - id: nitrates
+      title: "Organic Nitrates"
+      text: >
+        Mechanism: release NO → activates guanylyl cyclase → ↑cGMP → smooth muscle relaxation.
+        At low doses: predominantly VENODILATION → ↓preload → ↓wall tension → ↓O2 demand.
+        At high doses: also arteriolar dilation → ↓afterload. Coronary vasodilation (especially epicardial, collateral vessels).
+        Drugs: Glyceryl trinitrate/GTN (sublingual — 1-3 min onset, 30 min duration), Isosorbide dinitrate/ISDN (oral, sublingual),
+        Isosorbide mononitrate/ISMN (oral — no first-pass, active metabolite of ISDN).
+        Side effects: headache (most common), postural hypotension, reflex tachycardia, methemoglobinemia (rare).
+        Contraindications: Sildenafil/PDE5 inhibitors (severe hypotension — sildenafil blocks cGMP breakdown, potentiates nitrates),
+        Right ventricular infarction (preload-dependent), Hypertrophic obstructive cardiomyopathy, Severe aortic stenosis.
+        Nitrate tolerance: develops with continuous use (24-48h). Mechanism: sulfhydryl group depletion, superoxide generation.
+        Prevention: nitrate-free interval of 10-12 hours (usually overnight).
+        📚 KD Tripathi, 8th Ed, Ch.38 (p.531-537)
+
+    - id: beta-blockers-ccbs-angina
+      title: "β-Blockers & CCBs in Angina"
+      text: >
+        β-blockers: FIRST-LINE for chronic stable angina. ↓HR, ↓contractility, ↓BP → ↓myocardial O2 demand.
+        Prolong diastole → ↑coronary filling time. Preferred: Metoprolol, Atenolol, Bisoprolol.
+        CONTRAINDICATED in Prinzmetal (variant) angina — unopposed α-mediated coronary vasospasm.
+        CCBs: DHPs (Amlodipine, Nifedipine) → coronary and peripheral vasodilation. Non-DHPs (Verapamil, Diltiazem) →
+        also ↓HR and contractility. Amlodipine: can be used in variant angina and stable angina.
+        Variant (Prinzmetal) angina: caused by coronary vasospasm. CCBs are DOC. Nitrates also useful. β-blockers CONTRAINDICATED.
+        Unstable angina/NSTEMI: Aspirin + Clopidogrel/Ticagrelor + Anticoagulant (Heparin/Enoxaparin) + β-blocker + Nitrate + Statin.
+        Avoid immediate-release nifedipine (reflex tachycardia worsens ischemia).
+        📚 KD Tripathi, 8th Ed, Ch.38 (p.537-542)
+
+    - id: newer-antianginals
+      title: "Newer Antianginal Agents"
+      text: >
+        Ranolazine: inhibits late Na+ current (INa-L) → ↓intracellular Na+ → ↓Ca2+ (via Na+/Ca2+ exchanger) →
+        ↓diastolic wall tension. Does NOT affect HR or BP. Add-on therapy for refractory angina. Risk of QT prolongation.
+        Ivabradine: selective If (funny current) blocker in SA node → pure HR reduction without affecting contractility or BP.
+        Use: chronic stable angina (HR >70 bpm), heart failure (SHIFT trial). Contraindicated: severe bradycardia, sick sinus.
+        Side effect: luminous phenomena (phosphenes — visual brightness, due to retinal If channels).
+        Trimetazidine: metabolic modulator — shifts myocardial metabolism from fatty acid oxidation to glucose oxidation
+        (more O2-efficient). Anti-ischemic without hemodynamic effects.
+        Nicorandil: K+ channel opener + nitrate-like action (NO donor). Dual mechanism: venous + arteriolar dilation.
+        Unique: dilates both normal and stenotic coronary arteries. Side effect: oral ulcers.
+        📚 KD Tripathi, 8th Ed, Ch.38 (p.542-544)
+
+  clinical:
+    - title: "Clinical Correlation: Sildenafil + Nitrate Interaction"
+      text: >
+        PDE5 inhibitors (sildenafil, tadalafil) prevent cGMP breakdown. Combined with nitrates (which increase cGMP via NO),
+        this causes profound, potentially fatal hypotension. Contraindicated within 24h of sildenafil or 48h of tadalafil.
+        Always ask about erectile dysfunction medications before prescribing nitrates.
+    - title: "Clinical Correlation: Variant (Prinzmetal) Angina"
+      text: >
+        Occurs at rest, often early morning. Due to coronary artery spasm. ECG: ST elevation during episode (unlike typical angina).
+        Treatment: CCBs (first-line) + nitrates. β-blockers are CONTRAINDICATED (worsen vasospasm via unopposed α-stimulation).
+
+  high_yield_points:
+    - "Nitrates primarily cause VENODILATION → ↓preload (at low doses)"
+    - "Nitrate + Sildenafil = CONTRAINDICATED (fatal hypotension via cGMP potentiation)"
+    - "Nitrate tolerance: prevented by 10-12 hour nitrate-free interval"
+    - "β-blockers: FIRST-LINE for stable angina, CONTRAINDICATED in Prinzmetal angina"
+    - "Variant angina: CCBs are DOC (coronary vasospasm → need vasodilators)"
+    - "Ivabradine: pure HR reduction via If channel blockade, phosphenes (visual side effect)"
+    - "Ranolazine: blocks late Na+ current, add-on for refractory angina"
+    - "Nicorandil: K+ channel opener + NO donor — oral ulcers"
+    - "ISDN undergoes first-pass; ISMN does NOT (better oral bioavailability)"
+    - "Trimetazidine: metabolic modulator — no hemodynamic effects"
+
+mcqs:
+  - question: "A patient on sublingual nitroglycerin is prescribed sildenafil for erectile dysfunction. This combination is dangerous because:"
+    options:
+      - "Both drugs cause tachycardia"
+      - "Sildenafil inhibits nitrate metabolism"
+      - "Both increase cGMP causing severe hypotension"
+      - "Sildenafil causes coronary steal"
+    answer: "Both increase cGMP causing severe hypotension"
+    explanation: >
+      Nitrates release NO → ↑cGMP via guanylyl cyclase. Sildenafil inhibits PDE5 which breaks down cGMP.
+      Together → massive cGMP accumulation → profound vasodilation → potentially fatal hypotension.
+      📚 KD Tripathi, 8th Ed, Ch.38 (p.536)
+    difficulty: 1
+
+  - question: "The drug of choice for Prinzmetal (variant) angina is:"
+    options:
+      - "Propranolol"
+      - "Amlodipine"
+      - "Digoxin"
+      - "Aspirin"
+    answer: "Amlodipine"
+    explanation: >
+      Variant angina is caused by coronary vasospasm. CCBs (amlodipine, nifedipine, diltiazem) are DOC as they cause
+      coronary vasodilation. β-blockers (propranolol) are CONTRAINDICATED — they can worsen vasospasm
+      by allowing unopposed α-adrenergic coronary constriction.
+      📚 KD Tripathi, 8th Ed, Ch.38 (p.541)
+    difficulty: 1
+
+  - question: "Nitrate tolerance can be prevented by:"
+    options:
+      - "Increasing the dose progressively"
+      - "Adding a β-blocker"
+      - "Providing a 10-12 hour nitrate-free interval"
+      - "Switching from oral to transdermal route"
+    answer: "Providing a 10-12 hour nitrate-free interval"
+    explanation: >
+      Continuous nitrate exposure depletes sulfhydryl groups needed for NO release, causing tolerance.
+      A 10-12 hour daily nitrate-free period (usually overnight) restores responsiveness.
+      📚 KD Tripathi, 8th Ed, Ch.38 (p.535)
+    difficulty: 1
+
+  - question: "Ivabradine reduces heart rate by blocking:"
+    options:
+      - "β1-adrenergic receptors"
+      - "L-type calcium channels"
+      - "If (funny) current channels"
+      - "Sodium channels"
+    answer: "If (funny) current channels"
+    explanation: >
+      Ivabradine selectively inhibits the If (funny) current in the SA node, which is responsible for spontaneous
+      diastolic depolarization (phase 4). This produces pure HR reduction without affecting contractility, BP, or
+      conduction velocity. Visual phosphenes occur due to If channels in the retina.
+      📚 KD Tripathi, 8th Ed, Ch.38 (p.543)
+    difficulty: 1
+
+  - question: "Which antianginal drug acts as a metabolic modulator without hemodynamic effects?"
+    options:
+      - "Ranolazine"
+      - "Trimetazidine"
+      - "Nicorandil"
+      - "Ivabradine"
+    answer: "Trimetazidine"
+    explanation: >
+      Trimetazidine shifts myocardial metabolism from fatty acid β-oxidation to glucose oxidation, which is more
+      oxygen-efficient. It has no effect on HR, BP, or coronary blood flow — purely metabolic anti-ischemic action.
+      📚 KD Tripathi, 8th Ed, Ch.38 (p.543)
+    difficulty: 2

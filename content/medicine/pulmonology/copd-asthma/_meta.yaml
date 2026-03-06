@@ -1,0 +1,67 @@
+title: COPD & Asthma
+slug: copd-asthma
+depth: UG
+highYield: true
+nmc_codes:
+  - IM6.1
+  - IM6.2
+  - IM6.3
+  - IM6.4
+  - IM6.5
+  - IM6.6
+  - IM6.7
+  - IM6.8
+  - IM6.9
+  - IM6.10
+  - IM6.11
+  - IM6.12
+  - IM6.13
+  - IM6.14
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM6.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+    - code: IM6.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of copd & asthma
+      domain: KH
+  prerequisite_details: []
+  related_details: []

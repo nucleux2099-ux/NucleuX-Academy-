@@ -1,0 +1,9 @@
+topic_id: pericardium
+name: Pericardium
+description: Pericardium — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN22.1
+  domain: SH
+  core: true
+  phase: Phase 1

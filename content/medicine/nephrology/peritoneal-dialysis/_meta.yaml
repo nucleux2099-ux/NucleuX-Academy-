@@ -1,0 +1,15 @@
+title: Peritoneal Dialysis
+slug: peritoneal-dialysis
+depth: PG
+highYield: true
+nmc_codes:
+  - IM10.27
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.27
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of peritoneal dialysis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

@@ -1,0 +1,19 @@
+title: "Anaphylaxis — Emergency"
+slug: anaphylaxis-emergency
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.3"
+prerequisites: []
+related_topics:
+  - "breathlessness-approach"
+enrichment:
+  nmcCodes:
+    - code: "IM24.3"
+      text: "Anaphylaxis — Emergency — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "breathlessness-approach"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,49 @@
+{
+  "level": "SS",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Reconstruction requires detailed knowledge of esophageal blood supply, cervical/thoracic/abdominal segments, and adjacent structures",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-cancer",
+      "nmcCode": "",
+      "reason": "Esophagectomy for cancer is the most common indication for esophageal reconstruction",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "caustic-injury-esophagus",
+      "nmcCode": "",
+      "reason": "Caustic strictures are a major benign indication for esophageal reconstruction with conduit interposition",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-perforation",
+      "nmcCode": "",
+      "reason": "Extensive esophageal perforation with necrosis may require reconstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-atresia",
+      "nmcCode": "",
+      "reason": "Long-gap esophageal atresia requires reconstruction techniques in pediatric surgery",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This superspecialty-level roadmap connects Esophageal Reconstruction across foundational sciences and clinical applications."
+}

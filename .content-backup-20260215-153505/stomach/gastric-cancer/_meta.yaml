@@ -1,0 +1,9 @@
+topic_id: gastric-cancer
+name: "Gastric Cancer"
+description: "Risk factors, staging, diagnosis, surgical principles, and management"
+high_yield: true
+difficulty: 4
+estimated_minutes: 25
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [gastric-anatomy]
+related_topics: [gist, gastrectomy]

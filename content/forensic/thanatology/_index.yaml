@@ -1,0 +1,33 @@
+id: thanatology
+title: "Thanatology"
+subject: forensic
+description: |
+  Death, postmortem changes, and time of death.
+
+stats:
+  total_topics: 13
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - death-definition-types
+      - somatic-death-molecular-death
+      - postmortem-changes
+      - rigor-mortis
+      - livor-mortis
+      - algor-mortis
+      - decomposition
+      - adipocere
+      - mummification
+      - time-since-death-estimation
+      - autopsy-procedure
+      - medico-legal-autopsy
+      - virtual-autopsy
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

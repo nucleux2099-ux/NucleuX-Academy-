@@ -1,0 +1,10 @@
+title: "Paget Disease of Bone"
+slug: paget-disease-bone
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM12.5"
+prerequisites:
+  - "calcium-disorders"
+related_topics:
+  - "metabolic-syndrome"

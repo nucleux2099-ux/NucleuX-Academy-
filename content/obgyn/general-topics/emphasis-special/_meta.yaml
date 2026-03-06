@@ -1,0 +1,9 @@
+topic_id: emphasis-special
+name: And discuss the etiology (with special emphasis on
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG22.2
+  domain: KH
+  core: true
+  phase: Phase 3

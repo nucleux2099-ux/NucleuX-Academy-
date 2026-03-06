@@ -1,0 +1,19 @@
+title: "Clinical Skills — Mannequin Techniques"
+slug: correct-interpret-mannequin-technique
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.14"
+prerequisites: []
+related_topics:
+  - "establishes-examination-perform-systematic"
+enrichment:
+  nmcCodes:
+    - code: "IM26.14"
+      text: "Clinical Skills — Mannequin Techniques — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "establishes-examination-perform-systematic"
+      reason: "Clinically related"
+      relationship: "clinical"

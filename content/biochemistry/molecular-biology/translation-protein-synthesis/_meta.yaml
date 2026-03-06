@@ -1,0 +1,13 @@
+topic_id: translation-protein-synthesis
+name: Translation Protein Synthesis
+description: Translation Protein Synthesis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI8.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI9.3
+  domain: KH
+  core: false
+  phase: Phase 1

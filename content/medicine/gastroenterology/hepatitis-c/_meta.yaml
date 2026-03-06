@@ -1,0 +1,23 @@
+title: "Hepatitis C"
+slug: hepatitis-c
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.7"
+prerequisites: []
+related_topics:
+  - "hepatitis-b"
+  - "liver-cirrhosis"
+enrichment:
+  nmcCodes:
+    - code: "IM5.7"
+      text: "Hepatitis C — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "hepatitis-b"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "liver-cirrhosis"
+      reason: "Clinically related"
+      relationship: "clinical"

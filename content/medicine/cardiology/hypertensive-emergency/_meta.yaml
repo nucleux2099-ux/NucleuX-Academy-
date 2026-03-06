@@ -1,0 +1,26 @@
+title: Hypertensive Emergency
+slug: hypertensive-emergency
+depth: UG
+highYield: true
+nmc_codes:
+  - IM17.10
+  - IM8.15
+  - IM8.6
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM17.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypertensive
+        emergency
+      domain: KH
+    - code: IM8.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypertensive
+        emergency
+      domain: KH
+    - code: IM8.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypertensive
+        emergency
+      domain: KH
+  prerequisite_details: []
+  related_details: []

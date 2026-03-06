@@ -1,0 +1,9 @@
+topic_id: natural-family-planning
+name: Natural Family Planning
+description: Natural Family Planning — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG36.2
+  domain: KH
+  core: true
+  phase: Phase 3

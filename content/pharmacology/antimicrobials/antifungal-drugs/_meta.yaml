@@ -1,0 +1,41 @@
+topic_id: antifungal-drugs
+name: Antifungal Drugs
+description: Antifungal Drugs — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PH1.12
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH1.22
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.57
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.58
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PH1.9
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH3.5
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PH4.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH4.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH5.5
+  domain: KH
+  core: true
+  phase: Phase 1

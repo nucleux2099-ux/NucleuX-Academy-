@@ -1,0 +1,40 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "motility-disorders",
+      "nmcCode": "",
+      "reason": "",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects esophageal-manometry across foundational sciences and clinical applications."
+}

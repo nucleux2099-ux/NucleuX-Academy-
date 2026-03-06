@@ -1,0 +1,9 @@
+topic_id: describe-discuss-and-demonstrate-the-clinical-features-of
+name: Describe, discuss and demonstrate the clinical features of
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG6.1
+  domain: SH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,1477 @@
+So we're at our first fundamental checkpoint and this is a very important checkpoint because it makes sure that there is no key gap or weakness that's going to be holding us back from moving on to the later stages.
+
+When we move into the later stages we need to have a very strong foundation otherwise errors will appear all over the place and it's often very difficult to figure out where the errors are occurring and most of the time by the time we know the error has occurred it's already been like weeks or even months since the errors initial onset before it really starts manifesting and took us a long time to figure out and track back where these errors were coming from and realize it's a problem with you know some fundamental aspect and that's part of where this fundamentals course actually came from.
+
+I'll be going through the major components that we should have relatively down and confident with a reasonable level of competency and comfort with and I'll talk about the relative importance of each of these parts so you can make a judgment for yourself about whether you're ready to move on.
+
+There are some components that if you haven't done it or you haven't experienced it or if you haven't practiced it yet that's going to cause a huge issue and that's a big red flag but then there are certain components that if you're not really super comfortable with it yet you know we can potentially just continue working on that in the later stages and maybe would say hey by now if we if you haven't sorted that out it's a big issue but I'll explain the differences as we go through it and we'll also take a look at some examples of work so if you've got your own work I would recommend actually having it out in front of you right now so feel free to pause this go grab that and have it in front of you so you can actually compare what you're doing with the things that I'm saying to make sure that it ticks all the boxes.
+
+The first thing that we need to make sure that we have sorted 100% is that we have actually practiced the techniques.
+
+Now there is a surprising number of people that will go through the course and get to this point and they've never really actually practiced using the techniques that they've been taught.
+
+One of the most common reasons for that is because they may have heard of a similar or related technique or they may have heard of sort of one technique and they've used it in the past or they either didn't find that it was effective or something but there's some really important things that we need to understand about this it's quite nuanced.
+
+Number one what we're trying to do is build a system and even if you can do a single technique by itself it may be very difficult to do that when you have let's say three or four other techniques that you're using simultaneously and that's very very common to find that individual techniques can be fine but then when we put them into a system the techniques start breaking down so we need to have experience using at least most of these fundamentals in one go.
+
+Another I find a little bit of an odd but common reason for people not to practice is that they may hear of a technique and they may have never really heard of trying this before and as a result they may think that it's not relevant for them because they've never heard of it which I'm not completely sure of about the logic there but I've heard quite a number of students actually say that so I'm saying it for you right now is that if that's the case and you're selectively learning some of these techniques please don't do that.
+
+And the third thing is if you are wanting to learn more techniques to get more and more certainty about how to do the technique you may not be applying the technique because you're not sure exactly how to use it and you're thinking if you learn some of the later stages you'll get a better idea about how it all fits together and therefore you'll be able to be in a better position to actually start practicing and applying it.
+
+I'm going to tell you straight off the bat that is completely not going to happen.
+
+If you go further your confusion will only grow because there are certain nuances and assumptions that we are going to be making about you and your level of technique and your experience.
+
+We are going to assume that you've tried some of these techniques.
+
+We're going to assume that you know how it works.
+
+We're going to assume you know how it, the most important one here, we're going to assume you know how it feels when you apply a certain technique and the type of cognitive load that it introduces, the type of discomfort it creates.
+
+We actually need you to feel the uncertainty and the not being sure and still trying it anyway and then seeing how that feels and how it works for you.
+
+And we need you to actually do that a few times because only when you've had that experience of managing discomfort as well as actually trying techniques that you're not 100% sure about but doing your best, feeling some of the limitations, feeling some of the strengths and benefits it provides and having all these questions, that actually primes you to being able to learn the later stages much more easily with a lot less error.
+
+And it is incredibly consistent like to a near universal level of consistency.
+
+When people aren't practicing the techniques by this point, the later stages are really an absolute mess.
+
+Like we have people that are nearly finished the course whose technique level is worse than someone who is at this stage, at the end of fundamentals.
+
+And it's tragic.
+
+They're usually really demotivated and there's nothing we can do at that stage.
+
+It's a waste of everybody's time because these students will have to go and start the course all over again from scratch.
+
+But now they have to do it three times slower because they have to be extra careful about what they mislearned the first time around.
+
+So please, please, please, please, please do not make that mistake.
+
+I have people always messaging me saying, "Hey Justin, it's not clear that you're not meant to rush the course."
+
+And I just really, at this point, I do not think it's possible for me to make it any clearer.
+
+We need to be practicing.
+
+And if you're not practicing the techniques before you move on, it's not going to work out well for you.
+
+I'm going to say it this time once, make it a really big point here in the fundamentals.
+
+I'm not going to belabor it in the later stages just because this is like the time opportunity for me to just really, really reinforce it.
+
+So let's move on to the main things, the criteria that we need.
+
+The first one was actually having an experimental mindset.
+
+We need to get used to managing that.
+
+Managing that discomfort.
+
+So by now, you should have had at least, let's say, four or five separate occasions and experiences where you have learned a technique, you've tried to apply it, maybe you weren't sure, you felt some uncertainty, you felt some confusion, and you were trying to figure it out.
+
+You were really like a scientist experimenting with this and trying to figure it out and using your results and figuring out how you can get those marginal gains.
+
+That mindset is incredibly important.
+
+And that's what we're going to focus on in the next few weeks.
+
+So that's number one.
+
+We need to make sure that we've got that.
+
+And that is something that if we don't have yet, I strongly recommend that we do not move on until we have that.
+
+Mistakes that you make now are low risk, almost no risk, really.
+
+But if we hold off on that and only start making those mistakes when we're halfway through the course, that is just really, really messy and very time costly to start fixing that.
+
+And it's just the worst position to be in outside of just not being on the course at all.
+
+And in fact, actually, some students say that they would rather have not been on the course because they get to a position where they now know that their old techniques are wrong, but they feel incapable of doing it correctly because it's so overwhelming and they don't even know where the errors are because there are hundreds of places that errors could be.
+
+Here, if there's an error, there's only like six, seven places that you're likely to make an error.
+
+So if we can fix those four or five really important ones and the important mistakes that you make before you move on, then we're going to be able to make that.
+
+That in itself stops that error from becoming, you know, 20, 30, 40, 50 other errors later down the line.
+
+So that's the first point.
+
+The second one is that we want to have a level of experience with just trying to reduce the wordiness.
+
+Different people come into this course at different stages and with different techniques.
+
+Some people are very, very wordy and very linear with their note taking.
+
+Some people have an entire system built around just typing notes out or using apps like Notion or something else.
+
+And some people already come in.
+
+Some people already come in with a little bit more of a refined technique that doesn't rely on such a linearity.
+
+And so it's really hard for me to know on like a pre-recorded video to know exactly where you are.
+
+This is a judgment you have to make for yourself.
+
+We have to reduce the amount of words that we're using.
+
+We need to try to get some experience.
+
+Number three with writing some notes non-linearly, trying to show some of those relationships, trying to use a little bit more visualizations.
+
+And it's really important because relationships are incredibly important.
+
+And trying to represent and express relationships through words is very, very lengthy and tedious.
+
+Like if you had five concepts and relationships between all five of them, it might be like a whole three-page essay just to explain comprehensively and in detail what those relationships are.
+
+And in 99% of the cases, people are not even going to be willing to do that.
+
+They just don't even think about that because it just seems too overwhelming because they're so used to seeing things and thinking about things in terms of linear notes.
+
+So what we need to do is make sure that we are moving away from that.
+
+We're understanding how we can actually start expressing some ideas through arrows and things on a page occupying different places in space and start breaking into some level of non-linear note taking.
+
+It doesn't need to be amazing, but we need to start just getting a little bit more comfortable with expressing things without writing out full sentences and paragraphs all of the time and relying heavily on bullet points.
+
+Number four and related to that, we should have some knowledge.
+
+We should have some level of grouping and categorizing of information.
+
+This is really important and it's actually probably one of the most overlooked steps.
+
+People get so focused on the relationship side that we forget about just the fundamental step of taking those relationships and starting to bring some of them together to see how can I take these three items and actually group them because they share really similar relationships.
+
+And try to just simplify and categorize.
+
+And group some of this information.
+
+This is a really critical skill that leads on to more advanced chunking techniques later on.
+
+But if we're not used to just the idea and habit of grouping information, it's going to be a very uphill slope to learn the more advanced techniques.
+
+Everything that I've said so far up until now, these are things that would be red flags if we don't have at least some level of experience and a little bit of comfort and competency with doing.
+
+A little bit of non-linear note taking, trying to reduce our words a little bit, trying to show relevance.
+
+Trying to build relationships, trying to group some information together and being experimental in our mindset.
+
+If we don't have that to some level of comfort, even a little bit, just like starting to get used to it, then I would not move on until we get to that point where we are a little bit more used to it.
+
+The couple other things, so for example, exam revision techniques, your in-class technique, the space interleave retrieval, even if you don't have heaps of experience with this yet, that's something that we can just continue to do.
+
+That's something that we can just continue to work on for the next few stages.
+
+I definitely think we need to start implementing that, especially something like space interleave retrieval.
+
+People can do the spacing really well, but they often don't do the interleaving very well.
+
+So just getting a little bit of experience with that so that we can actually start addressing that later on and refining it even further.
+
+But I understand that it's a little unfair to hold you back just because of that when spacing by virtue is something that actually takes weeks or sometimes even months to actually start getting really good at it.
+
+So I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.
+
+I think that's something that we can do.

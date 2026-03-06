@@ -1,0 +1,37 @@
+topic_id: metabolic-organs-place-processes
+name: The metabolic processes that take place in specific organs in the
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: BI6.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.7
+  domain: KH
+  core: true
+  phase: Phase 1

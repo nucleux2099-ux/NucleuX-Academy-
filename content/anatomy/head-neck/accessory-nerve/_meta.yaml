@@ -1,0 +1,9 @@
+topic_id: accessory-nerve
+name: Accessory Nerve
+description: Accessory Nerve — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AN47.6
+  domain: KH
+  core: false
+  phase: Phase 1

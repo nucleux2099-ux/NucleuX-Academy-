@@ -1,0 +1,31 @@
+id: carbohydrate-metabolism
+title: "Carbohydrate Metabolism"
+subject: biochemistry
+description: |
+  Glycolysis, TCA cycle, gluconeogenesis, and glycogen.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - glycolysis
+      - pyruvate-dehydrogenase
+      - tca-cycle
+      - electron-transport-chain
+      - oxidative-phosphorylation
+      - gluconeogenesis
+      - glycogenesis-glycogenolysis
+      - glycogen-storage-diseases
+      - pentose-phosphate-pathway
+      - fructose-galactose-metabolism
+      - blood-glucose-regulation
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

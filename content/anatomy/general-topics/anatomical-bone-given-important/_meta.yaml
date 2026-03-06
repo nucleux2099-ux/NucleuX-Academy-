@@ -1,0 +1,9 @@
+topic_id: anatomical-bone-given-important
+name: The given bone, its side, important features & keep it in anatomical
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN14.1
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,29 @@
+topic_id: changes-cycle-menstrual-occurring
+name: The uterine changes occurring during the menstrual cycle
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN77.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN77.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN77.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN77.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN77.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN77.6
+  domain: KH
+  core: false
+  phase: Phase 1

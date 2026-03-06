@@ -1,0 +1,93 @@
+topic_id: examine-injured-legal-medico
+name: Examine and prepare Medico-legal report of an injured person with S SH/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM14.1
+  domain: P
+  core: true
+  phase: Phase 1
+- code: FM14.10
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.13
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.15
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.16
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.17
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.18
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.19
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM14.20
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.21
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.22
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM14.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: FM14.8
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: FM14.9
+  domain: SH
+  core: true
+  phase: Phase 1

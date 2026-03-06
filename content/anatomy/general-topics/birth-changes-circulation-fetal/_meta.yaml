@@ -1,0 +1,25 @@
+topic_id: birth-changes-circulation-fetal
+name: Fetal circulation and changes occurring at birth
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN25.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN25.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN25.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN25.7
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN25.8
+  domain: SH
+  core: false
+  phase: Phase 1

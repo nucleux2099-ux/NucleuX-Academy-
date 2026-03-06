@@ -1,0 +1,150 @@
+topic_id: porphyrin-metabolism-heme-synthesis
+name: "Porphyrin Metabolism & Heme Synthesis"
+description: >
+  Heme biosynthesis pathway, porphyrias, and heme degradation to bilirubin.
+high_yield: true
+nmc_codes:
+  - code: BI11.1
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Heme synthesis involves 8 enzymatic steps: starts in mitochondria (ALA synthase, rate-limiting),
+  continues in cytoplasm, returns to mitochondria (ferrochelatase adds Fe²+). Porphyrias result from
+  enzyme defects causing accumulation of heme precursors. Heme degradation produces bilirubin
+  (unconjugated → conjugated in liver → excreted in bile). Jaundice classification is clinically critical.
+  📚 Harper's Biochemistry, 31st Ed, Ch.31-32; 📚 Stryer Biochemistry, Ch.24
+
+learning_objectives:
+  - Describe the heme synthesis pathway with key enzymes and cellular locations
+  - Classify porphyrias as hepatic vs erythropoietic and acute vs cutaneous
+  - Explain heme degradation pathway and bilirubin metabolism
+  - Differentiate pre-hepatic, hepatic, and post-hepatic jaundice biochemically
+  - Identify lead poisoning effects on heme synthesis
+
+content:
+  atoms:
+    - id: heme-synthesis
+      title: "Heme Biosynthesis Pathway"
+      text: >
+        8 enzymes, starts and ends in mitochondria, middle steps in cytoplasm.
+        Step 1 (mitochondria): ALA synthase — succinyl-CoA + glycine → δ-aminolevulinic acid (ALA).
+        RATE-LIMITING. Requires PLP (B6). Induced by drugs/steroids, repressed by heme (negative feedback).
+        Step 2 (cytoplasm): ALA dehydratase — 2 ALA → porphobilinogen (PBG). Inhibited by LEAD.
+        Steps 3-6 (cytoplasm): PBG → hydroxymethylbilane → uroporphyrinogen III → coproporphyrinogen III.
+        Steps 7-8 (mitochondria): copro oxidase → protoporphyrinogen IX → protoporphyrin IX.
+        Final: ferrochelatase inserts Fe²+ → HEME. Also inhibited by LEAD.
+        📚 Harper's Biochemistry, 31st Ed, Ch.31
+
+    - id: porphyrias
+      title: "Porphyrias"
+      text: >
+        Acute intermittent porphyria (AIP): most common acute porphyria. PBG deaminase (HMB synthase) deficiency.
+        ↑ALA and ↑PBG in urine (port-wine colored). Abdominal pain, neuropsychiatric symptoms, NO skin lesions.
+        Triggered by drugs (barbiturates, alcohol, OCPs), fasting, stress. Autosomal dominant.
+        Porphyria cutanea tarda (PCT): most common porphyria overall. Uroporphyrinogen decarboxylase deficiency.
+        Photosensitivity, blistering skin lesions on sun-exposed areas. Tea-colored urine. Associated with hepatitis C, alcohol, iron overload.
+        Erythropoietic protoporphyria: ferrochelatase deficiency. Photosensitivity from childhood.
+        Lead poisoning inhibits ALA dehydratase AND ferrochelatase → ↑ALA, ↑protoporphyrin IX, sideroblastic anemia.
+        📚 Harper's Biochemistry, 31st Ed, Ch.31
+
+    - id: bilirubin-metabolism
+      title: "Bilirubin Metabolism & Jaundice"
+      text: >
+        Heme → biliverdin (heme oxygenase) → unconjugated bilirubin (UCB, indirect, lipid-soluble, bound to albumin).
+        Liver: UCB → conjugated bilirubin (CB, direct, water-soluble) by UDP-glucuronosyltransferase (UGT).
+        CB → bile → gut bacteria → urobilinogen → stercobilin (feces, brown) or urobilin (urine, yellow).
+        Pre-hepatic jaundice (hemolysis): ↑UCB, ↑urobilinogen, dark stools.
+        Hepatic jaundice (hepatitis): ↑both UCB and CB.
+        Post-hepatic/obstructive: ↑CB, pale stools (no stercobilin), dark urine (CB in urine), ↑ALP.
+        Gilbert syndrome: mild ↓UGT → mild unconjugated hyperbilirubinemia, benign. Crigler-Najjar: severe/absent UGT.
+        📚 Harper's Biochemistry, 31st Ed, Ch.32
+
+  clinical:
+    - title: "Clinical Correlation: Lead Poisoning"
+      text: >
+        Lead inhibits ALA dehydratase and ferrochelatase → ↑ALA, ↑free erythrocyte protoporphyrin (FEP).
+        Causes sideroblastic anemia (ringed sideroblasts), abdominal colic, lead lines on gingiva/long bones,
+        wrist/foot drop, basophilic stippling of RBCs, encephalopathy in children. Treatment: chelation (EDTA, succimer).
+    - title: "Clinical Correlation: Neonatal Jaundice"
+      text: >
+        Physiological: immature UGT → unconjugated hyperbilirubinemia, peaks day 2-5, resolves by 2 weeks.
+        Pathological: onset <24h (think hemolysis — Rh/ABO incompatibility). Kernicterus = bilirubin encephalopathy
+        (UCB crosses BBB, deposits in basal ganglia). Treatment: phototherapy (converts UCB to water-soluble isomers).
+
+high_yield_points:
+  - "ALA synthase is rate-limiting for heme synthesis; requires PLP (B6); repressed by heme"
+  - "Lead inhibits ALA dehydratase AND ferrochelatase → sideroblastic anemia + basophilic stippling"
+  - "AIP: ↑ALA + ↑PBG, abdominal pain, neuropsychiatric, NO skin lesions"
+  - "PCT: most common porphyria overall; photosensitive skin lesions; ↓uroporphyrinogen decarboxylase"
+  - "Conjugated bilirubin = direct, water-soluble; Unconjugated = indirect, lipid-soluble"
+  - "Gilbert syndrome: benign, mild ↓UGT; Crigler-Najjar Type I: absent UGT, severe"
+  - "Obstructive jaundice: pale stools, dark urine, ↑direct bilirubin, ↑ALP"
+  - "Kernicterus: unconjugated bilirubin deposits in basal ganglia of neonates"
+
+mcqs:
+  - question: "The rate-limiting enzyme of heme synthesis is:"
+    options:
+      - "ALA dehydratase"
+      - "ALA synthase"
+      - "Ferrochelatase"
+      - "PBG deaminase"
+    answer: "ALA synthase"
+    explanation: >
+      ALA synthase catalyzes the first and rate-limiting step: succinyl-CoA + glycine → ALA.
+      It requires PLP (B6) and is subject to feedback inhibition by heme.
+      📚 Harper's Biochemistry, 31st Ed, Ch.31
+    difficulty: 1
+
+  - question: "Lead poisoning causes sideroblastic anemia by inhibiting which two enzymes?"
+    options:
+      - "ALA synthase and PBG deaminase"
+      - "ALA dehydratase and ferrochelatase"
+      - "Uroporphyrinogen decarboxylase and coproporphyrinogen oxidase"
+      - "Heme oxygenase and biliverdin reductase"
+    answer: "ALA dehydratase and ferrochelatase"
+    explanation: >
+      Lead inhibits ALA dehydratase (↑ALA) and ferrochelatase (↑protoporphyrin IX, cannot insert Fe²+).
+      Result: sideroblastic anemia with ringed sideroblasts, basophilic stippling.
+      📚 Harper's Biochemistry, 31st Ed, Ch.31
+    difficulty: 2
+
+  - question: "A young woman has recurrent attacks of severe abdominal pain with port-wine colored urine. The most likely diagnosis is:"
+    options:
+      - "Porphyria cutanea tarda"
+      - "Acute intermittent porphyria"
+      - "Erythropoietic protoporphyria"
+      - "Gilbert syndrome"
+    answer: "Acute intermittent porphyria"
+    explanation: >
+      AIP = PBG deaminase deficiency → ↑ALA and PBG in urine (oxidize to port-wine color).
+      Acute abdominal pain + neuropsychiatric symptoms + NO skin lesions. Autosomal dominant.
+      📚 Harper's Biochemistry, 31st Ed, Ch.31
+    difficulty: 2
+
+  - question: "In obstructive jaundice, which of the following is expected?"
+    options:
+      - "↑Unconjugated bilirubin, dark stools"
+      - "↑Conjugated bilirubin, pale stools, dark urine"
+      - "↑Urobilinogen in urine"
+      - "Normal ALP"
+    answer: "↑Conjugated bilirubin, pale stools, dark urine"
+    explanation: >
+      Obstruction prevents conjugated bilirubin from reaching the gut → no stercobilin (pale stools),
+      CB backs up into blood and spills into urine (dark urine/cola colored). ALP is markedly elevated.
+      📚 Harper's Biochemistry, 31st Ed, Ch.32
+    difficulty: 1
+
+  - question: "Gilbert syndrome is characterized by:"
+    options:
+      - "Absent UDP-glucuronosyltransferase"
+      - "Mild decrease in UGT activity with benign unconjugated hyperbilirubinemia"
+      - "Elevated conjugated bilirubin"
+      - "Kernicterus in neonates"
+    answer: "Mild decrease in UGT activity with benign unconjugated hyperbilirubinemia"
+    explanation: >
+      Gilbert syndrome = common (5-10%), benign, mild ↓UGT activity. Mild jaundice exacerbated by
+      fasting/stress/illness. No treatment needed. Crigler-Najjar Type I = absent UGT, severe.
+      📚 Harper's Biochemistry, 31st Ed, Ch.32
+    difficulty: 1

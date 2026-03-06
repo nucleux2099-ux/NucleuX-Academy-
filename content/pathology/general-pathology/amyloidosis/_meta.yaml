@@ -1,0 +1,142 @@
+topic_id: amyloidosis
+name: Amyloidosis
+description: Classification, pathogenesis, and clinical features of amyloid deposition diseases
+high_yield: true
+
+overview: >
+  Amyloidosis is a group of diseases characterized by extracellular deposition of misfolded fibrillar proteins
+  (amyloid) in various organs. Congo red staining with apple-green birefringence under polarized light is diagnostic.
+  Classification is based on the precursor protein (AL, AA, ATTR, Aβ2M).
+  📚 Robbins, 10th Ed, Ch.6 (p.253-262)
+
+learning_objectives:
+  - Describe the biochemical nature and staining properties of amyloid
+  - Classify amyloidosis by precursor protein type
+  - Differentiate primary (AL) from secondary (AA) amyloidosis
+  - List the organs commonly affected and their clinical manifestations
+  - Describe the diagnosis of amyloidosis
+
+content:
+  atoms:
+    - id: amyloid-properties
+      title: "Properties of Amyloid"
+      text: >
+        Amyloid = misfolded proteins that aggregate into insoluble cross-β-pleated sheet fibrils.
+        Staining: Congo red → salmon-pink color; under POLARIZED light → APPLE-GREEN BIREFRINGENCE (pathognomonic).
+        All amyloid deposits contain SAP (serum amyloid P component) and proteoglycans.
+        Electron microscopy: non-branching fibrils, 7.5-10 nm diameter.
+        📚 Robbins, 10th Ed, Ch.6 (p.253-255)
+
+    - id: classification
+      title: "Classification of Amyloidosis"
+      text: >
+        AL (Amyloid Light chain): PRIMARY amyloidosis; from immunoglobulin light chains (usually lambda);
+        associated with plasma cell dyscrasias (multiple myeloma, Waldenström).
+        AA (Amyloid Associated): SECONDARY/REACTIVE amyloidosis; from SAA (serum amyloid A, an acute phase protein);
+        associated with chronic inflammatory conditions (RA, IBD, TB, FMF, bronchiectasis).
+        ATTR (Transthyretin): Familial (mutant transthyretin) → familial amyloid polyneuropathy;
+        Senile/wild-type ATTR → senile cardiac amyloidosis (elderly men).
+        Aβ2M (β2-microglobulin): hemodialysis-associated amyloidosis.
+        Aβ (β-amyloid): Alzheimer disease (cerebral amyloid from APP on chr 21).
+        📚 Robbins, 10th Ed, Ch.6 (p.255-258)
+
+    - id: organ-involvement
+      title: "Organ Involvement and Clinical Features"
+      text: >
+        Kidney: most common organ affected in AL and AA; nephrotic syndrome → renal failure.
+        Heart: restrictive cardiomyopathy (AL > AA); "stiff heart" with diastolic dysfunction; poor prognosis.
+        Liver/Spleen: hepatosplenomegaly; sago spleen (follicular) vs lardaceous spleen (diffuse).
+        Tongue: macroglossia (AL amyloidosis — almost pathognomonic).
+        Peripheral nerves: polyneuropathy (ATTR familial amyloid).
+        GI tract: malabsorption, diarrhea.
+        📚 Robbins, 10th Ed, Ch.6 (p.258-261)
+
+  clinical:
+    - title: "Diagnosis of Amyloidosis"
+      text: >
+        Tissue biopsy with Congo red staining is gold standard. Abdominal fat pad aspirate or rectal biopsy
+        are least invasive screening methods. Apple-green birefringence under polarized light confirms amyloid.
+        SAP scintigraphy can assess systemic distribution. Typing (AL vs AA) requires immunohistochemistry or mass spectrometry.
+
+  high_yield_points:
+    - "Congo red stain → apple-green birefringence under polarized light = DIAGNOSTIC of amyloid"
+    - "AL (primary) = immunoglobulin LIGHT chains; associated with multiple myeloma/plasma cell dyscrasias"
+    - "AA (secondary) = SAA protein; associated with CHRONIC inflammation (RA, TB, FMF)"
+    - "Kidney is most commonly affected organ in systemic amyloidosis (nephrotic syndrome)"
+    - "Macroglossia is almost pathognomonic for AL amyloidosis"
+    - "Cardiac amyloidosis → restrictive cardiomyopathy (diastolic dysfunction, 'stiff heart')"
+    - "Sago spleen = follicular amyloid deposition; Lardaceous spleen = diffuse deposition"
+    - "Aβ amyloid (from APP, chr 21) deposits in Alzheimer disease; Down syndrome patients get early Alzheimer"
+    - "Familial Mediterranean Fever (FMF) → AA amyloidosis (autosomal recessive, pyrin gene mutation)"
+    - "Abdominal fat pad aspirate = simplest screening biopsy for systemic amyloidosis"
+
+mcqs:
+  - question: "A 60-year-old man with long-standing rheumatoid arthritis develops nephrotic syndrome. Kidney biopsy shows amorphous eosinophilic material in glomeruli that stains positive with Congo red. The amyloid protein deposited is most likely:"
+    options:
+      - "AL (immunoglobulin light chain)"
+      - "AA (serum amyloid A)"
+      - "ATTR (transthyretin)"
+      - "Aβ2M (β2-microglobulin)"
+    answer: "AA (serum amyloid A)"
+    explanation: >
+      Chronic inflammatory conditions like RA produce sustained elevation of SAA (an acute phase reactant from the liver),
+      which can deposit as AA amyloid. This is secondary (reactive) amyloidosis. AL amyloid would be associated with
+      plasma cell dyscrasias, not RA. ATTR is hereditary or senile. Aβ2M is dialysis-related.
+      📚 Robbins, 10th Ed, Ch.6 (p.256)
+    difficulty: 1
+
+  - question: "Which staining pattern is pathognomonic for amyloid?"
+    options:
+      - "PAS-positive, diastase-resistant granules"
+      - "Congo red with apple-green birefringence under polarized light"
+      - "Sudan black positivity"
+      - "Prussian blue positivity"
+    answer: "Congo red with apple-green birefringence under polarized light"
+    explanation: >
+      Congo red binds to the β-pleated sheet structure of amyloid fibrils, producing a salmon-pink color under
+      ordinary light and pathognomonic APPLE-GREEN BIREFRINGENCE under polarized light. PAS-positive = glycogen.
+      Sudan black = lipids/myeloperoxidase. Prussian blue = iron (hemosiderin).
+      📚 Robbins, 10th Ed, Ch.6 (p.254)
+    difficulty: 1
+
+  - question: "A 65-year-old man presents with progressive heart failure with preserved ejection fraction, low-voltage ECG, and thickened ventricular walls on echocardiography. Endomyocardial biopsy is Congo red positive. The most likely type of amyloid is:"
+    options:
+      - "AL amyloid"
+      - "AA amyloid"
+      - "Wild-type ATTR (senile cardiac)"
+      - "Aβ amyloid"
+    answer: "Wild-type ATTR (senile cardiac)"
+    explanation: >
+      Senile cardiac amyloidosis (wild-type ATTR) is caused by deposition of normal (wild-type) transthyretin in the
+      heart of elderly men. It presents as restrictive cardiomyopathy with diastolic dysfunction. While AL can also
+      cause cardiac amyloidosis, in an elderly man without evidence of plasma cell dyscrasia, wild-type ATTR is most common.
+      📚 Robbins, 10th Ed, Ch.6 (p.257)
+    difficulty: 3
+
+  - question: "A patient with multiple myeloma develops nephrotic syndrome, hepatomegaly, and macroglossia. Which amyloid precursor protein is responsible?"
+    options:
+      - "Serum amyloid A"
+      - "Immunoglobulin light chains"
+      - "Transthyretin"
+      - "β2-microglobulin"
+    answer: "Immunoglobulin light chains"
+    explanation: >
+      Multiple myeloma is associated with AL (primary) amyloidosis. Malignant plasma cells produce excess
+      immunoglobulin light chains (usually lambda) that misfold and deposit as amyloid. Macroglossia is
+      almost pathognomonic for AL amyloidosis. AA amyloid is from chronic inflammation, not myeloma.
+      📚 Robbins, 10th Ed, Ch.6 (p.255)
+    difficulty: 1
+
+  - question: "A patient on chronic hemodialysis for 10 years develops carpal tunnel syndrome and joint stiffness. Biopsy of synovium shows amyloid deposition. The precursor protein is:"
+    options:
+      - "AL (light chains)"
+      - "AA (SAA)"
+      - "Aβ2M (β2-microglobulin)"
+      - "ATTR (transthyretin)"
+    answer: "Aβ2M (β2-microglobulin)"
+    explanation: >
+      Dialysis-associated amyloidosis is caused by β2-microglobulin (Aβ2M), which is normally filtered by the kidney
+      but accumulates in patients on long-term hemodialysis. It deposits preferentially in joints and periarticular
+      tissues, causing carpal tunnel syndrome and destructive arthropathy.
+      📚 Robbins, 10th Ed, Ch.6 (p.257)
+    difficulty: 2

@@ -1,0 +1,9 @@
+topic_id: viral-vaccines
+name: Viral Vaccines
+description: Viral Vaccines — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI1.9
+  domain: KH
+  core: true
+  phase: Phase 1

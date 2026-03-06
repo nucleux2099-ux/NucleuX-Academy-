@@ -1,0 +1,13 @@
+topic_id: neural-tube-defects-peds
+name: Neural Tube Defects Peds
+description: Neural Tube Defects Peds — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE24.15
+  domain: P
+  core: true
+  phase: Phase 2
+- code: PE30.5
+  domain: KH
+  core: true
+  phase: Phase 2

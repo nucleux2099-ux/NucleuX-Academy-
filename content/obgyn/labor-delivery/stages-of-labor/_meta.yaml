@@ -1,0 +1,9 @@
+topic_id: stages-of-labor
+name: Stages Of Labor
+description: Stages Of Labor — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG13.4
+  domain: SH
+  core: true
+  phase: Phase 3

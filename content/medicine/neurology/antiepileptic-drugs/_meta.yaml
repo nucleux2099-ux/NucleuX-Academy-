@@ -1,0 +1,27 @@
+title: "Antiepileptic Drugs"
+slug: antiepileptic-drugs
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM16.13"
+  - "IM16.18"
+prerequisites:
+  - "seizure-disorders"
+related_topics:
+  - "febrile-seizures"
+  - "raised-intracranial-pressure"
+enrichment:
+  nmcCodes:
+    - code: "IM16.13"
+      text: "Describe the pharmacology and side effects of antiepileptic drugs"
+      domain: "KH"
+    - code: "IM16.18"
+      text: "Enumerate and describe the indications for use of antiepileptic drugs"
+      domain: "K"
+  prerequisite_details:
+    - slug: "seizure-disorders"
+      reason: "Must understand seizure types to select appropriate AED"
+  related_details:
+    - slug: "febrile-seizures"
+      reason: "AED use considerations in febrile seizures"
+      relationship: "clinical"

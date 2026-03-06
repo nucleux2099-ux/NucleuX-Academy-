@@ -1,0 +1,9 @@
+topic_id: hip-joint
+name: Hip Joint
+description: Hip Joint — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: AN17.3
+  domain: KH
+  core: false
+  phase: Phase 1

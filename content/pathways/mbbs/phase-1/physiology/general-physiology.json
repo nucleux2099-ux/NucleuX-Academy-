@@ -1,0 +1,82 @@
+{
+  "id": "physiology-general",
+  "title": "General Physiology Foundations",
+  "phase": "Phase-1", 
+  "subject": "Physiology",
+  "description": "Fundamental principles of human physiology including cellular physiology, membrane transport, bioelectric phenomena, and homeostatic mechanisms essential for understanding all body systems.",
+  "competencies": ["PY1.1", "PY3.1", "PY3.7", "PY3.13"],
+  "prerequisites": ["anatomy-general"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Cell Physiology & Membrane Transport",
+      "libraryTopic": "general-physiology",
+      "sections": ["cell-membrane", "transport-mechanisms", "osmosis", "diffusion"],
+      "duration": "60min",
+      "xp": 25
+    },
+    {
+      "order": 2,
+      "type": "quiz",
+      "title": "Cellular Transport Quiz",
+      "mcqCount": 12,
+      "passingScore": 70,
+      "xp": 30,
+      "competency": "PY1.1"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Bioelectrical Phenomena", 
+      "libraryTopic": "general-physiology",
+      "sections": ["resting-potential", "action-potential", "conduction", "synaptic-transmission"],
+      "duration": "70min",
+      "xp": 35
+    },
+    {
+      "order": 4,
+      "type": "quiz",
+      "title": "Bioelectricity Assessment",
+      "mcqCount": 15,
+      "passingScore": 72,
+      "xp": 35,
+      "competency": "PY3.1"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Homeostasis & Regulation",
+      "libraryTopic": "general-physiology", 
+      "sections": ["homeostasis", "feedback-loops", "regulation", "adaptation"],
+      "duration": "50min",
+      "xp": 25
+    },
+    {
+      "order": 6,
+      "type": "skill",
+      "title": "Physiological Measurements",
+      "competency": "PY3.7",
+      "xp": 45,
+      "duration": "40min"
+    },
+    {
+      "order": 7,
+      "type": "integration",
+      "title": "Systems Integration",
+      "competency": "PY3.13",
+      "xp": 40,
+      "duration": "35min"
+    }
+  ],
+  "totalXP": 235,
+  "estimatedTime": "5 hours",
+  "unlocks": ["physiology-cardiovascular", "physiology-respiratory", "physiology-renal"],
+  "textbooks": [
+    {"title": "Guyton and Hall Textbook of Medical Physiology", "chapters": ["Introduction", "Cell Physiology"], "edition": "14th"},
+    {"title": "Ganong's Review of Medical Physiology", "chapters": ["Cellular Physiology"], "edition": "26th"}
+  ],
+  "tags": ["high-yield", "neet-pg", "basic-science"],
+  "difficulty": 2,
+  "lastUpdated": "2024-02-08"
+}

@@ -1,0 +1,37 @@
+title: "Surgical Audit"
+slug: surgical-audit
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU7.1"
+  - "SU7.2"
+prerequisites:
+  - "perioperative-management"
+  - "surgical-infections"
+related_topics:
+  - "surgical-ethics"
+  - "hospital-waste-management"
+  - "preoperative-assessment"
+enrichment:
+  nmcCodes:
+    - code: "SU7.1"
+      text: "Describe the Planning and conduct of Surgical audit"
+      domain: "K"
+    - code: "SU7.2"
+      text: "Describe the principles and steps of clinical research in General Surgery"
+      domain: "K"
+  prerequisite_details:
+    - slug: "perioperative-management"
+      reason: "Audit parameters (SSI rates, mortality, readmissions) are derived from perioperative outcomes data"
+    - slug: "surgical-infections"
+      reason: "Surgical site infection rate is the most commonly audited outcome metric in surgical departments"
+  related_details:
+    - slug: "surgical-ethics"
+      reason: "Audit findings raise ethical obligations for disclosure, informed consent improvements, and practice change"
+      relationship: "foundational"
+    - slug: "hospital-waste-management"
+      reason: "Waste segregation compliance is a key auditable quality indicator under hospital accreditation standards"
+      relationship: "quality"
+    - slug: "preoperative-assessment"
+      reason: "Preoperative risk scoring (ASA, P-POSSUM) provides the denominator data for risk-adjusted audit outcomes"
+      relationship: "clinical"

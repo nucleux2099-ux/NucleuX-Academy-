@@ -1,0 +1,19 @@
+title: "Ventilator-Associated Pneumonia"
+slug: ventilator-associated-pneumonia
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM8.13"
+prerequisites: []
+related_topics:
+  - "catheter-related-infections"
+enrichment:
+  nmcCodes:
+    - code: "IM8.13"
+      text: "Ventilator-Associated Pneumonia — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "catheter-related-infections"
+      reason: "Clinically related"
+      relationship: "clinical"

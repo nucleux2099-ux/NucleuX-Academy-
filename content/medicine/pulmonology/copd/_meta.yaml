@@ -1,0 +1,57 @@
+title: Chronic Obstructive Pulmonary Disease
+slug: copd
+depth: UG
+highYield: true
+nmc_codes:
+  - IM6.1
+  - IM6.2
+  - IM6.3
+  - IM6.5
+  - IM6.7
+  - IM6.9
+prerequisites: []
+related_topics:
+  - asthma
+  - pneumonia
+  - pulmonary-hypertension
+  - pneumothorax
+enrichment:
+  nmcCodes:
+    - code: IM6.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of chronic obstructive
+        pulmonary disease
+      domain: KH
+    - code: IM6.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of chronic obstructive
+        pulmonary disease
+      domain: KH
+    - code: IM6.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of chronic obstructive
+        pulmonary disease
+      domain: KH
+    - code: IM6.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of chronic obstructive
+        pulmonary disease
+      domain: KH
+    - code: IM6.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of chronic obstructive
+        pulmonary disease
+      domain: KH
+    - code: IM6.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of chronic obstructive
+        pulmonary disease
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: asthma
+      reason: Clinically related to chronic obstructive pulmonary disease
+      relationship: clinical
+    - slug: pneumonia
+      reason: Clinically related to chronic obstructive pulmonary disease
+      relationship: clinical
+    - slug: pulmonary-hypertension
+      reason: Clinically related to chronic obstructive pulmonary disease
+      relationship: clinical
+    - slug: pneumothorax
+      reason: Clinically related to chronic obstructive pulmonary disease
+      relationship: clinical

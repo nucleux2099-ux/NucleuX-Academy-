@@ -1,0 +1,19 @@
+title: "History Taking and Documentation"
+slug: document-elicit-history-present
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.17"
+prerequisites: []
+related_topics:
+  - "establishes-examination-perform-systematic"
+enrichment:
+  nmcCodes:
+    - code: "IM26.17"
+      text: "History Taking and Documentation — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "establishes-examination-perform-systematic"
+      reason: "Clinically related"
+      relationship: "clinical"

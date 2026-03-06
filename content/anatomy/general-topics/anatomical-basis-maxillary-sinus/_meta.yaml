@@ -1,0 +1,9 @@
+topic_id: anatomical-basis-maxillary-sinus
+name: Anatomical basis of sinusitis & maxillary sinus tumours
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: AN37.3
+  domain: KH
+  core: false
+  phase: Phase 1

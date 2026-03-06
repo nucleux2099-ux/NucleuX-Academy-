@@ -1,0 +1,22 @@
+title: "Colorectal Cancer — Medical Management"
+slug: colorectal-cancer-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.32"
+prerequisites:
+  - "chemotherapy-principles"
+related_topics:
+  - "tumor-markers"
+enrichment:
+  nmcCodes:
+    - code: "IM26.32"
+      text: "Colorectal Cancer — Medical Management — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "chemotherapy-principles"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "tumor-markers"
+      reason: "Clinically related"
+      relationship: "clinical"

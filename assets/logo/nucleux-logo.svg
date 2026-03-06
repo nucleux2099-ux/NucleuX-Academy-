@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for the core nucleus -->
+    <radialGradient id="nucleusGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </radialGradient>
+    
+    <!-- Gradient for orbital rings -->
+    <linearGradient id="orbitGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    
+    <linearGradient id="orbitGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    
+    <linearGradient id="orbitGradient3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle (optional, for dark backgrounds) -->
+  <!-- <circle cx="200" cy="200" r="190" fill="#0F172A"/> -->
+  
+  <!-- Orbital paths -->
+  <g filter="url(#glow)">
+    <!-- Orbit 1 - tilted ellipse -->
+    <ellipse cx="200" cy="200" rx="140" ry="50" 
+             stroke="url(#orbitGradient1)" stroke-width="3" fill="none"
+             transform="rotate(-30 200 200)" opacity="0.9"/>
+    
+    <!-- Orbit 2 - tilted ellipse -->
+    <ellipse cx="200" cy="200" rx="140" ry="50" 
+             stroke="url(#orbitGradient2)" stroke-width="3" fill="none"
+             transform="rotate(30 200 200)" opacity="0.9"/>
+    
+    <!-- Orbit 3 - tilted ellipse -->
+    <ellipse cx="200" cy="200" rx="140" ry="50" 
+             stroke="url(#orbitGradient3)" stroke-width="3" fill="none"
+             transform="rotate(90 200 200)" opacity="0.9"/>
+  </g>
+  
+  <!-- Electrons on orbits -->
+  <circle cx="340" cy="200" r="10" fill="#06B6D4" filter="url(#glow)"
+          transform="rotate(-30 200 200)"/>
+  <circle cx="60" cy="200" r="10" fill="#10B981" filter="url(#glow)"
+          transform="rotate(30 200 200)"/>
+  <circle cx="200" cy="60" r="10" fill="#F59E0B" filter="url(#glow)"/>
+  
+  <!-- Central Nucleus with X -->
+  <circle cx="200" cy="200" r="55" fill="url(#nucleusGradient)" filter="url(#glow)"/>
+  
+  <!-- X mark in the center (NucleuX) -->
+  <g stroke="white" stroke-width="8" stroke-linecap="round">
+    <line x1="175" y1="175" x2="225" y2="225"/>
+    <line x1="225" y1="175" x2="175" y2="225"/>
+  </g>
+</svg>

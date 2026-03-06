@@ -1,0 +1,77 @@
+# Stomach Topic Index
+# NucleuX Academy Content Library
+
+id: stomach
+title: "Stomach & Duodenum"
+subject: surgery
+subspecialty: gi_surgery
+system: upper_gi
+
+description: |
+  Comprehensive coverage of gastric anatomy, peptic ulcer disease,
+  GI bleeding, gastric neoplasms, and surgical procedures.
+  Primary sources: Shackelford 9th Ed, Sleisenger 11th Ed.
+
+stats:
+  total_chapters: 35
+  chapters_covered: 4
+  coverage_percent: 11
+  concept_notes: 3
+  grinde_maps: 0
+  retrieval_cards: 0
+  case_scenarios: 0
+
+categories:
+  - id: anatomy
+    title: "Anatomy & Physiology"
+    topics:
+      - gastric-anatomy
+      - gastric-physiology
+  - id: peptic_disease
+    title: "Peptic Disease"
+    topics:
+      - peptic-ulcer-disease
+      - h-pylori
+  - id: bleeding
+    title: "GI Bleeding"
+    topics:
+      - upper-gi-bleeding
+  - id: neoplasms
+    title: "Gastric Neoplasms"
+    topics:
+      - gastric-cancer
+      - gist
+  - id: procedures
+    title: "Surgical Procedures"
+    topics:
+      - gastrectomy
+      - vagotomy
+
+priority: high
+exam_relevance:
+  - NEET_PG
+  - USMLE_Step2
+  - MRCS
+
+study_order:
+  - anatomy (foundation)
+  - peptic_disease (common)
+  - bleeding (emergencies)
+  - neoplasms (high-yield)
+  - procedures (advanced)
+
+sources:
+  primary:
+    - book: "Shackelford's Surgery of the Alimentary Tract"
+      edition: "9th"
+      chapters: "43-77"
+  supplementary:
+    - book: "Sleisenger & Fordtran's GI and Liver Disease"
+      edition: "11th"
+      topic: "Peptic Disease, Gastric Cancer"
+    - book: "Maingot's Abdominal Operations"
+      edition: "12th"
+      chapters: "20-28"
+
+last_updated: "2025-02-08"
+status: seeding

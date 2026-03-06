@@ -1,0 +1,52 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "wound-healing",
+      "nmcCode": "",
+      "reason": "Understanding wound biology and contamination classification is foundational to aseptic practice",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hospital-waste-management",
+      "nmcCode": "",
+      "reason": "Proper disposal of contaminated materials is integral to maintaining asepsis in the OT",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Aseptic technique is the primary preventive strategy against surgical site infections",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "perioperative-management",
+      "nmcCode": "",
+      "reason": "Asepsis protocols are a core component of perioperative infection prevention bundles",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-ethics",
+      "nmcCode": "",
+      "reason": "Maintaining sterility standards is an ethical obligation to patient safety",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU14.1: Describe Aseptic techniques, sterilization and disinfection.",
+    "SU14.2: Describe Surgical approaches, incisions and the use of appropriate",
+    "SU14.3: Describe the materials and methods used for surgical wound",
+    "SU14.4: Demonstrate the techniques of asepsis and suturing in a simulated"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Asepsis & Sterilization across foundational sciences and clinical applications."
+}

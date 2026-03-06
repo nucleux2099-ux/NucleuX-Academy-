@@ -1,0 +1,150 @@
+overview: |
+  Inguinal hernias account for 75% of all abdominal wall hernias. They are classified as indirect (through
+  deep ring, MC) or direct (through Hesselbach's triangle). Understanding inguinal canal anatomy, the
+  distinction between inguinal and femoral hernias, and mesh repair techniques is essential for NEET-PG.
+
+learning_objectives:
+  - Describe inguinal canal anatomy including boundaries and contents
+  - Differentiate indirect from direct inguinal hernia and femoral hernia
+  - Define Hesselbach's triangle and its surgical significance
+  - Compare Lichtenstein (open mesh) vs laparoscopic (TEP/TAPP) repair
+  - Recognize and manage complications including strangulation
+
+content:
+  atoms:
+    - title: Inguinal Canal Anatomy
+      text: |
+        Length: 4 cm. Deep ring: Midpoint of inguinal ligament (lateral to inferior epigastric vessels).
+        Superficial ring: Above and medial to pubic tubercle.
+        **Boundaries:** Anterior wall — External oblique aponeurosis (+ internal oblique laterally).
+        Posterior wall — Transversalis fascia (+ conjoint tendon medially). Roof — Arching fibers of
+        internal oblique + transversus abdominis. Floor — Inguinal ligament + lacunar ligament medially.
+        **Contents:** Males: Spermatic cord (3 arteries, 3 veins, 3 nerves, 3 fasciae, vas deferens).
+        Females: Round ligament of uterus.
+        📚 Bailey & Love, 28th Ed, Ch.60; Sabiston, 21st Ed, Ch.44
+
+    - title: Classification — Indirect vs Direct vs Femoral
+      text: |
+        **Indirect (MC, 60%):** Through deep inguinal ring, LATERAL to inferior epigastric vessels.
+        Congenital (patent processus vaginalis). Common in young males. Can descend into scrotum.
+        Controlled by pressure over deep ring (midpoint of inguinal ligament).
+        **Direct (25%):** Through Hesselbach's triangle, MEDIAL to inferior epigastric vessels.
+        Acquired (weakness of posterior wall). Common in elderly. Rarely descends to scrotum.
+        NOT controlled by deep ring pressure.
+        **Femoral (15%):** Below and lateral to pubic tubercle, through femoral canal.
+        MC in females (but inguinal still MC hernia in females). Highest risk of strangulation.
+        **Hesselbach's triangle:** Inferior epigastric vessels (lateral), lateral border of rectus (medial),
+        inguinal ligament (inferior).
+        📚 Bailey & Love, 28th Ed, Ch.60
+
+    - title: Surgical Repair
+      text: |
+        **Lichtenstein tension-free mesh repair:** Gold standard for open inguinal hernia repair.
+        Polypropylene mesh placed over posterior wall. Recurrence <1%.
+        **Laparoscopic:** TEP (Totally Extraperitoneal) — preferred, no peritoneal entry.
+        TAPP (Transabdominal Preperitoneal) — enters peritoneum, useful for bilateral/recurrent hernias.
+        **Indications for laparoscopic:** Bilateral, recurrent, athletes (sportsman's hernia).
+        **Bassini repair:** (Historical) Posterior wall repair — conjoint tendon sutured to inguinal ligament.
+        **Shouldice repair:** Multilayered repair of transversalis fascia — best tissue repair (recurrence 1%).
+        📚 Maingot's, 12th Ed, Part I; Sabiston, 21st Ed, Ch.44
+
+    - title: Femoral Hernia
+      text: |
+        Passes through femoral canal (medial compartment of femoral sheath). Boundaries of femoral ring:
+        Anterior — inguinal ligament, Posterior — pectineal ligament (Cooper's), Medial — lacunar ligament
+        (site of constriction), Lateral — femoral vein.
+        Highest strangulation risk of all hernias (narrow rigid neck). Swelling BELOW and LATERAL to pubic tubercle.
+        Repair: Open — Lockwood (low/crural approach), Lotheissen (high/inguinal approach),
+        McEvedy (high/extraperitoneal — best for strangulated). Laparoscopic TEP/TAPP also effective.
+        📚 Bailey & Love, 28th Ed, Ch.60
+
+    - title: Complications & Incisional Hernia
+      text: |
+        **Complications of hernia:** Irreducibility, obstruction, strangulation (surgical emergency —
+        compromised blood supply → gangrene), Richter's hernia (only antimesenteric wall — can strangulate
+        without obstruction), Maydl's hernia (W-loop, retrograde strangulation), Littre's hernia (Meckel's in sac).
+        **Incisional hernia:** Through previous surgical incision. Risk factors: wound infection, obesity,
+        emergency surgery, vertical incisions. Repair: Mesh repair (sublay/retromuscular preferred — Rives-Stoppa technique).
+        📚 Bailey & Love, 28th Ed, Ch.60
+
+  clinical: |
+    **Approach to Groin Swelling:**
+    1. Above or below inguinal ligament? (Inguinal vs Femoral)
+    2. Relation to pubic tubercle: Above & medial = inguinal; Below & lateral = femoral
+    3. If inguinal: Controlled by deep ring pressure? Yes = Indirect; No = Direct
+    4. Cough impulse present + reducible = uncomplicated
+    5. Irreducible + tender + absent cough impulse = suspect strangulation → EMERGENCY SURGERY
+    6. Elective repair: Lichtenstein (open) or TEP/TAPP (laparoscopic)
+
+  high_yield_points:
+    - "MC hernia overall: Indirect inguinal hernia"
+    - "MC hernia in BOTH males and females: Inguinal hernia"
+    - "Femoral hernia: MC hernia to strangulate; below and lateral to pubic tubercle"
+    - "Hesselbach's triangle: Inferior epigastric vessels, rectus sheath, inguinal ligament"
+    - "Indirect: Lateral to inferior epigastric vessels; Direct: Medial"
+    - "Deep ring: Midpoint of inguinal ligament (NOT midinguinal point)"
+    - "Richter's hernia: Only antimesenteric wall — strangulates without obstruction"
+    - "Lichtenstein mesh repair: Gold standard, <1% recurrence"
+    - "TEP preferred laparoscopic approach; TAPP for bilateral/recurrent"
+    - "Lacunar ligament: Site of constriction in femoral hernia"
+
+mcqs:
+  - question: "A 60-year-old male has a groin swelling that is NOT controlled by pressure over the deep inguinal ring. The swelling is medial to the inferior epigastric vessels. What type of hernia is this?"
+    options:
+      a: Indirect inguinal hernia
+      b: Direct inguinal hernia
+      c: Femoral hernia
+      d: Spigelian hernia
+    answer: b
+    explanation: |
+      Direct inguinal hernia passes through Hesselbach's triangle, medial to the inferior epigastric
+      vessels. It is NOT controlled by pressure over the deep ring (unlike indirect hernia which passes
+      through the deep ring). 📚 Bailey & Love, 28th Ed, Ch.60
+
+  - question: "Which hernia has the highest risk of strangulation?"
+    options:
+      a: Indirect inguinal
+      b: Direct inguinal
+      c: Femoral
+      d: Umbilical
+    answer: c
+    explanation: |
+      Femoral hernia has the highest strangulation risk due to its narrow, rigid neck formed by
+      the lacunar ligament medially and Cooper's ligament posteriorly. Emergency surgery is indicated
+      for all femoral hernias due to this risk. 📚 Bailey & Love, 28th Ed, Ch.60
+
+  - question: "In Richter's hernia, which part of the bowel wall is involved?"
+    options:
+      a: Entire circumference
+      b: Mesenteric border
+      c: Antimesenteric border
+      d: Only the serosa
+    answer: c
+    explanation: |
+      Richter's hernia involves only the antimesenteric border of the bowel. This is significant because
+      it can strangulate and even perforate without causing intestinal obstruction (lumen remains patent).
+      Most commonly occurs in femoral hernias. 📚 Sabiston, 21st Ed, Ch.44
+
+  - question: "The gold standard open repair for inguinal hernia is:"
+    options:
+      a: Bassini repair
+      b: Shouldice repair
+      c: Lichtenstein tension-free mesh repair
+      d: Desarda repair
+    answer: c
+    explanation: |
+      Lichtenstein tension-free mesh repair is the gold standard with recurrence rate <1%.
+      Shouldice is the best tissue (non-mesh) repair. Bassini is historical. Modern practice
+      favors mesh-based repairs. 📚 Sabiston, 21st Ed, Ch.44
+
+  - question: "Which laparoscopic approach for inguinal hernia repair does NOT enter the peritoneal cavity?"
+    options:
+      a: TAPP
+      b: TEP
+      c: IPOM
+      d: Lap Lichtenstein
+    answer: b
+    explanation: |
+      TEP (Totally Extraperitoneal) approach works in the preperitoneal space without entering
+      the peritoneal cavity. TAPP (Transabdominal Preperitoneal) enters the peritoneum and then
+      accesses the preperitoneal space. TEP is generally preferred. 📚 Maingot's, 12th Ed, Part I

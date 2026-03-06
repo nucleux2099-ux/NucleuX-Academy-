@@ -1,0 +1,132 @@
+{
+  "generated": "2026-02-19T22:58:03.040974",
+  "phase": "3c-final",
+  "overall": {
+    "topics": 15,
+    "anchors_total": 45,
+    "relevance_ratio": 1.0,
+    "page_ratio": 1.0
+  },
+  "rows": [
+    {
+      "topic": "upper-gi-bleed-variceal-bleed",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "portal-hypertension",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "acute-pancreatitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "chronic-pancreatitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "obstructive-jaundice",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "cholangitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "choledocholithiasis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "liver-abscess",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "acute-cholecystitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "gallbladder-cancer",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "hepatocellular-carcinoma",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "liver-metastases",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "pancreatic-cancer",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "intestinal-obstruction",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "perforation-peritonitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+topic_id: carbon-dioxide-transport
+name: Carbon Dioxide Transport
+description: Carbon Dioxide Transport — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY1.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY6.3
+  domain: KH
+  core: true
+  phase: Phase 1

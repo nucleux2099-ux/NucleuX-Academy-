@@ -1,0 +1,15 @@
+title: "Protein-Calorie Malnutrition"
+slug: caloric-consequences-protein
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.9"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.9"
+      text: "Protein-Calorie Malnutrition — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

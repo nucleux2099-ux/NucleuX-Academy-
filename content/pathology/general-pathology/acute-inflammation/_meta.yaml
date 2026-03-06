@@ -1,0 +1,175 @@
+topic_id: inflammation
+name: Inflammation (Acute & Chronic)
+description: Acute and chronic inflammatory responses — vascular events, cellular mediators, and outcomes
+high_yield: true
+nmc_codes:
+- code: PA3.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA3.2
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  Inflammation is a protective response to tissue injury or infection, aimed at eliminating the cause and initiating repair.
+  Acute inflammation is rapid (minutes to days), characterized by vascular changes and neutrophilic infiltration.
+  Chronic inflammation is prolonged (weeks to years), with mononuclear cell infiltration, tissue destruction, and fibrosis.
+  📚 Robbins, 10th Ed, Ch.3 (p.71-113)
+
+learning_objectives:
+  - Describe the cardinal signs of inflammation and their pathophysiologic basis
+  - Explain the vascular and cellular events in acute inflammation
+  - List and classify chemical mediators of inflammation
+  - Differentiate acute from chronic inflammation by cells, duration, and outcomes
+  - Describe granulomatous inflammation and list causes
+
+content:
+  atoms:
+    - id: acute-inflammation-vascular
+      title: "Vascular Events in Acute Inflammation"
+      text: >
+        Sequence: (1) Transient arteriolar vasoconstriction → (2) Vasodilation (mediated by histamine, PGE2, PGI2)
+        → increased blood flow (rubor, calor) → (3) Increased vascular permeability → protein-rich exudate (tumor)
+        → (4) Stasis → margination of leukocytes.
+        Mechanisms of increased permeability: endothelial contraction (histamine, immediate), direct endothelial injury
+        (burns, toxins), leukocyte-mediated injury, transcytosis.
+        📚 Robbins, 10th Ed, Ch.3 (p.73-77)
+
+    - id: cellular-events
+      title: "Cellular Events — Leukocyte Recruitment"
+      text: >
+        Steps: Margination → Rolling (selectins: E-selectin, P-selectin, L-selectin) → Adhesion (integrins: LFA-1/ICAM-1,
+        VLA-4/VCAM-1) → Transmigration/Diapedesis (PECAM-1/CD31) → Chemotaxis (C5a, LTB4, IL-8, bacterial peptides).
+        NEUTROPHILS dominate in first 6-24 hours; MONOCYTES/MACROPHAGES replace neutrophils by 24-48 hours.
+        Exception: Pseudomonas, viral infections (lymphocytes first), hypersensitivity (eosinophils), Bordetella pertussis (lymphocytes).
+        📚 Robbins, 10th Ed, Ch.3 (p.77-85)
+
+    - id: chemical-mediators
+      title: "Chemical Mediators of Inflammation"
+      text: >
+        Cell-derived: Histamine (mast cells → vasodilation, permeability), Serotonin (platelets),
+        Arachidonic acid metabolites — COX pathway: PGE2 (pain, fever), PGI2 (vasodilation, inhibits platelet aggregation),
+        TXA2 (vasoconstriction, platelet aggregation); LOX pathway: LTB4 (chemotaxis), LTC4/D4/E4 (vasoconstriction,
+        bronchospasm, permeability — "slow-reacting substances of anaphylaxis").
+        Plasma-derived: Complement (C3a, C5a — anaphylatoxins; C5a — most potent chemotactic), Kinins (bradykinin — pain,
+        vasodilation, permeability), Coagulation/fibrinolytic system.
+        Cytokines: TNF-α, IL-1 (fever, acute phase response, endothelial activation), IL-6 (acute phase proteins from liver).
+        📚 Robbins, 10th Ed, Ch.3 (p.85-97)
+
+    - id: chronic-inflammation
+      title: "Chronic Inflammation"
+      text: >
+        Characterized by: (1) mononuclear cell infiltrate (macrophages, lymphocytes, plasma cells),
+        (2) tissue destruction, (3) attempts at repair (fibrosis, angiogenesis).
+        Causes: persistent infections (TB, viral hepatitis), autoimmune diseases (RA, SLE),
+        prolonged toxic exposure (silicosis, atherosclerosis).
+        Macrophage activation: Classical (M1) — microbicidal, pro-inflammatory; Alternative (M2) — tissue repair, anti-inflammatory.
+        📚 Robbins, 10th Ed, Ch.3 (p.97-101)
+
+    - id: granulomatous-inflammation
+      title: "Granulomatous Inflammation"
+      text: >
+        A pattern of chronic inflammation with aggregates of activated macrophages (epithelioid cells) ± multinucleated
+        giant cells (Langhans type — horseshoe nuclei; Foreign body type — scattered nuclei).
+        Caseating granulomas: TB (most common), fungal infections.
+        Non-caseating granulomas: Sarcoidosis (most common cause), Crohn's disease, berylliosis, cat-scratch disease.
+        Other: Foreign body granuloma, Wegener's (GPA), leprosy.
+        📚 Robbins, 10th Ed, Ch.3 (p.101-103)
+
+  clinical:
+    - title: "Acute Phase Response"
+      text: >
+        Systemic effects of inflammation driven by IL-1, TNF-α, IL-6: fever (PGE2 in hypothalamus),
+        leukocytosis, acute phase proteins from liver (CRP, fibrinogen, SAA, hepcidin → anemia of chronic disease).
+        CRP is the most widely used clinical marker of inflammation.
+    - title: "LAD (Leukocyte Adhesion Deficiency)"
+      text: >
+        LAD-1: deficiency of CD18 (β2 integrins) → defective adhesion and transmigration → recurrent bacterial infections,
+        delayed umbilical cord separation, absent pus despite high WBC count. Autosomal recessive.
+
+  high_yield_points:
+    - "Cardinal signs: Rubor (redness), Calor (heat), Tumor (swelling), Dolor (pain), Functio laesa (loss of function)"
+    - "Histamine → immediate transient vasodilation and permeability (from mast cells, basophils, platelets)"
+    - "C5a = most potent chemotactic agent for neutrophils"
+    - "LTB4 = chemotaxis; LTC4/D4/E4 = bronchospasm + vasoconstriction (slow-reacting substances)"
+    - "Selectins = Rolling; Integrins = Adhesion; PECAM-1 = Diapedesis"
+    - "Neutrophils first (6-24h) → then monocytes/macrophages (24-48h)"
+    - "Langhans giant cell = horseshoe peripheral nuclei (TB); Foreign body giant cell = scattered nuclei"
+    - "Non-caseating granuloma = think Sarcoidosis; Caseating = think TB"
+    - "IL-1 & TNF-α → fever, acute phase response, endothelial activation"
+    - "Lipoxins are ANTI-inflammatory arachidonic acid metabolites (they INHIBIT inflammation)"
+
+mcqs:
+  - question: "A 25-year-old IV drug user presents with high fever, right-sided heart murmur, and multiple septic emboli to the lungs. Blood cultures grow Staphylococcus aureus. The abscess cavities in his lungs would show which type of necrosis?"
+    options:
+      - "Coagulative necrosis"
+      - "Caseous necrosis"
+      - "Liquefactive necrosis"
+      - "Fibrinoid necrosis"
+    answer: "Liquefactive necrosis"
+    explanation: >
+      Abscesses show liquefactive necrosis — complete enzymatic digestion of tissue by neutrophilic enzymes, resulting
+      in pus (a collection of dead neutrophils, debris, and bacteria). This is different from brain infarct liquefaction
+      (which is ischemic). Caseous necrosis would suggest TB.
+      📚 Robbins, 10th Ed, Ch.3 (p.48-49)
+    difficulty: 2
+
+  - question: "Which molecule is responsible for the 'rolling' step of leukocyte recruitment in acute inflammation?"
+    options:
+      - "Integrins (LFA-1)"
+      - "Selectins (E-selectin, P-selectin)"
+      - "PECAM-1 (CD31)"
+      - "Immunoglobulins (IgG)"
+    answer: "Selectins (E-selectin, P-selectin)"
+    explanation: >
+      Rolling is mediated by selectins — P-selectin (stored in Weibel-Palade bodies of endothelium, released by histamine),
+      E-selectin (induced by TNF/IL-1 on endothelium), L-selectin (on leukocytes). Integrins mediate firm adhesion.
+      PECAM-1 mediates transmigration/diapedesis.
+      📚 Robbins, 10th Ed, Ch.3 (p.78-80)
+    difficulty: 1
+
+  - question: "A 30-year-old African American woman presents with bilateral hilar lymphadenopathy, erythema nodosum, and elevated ACE levels. Lymph node biopsy would most likely show:"
+    options:
+      - "Caseating granulomas with Langhans giant cells"
+      - "Non-caseating granulomas with epithelioid cells"
+      - "Necrotizing vasculitis with fibrinoid necrosis"
+      - "Reed-Sternberg cells in a mixed inflammatory background"
+    answer: "Non-caseating granulomas with epithelioid cells"
+    explanation: >
+      This is classic sarcoidosis — bilateral hilar lymphadenopathy, erythema nodosum, elevated ACE, in a young African
+      American woman. Sarcoidosis shows NON-caseating granulomas. Caseating granulomas would suggest TB. Always rule out
+      TB before diagnosing sarcoidosis. Reed-Sternberg cells indicate Hodgkin lymphoma.
+      📚 Robbins, 10th Ed, Ch.3 (p.102)
+    difficulty: 2
+
+  - question: "A child presents with recurrent bacterial infections, delayed separation of umbilical cord, and markedly elevated WBC count but no pus formation. The most likely defect is:"
+    options:
+      - "Myeloperoxidase deficiency"
+      - "NADPH oxidase deficiency (CGD)"
+      - "CD18 integrin deficiency (LAD-1)"
+      - "C5 complement deficiency"
+    answer: "CD18 integrin deficiency (LAD-1)"
+    explanation: >
+      LAD-1 (Leukocyte Adhesion Deficiency type 1) is caused by defective CD18 β2-integrins → neutrophils cannot
+      firmly adhere to endothelium → cannot migrate to infection sites → no pus despite leukocytosis, delayed cord
+      separation, recurrent infections. CGD has pus but cannot kill catalase-positive organisms. MPO deficiency is
+      usually clinically mild.
+      📚 Robbins, 10th Ed, Ch.3 (p.84)
+    difficulty: 3
+
+  - question: "Which of the following arachidonic acid metabolites is responsible for the bronchospasm seen in asthma?"
+    options:
+      - "PGE2"
+      - "PGI2 (Prostacyclin)"
+      - "LTB4"
+      - "LTC4, LTD4, LTE4"
+    answer: "LTC4, LTD4, LTE4"
+    explanation: >
+      Leukotrienes C4, D4, E4 (the cysteinyl leukotrienes) are the "slow-reacting substances of anaphylaxis" —
+      they cause prolonged bronchospasm, vasoconstriction, and increased vascular permeability. This is why
+      leukotriene receptor antagonists (montelukast) are used in asthma. LTB4 is chemotactic, not bronchospastic.
+      PGE2 causes vasodilation, pain, fever.
+      📚 Robbins, 10th Ed, Ch.3 (p.89-91)
+    difficulty: 1

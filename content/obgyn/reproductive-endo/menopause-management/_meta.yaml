@@ -1,0 +1,9 @@
+topic_id: menopause-management
+name: Menopause Management
+description: Menopause Management — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG32.1
+  domain: KH
+  core: true
+  phase: Phase 3

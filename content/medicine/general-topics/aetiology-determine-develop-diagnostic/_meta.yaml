@@ -1,0 +1,22 @@
+title: "Diagnostic Approach to Etiology"
+slug: aetiology-determine-develop-diagnostic
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.2"
+prerequisites:
+  - "aetiology"
+related_topics:
+  - "diagnostic-work"
+enrichment:
+  nmcCodes:
+    - code: "IM26.2"
+      text: "Diagnostic Approach to Etiology — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "aetiology"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "diagnostic-work"
+      reason: "Clinically related"
+      relationship: "clinical"

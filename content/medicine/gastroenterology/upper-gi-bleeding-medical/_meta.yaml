@@ -1,0 +1,25 @@
+title: "Upper GI Bleeding"
+slug: upper-gi-bleeding-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.3"
+prerequisites:
+  - "acid-peptic-disease"
+  - "liver-cirrhosis"
+related_topics:
+  - "lower-gi-bleeding-medical"
+enrichment:
+  nmcCodes:
+    - code: "IM5.3"
+      text: "Upper GI Bleeding — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "acid-peptic-disease"
+      reason: "Foundation knowledge"
+    - slug: "liver-cirrhosis"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "lower-gi-bleeding-medical"
+      reason: "Clinically related"
+      relationship: "clinical"

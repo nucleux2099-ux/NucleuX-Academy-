@@ -1,0 +1,58 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Portal vein formation, hepatic sinusoidal architecture, and portosystemic anastomosis sites are fundamental to understanding pre-hepatic, hepatic, and post-hepatic causes",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Cirrhosis causing portal hypertension frequently coexists with cholestatic jaundice; shared assessment with LFTs, imaging, and Child-Pugh scoring",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "HCC arises in cirrhotic livers with portal hypertension; portal vein thrombosis by tumor worsens portal pressures and contraindicates resection",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "spleen-surgical",
+      "nmcCode": "",
+      "reason": "Hypersplenism from portal hypertension causes pancytopenia; splenectomy or devascularization procedures may be indicated",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-transplant-indications",
+      "nmcCode": "",
+      "reason": "Decompensated portal hypertension (recurrent variceal bleeding, refractory ascites) is a primary indication for liver transplantation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-abscess",
+      "nmcCode": "",
+      "reason": "Portal pyemia from intra-abdominal infections can cause both portal vein thrombosis and liver abscess, representing pre-hepatic portal hypertension",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "IM5.6: Describe and discuss the pathophysiology, clinical evolution and",
+    "SU28.10: Describe the applied anatomy of liver. Describe the Clinical features,",
+    "SU28.11: Describe the applied anatomy of Spleen. Describe the clinical features,"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Portal Hypertension across foundational sciences and clinical applications."
+}

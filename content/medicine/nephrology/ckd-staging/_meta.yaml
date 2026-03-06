@@ -1,0 +1,27 @@
+title: Ckd Staging
+slug: ckd-staging
+depth: UG
+highYield: true
+nmc_codes:
+  - IM10.10
+  - IM10.30
+  - IM10.31
+  - IM10.8
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ckd staging
+      domain: KH
+    - code: IM10.30
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ckd staging
+      domain: KH
+    - code: IM10.31
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ckd staging
+      domain: KH
+    - code: IM10.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ckd staging
+      domain: KH
+  prerequisite_details: []
+  related_details: []

@@ -1,0 +1,32 @@
+id: cardiovascular-pathology
+title: "Cardiovascular Pathology"
+subject: pathology
+description: |
+  Atherosclerosis, MI, and valvular diseases.
+
+stats:
+  total_topics: 12
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - atherosclerosis-pathology
+      - ischemic-heart-disease-path
+      - myocardial-infarction-path
+      - hypertensive-heart-disease-path
+      - rheumatic-heart-disease-path
+      - infective-endocarditis-path
+      - cardiomyopathies-path
+      - pericardial-disease-path
+      - congenital-heart-disease-path
+      - vasculitis-path
+      - aortic-aneurysm-path
+      - varicose-veins-path
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

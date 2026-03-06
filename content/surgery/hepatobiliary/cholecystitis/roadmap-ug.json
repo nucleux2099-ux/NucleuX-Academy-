@@ -1,0 +1,73 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Gallstones are the causative factor in >90% of cholecystitis cases; understanding stone pathogenesis is essential",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Knowledge of hepatic arterial supply via cystic artery and Calot's triangle anatomy is critical for safe cholecystectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Cholecystitis can coexist with CBD stones causing obstructive jaundice; distinguishing biliary obstruction guides management",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "acute-cholecystitis",
+      "nmcCode": "",
+      "reason": "Acute cholecystitis is the most common emergency presentation requiring urgent cholecystectomy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "choledocholithiasis",
+      "nmcCode": "",
+      "reason": "Concomitant CBD stones occur in 10-15% of cholecystitis patients, altering surgical planning",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Ascending cholangitis is a life-threatening complication when cholecystitis is complicated by biliary obstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gallbladder-cancer",
+      "nmcCode": "",
+      "reason": "Chronic cholecystitis is a risk factor for gallbladder carcinoma; incidental cancer found in 1-2% of cholecystectomy specimens",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-dyskinesia",
+      "nmcCode": "",
+      "reason": "Acalculous biliary dyskinesia mimics cholecystitis and is a key differential in stone-negative biliary colic",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "IM5.8: Describe and discuss the pathophysiology, clinical evolution and",
+    "AN47.6: Explain the anatomical basis of Splenic notch, Accessory spleens, Kehr’s",
+    "AN47.7: Mention the clinical importance of Calot’s triangle"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Cholecystitis across foundational sciences and clinical applications."
+}

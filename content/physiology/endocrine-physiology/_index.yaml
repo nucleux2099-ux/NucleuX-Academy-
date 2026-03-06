@@ -1,0 +1,32 @@
+id: endocrine-physiology
+title: "Endocrine Physiology"
+subject: physiology
+description: |
+  Hormones and their mechanisms of action.
+
+stats:
+  total_topics: 12
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - hormone-classification
+      - hypothalamic-pituitary-axis
+      - growth-hormone
+      - thyroid-hormones-physiology
+      - adrenal-cortex-physiology
+      - adrenal-medulla
+      - insulin-glucagon-physiology
+      - calcium-metabolism-physiology
+      - reproductive-hormones-male
+      - reproductive-hormones-female
+      - menstrual-cycle-physiology
+      - pregnancy-physiology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

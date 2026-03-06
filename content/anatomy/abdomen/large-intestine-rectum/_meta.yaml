@@ -1,0 +1,160 @@
+topic_id: large-intestine-rectum
+name: Large Intestine & Rectum
+description: Large Intestine & Rectum — Anatomy, blood supply, lymphatic drainage, and surgical landmarks
+high_yield: true
+nmc_codes:
+- code: AN52.7
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The large intestine extends from the ileocecal junction to the anus (~1.5m). Parts: cecum, appendix, ascending
+  colon, transverse colon, descending colon, sigmoid colon, rectum, anal canal. Distinguishing features from
+  small intestine: taeniae coli, haustra, appendices epiploicae. Blood supply: midgut derivatives (cecum to
+  proximal 2/3 transverse colon) by SMA; hindgut derivatives (distal 1/3 transverse to rectum) by IMA.
+  📚 Gray's Anatomy, 42nd Ed, Ch.66; 📚 BD Chaurasia, Vol.2, Ch.19
+
+learning_objectives:
+  - Describe the parts, relations, and distinguishing features of the large intestine
+  - Explain the blood supply territories (SMA vs IMA) and watershed areas
+  - Describe the anatomy of the rectum and anal canal including sphincters
+  - Identify the lymphatic drainage relevant to colorectal cancer surgery
+  - Describe the applied anatomy of appendix and its positions
+
+content:
+  atoms:
+    - id: cecum-appendix
+      title: "Cecum & Appendix"
+      text: >
+        Cecum: blind pouch in right iliac fossa, completely covered by peritoneum (mobile), receives ileum at
+        ileocecal valve. Appendix: arises from posteromedial wall of cecum, 2 cm below ileocecal valve.
+        Base at convergence of 3 taeniae coli (taenia coli lead to appendix base — surgical landmark).
+        McBurney's point: junction of lateral 1/3 and medial 2/3 of line from ASIS to umbilicus.
+        Appendix positions: retrocecal (65%, most common), pelvic (31%), subcecal, preileal, postileal.
+        Blood supply: appendicular artery (branch of ileocolic artery, an end artery).
+        📚 BD Chaurasia, Vol.2, Ch.19 (p.270-276)
+
+    - id: colonic-blood-supply
+      title: "Blood Supply — SMA and IMA Territories"
+      text: >
+        SMA branches: ileocolic (cecum, appendix, terminal ileum), right colic (ascending colon),
+        middle colic (transverse colon). IMA branches: left colic (descending colon), sigmoid arteries (2-3),
+        superior rectal artery (upper rectum). Marginal artery (of Drummond): continuous anastomotic channel
+        along mesenteric border of colon from ileocolic to superior rectal. Arc of Riolan: inconsistent
+        anastomosis between middle colic and left colic (SMA-IMA connection).
+        Watershed areas: splenic flexure (Griffiths' point — SMA/IMA junction), rectosigmoid (Sudeck's point).
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed, Plate 306
+
+    - id: rectum-anal-canal
+      title: "Rectum & Anal Canal"
+      text: >
+        Rectum: 12 cm, begins at S3 (rectosigmoid junction), follows sacral curvature. No mesentery, no taeniae,
+        no appendices epiploicae. Has 3 lateral folds (valves of Houston — middle fold = Kohlrausch's plica at
+        level of peritoneal reflection). Upper 1/3 covered by peritoneum anteriorly and laterally; middle 1/3
+        anteriorly only; lower 1/3 has NO peritoneum (below peritoneal reflection — important in rectal surgery).
+        Anal canal: 4 cm, from anorectal ring to anal verge. Pectinate (dentate) line at middle — critical landmark.
+        Above pectinate line: columnar epithelium, portal venous drainage, visceral innervation (painless internal hemorrhoids).
+        Below pectinate line: squamous epithelium, systemic venous drainage, somatic innervation (painful external hemorrhoids).
+        📚 BD Chaurasia, Vol.2; 📚 Gray's Anatomy, 42nd Ed
+
+    - id: sphincters
+      title: "Anal Sphincters & Continence"
+      text: >
+        Internal anal sphincter (IAS): thickened circular smooth muscle, involuntary, maintains 80% of resting tone.
+        External anal sphincter (EAS): skeletal muscle, voluntary, 3 parts (subcutaneous, superficial, deep).
+        Supplied by inferior rectal nerve (branch of pudendal, S2-S4). Puborectalis sling maintains anorectal angle.
+        Intersphincteric plane: between IAS and EAS — plane of dissection in abdominoperineal resection.
+        📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Watershed Ischemia"
+      text: >
+        Splenic flexure (Griffiths' point) is watershed between SMA and IMA territories — vulnerable to ischemic
+        colitis in low-flow states (hypotension, post-AAA repair). Rectosigmoid (Sudeck's point) is watershed
+        between IMA and internal iliac territories.
+    - title: "Clinical: TME (Total Mesorectal Excision)"
+      text: >
+        Gold standard for rectal cancer surgery. Mesorectum (perirectal fat envelope containing lymph nodes and vessels)
+        is excised en bloc with rectum along the avascular "holy plane." Preserving hypogastric nerves prevents
+        urogenital dysfunction.
+
+high_yield_points:
+  - "Large intestine features: taeniae coli, haustra, appendices epiploicae"
+  - "Taeniae coli converge at base of appendix — surgical landmark"
+  - "McBurney's point: junction of lateral 1/3 and medial 2/3 of ASIS-to-umbilicus line"
+  - "Most common appendix position: retrocecal (65%)"
+  - "Watershed areas: splenic flexure (Griffiths' point), rectosigmoid (Sudeck's point)"
+  - "Pectinate (dentate) line: above = visceral/portal/columnar; below = somatic/systemic/squamous"
+  - "Internal hemorrhoids: above dentate line, painless, portal drainage"
+  - "External hemorrhoids: below dentate line, painful, systemic drainage"
+  - "IAS maintains 80% resting anal tone"
+  - "Superior rectal artery (from IMA) — key vessel in rectal surgery"
+
+mcqs:
+  - question: "The watershed area most vulnerable to ischemic colitis is located at:"
+    options:
+      - "Hepatic flexure"
+      - "Splenic flexure"
+      - "Cecum"
+      - "Sigmoid colon"
+    answer: "Splenic flexure"
+    explanation: >
+      The splenic flexure (Griffiths' point) is the watershed between SMA and IMA territories. It is the most
+      common site of ischemic colitis, especially in low-flow states after aortic surgery.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The pectinate (dentate) line of the anal canal is significant because structures above it:"
+    options:
+      - "Have somatic innervation and systemic venous drainage"
+      - "Have visceral innervation and portal venous drainage"
+      - "Are lined by stratified squamous epithelium"
+      - "Are supplied by inferior rectal artery"
+    answer: "Have visceral innervation and portal venous drainage"
+    explanation: >
+      Above the pectinate line: columnar epithelium, visceral nerve supply (painless), portal venous drainage (to
+      superior rectal vein → IMV → portal vein), supplied by superior rectal artery. Below: squamous epithelium,
+      somatic (painful), systemic drainage.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 2
+
+  - question: "The most common position of the appendix is:"
+    options:
+      - "Pelvic"
+      - "Retrocecal"
+      - "Subcecal"
+      - "Preileal"
+    answer: "Retrocecal"
+    explanation: >
+      Retrocecal position (65%) is the most common. Pelvic (31%) is second most common. In retrocecal appendicitis,
+      signs may be atypical — absent Rovsing's sign, positive psoas sign.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "McBurney's point is located at the junction of:"
+    options:
+      - "Upper 1/3 and lower 2/3 of line from umbilicus to ASIS"
+      - "Lateral 1/3 and medial 2/3 of line from ASIS to umbilicus"
+      - "Midpoint of line from ASIS to pubic symphysis"
+      - "Lateral 1/3 and medial 2/3 of line from umbilicus to pubic symphysis"
+    answer: "Lateral 1/3 and medial 2/3 of line from ASIS to umbilicus"
+    explanation: >
+      McBurney's point marks the base of the appendix at the junction of the lateral 1/3 and medial 2/3 of the line
+      drawn from the right ASIS to the umbilicus. Maximum tenderness here suggests acute appendicitis.
+      📚 BD Chaurasia, Vol.2
+    difficulty: 1
+
+  - question: "Which artery is the sole blood supply to the appendix?"
+    options:
+      - "Right colic artery"
+      - "Ileocolic artery"
+      - "Appendicular artery"
+      - "Middle colic artery"
+    answer: "Appendicular artery"
+    explanation: >
+      The appendicular artery is a branch of the ileocolic artery (from SMA). It is an end artery, running in the
+      mesoappendix. Thrombosis leads to gangrenous appendicitis. The ileocolic gives rise to it but does not
+      directly supply the appendix.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1

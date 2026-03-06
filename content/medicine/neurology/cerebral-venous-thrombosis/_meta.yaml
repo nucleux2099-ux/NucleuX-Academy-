@@ -1,0 +1,26 @@
+title: "Cerebral Venous Thrombosis"
+slug: cerebral-venous-thrombosis
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM18.14"
+prerequisites:
+  - "coagulation-disorders"
+related_topics:
+  - "ischemic-stroke"
+  - "hemorrhagic-stroke"
+enrichment:
+  nmcCodes:
+    - code: "IM18.14"
+      text: "Describe and discuss the aetiology, clinical features and management of cerebral venous thrombosis"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "coagulation-disorders"
+      reason: "Hypercoagulable states are major risk factors"
+  related_details:
+    - slug: "ischemic-stroke"
+      reason: "Differential diagnosis of stroke in young"
+      relationship: "clinical"
+    - slug: "hemorrhagic-stroke"
+      reason: "CVT can cause hemorrhagic infarction"
+      relationship: "clinical"

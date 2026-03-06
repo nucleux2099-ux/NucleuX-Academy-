@@ -1,0 +1,46 @@
+id: gynec-oncology
+title: "Gynecologic Oncology"
+subject: obgyn
+description: |
+  Cervical, endometrial, ovarian, and vulvar cancers.
+
+stats:
+  total_topics: 17
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: cervix
+    title: "Cervical"
+    topics:
+      - cervical-cancer
+      - cervical-screening
+      - cin-management
+      - hpv-vaccination
+      - cervical-cancer-staging
+  - id: uterus
+    title: "Uterine"
+    topics:
+      - endometrial-cancer
+      - uterine-sarcoma
+      - gestational-trophoblastic-disease
+      - endometrial-hyperplasia
+  - id: ovary
+    title: "Ovarian"
+    topics:
+      - ovarian-cancer
+      - ovarian-cancer-staging
+      - ovarian-tumors-classification
+      - borderline-ovarian-tumors
+      - germ-cell-tumors-ovary
+  - id: vulvar
+    title: "Vulvar & Vaginal"
+    topics:
+      - vulvar-cancer
+      - vaginal-cancer
+      - vulvar-intraepithelial-neoplasia
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

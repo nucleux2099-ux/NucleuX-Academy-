@@ -1,0 +1,9 @@
+topic_id: bite-scorpion-snake-sting
+name: Features and management of Snake bite, scorpion sting, K K/
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: FM11.1
+  domain: KH
+  core: true
+  phase: Phase 1

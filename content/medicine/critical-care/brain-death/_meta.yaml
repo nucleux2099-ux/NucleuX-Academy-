@@ -1,0 +1,23 @@
+title: "Brain Death"
+slug: brain-death
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.18"
+prerequisites: []
+related_topics:
+  - "organ-donation"
+  - "end-of-life-icu"
+enrichment:
+  nmcCodes:
+    - code: "IM24.18"
+      text: "Brain Death — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "organ-donation"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "end-of-life-icu"
+      reason: "Clinically related"
+      relationship: "clinical"

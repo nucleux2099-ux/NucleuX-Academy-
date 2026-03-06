@@ -1,0 +1,28 @@
+id: enzymes
+title: "Enzymes"
+subject: biochemistry
+description: |
+  Enzyme kinetics, regulation, and clinical enzymology.
+
+stats:
+  total_topics: 8
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - enzyme-classification
+      - enzyme-kinetics
+      - michaelis-menten
+      - enzyme-inhibition
+      - allosteric-regulation
+      - isoenzymes
+      - clinical-enzymology
+      - coenzymes-cofactors
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

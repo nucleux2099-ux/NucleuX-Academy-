@@ -1,0 +1,38 @@
+title: Electrolyte Disorders
+slug: electrolyte-disorders
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.3
+  - IM9.5
+  - IM9.7
+prerequisites:
+  - acute-kidney-injury
+related_topics:
+  - acute-kidney-injury
+  - chronic-kidney-disease
+  - renal-tubular-acidosis
+enrichment:
+  nmcCodes:
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of electrolyte disorders
+      domain: KH
+    - code: IM9.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of electrolyte disorders
+      domain: KH
+    - code: IM9.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of electrolyte disorders
+      domain: KH
+  prerequisite_details:
+    - slug: acute-kidney-injury
+      reason: Foundation knowledge for electrolyte disorders
+  related_details:
+    - slug: acute-kidney-injury
+      reason: Clinically related to electrolyte disorders
+      relationship: clinical
+    - slug: chronic-kidney-disease
+      reason: Clinically related to electrolyte disorders
+      relationship: clinical
+    - slug: renal-tubular-acidosis
+      reason: Clinically related to electrolyte disorders
+      relationship: clinical

@@ -1,0 +1,19 @@
+title: "Biochemical and Physiologic Basis of Disease"
+slug: basis-biochemical-physiologic
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.7"
+prerequisites: []
+related_topics:
+  - "aetiology"
+enrichment:
+  nmcCodes:
+    - code: "IM26.7"
+      text: "Biochemical and Physiologic Basis of Disease — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "aetiology"
+      reason: "Clinically related"
+      relationship: "clinical"

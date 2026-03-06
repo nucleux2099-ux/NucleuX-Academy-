@@ -1,0 +1,9 @@
+topic_id: t-cell-immunity
+name: T Cell Immunity
+description: T Cell Immunity — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: MI1.8
+  domain: KH
+  core: true
+  phase: Phase 1

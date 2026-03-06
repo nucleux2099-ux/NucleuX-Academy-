@@ -1,0 +1,156 @@
+topic_id: autopsy
+name: Autopsy (Types & Procedure)
+description: Types of autopsy, medicolegal autopsy procedure, objectives, and documentation
+high_yield: true
+
+overview: >
+  Autopsy (necropsy/post-mortem examination) is the systematic examination of a dead body to determine the cause,
+  manner, and mechanism of death. It may be medicolegal (ordered by law) or clinical/pathological (for academic purposes).
+  In India, medicolegal autopsy is conducted under Section 174 CrPC by a registered medical practitioner at the
+  order of a magistrate or investigating officer. It is the cornerstone of forensic investigation.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.139-170)
+
+learning_objectives:
+  - Differentiate medicolegal autopsy from clinical/pathological autopsy
+  - Describe the procedure of medicolegal autopsy step by step
+  - List the objectives and indications of medicolegal autopsy
+  - Explain the importance of chain of custody and documentation
+  - Discuss special autopsy techniques (Rokitansky, Virchow, Letulle, Ghon)
+
+content:
+  atoms:
+    - id: types-of-autopsy
+      title: "Types of Autopsy"
+      text: >
+        (1) Medicolegal autopsy — ordered by law (Section 174 CrPC), conducted by any registered medical practitioner,
+        consent NOT required, to determine cause and manner of death in suspicious/unnatural deaths.
+        (2) Clinical/Pathological autopsy — for academic/research purposes, requires consent of legal heir,
+        conducted by pathologist. (3) Virtual autopsy (Virtopsy) — uses CT/MRI imaging, non-invasive.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.139-141)
+
+    - id: medicolegal-autopsy-procedure
+      title: "Medicolegal Autopsy Procedure"
+      text: >
+        Steps: (1) External examination — clothing, injuries, PM changes, identification marks;
+        (2) Internal examination — three body cavities opened: cranial (skull cap removed), thoracic
+        (sternum removed), abdominal (midline incision). Standard "I" or "Y" shaped incision.
+        Organ removal techniques: Rokitansky (in-situ), Virchow (organs removed individually),
+        Letulle (en masse removal), Ghon (en bloc by systems).
+        Viscera preserved in saturated common salt for chemical analysis. NO formalin for toxicology specimens.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.145-165)
+
+    - id: objectives-autopsy
+      title: "Objectives of Medicolegal Autopsy"
+      text: >
+        (1) Establish identity of deceased, (2) Determine cause of death (disease, injury, poison),
+        (3) Determine manner of death (natural, homicide, suicide, accident), (4) Estimate time since death,
+        (5) Collect trace evidence (fibers, hair, bullets), (6) Correlate injuries with alleged weapon/circumstances,
+        (7) Determine whether injuries are ante-mortem or post-mortem, (8) Provide expert opinion for court.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.141-143)
+
+    - id: viscera-preservation
+      title: "Viscera Preservation"
+      text: >
+        Viscera for chemical analysis preserved in SATURATED COMMON SALT (NaCl) — NOT formalin.
+        Standard viscera sent: stomach with contents, 30cm of small intestine, liver (500g), kidney (one half),
+        blood (30ml in NaF), urine. In poisoning cases: additional organs based on suspected poison.
+        Sent to Forensic Science Laboratory (FSL) with sealed containers, proper labeling, and chain of custody.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.160-165)
+
+    - id: documentation
+      title: "Autopsy Documentation & Report"
+      text: >
+        PM report includes: (1) Preamble — authority, date, place, body received from;
+        (2) External findings — identification, PM changes, injuries; (3) Internal findings — organ-wise;
+        (4) Opinion — cause of death. Doctor can give opinion on cause of death (not manner — that's for court).
+        PM certificate issued as per Rule 3 of Punjab Rules. Negative autopsy — no apparent cause found
+        (seen in electrocution, hypothermia, poisoning, vagal inhibition).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.165-170)
+
+  clinical:
+    - title: "Clinical Correlation: Negative Autopsy"
+      text: >
+        A negative autopsy (no gross/microscopic cause of death found) occurs in ~2-5% of medicolegal autopsies.
+        Common causes: electrocution, hypothermia, certain poisons (insulin, succinylcholine), vagal inhibition,
+        status epilepticus, anaphylaxis. Requires careful toxicological analysis and correlation with circumstances.
+
+high_yield_points:
+  - "Medicolegal autopsy — consent NOT required; ordered under Section 174 CrPC"
+  - "Clinical autopsy — consent of legal heir IS required"
+  - "Viscera preserved in SATURATED COMMON SALT — NOT formalin"
+  - "Standard viscera: stomach + contents, small intestine (30cm), liver (500g), half kidney, blood, urine"
+  - "Blood preserved in sodium fluoride (NaF) for alcohol estimation"
+  - "Rokitansky method = in-situ dissection; Virchow = organs removed individually"
+  - "Doctor gives opinion on CAUSE of death, not MANNER (manner decided by court)"
+  - "Negative autopsy: electrocution, hypothermia, vagal inhibition, some poisons"
+  - "Y-shaped incision is most commonly used for thoraco-abdominal dissection"
+  - "Any registered medical practitioner can perform medicolegal autopsy in India"
+
+mcqs:
+  - question: "Which preservative is used for viscera in medicolegal autopsy for chemical analysis?"
+    options:
+      - "10% formalin"
+      - "Rectified spirit"
+      - "Saturated common salt"
+      - "Absolute alcohol"
+    answer: "Saturated common salt"
+    explanation: >
+      Saturated common salt (NaCl) is the standard preservative for viscera sent for chemical/toxicological analysis.
+      Formalin is NEVER used for toxicology specimens as it interferes with chemical analysis. Rectified spirit is
+      used for histopathology preservation.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.160)
+    difficulty: 1
+
+  - question: "Medicolegal autopsy in India is conducted under which section?"
+    options:
+      - "Section 302 IPC"
+      - "Section 174 CrPC"
+      - "Section 176 CrPC"
+      - "Section 53 CrPC"
+    answer: "Section 174 CrPC"
+    explanation: >
+      Section 174 CrPC deals with police investigation in cases of suicide, suspicious death, or death under
+      suspicious circumstances. The magistrate or investigating officer orders the autopsy. Section 176 is
+      for magisterial inquiry.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.139)
+    difficulty: 1
+
+  - question: "In Virchow's method of autopsy, organs are:"
+    options:
+      - "Dissected in situ"
+      - "Removed individually one by one"
+      - "Removed en masse"
+      - "Removed en bloc by organ systems"
+    answer: "Removed individually one by one"
+    explanation: >
+      Virchow's technique involves removing each organ individually for separate examination. Rokitansky = in-situ,
+      Letulle = en masse (all organs together), Ghon = en bloc by organ systems.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.150)
+    difficulty: 2
+
+  - question: "Blood for alcohol estimation at autopsy is preserved in:"
+    options:
+      - "Saturated NaCl"
+      - "Sodium fluoride (NaF)"
+      - "EDTA"
+      - "Formalin"
+    answer: "Sodium fluoride (NaF)"
+    explanation: >
+      Sodium fluoride is an enzyme inhibitor that prevents in-vitro glycolysis and bacterial fermentation,
+      which could produce alcohol post-collection. It is the standard preservative for blood alcohol estimation.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.162)
+    difficulty: 2
+
+  - question: "A negative autopsy is most likely seen in death due to:"
+    options:
+      - "Stab wound to heart"
+      - "Electrocution"
+      - "Hanging"
+      - "Organophosphorus poisoning"
+    answer: "Electrocution"
+    explanation: >
+      Electrocution may leave minimal or no gross/microscopic findings (especially low voltage). Other causes
+      of negative autopsy include hypothermia, vagal inhibition, insulin poisoning, and anaphylaxis.
+      Stab wounds, hanging, and OP poisoning all have characteristic findings.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.7 (p.168)
+    difficulty: 2

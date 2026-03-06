@@ -1,0 +1,9 @@
+topic_id: antenatal-screening-tests
+name: Antenatal Screening Tests
+description: Antenatal Screening Tests — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.7
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,181 @@
+topic_id: thyroid-physiology
+name: Thyroid Physiology
+description: Thyroid Physiology — Synthesis, transport, actions of T3/T4, and regulation of thyroid function
+high_yield: true
+nmc_codes:
+- code: PY8.3
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  Thyroid hormones (T3, T4) regulate basal metabolic rate, growth, development, and thermogenesis.
+  T4 is the predominant secreted form; T3 is the active form (converted peripherally by deiodinases).
+  Synthesis involves iodide trapping, organification, coupling, and proteolysis — each step is a potential drug target.
+  📚 Guyton & Hall, 14th Ed, Ch.77 (p.987-1000) / 📚 Ganong's, 26th Ed, Ch.19
+
+learning_objectives:
+  - Describe the steps of thyroid hormone synthesis
+  - Explain the transport, peripheral conversion, and mechanism of action of thyroid hormones
+  - Describe the HPT axis and feedback regulation
+  - Compare the clinical features of hyper- and hypothyroidism
+  - List antithyroid drugs and their mechanisms
+
+content:
+  atoms:
+    - id: thyroid-synthesis
+      title: "Thyroid Hormone Synthesis"
+      text: >
+        1. Iodide trapping: Na+/I- symporter (NIS) on basolateral membrane concentrates I- 20-40x.
+        Inhibited by perchlorate, thiocyanate (competitive inhibitors).
+        2. Oxidation: I- → I2 by thyroid peroxidase (TPO) at apical membrane.
+        3. Organification: I2 incorporated into tyrosine residues of thyroglobulin (TG) → MIT, DIT.
+        Inhibited by propylthiouracil (PTU) and methimazole (block TPO).
+        4. Coupling: MIT + DIT → T3; DIT + DIT → T4. Also by TPO.
+        5. Endocytosis of colloid → lysosomal proteolysis → T3, T4 released into blood.
+        6. MIT and DIT deiodinated by dehalogenase → iodide recycled.
+        Wolff-Chaikoff effect: excess iodide → transient inhibition of organification → ↓hormone synthesis.
+        📚 Guyton & Hall, 14th Ed, Ch.77 (p.987-992)
+
+    - id: thyroid-transport-action
+      title: "Transport, Conversion, and Mechanism of Action"
+      text: >
+        99.97% of T4 bound to proteins: TBG (70%), transthyretin/prealbumin (15%), albumin (15%).
+        Only FREE T3/T4 is biologically active. T4 half-life: 6-7 days; T3 half-life: 1 day.
+        Peripheral conversion: T4 → T3 by 5'-deiodinase (type 1 in liver/kidney, type 2 in brain/pituitary).
+        T4 → reverse T3 (rT3, inactive) by 5-deiodinase (type 3). Sick euthyroid: ↑rT3, ↓T3.
+        PTU inhibits peripheral T4→T3 conversion (methimazole does NOT — advantage of PTU in thyroid storm).
+        Mechanism: T3 binds nuclear thyroid hormone receptors (TR) → transcription regulation.
+        T3 is 3-5x more potent than T4, acts faster, but T4 is produced 10x more.
+        📚 Ganong's, 26th Ed, Ch.19
+
+    - id: thyroid-actions
+      title: "Physiological Actions of Thyroid Hormones"
+      text: >
+        Metabolic: ↑BMR, ↑O2 consumption (all tissues except brain, spleen, testes, anterior pituitary).
+        ↑Na+/K+ ATPase activity → calorigenic effect → thermogenesis.
+        Carbohydrate: ↑glucose absorption, ↑glycogenolysis, ↑gluconeogenesis.
+        Lipid: ↑lipolysis, ↑LDL receptor expression (hyperthyroidism → ↓cholesterol; hypothyroidism → ↑cholesterol).
+        Cardiovascular: ↑HR, ↑contractility, ↓SVR (β-receptor upregulation).
+        Growth: permissive for GH action, essential for brain development (cretinism if deficient in neonatal period).
+        Bone: ↑bone turnover (hyperthyroidism → osteoporosis).
+        📚 Guyton & Hall, 14th Ed, Ch.77 (p.993-998)
+
+    - id: thyroid-disorders
+      title: "Hyper- vs Hypothyroidism"
+      text: >
+        Hyperthyroidism: Graves' disease (most common, TSI/anti-TSH receptor stimulating antibodies),
+        toxic MNG, toxic adenoma. Features: weight loss, heat intolerance, tachycardia/AF, tremor,
+        exophthalmos (Graves-specific), pretibial myxedema, thyroid bruit. ↑free T3/T4, ↓TSH.
+        Hypothyroidism: Hashimoto's (most common cause in iodine-sufficient areas, anti-TPO antibodies),
+        iodine deficiency (most common worldwide). Features: weight gain, cold intolerance, bradycardia,
+        constipation, myxedema, delayed reflexes, ↑cholesterol. ↓free T4, ↑TSH (primary).
+        Cretinism: neonatal hypothyroidism → intellectual disability, short stature, coarse features.
+        📚 Ganong's, 26th Ed, Ch.19
+
+    - id: antithyroid-drugs
+      title: "Antithyroid Drug Summary"
+      text: >
+        Thionamides: PTU and methimazole — block TPO (organification and coupling).
+        PTU also blocks peripheral T4→T3 conversion (preferred in thyroid storm and 1st trimester pregnancy).
+        Methimazole preferred otherwise (once daily, fewer side effects). Both can cause agranulocytosis.
+        Iodide (Lugol's, KI): Wolff-Chaikoff effect + ↓vascularity (given pre-surgery).
+        Radioactive iodine (I-131): destroys thyroid tissue. Contraindicated in pregnancy.
+        β-blockers (propranolol): symptomatic relief + blocks peripheral T4→T3 conversion.
+        📚 Guyton & Hall, 14th Ed, Ch.77
+
+  clinical:
+    - title: "Clinical Correlation: Thyroid Storm"
+      text: >
+        Life-threatening thyrotoxicosis. Treat with: (1) PTU (blocks synthesis AND peripheral conversion),
+        (2) Iodide (given AFTER PTU — Wolff-Chaikoff + ↓vascularity), (3) β-blockers (propranolol),
+        (4) Glucocorticoids (block T4→T3 conversion + treat relative adrenal insufficiency),
+        (5) Supportive (cooling, fluids). Order matters: PTU before iodide.
+    - title: "Clinical Correlation: TBG Changes"
+      text: >
+        ↑TBG (pregnancy, estrogen, OCP, hepatitis): ↑total T4, but FREE T4 normal, patient euthyroid.
+        ↓TBG (nephrotic syndrome, androgens, glucocorticoids, liver failure): ↓total T4, FREE T4 normal.
+        Always measure FREE T4 for accurate assessment (not total T4).
+
+  high_yield_points:
+    - "NIS traps iodide (blocked by perchlorate); TPO does organification + coupling (blocked by PTU/methimazole)"
+    - "T4 = prohormone, T3 = active form; 5'-deiodinase converts T4→T3 peripherally"
+    - "PTU blocks both TPO AND peripheral conversion; Methimazole blocks only TPO"
+    - "TBG carries 70% of thyroid hormones; only FREE hormone is active"
+    - "Wolff-Chaikoff effect: excess iodide → transient ↓organification"
+    - "Thyroid hormones ↑BMR in all tissues EXCEPT brain, spleen, testes, anterior pituitary"
+    - "Graves: TSI antibodies; Hashimoto: anti-TPO antibodies (most common cause of hypothyroidism in iodine-sufficient areas)"
+    - "Hypothyroidism → ↑cholesterol (↓LDL receptors); Hyperthyroidism → ↓cholesterol"
+    - "Cretinism = neonatal hypothyroidism → irreversible brain damage if not treated early"
+    - "Thyroid storm treatment order: PTU → Iodide → β-blocker → Steroids"
+
+mcqs:
+  - question: "Propylthiouracil (PTU) has an advantage over methimazole in thyroid storm because it additionally:"
+    options:
+      - "Blocks NIS-mediated iodide trapping"
+      - "Inhibits peripheral conversion of T4 to T3"
+      - "Destroys thyroid tissue permanently"
+      - "Blocks β-adrenergic receptors"
+    answer: "Inhibits peripheral conversion of T4 to T3"
+    explanation: >
+      Both PTU and methimazole block TPO (organification/coupling). PTU additionally inhibits 5'-deiodinase,
+      blocking peripheral T4→T3 conversion. This provides faster reduction of active T3 levels,
+      making PTU preferred in thyroid storm.
+      📚 Guyton & Hall, 14th Ed, Ch.77
+    difficulty: 1
+
+  - question: "A pregnant woman has elevated total T4 but normal free T4 and TSH. The explanation is:"
+    options:
+      - "Subclinical hyperthyroidism"
+      - "Increased TBG due to estrogen"
+      - "Graves' disease"
+      - "Central hypothyroidism"
+    answer: "Increased TBG due to estrogen"
+    explanation: >
+      Pregnancy increases estrogen → ↑TBG synthesis by liver → ↑total T4 (more bound T4).
+      However, free T4 and TSH remain normal (euthyroid state maintained by feedback).
+      This is why free T4 (not total T4) should be used for thyroid assessment.
+      📚 Ganong's, 26th Ed, Ch.19
+    difficulty: 1
+
+  - question: "The Wolff-Chaikoff effect refers to:"
+    options:
+      - "Increased thyroid hormone synthesis with iodide loading"
+      - "Transient inhibition of organification by excess iodide"
+      - "Increased vascularity of thyroid with iodide deficiency"
+      - "Stimulation of NIS by TSH"
+    answer: "Transient inhibition of organification by excess iodide"
+    explanation: >
+      Excess iodide transiently inhibits TPO-mediated organification (Wolff-Chaikoff effect). This is the basis
+      for using iodide (Lugol's solution) in thyroid storm and pre-operatively. The effect is transient due to
+      "escape" phenomenon (downregulation of NIS).
+      📚 Guyton & Hall, 14th Ed, Ch.77 (p.991)
+    difficulty: 2
+
+  - question: "Thyroid hormones increase BMR in all tissues EXCEPT:"
+    options:
+      - "Heart and liver"
+      - "Brain, spleen, and testes"
+      - "Skeletal muscle and adipose tissue"
+      - "Kidney and skin"
+    answer: "Brain, spleen, and testes"
+    explanation: >
+      Thyroid hormones increase O2 consumption and BMR in virtually all tissues EXCEPT the adult brain,
+      spleen, testes, and anterior pituitary. However, thyroid hormones ARE essential for brain
+      development in the fetal/neonatal period (cretinism if deficient).
+      📚 Guyton & Hall, 14th Ed, Ch.77 (p.994)
+    difficulty: 2
+
+  - question: "The coupling reaction DIT + DIT produces:"
+    options:
+      - "T3 (triiodothyronine)"
+      - "T4 (thyroxine)"
+      - "Reverse T3"
+      - "MIT"
+    answer: "T4 (thyroxine)"
+    explanation: >
+      DIT + DIT = T4 (4 iodine atoms). MIT + DIT = T3 (3 iodine atoms). These coupling reactions
+      occur on thyroglobulin within the colloid and are catalyzed by TPO. T4 is produced in much
+      greater quantity than T3 by the thyroid gland.
+      📚 Guyton & Hall, 14th Ed, Ch.77 (p.989)
+    difficulty: 1

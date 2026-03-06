@@ -1,0 +1,37 @@
+topic_id: sphingolipid-metabolism
+name: Sphingolipid Metabolism
+description: Sphingolipid Metabolism — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI3.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI4.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI4.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI5.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI5.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI6.9
+  domain: KH
+  core: true
+  phase: Phase 1

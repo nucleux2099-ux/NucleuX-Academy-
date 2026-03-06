@@ -1,0 +1,3404 @@
+{
+  "anatomy/upper-limb/axilla": [
+    "AN10.1"
+  ],
+  "anatomy/upper-limb/rotator-cuff": [
+    "AN10.10"
+  ],
+  "anatomy/thorax/intercostal-muscles": [
+    "AN10.10",
+    "AN12.5",
+    "AN12.6",
+    "AN15.2",
+    "AN16.4",
+    "AN18.1",
+    "AN19.1",
+    "AN28.6",
+    "AN3.3",
+    "AN31.1",
+    "AN41.3",
+    "AN43.5",
+    "AN44.6",
+    "AN45.3",
+    "AN48.1",
+    "AN7.5"
+  ],
+  "anatomy/upper-limb/arm-muscles": [
+    "AN10.10",
+    "AN11.1",
+    "AN12.5",
+    "AN12.6",
+    "AN15.2",
+    "AN16.4",
+    "AN18.1",
+    "AN19.1",
+    "AN28.6",
+    "AN3.3",
+    "AN31.1",
+    "AN41.3",
+    "AN43.5",
+    "AN45.3",
+    "AN7.5"
+  ],
+  "anatomy/abdomen/anterior-abdominal-wall": [
+    "AN10.11",
+    "AN21.11",
+    "AN37.1",
+    "AN44.2",
+    "AN44.6",
+    "AN44.7",
+    "AN47.12",
+    "AN52.4"
+  ],
+  "anatomy/upper-limb/shoulder-joint": [
+    "AN10.12",
+    "AN11.6",
+    "AN13.4",
+    "AN17.3",
+    "AN18.5",
+    "AN33.5"
+  ],
+  "anatomy/upper-limb/elbow-joint": [
+    "AN10.12",
+    "AN11.6",
+    "AN13.4",
+    "AN17.3",
+    "AN18.5",
+    "AN33.5"
+  ],
+  "anatomy/upper-limb/wrist-joint": [
+    "AN10.12",
+    "AN11.6",
+    "AN12.13",
+    "AN13.4",
+    "AN33.5"
+  ],
+  "anatomy/head-neck/trigeminal-nerve": [
+    "AN10.13",
+    "AN10.8",
+    "AN16.2",
+    "AN2.1",
+    "AN2.6",
+    "AN21.4",
+    "AN24.4",
+    "AN24.5",
+    "AN27.1",
+    "AN29.1",
+    "AN31.5",
+    "AN33.2",
+    "AN34.1",
+    "AN35.7",
+    "AN38.1",
+    "AN38.3",
+    "AN39.1",
+    "AN39.2",
+    "AN40.1",
+    "AN42.3",
+    "AN47.13",
+    "AN58.3",
+    "AN59.3",
+    "AN62.1",
+    "AN68.1",
+    "AN7.4",
+    "AN9.1"
+  ],
+  "anatomy/head-neck/facial-nerve": [
+    "AN10.13",
+    "AN10.8",
+    "AN16.2",
+    "AN2.6",
+    "AN21.4",
+    "AN24.4",
+    "AN28.1",
+    "AN28.4",
+    "AN28.7",
+    "AN28.8",
+    "AN29.1",
+    "AN31.5",
+    "AN33.2",
+    "AN34.1",
+    "AN35.7",
+    "AN38.1",
+    "AN38.3",
+    "AN39.1",
+    "AN39.2",
+    "AN42.3",
+    "AN47.13",
+    "AN58.3",
+    "AN59.3",
+    "AN62.1",
+    "AN68.1",
+    "AN7.4",
+    "AN9.1"
+  ],
+  "anatomy/head-neck/olfactory-nerve": [
+    "AN10.13",
+    "AN10.8",
+    "AN2.6",
+    "AN21.4",
+    "AN24.4",
+    "AN29.1",
+    "AN33.2",
+    "AN34.1",
+    "AN38.3",
+    "AN39.1",
+    "AN42.3",
+    "AN43.3",
+    "AN47.13",
+    "AN68.1",
+    "AN7.4",
+    "AN9.1"
+  ],
+  "anatomy/head-neck/brachial-plexus": [
+    "AN10.5",
+    "AN33.4",
+    "AN45.2",
+    "AN48.4"
+  ],
+  "anatomy/upper-limb/brachial-plexus-anatomy": [
+    "AN10.5",
+    "AN48.4"
+  ],
+  "anatomy/head-neck/cervical-plexus": [
+    "AN10.5",
+    "AN26.5",
+    "AN28.5",
+    "AN33.4",
+    "AN35.1",
+    "AN45.2",
+    "AN48.4",
+    "AN57.3"
+  ],
+  "anatomy/upper-limb/nerves-upper-limb": [
+    "AN11.1",
+    "AN13.1",
+    "AN13.2",
+    "AN13.5",
+    "AN13.6",
+    "AN13.8",
+    "AN14.3",
+    "AN20.10",
+    "AN20.7",
+    "AN23.6",
+    "AN59.2"
+  ],
+  "anatomy/upper-limb/blood-supply-upper-limb": [
+    "AN11.1",
+    "AN12.7",
+    "AN13.1",
+    "AN13.2",
+    "AN13.5",
+    "AN13.6",
+    "AN13.8",
+    "AN14.3",
+    "AN2.1",
+    "AN22.1",
+    "AN22.7",
+    "AN23.1",
+    "AN24.1",
+    "AN24.5",
+    "AN24.6",
+    "AN27.1",
+    "AN36.1",
+    "AN40.1",
+    "AN46.3",
+    "AN5.1",
+    "AN59.2",
+    "AN69.1",
+    "AN69.2",
+    "AN69.3"
+  ],
+  "anatomy/upper-limb/cubital-fossa": [
+    "AN11.3",
+    "AN11.5",
+    "AN36.3"
+  ],
+  "anatomy/head-neck/pterygopalatine-fossa": [
+    "AN11.5",
+    "AN36.3"
+  ],
+  "anatomy/lower-limb/popliteal-fossa": [
+    "AN11.5",
+    "AN20.8",
+    "AN20.9",
+    "AN36.3"
+  ],
+  "anatomy/upper-limb/forearm-muscles": [
+    "AN12.1",
+    "AN12.6",
+    "AN15.2",
+    "AN16.4",
+    "AN18.1",
+    "AN19.1",
+    "AN28.6",
+    "AN3.3",
+    "AN31.1",
+    "AN41.3",
+    "AN45.3",
+    "AN7.5"
+  ],
+  "anatomy/upper-limb/hand-spaces": [
+    "AN12.10",
+    "AN12.8",
+    "AN35.10",
+    "AN8.5"
+  ],
+  "anatomy/lower-limb/leg-compartments": [
+    "AN12.14"
+  ],
+  "anatomy/upper-limb/carpal-tunnel": [
+    "AN12.4"
+  ],
+  "anatomy/upper-limb/hand-muscles": [
+    "AN12.5",
+    "AN12.8",
+    "AN8.5"
+  ],
+  "anatomy/thorax/great-vessels": [
+    "AN12.7",
+    "AN20.9",
+    "AN31.2",
+    "AN44.2",
+    "AN69.1",
+    "AN69.3"
+  ],
+  "anatomy/lower-limb/blood-supply-lower-limb": [
+    "AN12.7",
+    "AN2.1",
+    "AN20.10",
+    "AN20.6",
+    "AN20.7",
+    "AN22.7",
+    "AN23.1",
+    "AN24.1",
+    "AN24.5",
+    "AN24.6",
+    "AN27.1",
+    "AN36.1",
+    "AN40.1",
+    "AN46.3",
+    "AN5.1",
+    "AN69.1",
+    "AN69.2",
+    "AN69.3"
+  ],
+  "anatomy/head-neck/cervical-fascia": [
+    "AN13.1",
+    "AN20.3",
+    "AN26.5",
+    "AN28.5",
+    "AN35.1",
+    "AN4.3",
+    "AN4.4",
+    "AN44.2",
+    "AN45.1",
+    "AN57.3"
+  ],
+  "anatomy/lower-limb/nerves-lower-limb": [
+    "AN13.2",
+    "AN13.6",
+    "AN13.8",
+    "AN14.3",
+    "AN20.10",
+    "AN20.6",
+    "AN20.7",
+    "AN59.2"
+  ],
+  "anatomy/head-neck/skull-bones": [
+    "AN13.5",
+    "AN14.4",
+    "AN20.6",
+    "AN26.1",
+    "AN26.6",
+    "AN43.7",
+    "AN53.4",
+    "AN8.5"
+  ],
+  "anatomy/head-neck/brain-surface-anatomy": [
+    "AN13.7",
+    "AN25.9",
+    "AN33.3",
+    "AN55.1",
+    "AN55.2"
+  ],
+  "anatomy/pelvis-perineum/pelvic-joints": [
+    "AN14.2",
+    "AN2.5",
+    "AN20.2",
+    "AN21.10",
+    "AN8.2"
+  ],
+  "anatomy/lower-limb/foot-arches": [
+    "AN14.4",
+    "AN18.3",
+    "AN19.5",
+    "AN19.6"
+  ],
+  "anatomy/lower-limb/foot-muscles": [
+    "AN14.4",
+    "AN18.3",
+    "AN19.5",
+    "AN19.6"
+  ],
+  "anatomy/lower-limb/femoral-triangle": [
+    "AN15.3",
+    "AN15.4",
+    "AN20.8",
+    "AN20.9",
+    "AN32.1",
+    "AN47.7"
+  ],
+  "anatomy/pelvis-perineum/pelvic-floor-anatomy": [
+    "AN15.3",
+    "AN16.6"
+  ],
+  "anatomy/lower-limb/adductor-canal": [
+    "AN15.5",
+    "AN42.1",
+    "AN44.4"
+  ],
+  "anatomy/abdomen/rectum-anal-canal": [
+    "AN15.5",
+    "AN42.1",
+    "AN44.4"
+  ],
+  "anatomy/lower-limb/sciatic-nerve-anatomy": [
+    "AN16.2"
+  ],
+  "anatomy/head-neck/triangles-of-neck": [
+    "AN17.2",
+    "AN29.3",
+    "AN35.10",
+    "AN35.7"
+  ],
+  "anatomy/lower-limb/hip-joint": [
+    "AN17.3"
+  ],
+  "anatomy/lower-limb/knee-joint": [
+    "AN18.5",
+    "AN18.6"
+  ],
+  "anatomy/abdomen/stomach-anatomy": [
+    "AN18.6",
+    "AN23.7",
+    "AN35.5",
+    "AN36.1",
+    "AN37.2",
+    "AN49.4",
+    "AN55.2",
+    "AN56.2"
+  ],
+  "anatomy/abdomen/duodenum-anatomy": [
+    "AN18.6",
+    "AN23.7",
+    "AN35.5",
+    "AN37.2",
+    "AN49.4",
+    "AN56.2"
+  ],
+  "anatomy/thorax/heart-anatomy": [
+    "AN19.3",
+    "AN22.4",
+    "AN22.6"
+  ],
+  "anatomy/pelvis-perineum/perineal-body": [
+    "AN2.4",
+    "AN4.1",
+    "AN4.3",
+    "AN49.1",
+    "AN49.2",
+    "AN49.3",
+    "AN49.5"
+  ],
+  "anatomy/head-neck/venous-sinuses": [
+    "AN20.3",
+    "AN22.1",
+    "AN30.3",
+    "AN30.4",
+    "AN33.4",
+    "AN5.7"
+  ],
+  "anatomy/abdomen/inguinal-region-anatomy": [
+    "AN20.4",
+    "AN44.4",
+    "AN44.5"
+  ],
+  "anatomy/abdomen/portal-vein-anatomy": [
+    "AN20.5",
+    "AN28.8",
+    "AN47.11",
+    "AN47.8",
+    "AN5.5"
+  ],
+  "anatomy/thorax/superior-mediastinum": [
+    "AN21.11",
+    "AN61.2"
+  ],
+  "anatomy/abdomen/superior-mesenteric-artery": [
+    "AN21.11",
+    "AN35.9",
+    "AN61.2"
+  ],
+  "anatomy/thorax/thoracic-wall": [
+    "AN21.3",
+    "AN23.2",
+    "AN23.5",
+    "AN37.1",
+    "AN38.1",
+    "AN47.12",
+    "AN52.4",
+    "AN57.4"
+  ],
+  "anatomy/thorax/thoracic-vertebrae": [
+    "AN21.3",
+    "AN23.2",
+    "AN23.5",
+    "AN26.5",
+    "AN57.4"
+  ],
+  "anatomy/thorax/thoracic-duct": [
+    "AN21.3",
+    "AN23.2",
+    "AN23.5",
+    "AN43.6",
+    "AN57.4"
+  ],
+  "anatomy/thorax/pericardium": [
+    "AN22.1"
+  ],
+  "anatomy/thorax/coronary-arteries": [
+    "AN22.3",
+    "AN25.6",
+    "AN5.3",
+    "AN5.4"
+  ],
+  "anatomy/thorax/cardiac-conduction-system": [
+    "AN22.7",
+    "AN5.1",
+    "AN5.5",
+    "AN52.7",
+    "AN52.8",
+    "AN6.1",
+    "AN7.1"
+  ],
+  "anatomy/abdomen/abdominal-aorta": [
+    "AN23.4",
+    "AN44.6",
+    "AN44.7",
+    "AN47.12",
+    "AN52.4"
+  ],
+  "anatomy/abdomen/autonomic-nerves-abdomen": [
+    "AN23.6",
+    "AN31.2",
+    "AN47.5",
+    "AN54.1",
+    "AN54.3",
+    "AN55.1"
+  ],
+  "anatomy/head-neck/cranial-nerves-overview": [
+    "AN23.6",
+    "AN26.3",
+    "AN30.1"
+  ],
+  "anatomy/abdomen/appendix-anatomy": [
+    "AN23.7",
+    "AN35.5",
+    "AN37.2",
+    "AN49.4",
+    "AN56.2"
+  ],
+  "anatomy/thorax/pleura": [
+    "AN24.1",
+    "AN25.2"
+  ],
+  "anatomy/thorax/bronchopulmonary-segments": [
+    "AN24.3"
+  ],
+  "anatomy/thorax/lung-anatomy": [
+    "AN25.1",
+    "AN25.2",
+    "AN25.9"
+  ],
+  "anatomy/thorax/hilum-of-lung": [
+    "AN25.1",
+    "AN25.2",
+    "AN25.9"
+  ],
+  "anatomy/thorax/trachea-bronchi": [
+    "AN25.1"
+  ],
+  "anatomy/head-neck/cranial-fossae": [
+    "AN26.3",
+    "AN30.1",
+    "AN58.3",
+    "AN59.3",
+    "AN62.1"
+  ],
+  "anatomy/head-neck/nasal-cavity-anatomy": [
+    "AN26.3",
+    "AN37.1"
+  ],
+  "anatomy/pelvis-perineum/pelvic-bones": [
+    "AN26.6",
+    "AN53.4"
+  ],
+  "anatomy/head-neck/facial-muscles": [
+    "AN28.1",
+    "AN28.4",
+    "AN28.7",
+    "AN28.8",
+    "AN43.5"
+  ],
+  "anatomy/head-neck/facial-nerve-anatomy": [
+    "AN28.1",
+    "AN28.4",
+    "AN28.7"
+  ],
+  "anatomy/abdomen/inferior-vena-cava": [
+    "AN29.4",
+    "AN61.2"
+  ],
+  "anatomy/abdomen/inferior-mesenteric-artery": [
+    "AN29.4",
+    "AN35.9"
+  ],
+  "anatomy/head-neck/orbit-anatomy": [
+    "AN31.2"
+  ],
+  "anatomy/head-neck/oculomotor-nerve": [
+    "AN31.5"
+  ],
+  "anatomy/pelvis-perineum/urogenital-triangle": [
+    "AN32.1",
+    "AN47.7"
+  ],
+  "anatomy/pelvis-perineum/anal-triangle": [
+    "AN32.1",
+    "AN47.7"
+  ],
+  "anatomy/head-neck/carotid-sheath": [
+    "AN32.2",
+    "AN43.8",
+    "AN43.9",
+    "AN44.3"
+  ],
+  "anatomy/head-neck/thyroid-gland-anatomy": [
+    "AN35.8",
+    "AN43.2",
+    "AN43.6",
+    "AN70.1"
+  ],
+  "anatomy/head-neck/hypoglossal-nerve": [
+    "AN39.2"
+  ],
+  "anatomy/head-neck/parotid-gland-anatomy": [
+    "AN43.2",
+    "AN43.6",
+    "AN70.1"
+  ],
+  "anatomy/abdomen/rectus-sheath": [
+    "AN44.3"
+  ],
+  "anatomy/abdomen/lumbar-region": [
+    "AN45.2",
+    "AN50.3",
+    "AN54.2"
+  ],
+  "anatomy/pelvis-perineum/penis-anatomy": [
+    "AN46.3"
+  ],
+  "anatomy/abdomen/lesser-sac": [
+    "AN47.1",
+    "AN80.1"
+  ],
+  "anatomy/abdomen/greater-omentum": [
+    "AN47.1"
+  ],
+  "anatomy/thorax/diaphragm-anatomy": [
+    "AN47.14",
+    "AN48.1",
+    "AN52.5"
+  ],
+  "anatomy/head-neck/accessory-nerve": [
+    "AN47.6"
+  ],
+  "anatomy/pelvis-perineum/pelvic-types": [
+    "AN48.1"
+  ],
+  "anatomy/pelvis-perineum/urinary-bladder-anatomy": [
+    "AN48.5",
+    "AN48.6",
+    "AN52.7"
+  ],
+  "anatomy/pelvis-perineum/male-urethra": [
+    "AN49.3",
+    "AN51.2",
+    "AN52.8"
+  ],
+  "anatomy/abdomen/umbilical-region": [
+    "AN54.2",
+    "AN80.2",
+    "AN80.7"
+  ],
+  "anatomy/lower-limb/gluteal-region": [
+    "AN54.2"
+  ],
+  "anatomy/abdomen/liver-anatomy": [
+    "AN55.2"
+  ],
+  "anatomy/head-neck/meninges": [
+    "AN56.1"
+  ],
+  "anatomy/pelvis-perineum/spermatic-cord-anatomy": [
+    "AN57.1",
+    "AN57.2",
+    "AN57.3",
+    "AN64.1",
+    "AN64.2",
+    "AN80.2",
+    "AN80.7"
+  ],
+  "anatomy/pelvis-perineum/fallopian-tube-anatomy": [
+    "AN64.2",
+    "AN64.3"
+  ],
+  "biochemistry/clinical-biochemistry/tumor-markers-biochemistry": [
+    "BI10.2"
+  ],
+  "biochemistry/vitamins-minerals/calcium-phosphorus": [
+    "BI11.11"
+  ],
+  "biochemistry/clinical-biochemistry/csf-analysis": [
+    "BI11.15",
+    "BI11.4",
+    "BI6.8"
+  ],
+  "biochemistry/molecular-biology/blotting-techniques": [
+    "BI11.16"
+  ],
+  "biochemistry/lipid-metabolism/dyslipidemia-biochemistry": [
+    "BI11.16"
+  ],
+  "biochemistry/clinical-biochemistry/diabetes-biochemistry": [
+    "BI11.16"
+  ],
+  "biochemistry/clinical-biochemistry/liver-function-tests-biochemistry": [
+    "BI11.17",
+    "BI6.13",
+    "BI6.14",
+    "BI6.15"
+  ],
+  "biochemistry/clinical-biochemistry/renal-function-tests-biochemistry": [
+    "BI11.17",
+    "BI6.14"
+  ],
+  "biochemistry/clinical-biochemistry/thyroid-function-tests-biochemistry": [
+    "BI11.17",
+    "BI6.13",
+    "BI6.14",
+    "BI6.15"
+  ],
+  "biochemistry/protein-amino-acid-metabolism/maple-syrup-urine-disease": [
+    "BI11.20",
+    "BI11.3",
+    "BI11.4",
+    "BI11.5",
+    "BI7.5",
+    "BI8.3",
+    "BI9.2"
+  ],
+  "biochemistry/protein-amino-acid-metabolism/urea-cycle": [
+    "BI11.21",
+    "BI3.6"
+  ],
+  "biochemistry/biomolecules/protein-structure": [
+    "BI11.21",
+    "BI4.4",
+    "BI5.2",
+    "BI8.2",
+    "BI9.3"
+  ],
+  "biochemistry/biomolecules/protein-folding": [
+    "BI11.21",
+    "BI8.2",
+    "BI9.3"
+  ],
+  "biochemistry/protein-amino-acid-metabolism/inborn-errors-amino-acid": [
+    "BI11.5"
+  ],
+  "biochemistry/clinical-biochemistry/inborn-errors-metabolism-overview": [
+    "BI11.5"
+  ],
+  "biochemistry/lipid-metabolism/cholesterol-synthesis": [
+    "BI11.9"
+  ],
+  "biochemistry/enzymes/enzyme-classification": [
+    "BI2.1",
+    "BI2.3",
+    "BI2.4",
+    "BI2.6",
+    "BI2.7"
+  ],
+  "biochemistry/enzymes/enzyme-kinetics": [
+    "BI2.1",
+    "BI2.3",
+    "BI2.4",
+    "BI2.6",
+    "BI2.7"
+  ],
+  "biochemistry/enzymes/enzyme-inhibition": [
+    "BI2.1",
+    "BI2.3",
+    "BI2.4",
+    "BI2.6",
+    "BI2.7"
+  ],
+  "biochemistry/biomolecules/monosaccharides-disaccharides": [
+    "BI3.1"
+  ],
+  "biochemistry/carbohydrate-metabolism/blood-glucose-regulation": [
+    "BI3.10",
+    "BI3.5",
+    "BI3.9",
+    "BI6.8"
+  ],
+  "biochemistry/lipid-metabolism/phospholipid-metabolism": [
+    "BI3.4",
+    "BI4.3",
+    "BI4.5",
+    "BI4.7",
+    "BI5.4",
+    "BI5.5",
+    "BI6.3",
+    "BI6.9"
+  ],
+  "biochemistry/lipid-metabolism/sphingolipid-metabolism": [
+    "BI3.4",
+    "BI4.3",
+    "BI4.5",
+    "BI4.7",
+    "BI5.4",
+    "BI5.5",
+    "BI6.3",
+    "BI6.9"
+  ],
+  "biochemistry/protein-amino-acid-metabolism/tryptophan-metabolism": [
+    "BI3.4",
+    "BI4.5",
+    "BI4.7",
+    "BI5.4",
+    "BI5.5",
+    "BI6.3",
+    "BI6.9"
+  ],
+  "biochemistry/molecular-biology/gene-regulation": [
+    "BI3.5",
+    "BI3.9",
+    "BI4.3",
+    "BI7.3"
+  ],
+  "biochemistry/enzymes/allosteric-regulation": [
+    "BI3.5",
+    "BI3.9",
+    "BI7.3"
+  ],
+  "biochemistry/carbohydrate-metabolism/tca-cycle": [
+    "BI3.6"
+  ],
+  "biochemistry/molecular-biology/operon-concept": [
+    "BI3.6"
+  ],
+  "biochemistry/biomolecules/fatty-acids": [
+    "BI4.1"
+  ],
+  "biochemistry/lipid-metabolism/fatty-acid-oxidation": [
+    "BI4.1"
+  ],
+  "biochemistry/lipid-metabolism/fatty-acid-synthesis": [
+    "BI4.1"
+  ],
+  "biochemistry/lipid-metabolism/lipoproteins": [
+    "BI4.4"
+  ],
+  "biochemistry/biomolecules/dna-structure": [
+    "BI4.4",
+    "BI5.2",
+    "BI7.1",
+    "BI7.2",
+    "BI7.4"
+  ],
+  "biochemistry/biomolecules/nucleic-acid-structure": [
+    "BI5.2"
+  ],
+  "biochemistry/clinical-biochemistry/electrolyte-disorders-biochemistry": [
+    "BI6.10"
+  ],
+  "biochemistry/biomolecules/rna-types": [
+    "BI7.1"
+  ],
+  "biochemistry/molecular-biology/dna-replication": [
+    "BI7.1",
+    "BI7.2",
+    "BI7.4"
+  ],
+  "biochemistry/molecular-biology/dna-repair-mechanisms": [
+    "BI7.2"
+  ],
+  "biochemistry/molecular-biology/gene-therapy": [
+    "BI7.3"
+  ],
+  "biochemistry/molecular-biology/recombinant-dna-technology": [
+    "BI7.4"
+  ],
+  "biochemistry/carbohydrate-metabolism/oxidative-phosphorylation": [
+    "BI7.7"
+  ],
+  "biochemistry/molecular-biology/translation-protein-synthesis": [
+    "BI8.2",
+    "BI9.3"
+  ],
+  "medicine/neurology/peripheral-neuropathy": [
+    "IM1.12",
+    "IM10.21",
+    "IM9.10",
+    "IM9.11"
+  ],
+  "medicine/cardiology/peripheral-vascular-disease-medical": [
+    "IM1.12",
+    "IM10.21"
+  ],
+  "medicine/geriatrics/pressure-ulcers": [
+    "IM1.13"
+  ],
+  "medicine/neurology/raised-intracranial-pressure": [
+    "IM1.13"
+  ],
+  "medicine/hematology/blood-component-therapy": [
+    "IM1.13",
+    "IM10.20",
+    "IM11.12",
+    "IM15.12",
+    "IM15.13",
+    "IM16.11",
+    "IM25.9",
+    "IM4.19",
+    "IM9.10",
+    "IM9.11",
+    "IM9.17",
+    "IM9.19"
+  ],
+  "medicine/neurology/cerebral-venous-thrombosis": [
+    "IM1.14"
+  ],
+  "medicine/cardiology/heart-failure": [
+    "IM1.19",
+    "IM1.2",
+    "IM1.20",
+    "IM1.28",
+    "IM1.4",
+    "IM1.7"
+  ],
+  "medicine/cardiology/heart-block": [
+    "IM1.19",
+    "IM1.2",
+    "IM1.28",
+    "IM1.4",
+    "IM1.7"
+  ],
+  "medicine/cardiology/ischemic-heart-disease": [
+    "IM1.19",
+    "IM1.2",
+    "IM1.20",
+    "IM1.28",
+    "IM1.7"
+  ],
+  "medicine/cardiology/rheumatic-heart-disease": [
+    "IM1.20"
+  ],
+  "medicine/cardiology/pericarditis-acute": [
+    "IM1.21",
+    "IM10.1",
+    "IM15.3",
+    "IM16.1",
+    "IM16.2",
+    "IM18.12",
+    "IM2.11",
+    "IM2.16",
+    "IM2.20",
+    "IM2.5",
+    "IM6.1"
+  ],
+  "medicine/emergency/acute-stroke-em": [
+    "IM1.21",
+    "IM10.1",
+    "IM15.3",
+    "IM16.1",
+    "IM16.2",
+    "IM2.11",
+    "IM2.16",
+    "IM2.20",
+    "IM6.1"
+  ],
+  "medicine/cardiology/acute-coronary-syndrome": [
+    "IM1.21",
+    "IM1.25",
+    "IM15.3",
+    "IM16.1",
+    "IM16.2",
+    "IM2.14",
+    "IM2.16",
+    "IM2.5"
+  ],
+  "medicine/critical-care/non-invasive-ventilation": [
+    "IM1.23",
+    "IM15.18",
+    "IM2.2",
+    "IM26.3",
+    "IM6.23"
+  ],
+  "medicine/hematology/non-hodgkin-lymphoma": [
+    "IM1.23",
+    "IM15.18",
+    "IM2.2",
+    "IM26.3"
+  ],
+  "medicine/neurology/antiepileptic-drugs": [
+    "IM1.24",
+    "IM4.23",
+    "IM6.13",
+    "IM6.18",
+    "IM6.19"
+  ],
+  "medicine/emergency/acute-coronary-syndrome-em": [
+    "IM1.25",
+    "IM2.14",
+    "IM2.5"
+  ],
+  "medicine/pulmonology/respiratory-failure": [
+    "IM1.4"
+  ],
+  "medicine/nephrology/renal-osteodystrophy": [
+    "IM10.1",
+    "IM10.16",
+    "IM10.17",
+    "IM10.19",
+    "IM10.24",
+    "IM10.27",
+    "IM10.28",
+    "IM10.3"
+  ],
+  "medicine/nephrology/ckd-complications": [
+    "IM10.10",
+    "IM10.26",
+    "IM10.30",
+    "IM10.31",
+    "IM10.8"
+  ],
+  "medicine/nephrology/ckd-staging": [
+    "IM10.10",
+    "IM10.30",
+    "IM10.31",
+    "IM10.8"
+  ],
+  "medicine/cardiology/dvt-pe-medical": [
+    "IM10.12",
+    "IM11.7",
+    "IM25.4",
+    "IM26.40",
+    "IM4.9",
+    "IM5.9",
+    "IM6.7",
+    "IM7.11",
+    "IM8.9",
+    "IM9.3"
+  ],
+  "medicine/endocrinology/obesity-medical": [
+    "IM10.12",
+    "IM11.7",
+    "IM14.1",
+    "IM14.2",
+    "IM14.3",
+    "IM14.5",
+    "IM25.4",
+    "IM26.40",
+    "IM4.9",
+    "IM5.9",
+    "IM6.7",
+    "IM7.11",
+    "IM8.9",
+    "IM9.3"
+  ],
+  "medicine/gastroenterology/gerd-medical": [
+    "IM10.12",
+    "IM11.7",
+    "IM25.4",
+    "IM26.40",
+    "IM4.9",
+    "IM5.9",
+    "IM6.7",
+    "IM7.11",
+    "IM8.9",
+    "IM9.3"
+  ],
+  "medicine/nephrology/renal-transplant": [
+    "IM10.16",
+    "IM10.17",
+    "IM10.19",
+    "IM10.24",
+    "IM10.3"
+  ],
+  "medicine/nephrology/renal-tubular-acidosis": [
+    "IM10.16",
+    "IM10.17",
+    "IM10.19",
+    "IM10.24",
+    "IM10.3"
+  ],
+  "medicine/nephrology/hyperkalemia": [
+    "IM10.18"
+  ],
+  "medicine/critical-care/arterial-line": [
+    "IM10.20",
+    "IM3.8"
+  ],
+  "medicine/endocrinology/insulin-therapy": [
+    "IM10.26",
+    "IM10.28",
+    "IM11.17",
+    "IM12.15",
+    "IM18.12",
+    "IM18.17",
+    "IM20.8",
+    "IM20.9",
+    "IM3.17",
+    "IM7.21",
+    "IM9.14"
+  ],
+  "medicine/pulmonology/oxygen-therapy": [
+    "IM10.26",
+    "IM10.28",
+    "IM11.17",
+    "IM12.15",
+    "IM18.12",
+    "IM18.17",
+    "IM20.8",
+    "IM20.9",
+    "IM3.17",
+    "IM7.21",
+    "IM9.14"
+  ],
+  "medicine/nephrology/dialysis-overview": [
+    "IM10.27"
+  ],
+  "medicine/nephrology/peritoneal-dialysis": [
+    "IM10.27"
+  ],
+  "medicine/critical-care/end-of-life-icu": [
+    "IM10.30",
+    "IM13.5"
+  ],
+  "medicine/geriatrics/end-of-life-care": [
+    "IM10.31",
+    "IM13.5",
+    "IM14.15",
+    "IM17.10",
+    "IM24.20",
+    "IM24.21",
+    "IM26.22",
+    "IM26.30",
+    "IM26.34",
+    "IM26.6"
+  ],
+  "medicine/nephrology/chronic-kidney-disease": [
+    "IM10.6",
+    "IM16.3"
+  ],
+  "medicine/nephrology/polycystic-kidney-disease": [
+    "IM10.6"
+  ],
+  "medicine/hematology/anemia-of-chronic-disease": [
+    "IM10.6",
+    "IM16.3"
+  ],
+  "medicine/hematology/megaloblastic-anemia": [
+    "IM10.9",
+    "IM9.1",
+    "IM9.16",
+    "IM9.9"
+  ],
+  "medicine/hematology/aplastic-anemia": [
+    "IM10.9",
+    "IM9.1",
+    "IM9.16",
+    "IM9.9"
+  ],
+  "medicine/hematology/iron-deficiency-anemia": [
+    "IM10.9",
+    "IM9.16",
+    "IM9.8"
+  ],
+  "medicine/endocrinology/diabetes-insipidus": [
+    "IM11.1",
+    "IM11.11",
+    "IM11.16"
+  ],
+  "medicine/endocrinology/diabetes-mellitus-type-1": [
+    "IM11.1",
+    "IM11.11",
+    "IM11.16"
+  ],
+  "medicine/endocrinology/diabetes-mellitus-type-2": [
+    "IM11.1",
+    "IM11.11",
+    "IM11.16"
+  ],
+  "medicine/geriatrics/urinary-incontinence-geriatric": [
+    "IM11.13"
+  ],
+  "medicine/infectious-diseases/urinary-tract-infections": [
+    "IM11.13"
+  ],
+  "medicine/endocrinology/diabetic-ketoacidosis": [
+    "IM11.15"
+  ],
+  "medicine/endocrinology/diabetic-nephropathy": [
+    "IM11.15"
+  ],
+  "medicine/endocrinology/diabetic-retinopathy": [
+    "IM11.15"
+  ],
+  "medicine/emergency/breathlessness-approach": [
+    "IM11.17",
+    "IM20.3",
+    "IM20.8",
+    "IM20.9",
+    "IM21.1",
+    "IM22.3",
+    "IM7.4",
+    "IM7.5"
+  ],
+  "medicine/endocrinology/hypothyroidism": [
+    "IM12.1"
+  ],
+  "medicine/cardiology/atrial-fibrillation": [
+    "IM12.10"
+  ],
+  "medicine/cardiology/pericardial-effusion": [
+    "IM12.10"
+  ],
+  "medicine/pulmonology/pleural-effusion": [
+    "IM12.10",
+    "IM3.9"
+  ],
+  "medicine/endocrinology/hyperthyroidism": [
+    "IM12.11"
+  ],
+  "medicine/endocrinology/thyroid-storm": [
+    "IM12.11",
+    "IM12.2",
+    "IM12.7"
+  ],
+  "medicine/endocrinology/thyroid-nodule-evaluation": [
+    "IM12.11",
+    "IM12.2",
+    "IM12.7",
+    "IM15.2"
+  ],
+  "medicine/infectious-diseases/antiretroviral-therapy": [
+    "IM12.15",
+    "IM18.17",
+    "IM3.17",
+    "IM7.21",
+    "IM9.14"
+  ],
+  "medicine/endocrinology/thyroid-cancer-medical": [
+    "IM12.2",
+    "IM12.7",
+    "IM13.17"
+  ],
+  "medicine/emergency/chest-trauma-em": [
+    "IM13.12",
+    "IM2.11"
+  ],
+  "medicine/critical-care/chest-tube-icu": [
+    "IM13.12"
+  ],
+  "medicine/emergency/chest-pain-approach": [
+    "IM13.12",
+    "IM13.13",
+    "IM7.3",
+    "IM7.4",
+    "IM7.5",
+    "IM7.8",
+    "IM7.9"
+  ],
+  "medicine/infectious-diseases/hiv-prevention": [
+    "IM13.15",
+    "IM25.13",
+    "IM4.26",
+    "IM6.2",
+    "IM6.23"
+  ],
+  "medicine/pulmonology/small-cell-lung-cancer": [
+    "IM13.17"
+  ],
+  "medicine/pulmonology/lung-cancer": [
+    "IM13.17"
+  ],
+  "medicine/gastroenterology/upper-gi-bleeding-medical": [
+    "IM15.1",
+    "IM15.6",
+    "IM18.6"
+  ],
+  "medicine/gastroenterology/lower-gi-bleeding-medical": [
+    "IM15.1",
+    "IM15.6",
+    "IM18.6"
+  ],
+  "medicine/critical-care/fluid-resuscitation": [
+    "IM15.11",
+    "IM3.9"
+  ],
+  "medicine/hematology/transfusion-reactions": [
+    "IM15.13",
+    "IM17.13",
+    "IM9.17",
+    "IM9.19"
+  ],
+  "medicine/hematology/massive-transfusion": [
+    "IM15.13",
+    "IM9.17",
+    "IM9.19"
+  ],
+  "medicine/emergency/gi-bleeding-approach": [
+    "IM15.6",
+    "IM20.3",
+    "IM21.1",
+    "IM22.3",
+    "IM7.4",
+    "IM7.5"
+  ],
+  "medicine/neurology/parkinson-disease": [
+    "IM16.15",
+    "IM5.14",
+    "IM7.1",
+    "IM7.10",
+    "IM7.2"
+  ],
+  "medicine/neurology/huntington-disease": [
+    "IM16.15",
+    "IM5.14",
+    "IM7.1",
+    "IM7.10",
+    "IM7.2"
+  ],
+  "medicine/endocrinology/graves-disease": [
+    "IM16.15",
+    "IM7.1",
+    "IM7.10",
+    "IM7.2"
+  ],
+  "medicine/gastroenterology/inflammatory-bowel-disease": [
+    "IM16.17"
+  ],
+  "medicine/gastroenterology/chronic-pancreatitis-medical": [
+    "IM16.3"
+  ],
+  "medicine/infectious-diseases/parasitic-infections-systemic": [
+    "IM16.9",
+    "IM7.22",
+    "IM7.23"
+  ],
+  "medicine/neurology/tension-headache": [
+    "IM17.1"
+  ],
+  "medicine/neurology/cluster-headache": [
+    "IM17.1"
+  ],
+  "medicine/cardiology/hypertensive-emergency": [
+    "IM17.10",
+    "IM8.15",
+    "IM8.6"
+  ],
+  "medicine/emergency/anaphylaxis-emergency": [
+    "IM17.10"
+  ],
+  "medicine/neurology/migraine": [
+    "IM17.14",
+    "IM17.3"
+  ],
+  "medicine/emergency/poisoning-general-approach": [
+    "IM17.4",
+    "IM20.3",
+    "IM21.1",
+    "IM21.7",
+    "IM9.4"
+  ],
+  "medicine/neurology/brain-abscess": [
+    "IM18.1",
+    "IM19.1",
+    "IM19.2"
+  ],
+  "medicine/critical-care/brain-death": [
+    "IM18.1",
+    "IM19.1",
+    "IM19.2"
+  ],
+  "medicine/neurology/brain-tumors-medical": [
+    "IM18.1",
+    "IM19.1"
+  ],
+  "medicine/nephrology/anti-gbm-disease": [
+    "IM18.13",
+    "IM2.23",
+    "IM7.15"
+  ],
+  "medicine/neurology/hemorrhagic-stroke": [
+    "IM18.14",
+    "IM18.15"
+  ],
+  "medicine/neurology/ischemic-stroke": [
+    "IM18.14",
+    "IM18.15"
+  ],
+  "medicine/neurology/stroke-rehabilitation": [
+    "IM18.14",
+    "IM18.15"
+  ],
+  "medicine/neurology/motor-neuron-disease": [
+    "IM18.6"
+  ],
+  "medicine/gastroenterology/gi-motility-disorders": [
+    "IM19.2"
+  ],
+  "medicine/psychiatry/alcohol-use-disorder": [
+    "IM19.9",
+    "IM25.8",
+    "IM26.28",
+    "IM4.18"
+  ],
+  "medicine/psychiatry/opioid-use-disorder": [
+    "IM19.9",
+    "IM25.8",
+    "IM26.28",
+    "IM4.18"
+  ],
+  "medicine/psychiatry/cannabis-use-disorder": [
+    "IM19.9",
+    "IM25.8",
+    "IM26.28",
+    "IM4.18"
+  ],
+  "medicine/cardiology/cardiac-transplant": [
+    "IM2.17"
+  ],
+  "medicine/cardiology/cardiac-tamponade": [
+    "IM2.17"
+  ],
+  "medicine/geriatrics/geriatric-assessment": [
+    "IM2.20",
+    "IM23.1",
+    "IM24.2",
+    "IM9.10",
+    "IM9.11"
+  ],
+  "medicine/emergency/cpr-acls-bls": [
+    "IM2.21",
+    "IM2.22"
+  ],
+  "medicine/cardiology/stable-angina": [
+    "IM2.9"
+  ],
+  "medicine/emergency/paracetamol-overdose": [
+    "IM21.4"
+  ],
+  "medicine/dermatology/drug-eruptions": [
+    "IM21.4",
+    "IM5.7"
+  ],
+  "medicine/gastroenterology/drug-induced-liver-injury": [
+    "IM21.4",
+    "IM5.7"
+  ],
+  "medicine/emergency/organophosphate-poisoning": [
+    "IM21.7"
+  ],
+  "medicine/nephrology/hypercalcemia": [
+    "IM22.1",
+    "IM22.3"
+  ],
+  "medicine/psychiatry/schizoaffective-disorder": [
+    "IM22.13"
+  ],
+  "medicine/psychiatry/delusional-disorder": [
+    "IM22.13"
+  ],
+  "medicine/psychiatry/bipolar-disorder": [
+    "IM22.13"
+  ],
+  "medicine/rheumatology/adult-onset-stills-disease": [
+    "IM23.1"
+  ],
+  "medicine/critical-care/nutrition-icu": [
+    "IM23.4"
+  ],
+  "medicine/geriatrics/falls-in-elderly": [
+    "IM24.19",
+    "IM24.20",
+    "IM24.21"
+  ],
+  "medicine/geriatrics/delirium-geriatric": [
+    "IM24.2"
+  ],
+  "medicine/geriatrics/osteoporosis-geriatric": [
+    "IM24.2"
+  ],
+  "medicine/infectious-diseases/catheter-related-infections": [
+    "IM25.13"
+  ],
+  "medicine/infectious-diseases/opportunistic-infections-hiv": [
+    "IM25.13",
+    "IM6.2"
+  ],
+  "medicine/pulmonology/community-acquired-pneumonia": [
+    "IM3.1",
+    "IM3.2"
+  ],
+  "medicine/pulmonology/hospital-acquired-pneumonia": [
+    "IM3.1"
+  ],
+  "medicine/pulmonology/pneumocystis-pneumonia": [
+    "IM3.1",
+    "IM3.2"
+  ],
+  "medicine/infectious-diseases/ventilator-associated-pneumonia": [
+    "IM3.2"
+  ],
+  "medicine/neurology/febrile-seizures": [
+    "IM4.1"
+  ],
+  "medicine/endocrinology/paget-disease-bone": [
+    "IM4.17"
+  ],
+  "medicine/infectious-diseases/malaria": [
+    "IM4.23"
+  ],
+  "medicine/gastroenterology/alcoholic-liver-disease": [
+    "IM5.14",
+    "IM5.2"
+  ],
+  "medicine/gastroenterology/hepatitis-b": [
+    "IM5.16"
+  ],
+  "medicine/gastroenterology/hepatitis-c": [
+    "IM5.16"
+  ],
+  "medicine/gastroenterology/liver-cirrhosis": [
+    "IM5.16",
+    "IM5.2"
+  ],
+  "medicine/critical-care/hepatic-failure-icu": [
+    "IM5.18"
+  ],
+  "medicine/gastroenterology/acute-liver-failure": [
+    "IM5.2"
+  ],
+  "medicine/infectious-diseases/hiv-aids": [
+    "IM6.1",
+    "IM6.2",
+    "IM6.23"
+  ],
+  "medicine/critical-care/lumbar-puncture": [
+    "IM6.15"
+  ],
+  "medicine/dermatology/lupus-skin": [
+    "IM7.12",
+    "IM7.13"
+  ],
+  "medicine/dermatology/dermatomyositis-skin": [
+    "IM7.12",
+    "IM7.13"
+  ],
+  "medicine/dermatology/scleroderma-skin": [
+    "IM7.12",
+    "IM7.13"
+  ],
+  "medicine/rheumatology/systemic-lupus-erythematosus": [
+    "IM7.22",
+    "IM7.23"
+  ],
+  "medicine/infectious-diseases/fungal-infections-systemic": [
+    "IM7.22",
+    "IM7.23"
+  ],
+  "medicine/rheumatology/rheumatoid-arthritis": [
+    "IM7.6"
+  ],
+  "medicine/rheumatology/septic-arthritis": [
+    "IM7.6"
+  ],
+  "medicine/rheumatology/reactive-arthritis": [
+    "IM7.6"
+  ],
+  "medicine/cardiology/hypertension": [
+    "IM8.14",
+    "IM8.19",
+    "IM8.2",
+    "IM8.3",
+    "IM8.4"
+  ],
+  "medicine/cardiology/secondary-hypertension": [
+    "IM8.14",
+    "IM8.19",
+    "IM8.2",
+    "IM8.3",
+    "IM8.4"
+  ],
+  "medicine/cardiology/resistant-hypertension": [
+    "IM8.14",
+    "IM8.19",
+    "IM8.2",
+    "IM8.3",
+    "IM8.4"
+  ],
+  "medicine/psychiatry/psychiatric-emergencies": [
+    "IM8.15"
+  ],
+  "medicine/emergency/primary-survey-atls": [
+    "IM8.5"
+  ],
+  "medicine/critical-care/organ-donation": [
+    "IM8.8"
+  ],
+  "medicine/rheumatology/giant-cell-arteritis": [
+    "IM9.1",
+    "IM9.9"
+  ],
+  "medicine/hematology/g6pd-deficiency": [
+    "IM9.8"
+  ],
+  "microbiology/virology/antiviral-mechanisms": [
+    "MI1.10",
+    "MI1.11",
+    "MI1.6",
+    "MI1.7",
+    "MI1.8"
+  ],
+  "microbiology/immunology/immunodeficiency-diseases": [
+    "MI1.3",
+    "MI8.4"
+  ],
+  "microbiology/general-microbiology/sterilization-disinfection": [
+    "MI1.4",
+    "MI1.5"
+  ],
+  "microbiology/immunology/t-cell-immunity": [
+    "MI1.8"
+  ],
+  "microbiology/immunology/b-cell-immunity": [
+    "MI1.8"
+  ],
+  "microbiology/immunology/vaccines-immunology": [
+    "MI1.9"
+  ],
+  "microbiology/virology/viral-vaccines": [
+    "MI1.9"
+  ],
+  "microbiology/mycobacteria/leprosy-classification": [
+    "MI2.2"
+  ],
+  "microbiology/virology/viral-pathogenesis": [
+    "MI3.8"
+  ],
+  "microbiology/mycobacteria/tuberculin-test": [
+    "MI3.8",
+    "MI8.13"
+  ],
+  "microbiology/virology/viral-replication": [
+    "MI3.8"
+  ],
+  "microbiology/systemic-infections/gi-infections-micro": [
+    "MI4.1",
+    "MI4.3",
+    "MI8.2",
+    "MI8.5"
+  ],
+  "microbiology/systemic-infections/biofilm-infections": [
+    "MI4.1",
+    "MI4.3",
+    "MI8.2",
+    "MI8.5"
+  ],
+  "microbiology/systemic-infections/emerging-infections": [
+    "MI4.1",
+    "MI4.3",
+    "MI8.2",
+    "MI8.4",
+    "MI8.5"
+  ],
+  "microbiology/systemic-infections/respiratory-tract-infections-micro": [
+    "MI6.2",
+    "MI6.3"
+  ],
+  "microbiology/systemic-infections/urinary-tract-infections-micro": [
+    "MI6.2",
+    "MI6.3"
+  ],
+  "microbiology/systemic-infections/zoonotic-infections": [
+    "MI8.1"
+  ],
+  "microbiology/general-microbiology/specimen-collection": [
+    "MI8.10",
+    "MI8.9"
+  ],
+  "microbiology/virology/hepatitis-b-virus": [
+    "MI8.3"
+  ],
+  "microbiology/virology/influenza-virus": [
+    "MI8.3"
+  ],
+  "microbiology/virology/hepatitis-a-virus": [
+    "MI8.3"
+  ],
+  "obgyn/obstetrics/maternal-adaptations": [
+    "OG1.1",
+    "OG14.1",
+    "OG5.2",
+    "OG9.5"
+  ],
+  "obgyn/obstetrics/diagnosis-of-pregnancy": [
+    "OG12.5",
+    "OG12.6"
+  ],
+  "obgyn/high-risk-pregnancy/multiple-pregnancy": [
+    "OG12.5",
+    "OG12.6"
+  ],
+  "obgyn/high-risk-pregnancy/ectopic-pregnancy": [
+    "OG12.5",
+    "OG12.6"
+  ],
+  "obgyn/obstetrics/antenatal-screening": [
+    "OG12.7",
+    "OG36.2",
+    "OG8.1"
+  ],
+  "obgyn/gynec-oncology/cervical-screening": [
+    "OG12.7",
+    "OG33.3"
+  ],
+  "obgyn/antenatal-care/antenatal-screening-tests": [
+    "OG12.7"
+  ],
+  "obgyn/high-risk-pregnancy/fetal-distress": [
+    "OG12.8",
+    "OG8.4",
+    "OG9.5"
+  ],
+  "obgyn/obstetrics/fetal-circulation": [
+    "OG12.8",
+    "OG8.4",
+    "OG9.5"
+  ],
+  "obgyn/fetal-medicine/fetal-hydrops": [
+    "OG12.8"
+  ],
+  "obgyn/obstetrics/normal-labor": [
+    "OG13.1",
+    "OG13.4",
+    "OG14.2"
+  ],
+  "obgyn/labor-delivery/mechanism-of-labor": [
+    "OG13.1",
+    "OG13.4",
+    "OG14.2"
+  ],
+  "obgyn/high-risk-pregnancy/preterm-labor": [
+    "OG13.1",
+    "OG14.2"
+  ],
+  "obgyn/labor-delivery/uterine-rupture": [
+    "OG13.3",
+    "OG14.3",
+    "OG35.13"
+  ],
+  "obgyn/high-risk-pregnancy/premature-rupture-membranes": [
+    "OG13.3",
+    "OG14.3",
+    "OG35.13"
+  ],
+  "obgyn/labor-delivery/stages-of-labor": [
+    "OG13.4"
+  ],
+  "obgyn/obstetrics/operative-vaginal-delivery": [
+    "OG13.5",
+    "OG22.1",
+    "OG34.4"
+  ],
+  "obgyn/gynec-oncology/vaginal-cancer": [
+    "OG13.5",
+    "OG22.1"
+  ],
+  "obgyn/labor-delivery/forceps-delivery": [
+    "OG13.5",
+    "OG37.6"
+  ],
+  "obgyn/gynec-oncology/ovarian-tumors-classification": [
+    "OG14.4",
+    "OG31.1",
+    "OG34.2",
+    "OG34.3"
+  ],
+  "obgyn/labor-delivery/episiotomy": [
+    "OG15.2"
+  ],
+  "obgyn/labor-delivery/uterine-inversion": [
+    "OG16.2"
+  ],
+  "obgyn/benign-gynecology/uterine-fibroids": [
+    "OG16.2",
+    "OG24.1"
+  ],
+  "obgyn/gynecology/abnormal-uterine-bleeding": [
+    "OG16.2",
+    "OG24.1",
+    "OG32.2"
+  ],
+  "obgyn/obstetrics/lactation": [
+    "OG17.1"
+  ],
+  "obgyn/obstetrics/placenta-physiology": [
+    "OG17.1",
+    "OG19.1",
+    "OG23.1",
+    "OG3.1",
+    "OG32.1"
+  ],
+  "obgyn/obstetrics/fetal-growth-assessment": [
+    "OG18.1",
+    "OG28.2",
+    "OG8.5"
+  ],
+  "obgyn/obstetrics/puerperal-sepsis": [
+    "OG19.2"
+  ],
+  "obgyn/obstetrics/contraception-postpartum": [
+    "OG19.2"
+  ],
+  "obgyn/contraception/emergency-contraception": [
+    "OG19.2",
+    "OG35.16"
+  ],
+  "obgyn/infertility/female-infertility": [
+    "OG2.1"
+  ],
+  "obgyn/contraception/female-sterilization": [
+    "OG2.1",
+    "OG38.3"
+  ],
+  "obgyn/infertility/surrogacy-legal-aspects": [
+    "OG20.1",
+    "OG35.6"
+  ],
+  "obgyn/reproductive-endo/puberty-precocious-delayed": [
+    "OG23.1",
+    "OG23.2",
+    "OG23.3"
+  ],
+  "obgyn/gynec-oncology/uterine-sarcoma": [
+    "OG24.1"
+  ],
+  "obgyn/infertility/ovulation-induction": [
+    "OG28.3",
+    "OG3.1"
+  ],
+  "obgyn/obstetrics/induction-of-labor": [
+    "OG28.3"
+  ],
+  "obgyn/reproductive-endo/menopause-management": [
+    "OG32.1"
+  ],
+  "obgyn/gynecology/menopause": [
+    "OG32.1"
+  ],
+  "obgyn/gynec-oncology/cervical-cancer": [
+    "OG33.3",
+    "OG33.4"
+  ],
+  "obgyn/gynec-oncology/cervical-cancer-staging": [
+    "OG33.3",
+    "OG34.1",
+    "OG34.2",
+    "OG34.3"
+  ],
+  "obgyn/gynec-oncology/endometrial-cancer": [
+    "OG33.4",
+    "OG37.5"
+  ],
+  "obgyn/gynec-oncology/ovarian-cancer": [
+    "OG33.4"
+  ],
+  "obgyn/gynec-oncology/ovarian-cancer-staging": [
+    "OG34.1",
+    "OG34.2",
+    "OG34.3"
+  ],
+  "obgyn/high-risk-pregnancy/antepartum-hemorrhage": [
+    "OG35.16"
+  ],
+  "obgyn/urogynecology/stress-urinary-incontinence": [
+    "OG35.17"
+  ],
+  "obgyn/high-risk-pregnancy/gestational-diabetes": [
+    "OG35.5"
+  ],
+  "obgyn/fetal-medicine/obstetric-ultrasound": [
+    "OG35.5",
+    "OG8.2"
+  ],
+  "obgyn/labor-delivery/obstetric-injuries": [
+    "OG35.5",
+    "OG8.2"
+  ],
+  "obgyn/antenatal-care/medical-disorders-pregnancy-overview": [
+    "OG35.6",
+    "OG38.4",
+    "OG5.1"
+  ],
+  "obgyn/obstetrics/antenatal-investigations": [
+    "OG36.2",
+    "OG8.1"
+  ],
+  "obgyn/contraception/natural-family-planning": [
+    "OG36.2"
+  ],
+  "obgyn/obstetrics/cesarean-section": [
+    "OG37.1"
+  ],
+  "obgyn/labor-delivery/cesarean-section-ob": [
+    "OG37.1"
+  ],
+  "obgyn/gynecology/hysterectomy": [
+    "OG37.3"
+  ],
+  "obgyn/gynecology/dilation-curettage": [
+    "OG37.4"
+  ],
+  "obgyn/gynecology/endometrial-ablation": [
+    "OG37.5"
+  ],
+  "obgyn/gynec-oncology/endometrial-hyperplasia": [
+    "OG37.5"
+  ],
+  "obgyn/gynecology/laparoscopy-gyn": [
+    "OG38.1"
+  ],
+  "obgyn/gynecology/hysteroscopy": [
+    "OG38.2"
+  ],
+  "obgyn/contraception/male-sterilization": [
+    "OG38.3"
+  ],
+  "obgyn/obstetrics/embryology-overview": [
+    "OG4.1"
+  ],
+  "obgyn/reproductive-endo/intersex-disorders": [
+    "OG5.1"
+  ],
+  "obgyn/high-risk-pregnancy/postpartum-hemorrhage-high-risk": [
+    "OG5.2"
+  ],
+  "obgyn/antenatal-care/antenatal-visit-schedule": [
+    "OG8.1"
+  ],
+  "obgyn/obstetrics/fetal-wellbeing-monitoring": [
+    "OG8.4"
+  ],
+  "obgyn/gynecology/pelvic-inflammatory-disease": [
+    "OG8.5"
+  ],
+  "obgyn/urogynecology/pelvic-organ-prolapse": [
+    "OG8.5"
+  ],
+  "obgyn/gynec-oncology/hpv-vaccination": [
+    "OG8.7"
+  ],
+  "obgyn/antenatal-care/vaccination-in-pregnancy": [
+    "OG8.7"
+  ],
+  "orthopedics/bone-tumors/soft-tissue-sarcoma": [
+    "OR1.3",
+    "OR1.4"
+  ],
+  "orthopedics/sports-medicine/meniscal-injuries": [
+    "OR1.3",
+    "OR11.1"
+  ],
+  "orthopedics/trauma-fractures/cervical-spine-injuries": [
+    "OR1.3",
+    "OR11.1"
+  ],
+  "orthopedics/trauma-fractures/radial-head-fracture": [
+    "OR11.1"
+  ],
+  "orthopedics/trauma-fractures/elbow-dislocation": [
+    "OR13.1"
+  ],
+  "orthopedics/sports-medicine/tennis-elbow": [
+    "OR13.1"
+  ],
+  "orthopedics/sports-medicine/golfers-elbow": [
+    "OR13.1"
+  ],
+  "orthopedics/trauma-fractures/open-fractures": [
+    "OR14.1",
+    "OR2.2"
+  ],
+  "orthopedics/trauma-fractures/metatarsal-fractures": [
+    "OR14.1",
+    "OR2.2"
+  ],
+  "orthopedics/trauma-fractures/pelvic-fractures": [
+    "OR14.1",
+    "OR2.7"
+  ],
+  "orthopedics/pediatric-orthopedics/rickets-orthopedic": [
+    "OR14.2",
+    "OR14.3"
+  ],
+  "orthopedics/sports-medicine/acl-injury": [
+    "OR2.1",
+    "OR2.10",
+    "OR2.11",
+    "OR2.16",
+    "OR2.3",
+    "OR2.4",
+    "OR2.6",
+    "OR2.7",
+    "OR2.8",
+    "OR2.9"
+  ],
+  "orthopedics/sports-medicine/pcl-injury": [
+    "OR2.1",
+    "OR2.10",
+    "OR2.11",
+    "OR2.16",
+    "OR2.3",
+    "OR2.4",
+    "OR2.6",
+    "OR2.7",
+    "OR2.8",
+    "OR2.9"
+  ],
+  "orthopedics/trauma-fractures/proximal-humerus-fracture": [
+    "OR2.2"
+  ],
+  "orthopedics/bone-joint-infections/acute-osteomyelitis": [
+    "OR3.1"
+  ],
+  "orthopedics/bone-joint-infections/tuberculosis-bone-joint": [
+    "OR3.1"
+  ],
+  "orthopedics/bone-joint-infections/chronic-osteomyelitis": [
+    "OR3.1"
+  ],
+  "pathology/general-pathology/tumor-nomenclature": [
+    "PA11.2",
+    "PA7.4"
+  ],
+  "pathology/general-pathology/tumor-genetics": [
+    "PA11.2",
+    "PA26.6",
+    "PA26.7",
+    "PA28.12",
+    "PA28.14",
+    "PA28.15",
+    "PA28.16",
+    "PA32.5",
+    "PA35.2",
+    "PA36.1",
+    "PA7.4"
+  ],
+  "pathology/general-pathology/tumor-immunity": [
+    "PA11.2",
+    "PA7.4",
+    "PA9.1"
+  ],
+  "pathology/hematopathology/platelet-disorders-path": [
+    "PA11.3",
+    "PA12.1",
+    "PA12.2",
+    "PA21.3",
+    "PA9.4"
+  ],
+  "pathology/hematopathology/coagulation-disorders-path": [
+    "PA11.3",
+    "PA12.1",
+    "PA12.2",
+    "PA21.3",
+    "PA21.4",
+    "PA21.5",
+    "PA9.4"
+  ],
+  "pathology/hematopathology/megaloblastic-anemia-path": [
+    "PA13.3",
+    "PA13.4",
+    "PA14.3",
+    "PA15.2",
+    "PA16.1"
+  ],
+  "pathology/hematopathology/aplastic-anemia-path": [
+    "PA13.3",
+    "PA13.4",
+    "PA14.3",
+    "PA15.2",
+    "PA16.1"
+  ],
+  "pathology/hematopathology/iron-deficiency-anemia-path": [
+    "PA13.3",
+    "PA13.4",
+    "PA14.1",
+    "PA14.3",
+    "PA15.2"
+  ],
+  "pathology/hematopathology/hemolytic-anemias-path": [
+    "PA16.1",
+    "PA16.5",
+    "PA16.6"
+  ],
+  "pathology/hematopathology/hodgkin-lymphoma-path": [
+    "PA19.5"
+  ],
+  "pathology/hematopathology/non-hodgkin-lymphoma-path": [
+    "PA19.5"
+  ],
+  "pathology/general-pathology/cell-injury": [
+    "PA2.2",
+    "PA2.4",
+    "PA2.8",
+    "PA20.1"
+  ],
+  "pathology/hematopathology/sickle-cell-path": [
+    "PA2.2",
+    "PA2.4",
+    "PA2.8",
+    "PA20.1"
+  ],
+  "pathology/renal-pathology/renal-cell-carcinoma-path": [
+    "PA2.2",
+    "PA2.8"
+  ],
+  "pathology/general-pathology/intracellular-accumulations": [
+    "PA2.3"
+  ],
+  "pathology/general-pathology/necrosis-types": [
+    "PA2.4"
+  ],
+  "pathology/general-pathology/cellular-adaptations": [
+    "PA2.6",
+    "PA2.7"
+  ],
+  "pathology/hematopathology/multiple-myeloma-path": [
+    "PA20.1"
+  ],
+  "pathology/neuropathology/cns-infections-path": [
+    "PA22.5"
+  ],
+  "pathology/endocrine-pathology/graves-disease-path": [
+    "PA23.1",
+    "PA23.2"
+  ],
+  "pathology/cardiovascular-pathology/pericardial-disease-path": [
+    "PA23.1",
+    "PA23.2"
+  ],
+  "pathology/neuropathology/cerebrovascular-disease-path": [
+    "PA23.1",
+    "PA23.2"
+  ],
+  "pathology/gi-pathology/peptic-ulcer-path": [
+    "PA24.3"
+  ],
+  "pathology/reproductive-pathology/fibrocystic-changes": [
+    "PA25.2"
+  ],
+  "pathology/gi-pathology/hepatitis-pathology": [
+    "PA25.3",
+    "PA25.6"
+  ],
+  "pathology/gi-pathology/alcoholic-liver-disease-path": [
+    "PA25.6"
+  ],
+  "pathology/cardiovascular-pathology/atherosclerosis-pathology": [
+    "PA27.1"
+  ],
+  "pathology/general-pathology/acute-inflammation": [
+    "PA27.8",
+    "PA4.1",
+    "PA4.2",
+    "PA4.3",
+    "PA4.4"
+  ],
+  "pathology/hematopathology/acute-leukemia-path": [
+    "PA27.8",
+    "PA4.1"
+  ],
+  "pathology/gi-pathology/acute-pancreatitis-path": [
+    "PA27.8"
+  ],
+  "pathology/renal-pathology/polycystic-kidney-disease-path": [
+    "PA28.1"
+  ],
+  "pathology/general-pathology/paraneoplastic-syndromes": [
+    "PA28.2"
+  ],
+  "pathology/endocrine-pathology/men-syndromes-path": [
+    "PA28.2"
+  ],
+  "pathology/neuropathology/demyelinating-diseases-path": [
+    "PA28.5",
+    "PA28.8"
+  ],
+  "pathology/neuropathology/neurodegenerative-diseases-path": [
+    "PA28.5",
+    "PA28.8"
+  ],
+  "pathology/renal-pathology/renal-tubular-diseases-path": [
+    "PA28.5",
+    "PA28.8"
+  ],
+  "pathology/reproductive-pathology/testicular-tumors-path": [
+    "PA29.1"
+  ],
+  "pathology/neuropathology/brain-tumors-pathology": [
+    "PA29.1",
+    "PA34.4"
+  ],
+  "pathology/neuropathology/pituitary-tumors-path": [
+    "PA29.1",
+    "PA34.4"
+  ],
+  "pathology/general-pathology/amyloidosis": [
+    "PA3.1",
+    "PA3.2"
+  ],
+  "pathology/renal-pathology/amyloidosis-renal": [
+    "PA3.1",
+    "PA3.2"
+  ],
+  "pathology/reproductive-pathology/ovarian-tumors-path": [
+    "PA34.4"
+  ],
+  "pathology/general-pathology/chronic-inflammation": [
+    "PA4.1",
+    "PA4.2",
+    "PA4.3",
+    "PA4.4"
+  ],
+  "pathology/general-pathology/granulomatous-inflammation": [
+    "PA4.2",
+    "PA4.3",
+    "PA4.4"
+  ],
+  "pathology/general-pathology/tissue-repair": [
+    "PA5.1"
+  ],
+  "pathology/general-pathology/edema-pathology": [
+    "PA6.1"
+  ],
+  "pathology/general-pathology/hyperemia-congestion": [
+    "PA6.2"
+  ],
+  "pathology/general-pathology/shock-pathology": [
+    "PA6.3"
+  ],
+  "pathology/general-pathology/embolism": [
+    "PA6.5"
+  ],
+  "pathology/general-pathology/infarction": [
+    "PA6.6"
+  ],
+  "pathology/cardiovascular-pathology/myocardial-infarction-path": [
+    "PA6.6"
+  ],
+  "pathology/general-pathology/neoplasia-overview": [
+    "PA7.1"
+  ],
+  "pathology/respiratory-pathology/lung-cancer-pathology": [
+    "PA7.2",
+    "PA7.5"
+  ],
+  "pathology/endocrine-pathology/thyroid-cancer-path": [
+    "PA7.2",
+    "PA7.5"
+  ],
+  "pathology/reproductive-pathology/prostate-cancer-path": [
+    "PA7.2",
+    "PA7.5"
+  ],
+  "pathology/renal-pathology/lupus-nephritis-path": [
+    "PA9.5"
+  ],
+  "pediatrics/growth-development/normal-development-milestones": [
+    "PE1.1",
+    "PE1.5",
+    "PE1.6"
+  ],
+  "pediatrics/neonatology/gestational-age-assessment": [
+    "PE1.3",
+    "PE1.6",
+    "PE1.7",
+    "PE10.3",
+    "PE18.6",
+    "PE19.6",
+    "PE20.4",
+    "PE27.13",
+    "PE28.9",
+    "PE30.17",
+    "PE31.4",
+    "PE9.1",
+    "PE9.2",
+    "PE9.5"
+  ],
+  "pediatrics/growth-development/developmental-delay": [
+    "PE1.5",
+    "PE1.7",
+    "PE3.1",
+    "PE3.2",
+    "PE3.3",
+    "PE3.4",
+    "PE3.5",
+    "PE3.6",
+    "PE3.7"
+  ],
+  "pediatrics/pediatric-respiratory/wheezing-child": [
+    "PE10.2",
+    "PE11.3",
+    "PE18.2",
+    "PE2.2",
+    "PE2.3",
+    "PE2.5",
+    "PE21.3",
+    "PE21.4",
+    "PE27.31",
+    "PE27.32",
+    "PE28.14",
+    "PE28.20",
+    "PE28.9",
+    "PE3.2",
+    "PE3.3",
+    "PE3.4",
+    "PE3.5",
+    "PE3.7",
+    "PE30.16",
+    "PE32.10",
+    "PE32.5",
+    "PE4.1",
+    "PE4.5",
+    "PE4.6",
+    "PE5.10",
+    "PE5.11"
+  ],
+  "pediatrics/pediatric-gi/vomiting-child": [
+    "PE10.2",
+    "PE11.3",
+    "PE18.2",
+    "PE2.2",
+    "PE2.3",
+    "PE2.5",
+    "PE21.3",
+    "PE21.4",
+    "PE27.31",
+    "PE27.32",
+    "PE28.14",
+    "PE28.20",
+    "PE28.9",
+    "PE3.2",
+    "PE3.3",
+    "PE3.4",
+    "PE3.5",
+    "PE3.7",
+    "PE30.16",
+    "PE32.10",
+    "PE32.5",
+    "PE4.1",
+    "PE4.5",
+    "PE4.6",
+    "PE5.10",
+    "PE5.11"
+  ],
+  "pediatrics/growth-development/obesity-pediatric": [
+    "PE11.2",
+    "PE11.3",
+    "PE23.14",
+    "PE27.9",
+    "PE6.12"
+  ],
+  "pediatrics/neonatology/newborn-examination": [
+    "PE11.4",
+    "PE18.3",
+    "PE18.6",
+    "PE21.11",
+    "PE23.10",
+    "PE24.12",
+    "PE26.7",
+    "PE28.10",
+    "PE28.11",
+    "PE28.12",
+    "PE29.12",
+    "PE30.18",
+    "PE33.7",
+    "PE7.7"
+  ],
+  "pediatrics/pediatric-nutrition/vitamin-a-deficiency": [
+    "PE12.1",
+    "PE12.10",
+    "PE12.11",
+    "PE12.13",
+    "PE12.15",
+    "PE12.17",
+    "PE12.18",
+    "PE12.19",
+    "PE12.21",
+    "PE12.3",
+    "PE12.4",
+    "PE12.5",
+    "PE12.6",
+    "PE12.8",
+    "PE12.9",
+    "PE13.2",
+    "PE13.3",
+    "PE13.5",
+    "PE13.9"
+  ],
+  "pediatrics/pediatric-nutrition/vitamin-d-deficiency-rickets": [
+    "PE12.1",
+    "PE12.10",
+    "PE12.11",
+    "PE12.13",
+    "PE12.15",
+    "PE12.17",
+    "PE12.18",
+    "PE12.19",
+    "PE12.21",
+    "PE12.3",
+    "PE12.4",
+    "PE12.5",
+    "PE12.6",
+    "PE12.8",
+    "PE12.9"
+  ],
+  "pediatrics/pediatric-nutrition/zinc-deficiency": [
+    "PE12.10",
+    "PE12.17",
+    "PE12.18",
+    "PE12.21",
+    "PE12.3",
+    "PE12.4",
+    "PE12.8",
+    "PE12.9",
+    "PE13.2",
+    "PE13.3",
+    "PE13.5",
+    "PE13.9"
+  ],
+  "pediatrics/pediatric-nutrition/iron-deficiency-pediatric": [
+    "PE13.1",
+    "PE13.3",
+    "PE13.4"
+  ],
+  "pediatrics/pediatric-infections/national-immunization-schedule": [
+    "PE13.10",
+    "PE13.6",
+    "PE19.1",
+    "PE19.11",
+    "PE19.15",
+    "PE19.5",
+    "PE19.6",
+    "PE19.7",
+    "PE19.8",
+    "PE29.5"
+  ],
+  "pediatrics/pediatric-nutrition/iodine-deficiency": [
+    "PE13.2",
+    "PE13.5",
+    "PE13.7",
+    "PE13.9"
+  ],
+  "pediatrics/neonatology/neonatal-resuscitation": [
+    "PE16.1",
+    "PE20.1",
+    "PE20.14",
+    "PE20.15",
+    "PE20.16",
+    "PE20.19",
+    "PE20.3",
+    "PE33.3"
+  ],
+  "pediatrics/neonatology/neonatal-jaundice": [
+    "PE16.1",
+    "PE20.1",
+    "PE20.14",
+    "PE20.15",
+    "PE20.16",
+    "PE20.19",
+    "PE20.3",
+    "PE26.6",
+    "PE29.11",
+    "PE33.3"
+  ],
+  "pediatrics/neonatology/neonatal-sepsis": [
+    "PE16.1",
+    "PE20.1",
+    "PE20.14",
+    "PE20.15",
+    "PE20.16",
+    "PE20.19",
+    "PE20.3",
+    "PE33.3"
+  ],
+  "pediatrics/pediatric-infections/catch-up-immunization": [
+    "PE19.1",
+    "PE19.11",
+    "PE19.15",
+    "PE19.5",
+    "PE19.6",
+    "PE19.7"
+  ],
+  "pediatrics/pediatric-infections/travel-vaccines": [
+    "PE19.10",
+    "PE19.12",
+    "PE19.13",
+    "PE19.16",
+    "PE19.3"
+  ],
+  "pediatrics/pediatric-infections/adverse-events-vaccines": [
+    "PE19.10",
+    "PE19.12",
+    "PE19.13",
+    "PE19.16",
+    "PE19.3"
+  ],
+  "pediatrics/pediatric-infections/vaccine-types": [
+    "PE19.2",
+    "PE19.3",
+    "PE19.9"
+  ],
+  "pediatrics/pediatric-infections/hiv-pediatric": [
+    "PE19.5"
+  ],
+  "pediatrics/growth-development/failure-to-thrive": [
+    "PE2.2",
+    "PE2.3",
+    "PE21.9"
+  ],
+  "pediatrics/growth-development/short-stature": [
+    "PE2.5"
+  ],
+  "pediatrics/pediatric-nutrition/complementary-feeding": [
+    "PE20.6",
+    "PE7.1",
+    "PE7.11",
+    "PE7.5",
+    "PE7.9",
+    "PE8.1",
+    "PE8.4"
+  ],
+  "pediatrics/neonatology/birth-asphyxia": [
+    "PE20.7",
+    "PE20.9"
+  ],
+  "pediatrics/neonatology/birth-injuries": [
+    "PE20.7",
+    "PE20.9"
+  ],
+  "pediatrics/neonatology/low-birth-weight": [
+    "PE20.7",
+    "PE20.9"
+  ],
+  "pediatrics/neonatology/hirschsprung-disease": [
+    "PE21.9",
+    "PE23.7",
+    "PE23.8",
+    "PE9.5",
+    "PE9.7"
+  ],
+  "pediatrics/pediatric-cardiology/kawasaki-disease-peds": [
+    "PE21.9",
+    "PE23.7",
+    "PE23.8",
+    "PE9.5",
+    "PE9.7"
+  ],
+  "pediatrics/pediatric-gi/chronic-diarrhea-peds": [
+    "PE22.2"
+  ],
+  "pediatrics/pediatric-neurology/epilepsy-pediatric": [
+    "PE23.14",
+    "PE27.9",
+    "PE30.8"
+  ],
+  "pediatrics/pediatric-neurology/meningitis-pediatric": [
+    "PE23.14",
+    "PE27.9",
+    "PE30.2"
+  ],
+  "pediatrics/pediatric-gi/celiac-disease-peds": [
+    "PE23.7",
+    "PE23.8",
+    "PE9.7"
+  ],
+  "pediatrics/neonatology/respiratory-distress-syndrome": [
+    "PE23.9",
+    "PE27.15",
+    "PE27.3",
+    "PE27.4",
+    "PE28.16",
+    "PE32.12",
+    "PE32.2",
+    "PE32.7"
+  ],
+  "pediatrics/pediatric-respiratory/upper-respiratory-infections": [
+    "PE23.9",
+    "PE26.11",
+    "PE27.15",
+    "PE27.3",
+    "PE27.4",
+    "PE28.16"
+  ],
+  "pediatrics/pediatric-gi/dehydration-management": [
+    "PE24.10"
+  ],
+  "pediatrics/pediatric-neurology/neural-tube-defects-peds": [
+    "PE24.15",
+    "PE30.5"
+  ],
+  "pediatrics/neonatology/physiological-jaundice": [
+    "PE24.3",
+    "PE26.6",
+    "PE29.11",
+    "PE6.2"
+  ],
+  "pediatrics/neonatology/pathological-jaundice": [
+    "PE26.6",
+    "PE29.11"
+  ],
+  "pediatrics/pediatric-respiratory/childhood-asthma": [
+    "PE28.20",
+    "PE31.6",
+    "PE31.7",
+    "PE31.9",
+    "PE34.2"
+  ],
+  "pediatrics/pediatric-respiratory/foreign-body-aspiration": [
+    "PE28.8",
+    "PE29.17"
+  ],
+  "pediatrics/neonatology/meconium-aspiration": [
+    "PE29.17"
+  ],
+  "pediatrics/pediatric-gi/acute-diarrhea-peds": [
+    "PE29.8"
+  ],
+  "pediatrics/neonatology/neonatal-meningitis": [
+    "PE30.2"
+  ],
+  "pediatrics/pediatric-neurology/status-epilepticus-peds": [
+    "PE30.9",
+    "PE9.6"
+  ],
+  "pediatrics/growth-development/down-syndrome": [
+    "PE32.12",
+    "PE32.2",
+    "PE32.7"
+  ],
+  "pediatrics/pediatric-infections/tuberculosis-peds": [
+    "PE34.13",
+    "PE34.2",
+    "PE34.3"
+  ],
+  "pediatrics/pediatric-cardiology/rheumatic-fever": [
+    "PE34.14",
+    "PE34.15",
+    "PE34.16",
+    "PE34.17",
+    "PE34.18",
+    "PE34.19",
+    "PE34.20"
+  ],
+  "pediatrics/pediatric-infections/scarlet-fever": [
+    "PE34.14",
+    "PE34.15",
+    "PE34.16",
+    "PE34.17",
+    "PE34.18",
+    "PE34.19",
+    "PE34.20"
+  ],
+  "pharmacology/chemotherapy/immunosuppressants-pharmacology": [
+    "PH1.1",
+    "PH1.56"
+  ],
+  "pharmacology/endocrine-pharmacology/corticosteroids-pharmacology": [
+    "PH1.1",
+    "PH1.56"
+  ],
+  "pharmacology/cardiovascular-drugs/diuretics-pharmacology": [
+    "PH1.1",
+    "PH1.56"
+  ],
+  "pharmacology/general-pharmacology/drug-receptors": [
+    "PH1.11",
+    "PH1.23",
+    "PH1.3",
+    "PH1.5",
+    "PH1.63",
+    "PH1.64",
+    "PH1.7",
+    "PH1.8",
+    "PH2.4",
+    "PH3.3",
+    "PH3.4",
+    "PH5.2"
+  ],
+  "pharmacology/general-pharmacology/drug-interactions": [
+    "PH1.11",
+    "PH1.23",
+    "PH1.3",
+    "PH1.5",
+    "PH1.63",
+    "PH1.7",
+    "PH1.8",
+    "PH2.4",
+    "PH3.3",
+    "PH3.4",
+    "PH5.2"
+  ],
+  "pharmacology/endocrine-pharmacology/oral-hypoglycemics-pharmacology": [
+    "PH1.11",
+    "PH2.2"
+  ],
+  "pharmacology/antimicrobials/antifungal-drugs": [
+    "PH1.12",
+    "PH1.22",
+    "PH1.57",
+    "PH1.58",
+    "PH1.9",
+    "PH3.5",
+    "PH4.1",
+    "PH4.2",
+    "PH5.5"
+  ],
+  "pharmacology/antimicrobials/antiamoebic-drugs": [
+    "PH1.12",
+    "PH1.22",
+    "PH1.57",
+    "PH1.58",
+    "PH1.9",
+    "PH3.5",
+    "PH4.1",
+    "PH4.2",
+    "PH5.5"
+  ],
+  "pharmacology/antimicrobials/antifilarial-drugs": [
+    "PH1.12",
+    "PH1.57",
+    "PH1.58",
+    "PH1.9",
+    "PH3.5",
+    "PH4.1",
+    "PH4.2",
+    "PH5.5"
+  ],
+  "pharmacology/cns-pharmacology/drugs-of-abuse": [
+    "PH1.22"
+  ],
+  "pharmacology/general-pharmacology/adverse-drug-reactions": [
+    "PH1.23",
+    "PH1.3",
+    "PH1.63",
+    "PH1.7",
+    "PH1.8",
+    "PH2.4",
+    "PH3.3",
+    "PH3.4",
+    "PH5.2"
+  ],
+  "pharmacology/general-pharmacology/metabolism-drugs": [
+    "PH1.4"
+  ],
+  "pharmacology/general-pharmacology/excretion-drugs": [
+    "PH1.4"
+  ],
+  "pharmacology/general-pharmacology/absorption": [
+    "PH1.4"
+  ],
+  "pharmacology/chemotherapy/principles-of-chemotherapy": [
+    "PH1.42"
+  ],
+  "pharmacology/cns-pharmacology/general-anesthetics": [
+    "PH1.42",
+    "PH1.5"
+  ],
+  "pharmacology/chemotherapy/alkylating-agents": [
+    "PH1.53"
+  ],
+  "pharmacology/general-pharmacology/pharmacogenomics": [
+    "PH1.60"
+  ],
+  "pharmacology/gi-pharmacology/pancreatic-enzyme-supplements": [
+    "PH1.61"
+  ],
+  "pharmacology/general-pharmacology/drug-development-phases": [
+    "PH1.64"
+  ],
+  "pharmacology/cardiovascular-drugs/antihypertensives-overview": [
+    "PH1.64"
+  ],
+  "pharmacology/endocrine-pharmacology/oral-contraceptives-pharmacology": [
+    "PH2.2"
+  ],
+  "pharmacology/cns-pharmacology/intravenous-anesthetics": [
+    "PH2.3"
+  ],
+  "physiology/cns-physiology/hypothalamus-functions": [
+    "PY1.1",
+    "PY10.2",
+    "PY10.5",
+    "PY10.6",
+    "PY2.1",
+    "PY2.2",
+    "PY2.3",
+    "PY2.7",
+    "PY3.1",
+    "PY3.2",
+    "PY4.1",
+    "PY4.3",
+    "PY4.5",
+    "PY4.7",
+    "PY7.2"
+  ],
+  "physiology/gi-physiology/liver-functions-physiology": [
+    "PY1.1",
+    "PY10.5",
+    "PY10.6",
+    "PY2.1",
+    "PY2.2",
+    "PY2.3",
+    "PY2.7",
+    "PY3.1",
+    "PY3.2",
+    "PY4.3",
+    "PY4.7",
+    "PY7.2"
+  ],
+  "physiology/general-physiology/homeostasis": [
+    "PY1.2"
+  ],
+  "physiology/general-physiology/cell-membrane-transport": [
+    "PY1.4",
+    "PY1.5",
+    "PY1.8",
+    "PY6.3"
+  ],
+  "physiology/respiratory-physiology/oxygen-transport": [
+    "PY1.5",
+    "PY6.3",
+    "PY6.5"
+  ],
+  "physiology/respiratory-physiology/carbon-dioxide-transport": [
+    "PY1.5",
+    "PY6.3"
+  ],
+  "physiology/general-physiology/body-fluid-compartments": [
+    "PY1.6",
+    "PY1.7",
+    "PY7.5"
+  ],
+  "physiology/general-physiology/resting-membrane-potential": [
+    "PY1.8"
+  ],
+  "physiology/cns-physiology/autonomic-nervous-system-physiology": [
+    "PY10.1",
+    "PY10.10",
+    "PY10.11",
+    "PY5.14"
+  ],
+  "physiology/cardiovascular-physiology/lymphatic-system": [
+    "PY10.1",
+    "PY10.10",
+    "PY10.11",
+    "PY4.1",
+    "PY5.7",
+    "PY9.3",
+    "PY9.4"
+  ],
+  "physiology/cns-physiology/vestibular-system": [
+    "PY10.1",
+    "PY10.11",
+    "PY4.1",
+    "PY5.7",
+    "PY9.3",
+    "PY9.4"
+  ],
+  "physiology/general-physiology/synaptic-transmission": [
+    "PY10.10",
+    "PY3.4"
+  ],
+  "physiology/cns-physiology/eeg-basics": [
+    "PY10.12",
+    "PY10.8"
+  ],
+  "physiology/cns-physiology/taste-smell-physiology": [
+    "PY10.13",
+    "PY10.14",
+    "PY10.20"
+  ],
+  "physiology/cns-physiology/somatic-sensation": [
+    "PY10.13",
+    "PY10.20",
+    "PY10.3"
+  ],
+  "physiology/nerve-muscle/reflexes-physiology": [
+    "PY10.14",
+    "PY10.17",
+    "PY11.6",
+    "PY11.7",
+    "PY4.4",
+    "PY4.9",
+    "PY5.11",
+    "PY5.5",
+    "PY6.4",
+    "PY7.6",
+    "PY8.1",
+    "PY8.3",
+    "PY9.8"
+  ],
+  "physiology/endocrine-physiology/pregnancy-physiology": [
+    "PY10.14",
+    "PY10.17",
+    "PY11.6",
+    "PY11.7",
+    "PY4.9",
+    "PY5.11",
+    "PY5.5",
+    "PY6.4",
+    "PY7.6",
+    "PY8.1",
+    "PY8.3",
+    "PY9.10",
+    "PY9.8"
+  ],
+  "physiology/cns-physiology/hearing-physiology": [
+    "PY10.16",
+    "PY10.20"
+  ],
+  "physiology/cns-physiology/pain-physiology": [
+    "PY10.17",
+    "PY11.6",
+    "PY11.7",
+    "PY4.9",
+    "PY5.5",
+    "PY7.6",
+    "PY8.3",
+    "PY9.8"
+  ],
+  "physiology/gi-physiology/defecation-reflex": [
+    "PY10.2"
+  ],
+  "physiology/cardiovascular-physiology/baroreceptor-reflex": [
+    "PY10.2"
+  ],
+  "physiology/cns-physiology/descending-tracts": [
+    "PY10.3",
+    "PY10.4"
+  ],
+  "physiology/nerve-muscle/motor-unit": [
+    "PY10.4"
+  ],
+  "physiology/cns-physiology/motor-cortex": [
+    "PY10.4",
+    "PY10.7"
+  ],
+  "physiology/cns-physiology/spinal-cord-physiology": [
+    "PY10.6"
+  ],
+  "physiology/cns-physiology/basal-ganglia-physiology": [
+    "PY10.7"
+  ],
+  "physiology/cardiovascular-physiology/cerebral-circulation": [
+    "PY10.7",
+    "PY5.10"
+  ],
+  "physiology/cns-physiology/memory-learning-physiology": [
+    "PY10.9",
+    "PY3.18"
+  ],
+  "physiology/cns-physiology/temperature-regulation": [
+    "PY11.1",
+    "PY11.2",
+    "PY2.4",
+    "PY2.6",
+    "PY4.3",
+    "PY4.5",
+    "PY7.5"
+  ],
+  "physiology/cardiovascular-physiology/exercise-cardiovascular": [
+    "PY11.8",
+    "PY3.15",
+    "PY5.14",
+    "PY5.15",
+    "PY5.8"
+  ],
+  "physiology/endocrine-physiology/growth-hormone": [
+    "PY11.9"
+  ],
+  "physiology/blood-immunity/blood-groups": [
+    "PY2.1",
+    "PY2.11",
+    "PY2.9",
+    "PY5.12"
+  ],
+  "physiology/blood-immunity/innate-immunity": [
+    "PY2.10"
+  ],
+  "physiology/blood-immunity/adaptive-immunity": [
+    "PY2.10"
+  ],
+  "physiology/cardiovascular-physiology/arterial-blood-pressure": [
+    "PY2.11",
+    "PY2.9",
+    "PY5.12",
+    "PY5.16",
+    "PY6.2"
+  ],
+  "physiology/renal-physiology/renal-blood-flow": [
+    "PY2.11",
+    "PY2.9",
+    "PY5.12",
+    "PY7.4",
+    "PY7.7",
+    "PY7.8"
+  ],
+  "physiology/blood-immunity/platelets-physiology": [
+    "PY2.7"
+  ],
+  "physiology/cns-physiology/upper-vs-lower-motor-neuron": [
+    "PY3.1"
+  ],
+  "physiology/nerve-muscle/skeletal-muscle-contraction": [
+    "PY3.10",
+    "PY3.11",
+    "PY3.7",
+    "PY3.8",
+    "PY3.9"
+  ],
+  "physiology/nerve-muscle/excitation-contraction-coupling": [
+    "PY3.10",
+    "PY3.9"
+  ],
+  "physiology/nerve-muscle/smooth-muscle-physiology": [
+    "PY3.10",
+    "PY3.11",
+    "PY3.7",
+    "PY3.8",
+    "PY3.9"
+  ],
+  "physiology/nerve-muscle/cardiac-muscle-physiology": [
+    "PY3.11",
+    "PY3.7",
+    "PY5.2"
+  ],
+  "physiology/nerve-muscle/nerve-conduction": [
+    "PY3.18",
+    "PY3.2",
+    "PY5.4"
+  ],
+  "physiology/nerve-muscle/neuromuscular-junction": [
+    "PY3.4"
+  ],
+  "physiology/general-physiology/action-potential": [
+    "PY3.8"
+  ],
+  "physiology/gi-physiology/salivary-secretion": [
+    "PY4.2",
+    "PY8.2"
+  ],
+  "physiology/gi-physiology/gastric-secretion": [
+    "PY4.2",
+    "PY4.8",
+    "PY8.2"
+  ],
+  "physiology/gi-physiology/pancreatic-secretion": [
+    "PY4.2",
+    "PY8.2"
+  ],
+  "physiology/gi-physiology/absorption-carbohydrates": [
+    "PY4.4"
+  ],
+  "physiology/gi-physiology/absorption-proteins": [
+    "PY4.4"
+  ],
+  "physiology/gi-physiology/gi-hormones": [
+    "PY4.5",
+    "PY9.5"
+  ],
+  "physiology/endocrine-physiology/hypothalamic-pituitary-axis": [
+    "PY4.6"
+  ],
+  "physiology/renal-physiology/renal-function-tests": [
+    "PY4.8",
+    "PY5.14",
+    "PY6.7",
+    "PY7.1",
+    "PY7.4",
+    "PY7.7",
+    "PY7.8",
+    "PY8.4",
+    "PY9.10"
+  ],
+  "physiology/gi-physiology/gastric-motility": [
+    "PY4.8"
+  ],
+  "physiology/cardiovascular-physiology/heart-sounds-physiology": [
+    "PY5.1",
+    "PY5.11",
+    "PY5.6"
+  ],
+  "physiology/cardiovascular-physiology/microcirculation": [
+    "PY5.10"
+  ],
+  "physiology/cardiovascular-physiology/coronary-circulation": [
+    "PY5.10"
+  ],
+  "physiology/cardiovascular-physiology/ecg-basics": [
+    "PY5.13",
+    "PY5.6"
+  ],
+  "physiology/cardiovascular-physiology/cardiac-cycle": [
+    "PY5.2",
+    "PY5.3",
+    "PY5.4",
+    "PY5.9"
+  ],
+  "physiology/cardiovascular-physiology/cardiac-output": [
+    "PY5.2",
+    "PY5.3",
+    "PY5.9"
+  ],
+  "physiology/cardiovascular-physiology/cardiac-receptors": [
+    "PY5.3",
+    "PY5.9"
+  ],
+  "physiology/cardiovascular-physiology/cardiac-conduction-physiology": [
+    "PY5.4"
+  ],
+  "physiology/cns-physiology/limbic-system": [
+    "PY5.7"
+  ],
+  "physiology/respiratory-physiology/mechanics-of-breathing": [
+    "PY6.2"
+  ],
+  "physiology/respiratory-physiology/high-altitude-physiology": [
+    "PY6.4"
+  ],
+  "physiology/respiratory-physiology/oxygen-hemoglobin-dissociation": [
+    "PY6.5"
+  ],
+  "physiology/respiratory-physiology/lung-volumes-capacities": [
+    "PY6.7"
+  ],
+  "physiology/renal-physiology/glomerular-filtration": [
+    "PY7.2"
+  ],
+  "physiology/renal-physiology/urine-concentration-dilution": [
+    "PY7.3"
+  ],
+  "physiology/renal-physiology/acid-base-physiology": [
+    "PY7.5"
+  ],
+  "physiology/endocrine-physiology/calcium-metabolism-physiology": [
+    "PY8.1"
+  ],
+  "physiology/endocrine-physiology/adrenal-medulla": [
+    "PY8.4"
+  ],
+  "physiology/endocrine-physiology/adrenal-cortex-physiology": [
+    "PY8.4"
+  ],
+  "physiology/endocrine-physiology/reproductive-hormones-male": [
+    "PY9.3",
+    "PY9.5",
+    "PY9.6"
+  ],
+  "physiology/endocrine-physiology/reproductive-hormones-female": [
+    "PY9.4",
+    "PY9.6"
+  ],
+  "physiology/endocrine-physiology/thyroid-hormones-physiology": [
+    "PY9.5"
+  ],
+  "surgery/esophagus/caustic-injury-esophagus": [
+    "SU1.2"
+  ],
+  "surgery/hepatobiliary/bile-duct-injury": [
+    "SU1.2"
+  ],
+  "surgery/esophagus/surgical-management-gerd": [
+    "SU10.3",
+    "SU10.4",
+    "SU12.3",
+    "SU14.2",
+    "SU14.3",
+    "SU18.3",
+    "SU21.1",
+    "SU6.1",
+    "SU7.1",
+    "SU8.3",
+    "SU9.3"
+  ],
+  "surgery/general-topics/sepsis-surgical": [
+    "SU10.3",
+    "SU10.4",
+    "SU12.3",
+    "SU14.2",
+    "SU14.3",
+    "SU18.3",
+    "SU6.1",
+    "SU7.1",
+    "SU8.3",
+    "SU9.3"
+  ],
+  "surgery/general-topics/surgical-nutrition": [
+    "SU10.3",
+    "SU12.3",
+    "SU14.2",
+    "SU18.3",
+    "SU6.1",
+    "SU7.1",
+    "SU8.3",
+    "SU9.3"
+  ],
+  "surgery/procedures/suturing-techniques": [
+    "SU10.4",
+    "SU14.1",
+    "SU14.4"
+  ],
+  "surgery/general-topics/preoperative-assessment": [
+    "SU11.1",
+    "SU17.5"
+  ],
+  "surgery/breast/triple-assessment": [
+    "SU11.1",
+    "SU17.5"
+  ],
+  "surgery/general-topics/polytrauma-initial-assessment": [
+    "SU11.1",
+    "SU17.5"
+  ],
+  "surgery/general-topics/splenectomy-indications": [
+    "SU11.4",
+    "SU16.1",
+    "SU3.1"
+  ],
+  "surgery/hepatobiliary/liver-transplant-indications": [
+    "SU11.4",
+    "SU3.1"
+  ],
+  "surgery/colorectal/pouch-surgery": [
+    "SU11.6",
+    "SU16.1",
+    "SU26.1",
+    "SU7.2",
+    "SU8.1"
+  ],
+  "surgery/procedures/robotic-surgery-basics": [
+    "SU11.6",
+    "SU16.1",
+    "SU26.1",
+    "SU7.2",
+    "SU8.1"
+  ],
+  "surgery/procedures/damage-control-surgery": [
+    "SU11.6",
+    "SU26.1",
+    "SU7.2",
+    "SU8.1"
+  ],
+  "surgery/procedures/wound-closure": [
+    "SU14.3",
+    "SU5.1"
+  ],
+  "surgery/colorectal/hinchey-classification": [
+    "SU15.1",
+    "SU19.1",
+    "SU22.4",
+    "SU30.6"
+  ],
+  "surgery/procedures/chest-tube-insertion": [
+    "SU17.8"
+  ],
+  "surgery/anorectal/retrorectal-tumors": [
+    "SU18.2",
+    "SU26.4"
+  ],
+  "surgery/head-neck/parotid-tumors": [
+    "SU18.2",
+    "SU26.4"
+  ],
+  "surgery/general-topics/skin-grafting": [
+    "SU18.2"
+  ],
+  "surgery/breast/breast-reconstruction": [
+    "SU19.2",
+    "SU25.5"
+  ],
+  "surgery/esophagus/esophageal-reconstruction": [
+    "SU19.2"
+  ],
+  "surgery/general-topics/shock": [
+    "SU2.1",
+    "SU2.2"
+  ],
+  "surgery/general-topics/hemorrhagic-shock": [
+    "SU2.1",
+    "SU2.2"
+  ],
+  "surgery/breast/breast-cancer": [
+    "SU20.1",
+    "SU25.5",
+    "SU9.2"
+  ],
+  "surgery/esophagus/esophageal-cancer": [
+    "SU20.1",
+    "SU9.2"
+  ],
+  "surgery/pancreas/pancreatic-cancer": [
+    "SU20.1",
+    "SU9.2"
+  ],
+  "surgery/esophagus/esophageal-anatomy": [
+    "SU21.1",
+    "SU22.1",
+    "SU22.5",
+    "SU23.1",
+    "SU27.5",
+    "SU28.10",
+    "SU28.11",
+    "SU28.12",
+    "SU28.13",
+    "SU28.16",
+    "SU28.5",
+    "SU28.7",
+    "SU30.2",
+    "SU30.3",
+    "SU30.4",
+    "SU30.5"
+  ],
+  "surgery/head-neck/salivary-calculi": [
+    "SU21.1"
+  ],
+  "surgery/esophagus/les-physiology": [
+    "SU22.1",
+    "SU28.5",
+    "SU28.7"
+  ],
+  "surgery/head-neck/thyroid-malignancies": [
+    "SU22.1"
+  ],
+  "surgery/head-neck/thyroid-swellings-approach": [
+    "SU22.2"
+  ],
+  "surgery/head-neck/parathyroid-adenoma": [
+    "SU22.5"
+  ],
+  "surgery/hernia/inguinal-canal-anatomy": [
+    "SU22.5",
+    "SU23.1",
+    "SU28.11",
+    "SU28.13",
+    "SU28.16",
+    "SU28.7",
+    "SU30.2",
+    "SU30.3",
+    "SU30.4",
+    "SU30.5"
+  ],
+  "surgery/breast/pagets-disease-breast": [
+    "SU25.1"
+  ],
+  "surgery/breast/fibrocystic-disease": [
+    "SU25.1"
+  ],
+  "surgery/breast/breast-abscess": [
+    "SU25.1",
+    "SU25.5"
+  ],
+  "surgery/small-intestine/small-bowel-tumors": [
+    "SU26.4"
+  ],
+  "surgery/vascular/vascular-trauma": [
+    "SU27.2"
+  ],
+  "surgery/general-topics/gas-gangrene": [
+    "SU27.4"
+  ],
+  "surgery/vascular/venous-ulcers": [
+    "SU27.5"
+  ],
+  "surgery/colorectal/lower-gi-bleeding": [
+    "SU27.5"
+  ],
+  "surgery/hepatobiliary/liver-abscess": [
+    "SU28.10"
+  ],
+  "surgery/hepatobiliary/liver-metastases": [
+    "SU28.10"
+  ],
+  "surgery/hepatobiliary/biliary-stricture": [
+    "SU28.12"
+  ],
+  "surgery/hepatobiliary/biliary-dyskinesia": [
+    "SU28.12"
+  ],
+  "surgery/small-intestine/small-bowel-obstruction": [
+    "SU28.13"
+  ],
+  "surgery/esophagus/barrett-esophagus": [
+    "SU28.5"
+  ],
+  "surgery/anorectal/rectal-prolapse": [
+    "SU29.10"
+  ],
+  "surgery/colorectal/rectal-cancer": [
+    "SU29.10"
+  ],
+  "surgery/anorectal/solitary-rectal-ulcer": [
+    "SU29.10"
+  ],
+  "surgery/pancreas/acute-pancreatitis": [
+    "SU29.7"
+  ],
+  "surgery/pancreas/chronic-pancreatitis": [
+    "SU29.7"
+  ],
+  "surgery/hepatobiliary/acute-cholecystitis": [
+    "SU29.7"
+  ],
+  "surgery/general-topics/blood-transfusion": [
+    "SU3.1",
+    "SU3.2",
+    "SU3.3"
+  ],
+  "surgery/general-topics/burns": [
+    "SU4.1",
+    "SU4.2"
+  ],
+  "surgery/general-topics/burn-resuscitation": [
+    "SU4.3"
+  ],
+  "surgery/general-topics/wound-healing": [
+    "SU5.1"
+  ]
+}

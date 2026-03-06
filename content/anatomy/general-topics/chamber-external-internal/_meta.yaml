@@ -1,0 +1,13 @@
+topic_id: chamber-external-internal
+name: '& demonstrate external and internal features of each chamber'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN22.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN22.5
+  domain: SH
+  core: true
+  phase: Phase 1

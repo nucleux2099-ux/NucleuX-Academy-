@@ -1,0 +1,63 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Achalasia is the primary indication for POEM — Chicago classification subtypes guide treatment selection",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "POEM performs selective inner circular muscle myotomy at the LES — understanding LES tone mechanisms is essential",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Submucosal tunneling technique requires knowledge of esophageal wall layers and GEJ anatomy",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "heller-myotomy",
+      "nmcCode": "",
+      "reason": "POEM is the endoscopic alternative to laparoscopic Heller myotomy — both target LES circular muscle",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "achalasia-lhm-vs-poem",
+      "nmcCode": "",
+      "reason": "Direct comparison of outcomes, reflux rates, and indications between LHM and POEM",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Post-POEM manometry confirms adequate LES relaxation and treatment response",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "Post-POEM GERD is a major complication since no anti-reflux procedure is added (unlike LHM+fundoplication)",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects POEM Procedure across foundational sciences and clinical applications."
+}

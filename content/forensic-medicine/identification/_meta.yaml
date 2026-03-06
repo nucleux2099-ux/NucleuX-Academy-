@@ -1,0 +1,163 @@
+topic_id: identification-of-dead-body
+name: Identification of Dead Body
+description: Methods and medicolegal aspects of identifying dead bodies — corpus delicti, physical features, dental records, DNA profiling
+high_yield: true
+
+overview: >
+  Identification of a dead body is a fundamental medicolegal procedure. It establishes corpus delicti (body of crime)
+  and is essential for legal, civil, and criminal proceedings. Methods range from simple visual identification to
+  advanced techniques like DNA profiling. Primary data includes sex, age, stature, race, and individual features
+  (scars, tattoos, birthmarks, dental records). Identification becomes challenging in decomposed, mutilated, or
+  skeletonized remains. Dactylography (fingerprinting) remains the most reliable method of identification.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.55-89)
+
+learning_objectives:
+  - Define identification and corpus delicti in medicolegal context
+  - Enumerate methods of identification of dead body
+  - Describe dactylography and its medicolegal importance
+  - Explain determination of age, sex, and stature from skeletal remains
+  - Discuss DNA profiling and its applications in forensic identification
+
+content:
+  atoms:
+    - id: corpus-delicti
+      title: "Corpus Delicti & Medicolegal Importance"
+      text: >
+        Corpus delicti means "body of the crime" — establishing that a crime has occurred.
+        Identification is needed for: (1) Criminal cases — linking victim to crime, (2) Civil cases — inheritance,
+        insurance claims, (3) Mass disasters — natural calamities, accidents.
+        Data collected: sex, age, race, stature, complexion, hair, scars, tattoos, moles, deformities,
+        occupational marks, clothing, personal belongings.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.55-57)
+
+    - id: dactylography
+      title: "Dactylography (Fingerprinting)"
+      text: >
+        Fingerprints are the MOST RELIABLE method of identification. They are unique (even identical twins differ),
+        permanent (unchanged from 4th month of IUL to decomposition), and classifiable.
+        Types of fingerprint patterns: (1) Loops — 67% (most common), (2) Whorls — 25%, (3) Arches — 7%,
+        (4) Composite — 1%. Galton's system classifies based on ridge patterns. Henry's system used in India.
+        Fingerprints can be obtained even from decomposed bodies using the "degloving" technique.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.60-65)
+
+    - id: age-determination
+      title: "Age Determination from Skeletal Remains"
+      text: >
+        Age estimation uses: (1) Ossification centers — appearance and fusion of epiphyses,
+        (2) Dentition — eruption of deciduous (6 months) and permanent teeth (6 years),
+        (3) Skull suture closure — sagittal (30-40 yrs), coronal (40-50 yrs),
+        (4) Pubic symphysis — Todd's method, (5) Gustafson's method — dental changes (attrition, root resorption).
+        Key landmarks: Head of humerus fuses at 20 yrs, medial end of clavicle at 25 yrs (LAST to fuse),
+        iliac crest at 21-25 yrs.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.70-80)
+
+    - id: sex-determination
+      title: "Sex Determination from Skeletal Remains"
+      text: >
+        Pelvis is the MOST RELIABLE bone for sex determination. Male pelvis: narrow, deep, heart-shaped inlet,
+        sub-pubic angle <90°. Female pelvis: wide, shallow, oval inlet, sub-pubic angle >90°.
+        Skull: male has prominent supraorbital ridges, larger mastoid, square chin; female has smooth forehead,
+        small mastoid, pointed chin. DNA-based sex determination uses amelogenin gene (X and Y variants).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.65-70)
+
+    - id: dna-profiling
+      title: "DNA Profiling in Forensic Identification"
+      text: >
+        DNA profiling (genetic fingerprinting) was developed by Alec Jeffreys (1985). Uses STR (Short Tandem
+        Repeat) analysis — highly polymorphic regions. Sources: blood, semen, hair roots, bone, saliva.
+        Mitochondrial DNA — used when nuclear DNA degraded (maternally inherited, useful for maternal lineage).
+        Y-STR — paternal lineage. Applications: paternity disputes, sexual assault cases, mass disaster
+        victim identification (DVI), criminal identification.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.85-89)
+
+  clinical:
+    - title: "Clinical Correlation: Mass Disaster Victim Identification"
+      text: >
+        In mass disasters (plane crashes, tsunamis), identification uses a systematic approach: (1) Dental records
+        (most resistant to destruction), (2) DNA profiling, (3) Fingerprints if preserved, (4) Personal effects,
+        (5) Medical records (implants, prostheses). Interpol DVI protocol is the international standard.
+    - title: "Clinical Correlation: Superimposition Technique"
+      text: >
+        Skull-photo superimposition (Ruxton case, 1935) involves overlaying a photograph over the skull using
+        video technology. Useful when only skull is available. Landmarks matched include orbits, nasal aperture,
+        and dental arch.
+
+high_yield_points:
+  - "Fingerprints (dactylography) = MOST RELIABLE method of identification"
+  - "Loops are the MOST COMMON fingerprint pattern (67%)"
+  - "Pelvis = MOST RELIABLE bone for sex determination"
+  - "Medial end of clavicle = LAST epiphysis to fuse (25 years)"
+  - "DNA profiling uses STR analysis — developed by Alec Jeffreys (1985)"
+  - "Gustafson's method uses dental changes for age estimation"
+  - "Fingerprints appear at 4th month IUL and persist until decomposition"
+  - "Henry's classification system of fingerprints is used in India"
+  - "Skull sutures: sagittal closes at 30-40 yrs, coronal at 40-50 yrs"
+  - "Mitochondrial DNA is maternally inherited — used when nuclear DNA is degraded"
+
+mcqs:
+  - question: "What is the MOST RELIABLE method of personal identification?"
+    options:
+      - "DNA profiling"
+      - "Dactylography (fingerprinting)"
+      - "Dental records"
+      - "Anthropometry"
+    answer: "Dactylography (fingerprinting)"
+    explanation: >
+      Fingerprints are unique, permanent, and classifiable — making dactylography the most reliable method.
+      DNA profiling is highly accurate but technically more complex. Dental records are useful but not unique
+      in the same way fingerprints are.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.60)
+    difficulty: 1
+
+  - question: "The LAST epiphysis to fuse in the human body is:"
+    options:
+      - "Head of humerus"
+      - "Medial end of clavicle"
+      - "Iliac crest"
+      - "Lower end of femur"
+    answer: "Medial end of clavicle"
+    explanation: >
+      The medial end (sternal end) of the clavicle is the last epiphysis to fuse, at approximately 25 years of age.
+      This is an important landmark for age determination in forensic medicine.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.75)
+    difficulty: 1
+
+  - question: "Which bone is MOST RELIABLE for determining sex from skeletal remains?"
+    options:
+      - "Skull"
+      - "Pelvis"
+      - "Femur"
+      - "Mandible"
+    answer: "Pelvis"
+    explanation: >
+      The pelvis is the most reliable bone for sex determination due to its distinct sexual dimorphism.
+      Female pelvis has a wider sub-pubic angle (>90°), oval inlet; male has narrower angle (<90°), heart-shaped inlet.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.65)
+    difficulty: 1
+
+  - question: "The most common type of fingerprint pattern is:"
+    options:
+      - "Whorl"
+      - "Arch"
+      - "Loop"
+      - "Composite"
+    answer: "Loop"
+    explanation: >
+      Loops account for approximately 67% of all fingerprint patterns, making them the most common.
+      Whorls constitute 25%, arches 7%, and composites about 1%.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.62)
+    difficulty: 1
+
+  - question: "Gustafson's method of age determination is based on changes in:"
+    options:
+      - "Skull sutures"
+      - "Teeth"
+      - "Pubic symphysis"
+      - "Long bones"
+    answer: "Teeth"
+    explanation: >
+      Gustafson's method uses six dental changes for age estimation: attrition, periodontosis, secondary
+      dentin deposition, cementum apposition, root resorption, and root transparency. Each is scored 0-3,
+      and the total correlated with age.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.3 (p.80)
+    difficulty: 2

@@ -1,0 +1,12 @@
+id: public-health
+title: "Public Health"
+subject: community-medicine
+description: |
+  Public health systems and administration.
+stats:
+  total_topics: 7
+  topics_written: 0
+  coverage_percent: 0
+priority: high
+status: scaffold
+last_updated: "2026-02-15"

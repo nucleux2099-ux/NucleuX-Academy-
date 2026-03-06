@@ -1,0 +1,165 @@
+topic_id: antifungals
+name: Antifungal Drugs
+description: Polyenes, azoles, echinocandins, and other antifungals — mechanisms, spectrum, and toxicity
+high_yield: true
+nmc_codes:
+- code: PH1.48
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Antifungal drugs target ergosterol (unique to fungal membranes) or other fungal-specific structures. Major classes include
+  polyenes (amphotericin B), azoles (ketoconazole, fluconazole, itraconazole, voriconazole), echinocandins (caspofungin),
+  and antimetabolites (flucytosine). Fungal infections have increased due to immunosuppression, and drug selection depends
+  on organism, site, and host factors.
+  📚 KD Tripathi, 8th Ed, Ch.58 (p.831-845); 📚 Goodman & Gilman's, 14th Ed, Ch.57
+
+learning_objectives:
+  - Classify antifungals by mechanism of action
+  - Describe amphotericin B mechanism, toxicity, and formulations
+  - Compare azole antifungals in terms of spectrum and drug interactions
+  - Explain echinocandin mechanism and clinical role
+  - Select appropriate antifungal for common clinical scenarios
+
+content:
+  atoms:
+    - id: amphotericin-b
+      title: "Amphotericin B — Polyene Antifungal"
+      text: >
+        Mechanism: Binds ergosterol in fungal membrane → forms pores → ion leakage → cell death. FUNGICIDAL.
+        Broadest spectrum antifungal — effective against most systemic mycoses.
+        "Gold standard" for life-threatening systemic fungal infections.
+        Uses: Invasive aspergillosis (voriconazole now preferred), Mucormycosis (DOC), Cryptococcal meningitis
+        (with flucytosine), Visceral leishmaniasis (liposomal formulation — DOC in India).
+        Toxicity: Nephrotoxicity (dose-limiting — causes renal tubular acidosis, hypokalemia, hypomagnesemia),
+        Infusion-related reactions (fever, chills, rigors — "shake and bake"), Anemia (↓EPO production).
+        Lipid formulations (Liposomal AmB, ABLC, ABCD): less nephrotoxic, can give higher doses. More expensive.
+        Nystatin: polyene used ONLY topically (oral/vaginal candidiasis). Too toxic for systemic use.
+        📚 KD Tripathi, 8th Ed, Ch.58 (p.831-835)
+
+    - id: azoles-echinocandins
+      title: "Azoles & Echinocandins"
+      text: >
+        Azoles: Inhibit lanosterol 14α-demethylase (CYP51) → block ergosterol synthesis. FUNGISTATIC (except voriconazole for Aspergillus).
+        Ketoconazole: first oral azole. Significant hepatotoxicity, anti-androgen effects (gynecomastia), potent CYP3A4 inhibitor.
+        Now mostly topical. Inhibits cortisol synthesis — used in Cushing syndrome.
+        Fluconazole: best CNS penetration. DOC for Cryptococcal meningitis (maintenance), Coccidioidomycosis, Candida (non-krusei/glabrata).
+        Intrinsic resistance: C. krusei (always), C. glabrata (often). Water-soluble, renal excretion.
+        Itraconazole: broadest spectrum azole — covers Aspergillus, dimorphic fungi. Needs acidic pH for absorption.
+        Voriconazole: DOC for invasive aspergillosis. Side effects: visual disturbances (transient — photopsia), hepatotoxicity,
+        photosensitivity (SCC with prolonged use), periostitis. Inhibits CYP2C19, 2C9, 3A4.
+        Posaconazole: broadest spectrum azole, active against Mucor (some). Prophylaxis in neutropenic patients.
+        Echinocandins: Caspofungin, Micafungin, Anidulafungin. Inhibit β(1,3)-D-glucan synthase → disrupt cell wall.
+        FUNGICIDAL against Candida, FUNGISTATIC against Aspergillus. IV only.
+        DOC for invasive candidiasis/candidemia. NOT effective against Cryptococcus (lacks glucan in wall) or Mucor.
+        Minimal drug interactions, well-tolerated. Cannot penetrate CNS/eye.
+        📚 KD Tripathi, 8th Ed, Ch.58 (p.835-845)
+
+    - id: other-antifungals
+      title: "Other Antifungals"
+      text: >
+        Flucytosine (5-FC): converted to 5-FU inside fungal cells → inhibits DNA/RNA synthesis. Used in COMBINATION with
+        amphotericin B for Cryptococcal meningitis (synergistic). Resistance develops rapidly with monotherapy.
+        Toxicity: bone marrow suppression, hepatotoxicity.
+        Griseofulvin: inhibits mitotic spindle (microtubule disruption). ONLY for dermatophytes. Oral, deposits in keratin.
+        Requires prolonged treatment (weeks-months). Side effects: headache, photosensitivity, teratogenic.
+        CYP inducer → reduces warfarin/OCP levels. Disulfiram-like reaction with alcohol.
+        Terbinafine: inhibits squalene epoxidase (earlier step than azoles in ergosterol pathway). FUNGICIDAL.
+        DOC for dermatophytosis (tinea, onychomycosis). Oral and topical. Well-tolerated. Minimal CYP interactions.
+        Side effects: taste disturbance, hepatotoxicity (rare), Steven-Johnson syndrome (rare).
+        📚 KD Tripathi, 8th Ed, Ch.58 (p.840-845)
+
+  clinical:
+    - title: "Clinical Correlation: Mucormycosis (Zygomycosis)"
+      text: >
+        Seen in uncontrolled diabetes (DKA), immunosuppression, iron overload. Rhinocerebral form most common.
+        DOC: Liposomal Amphotericin B. Adjuncts: Posaconazole (step-down), Isavuconazole. Surgical debridement essential.
+        Echinocandins and other azoles are NOT effective (Mucor has no glucan target for echinocandins).
+    - title: "Clinical Correlation: Antifungal Drug Interactions"
+      text: >
+        Azoles inhibit CYP450 (especially CYP3A4) → increase levels of cyclosporine, tacrolimus, statins, warfarin.
+        Ketoconazole: most potent inhibitor. Fluconazole: moderate. Itraconazole/Voriconazole: significant.
+        Rifampicin induces azole metabolism → ↓antifungal levels → treatment failure.
+
+  high_yield_points:
+    - "Amphotericin B: binds ergosterol → pores → fungicidal — broadest spectrum"
+    - "Amphotericin B: dose-limiting NEPHROTOXICITY — liposomal form reduces toxicity"
+    - "Azoles inhibit CYP51 (lanosterol 14α-demethylase) → block ergosterol synthesis"
+    - "Fluconazole: best CNS penetration — DOC for Cryptococcal meningitis maintenance"
+    - "Voriconazole: DOC for invasive aspergillosis — visual disturbances (photopsia)"
+    - "Echinocandins: DOC for invasive candidiasis — inhibit glucan synthase, IV only"
+    - "Echinocandins NOT effective against Cryptococcus or Mucor"
+    - "Terbinafine: DOC for dermatophytosis — inhibits squalene epoxidase, fungicidal"
+    - "Griseofulvin: ONLY for dermatophytes — microtubule inhibitor, CYP inducer"
+    - "Mucormycosis DOC: Liposomal Amphotericin B + surgical debridement"
+
+mcqs:
+  - question: "The drug of choice for invasive aspergillosis is:"
+    options:
+      - "Amphotericin B"
+      - "Fluconazole"
+      - "Voriconazole"
+      - "Caspofungin"
+    answer: "Voriconazole"
+    explanation: >
+      Voriconazole is the current DOC for invasive aspergillosis (superior to amphotericin B in a landmark RCT).
+      Fluconazole has no activity against Aspergillus. Caspofungin is second-line/salvage therapy.
+      📚 KD Tripathi, 8th Ed, Ch.58 (p.839)
+    difficulty: 1
+
+  - question: "Which antifungal class is NOT effective against Cryptococcus neoformans?"
+    options:
+      - "Polyenes"
+      - "Azoles"
+      - "Echinocandins"
+      - "Flucytosine"
+    answer: "Echinocandins"
+    explanation: >
+      Echinocandins target β(1,3)-D-glucan in the fungal cell wall. Cryptococcus has a polysaccharide capsule
+      but minimal glucan in its cell wall → echinocandins are ineffective. Treat with AmB + flucytosine (induction)
+      followed by fluconazole (maintenance).
+      📚 KD Tripathi, 8th Ed, Ch.58 (p.842)
+    difficulty: 2
+
+  - question: "Amphotericin B nephrotoxicity manifests as all of the following EXCEPT:"
+    options:
+      - "Renal tubular acidosis"
+      - "Hypokalemia"
+      - "Hypermagnesemia"
+      - "Decreased GFR"
+    answer: "Hypermagnesemia"
+    explanation: >
+      Amphotericin B causes renal tubular damage → K+ and Mg2+ wasting → HYPOkalemia and HYPOmagnesemia
+      (not hypermagnesemia). Also causes distal RTA (type 1) and decreased GFR. Nephrotoxicity is the
+      dose-limiting toxicity. Saline preloading reduces risk.
+      📚 KD Tripathi, 8th Ed, Ch.58 (p.833)
+    difficulty: 2
+
+  - question: "The DOC for dermatophyte infections (tinea, onychomycosis) is:"
+    options:
+      - "Fluconazole"
+      - "Amphotericin B"
+      - "Terbinafine"
+      - "Caspofungin"
+    answer: "Terbinafine"
+    explanation: >
+      Terbinafine inhibits squalene epoxidase, is fungicidal against dermatophytes, and concentrates in
+      keratin (nail, skin, hair). It is the DOC for onychomycosis and dermatophytosis. Oral course for
+      nail infections (6 weeks fingernails, 12 weeks toenails). Well-tolerated with minimal CYP interactions.
+      📚 KD Tripathi, 8th Ed, Ch.58 (p.844)
+    difficulty: 1
+
+  - question: "Ketoconazole is used off-label in Cushing syndrome because it:"
+    options:
+      - "Blocks ACTH receptors"
+      - "Inhibits cortisol synthesis (CYP enzymes in adrenal)"
+      - "Increases cortisol metabolism"
+      - "Blocks glucocorticoid receptors"
+    answer: "Inhibits cortisol synthesis (CYP enzymes in adrenal)"
+    explanation: >
+      Ketoconazole inhibits several CYP enzymes involved in steroidogenesis (CYP17, CYP11B1, CYP11A1)
+      in the adrenal gland → reduces cortisol production. This side effect is exploited therapeutically
+      in Cushing syndrome when surgery is not feasible.
+      📚 KD Tripathi, 8th Ed, Ch.58 (p.836)
+    difficulty: 2

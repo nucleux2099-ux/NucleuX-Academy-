@@ -1,0 +1,37 @@
+id: gram-positive-bacteria
+title: "Gram-Positive Bacteria"
+subject: microbiology
+description: |
+  Staphylococci, Streptococci, and other GP organisms.
+
+stats:
+  total_topics: 17
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - staphylococcus-aureus
+      - mrsa-micro
+      - coagulase-negative-staphylococci
+      - streptococcus-pyogenes
+      - streptococcus-pneumoniae
+      - enterococcus
+      - streptococcus-viridans
+      - bacillus-anthracis
+      - bacillus-cereus
+      - clostridium-tetani
+      - clostridium-botulinum
+      - clostridium-perfringens
+      - clostridioides-difficile-micro
+      - corynebacterium-diphtheriae
+      - listeria-monocytogenes
+      - nocardia
+      - actinomyces
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

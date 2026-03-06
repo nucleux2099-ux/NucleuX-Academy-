@@ -1,0 +1,19 @@
+title: "Chest Tube in ICU"
+slug: chest-tube-icu
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM24.16"
+prerequisites: []
+related_topics:
+  - "non-invasive-ventilation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.16"
+      text: "Chest Tube in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "non-invasive-ventilation"
+      reason: "Clinically related"
+      relationship: "clinical"

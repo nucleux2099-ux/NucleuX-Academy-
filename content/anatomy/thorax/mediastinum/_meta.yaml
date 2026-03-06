@@ -1,0 +1,153 @@
+topic_id: mediastinum
+name: Mediastinum
+description: Mediastinum — Divisions, contents, and clinical significance of the mediastinum
+high_yield: true
+nmc_codes:
+- code: AN21.1
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The mediastinum is the central compartment of the thorax between the two pleural cavities, extending from the
+  thoracic inlet superiorly to the diaphragm inferiorly, sternum anteriorly, and vertebral column posteriorly.
+  Divided by a transverse plane at the sternal angle (of Louis, T4-T5) into superior and inferior mediastinum.
+  Inferior mediastinum is further subdivided into anterior, middle, and posterior mediastinum.
+  📚 Gray's Anatomy, 42nd Ed, Ch.53; 📚 BD Chaurasia, Vol.1, Ch.17
+
+learning_objectives:
+  - Describe the boundaries and subdivisions of the mediastinum
+  - List the contents of each mediastinal compartment
+  - Describe the clinical significance of the sternal angle (angle of Louis)
+  - Identify common mediastinal masses by compartment
+  - Explain the relations of structures in the superior mediastinum
+
+content:
+  atoms:
+    - id: superior-mediastinum
+      title: "Superior Mediastinum"
+      text: >
+        Boundaries: above — thoracic inlet; below — transverse plane at sternal angle (T4-T5); anterior — manubrium;
+        posterior — T1-T4 vertebral bodies. Contents (anterior to posterior): thymus (in children), great veins
+        (brachiocephalic veins, upper SVC), great arteries (aortic arch + 3 branches: brachiocephalic trunk, left
+        common carotid, left subclavian), trachea, esophagus, thoracic duct, vagus nerves, left recurrent laryngeal
+        nerve (hooks under aortic arch), phrenic nerves.
+        📚 BD Chaurasia, Vol.1, Ch.17 (p.240-248)
+
+    - id: inferior-mediastinum
+      title: "Anterior, Middle, and Posterior Mediastinum"
+      text: >
+        Anterior mediastinum: between sternum and pericardium. Contains thymus (adult remnant), fat, lymph nodes,
+        internal thoracic vessels. Middle mediastinum: contains pericardium, heart, ascending aorta, SVC, pulmonary
+        trunk and arteries, main bronchi, phrenic nerves. Posterior mediastinum: between pericardium and vertebrae.
+        Contains descending thoracic aorta, esophagus (lower 2/3), thoracic duct, azygos/hemiazygos veins,
+        vagus nerve, splanchnic nerves, sympathetic chains.
+        📚 Gray's Anatomy, 42nd Ed, Ch.53; 📚 Netter's Atlas, 6th Ed, Plate 230
+
+    - id: sternal-angle
+      title: "Sternal Angle (Angle of Louis) — Key Landmark"
+      text: >
+        Junction of manubrium and body of sternum at T4-T5 level. Marks: (1) start/end of aortic arch;
+        (2) bifurcation of trachea (carina); (3) level of 2nd costal cartilage; (4) division of superior and
+        inferior mediastinum; (5) azygos vein arches over right main bronchus to enter SVC; (6) thoracic duct
+        crosses from right to left; (7) ligamentum arteriosum level; (8) upper border of cardiac shadow on X-ray.
+        📚 BD Chaurasia, Vol.1
+
+    - id: mediastinal-masses
+      title: "Mediastinal Masses — '4 Ts' and More"
+      text: >
+        Anterior mediastinum (4 Ts): Thymoma, Teratoma/germ cell tumors, (Terrible) Lymphoma, Thyroid (retrosternal goiter).
+        Middle mediastinum: Lymphadenopathy (sarcoidosis, lymphoma), bronchogenic cyst, pericardial cyst.
+        Posterior mediastinum: Neurogenic tumors (schwannoma, neurofibroma — most common posterior mediastinal mass),
+        esophageal tumors, aortic aneurysm, meningocele, extramedullary hematopoiesis.
+        📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Superior Mediastinal Syndrome"
+      text: >
+        SVC obstruction by mediastinal mass (commonly lung cancer or lymphoma). Presents with facial/upper limb edema,
+        distended neck veins, cyanosis, headache. Pemberton's sign positive with retrosternal goiter.
+    - title: "Clinical: Recurrent Laryngeal Nerve"
+      text: >
+        Left RLN hooks under aortic arch (ligamentum arteriosum), right RLN under right subclavian artery.
+        Left RLN has longer course — more vulnerable. Mediastinal tumors, aortic aneurysm, or enlarged left atrium
+        can compress left RLN → hoarseness (Ortner's syndrome with mitral stenosis).
+
+high_yield_points:
+  - "Sternal angle (T4-T5): tracheal bifurcation, start/end of aortic arch, 2nd costal cartilage"
+  - "Anterior mediastinal masses: 4 Ts — Thymoma, Teratoma, Terrible lymphoma, Thyroid"
+  - "Most common posterior mediastinal mass = neurogenic tumors (schwannoma)"
+  - "Left recurrent laryngeal nerve hooks under aortic arch — longer, more vulnerable"
+  - "Thoracic duct crosses from right to left at T4-T5 level"
+  - "Azygos vein arches over right main bronchus to join SVC at sternal angle level"
+  - "Middle mediastinum contains heart, pericardium, and phrenic nerves"
+  - "Posterior mediastinum: descending aorta, esophagus, thoracic duct, azygos system"
+  - "Thymoma associated with myasthenia gravis (anterior mediastinum)"
+  - "Ortner's syndrome: left RLN compression by enlarged left atrium in mitral stenosis"
+
+mcqs:
+  - question: "The sternal angle (angle of Louis) corresponds to the level of which vertebra?"
+    options:
+      - "T2"
+      - "T4-T5"
+      - "T6"
+      - "T8"
+    answer: "T4-T5"
+    explanation: >
+      The sternal angle marks the junction of manubrium and body of sternum at T4-T5 level. It is a key landmark
+      for tracheal bifurcation, beginning/end of aortic arch, and the 2nd costal cartilage.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 1
+
+  - question: "Which of the following is the most common tumor of the posterior mediastinum?"
+    options:
+      - "Thymoma"
+      - "Lymphoma"
+      - "Neurogenic tumor"
+      - "Teratoma"
+    answer: "Neurogenic tumor"
+    explanation: >
+      Neurogenic tumors (schwannoma, neurofibroma, ganglioneuroma) are the most common posterior mediastinal masses.
+      Thymoma and teratoma are anterior mediastinal. Lymphoma can occur in any compartment but classically anterior.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "The left recurrent laryngeal nerve hooks around which structure?"
+    options:
+      - "Right subclavian artery"
+      - "Aortic arch"
+      - "Pulmonary trunk"
+      - "Left common carotid artery"
+    answer: "Aortic arch"
+    explanation: >
+      The left RLN loops under the aortic arch (at the level of ligamentum arteriosum) before ascending in the
+      tracheoesophageal groove. The right RLN hooks under the right subclavian artery.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 1
+
+  - question: "A 60-year-old smoker presents with facial swelling, distended neck veins, and cyanosis. Which structure is most likely compressed?"
+    options:
+      - "Thoracic duct"
+      - "Superior vena cava"
+      - "Aortic arch"
+      - "Left brachiocephalic vein"
+    answer: "Superior vena cava"
+    explanation: >
+      This is SVC syndrome — compression of the SVC in the superior/middle mediastinum, commonly by lung carcinoma
+      or lymphoma. Causes venous congestion of head, neck, and upper limbs.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 1
+
+  - question: "Which mediastinal compartment contains the thoracic duct and esophagus?"
+    options:
+      - "Superior mediastinum only"
+      - "Anterior mediastinum"
+      - "Middle mediastinum"
+      - "Posterior mediastinum"
+    answer: "Posterior mediastinum"
+    explanation: >
+      The posterior mediastinum (between pericardium and vertebral column) contains the esophagus (lower 2/3),
+      descending thoracic aorta, thoracic duct, azygos/hemiazygos veins, vagus nerves, and sympathetic trunks.
+      The esophagus and thoracic duct also pass through the superior mediastinum, but "posterior" is the best answer.
+      📚 BD Chaurasia, Vol.1
+    difficulty: 2

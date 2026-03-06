@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Segmental anatomy determines abscess localization and guides percutaneous vs surgical drainage approach",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "portal-hypertension",
+      "nmcCode": "",
+      "reason": "Portal pyaemia from intra-abdominal sepsis (e.g., appendicitis, diverticulitis) is a key pathogenic route for pyogenic liver abscess",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "hydatid-cyst",
+      "nmcCode": "",
+      "reason": "Hydatid cyst is the chief differential for cystic hepatic lesions; infected hydatid mimics pyogenic abscess",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Ascending cholangitis with biliary obstruction is the most common cause of pyogenic liver abscess",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "Necrotic HCC can mimic liver abscess on imaging; tumor markers and biopsy differentiate the two",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Biliary obstruction predisposes to cholangitic abscesses; jaundice with fever and RUQ pain raises suspicion",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.10: Describe the applied anatomy of liver. Describe the Clinical features,",
+    "IM5.13: Enumerate the indications for ultrasound and other imaging studies"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Liver Abscess across foundational sciences and clinical applications."
+}

@@ -1,0 +1,31 @@
+id: autonomic-pharmacology
+title: "Autonomic Pharmacology"
+subject: pharmacology
+description: |
+  Cholinergic, adrenergic, and ganglionic drugs.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - autonomic-nervous-system-drugs
+      - cholinergic-agonists
+      - anticholinesterases
+      - muscarinic-antagonists
+      - sympathomimetics
+      - alpha-blockers
+      - beta-blockers
+      - ganglionic-blockers
+      - neuromuscular-blockers
+      - skeletal-muscle-relaxants
+      - local-anesthetics
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

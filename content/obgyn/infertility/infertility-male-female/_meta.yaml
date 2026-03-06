@@ -1,0 +1,157 @@
+topic_id: infertility-male-female
+name: Infertility (Male & Female)
+description: Evaluation, causes, and management of male and female infertility including ART
+high_yield: true
+nmc_codes:
+- code: OG26.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Infertility is defined as failure to conceive after 12 months of regular unprotected intercourse.
+  It affects 10-15% of couples. Female factors account for ~40%, male factors ~40%, combined ~10%,
+  and unexplained ~10%. Systematic evaluation of both partners is essential. The WHO semen analysis
+  criteria and assessment of ovulation, tubal patency, and uterine factors form the cornerstone of workup.
+  📚 DC Dutta, 9th Ed, Ch.15 | 📚 Williams Obstetrics, 26th Ed
+
+learning_objectives:
+  - Define primary and secondary infertility
+  - List the causes of female and male infertility
+  - Describe the basic infertility workup
+  - Interpret WHO semen analysis parameters
+  - Outline ART options (IUI, IVF, ICSI)
+
+content:
+  atoms:
+    - id: causes-female
+      title: "Causes of Female Infertility"
+      text: >
+        Ovulatory disorders (25-30%): PCOS (most common), hypothalamic amenorrhea, hyperprolactinemia,
+        premature ovarian insufficiency, thyroid disorders.
+        Tubal factors (25-35%): PID (most common cause of tubal damage), endometriosis, previous
+        ectopic, tubal surgery, TB salpingitis (common in India).
+        Uterine factors (10%): fibroids (submucous), Asherman syndrome, Müllerian anomalies.
+        Cervical factors: hostile cervical mucus, cervical stenosis.
+        Peritoneal: endometriosis, pelvic adhesions.
+        📚 DC Dutta, 9th Ed, Ch.15 (p.193-200)
+
+    - id: causes-male
+      title: "Causes of Male Infertility"
+      text: >
+        Pre-testicular: hypogonadotropic hypogonadism (Kallmann syndrome), hyperprolactinemia,
+        drugs, systemic illness.
+        Testicular: varicocele (most common correctable cause), cryptorchidism, Klinefelter syndrome,
+        mumps orchitis, radiation, drugs.
+        Post-testicular: obstruction (CBAVD — associated with CF gene), ejaculatory dysfunction,
+        antisperm antibodies.
+        WHO Semen Analysis (6th Ed, 2021): Volume ≥1.4 mL, concentration ≥16 million/mL,
+        total count ≥39 million, motility ≥42% total (≥30% progressive), morphology ≥4% normal (strict Kruger).
+        📚 DC Dutta, 9th Ed, Ch.15 (p.200-205)
+
+    - id: workup
+      title: "Basic Infertility Workup"
+      text: >
+        Female: (1) Ovulation assessment — day 21 serum progesterone (>3 ng/mL = ovulatory),
+        BBT chart, LH surge kits, USG follicular monitoring.
+        (2) Tubal patency — HSG (hysterosalpingography, first-line), laparoscopy + chromopertubation
+        (gold standard), sonosalpingography.
+        (3) Hormonal: Day 2-3 FSH, LH, E2, prolactin, TSH, AMH.
+        (4) Uterine: USG, hysteroscopy, SIS.
+        Male: Semen analysis (abstinence 2-7 days, 2 samples 3 months apart).
+        If abnormal → hormonal profile (FSH, LH, testosterone), scrotal USG, karyotype.
+        📚 DC Dutta, 9th Ed, Ch.15 (p.205-212)
+
+    - id: art
+      title: "Assisted Reproductive Technology"
+      text: >
+        IUI (Intrauterine Insemination): washed sperm placed directly into uterus. Indicated for mild
+        male factor, unexplained infertility, cervical factor. Success rate: 10-20% per cycle.
+        IVF (In Vitro Fertilization): ovarian stimulation → oocyte retrieval → fertilization in lab →
+        embryo transfer. Indicated for tubal factor, endometriosis, moderate male factor, failed IUI.
+        ICSI (Intracytoplasmic Sperm Injection): single sperm injected directly into oocyte.
+        Indicated for severe male factor (oligoasthenoteratozoospermia), obstructive azoospermia
+        (TESA/MESA sperm). Success rate: 40-50% per cycle.
+        📚 DC Dutta, 9th Ed, Ch.15 (p.215-220)
+
+  high_yield_points:
+    - "Infertility: failure to conceive after 12 months of unprotected intercourse"
+    - "Most common cause of female infertility: ovulatory dysfunction (PCOS)"
+    - "Most common correctable cause of male infertility: VARICOCELE"
+    - "HSG: first-line test for tubal patency; laparoscopy + chromopertubation = gold standard"
+    - "Day 21 progesterone >3 ng/mL confirms ovulation"
+    - "CBAVD (congenital bilateral absence of vas deferens) — associated with CFTR gene mutation"
+    - "WHO semen: volume ≥1.4 mL, count ≥16 M/mL, motility ≥42%, morphology ≥4%"
+    - "ICSI = treatment of choice for severe male factor infertility"
+    - "AMH reflects ovarian reserve — low AMH = diminished reserve"
+    - "TB salpingitis is an important cause of tubal infertility in India"
+
+mcqs:
+  - question: "The most common correctable cause of male infertility is:"
+    options:
+      - "Cryptorchidism"
+      - "Varicocele"
+      - "Ejaculatory duct obstruction"
+      - "Klinefelter syndrome"
+    answer: "Varicocele"
+    explanation: >
+      Varicocele (abnormal dilatation of pampiniform plexus) is found in 15% of all males and
+      40% of infertile males. It is the most common surgically correctable cause. It impairs
+      spermatogenesis through increased scrotal temperature.
+      📚 DC Dutta, 9th Ed, Ch.15 (p.202)
+    difficulty: 1
+
+  - question: "The gold standard investigation for tubal patency is:"
+    options:
+      - "Hysterosalpingography"
+      - "Sonosalpingography"
+      - "Laparoscopy with chromopertubation"
+      - "Hysteroscopy"
+    answer: "Laparoscopy with chromopertubation"
+    explanation: >
+      Laparoscopy with chromopertubation (dye test — methylene blue injected through cervix, seen
+      spilling from fimbrial ends) is the gold standard. It also allows visualization and treatment
+      of endometriosis, adhesions. HSG is the first-line screening test.
+      📚 DC Dutta, 9th Ed, Ch.15 (p.209)
+    difficulty: 1
+
+  - question: "According to WHO 6th edition (2021), normal sperm concentration is:"
+    options:
+      - "≥10 million/mL"
+      - "≥15 million/mL"
+      - "≥16 million/mL"
+      - "≥20 million/mL"
+    answer: "≥16 million/mL"
+    explanation: >
+      WHO 6th edition (2021) updated the lower reference limits: concentration ≥16 million/mL
+      (previously 15 million in 5th edition), total count ≥39 million, motility ≥42%.
+      📚 DC Dutta, 9th Ed, Ch.15
+    difficulty: 2
+
+  - question: "ICSI is primarily indicated for:"
+    options:
+      - "Tubal factor infertility"
+      - "Unexplained infertility"
+      - "Severe male factor infertility"
+      - "Endometriosis"
+    answer: "Severe male factor infertility"
+    explanation: >
+      ICSI bypasses all barriers to fertilization by injecting a single sperm directly into the
+      oocyte. It is the treatment of choice for severe oligoasthenoteratozoospermia, obstructive
+      azoospermia (using TESA/MESA), and previous IVF fertilization failure.
+      📚 DC Dutta, 9th Ed, Ch.15 (p.219)
+    difficulty: 1
+
+  - question: "Congenital bilateral absence of vas deferens (CBAVD) is associated with mutations in:"
+    options:
+      - "SRY gene"
+      - "CFTR gene"
+      - "Androgen receptor gene"
+      - "DAZ gene"
+    answer: "CFTR gene"
+    explanation: >
+      CBAVD is found in >95% of males with cystic fibrosis and is caused by mutations in the CFTR
+      gene. These men have obstructive azoospermia but normal spermatogenesis. Sperm can be retrieved
+      by MESA/TESA for ICSI.
+      📚 DC Dutta, 9th Ed, Ch.15 (p.203)
+    difficulty: 2

@@ -1,0 +1,70 @@
+id: endocrinology
+title: "Endocrinology"
+subject: medicine
+description: |
+  Diabetes, thyroid disorders, and hormonal diseases.
+
+stats:
+  total_topics: 38
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: diabetes
+    title: "Diabetes Mellitus"
+    topics:
+      - diabetes-mellitus-type-1
+      - diabetes-mellitus-type-2
+      - diabetic-ketoacidosis
+      - hyperosmolar-hyperglycemic-state
+      - insulin-therapy
+      - oral-hypoglycemics
+      - diabetic-nephropathy
+      - diabetic-retinopathy
+      - diabetic-neuropathy
+      - hypoglycemia
+  - id: thyroid
+    title: "Thyroid"
+    topics:
+      - hypothyroidism
+      - hyperthyroidism
+      - graves-disease
+      - hashimoto-thyroiditis
+      - thyroid-storm
+      - myxedema-coma
+      - thyroid-nodule-evaluation
+      - thyroid-cancer-medical
+      - subacute-thyroiditis
+  - id: adrenal
+    title: "Adrenal"
+    topics:
+      - cushing-syndrome
+      - addison-disease
+      - pheochromocytoma
+      - conn-syndrome
+      - adrenal-incidentaloma
+      - congenital-adrenal-hyperplasia
+      - adrenal-crisis
+  - id: pituitary
+    title: "Pituitary"
+    topics:
+      - acromegaly
+      - prolactinoma
+      - diabetes-insipidus
+      - siadh
+      - hypopituitarism
+      - pituitary-adenomas
+  - id: metabolic
+    title: "Metabolic & Other"
+    topics:
+      - obesity-medical
+      - metabolic-syndrome
+      - osteoporosis
+      - paget-disease-bone
+      - multiple-endocrine-neoplasia
+      - carcinoid-syndrome-medical
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

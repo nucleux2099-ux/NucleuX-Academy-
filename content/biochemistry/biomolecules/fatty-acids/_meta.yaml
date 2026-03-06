@@ -1,0 +1,9 @@
+topic_id: fatty-acids
+name: Fatty Acids
+description: Fatty Acids — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI4.1
+  domain: KH
+  core: true
+  phase: Phase 1

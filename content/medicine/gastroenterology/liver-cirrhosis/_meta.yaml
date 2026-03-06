@@ -1,0 +1,26 @@
+title: "Liver Cirrhosis"
+slug: liver-cirrhosis
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.8"
+prerequisites:
+  - "hepatitis-b"
+related_topics:
+  - "acute-liver-failure"
+  - "alcoholic-liver-disease"
+enrichment:
+  nmcCodes:
+    - code: "IM5.8"
+      text: "Liver Cirrhosis — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "hepatitis-b"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "acute-liver-failure"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "alcoholic-liver-disease"
+      reason: "Clinically related"
+      relationship: "clinical"

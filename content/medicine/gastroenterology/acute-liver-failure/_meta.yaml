@@ -1,0 +1,22 @@
+title: "Acute Liver Failure"
+slug: acute-liver-failure
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.9"
+prerequisites:
+  - "liver-cirrhosis"
+related_topics:
+  - "drug-induced-liver-injury"
+enrichment:
+  nmcCodes:
+    - code: "IM5.9"
+      text: "Acute Liver Failure — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-cirrhosis"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "drug-induced-liver-injury"
+      reason: "Clinically related"
+      relationship: "clinical"

@@ -1,0 +1,61 @@
+topic_id: newborn-examination
+name: Newborn Examination
+description: Newborn Examination — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE11.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE18.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE18.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE21.11
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PE23.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE24.12
+  domain: P
+  core: false
+  phase: Phase 1
+- code: PE26.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE28.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE28.11
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE28.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE30.18
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE33.7
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE7.7
+  domain: SH
+  core: true
+  phase: Phase 2

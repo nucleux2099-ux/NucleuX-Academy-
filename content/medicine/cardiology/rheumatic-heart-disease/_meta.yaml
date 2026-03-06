@@ -1,0 +1,96 @@
+title: Rheumatic Heart Disease
+slug: rheumatic-heart-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.1
+  - IM1.2
+  - IM1.3
+  - IM1.4
+  - IM1.5
+  - IM1.6
+  - IM1.7
+  - IM1.8
+  - IM1.9
+  - IM1.10
+  - IM1.11
+  - IM1.12
+  - IM1.13
+  - IM1.14
+  - IM1.15
+  - IM1.16
+  - IM1.17
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+    - code: IM1.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of rheumatic heart
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

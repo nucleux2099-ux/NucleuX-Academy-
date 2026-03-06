@@ -1,0 +1,107 @@
+{
+  "id": "clinical-procedures",
+  "title": "Essential Clinical Procedures",
+  "phase": "Phase-1",
+  "subject": "Clinical Skills", 
+  "description": "Fundamental clinical procedures and practical skills including injections, blood sampling, basic life support, and infection control measures for safe medical practice.",
+  "competencies": ["CP1.1", "CP1.2", "CP1.3", "CP1.4", "CP1.5"],
+  "prerequisites": ["clinical-examination"],
+  "steps": [
+    {
+      "order": 1,
+      "type": "reading",
+      "title": "Infection Control & Safety",
+      "libraryTopic": "clinical-procedures",
+      "sections": ["hand-hygiene", "ppe", "sterile-technique", "waste-disposal"],
+      "duration": "50min",
+      "xp": 25
+    },
+    {
+      "order": 2,
+      "type": "skill",
+      "title": "Hand Hygiene & PPE",
+      "competency": "CP1.1",
+      "xp": 35,
+      "duration": "30min"
+    },
+    {
+      "order": 3,
+      "type": "reading",
+      "title": "Venipuncture & IV Access",
+      "libraryTopic": "clinical-procedures",
+      "sections": ["venipuncture-technique", "iv-cannulation", "blood-sampling", "complications"],
+      "duration": "60min",
+      "xp": 30
+    },
+    {
+      "order": 4,
+      "type": "skill",
+      "title": "Blood Sampling Practice",
+      "competency": "CP1.2",
+      "xp": 55,
+      "duration": "45min"
+    },
+    {
+      "order": 5,
+      "type": "reading",
+      "title": "Injection Techniques",
+      "libraryTopic": "clinical-procedures",
+      "sections": ["intramuscular", "subcutaneous", "intradermal", "needle-safety"],
+      "duration": "45min",
+      "xp": 25
+    },
+    {
+      "order": 6,
+      "type": "skill",
+      "title": "Injection Administration",
+      "competency": "CP1.3",
+      "xp": 45,
+      "duration": "35min"
+    },
+    {
+      "order": 7,
+      "type": "reading",
+      "title": "Basic Life Support",
+      "libraryTopic": "clinical-procedures",
+      "sections": ["cpr-technique", "aed-use", "choking", "recovery-position"],
+      "duration": "70min",
+      "xp": 40
+    },
+    {
+      "order": 8,
+      "type": "skill",
+      "title": "BLS Certification",
+      "competency": "CP1.4",
+      "xp": 65,
+      "duration": "60min"
+    },
+    {
+      "order": 9,
+      "type": "reading",
+      "title": "Documentation & Legal Aspects",
+      "libraryTopic": "clinical-procedures",
+      "sections": ["medical-records", "consent", "incident-reporting", "ethics"],
+      "duration": "55min",
+      "xp": 30
+    },
+    {
+      "order": 10,
+      "type": "case",
+      "title": "Procedure Simulation",
+      "competency": "CP1.5",
+      "xp": 60,
+      "duration": "50min"
+    }
+  ],
+  "totalXP": 410,
+  "estimatedTime": "7 hours",
+  "unlocks": ["emergency-medicine", "surgery-skills", "medicine-procedures"],
+  "textbooks": [
+    {"title": "Oxford Handbook of Clinical Medicine", "chapters": ["Practical Procedures"], "edition": "11th"},
+    {"title": "Kumar & Clark's Clinical Medicine", "chapters": ["Clinical Skills"], "edition": "10th"},
+    {"title": "BLS Provider Manual", "chapters": ["All"], "edition": "2020"}
+  ],
+  "tags": ["high-yield", "procedures", "emergency", "clinical"],
+  "difficulty": 3,
+  "lastUpdated": "2024-02-08"
+}

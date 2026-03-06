@@ -1,0 +1,34 @@
+id: immunology
+title: "Immunology"
+subject: microbiology
+description: |
+  Innate and adaptive immunity, hypersensitivity, and autoimmunity.
+
+stats:
+  total_topics: 14
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - innate-immunity-micro
+      - adaptive-immunity-micro
+      - antigens
+      - antibodies-immunoglobulins
+      - complement-system-micro
+      - mhc-system
+      - t-cell-immunity
+      - b-cell-immunity
+      - hypersensitivity-reactions
+      - autoimmunity
+      - immunodeficiency-diseases
+      - transplant-immunology
+      - tumor-immunology-micro
+      - vaccines-immunology
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

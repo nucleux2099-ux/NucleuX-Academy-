@@ -1,0 +1,65 @@
+topic_id: classification-etio
+name: The etio-pathogenesis, Clinical features, classification and
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE29.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE29.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.13
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.14
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.15
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.16
+  domain: K
+  core: false
+  phase: Phase 1
+- code: PE29.18
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.19
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE29.20
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE29.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE29.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE29.6
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: PE29.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PE29.9
+  domain: KH
+  core: false
+  phase: Phase 1

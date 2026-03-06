@@ -1,0 +1,43 @@
+title: Renal Osteodystrophy
+slug: renal-osteodystrophy
+depth: PG
+highYield: true
+nmc_codes:
+  - IM10.1
+  - IM10.16
+  - IM10.17
+  - IM10.19
+  - IM10.24
+  - IM10.27
+  - IM10.28
+  - IM10.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.24
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.27
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.28
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+    - code: IM10.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal osteodystrophy
+      domain: KH
+  prerequisite_details: []
+  related_details: []

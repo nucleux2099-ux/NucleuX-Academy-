@@ -1,0 +1,17 @@
+topic_id: mechanism-of-labor
+name: Mechanism Of Labor
+description: Mechanism Of Labor — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG13.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG13.4
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OG14.2
+  domain: KH
+  core: true
+  phase: Phase 3

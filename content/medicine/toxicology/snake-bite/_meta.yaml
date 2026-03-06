@@ -1,0 +1,15 @@
+title: "Snake Bite"
+slug: snake-bite
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.23"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM24.23"
+      text: "Snake Bite — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

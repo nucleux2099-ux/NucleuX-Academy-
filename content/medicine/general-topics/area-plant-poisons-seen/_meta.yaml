@@ -1,0 +1,19 @@
+title: "Plant Poisons"
+slug: area-plant-poisons-seen
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.5"
+prerequisites: []
+related_topics:
+  - "area-poisonous-snakes-your"
+enrichment:
+  nmcCodes:
+    - code: "IM26.5"
+      text: "Plant Poisons — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "area-poisonous-snakes-your"
+      reason: "Clinically related"
+      relationship: "clinical"

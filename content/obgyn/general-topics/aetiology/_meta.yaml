@@ -1,0 +1,13 @@
+topic_id: aetiology
+name: Define, classify and describe the aetiology, pathogenesis, clinical
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG10.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG10.2
+  domain: KH
+  core: true
+  phase: Phase 1

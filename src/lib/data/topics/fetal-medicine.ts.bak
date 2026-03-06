@@ -1,0 +1,2542 @@
+/**
+ * NucleuX Academy - Fetal Medicine Topics
+ * 
+ * Comprehensive fetal medicine content covering:
+ * - Fetal development & embryology
+ * - Antenatal screening (combined, quadruple, NIPT)
+ * - Fetal anomaly scan (18-20 weeks)
+ * - IUGR (types, Doppler, management)
+ * - Fetal anomalies (neural tube, cardiac, renal)
+ * - Multiple pregnancy (twins - chorionicity, TTTS)
+ * - Fetal therapy (intrauterine transfusion, laser)
+ * - Hydrops fetalis
+ * - Prenatal diagnosis (amnio, CVS)
+ * - Fetal monitoring (NST, BPP)
+ * 
+ * References: Williams Obstetrics (26th Ed), DC Dutta's Obstetrics (9th Ed)
+ */
+
+import type { LibraryTopic } from '../../types/library';
+
+export const FETAL_MEDICINE_TOPICS: LibraryTopic[] = [
+  // =============================================================================
+  // FETAL DEVELOPMENT & EMBRYOLOGY
+  // =============================================================================
+  {
+    id: 'fetal-development',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Fetal Development & Embryology',
+    slug: 'fetal-development',
+    description: 'Embryonic and fetal development from conception to term',
+    content: {
+      concept: `# Fetal Development & Embryology
+
+## Overview
+
+Understanding fetal development is fundamental to fetal medicine. The process spans from fertilization through organogenesis to fetal maturation.
+
+## Stages of Development
+
+### Pre-embryonic Period (Weeks 1-2)
+
+**Week 1: Fertilization to Implantation**
+- **Day 0**: Fertilization in ampulla of fallopian tube
+- **Day 1-3**: Cleavage divisions → morula (16 cells)
+- **Day 4-5**: Blastocyst formation (inner cell mass + trophoblast)
+- **Day 6-7**: Implantation begins (hatching from zona pellucida)
+
+**Week 2: Bilaminar Disc**
+- Trophoblast differentiates into:
+  - **Cytotrophoblast** (inner, mitotically active)
+  - **Syncytiotrophoblast** (outer, produces hCG)
+- Inner cell mass forms bilaminar disc:
+  - **Epiblast** (future embryo)
+  - **Hypoblast** (future yolk sac)
+
+> 💎 **High Yield**: hCG is produced by syncytiotrophoblast, detectable by day 8-10
+
+### Embryonic Period (Weeks 3-8)
+
+**Week 3: Gastrulation**
+- Primitive streak forms
+- Three germ layers established:
+  - **Ectoderm**: Skin, CNS, neural crest
+  - **Mesoderm**: Muscle, bone, cardiovascular, kidneys, gonads
+  - **Endoderm**: GI tract, liver, pancreas, lungs
+
+| Germ Layer | Derivatives |
+|------------|-------------|
+| Ectoderm | Brain, spinal cord, peripheral nerves, skin, hair, nails, eyes, ears |
+| Mesoderm | Heart, blood vessels, skeleton, muscles, kidneys, gonads |
+| Endoderm | GI epithelium, liver, pancreas, respiratory epithelium, thyroid, bladder |
+
+**Week 4: Neurulation & Folding**
+- Neural tube closes (day 21-28)
+- **Cranial neuropore**: Closes day 25 (failure → anencephaly)
+- **Caudal neuropore**: Closes day 27 (failure → spina bifida)
+- Heart begins beating (day 22)
+- Embryonic folding creates tubular structure
+
+> 📌 **Critical Period**: Folic acid must be present BEFORE conception to prevent NTDs
+
+**Week 5-8: Organogenesis**
+
+| Week | Key Developments |
+|------|------------------|
+| 5 | Upper limb buds, heart chambers forming, lens placodes |
+| 6 | Lower limb buds, hand plates, primitive gut |
+| 7 | Digital rays (fingers), eyelids forming, intestines in umbilical cord |
+| 8 | Distinct fingers/toes, external genitalia begin, intestines return to abdomen |
+
+> 💎 **High Yield**: By end of week 8, all organ systems are present in rudimentary form
+
+### Fetal Period (Weeks 9-40)
+
+**First Trimester (Weeks 9-12)**
+- Rapid growth and differentiation
+- **Week 9**: Fetal period begins, CRL ~25 mm
+- **Week 10**: External genitalia begin to differentiate
+- **Week 11**: Urine production begins
+- **Week 12**: External genitalia distinguishable, ossification centers appear
+
+**Second Trimester (Weeks 13-28)**
+
+| Week | CRL/Weight | Key Developments |
+|------|------------|------------------|
+| 14 | 8 cm | Sex distinguishable externally |
+| 16 | 12 cm / 100g | Quickening possible (multiparas) |
+| 18 | 14 cm / 200g | Vernix caseosa appears |
+| 20 | 16 cm / 300g | Lanugo covers body, quickening (primiparas) |
+| 24 | 21 cm / 600g | Surfactant production begins, viability threshold |
+| 28 | 25 cm / 1000g | Eyes open, can regulate temperature |
+
+> 💎 **Viability**: 24 weeks is the threshold; 50% survival at tertiary centers
+
+**Third Trimester (Weeks 29-40)**
+
+| Week | Weight | Key Developments |
+|------|--------|------------------|
+| 32 | 1800g | Lanugo begins to disappear, nails reach fingertips |
+| 34 | 2100g | Surfactant adequate, less need for NICU |
+| 36 | 2500g | Fat deposition, body becomes rounder |
+| 38 | 3000g | Firm cartilage in ears and nose |
+| 40 | 3400g | Term, ready for extrauterine life |
+
+## Teratogenic Periods
+
+### Critical vs. Sensitive Periods
+
+- **All-or-none period** (weeks 1-2): Teratogen causes death or no effect
+- **Embryonic period** (weeks 3-8): Maximum teratogenic risk (organogenesis)
+- **Fetal period** (weeks 9-40): Growth/functional defects, less structural malformation
+
+### Organ-Specific Critical Periods
+
+| Organ System | Critical Period | Common Defects |
+|--------------|-----------------|----------------|
+| CNS | Week 3-16 (continues) | NTDs, microcephaly, intellectual disability |
+| Heart | Week 3-8 | Septal defects, conotruncal anomalies |
+| Limbs | Week 4-8 | Limb reduction, phocomelia |
+| Eyes | Week 4-9 | Microphthalmia, cataracts |
+| Ears | Week 4-12 | Deafness |
+| Palate | Week 6-9 | Cleft palate |
+| External genitalia | Week 7-12 | Ambiguous genitalia |
+
+## Placental Development
+
+### Formation
+- **Week 3**: Primary villi (trophoblast only)
+- **Week 4**: Secondary villi (mesoderm core)
+- **Week 5**: Tertiary villi (blood vessels present)
+
+### Mature Placenta (Term)
+- Weight: 450-600g (1/6 of fetal weight)
+- Diameter: 15-20 cm
+- Thickness: 2-3 cm
+- 15-20 cotyledons
+
+### Functions
+1. **Gas exchange**: O₂ to fetus, CO₂ to mother
+2. **Nutrition**: Glucose, amino acids, fatty acids
+3. **Excretion**: Waste products to maternal circulation
+4. **Hormone production**: hCG, hPL, progesterone, estrogens
+5. **Immunological barrier**: Transfers IgG (passive immunity)
+
+> 💎 **High Yield**: Only IgG crosses placenta (passive immunity); peaks at 32-34 weeks
+
+## Amniotic Fluid
+
+### Production
+- **Early pregnancy**: Transudation from fetal skin, placenta
+- **Second half**: Mainly fetal urine (500-700 mL/day at term)
+
+### Removal
+- Fetal swallowing (500 mL/day)
+- Intramembranous absorption
+
+### Normal Volume
+- **20 weeks**: 400 mL
+- **34 weeks**: 1000 mL (peak)
+- **40 weeks**: 800 mL
+- **Post-term**: Declines
+
+### Clinical Significance
+
+| Condition | AFI | Causes |
+|-----------|-----|--------|
+| Oligohydramnios | <5 cm | IUGR, renal agenesis, PROM, post-term |
+| Polyhydramnios | >25 cm | GDM, hydrops, GI obstruction, anencephaly |
+
+> 📌 **Potter Sequence**: Oligohydramnios → pulmonary hypoplasia, limb deformities, facial compression`,
+      keyPoints: [
+        'Neural tube closes by day 28 - folic acid needed pre-conception',
+        'Organogenesis complete by week 8 - maximum teratogenic risk',
+        'Viability threshold: 24 weeks (surfactant production begins)',
+        'Only IgG crosses placenta (passive immunity)',
+        'Amniotic fluid: mainly fetal urine after mid-pregnancy',
+        'Oligohydramnios → Potter sequence (pulmonary hypoplasia)'
+      ],
+      examPrep: {
+        summary: `**Fetal Development - Quick Review**
+
+🔬 **Fertilization**: Day 0 in ampulla → Blastocyst day 5 → Implantation day 6-7
+
+🧬 **Gastrulation** (Week 3): 3 germ layers - Ecto, Meso, Endoderm
+
+🧠 **Neural Tube Closure**: Cranial day 25, Caudal day 27
+
+❤️ **Heart**: Beats day 22, chambers form week 5-8
+
+👶 **Organogenesis**: Complete by week 8
+
+🎯 **Viability**: 24 weeks (surfactant begins)
+
+💧 **AFI Normal**: 5-25 cm`,
+        mnemonics: [
+          'Germ layers: "ExMEn" - Ectoderm (skin/nerves), Mesoderm (muscle), Endoderm (gut)',
+          'NTD closure: "25 for head, 27 for tail" (days)',
+          'POTTER: Pulmonary hypoplasia, Oligohydramnios (cause), Twisted face, limbs, Extremely dry skin, Renal agenesis'
+        ],
+        highYield: [
+          'All-or-none phenomenon: weeks 1-2',
+          'Maximum teratogenic risk: weeks 3-8 (organogenesis)',
+          'CRL most accurate for dating: 7-13 weeks',
+          'hCG detectable: day 8-10 post-fertilization',
+          'Surfactant production: begins 24 weeks, adequate by 34 weeks'
+        ],
+        commonMCQs: [
+          'Neural tube closure timing: Cranial day 25, Caudal day 27',
+          'Viability threshold: 24 weeks',
+          'Only immunoglobulin crossing placenta: IgG',
+          'AFI in oligohydramnios: <5 cm',
+          'Maximum teratogenic period: 3-8 weeks (embryonic)'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 7', chapterTitle: 'Embryogenesis and Fetal Development' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 4', chapterTitle: 'Embryology of Fetus' }
+      ],
+      retrievalCards: [
+        { id: 'fd-1', question: 'When does the neural tube close?', answer: 'Cranial neuropore: day 25; Caudal neuropore: day 27', difficulty: 2 },
+        { id: 'fd-2', question: 'What is the viability threshold and why?', answer: '24 weeks - surfactant production begins, allowing lung function', difficulty: 2 },
+        { id: 'fd-3', question: 'Which immunoglobulin crosses the placenta?', answer: 'IgG only - provides passive immunity to fetus', difficulty: 1 },
+        { id: 'fd-4', question: 'What is the main source of amniotic fluid after mid-pregnancy?', answer: 'Fetal urine (500-700 mL/day at term)', difficulty: 2 },
+        { id: 'fd-5', question: 'What is Potter sequence?', answer: 'Oligohydramnios → pulmonary hypoplasia, limb deformities, facial compression (often from renal agenesis)', difficulty: 3 },
+        { id: 'fd-6', question: 'By what week is organogenesis complete?', answer: 'Week 8 - all organ systems present in rudimentary form', difficulty: 1 },
+        { id: 'fd-7', question: 'What are the three germ layers and their key derivatives?', answer: 'Ectoderm (CNS, skin), Mesoderm (muscle, bone, heart, kidneys), Endoderm (GI, lungs, liver)', difficulty: 2 },
+        { id: 'fd-8', question: 'When does hCG become detectable?', answer: 'Day 8-10 post-fertilization (produced by syncytiotrophoblast)', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'fd-case-1',
+          title: 'Neural Tube Defect Prevention',
+          presentation: 'A 28-year-old woman with epilepsy on valproate wishes to conceive. She asks about folic acid supplementation.',
+          questions: [
+            { question: 'What dose of folic acid should she take?', answer: 'High-dose 5 mg/day (not 400 mcg) due to antiepileptic medication' },
+            { question: 'When should supplementation begin?', answer: 'At least 1-3 months BEFORE conception and continue through first 12 weeks' },
+            { question: 'Why is timing critical?', answer: 'Neural tube closes by day 28 - most women dont know they\'re pregnant by then' }
+          ],
+          keyLearning: [
+            'High-dose folic acid (5 mg) for: previous NTD, antiepileptics, diabetes',
+            'Start pre-conception - neural tube closes before missed period',
+            'Valproate has 1-2% risk of NTD (highest of antiepileptics)'
+          ],
+          difficulty: 3
+        },
+        {
+          id: 'fd-case-2',
+          title: 'Teratogenic Exposure',
+          presentation: 'A 30-year-old woman discovers she is pregnant at 7 weeks. She took isotretinoin (Accutane) for acne until 2 weeks ago.',
+          questions: [
+            { question: 'What is the teratogenic risk?', answer: 'High - isotretinoin is Category X. Exposure during organogenesis (weeks 3-8) causes CNS, cardiac, craniofacial defects' },
+            { question: 'What investigations are needed?', answer: 'Detailed anomaly scan at 18-20 weeks, fetal echocardiography, genetic counseling' },
+            { question: 'What is the risk of major malformation?', answer: 'Approximately 25-30% with first trimester exposure' }
+          ],
+          keyLearning: [
+            'Isotretinoin is highly teratogenic - requires two forms of contraception',
+            'Must be stopped 1 month before conception',
+            'Causes: microtia, conotruncal cardiac defects, thymic hypoplasia, CNS anomalies'
+          ],
+          difficulty: 4
+        }
+      ]
+    },
+    prerequisites: [],
+    relatedTopics: ['fetal-anomalies', 'first-trimester-screening', 'antenatal-care'],
+    difficulty: 2,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 60,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // ANTENATAL SCREENING - COMBINED TEST
+  // =============================================================================
+  {
+    id: 'first-trimester-screening',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'First Trimester Screening',
+    slug: 'first-trimester-screening',
+    description: 'Combined test, NT measurement, and early aneuploidy screening',
+    content: {
+      concept: `# First Trimester Screening
+
+## Overview
+
+First trimester screening (11-13+6 weeks) combines ultrasound markers with biochemistry to calculate aneuploidy risk. It is a **screening test** (not diagnostic).
+
+## Combined Test Components
+
+### 1. Nuchal Translucency (NT)
+
+**Definition**: Subcutaneous fluid collection at the back of the fetal neck
+
+**Measurement Criteria**:
+- Gestational age: 11+0 to 13+6 weeks
+- CRL: 45-84 mm
+- Mid-sagittal plane, fetal profile visible
+- Measure widest thickness, perpendicular to fetal long axis
+- Calipers placed ON the lines (inner-to-inner)
+
+**Normal Values**:
+- 95th percentile increases with CRL
+- At CRL 45 mm: 95th percentile = 2.1 mm
+- At CRL 84 mm: 95th percentile = 2.7 mm
+
+> 💎 **High Yield**: NT >3.5 mm = high risk for aneuploidy AND cardiac defects (offer echo regardless of karyotype)
+
+**Causes of Increased NT**:
+
+| Category | Examples |
+|----------|----------|
+| Chromosomal | Trisomy 21, 18, 13; Turner syndrome; Triploidy |
+| Cardiac defects | Septal defects, coarctation, hypoplastic left heart |
+| Genetic syndromes | Noonan syndrome, Smith-Lemli-Opitz |
+| Other | Diaphragmatic hernia, skeletal dysplasia |
+
+### 2. Additional Ultrasound Markers
+
+**Nasal Bone**
+- Absent in 60-70% of T21 fetuses
+- Absent in only 1-3% of euploid fetuses
+- Adds to detection rate when combined with NT
+
+**Ductus Venosus**
+- Absent or reversed a-wave suggests aneuploidy or cardiac defect
+- Normal: forward flow throughout cardiac cycle
+
+**Tricuspid Regurgitation**
+- Present in 55% of T21 (vs 1% euploid)
+- Measured in apical four-chamber view
+
+### 3. Biochemical Markers
+
+**PAPP-A (Pregnancy-Associated Plasma Protein A)**
+- Produced by syncytiotrophoblast
+- LOW in T21, T18, T13
+
+**Free β-hCG (or total hCG)**
+- HIGH in T21
+- LOW in T18, T13
+
+| Condition | PAPP-A | β-hCG |
+|-----------|--------|-------|
+| Trisomy 21 (Down) | ↓ | ↑ |
+| Trisomy 18 (Edwards) | ↓ | ↓ |
+| Trisomy 13 (Patau) | ↓ | ↓ |
+| Triploidy (type I) | ↓ | ↑↑ |
+| Triploidy (type II) | ↓↓ | ↓ |
+
+> 📌 **Remember**: "Down = Up" (β-hCG is UP in Down syndrome)
+
+### Combined Test Performance
+
+| Parameter | Value |
+|-----------|-------|
+| Detection rate for T21 | 85-90% |
+| False positive rate | 5% |
+| Optimal timing | 11-13+6 weeks |
+
+## Risk Calculation
+
+### Method
+Risk = Background risk × Likelihood ratios (NT + biochemistry)
+
+**Background Risk Factors**:
+- Maternal age (main factor)
+- Previous affected pregnancy
+- Gestational age at delivery
+
+### Risk Thresholds
+
+| Risk Level | Risk | Action |
+|------------|------|--------|
+| High risk | >1:100 | Offer CVS/Amniocentesis |
+| Intermediate | 1:100 - 1:1000 | Offer NIPT or invasive testing |
+| Low risk | <1:1000 | Routine care |
+
+## Additional First Trimester Findings
+
+### Early Anomaly Scan Components
+- **Crown-rump length** (dating)
+- **Chorionicity** in multiple pregnancy
+- **Uterus and adnexa**
+- **Fetal number and viability**
+
+### First Trimester Anomalies Detectable
+
+| Anomaly | Detection Rate |
+|---------|----------------|
+| Anencephaly | >95% |
+| Major abdominal wall defects | >95% |
+| Major limb abnormalities | 50-60% |
+| Megacystis (bladder >7mm) | >90% |
+
+> 💎 **High Yield**: Anencephaly diagnosed by absent calvarium - 100% lethal, offer termination
+
+## Quality Assurance
+
+### FMF Certification
+- Nuchal Translucency must be measured by certified operators
+- Annual audit of measurements
+- Standardized technique ensures accuracy
+
+### Reporting
+- Report should include:
+  - NT measurement (mm and MoM)
+  - Biochemistry (PAPP-A, β-hCG as MoM)
+  - Combined risk for T21, T18, T13
+  - Recommendation based on risk`,
+      keyPoints: [
+        'Combined test = NT + PAPP-A + β-hCG + maternal age (11-13+6 weeks)',
+        'Detection rate 85-90% for Down syndrome at 5% FPR',
+        'NT >3.5 mm needs cardiac evaluation regardless of karyotype',
+        'Down syndrome: PAPP-A ↓, β-hCG ↑ ("Down = hCG Up")',
+        'Edwards/Patau: Both PAPP-A and β-hCG decreased'
+      ],
+      examPrep: {
+        summary: `**First Trimester Screening - Quick Review**
+
+⏰ **Timing**: 11-13+6 weeks (CRL 45-84 mm)
+
+🔬 **Components**: NT + PAPP-A + free β-hCG + maternal age
+
+📊 **Detection**: 85-90% for T21 at 5% FPR
+
+🔢 **Markers in T21**: PAPP-A ↓, β-hCG ↑
+
+📏 **NT cutoff**: >3.5 mm = offer echo + karyotype
+
+⚠️ **Risk thresholds**: 
+- >1:100 → Invasive testing
+- 1:100-1:1000 → NIPT or invasive
+- <1:1000 → Routine care`,
+        mnemonics: [
+          'Combined test timing: "11-13+6" like a lucky number',
+          '"Down = hCG Up" (β-hCG elevated in Down syndrome)',
+          'Edwards/Patau = Everything Down (both markers low)'
+        ],
+        highYield: [
+          'NT measurement requires FMF certification',
+          'Absent nasal bone: 60-70% of T21 vs 1-3% euploid',
+          'NT >3.5 mm: screen for cardiac defects even if normal karyotype',
+          'Low PAPP-A also associated with: preeclampsia, IUGR, stillbirth'
+        ],
+        commonMCQs: [
+          'Best timing for NT measurement: 11-13+6 weeks',
+          'Detection rate of combined test for T21: 85-90%',
+          'Biochemical pattern in Down syndrome: Low PAPP-A, High β-hCG',
+          'CRL range for NT measurement: 45-84 mm'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 14', chapterTitle: 'Prenatal Diagnosis' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 8', chapterTitle: 'Antenatal Screening' }
+      ],
+      retrievalCards: [
+        { id: 'fts-1', question: 'What are the components of the combined first trimester screening test?', answer: 'NT + PAPP-A + free β-hCG + maternal age', difficulty: 1 },
+        { id: 'fts-2', question: 'What is the detection rate of combined test for Down syndrome?', answer: '85-90% at 5% false positive rate', difficulty: 2 },
+        { id: 'fts-3', question: 'What is the biochemical pattern in Trisomy 21?', answer: 'PAPP-A decreased, β-hCG increased', difficulty: 2 },
+        { id: 'fts-4', question: 'What NT cutoff warrants cardiac evaluation?', answer: 'NT >3.5 mm (associated with cardiac defects even with normal karyotype)', difficulty: 2 },
+        { id: 'fts-5', question: 'What CRL range is acceptable for NT measurement?', answer: '45-84 mm (corresponding to 11-13+6 weeks)', difficulty: 2 },
+        { id: 'fts-6', question: 'What is the significance of absent nasal bone at first trimester scan?', answer: 'Present in 60-70% of T21 fetuses vs only 1-3% of euploid fetuses - increases T21 risk', difficulty: 3 }
+      ],
+      cases: [
+        {
+          id: 'fts-case-1',
+          title: 'High-Risk Combined Test',
+          presentation: 'A 38-year-old G2P1 has combined screening at 12 weeks showing NT 4.2 mm, PAPP-A 0.3 MoM, β-hCG 2.8 MoM. Combined risk for Down syndrome is 1:50.',
+          questions: [
+            { question: 'What is the next step?', answer: 'Offer invasive diagnostic testing (CVS now, or amniocentesis after 15 weeks) vs NIPT' },
+            { question: 'Why is NT elevated concerning beyond aneuploidy?', answer: 'NT >3.5 mm associated with cardiac defects - recommend fetal echo at 18-22 weeks regardless of karyotype' },
+            { question: 'If patient chooses NIPT and it is positive, what next?', answer: 'NIPT is still a screening test - confirm with invasive testing (amniocentesis) before any definitive action' }
+          ],
+          keyLearning: [
+            'Markedly elevated NT (>3.5mm) needs cardiac evaluation regardless of karyotype',
+            'NIPT positive still requires confirmatory invasive testing',
+            'Biochemical pattern (low PAPP-A, high β-hCG) classic for Down syndrome'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['fetal-development'],
+    relatedTopics: ['second-trimester-screening', 'nipt', 'amniocentesis', 'cvs'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 45,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // SECOND TRIMESTER SCREENING (QUADRUPLE TEST)
+  // =============================================================================
+  {
+    id: 'second-trimester-screening',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Second Trimester Screening',
+    slug: 'second-trimester-screening',
+    description: 'Quadruple test, soft markers, and integrated screening',
+    content: {
+      concept: `# Second Trimester Screening
+
+## Quadruple Test
+
+### Overview
+Second trimester biochemical screening performed at **15-20 weeks** (optimal: 16-18 weeks).
+
+### Components
+
+1. **AFP (Alpha-fetoprotein)**
+   - Produced by fetal liver and yolk sac
+   - Peaks at 12-14 weeks in fetal serum
+   - Peaks at 32 weeks in maternal serum
+
+2. **hCG (Human Chorionic Gonadotropin)**
+   - Total or free β-hCG
+   - Produced by syncytiotrophoblast
+
+3. **uE3 (Unconjugated Estriol)**
+   - Produced by fetal adrenal-placental unit
+   - Requires functioning fetal adrenal glands
+
+4. **Inhibin A**
+   - Produced by placenta and ovaries
+   - Added to triple test to create quadruple test
+
+### Marker Patterns
+
+| Condition | AFP | hCG | uE3 | Inhibin A |
+|-----------|-----|-----|-----|-----------|
+| **Down syndrome (T21)** | ↓ | ↑ | ↓ | ↑ |
+| **Edwards (T18)** | ↓ | ↓ | ↓ | Normal |
+| **Neural tube defects** | ↑↑ | Normal | Normal | Normal |
+| **Abdominal wall defects** | ↑↑ | Normal | Normal | Normal |
+| **Smith-Lemli-Opitz** | ↓ | ↓ | ↓↓ | Normal |
+| **Steroid sulfatase deficiency** | Normal | Normal | ↓↓ | Normal |
+
+> 💎 **High Yield Mnemonic for T21**: "Down syndrome = hCG and Inhibin UP, everything else DOWN"
+
+### Performance
+
+| Test | Detection Rate (T21) | False Positive Rate |
+|------|---------------------|---------------------|
+| Triple test | 65-70% | 5% |
+| Quadruple test | 75-80% | 5% |
+
+## AFP Interpretation
+
+### Elevated AFP (>2.5 MoM)
+
+**Neural Tube Defects**:
+- Open spina bifida: AFP 4-5x normal
+- Anencephaly: AFP 8-10x normal
+
+**Other Causes**:
+- Wrong dates (underestimated GA)
+- Multiple pregnancy
+- Fetal demise
+- Abdominal wall defects (gastroschisis, omphalocele)
+- Placental abnormalities
+- Fetal skin defects (epidermolysis bullosa)
+- Congenital nephrosis (Finnish type)
+
+> 📌 **Next step for elevated AFP**: Repeat ultrasound for dating and anatomy
+
+### Low AFP
+
+- Down syndrome (T21)
+- Edwards syndrome (T18)
+- Overestimated gestational age
+- Molar pregnancy
+
+## Ultrasound Soft Markers
+
+### Common Soft Markers
+
+| Marker | Sensitivity for T21 | Likelihood Ratio |
+|--------|--------------------|--------------------|
+| Thickened nuchal fold (>6mm) | 40% | 17 |
+| Absent/hypoplastic nasal bone | 60% | 23-132 |
+| Short femur | 20-30% | 2.2 |
+| Short humerus | 30-40% | 7.5 |
+| Echogenic bowel | 15% | 6.7 |
+| Echogenic intracardiac focus (EIF) | 25% | 1.8 |
+| Renal pyelectasis | 15% | 1.9 |
+| Choroid plexus cyst | 1% (T18 marker) | 0.99 (isolated) |
+
+> 💎 **High Yield**: Isolated choroid plexus cyst = NO increased T21 risk (associated with T18)
+
+### Interpretation Approach
+
+**Single Isolated Soft Marker** (especially EIF or CPC):
+- Usually benign
+- Consider combined with prior screening result
+- May not warrant invasive testing alone
+
+**Multiple Soft Markers or Major Markers**:
+- Significantly increases risk
+- Recommend NIPT or invasive testing
+- Thickened nuchal fold is the strongest marker
+
+## Integrated and Contingent Screening
+
+### Integrated Screening
+First trimester (NT + PAPP-A) + Second trimester (Quad) = Single combined risk
+
+| Approach | Detection Rate | FPR |
+|----------|---------------|-----|
+| Integrated (combined 1st + 2nd) | 94-96% | 5% |
+| Sequential independent | 85-90% + 75-80% | Higher cumulative |
+
+### Contingent Screening
+- First trimester screening performed
+- Based on risk:
+  - High risk (>1:50): Immediate diagnostic testing
+  - Intermediate (1:50-1:1000): Add second trimester
+  - Low risk (<1:1000): No further screening
+
+## When Combined Test Not Available
+
+If patient presents after 14 weeks without first trimester screening:
+1. **Quadruple test** (15-20 weeks)
+2. **NIPT** (any time after 10 weeks)
+3. **Anomaly scan** with soft marker assessment
+4. **Genetic counseling** about options`,
+      keyPoints: [
+        'Quadruple test = AFP + hCG + uE3 + Inhibin A (15-20 weeks)',
+        'T21: AFP↓, hCG↑, uE3↓, Inhibin A↑',
+        'Elevated AFP: NTDs, abdominal wall defects, wrong dates',
+        'Thickened nuchal fold (>6mm) is strongest second trimester soft marker',
+        'Isolated choroid plexus cyst: associated with T18, not T21'
+      ],
+      examPrep: {
+        summary: `**Second Trimester Screening - Quick Review**
+
+⏰ **Timing**: 15-20 weeks (optimal 16-18)
+
+🔬 **Quad Test**: AFP + hCG + uE3 + Inhibin A
+
+📊 **Detection**: 75-80% for T21 at 5% FPR
+
+🔢 **T21 Pattern**: AFP↓, hCG↑, uE3↓, Inhibin A↑
+
+⬆️ **High AFP**: NTDs, gastroschisis, wrong dates
+
+📏 **Soft Markers**: Thickened nuchal fold >6mm is strongest`,
+        mnemonics: [
+          'Down quad pattern: "hCG and Inhibin Go UP, AFP and Estriol Go DOWN"',
+          'Elevated AFP = "Open things" (open NTDs, open abdominal wall)',
+          'T18 = Everything Low, CPC (choroid plexus cyst) is the clue'
+        ],
+        highYield: [
+          'Integrated screening has 94-96% detection rate',
+          'Echogenic bowel differential: T21, CF, CMV, swallowed blood',
+          'Nuchal fold >6mm: 17x increased risk for T21',
+          'Smith-Lemli-Opitz: very low estriol (sterol synthesis defect)'
+        ],
+        commonMCQs: [
+          'Quad test pattern in Down syndrome: AFP↓, hCG↑, uE3↓, Inhibin A↑',
+          'Most elevated AFP seen in: Anencephaly (8-10x normal)',
+          'Strongest second trimester soft marker: Thickened nuchal fold',
+          'Choroid plexus cyst is marker for: Trisomy 18'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 14', chapterTitle: 'Prenatal Diagnosis' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 8', chapterTitle: 'Antenatal Care' }
+      ],
+      retrievalCards: [
+        { id: 'sts-1', question: 'What are the components of the quadruple test?', answer: 'AFP, hCG, uE3 (unconjugated estriol), Inhibin A', difficulty: 1 },
+        { id: 'sts-2', question: 'What is the quad test pattern in Down syndrome?', answer: 'AFP↓, hCG↑, uE3↓, Inhibin A↑', difficulty: 2 },
+        { id: 'sts-3', question: 'What conditions cause elevated maternal serum AFP?', answer: 'Open NTDs, anencephaly, abdominal wall defects, multiple pregnancy, fetal demise, wrong dates', difficulty: 2 },
+        { id: 'sts-4', question: 'What is the detection rate of quadruple test for Down syndrome?', answer: '75-80% at 5% false positive rate', difficulty: 2 },
+        { id: 'sts-5', question: 'Which soft marker has the highest likelihood ratio for Down syndrome?', answer: 'Thickened nuchal fold >6mm (LR 17) and absent nasal bone (LR up to 132)', difficulty: 3 },
+        { id: 'sts-6', question: 'What is the significance of isolated choroid plexus cyst?', answer: 'Associated with Trisomy 18 (not T21); isolated CPC in low-risk patient usually benign', difficulty: 3 }
+      ],
+      cases: [
+        {
+          id: 'sts-case-1',
+          title: 'Elevated AFP',
+          presentation: 'A 32-year-old G1P0 at 17 weeks has quad screen showing AFP 4.5 MoM, with normal hCG, uE3, and inhibin. Ultrasound confirms singleton with dates matching.',
+          questions: [
+            { question: 'What is the differential diagnosis?', answer: 'Open neural tube defect, abdominal wall defect, other open fetal defects, placental causes' },
+            { question: 'What is the next step?', answer: 'Detailed anatomy ultrasound focusing on spine (spina bifida), cranium (anencephaly), and abdominal wall (gastroschisis/omphalocele)' },
+            { question: 'If ultrasound is normal, what is considered?', answer: 'Amniocentesis for amniotic fluid AFP and acetylcholinesterase; also associated with adverse outcomes (preterm, preeclampsia, abruption)' }
+          ],
+          keyLearning: [
+            'Very high AFP (>4 MoM) strongly suggests open fetal defect',
+            'Normal ultrasound with elevated AFP: consider amnio for confirmation',
+            'Elevated AFP with normal fetal anatomy: monitor for adverse pregnancy outcomes'
+          ],
+          difficulty: 3
+        },
+        {
+          id: 'sts-case-2',
+          title: 'Multiple Soft Markers',
+          presentation: 'Anatomy scan at 20 weeks shows echogenic intracardiac focus, echogenic bowel, and short femur. No major structural anomalies.',
+          questions: [
+            { question: 'What is the significance?', answer: 'Multiple soft markers significantly increase aneuploidy risk - recommend genetic counseling and offer NIPT or amniocentesis' },
+            { question: 'What else should echogenic bowel prompt you to consider?', answer: 'Cystic fibrosis (offer CF carrier testing), CMV infection (offer serology), swallowed blood' },
+            { question: 'If amniocentesis is normal for chromosomes, what follow-up?', answer: 'CF testing on amniotic fluid, CMV PCR, serial growth scans' }
+          ],
+          keyLearning: [
+            'Multiple soft markers = higher aneuploidy risk than single markers',
+            'Echogenic bowel differential: T21, CF, CMV, swallowed blood',
+            'Always consider non-chromosomal causes for each soft marker'
+          ],
+          difficulty: 4
+        }
+      ]
+    },
+    prerequisites: ['first-trimester-screening'],
+    relatedTopics: ['nipt', 'fetal-anomaly-scan', 'amniocentesis'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 40,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // NON-INVASIVE PRENATAL TESTING (NIPT)
+  // =============================================================================
+  {
+    id: 'nipt',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Non-Invasive Prenatal Testing (NIPT)',
+    slug: 'nipt',
+    description: 'Cell-free DNA screening for aneuploidy',
+    content: {
+      concept: `# Non-Invasive Prenatal Testing (NIPT)
+
+## Overview
+
+NIPT analyzes cell-free fetal DNA (cffDNA) circulating in maternal blood to screen for chromosomal abnormalities. It is the most sensitive **screening test** available but is NOT diagnostic.
+
+## Biology of Cell-Free DNA
+
+### Source
+- Primarily from placental trophoblast (not fetal cells)
+- Released by apoptosis of syncytiotrophoblast
+- Therefore detects **placental** genetics (usually same as fetus)
+
+### Characteristics
+- Detectable from ~4-5 weeks
+- Sufficient for testing from **10 weeks**
+- Fetal fraction: 3-13% of total cfDNA (increases with GA)
+- Half-life: ~16 minutes (cleared rapidly after delivery)
+
+> 💎 **High Yield**: NIPT tests PLACENTAL DNA, not fetal DNA directly. This explains discordant results.
+
+### Minimum Fetal Fraction
+- Most labs require **>4%** fetal fraction
+- Low fetal fraction causes:
+  - Early gestational age
+  - High maternal BMI (adipose tissue releases maternal cfDNA)
+  - Aneuploidy (especially T13, T18)
+
+## What NIPT Screens For
+
+### Standard Panel
+| Condition | Detection Rate | False Positive Rate |
+|-----------|---------------|---------------------|
+| Trisomy 21 (Down) | >99% | 0.04% |
+| Trisomy 18 (Edwards) | 97-99% | 0.04% |
+| Trisomy 13 (Patau) | 87-99% | 0.04% |
+| Sex chromosomes | 90-96% | 0.3% |
+
+### Extended Panels (Available in Some Labs)
+- Microdeletions (22q11.2, 1p36, etc.)
+- Other aneuploidies (T16, T22)
+- Genome-wide abnormalities
+
+> 📌 **Important**: Microdeletion screening has LOWER positive predictive value - more false positives
+
+## Positive Predictive Value (PPV)
+
+NIPT has excellent sensitivity but PPV depends on **prior risk**:
+
+| Population | Prior Risk T21 | PPV for Positive NIPT |
+|------------|---------------|----------------------|
+| High-risk (age 40) | 1:100 | 91% |
+| Average-risk (age 30) | 1:1000 | 50% |
+| Low-risk (age 25) | 1:1500 | 33% |
+
+> 💎 **Critical Point**: Positive NIPT in low-risk population = ~50% chance of TRUE positive. ALWAYS confirm with invasive testing.
+
+## Causes of False Results
+
+### False Positives
+1. **Confined placental mosaicism (CPM)** - Most common
+   - Placenta aneuploid, fetus euploid
+   - Occurs in 1-2% of CVS
+
+2. **Vanishing twin**
+   - Demised twin's placental DNA still present
+   - May persist for weeks
+
+3. **Maternal chromosome abnormality**
+   - Turner mosaicism
+   - Maternal malignancy (rare)
+
+### False Negatives
+1. Low fetal fraction
+2. True fetal mosaicism (low-level)
+3. Laboratory error
+
+### No-Call Results
+- Insufficient fetal fraction
+- Repeat draw in 1-2 weeks
+- Fetal fraction <4% associated with higher aneuploidy risk
+
+## Indications for NIPT
+
+### ACOG/SMFM Guidelines
+- **Universal option**: Can be offered to ALL pregnant women
+- **Particularly useful when**:
+  - Advanced maternal age (≥35)
+  - Abnormal serum screening
+  - Ultrasound finding suggesting aneuploidy
+  - History of previous aneuploidy
+  - Known parental chromosomal abnormality
+
+### When NOT to Use NIPT Alone
+- Multiple gestations (limited data, lower detection)
+- High suspicion of structural anomaly (need invasive)
+- Known maternal chromosomal abnormality
+
+## NIPT vs Traditional Screening
+
+| Feature | Combined Test | NIPT |
+|---------|--------------|------|
+| Timing | 11-13+6 weeks | ≥10 weeks |
+| Detection T21 | 85-90% | >99% |
+| False positive rate | 5% | 0.04% |
+| Cost | Lower | Higher |
+| Additional info | NT, early anatomy | None |
+| Turnaround | Same day-1 week | 1-2 weeks |
+
+## Counseling Points
+
+### Pre-test Counseling
+1. NIPT is a **screening test** - not diagnostic
+2. Positive result requires **confirmation** with CVS/amnio
+3. Cannot detect all genetic conditions
+4. May reveal incidental findings (sex chromosome abnormalities)
+5. Possibility of no-result (need redraw or invasive testing)
+
+### Post-test (Positive Result)
+1. Do not make decisions based on NIPT alone
+2. Offer confirmatory invasive testing
+3. Genetic counseling
+4. PPV varies by prior risk and condition
+5. Support and time for decision-making`,
+      keyPoints: [
+        'NIPT detects placental cfDNA, not fetal DNA directly',
+        'Detection rate >99% for T21, but still a SCREENING test',
+        'Positive NIPT requires confirmation with CVS/amniocentesis',
+        'PPV depends on prior risk - lower in low-risk women',
+        'Common false positive cause: confined placental mosaicism'
+      ],
+      examPrep: {
+        summary: `**NIPT - Quick Review**
+
+🔬 **Source**: Placental cell-free DNA (not fetal cells)
+
+⏰ **Timing**: ≥10 weeks (need adequate fetal fraction)
+
+📊 **Detection T21**: >99% (best screening test available)
+
+⚠️ **False Positive Rate**: 0.04% (but PPV varies!)
+
+🎯 **Remember**: SCREENING test - always confirm positive with invasive testing
+
+❌ **False positives from**: CPM, vanishing twin, maternal abnormality`,
+        mnemonics: [
+          'NIPT = Not Invasive, Placenta Tested',
+          'CPM = Common cause of Positive that is Misleading',
+          'Low fetal fraction: "Fat mothers, Early testing, Aneuploid babies"'
+        ],
+        highYield: [
+          'Minimum fetal fraction needed: >4%',
+          'High BMI reduces fetal fraction (more maternal cfDNA)',
+          'Positive NIPT in average-risk woman: ~50% PPV',
+          'Confined placental mosaicism is the most common cause of false positive',
+          'No-call result may indicate higher aneuploidy risk'
+        ],
+        commonMCQs: [
+          'Source of cell-free DNA in NIPT: Placental trophoblast',
+          'Detection rate of NIPT for T21: >99%',
+          'Most common cause of false positive NIPT: Confined placental mosaicism',
+          'NIPT is a: Screening test (requires confirmation if positive)'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 14', chapterTitle: 'Prenatal Diagnosis' }
+      ],
+      retrievalCards: [
+        { id: 'nipt-1', question: 'What is the source of cell-free DNA analyzed in NIPT?', answer: 'Placental trophoblast cells (not fetal cells) - released by apoptosis', difficulty: 2 },
+        { id: 'nipt-2', question: 'What is the detection rate of NIPT for Trisomy 21?', answer: '>99%', difficulty: 1 },
+        { id: 'nipt-3', question: 'What is the most common cause of false positive NIPT?', answer: 'Confined placental mosaicism (CPM) - placenta aneuploid, fetus euploid', difficulty: 2 },
+        { id: 'nipt-4', question: 'Why does high maternal BMI affect NIPT accuracy?', answer: 'Adipose tissue releases more maternal cfDNA, reducing fetal fraction below acceptable levels', difficulty: 3 },
+        { id: 'nipt-5', question: 'What should be done after a positive NIPT result?', answer: 'Confirm with invasive diagnostic testing (CVS or amniocentesis) - NIPT is a screening test', difficulty: 2 },
+        { id: 'nipt-6', question: 'What is the earliest gestational age for NIPT?', answer: '10 weeks (need adequate fetal fraction, typically >4%)', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'nipt-case-1',
+          title: 'Positive NIPT in Low-Risk Woman',
+          presentation: 'A healthy 28-year-old G1P0 has NIPT showing high risk for Trisomy 21. Her first trimester combined test was low risk (1:5000). She had no ultrasound abnormalities.',
+          questions: [
+            { question: 'What is the PPV of this positive NIPT?', answer: 'Approximately 30-50% - in low-risk women, positive NIPT has lower PPV due to lower prior probability' },
+            { question: 'What is the next step?', answer: 'Genetic counseling and offer confirmatory amniocentesis. Do NOT make decisions based on NIPT alone.' },
+            { question: 'What could explain a false positive?', answer: 'Confined placental mosaicism, vanishing twin, maternal chromosomal abnormality' }
+          ],
+          keyLearning: [
+            'PPV of NIPT depends on prior risk',
+            'Low-risk woman with positive NIPT: ~50% chance of true positive',
+            'Always confirm with invasive testing before definitive management'
+          ],
+          difficulty: 3
+        },
+        {
+          id: 'nipt-case-2',
+          title: 'No-Call NIPT Result',
+          presentation: 'A 32-year-old G2P1 with BMI 42 has NIPT at 12 weeks. The lab reports "no result due to low fetal fraction" (3.2%).',
+          questions: [
+            { question: 'Why did this occur?', answer: 'High BMI increases maternal cfDNA from adipose tissue, diluting fetal fraction below the 4% threshold' },
+            { question: 'What are the options?', answer: '1) Repeat NIPT in 2 weeks (fetal fraction increases with GA), 2) Invasive testing, 3) Serum screening' },
+            { question: 'Is there any additional significance to no-call results?', answer: 'Yes - no-call results are associated with higher aneuploidy risk, particularly T13, T18' }
+          ],
+          keyLearning: [
+            'High BMI is a common cause of low fetal fraction',
+            'No-call results have increased aneuploidy risk',
+            'Can repeat in 2 weeks as fetal fraction increases with gestational age'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['first-trimester-screening', 'second-trimester-screening'],
+    relatedTopics: ['amniocentesis', 'cvs', 'chromosomal-abnormalities'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 35,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // FETAL ANOMALY SCAN (18-22 WEEKS)
+  // =============================================================================
+  {
+    id: 'fetal-anomaly-scan',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Fetal Anomaly Scan',
+    slug: 'fetal-anomaly-scan',
+    description: 'Second trimester detailed anatomy scan (18-22 weeks)',
+    content: {
+      concept: `# Fetal Anomaly Scan (18-22 Weeks)
+
+## Overview
+
+The fetal anomaly scan (also called Level II, morphology scan, or mid-trimester scan) is a systematic ultrasound examination performed at **18-22 weeks** to detect structural abnormalities.
+
+## Timing
+
+- **Optimal**: 18-22 weeks
+- Earlier: Some structures not fully developed
+- Later: Fetal position/size may limit visualization
+- **20 weeks**: Often considered ideal
+
+> 💎 **High Yield**: Detection rates vary by anomaly and operator experience. Training and standardization are critical.
+
+## Systematic Approach
+
+### 1. Head and Brain
+
+**Measurements**
+- Biparietal diameter (BPD)
+- Head circumference (HC)
+
+**Structures to Assess**
+
+| Structure | Normal Finding | Abnormal |
+|-----------|---------------|----------|
+| Skull | Intact, oval | Lemon sign (spina bifida), cloverleaf |
+| Cerebral ventricles | <10 mm atrium | Ventriculomegaly >10 mm |
+| Cavum septum pellucidum | Present | Absent (holoprosencephaly, agenesis CC) |
+| Cerebellum | Dumbbell shape | Banana sign (Chiari II), hypoplasia |
+| Cisterna magna | 2-10 mm | Enlarged (Dandy-Walker) |
+| Choroid plexus | Symmetric | Cysts (usually benign, associated T18) |
+
+**Lemon and Banana Signs**
+- **Lemon sign**: Frontal bossing (scalloped frontal bones)
+- **Banana sign**: Curved cerebellum
+- Both suggest open spina bifida with Chiari II malformation
+
+### 2. Face
+
+**Structures**
+- Lips (rule out cleft)
+- Nose
+- Orbits (spacing, lens)
+- Profile (micrognathia, nasal bone)
+
+**Cleft Lip/Palate**
+- Unilateral vs bilateral
+- Lip only vs lip and palate
+- Isolated vs syndromic
+
+### 3. Spine
+
+**Technique**
+- Sagittal: Overall alignment, sacrum
+- Transverse: Each vertebra - three ossification centers forming closed circle
+- Coronal: Parallel lines
+
+**Spina Bifida**
+- Open defect visible on transverse view
+- Skin covering absent
+- Associated findings: Lemon sign, banana sign, ventriculomegaly
+
+### 4. Heart
+
+**Standard Views**
+
+| View | Structures | Abnormalities Detected |
+|------|------------|----------------------|
+| Four-chamber | Atria, ventricles, septum, AV valves | VSD, AVSD, hypoplastic chambers |
+| LVOT (5-chamber) | Left ventricle, aorta | Aortic stenosis, coarctation clues |
+| RVOT (3-vessel) | Right ventricle, pulmonary artery | Pulmonary stenosis, ToF |
+| 3-vessel view | Aorta, PA, SVC | Transposition, coarctation |
+| 3-vessel-trachea | Above + trachea position | Right aortic arch |
+
+**Normal Findings**
+- Heart 1/3 of thorax
+- Apex points left (45° angle)
+- Equal-sized ventricles
+- No significant regurgitation
+
+> 💎 **High Yield**: Four-chamber view detects only 40-50% of cardiac anomalies. Outflow tracts are essential.
+
+### 5. Thorax
+
+- **Lungs**: Homogeneous echogenicity
+- **Diaphragm**: Intact (stomach below, heart above)
+- **CDH** (Congenital Diaphragmatic Hernia): Stomach/bowel in chest
+
+### 6. Abdomen
+
+| Structure | Normal | Abnormal |
+|-----------|--------|----------|
+| Stomach | Left upper quadrant, fluid-filled | Absent (esophageal atresia), right-sided (situs) |
+| Kidneys | Paraspinal, bean-shaped | Absent (agenesis), cystic, dilated pelvis |
+| Bladder | Midline pelvis | Megacystis, absent (BRA) |
+| Cord insertion | Central, 3 vessels | Omphalocele, 2-vessel cord |
+| Bowel | Not dilated | Dilated loops, echogenic |
+
+### 7. Umbilical Cord
+
+**Normal**: 3 vessels (2 arteries, 1 vein)
+
+**Single Umbilical Artery (SUA)**
+- Present in 0.5-1% of pregnancies
+- 20-30% have associated anomalies
+- Most common: Cardiac, renal
+- Isolated SUA: Lower risk, consider detailed scan
+
+### 8. Extremities
+
+- All 4 limbs present
+- 3 segments each (humerus/radius+ulna, femur/tibia+fibula)
+- Hands and feet: 5 digits each
+- Movement and position
+
+**Abnormalities**
+- Absent/shortened limbs (reduction defects)
+- Positional abnormalities (clubfoot, rocker-bottom)
+- Polydactyly, syndactyly
+
+### 9. Placenta and Amniotic Fluid
+
+**Placenta**
+- Location (anterior, posterior, fundal, low-lying)
+- Cord insertion (central, marginal, velamentous)
+- Morphology (succenturiate lobe, abnormal thickness)
+
+**Amniotic Fluid**
+- Normal AFI: 5-25 cm
+- Deepest vertical pocket: 2-8 cm
+
+## Detection Rates by System
+
+| Anomaly | Detection Rate |
+|---------|---------------|
+| Anencephaly | >99% |
+| Spina bifida | 90% |
+| Major cardiac | 50-60% |
+| Diaphragmatic hernia | 60-70% |
+| Gastroschisis | >95% |
+| Renal agenesis | 80-90% |
+| Limb reduction | 80% |
+
+> 📌 Even with expert scanning, some anomalies are not detectable prenatally
+
+## When Findings Are Abnormal
+
+### Isolated Minor Abnormality
+- Document and follow-up
+- May be normal variant
+- Consider soft markers in context
+
+### Major Structural Anomaly
+1. Detailed targeted ultrasound
+2. Fetal echocardiography (if cardiac or marker)
+3. Genetic counseling
+4. Offer invasive testing (amniocentesis)
+5. MRI if needed for brain/spine
+6. Multidisciplinary discussion`,
+      keyPoints: [
+        'Optimal timing: 18-22 weeks (20 weeks ideal)',
+        'Systematic approach: Head → Face → Spine → Heart → Chest → Abdomen → Limbs',
+        'Four-chamber view detects only 40-50% of CHD - outflow tracts essential',
+        'Lemon + Banana signs = open spina bifida',
+        'Single umbilical artery: 20-30% have associated anomalies'
+      ],
+      examPrep: {
+        summary: `**Anomaly Scan - Quick Review**
+
+⏰ **Timing**: 18-22 weeks
+
+🧠 **Brain**: Ventricles <10mm, CSP present, check for lemon/banana
+
+❤️ **Heart**: 4-chamber + LVOT + RVOT + 3VT view
+
+🦴 **Spine**: Sagittal + Transverse + Coronal
+
+👶 **Limbs**: All present, 3 segments, 5 digits each
+
+🔴 **Cord**: 3 vessels (SUA = detailed scan)
+
+💧 **AFI**: Normal 5-25 cm`,
+        mnemonics: [
+          'Lemon + Banana = Spina bifida (Chiari II)',
+          'Heart views: "4-5-3-3VT" (4-chamber, LVOT, RVOT, 3-vessel-trachea)',
+          'Absent CSP: "HACS" - Holoprosencephaly, Agenesis of corpus callosum, Septo-optic dysplasia'
+        ],
+        highYield: [
+          'Ventriculomegaly: atrium >10 mm',
+          'Four-chamber view alone misses 50% of CHD',
+          'Echogenic bowel: T21, CF, CMV, swallowed blood',
+          'Nuchal fold >6mm at 18-22 weeks is strongest T21 soft marker'
+        ],
+        commonMCQs: [
+          'Optimal time for anomaly scan: 18-22 weeks',
+          'Lemon and banana signs indicate: Open spina bifida with Chiari II',
+          'Single umbilical artery most commonly associated with: Cardiac and renal anomalies',
+          'Mild ventriculomegaly definition: Atrial width 10-15 mm'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 10', chapterTitle: 'Fetal Imaging' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 8', chapterTitle: 'Antenatal Care' }
+      ],
+      retrievalCards: [
+        { id: 'fas-1', question: 'What is the optimal timing for anomaly scan?', answer: '18-22 weeks (20 weeks often considered ideal)', difficulty: 1 },
+        { id: 'fas-2', question: 'What do the lemon and banana signs indicate?', answer: 'Open spina bifida with Chiari II malformation', difficulty: 2 },
+        { id: 'fas-3', question: 'What defines ventriculomegaly?', answer: 'Atrial width >10 mm (10-15 mm = mild, >15 mm = severe)', difficulty: 2 },
+        { id: 'fas-4', question: 'What percentage of cardiac anomalies does the 4-chamber view detect?', answer: '40-50% - outflow tract views essential for higher detection', difficulty: 3 },
+        { id: 'fas-5', question: 'What is the significance of single umbilical artery?', answer: '20-30% have associated anomalies (cardiac, renal most common); warrants detailed scan', difficulty: 2 },
+        { id: 'fas-6', question: 'What structure should be visualized to rule out holoprosencephaly?', answer: 'Cavum septum pellucidum (CSP) - absent in holoprosencephaly', difficulty: 3 }
+      ],
+      cases: [
+        {
+          id: 'fas-case-1',
+          title: 'Lemon and Banana Signs',
+          presentation: '20-week anomaly scan shows "lemon-shaped" skull on BPD view and curved cerebellum. Mild ventriculomegaly (12 mm) noted. Spine examination shows a lumbar defect.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'Open spina bifida (myelomeningocele) with Chiari II malformation' },
+            { question: 'What causes these cranial findings?', answer: 'Hindbrain herniation (Chiari II) pulls cerebellum down (banana sign) and alters intracranial pressure (lemon sign)' },
+            { question: 'What are the next steps?', answer: 'Detailed scan, amniocentesis for karyotype and AFP/AChE, MRI for detailed evaluation, multidisciplinary counseling, discuss options including fetal surgery' }
+          ],
+          keyLearning: [
+            'Lemon + Banana = virtually diagnostic of open spina bifida',
+            'Chiari II occurs in 99% of open myelomeningocele',
+            'Fetal surgery (MOMS trial) can improve outcomes in selected cases'
+          ],
+          difficulty: 3
+        },
+        {
+          id: 'fas-case-2',
+          title: 'Echogenic Bowel',
+          presentation: 'At 20-week scan, fetal bowel appears as echogenic as bone. No other abnormalities seen. NT at 12 weeks was normal.',
+          questions: [
+            { question: 'What is the differential diagnosis?', answer: 'Down syndrome, cystic fibrosis, CMV infection, swallowed blood (intraamniotic bleeding), normal variant' },
+            { question: 'What investigations are indicated?', answer: 'CF carrier testing for parents, CMV IgG/IgM, consider amniocentesis for karyotype, CF testing, CMV PCR' },
+            { question: 'If isolated and workup negative, what is the plan?', answer: 'Serial growth scans - associated with IUGR; detailed cardiac evaluation' }
+          ],
+          keyLearning: [
+            'Echogenic bowel = brightness similar to bone',
+            'Important differential: T21, CF, CMV',
+            'Even if isolated, associated with IUGR - follow growth'
+          ],
+          difficulty: 4
+        }
+      ]
+    },
+    prerequisites: ['fetal-development', 'first-trimester-screening'],
+    relatedTopics: ['fetal-anomalies', 'fetal-doppler', 'amniocentesis'],
+    difficulty: 3,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 50,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // IUGR (INTRAUTERINE GROWTH RESTRICTION)
+  // =============================================================================
+  {
+    id: 'iugr',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Intrauterine Growth Restriction',
+    slug: 'iugr',
+    description: 'IUGR types, Doppler assessment, and management',
+    content: {
+      concept: `# Intrauterine Growth Restriction (IUGR)
+
+## Definitions
+
+**Small for Gestational Age (SGA)**: EFW or AC <10th percentile
+- May be constitutionally small (normal) or pathologically small (IUGR)
+
+**Fetal Growth Restriction (FGR/IUGR)**: Failure to reach genetic growth potential
+- Pathological process with risk of adverse outcomes
+- Suggested by abnormal Dopplers, oligohydramnios, or growth trajectory
+
+> 💎 **High Yield**: Not all SGA babies are growth restricted; not all FGR babies are SGA
+
+## Types of IUGR
+
+### Symmetric IUGR (20-30%)
+
+**Characteristics**
+- All measurements proportionally small (HC, AC, FL)
+- Head:Abdominal ratio normal
+- Early onset (first trimester)
+
+**Causes**
+- Chromosomal abnormalities (T21, T18, T13)
+- Congenital infections (TORCH - especially CMV, Rubella)
+- Fetal structural anomalies
+- Severe early-onset placental insufficiency
+- Teratogens
+
+### Asymmetric IUGR (70-80%)
+
+**Characteristics**
+- AC small, HC relatively preserved ("head-sparing")
+- Elevated HC/AC ratio (>1 after 32 weeks abnormal)
+- Late onset (second/third trimester)
+
+**Causes**
+- Placental insufficiency (most common)
+  - Preeclampsia
+  - Chronic hypertension
+  - Antiphospholipid syndrome
+  - Maternal vascular disease
+- Maternal factors
+  - Malnutrition
+  - Smoking, substance abuse
+  - High altitude
+
+> 📌 **Brain-sparing**: Fetus redistributes blood flow to brain at expense of abdominal organs
+
+## Doppler Assessment
+
+### Umbilical Artery Doppler
+
+**Normal**: Low-resistance flow (forward diastolic flow)
+
+**Stages of Deterioration**:
+
+| Stage | Finding | Significance |
+|-------|---------|--------------|
+| 1 | High S/D ratio, elevated PI | Early placental dysfunction |
+| 2 | Absent end-diastolic flow (AEDF) | Severe dysfunction, 50% delivery within 1 week |
+| 3 | Reversed end-diastolic flow (REDF) | Critical, high mortality if undelivered |
+
+> 💎 **High Yield**: AEDF/REDF = Immediate hospitalization, steroids if preterm, delivery planning
+
+### Middle Cerebral Artery (MCA)
+
+**Normal**: High-resistance flow
+
+**Brain-sparing (redistribution)**:
+- MCA PI decreased (low-resistance)
+- Increased blood flow to brain
+- CPR <1 suggests redistribution
+
+**MCA PSV**:
+- Used to detect fetal anemia
+- >1.5 MoM suggests anemia (Rhesus disease, infections)
+
+### Cerebroplacental Ratio (CPR)
+
+**Formula**: MCA PI / UA PI
+
+**Interpretation**:
+| CPR | Significance |
+|-----|--------------|
+| >1 | Normal |
+| <1 | Brain-sparing/redistribution |
+| <1 with abnormal UA | High risk, close surveillance |
+
+### Ductus Venosus (DV)
+
+**Normal**: Forward flow throughout cardiac cycle (positive a-wave)
+
+**Abnormal**:
+- Absent a-wave
+- Reversed a-wave (most ominous)
+
+> 💎 **High Yield**: Reversed DV a-wave = cardiac decompensation, imminent demise if undelivered
+
+## Staging of IUGR (Delphi Classification)
+
+### Early-onset FGR (<32 weeks)
+| Stage | Criteria |
+|-------|----------|
+| Stage I | EFW <3rd centile OR AC <3rd centile OR UA PI >95th |
+| Stage II | AEDF in UA OR Reversed DV a-wave |
+| Stage III | REDF in UA |
+| Stage IV | Abnormal CTG OR stillbirth |
+
+### Late-onset FGR (≥32 weeks)
+| Stage | Criteria |
+|-------|----------|
+| Stage I | EFW <3rd centile OR AC <3rd centile |
+| Stage II | EFW <10th + abnormal CPR (<5th) or UA PI >95th |
+| Stage III | As early-onset |
+| Stage IV | As early-onset |
+
+## Management
+
+### Antepartum Surveillance
+
+**Monitoring Schedule**:
+| Doppler Status | Frequency |
+|----------------|-----------|
+| Normal UA | Weekly Doppler, biweekly CTG |
+| Elevated UA PI | Twice weekly Doppler, daily CTG |
+| AEDF | Daily/twice daily CTG, deliver by 32-34 weeks |
+| REDF | Continuous CTG, deliver by 30-32 weeks |
+| Abnormal DV | Immediate delivery consideration |
+
+### Timing of Delivery
+
+| Gestational Age | Condition | Action |
+|-----------------|-----------|--------|
+| <26 weeks | REDF/abnormal DV | Individual decision, high mortality |
+| 26-28 weeks | REDF/abnormal DV | Steroids, deliver 48-72h if stable |
+| 28-32 weeks | AEDF | Steroids, deliver 32-34 weeks |
+| 32-34 weeks | AEDF | Deliver (consider steroids if none) |
+| >34 weeks | Any IUGR | Deliver by 37-38 weeks |
+| >37 weeks | SGA | Deliver |
+
+### Antenatal Steroids
+- Give if <34 weeks and delivery anticipated
+- Betamethasone 12 mg IM x 2 doses, 24h apart
+- Dexamethasone 6 mg IM x 4 doses, 12h apart
+
+### Magnesium for Neuroprotection
+- Give if <32 weeks and delivery anticipated
+- 4g IV loading dose
+
+### Mode of Delivery
+- Vaginal delivery acceptable if:
+  - Reassuring CTG
+  - Cephalic presentation
+  - No severe REDF/DV changes
+- Low threshold for cesarean due to poor reserve
+
+## Prognosis
+
+### Short-term Risks
+- Hypoglycemia
+- Hypothermia
+- Polycythemia
+- Hyperbilirubinemia
+- Necrotizing enterocolitis
+
+### Long-term Risks
+- Neurodevelopmental delay
+- Metabolic syndrome (Barker hypothesis)
+- Cardiovascular disease
+- Type 2 diabetes`,
+      keyPoints: [
+        'Asymmetric IUGR (head-sparing) = placental insufficiency',
+        'Symmetric IUGR (early) = genetic, infection, structural anomaly',
+        'AEDF/REDF in umbilical artery = critical finding, hospitalize',
+        'CPR <1 indicates brain-sparing (redistribution)',
+        'Reversed DV a-wave = cardiac decompensation, imminent risk'
+      ],
+      examPrep: {
+        summary: `**IUGR - Quick Review**
+
+📏 **Definition**: EFW or AC <10th centile
+
+🔀 **Types**:
+- Symmetric (20%): All small, genetic/infection
+- Asymmetric (80%): Head-sparing, placental insufficiency
+
+🔊 **Doppler Progression**:
+UA: High PI → AEDF → REDF
+MCA: Low PI (brain-sparing)
+DV: Absent → Reversed a-wave
+
+📊 **CPR**: MCA PI / UA PI - Normal >1, Abnormal <1
+
+⏰ **Delivery**:
+- AEDF: 32-34 weeks
+- REDF: 30-32 weeks
+- Abnormal DV: Consider immediate`,
+        mnemonics: [
+          'AEDF = "Absent = Admit" (hospitalize for monitoring)',
+          'REDF = "Reversed = Really dangerous"',
+          'Symmetric = Same, Starts early, Suggests genetic/infection'
+        ],
+        highYield: [
+          'Umbilical artery Doppler: best predictor of fetal outcome in IUGR',
+          'AEDF: 50% deliver within 1 week',
+          'Ductus venosus a-wave reversal: immediate delivery consideration',
+          'AC is most sensitive parameter for IUGR'
+        ],
+        commonMCQs: [
+          'Most common type of IUGR: Asymmetric (70-80%)',
+          'Most sensitive US parameter for IUGR: Abdominal circumference',
+          'AEDF stands for: Absent End-Diastolic Flow',
+          'CPR (Cerebroplacental ratio) <1 indicates: Brain-sparing/redistribution'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 44', chapterTitle: 'Fetal Growth Restriction' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 27', chapterTitle: 'IUGR' }
+      ],
+      retrievalCards: [
+        { id: 'iugr-1', question: 'What differentiates symmetric from asymmetric IUGR?', answer: 'Symmetric: all measurements proportionally small, early onset, genetic/infection causes. Asymmetric: head-sparing (HC preserved, AC small), late onset, placental insufficiency.', difficulty: 2 },
+        { id: 'iugr-2', question: 'What do AEDF and REDF indicate?', answer: 'AEDF = Absent End-Diastolic Flow; REDF = Reversed End-Diastolic Flow in umbilical artery - critical placental insufficiency requiring hospitalization and delivery planning', difficulty: 2 },
+        { id: 'iugr-3', question: 'What is brain-sparing and how is it detected?', answer: 'Redistribution of blood flow to brain at expense of other organs; detected by low MCA PI (normally high resistance) and CPR <1', difficulty: 3 },
+        { id: 'iugr-4', question: 'What is the most ominous Doppler finding in IUGR?', answer: 'Reversed a-wave in ductus venosus - indicates cardiac decompensation', difficulty: 2 },
+        { id: 'iugr-5', question: 'When should you deliver a fetus with REDF?', answer: '30-32 weeks after steroids, or earlier if CTG abnormal', difficulty: 3 },
+        { id: 'iugr-6', question: 'What is the most sensitive ultrasound parameter for detecting IUGR?', answer: 'Abdominal circumference (AC)', difficulty: 1 }
+      ],
+      cases: [
+        {
+          id: 'iugr-case-1',
+          title: 'Early-onset Severe IUGR',
+          presentation: 'A 32-year-old G1P0 at 28 weeks has EFW <3rd centile, AFI 4 cm. Umbilical artery shows absent end-diastolic flow. MCA PI is low. Ductus venosus shows forward a-wave.',
+          questions: [
+            { question: 'What is the diagnosis and staging?', answer: 'Early-onset FGR Stage II (AEDF in UA) with brain-sparing' },
+            { question: 'What immediate steps are needed?', answer: 'Admit for intensive monitoring, give betamethasone for lung maturity, magnesium for neuroprotection, daily CTG and BPP' },
+            { question: 'When should delivery be planned?', answer: 'With AEDF and preserved DV: aim for 32-34 weeks. Earlier if DV becomes abnormal or CTG non-reassuring.' }
+          ],
+          keyLearning: [
+            'AEDF requires hospitalization',
+            'Steroids essential if <34 weeks',
+            'DV a-wave is key for timing - normal DV allows surveillance to continue',
+            'Balance prematurity risks against in-utero deterioration'
+          ],
+          difficulty: 4
+        },
+        {
+          id: 'iugr-case-2',
+          title: 'Late-onset IUGR',
+          presentation: 'A 35-year-old G2P1 at 36 weeks is found to have EFW at 7th centile. Previous scan at 32 weeks showed EFW at 25th centile. Umbilical artery Doppler normal, but CPR is 0.9.',
+          questions: [
+            { question: 'What does the CPR indicate?', answer: 'CPR <1 indicates cerebral redistribution (brain-sparing) despite normal UA Doppler - subtle placental insufficiency' },
+            { question: 'How should this be managed?', answer: 'Close surveillance with twice-weekly CTG and Doppler. Late-onset FGR with abnormal CPR: consider delivery by 37 weeks.' },
+            { question: 'Is immediate delivery indicated?', answer: 'Not immediately - at 36 weeks with preserved CTG and no AEDF, can monitor closely. Deliver by 37 weeks maximum.' }
+          ],
+          keyLearning: [
+            'CPR can be abnormal before UA Doppler becomes abnormal',
+            'Late-onset FGR has different trajectory than early-onset',
+            'Crossing growth centiles (25th → 7th) is significant',
+            'Late-onset FGR: deliver by 37-38 weeks'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['fetal-anomaly-scan'],
+    relatedTopics: ['fetal-doppler', 'fetal-monitoring', 'preeclampsia'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 55,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // FETAL ANOMALIES
+  // =============================================================================
+  {
+    id: 'fetal-anomalies',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Fetal Structural Anomalies',
+    slug: 'fetal-anomalies',
+    description: 'Neural tube defects, cardiac anomalies, and renal abnormalities',
+    content: {
+      concept: `# Fetal Structural Anomalies
+
+## Neural Tube Defects (NTDs)
+
+### Types
+
+| Type | Description | Prognosis |
+|------|-------------|-----------|
+| **Anencephaly** | Absence of calvarium and brain | Lethal, 100% mortality |
+| **Encephalocele** | Brain herniation through skull defect | Variable, depends on size/content |
+| **Spina bifida** | Vertebral arch defect ± meningeal/neural herniation | Variable, location-dependent |
+
+### Anencephaly
+- Most common lethal NTD
+- Diagnosed in first trimester (absent skull vault)
+- **Ultrasound**: "Frog-eye" appearance, absent cranium above orbits
+- Associated with polyhydramnios (impaired swallowing)
+- Termination or comfort care at birth
+
+### Spina Bifida
+
+**Types**:
+- **Spina bifida occulta**: Vertebral defect only, skin intact
+- **Meningocele**: Meninges herniate, neural tissue in canal
+- **Myelomeningocele**: Neural tissue herniates (most common open type)
+
+**Ultrasound Signs**:
+- **Lemon sign**: Scalloped frontal bones
+- **Banana sign**: Curved cerebellum (Chiari II)
+- **Ventriculomegaly**: Common
+- **Spinal defect**: Splaying of posterior elements
+
+**Associated Findings**:
+- Chiari II malformation (99% of open cases)
+- Hydrocephalus (85-90% require shunt)
+- Clubfoot
+- Bladder dysfunction
+
+**Management**:
+1. Karyotype (amniocentesis)
+2. MRI for detailed assessment
+3. Multidisciplinary counseling
+4. Options: Termination, postnatal surgery, fetal surgery (MOMS trial)
+
+> 💎 **High Yield**: MOMS trial showed fetal surgery reduces shunt need and improves motor outcomes, but increases preterm delivery
+
+### Prevention
+- Folic acid 400 mcg preconception
+- High-dose 5 mg for: previous NTD, antiepileptics, diabetes
+
+## Cardiac Anomalies
+
+### Overview
+- Incidence: 8/1000 live births
+- Leading cause of death from congenital anomalies
+- 4-chamber view alone detects only 40-50%
+
+### Common Cardiac Defects
+
+| Defect | Prevalence | Ultrasound Finding |
+|--------|------------|-------------------|
+| VSD | Most common (25-30%) | Dropout in ventricular septum |
+| AVSD | 3-5% | Common AV valve, primum ASD |
+| Hypoplastic left heart | 1-2% | Small LV, aorta; normal appearing 4-chamber possible |
+| Tetralogy of Fallot | 3-5% | Overriding aorta, VSD, small PA |
+| Transposition | 3% | Parallel great vessels (not crossing) |
+| Coarctation | 5-8% | Size discrepancy in 3VV, may be subtle |
+
+### Screening
+
+**Risk Factors for CHD**:
+- Previous CHD child
+- Maternal diabetes
+- Maternal CHD
+- Teratogen exposure (alcohol, phenytoin, lithium)
+- Increased NT (>3.5 mm)
+- Abnormal serum screening
+
+**Fetal Echocardiography Indications**:
+- NT >3.5 mm (regardless of karyotype)
+- Family history of CHD
+- Maternal diabetes (pregestational)
+- Teratogen exposure
+- Extracardiac anomaly on scan
+- Abnormal 4-chamber view
+
+### Prognosis by Lesion
+
+| Lesion | Prognosis |
+|--------|-----------|
+| Isolated VSD | Often closes spontaneously |
+| AVSD | Surgical repair, good outcomes |
+| HLHS | Requires staged surgery (Norwood), 50-70% 5-yr survival |
+| TGA | Arterial switch operation, good outcomes |
+| ToF | Surgical repair, good outcomes |
+
+## Renal Anomalies
+
+### Classification
+
+**Structural Anomalies**:
+- Renal agenesis (unilateral/bilateral)
+- Multicystic dysplastic kidney (MCDK)
+- Polycystic kidney disease
+- Hydronephrosis/pyelectasis
+- Duplex collecting system
+
+### Bilateral Renal Agenesis
+
+**Features**:
+- **Severe oligohydramnios** (no fetal urine)
+- Absent kidneys on ultrasound
+- Absent bladder filling
+- **Potter sequence**: Pulmonary hypoplasia, limb deformities, facial features
+
+**Prognosis**: Lethal - offer termination
+
+### Multicystic Dysplastic Kidney (MCDK)
+
+**Ultrasound**:
+- Multiple non-communicating cysts
+- No normal renal parenchyma
+- Absent normal pelvis
+
+**Management**:
+- Unilateral: Usually benign, involutes postnatally
+- Bilateral: Lethal (no urine production)
+- Follow-up for hypertension
+
+### Hydronephrosis (Pyelectasis)
+
+**Definition by APD (Anteroposterior diameter of renal pelvis)**:
+
+| Trimester | Mild | Moderate | Severe |
+|-----------|------|----------|--------|
+| 2nd trimester | 4-7 mm | 7-10 mm | >10 mm |
+| 3rd trimester | 7-9 mm | 9-15 mm | >15 mm |
+
+**Causes**:
+- PUJ obstruction (most common)
+- VUJ obstruction
+- Posterior urethral valves (males)
+- Vesicoureteric reflux
+- Duplex kidney with obstructed upper pole
+
+> 💎 **High Yield**: Mild isolated pyelectasis often resolves; severe bilateral with oligohydramnios suggests obstruction
+
+### Posterior Urethral Valves (PUV)
+
+**Features**:
+- **Male fetus** only
+- Dilated posterior urethra ("keyhole" sign)
+- Bilateral hydroureteronephrosis
+- Thick-walled, distended bladder
+- Oligohydramnios
+
+**Management**:
+- Amnioinfusion for lung development
+- Fetal therapy: Vesicoamniotic shunt
+- Postnatal: Valve ablation
+
+### Autosomal Recessive Polycystic Kidney Disease (ARPKD)
+
+**Features**:
+- Enlarged, echogenic kidneys
+- Oligohydramnios
+- Associated hepatic fibrosis
+- High recurrence risk (25%)
+
+**Prognosis**: Variable; severe cases lethal; survivors may need transplant
+
+## Abdominal Wall Defects
+
+### Gastroschisis
+
+**Features**:
+- Defect usually RIGHT of umbilical cord
+- Bowel freely floating in amniotic fluid
+- No covering membrane
+- Small defect (<4 cm)
+- Usually isolated (normal karyotype)
+
+**Associations**:
+- Young maternal age
+- Smoking, vasoconstriction
+- NOT associated with chromosomal abnormalities
+
+**Management**:
+- Serial growth scans (risk of IUGR)
+- Monitor bowel dilation
+- Delivery at tertiary center
+- Mode: Vaginal usually acceptable
+
+### Omphalocele
+
+**Features**:
+- Central defect at umbilical cord insertion
+- Contents covered by membrane (peritoneum/amnion)
+- May contain liver
+- Variable size
+
+**Associations**:
+- Chromosomal abnormalities (30-50%)
+- Beckwith-Wiedemann syndrome
+- Cardiac defects
+
+**Management**:
+- Karyotype (amniocentesis)
+- Detailed anomaly scan
+- Fetal echocardiography
+- Counseling depends on contents and associations`,
+      keyPoints: [
+        'Anencephaly: 100% lethal, diagnosed by absent calvarium',
+        'Spina bifida: Lemon + Banana signs on USS; MOMS trial shows fetal surgery benefit',
+        '4-chamber view detects only 40-50% of CHD - outflow tracts essential',
+        'Bilateral renal agenesis = Potter sequence = lethal',
+        'Gastroschisis: isolated, right of cord; Omphalocele: associated with aneuploidy, has membrane'
+      ],
+      examPrep: {
+        summary: `**Fetal Anomalies - Quick Review**
+
+🧠 **NTDs**:
+- Anencephaly: Lethal, no skull
+- Spina bifida: Lemon + Banana signs
+
+❤️ **CHD**:
+- VSD most common
+- 4-chamber view misses 50%
+- NT >3.5mm → Echo
+
+🫘 **Renal**:
+- Bilateral agenesis = Potter sequence = lethal
+- MCDK: Multiple cysts, no parenchyma
+- PUV: Male, keyhole sign, oligo
+
+👶 **Abdominal Wall**:
+- Gastroschisis: Right, no membrane, isolated
+- Omphalocele: Central, membrane, aneuploidy risk`,
+        mnemonics: [
+          'Gastroschisis vs Omphalocele: "Gastro is Good genes" (usually normal karyotype)',
+          'Lemon + Banana = Spina bifida',
+          'POTTER: Pulmonary hypoplasia, Oligo, limb TwistERs, facies'
+        ],
+        highYield: [
+          'NT >3.5 mm: echo even with normal karyotype',
+          'MOMS trial: fetal spina bifida surgery reduces shunt need',
+          'Omphalocele: 30-50% have chromosomal abnormality',
+          'Keyhole sign = posterior urethral valves (males only)'
+        ],
+        commonMCQs: [
+          'Most common CHD: VSD',
+          'Ultrasound signs of spina bifida: Lemon and banana signs',
+          'Posterior urethral valves seen in: Males only',
+          'Omphalocele association: Chromosomal abnormalities (30-50%)'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 10', chapterTitle: 'Fetal Imaging' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 26', chapterTitle: 'Fetal Abnormalities' }
+      ],
+      retrievalCards: [
+        { id: 'fa-1', question: 'What are the lemon and banana signs?', answer: 'Lemon sign: scalloped frontal bones; Banana sign: curved cerebellum - both indicate open spina bifida with Chiari II', difficulty: 2 },
+        { id: 'fa-2', question: 'What is Potter sequence and what causes it?', answer: 'Oligohydramnios leading to pulmonary hypoplasia, limb deformities, facial compression; caused by bilateral renal agenesis or severe obstruction', difficulty: 2 },
+        { id: 'fa-3', question: 'How do you differentiate gastroschisis from omphalocele?', answer: 'Gastroschisis: right of cord, no membrane, isolated; Omphalocele: at cord insertion, has membrane, 30-50% aneuploidy', difficulty: 2 },
+        { id: 'fa-4', question: 'What does the keyhole sign indicate?', answer: 'Posterior urethral valves (males only) - dilated posterior urethra with bladder', difficulty: 2 },
+        { id: 'fa-5', question: 'What is the most common congenital heart defect?', answer: 'Ventricular septal defect (VSD) - 25-30% of all CHD', difficulty: 1 },
+        { id: 'fa-6', question: 'What did the MOMS trial show about fetal spina bifida surgery?', answer: 'Reduced need for VP shunt (40% vs 82%), improved motor outcomes, but increased preterm delivery', difficulty: 3 }
+      ],
+      cases: [
+        {
+          id: 'fa-case-1',
+          title: 'Anencephaly',
+          presentation: 'First trimester scan at 12 weeks shows absent cranial vault above the orbits. Facial structures visible but no brain tissue.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'Anencephaly - failure of cranial neuropore closure' },
+            { question: 'What is the prognosis?', answer: '100% lethal - incompatible with life. Most die in utero or within hours of birth.' },
+            { question: 'What counseling should be provided?', answer: 'Explain lethal nature, offer termination, discuss organ donation if continuing, emphasize no intervention will change outcome' }
+          ],
+          keyLearning: [
+            'Anencephaly is 100% lethal',
+            'Diagnosed by absent skull vault in first trimester',
+            'Folic acid pre-conception prevents 70% of NTDs'
+          ],
+          difficulty: 2
+        },
+        {
+          id: 'fa-case-2',
+          title: 'Omphalocele with Aneuploidy',
+          presentation: '20-week scan shows central abdominal wall defect at cord insertion with herniated bowel covered by a membrane. No liver in sac. Slight increase in NT was noted at 12 weeks.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'Omphalocele - central defect with membrane covering' },
+            { question: 'What is the aneuploidy risk?', answer: '30-50% - especially if no liver in sac (small omphalocele has higher aneuploidy risk)' },
+            { question: 'What investigations are indicated?', answer: 'Amniocentesis for karyotype, detailed anomaly scan, fetal echocardiography' }
+          ],
+          keyLearning: [
+            'Small omphalocele (bowel only) = higher aneuploidy risk',
+            'Large omphalocele (liver in) = lower aneuploidy risk but surgical challenge',
+            'Always offer karyotype for omphalocele'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['fetal-development', 'fetal-anomaly-scan'],
+    relatedTopics: ['first-trimester-screening', 'amniocentesis', 'chromosomal-abnormalities'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 60,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // MULTIPLE PREGNANCY (TWINS)
+  // =============================================================================
+  {
+    id: 'multiple-pregnancy',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Multiple Pregnancy & Twin Complications',
+    slug: 'multiple-pregnancy',
+    description: 'Chorionicity, TTTS, selective IUGR, and management of twins',
+    content: {
+      concept: `# Multiple Pregnancy & Twin Complications
+
+## Types of Twins
+
+### Dizygotic (DZ) Twins - 70%
+- Two separate eggs fertilized by two sperm
+- Always dichorionic diamniotic (DCDA)
+- Genetically different (like siblings)
+- Risk factors: Maternal age, ART, family history, race
+
+### Monozygotic (MZ) Twins - 30%
+- Single fertilized egg splits
+- Chorionicity depends on timing of division:
+
+| Timing of Split | Result | Frequency |
+|-----------------|--------|-----------|
+| Day 1-3 | Dichorionic Diamniotic (DCDA) | 25-30% |
+| Day 4-8 | Monochorionic Diamniotic (MCDA) | 70-75% |
+| Day 8-13 | Monochorionic Monoamniotic (MCMA) | 1-2% |
+| Day >13 | Conjoined twins | Rare |
+
+> 💎 **High Yield**: Later split = more shared structures = more complications
+
+## Determining Chorionicity
+
+### Optimal Timing
+- **Best**: 11-14 weeks (most accurate)
+- After 14 weeks: Membrane characteristics used
+
+### Ultrasound Signs
+
+| Sign | DCDA | MCDA |
+|------|------|------|
+| Separate placentas | Yes | Single or fused |
+| Lambda sign (peak) | Present | Absent |
+| T-sign | Absent | Present |
+| Membrane thickness | Thick (>2mm) | Thin |
+| Number of layers | 4 | 2 |
+| Fetal sex | May differ | Same |
+
+**Lambda (Twin Peak) Sign**: Triangular projection of placental tissue between membranes - indicates DCDA
+
+**T-Sign**: Membranes meet placenta at 90° - indicates MCDA
+
+> 📌 **Critical**: Chorionicity must be established in first trimester - determines entire management
+
+## Risks of Multiple Pregnancy
+
+### Maternal Complications
+- Hyperemesis gravidarum (increased hCG)
+- Gestational diabetes (increased hPL)
+- Preeclampsia (3x risk)
+- Anemia
+- Cesarean delivery (>50%)
+- Postpartum hemorrhage
+
+### Fetal Complications
+| Complication | DCDA | MCDA | MCMA |
+|--------------|------|------|------|
+| Preterm delivery | ↑ | ↑↑ | ↑↑↑ |
+| IUGR | ↑ | ↑↑ | ↑↑ |
+| Fetal loss | 2% | 12% | 50% (untreated) |
+| Anomalies | ↑ | ↑↑ | ↑↑ |
+| TTTS | No | 10-15% | No |
+| Cord entanglement | No | No | High |
+
+## Twin-to-Twin Transfusion Syndrome (TTTS)
+
+### Pathophysiology
+- Occurs only in **MCDA twins** (shared placenta with vascular anastomoses)
+- Unbalanced blood flow through arteriovenous anastomoses
+- **Donor twin**: Hypovolemic, anemic, oliguric → oligohydramnios, IUGR
+- **Recipient twin**: Hypervolemic, polycythemic, polyuric → polyhydramnios, cardiac overload
+
+### Diagnosis (Quintero Staging)
+
+| Stage | Findings |
+|-------|----------|
+| I | Oligohydramnios (DVP <2cm) in donor + Polyhydramnios (DVP >8cm) in recipient |
+| II | Absent bladder in donor |
+| III | Abnormal Doppler: AEDF/REDF in UA, reversed DV a-wave, pulsatile UV |
+| IV | Hydrops in one or both |
+| V | Demise of one or both |
+
+> 💎 **High Yield**: TTTS diagnostic criteria = Oligo-Poly sequence in MCDA twins (DVP <2cm donor, >8cm recipient)
+
+### Management
+
+**Conservative** (Stage I):
+- Close surveillance (weekly ultrasound)
+- May stabilize or regress
+
+**Fetoscopic Laser Ablation** (Stage II-IV):
+- Treatment of choice for stage II-IV before 26 weeks
+- Laser coagulation of placental vascular anastomoses
+- Survival: 80-90% at least one twin, 50-60% both twins
+
+**Amnioreduction**:
+- Alternative if laser not available
+- Reduces polyhydramnios, prolongs pregnancy
+- Inferior outcomes to laser
+
+**Selective Feticide**:
+- If one twin severely affected
+- Cord occlusion (not intracardiac injection in MCDA)
+
+## Selective Intrauterine Growth Restriction (sIUGR)
+
+### Definition
+- EFW discordance >25% in MCDA twins
+- One twin <10th percentile
+
+### Types (Based on UA Doppler of Smaller Twin)
+
+| Type | UA Doppler | Prognosis |
+|------|------------|-----------|
+| Type I | Normal | Good, watch closely |
+| Type II | Persistent AEDF/REDF | Poor, high mortality risk |
+| Type III | Intermittent AEDF/REDF | Variable, unpredictable |
+
+### Management
+- Serial surveillance
+- Type II/III: Consider laser ablation or selective feticide
+- Delivery timing based on Doppler deterioration
+
+## Monoamniotic Twins (MCMA)
+
+### Risks
+- **Cord entanglement**: 50-70% risk
+- Very high mortality (historically 50-70%)
+- Preterm delivery
+
+### Management
+- Intensive surveillance from 24 weeks
+- Consider daily CTG from 26-28 weeks
+- **Delivery at 32-34 weeks** by cesarean
+- Steroid administration at 26-28 weeks
+
+## Twin Anemia-Polycythemia Sequence (TAPS)
+
+### Features
+- Large difference in Hb between twins (>8 g/dL)
+- Without amniotic fluid discordance
+- Due to chronic, slow transfusion
+
+### Diagnosis
+- MCA PSV discordant (>1.5 MoM in anemic twin, <0.8 MoM in polycythemic)
+- Can occur spontaneously or post-laser TTTS
+
+### Management
+- Laser ablation of residual anastomoses
+- Intrauterine transfusion
+- Expectant with close monitoring
+
+## Management of Twin Pregnancy
+
+### Surveillance Schedule
+
+| Chorionicity | Surveillance |
+|--------------|--------------|
+| DCDA | Scans at 20, 28, 32, 36 weeks |
+| MCDA | Scans every 2 weeks from 16 weeks |
+| MCMA | Weekly from 24 weeks, daily CTG from 26-28 |
+
+### Timing of Delivery
+
+| Chorionicity | Uncomplicated | Complicated |
+|--------------|---------------|-------------|
+| DCDA | 37-38 weeks | As indicated |
+| MCDA | 36-37 weeks | Earlier if TTTS, sIUGR |
+| MCMA | 32-34 weeks | - |
+
+### Mode of Delivery
+- **Twin A cephalic**: Vaginal delivery considered
+- **Twin A non-cephalic**: Cesarean
+- **MCMA**: Always cesarean (cord entanglement risk)`,
+      keyPoints: [
+        'Chorionicity must be established in first trimester',
+        'Lambda sign = DCDA; T-sign = MCDA',
+        'TTTS only in MCDA twins: oligo-poly sequence',
+        'Laser ablation is treatment of choice for TTTS stage II-IV',
+        'MCMA twins: delivery at 32-34 weeks due to cord entanglement'
+      ],
+      examPrep: {
+        summary: `**Multiple Pregnancy - Quick Review**
+
+👯 **Types**: DZ (70%) always DCDA; MZ (30%) depends on split timing
+
+🔬 **Chorionicity**:
+- Lambda sign = DCDA (Di-Di)
+- T-sign = MCDA (Mono-Di)
+
+⚠️ **TTTS** (MCDA only):
+- Oligo (<2cm) in donor, Poly (>8cm) in recipient
+- Quintero staging I-V
+- Laser ablation for stage II-IV
+
+⏰ **Delivery**:
+- DCDA: 37-38 weeks
+- MCDA: 36-37 weeks
+- MCMA: 32-34 weeks (cesarean)`,
+        mnemonics: [
+          'Lambda = Looks like mountains = DCDA (two chorions making peak)',
+          'T-sign = Thin membrane = MCDA (single chorion)',
+          'TTTS donor: "Small, dry, Stuck" (oligohydramnios)',
+          'TTTS recipient: "Big, wet, heart stressed" (polyhydramnios, hydrops)'
+        ],
+        highYield: [
+          'Chorionicity determination: first trimester most accurate',
+          'MCDA twins need surveillance every 2 weeks from 16 weeks',
+          'Laser ablation survival: 80-90% at least one twin',
+          'Discordance >25% EFW = significant'
+        ],
+        commonMCQs: [
+          'Lambda sign indicates: Dichorionic pregnancy',
+          'TTTS occurs in: Monochorionic diamniotic twins only',
+          'Treatment of choice for TTTS stage II-IV: Fetoscopic laser ablation',
+          'Delivery timing for uncomplicated MCDA twins: 36-37 weeks'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 39', chapterTitle: 'Multifetal Pregnancy' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 24', chapterTitle: 'Multiple Pregnancy' }
+      ],
+      retrievalCards: [
+        { id: 'mp-1', question: 'What do the Lambda and T signs indicate?', answer: 'Lambda sign = DCDA (dichorionic); T-sign = MCDA (monochorionic) - describes membrane-placenta junction', difficulty: 2 },
+        { id: 'mp-2', question: 'What is the diagnostic criteria for TTTS?', answer: 'Oligohydramnios (DVP <2cm) in donor + Polyhydramnios (DVP >8cm) in recipient, in MCDA twins', difficulty: 2 },
+        { id: 'mp-3', question: 'What is the treatment of choice for TTTS stage II-IV?', answer: 'Fetoscopic laser ablation of placental vascular anastomoses', difficulty: 2 },
+        { id: 'mp-4', question: 'When should uncomplicated MCMA twins be delivered?', answer: '32-34 weeks by cesarean due to risk of cord entanglement', difficulty: 2 },
+        { id: 'mp-5', question: 'What determines chorionicity in MZ twins?', answer: 'Timing of embryo splitting: Day 1-3 = DCDA, Day 4-8 = MCDA, Day 8-13 = MCMA, >Day 13 = conjoined', difficulty: 3 },
+        { id: 'mp-6', question: 'How often should MCDA twins be scanned?', answer: 'Every 2 weeks from 16 weeks to screen for TTTS', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'mp-case-1',
+          title: 'TTTS Diagnosis',
+          presentation: 'MCDA twins at 20 weeks. Twin A has DVP 1.5 cm with collapsed bladder. Twin B has DVP 10 cm with distended bladder. Umbilical artery Dopplers normal.',
+          questions: [
+            { question: 'What is the diagnosis?', answer: 'Twin-to-Twin Transfusion Syndrome Stage II (oligo-poly + absent donor bladder)' },
+            { question: 'What is the treatment?', answer: 'Fetoscopic laser ablation of placental anastomoses - treatment of choice for stage II-IV' },
+            { question: 'What is the prognosis with treatment?', answer: '80-90% survival of at least one twin, 50-60% survival of both twins with laser therapy' }
+          ],
+          keyLearning: [
+            'TTTS only occurs in MCDA twins',
+            'Quintero staging guides management',
+            'Stage II (absent bladder) warrants laser treatment',
+            'Without treatment, >90% mortality'
+          ],
+          difficulty: 4
+        },
+        {
+          id: 'mp-case-2',
+          title: 'Chorionicity Determination',
+          presentation: 'First pregnancy with twins at 12 weeks. Ultrasound shows single placental mass. Membrane seen dividing the sacs. The membrane meets the placenta forming a 90° angle.',
+          questions: [
+            { question: 'What is the chorionicity?', answer: 'Monochorionic diamniotic (MCDA) - T-sign indicates single chorion' },
+            { question: 'What surveillance is needed?', answer: 'Scans every 2 weeks from 16 weeks to monitor for TTTS, sIUGR' },
+            { question: 'What is the delivery timing?', answer: '36-37 weeks if uncomplicated' }
+          ],
+          keyLearning: [
+            'T-sign = MCDA (monochorionic)',
+            'First trimester is optimal for chorionicity',
+            'MCDA requires intensive surveillance'
+          ],
+          difficulty: 3
+        }
+      ]
+    },
+    prerequisites: ['fetal-anomaly-scan'],
+    relatedTopics: ['iugr', 'fetal-therapy', 'preterm-labor'],
+    difficulty: 4,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 55,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // FETAL THERAPY
+  // =============================================================================
+  {
+    id: 'fetal-therapy',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Fetal Therapy',
+    slug: 'fetal-therapy',
+    description: 'Intrauterine transfusion, laser therapy, and fetal interventions',
+    content: {
+      concept: `# Fetal Therapy
+
+## Overview
+
+Fetal therapy encompasses interventions performed in utero to treat conditions that would otherwise cause fetal demise or significant morbidity. The field has evolved from simple procedures to complex fetal surgery.
+
+## Intrauterine Blood Transfusion (IUT)
+
+### Indications
+- **Rhesus (Rh) alloimmunization** with fetal anemia
+- Other red cell alloimmunization (Kell, Duffy, etc.)
+- Parvovirus B19 infection
+- Fetomaternal hemorrhage
+- TAPS (Twin Anemia-Polycythemia Sequence)
+
+### Diagnosis of Fetal Anemia
+
+**MCA PSV (Middle Cerebral Artery Peak Systolic Velocity)**:
+- Non-invasive screening tool
+- **>1.5 MoM = significant anemia** (sensitivity 95% for moderate-severe)
+- Anemic fetus has decreased blood viscosity → increased velocity
+
+> 💎 **High Yield**: MCA PSV >1.5 MoM indicates need for IUT or delivery (if near term)
+
+### Procedure
+
+**Technique**:
+1. Ultrasound-guided needle insertion
+2. Target: **Umbilical vein** (intrahepatic or at cord insertion)
+3. Sample fetal blood (FBS) for Hb/Hct
+4. Transfuse O-negative, CMV-negative, irradiated, leukocyte-reduced PRBCs
+5. Calculate volume based on fetal weight and target Hb
+
+**Volume Calculation**:
+- Target Hct rise of 15-20%
+- Volume (mL) = Fetal blood volume × (Target Hct - Initial Hct) / Donor Hct
+- Approximate: 10 mL/kg for each 10% Hct rise
+
+### Complications
+- Fetal bradycardia (most common)
+- PPROM
+- Preterm labor
+- Cord hematoma
+- Fetal death (1-2% per procedure)
+
+### Schedule
+- Repeat transfusion every 2-4 weeks
+- Fetal Hb drops ~1 g/dL per day (faster early in course)
+- Aim for delivery at 34-37 weeks depending on severity
+
+## Fetoscopic Laser Ablation
+
+### Primary Indication: TTTS
+- Treatment of choice for Quintero stage II-IV
+- Performed at 16-26 weeks
+
+### Technique
+1. Fetoscopic visualization of placental surface
+2. Identify and map vascular anastomoses
+3. Laser coagulation of anastomoses (Solomon technique: dichorionization)
+4. Amnioreduction if needed
+
+### Outcomes
+- Survival of at least one twin: 80-90%
+- Survival of both twins: 50-70%
+- Long-term neurological outcome improved vs. amnioreduction
+
+### Other Indications for Fetoscopy
+- TAPS (residual anastomoses)
+- Cord occlusion for selective feticide in MCDA
+- Complicated MCMA twins
+- Amniotic band syndrome release
+
+## Fetal Surgery
+
+### Open Fetal Surgery
+
+**Myelomeningocele Repair (MOMS Trial)**
+
+**Inclusion Criteria**:
+- Gestational age 19-25+6 weeks
+- Spina bifida at T1-S1
+- Hindbrain herniation
+- No other major anomalies
+- Normal karyotype
+
+**Outcomes (MOMS Trial)**:
+| Outcome | Prenatal Surgery | Postnatal Surgery |
+|---------|------------------|-------------------|
+| VP shunt at 12 months | 40% | 82% |
+| Walking independently at 30 months | 42% | 21% |
+| Preterm delivery <30 weeks | 13% | 0% |
+| Uterine dehiscence | 10% | - |
+
+> 💎 **High Yield**: Fetal spina bifida surgery reduces shunt need by half but increases preterm delivery risk
+
+**Congenital Diaphragmatic Hernia (CDH)**
+
+**FETO (Fetoscopic Endoluminal Tracheal Occlusion)**:
+- Balloon occlusion of trachea at 27-30 weeks
+- Lung fluid retention promotes lung growth
+- Balloon removed at 34 weeks
+- For severe CDH (O/E LHR <25-30%)
+- Improves survival from ~15% to ~50%
+
+### EXIT Procedure (Ex Utero Intrapartum Treatment)
+
+**Concept**: Maintain uteroplacental circulation during cesarean while securing fetal airway
+
+**Indications**:
+- Giant cervical teratoma
+- Congenital high airway obstruction syndrome (CHAOS)
+- Large cystic hygroma
+- EXIT to ECMO for CDH
+
+**Technique**:
+1. Maternal general anesthesia with uterine relaxation
+2. Hysterotomy, deliver head/upper body
+3. Secure airway (intubation, tracheostomy) while on placental support
+4. Complete delivery after airway secured
+
+## Amnioreduction and Amnioinfusion
+
+### Amnioreduction
+
+**Indications**:
+- Symptomatic polyhydramnios
+- TTTS (if laser not available)
+- Preterm labor prevention
+
+**Technique**:
+- Remove large volume (up to 5-6 L in severe cases)
+- Monitor for complications (abruption, preterm labor)
+
+### Amnioinfusion (Therapeutic)
+
+**Indications**:
+- Severe oligohydramnios limiting visualization
+- PPROM with cord compression
+- Posterior urethral valves (for lung development)
+
+**Volume**: 200-500 mL normal saline, warmed
+
+## Shunting Procedures
+
+### Thoracoamniotic Shunt
+
+**Indications**:
+- Large pleural effusion causing mediastinal shift
+- Cystic adenomatoid malformation (CCAM/CPAM)
+- Prevent hydrops and pulmonary hypoplasia
+
+### Vesicoamniotic Shunt
+
+**Indications**:
+- Lower urinary tract obstruction (LUTO)
+- Posterior urethral valves
+- Severe bladder distension with oligohydramnios
+
+**Selection Criteria**:
+- Serial vesicocentesis to assess renal function
+- Poor prognosis indicators: Sodium >100, Chloride >90, Osmolality >210
+
+## Fetal Cardiac Interventions
+
+### Aortic Valvuloplasty
+- For critical aortic stenosis
+- Aim to prevent progression to HLHS
+- Needle/balloon through fetal chest into LV
+
+### Atrial Septostomy
+- For restrictive foramen ovale with hypoplastic left heart
+- Creates atrial communication for postnatal survival
+
+## Ethical Considerations
+
+### Principles
+1. **Maternal safety**: Mother is the patient; her safety is primary
+2. **Informed consent**: Detailed discussion of risks/benefits
+3. **Reversibility**: Consider if intervention affects future options
+4. **Evidence**: Procedures should be based on clinical trials when possible
+
+### Patient Selection
+- Multidisciplinary team evaluation
+- Psychological support
+- Clear understanding of limitations
+- Tertiary center capability`,
+      keyPoints: [
+        'MCA PSV >1.5 MoM indicates significant fetal anemia',
+        'Fetoscopic laser is treatment of choice for TTTS stage II-IV',
+        'MOMS trial: Prenatal spina bifida repair reduces shunt need (40% vs 82%)',
+        'FETO for severe CDH improves survival from 15% to 50%',
+        'EXIT procedure: secures airway while on placental support'
+      ],
+      examPrep: {
+        summary: `**Fetal Therapy - Quick Review**
+
+💉 **IUT Indications**: Rh disease, Parvovirus, TAPS
+
+🔬 **Anemia Detection**: MCA PSV >1.5 MoM
+
+🔦 **Laser for TTTS**: Stage II-IV, 16-26 weeks
+
+✂️ **MOMS Trial** (Spina Bifida Surgery):
+- VP shunt reduced 82% → 40%
+- Walking improved
+- But ↑preterm delivery
+
+🎈 **FETO** (CDH): Balloon at 27-30 weeks, improves survival
+
+🚑 **EXIT**: Airway secured on placental support`,
+        mnemonics: [
+          'MCA PSV >1.5 = Major Concern for Anemia',
+          'MOMS = Myelomeningocele On-table Management Surgery',
+          'FETO = Fetal Endoluminal Tracheal Occlusion'
+        ],
+        highYield: [
+          'IUT uses O-negative, CMV-neg, irradiated, leukocyte-reduced blood',
+          'Laser success: 80-90% survival of at least one twin',
+          'Prenatal spina bifida surgery: 19-25+6 weeks, T1-S1 level',
+          'Uterine dehiscence risk with open fetal surgery: ~10%'
+        ],
+        commonMCQs: [
+          'MCA PSV threshold for significant fetal anemia: >1.5 MoM',
+          'Treatment of choice for TTTS: Fetoscopic laser ablation',
+          'MOMS trial showed VP shunt rate with prenatal surgery: 40%',
+          'Site for intrauterine transfusion: Umbilical vein (intrahepatic or cord insertion)'
+        ]
+      },
+      textbookRefs: [
+        { textbook: 'Williams Obstetrics', edition: '26th', chapter: 'Chapter 18', chapterTitle: 'Fetal Therapy' },
+        { textbook: 'DC Dutta Obstetrics', edition: '9th', chapter: 'Chapter 26', chapterTitle: 'Fetal Therapy' }
+      ],
+      retrievalCards: [
+        { id: 'ft-1', question: 'What MCA PSV threshold indicates significant fetal anemia?', answer: '>1.5 MoM (sensitivity 95% for moderate-severe anemia)', difficulty: 2 },
+        { id: 'ft-2', question: 'What are the main findings from the MOMS trial for fetal spina bifida repair?', answer: 'VP shunt reduced from 82% to 40%, improved walking at 30 months, but increased preterm delivery', difficulty: 3 },
+        { id: 'ft-3', question: 'What is FETO and when is it indicated?', answer: 'Fetoscopic Endoluminal Tracheal Occlusion - indicated for severe CDH (O/E LHR <25-30%), improves survival from 15% to 50%', difficulty: 3 },
+        { id: 'ft-4', question: 'What blood type is used for intrauterine transfusion?', answer: 'O-negative, CMV-negative, irradiated, leukocyte-reduced packed RBCs', difficulty: 2 },
+        { id: 'ft-5', question: 'What is the EXIT procedure?', answer: 'Ex Utero Intrapartum Treatment - securing fetal airway during cesarean while maintaining placental circulation', difficulty: 3 },
+        { id: 'ft-6', question: 'What is the survival rate for TTTS with fetoscopic laser ablation?', answer: '80-90% survival of at least one twin, 50-70% survival of both twins', difficulty: 2 }
+      ],
+      cases: [
+        {
+          id: 'ft-case-1',
+          title: 'Rh Alloimmunization with Fetal Anemia',
+          presentation: 'A 28-year-old Rh-negative G3P2 (previous affected pregnancy) at 24 weeks. Anti-D titer 1:256. MCA PSV is 1.8 MoM.',
+          questions: [
+            { question: 'What does the MCA PSV indicate?', answer: 'MCA PSV >1.5 MoM indicates moderate-severe fetal anemia requiring intervention' },
+            { question: 'What is the management?', answer: 'Intrauterine transfusion (IUT) - sample fetal blood for Hb, then transfuse O-negative irradiated PRBCs' },
+            { question: 'When should this be repeated?', answer: 'Every 2-4 weeks, monitoring MCA PSV and fetal Hb decline' }
+          ],
+          keyLearning: [
+            'MCA PSV is the non-invasive screening for fetal anemia',
+            '>1.5 MoM requires invasive assessment or IUT',
+            'IUT is life-saving in severe Rh disease'
+          ],
+          difficulty: 4
+        },
+        {
+          id: 'ft-case-2',
+          title: 'Open Spina Bifida - Fetal Surgery Candidate',
+          presentation: 'A 30-year-old G1P0 at 22 weeks with fetal myelomeningocele at L3-L4 level. Chiari II malformation present. Normal karyotype on amniocentesis. No other anomalies.',
+          questions: [
+            { question: 'Is this patient a candidate for fetal surgery?', answer: 'Yes - meets MOMS criteria: 19-25+6 weeks, T1-S1 level, hindbrain herniation, normal karyotype, no other anomalies' },
+            { question: 'What are the expected benefits?', answer: 'Reduced need for VP shunt (40% vs 82%), improved motor function and independent walking' },
+            { question: 'What are the risks?', answer: 'Preterm delivery (13% <30 weeks), uterine dehiscence (~10%), maternal risks of open surgery, need for cesarean in future pregnancies' }
+          ],
+          keyLearning: [
+            'Careful patient selection is critical',
+            'Benefits must be weighed against maternal risks',
+            'Multidisciplinary counseling essential'
+          ],
+          difficulty: 4
+        }
+      ]
+    },
+    prerequisites: ['iugr', 'multiple-pregnancy', 'fetal-anomalies'],
+    relatedTopics: ['hydrops-fetalis', 'rhesus-disease'],
+    difficulty: 5,
+    highYield: true,
+    examTags: ['NEET_PG', 'INICET', 'FMGE'],
+    estimatedMinutes: 50,
+    hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+    createdAt: '2025-02-09',
+    updatedAt: '2025-02-09'
+  },
+
+  // =============================================================================
+  // HYDROPS FETALIS
+  // =============================================================================
+  {
+    id: 'hydrops-fetalis',
+    subjectId: 'obgyn',
+    subspecialtyId: 'obgyn-fetal-medicine',
+    name: 'Hydrops Fetalis',
+    slug: 'hydrops-fetalis',
+    description: 'Immune and non-immune hydrops: causes, diagnosis, and management',
+    content: {
+      concept: `# Hydrops Fetalis
+
+## Definition
+
+Abnormal accumulation of fluid in **two or more** fetal body compartments:
+- Skin edema (>5 mm)
+- Ascites
+- Pleural effusion
+- Pericardial effusion
+
+Often associated with polyhydramnios and placental edema.
+
+## Classification
+
+### Immune Hydrops (10-20%)
+- Due to red cell alloimmunization
+- Antibodies cross placenta → hemolysis → anemia → high-output cardiac failure
+
+**Causes**:
+- Rh (D) alloimmunization (most common immune cause)
+- Anti-Kell (K1) antibodies
+- Anti-c, anti-E, anti-Duffy
+
+> 💎 **High Yield**: With universal RhoGAM prophylaxis, immune hydrops has declined dramatically
+
+### Non-Immune Hydrops (80-90%)
+- All causes not related to red cell alloimmunization
+- More diverse and often more challenging to diagnose
+
+**Categories of Non-Immune Hydrops**:
+
+| Category | % | Examples |
+|----------|---|----------|
+| Cardiovascular | 20-25% | Structural CHD, arrhythmias, cardiomyopathy, AV malformations |
+| Chromosomal | 10-15% | Turner syndrome (45,X), T21, T18, T13, triploidy |
+| Hematologic | 10-15% | Parvovirus B19, alpha-thalassemia, G6PD deficiency |
+| Thoracic | 5-10% | CPAM/CCAM, CDH, pleural effusion, chylothorax |
+| Twin-related | 5-10% | TTTS, TAPS, TRAP sequence |
+| Infections | 5-10% | Parvovirus B19, CMV, syphilis, toxoplasmosis |
+| Urinary | 5% | Obstructive uropathy |
+| Genetic syndromes | 5-10% | Noonan, multiple pterygium, storage diseases |
+| Idiopathic | 15-25% | No cause found despite evaluation |
+
+## Pathophysiology
+
+### Common Pathway
+1. **Anemia** → High-output cardiac failure (Rh disease, parvovirus)
+2. **Cardiac dysfunction** → Low-output failure (CHD, arrhythmias, cardiomyopathy)
+3. **Hypoproteinemia** → Decreased oncotic pressure (liver failure, lymphatic obstruction)
+4. **Lymphatic obstruction** → Turner syndrome, storage diseases
+5. **Vascular leak** → Infections, placental pathology
+
+### Fluid Accumulation Sequence
+- Often starts in one compartment
+- Progresses to generalized hydrops
+- Placental edema (>6 cm) and polyhydramnios common
+
+## Diagnosis
+
+### Ultrasound Features
+
+**Fluid Collections**:
+- Ascites: Fluid around bowel, in pelvis
+- Pleural effusion: Fluid around lungs
+- Pericardial effusion: Fluid around heart (>2 mm abnormal)
+- Skin edema: >5 mm thickness
+
+**Associated Findings**:
+- Polyhydramnios (reduced swallowing, increased urine output)
+- Placental edema (>6 cm thickness)
+- Cardiomegaly
+
+### Investigations
+
+**Maternal**:
+- Blood group and antibody screen (rule out immune)
+- Kleihauer-Betke test (fetomat

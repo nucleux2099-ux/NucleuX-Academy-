@@ -1,0 +1,47 @@
+title: Pneumonia
+slug: pneumonia
+depth: UG
+highYield: true
+nmc_codes:
+  - IM4.1
+  - IM4.3
+  - IM4.5
+  - IM4.7
+  - IM4.9
+prerequisites: []
+related_topics:
+  - pleural-effusion
+  - lung-abscess
+  - copd
+  - asthma
+enrichment:
+  nmcCodes:
+    - code: IM4.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia
+      domain: KH
+    - code: IM4.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia
+      domain: KH
+    - code: IM4.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia
+      domain: KH
+    - code: IM4.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia
+      domain: KH
+    - code: IM4.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia
+      domain: KH
+  prerequisite_details: []
+  related_details:
+    - slug: pleural-effusion
+      reason: Clinically related to pneumonia
+      relationship: clinical
+    - slug: lung-abscess
+      reason: Clinically related to pneumonia
+      relationship: clinical
+    - slug: copd
+      reason: Clinically related to pneumonia
+      relationship: clinical
+    - slug: asthma
+      reason: Clinically related to pneumonia
+      relationship: clinical

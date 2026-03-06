@@ -1,0 +1,9 @@
+topic_id: peptic-ulcer-path
+name: Peptic Ulcer Path
+description: Peptic Ulcer Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA24.3
+  domain: SH
+  core: true
+  phase: Phase 1

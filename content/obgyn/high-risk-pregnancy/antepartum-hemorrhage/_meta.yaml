@@ -1,0 +1,164 @@
+topic_id: antepartum-hemorrhage
+name: Antepartum Hemorrhage (Placenta Previa & Abruption)
+description: Bleeding after 28 weeks — placenta previa, placental abruption, and vasa previa
+high_yield: true
+nmc_codes:
+- code: OG10.1
+  domain: KH
+  core: true
+  phase: Phase 3
+
+overview: >
+  Antepartum hemorrhage (APH) is bleeding from the genital tract after 28 weeks (some define after 24 weeks)
+  of gestation but before delivery. The two major causes are placenta previa (painless bleeding) and placental
+  abruption (painful bleeding), which together account for >50% of APH cases. APH complicates 2-5% of pregnancies
+  and is a major cause of maternal and perinatal morbidity and mortality.
+  📚 Williams Obstetrics, 26th Ed, Ch.41-42 | 📚 DC Dutta, 9th Ed, Ch.18
+
+learning_objectives:
+  - Define APH and classify its causes
+  - Differentiate placenta previa from placental abruption clinically
+  - Describe the types of placenta previa and their management
+  - Classify placental abruption by severity (Grade 0-3)
+  - Outline the emergency management of massive APH
+
+content:
+  atoms:
+    - id: placenta-previa
+      title: "Placenta Previa"
+      text: >
+        Placenta previa: placenta implanted wholly or partially in the lower uterine segment.
+        Classification: (1) Low-lying — placenta within 2 cm of internal os but not covering it.
+        (2) Marginal — placenta reaches the margin of the internal os.
+        (3) Partial — partially covers the internal os. (4) Complete/Total — completely covers the os.
+        Clinical features: PAINLESS, bright red, recurrent bleeding (warning hemorrhage → inevitable → torrential).
+        Uterus soft, non-tender, relaxed. FHR usually normal. Malpresentation common (30%).
+        Risk factors: previous CS (strongest), multiparity, advanced age, smoking, previous previa.
+        Diagnosis: transvaginal ultrasound (GOLD STANDARD) — safe and more accurate than transabdominal.
+        📚 DC Dutta, 9th Ed, Ch.18 (p.241-250)
+
+    - id: placental-abruption
+      title: "Placental Abruption (Abruptio Placentae)"
+      text: >
+        Premature separation of normally implanted placenta after 28 weeks.
+        Classification (Grade): 0 — asymptomatic (diagnosed retrospectively from retroplacental clot).
+        1 (Mild) — vaginal bleeding, uterine tenderness, no fetal distress.
+        2 (Moderate) — painful dark bleeding, tetanic uterus, fetal distress, coagulopathy may begin.
+        3 (Severe) — fetal death, maternal shock, DIC, Couvelaire uterus.
+        Clinical: PAINFUL, dark (concealed or revealed), tense tender uterus, board-like rigidity.
+        Concealed hemorrhage (20%) — more dangerous, blood trapped behind placenta.
+        Risk factors: hypertension (MOST COMMON), trauma, smoking, cocaine, PPROM, short cord, polyhydramnios.
+        Couvelaire uterus: blood infiltrates myometrium → purple uterus, may need hysterectomy.
+        📚 Williams Obstetrics, 26th Ed, Ch.42 (p.758-770)
+
+    - id: differential-diagnosis
+      title: "Placenta Previa vs Abruption — Key Differences"
+      text: >
+        Previa: painless, bright red, recurrent, soft relaxed uterus, malpresentation, normal FHR initially.
+        Abruption: painful, dark, may be concealed, tense tender uterus, fetal distress/death, DIC.
+        Previa: NEVER do vaginal examination without USG (can precipitate massive hemorrhage).
+        Abruption: coagulopathy is common (DIC in 10-20% of severe cases).
+        Vasa previa: fetal vessels in membranes crossing internal os — rupture at ROM → fetal bleeding.
+        Apt test distinguishes fetal from maternal blood (fetal Hb resistant to alkali denaturation).
+        📚 DC Dutta, 9th Ed, Ch.18
+
+    - id: management
+      title: "Management of APH"
+      text: >
+        Initial: ABC, two large bore IV lines, crossmatch 4 units, Foley catheter, CTG monitoring.
+        Placenta previa: Expectant if <37 wks, stable, and preterm (hospitalize, steroids, monitor).
+        Delivery: CS for major previa (type III, IV); vaginal delivery may be attempted in low-lying.
+        Abruption (mild): expectant if preterm, stable fetus. Moderate-severe: DELIVER immediately.
+        Vaginal delivery preferred in abruption if fetus dead or rapid delivery expected (amniotomy helps).
+        CS if fetal distress, severe hemorrhage, or failed induction.
+        DIC management: FFP, cryoprecipitate, platelet transfusion. Watch for PPH (atonic uterus).
+        📚 Williams Obstetrics, 26th Ed, Ch.41-42
+
+  clinical:
+    - title: "Vasa Previa"
+      text: >
+        Fetal vessels run in membranes over the internal os. Rupture of membranes → vessel tears →
+        fetal hemorrhage (small volume but catastrophic — fetal blood volume only ~250 mL at term).
+        Triad: ROM + painless vaginal bleeding + fetal bradycardia. Apt test positive (fetal blood).
+        Emergency CS is life-saving. Mortality >50% if undiagnosed. Prenatal diagnosis by color Doppler.
+
+  high_yield_points:
+    - "Placenta previa = PAINLESS bright red bleeding; Abruption = PAINFUL dark bleeding"
+    - "NEVER do per vaginal examination in placenta previa without USG (Double setup exam if needed)"
+    - "Transvaginal USG is SAFE and GOLD STANDARD for diagnosing placenta previa"
+    - "Most common risk factor for abruption = HYPERTENSION"
+    - "Concealed hemorrhage in abruption is MORE dangerous than revealed (underestimates blood loss)"
+    - "Couvelaire uterus = blood infiltrating myometrium — complication of severe abruption"
+    - "DIC is a complication of abruption, NOT previa"
+    - "Apt test: fetal Hb resists alkali denaturation (stays pink) vs maternal Hb (turns brown)"
+    - "Vasa previa triad: ROM + painless vaginal bleeding + fetal bradycardia"
+    - "Previous cesarean section is the STRONGEST risk factor for placenta previa"
+
+mcqs:
+  - question: "A 32-year-old multigravida at 34 weeks presents with sudden painless bright red vaginal bleeding. Uterus is soft and non-tender. The most likely diagnosis is:"
+    options:
+      - "Placental abruption"
+      - "Placenta previa"
+      - "Vasa previa"
+      - "Cervical polyp"
+    answer: "Placenta previa"
+    explanation: >
+      Painless, bright red, recurrent bleeding with a soft non-tender uterus in the third trimester
+      is classic for placenta previa. Abruption would present with pain and tense tender uterus.
+      📚 DC Dutta, 9th Ed, Ch.18 (p.242)
+    difficulty: 1
+
+  - question: "The most common predisposing factor for placental abruption is:"
+    options:
+      - "Placenta previa"
+      - "Hypertension"
+      - "Uterine anomaly"
+      - "Gestational diabetes"
+    answer: "Hypertension"
+    explanation: >
+      Hypertension (chronic or pre-eclampsia) is the single most common risk factor for placental
+      abruption, present in ~50% of cases severe enough to cause fetal death. Other risk factors
+      include trauma, cocaine use, smoking, and PPROM.
+      📚 Williams Obstetrics, 26th Ed, Ch.42 (p.760)
+    difficulty: 1
+
+  - question: "A pregnant woman at 35 weeks with suspected placenta previa — which investigation is the GOLD STANDARD for diagnosis?"
+    options:
+      - "Transabdominal ultrasound"
+      - "Transvaginal ultrasound"
+      - "MRI pelvis"
+      - "Double setup examination"
+    answer: "Transvaginal ultrasound"
+    explanation: >
+      Transvaginal USG is the gold standard — it is SAFE (probe doesn't reach the cervical os)
+      and more accurate than transabdominal USG, especially for posterior placenta previa.
+      📚 Williams Obstetrics, 26th Ed, Ch.41 (p.752)
+    difficulty: 1
+
+  - question: "Couvelaire uterus is seen in:"
+    options:
+      - "Placenta previa"
+      - "Placental abruption"
+      - "Uterine rupture"
+      - "Vasa previa"
+    answer: "Placental abruption"
+    explanation: >
+      Couvelaire uterus (uteroplacental apoplexy) occurs in severe abruption when blood
+      dissects into the myometrium, giving a characteristic purple/blue discoloration.
+      The uterus may become atonic, sometimes requiring hysterectomy.
+      📚 DC Dutta, 9th Ed, Ch.18 (p.257)
+    difficulty: 1
+
+  - question: "Which test differentiates fetal blood from maternal blood in vaginal bleeding?"
+    options:
+      - "Kleihauer-Betke test"
+      - "Apt test"
+      - "Coombs test"
+      - "Bubble stability test"
+    answer: "Apt test"
+    explanation: >
+      The Apt test uses NaOH (alkali denaturation): fetal hemoglobin (HbF) resists denaturation
+      and remains pink, while adult hemoglobin (HbA) denatures and turns yellow-brown. It is used
+      to diagnose vasa previa. Kleihauer-Betke detects fetal cells in MATERNAL blood (for fetomaternal hemorrhage).
+      📚 DC Dutta, 9th Ed, Ch.18
+    difficulty: 2

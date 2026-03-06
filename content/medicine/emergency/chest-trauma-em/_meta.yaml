@@ -1,0 +1,22 @@
+title: "Chest Trauma — Emergency"
+slug: chest-trauma-em
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.10"
+prerequisites:
+  - "primary-survey-atls"
+related_topics:
+  - "breathlessness-approach"
+enrichment:
+  nmcCodes:
+    - code: "IM24.10"
+      text: "Chest Trauma — Emergency — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "primary-survey-atls"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "breathlessness-approach"
+      reason: "Clinically related"
+      relationship: "clinical"

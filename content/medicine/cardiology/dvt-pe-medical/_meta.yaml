@@ -1,0 +1,51 @@
+title: Dvt Pe Medical
+slug: dvt-pe-medical
+depth: UG
+highYield: true
+nmc_codes:
+  - IM10.12
+  - IM11.7
+  - IM25.4
+  - IM26.40
+  - IM4.9
+  - IM5.9
+  - IM6.7
+  - IM7.11
+  - IM8.9
+  - IM9.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM11.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM25.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM26.40
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM4.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM5.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM6.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM7.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM8.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+    - code: IM9.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dvt pe medical
+      domain: KH
+  prerequisite_details: []
+  related_details: []

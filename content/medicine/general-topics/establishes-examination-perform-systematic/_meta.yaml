@@ -1,0 +1,18 @@
+title: "Systematic Clinical Examination"
+slug: establishes-examination-perform-systematic
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM26.19"
+prerequisites:
+  - "document-elicit-history-present"
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.19"
+      text: "Systematic Clinical Examination — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "document-elicit-history-present"
+      reason: "Foundation knowledge"
+  related_details: []

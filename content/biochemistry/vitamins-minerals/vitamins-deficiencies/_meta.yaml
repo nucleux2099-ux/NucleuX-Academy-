@@ -1,0 +1,161 @@
+topic_id: vitamins-deficiencies
+name: "Vitamins (Water-soluble & Fat-soluble — Deficiencies)"
+description: >
+  Comprehensive review of all vitamins, their biochemical roles, deficiency syndromes, and toxicities.
+high_yield: true
+nmc_codes:
+  - code: BI8.1
+    domain: KH
+    core: true
+    phase: Phase 1
+  - code: BI8.2
+    domain: KH
+    core: true
+    phase: Phase 1
+
+overview: >
+  Fat-soluble vitamins (A, D, E, K) are stored in fat, can accumulate to toxic levels.
+  Water-soluble vitamins (B-complex, C) are cofactors for enzymes, excreted in urine (except B12 stored in liver).
+  Deficiency states are extremely high-yield for exams. Key principle: know the coenzyme form,
+  the enzyme it serves, and the deficiency disease.
+  📚 Harper's Biochemistry, 31st Ed, Ch.44; 📚 Stryer Biochemistry, Ch.Appendix
+
+learning_objectives:
+  - List all fat-soluble and water-soluble vitamins with their active coenzyme forms
+  - Match each vitamin deficiency with its clinical syndrome
+  - Identify vitamins that serve as cofactors for specific metabolic enzymes
+  - Recognize toxicity syndromes for fat-soluble vitamins
+  - Apply vitamin biochemistry to clinical scenarios
+
+content:
+  atoms:
+    - id: fat-soluble-vitamins
+      title: "Fat-Soluble Vitamins (A, D, E, K)"
+      text: >
+        Vitamin A (retinol): vision (retinal in rhodopsin), epithelial maintenance, antioxidant.
+        Deficiency: night blindness → xerophthalmia → Bitot's spots → keratomalacia. Excess: pseudotumor cerebri.
+        Vitamin D (cholecalciferol): Ca²+ and PO4³⁻ homeostasis. Active form: 1,25-(OH)2D3 (calcitriol).
+        Deficiency: rickets (children), osteomalacia (adults). Requires 25-hydroxylation (liver) + 1α-hydroxylation (kidney).
+        Vitamin E (tocopherol): antioxidant, protects RBC membranes from lipid peroxidation.
+        Deficiency: hemolytic anemia in premature infants, spinocerebellar ataxia.
+        Vitamin K (phylloquinone): γ-carboxylation of clotting factors II, VII, IX, X, protein C & S.
+        Deficiency: bleeding (prolonged PT). Neonates lack gut flora → hemorrhagic disease of newborn.
+        📚 Harper's Biochemistry, 31st Ed, Ch.44
+
+    - id: water-soluble-b-vitamins
+      title: "Water-Soluble B Vitamins"
+      text: >
+        B1 (thiamine) → TPP: cofactor for pyruvate dehydrogenase, α-KG dehydrogenase, transketolase.
+        Deficiency: beriberi (wet=cardiac, dry=neuro), Wernicke-Korsakoff (alcoholics).
+        B2 (riboflavin) → FAD, FMN. Deficiency: cheilosis, glossitis, corneal vascularization.
+        B3 (niacin) → NAD+, NADP+. Deficiency: pellagra (3 D's: dermatitis, diarrhea, dementia). Synthesized from tryptophan.
+        B5 (pantothenate) → CoA. Deficiency: rare ("burning feet syndrome").
+        B6 (pyridoxine) → PLP: cofactor for transaminases, ALA synthase, cystathionine synthase.
+        Deficiency: sideroblastic anemia, peripheral neuropathy, seizures (↓GABA synthesis).
+        B7 (biotin) → cofactor for carboxylases (pyruvate carboxylase, acetyl-CoA carboxylase, propionyl-CoA carboxylase).
+        Deficiency: dermatitis, alopecia (raw egg whites contain avidin that binds biotin).
+        B9 (folate) → THF: 1-carbon transfers, DNA synthesis (thymidylate synthase). Deficiency: megaloblastic anemia, NTDs.
+        B12 (cobalamin) → cofactor for methionine synthase and methylmalonyl-CoA mutase.
+        Deficiency: megaloblastic anemia + neurological symptoms (subacute combined degeneration), ↑methylmalonic acid + ↑homocysteine.
+        📚 Harper's Biochemistry, 31st Ed, Ch.44
+
+    - id: vitamin-c
+      title: "Vitamin C (Ascorbic Acid)"
+      text: >
+        Cofactor for prolyl and lysyl hydroxylase (collagen synthesis), dopamine β-hydroxylase.
+        Powerful antioxidant, enhances iron absorption (Fe³+ → Fe²+).
+        Deficiency: scurvy — poor wound healing, bleeding gums, perifollicular hemorrhages,
+        corkscrew hairs, weakened collagen. Seen in elderly, alcoholics, those with poor diet.
+        📚 Harper's Biochemistry, 31st Ed, Ch.44
+
+  clinical:
+    - title: "Clinical Correlation: Wernicke-Korsakoff Syndrome"
+      text: >
+        Thiamine (B1) deficiency in alcoholics. Wernicke: confusion, ophthalmoplegia, ataxia (acute, reversible).
+        Korsakoff: confabulation, anterograde amnesia (chronic, often irreversible).
+        ALWAYS give thiamine BEFORE glucose in alcoholics (glucose metabolism consumes thiamine).
+    - title: "Clinical Correlation: Folate vs B12 Deficiency"
+      text: >
+        Both cause megaloblastic anemia. Only B12 deficiency causes neurological symptoms
+        (subacute combined degeneration — demyelination of posterior columns and lateral corticospinal tracts).
+        B12: ↑methylmalonic acid + ↑homocysteine. Folate: ↑homocysteine only (MMA normal).
+
+high_yield_points:
+  - "B1 (thiamine/TPP) = PDH, α-KGDH, transketolase; deficiency = beriberi, Wernicke-Korsakoff"
+  - "B3 (niacin) deficiency = pellagra (Dermatitis, Diarrhea, Dementia); made from Trp"
+  - "B6 (PLP) required for ALL transaminases + ALA synthase; deficiency = sideroblastic anemia"
+  - "B12 deficiency: megaloblastic anemia + neuro (↑MMA + ↑homocysteine); Folate: anemia only (↑homocysteine)"
+  - "Vitamin K: γ-carboxylation of factors II, VII, IX, X and protein C, S"
+  - "Vitamin D activation: liver (25-OH) → kidney (1,25-OH) = calcitriol"
+  - "Vitamin A deficiency: night blindness → Bitot's spots → keratomalacia"
+  - "Scurvy (vit C def): impaired collagen crosslinking → bleeding, poor wound healing"
+  - "Give thiamine BEFORE glucose in alcoholics"
+  - "Biotin deficiency from raw egg whites (avidin binds biotin)"
+
+mcqs:
+  - question: "A chronic alcoholic presents with confusion, ataxia, and ophthalmoplegia. Which vitamin deficiency is most likely?"
+    options:
+      - "Vitamin B12"
+      - "Vitamin B1 (thiamine)"
+      - "Vitamin B6"
+      - "Vitamin C"
+    answer: "Vitamin B1 (thiamine)"
+    explanation: >
+      Classic Wernicke's encephalopathy triad: confusion, ophthalmoplegia, ataxia — due to thiamine
+      deficiency. Common in alcoholics due to poor nutrition and impaired thiamine absorption.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 1
+
+  - question: "A patient has megaloblastic anemia with elevated methylmalonic acid and homocysteine. Which vitamin is deficient?"
+    options:
+      - "Folate"
+      - "Vitamin B12"
+      - "Vitamin B6"
+      - "Vitamin C"
+    answer: "Vitamin B12"
+    explanation: >
+      B12 is cofactor for methylmalonyl-CoA mutase (↑MMA when deficient) and methionine synthase
+      (↑homocysteine). Folate deficiency causes ↑homocysteine but normal MMA.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 1
+
+  - question: "Which vitamin is required for γ-carboxylation of clotting factors?"
+    options:
+      - "Vitamin A"
+      - "Vitamin D"
+      - "Vitamin E"
+      - "Vitamin K"
+    answer: "Vitamin K"
+    explanation: >
+      Vitamin K is essential for γ-carboxylation of glutamate residues on factors II, VII, IX, X
+      and proteins C and S. This modification is needed for Ca²+ binding and clotting function.
+      Warfarin inhibits vitamin K epoxide reductase.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 1
+
+  - question: "Pellagra (dermatitis, diarrhea, dementia) is caused by deficiency of:"
+    options:
+      - "Thiamine"
+      - "Riboflavin"
+      - "Niacin"
+      - "Pyridoxine"
+    answer: "Niacin"
+    explanation: >
+      Niacin (B3) deficiency causes pellagra — the 3 D's: dermatitis (sun-exposed skin),
+      diarrhea, dementia. A 4th D (death) if untreated. Niacin can be synthesized from tryptophan;
+      corn-based diets (low tryptophan) predispose.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 1
+
+  - question: "A patient on isoniazid therapy develops peripheral neuropathy and sideroblastic anemia. Which vitamin should be supplemented?"
+    options:
+      - "B1 (thiamine)"
+      - "B6 (pyridoxine)"
+      - "B12 (cobalamin)"
+      - "B9 (folate)"
+    answer: "B6 (pyridoxine)"
+    explanation: >
+      INH inhibits pyridoxine (B6) metabolism. B6 (PLP) is needed for ALA synthase (heme synthesis —
+      deficiency → sideroblastic anemia) and neurotransmitter synthesis (neuropathy). Always co-prescribe B6 with INH.
+      📚 Harper's Biochemistry, 31st Ed, Ch.44
+    difficulty: 2

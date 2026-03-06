@@ -1,0 +1,9 @@
+topic_id: vaccination-in-pregnancy
+name: Vaccination In Pregnancy
+description: Vaccination In Pregnancy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG8.7
+  domain: KH
+  core: true
+  phase: Phase 3

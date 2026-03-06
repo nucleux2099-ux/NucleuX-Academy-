@@ -1,0 +1,9 @@
+topic_id: drug-development-phases
+name: Drug Development Phases
+description: Drug Development Phases — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PH1.64
+  domain: KH
+  core: true
+  phase: Phase 1

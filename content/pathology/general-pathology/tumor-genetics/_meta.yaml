@@ -1,0 +1,49 @@
+topic_id: tumor-genetics
+name: Tumor Genetics
+description: Tumor Genetics — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA11.2
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA26.6
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA26.7
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA28.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA28.14
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA28.15
+  domain: KH
+  core: false
+  phase: Phase 2
+- code: PA28.16
+  domain: KH
+  core: false
+  phase: Phase 3
+- code: PA32.5
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA35.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA36.1
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: PA7.4
+  domain: KH
+  core: true
+  phase: Phase 1

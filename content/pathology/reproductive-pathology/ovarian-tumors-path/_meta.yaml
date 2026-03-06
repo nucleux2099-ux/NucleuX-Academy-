@@ -1,0 +1,9 @@
+topic_id: ovarian-tumors-path
+name: Ovarian Tumors Path
+description: Ovarian Tumors Path — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PA34.4
+  domain: SH
+  core: false
+  phase: Phase 1

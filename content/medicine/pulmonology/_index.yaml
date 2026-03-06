@@ -1,0 +1,67 @@
+id: pulmonology
+title: "Pulmonology"
+subject: medicine
+description: |
+  Respiratory diseases and pulmonary medicine.
+
+stats:
+  total_topics: 29
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: airway
+    title: "Airway Disease"
+    topics:
+      - asthma
+      - copd
+      - bronchiectasis
+      - cystic-fibrosis
+  - id: infection
+    title: "Pulmonary Infections"
+    topics:
+      - community-acquired-pneumonia
+      - hospital-acquired-pneumonia
+      - lung-abscess
+      - empyema
+      - aspergillosis-pulmonary
+      - pneumocystis-pneumonia
+  - id: ild
+    title: "Interstitial Lung Disease"
+    topics:
+      - interstitial-lung-disease-overview
+      - idiopathic-pulmonary-fibrosis
+      - sarcoidosis
+      - hypersensitivity-pneumonitis
+      - occupational-lung-disease
+  - id: vascular
+    title: "Pulmonary Vascular"
+    topics:
+      - pulmonary-embolism
+      - pulmonary-hypertension-medical
+      - cor-pulmonale
+  - id: pleural
+    title: "Pleural Disease"
+    topics:
+      - pleural-effusion
+      - pneumothorax
+      - mesothelioma
+  - id: cancer
+    title: "Lung Cancer"
+    topics:
+      - lung-cancer
+      - lung-cancer-staging
+      - small-cell-lung-cancer
+  - id: critical
+    title: "Critical Respiratory"
+    topics:
+      - ards
+      - respiratory-failure
+      - mechanical-ventilation-basics
+      - oxygen-therapy
+      - sleep-apnea
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

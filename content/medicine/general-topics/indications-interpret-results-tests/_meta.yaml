@@ -1,0 +1,18 @@
+title: "Interpreting Test Results"
+slug: indications-interpret-results-tests
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM26.23"
+prerequisites:
+  - "diagnostic-work"
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM26.23"
+      text: "Interpreting Test Results — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "diagnostic-work"
+      reason: "Foundation knowledge"
+  related_details: []

@@ -1,0 +1,13 @@
+topic_id: diagnosis-of-pregnancy
+name: Diagnosis Of Pregnancy
+description: Diagnosis Of Pregnancy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.5
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: OG12.6
+  domain: KH
+  core: true
+  phase: Phase 2

@@ -1,0 +1,13 @@
+topic_id: renal-cell-carcinoma-path
+name: Renal Cell Carcinoma Path
+description: Renal Cell Carcinoma Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA2.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PA2.8
+  domain: SH
+  core: true
+  phase: Phase 1

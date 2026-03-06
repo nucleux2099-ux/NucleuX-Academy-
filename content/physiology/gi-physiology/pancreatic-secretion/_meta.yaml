@@ -1,0 +1,13 @@
+topic_id: pancreatic-secretion
+name: Pancreatic Secretion
+description: Pancreatic Secretion — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY4.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY8.2
+  domain: KH
+  core: true
+  phase: Phase 1

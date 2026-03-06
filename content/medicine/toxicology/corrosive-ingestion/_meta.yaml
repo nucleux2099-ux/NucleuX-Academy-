@@ -1,0 +1,15 @@
+title: "Corrosive Ingestion"
+slug: corrosive-ingestion
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.24"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM24.24"
+      text: "Corrosive Ingestion — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

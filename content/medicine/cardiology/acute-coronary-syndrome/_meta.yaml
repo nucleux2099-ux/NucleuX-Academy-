@@ -1,0 +1,51 @@
+title: Acute Coronary Syndrome
+slug: acute-coronary-syndrome
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.21
+  - IM1.25
+  - IM15.3
+  - IM16.1
+  - IM16.2
+  - IM2.14
+  - IM2.16
+  - IM2.5
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.21
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM1.25
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM15.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM16.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM16.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM2.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM2.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+    - code: IM2.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute coronary
+        syndrome
+      domain: KH
+  prerequisite_details: []
+  related_details: []

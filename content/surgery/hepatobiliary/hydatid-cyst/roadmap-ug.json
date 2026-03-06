@@ -1,0 +1,50 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Segmental liver anatomy determines cyst localization, surgical approach, and proximity to major hepatic veins and bile ducts",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-abscess",
+      "nmcCode": "",
+      "reason": "Liver abscess is the primary differential for cystic hepatic lesions; distinguishing hydatid from pyogenic/amoebic abscess guides management",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "hepatocellular-carcinoma",
+      "nmcCode": "",
+      "reason": "Solid-appearing hydatid cysts can mimic hepatic tumors on imaging; differentiation is critical before intervention",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholangitis",
+      "nmcCode": "",
+      "reason": "Intrabiliary rupture of hydatid cyst causes obstructive cholangitis, a surgical emergency",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-metastases",
+      "nmcCode": "",
+      "reason": "Cystic liver metastases (ovarian, neuroendocrine) enter the differential for hepatic cystic lesions",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.10: Describe the applied anatomy of liver. Describe the Clinical features,",
+    "MI8.1: Enumerate the microbial agents and their vectors causing Zoonotic"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Hydatid Cyst across foundational sciences and clinical applications."
+}

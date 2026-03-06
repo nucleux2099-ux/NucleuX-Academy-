@@ -1,0 +1,144 @@
+overview: |
+  Acute pancreatitis is an inflammatory condition of the pancreas ranging from mild edematous (80%) to
+  severe necrotizing (20%) forms. Gallstones and alcohol are responsible for 80% of cases. Severity assessment
+  using Ranson's criteria, APACHE II, and the Modified Atlanta Classification guides management and prognosis.
+
+learning_objectives:
+  - Enumerate causes of acute pancreatitis using the GET SMASHED mnemonic
+  - Apply Ranson's criteria and Modified Atlanta Classification for severity assessment
+  - Differentiate early organ failure from late local complications
+  - Manage mild vs severe acute pancreatitis including necrosectomy indications
+  - Recognize and manage complications (pseudocyst, pancreatic abscess, WON)
+
+content:
+  atoms:
+    - title: Etiology — GET SMASHED
+      text: |
+        G — Gallstones (MC cause, 40%)
+        E — Ethanol/Alcohol (2nd MC, 35%)
+        T — Trauma, S — Steroids, M — Mumps/infections
+        A — Autoimmune, S — Scorpion sting/Spider bite
+        H — Hyperlipidemia/Hypercalcemia/Hypothermia
+        E — ERCP (post-procedural)
+        D — Drugs (azathioprine, valproate, thiazides, steroids)
+        📚 Bailey & Love, 28th Ed, Ch.69; Sabiston, 21st Ed, Ch.56
+
+    - title: Ranson's Criteria
+      text: |
+        **At admission (GA LAW):** Glucose >200, Age >55, LDH >350, AST >250, WBC >16,000
+        **At 48 hours (C HOBBS):** Calcium <8, Hematocrit drop >10%, O2 (PaO2) <60, Base deficit >4,
+        BUN rise >5, Sequestration of fluid >6L.
+        Score: <3 = mild (1% mortality), 3-5 = moderate (15%), >6 = severe (40% mortality).
+        📚 Sabiston, 21st Ed, Ch.56
+
+    - title: Modified Atlanta Classification (2012)
+      text: |
+        **Mild:** No organ failure, no local/systemic complications.
+        **Moderately severe:** Transient organ failure (<48h) OR local complications without persistent organ failure.
+        **Severe:** Persistent organ failure (>48h) — renal, respiratory, or cardiovascular.
+        **Local complications:** Acute peripancreatic fluid collection (<4 wks), Pseudocyst (>4 wks, encapsulated),
+        Acute necrotic collection (<4 wks), Walled-off necrosis (WON, >4 wks).
+        📚 Sabiston, 21st Ed, Ch.56
+
+    - title: Management
+      text: |
+        **Mild:** Aggressive IV fluids (Ringer's lactate), analgesics (avoid morphine — causes sphincter
+        of Oddi spasm; use pethidine/fentanyl), NPO initially → early oral feeding when tolerated.
+        **Severe:** ICU care, organ support. CT scan at 72h-7 days to assess necrosis (CTSI scoring).
+        **Infected necrosis:** Step-up approach — percutaneous drainage → video-assisted retroperitoneal
+        debridement (VARD) → open necrosectomy (last resort). FNA to confirm infection if suspected.
+        **Gallstone pancreatitis:** Early ERCP (<24h) if cholangitis/persistent biliary obstruction.
+        Cholecystectomy during same admission (mild) or after recovery (severe).
+        📚 Bailey & Love, 28th Ed, Ch.69; Maingot's, 12th Ed, Part VIII
+
+    - title: Complications & Pseudocyst
+      text: |
+        **Early (within 2 weeks):** Organ failure (lung MC — ARDS), SIRS, DIC.
+        **Late (after 2 weeks):** Pseudocyst, WON, infected necrosis, pancreatic abscess,
+        pseudoaneurysm (splenic artery MC — massive GI bleed), pancreatic duct disruption.
+        **Pseudocyst:** Encapsulated fluid collection >4 weeks, NO epithelial lining (unlike true cyst).
+        Treat if >6cm, symptomatic, or complicated. Internal drainage preferred:
+        Cystogastrostomy (MC), cystojejunostomy (Roux-en-Y), cystoduodenostomy.
+        📚 Sabiston, 21st Ed, Ch.56
+
+  clinical: |
+    **Management Algorithm:**
+    1. Diagnosis: Clinical (epigastric pain radiating to back) + Amylase/Lipase >3x ULN
+    2. Severity: Ranson's at 0 & 48h, APACHE II, BISAP, CRP at 48h (>150 = severe)
+    3. Mild: IV fluids + analgesia + early oral feeding → identify cause → treat
+    4. Severe: ICU → CT at 72h → CTSI → monitor for organ failure
+    5. Infected necrosis: Step-up approach (drain → VARD → open necrosectomy)
+    6. Gallstone cause: ERCP if cholangitis → cholecystectomy before discharge
+
+  high_yield_points:
+    - "MC cause: Gallstones; 2nd MC: Alcohol"
+    - "Serum lipase is more specific and stays elevated longer than amylase"
+    - "Ranson's ≥3 = severe pancreatitis; mortality rises with score"
+    - "Modified Atlanta: Persistent organ failure >48h = Severe"
+    - "CT severity index (CTSI): Balthazar grade + necrosis score; >6 = severe"
+    - "Pseudocyst: NO epithelial lining, appears >4 weeks, needs wall maturation before drainage"
+    - "MC pseudocyst drainage: Cystogastrostomy (transgastric)"
+    - "Infected necrosis: Step-up approach; gas bubbles in necrosis on CT"
+    - "Avoid morphine in pancreatitis (sphincter of Oddi spasm) — use pethidine"
+    - "Grey Turner sign (flank), Cullen sign (periumbilical) = retroperitoneal hemorrhage in severe pancreatitis"
+
+mcqs:
+  - question: "Which biochemical marker is most specific for acute pancreatitis?"
+    options:
+      a: Serum amylase
+      b: Serum lipase
+      c: Urinary amylase
+      d: CRP
+    answer: b
+    explanation: |
+      Serum lipase is more specific for pancreatitis than amylase (amylase can be elevated in
+      salivary gland disease, bowel obstruction, etc.). Lipase also stays elevated longer (7-14 days
+      vs 3-5 days for amylase). 📚 Sabiston, 21st Ed, Ch.56
+
+  - question: "A patient with acute pancreatitis has a CT showing 50% pancreatic necrosis. The patient is afebrile and improving. What is the appropriate management?"
+    options:
+      a: Immediate surgical necrosectomy
+      b: CT-guided FNA of necrosis
+      c: Continue conservative management
+      d: ERCP with sphincterotomy
+    answer: c
+    explanation: |
+      Sterile pancreatic necrosis is managed conservatively regardless of extent. Surgery is only
+      indicated for INFECTED necrosis (suspected by clinical deterioration, gas bubbles on CT,
+      confirmed by FNA). The step-up approach is used. 📚 Bailey & Love, 28th Ed, Ch.69
+
+  - question: "Cullen's sign in acute pancreatitis indicates:"
+    options:
+      a: Periumbilical ecchymosis due to retroperitoneal hemorrhage
+      b: Flank ecchymosis due to retroperitoneal hemorrhage
+      c: Splenic vein thrombosis
+      d: Pseudocyst formation
+    answer: a
+    explanation: |
+      Cullen's sign = periumbilical bluish discoloration. Grey Turner's sign = flank ecchymosis.
+      Both indicate retroperitoneal hemorrhage tracking along tissue planes in severe hemorrhagic
+      pancreatitis. They are associated with poor prognosis. 📚 Bailey & Love, 28th Ed, Ch.69
+
+  - question: "Which of the following is NOT a Ranson's criteria at admission?"
+    options:
+      a: Age >55 years
+      b: WBC >16,000
+      c: Calcium <8 mg/dL
+      d: Glucose >200 mg/dL
+    answer: c
+    explanation: |
+      Calcium <8 mg/dL is a Ranson's criterion at 48 hours (C HOBBS), not at admission.
+      At admission criteria (GA LAW): Glucose >200, Age >55, LDH >350, AST >250, WBC >16,000.
+      📚 Sabiston, 21st Ed, Ch.56
+
+  - question: "A pancreatic pseudocyst is best differentiated from a true cyst by:"
+    options:
+      a: Size of the cyst
+      b: Absence of epithelial lining
+      c: Location in the pancreas
+      d: Presence of calcification
+    answer: b
+    explanation: |
+      A pseudocyst lacks an epithelial lining — it is encapsulated by fibrous/granulation tissue.
+      True cysts (serous/mucinous cystadenoma) have an epithelial lining. This distinction is
+      crucial as mucinous cysts have malignant potential. 📚 Sabiston, 21st Ed, Ch.56

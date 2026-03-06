@@ -1,0 +1,148 @@
+overview: |
+  Colorectal cancer is the 3rd most common cancer worldwide. Most arise from the adenoma-carcinoma sequence
+  (APC → K-ras → p53). Left-sided tumours present with obstruction and altered bowel habits; right-sided with
+  anemia and mass. Dukes'/TNM staging guides management. Surgery is the mainstay with adjuvant chemotherapy for stage III.
+
+learning_objectives:
+  - Describe the adenoma-carcinoma sequence and genetic pathways
+  - Differentiate right-sided from left-sided colorectal cancer presentations
+  - Apply Dukes' and TNM staging for prognosis and treatment planning
+  - Describe surgical options by tumour location
+  - Understand the role of adjuvant chemotherapy and screening
+
+content:
+  atoms:
+    - title: Pathogenesis
+      text: |
+        **Adenoma-carcinoma sequence (Vogelstein model):** Normal mucosa → APC gene mutation → adenoma →
+        K-ras mutation → advanced adenoma → p53 loss → carcinoma (takes 10-15 years).
+        **Risk factors:** Age >50, FAP (APC gene, 100% cancer risk), HNPCC/Lynch syndrome (MLH1/MSH2 mismatch
+        repair genes, MC hereditary CRC), IBD (UC > Crohn's), high-fat/low-fiber diet, smoking, prior CRC.
+        **FAP:** >100 adenomatous polyps by age 20; prophylactic colectomy needed.
+        **Lynch syndrome:** Amsterdam criteria (3-2-1 rule); microsatellite instability pathway.
+        📚 Bailey & Love, 28th Ed, Ch.73; Sabiston, 21st Ed, Ch.52
+
+    - title: Clinical Features
+      text: |
+        **Right colon (caecum, ascending):** Insidious onset, iron-deficiency anemia (occult blood loss),
+        palpable mass in RIF, weight loss. Tumour is often polypoid/fungating. Late obstruction.
+        **Left colon (descending, sigmoid):** Change in bowel habits (alternating constipation/diarrhea),
+        colicky pain, rectal bleeding, obstruction (annular/napkin-ring constriction). Early obstruction.
+        **Rectum:** Bleeding per rectum (MC symptom), tenesmus, mucus discharge, altered stool caliber.
+        **Emergency presentation:** Obstruction (15-20%), perforation, massive bleeding.
+        📚 Bailey & Love, 28th Ed, Ch.73
+
+    - title: Staging & Prognosis
+      text: |
+        **Dukes' classification:** A — confined to bowel wall (90% 5-yr survival). B — through bowel wall,
+        no nodes (65%). C — lymph node involvement (C1: apical node negative, C2: apical positive) (30%).
+        D — distant metastases (5%).
+        **TNM:** T1 (submucosa), T2 (muscularis), T3 (subserosa), T4 (perforation/invasion of organs).
+        N0 (no nodes), N1 (1-3 nodes), N2 (≥4 nodes). M0/M1.
+        **CEA:** Tumour marker — NOT for screening. Used for monitoring recurrence post-surgery.
+        Normal <5 ng/mL. Rising CEA post-surgery suggests recurrence.
+        📚 Sabiston, 21st Ed, Ch.52
+
+    - title: Surgical Management
+      text: |
+        **Right hemicolectomy:** Caecum, ascending, hepatic flexure. Ligates ileocolic, right colic, right branch of middle colic.
+        **Extended right hemicolectomy:** Transverse colon.
+        **Left hemicolectomy:** Descending colon. Ligates left colic, left branch of middle colic.
+        **Sigmoid colectomy:** Sigmoid colon.
+        **Anterior resection:** Upper rectum (>5cm from anal verge). Sphincter-preserving with TME.
+        **Abdominoperineal resection (APR/Miles):** Lower rectum (<5cm from anal verge). Permanent colostomy.
+        **Total Mesorectal Excision (TME):** Standard for rectal cancer — reduces local recurrence from 30% to 5%.
+        **Emergency obstruction (left-sided):** Hartmann's procedure or defunctioning stoma + delayed resection.
+        📚 Bailey & Love, 28th Ed, Ch.73; Maingot's, 12th Ed, Part V
+
+    - title: Adjuvant Therapy & Screening
+      text: |
+        **Chemotherapy:** Stage III (node-positive): FOLFOX (5-FU + leucovorin + oxaliplatin). Stage II: selective
+        (high-risk features: T4, perforation, inadequate nodes sampled, poorly differentiated).
+        **Rectal cancer:** Neoadjuvant chemoradiotherapy (long course) for T3/T4 or node-positive → surgery → adjuvant chemo.
+        **Screening:** Average risk: Colonoscopy every 10 years from age 50 (or 45 in US guidelines).
+        High risk (FAP): Flexible sigmoidoscopy from age 10-12; HNPCC: Colonoscopy every 2 years from age 25.
+        📚 Sabiston, 21st Ed, Ch.52
+
+  clinical: |
+    **Management Algorithm:**
+    1. Colonoscopy + biopsy (gold standard for diagnosis)
+    2. Staging: CT chest/abdomen/pelvis, CEA level
+    3. Rectal cancer: MRI pelvis for T and N staging
+    4. MDT discussion
+    5. Colon cancer: Surgery → adjuvant chemo if stage III
+    6. Rectal cancer: Neoadjuvant CRT if advanced → TME surgery → adjuvant chemo
+    7. Follow-up: CEA every 3-6 months, CT annually, colonoscopy at 1 year
+
+  high_yield_points:
+    - "MC hereditary CRC: Lynch syndrome (HNPCC); MC inherited polyposis: FAP"
+    - "Adenoma-carcinoma sequence: APC → K-ras → DCC → p53"
+    - "Right colon cancer: Anemia, mass; Left colon: Obstruction, altered bowel habits"
+    - "CEA: Monitor recurrence, NOT for screening"
+    - "TME: Gold standard for rectal cancer surgery — reduces local recurrence to <5%"
+    - "APR (Miles): Lower rectal cancer <5cm from anal verge — permanent colostomy"
+    - "Dukes' C = Node positive → adjuvant chemotherapy (FOLFOX)"
+    - "Rectal cancer: Neoadjuvant CRT for T3/T4 or N+"
+    - "FAP: >100 polyps, APC gene, 100% cancer risk — prophylactic colectomy"
+    - "Apple-core/napkin-ring lesion on barium enema: Left-sided CRC"
+
+mcqs:
+  - question: "A 60-year-old male presents with iron-deficiency anemia and a palpable mass in the right iliac fossa. Colonoscopy shows a fungating mass in the caecum. What is the appropriate surgery?"
+    options:
+      a: Left hemicolectomy
+      b: Right hemicolectomy
+      c: Sigmoid colectomy
+      d: Abdominoperineal resection
+    answer: b
+    explanation: |
+      Right hemicolectomy is the procedure for caecal and ascending colon cancers. It involves
+      resection from terminal ileum to proximal transverse colon with ligation of ileocolic,
+      right colic, and right branch of middle colic vessels. 📚 Bailey & Love, 28th Ed, Ch.73
+
+  - question: "Which gene mutation initiates the adenoma-carcinoma sequence?"
+    options:
+      a: K-ras
+      b: p53
+      c: APC
+      d: DCC
+    answer: c
+    explanation: |
+      The APC (adenomatous polyposis coli) gene mutation on chromosome 5q21 is the initiating event
+      in the adenoma-carcinoma sequence (Vogelstein model). Loss of APC is also the germline mutation
+      in FAP. 📚 Sabiston, 21st Ed, Ch.52
+
+  - question: "A rectal cancer located 3 cm from the anal verge. What is the standard surgical procedure?"
+    options:
+      a: Anterior resection with TME
+      b: Abdominoperineal resection
+      c: Local excision
+      d: Hartmann's procedure
+    answer: b
+    explanation: |
+      Tumours within 5 cm of the anal verge where sphincter preservation is not possible require
+      APR (Miles' operation) with permanent end colostomy. For tumours >5 cm from verge, anterior
+      resection with TME is preferred. 📚 Bailey & Love, 28th Ed, Ch.73
+
+  - question: "The tumour marker used for monitoring recurrence of colorectal cancer is:"
+    options:
+      a: CA 19-9
+      b: AFP
+      c: CEA
+      d: CA 125
+    answer: c
+    explanation: |
+      CEA (carcinoembryonic antigen) is used for post-operative surveillance. Rising CEA suggests
+      recurrence. It is NOT used for screening (poor sensitivity/specificity). Baseline level has
+      prognostic significance. 📚 Sabiston, 21st Ed, Ch.52
+
+  - question: "Lynch syndrome (HNPCC) is caused by mutations in:"
+    options:
+      a: APC gene
+      b: Mismatch repair genes (MLH1, MSH2)
+      c: BRCA1/2
+      d: RET proto-oncogene
+    answer: b
+    explanation: |
+      HNPCC/Lynch syndrome results from germline mutations in DNA mismatch repair genes (MLH1, MSH2,
+      MSH6, PMS2) leading to microsatellite instability. It is the MC hereditary colorectal cancer
+      syndrome. Amsterdam II criteria used for clinical diagnosis. 📚 Sabiston, 21st Ed, Ch.52

@@ -1,0 +1,55 @@
+title: Valvular Heart Disease
+slug: valvular-heart-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.1
+  - IM1.5
+  - IM1.7
+  - IM1.9
+  - IM1.11
+prerequisites:
+  - heart-failure
+related_topics:
+  - mitral-stenosis
+  - endocarditis
+  - heart-failure
+  - atrial-fibrillation
+enrichment:
+  nmcCodes:
+    - code: IM1.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of valvular heart
+        disease
+      domain: KH
+    - code: IM1.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of valvular heart
+        disease
+      domain: KH
+    - code: IM1.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of valvular heart
+        disease
+      domain: KH
+    - code: IM1.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of valvular heart
+        disease
+      domain: KH
+    - code: IM1.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of valvular heart
+        disease
+      domain: KH
+  prerequisite_details:
+    - slug: heart-failure
+      reason: Foundation knowledge for valvular heart disease
+  related_details:
+    - slug: mitral-stenosis
+      reason: Clinically related to valvular heart disease
+      relationship: clinical
+    - slug: endocarditis
+      reason: Clinically related to valvular heart disease
+      relationship: clinical
+    - slug: heart-failure
+      reason: Clinically related to valvular heart disease
+      relationship: clinical
+    - slug: atrial-fibrillation
+      reason: Clinically related to valvular heart disease
+      relationship: clinical

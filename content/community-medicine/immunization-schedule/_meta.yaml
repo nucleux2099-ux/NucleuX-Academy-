@@ -1,0 +1,159 @@
+topic_id: immunization-schedule
+name: Immunization Schedule (NIS)
+description: National Immunization Schedule of India, types of vaccines, cold chain, and AEFI
+high_yield: true
+
+overview: >
+  The Universal Immunization Programme (UIP) is one of the largest public health programs globally. The National
+  Immunization Schedule (NIS) covers vaccines from birth to 16 years and includes BCG, OPV, Hepatitis B, Pentavalent
+  (DPT+HepB+Hib), Rotavirus, PCV, IPV, MR, JE, DPT boosters, and Td. Understanding vaccine types, schedule,
+  cold chain, and AEFI management is essential.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.166-180)
+
+learning_objectives:
+  - Enumerate vaccines in the National Immunization Schedule
+  - Classify vaccines by type (live, killed, toxoid, etc.)
+  - Describe the cold chain system and its components
+  - Explain AEFI classification and management
+  - Know key differences between OPV and IPV
+
+content:
+  atoms:
+    - id: nis-schedule
+      title: "National Immunization Schedule (NIS)"
+      text: >
+        Birth: BCG, OPV-0, Hep B birth dose. 6 weeks: OPV-1, Pentavalent-1, Rotavirus-1, fIPV-1, PCV-1.
+        10 weeks: OPV-2, Pentavalent-2, Rotavirus-2. 14 weeks: OPV-3, Pentavalent-3, Rotavirus-3, fIPV-2, PCV-2.
+        9 months: MR-1 (measles-rubella), JE-1 (endemic areas), PCV booster. 16-24 months: MR-2, JE-2, DPT booster-1,
+        OPV booster. 5-6 years: DPT booster-2. 10 years: Td. 16 years: Td.
+        Pentavalent = DPT + Hep B + Hib.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.168-172)
+
+    - id: vaccine-types
+      title: "Types of Vaccines"
+      text: >
+        Live attenuated: BCG, OPV (Sabin), MR/MMR, rotavirus, varicella, yellow fever. Contraindicated in
+        immunocompromised (except BCG in HIV if asymptomatic).
+        Killed/inactivated: IPV (Salk), hepatitis A, rabies, typhoid (Vi polysaccharide).
+        Toxoid: DPT (diphtheria & tetanus toxoids + pertussis killed), Td.
+        Subunit/conjugate: Hib, PCV, meningococcal conjugate, Hep B (recombinant).
+        Pentavalent is a COMBINATION vaccine (not a new type).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.166-168)
+
+    - id: cold-chain
+      title: "Cold Chain System"
+      text: >
+        Cold chain = system of transporting and storing vaccines within recommended temperature range
+        (2-8°C for most vaccines). Components: cold rooms (state), walk-in coolers/freezers (district),
+        ILR (ice-lined refrigerators — PHC), deep freezers (for OPV, ice packs), vaccine carriers (field).
+        Freeze-sensitive vaccines (MUST NOT freeze): DPT, Pentavalent, Hep B, Td, IPV, PCV — damaged by
+        freezing (shake test to check). OPV and measles/MR can be frozen.
+        Vaccine Vial Monitor (VVM): heat-sensitive label showing cumulative heat exposure.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.174-178)
+
+    - id: aefi
+      title: "AEFI (Adverse Events Following Immunization)"
+      text: >
+        Classification: (1) Vaccine product-related (inherent properties), (2) Vaccine quality defect,
+        (3) Immunization error (programmatic — wrong dose, wrong route, wrong reconstitution),
+        (4) Immunization anxiety, (5) Coincidental.
+        Serious AEFI: death, hospitalization, disability, cluster of cases — must be reported within 24 hours.
+        BCG: BCGitis, disseminated BCG (immunocompromised). OPV: VAPP (vaccine-associated paralytic polio —
+        1 in 2.4 million doses). DPT: HHE (hypotonic-hyporesponsive episode), seizures, encephalopathy.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.178-180)
+
+    - id: opv-vs-ipv
+      title: "OPV vs IPV"
+      text: >
+        OPV (oral polio vaccine, Sabin): live attenuated, oral, induces gut immunity (IgA), cheap, easy
+        to administer, herd immunity through contact spread. Risk: VAPP, cVDPV.
+        IPV (inactivated polio vaccine, Salk): killed, injectable, induces systemic immunity (IgG), NO risk
+        of VAPP, more expensive. India uses both: OPV for routine + IPV (fractional intradermal) for boosting.
+        India declared polio-free in 2014 (last wild case: Jan 2011).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.170-172)
+
+  clinical:
+    - title: "Clinical Correlation: Shake Test for Freeze Damage"
+      text: >
+        The shake test detects freeze damage in adsorbed vaccines (DPT, Pentavalent, Hep B, Td). Shake the
+        suspect vial and a control vial. If the suspect vial sediments faster or shows flocculation, it has
+        been frozen and must be discarded. Frozen adsorbed vaccines lose potency permanently.
+
+high_yield_points:
+  - "Birth vaccines: BCG + OPV-0 + Hep B birth dose"
+  - "Pentavalent = DPT + Hep B + Hib (given at 6, 10, 14 weeks)"
+  - "MR-1 at 9 months; MR-2 at 16-24 months"
+  - "Freeze-sensitive (NEVER freeze): DPT, Pentavalent, Hep B, Td, IPV, PCV"
+  - "OPV can be frozen; MR/measles can be frozen"
+  - "VAPP risk with OPV: 1 in 2.4 million doses"
+  - "India declared polio-free in 2014 (last wild case: Jan 2011)"
+  - "VVM (Vaccine Vial Monitor) shows cumulative heat exposure"
+  - "Cold chain temperature: 2-8°C for most vaccines"
+  - "Shake test detects freeze damage in adsorbed vaccines"
+
+mcqs:
+  - question: "Which vaccines are given at birth under the National Immunization Schedule?"
+    options:
+      - "BCG, OPV-0, Hep B birth dose"
+      - "BCG, DPT-1, OPV-0"
+      - "BCG, Pentavalent-1, OPV-0"
+      - "OPV-0, Hep B, Rotavirus-1"
+    answer: "BCG, OPV-0, Hep B birth dose"
+    explanation: >
+      At birth, three vaccines are given: BCG (left upper arm, intradermal), OPV zero dose (oral),
+      and Hepatitis B birth dose (intramuscular, within 24 hours). Pentavalent starts at 6 weeks.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.168)
+    difficulty: 1
+
+  - question: "Which of the following vaccines is FREEZE-SENSITIVE and must NOT be frozen?"
+    options:
+      - "OPV"
+      - "Measles-Rubella (MR)"
+      - "DPT/Pentavalent"
+      - "BCG"
+    answer: "DPT/Pentavalent"
+    explanation: >
+      Adsorbed vaccines (DPT, Pentavalent, Hep B, Td, IPV, PCV) are freeze-sensitive — freezing
+      denatures the aluminum adjuvant and destroys vaccine potency. OPV, MR, BCG can be frozen.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.175)
+    difficulty: 1
+
+  - question: "Vaccine-associated paralytic polio (VAPP) is a risk of:"
+    options:
+      - "IPV (Salk)"
+      - "OPV (Sabin)"
+      - "Pentavalent"
+      - "BCG"
+    answer: "OPV (Sabin)"
+    explanation: >
+      VAPP occurs with OPV (live attenuated) due to reversion to neurovirulence. Risk: ~1 in 2.4 million
+      first doses. IPV (killed) has zero risk of VAPP. This is why many countries have switched to IPV-only schedules.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.171)
+    difficulty: 1
+
+  - question: "Pentavalent vaccine is a combination of:"
+    options:
+      - "DPT + Hep A + Hib"
+      - "DPT + Hep B + Hib"
+      - "DPT + IPV + Hib"
+      - "DPT + Hep B + PCV"
+    answer: "DPT + Hep B + Hib"
+    explanation: >
+      Pentavalent vaccine combines five antigens: Diphtheria toxoid, Pertussis (killed), Tetanus toxoid,
+      Hepatitis B (recombinant), and Haemophilus influenzae type b (conjugate). Given at 6, 10, 14 weeks.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.169)
+    difficulty: 1
+
+  - question: "The Vaccine Vial Monitor (VVM) indicates:"
+    options:
+      - "Vaccine expiry date"
+      - "Whether vaccine has been frozen"
+      - "Cumulative heat exposure of the vaccine"
+      - "Vaccine potency in laboratory testing"
+    answer: "Cumulative heat exposure of the vaccine"
+    explanation: >
+      VVM is a heat-sensitive label on vaccine vials that changes color progressively with cumulative heat
+      exposure. When the inner square becomes the same color or darker than the outer circle, the vaccine
+      should be discarded. It does not detect freeze damage (use shake test for that).
+      📚 Park's Textbook of PSM, 26th Ed, Ch.7 (p.177)
+    difficulty: 2

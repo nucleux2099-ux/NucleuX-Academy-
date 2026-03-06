@@ -1,0 +1,9 @@
+topic_id: hodgkin-lymphoma-path
+name: Hodgkin Lymphoma Path
+description: Hodgkin Lymphoma Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA19.5
+  domain: SH
+  core: true
+  phase: Phase 3

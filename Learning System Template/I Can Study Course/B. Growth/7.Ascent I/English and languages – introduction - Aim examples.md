@@ -1,0 +1,2 @@
+# English and languages – introduction - Aim examples
+English and languages have a few aspects we need to recognise before we can apply the Bear Hunter System. Once we understand the nature of these subjects, we can correctly apply the BHS to achieve top results much faster.

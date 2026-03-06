@@ -1,0 +1,29 @@
+topic_id: determination-differentiation-sex
+name: And discuss sex determination; sex differentiation and their
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY9.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.11
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.12
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.7
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY9.9
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,158 @@
+topic_id: communicable-disease-surveillance
+name: Communicable Disease Surveillance
+description: Disease surveillance systems, IDSP, outbreak investigation, and notification of communicable diseases
+high_yield: true
+
+overview: >
+  Disease surveillance is the continuous systematic collection, analysis, and interpretation of health data for
+  planning and evaluation. India's Integrated Disease Surveillance Programme (IDSP) monitors disease trends and
+  detects outbreaks. Understanding the epidemiological triad, chain of infection, outbreak investigation steps,
+  and notifiable diseases is essential for public health practice.
+  📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.180-200)
+
+learning_objectives:
+  - Define surveillance and its types (passive, active, sentinel)
+  - Describe IDSP and its components
+  - Explain steps of outbreak investigation
+  - Define epidemic, endemic, pandemic, and sporadic
+  - List notifiable diseases in India
+
+content:
+  atoms:
+    - id: surveillance-types
+      title: "Types of Surveillance"
+      text: >
+        Passive surveillance: routine reporting by health facilities (most common, underestimates true burden).
+        Active surveillance: health workers actively search for cases (more accurate, resource-intensive).
+        Sentinel surveillance: selected sites monitor specific diseases (HIV sentinel surveillance, AEFI).
+        Syndromic surveillance: monitors symptom clusters (early warning, pre-diagnostic).
+        Zero reporting: reporting even when no cases found (confirms system is functional).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.182-185)
+
+    - id: idsp
+      title: "Integrated Disease Surveillance Programme (IDSP)"
+      text: >
+        Launched 2004, restructured as Integrated Health Information Platform (IHIP) — digital platform.
+        Three reporting formats: S (syndromic — by health workers weekly), P (presumptive — by physicians),
+        L (laboratory-confirmed). Diseases monitored: cholera, malaria, dengue, chikungunya, JE, AES, measles,
+        diphtheria, pertussis, plague, hepatitis, meningitis, leptospirosis, etc.
+        Central Surveillance Unit (CSU) at NCDC Delhi; State and District Surveillance Units.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.185-190)
+
+    - id: outbreak-investigation
+      title: "Steps of Outbreak Investigation"
+      text: >
+        (1) Confirm the outbreak (observed > expected cases), (2) Verify diagnosis,
+        (3) Define and identify cases (case definition), (4) Describe outbreak by time (epidemic curve),
+        place (spot map), person (age, sex), (5) Develop hypotheses, (6) Test hypotheses (analytical study —
+        usually case-control), (7) Implement control measures, (8) Communicate findings,
+        (9) Monitor and evaluate.
+        Epidemic curve shape: point source (single peak), propagated (multiple peaks), continuous (plateau).
+        📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.190-195)
+
+    - id: epidemic-terms
+      title: "Endemic, Epidemic, Pandemic"
+      text: >
+        Endemic: constant presence of disease at baseline level in a geographic area (malaria in Odisha).
+        Epidemic: occurrence in excess of normal expectancy (cholera outbreak).
+        Pandemic: worldwide epidemic (COVID-19, HIV, influenza H1N1).
+        Sporadic: occasional, irregular occurrence (tetanus). Hyperendemic: persistently high level.
+        Holoendemic: affects most of the population from early age (malaria in tropical Africa).
+        Index case: first identified case. Primary case: first case introduced into population.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.180-182)
+
+    - id: notifiable-diseases
+      title: "Notifiable Diseases & IHR"
+      text: >
+        International Health Regulations (IHR, 2005): diseases requiring notification to WHO within 24 hours —
+        smallpox, polio (wild), SARS, new influenza subtype. Plus any event of potential international concern.
+        India: Epidemic Diseases Act 1897 (used during COVID-19). Notifiable diseases include cholera, plague,
+        yellow fever, COVID-19, Ebola, MERS. State-level notification lists vary.
+        Point of entry surveillance at ports, airports, land crossings.
+        📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.195-200)
+
+  clinical:
+    - title: "Clinical Correlation: COVID-19 Surveillance"
+      text: >
+        COVID-19 demonstrated the importance of real-time surveillance: RT-PCR testing, contact tracing,
+        genome sequencing (for variants), digital platforms (Aarogya Setu), and IHIP integration.
+        India invoked the Epidemic Diseases Act 1897 for the first time in decades.
+
+high_yield_points:
+  - "Passive surveillance: routine reporting (most common but underestimates)"
+  - "Active surveillance: health workers actively search for cases (more accurate)"
+  - "IDSP: S (syndromic), P (presumptive), L (laboratory) reporting formats"
+  - "Outbreak investigation: 9 steps — confirm, verify, define, describe, hypothesize, test, control, communicate, monitor"
+  - "Point source epidemic: single peak in epidemic curve"
+  - "Propagated epidemic: multiple successive peaks"
+  - "IHR 2005: mandatory WHO notification for smallpox, polio, SARS, new influenza"
+  - "Index case = first IDENTIFIED case; Primary case = first case INTRODUCED"
+  - "Endemic = constant baseline; Epidemic = above expected; Pandemic = global"
+  - "Epidemic Diseases Act 1897 used during COVID-19 in India"
+
+mcqs:
+  - question: "A disease that is constantly present at baseline level in a geographic area is termed:"
+    options:
+      - "Epidemic"
+      - "Endemic"
+      - "Pandemic"
+      - "Sporadic"
+    answer: "Endemic"
+    explanation: >
+      Endemic refers to the constant presence of a disease at its expected baseline level in a defined
+      geographic area. When cases exceed this expected level, it becomes an epidemic.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.180)
+    difficulty: 1
+
+  - question: "In outbreak investigation, the analytical study most commonly used is:"
+    options:
+      - "Cohort study"
+      - "Case-control study"
+      - "Cross-sectional study"
+      - "RCT"
+    answer: "Case-control study"
+    explanation: >
+      Case-control study is the most commonly used analytical study in outbreak investigation because it
+      is quick, inexpensive, and cases are already identified. Cohort studies may be used in well-defined
+      exposures (e.g., food at a banquet).
+      📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.193)
+    difficulty: 2
+
+  - question: "Under IHR 2005, which disease requires MANDATORY notification to WHO?"
+    options:
+      - "Tuberculosis"
+      - "Malaria"
+      - "Wild poliovirus"
+      - "Dengue"
+    answer: "Wild poliovirus"
+    explanation: >
+      IHR 2005 mandates notification of four diseases: smallpox, wild poliovirus, SARS, and human influenza
+      caused by a new subtype. Any other event of potential international public health concern also requires notification.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.197)
+    difficulty: 2
+
+  - question: "A single-peak epidemic curve with rapid rise and gradual fall suggests:"
+    options:
+      - "Propagated epidemic"
+      - "Point source epidemic"
+      - "Continuous source epidemic"
+      - "Mixed epidemic"
+    answer: "Point source epidemic"
+    explanation: >
+      Point source epidemic has a single exposure event resulting in one peak. All cases cluster within one
+      incubation period. Propagated epidemics show successive peaks as person-to-person transmission occurs.
+      📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.192)
+    difficulty: 1
+
+  - question: "The three reporting formats under IDSP are:"
+    options:
+      - "S (syndromic), P (presumptive), L (laboratory)"
+      - "A (acute), C (chronic), E (emergency)"
+      - "D (daily), W (weekly), M (monthly)"
+      - "I (immediate), R (routine), Z (zero)"
+    answer: "S (syndromic), P (presumptive), L (laboratory)"
+    explanation: >
+      IDSP uses three reporting formats: S-form (syndromic data from health workers), P-form (presumptive
+      diagnoses from physicians), L-form (laboratory-confirmed diagnoses from labs).
+      📚 Park's Textbook of PSM, 26th Ed, Ch.8 (p.187)
+    difficulty: 1

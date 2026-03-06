@@ -1,0 +1,36 @@
+title: "Biliary Stricture"
+slug: biliary-stricture
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.12"
+prerequisites:
+  - "liver-anatomy"
+  - "cholelithiasis"
+  - "bile-duct-injury"
+related_topics:
+  - "obstructive-jaundice"
+  - "cholangitis"
+  - "gallbladder-cancer"
+enrichment:
+  nmcCodes:
+    - code: "SU28.12"
+      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Bismuth-Strasberg classification of strictures requires precise knowledge of biliary confluence anatomy"
+    - slug: "cholelithiasis"
+      reason: "Cholecystectomy for gallstones is the most common cause of iatrogenic biliary stricture"
+    - slug: "bile-duct-injury"
+      reason: "Post-cholecystectomy bile duct injury is the primary etiology leading to benign biliary stricture formation"
+  related_details:
+    - slug: "obstructive-jaundice"
+      reason: "Biliary strictures present with progressive obstructive jaundice requiring structured evaluation with MRCP/ERCP"
+      relationship: "clinical"
+    - slug: "cholangitis"
+      reason: "Strictures cause biliary stasis predisposing to recurrent cholangitis episodes requiring drainage"
+      relationship: "complication"
+    - slug: "gallbladder-cancer"
+      reason: "Malignant strictures from gallbladder cancer must be differentiated from benign post-surgical strictures"
+      relationship: "differential"

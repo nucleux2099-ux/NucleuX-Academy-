@@ -1,0 +1,8 @@
+topic_id: elbow-dislocation
+name: Elbow Dislocation
+description: Elbow Dislocation — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR13.1
+  core: false
+  phase: Phase 3

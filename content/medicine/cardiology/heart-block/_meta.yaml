@@ -1,0 +1,31 @@
+title: Heart Block
+slug: heart-block
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.19
+  - IM1.2
+  - IM1.28
+  - IM1.4
+  - IM1.7
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart block
+      domain: KH
+    - code: IM1.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart block
+      domain: KH
+    - code: IM1.28
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart block
+      domain: KH
+    - code: IM1.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart block
+      domain: KH
+    - code: IM1.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of heart block
+      domain: KH
+  prerequisite_details: []
+  related_details: []

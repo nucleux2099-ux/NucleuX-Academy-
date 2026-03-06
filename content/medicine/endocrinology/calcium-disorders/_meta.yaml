@@ -1,0 +1,12 @@
+title: "Calcium Disorders"
+slug: calcium-disorders
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM12.3"
+  - "IM12.4"
+prerequisites:
+  - "renal-physiology"
+related_topics:
+  - "paget-disease-bone"
+  - "adrenal-disorders"

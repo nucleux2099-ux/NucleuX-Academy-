@@ -1,0 +1,174 @@
+topic_id: oxygen-hemoglobin-dissociation
+name: Oxygen-Hemoglobin Dissociation Curve
+description: Oxygen-Hemoglobin Dissociation Curve — Sigmoid curve, P50, shifts, and clinical significance
+high_yield: true
+nmc_codes:
+- code: PY6.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The oxygen-hemoglobin dissociation curve (ODC) describes the relationship between PO2 and hemoglobin oxygen
+  saturation. Its sigmoid shape reflects cooperative binding. Rightward shifts (decreased affinity) facilitate
+  O2 unloading at tissues; leftward shifts (increased affinity) impair O2 delivery. P50 (PO2 at 50% saturation)
+  is the key parameter — normal P50 = 26.7 mmHg.
+  📚 Guyton & Hall, 14th Ed, Ch.41 (p.531-540) / 📚 Ganong's, 26th Ed, Ch.35
+
+learning_objectives:
+  - Explain the sigmoid shape of the ODC and cooperative binding
+  - Define P50 and its clinical significance
+  - List factors that shift the curve rightward and leftward
+  - Describe the Bohr effect and Haldane effect
+  - Explain the clinical significance of carbon monoxide and methemoglobin on the curve
+
+content:
+  atoms:
+    - id: sigmoid-curve
+      title: "Sigmoid Shape and Cooperative Binding"
+      text: >
+        Hemoglobin (Hb) has 4 subunits (2α, 2β), each binding one O2. Binding of first O2 increases affinity
+        for subsequent O2 (cooperative binding/allosteric effect) → sigmoid curve.
+        Flat upper portion (PO2 70-100): large PO2 changes cause minimal SaO2 change — "safety margin" for O2 loading.
+        Steep middle portion (PO2 20-60): small PO2 changes cause large SaO2 changes — efficient O2 unloading at tissues.
+        At PO2 100 mmHg (arterial): SaO2 ≈ 97.5%. At PO2 40 mmHg (venous): SaO2 ≈ 75%.
+        At PO2 27 mmHg: SaO2 = 50% (P50).
+        Myoglobin has hyperbolic curve (single subunit, no cooperativity, higher O2 affinity than Hb).
+        📚 Guyton & Hall, 14th Ed, Ch.41 (p.531-534)
+
+    - id: right-left-shifts
+      title: "Shifts of the ODC"
+      text: >
+        RIGHT shift (↑P50, ↓affinity, ↑O2 unloading — "Right = Release"):
+        ↑Temperature, ↑PCO2, ↑H+ (↓pH), ↑2,3-DPG. Mnemonic: "CADET face Right" — CO2, Acid, DPG, Exercise, Temperature.
+        LEFT shift (↓P50, ↑affinity, ↓O2 unloading — "Left = Loading"):
+        ↓Temperature, ↓PCO2, ↓H+ (↑pH), ↓2,3-DPG, CO poisoning, methemoglobinemia, fetal hemoglobin (HbF).
+        2,3-DPG: produced in RBC glycolysis, binds β-chains of deoxy-Hb → stabilizes T (tense) state → ↓affinity.
+        Stored blood: ↓2,3-DPG → left shift → impaired O2 delivery (important in massive transfusion).
+        📚 Ganong's, 26th Ed, Ch.35
+
+    - id: bohr-haldane-effects
+      title: "Bohr Effect and Haldane Effect"
+      text: >
+        Bohr effect: ↑CO2/↑H+ at tissues → ↓Hb-O2 affinity → facilitates O2 unloading at tissues.
+        At lungs: ↓CO2/↓H+ → ↑Hb-O2 affinity → facilitates O2 loading. The Bohr effect describes
+        the influence of CO2/pH on O2 binding.
+        Haldane effect: deoxygenated Hb has greater affinity for CO2 than oxygenated Hb. At tissues: Hb releases O2,
+        picks up CO2. At lungs: Hb picks up O2, releases CO2. The Haldane effect describes the influence of O2 on CO2 binding.
+        Bohr and Haldane effects are complementary — both facilitate gas exchange at tissues AND lungs.
+        📚 Guyton & Hall, 14th Ed, Ch.41 (p.536-539)
+
+    - id: co-poisoning
+      title: "Carbon Monoxide Poisoning"
+      text: >
+        CO binds Hb with 200-250x greater affinity than O2 → forms carboxyhemoglobin (COHb).
+        Effect on ODC: LEFT shift + DECREASED O2 carrying capacity.
+        CO stabilizes R (relaxed) state → remaining Hb holds O2 more tightly → impaired O2 unloading at tissues.
+        Cherry-red skin color (COHb is bright red). Pulse oximetry reads FALSELY NORMAL (cannot distinguish COHb from OxyHb).
+        PaO2 is NORMAL (dissolved O2 unaffected). SaO2 is decreased (measured by co-oximetry, not pulse ox).
+        Treatment: 100% O2 (reduces CO half-life from 5h to 1h); hyperbaric O2 for severe cases.
+        📚 Ganong's, 26th Ed, Ch.35
+
+    - id: fetal-hemoglobin
+      title: "Fetal Hemoglobin (HbF)"
+      text: >
+        HbF (α2γ2) has higher O2 affinity than HbA (α2β2) — LEFT shifted ODC.
+        Mechanism: γ-chains bind 2,3-DPG poorly → less DPG effect → higher affinity.
+        Advantage: facilitates O2 transfer from maternal to fetal blood across placenta.
+        At placental PO2 (~40 mmHg), HbF is ~80% saturated while maternal HbA is ~75%.
+        HbF gradually replaced by HbA after birth (complete by 6 months).
+        📚 Guyton & Hall, 14th Ed, Ch.41
+
+  clinical:
+    - title: "Clinical Correlation: CO Poisoning vs Methemoglobinemia"
+      text: >
+        Both cause left shift and functional anemia. CO: cherry-red, pulse ox falsely normal, treat with 100% O2.
+        Methemoglobin (Fe3+): chocolate-brown blood that doesn't change with O2, pulse ox reads ~85% regardless.
+        Treat methemoglobinemia with methylene blue (reduces Fe3+ → Fe2+ via NADPH methemoglobin reductase).
+        G6PD deficiency → ↓NADPH → methylene blue ineffective → use ascorbic acid.
+    - title: "Clinical Correlation: Massive Transfusion"
+      text: >
+        Stored blood loses 2,3-DPG over time → left shifted ODC → impaired O2 delivery despite normal Hb levels.
+        Clinically significant in massive transfusion. 2,3-DPG regenerates within 24-48 hours after transfusion.
+
+  high_yield_points:
+    - "P50 = 26.7 mmHg (PO2 at 50% saturation) — increased P50 = right shift"
+    - "Right shift = CADET face Right: CO2, Acid, DPG, Exercise, Temperature"
+    - "Left shift: ↓temp, ↓CO2, ↑pH, ↓DPG, CO, methemoglobin, HbF"
+    - "Bohr effect: CO2/H+ effect on O2 binding; Haldane effect: O2 effect on CO2 binding"
+    - "CO has 200-250x greater affinity for Hb than O2 — pulse ox reads FALSELY NORMAL"
+    - "HbF left-shifted because γ-chains bind 2,3-DPG poorly"
+    - "Stored blood: ↓2,3-DPG → left shift → poor O2 delivery"
+    - "Myoglobin: hyperbolic curve, higher affinity than Hb, single subunit, no cooperativity"
+    - "Methemoglobin (Fe3+): chocolate-brown blood, pulse ox reads ~85%, treat with methylene blue"
+    - "Cooperative binding → sigmoid curve; first O2 binding is hardest (T→R state transition)"
+
+mcqs:
+  - question: "A patient presents with cherry-red skin, headache, and confusion after a house fire. Pulse oximetry shows 98%. The most likely diagnosis is:"
+    options:
+      - "Cyanide poisoning"
+      - "Carbon monoxide poisoning"
+      - "Methemoglobinemia"
+      - "Smoke inhalation injury"
+    answer: "Carbon monoxide poisoning"
+    explanation: >
+      Cherry-red skin + normal pulse ox reading + altered mental status after fire exposure = CO poisoning.
+      Pulse oximetry cannot distinguish COHb from OxyHb, giving falsely normal readings. PaO2 is also normal.
+      Diagnosis requires co-oximetry showing elevated COHb levels.
+      📚 Ganong's, 26th Ed, Ch.35
+    difficulty: 1
+
+  - question: "Which of the following causes a LEFT shift of the oxygen-hemoglobin dissociation curve?"
+    options:
+      - "Increased 2,3-DPG"
+      - "Increased temperature"
+      - "Decreased pH"
+      - "Fetal hemoglobin"
+    answer: "Fetal hemoglobin"
+    explanation: >
+      HbF has higher O2 affinity (left shift) because γ-chains bind 2,3-DPG poorly. Increased 2,3-DPG,
+      temperature, and decreased pH (acidosis) all cause right shift (decreased affinity).
+      📚 Guyton & Hall, 14th Ed, Ch.41
+    difficulty: 1
+
+  - question: "The Bohr effect describes:"
+    options:
+      - "The effect of O2 on CO2 binding to hemoglobin"
+      - "The effect of CO2/H+ on O2 binding to hemoglobin"
+      - "Cooperative O2 binding by hemoglobin subunits"
+      - "The effect of temperature on O2 binding"
+    answer: "The effect of CO2/H+ on O2 binding to hemoglobin"
+    explanation: >
+      Bohr effect: increased CO2/H+ decreases Hb-O2 affinity → promotes O2 release at tissues.
+      The Haldane effect is the reciprocal — the effect of O2 on CO2 binding. Both effects work together
+      to optimize gas exchange at tissues and lungs.
+      📚 Guyton & Hall, 14th Ed, Ch.41 (p.537)
+    difficulty: 1
+
+  - question: "A patient receives massive blood transfusion with stored blood. Post-transfusion, despite normal hemoglobin, tissue hypoxia persists. The most likely cause is:"
+    options:
+      - "Transfusion reaction causing hemolysis"
+      - "Decreased 2,3-DPG in stored blood"
+      - "Hyperkalemia from stored blood"
+      - "Citrate toxicity"
+    answer: "Decreased 2,3-DPG in stored blood"
+    explanation: >
+      Stored blood progressively loses 2,3-DPG → left-shifted ODC → Hb holds O2 tightly → impaired
+      O2 unloading at tissues despite adequate Hb and PaO2. 2,3-DPG regenerates within 24-48 hours
+      after transfusion. Clinically significant in massive transfusion scenarios.
+      📚 Ganong's, 26th Ed, Ch.35
+    difficulty: 2
+
+  - question: "P50 of normal adult hemoglobin is approximately:"
+    options:
+      - "13 mmHg"
+      - "27 mmHg"
+      - "40 mmHg"
+      - "60 mmHg"
+    answer: "27 mmHg"
+    explanation: >
+      P50 is the PO2 at which hemoglobin is 50% saturated. Normal P50 ≈ 26.7 mmHg (~27).
+      Increased P50 = right shift (decreased affinity). Decreased P50 = left shift (increased affinity).
+      HbF has P50 ≈ 19 mmHg (left-shifted). Myoglobin P50 ≈ 5 mmHg (very high affinity).
+      📚 Guyton & Hall, 14th Ed, Ch.41 (p.533)
+    difficulty: 1

@@ -1,0 +1,50 @@
+/**
+ * NucleuX Academy - GI Pathology Topics
+ * Skeleton file - content pending
+ */
+
+import type { LibraryTopic } from '../../types/library';
+
+const createSkeletonTopic = (
+  id: string,
+  name: string,
+  description: string,
+  difficulty: 1 | 2 | 3 | 4 | 5 = 3,
+  highYield: boolean = true
+): LibraryTopic => ({
+  id,
+  subjectId: 'pathology',
+  subspecialtyId: 'pathology-gi',
+  name,
+  slug: id,
+  description,
+  content: {
+    concept: `# ${name}\n\nContent pending...`,
+    keyPoints: [],
+    textbookRefs: [{ textbook: "Robbins & Cotran Pathologic Basis of Disease", chapter: 'TBD' }],
+    retrievalCards: [],
+    cases: [],
+  },
+  prerequisites: [],
+  relatedTopics: [],
+  difficulty,
+  highYield,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 30,
+  hasContent: { concept: false, examPrep: false, textbook: false, retrievalCards: false, cases: false, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+});
+
+export const GI_PATHOLOGY_TOPICS: LibraryTopic[] = [
+  createSkeletonTopic('oral-pathology', 'Oral Pathology', 'Leukoplakia, erythroplakia, oral cancer, salivary gland tumors', 3, true),
+  createSkeletonTopic('esophageal-pathology', 'Esophageal Pathology', 'Barrett esophagus, esophageal carcinoma, varices, achalasia', 4, true),
+  createSkeletonTopic('gastric-pathology', 'Gastric Pathology', 'Gastritis types, peptic ulcer, gastric carcinoma, GIST, lymphoma', 4, true),
+  createSkeletonTopic('small-intestine-pathology', 'Small Intestine Pathology', 'Celiac disease, Whipple disease, carcinoid, lymphoma', 3, true),
+  createSkeletonTopic('appendix-pathology', 'Appendix Pathology', 'Acute appendicitis, mucocele, carcinoid, pseudomyxoma peritonei', 3, true),
+  createSkeletonTopic('ibd-pathology', 'Inflammatory Bowel Disease', 'Crohn vs UC, skip lesions, crypt abscesses, dysplasia surveillance', 4, true),
+  createSkeletonTopic('colorectal-pathology', 'Colorectal Pathology', 'Polyps, adenoma-carcinoma sequence, FAP, Lynch syndrome, staging', 4, true),
+  createSkeletonTopic('liver-pathology', 'Liver Pathology', 'Hepatitis, cirrhosis, HCC, metastases, liver failure', 4, true),
+  createSkeletonTopic('biliary-pathology', 'Biliary Tract Pathology', 'Cholelithiasis, cholecystitis, cholangiocarcinoma, biliary atresia', 3, true),
+  createSkeletonTopic('pancreatic-pathology', 'Pancreatic Pathology', 'Acute vs chronic pancreatitis, pancreatic carcinoma, cystic neoplasms', 4, true),
+];

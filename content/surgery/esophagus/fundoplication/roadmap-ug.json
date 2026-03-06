@@ -1,0 +1,63 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "gerd",
+      "nmcCode": "",
+      "reason": "GERD is the primary indication — understanding reflux pathophysiology and failed medical therapy criteria is essential",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "Fundoplication mechanically augments the LES anti-reflux barrier — LES pressure dynamics determine surgical approach",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Hiatal anatomy, short gastric vessels, and vagal trunks are critical operative landmarks",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "surgical-management-gerd",
+      "nmcCode": "",
+      "reason": "Fundoplication is the cornerstone anti-reflux procedure within the surgical GERD management algorithm",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "heller-myotomy",
+      "nmcCode": "",
+      "reason": "Partial fundoplication (Dor/Toupet) is routinely added to Heller myotomy to prevent post-myotomy reflux",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Choice of partial vs full wrap depends on esophageal motility — achalasia mandates partial fundoplication",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Pre-operative manometry determines wrap type — full (Nissen) for normal motility, partial for impaired peristalsis",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Fundoplication across foundational sciences and clinical applications."
+}

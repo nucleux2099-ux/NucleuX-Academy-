@@ -1,0 +1,52 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "preoperative-assessment",
+      "nmcCode": "",
+      "reason": "Systematic preoperative assessment (ASA grading, airway evaluation, cardiac risk stratification) directly determines the perioperative management plan",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Perioperative fluid management requires understanding of maintenance requirements, deficit replacement, and third-space losses to prevent hypovolemia or fluid overload",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "blood-transfusion",
+      "nmcCode": "",
+      "reason": "Intraoperative and postoperative transfusion decisions based on hemoglobin triggers and coagulation status are core perioperative skills",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Surgical site infection prevention through antibiotic prophylaxis timing, skin preparation, and aseptic technique is integral to perioperative care",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Recognition and management of intraoperative and postoperative shock (hemorrhagic, septic, anaphylactic) is a critical perioperative emergency",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU10.1: Describe the principles of perioperative management of common",
+    "SU10.2: Describe the steps and obtain informed consent in a simulated S/A/C",
+    "SU10.3: Observe common surgical procedures and assist in minor surgical",
+    "SU10.4: Perform basic surgical Skills such as First aid including suturing and"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Perioperative Management across foundational sciences and clinical applications."
+}

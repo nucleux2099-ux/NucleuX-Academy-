@@ -1,0 +1,11 @@
+title: "Thyroid Cancer (Medical)"
+slug: thyroid-cancer-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.10"
+prerequisites:
+  - "thyroid-nodule-evaluation"
+related_topics:
+  - "hyperthyroidism"
+  - "hypothyroidism"

@@ -1,0 +1,22 @@
+title: "Organophosphate Poisoning"
+slug: organophosphate-poisoning
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.11"
+prerequisites:
+  - "poisoning-general-approach"
+related_topics:
+  - "paracetamol-overdose"
+enrichment:
+  nmcCodes:
+    - code: "IM24.11"
+      text: "Organophosphate Poisoning — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "poisoning-general-approach"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "paracetamol-overdose"
+      reason: "Clinically related"
+      relationship: "clinical"

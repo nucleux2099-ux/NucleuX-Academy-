@@ -1,0 +1,9 @@
+topic_id: basal-ganglia-physiology
+name: Basal Ganglia Physiology
+description: Basal Ganglia Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY10.7
+  domain: KH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,59 @@
+id: psychiatry
+title: "Psychiatry"
+subject: medicine
+description: |
+  Mental health, psychosis, mood disorders, and addiction.
+
+stats:
+  total_topics: 27
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: psychosis
+    title: "Psychotic Disorders"
+    topics:
+      - schizophrenia
+      - schizoaffective-disorder
+      - brief-psychotic-disorder
+      - delusional-disorder
+  - id: mood
+    title: "Mood Disorders"
+    topics:
+      - major-depressive-disorder
+      - bipolar-disorder
+      - dysthymia
+      - cyclothymia
+      - postpartum-depression
+  - id: anxiety
+    title: "Anxiety & Stress"
+    topics:
+      - generalized-anxiety-disorder
+      - panic-disorder
+      - ocd
+      - ptsd
+      - phobias
+      - adjustment-disorder
+  - id: substance
+    title: "Substance Use"
+    topics:
+      - alcohol-use-disorder
+      - opioid-use-disorder
+      - cannabis-use-disorder
+      - delirium-tremens
+  - id: other
+    title: "Other"
+    topics:
+      - personality-disorders
+      - eating-disorders
+      - somatic-symptom-disorders
+      - dissociative-disorders
+      - sleep-disorders-psych
+      - child-psychiatry-overview
+      - psychiatric-emergencies
+      - psychopharmacology-overview
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

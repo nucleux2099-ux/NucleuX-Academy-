@@ -1,0 +1,144 @@
+overview: |
+  Peptic ulcer disease (PUD) involves mucosal breaks in the stomach or duodenum due to acid-pepsin imbalance.
+  H. pylori infection and NSAID use are the two major etiologies. Complications include hemorrhage, perforation,
+  gastric outlet obstruction, and malignant transformation (gastric ulcers). Surgical management has declined
+  with effective PPI therapy but remains crucial for complications.
+
+learning_objectives:
+  - Understand the pathophysiology of acid secretion and mucosal defense
+  - Differentiate gastric from duodenal ulcers clinically and by location
+  - Recognize and manage complications of PUD (perforation, hemorrhage, GOO)
+  - Describe surgical options for PUD including vagotomy types and their consequences
+  - Apply the Modified Johnson classification of gastric ulcers
+
+content:
+  atoms:
+    - title: Pathophysiology & Etiology
+      text: |
+        PUD results from imbalance between aggressive factors (acid, pepsin, H. pylori, NSAIDs, smoking)
+        and defensive factors (mucus-bicarbonate barrier, prostaglandins, mucosal blood flow).
+        **H. pylori:** Found in 90% DU and 70% GU. Produces urease → ammonia → damages mucosa.
+        Lives in gastric antrum. Diagnosis: Urea breath test (best non-invasive), stool antigen, rapid urease test (CLO test on biopsy).
+        **DU:** Acid hypersecretion (offensive factors dominate). **GU:** Mucosal defense failure.
+        📚 Bailey & Love, 28th Ed, Ch.63; Sabiston, 21st Ed, Ch.48
+
+    - title: Modified Johnson Classification of Gastric Ulcers
+      text: |
+        Type I: Lesser curvature (MC, 60%) — low acid, due to mucosal defense failure
+        Type II: Body + duodenal ulcer — high acid
+        Type III: Prepyloric — high acid (behaves like DU)
+        Type IV: High on lesser curvature near GEJ — low acid
+        Type V: Anywhere, NSAID-induced — normal acid
+        **High acid types (II, III):** Need acid-reducing surgery. **Low acid (I, IV):** Resection alone.
+        📚 Sabiston, 21st Ed, Ch.48
+
+    - title: Complications & Management
+      text: |
+        **Hemorrhage (MC complication):** Upper GI endoscopy within 24h — diagnostic + therapeutic.
+        Forrest classification for bleeding risk. Rockall score for rebleed/mortality risk.
+        Surgical: Under-running of bleeding vessel (GDA for posterior DU bleed).
+        **Perforation:** Sudden severe epigastric pain, board-like rigidity, absent liver dullness
+        (pneumoperitoneum). X-ray erect: Air under diaphragm (70%). Graham's omental patch repair (open/laparoscopic).
+        **GOO (Gastric Outlet Obstruction):** Projectile non-bilious vomiting, succussion splash, hypochloremic
+        hypokalemic metabolic alkalosis. Treatment: Correct metabolic derangement → GJ / truncal vagotomy + GJ.
+        📚 Bailey & Love, 28th Ed, Ch.63
+
+    - title: Surgical Procedures for PUD
+      text: |
+        **Truncal vagotomy + drainage (pyloroplasty/GJ):** Denervates entire stomach; needs drainage as pylorus loses function.
+        **Selective vagotomy:** Preserves hepatic and celiac branches; still needs drainage.
+        **Highly selective vagotomy (HSV/Parietal cell vagotomy):** Denervates only parietal cell mass,
+        preserves antral innervation (Crow's foot/nerve of Latarjet). No drainage needed. Lowest complication rate
+        but highest recurrence (10-15%).
+        **Billroth I:** Antrectomy + gastroduodenostomy. **Billroth II:** Antrectomy + gastrojejunostomy.
+        📚 Maingot's, 12th Ed, Part IV
+
+    - title: Zollinger-Ellison Syndrome
+      text: |
+        Gastrinoma (usually in Passaro's triangle: CBD-D2-D3 junction) → massive acid hypersecretion
+        → multiple, recurrent, atypical ulcers (jejunal ulcers). Part of MEN-1 (3Ps: Parathyroid, Pituitary, Pancreas).
+        Diagnosis: Fasting serum gastrin >1000 pg/mL, secretin stimulation test (paradoxical rise in gastrin).
+        Treatment: High-dose PPIs, surgical resection of gastrinoma if localized.
+        📚 Sabiston, 21st Ed, Ch.48
+
+  clinical: |
+    **Approach to Perforated DU:**
+    1. Resuscitate: IV fluids, NG tube, NPO, IV PPI, antibiotics
+    2. Erect X-ray chest: Pneumoperitoneum (air under diaphragm)
+    3. If stable: Laparoscopic Graham's omental patch repair
+    4. Post-op: Triple therapy for H. pylori eradication
+    5. If unstable/late presentation: Open repair via upper midline incision
+    6. Definitive surgery (vagotomy) rarely needed in PPI era
+
+  high_yield_points:
+    - "MC cause of PUD: H. pylori (DU 90%, GU 70%)"
+    - "MC complication of PUD: Hemorrhage; MC cause of death: Hemorrhage"
+    - "Posterior DU perforates into GDA → massive hemorrhage"
+    - "Anterior DU perforates → pneumoperitoneum"
+    - "Air under diaphragm on erect X-ray: Perforation (most common cause = DU perforation)"
+    - "GOO → Hypochloremic, Hypokalemic Metabolic Alkalosis (paradoxical aciduria)"
+    - "Johnson Type I (lesser curvature): MC type, low acid"
+    - "HSV: No drainage needed, preserves nerve of Latarjet (Crow's foot)"
+    - "ZES: Fasting gastrin >1000, secretin stimulation test positive, look for MEN-1"
+    - "Graham's omental patch: Standard repair for perforated DU"
+
+mcqs:
+  - question: "A patient presents with sudden-onset severe epigastric pain and board-like rigidity. Erect X-ray shows air under the diaphragm. What is the most likely diagnosis?"
+    options:
+      a: Acute pancreatitis
+      b: Perforated duodenal ulcer
+      c: Acute cholecystitis
+      d: Mesenteric ischemia
+    answer: b
+    explanation: |
+      Pneumoperitoneum (air under diaphragm) with sudden epigastric pain and board-like rigidity
+      is classic for hollow viscus perforation. DU perforation (anterior wall) is the most common cause.
+      📚 Bailey & Love, 28th Ed, Ch.63
+
+  - question: "Which type of vagotomy does not require a drainage procedure?"
+    options:
+      a: Truncal vagotomy
+      b: Selective vagotomy
+      c: Highly selective vagotomy
+      d: Posterior truncal vagotomy
+    answer: c
+    explanation: |
+      HSV (parietal cell vagotomy) preserves the nerve of Latarjet and antral innervation,
+      maintaining pyloric function. Hence no drainage procedure is needed. It has the lowest
+      dumping/diarrhea rates but highest recurrence. 📚 Maingot's, 12th Ed, Part IV
+
+  - question: "A patient with chronic DU presents with projectile non-bilious vomiting and succussion splash. ABG shows metabolic alkalosis. What is the diagnosis?"
+    options:
+      a: Perforation
+      b: Hemorrhage
+      c: Gastric outlet obstruction
+      d: Malignant transformation
+    answer: c
+    explanation: |
+      GOO from chronic DU causes pyloric stenosis → projectile non-bilious vomiting, visible
+      gastric peristalsis, succussion splash. Loss of HCl → hypochloremic hypokalemic metabolic
+      alkalosis with paradoxical aciduria. 📚 Sabiston, 21st Ed, Ch.48
+
+  - question: "Which gastric ulcer type is associated with high acid secretion and behaves like a duodenal ulcer?"
+    options:
+      a: Johnson Type I
+      b: Johnson Type II
+      c: Johnson Type IV
+      d: Johnson Type V
+    answer: b
+    explanation: |
+      Johnson Type II (body + duodenal ulcer) and Type III (prepyloric) are associated with
+      high acid secretion. Types I and IV are low-acid types. Type V is NSAID-related.
+      📚 Sabiston, 21st Ed, Ch.48
+
+  - question: "Passaro's triangle, where gastrinomas are most commonly located, is bounded by:"
+    options:
+      a: Cystic duct, common hepatic duct, liver edge
+      b: CBD, 2nd part of duodenum, 3rd part of duodenum
+      c: Portal vein, hepatic artery, cystic duct
+      d: Splenic artery, pancreatic neck, celiac trunk
+    answer: b
+    explanation: |
+      Passaro's triangle (gastrinoma triangle) is bounded by the junction of cystic and common
+      bile duct superiorly, junction of D2 and D3 inferiorly, and junction of neck and body of
+      pancreas medially. 📚 Sabiston, 21st Ed, Ch.48

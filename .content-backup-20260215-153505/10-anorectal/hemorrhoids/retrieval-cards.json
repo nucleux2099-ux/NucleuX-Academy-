@@ -1,0 +1,21 @@
+{
+  "topic_id": "hemorrhoids",
+  "version": "1.0",
+  "cards": [
+    {"id": "hm-001", "front": "What are hemorrhoids?", "back": "Engorged anal cushions (NOT varicose veins)", "tags": ["definition", "high-yield"]},
+    {"id": "hm-002", "front": "What are the positions of primary hemorrhoids?", "back": "3, 7, and 11 o'clock (in lithotomy position)", "tags": ["anatomy", "high-yield"]},
+    {"id": "hm-003", "front": "Why is internal hemorrhoid bleeding painless?", "back": "Internal hemorrhoids are above dentate line — visceral innervation (no pain)", "tags": ["anatomy", "high-yield"]},
+    {"id": "hm-004", "front": "What is Grade III hemorrhoids?", "back": "Prolapse requiring manual reduction", "tags": ["classification", "high-yield"]},
+    {"id": "hm-005", "front": "What is Grade IV hemorrhoids?", "back": "Permanently prolapsed, irreducible", "tags": ["classification"]},
+    {"id": "hm-006", "front": "What is the most effective office procedure for hemorrhoids?", "back": "Rubber band ligation", "tags": ["treatment", "high-yield"]},
+    {"id": "hm-007", "front": "What is Milligan-Morgan procedure?", "back": "Open hemorrhoidectomy — wounds left open to heal by secondary intention", "tags": ["surgery"]},
+    {"id": "hm-008", "front": "What is Ferguson procedure?", "back": "Closed hemorrhoidectomy — wounds sutured closed", "tags": ["surgery"]},
+    {"id": "hm-009", "front": "What is stapled hemorrhoidopexy (PPH)?", "back": "Stapled excision of rectal mucosa — reduces prolapse, less pain than conventional", "tags": ["surgery"]},
+    {"id": "hm-010", "front": "When should you suspect colorectal cancer with rectal bleeding?", "back": "Age >40-50, change in bowel habit, weight loss, anemia, family history", "tags": ["clinical", "high-yield"]},
+    {"id": "hm-011", "front": "What causes thrombosed external hemorrhoid?", "back": "Thrombosis in external hemorrhoidal plexus — acutely painful, may need excision", "tags": ["complications"]},
+    {"id": "hm-012", "front": "What is the first-line treatment for Grade I-II hemorrhoids?", "back": "Conservative (high fiber, fluids) + Rubber band ligation", "tags": ["treatment"]},
+    {"id": "hm-013", "front": "What are contraindications to rubber band ligation?", "back": "External hemorrhoids, anticoagulation, immunosuppression, IBD", "tags": ["treatment"]},
+    {"id": "hm-014", "front": "What causes hemorrhoids?", "back": "Straining, constipation, pregnancy, prolonged sitting, low fiber diet", "tags": ["etiology"]},
+    {"id": "hm-015", "front": "Most common symptom of hemorrhoids?", "back": "Painless bright red bleeding per rectum (on paper/in bowl)", "tags": ["clinical", "high-yield"]}
+  ]
+}

@@ -1,0 +1,163 @@
+topic_id: toxicology-basics
+name: Toxicology Basics (Absorption, Elimination)
+description: General principles of toxicology — absorption, distribution, metabolism, elimination of poisons, and classification
+high_yield: true
+
+overview: >
+  Toxicology is the study of adverse effects of chemicals/poisons on living organisms. A poison is any substance
+  that, when introduced into the body in sufficient quantity, produces harmful effects or death. The dose makes
+  the poison (Paracelsus). Understanding absorption, distribution, metabolism, and elimination (ADME) of poisons
+  is fundamental to diagnosis and treatment. Classification includes corrosive, irritant, neurotic, and miscellaneous poisons.
+  📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.435-455)
+
+learning_objectives:
+  - Define poison and describe factors modifying the action of poisons
+  - Classify poisons with examples
+  - Describe routes of absorption of poisons
+  - Explain metabolism and elimination of poisons
+  - Discuss general principles of management of poisoning
+
+content:
+  atoms:
+    - id: definition-classification
+      title: "Definition & Classification of Poisons"
+      text: >
+        Poison: any substance which, administered by any route, can cause ill health or death.
+        Classification: (1) Corrosive — acids (H2SO4, HNO3, HCl), alkalis (NaOH, KOH);
+        (2) Irritant — metallic (arsenic, mercury, lead), organic (castor, croton), mechanical (glass);
+        (3) Neurotic/CNS — cerebral (opium, barbiturates, alcohol), spinal (strychnine), peripheral (curare);
+        (4) Cardiac — oleander, aconite, digitalis;
+        (5) Asphyxiant — CO, CO2, H2S.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.435-440)
+
+    - id: absorption
+      title: "Absorption of Poisons"
+      text: >
+        Routes: (1) Oral — most common route for poisoning (suicidal), rate affected by gastric contents, pH,
+        formulation; (2) Inhalation — gases/vapors (CO, HCN) — fastest absorption, directly into blood;
+        (3) Skin/transdermal — OP compounds, nicotine patches; (4) Parenteral — injection (fastest for liquids);
+        (5) Rectal/vaginal — suppositories; (6) Sublingual — rapid absorption bypassing first-pass metabolism.
+        Factors affecting absorption: physical state, solubility, concentration, surface area, blood flow, pH.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.440-445)
+
+    - id: distribution-metabolism
+      title: "Distribution & Metabolism"
+      text: >
+        Distribution depends on: blood flow, plasma protein binding, lipid solubility, tissue affinity.
+        Volume of distribution (Vd): apparent volume needed to contain the drug at plasma concentration.
+        Metabolism (biotransformation): primarily in liver via Phase I (oxidation, reduction, hydrolysis — CYP450)
+        and Phase II (conjugation — glucuronidation, sulfation, acetylation, methylation) reactions.
+        First-pass metabolism: oral drugs metabolized in liver before reaching systemic circulation.
+        Some poisons form MORE toxic metabolites: methanol → formaldehyde → formic acid; parathion → paraoxon.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.445-448)
+
+    - id: elimination
+      title: "Elimination of Poisons"
+      text: >
+        Routes: (1) Renal — most important route for water-soluble compounds and metabolites;
+        (2) Pulmonary — volatile substances (alcohol, anesthetics, CO);
+        (3) GI — biliary excretion, enterohepatic circulation (some poisons recirculated);
+        (4) Sweat, saliva, breast milk — minor routes but forensically important (breast milk = infant exposure).
+        Half-life (t½): time to reduce plasma concentration by 50%. Clearance: volume of plasma cleared per unit time.
+        Alkaline diuresis accelerates elimination of acidic poisons (aspirin, barbiturates — ion trapping).
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.448-452)
+
+    - id: factors-management
+      title: "Factors Modifying Poison Action & General Management"
+      text: >
+        Factors: dose, route, physical form, age (children/elderly more susceptible), sex, body weight,
+        tolerance (chronic exposure), idiosyncrasy, health status, combination with other substances.
+        General management: (1) Stabilize ABC, (2) Decontamination — gastric lavage (within 1 hour), activated
+        charcoal (adsorbs most poisons except metals, alcohols, cyanide), whole bowel irrigation;
+        (3) Specific antidotes (atropine for OP, NAC for paracetamol, naloxone for opioids);
+        (4) Enhanced elimination — alkaline diuresis, hemodialysis; (5) Supportive care.
+        📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.452-455)
+
+  clinical:
+    - title: "Clinical Correlation: Activated Charcoal Limitations"
+      text: >
+        Activated charcoal does NOT adsorb: metals (iron, lithium, lead), alcohols (methanol, ethanol),
+        cyanide, strong acids/alkalis, hydrocarbons. Mnemonic: "PHAILS" — Pesticides (some), Hydrocarbons,
+        Acids/Alkalis, Iron/metals, Lithium, Solvents.
+
+high_yield_points:
+  - "Paracelsus: 'The dose makes the poison'"
+  - "Inhalation = FASTEST route of absorption (gases directly into blood)"
+  - "Oral = MOST COMMON route for suicidal poisoning"
+  - "Liver is the primary site of drug/poison metabolism (CYP450)"
+  - "Phase I = oxidation/reduction (CYP450); Phase II = conjugation"
+  - "Methanol → formaldehyde → formic acid (MORE toxic metabolite)"
+  - "Renal = most important route of elimination for water-soluble compounds"
+  - "Alkaline diuresis enhances elimination of ACIDIC poisons (aspirin, barbiturates)"
+  - "Activated charcoal does NOT work for metals, alcohols, acids/alkalis, cyanide"
+  - "Enterohepatic circulation can prolong poison action (re-absorption from gut)"
+
+mcqs:
+  - question: "The fastest route of absorption for a poison is:"
+    options:
+      - "Oral"
+      - "Inhalation"
+      - "Transdermal"
+      - "Rectal"
+    answer: "Inhalation"
+    explanation: >
+      Inhalation provides the fastest absorption because gases/vapors are absorbed directly across the large
+      alveolar surface area into pulmonary capillaries, bypassing first-pass metabolism entirely.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.441)
+    difficulty: 1
+
+  - question: "Alkaline diuresis is used to enhance elimination of:"
+    options:
+      - "Amphetamines (basic drug)"
+      - "Aspirin (acidic drug)"
+      - "Organophosphorus compounds"
+      - "Cyanide"
+    answer: "Aspirin (acidic drug)"
+    explanation: >
+      Alkaline diuresis (NaHCO3 infusion) ionizes acidic drugs in renal tubules (ion trapping), preventing
+      reabsorption and enhancing elimination. Works for aspirin, barbiturates, methotrexate. Acidic diuresis
+      would be needed for basic drugs like amphetamines.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.450)
+    difficulty: 2
+
+  - question: "Which of the following is NOT adsorbed by activated charcoal?"
+    options:
+      - "Paracetamol"
+      - "Benzodiazepines"
+      - "Iron"
+      - "Theophylline"
+    answer: "Iron"
+    explanation: >
+      Activated charcoal does not effectively adsorb metals (iron, lithium, lead), alcohols, cyanide,
+      strong acids/alkalis, and hydrocarbons. It does adsorb most organic compounds including paracetamol,
+      benzodiazepines, and theophylline.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.454)
+    difficulty: 1
+
+  - question: "Methanol is toxic primarily because of its metabolite:"
+    options:
+      - "Acetaldehyde"
+      - "Formaldehyde and formic acid"
+      - "Oxalic acid"
+      - "Acetic acid"
+    answer: "Formaldehyde and formic acid"
+    explanation: >
+      Methanol is metabolized by alcohol dehydrogenase to formaldehyde, then by aldehyde dehydrogenase to
+      formic acid. Formic acid causes metabolic acidosis and retinal damage (blindness). Treatment: fomepizole
+      or ethanol (competitive inhibitors of alcohol dehydrogenase).
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.447)
+    difficulty: 1
+
+  - question: "The primary site of biotransformation (metabolism) of poisons is:"
+    options:
+      - "Kidney"
+      - "Lungs"
+      - "Liver"
+      - "Spleen"
+    answer: "Liver"
+    explanation: >
+      The liver is the primary organ for drug/poison metabolism via Phase I (CYP450 enzyme system) and
+      Phase II (conjugation) reactions. The microsomal enzyme system (CYP450) in hepatocytes is responsible
+      for the majority of biotransformation reactions.
+      📚 Reddy's Essentials of Forensic Medicine, 34th Ed, Ch.19 (p.445)
+    difficulty: 1

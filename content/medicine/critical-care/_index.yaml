@@ -1,0 +1,58 @@
+id: critical-care
+title: "Critical Care Medicine"
+subject: medicine
+description: |
+  ICU management, shock, ARDS, and ventilation.
+
+stats:
+  total_topics: 26
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: shock
+    title: "Shock & Resuscitation"
+    topics:
+      - shock-overview
+      - septic-shock-icu
+      - cardiogenic-shock
+      - anaphylactic-shock
+      - fluid-resuscitation
+      - vasopressors
+  - id: respiratory
+    title: "Respiratory ICU"
+    topics:
+      - ards-icu
+      - mechanical-ventilation
+      - weaning-from-ventilator
+      - non-invasive-ventilation
+      - tracheostomy-icu
+  - id: organ
+    title: "Organ Support"
+    topics:
+      - acute-kidney-injury-icu
+      - hepatic-failure-icu
+      - nutrition-icu
+      - sedation-analgesia-icu
+      - delirium-icu
+  - id: procedures
+    title: "ICU Procedures"
+    topics:
+      - central-line-placement
+      - arterial-line
+      - intubation-airway
+      - chest-tube-icu
+      - lumbar-puncture
+  - id: scoring
+    title: "Scoring & Ethics"
+    topics:
+      - apache-sofa-scoring
+      - brain-death
+      - organ-donation
+      - end-of-life-icu
+      - antimicrobial-stewardship
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

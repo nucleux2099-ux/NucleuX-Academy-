@@ -1,0 +1,19 @@
+title: Hypercalcemia
+slug: hypercalcemia
+depth: UG
+highYield: false
+nmc_codes:
+  - IM22.1
+  - IM22.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM22.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypercalcemia
+      domain: KH
+    - code: IM22.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hypercalcemia
+      domain: KH
+  prerequisite_details: []
+  related_details: []

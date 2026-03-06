@@ -1,0 +1,158 @@
+topic_id: lung-tumors
+name: Lung Tumors
+description: Classification, pathology, and clinical features of primary lung carcinomas and carcinoids
+high_yield: true
+
+overview: >
+  Lung cancer is the leading cause of cancer death worldwide. Four major types: adenocarcinoma (most common overall),
+  squamous cell carcinoma, small cell carcinoma, and large cell carcinoma. Small cell is the most aggressive
+  and strongly associated with smoking. Paraneoplastic syndromes are heavily tested.
+  📚 Robbins, 10th Ed, Ch.15 (p.693-710)
+
+learning_objectives:
+  - Classify lung carcinomas by histology and location
+  - Associate each type with specific paraneoplastic syndromes
+  - Differentiate small cell from non-small cell lung cancer for treatment purposes
+  - Describe molecular targets (EGFR, ALK, PD-L1) in lung cancer
+
+content:
+  atoms:
+    - id: adenocarcinoma
+      title: "Adenocarcinoma"
+      text: >
+        Most common lung cancer overall (40%); most common in NON-SMOKERS and WOMEN.
+        Location: PERIPHERAL. Histology: glandular differentiation, mucin production.
+        Subtypes: lepidic (formerly BAC — grows along alveolar walls), acinar, papillary, solid.
+        Molecular: EGFR mutations (responsive to erlotinib/gefitinib), ALK rearrangements (crizotinib), KRAS mutations.
+        Presents with peripheral mass ± pleural effusion.
+        📚 Robbins, 10th Ed, Ch.15 (p.697-700)
+
+    - id: squamous-cell
+      title: "Squamous Cell Carcinoma"
+      text: >
+        Second most common; STRONGEST association with SMOKING.
+        Location: CENTRAL (hilar), arises from bronchial epithelium.
+        Histology: keratin pearls, intercellular bridges (desmosomes).
+        Paraneoplastic: PTHrP → hypercalcemia (most common paraneoplastic causing hypercalcemia).
+        Can present with Pancoast tumor (superior sulcus) → Horner syndrome (ptosis, miosis, anhidrosis).
+        Cavitation is more common with squamous cell carcinoma.
+        📚 Robbins, 10th Ed, Ch.15 (p.697)
+
+    - id: small-cell
+      title: "Small Cell Lung Carcinoma (SCLC)"
+      text: >
+        10-15% of lung cancers; MOST aggressive; STRONGEST association with SMOKING.
+        Location: CENTRAL (hilar). Histology: small round blue cells, nuclear molding, crush artifact, scant cytoplasm.
+        Neuroendocrine origin (chromogranin+, synaptophysin+, NSE+).
+        NOT surgical — treat with chemo + radiation (etoposide + cisplatin).
+        Paraneoplastic: SIADH (↓Na), ectopic ACTH (Cushing), Lambert-Eaton (antibodies against presynaptic Ca channels).
+        Associated with p53 and RB mutations (virtually 100%).
+        📚 Robbins, 10th Ed, Ch.15 (p.700-702)
+
+    - id: large-cell
+      title: "Large Cell Carcinoma"
+      text: >
+        Diagnosis of exclusion (undifferentiated; no glandular, squamous, or small cell features).
+        Peripheral location. Poor prognosis. Large pleomorphic cells.
+        Large cell neuroendocrine variant has neuroendocrine markers and very poor prognosis (similar to SCLC).
+        📚 Robbins, 10th Ed, Ch.15 (p.702)
+
+    - id: carcinoid-mesothelioma
+      title: "Carcinoid Tumors and Mesothelioma"
+      text: >
+        Bronchial carcinoid: low-grade neuroendocrine tumor; NOT related to smoking.
+        Can secrete serotonin → carcinoid syndrome (flushing, diarrhea, bronchospasm, right-sided heart valvular fibrosis).
+        Mesothelioma: malignant pleural tumor; ASBESTOS exposure (long latency 25-45 years).
+        Histology: biphasic (epithelioid + sarcomatoid). Positive for calretinin, CK5/6.
+        Asbestos bodies (ferruginous bodies): golden-brown, dumbbell-shaped, iron-coated fibers.
+        📚 Robbins, 10th Ed, Ch.15 (p.710-715)
+
+  clinical:
+    - title: "Superior Vena Cava Syndrome"
+      text: >
+        Compression/invasion of SVC by lung cancer (most commonly SCLC or NHL) → facial/upper extremity swelling,
+        JVD, headache, cyanosis. Medical emergency. Most common malignant cause = lung cancer.
+
+  high_yield_points:
+    - "Adenocarcinoma = most common lung cancer overall; most common in non-smokers and women; PERIPHERAL"
+    - "Squamous cell = CENTRAL, strongest smoking association among NSCLC; keratin pearls; PTHrP → hypercalcemia"
+    - "Small cell = CENTRAL, most aggressive, virtually 100% smoking; SIADH, ectopic ACTH, Lambert-Eaton"
+    - "Small cell: NOT surgical; treat with chemo-radiation (etoposide + cisplatin)"
+    - "Pancoast tumor (superior sulcus) → Horner syndrome + brachial plexopathy (usually SCC)"
+    - "Cavitating lung lesion = think squamous cell carcinoma"
+    - "Mesothelioma = asbestos exposure; calretinin positive; latency 25-45 years"
+    - "Asbestos → mesothelioma (most specific) and bronchogenic carcinoma (most common cancer from asbestos)"
+    - "EGFR mutations = adenocarcinoma; treat with TKIs (erlotinib, osimertinib)"
+    - "Lambert-Eaton: muscle weakness that IMPROVES with use (vs myasthenia gravis = worsens with use)"
+
+mcqs:
+  - question: "A 65-year-old male smoker presents with a central hilar mass, hyponatremia (Na 118), and concentrated urine. Biopsy shows small round blue cells with crush artifact. The paraneoplastic syndrome is:"
+    options:
+      - "Hypercalcemia from PTHrP"
+      - "SIADH"
+      - "Cushing syndrome"
+      - "Carcinoid syndrome"
+    answer: "SIADH"
+    explanation: >
+      Small cell lung carcinoma (central, small round blue cells, crush artifact) is the most common cause of
+      paraneoplastic SIADH → inappropriate ADH secretion → water retention → dilutional hyponatremia with
+      concentrated urine. PTHrP/hypercalcemia is associated with squamous cell. SCLC can also cause ectopic ACTH.
+      📚 Robbins, 10th Ed, Ch.15 (p.701)
+    difficulty: 1
+
+  - question: "A non-smoking 50-year-old woman has a 3 cm peripheral lung nodule. Biopsy shows glandular differentiation with mucin. Molecular testing shows EGFR mutation. The most likely diagnosis is:"
+    options:
+      - "Squamous cell carcinoma"
+      - "Adenocarcinoma"
+      - "Small cell carcinoma"
+      - "Carcinoid tumor"
+    answer: "Adenocarcinoma"
+    explanation: >
+      Peripheral location, non-smoker, female, glandular differentiation with mucin, EGFR mutation = classic
+      lung adenocarcinoma. EGFR mutations are targetable with TKIs (erlotinib, osimertinib). Squamous cell
+      is central and keratin-producing. Small cell is central and neuroendocrine.
+      📚 Robbins, 10th Ed, Ch.15 (p.698)
+    difficulty: 1
+
+  - question: "A patient with lung cancer presents with proximal muscle weakness that improves with repeated use. Antibodies are directed against:"
+    options:
+      - "Acetylcholine receptors"
+      - "Presynaptic voltage-gated calcium channels"
+      - "Postsynaptic sodium channels"
+      - "Muscle-specific kinase (MuSK)"
+    answer: "Presynaptic voltage-gated calcium channels"
+    explanation: >
+      Lambert-Eaton myasthenic syndrome is a paraneoplastic condition associated with small cell lung cancer.
+      Antibodies target presynaptic voltage-gated calcium channels → decreased ACh release. Key distinction:
+      weakness IMPROVES with repeated use (vs myasthenia gravis = worsens). Anti-AChR = myasthenia gravis.
+      📚 Robbins, 10th Ed, Ch.15 (p.701)
+    difficulty: 2
+
+  - question: "A 70-year-old man with 40 years of asbestos exposure presents with pleural thickening and effusion. Biopsy shows biphasic pattern with calretinin-positive cells. The diagnosis is:"
+    options:
+      - "Lung adenocarcinoma with pleural metastasis"
+      - "Malignant mesothelioma"
+      - "Squamous cell carcinoma"
+      - "Pleural fibroma"
+    answer: "Malignant mesothelioma"
+    explanation: >
+      Asbestos exposure + pleural mass + biphasic pattern + calretinin positivity = malignant mesothelioma.
+      Calretinin and CK5/6 are positive in mesothelioma; TTF-1 and CEA are positive in lung adenocarcinoma.
+      Mesothelioma has 25-45 year latency after asbestos exposure. Poor prognosis.
+      📚 Robbins, 10th Ed, Ch.15 (p.712)
+    difficulty: 2
+
+  - question: "A lung cancer patient has serum calcium of 14 mg/dL. PTH is low. The tumor most likely produces:"
+    options:
+      - "ACTH"
+      - "ADH"
+      - "PTHrP"
+      - "Serotonin"
+    answer: "PTHrP"
+    explanation: >
+      Hypercalcemia with suppressed PTH (low) in a lung cancer patient = paraneoplastic PTHrP production,
+      most commonly from squamous cell carcinoma. PTHrP mimics PTH action on bone and kidney but is not
+      detected by the standard PTH assay (hence low PTH). This is the most common cause of malignancy-associated
+      hypercalcemia (humoral hypercalcemia of malignancy).
+      📚 Robbins, 10th Ed, Ch.15 (p.701)
+    difficulty: 1

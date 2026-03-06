@@ -1,0 +1,37 @@
+title: "Caustic Injury of Esophagus"
+slug: caustic-injury-esophagus
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+  - "SU28.5"
+prerequisites:
+  - "esophageal-anatomy"
+  - "dysphagia"
+related_topics:
+  - "esophageal-perforation"
+  - "esophageal-reconstruction"
+  - "esophageal-cancer"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+    - code: "SU28.5"
+      text: "Describe the applied anatomy and physiology of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "esophageal-anatomy"
+      reason: "Esophageal wall layers and sites of narrowing determine depth and distribution of caustic burns"
+    - slug: "dysphagia"
+      reason: "Progressive dysphagia from stricture formation is the hallmark late complication of caustic injury"
+  related_details:
+    - slug: "esophageal-perforation"
+      reason: "Full-thickness caustic burns can cause acute perforation requiring emergency management"
+      relationship: "clinical"
+    - slug: "esophageal-reconstruction"
+      reason: "Severe caustic strictures unresponsive to dilatation require esophageal replacement (colon/gastric interposition)"
+      relationship: "clinical"
+    - slug: "esophageal-cancer"
+      reason: "Caustic strictures carry long-term risk of squamous cell carcinoma (1000x increased risk)"
+      relationship: "clinical"

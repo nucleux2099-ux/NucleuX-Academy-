@@ -1,0 +1,9 @@
+topic_id: pancreatic-enzyme-supplements
+name: Pancreatic Enzyme Supplements
+description: Pancreatic Enzyme Supplements — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PH1.61
+  domain: KH
+  core: false
+  phase: Phase 1

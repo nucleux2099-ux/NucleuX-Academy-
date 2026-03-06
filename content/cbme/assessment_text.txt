@@ -1,0 +1,1585 @@
+BOARD of GOVERNORS in supersession
+of Medical Council of India
+COMPETENCY BASED UNDERGRADUATE CURRICULUM
+FOR THE INDIAN MEDICAL GRADUATE
+
+Knows Knows how
+
+Shows
+
+Shows how
+
+Observe
+
+Demonstrate
+Assist
+
+Enumerate
+Counsel
+
+Performs
+
+Prescribe
+
+Describe
+
+Integrate
+
+Analyse
+
+Guide
+
+Communicate
+Correlate
+
+Interpret
+
+Module 3
+Critique
+
+Assessment
+
+Clinician Communicator Team Leader
+Knowledge
+
+Skills
+
+Attitude
+
+Collaborate
+Professional
+
+Values
+
+Lifelong Learner
+
+Responsiveness
+
+Communication
+
+Curriculum Implementation Support Program
+
+Assessment Module for
+Undergraduate Medical Education
+2019
+
+Medical Council of India
+Pocket-14, Sector-8, Dwarka,
+New Delhi 110 077
+
+All rights reserved. No part of this publication/documents may be reproduced,
+distributed, or transmitted in any form or by any means, including photocopying,
+recording, or other electronic or mechanical methods, without the prior written
+permission from Academic Cell of Medical Council of India, except for the use in
+Curriculum Implementation Support Program by medical teachers and institutions as
+well as in the case of brief quotations embodied in critical reviews and certain other
+non-commercial uses permitted by copyright law.
+
+How to Cite: Medical Council of India. Assessment Module for
+Undergraduate Medical Education Training Program, 2019: pp 1-29.
+
+Expert Group
+
+1. Dr. Avinash Supe
+Former Director (ME & MH) and Dean, Professor,
+Departments of G I Surgery and Medical Education
+Seth GS Medical College and KEM Hospital, Mumbai – 400012
+
+2. Dr. Krishna G. Seshadri
+Member, Board of Management
+Visiting Professor
+Departments of Endocrinology, Diabetes and Medical Education
+Sri Balaji Vidyapeeth, Puducherry - 607 403
+3. Dr. R. Sajith Kumar
+Professor and Head, Departments of Infectious Diseases and Medical Education
+Convener, MCI Nodal Centre for Faculty Development
+Government Medical College, Kottayam, Kerala – 686008
+4. Dr. P.V. Chalam
+Principal & Professor, Department of Surgery
+Bhaskar Medical College, RR Dist., Telangana – 500075
+5. Dr. Praveen Singh
+Professor and Head, Departments of Anatomy and Medical Education
+Convener, MCI Nodal Centre for Faculty Development
+Pramukhswami Medical College, Karamsad, Gujarat - 388325
+6. Dr. Tejinder Singh
+Professor, Department of Medical Education
+Sri Guru Ram Das Institute of Medical Sciences & Research, Amritsar-143501.
+7. Dr. P.V. Vijayaraghavan
+Convener, MCI Nodal Centre for Faculty Development,
+Vice Chancellor & Professor of Orthopedics,
+Sri Ramachandra Medical College & Research Institute, Porur, Chennai-600116.
+8. Dr. Subir K. Maulik
+Professor, Department of Pharmacology
+All India Institute of Medical Sciences, New Delhi-110029
+9. Dr. M Rajalakshmi
+Chief Consultant, Academic Cell, Medical Council of India,
+Pocket 14, Sector 8, Dwarka, New Delhi 110077.
+Additional Contributors
+1. Dr. Dinesh Kumar Badyal
+Professor, Departments of Pharmacology and Medical Education
+Convener, MCI Nodal Centre for Faculty Development
+Christian Medical College, Ludhiana, Punjab – 141008
+2. Dr. Mohan Khamgaonkar
+Pro-Vice Chancellor,
+Maharashtra University of Health Sciences
+Mhasrul, Nashik-422004
+
+Curriculum Implementation Support Program
+
+Module - 3
+
+Assessment
+
+Guidelines for Assessment in
+Competency Based UG Curriculum
+1. Objectives of the Document
+To help the reader to:
+•
+
+Understand the role and place of assessment in new competency based
+curriculum
+
+•
+
+Understand the changes in assessment as per new curriculum.
+
+•
+
+Understand the differences between the traditional assessment and
+Competency Based Assessment (CBA).
+
+•
+
+Understand the components of competency based assessment.
+
+•
+
+Understand the tools for competency based assessment.
+
+•
+
+Understand the role of feedback in assessment.
+
+•
+
+Plan, develop and implement CBA in the colleges and universities.
+
+2. Glossary of terms used in the document
+Summative assessment
+
+An assessment conducted at the end of instruction to
+
+(University examination)
+
+check how much the student has learnt.
+
+Formative assessment
+
+An assessment conducted during the instruction with
+the primary purpose of providing feedback for
+improving learning.
+
+Internal assessment
+
+Range of assessments conducted by the teachers
+teaching a particular subject with the express purpose
+of knowing what is learnt and how it is learnt. Internal
+assessment can have both formative and summative
+functions.
+
+Validity
+
+Degree
+
+to
+
+which
+
+the
+
+inferences
+
+drawn
+
+from
+
+assessment are supported by empirical evidence or
+theoretical rationale.
+
+1
+
+Reliability
+
+Degree of confidence that can be placed in the results.
+Depending on the context, it can be in terms of
+precision, consistency or reproducibility.
+
+Competency
+
+An observable activity of the health professional with a
+judicious and consistent mix of knowledge, skills,
+attitudes and communication.
+
+3. Introduction
+Competency based education has been defined as an outcome-based
+approach to the design, implementation, assessment and evaluation of a medical
+education program using an organizing framework of competencies 1. Much more
+than a different style of teaching, competency based curriculum obligates a vastly
+different perspective on assessment. It mandates greater emphasis on setting up an
+ongoing and longitudinal assessment so that teachers can identify the stage of the
+learner and decide whether they need further or different learning opportunities to
+acquire competency. Assessment in competency based curriculum plays a crucial
+role in its implementation.
+Competency is not an all or none phenomenon. Rather it is incremental. The
+role of teachers is to help the learner acquire and improve upon the competencies.
+Competency based curriculum moves away from time bound education and looks at
+competency as the end point. Consequently, we are no longer interested in
+demonstration of discrete behaviours by the learners; rather we are interested in
+application of these in each patient context. Thus, it is more about integration of the
+required knowledge, skills and attitudes rather than anyone of them in isolation.
+Therefore, assessment in competency based curriculum should incorporate
+integration to the extent feasible while maintaining subject identity.
+
+4. Purpose of assessment in competency based curriculum
+While an obvious purpose of assessment in competency based curriculum is
+to help the teachers decide if the students have acquired the desired competencies,
+an equally important purpose is to help the students acquire and improve their
+competencies. Quality assurance also requires quality assessment.
+2
+
+Major characteristics of competency based assessment are their longitudinal
+nature, provision of developmental feedback and authentic settings, all of which
+result in lowering the stakes on individual assessments. This has other important
+implications also for assessment design. Since the stakes are low and purpose is to
+improve learning, high standardization and psychometric rigor is not required.
+Authenticity of assessment task is more important than its structure or objectivity.
+Expert subjective judgment plays a major role in assessment of competencies.
+This difference in perspective stems from three important characteristics of
+competency based curriculum. First, that by definition, teaching and assessment has
+to be in the context of competencies. Second, that discrete assessment of
+knowledge, skills and attitudes may not always add up to a competency. Third and
+probably the most important, that there is a high context specificity in assessment.
+Performing competency ‘A’ well does not mean that the student can perform the
+competency ‘B’ also as well. Similarly, assessment in demonstration room may not
+be the same as assessment at the bedside. Moreover, many competencies like
+communication, team work, sincerity etc. may not be amenable to reliable
+assessment if done sparingly or only at summative examination.
+
+Therefore, all
+
+competencies need to be assessed multiple times and in different contexts. An
+implication of this is that only one summative or end of year examination is not suited
+for this purpose.
+Utility of assessment is traditionally expressed as a notional concept
+represented as using a product of validity, reliability, acceptability, feasibility and
+educational impact.2 For CBA, validity and educational impact are the major
+determinants of its utility. Despite subjective judgments being involved, their
+reliability can be improved by increasing the number of assessors, assessments,
+tasks and by involving all teachers of the department in CBA process. This is a
+simple intervention to not only take care of subjectivity but also to improve ownership
+of teaching-learning and assessment.3
+
+3
+
+5. How does CBA differ from traditional assessment?
+Traditional assessments are easy to design, administer, score and analyse
+compared to CBA but may not be able to provide complete information about the
+stage of the student. Traditional assessments are snap shot observations of
+learning, are generally not linked to instructions or outcomes and promote test taking
+behaviour. They are fragmented and mainly focus on knowledge (sometimes skills).
+CBA, on the other hand, provides more comprehensive information about not only
+the current stage of the student but also about his progression and ascendency.
+They are longitudinal, often with low stakes and help to reduce examination anxiety.
+CBA is based on direct observation and therefore helps in generation of authentic
+feedback, which helps the students to learn better. This process of assessment for
+learning is crucial for the acquisition of competencies.
+Competency based assessment should help in collecting and analysing
+evidence to decide if a student is competent in relation to a required competency and
+in relation to his/her stage of training. The underlying concept of competency – i.e.
+the habitual and consistent use of knowledge, technical skills, clinical reasoning,
+communication, emotions, values and reflection in daily practice for the benefit of the
+individual and the community being served, again demands that the student should
+consistently demonstrate the desired behaviour rather than only during the final
+examination.
+Competency based assessment aids in the process of learning. Effective
+feedback is paramount to helping learners improve. CBA is an ongoing process so
+that any deviation in learning can be recognized early and taken care of by providing
+formative feedback. This concept is crucial and aligns very well with the basic
+principles of competency based medical education viz. active involvement of the
+learner, creating an authentic environment for learning, direct observation and
+provision of formative feedback. CBA requires active participation of the student in
+the form of self-assessment and reflections.4 The paradigm is reflected in figure 1.5
+
+4
+
+Figure 1. Paradigm of medical student assessment5
+(Reproduced with permission from National Medical Journal of India)
+
+Medical education literature distinguishes between competence (ability to do)
+and performance (actually doing). In terms of Miller’s pyramid, competence would fall
+under the ‘shows’ category while performance falls under ‘does’.6 For the
+undergraduate students, most of the assessment would be up to ‘shows’ level. Since
+they are not authorized to independently take care of the patient or are not directly in
+charge of patient care, targeting the ‘does’ level will pose logistic difficulty.
+
+6. What should be assessed?
+Assessment requires specification of measurable and observable entities.
+This could be in the form of whole tasks that contribute to one or more competencies
+or assessment of a competency per se. Another approach is to break down the
+individual competency into learning objectives related to the domains of knowledge,
+skills, attitudes, communication etc. and then assess them individually. However, as
+stated earlier, using individual domain framework may not always result in making an
+accurate assessment of the specific competency. Therefore, efforts should be made
+to include competencies in the assessment process as much as possible. CBA is
+very useful to convey a message to the students to structure their learning around
+competency framework.
+5
+
+The assessment opportunities can be broadly divided into ongoing and term
+end. While the term end examinations (Summative assessment) will usually be
+conducted by the Universities, the ongoing assessments are conducted by the
+teachers teaching the subject and can be both formal and informal.
+The summative assessment e.g. University examinations at the end of
+professionals, are used for pass or fail decision. The purpose of such assessments
+is to sample the learning and ensure quality. Since all competencies should be
+assessed, summative assessments alone are not the option for CBA. For logistic
+reasons, competencies like communication, team work, ethics, professionalism and
+many procedural skills are also not assessable at term end examinations.
+Ongoing assessment provides many options for this purpose. A blueprint may
+be needed to decide which competencies should be assessed during internal
+assessment and which should go to summative or University examinations. Informal
+assessments should happen during teaching learning activities with the express
+purpose of finding out the stage of the student and taking corrective action in
+teaching-learning methodology on an ongoing basis. During lectures, small groups or
+seminars, use of techniques like clickers, one-minute papers and muddiest point
+provide valuable information to check understanding and provide developmental
+feedback.7 Same can be done during practical/clinical teaching using one-minute
+preceptor (OMP) or SNAPPS technique (Summarize history and findings, Narrow the
+differential; Analyze the differential; Probe preceptor about uncertainties; Plan
+management; Select case-related issues for self-study)8-10. Many of these do not
+need to be considered for pass / fail decisions but are useful to aid learning and
+acquire competencies. These can be planned by the teachers on a day to day basis
+and modified depending on the tasks at hand.
+
+6
+
+Features of Competency Based Assessment (CBA)
+•
+
+CBA operates within the framework of competencies. Assessment tools
+should align with competencies/objectives.
+
+•
+
+CBA should help to acquire competencies/objectives (assessment for
+learning) and their certification (assessment of learning)
+
+•
+
+CBA is continuous and ongoing process with opportunities for providing
+developmental feedback
+
+•
+
+Direct observation of students improves utility of CBA and feedback
+
+•
+
+Multiple assessors, multiple tools and multiple assessments improve the
+validity and reliability of CBA
+
+7. Formative & Internal Assessment (IA)
+Formative assessment is an assessment conducted during the instruction with
+the primary purpose of providing feedback for improving learning. It also helps the
+teachers and learners to modify their teaching learning strategies. The feedback is
+central to formative assessment and is linked to deep learning, seeking to explore
+the educational literature and its pedagogical lessons for healthcare educational
+practice. It provides inputs to both students and teachers regarding adequacy of
+teaching-learning10. A variety of feedback principles and techniques can be used
+depending on the context.11, 12
+Although there can be a debate on the summative or formative nature of IA, it
+still provides the best opportunities for formative purposes. IA is when assessment is
+done by the teachers who have taught the subject. It overcomes the limitations of
+day-to-day variability and allows larger sampling of topics, competencies and skills.
+In competency based curriculum, IA provides useful avenues for both
+formative and summative assessment. IA focuses on the content and process of
+learning i.e. what and how students have learnt throughout the course. This
+assessment gives priority to psychomotor, communication and affective domains.
+These domains are usually not assessed by the traditional assessment methods. It
+should involve all faculty members of a department (Senior Residents upwards) and
+not just one or two senior teachers. This helps to build ownership of teaching7
+
+learning and assessment as well as provide ‘hands-on’ experience in assessment to
+all teachers. IA can be a very useful tool for assessing all competencies in any
+competency based curriculum.
+IA should not be considered as an assessment without external controls and
+can be utilized in a manner to overcome some of its perceived weaknesses. Utility of
+IA can be further improved by involving all teachers in the department and limiting
+the contribution of individual teacher, test or tool.12
+
+8. Designing a system of assessment
+While designing an internal assessment, all domains of learning i.e. cognitive,
+psychomotor and affective should be taken into account and weightage should be
+assigned to these domains for assessment.
+Miller’s pyramid (figure 2) provides a simple way to select appropriate tool for
+assessment. Efforts should be made to climb higher in the pyramid. 6, 13The following
+adapted example illustrates this:
+
+Figure 2. Assessment methods as per levels of competency (Adapted from Ramani)13
+OSCE: Objective Structured Clinical Examination, SP: Standardised/ Simulated Patients
+
+The key to building validity and making CBA assessment useful is its
+alignment with competencies/objectives. Including some aspects from competencies
+of other phases is useful to assess integration of concepts. Some examples of such
+alignment can be seen in the competency sheet given inTable1.
+
+8
+
+Table 1. Deriving assessment methods from objectives
+
+A useful approach, especially for affective, psychomotor and communication
+domains, is to adopt the concept of assessment toolbox. A toolbox is a listing of
+available tools (and rating forms, if required), which are suggested for a particular
+competency or sub-competency and aims at improving the value of assessment
+data.14 The listed tools are suggestions only and can be freely used either singly or in
+combination by teachers to suit particular requirements. Efforts should be made to
+use multiple tools for a given competency to improve validity and reliability of
+assessment.
+While assessment will continue to be subject based, efforts must be made to
+ensure that phase appropriate correlates are assessed to determine if the learner
+has internalised and integrated the concept and its application.
+
+a. Internal Assessment logistics
+Scheduling of IA
+A proposed schedule of tests for IA is given in Annexure 1. These are
+minimum required numbers but more tests can be scheduled by departments as
+required. An end of posting clinical assessment shall be conducted for each clinical
+posting in each professional year. Prior to University examinations, departments can
+conduct additional tests as and when required with the purpose of providing
+
+9
+
+formative feedback to the students. In subjects that are taught at more than one
+phase, proportionate weightage must be given for internal assessment for each
+Phase. For example, General Medicine must be assessed in second Professional,
+third Professional Part I and third Professional Part II, independently. A student who
+has not taken minimum required number of tests for IA each in theory and practical
+will not be eligible for university examinations. Proper records of the work should be
+maintained which will form the basis for the students' internal assessment and
+should be available to the assessors at the time of inspection of the college by the
+Medical Council of India.
+
+Components of IA
+(i)
+
+Theory IA can include:
+
+Written tests, should have essay questions,
+
+short notes and creative writing experiences.
+(ii)
+
+Practical / Clinical IA can include: practical / clinical tests, Objective
+Structured Clinical Examination (OSCE) / Objective Structured Practical
+Examination (OSPE), Directly Observed Procedural Skills (DOPS), Mini
+Clinical Evaluation Exercise (mini-CEX), records maintenance and
+attitudinal assessment.
+
+(iii)
+
+Assessment of Log-book. Log book should record all activities like
+seminar, symposia, quizzes and other academic activities. Achievement
+of certifiable competencies should also be recorded in logbooks. It should
+be assessed regularly and submitted to the department. Up To twenty per
+cent IA marks (Theory and Practical) should be from Log book
+assessment.
+
+(iv)
+
+Internal Assessment for Professional development programme
+(AETCOM) will include:
+a. Written tests comprising of short notes and creative writing
+experiences in each subject.
+b. OSCE based clinical scenarios and/or viva voce. Skill competencies
+acquired during the Professional Development Programme must be
+tested during the clinical, practical and viva voce in every subject.
+
+10
+
+Colleges and teachers should try to build capacity to use a variety of
+assessment tools. A number of tools are available in the form of assessment
+toolbox.14 The construct validity and predictive utility of internal assessment is high.15
+Many of the tools mentioned for IA may appear subjective. However, by virtue of
+being high on validity and by conveying a message to the students not to ignore
+skills, attitudes and communication (educational impact), they contribute to better
+learning. Since stakes at IA are low, the use of expert subjective assessments to
+cover areas which are not assessable by conventional objectivised assessment tools
+is appropriate. There is plenty of evidence in literature to suggest that expert
+subjective assessments can be as reliable as highly objective ones.16
+The IA of broader specialties should also include marks from all the allied
+specialties e.g. General Medicine should include marks of Psychiatry, Dermatology,
+Venereology & Leprosy and Respiratory Medicine including tuberculosis, while
+General Surgery should include Orthopaedics, Dentistry, Anaesthesiology and
+Radio-diagnosis, so that students do not ignore these postings. The proportion of the
+marks for each allied specialty shall be proportionate to the time of instruction
+allotted to each. It may be noted that although very small contribution is being made
+by allied subjects, yet it serves as motivator to the students to not miss these
+postings. When subjects are taught in more than one phase, the assessment must
+be done in each phase and must contribute proportionally to final internal
+assessment.
+Assessment of Foundation Course should be included in formative
+assessment of first phase. Assessment of ECE should be included in formative as
+well as in internal assessment in first phase subject wise. Assessment of electives
+should contribute to internal assessment in final phase part-II. There should be at
+least one assessment based on direct observation of skills, attitudes and
+communication at all levels. Communication and attitudinal assessment should also
+be built in to all assessments as far as possible. A log book must be used to record
+these components. A sample format of log book is being published separately.
+
+Feedback in IA
+Feedback should be provided to students throughout the course so that they
+are aware of their performance and remedial action can be initiated well in time. The
+11
+
+feedbacks need to be structured and the faculty and students must be sensitized to
+giving and receiving feedback.11,12
+The results of IA should be displayed on notice board within two weeks of the
+test and an opportunity provided to the students to discuss the results and get
+feedback on making their performance better. Universities should guide the colleges
+regarding formulating policies for remedial measures for students who are either not
+able to score qualifying marks or have missed on some assessments due to any
+reason(s).
+It is also recommended that students should sign with date whenever they are
+shown IA records in token of having seen and discussed the marks. Internal
+assessment marks will not be added to University examination marks and will
+reflect as a separate head of passing at the summative examination.
+
+Record keeping
+The peculiarities of CBA, particularly its longitudinal nature and its use as a
+measure of progression require a good record keeping. Such records can vary from
+manual to electronic. In whatever form they are used, the essential features should
+include regularity, availability to the students and a documentation of discussion on
+the results (present status, feedback and suggestions for improvement) between the
+student and the teacher(s). Many aspects can be covered in a group feedback while
+some will require one to one discussion. The formats for use in Indian settings have
+been published and can be suitably modified for local use.12
+These concepts have been incorporated in the proposed GMER 2019 and are
+reproduced below.
+
+12
+
+Excerpts from proposed GMER 2019
+11.1.1 (b) Internal Assessment: Internal assessment shall be based on day-to-day
+assessment. It shall relate to different ways in which learners participate in learning
+process including assignments, preparation for seminar, clinical case presentation,
+preparation of clinical case for discussion, clinical case study/problem solving
+exercise, participation in project for health care in the community, proficiency in
+carrying out a practical or a skill in small research project, a written test etc.
+1.
+
+Regular periodic examinations shall be conducted throughout the
+course. There shall be no less than three internal assessment examinations
+in each Preclinical / Para-clinical subject and no less than two examinations in
+each clinical subject in a professional year. An end of posting clinical
+assessment shall be conducted for each clinical posting in each professional
+year.
+
+2.
+
+When subjects are taught in more than one phase, the internal assessment
+must be done in each phase and must contribute proportionately to final
+assessment. For example, General Medicine must be assessed in second
+Professional, third Professional Part I and third Professional Part II,
+independently.
+
+3.
+
+Day to day records and log book (including required skill certifications) should
+be given importance in internal assessment. Internal assessment should be
+based on competencies and skills.
+
+4.
+
+The final internal assessment in a broad clinical specialty (e.g. Surgery and
+allied specialties etc.) shall comprise of marks from all the constituent
+specialties. The proportion of the marks for each constituent specialty shall be
+determined by the time of instruction allotted to each.
+
+5.
+
+Learners must secure at least 50% marks of the total marks (combined in
+theory and practical / clinical; not less than 40 % marks in theory and practical
+separately) assigned for internal assessment in a particular subject in order to
+be eligible for appearing at the final University examination of that subject.
+Internal assessment marks will reflect as separate head of passing at the
+summative examination.
+
+6.
+
+The results of IA should be displayed on the notice board within a 1-2 week of
+the test. Universities shall guide the colleges regarding formulating policies for
+remedial measures for students who are either not able to score qualifying
+marks or have missed on some assessments due to any reason.
+
+7.
+
+Learners must have completed the required certifiable competencies for that
+phase of training and completed the log book appropriate for that phase of
+training to be eligible for appearing at the final university examination of that
+subject.
+
+13
+
+b. Summative assessment logistics (For Universities)
+Summative assessment consists of University examinations. Each theory
+paper will have 100 marks. Marks distribution as per proposed GMER 2019 for
+various subjects in given in Table 2.
+Table 2: Marks distribution for various subjects in University examinations
+WrittenPhase of Course
+
+Practicals /
+
+Theory – Orals/
+Total
+
+Pass Criteria
+
+Clinicals
+Internal Assessment:
+
+First Professional
+Human Anatomy - 2 papers
+
+200
+
+100
+
+Physiology - 2 papers
+
+200
+
+100
+
+Biochemistry - 2 papers
+
+200
+
+100
+
+50%combined in theory
+and practical (not less
+
+Pharmacology - 2 Papers
+
+200
+
+100
+
+Pathology - 2 papers
+
+200
+
+100
+
+Microbiology - 2 papers
+
+200
+
+100
+
+Third Professional Part – I
+
+paper
+
+eligibility for appearing
+for University
+
+Second Professional
+
+Forensic Medicine & Toxicology - 1
+
+than 40% in each) for
+
+Examinations
+University Examination
+Mandatory 50% marks
+in theory and practical
+(practical = practical/
+
+100
+
+100
+
+clinical + viva)
+[theory=theory paper(s)
+
+Ophthalmology – 1 paper
+
+100
+
+100
+
+only]
+
+Otorhinolaryngology – 1 paper
+
+100
+
+100
+
+Internal assessment
+
+Community Medicine - 2 papers
+
+200
+
+100
+
+marks are not to be
+added to marks of the
+
+Third Professional Part – II
+
+University
+General Medicine - 2 papers
+
+200
+
+200
+
+General Surgery - 2 papers
+
+200
+
+200
+
+should be shown
+
+Pediatrics – 1 paper
+
+100
+
+100
+
+separately in the grade
+
+Obstetrics & Gynaecology - 2 papers 200
+
+200
+
+examinations and
+
+card.
+
+14
+
+As per proposed GMER 2019, University examinations will be held in the month of
+September for first & second phase and October for final phase part 1. The
+examination for final phase part II will be held in the month of January (Table 3).
+
+Table 3: Examinations schedule
+
+Theory question paper (Knowledge part)-For Universities and
+colleges
+Universities should instruct paper setters to follow guidelines for paper setting as
+given below:
+1. Follow MCI competencies for paper setting in the subject.
+2. Designing of question paper should take into consideration all levels of
+knowledge domain e.g. Bloom’s taxonomy of cognitive domain. Use appropriate
+verbs for the questions at each level to assess higher levels of learning.17 An
+example is given below in Table 4. Use combination of various types of
+questions e.g. structured essays (Long Answer Questions - LAQ), Short
+Answers Questions (SAQ) and objective type questions (e.g. Multiple Choice
+Questions - MCQ). Marks for each part should be indicated separately. MCQs if
+
+15
+
+used, should not have more than 20% weightage. Example of theory paper and
+some examples of questions are given in Annexure 2.
+3.
+
+The question paper setter must sample the contents appropriately from
+competencies. The blueprinting grid can help the paper setters to balance the
+question papers in content related aspects as depicted below in Table 5.
+Blueprinting will add to the value and quality of these assessments. Moderation
+of theory question paper by subject expert must be arranged by Universities.
+
+Table 4: Verbs in various levels in Knowledge domain (Bloom’s taxonomy) 17
+Level
+Knowledge
+Comprehension
+
+Application
+Analysis
+Synthesis
+Evaluation
+
+Suggested Verbs
+Define, Describe, Draw, Find, Enumerate, Cite, Name, Identify, List, label,
+Match, Sequence, Write, State
+Discuss, Conclude, Articulate, Associate, Estimate, Rearrange,
+Demonstrate understanding, Explain, Generalise, Identify, Illustrate,
+Interpret, Review, Summarise
+Apply, Choose, Compute, Modify, Solve, Prepare, Produce, Select, Show,
+Transfer, Use
+Analyse, Characterise, Classify, Compare, Contrast, Debate, Diagram,
+Differentiate, Distinguish, Relate, Categorise
+Compose, Construct, Create, Verify, Determine, Design, Develop,
+Integrate, Organise, Plan, Produce, Propose, rewrite
+Appraise, Assess, Conclude, Critic, Decide, Evaluate, judge, Justify,
+Predict, Prioritise, Prove, Rank
+
+Table 5: Blueprinting in knowledge domain
+(Representative example only. Actual figures may vary with the subject and Phase)
+
+Level
+Knowledge
+Comprehension
+Application
+Analysis
+Synthesis
+Evaluation
+Total
+
+Topic A
+1
+1
+2
+1
+1
+6(24%)
+
+Topic B
+2
+1
+1
+1
+1
+6(24%)
+
+Topic C
+1
+1
+1
+2
+1
+6(24%)
+
+Topic D
+1
+2
+1
+2
+1
+7(28%)
+
+Total
+5 (20%)
+5(20%)
+5 (20%)
+6(24%)
+2 (8%)
+2 (8%)
+25 (100%)
+
+16
+
+Practical/Clinical examination
+This part should include assessment in psychomotor and affective domain.
+Assessment of clinical and procedural skills should be based on direct observations
+by the examiners.
+
+Avoid making this assessment mainly targeted to knowledge
+
+domain only. e.g. by asking a learner in a room away from actual patient, “how
+history was taken”. Instead, learner should be observed while he/she is taking
+history.
+The competencies dealing mainly with skills and affective domains in each
+subject must be included. Many of the tools mentioned for formative assessment
+may not be usable / feasible at the University examinations e.g. mini-CEX. However,
+multiple
+
+tools
+
+like
+
+case
+
+presentations,
+
+OSCE
+
+and/or
+
+OSPE
+
+should
+
+be
+
+employed.11,14,18-22. The value of conventional case presentation should be improved
+by having 1 or 2 longer (15 minutes or so) OSCE type stations, where examiners can
+observe and assess complete history taking (e.g. family history, present history etc.)
+and/or physical examination skill. This can be done either with check lists or using
+global ratings. Not only will this improve the validity of case presentations, but also
+provide an opportunity to assess attitudes and communication in context.
+Pre- and para-clinical departments should make practical exercises
+application oriented. Objective Structured Practical Examination (OSPE), OneMinute Preceptor (OMP), Directly Observed Procedural Skills (DOPS) etc. can be
+suitably modified for this purpose. Practical tests should not become simply tests of
+knowledge.
+Multiple teachers should be involved in assessment. This will help in not only
+taking care of subjectivity but also provide much needed training in assessment to
+senior residents and assistant professors.
+The use of multiple methods, by multiple examiners in multiple settings to
+assess multiple competencies, blueprinting and longitudinal assessment help to
+improve the reliability and validity of assessment.6, 18,23
+The relevant provisions from proposed GMER 2019 and are reproduced below:
+
+17
+
+Excerpts from proposed GMER 2019
+University Examinations
+11.2.1 University examinations are to be designed with a view to ascertain whether
+the candidate has acquired the necessary knowledge, minimal level of skills,
+ethical and professional values with clear concepts of the fundamentals which
+are necessary for him/her to function effectively and appropriately as a
+physician of first contact. Assessment shall be carried out on an objective
+basis to the extent possible.
+
+11.2.2 Nature of questions will include different types such as structured essays
+(Long Answer Questions - LAQ), Short Answers Questions (SAQ) and
+objective type questions (e.g. Multiple Choice Questions - MCQ). Marks for
+each part should be indicated separately. MCQs shall be accorded a
+weightage of not more than 20% of the total theory marks. In subjects that
+have two papers, the learner must secure at least 40% marks in each of the
+papers with minimum 50% of marks in aggregate (both papers together) to
+pass.
+11.2.3 Practical/clinical examinations will be conducted in the laboratories and /or
+hospital wards. The objective will be to assess proficiency and skills to
+conduct experiments, interpret data and form logical conclusion. Clinical
+cases kept in the examination must be common conditions that the learner
+may encounter as a physician of first contact in the community. Selection of
+rare syndromes and disorders as examination cases is to be discouraged.
+Emphasis should be on candidate’s capability to elicit history, demonstrate
+physical signs, write a case record, analyze the case and develop a
+management plan.
+11.2.4 Viva/oral examination should assess approach to patient management,
+emergencies, attitudinal, ethical and professional values. Candidate’s skill in
+interpretation of common investigative data, X-rays, identification of
+specimens, ECG, etc. is to be also assessed.
+11.2.5 There shall be one main examination in an academic year and a
+supplementary examination to be held not later than 90 days after the
+declaration of the results of the main examination.
+11.2.6 A learner shall not be entitled to graduate after 10 years of his/her joining of
+the first part of the MBBS course.
+
+18
+
+11.2.7 University Examinations shall be held as under:
+(a)
+
+First Professional
+
+1.
+
+The first Professional examination shall be held at the end of first Professional
+training (1+12 months), in the subjects of Human Anatomy, Physiology and
+Biochemistry.
+
+2.
+
+A maximum number of four permissible attempts would be available to clear the
+first Professional University examination, whereby the first Professional course
+will have to be cleared within 4 years of admission to the said course. Partial
+attendance at any University examination shall be counted as an availed
+attempt.
+
+(b)
+
+1.
+
+(c)
+
+Second Professional
+
+The second Professional examination shall be held at the end of second
+professional training (11 months), in the subjects of Pathology, Microbiology,
+and Pharmacology.
+Third Professional
+
+1.
+
+Third Professional Part I examination shall be held at end of third Professional
+part 1 of training (12 months) in the subjects of Ophthalmology,
+Otorhinolaryngology, Community Medicine and Forensic Medicine and
+Toxicology
+
+2.
+
+Third Professional Part II - (Final Professional) examination shall be at the end
+of training (14 months including 2 months of electives) in the subjects of
+General Medicine, General Surgery, Obstetrics & Gynaecology and Pediatrics.
+The disciplines of Orthopaedics, Anaesthesiology, Dentistry and
+Radiodiagnosis will constitute 25% of the total theory marks incorporated as a
+separate section in paper II of General Surgery.
+
+3.
+
+The discipline of Psychiatry and Dermatology, Venereology and Leprosy (DVL),
+Respiratory Medicine including Tuberculosis will constitute 25% of the total
+theory marks in General Medicine incorporated as a separate section in paper II
+of General Medicine.
+
+19
+
+9. Capacity building
+Considering the importance of CBA in making competency based curriculum
+a success, preparing the faculty to decide and use appropriate tools is crucial.
+Faculty needs to move beyond ‘conventional’ assessment methods. It is also
+important to remember that usefulness of many newer tools depends on the way
+they are used. Faculty also needs to be trained to develop their own toolbox
+depending on resources, expertise and contextual factors.
+The revised Basic Course Workshop (rBCW) in Medical Education
+Technologies provides training in tools to be used for lower two levels of Miller’s
+pyramid while the Advance Course in Medical Education (ACME) trains in those for
+higher two levels. In addition, the trained faculty and Medical Education Units should
+have in-house programs to build capacity for assessment. Involving junior faculty in
+IA is a useful step to provide hands-on training in assessment. Sensitization and
+training of all stakeholders at the University and Institutional level is required.
+It is equally important to involve the student community and make them aware
+of these changes. Many changes require a variance from established practices.
+Foundation course and introductory sessions in each department should orient the
+students to the changes in assessment.
+
+10. Implementation & Monitoring / Curricular Governance
+Internal assessment formats are to be developed by institutes as per
+proposed GMER 2019. The changes in summative assessment (university
+examination) are to be adopted by universities and details to be provided to the
+affiliated colleges. Quality assurance techniques in formative assessment (self / peer
+monitoring) and University examinations (question paper moderation by subject
+experts, external monitoring or posting external observers/examiners) should be
+employed to improve assessment.
+
+11. Examples / Models
+The suggested formats are provided in annexures.
+
+20
+
+12. Bibliography and Further reading:
+1. Frank JR, Snell L, Ten Cate O et al. Competency-based medical education:
+Theory to practice. Medical Teacher 2010; 32:638-45
+2. Van der Vleuten CPM. The assessment of professional competence:
+developments,
+
+research
+
+and
+
+practical
+
+implications. Adv
+
+Health
+
+Sci
+
+Educ. 1996; 1: 41-67.
+3. Sood R, Singh T. Assessment in medical education: evolving perspectives,
+contemporary trends. National Med J India. 2012; 6: 357-60.
+4. Fitzgerald JT, John B, Steven K, Patricia M, Santen AS, Kent JS et al.
+Assessment challenges in competency-based education: A case study in
+health professions education. Med Teacher. 2015; 38:1-9.
+5. Mahajan R, Singh T. The national licentiate examination: pros and cons.
+National Med J India. 2017: 30; 275-78.
+6. van der Vleuten CPM, SchuwirthLWT, Scheele F, Driessen EW, Hodges B.
+The assessment of professional competence: building blocks for theory
+development. Best Pract Res Clin Obst Gynaecol. 2010; 24:703-19.
+7. Thomas AA, Patricia CK. Classroom assessment techniques: A handbook for
+college teachers. San Francisco: Jossey-Bass, 1993.
+8. Modi JN, Anshu, Gupta P, Singh T. Teaching and assessing clinical reasoning
+skills. Indian Pediatr. 2015; 52: 787-92.
+9. Wolpaw T, Wolpaw D, Papp K. SNAPPS: A learner-centred model for
+outpatient education. Acad Med. 2003;78: 893-98.
+10. Singh T, Sood R. Workplace based assessment–measuring and shaping
+clinical learning. Nat Med J India, 2013;26: 42-45.
+11. Norcini J, Burch Vaneesa. Workplace based assessment as an educational
+tool AMEE guide No. 31. https://www.researchgate.net/publication/5690073
+(accessed Aug. 21, 2019).
+12. Badyal DK, Singh T. Internal assessment for medical graduates in India:
+concept and application. CHRISMED J Health Res. 2018;5: 253-58.
+13. Ramani S, Leinster S. AMEE guide no. 34: Teaching in the clinical
+environment. Med Teacher. 2008;30: 347-64.
+
+21
+
+14. ACGME. Toolbox of assessment methods ver 1.0 https://www.partners.org/
+Assets/Documents/Graduate-Medical-Education/ToolTable.pdf
+
+(accessed
+
+Aug. 21, 2019).
+15. Badyal DK, Singh S, Singh T. Construct validity and predictive utility of
+internal assessment in undergraduate medical education. National Med J
+India. 2017; 30:151-54.
+16. Singh T. Student assessment: issues and dilemmas regarding objectivity.
+National Med J India. 2012; 25: 287-90.
+17. Bloom’s taxonomy of measurable verbs. https://www.utica.edu/academic
+/Assessment/new/Blooms%20Taxonomy%20-%20Best.pdf (accessed Aug.
+21, 2019).
+18. Cox M, David I, Ronald E. Assessment in medical education. NEJM. 2007;29:
+855-71.
+19. Modi JN, Anshu, Gupta P, Singh T. Competency based education,
+entrustment and assessment. Indian Pediatr. 2015; 52:413-18.
+20. Joshi MK, Singh T, Badyal DK. Acceptability and feasibility of mini-clinical
+evaluation exercise as a formative assessment tool for workplace-based
+assessment for surgical postgraduate students. J PostgradMed.2017;63:1005
+21. Gupta P, Dewan P, Singh T. Objective structured clinical examination (OSCE)
+Revisited. Indian Pediatr. 2010; 47:911-20.
+22. Singh T, Anshu. Internal assessment revisited. NatMed J India. 2009;22: 8284.
+23. Singh T, Anshu, Modi JN. The quarter model: A proposed approach to intraining assessment for undergraduate students in Indian medical schools.
+Indian Pediatr. 2012;49: 871-75.
+
+22
+
+Annexure 1
+Suggested phase wise scheduling of tests for internal assessment for Colleges
+(This is only a suggested sample plan. Local changes can be made if they conform to proposed GMER 2019)
+Phase
+
+Minimum Number of tests during the year
+
+Remarks
+
+1st
+
+Human Anatomy 3, Physiology 3, Biochemistry 3, Community
+
+•ECE assessment should be included subject
+
+Medicine 1
+
+wise
+•There should be at least one short question
+from AETCOM in each subject
+•One of the 3 tests in preclinical subjects should
+be prelim or pre-university examination
+
+2nd
+
+Pathology 3, Pharmacology 3, Microbiology 3,
+
+•Clinical subjects should also be assessed at
+end of each posting (EOP) – Theory and
+
+Two tests for-
+
+Practical
+
+General Medicine (Including Psychiatry, Dermatology,
+
+•There should be at least one short question
+
+Venereology & Leprosy (DVL) and Respiratory Medicine
+
+from AETCOM in each subject
+
+including Tuberculosis), General Surgery (Including
+
+•One of the 3 tests in Para-clinical subjects
+
+Orthopaedics, Dentistry, Anaesthesiology and Radiodiagnosis),
+
+should be prelim or pre-university examination
+
+Obstetrics& Gynaecology, Forensic Medicine & Toxicology and
+Community Medicine
+End of posting (EOP) examination at each clinical posting
+including those of allied subjects
+23
+
+3rd
+
+Forensic Medicine &Toxicology 2, Community Medicine 2,
+
+•Clinical subjects should also be tested at end of
+
+Ophthalmology 2, Otorhinolaryngology 2
+
+each posting (EOP)-Theory and Practical
+
+Two tests for-
+
+•There should be at least one short question
+
+General Medicine (Including Psychiatry, Dermatology,
+
+from AETCOM in each subject
+
+Venereology & Leprosy (DVL) and Respiratory Medicine
+
+•One of the tests in Ophthalmology,
+
+including Tuberculosis), General Surgery (Including
+
+Otorhinolaryngology /Forensic Medicine &
+
+Orthopaedics, Anaesthesiology and Radiodiagnosis),
+
+Toxicology/ Community Medicine should be
+
+Pediatrics, Obstetrics &Gynaecology
+
+prelim or pre-university examination
+
+EOP examination at each clinical posting including allied
+subjects
+4th
+
+Two Tests for-
+
+•Clinical subjects should also be tested at end of
+
+General Medicine (Including Psychiatry, Dermatology,
+
+each posting (EOP)-Theory and Practical
+
+Venereology & Leprosy (DVL) and Respiratory Medicine
+
+•There should be at least one short question
+
+including Tuberculosis), General Surgery (Including
+
+from AETCOM in each subject
+
+Orthopaedics, Anaesthesiology and Radiodiagnosis),
+
+•One of the tests in General Medicine, General
+
+Pediatrics, Obstetrics & Gynaecology
+
+Surgery, Pediatrics and Obstetrics &
+Gynaecology should be preliminary or pre-
+
+EOP examination at each clinical posting including that in allied
+
+university examination
+
+subjects
+
+•Assessment of electives to be included in IA
+
+AETCOM: Attitude, Ethics and Communication
+24
+
+The internal assessment marks for each subject will be out of 100 for theory and out of 100 for practical/clinical (except in General
+Medicine, General Surgery and Obstetrics & Gynaecology, in which theory and clinical will be of 200 marks each). Internal
+assessment marks will reflect as a separate head of passing at the summative examination and will not be added to the University
+marks.
+
+Twenty five percent of weightage in theory tests in General Medicine and General Surgery should be given to allied subjects and
+there should be at least one question from each allied subject.
+
+25
+
+Annexure 2
+Examples of theory questions
+Sl.
+No.
+
+Type
+Long
+
+Explanation
+
+essay The question should pose a clinical/practical A 6 days old term neonate has presented with jaundice
+
+question
+
+problem to the students and require them to noted at 3 days of age. He is born out of normal delivery
+apply
+
+1
+
+Examples
+
+knowledge
+
+and
+
+integrate
+
+it
+
+giving
+
+one
+
+liners
+
+question
+
+stem
+
+should be normal.
+
+disciplines.
+
+Avoid
+
+questions.
+
+The
+
+with at home. On examination, he looks pale, has a liver of
+as 5cms and spleen of 2 cms. Other systemic examination is
+
+structured and marking distribution should be
+
+a. What is your provisional diagnosis?
+
+provided. Use action verbs from higher domains
+
+b. Which other conditions need to be considered?
+
+as given in this document.
+
+c. Enumerate the lab tests that you will order and
+
+Please avoid simple recall based questions.
+
+their likely reports in each of the diagnosis that you
+
+What is asked in the examination generally sets
+
+considered.
+
+the agenda of what and how the students learn.
+
+d. Explain the physical findings in the light of
+underlying derangements.
+-
+
+Describe the clinical features, complications and
+management of type 2 diabetes mellitus. (3+3+4=10)
+
+26
+
+Sl.
+No.
+2
+
+Type
+
+Explanation
+
+Short notes
+
+These provide opportunity to sample a wider
+
+Examples
+1. What are the various ways in which acute
+
+content, albeit in a short time. The questions
+should be task oriented rather than Write a
+
+glomerulonephritis can present during childhood?
+2. What is the role of antibiotics in childhood
+
+short note on xxx. (Two questions based on
+ECE in Phase 1 in internal assessment) (Two
+
+diarrhoeas?
+3. What
+
+questions based on integration in Phase 2 & 3
+in internal assessment)
+
+is
+
+the
+
+utility
+
+of
+
+routine
+
+vitamin
+
+K
+
+administration during newborn period?
+4. Compare and contrast the use of ramipril and
+amlodipine in treatment of hypertension.
+
+3
+
+Reasoning
+
+These provide excellent opportunities for testing
+
+1. Which components of breast milk help in
+
+Questions
+
+integration, clinical reasoning and analytic
+
+prevention of neonatal infections? How do they
+
+ability of the student.
+
+help in prevention of infection?
+2. Plan immunization for a 2 years old totally unimmunized child.
+3.
+
+What is the physiological basis of origin of
+respiratory sounds? How can they help us in
+making a diagnosis?
+
+4.
+
+Explain why adrenaline is the preferred medication
+in anaphylactic shock.
+
+27
+
+Sl.
+No.
+4
+
+Type
+
+Explanation
+
+Examples
+
+Short notes
+
+(Pre- & Para-Clinical subjects: questions on Pre
+
+Applied
+
+applied aspect)
+
+aspects
+
+(Clinical subjects: questions on preclinical Clinical subjects: Explain patho-physiological basis of
+basis)
+
+5
+
+&
+
+Para-Clinical
+
+subjects:
+
+Describe
+
+clinical
+
+significance of half-life of drugs.
+
+clinical features of heart failure
+
+Short notes
+
+(one question on AETCOM in all subjects in all Pharmacovigilance program of India
+
+AETCOM
+
+phases)
+
+AETCOM: What are the rights of a patient in a hospital
+setting
+
+6
+
+MCQs
+
+MCQs should be
+
+1. A 25 year old lady was using oral contraceptives successfully for last two years. She
+
+scenario based,
+
+got tuberculosis and was prescribed Rifampicin. She became pregnant after 2
+
+single response
+
+months of starting Rifampicin despite continuing the oral contraceptives. Which of
+
+with 4 options in
+
+the following effects of Rifampicin can be the reason for this?
+
+answers.
+
+A. Induction of oral contraceptive metabolism
+
+one
+
+liner
+
+negative
+in
+
+stem
+
+Avoid
+and
+terms
+of
+
+B. Stimulation of ovulation
+C. Interruption of entero-hepatic circulation
+D. Increased excretion of oral contraceptives
+
+Key: A
+
+question. Avoid
+‘all of above’ and
+‘none of above’
+in options.
+
+28
+
+Sl.
+No.
+
+Type
+MCQs
+
+Explanation
+
+Examples
+2. A 2 year old child presents with excessive weight gain over last 1 week. He has puffy eyes,
+pitting edema and normal blood pressure. Urine examination shows no RBCs but massive
+proteinuria. Which of the following biochemical parameters is likely to be elevated in this
+child?
+a. Urea
+b. Cholesterol
+c. Creatinine
+d. Uric acid
+
+Key B
+
+3. Which of the following term best describes the decreased effects of beta adrenergic agonists
+in bronchial asthma after long term use?
+A. Pharmacokinetic tolerance
+B. Pharmacodynamic tolerance
+C. Tachyphylaxis
+D. Drug dependence
+
+Key: B
+
+Note: AETCOM question should be based on competencies (primarily knowledge based) acquired during the AETCOM module
+training. At least one question in each paper of the clinical specialties should test knowledge - competencies acquired during the
+professional development programme (AETCOM module); Skills competencies acquired during the Professional Development
+programme (AETCOM module) must be tested during clinical, practical and viva.
+In subjects that have two papers, the learner must secure at least 40% marks in each of the papers with minimum 50% of
+marks in aggregate (both papers together) to pass in the said subject.
+
+29
+
+

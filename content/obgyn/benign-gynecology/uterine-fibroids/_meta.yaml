@@ -1,0 +1,13 @@
+topic_id: uterine-fibroids
+name: Uterine Fibroids
+description: Uterine Fibroids — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG16.2
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG24.1
+  domain: KH
+  core: true
+  phase: Phase 3

@@ -1,0 +1,34 @@
+id: fetal-medicine
+title: "Fetal Medicine"
+subject: obgyn
+description: |
+  Fetal development, anomalies, and monitoring.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: assessment
+    title: "Fetal Assessment"
+    topics:
+      - obstetric-ultrasound
+      - doppler-in-obstetrics
+      - biophysical-profile
+      - nst-cst
+      - amniocentesis
+      - chorionic-villus-sampling
+  - id: anomalies
+    title: "Fetal Anomalies"
+    topics:
+      - neural-tube-defects
+      - chromosomal-anomalies
+      - fetal-hydrops
+      - congenital-heart-disease-prenatal
+      - fetal-growth-restriction-fm
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

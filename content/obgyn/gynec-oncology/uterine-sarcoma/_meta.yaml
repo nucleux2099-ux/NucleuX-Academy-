@@ -1,0 +1,9 @@
+topic_id: uterine-sarcoma
+name: Uterine Sarcoma
+description: Uterine Sarcoma — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG24.1
+  domain: KH
+  core: true
+  phase: Phase 3

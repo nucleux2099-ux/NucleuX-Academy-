@@ -1,0 +1,9 @@
+topic_id: induction-of-labor
+name: Induction Of Labor
+description: Induction Of Labor — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG28.3
+  domain: KH
+  core: true
+  phase: Phase 3

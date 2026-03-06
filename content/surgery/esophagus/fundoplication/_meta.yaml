@@ -1,0 +1,40 @@
+title: "Fundoplication"
+slug: fundoplication
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "gerd"
+  - "les-physiology"
+  - "esophageal-anatomy"
+related_topics:
+  - "surgical-management-gerd"
+  - "heller-myotomy"
+  - "achalasia"
+  - "esophageal-manometry"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "gerd"
+      reason: "GERD is the primary indication — understanding reflux pathophysiology and failed medical therapy criteria is essential"
+    - slug: "les-physiology"
+      reason: "Fundoplication mechanically augments the LES anti-reflux barrier — LES pressure dynamics determine surgical approach"
+    - slug: "esophageal-anatomy"
+      reason: "Hiatal anatomy, short gastric vessels, and vagal trunks are critical operative landmarks"
+  related_details:
+    - slug: "surgical-management-gerd"
+      reason: "Fundoplication is the cornerstone anti-reflux procedure within the surgical GERD management algorithm"
+      relationship: "clinical"
+    - slug: "heller-myotomy"
+      reason: "Partial fundoplication (Dor/Toupet) is routinely added to Heller myotomy to prevent post-myotomy reflux"
+      relationship: "clinical"
+    - slug: "achalasia"
+      reason: "Choice of partial vs full wrap depends on esophageal motility — achalasia mandates partial fundoplication"
+      relationship: "clinical"
+    - slug: "esophageal-manometry"
+      reason: "Pre-operative manometry determines wrap type — full (Nissen) for normal motility, partial for impaired peristalsis"
+      relationship: "clinical"

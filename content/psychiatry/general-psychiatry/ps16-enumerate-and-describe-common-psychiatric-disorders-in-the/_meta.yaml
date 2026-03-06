@@ -1,0 +1,25 @@
+topic_id: ps16-enumerate-and-describe-common-psychiatric-disorders-in-the
+name: Enumerate and describe common psychiatric disorders in the
+description: Enumerate and describe common psychiatric disorders in the — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PS16.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS16.2
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS16.3
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PS16.4
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PS16.5
+  domain: K
+  core: true
+  phase: Phase 2

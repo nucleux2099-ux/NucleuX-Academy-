@@ -1,0 +1,21 @@
+topic_id: cm6-formulate-a-research-question-for-a-study
+name: Formulate a research question for a study
+description: Formulate a research question for a study — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: CM6.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: CM6.2
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: CM6.3
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: CM6.4
+  domain: SH
+  core: true
+  phase: Phase 2

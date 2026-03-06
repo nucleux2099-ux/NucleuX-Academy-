@@ -1,0 +1,57 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Anatomical narrowings and mucosal layers determine sites and causes of obstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "LES dysfunction is central to distinguishing motility from mechanical dysphagia",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "achalasia",
+      "nmcCode": "",
+      "reason": "Achalasia is the prototypical motility cause of dysphagia — progressive dysphagia to solids and liquids",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-cancer",
+      "nmcCode": "",
+      "reason": "Progressive dysphagia to solids is the red-flag presentation of esophageal malignancy",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "motility-disorders",
+      "nmcCode": "",
+      "reason": "Dysphagia classification depends on distinguishing motility disorders from mechanical obstruction",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Manometry is the key investigation for motility-related dysphagia",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "EN4.38: Elicit document and present a correct history demonstrate and describe"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Dysphagia across foundational sciences and clinical applications."
+}

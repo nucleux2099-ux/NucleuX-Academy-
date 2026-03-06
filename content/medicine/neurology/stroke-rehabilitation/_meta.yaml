@@ -1,0 +1,27 @@
+title: "Stroke Rehabilitation"
+slug: stroke-rehabilitation
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM18.14"
+  - "IM18.15"
+prerequisites:
+  - "ischemic-stroke"
+  - "hemorrhagic-stroke"
+related_topics:
+  - "ischemic-stroke"
+  - "hemorrhagic-stroke"
+enrichment:
+  nmcCodes:
+    - code: "IM18.14"
+      text: "Describe rehabilitation strategies for stroke patients"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "ischemic-stroke"
+      reason: "Most stroke rehabilitation follows ischemic stroke"
+    - slug: "hemorrhagic-stroke"
+      reason: "Hemorrhagic stroke also requires rehabilitation"
+  related_details:
+    - slug: "ischemic-stroke"
+      reason: "Post-stroke care continuum"
+      relationship: "clinical"

@@ -1,0 +1,19 @@
+title: Ischemic Stroke
+slug: ischemic-stroke
+depth: UG
+highYield: true
+nmc_codes:
+  - IM18.14
+  - IM18.15
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM18.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic stroke
+      domain: KH
+    - code: IM18.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of ischemic stroke
+      domain: KH
+  prerequisite_details: []
+  related_details: []

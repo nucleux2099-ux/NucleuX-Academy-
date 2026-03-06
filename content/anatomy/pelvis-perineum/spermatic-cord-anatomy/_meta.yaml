@@ -1,0 +1,33 @@
+topic_id: spermatic-cord-anatomy
+name: Spermatic Cord Anatomy
+description: Spermatic Cord Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN57.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN57.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN57.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN64.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN64.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN80.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN80.7
+  domain: KH
+  core: false
+  phase: Phase 1

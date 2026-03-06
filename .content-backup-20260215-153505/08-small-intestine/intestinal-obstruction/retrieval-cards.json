@@ -1,0 +1,21 @@
+{
+  "topic_id": "intestinal-obstruction",
+  "version": "1.0",
+  "cards": [
+    {"id": "io-001", "front": "What is the most common cause of small bowel obstruction?", "back": "Adhesions from previous surgery (60%)", "tags": ["etiology", "high-yield"]},
+    {"id": "io-002", "front": "What is the most common cause of large bowel obstruction?", "back": "Colorectal cancer (60%)", "tags": ["etiology", "high-yield"]},
+    {"id": "io-003", "front": "What is the Rule of 3-6-9?", "back": "Dilated if: Small bowel >3cm, Large bowel >6cm, Cecum >9cm (perforation risk)", "tags": ["radiology", "high-yield"]},
+    {"id": "io-004", "front": "What is absolute constipation?", "back": "No passage of flatus AND feces — indicates complete obstruction", "tags": ["clinical", "high-yield"]},
+    {"id": "io-005", "front": "How does vomiting differ in SBO vs LBO?", "back": "SBO: Early, profuse, bilious. LBO: Late, feculent", "tags": ["clinical", "high-yield"]},
+    {"id": "io-006", "front": "What is closed-loop obstruction?", "back": "Bowel obstructed at two points — high risk of strangulation", "tags": ["types", "high-yield"]},
+    {"id": "io-007", "front": "What X-ray sign suggests sigmoid volvulus?", "back": "Coffee bean sign", "tags": ["radiology", "high-yield"]},
+    {"id": "io-008", "front": "What is the bird's beak sign?", "back": "Tapered narrowing on contrast enema in sigmoid volvulus", "tags": ["radiology"]},
+    {"id": "io-009", "front": "What are signs of strangulation?", "back": "Continuous pain, fever, tachycardia, localized tenderness, elevated lactate", "tags": ["clinical", "high-yield"]},
+    {"id": "io-010", "front": "What is the initial management of uncomplicated SBO?", "back": "Conservative: NPO, IV fluids, NGT (drip and suck) for 48-72 hours", "tags": ["treatment"]},
+    {"id": "io-011", "front": "When is emergency surgery indicated in obstruction?", "back": "Strangulation, closed-loop, peritonitis, failed conservative (48-72 hrs)", "tags": ["treatment", "high-yield"]},
+    {"id": "io-012", "front": "What is Richter's hernia?", "back": "Only anti-mesenteric border of bowel in sac — can strangulate without obstruction", "tags": ["types"]},
+    {"id": "io-013", "front": "What differentiates mechanical from paralytic ileus?", "back": "Mechanical: colicky pain, visible peristalsis, high-pitched bowel sounds. Ileus: silent abdomen", "tags": ["clinical"]},
+    {"id": "io-014", "front": "What is the most useful investigation for obstruction?", "back": "CT abdomen (shows transition point, cause, complications)", "tags": ["investigation"]},
+    {"id": "io-015", "front": "What is the step-ladder pattern on X-ray?", "back": "Multiple air-fluid levels at different heights — seen in small bowel obstruction", "tags": ["radiology"]}
+  ]
+}

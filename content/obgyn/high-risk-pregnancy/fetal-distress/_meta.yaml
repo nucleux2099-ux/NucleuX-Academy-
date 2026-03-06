@@ -1,0 +1,17 @@
+topic_id: fetal-distress
+name: Fetal Distress
+description: Fetal Distress — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: OG12.8
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG8.4
+  domain: SH
+  core: true
+  phase: Phase 3
+- code: OG9.5
+  domain: KH
+  core: true
+  phase: Phase 3

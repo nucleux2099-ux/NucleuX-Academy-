@@ -1,0 +1,101 @@
+title: Pneumonia & Respiratory Infections
+slug: pneumonia-respiratory-infections
+depth: UG
+highYield: true
+nmc_codes:
+  - IM4.1
+  - IM4.2
+  - IM4.3
+  - IM4.4
+  - IM4.5
+  - IM4.6
+  - IM4.7
+  - IM4.8
+  - IM4.9
+  - IM4.10
+  - IM4.11
+  - IM4.12
+  - IM4.13
+  - IM4.14
+  - IM4.15
+  - IM4.16
+  - IM4.17
+  - IM4.18
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM4.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.2
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.8
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.10
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.11
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.12
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.13
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.14
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.15
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+    - code: IM4.18
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of pneumonia &
+        respiratory infections
+      domain: KH
+  prerequisite_details: []
+  related_details: []

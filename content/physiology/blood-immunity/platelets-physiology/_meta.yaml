@@ -1,0 +1,9 @@
+topic_id: platelets-physiology
+name: Platelets Physiology
+description: Platelets Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY2.7
+  domain: KH
+  core: true
+  phase: Phase 1

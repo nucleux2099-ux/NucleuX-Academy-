@@ -1,0 +1,186 @@
+topic_id: cardiac-cycle
+name: Cardiac Cycle & Heart Sounds
+description: Cardiac Cycle & Heart Sounds — Phases of cardiac cycle, pressure-volume relationships, and auscultatory findings
+high_yield: true
+nmc_codes:
+- code: PY5.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY5.5
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The cardiac cycle consists of systole (contraction) and diastole (relaxation) of the heart chambers.
+  Each cycle lasts ~0.8 seconds at 75 bpm. Understanding the pressure-volume changes and valve events
+  is essential for interpreting heart sounds, murmurs, and cardiac pathology. The Wiggers diagram
+  integrates pressure, volume, ECG, and heart sounds across the cycle.
+  📚 Guyton & Hall, 14th Ed, Ch.9 (p.109-120) / 📚 Ganong's, 26th Ed, Ch.30
+
+learning_objectives:
+  - Describe the phases of the cardiac cycle with pressure-volume relationships
+  - Explain the events during isovolumetric contraction and relaxation
+  - Correlate heart sounds with valve events in the cardiac cycle
+  - Identify normal and abnormal heart sounds (S3, S4, murmurs)
+  - Interpret the pressure-volume loop of the left ventricle
+
+content:
+  atoms:
+    - id: phases-cardiac-cycle
+      title: "Phases of the Cardiac Cycle"
+      text: >
+        Ventricular systole (0.3s): (1) Isovolumetric contraction — all valves closed, pressure rises rapidly,
+        volume unchanged. Begins with S1 (mitral + tricuspid valve closure).
+        (2) Rapid ejection — aortic valve opens when LV pressure > aortic pressure (~80 mmHg), blood ejected rapidly.
+        (3) Reduced ejection — pressure gradient decreases, ejection slows.
+        Ventricular diastole (0.5s): (4) Isovolumetric relaxation — aortic valve closes (S2), all valves closed,
+        pressure falls rapidly, volume unchanged.
+        (5) Rapid filling — mitral valve opens when LV pressure < LA pressure, passive filling (~70% of filling).
+        (6) Slow filling (diastasis). (7) Atrial systole (atrial kick — contributes ~20-30% of filling).
+        📚 Guyton & Hall, 14th Ed, Ch.9 (p.109-114)
+
+    - id: heart-sounds
+      title: "Heart Sounds"
+      text: >
+        S1: Closure of AV valves (mitral + tricuspid) — marks onset of ventricular systole. Mitral closes slightly
+        before tricuspid. Best heard at apex. Loud S1: mitral stenosis, short PR interval.
+        S2: Closure of semilunar valves (aortic + pulmonary) — marks onset of diastole. A2 before P2.
+        Physiological splitting of S2: increases with inspiration (increased venous return → delayed P2).
+        Fixed splitting: ASD. Paradoxical splitting: LBBB, aortic stenosis (delayed A2).
+        S3: Rapid ventricular filling sound — heard in early diastole. Normal in young; pathologic >40 years
+        (volume overload, dilated ventricle, CHF). Creates "Kentucky" cadence (S1-S2-S3).
+        S4: Atrial contraction against stiff ventricle — heard in late diastole (presystolic).
+        Always pathologic. "Tennessee" cadence (S4-S1-S2). Seen in LVH, diastolic dysfunction, HTN.
+        📚 Ganong's, 26th Ed, Ch.30
+
+    - id: pressure-volume-loop
+      title: "Left Ventricular Pressure-Volume Loop"
+      text: >
+        The PV loop plots LV pressure (y-axis) against LV volume (x-axis) counterclockwise.
+        Point A→B: Mitral valve closes → Isovolumetric contraction (vertical rise in pressure).
+        Point B→C: Aortic valve opens → Ejection (volume decreases, pressure rises then falls).
+        Point C→D: Aortic valve closes → Isovolumetric relaxation (vertical drop in pressure).
+        Point D→A: Mitral valve opens → Filling (volume increases at low pressure).
+        Width of loop = Stroke Volume (EDV - ESV). Area within loop = Stroke Work.
+        ESPVR (end-systolic PV relationship) = index of contractility (shifts left/up with increased inotropy).
+        📚 Guyton & Hall, 14th Ed, Ch.9 (p.115-118)
+
+    - id: wiggers-diagram
+      title: "Wiggers Diagram — Integration"
+      text: >
+        The Wiggers diagram simultaneously displays: aortic pressure, LV pressure, LA pressure, LV volume,
+        ECG, and phonocardiogram across one cardiac cycle.
+        Key correlations: QRS complex → onset of ventricular systole → S1.
+        T wave → onset of ventricular relaxation → S2.
+        'a' wave in LA pressure → atrial contraction. 'c' wave → tricuspid bulging during isovolumetric contraction.
+        'v' wave → venous filling of atria during ventricular systole.
+        'x' descent → atrial relaxation. 'y' descent → rapid ventricular filling after AV valve opens.
+        📚 Guyton & Hall, 14th Ed, Ch.9 (p.110)
+
+    - id: murmurs-overview
+      title: "Heart Murmurs — Timing Basics"
+      text: >
+        Systolic murmurs (between S1 and S2): Mitral regurgitation (pansystolic, apex, radiates to axilla),
+        Aortic stenosis (crescendo-decrescendo, RUSB, radiates to carotids), VSD (pansystolic, LLSB).
+        Diastolic murmurs (between S2 and S1): Aortic regurgitation (early diastolic, decrescendo, LLSB),
+        Mitral stenosis (mid-diastolic rumble with opening snap, apex, best in left lateral position).
+        Continuous murmur: Patent ductus arteriosus (machinery murmur).
+        Innocent murmurs: systolic, soft, no radiation, change with position — common in children.
+        📚 Ganong's, 26th Ed, Ch.30
+
+  clinical:
+    - title: "Clinical Correlation: S3 Gallop in Heart Failure"
+      text: >
+        S3 gallop in adults >40 indicates volume overload and ventricular dysfunction. Blood rushing into a
+        dilated, compliant ventricle during rapid filling produces the sound. Presence of S3 in CHF correlates
+        with elevated BNP and poor prognosis. S3 is also heard in mitral/tricuspid regurgitation.
+    - title: "Clinical Correlation: Auscultation in Valvular Disease"
+      text: >
+        Aortic stenosis: ejection systolic murmur, crescendo-decrescendo, radiates to carotids, pulsus parvus et tardus.
+        Mitral stenosis: opening snap followed by low-pitched mid-diastolic rumble at apex.
+        Short S2-OS interval = severe stenosis (higher LA pressure opens valve sooner).
+
+  high_yield_points:
+    - "Isovolumetric contraction: ALL valves CLOSED, pressure rises, volume constant"
+    - "S1 = AV valve closure (mitral before tricuspid); S2 = semilunar valve closure (A2 before P2)"
+    - "Physiological splitting of S2 INCREASES with inspiration (delayed P2)"
+    - "Fixed splitting of S2 = ASD; Paradoxical splitting = LBBB or aortic stenosis"
+    - "S3 = rapid filling phase (normal <30 yr, pathologic >40 yr = CHF)"
+    - "S4 = ALWAYS pathologic (stiff ventricle — LVH, diastolic dysfunction)"
+    - "Rapid filling phase accounts for ~70% of ventricular filling; atrial kick ~20-30%"
+    - "In atrial fibrillation: loss of atrial kick → loss of S4, loss of 'a' wave in JVP"
+    - "PV loop area = stroke work; ESPVR slope = contractility index"
+    - "Diastole is longer than systole — at high heart rates, diastole shortens MORE"
+
+mcqs:
+  - question: "During which phase of the cardiac cycle are ALL cardiac valves closed?"
+    options:
+      - "Rapid ejection and rapid filling"
+      - "Isovolumetric contraction and isovolumetric relaxation"
+      - "Atrial systole and reduced ejection"
+      - "Rapid filling and slow filling"
+    answer: "Isovolumetric contraction and isovolumetric relaxation"
+    explanation: >
+      During isovolumetric contraction (after AV valve closure, before semilunar valve opening) and isovolumetric
+      relaxation (after semilunar closure, before AV valve opening), all four valves are closed.
+      Volume remains constant while pressure changes.
+      📚 Guyton & Hall, 14th Ed, Ch.9 (p.111)
+    difficulty: 1
+
+  - question: "A 65-year-old hypertensive patient has a fourth heart sound (S4). This indicates:"
+    options:
+      - "Volume overload with dilated ventricle"
+      - "Atrial contraction against a stiff, non-compliant ventricle"
+      - "Rapid ventricular filling in early diastole"
+      - "Aortic valve closure"
+    answer: "Atrial contraction against a stiff, non-compliant ventricle"
+    explanation: >
+      S4 is a late diastolic (presystolic) sound caused by forceful atrial contraction against a stiff,
+      hypertrophied ventricle (decreased compliance). Always pathologic. Common in HTN with LVH,
+      HOCM, and aortic stenosis. S3 (not S4) indicates volume overload in early diastole.
+      📚 Ganong's, 26th Ed, Ch.30
+    difficulty: 1
+
+  - question: "Fixed splitting of S2 is characteristic of:"
+    options:
+      - "Left bundle branch block"
+      - "Atrial septal defect"
+      - "Pulmonary hypertension"
+      - "Aortic stenosis"
+    answer: "Atrial septal defect"
+    explanation: >
+      In ASD, left-to-right shunt equalizes filling of both ventricles regardless of respiration.
+      Both RV and LV empty at similar rates → A2-P2 interval remains constant (fixed) during inspiration
+      and expiration. LBBB and aortic stenosis cause paradoxical splitting.
+      📚 Ganong's, 26th Ed, Ch.30
+    difficulty: 1
+
+  - question: "In the Wiggers diagram, the 'v' wave in the left atrial pressure tracing corresponds to:"
+    options:
+      - "Atrial contraction"
+      - "Venous filling of atrium during ventricular systole"
+      - "Rapid ventricular filling"
+      - "Isovolumetric contraction"
+    answer: "Venous filling of atrium during ventricular systole"
+    explanation: >
+      The 'v' wave represents blood filling the atria from pulmonary veins while the mitral valve is closed
+      during ventricular systole. The 'a' wave = atrial contraction, 'c' wave = AV valve bulging.
+      Giant 'v' waves are seen in mitral/tricuspid regurgitation.
+      📚 Guyton & Hall, 14th Ed, Ch.9 (p.110)
+    difficulty: 2
+
+  - question: "What percentage of ventricular filling occurs during the rapid filling phase?"
+    options:
+      - "10-15%"
+      - "30-40%"
+      - "70-80%"
+      - "90-100%"
+    answer: "70-80%"
+    explanation: >
+      Rapid filling phase accounts for approximately 70-80% of ventricular filling passively due to the
+      pressure gradient between atria and ventricles. Atrial systole (atrial kick) contributes only 20-30%.
+      This is why cardiac output is maintained in atrial fibrillation at rest (loss of atrial kick).
+      📚 Guyton & Hall, 14th Ed, Ch.9 (p.113)
+    difficulty: 2

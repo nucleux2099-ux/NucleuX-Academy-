@@ -1,0 +1,21 @@
+title: Systemic Lupus Erythematosus
+slug: systemic-lupus-erythematosus
+depth: UG
+highYield: true
+nmc_codes:
+  - IM7.22
+  - IM7.23
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM7.22
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of systemic lupus
+        erythematosus
+      domain: KH
+    - code: IM7.23
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of systemic lupus
+        erythematosus
+      domain: KH
+  prerequisite_details: []
+  related_details: []

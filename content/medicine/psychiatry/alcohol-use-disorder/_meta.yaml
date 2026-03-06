@@ -1,0 +1,23 @@
+title: "Alcohol Use Disorder"
+slug: alcohol-use-disorder
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM22.1"
+prerequisites: []
+related_topics:
+  - "cannabis-use-disorder"
+  - "opioid-use-disorder"
+enrichment:
+  nmcCodes:
+    - code: "IM22.1"
+      text: "Alcohol Use Disorder — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "cannabis-use-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"
+    - slug: "opioid-use-disorder"
+      reason: "Clinically related"
+      relationship: "clinical"

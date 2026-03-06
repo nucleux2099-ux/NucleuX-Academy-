@@ -1,0 +1,8 @@
+topic_id: chronic-osteomyelitis
+name: Chronic Osteomyelitis
+description: Chronic Osteomyelitis — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR3.1
+  core: false
+  phase: Phase 3

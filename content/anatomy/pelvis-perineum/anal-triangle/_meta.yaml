@@ -1,0 +1,13 @@
+topic_id: anal-triangle
+name: Anal Triangle
+description: Anal Triangle — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN32.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN47.7
+  domain: KH
+  core: false
+  phase: Phase 1

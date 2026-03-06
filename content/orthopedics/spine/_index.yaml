@@ -1,0 +1,30 @@
+id: spine
+title: "Spine Surgery"
+subject: orthopedics
+description: |
+  Spinal disorders, disc disease, and spinal trauma.
+
+stats:
+  total_topics: 10
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - lumbar-disc-prolapse
+      - cervical-spondylosis
+      - spinal-stenosis
+      - spondylolisthesis
+      - spinal-tuberculosis
+      - spinal-tumors
+      - scoliosis
+      - kyphosis
+      - ankylosing-spondylitis-spine
+      - cauda-equina-syndrome
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

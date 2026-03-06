@@ -1,0 +1,19 @@
+title: "Pressure Ulcers"
+slug: pressure-ulcers
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM23.5"
+prerequisites: []
+related_topics:
+  - "end-of-life-care"
+enrichment:
+  nmcCodes:
+    - code: "IM23.5"
+      text: "Pressure Ulcers — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "end-of-life-care"
+      reason: "Clinically related"
+      relationship: "clinical"

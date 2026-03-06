@@ -1,0 +1,16 @@
+title: Small Cell Lung Cancer
+slug: small-cell-lung-cancer
+depth: PG
+highYield: false
+nmc_codes:
+  - IM13.17
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM13.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of small cell lung
+        cancer
+      domain: KH
+  prerequisite_details: []
+  related_details: []

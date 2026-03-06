@@ -1,0 +1,25 @@
+topic_id: adverse-events-vaccines
+name: Adverse Events Vaccines
+description: Adverse Events Vaccines — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE19.10
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.12
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.13
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE19.16
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE19.3
+  domain: KH
+  core: true
+  phase: Phase 1

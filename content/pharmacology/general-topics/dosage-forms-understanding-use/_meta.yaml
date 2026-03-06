@@ -1,0 +1,9 @@
+topic_id: dosage-forms-understanding-use
+name: Understanding of the use of various dosage forms S/C
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PH2.1
+  domain: SH
+  core: true
+  phase: Phase 1

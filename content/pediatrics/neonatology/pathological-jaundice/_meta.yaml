@@ -1,0 +1,13 @@
+topic_id: pathological-jaundice
+name: Pathological Jaundice
+description: Pathological Jaundice — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE26.6
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE29.11
+  domain: SH
+  core: true
+  phase: Phase 2

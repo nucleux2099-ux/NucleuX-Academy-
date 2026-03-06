@@ -1,0 +1,21 @@
+topic_id: gene-regulation
+name: Gene Regulation
+description: Gene Regulation — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI3.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI3.9
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.3
+  domain: KH
+  core: true
+  phase: Phase 1

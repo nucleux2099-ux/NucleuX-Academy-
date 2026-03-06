@@ -1,0 +1,86 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "esophageal-anatomy",
+      "nmcCode": "",
+      "reason": "Anti-reflux barrier anatomy — LES, crura, angle of His",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "les-physiology",
+      "nmcCode": "",
+      "reason": "LES tone and transient relaxations are central to GERD pathophysiology",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "gastric-secretion",
+      "nmcCode": "",
+      "reason": "Acid secretion mechanisms — target of PPI therapy",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "barrett-esophagus",
+      "nmcCode": "",
+      "reason": "Barrett's is the major complication of chronic GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "fundoplication",
+      "nmcCode": "",
+      "reason": "Anti-reflux surgery for refractory GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-management-gerd",
+      "nmcCode": "",
+      "reason": "Surgical indications and techniques for GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "hiatal-hernia",
+      "nmcCode": "",
+      "reason": "Hiatal hernia is a major contributor to GERD",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-cancer",
+      "nmcCode": "",
+      "reason": "GERD → Barrett's → adenocarcinoma sequence",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "peptic-ulcer-path",
+      "nmcCode": "",
+      "reason": "Shared acid-related pathology and differential diagnosis",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "esophageal-manometry",
+      "nmcCode": "",
+      "reason": "Manometry for pre-surgical workup in GERD",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.6: Describe the clinical features, investigations and principles of",
+    "PH1.34: Describe the mechanism/s of action, types, doses, side effects,",
+    "PY4.9: Discuss the physiology aspects of: peptic ulcer, gastro-oesophageal"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Gastroesophageal Reflux Disease (GERD) across foundational sciences and clinical applications."
+}

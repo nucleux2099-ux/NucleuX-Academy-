@@ -1,0 +1,13 @@
+title: "Hyperthyroidism"
+slug: hyperthyroidism
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.5"
+  - "IM10.6"
+prerequisites:
+  - "thyroid-physiology"
+related_topics:
+  - "graves-disease"
+  - "thyroid-storm"
+  - "hypothyroidism"

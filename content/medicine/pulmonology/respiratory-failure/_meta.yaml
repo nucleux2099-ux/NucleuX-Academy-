@@ -1,0 +1,15 @@
+title: Respiratory Failure
+slug: respiratory-failure
+depth: UG
+highYield: true
+nmc_codes:
+  - IM1.4
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM1.4
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of respiratory failure
+      domain: KH
+  prerequisite_details: []
+  related_details: []

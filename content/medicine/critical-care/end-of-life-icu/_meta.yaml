@@ -1,0 +1,22 @@
+title: "End-of-Life Care in ICU"
+slug: end-of-life-icu
+depth: "UG"
+highYield: false
+nmc_codes:
+  - "IM24.20"
+prerequisites:
+  - "brain-death"
+related_topics:
+  - "organ-donation"
+enrichment:
+  nmcCodes:
+    - code: "IM24.20"
+      text: "End-of-Life Care in ICU — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "brain-death"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "organ-donation"
+      reason: "Clinically related"
+      relationship: "clinical"

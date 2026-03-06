@@ -1,0 +1,28 @@
+title: "Brain Abscess"
+slug: brain-abscess
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM18.1"
+  - "IM19.1"
+  - "IM19.2"
+prerequisites:
+  - "cns-infections"
+related_topics:
+  - "raised-intracranial-pressure"
+  - "brain-tumors-medical"
+enrichment:
+  nmcCodes:
+    - code: "IM18.1"
+      text: "Describe and discuss the aetiology, clinical features and management of CNS infections including brain abscess"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "cns-infections"
+      reason: "Brain abscess is a focal CNS infection"
+  related_details:
+    - slug: "raised-intracranial-pressure"
+      reason: "Brain abscess causes raised ICP"
+      relationship: "clinical"
+    - slug: "brain-tumors-medical"
+      reason: "Key differential for space-occupying lesion"
+      relationship: "clinical"

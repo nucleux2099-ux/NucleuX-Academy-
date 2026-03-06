@@ -1,0 +1,33 @@
+id: sports-medicine
+title: "Sports Medicine"
+subject: orthopedics
+description: |
+  Ligament injuries, arthroscopy, and sports trauma.
+
+stats:
+  total_topics: 13
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - acl-injury
+      - pcl-injury
+      - meniscal-injuries
+      - rotator-cuff-tears
+      - shoulder-impingement
+      - frozen-shoulder
+      - tennis-elbow
+      - golfers-elbow
+      - achilles-tendon-rupture
+      - plantar-fasciitis
+      - stress-fractures
+      - ankle-sprains
+      - carpal-tunnel-syndrome-ortho
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

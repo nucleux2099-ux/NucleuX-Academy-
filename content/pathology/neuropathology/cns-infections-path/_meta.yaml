@@ -1,0 +1,9 @@
+topic_id: cns-infections-path
+name: Cns Infections Path
+description: Cns Infections Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA22.5
+  domain: KH
+  core: true
+  phase: Phase 1

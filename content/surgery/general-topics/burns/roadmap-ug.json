@@ -1,0 +1,52 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "fluid-electrolytes",
+      "nmcCode": "",
+      "reason": "Burns cause massive fluid shifts and third-spacing; Parkland formula-based fluid resuscitation requires understanding of fluid compartment physiology",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "wound-healing",
+      "nmcCode": "",
+      "reason": "Burn wound management depends on understanding healing phases, granulation tissue formation, and factors affecting graft take",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "shock",
+      "nmcCode": "",
+      "reason": "Major burns cause hypovolemic and distributive shock from capillary leak syndrome requiring aggressive early fluid resuscitation",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "surgical-infections",
+      "nmcCode": "",
+      "reason": "Burn wound sepsis (Pseudomonas, MRSA, fungal) is the leading cause of late mortality in burn patients",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "skin-subcutaneous-tumors",
+      "nmcCode": "",
+      "reason": "Chronic burn scars can undergo malignant transformation to squamous cell carcinoma (Marjolin's ulcer)",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU4.1: Elicit, document and present history in a case of Burns and perform",
+    "SU4.2: Describe Clinical features, Diagnose type and extent of burns and",
+    "SU4.3: Discuss the Medicolegal aspects in burn injuries.",
+    "SU4.4: Communicate and counsel patients and families on the outcome A /C"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Burns across foundational sciences and clinical applications."
+}

@@ -1,0 +1,11 @@
+topic_id: meniscal-injuries
+name: Meniscal Injuries
+description: Meniscal Injuries — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: OR1.3
+  core: false
+  phase: Phase 3
+- code: OR11.1
+  core: false
+  phase: Phase 1

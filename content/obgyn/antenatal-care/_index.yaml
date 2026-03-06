@@ -1,0 +1,29 @@
+id: antenatal-care
+title: "Antenatal Care"
+subject: obgyn
+description: |
+  Routine antenatal visits, screening, and risk assessment.
+
+stats:
+  total_topics: 9
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - booking-visit
+      - antenatal-visit-schedule
+      - antenatal-screening-tests
+      - nutrition-in-pregnancy
+      - drugs-in-pregnancy
+      - vaccination-in-pregnancy
+      - exercise-in-pregnancy
+      - common-complaints-pregnancy
+      - medical-disorders-pregnancy-overview
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

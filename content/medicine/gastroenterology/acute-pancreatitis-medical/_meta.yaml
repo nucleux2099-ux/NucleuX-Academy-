@@ -1,0 +1,16 @@
+title: Acute Pancreatitis Medical
+slug: acute-pancreatitis-medical
+depth: UG
+highYield: true
+nmc_codes:
+  - IM5.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM5.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of acute pancreatitis
+        medical
+      domain: KH
+  prerequisite_details: []
+  related_details: []

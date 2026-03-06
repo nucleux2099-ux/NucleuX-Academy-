@@ -1,0 +1,16 @@
+title: Hospital Acquired Pneumonia
+slug: hospital-acquired-pneumonia
+depth: UG
+highYield: true
+nmc_codes:
+  - IM3.1
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM3.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of hospital acquired
+        pneumonia
+      domain: KH
+  prerequisite_details: []
+  related_details: []

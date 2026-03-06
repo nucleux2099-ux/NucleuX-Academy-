@@ -1,0 +1,166 @@
+topic_id: ear-anatomy
+name: Ear Anatomy (Middle & Inner Ear)
+description: Ear Anatomy — Middle ear, inner ear, auditory pathway, and clinical correlations
+high_yield: true
+nmc_codes:
+- code: AN43.1
+  domain: KH
+  core: true
+  phase: Phase 1
+
+overview: >
+  The ear has 3 parts: external ear (pinna, external auditory meatus), middle ear (tympanic cavity with ossicles),
+  and inner ear (cochlea for hearing, vestibular apparatus for balance). The middle ear communicates with the
+  nasopharynx via the Eustachian tube and with the mastoid antrum via the aditus. The inner ear contains the
+  bony and membranous labyrinths.
+  📚 Gray's Anatomy, 42nd Ed, Ch.36; 📚 BD Chaurasia, Vol.3, Ch.9
+
+learning_objectives:
+  - Describe the boundaries and contents of the middle ear (tympanic cavity)
+  - List the ossicles and their articulations
+  - Describe the inner ear structures (cochlea, semicircular canals, vestibule)
+  - Explain the clinical significance of middle ear relations
+  - Describe the nerve supply of the ear and auditory pathway
+
+content:
+  atoms:
+    - id: middle-ear
+      title: "Middle Ear (Tympanic Cavity)"
+      text: >
+        Air-filled space in the petrous temporal bone. 6 walls: Roof (tegmen tympani — thin bone separating from
+        middle cranial fossa/temporal lobe). Floor (jugular wall — separates from jugular bulb). Lateral wall
+        (tympanic membrane). Medial wall (labyrinthine wall — promontory over basal turn of cochlea, oval window
+        [stapes footplate], round window [secondary tympanic membrane], facial nerve canal prominence).
+        Anterior wall (carotid wall — ICA + Eustachian tube opening). Posterior wall (mastoid wall — aditus to
+        mastoid antrum, pyramidal eminence [stapedius muscle]).
+        📚 BD Chaurasia, Vol.3, Ch.9 (p.130-140); 📚 Netter's Atlas, 6th Ed, Plate 92
+
+    - id: ossicles
+      title: "Ossicles & Their Muscles"
+      text: >
+        Three ossicles: malleus (attached to tympanic membrane), incus (body articulates with malleus head),
+        stapes (footplate in oval window — smallest bone in body). Sound transmission: TM → malleus → incus → stapes
+        → oval window → perilymph. Two muscles: tensor tympani (CN V3 — tenses TM by pulling malleus medially)
+        and stapedius (CN VII — smallest skeletal muscle, dampens stapes vibration, protects from loud sounds).
+        Stapedius paralysis (CN VII palsy) → hyperacusis.
+        📚 Gray's Anatomy, 42nd Ed; 📚 BD Chaurasia, Vol.3
+
+    - id: inner-ear
+      title: "Inner Ear — Bony & Membranous Labyrinth"
+      text: >
+        Bony labyrinth (filled with perilymph — similar to ECF): cochlea (2.5 turns), vestibule, 3 semicircular
+        canals (anterior/superior, posterior, lateral/horizontal). Membranous labyrinth (filled with endolymph —
+        similar to ICF, high K+): cochlear duct (scala media), utricle and saccule (in vestibule), semicircular ducts.
+        Cochlea: scala vestibuli (perilymph) → Reissner's membrane → scala media (endolymph, organ of Corti on
+        basilar membrane — hearing receptor) → basilar membrane → scala tympani (perilymph → round window).
+        Vestibular system: semicircular canals detect angular acceleration; utricle detects horizontal linear
+        acceleration; saccule detects vertical linear acceleration.
+        📚 Gray's Anatomy, 42nd Ed; 📚 Netter's Atlas, 6th Ed, Plate 95
+
+    - id: nerve-supply
+      title: "Nerve Supply & Auditory Pathway"
+      text: >
+        CN VIII (vestibulocochlear): cochlear division (spiral ganglion → cochlear nuclei → superior olivary
+        nucleus → lateral lemniscus → inferior colliculus → medial geniculate body → auditory cortex [Heschl's gyrus,
+        area 41-42]). Vestibular division (Scarpa's ganglion → vestibular nuclei).
+        Other nerves: chorda tympani (CN VII branch) crosses middle ear between malleus and incus — carries
+        taste from anterior 2/3 tongue + parasympathetic to submandibular/sublingual glands.
+        Jacobson's nerve (CN IX, tympanic branch): sensory to middle ear mucosa, forms tympanic plexus.
+        📚 BD Chaurasia, Vol.3; 📚 Gray's Anatomy, 42nd Ed
+
+  clinical:
+    - title: "Clinical: Cholesteatoma & Facial Nerve"
+      text: >
+        Facial nerve (CN VII) runs through the middle ear in the facial canal (medial wall).
+        Middle ear infections or cholesteatoma can erode the canal → facial nerve palsy. The nerve is most
+        superficial at the second genu (above oval window) — most vulnerable to surgical injury.
+        Cholesteatoma also risks dural exposure (erosion of tegmen tympani) and lateral sinus thrombosis.
+    - title: "Clinical: Conductive vs Sensorineural Hearing Loss"
+      text: >
+        Conductive: pathology in external/middle ear (wax, otitis media, otosclerosis). Weber lateralizes
+        TO affected ear; Rinne: bone > air (negative Rinne) in affected ear.
+        Sensorineural: pathology in cochlea/CN VIII (presbycusis, acoustic neuroma, ototoxic drugs).
+        Weber lateralizes AWAY from affected ear; Rinne: air > bone in both ears (but decreased in affected).
+
+high_yield_points:
+  - "Stapes = smallest bone in body, footplate in oval window"
+  - "Stapedius = smallest skeletal muscle, supplied by CN VII — paralysis → hyperacusis"
+  - "Tensor tympani supplied by CN V3 (mandibular division)"
+  - "Chorda tympani (CN VII) crosses middle ear between malleus and incus"
+  - "Tegmen tympani = roof of middle ear, separates from middle cranial fossa (temporal lobe)"
+  - "Endolymph: high K+ (like ICF); Perilymph: high Na+ (like ECF)"
+  - "Organ of Corti on basilar membrane = hearing receptor in scala media"
+  - "Semicircular canals: angular acceleration; Utricle/saccule: linear acceleration"
+  - "Weber lateralizes TO affected ear in conductive loss, AWAY in sensorineural"
+  - "Facial nerve most vulnerable at second genu (above oval window) in middle ear surgery"
+
+mcqs:
+  - question: "The stapedius muscle is supplied by which nerve?"
+    options:
+      - "CN V3 (mandibular)"
+      - "CN VII (facial)"
+      - "CN IX (glossopharyngeal)"
+      - "CN VIII (vestibulocochlear)"
+    answer: "CN VII (facial)"
+    explanation: >
+      Stapedius (smallest skeletal muscle) is supplied by a branch of CN VII (facial nerve). It dampens stapes
+      vibrations to protect from loud sounds. In Bell's palsy (CN VII lesion), stapedius paralysis causes
+      hyperacusis (increased sensitivity to sound).
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "The chorda tympani nerve crosses the middle ear between which two ossicles?"
+    options:
+      - "Malleus and stapes"
+      - "Incus and stapes"
+      - "Malleus and incus"
+      - "Does not cross between ossicles"
+    answer: "Malleus and incus"
+    explanation: >
+      Chorda tympani (branch of CN VII) crosses the middle ear between the handle of the malleus and the long
+      process of the incus. It carries taste from the anterior 2/3 of the tongue and parasympathetic fibers
+      to the submandibular and sublingual glands.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2
+
+  - question: "In a patient with conductive hearing loss in the right ear, Weber's test will lateralize to:"
+    options:
+      - "Left ear"
+      - "Right ear"
+      - "Both ears equally"
+      - "Neither ear"
+    answer: "Right ear"
+    explanation: >
+      In conductive hearing loss, Weber lateralizes to the AFFECTED ear because bone conduction is relatively
+      enhanced (background noise is reduced in that ear). In sensorineural loss, it lateralizes to the
+      unaffected (better) ear.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1
+
+  - question: "The endolymph in the membranous labyrinth is characterized by:"
+    options:
+      - "High sodium, low potassium (similar to ECF)"
+      - "High potassium, low sodium (similar to ICF)"
+      - "Equal sodium and potassium"
+      - "High calcium"
+    answer: "High potassium, low sodium (similar to ICF)"
+    explanation: >
+      Endolymph has a unique ionic composition similar to intracellular fluid (high K+, low Na+), produced by
+      the stria vascularis in the cochlea. Perilymph resembles ECF (high Na+, low K+). This K+ gradient is
+      essential for hair cell transduction.
+      📚 Gray's Anatomy, 42nd Ed
+    difficulty: 2
+
+  - question: "The roof of the middle ear (tegmen tympani) separates it from which cranial fossa?"
+    options:
+      - "Anterior cranial fossa"
+      - "Middle cranial fossa"
+      - "Posterior cranial fossa"
+      - "Infratemporal fossa"
+    answer: "Middle cranial fossa"
+    explanation: >
+      Tegmen tympani is a thin plate of bone forming the roof of the middle ear, separating it from the middle
+      cranial fossa (temporal lobe of brain). Middle ear infections can spread intracranially through this thin
+      bone, causing temporal lobe abscess or meningitis.
+      📚 BD Chaurasia, Vol.3
+    difficulty: 1

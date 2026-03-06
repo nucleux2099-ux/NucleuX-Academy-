@@ -1,0 +1,62 @@
+id: head-neck
+title: "Head & Neck"
+subject: anatomy
+description: |
+  Skull, face, neck, and cranial nerves.
+
+stats:
+  total_topics: 33
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: skull
+    title: "Skull & Brain"
+    topics:
+      - skull-bones
+      - cranial-fossae
+      - meninges
+      - brain-surface-anatomy
+      - venous-sinuses
+      - circle-of-willis
+  - id: face
+    title: "Face"
+    topics:
+      - facial-muscles
+      - trigeminal-nerve
+      - facial-nerve
+      - parotid-gland-anatomy
+      - orbit-anatomy
+      - nasal-cavity-anatomy
+      - pterygopalatine-fossa
+  - id: neck
+    title: "Neck"
+    topics:
+      - triangles-of-neck
+      - cervical-fascia
+      - thyroid-gland-anatomy
+      - larynx-anatomy
+      - pharynx-anatomy
+      - carotid-sheath
+      - brachial-plexus
+      - cervical-plexus
+      - scalene-muscles
+  - id: cranial
+    title: "Cranial Nerves"
+    topics:
+      - cranial-nerves-overview
+      - olfactory-nerve
+      - optic-nerve
+      - oculomotor-nerve
+      - trigeminal-nerve-anatomy
+      - facial-nerve-anatomy
+      - vestibulocochlear-nerve
+      - glossopharyngeal-nerve
+      - vagus-nerve
+      - accessory-nerve
+      - hypoglossal-nerve
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

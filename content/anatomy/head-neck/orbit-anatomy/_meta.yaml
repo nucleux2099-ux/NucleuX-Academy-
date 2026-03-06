@@ -1,0 +1,9 @@
+topic_id: orbit-anatomy
+name: Orbit Anatomy
+description: Orbit Anatomy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN31.2
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,9 @@
+topic_id: abdomen-correct-examination
+name: The correct clinical examination of the abdomen in a
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY4.10
+  domain: SH
+  core: true
+  phase: Phase 1

@@ -1,0 +1,9 @@
+topic_id: cardiac-conduction-physiology
+name: Cardiac Conduction Physiology
+description: Cardiac Conduction Physiology — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PY5.4
+  domain: KH
+  core: true
+  phase: Phase 1

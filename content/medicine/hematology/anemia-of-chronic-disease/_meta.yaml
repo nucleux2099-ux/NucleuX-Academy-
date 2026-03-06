@@ -1,0 +1,21 @@
+title: Anemia Of Chronic Disease
+slug: anemia-of-chronic-disease
+depth: UG
+highYield: true
+nmc_codes:
+  - IM10.6
+  - IM16.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.6
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anemia of chronic
+        disease
+      domain: KH
+    - code: IM16.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of anemia of chronic
+        disease
+      domain: KH
+  prerequisite_details: []
+  related_details: []

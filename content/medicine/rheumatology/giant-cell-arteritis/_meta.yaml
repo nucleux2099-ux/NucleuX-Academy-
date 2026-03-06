@@ -1,0 +1,19 @@
+title: Giant Cell Arteritis
+slug: giant-cell-arteritis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM9.1
+  - IM9.9
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM9.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of giant cell arteritis
+      domain: KH
+    - code: IM9.9
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of giant cell arteritis
+      domain: KH
+  prerequisite_details: []
+  related_details: []

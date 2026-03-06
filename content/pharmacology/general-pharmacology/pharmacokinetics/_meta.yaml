@@ -1,0 +1,182 @@
+topic_id: pharmacokinetics
+name: General Pharmacology — Pharmacokinetics
+description: Absorption, Distribution, Metabolism, and Excretion (ADME) of drugs — the foundation of clinical pharmacology
+high_yield: true
+nmc_codes:
+- code: PH1.1
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PH1.3
+  domain: KH
+  core: true
+  phase: Phase 2
+
+overview: >
+  Pharmacokinetics is "what the body does to the drug" — encompassing Absorption, Distribution, Metabolism, and Excretion (ADME).
+  Key concepts include bioavailability, first-pass metabolism, volume of distribution (Vd), clearance, half-life, and steady-state kinetics.
+  Understanding pharmacokinetics is essential for rational drug dosing, predicting drug interactions, and managing special populations
+  (renal/hepatic impairment, pediatrics, geriatrics).
+  📚 KD Tripathi, 8th Ed, Ch.1-3 (p.1-35); 📚 Goodman & Gilman's, 14th Ed, Ch.2
+
+learning_objectives:
+  - Define bioavailability and explain factors affecting oral drug absorption
+  - Describe first-pass metabolism and its clinical significance
+  - Explain volume of distribution (Vd) and its relationship to drug properties
+  - Differentiate zero-order from first-order kinetics with clinical examples
+  - Calculate loading dose and maintenance dose using pharmacokinetic parameters
+  - Describe Phase I and Phase II drug metabolism reactions and the role of CYP450 enzymes
+  - Explain renal excretion of drugs including filtration, secretion, and reabsorption
+
+content:
+  atoms:
+    - id: absorption-bioavailability
+      title: "Drug Absorption & Bioavailability"
+      text: >
+        Absorption is the movement of drug from site of administration to systemic circulation.
+        Bioavailability (F) = fraction of administered dose reaching systemic circulation unchanged.
+        IV bioavailability = 100%. Oral bioavailability reduced by: incomplete absorption, first-pass metabolism,
+        gut wall metabolism (CYP3A4), P-glycoprotein efflux.
+        Factors affecting absorption: lipophilicity, ionization (Henderson-Hasselbalch: weak acids absorbed in stomach,
+        weak bases in intestine), surface area, blood flow, drug formulation.
+        First-pass effect: drug metabolized in gut wall/liver before reaching systemic circulation.
+        Drugs with high first-pass: morphine, propranolol, lidocaine, nitroglycerin, salbutamol.
+        Sublingual route (nitroglycerin) and rectal route (lower 1/3) bypass first-pass.
+        📚 KD Tripathi, 8th Ed, Ch.1 (p.3-8)
+
+    - id: distribution-vd
+      title: "Drug Distribution & Volume of Distribution"
+      text: >
+        Distribution depends on: cardiac output, regional blood flow, capillary permeability, tissue binding, plasma protein binding.
+        Volume of Distribution (Vd) = Total amount of drug in body / Plasma concentration.
+        Low Vd (~3-5L) = drug confined to plasma (heparin, warfarin — highly protein bound).
+        High Vd (>40L) = drug distributed into tissues (chloroquine Vd ~13,000L, digoxin ~500L).
+        Plasma protein binding: albumin binds acidic drugs (warfarin, phenytoin, NSAIDs);
+        α1-acid glycoprotein binds basic drugs (propranolol, lidocaine).
+        Only FREE (unbound) drug is pharmacologically active. Displacement interactions: warfarin displaced by phenylbutazone.
+        Blood-Brain Barrier: only lipophilic, non-ionized, small molecules cross. Inflammation increases BBB permeability.
+        Placental barrier: most drugs cross by simple diffusion. Teratogenic drugs: thalidomide, isotretinoin, warfarin, methotrexate.
+        📚 KD Tripathi, 8th Ed, Ch.2 (p.14-19)
+
+    - id: metabolism-cyp450
+      title: "Drug Metabolism & CYP450 System"
+      text: >
+        Metabolism converts lipophilic drugs to hydrophilic metabolites for excretion.
+        Phase I reactions: oxidation, reduction, hydrolysis — introduce/expose functional group. Key enzymes: CYP450 family.
+        Major CYP isoforms: CYP3A4 (metabolizes ~50% drugs), CYP2D6 (codeine → morphine), CYP2C9 (warfarin, phenytoin),
+        CYP2C19 (omeprazole, clopidogrel), CYP1A2 (theophylline, caffeine).
+        Phase II reactions: conjugation (glucuronidation, acetylation, sulfation, methylation, glutathione conjugation).
+        CYP450 INDUCERS (increase metabolism): Rifampicin, Phenytoin, Carbamazepine, Phenobarbital, Chronic alcohol, St. John's Wort.
+        Mnemonic: "RIF-PC" induces everything.
+        CYP450 INHIBITORS (decrease metabolism): Ketoconazole, Erythromycin/Clarithromycin, Cimetidine, Ciprofloxacin,
+        Grapefruit juice, Isoniazid, Acute alcohol, Ritonavir, Fluconazole, Valproate.
+        Mnemonic: "SICK FACES.com" — Sodium valproate, Isoniazid, Cimetidine, Ketoconazole, Fluconazole, Acute alcohol,
+        Ciprofloxacin, Erythromycin, Sulfonamides, Chloramphenicol, Omeprazole, Metronidazole.
+        Prodrugs: inactive → active by metabolism (enalapril → enalaprilat, clopidogrel → active metabolite via CYP2C19).
+        📚 KD Tripathi, 8th Ed, Ch.3 (p.20-28)
+
+    - id: excretion-kinetics
+      title: "Drug Excretion & Elimination Kinetics"
+      text: >
+        Renal excretion: glomerular filtration (free drug), tubular secretion (active transport — penicillin, probenecid blocks),
+        tubular reabsorption (passive, pH-dependent — alkalinize urine for aspirin overdose, acidify for amphetamine).
+        Biliary excretion: large molecular weight, conjugated drugs. Enterohepatic circulation: drug excreted in bile →
+        reabsorbed from intestine (estrogens, digitoxin, morphine) — prolongs action.
+        First-order kinetics: constant FRACTION eliminated per unit time. Most drugs follow this. t½ is constant.
+        Zero-order kinetics: constant AMOUNT eliminated per unit time. t½ increases with dose.
+        Zero-order drugs: Phenytoin (at therapeutic doses), Ethanol, Aspirin (high doses), Heparin, Theophylline (toxic).
+        Mnemonic: "PEATH" for zero-order.
+        Half-life (t½) = 0.693 × Vd / Clearance. Steady state reached in ~4-5 half-lives.
+        Loading dose = Vd × Cp (target) / F. Maintenance dose = Clearance × Cp (target) / F.
+        📚 KD Tripathi, 8th Ed, Ch.3 (p.28-35)
+
+  clinical:
+    - title: "Clinical Correlation: Drug Dosing in Renal Failure"
+      text: >
+        Drugs primarily excreted by kidneys require dose adjustment in renal impairment. Aminoglycosides, vancomycin,
+        digoxin, lithium, methotrexate — all need dose reduction or interval extension. Use Cockcroft-Gault equation
+        for CrCl estimation. Dialyzable drugs (low Vd, low protein binding): lithium, aminoglycosides, methanol, ethylene glycol.
+    - title: "Clinical Correlation: CYP450 Drug Interactions"
+      text: >
+        Rifampicin (potent inducer) reduces efficacy of: OCP, warfarin, cyclosporine, protease inhibitors, theophylline.
+        Ketoconazole/erythromycin (inhibitors) increase toxicity of: terfenadine (QT prolongation), simvastatin (rhabdomyolysis),
+        cyclosporine (nephrotoxicity). Grapefruit juice inhibits intestinal CYP3A4 → increased bioavailability of statins, cyclosporine.
+
+  high_yield_points:
+    - "Bioavailability of IV route = 100% (reference standard)"
+    - "First-pass effect highest for: morphine, propranolol, lidocaine, GTN — give sublingual/IV to bypass"
+    - "Vd >body water = drug concentrated in tissues (chloroquine, digoxin)"
+    - "Only FREE drug is pharmacologically active — protein binding is a RESERVOIR"
+    - "CYP3A4 metabolizes ~50% of all drugs — most important isoform"
+    - "Rifampicin is the MOST POTENT CYP inducer — reduces efficacy of OCP, warfarin, cyclosporine"
+    - "Zero-order kinetics: PEATH — Phenytoin, Ethanol, Aspirin, Theophylline (toxic), Heparin"
+    - "Steady state = 4-5 half-lives regardless of dose"
+    - "Loading dose depends on Vd; Maintenance dose depends on Clearance"
+    - "Alkalinize urine (NaHCO3) for aspirin/barbiturate overdose → ion trapping"
+
+mcqs:
+  - question: "A drug has a volume of distribution of 500L. This most likely indicates that the drug is:"
+    options:
+      - "Highly plasma protein bound and confined to vascular compartment"
+      - "Extensively distributed and bound to tissue proteins"
+      - "Primarily excreted unchanged by the kidneys"
+      - "Metabolized entirely by first-pass effect"
+    answer: "Extensively distributed and bound to tissue proteins"
+    explanation: >
+      A Vd of 500L (far exceeding total body water of ~42L) indicates the drug is extensively sequestered in tissues.
+      Examples include chloroquine (Vd ~13,000L) and digoxin (Vd ~500L). High plasma protein binding would give LOW Vd.
+      📚 KD Tripathi, 8th Ed, Ch.2 (p.16)
+    difficulty: 2
+
+  - question: "Which of the following drugs follows zero-order elimination kinetics at therapeutic doses?"
+    options:
+      - "Amoxicillin"
+      - "Phenytoin"
+      - "Metformin"
+      - "Atenolol"
+    answer: "Phenytoin"
+    explanation: >
+      Phenytoin shows zero-order (saturation) kinetics at therapeutic doses because its metabolizing enzymes become saturated.
+      Small dose increases can cause disproportionate rises in plasma levels → toxicity. Other zero-order drugs: ethanol, aspirin (high dose).
+      📚 KD Tripathi, 8th Ed, Ch.3 (p.30)
+    difficulty: 1
+
+  - question: "A patient on warfarin is started on rifampicin for tuberculosis. What is the expected effect on INR?"
+    options:
+      - "INR increases due to CYP450 inhibition"
+      - "INR decreases due to CYP450 induction"
+      - "No change in INR"
+      - "INR increases due to protein binding displacement"
+    answer: "INR decreases due to CYP450 induction"
+    explanation: >
+      Rifampicin is the most potent CYP450 inducer, increasing metabolism of warfarin via CYP2C9 induction.
+      This leads to decreased warfarin levels → decreased INR → risk of thrombosis. Warfarin dose needs to be increased.
+      📚 KD Tripathi, 8th Ed, Ch.3 (p.25)
+    difficulty: 2
+
+  - question: "Steady-state plasma concentration is achieved after approximately:"
+    options:
+      - "1-2 half-lives"
+      - "3-4 half-lives"
+      - "4-5 half-lives"
+      - "7-8 half-lives"
+    answer: "4-5 half-lives"
+    explanation: >
+      At steady state, rate of drug input equals rate of elimination. This is achieved at ~4-5 half-lives
+      (>93.75% of steady state at 4 half-lives, >96.9% at 5 half-lives). This is independent of dose or dosing interval.
+      📚 Goodman & Gilman's, 14th Ed, Ch.2
+    difficulty: 1
+
+  - question: "Which route of drug administration bypasses first-pass metabolism?"
+    options:
+      - "Oral"
+      - "Sublingual"
+      - "Rectal (upper 1/3)"
+      - "Portal vein injection"
+    answer: "Sublingual"
+    explanation: >
+      Sublingual absorption drains into the superior vena cava, bypassing the portal circulation and liver.
+      Oral and upper rectal routes undergo first-pass metabolism. Lower 1/3 of rectum drains to inferior rectal vein → IVC (bypasses first-pass).
+      Nitroglycerin is given sublingually for this reason.
+      📚 KD Tripathi, 8th Ed, Ch.1 (p.6-7)
+    difficulty: 1

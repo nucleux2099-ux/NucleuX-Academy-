@@ -1,0 +1,21 @@
+topic_id: aetiology-discuses
+name: Classify, define and discuses the aetiology and management of
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: OG9.1
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG9.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: OG9.3
+  domain: KH
+  core: true
+  phase: Phase 3
+- code: OG9.4
+  domain: KH
+  core: true
+  phase: Phase 3

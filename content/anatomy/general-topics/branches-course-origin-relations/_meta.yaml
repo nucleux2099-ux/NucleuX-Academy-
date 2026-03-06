@@ -1,0 +1,13 @@
+topic_id: branches-course-origin-relations
+name: '& describe origin, course, relations, branches (or tributaries)'
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: AN11.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN11.4
+  domain: KH
+  core: true
+  phase: Phase 1

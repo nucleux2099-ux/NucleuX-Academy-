@@ -1,0 +1,41 @@
+topic_id: thumb
+name: The clinical features, diagnosis and management of thumb
+description: Auto-generated from NMC competency gaps
+high_yield: false
+nmc_codes:
+- code: PE5.1
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.2
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.3
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.4
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.5
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.6
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.7
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.8
+  domain: K
+  core: false
+  phase: Phase 2
+- code: PE5.9
+  domain: K
+  core: false
+  phase: Phase 2

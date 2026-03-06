@@ -1,0 +1,682 @@
+# NMC MS General Surgery - Curriculum Topic Map
+# Source: NMC-PG-Curricula/MS/MS-Surgery.md
+# Primary Sources: Bailey & Love, Sabiston, Schwartz
+
+version: "1.0"
+last_updated: "2026-02-09"
+total_topics: 150+
+estimated_completion: "4-6 weeks"
+
+# ============================================================================
+# SYSTEM 01: GENERAL TOPICS
+# ============================================================================
+01-general-topics:
+  name: "General Principles of Surgery"
+  topics:
+    - id: wound-healing
+      name: "Wound Healing"
+      nmc_ref: "General Topics #23"
+      subtopics: [phases, factors-affecting, wound-types, recent-advances]
+      priority: high
+      
+    - id: surgical-infections
+      name: "Surgical Infections"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [asepsis, antisepsis, sterilization, universal-precautions]
+      priority: high
+      
+    - id: shock
+      name: "Shock"
+      nmc_ref: "General Topics"
+      subtopics: [hypovolemic, septic, cardiogenic, neurogenic, anaphylactic]
+      priority: critical
+      
+    - id: fluid-electrolytes
+      name: "Fluid & Electrolyte Balance"
+      nmc_ref: "General Topics #24"
+      subtopics: [body-fluid-compartments, electrolyte-disorders, acid-base, abg-interpretation]
+      priority: critical
+      
+    - id: blood-transfusion
+      name: "Blood Transfusion"
+      nmc_ref: "General Topics #26"
+      subtopics: [components, indications, complications, massive-transfusion]
+      priority: high
+      
+    - id: nutrition
+      name: "Nutritional Support"
+      nmc_ref: "General Topics #25"
+      subtopics: [assessment, enteral, parenteral, surgical-patient]
+      priority: medium
+      
+    - id: preoperative-care
+      name: "Preoperative Preparation"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [workup, risk-assessment, asa-grading, optimization]
+      priority: high
+      
+    - id: postoperative-care
+      name: "Postoperative Complications"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [early, late, prevention, management]
+      priority: high
+      
+    - id: critical-care
+      name: "Critical Care in Surgery"
+      nmc_ref: "General Topics #21"
+      subtopics: [icu-monitoring, ventilation, sepsis-management]
+      priority: high
+      
+    - id: trauma-response
+      name: "Response to Trauma"
+      nmc_ref: "General Topics #22"
+      subtopics: [atls, primary-survey, secondary-survey, damage-control]
+      priority: critical
+      
+    - id: surgical-infections-specific
+      name: "Specific Surgical Infections"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [tetanus, gas-gangrene, tb, necrotizing-fasciitis, nosocomial]
+      priority: high
+      
+    - id: antibiotic-therapy
+      name: "Antibiotic Therapy"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [prophylaxis, empirical, targeted, resistance]
+      priority: high
+
+# ============================================================================
+# SYSTEM 02: HEAD & NECK
+# ============================================================================
+02-head-neck:
+  name: "Head & Neck Surgery"
+  topics:
+    - id: thyroid-disorders
+      name: "Thyroid Disorders"
+      nmc_ref: "Systemic Surgery - Thyroid"
+      subtopics: [goitre, thyrotoxicosis, thyroid-neoplasms, solitary-nodule]
+      priority: high
+      
+    - id: thyroglossal-cyst
+      name: "Thyroglossal Cyst & Fistula"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: salivary-glands
+      name: "Salivary Gland Disorders"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [neoplasms, stones, infections]
+      priority: medium
+      
+    - id: oral-cavity
+      name: "Oral Cavity Lesions"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [leukoplakia, oral-malignancies, tongue-ulcers]
+      priority: medium
+      
+    - id: cervical-lymphadenopathy
+      name: "Cervical Lymphadenopathy"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [nonspecific, tuberculous, metastatic, lymphoma]
+      priority: high
+      
+    - id: branchial-anomalies
+      name: "Branchial Anomalies"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [branchial-cyst, cystic-hygroma]
+      priority: low
+      
+    - id: cleft-lip-palate
+      name: "Cleft Lip & Palate"
+      nmc_ref: "Systemic Surgery"
+      priority: low
+
+# ============================================================================
+# SYSTEM 03: BREAST
+# ============================================================================
+03-breast:
+  name: "Breast Surgery"
+  topics:
+    - id: breast-examination
+      name: "Clinical Breast Examination"
+      nmc_ref: "Systemic Surgery - Breast"
+      subtopics: [cbe, self-examination, triple-assessment]
+      priority: high
+      
+    - id: breast-lump
+      name: "Breast Lump Investigation"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [imaging, fnac, core-biopsy, staging]
+      priority: high
+      
+    - id: breast-abscess
+      name: "Breast Abscess"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [lactational, non-lactational, management]
+      priority: medium
+      
+    - id: breast-cancer
+      name: "Breast Cancer"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [staging, surgery, chemotherapy, radiotherapy, hormonal-therapy, tumor-markers]
+      priority: critical
+      
+    - id: nipple-discharge
+      name: "Nipple Discharge"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: benign-breast-disease
+      name: "Benign Breast Disease"
+      nmc_ref: "Clinical Cases"
+      subtopics: [fibroadenoma, fibrocystic-disease, phyllodes]
+      priority: medium
+
+# ============================================================================
+# SYSTEM 04: THORAX
+# ============================================================================
+04-thorax:
+  name: "Thoracic Surgery"
+  topics:
+    - id: pneumothorax
+      name: "Pneumothorax"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [types, diagnosis, management, icd-insertion]
+      priority: critical
+      
+    - id: hemothorax
+      name: "Hemothorax"
+      nmc_ref: "Systemic Surgery"
+      priority: high
+      
+    - id: empyema
+      name: "Empyema Thoracis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [stages, management, decortication]
+      priority: medium
+      
+    - id: chest-trauma
+      name: "Chest Trauma"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [flail-chest, pulmonary-contusion, cardiac-tamponade]
+      priority: critical
+      
+    - id: pulmonary-embolism
+      name: "Pulmonary Embolism"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [risk-factors, diagnosis, prevention, treatment]
+      priority: high
+      
+    - id: lung-neoplasms
+      name: "Lung Neoplasms"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+
+# ============================================================================
+# SYSTEM 05: UPPER GI
+# ============================================================================
+05-upper-gi:
+  name: "Upper Gastrointestinal Surgery"
+  topics:
+    - id: esophageal-atresia
+      name: "Esophageal Atresia"
+      nmc_ref: "Systemic Surgery"
+      priority: low
+      
+    - id: achalasia
+      name: "Achalasia Cardia"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: gerd
+      name: "Gastroesophageal Reflux Disease"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [diagnosis, medical, surgical, barretts]
+      priority: high
+      
+    - id: esophageal-cancer
+      name: "Esophageal Cancer"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [squamous, adenocarcinoma, staging, management]
+      priority: high
+      
+    - id: pyloric-stenosis
+      name: "Congenital Hypertrophic Pyloric Stenosis"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: peptic-ulcer
+      name: "Peptic Ulcer Disease"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [h-pylori, complications, surgery, perforation]
+      priority: high
+      
+    - id: gastric-cancer
+      name: "Gastric Cancer"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [staging, surgery, chemotherapy]
+      priority: high
+
+# ============================================================================
+# SYSTEM 06: HEPATOBILIARY
+# ============================================================================
+06-hepatobiliary:
+  name: "Hepatobiliary Surgery"
+  topics:
+    - id: liver-function
+      name: "Liver Function Assessment"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [lfts, child-pugh, meld]
+      priority: high
+      
+    - id: liver-abscess
+      name: "Liver Abscess"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [amoebic, pyogenic, management]
+      priority: high
+      
+    - id: hydatid-cyst
+      name: "Hydatid Cyst"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [diagnosis, medical, surgical, laparoscopic]
+      priority: medium
+      
+    - id: portal-hypertension
+      name: "Portal Hypertension"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [causes, varices, ascites, hepatic-encephalopathy]
+      priority: high
+      
+    - id: obstructive-jaundice
+      name: "Obstructive Jaundice"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [medical-vs-surgical, algorithm, management]
+      priority: critical
+      
+    - id: liver-neoplasms
+      name: "Liver Neoplasms"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [hcc, metastases, benign]
+      priority: medium
+      
+    - id: splenic-rupture
+      name: "Splenic Rupture"
+      nmc_ref: "Systemic Surgery"
+      priority: high
+      
+    - id: splenectomy
+      name: "Splenectomy"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [indications, technique, opsi]
+      priority: medium
+      
+    - id: cholelithiasis
+      name: "Cholelithiasis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [types, complications, management]
+      priority: critical
+      
+    - id: cholecystitis
+      name: "Cholecystitis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [acute, chronic, lap-chole]
+      priority: critical
+      
+    - id: cbd-stones
+      name: "CBD Stones"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [ercp, open, laparoscopic]
+      priority: high
+      
+    - id: gallbladder-cancer
+      name: "Gallbladder Cancer"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [incidental, staging, management]
+      priority: medium
+      
+    - id: choledochal-cyst
+      name: "Choledochal Cyst"
+      nmc_ref: "Systemic Surgery"
+      priority: low
+
+# ============================================================================
+# SYSTEM 07: PANCREAS
+# ============================================================================
+07-pancreas:
+  name: "Pancreatic Surgery"
+  topics:
+    - id: acute-pancreatitis
+      name: "Acute Pancreatitis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [etiology, severity-scoring, management, complications]
+      priority: critical
+      
+    - id: chronic-pancreatitis
+      name: "Chronic Pancreatitis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [etiology, complications, surgery]
+      priority: medium
+      
+    - id: pancreatic-cancer
+      name: "Pancreatic Cancer"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [staging, resectability, whipple]
+      priority: high
+
+# ============================================================================
+# SYSTEM 08: SMALL INTESTINE
+# ============================================================================
+08-small-intestine:
+  name: "Small Intestine Surgery"
+  topics:
+    - id: intestinal-obstruction
+      name: "Intestinal Obstruction"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [causes, diagnosis, management, strangulation]
+      priority: critical
+      
+    - id: acute-appendicitis
+      name: "Acute Appendicitis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [diagnosis, scoring, surgery, complications]
+      priority: critical
+      
+    - id: appendicular-mass
+      name: "Appendicular Mass & Abscess"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [ochsner-sherren, interval-appendicectomy]
+      priority: high
+      
+    - id: abdominal-tb
+      name: "Abdominal Tuberculosis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [intestinal, peritoneal, management]
+      priority: high
+      
+    - id: peritonitis
+      name: "Peritonitis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [primary, secondary, tertiary, typhoid-perforation]
+      priority: critical
+      
+    - id: mesenteric-ischemia
+      name: "Mesenteric Ischemia"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [acute, chronic]
+      priority: medium
+      
+    - id: parasitic-infections
+      name: "Parasitic Infections"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [amoebiasis, ascariasis, surgical-complications]
+      priority: medium
+
+# ============================================================================
+# SYSTEM 09: COLON & RECTUM
+# ============================================================================
+09-colon-rectum:
+  name: "Colorectal Surgery"
+  topics:
+    - id: congenital-megacolon
+      name: "Congenital Megacolon (Hirschsprung)"
+      nmc_ref: "Colon"
+      priority: medium
+      
+    - id: colitis
+      name: "Colitis"
+      nmc_ref: "Colon"
+      subtopics: [infective, ischemic, pseudomembranous]
+      priority: medium
+      
+    - id: ibd
+      name: "Inflammatory Bowel Disease"
+      nmc_ref: "Colon"
+      subtopics: [ulcerative-colitis, crohns, surgical-management]
+      priority: high
+      
+    - id: colon-cancer
+      name: "Colon Cancer"
+      nmc_ref: "Colon"
+      subtopics: [staging, surgery, adjuvant, screening]
+      priority: critical
+      
+    - id: colostomy
+      name: "Colostomy"
+      nmc_ref: "Colon"
+      subtopics: [types, indications, complications, reversal]
+      priority: high
+      
+    - id: rectal-prolapse
+      name: "Rectal Prolapse"
+      nmc_ref: "Rectum and Anal Canal"
+      priority: medium
+      
+    - id: rectal-cancer
+      name: "Rectal Cancer"
+      nmc_ref: "Rectum and Anal Canal"
+      subtopics: [staging, tme, neoadjuvant, sphincter-preservation]
+      priority: high
+
+# ============================================================================
+# SYSTEM 10: ANORECTAL
+# ============================================================================
+10-anorectal:
+  name: "Anorectal Surgery"
+  topics:
+    - id: hemorrhoids
+      name: "Hemorrhoids"
+      nmc_ref: "Rectum and Anal Canal"
+      subtopics: [classification, conservative, banding, surgery, stapled]
+      priority: high
+      
+    - id: anal-fissure
+      name: "Anal Fissure"
+      nmc_ref: "Rectum and Anal Canal"
+      subtopics: [acute, chronic, medical, surgical]
+      priority: high
+      
+    - id: fistula-in-ano
+      name: "Fistula in Ano"
+      nmc_ref: "Rectum and Anal Canal"
+      subtopics: [classification, goodsall-rule, surgery]
+      priority: high
+      
+    - id: perianal-abscess
+      name: "Perianal & Ischiorectal Abscess"
+      nmc_ref: "Rectum and Anal Canal"
+      priority: high
+      
+    - id: anal-cancer
+      name: "Anal Cancer"
+      nmc_ref: "Rectum and Anal Canal"
+      priority: medium
+      
+    - id: anorectal-anomalies
+      name: "Anorectal Anomalies"
+      nmc_ref: "Rectum and Anal Canal"
+      priority: low
+
+# ============================================================================
+# SYSTEM 11: HERNIAS
+# ============================================================================
+11-hernias:
+  name: "Hernia Surgery"
+  topics:
+    - id: inguinal-hernia
+      name: "Inguinal Hernia"
+      nmc_ref: "Systemic Surgery - Hernia"
+      subtopics: [anatomy, direct-indirect, open-repair, laparoscopic]
+      priority: critical
+      
+    - id: femoral-hernia
+      name: "Femoral Hernia"
+      nmc_ref: "Systemic Surgery"
+      priority: high
+      
+    - id: umbilical-hernia
+      name: "Umbilical Hernia"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: epigastric-hernia
+      name: "Epigastric Hernia"
+      nmc_ref: "Systemic Surgery"
+      priority: low
+      
+    - id: incisional-hernia
+      name: "Incisional Hernia"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [prevention, open-repair, laparoscopic]
+      priority: high
+      
+    - id: ventral-hernia
+      name: "Primary Ventral Hernia"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+
+# ============================================================================
+# SYSTEM 12: UROLOGY
+# ============================================================================
+12-urology:
+  name: "Urological Surgery"
+  topics:
+    - id: urolithiasis
+      name: "Urolithiasis"
+      nmc_ref: "Systemic Surgery - Urology"
+      subtopics: [types, investigation, management, eswl, pcnl]
+      priority: high
+      
+    - id: bph
+      name: "Benign Prostatic Hyperplasia"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [luts, medical, turp]
+      priority: high
+      
+    - id: urethral-injuries
+      name: "Urethral Injuries"
+      nmc_ref: "Systemic Surgery"
+      priority: high
+      
+    - id: testicular-torsion
+      name: "Testicular Torsion"
+      nmc_ref: "Systemic Surgery"
+      priority: critical
+      
+    - id: undescended-testis
+      name: "Undescended Testis"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: hydrocele
+      name: "Hydrocele"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: varicocele
+      name: "Varicocele"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: testicular-tumors
+      name: "Testicular Tumors"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: phimosis
+      name: "Phimosis & Paraphimosis"
+      nmc_ref: "Systemic Surgery"
+      priority: medium
+      
+    - id: penile-cancer
+      name: "Penile Cancer"
+      nmc_ref: "Systemic Surgery"
+      priority: low
+
+# ============================================================================
+# SYSTEM 13: VASCULAR
+# ============================================================================
+13-vascular:
+  name: "Vascular Surgery"
+  topics:
+    - id: arterial-occlusion
+      name: "Acute Arterial Occlusion"
+      nmc_ref: "Systemic Surgery - Vascular"
+      subtopics: [6ps, embolism, thrombosis, management]
+      priority: critical
+      
+    - id: gangrene
+      name: "Gangrene"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [dry, wet, gas, diabetic-foot]
+      priority: high
+      
+    - id: peripheral-arterial-disease
+      name: "Peripheral Arterial Disease"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [atherosclerosis, buergers, investigation]
+      priority: high
+      
+    - id: amputation
+      name: "Amputation"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [indications, levels, prosthetics]
+      priority: medium
+      
+    - id: varicose-veins
+      name: "Varicose Veins"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [trendelenburg, surgery, sclerotherapy, laser]
+      priority: high
+      
+    - id: dvt
+      name: "Deep Vein Thrombosis"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [risk-factors, diagnosis, treatment, prevention]
+      priority: critical
+      
+    - id: lymphedema
+      name: "Lymphedema"
+      nmc_ref: "Systemic Surgery"
+      subtopics: [primary, secondary, filariasis, management]
+      priority: medium
+      
+    - id: vascular-injuries
+      name: "Vascular Injuries"
+      nmc_ref: "Systemic Surgery"
+      priority: high
+
+# ============================================================================
+# SYSTEM 14: PROCEDURES
+# ============================================================================
+14-procedures:
+  name: "Surgical Procedures"
+  basic:
+    - iv-access
+    - cvp-line
+    - urinary-catheterization
+    - ng-tube
+    - wound-care
+    - suturing
+    - incision-drainage
+    - biopsies
+    - fnac
+    
+  intermediate:
+    - circumcision
+    - hydrocele-surgery
+    - hernia-repair
+    - hemorrhoidectomy
+    - appendicectomy
+    - lap-cholecystectomy
+    - skin-grafting
+    - icd-insertion
+    - tracheostomy
+    
+  advanced:
+    - thyroidectomy
+    - mastectomy
+    - gastrectomy
+    - colectomy
+    - whipple
+    - splenectomy
+    - liver-resection

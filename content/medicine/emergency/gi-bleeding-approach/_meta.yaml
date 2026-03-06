@@ -1,0 +1,15 @@
+title: "Approach to GI Bleeding"
+slug: gi-bleeding-approach
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.7"
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: "IM24.7"
+      text: "Approach to GI Bleeding — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details: []

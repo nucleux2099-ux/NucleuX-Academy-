@@ -1,0 +1,37 @@
+title: "Barrett's Esophagus"
+slug: barrett-esophagus
+depth: "SS"
+highYield: true
+nmc_codes:
+  - "SU28.6"
+prerequisites:
+  - "gerd"
+  - "esophageal-anatomy"
+related_topics:
+  - "esophageal-cancer"
+  - "surgical-management-gerd"
+  - "fundoplication"
+  - "dysphagia"
+enrichment:
+  nmcCodes:
+    - code: "SU28.6"
+      text: "Describe the clinical features, investigations and principles of management of benign and malignant disorders of esophagus"
+      domain: "K"
+  prerequisite_details:
+    - slug: "gerd"
+      reason: "Chronic GERD is the primary risk factor driving intestinal metaplasia in Barrett's"
+    - slug: "esophageal-anatomy"
+      reason: "Understanding the squamocolumnar junction and Z-line is essential for Barrett's diagnosis"
+  related_details:
+    - slug: "esophageal-cancer"
+      reason: "Barrett's is the premalignant precursor to esophageal adenocarcinoma — dysplasia-carcinoma sequence"
+      relationship: "clinical"
+    - slug: "surgical-management-gerd"
+      reason: "Anti-reflux surgery may halt Barrett's progression by controlling acid exposure"
+      relationship: "clinical"
+    - slug: "fundoplication"
+      reason: "Nissen/Toupet fundoplication considered in Barrett's patients with refractory GERD"
+      relationship: "clinical"
+    - slug: "dysphagia"
+      reason: "Stricture formation in long-segment Barrett's presents with dysphagia"
+      relationship: "clinical"

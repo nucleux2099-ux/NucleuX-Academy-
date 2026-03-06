@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="nucleusGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </radialGradient>
+    
+    <linearGradient id="orbitGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    
+    <linearGradient id="orbitGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+    
+    <linearGradient id="orbitGradient3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F87171"/>
+    </linearGradient>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="400" height="400" rx="40" fill="#0F172A"/>
+  
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#grid)" opacity="0.5"/>
+  
+  <!-- Orbital paths -->
+  <g filter="url(#glow)">
+    <ellipse cx="200" cy="200" rx="130" ry="45" 
+             stroke="url(#orbitGradient1)" stroke-width="2.5" fill="none"
+             transform="rotate(-35 200 200)" opacity="0.85"/>
+    
+    <ellipse cx="200" cy="200" rx="130" ry="45" 
+             stroke="url(#orbitGradient2)" stroke-width="2.5" fill="none"
+             transform="rotate(35 200 200)" opacity="0.85"/>
+    
+    <ellipse cx="200" cy="200" rx="130" ry="45" 
+             stroke="url(#orbitGradient3)" stroke-width="2.5" fill="none"
+             transform="rotate(90 200 200)" opacity="0.85"/>
+  </g>
+  
+  <!-- Electrons -->
+  <circle cx="330" cy="200" r="9" fill="#22D3EE" filter="url(#glow)"
+          transform="rotate(-35 200 200)"/>
+  <circle cx="70" cy="200" r="9" fill="#34D399" filter="url(#glow)"
+          transform="rotate(35 200 200)"/>
+  <circle cx="200" cy="70" r="9" fill="#FBBF24" filter="url(#glow)"/>
+  
+  <!-- Central Nucleus -->
+  <circle cx="200" cy="200" r="50" fill="url(#nucleusGradient)" filter="url(#glow)"/>
+  
+  <!-- X mark -->
+  <g stroke="white" stroke-width="7" stroke-linecap="round">
+    <line x1="178" y1="178" x2="222" y2="222"/>
+    <line x1="222" y1="178" x2="178" y2="222"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+title: "Fluid & Electrolyte Balance"
+slug: fluid-electrolytes
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "SU12.2"
+prerequisites:
+  - "homeostasis"
+  - "preoperative-assessment"
+related_topics:
+  - "shock"
+  - "burns"
+  - "surgical-nutrition"
+  - "perioperative-management"
+enrichment:
+  nmcCodes:
+    - code: "SU12.2"
+      text: "Describe and discuss the methods of estimation and replacement of the fluid and electrolyte requirements in the surgical patient"
+      domain: "K"
+  prerequisite_details:
+    - slug: "homeostasis"
+      reason: "Understanding normal body fluid compartments, osmolality regulation and renal handling of electrolytes is the physiological foundation for fluid therapy"
+    - slug: "preoperative-assessment"
+      reason: "Preoperative fluid status assessment and correction of electrolyte imbalances is essential before any surgical procedure"
+  related_details:
+    - slug: "shock"
+      reason: "Hypovolemic shock results from uncorrected fluid deficits; rational fluid resuscitation requires understanding of crystalloid vs colloid physiology"
+      relationship: "clinical"
+    - slug: "burns"
+      reason: "Major burns cause massive third-space fluid losses requiring formula-based IV fluid resuscitation (Parkland formula) and electrolyte monitoring"
+      relationship: "clinical"
+    - slug: "surgical-nutrition"
+      reason: "Parenteral nutrition requires careful electrolyte supplementation; refeeding syndrome causes dangerous hypophosphatemia and hypokalemia"
+      relationship: "clinical"
+    - slug: "perioperative-management"
+      reason: "Perioperative fluid management (maintenance, replacement, deficit correction) is a core daily surgical skill"
+      relationship: "clinical"

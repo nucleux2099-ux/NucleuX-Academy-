@@ -1,0 +1,24 @@
+title: "Brain Tumors (Medical)"
+slug: brain-tumors-medical
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM18.1"
+  - "IM19.1"
+prerequisites:
+  - "raised-intracranial-pressure"
+related_topics:
+  - "brain-abscess"
+  - "ischemic-stroke"
+enrichment:
+  nmcCodes:
+    - code: "IM18.1"
+      text: "Describe and discuss the clinical features and approach to intracranial space-occupying lesions"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "raised-intracranial-pressure"
+      reason: "Brain tumors cause raised ICP"
+  related_details:
+    - slug: "brain-abscess"
+      reason: "Key differential for ring-enhancing lesion"
+      relationship: "clinical"

@@ -1,0 +1,33 @@
+topic_id: perineal-body
+name: Perineal Body
+description: Perineal Body — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: AN2.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN4.1
+  domain: KH
+  core: false
+  phase: Phase 1
+- code: AN4.3
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: AN49.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN49.2
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN49.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: AN49.5
+  domain: KH
+  core: false
+  phase: Phase 1

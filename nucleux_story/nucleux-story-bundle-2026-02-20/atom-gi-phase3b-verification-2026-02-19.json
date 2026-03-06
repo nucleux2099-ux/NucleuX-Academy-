@@ -1,0 +1,523 @@
+{
+  "generated": "2026-02-19T22:37:46.703956",
+  "overall": {
+    "topics": 15,
+    "anchors_total": 45,
+    "relevance_ratio": 1.0,
+    "page_ratio": 0.67
+  },
+  "rows": [
+    {
+      "topic": "upper-gi-bleed-variceal-bleed",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "portal-hypertension",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "acute-pancreatitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "chronic-pancreatitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "obstructive-jaundice",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "cholangitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "choledocholithiasis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 0,
+      "rel_ratio": 1.0,
+      "page_ratio": 0.0
+    },
+    {
+      "topic": "liver-abscess",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 0,
+      "rel_ratio": 1.0,
+      "page_ratio": 0.0
+    },
+    {
+      "topic": "acute-cholecystitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "gallbladder-cancer",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 0,
+      "rel_ratio": 1.0,
+      "page_ratio": 0.0
+    },
+    {
+      "topic": "hepatocellular-carcinoma",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "liver-metastases",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 0,
+      "rel_ratio": 1.0,
+      "page_ratio": 0.0
+    },
+    {
+      "topic": "pancreatic-cancer",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 0,
+      "rel_ratio": 1.0,
+      "page_ratio": 0.0
+    },
+    {
+      "topic": "intestinal-obstruction",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    },
+    {
+      "topic": "perforation-peritonitis",
+      "anchors": 3,
+      "relevant": 3,
+      "page_covered": 3,
+      "rel_ratio": 1.0,
+      "page_ratio": 1.0
+    }
+  ],
+  "details": {
+    "upper-gi-bleed-variceal-bleed": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch70 - The spleen",
+        "pages": "pp. 1240-1252",
+        "score": 29,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch70 - The spleen/Ch70 - The spleen.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch66 - The oesophagus",
+        "pages": "pp. 1127-1168",
+        "score": 22,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch66 - The oesophagus/Ch66 - The oesophagus.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch67 - The stomach and duodenum",
+        "pages": "pp. 1169-1202",
+        "score": 22,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch67 - The stomach and duodenum/Ch67 - The stomach and duodenum.md"
+      }
+    ],
+    "portal-hypertension": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch70 - The spleen",
+        "pages": "pp. 1240-1252",
+        "score": 28,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch70 - The spleen/Ch70 - The spleen.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch66 - The oesophagus",
+        "pages": "pp. 1127-1168",
+        "score": 21,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch66 - The oesophagus/Ch66 - The oesophagus.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch91 - Intestinal and multivisceral transplantation",
+        "pages": "pp. 1650-1656",
+        "score": 20,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch91 - Intestinal and multivisceral transplantation/Ch91 - Intestinal and multivisceral transplantation.md"
+      }
+    ],
+    "acute-pancreatitis": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch90 - Pancreas transplantation",
+        "pages": "pp. 1642-1649",
+        "score": 22,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch90 - Pancreas transplantation/Ch90 - Pancreas transplantation.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch72 - The pancreas",
+        "pages": "pp. 1281-1308",
+        "score": 21,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch72 - The pancreas/Ch72 - The pancreas.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch70 - The spleen",
+        "pages": "pp. 1240-1252",
+        "score": 21,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch70 - The spleen/Ch70 - The spleen.md"
+      }
+    ],
+    "chronic-pancreatitis": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch72 - The pancreas",
+        "pages": "pp. 1281-1308",
+        "score": 21,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch72 - The pancreas/Ch72 - The pancreas.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch90 - Pancreas transplantation",
+        "pages": "pp. 1642-1649",
+        "score": 16,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch90 - Pancreas transplantation/Ch90 - Pancreas transplantation.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch70 - The spleen",
+        "pages": "pp. 1240-1252",
+        "score": 16,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch70 - The spleen/Ch70 - The spleen.md"
+      }
+    ],
+    "obstructive-jaundice": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch81 - Urinary symptoms and investigations",
+        "pages": "pp. 1468-1486",
+        "score": 21,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch81 - Urinary symptoms and investigations/Ch81 - Urinary symptoms and investigations.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch63 - History and examination of the abdomen",
+        "pages": "pp. 1072-1078",
+        "score": 16,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch63 - History and examination of the abdomen/Ch63 - History and examination of the abdomen.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch69 - The liver",
+        "pages": "pp. 1212-1239",
+        "score": 14,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch69 - The liver/Ch69 - The liver.md"
+      }
+    ],
+    "cholangitis": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch89 - Liver transplantation",
+        "pages": "pp. 1629-1641",
+        "score": 15,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch89 - Liver transplantation/Ch89 - Liver transplantation.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch09 - Gastrointestinal endoscopy",
+        "pages": "pp. 164-182",
+        "score": 14,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch09 - Gastrointestinal endoscopy/Ch09 - Gastrointestinal endoscopy.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch75 - Infammatory bowel disease",
+        "pages": "pp. 1339-1355",
+        "score": 13,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch75 - Infammatory bowel disease/Ch75 - Infammatory bowel disease.md"
+      }
+    ],
+    "choledocholithiasis": [
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "114_Endoscopic Evaluation and Management of Biliary Di",
+        "pages": "pp. [manual-verify]",
+        "score": 32,
+        "hard_hits": 4,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/markdown_chapters/114_Endoscopic Evaluation and Management of Biliary Di/114_Endoscopic Evaluation and Management of Biliary Di/114_Endoscopic Evaluation and Management of Biliary Di.md"
+      },
+      {
+        "book": "Blumgart, 7th Ed",
+        "chapter": "37. Stones in the bile duct Endoscopic and percutaneous approaches 3",
+        "pages": "pp. [manual-verify]",
+        "score": 32,
+        "hard_hits": 4,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Blumgart 7th Ed/37. Stones in the bile duct Endoscopic and percutaneous approaches 3.md"
+      },
+      {
+        "book": "Blumgart, 7th Ed",
+        "chapter": "32. Bile duct exploration and biliary-enteric anastomosis",
+        "pages": "pp. [manual-verify]",
+        "score": 32,
+        "hard_hits": 4,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Blumgart 7th Ed/32. Bile duct exploration and biliary-enteric anastomosis.md"
+      }
+    ],
+    "liver-abscess": [
+      {
+        "book": "Blumgart, 7th Ed",
+        "chapter": "31. Radiologic hepatobiliary interventions",
+        "pages": "pp. [manual-verify]",
+        "score": 25,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Blumgart 7th Ed/31. Radiologic hepatobiliary interventions.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "132. Infections of the Liver - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 19,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Liver/132. Infections of the Liver - ClinicalKey.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "132_Infections of the Liver",
+        "pages": "pp. [manual-verify]",
+        "score": 19,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/markdown_chapters/132_Infections of the Liver/132_Infections of the Liver/132_Infections of the Liver.md"
+      }
+    ],
+    "acute-cholecystitis": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch71 - The gallbladder and bile ducts",
+        "pages": "pp. 1253-1280",
+        "score": 21,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch71 - The gallbladder and bile ducts/Ch71 - The gallbladder and bile ducts.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch74 - The small intestine",
+        "pages": "pp. 1327-1338",
+        "score": 14,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch74 - The small intestine/Ch74 - The small intestine.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch69 - The liver",
+        "pages": "pp. 1212-1239",
+        "score": 13,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch69 - The liver/Ch69 - The liver.md"
+      }
+    ],
+    "gallbladder-cancer": [
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "118. Management of Gallbladder Cancer and Premalignant Gallbladder Lesions - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 18,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Biliary Tract and Gallbladder/118. Management of Gallbladder Cancer and Premalignant Gallbladder Lesions - ClinicalKey.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "119. Biliary Tract Tumors - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 18,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Biliary Tract and Gallbladder/119. Biliary Tract Tumors - ClinicalKey.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "149. Radiotherapy for Liver Tumors - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 18,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Liver/149. Radiotherapy for Liver Tumors - ClinicalKey.md"
+      }
+    ],
+    "hepatocellular-carcinoma": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch89 - Liver transplantation",
+        "pages": "pp. 1629-1641",
+        "score": 22,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch89 - Liver transplantation/Ch89 - Liver transplantation.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch69 - The liver",
+        "pages": "pp. 1212-1239",
+        "score": 13,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch69 - The liver/Ch69 - The liver.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch63 - History and examination of the abdomen",
+        "pages": "pp. 1072-1078",
+        "score": 13,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch63 - History and examination of the abdomen/Ch63 - History and examination of the abdomen.md"
+      }
+    ],
+    "liver-metastases": [
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "129. Assessment of Hepatic Function and Preoperative Hepatic Optimization - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 24,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Liver/129. Assessment of Hepatic Function and Preoperative Hepatic Optimization - ClinicalKey.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "134. Operative Techniques and Principles of Hepatic Resection - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 24,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Liver/134. Operative Techniques and Principles of Hepatic Resection - ClinicalKey.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "136. Management of Colorectal Liver Metastases - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 24,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Liver/136. Management of Colorectal Liver Metastases - ClinicalKey.md"
+      }
+    ],
+    "pancreatic-cancer": [
+      {
+        "book": "Blumgart, 7th Ed",
+        "chapter": "9. Advances in the molecular characterization of pancreatic cancer and pre-malignant lesions 4",
+        "pages": "pp. [manual-verify]",
+        "score": 24,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Blumgart 7th Ed/9. Advances in the molecular characterization of pancreatic cancer and pre-malignant lesions 4.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "97. Imaging of and Radiologic Intervention in the Pancreas - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 18,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Pancreas/97. Imaging of and Radiologic Intervention in the Pancreas - ClinicalKey.md"
+      },
+      {
+        "book": "Shackelford, 9th Ed",
+        "chapter": "99. Periampullary Tumors - ClinicalKey",
+        "pages": "pp. [manual-verify]",
+        "score": 18,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Shackelford 9th Ed/Pancreas/99. Periampullary Tumors - ClinicalKey.md"
+      }
+    ],
+    "intestinal-obstruction": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch78 - Intestinal obstruction",
+        "pages": "pp. 1396-1413",
+        "score": 31,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch78 - Intestinal obstruction/Ch78 - Intestinal obstruction.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch63 - History and examination of the abdomen",
+        "pages": "pp. 1072-1078",
+        "score": 30,
+        "hard_hits": 3,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch63 - History and examination of the abdomen/Ch63 - History and examination of the abdomen.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch76 - The vermiform appendix",
+        "pages": "pp. 1356-1374",
+        "score": 25,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch76 - The vermiform appendix/Ch76 - The vermiform appendix.md"
+      }
+    ],
+    "perforation-peritonitis": [
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch76 - The vermiform appendix",
+        "pages": "pp. 1356-1374",
+        "score": 22,
+        "hard_hits": 2,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch76 - The vermiform appendix/Ch76 - The vermiform appendix.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch10 - Principles of minimal access surgery",
+        "pages": "pp. 183-197",
+        "score": 16,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch10 - Principles of minimal access surgery/Ch10 - Principles of minimal access surgery.md"
+      },
+      {
+        "book": "Bailey & Love, 28th Ed",
+        "chapter": "Ch09 - Gastrointestinal endoscopy",
+        "pages": "pp. 164-182",
+        "score": 15,
+        "hard_hits": 1,
+        "file": "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library/Bailey and Love 28th Ed/markdown/Ch09 - Gastrointestinal endoscopy/Ch09 - Gastrointestinal endoscopy.md"
+      }
+    ]
+  }
+}

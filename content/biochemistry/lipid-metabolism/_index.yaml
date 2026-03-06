@@ -1,0 +1,31 @@
+id: lipid-metabolism
+title: "Lipid Metabolism"
+subject: biochemistry
+description: |
+  Fatty acid oxidation, ketogenesis, and lipoproteins.
+
+stats:
+  total_topics: 11
+  topics_written: 0
+  coverage_percent: 0
+
+categories:
+  - id: core
+    title: "Core Topics"
+    topics:
+      - fatty-acid-oxidation
+      - fatty-acid-synthesis
+      - ketogenesis
+      - cholesterol-synthesis
+      - bile-acid-metabolism
+      - lipoproteins
+      - dyslipidemia-biochemistry
+      - eicosanoids
+      - phospholipid-metabolism
+      - sphingolipid-metabolism
+      - lipid-storage-diseases
+
+priority: high
+exam_relevance: [NEET_PG, INICET]
+last_updated: "2026-02-15"
+status: scaffold

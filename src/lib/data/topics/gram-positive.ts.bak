@@ -1,0 +1,2850 @@
+/**
+ * NucleuX Academy - Gram-Positive Bacteria Topics
+ * Ananthanarayan and Paniker's Textbook of Microbiology Based Content
+ * Complete with concepts, exam prep, retrieval cards, and cases
+ */
+
+import type { LibraryTopic, RetrievalCard, CaseScenario, TextbookReference } from '../../types/library';
+
+// =============================================================================
+// STAPHYLOCOCCUS
+// =============================================================================
+
+const staphylococcusTopic: LibraryTopic = {
+  id: 'staphylococcus',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Staphylococcus',
+  slug: 'staphylococcus',
+  description: 'S. aureus, coagulase-negative, MRSA, toxins, diseases, diagnosis',
+  content: {
+    concept: `# Staphylococcus
+
+## Overview
+Staphylococci are Gram-positive cocci arranged in **grape-like clusters** (Greek: staphyle = bunch of grapes). They are ubiquitous commensals of human skin and mucous membranes but are also important pathogens causing a wide spectrum of diseases.
+
+## Classification
+
+| Species | Coagulase | Mannitol | Novobiocin | Clinical Significance |
+|---------|-----------|----------|------------|----------------------|
+| **S. aureus** | Positive | Ferments | Sensitive | Major pathogen |
+| **S. epidermidis** | Negative | - | Sensitive | Device infections |
+| **S. saprophyticus** | Negative | - | **Resistant** | UTI in young women |
+| **S. lugdunensis** | Negative | + | Sensitive | Aggressive CoNS |
+
+## Staphylococcus aureus
+
+### Morphology
+- **Shape**: Spherical cocci, 0.8-1.0 μm diameter
+- **Arrangement**: Grape-like clusters (division in multiple planes)
+- **Staining**: Gram-positive (may become Gram-variable in old cultures)
+- **Capsule**: Present in some strains (11 serotypes; types 5, 8 most common)
+- **Motility**: Non-motile
+- **Spores**: Non-sporing
+
+### Cultural Characteristics
+- **Temperature**: 10-45°C (optimum 37°C)
+- **Atmosphere**: Facultative anaerobe
+- **Media**:
+  - **Nutrient agar**: Golden-yellow colonies (β-carotene pigment)
+  - **Blood agar**: β-hemolytic, 2-3 mm colonies
+  - **Mannitol salt agar (MSA)**: Selective medium (7.5% NaCl), yellow colonies (mannitol fermentation)
+  - **Baird-Parker agar**: Black colonies with halo (tellurite reduction + egg yolk reaction)
+
+### Biochemical Reactions
+- **Catalase**: Positive (differentiates from Streptococcus)
+- **Coagulase**: Positive (differentiates from CoNS)
+  - Bound coagulase (clumping factor) - slide test
+  - Free coagulase - tube test (gold standard)
+- **DNase**: Positive (thermostable)
+- **Phosphatase**: Positive
+- **Mannitol fermentation**: Positive
+- **Voges-Proskauer**: Positive
+
+### Virulence Factors
+
+#### Cell Surface Components
+| Factor | Function |
+|--------|----------|
+| **Protein A** | Binds Fc region of IgG → prevents opsonization |
+| **Clumping factor A/B** | Binds fibrinogen → adhesion |
+| **Collagen-binding protein** | Adhesion to cartilage, bone |
+| **Fibronectin-binding proteins** | Adhesion to ECM |
+| **Capsule** | Antiphagocytic |
+| **Teichoic acids** | Adhesion, inflammation |
+| **Peptidoglycan** | Endotoxin-like activity |
+
+#### Enzymes
+| Enzyme | Action |
+|--------|--------|
+| **Coagulase** | Converts fibrinogen to fibrin (clot formation) |
+| **Staphylokinase** | Fibrinolysis (spreads infection) |
+| **Hyaluronidase** | Degrades hyaluronic acid (spreading factor) |
+| **Lipase** | Degrades lipids (skin colonization) |
+| **DNase** | Degrades DNA (pus liquefaction) |
+| **β-lactamase** | Penicillin resistance |
+
+#### Toxins
+| Toxin | Mechanism | Disease |
+|-------|-----------|---------|
+| **α-hemolysin** | Forms pores in RBC, WBC | Tissue necrosis |
+| **β-hemolysin** | Sphingomyelinase | Hot-cold lysis |
+| **γ-hemolysin** | Two-component pore-forming | Tissue damage |
+| **δ-hemolysin** | Surfactant-like | Membrane damage |
+| **Panton-Valentine Leukocidin (PVL)** | Destroys neutrophils | CA-MRSA, necrotizing pneumonia |
+| **Exfoliative toxins A & B** | Serine proteases → cleave desmoglein-1 | SSSS (Scalded Skin Syndrome) |
+| **TSST-1** | Superantigen → massive T-cell activation | Toxic Shock Syndrome |
+| **Enterotoxins (A-E, G-I)** | Heat-stable, superantigens | Food poisoning |
+
+### Diseases Caused by S. aureus
+
+#### 1. Skin and Soft Tissue Infections
+- **Folliculitis**: Infection of hair follicle
+- **Furuncle (boil)**: Deep follicular infection
+- **Carbuncle**: Multiple connected furuncles
+- **Impetigo**: Superficial crusted lesions (also GAS)
+- **Cellulitis**: Deep spreading infection
+- **Surgical site infections**: Major cause
+- **Necrotizing fasciitis**: Rare but life-threatening
+
+#### 2. Systemic Infections
+- **Bacteremia/Septicemia**: Often from skin source
+- **Endocarditis**: Both native and prosthetic valves
+- **Osteomyelitis**: Most common cause in all age groups
+- **Septic arthritis**: Monoarticular, large joints
+- **Pneumonia**: Post-influenza, nosocomial, CA-MRSA
+
+#### 3. Toxin-Mediated Diseases
+- **Staphylococcal Food Poisoning**
+  - Preformed heat-stable enterotoxin in food
+  - Incubation: 1-6 hours (short!)
+  - Symptoms: Vomiting > diarrhea, no fever
+  - Self-limiting within 24 hours
+  
+- **Toxic Shock Syndrome (TSS)**
+  - TSST-1 (menstrual) or enterotoxins (non-menstrual)
+  - Criteria: Fever >38.9°C, diffuse rash, desquamation (1-2 weeks), hypotension, ≥3 organ involvement
+  - Associated with: Tampon use, surgical packing, wounds
+
+- **Staphylococcal Scalded Skin Syndrome (SSSS)**
+  - Exfoliative toxins A or B
+  - Affects neonates and young children
+  - Nikolsky sign positive
+  - Cleavage at granular layer (vs TEN - dermal-epidermal junction)
+  - No organisms at lesion site (toxin-mediated)
+
+### MRSA (Methicillin-Resistant S. aureus)
+
+#### Mechanism of Resistance
+- **mecA gene** located on **SCCmec** (Staphylococcal Cassette Chromosome mec)
+- Encodes **PBP2a (PBP2')** - altered penicillin-binding protein
+- PBP2a has low affinity for all β-lactams
+- SCCmec types I-III: HA-MRSA; IV-V: CA-MRSA
+
+#### HA-MRSA vs CA-MRSA
+| Feature | HA-MRSA | CA-MRSA |
+|---------|---------|---------|
+| SCCmec type | I, II, III (large) | IV, V (small) |
+| Resistance | Multidrug resistant | Usually susceptible to clindamycin, TMP-SMX |
+| PVL genes | Usually absent | Often present |
+| Typical infection | Line infection, pneumonia | Skin abscess, necrotizing pneumonia |
+| Risk factors | Healthcare exposure | Community, no risk factors |
+
+#### MRSA Detection
+- **Cefoxitin disk test**: Cefoxitin is better inducer of mecA
+- **mecA/mecC PCR**: Gold standard
+- **Chromogenic agar**: MRSA-specific media
+- **Latex agglutination**: PBP2a detection
+
+### Laboratory Diagnosis
+
+#### Specimen Collection
+- Pus, wound swabs, blood, urine, CSF depending on infection
+- Transport promptly; can survive drying
+
+#### Direct Examination
+- Gram stain: Gram-positive cocci in clusters
+- Often seen with neutrophils
+
+#### Culture
+1. Blood agar: β-hemolysis, golden colonies
+2. Mannitol salt agar: Yellow colonies
+3. Chromogenic media: Species-specific colors
+
+#### Identification
+1. **Catalase test**: Positive (H₂O₂ → H₂O + O₂ bubbles)
+2. **Coagulase test**: 
+   - Slide test (bound coagulase): Clumping within 10 seconds
+   - Tube test (free coagulase): Clot at 4 hours (confirm at 24h)
+3. **DNase test**: Zone of clearing on DNase agar
+4. **Latex agglutination**: Protein A, clumping factor
+5. **MALDI-TOF MS**: Rapid identification
+6. **PCR**: nuc gene (S. aureus specific), mecA (MRSA)
+
+### Treatment
+
+#### MSSA (Methicillin-Sensitive)
+- **Drug of choice**: Anti-staphylococcal penicillins (nafcillin, oxacillin, flucloxacillin)
+- Alternatives: First-generation cephalosporins (cefazolin)
+
+#### MRSA
+| Infection Severity | Drug of Choice |
+|--------------------|----------------|
+| Skin/soft tissue (mild) | TMP-SMX, doxycycline, clindamycin |
+| Severe/Bacteremia | **Vancomycin** (IV) |
+| Vancomycin MIC 1-2 | Consider daptomycin |
+| VRSA/Salvage | Linezolid, daptomycin, ceftaroline |
+
+#### Special Considerations
+- **Endocarditis**: Prolonged therapy (4-6 weeks), consider surgery
+- **Osteomyelitis**: 4-6 weeks IV, then oral
+- **TSST**: Clindamycin (toxin suppression) + anti-staphylococcal agent + IVIG
+
+### Prevention
+- Hand hygiene (most important)
+- Contact precautions for MRSA
+- Decolonization: Mupirocin nasal ointment + chlorhexidine bathing
+- Screening high-risk patients
+- Surgical prophylaxis
+
+---
+
+## Coagulase-Negative Staphylococci (CoNS)
+
+### S. epidermidis
+- Normal skin flora
+- Biofilm producer (slime layer)
+- Most common cause of prosthetic device infections
+- Catheter-related bloodstream infections
+- Often contaminant - multiple positive cultures needed
+
+### S. saprophyticus
+- **Novobiocin resistant** (key test)
+- Second most common cause of UTI in young sexually active women
+- Associated with "honeymoon cystitis"
+
+### S. lugdunensis
+- More virulent CoNS
+- Causes aggressive endocarditis
+- Treat like S. aureus
+
+---
+
+*"S. aureus is the great imitator of infectious diseases - it can cause infection in virtually any organ system."*`,
+    
+    keyPoints: [
+      'S. aureus: Coagulase positive, mannitol fermenting, golden yellow colonies',
+      'Catalase positive differentiates Staphylococcus from Streptococcus',
+      'Protein A binds Fc portion of IgG - prevents opsonization',
+      'MRSA mechanism: mecA gene → PBP2a (altered PBP with low β-lactam affinity)',
+      'CA-MRSA: Often PVL-positive, SCCmec IV, causes skin abscesses and necrotizing pneumonia',
+      'Food poisoning: Preformed heat-stable enterotoxin, incubation 1-6 hours, vomiting predominant',
+      'TSST: Superantigen TSST-1, fever + rash + desquamation + hypotension + multiorgan involvement',
+      'SSSS: Exfoliative toxins cleave desmoglein-1, affects children, Nikolsky positive',
+      'S. saprophyticus: Novobiocin resistant, UTI in young women',
+      'Coagulase tube test (free coagulase) is gold standard for S. aureus identification'
+    ],
+    
+    examPrep: {
+      summary: `**Staphylococcus - High Yield Summary**
+
+**Key Tests**:
+- Catalase: Positive (vs Streptococcus)
+- Coagulase: Positive = S. aureus
+- Novobiocin resistant: S. saprophyticus
+
+**Toxins to Remember**:
+- Enterotoxins: Heat-stable, food poisoning (1-6h)
+- TSST-1: Toxic shock syndrome
+- Exfoliative toxin: Scalded skin syndrome
+- PVL: CA-MRSA, necrotizing pneumonia
+
+**MRSA**: mecA → PBP2a → resistance to all β-lactams
+Treatment: Vancomycin (severe), TMP-SMX/doxycycline (mild)`,
+      
+      mnemonics: [
+        'PASTE for S. aureus virulence: Protein A, A-toxin (α-hemolysin), Superantigen (TSST-1), Toxin (exfoliative), Enterotoxin',
+        'Coagulase + = S. aureus (both have "a" in them)',
+        'S. Saprophyticus = S. Sexually active, UTI',
+        'Food poisoning timing: 1-6 hours = Staph, 8-16 hours = Clostridium perfringens, >16 hours = C. diff/others',
+        'SSSS vs TEN: Staph = Superficial (granular layer), TEN = dEEp (dermal-epidermal)'
+      ],
+      
+      highYield: [
+        'Most common cause of osteomyelitis in ALL ages: S. aureus',
+        'Most common cause of acute endocarditis in IV drug users: S. aureus (right-sided)',
+        'Food poisoning with shortest incubation: Staphylococcal (1-6 hours)',
+        'Post-influenza pneumonia pathogen: S. aureus',
+        'SSSS: Nikolsky positive, no organisms at blister site, cleavage at granular layer',
+        'MSA (Mannitol Salt Agar): 7.5% NaCl - selective for Staphylococci',
+        'Protein A is used in immunological techniques (binds Fc of IgG)',
+        'CA-MRSA commonly PVL positive - necrotizing skin infections and pneumonia'
+      ],
+      
+      commonMCQs: [
+        'Enzyme that differentiates S. aureus from CoNS: Coagulase',
+        'Toxin causing SSSS: Exfoliative toxin (A or B)',
+        'Most common cause of catheter-related infection: S. epidermidis (biofilm)',
+        'Novobiocin resistant staphylococcus: S. saprophyticus',
+        'Selective medium for Staphylococcus: Mannitol Salt Agar',
+        'Gene responsible for methicillin resistance: mecA',
+        'Treatment of severe MRSA infection: Vancomycin'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 25', chapterTitle: 'Staphylococcus', pages: '209-220' },
+      { textbook: "Jawetz, Melnick & Adelberg's Medical Microbiology", edition: '28th', chapter: 'Ch 13', chapterTitle: 'The Staphylococci' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'staph-1',
+        question: 'What differentiates Staphylococcus from Streptococcus?',
+        answer: 'Catalase test:\n- Staphylococcus: Catalase POSITIVE (produces bubbles with H₂O₂)\n- Streptococcus: Catalase NEGATIVE',
+        difficulty: 1,
+        tags: ['identification', 'catalase']
+      },
+      {
+        id: 'staph-2',
+        question: 'What is the mechanism of methicillin resistance in MRSA?',
+        answer: 'mecA gene (on SCCmec cassette) encodes PBP2a (penicillin-binding protein 2a), which has LOW AFFINITY for all β-lactam antibiotics, allowing cell wall synthesis even in presence of these drugs.',
+        difficulty: 3,
+        tags: ['MRSA', 'resistance']
+      },
+      {
+        id: 'staph-3',
+        question: 'Compare HA-MRSA and CA-MRSA',
+        answer: 'HA-MRSA: Large SCCmec (I-III), multidrug resistant, usually PVL-negative, healthcare-associated\n\nCA-MRSA: Small SCCmec (IV-V), often susceptible to TMP-SMX/doxycycline, PVL-positive, community-acquired, causes skin abscesses and necrotizing pneumonia',
+        difficulty: 3,
+        tags: ['MRSA', 'epidemiology']
+      },
+      {
+        id: 'staph-4',
+        question: 'What causes Staphylococcal Scalded Skin Syndrome (SSSS)?',
+        answer: 'Exfoliative toxins A and B:\n- Serine proteases that cleave desmoglein-1\n- Causes separation at GRANULAR LAYER of epidermis\n- Affects neonates and young children (no neutralizing antibodies)\n- Nikolsky sign positive\n- No bacteria at lesion site (distant toxin effect)',
+        difficulty: 3,
+        tags: ['toxins', 'SSSS']
+      },
+      {
+        id: 'staph-5',
+        question: 'What is the function of Protein A in S. aureus virulence?',
+        answer: 'Protein A binds the Fc portion of IgG (wrong orientation), preventing:\n- Opsonization\n- Complement fixation\n- Phagocytosis\n\nThis allows the bacteria to evade immune recognition.',
+        difficulty: 2,
+        tags: ['virulence', 'immune evasion']
+      },
+      {
+        id: 'staph-6',
+        question: 'What are the features of Staphylococcal food poisoning?',
+        answer: 'Preformed heat-stable enterotoxin (survives cooking)\n- Incubation: 1-6 hours (shortest)\n- Symptoms: Vomiting > diarrhea, NO fever\n- Self-limiting (24 hours)\n- Foods: Cream pastries, salads, processed meat\n- No antibiotic treatment needed',
+        difficulty: 2,
+        tags: ['food poisoning', 'enterotoxin']
+      },
+      {
+        id: 'staph-7',
+        question: 'What is the selective medium for Staphylococcus and how does it work?',
+        answer: 'Mannitol Salt Agar (MSA):\n- Contains 7.5% NaCl (selective - only Staph tolerates high salt)\n- Contains mannitol + phenol red indicator\n- S. aureus: Yellow colonies (ferments mannitol, produces acid)\n- CoNS: Pink/red colonies (no mannitol fermentation)',
+        difficulty: 2,
+        tags: ['culture', 'identification']
+      },
+      {
+        id: 'staph-8',
+        question: 'What is Toxic Shock Syndrome and its diagnostic criteria?',
+        answer: 'Caused by TSST-1 (superantigen) or enterotoxins\n\nCriteria:\n1. Fever ≥38.9°C\n2. Diffuse macular rash (sunburn-like)\n3. Desquamation (1-2 weeks later, palms/soles)\n4. Hypotension (SBP <90)\n5. ≥3 organ system involvement\n\nAssociated with tampon use, surgical packing',
+        difficulty: 3,
+        tags: ['TSS', 'superantigen']
+      },
+      {
+        id: 'staph-9',
+        question: 'How do you differentiate S. saprophyticus from S. epidermidis?',
+        answer: 'Novobiocin susceptibility test:\n- S. saprophyticus: RESISTANT (zone <16mm)\n- S. epidermidis: Sensitive\n\nClinical clue: S. saprophyticus causes UTI in young sexually active women ("honeymoon cystitis")',
+        difficulty: 2,
+        tags: ['CoNS', 'identification']
+      },
+      {
+        id: 'staph-10',
+        question: 'What is the treatment approach for MRSA infections?',
+        answer: 'Mild skin/soft tissue: TMP-SMX, doxycycline, or clindamycin (oral)\n\nSevere/Bacteremia: Vancomycin IV (drug of choice)\n\nVancomycin alternatives (if MIC 1-2 or failure): Daptomycin, linezolid\n\nCeftaroline: 5th gen cephalosporin with MRSA activity',
+        difficulty: 3,
+        tags: ['MRSA', 'treatment']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'staph-case-1',
+        title: 'Post-operative Wound Infection',
+        presentation: 'A 55-year-old man presents 5 days after hip replacement surgery with fever, wound erythema, and purulent discharge. Blood cultures and wound cultures are sent.',
+        question: 'What is the most likely causative organism and how would you confirm it?',
+        answer: 'Most likely: Staphylococcus aureus (most common cause of surgical site infections)\n\nConfirmation:\n1. Gram stain: Gram-positive cocci in clusters\n2. Culture: Golden yellow colonies on blood agar, β-hemolysis\n3. Catalase: Positive\n4. Coagulase: Positive (tube test)\n5. If positive: Test for MRSA (cefoxitin disk, mecA PCR)\n\nTreatment: Based on sensitivity - MSSA (flucloxacillin), MRSA (vancomycin)',
+        keyLearning: 'S. aureus is the most common cause of surgical site infections; always test for MRSA in healthcare settings',
+        difficulty: 2
+      },
+      {
+        id: 'staph-case-2',
+        title: 'Toxic Shock Syndrome',
+        presentation: 'A 22-year-old woman presents with high fever (40°C), diffuse rash, hypotension (BP 80/50), vomiting, and diarrhea. She is menstruating and using tampons. Labs show elevated creatinine and liver enzymes.',
+        question: 'What is the diagnosis and what is the pathogenesis?',
+        answer: 'Diagnosis: Menstrual Toxic Shock Syndrome\n\nPathogenesis:\n- S. aureus colonizing vagina/tampon produces TSST-1\n- TSST-1 is a SUPERANTIGEN\n- Binds MHC class II and T-cell receptor outside antigen groove\n- Massive polyclonal T-cell activation (up to 20% of T-cells)\n- Cytokine storm: TNF-α, IL-1, IL-2\n- Multi-organ dysfunction\n\nTreatment:\n1. Remove tampon\n2. Fluid resuscitation\n3. Clindamycin (stops toxin production)\n4. Anti-staphylococcal antibiotic\n5. IVIG (neutralizes toxin)',
+        keyLearning: 'TSST-1 is a superantigen causing massive non-specific T-cell activation; clindamycin suppresses toxin synthesis',
+        difficulty: 3
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['streptococcus', 'antimicrobials'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE', 'INI_CET'],
+  estimatedMinutes: 45,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// STREPTOCOCCUS
+// =============================================================================
+
+const streptococcusTopic: LibraryTopic = {
+  id: 'streptococcus',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Streptococcus',
+  slug: 'streptococcus',
+  description: 'GAS, GBS, S. pneumoniae, viridans, classification, diseases',
+  content: {
+    concept: `# Streptococcus
+
+## Overview
+Streptococci are Gram-positive cocci arranged in **chains or pairs**. They are catalase-negative (differentiating them from Staphylococci). Classification is based on hemolysis pattern (Brown's classification) and Lancefield grouping (cell wall carbohydrate antigens).
+
+## Classification
+
+### By Hemolysis (Brown's Classification)
+| Type | Hemolysis | Appearance | Examples |
+|------|-----------|------------|----------|
+| **α (Alpha)** | Partial | Green discoloration | S. pneumoniae, Viridans group |
+| **β (Beta)** | Complete | Clear zone | S. pyogenes (GAS), S. agalactiae (GBS) |
+| **γ (Gamma)** | None | No change | Enterococcus, some Viridans |
+
+### Lancefield Grouping (β-hemolytic)
+Based on C-carbohydrate antigen in cell wall (Groups A-V)
+
+| Group | Species | Key Feature |
+|-------|---------|-------------|
+| **A** | S. pyogenes | Pharyngitis, RF, PSGN |
+| **B** | S. agalactiae | Neonatal sepsis, meningitis |
+| **C, G** | S. dysgalactiae | Similar to GAS |
+| **D** | Enterococcus (formerly) | Now separate genus |
+
+---
+
+## Streptococcus pyogenes (Group A Streptococcus - GAS)
+
+### Morphology
+- Gram-positive cocci in chains
+- Non-motile, non-sporing
+- Capsule: Hyaluronic acid (non-immunogenic - mimics host tissue)
+
+### Cultural Characteristics
+- **Blood agar**: β-hemolytic, small (0.5-1mm) colonies
+- **Crystal violet blood agar**: Selective medium
+- **Pike's medium**: Selective enrichment
+- Optimum: 37°C, aerobic with 5-10% CO₂
+
+### Virulence Factors
+
+#### Cell Surface
+| Factor | Function |
+|--------|----------|
+| **M protein** | Major virulence factor, antiphagocytic, >200 serotypes |
+| **Hyaluronic acid capsule** | Antiphagocytic (mimics host) |
+| **Lipoteichoic acid** | Adhesion to epithelium |
+| **F protein (Protein F)** | Binds fibronectin |
+
+#### Enzymes
+| Enzyme | Function |
+|--------|----------|
+| **Streptokinase** | Plasminogen → plasmin (thrombolysis) |
+| **Streptodornase (DNase)** | Liquefies pus |
+| **Hyaluronidase** | Spreading factor |
+| **C5a peptidase** | Degrades complement |
+| **Streptolysin O** | Oxygen-labile, immunogenic (ASO test) |
+| **Streptolysin S** | Oxygen-stable, non-immunogenic, causes β-hemolysis |
+
+#### Toxins
+| Toxin | Mechanism | Disease |
+|-------|-----------|---------|
+| **Streptococcal Pyrogenic Exotoxins (SPE A, B, C)** | Superantigens | Scarlet fever, STSS |
+| **Exotoxin B** | Cysteine protease | Necrotizing fasciitis |
+
+### Diseases
+
+#### Suppurative Diseases
+1. **Pharyngitis (Strep throat)**
+   - Most common bacterial cause of pharyngitis (15-30% of pediatric cases)
+   - Exudative tonsillitis, tender anterior cervical lymphadenopathy
+   - Centor criteria: Fever, exudate, adenopathy, no cough
+   - Treatment: Penicillin V (prevents RF)
+
+2. **Skin Infections**
+   - **Impetigo**: Honey-crusted lesions, can lead to PSGN (not RF)
+   - **Erysipelas**: Raised, well-demarcated, "butterfly" facial distribution
+   - **Cellulitis**: Deeper, less demarcated
+
+3. **Scarlet Fever**
+   - Follows pharyngitis (1-2 days later)
+   - SPE-mediated (pyrogenic exotoxin)
+   - "Sandpaper" rash, strawberry tongue, Pastia's lines, circumoral pallor
+   - Desquamation in convalescence
+
+4. **Necrotizing Fasciitis (Type II)**
+   - "Flesh-eating bacteria"
+   - Rapid spread along fascial planes
+   - Pain out of proportion to findings
+   - Surgical emergency (debridement essential)
+
+5. **Streptococcal Toxic Shock Syndrome (STSS)**
+   - Superantigen-mediated (SPE)
+   - Similar to staphylococcal TSS but higher mortality
+   - Often associated with soft tissue infection
+
+#### Non-Suppurative (Post-Streptococcal) Diseases
+
+##### Acute Rheumatic Fever (ARF)
+- Follows **pharyngitis** only (not skin infection)
+- Latency: 2-3 weeks
+- Molecular mimicry: M protein antigens cross-react with heart, joints, brain
+- **Jones Criteria (2015 WHO)**:
+
+| Major Criteria | Minor Criteria |
+|----------------|----------------|
+| Carditis (pancarditis) | Arthralgia |
+| Polyarthritis (migratory, large joints) | Fever |
+| Chorea (Sydenham's) | Elevated ESR/CRP |
+| Erythema marginatum | Prolonged PR interval |
+| Subcutaneous nodules | |
+
+**Diagnosis**: Evidence of recent strep infection + 2 major OR 1 major + 2 minor criteria
+
+##### Post-Streptococcal Glomerulonephritis (PSGN)
+- Follows pharyngitis (1-2 weeks) OR skin infection (3-6 weeks)
+- Immune complex deposition in glomeruli
+- "Nephritic syndrome": Hematuria, hypertension, edema, oliguria
+- Low C3 complement
+- "Lumpy-bumpy" deposits on immunofluorescence
+- Self-limiting in children (good prognosis)
+
+### Laboratory Diagnosis
+
+#### Rapid Tests
+- **Rapid Antigen Detection Test (RADT)**: High specificity (>95%), moderate sensitivity
+- **Throat culture**: Gold standard (blood agar, 24-48h)
+
+#### Serological Tests (for post-streptococcal sequelae)
+| Test | What it Detects | Use |
+|------|-----------------|-----|
+| **ASO (Anti-Streptolysin O)** | Antibodies to Streptolysin O | Rising titers in ARF (pharyngitis) |
+| **Anti-DNase B** | Antibodies to DNase B | Better for skin infections (PSGN) |
+| **Streptozyme** | Multiple antibodies | Screening |
+
+#### Identification
+- **Bacitracin sensitive**: GAS (zone >10mm)
+- **PYR test (L-pyrrolidonyl arylamidase)**: Positive for GAS and Enterococcus
+- **Lancefield grouping**: Group A antigen
+
+### Treatment
+- **Drug of choice**: Penicillin (no resistance!)
+- Alternatives: Amoxicillin, cephalosporins, macrolides (if allergic)
+- Duration: 10 days (to prevent RF)
+- Necrotizing fasciitis: Penicillin + clindamycin + surgical debridement
+
+### Prevention
+- Primary prophylaxis: Treat acute infection
+- Secondary prophylaxis (RF): Benzathine penicillin monthly for 5 years or until age 21 (longer if carditis)
+
+---
+
+## Streptococcus agalactiae (Group B Streptococcus - GBS)
+
+### Key Features
+- β-hemolytic, Lancefield Group B
+- Normal vaginal flora (25% women colonized)
+- CAMP test positive (arrow-shaped hemolysis with S. aureus)
+- Hippurate hydrolysis positive
+
+### Diseases
+1. **Neonatal Infections** (most important)
+   - Early-onset (<7 days): Sepsis, pneumonia, meningitis
+   - Late-onset (7 days-3 months): Meningitis predominantly
+   - Highest risk: Premature, prolonged rupture of membranes
+
+2. **Adult Infections**
+   - Diabetics, elderly, immunocompromised
+   - UTI, skin/soft tissue, bacteremia
+
+### Prevention
+- Universal screening at 35-37 weeks gestation
+- Intrapartum antibiotic prophylaxis (IAP): Penicillin G or ampicillin IV
+- Indications: GBS positive, previous GBS baby, GBS bacteriuria, unknown status with risk factors
+
+---
+
+## Streptococcus pneumoniae (Pneumococcus)
+
+### Morphology
+- Gram-positive **lancet-shaped diplococci** (flame-shaped)
+- Polysaccharide capsule (>100 serotypes)
+- Bile soluble (bile salts lyse S. pneumoniae)
+- Optochin sensitive
+
+### Cultural Characteristics
+- **Blood agar**: α-hemolytic, draughtsman/carrom coin colonies (central depression)
+- **Chocolate agar**: Best growth (autolysis releases NAD)
+- Requires CO₂ for primary isolation
+
+### Virulence Factors
+| Factor | Function |
+|--------|----------|
+| **Polysaccharide capsule** | Major virulence factor, antiphagocytic |
+| **Pneumolysin** | Pore-forming toxin, inhibits cilia |
+| **Autolysin** | Releases pneumolysin and inflammatory mediators |
+| **IgA protease** | Cleaves secretory IgA |
+| **Neuraminidase** | Exposes receptors |
+
+### Diseases
+1. **Pneumonia**: Most common cause of community-acquired pneumonia
+   - Lobar pneumonia (classical) or bronchopneumonia
+   - "Rusty" sputum
+
+2. **Meningitis**: Most common cause of adult bacterial meningitis
+   - Second most common in children (after N. meningitidis)
+
+3. **Otitis Media**: Most common cause in children (with H. influenzae)
+
+4. **Sinusitis**: Common cause
+
+### Laboratory Diagnosis
+| Test | Principle |
+|------|-----------|
+| **Gram stain** | Lancet-shaped diplococci |
+| **Bile solubility** | Positive (lyses in bile/deoxycholate) |
+| **Optochin sensitivity** | Zone ≥14mm (6mm disk) |
+| **Quellung reaction** | Capsular swelling with antisera |
+| **Urinary antigen** | Rapid, useful in pneumonia |
+
+### Treatment & Resistance
+- **Susceptible**: Penicillin G (meningitis: high-dose)
+- **Penicillin-resistant**: Due to altered PBPs (not β-lactamase)
+- Meningitis: Ceftriaxone + vancomycin (until susceptibility known)
+
+### Prevention
+- **PCV13**: Conjugate vaccine, children
+- **PPSV23**: Polysaccharide vaccine, adults ≥65, high-risk
+
+---
+
+## Viridans Group Streptococci
+
+### Key Features
+- α-hemolytic (green)
+- Optochin resistant (vs S. pneumoniae)
+- Bile insoluble (vs S. pneumoniae)
+- Normal oral flora
+
+### Species
+- S. mutans: Dental caries
+- S. sanguinis, S. mitis: Subacute bacterial endocarditis
+- S. bovis: Bacteremia/endocarditis associated with **colon cancer**
+
+### Clinical Significance
+- Subacute bacterial endocarditis (previously damaged/abnormal valves)
+- Dental caries (S. mutans - produces glucan)
+- **S. bovis bacteremia → Colonoscopy** (colon cancer screening)
+
+---
+
+*"No Group A streptococcal isolate has ever been documented to be resistant to penicillin" - A remarkable fact in the era of antimicrobial resistance.*`,
+    
+    keyPoints: [
+      'GAS (S. pyogenes): β-hemolytic, bacitracin sensitive, PYR positive',
+      'M protein is the major virulence factor - antiphagocytic, >200 serotypes',
+      'Rheumatic fever follows PHARYNGITIS only, PSGN follows both pharyngitis and skin infection',
+      'Jones criteria: 2 major OR 1 major + 2 minor + evidence of recent strep infection',
+      'GAS has NEVER developed penicillin resistance - always susceptible',
+      'GBS: CAMP test positive, hippurate hydrolysis positive, screen at 35-37 weeks',
+      'S. pneumoniae: Lancet-shaped diplococci, bile soluble, optochin sensitive',
+      'S. pneumoniae: Most common cause of CAP, adult meningitis, otitis media',
+      'Quellung reaction: Capsular swelling with type-specific antisera',
+      'S. bovis bacteremia → colonoscopy for colon cancer screening'
+    ],
+    
+    examPrep: {
+      summary: `**Streptococcus - High Yield Summary**
+
+**Classification**:
+- α-hemolytic: S. pneumoniae, Viridans
+- β-hemolytic: GAS (A), GBS (B)
+- Catalase NEGATIVE (vs Staphylococcus)
+
+**GAS Tests**: Bacitracin S, PYR +, Group A antigen
+**GBS Tests**: CAMP +, Hippurate +, Group B antigen
+**Pneumococcus**: Optochin S, Bile soluble, Quellung +
+
+**Post-Streptococcal Sequelae**:
+- ARF: Pharyngitis only, 2-3 weeks, Jones criteria
+- PSGN: Both pharyngitis & skin, immune complex`,
+      
+      mnemonics: [
+        'Jones criteria major: "JONES" - Joints (polyarthritis), O (carditis), Nodules (subcutaneous), Erythema marginatum, Sydenham chorea',
+        'PSGN timing: "Pharyngitis 1-2, Skin 3-6" (weeks)',
+        'GAS virulence: "M protein Makes Me Miserable" (Molecular mimicry, Major virulence)',
+        'Pneumococcus ID: "OB-GYN" - Optochin sensitive, Bile soluble, Green hemolysis, draughtsman coloNies',
+        'Scarlet fever: "Sandpaper Strawberry Pasties" (rash, tongue, Pastia\'s lines)'
+      ],
+      
+      highYield: [
+        'GAS: Only bacteria NEVER resistant to penicillin',
+        'Rheumatic fever: Pharyngitis only (skin infection → PSGN only)',
+        'Most common cause of CAP: S. pneumoniae',
+        'Most common cause of adult bacterial meningitis: S. pneumoniae',
+        'Most common cause of neonatal meningitis/sepsis: GBS',
+        'S. bovis bacteremia = colon cancer until proven otherwise',
+        'Penicillin resistance in pneumococcus: Altered PBPs (not β-lactamase)',
+        'CAMP test: GBS + S. aureus → arrowhead hemolysis'
+      ],
+      
+      commonMCQs: [
+        'Bacitracin sensitive streptococcus: S. pyogenes (GAS)',
+        'Most important virulence factor of GAS: M protein',
+        'Lancet-shaped diplococci: S. pneumoniae',
+        'Post-streptococcal sequelae following skin infection: PSGN (not ARF)',
+        'Endocarditis with colon cancer: S. bovis (gallolyticus)',
+        'Best serological test for post-streptococcal skin infection: Anti-DNase B',
+        'Screening time for GBS in pregnancy: 35-37 weeks'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 26', chapterTitle: 'Streptococcus', pages: '221-237' },
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 27', chapterTitle: 'Streptococcus pneumoniae', pages: '238-246' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'strep-1',
+        question: 'What differentiates GAS from GBS?',
+        answer: 'GAS (S. pyogenes):\n- Bacitracin SENSITIVE\n- PYR test POSITIVE\n- CAMP test negative\n\nGBS (S. agalactiae):\n- Bacitracin RESISTANT\n- PYR test negative\n- CAMP test POSITIVE\n- Hippurate hydrolysis positive',
+        difficulty: 2,
+        tags: ['identification', 'GAS', 'GBS']
+      },
+      {
+        id: 'strep-2',
+        question: 'What are the Jones criteria for Rheumatic Fever?',
+        answer: 'Diagnosis: Evidence of recent strep infection + 2 Major OR 1 Major + 2 Minor\n\nMAJOR (JONES):\n- Joints (migratory polyarthritis)\n- O/carditis (pancarditis)\n- Nodules (subcutaneous)\n- Erythema marginatum\n- Sydenham chorea\n\nMINOR:\n- Arthralgia, Fever\n- ↑ESR/CRP, Prolonged PR interval',
+        difficulty: 3,
+        tags: ['rheumatic fever', 'diagnosis']
+      },
+      {
+        id: 'strep-3',
+        question: 'Why does ARF follow pharyngitis but not skin infection?',
+        answer: 'Proposed theories:\n1. M protein serotypes causing pharyngitis (1, 3, 5, 6, 18) differ from skin strains\n2. Skin lipids may modify M protein immunogenicity\n3. Pharyngeal route provides better access to lymphoid tissue\n\nPSGN can follow BOTH pharyngitis and skin infection (different pathogenesis - immune complex)',
+        difficulty: 4,
+        tags: ['rheumatic fever', 'pathogenesis']
+      },
+      {
+        id: 'strep-4',
+        question: 'How do you differentiate S. pneumoniae from Viridans streptococci?',
+        answer: 'Both are α-hemolytic (green), but:\n\nS. pneumoniae:\n- Optochin SENSITIVE (zone ≥14mm)\n- Bile SOLUBLE (dissolves in bile)\n- Quellung reaction POSITIVE\n- Lancet-shaped diplococci\n\nViridans:\n- Optochin RESISTANT\n- Bile INSOLUBLE\n- Quellung negative',
+        difficulty: 2,
+        tags: ['pneumococcus', 'identification']
+      },
+      {
+        id: 'strep-5',
+        question: 'What are the features of Scarlet Fever?',
+        answer: 'Caused by: Streptococcal pyrogenic exotoxins (SPE A, B, C)\n\nFeatures:\n- Follows strep pharyngitis (1-2 days)\n- "Sandpaper" rash (diffuse, blanching)\n- Strawberry tongue (white → red)\n- Pastia lines (linear petechiae in skin folds)\n- Circumoral pallor\n- Desquamation during convalescence',
+        difficulty: 2,
+        tags: ['scarlet fever', 'toxins']
+      },
+      {
+        id: 'strep-6',
+        question: 'What is the significance of S. bovis bacteremia?',
+        answer: 'S. bovis (now S. gallolyticus) bacteremia or endocarditis is STRONGLY associated with COLON CANCER.\n\nAction: All patients with S. bovis bacteremia must undergo COLONOSCOPY.\n\nPathogenesis: Colonic tumors may provide portal of entry, or tumor products may promote S. bovis adherence.',
+        difficulty: 3,
+        tags: ['S. bovis', 'colon cancer']
+      },
+      {
+        id: 'strep-7',
+        question: 'What is the CAMP test and what does it diagnose?',
+        answer: 'CAMP test (Christie, Atkins, Munch-Petersen):\n- GBS streaked perpendicular to S. aureus β-hemolysin streak\n- CAMP factor from GBS enhances S. aureus hemolysis\n- Creates ARROWHEAD-shaped zone of complete hemolysis\n\nPositive: Group B Streptococcus (S. agalactiae)',
+        difficulty: 2,
+        tags: ['GBS', 'CAMP test']
+      },
+      {
+        id: 'strep-8',
+        question: 'What is the treatment and prophylaxis for GAS pharyngitis?',
+        answer: 'Treatment (to prevent ARF):\n- First-line: Penicillin V (oral) × 10 days\n- Alternatives: Amoxicillin, 1st gen cephalosporin\n- Penicillin allergy: Macrolides (azithromycin 5 days)\n\nSecondary prophylaxis (after ARF):\n- Benzathine penicillin G IM every 3-4 weeks\n- Duration: 5 years or until age 21 (longer if carditis)',
+        difficulty: 3,
+        tags: ['treatment', 'prophylaxis']
+      },
+      {
+        id: 'strep-9',
+        question: 'What is the mechanism of penicillin resistance in S. pneumoniae?',
+        answer: 'Mechanism: Altered Penicillin-Binding Proteins (PBPs)\n- NOT β-lactamase production\n- Mosaic PBP genes from transformation with other streptococci\n- Reduced affinity for β-lactams\n\nManagement:\n- Non-meningitis: High-dose penicillin may work\n- Meningitis: Ceftriaxone + vancomycin (until susceptibility known)',
+        difficulty: 3,
+        tags: ['pneumococcus', 'resistance']
+      },
+      {
+        id: 'strep-10',
+        question: 'What is GBS prophylaxis in pregnancy?',
+        answer: 'Screening: Universal vaginal-rectal swab at 35-37 weeks\n\nIntrapartum Antibiotic Prophylaxis (IAP) indications:\n- GBS positive culture\n- GBS bacteriuria in current pregnancy\n- Previous infant with GBS disease\n- Unknown GBS status WITH risk factors (preterm, ROM >18h, fever)\n\nRegimen: Penicillin G or Ampicillin IV until delivery',
+        difficulty: 3,
+        tags: ['GBS', 'pregnancy', 'prophylaxis']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'strep-case-1',
+        title: 'Pharyngitis Complications',
+        presentation: 'A 10-year-old boy presents with sore throat, fever, and cervical lymphadenopathy. Rapid strep test is positive. He is treated with 3 days of azithromycin. Three weeks later, he develops migratory joint pain and a new cardiac murmur.',
+        question: 'What complication has developed and what was the management error?',
+        answer: 'Complication: Acute Rheumatic Fever\n\nManagement Error:\n1. Inadequate duration: GAS pharyngitis requires 10 DAYS of treatment to prevent RF\n2. 3 days azithromycin is insufficient for RF prevention\n\nJones Criteria present:\n- Carditis (new murmur) - major\n- Polyarthritis (migratory) - major\n- Evidence of recent strep infection (positive rapid test)\n\nLesson: Complete 10-day course of antibiotics for GAS pharyngitis is critical for ARF prevention.',
+        keyLearning: 'GAS pharyngitis requires 10 days of treatment to prevent rheumatic fever - shorter courses are inadequate',
+        difficulty: 3
+      },
+      {
+        id: 'strep-case-2',
+        title: 'Neonatal Sepsis',
+        presentation: 'A preterm neonate (34 weeks) is delivered to a mother who did not receive prenatal care. Within 12 hours of birth, the baby develops respiratory distress, poor feeding, and temperature instability. Blood culture grows gram-positive cocci in chains.',
+        question: 'What is the most likely organism and how could this have been prevented?',
+        answer: 'Most likely organism: Group B Streptococcus (S. agalactiae)\n\nPresentation: Early-onset GBS disease (<7 days)\n- Pneumonia, sepsis, meningitis\n- Risk factors: Preterm, no prenatal care (no GBS screening)\n\nPrevention:\n1. Universal GBS screening at 35-37 weeks gestation\n2. Intrapartum antibiotic prophylaxis (Penicillin G IV) if:\n   - GBS positive\n   - Previous GBS infant\n   - Unknown status + risk factors (preterm, ROM >18h, fever)\n\nTreatment: Ampicillin + Gentamicin (empiric for neonatal sepsis)',
+        keyLearning: 'GBS is the most common cause of early-onset neonatal sepsis; universal screening and intrapartum prophylaxis prevent most cases',
+        difficulty: 3
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['staphylococcus', 'antimicrobials'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE', 'INI_CET'],
+  estimatedMinutes: 50,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// ENTEROCOCCUS
+// =============================================================================
+
+const enterococcusTopic: LibraryTopic = {
+  id: 'enterococcus',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Enterococcus',
+  slug: 'enterococcus',
+  description: 'E. faecalis, E. faecium, VRE, endocarditis, UTI, treatment',
+  content: {
+    concept: `# Enterococcus
+
+## Overview
+Enterococci were formerly classified as Group D Streptococci (Lancefield) but are now a separate genus. They are hardy organisms that survive harsh conditions and are important causes of healthcare-associated infections.
+
+## Key Species
+- **E. faecalis** (80-90% of clinical isolates)
+- **E. faecium** (more drug-resistant)
+
+## Morphology & Characteristics
+- Gram-positive cocci in pairs or short chains
+- Facultative anaerobe
+- Catalase negative
+- PYR positive (like GAS)
+- Bile esculin positive (Group D characteristic)
+- Growth in 6.5% NaCl (differentiates from other Group D streptococci)
+- Growth at 10-45°C
+- Survives 60°C for 30 minutes
+
+## Laboratory Identification
+
+| Test | Result |
+|------|--------|
+| Bile esculin agar | Positive (black colonies) |
+| 6.5% NaCl | Growth positive |
+| PYR test | Positive |
+| Catalase | Negative |
+| Hemolysis | Usually γ (non-hemolytic) |
+
+## Clinical Significance
+
+### Common Infections
+1. **Urinary Tract Infections**
+   - Second most common cause of nosocomial UTI
+   - Associated with catheters
+
+2. **Intra-abdominal Infections**
+   - Usually polymicrobial
+   - Post-surgical, biliary tract
+
+3. **Bacteremia**
+   - Often from GI/GU source
+   - Associated with central lines
+
+4. **Endocarditis**
+   - Third most common cause (after Staphylococci and Streptococci)
+   - Subacute course
+   - Often requires surgery
+
+5. **Wound Infections**
+   - Usually polymicrobial
+   - Surgical sites
+
+## Antimicrobial Resistance
+
+### Intrinsic Resistance
+| Class | Mechanism |
+|-------|-----------|
+| Cephalosporins | Low PBP affinity |
+| Aminoglycosides (low-level) | Poor uptake |
+| Clindamycin | Unknown mechanism |
+| TMP-SMX | Use exogenous folate |
+
+### Acquired Resistance
+
+#### Vancomycin Resistance (VRE)
+| Phenotype | Gene | D-Ala-D-Lac | Vancomycin MIC | Teicoplanin |
+|-----------|------|-------------|----------------|-------------|
+| **VanA** | vanA | + | High (>64) | Resistant |
+| **VanB** | vanB | + | Variable | Susceptible |
+| **VanC** | vanC | D-Ala-D-Ser | Low-level | Susceptible |
+
+**Mechanism**: vanA/B operons encode enzymes that modify peptidoglycan precursor from D-Ala-D-Ala to D-Ala-D-Lac, preventing vancomycin binding.
+
+**VanA** is transferable and most clinically significant.
+
+### High-Level Aminoglycoside Resistance (HLAR)
+- Aminoglycoside-modifying enzymes
+- Abolishes synergy with cell wall agents
+- Must test before combination therapy
+
+## Treatment
+
+### General Principles
+- Enterococci are TOLERANT to β-lactams (inhibit but don't kill)
+- BACTERICIDAL therapy requires synergy: β-lactam + aminoglycoside
+- Test for HLAR before combination therapy
+
+### Treatment Options
+
+| Infection | Regimen |
+|-----------|---------|
+| UTI (uncomplicated) | Ampicillin, Nitrofurantoin |
+| Serious/Endocarditis | Ampicillin + Gentamicin (6 weeks) |
+| VRE (non-serious) | Linezolid, Daptomycin |
+| VRE Endocarditis | Daptomycin + β-lactam or Linezolid |
+
+### Drugs Active Against VRE
+- **Linezolid** (bacteriostatic)
+- **Daptomycin** (bactericidal)
+- **Tigecycline** (not for bloodstream)
+- **Quinupristin-Dalfopristin** (E. faecium only, not E. faecalis)
+
+## Infection Control
+- Contact precautions for VRE colonized/infected patients
+- Hand hygiene critical
+- Environmental cleaning (survives on surfaces)
+- Antimicrobial stewardship
+
+---
+
+*"Enterococci are the consummate survivors - thriving in hostile environments and acquiring resistance determinants with remarkable efficiency."*`,
+    
+    keyPoints: [
+      'Enterococci: Former Group D Streptococci, now separate genus',
+      'Key tests: Bile esculin positive, growth in 6.5% NaCl, PYR positive',
+      'E. faecalis (80-90% of isolates), E. faecium (more resistant)',
+      'Intrinsically resistant to cephalosporins, low-level aminoglycosides, clindamycin',
+      'VanA phenotype: High-level vancomycin and teicoplanin resistance, transferable',
+      'VanB phenotype: Vancomycin resistant but teicoplanin susceptible',
+      'Bactericidal therapy requires synergy: β-lactam + aminoglycoside',
+      'Must test for HLAR before using aminoglycoside combination',
+      'VRE treatment: Linezolid, daptomycin, tigecycline',
+      'Third most common cause of infective endocarditis'
+    ],
+    
+    examPrep: {
+      summary: `**Enterococcus - High Yield Summary**
+
+**Identification**:
+- Bile esculin: Positive (black)
+- 6.5% NaCl: Growth
+- PYR: Positive
+- Catalase: Negative
+
+**Intrinsic Resistance**: Cephalosporins, low-level aminoglycosides, clindamycin, TMP-SMX
+
+**VRE Phenotypes**:
+- VanA: Vancomycin R, Teicoplanin R, transferable
+- VanB: Vancomycin R, Teicoplanin S
+
+**Treatment**: Ampicillin ± gentamicin (synergy); VRE: Linezolid, daptomycin`,
+      
+      mnemonics: [
+        'Enterococcus = "ENTERs harsh environments" (bile, high salt, heat)',
+        'VanA = "A"ll resistant (vancomycin AND teicoplanin)',
+        'VanB = "B"etter - teicoplanin still works',
+        'HLAR = No synergy, aminoglycosides won\'t help'
+      ],
+      
+      highYield: [
+        'Bile esculin positive + growth in 6.5% NaCl = Enterococcus',
+        'VanA is transferable to Staphylococcus (VRSA threat)',
+        'Cephalosporins do NOT cover Enterococcus (common clinical error)',
+        'Quinupristin-dalfopristin: Works on E. faecium, NOT E. faecalis',
+        'Daptomycin inactivated by surfactant - not for pneumonia'
+      ],
+      
+      commonMCQs: [
+        'Organism intrinsically resistant to cephalosporins: Enterococcus',
+        'VanA phenotype confers resistance to: Vancomycin AND teicoplanin',
+        'Third most common cause of infective endocarditis: Enterococcus',
+        'Drug for VRE UTI: Linezolid or Nitrofurantoin'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 26', chapterTitle: 'Streptococcus (Enterococcus section)', pages: '235-237' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'entero-1',
+        question: 'How do you differentiate Enterococcus from other Group D streptococci?',
+        answer: 'Both are bile esculin positive, but:\n\nEnterococcus: Grows in 6.5% NaCl\nGroup D Streptococci (S. bovis): Does NOT grow in 6.5% NaCl\n\nBoth are PYR positive (also GAS)',
+        difficulty: 2,
+        tags: ['identification']
+      },
+      {
+        id: 'entero-2',
+        question: 'What is the mechanism of VanA vancomycin resistance?',
+        answer: 'vanA operon encodes enzymes that modify peptidoglycan precursor:\n\nNormal: D-Ala-D-Ala (vancomycin binding site)\nModified: D-Ala-D-Lac (vancomycin cannot bind)\n\nVanA: High-level resistance to BOTH vancomycin and teicoplanin\nTransferable on transposons (can spread to Staph)',
+        difficulty: 3,
+        tags: ['resistance', 'VRE']
+      },
+      {
+        id: 'entero-3',
+        question: 'Why is HLAR testing important before treating enterococcal endocarditis?',
+        answer: 'Enterococci are TOLERANT to β-lactams alone (inhibited but not killed).\n\nBactericidal therapy requires SYNERGY: β-lactam + aminoglycoside\n\nHLAR (High-Level Aminoglycoside Resistance): Abolishes synergy due to aminoglycoside-modifying enzymes.\n\nIf HLAR positive: Aminoglycoside combination is useless; consider prolonged β-lactam or alternative agents.',
+        difficulty: 3,
+        tags: ['treatment', 'endocarditis']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'entero-case-1',
+        title: 'VRE Bacteremia',
+        presentation: 'A 70-year-old man with recent hospitalization for cholecystitis develops fever while on ceftriaxone. Blood cultures grow gram-positive cocci in chains that are vancomycin-resistant.',
+        question: 'What is the organism and why did it emerge?',
+        answer: 'Organism: Vancomycin-Resistant Enterococcus (VRE)\n\nWhy it emerged:\n1. Ceftriaxone provides NO coverage against Enterococcus (intrinsic resistance)\n2. Suppression of competing flora allowed overgrowth\n3. GI/biliary source likely (cholecystitis)\n\nManagement:\n1. Stop ceftriaxone\n2. Test for VanA vs VanB phenotype\n3. Treatment options: Linezolid or Daptomycin\n4. Source control (repeat imaging)',
+        keyLearning: 'Cephalosporins select for Enterococcus; VRE often emerges after broad-spectrum antibiotic use',
+        difficulty: 3
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology', 'streptococcus'],
+  relatedTopics: ['streptococcus', 'antimicrobials'],
+  difficulty: 3,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 25,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// BACILLUS
+// =============================================================================
+
+const bacillusTopic: LibraryTopic = {
+  id: 'bacillus',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Bacillus',
+  slug: 'bacillus',
+  description: 'B. anthracis, B. cereus, anthrax, food poisoning, spores',
+  content: {
+    concept: `# Bacillus
+
+## Overview
+Bacillus species are **large, Gram-positive, aerobic/facultative, spore-forming rods**. The genus includes the deadly pathogen B. anthracis and the common food poisoning agent B. cereus.
+
+## Key Species
+
+| Species | Capsule | Motility | Hemolysis | Clinical |
+|---------|---------|----------|-----------|----------|
+| **B. anthracis** | + (Poly-D-glutamic acid) | Non-motile | Non-hemolytic | Anthrax |
+| **B. cereus** | - | Motile | β-hemolytic | Food poisoning |
+
+---
+
+## Bacillus anthracis
+
+### Morphology
+- Large rods (4-8 × 1-1.5 μm), "Boxcar" shaped
+- **Central/subterminal spores** (do not bulge cell)
+- **Capsule**: Poly-D-glutamic acid (unique - polypeptide, not polysaccharide)
+- Arranged in long chains - "bamboo stick" appearance
+- Gram-positive (may appear Gram-variable)
+- **Non-motile** (key distinction from B. cereus)
+
+### Cultural Characteristics
+- **Nutrient agar**: "Medusa head" or "frosted glass" colonies
+- **Blood agar**: Non-hemolytic (γ-hemolysis)
+- **Bicarbonate agar + CO₂**: Capsule production (mucoid colonies)
+- **String of pearls**: Penicillin (0.5 U/ml) causes chain formation
+
+### Virulence Factors
+
+#### Plasmid-Encoded
+| Plasmid | Gene | Product | Function |
+|---------|------|---------|----------|
+| **pXO1** | pagA, lef, cya | Anthrax toxin | Tissue damage |
+| **pXO2** | capA, B, C | Capsule | Antiphagocytic |
+
+#### Anthrax Toxin (A-B toxin system)
+Three proteins that work together:
+| Component | Function |
+|-----------|----------|
+| **Protective Antigen (PA)** | Binds cell receptor, forms pore (B component) |
+| **Edema Factor (EF)** | Adenylate cyclase → ↑cAMP → edema |
+| **Lethal Factor (LF)** | Metalloprotease → cleaves MAPK kinases → cell death |
+
+- PA + EF = **Edema Toxin**
+- PA + LF = **Lethal Toxin**
+
+### Anthrax - Clinical Forms
+
+#### 1. Cutaneous Anthrax (95% of cases)
+- Entry through skin abrasion
+- Incubation: 1-7 days
+- **Malignant pustule**: Painless papule → vesicle → BLACK ESCHAR (painless!)
+- "Coal" appearance (Greek: anthrakis = coal)
+- Surrounding edema (gelatinous, non-pitting)
+- Mortality: <1% if treated, ~20% untreated
+
+#### 2. Inhalational Anthrax (Woolsorter's Disease)
+- Inhalation of spores (bioterrorism concern)
+- Spores → mediastinal lymph nodes → germination
+- Incubation: 1-5 days (up to 60 days)
+- **Biphasic illness**:
+  - Prodrome: Flu-like (fever, malaise, chest discomfort)
+  - Fulminant: Hemorrhagic mediastinitis, sepsis, meningitis
+- **"Widened mediastinum"** on CXR (pathognomonic)
+- Mortality: >80% even with treatment
+
+#### 3. Gastrointestinal Anthrax
+- Ingestion of contaminated meat
+- Oropharyngeal or intestinal forms
+- Severe GI symptoms, ascites
+- High mortality
+
+#### 4. Injection Anthrax
+- Associated with contaminated heroin
+- Soft tissue infection, sepsis
+
+### Laboratory Diagnosis
+
+| Test | Finding |
+|------|---------|
+| Gram stain | Large Gram-positive rods in chains |
+| Spore stain | Central/subterminal, non-bulging |
+| Culture | Medusa head colonies, non-hemolytic |
+| Motility | Non-motile (vs B. cereus) |
+| **M'Fadyean reaction** | Polychrome methylene blue → capsule halo |
+| **Ascoli thermoprecipitin test** | Detects antigen in animal products |
+| PCR | pagA, capA genes |
+
+### Treatment
+- **Cutaneous**: Ciprofloxacin or Doxycycline (60 days)
+- **Systemic**: Ciprofloxacin + another agent (meropenem, rifampin) + antitoxin
+- **Post-exposure prophylaxis**: Ciprofloxacin × 60 days ± vaccine
+
+### Prevention
+- **Vaccine**: Anthrax Vaccine Adsorbed (AVA) - protective antigen based
+- Spore decontamination: Autoclaving, chemical agents
+- Biosecurity (Category A bioterrorism agent)
+
+---
+
+## Bacillus cereus
+
+### Key Features
+- **Motile** (peritrichous flagella)
+- **β-hemolytic**
+- Spore-forming
+
+### Food Poisoning
+
+| Syndrome | Toxin | Food | Incubation | Symptoms |
+|----------|-------|------|------------|----------|
+| **Emetic** | Cereulide (heat-stable) | Fried rice | 1-6 hours | Vomiting |
+| **Diarrheal** | Enterotoxin (heat-labile) | Meat, vegetables | 8-16 hours | Watery diarrhea |
+
+#### Emetic Syndrome ("Fried Rice Syndrome")
+- Preformed toxin (cereulide) - heat-stable
+- Cooked rice left at room temperature → spore germination → toxin production
+- Short incubation (1-6 hours) - like S. aureus
+- Profuse vomiting, self-limiting
+
+#### Diarrheal Syndrome
+- Enterotoxin produced in vivo (heat-labile)
+- Longer incubation (8-16 hours) - like C. perfringens
+- Watery diarrhea, abdominal cramps
+
+### Other Infections
+- Ocular infections (traumatic/post-surgical) - severe, may cause blindness
+- Bacteremia in immunocompromised
+- Catheter-related infections
+
+### Treatment
+- Food poisoning: Supportive (self-limiting)
+- Serious infections: Vancomycin, carbapenems, fluoroquinolones
+
+---
+
+*"B. anthracis: 'Medusa head' colonies that turn patients to stone - the prototypical bioterrorism agent."*`,
+    
+    keyPoints: [
+      'B. anthracis: Non-motile, non-hemolytic, poly-D-glutamic acid capsule',
+      'B. cereus: Motile, β-hemolytic, causes fried rice food poisoning',
+      'Anthrax toxin: PA (binding) + EF (edema) or LF (lethal)',
+      'Cutaneous anthrax: Painless black eschar (malignant pustule)',
+      'Inhalational anthrax: Widened mediastinum, high mortality',
+      'M\'Fadyean reaction: Polychrome methylene blue shows capsule halo',
+      '"Medusa head" colonies characteristic of B. anthracis',
+      'B. cereus emetic toxin (cereulide): Heat-stable, preformed, causes vomiting',
+      'Fried rice syndrome: B. cereus spores survive cooking, germinate at room temp',
+      'Anthrax treatment: Ciprofloxacin × 60 days (spore persistence)'
+    ],
+    
+    examPrep: {
+      summary: `**Bacillus - High Yield Summary**
+
+**B. anthracis vs B. cereus**:
+- Motility: Anthracis = NON-motile, Cereus = Motile
+- Hemolysis: Anthracis = γ, Cereus = β
+- Capsule: Anthracis = Poly-D-glutamic acid
+
+**Anthrax Toxin**: PA + EF = Edema toxin, PA + LF = Lethal toxin
+
+**Cutaneous anthrax**: Painless black eschar
+**Inhalational**: Widened mediastinum
+
+**B. cereus food poisoning**:
+- Emetic: Fried rice, 1-6h, vomiting
+- Diarrheal: Meat, 8-16h, diarrhea`,
+      
+      mnemonics: [
+        'Anthrax = A for "Atypical" - painless lesion, unique polypeptide capsule',
+        'B. cereus = "Seriously Emesis" from fried rice (cereulide)',
+        'PA + LF = Lethal, PA + EF = Edema (PE = Edema... pulmonary edema has fluid)',
+        'Non-motile, Non-hemolytic = B. aNthracis (N for Neither motile nor hemolytic)'
+      ],
+      
+      highYield: [
+        'Only bacterium with polypeptide capsule (poly-D-glutamic acid)',
+        'Cutaneous anthrax: PAINLESS black eschar (malignant pustule)',
+        'Inhalational anthrax: Widened mediastinum (hemorrhagic mediastinitis)',
+        'Category A bioterrorism agent',
+        'B. cereus fried rice syndrome: Emetic toxin is heat-stable',
+        'Treatment: 60 days (spores can persist and germinate)',
+        'B. anthracis is NON-motile (distinguishes from B. cereus)'
+      ],
+      
+      commonMCQs: [
+        'Bacterium with polypeptide capsule: B. anthracis',
+        'Non-motile spore-forming pathogen: B. anthracis',
+        'Food poisoning from reheated fried rice: B. cereus (emetic)',
+        'Black eschar on skin: Cutaneous anthrax',
+        'Bioterrorism agent with widened mediastinum: B. anthracis'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 28', chapterTitle: 'Bacillus', pages: '247-257' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'bacillus-1',
+        question: 'What is unique about the capsule of B. anthracis?',
+        answer: 'B. anthracis capsule is made of POLY-D-GLUTAMIC ACID:\n- Only bacterium with polypeptide capsule (all others are polysaccharide)\n- Encoded on plasmid pXO2\n- Antiphagocytic\n- Not immunogenic (poor vaccine target)\n- Detected by M\'Fadyean reaction (polychrome methylene blue → pink halo)',
+        difficulty: 2,
+        tags: ['anthrax', 'capsule']
+      },
+      {
+        id: 'bacillus-2',
+        question: 'Describe the components and mechanism of anthrax toxin',
+        answer: 'Anthrax toxin has THREE components (binary A-B toxin system):\n\n1. **Protective Antigen (PA)**: B component - binds receptor, forms pore\n2. **Edema Factor (EF)**: A component - adenylate cyclase (↑cAMP → edema)\n3. **Lethal Factor (LF)**: A component - metalloprotease (cleaves MAPK kinases → death)\n\nCombinations:\n- PA + EF = Edema Toxin\n- PA + LF = Lethal Toxin\n\nPA is the vaccine target.',
+        difficulty: 3,
+        tags: ['anthrax', 'toxin']
+      },
+      {
+        id: 'bacillus-3',
+        question: 'How do you differentiate B. anthracis from B. cereus in the lab?',
+        answer: 'Key differences:\n\n| Feature | B. anthracis | B. cereus |\n|---------|-------------|----------|\n| Motility | NON-motile | Motile (peritrichous) |\n| Hemolysis | γ (none) | β (strong) |\n| Capsule | Present (poly-D-glutamate) | Absent |\n| Colony | Medusa head | Irregular, spreading |\n| Penicillin | Sensitive | Often resistant |\n\nMnemonic: "aNthracis = Neither motile Nor hemolytic"',
+        difficulty: 2,
+        tags: ['identification']
+      },
+      {
+        id: 'bacillus-4',
+        question: 'What are the two food poisoning syndromes caused by B. cereus?',
+        answer: 'EMETIC syndrome:\n- Toxin: Cereulide (heat-STABLE, preformed)\n- Food: Fried rice (reheated)\n- Incubation: 1-6 hours (short, like S. aureus)\n- Symptoms: Vomiting predominant\n\nDIARRHEAL syndrome:\n- Toxin: Enterotoxin (heat-labile, produced in vivo)\n- Food: Meat, vegetables, sauces\n- Incubation: 8-16 hours (like C. perfringens)\n- Symptoms: Watery diarrhea, cramps',
+        difficulty: 2,
+        tags: ['food poisoning', 'B. cereus']
+      },
+      {
+        id: 'bacillus-5',
+        question: 'What is the clinical presentation of cutaneous anthrax?',
+        answer: 'Cutaneous Anthrax (95% of cases):\n\n1. Entry through skin abrasion\n2. Papule → Vesicle → PAINLESS BLACK ESCHAR\n   - Eschar = "coal" (anthracis = coal in Greek)\n3. Surrounding gelatinous, non-pitting edema\n4. Regional lymphadenopathy\n\nKey point: PAINLESS lesion (vs other infections)\n\nMortality: <1% if treated, ~20% untreated\n\nTreatment: Ciprofloxacin/doxycycline × 60 days',
+        difficulty: 2,
+        tags: ['anthrax', 'cutaneous']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'bacillus-case-1',
+        title: 'Bioterrorism Alert',
+        presentation: 'A postal worker presents with malaise, fever, and non-productive cough for 2 days. CXR shows widened mediastinum. He works in a mail sorting facility that received suspicious packages.',
+        question: 'What is the likely diagnosis and immediate management?',
+        answer: 'Diagnosis: Inhalational Anthrax (likely bioterrorism)\n\nClues:\n- Widened mediastinum (hemorrhagic mediastinitis)\n- Postal worker with suspicious mail exposure\n- Flu-like prodrome\n\nImmediate Management:\n1. Isolate patient (standard precautions sufficient - not person-to-person)\n2. Start treatment: Ciprofloxacin + 1-2 additional agents (meropenem, linezolid)\n3. Notify CDC/public health immediately\n4. Consider anthrax antitoxin\n5. Collect blood cultures, nasal swabs\n6. Post-exposure prophylaxis for exposed contacts\n\nDuration: 60 days (spore persistence)',
+        keyLearning: 'Widened mediastinum + flu-like illness = suspect inhalational anthrax; treat empirically while confirming diagnosis',
+        difficulty: 4
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['clostridium', 'spore-forming-bacteria'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE', 'BIOTERRORISM'],
+  estimatedMinutes: 35,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// CLOSTRIDIUM
+// =============================================================================
+
+const clostridiumTopic: LibraryTopic = {
+  id: 'clostridium',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Clostridium',
+  slug: 'clostridium',
+  description: 'C. difficile, tetani, botulinum, perfringens, toxins, diseases',
+  content: {
+    concept: `# Clostridium
+
+## Overview
+Clostridia are **large, Gram-positive, anaerobic, spore-forming rods**. They produce some of the most potent toxins known and cause a spectrum of diseases from food poisoning to life-threatening gas gangrene.
+
+## Key Species
+
+| Species | Disease | Toxin Mechanism |
+|---------|---------|-----------------|
+| **C. tetani** | Tetanus | Blocks inhibitory neurotransmitters |
+| **C. botulinum** | Botulism | Blocks acetylcholine release |
+| **C. perfringens** | Gas gangrene, food poisoning | Phospholipase, enterotoxin |
+| **C. difficile** | Pseudomembranous colitis | Toxin A & B |
+
+---
+
+## Clostridium tetani
+
+### Morphology
+- Gram-positive rod with **terminal round spore** → "drumstick" or "tennis racket" appearance
+- Strict anaerobe
+- Motile (peritrichous flagella)
+
+### Pathogenesis
+1. Spores enter wound (puncture, umbilical stump, contaminated injection)
+2. Anaerobic conditions → germination
+3. Production of **Tetanospasmin** (neurotoxin)
+
+### Tetanospasmin
+- Encoded by plasmid
+- A-B toxin: B (heavy chain) binds, A (light chain) is enzymatic
+- Travels **retrograde** along nerves to CNS
+- **Cleaves synaptobrevin (VAMP)** in inhibitory interneurons
+- Prevents release of GABA and glycine
+- Result: **Spastic paralysis** (unopposed excitation)
+
+### Clinical Features
+
+| Type | Features |
+|------|----------|
+| **Generalized** | Trismus (lockjaw), risus sardonicus, opisthotonus, reflex spasms |
+| **Localized** | Muscle rigidity near wound |
+| **Cephalic** | Follows head injury, cranial nerve involvement |
+| **Neonatal** | Umbilical infection in unimmunized mother's baby |
+
+**Classic Triad**: Trismus + Risus sardonicus + Opisthotonus
+
+Spasms triggered by minor stimuli (noise, light, touch). Patient remains **conscious** during spasms.
+
+### Diagnosis
+- **Clinical** (toxin rarely detected)
+- "Spatula test": Touch posterior pharynx → jaw clamps (reflex spasm) vs normal gag
+
+### Treatment
+1. **Wound debridement** (remove source)
+2. **Human Tetanus Immunoglobulin (HTIG)** - neutralizes unbound toxin
+3. **Metronidazole** (kills organism, prevents further toxin production)
+4. **Supportive**: Muscle relaxants (diazepam), mechanical ventilation
+5. **Active immunization**: Toxoid after recovery (infection doesn't confer immunity)
+
+### Prevention
+- **DPT/Tdap vaccine**: Tetanus toxoid (formalin-inactivated toxin)
+- Primary series: 3 doses
+- Boosters: Every 10 years
+- Wound management: TIG if unvaccinated or uncertain status
+
+---
+
+## Clostridium botulinum
+
+### Morphology
+- Large Gram-positive rod with **subterminal oval spore** → "tennis racket"
+- Strict anaerobe
+
+### Botulinum Toxin (BoNT)
+- **Most potent toxin known** (LD50: 1-2 μg/kg)
+- 7 serotypes (A-G); A, B, E most common in humans
+- A-B toxin: Binds presynaptic terminal at neuromuscular junction
+- **Cleaves SNARE proteins** (SNAP-25, synaptobrevin, syntaxin)
+- **Blocks acetylcholine release** → flaccid paralysis
+
+### Clinical Forms
+
+#### 1. Foodborne Botulism
+- Ingestion of **preformed toxin** in contaminated food
+- Home-canned vegetables, fermented foods, honey (infant)
+- Incubation: 12-36 hours
+- **Descending flaccid paralysis**:
+  - Starts with cranial nerves: Diplopia, ptosis, dysphagia, dysarthria (4 D's)
+  - Descends to trunk and limbs
+  - Respiratory paralysis (cause of death)
+- **No fever, sensory intact, alert**
+- Symmetric involvement
+
+#### 2. Infant Botulism
+- Ingestion of **spores** → germination in GI tract → toxin production
+- Source: Honey (do not give honey to infants <1 year!)
+- "Floppy baby" syndrome: Constipation, poor feeding, weak cry, hypotonia
+
+#### 3. Wound Botulism
+- Spores enter wound → germination → toxin production
+- Associated with IV drug use, traumatic wounds
+- Like foodborne but longer incubation, no GI symptoms
+
+#### 4. Iatrogenic Botulism
+- Overdose of therapeutic BoNT (cosmetic, dystonia treatment)
+
+### Diagnosis
+- **Clinical**: Symmetric descending paralysis, no fever, alert
+- **Mouse bioassay**: Inject patient serum into mice (one protected with antitoxin)
+- **EMG**: Incremental response with rapid stimulation
+- **Stool/food culture**: Organism or toxin detection
+
+### Treatment
+1. **Trivalent (A, B, E) antitoxin** (equine or human botulism immunoglobulin)
+   - Given early (only neutralizes free toxin)
+   - Infant botulism: Human BIG-IV (not equine)
+2. **Supportive**: Respiratory support (ICU, intubation)
+3. **Wound debridement** if applicable
+4. **DO NOT give antibiotics** for infant botulism (lysis may release more toxin)
+
+### Prevention
+- Proper food canning (121°C for 15 min destroys spores)
+- No honey for infants <1 year
+- Toxin destroyed by heating (85°C for 5 minutes)
+
+---
+
+## Clostridium perfringens
+
+### Morphology
+- Large Gram-positive rod with **central/subterminal spore**
+- **Non-motile** (differentiates from other clostridia)
+- Rapid growth ("stormy fermentation" in milk)
+
+### Virulence Factors
+
+| Toxin | Activity | Effect |
+|-------|----------|--------|
+| **α-toxin (lecithinase/phospholipase C)** | Destroys cell membranes | Gas gangrene, hemolysis |
+| **θ-toxin (perfringolysin)** | Pore-forming | Tissue damage |
+| **Enterotoxin (CPE)** | Alters membrane permeability | Food poisoning |
+| **β-toxin** | Necrotic | Necrotizing enteritis |
+
+**Nagler reaction**: α-toxin (lecithinase) activity on egg yolk agar - opalescence
+
+### Clinical Diseases
+
+#### 1. Gas Gangrene (Clostridial Myonecrosis)
+- Contaminated wounds, post-surgical, traumatic
+- Incubation: 1-4 days
+- **Features**:
+  - Severe pain out of proportion to findings
+  - Crepitus (gas in tissues)
+  - "Sweet, foul" odor
+  - Rapid spread
+  - Shock, toxemia
+- X-ray: Gas in soft tissues
+- Mortality: 20-30% (higher with delayed treatment)
+- **Treatment**: Surgical debridement (URGENT!) + Penicillin + Clindamycin ± Hyperbaric O₂
+
+#### 2. Food Poisoning
+- **Second most common** bacterial food poisoning (after Staph)
+- Type A strains, enterotoxin production in gut
+- **Inadequately reheated meat** (spores survive cooking)
+- Incubation: **8-16 hours**
+- Symptoms: Watery diarrhea, abdominal cramps (no vomiting)
+- Self-limiting (24 hours)
+
+#### 3. Necrotizing Enteritis (Pigbel)
+- Type C strains producing β-toxin
+- Associated with protein-deficient diets, pig feasts (Papua New Guinea)
+- Segmental necrosis of jejunum
+
+---
+
+## Clostridioides difficile (formerly Clostridium difficile)
+
+### Key Features
+- Gram-positive rod with **subterminal oval spore**
+- Motile
+- Major cause of **antibiotic-associated diarrhea** and **pseudomembranous colitis**
+
+### Epidemiology
+- Healthcare-associated infection
+- **Antibiotic exposure** disrupts normal flora
+- Spores persist in environment (alcohol doesn't kill them!)
+- Hypervirulent strain: **NAP1/BI/027** (↑ toxin production)
+
+### Pathogenesis
+1. Antibiotic use (clindamycin, fluoroquinolones, cephalosporins)
+2. Disruption of normal gut flora
+3. C. difficile spore germination and colonization
+4. Toxin production
+
+### Toxins
+
+| Toxin | Mechanism | Effect |
+|-------|-----------|--------|
+| **Toxin A (TcdA)** | Enterotoxin, glucosyltransferase | Fluid secretion, inflammation |
+| **Toxin B (TcdB)** | Cytotoxin, glucosyltransferase | Cell death, more potent |
+| **Binary toxin (CDT)** | ADP-ribosyltransferase | Present in hypervirulent strains |
+
+Both toxins **inactivate Rho GTPases** → disruption of actin cytoskeleton → cell death
+
+### Clinical Features
+- Spectrum: Asymptomatic colonization → mild diarrhea → pseudomembranous colitis → toxic megacolon
+- **Watery diarrhea** (may be bloody)
+- Fever, abdominal pain, leukocytosis
+- **Pseudomembranes**: Yellow-white plaques on colonic mucosa (endoscopy)
+
+### Diagnosis
+- **NAAT (PCR) for toxin genes**: Most sensitive
+- **Toxin EIA**: Detects toxin A and/or B (fast but less sensitive)
+- **GDH (Glutamate Dehydrogenase) antigen**: Sensitive screening test
+- **Two-step algorithm**: GDH screening → Toxin confirmation
+- **Stool culture** (Cycloserine-Cefoxitin Fructose Agar - CCFA)
+
+### Treatment
+
+| Severity | Treatment |
+|----------|-----------|
+| Non-severe, first episode | **Oral Vancomycin** or Fidaxomicin |
+| Severe (WBC >15K, Cr >1.5) | Oral Vancomycin ± IV Metronidazole |
+| Fulminant | Oral Vancomycin + IV Metronidazole ± Surgery |
+| Recurrent | Fidaxomicin, extended vancomycin taper, FMT |
+
+**Note**: Metronidazole is no longer first-line for initial episode
+
+### Prevention
+- Hand hygiene with **soap and water** (alcohol doesn't kill spores!)
+- Contact precautions
+- Antibiotic stewardship
+- Environmental cleaning with bleach
+- **Fecal Microbiota Transplantation (FMT)**: For recurrent CDI (>85% cure rate)
+
+---
+
+*"The Clostridia: Where spores and toxins create a spectrum from lockjaw to floppy babies to explosive diarrhea."*`,
+    
+    keyPoints: [
+      'C. tetani: Drumstick spore, tetanospasmin blocks GABA/glycine → spastic paralysis',
+      'C. botulinum: Most potent toxin, blocks ACh release → flaccid paralysis',
+      'Botulism 4 Ds: Diplopia, Dysphagia, Dysarthria, Descending paralysis',
+      'Infant botulism from honey - no honey <1 year old',
+      'C. perfringens: α-toxin (lecithinase), non-motile, gas gangrene',
+      'Gas gangrene: Pain out of proportion, crepitus, sweet odor, surgical emergency',
+      'C. perfringens food poisoning: Reheated meat, 8-16h incubation, diarrhea (no vomiting)',
+      'C. difficile: Toxin A (enterotoxin) and B (cytotoxin), inactivate Rho GTPases',
+      'C. difficile treatment: Oral vancomycin or fidaxomicin (not metro first-line)',
+      'Hand washing with soap/water for C. difficile (alcohol doesn\'t kill spores)'
+    ],
+    
+    examPrep: {
+      summary: `**Clostridium - High Yield Summary**
+
+**Toxin Mechanisms**:
+- Tetanospasmin: Blocks GABA/glycine → SPASTIC paralysis
+- Botulinum: Blocks ACh release → FLACCID paralysis
+- C. perfringens α-toxin: Lecithinase → Gas gangrene
+- C. difficile A/B: Inactivate Rho GTPases
+
+**Clinical Pearls**:
+- Tetanus: Lockjaw, opisthotonus, conscious
+- Botulism: 4 Ds, descending, symmetric, no fever
+- Gas gangrene: Crepitus, surgical emergency
+- C. diff: Antibiotic-associated, pseudomembranes`,
+      
+      mnemonics: [
+        'TETANUS toxin = "Locked Up" (spastic) vs BOTULINUM = "Loose" (flaccid)',
+        'Botulism 4 Ds: Diplopia, Dysphagia, Dysarthria, Descending paralysis',
+        'C. diff risk: "Can Catch Colitis" - Clindamycin, Cephalosporins, Ciprofloxacin',
+        'Spore shapes: TETanus = Terminal (drumstick), BOTulinum/Difficile = OvalSubterminal',
+        'C. perfringens food poisoning: "8-16 hours of PERFectly watery diarrhea"'
+      ],
+      
+      highYield: [
+        'Tetanus: Patient conscious during spasms (only motor block)',
+        'Infant botulism: No antibiotics (may release more toxin)',
+        'Botulinum toxin is MOST POTENT biological toxin known',
+        'Gas gangrene: Surgical debridement is MOST important treatment',
+        'C. perfringens is NON-MOTILE (unlike other Clostridia)',
+        'C. difficile: Oral vancomycin first-line (not metronidazole)',
+        'FMT for recurrent C. difficile: >85% cure rate',
+        'Alcohol hand rub DOES NOT kill C. difficile spores'
+      ],
+      
+      commonMCQs: [
+        'Toxin blocking GABA release: Tetanospasmin',
+        'Toxin cleaving SNARE proteins: Botulinum toxin',
+        'Drumstick-shaped spore: C. tetani',
+        'Food poisoning with 8-16h incubation: C. perfringens',
+        'Most common cause of antibiotic-associated diarrhea: C. difficile',
+        'Nagler reaction positive: C. perfringens',
+        'No honey before age 1 due to: Infant botulism'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 29', chapterTitle: 'Clostridium', pages: '258-275' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'clostridium-1',
+        question: 'Compare the mechanism of tetanus and botulinum toxins',
+        answer: '**Tetanospasmin (C. tetani)**:\n- Cleaves synaptobrevin in INHIBITORY interneurons\n- Blocks GABA and glycine release\n- Result: SPASTIC paralysis (unopposed excitation)\n- Trismus, opisthotonus\n\n**Botulinum toxin (C. botulinum)**:\n- Cleaves SNARE proteins at neuromuscular junction\n- Blocks acetylcholine release\n- Result: FLACCID paralysis\n- Descending, symmetric weakness',
+        difficulty: 3,
+        tags: ['toxins', 'mechanism']
+      },
+      {
+        id: 'clostridium-2',
+        question: 'What are the different forms of botulism and their sources?',
+        answer: '1. **Foodborne**: Preformed toxin in food (canned goods)\n2. **Infant**: Ingested SPORES germinate in gut (honey!)\n3. **Wound**: Spores enter wound, germinate (IV drug users)\n4. **Iatrogenic**: Overdose of therapeutic BoNT\n\nPresentation: Symmetric descending flaccid paralysis, cranial nerves first (4 Ds), no fever, alert patient.',
+        difficulty: 2,
+        tags: ['botulism', 'types']
+      },
+      {
+        id: 'clostridium-3',
+        question: 'How do C. difficile toxins A and B cause disease?',
+        answer: 'Both toxins are GLUCOSYLTRANSFERASES that:\n\n1. Inactivate Rho GTPases (Rho, Rac, Cdc42)\n2. Disrupt actin cytoskeleton\n3. Cause tight junction breakdown\n4. Lead to cell death\n\nToxin A: Primarily enterotoxin (fluid secretion)\nToxin B: Primarily cytotoxin (more potent cell death)\n\nResult: Diarrhea, inflammation, pseudomembrane formation',
+        difficulty: 3,
+        tags: ['C. difficile', 'toxins']
+      },
+      {
+        id: 'clostridium-4',
+        question: 'What is the treatment algorithm for C. difficile infection?',
+        answer: '**Non-severe, initial episode**: Oral Vancomycin 125mg QID × 10d OR Fidaxomicin\n\n**Severe (WBC >15K, Cr >1.5)**: Vancomycin 125mg QID ± IV Metronidazole\n\n**Fulminant (hypotension, ileus, megacolon)**:\n- Vancomycin 500mg QID (oral or rectal)\n- IV Metronidazole\n- Surgical consult\n\n**Recurrent (≥2 episodes)**:\n- Fidaxomicin, Vancomycin taper/pulse\n- Fecal Microbiota Transplant (FMT)',
+        difficulty: 3,
+        tags: ['C. difficile', 'treatment']
+      },
+      {
+        id: 'clostridium-5',
+        question: 'What is the clinical presentation and treatment of gas gangrene?',
+        answer: '**Presentation (Clostridial Myonecrosis)**:\n- Severe PAIN out of proportion to findings\n- Rapid onset (1-4 days after injury)\n- Crepitus (gas in tissues)\n- "Sweet, foul" odor\n- Bronze/dusky skin discoloration\n- Systemic toxicity, shock\n- X-ray: Gas in soft tissues\n\n**Treatment (EMERGENCY!)**:\n1. SURGICAL DEBRIDEMENT (most important!)\n2. High-dose Penicillin G IV\n3. Clindamycin (inhibits toxin production)\n4. ± Hyperbaric oxygen (adjunct)\n\nMortality: 20-30%',
+        difficulty: 3,
+        tags: ['gas gangrene', 'emergency']
+      },
+      {
+        id: 'clostridium-6',
+        question: 'Why should you not give honey to infants under 1 year?',
+        answer: 'INFANT BOTULISM risk:\n\nHoney may contain C. botulinum SPORES.\n\nIn infants <1 year:\n- Immature gut flora cannot compete with C. botulinum\n- Spores germinate, colonize, produce toxin IN VIVO\n\nIn adults: Normal flora prevents colonization, so only preformed toxin in food causes disease.\n\n"Floppy baby" syndrome: Constipation, weak cry, poor feeding, hypotonia, descending paralysis.',
+        difficulty: 2,
+        tags: ['infant botulism', 'prevention']
+      },
+      {
+        id: 'clostridium-7',
+        question: 'Why is hand washing with soap and water important for C. difficile?',
+        answer: 'C. difficile produces SPORES that:\n\n1. Are resistant to alcohol-based hand sanitizers\n2. Survive for months in the environment\n3. Are resistant to many disinfectants\n\n**Prevention**:\n- Soap and water hand washing (mechanical removal of spores)\n- Contact precautions with gowns/gloves\n- Environmental cleaning with BLEACH (sporicidal)\n- Antibiotic stewardship\n\nAlcohol-based rubs are ineffective!',
+        difficulty: 2,
+        tags: ['C. difficile', 'infection control']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'clostridium-case-1',
+        title: 'Post-Antibiotic Diarrhea',
+        presentation: 'A 68-year-old woman develops watery diarrhea, fever, and abdominal pain 10 days after completing ciprofloxacin for UTI. WBC is 18,000. CT shows colonic wall thickening.',
+        question: 'What is the diagnosis and management?',
+        answer: 'Diagnosis: C. difficile infection (severe)\n\nEvidence:\n- Recent antibiotic use (ciprofloxacin - fluoroquinolone)\n- Watery diarrhea + fever\n- Leukocytosis >15,000 (severity marker)\n- Colonic wall thickening\n\nDiagnosis: NAAT (PCR) for toxin genes or two-step (GDH + toxin EIA)\n\nTreatment (SEVERE CDI):\n1. Oral Vancomycin 125mg QID × 10-14 days\n2. Consider adding IV Metronidazole 500mg TID\n3. Stop ciprofloxacin\n4. Contact precautions\n5. Soap and water hand hygiene',
+        keyLearning: 'Fluoroquinolones are a major risk factor for C. difficile; oral vancomycin is first-line treatment',
+        difficulty: 3
+      },
+      {
+        id: 'clostridium-case-2',
+        title: 'Wound Infection After Farm Accident',
+        presentation: 'A farmer presents 2 days after a tractor accident with severe thigh pain, swelling, and fever. Examination reveals crepitus and foul-smelling discharge. X-ray shows gas in soft tissues.',
+        question: 'What is the diagnosis and what is the most critical intervention?',
+        answer: 'Diagnosis: Gas Gangrene (Clostridial Myonecrosis)\n\nMost likely organism: Clostridium perfringens\n\nClues:\n- Soil contamination (tractor accident)\n- Rapid onset (2 days)\n- Severe pain\n- Crepitus + gas on X-ray\n- Foul odor\n\n**MOST CRITICAL INTERVENTION: SURGICAL DEBRIDEMENT**\n\nComplete management:\n1. URGENT surgical debridement (life-saving)\n2. High-dose Penicillin G IV\n3. Clindamycin (inhibits toxin synthesis)\n4. ICU care, fluid resuscitation\n5. ± Hyperbaric oxygen (adjunctive)\n\nDelay in surgery = death',
+        keyLearning: 'Gas gangrene is a surgical emergency - debridement is the most critical intervention',
+        difficulty: 4
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['bacillus', 'anaerobes'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE', 'INI_CET'],
+  estimatedMinutes: 50,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// LISTERIA
+// =============================================================================
+
+const listeriaTopic: LibraryTopic = {
+  id: 'listeria',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Listeria monocytogenes',
+  slug: 'listeria',
+  description: 'Tumbling motility, cold growth, meningitis, pregnancy, foodborne',
+  content: {
+    concept: `# Listeria monocytogenes
+
+## Overview
+Listeria monocytogenes is a Gram-positive, facultative intracellular pathogen that causes listeriosis - a serious foodborne infection particularly dangerous for pregnant women, neonates, elderly, and immunocompromised individuals.
+
+## Morphology
+- Small Gram-positive coccobacillus (may appear coccal in tissue)
+- May resemble diphtheroids (can be misidentified as contaminant!)
+- Non-sporing
+- **Motile**: Tumbling motility at 25°C (reduced at 37°C)
+- Peritrichous flagella
+
+## Cultural Characteristics
+- Facultative anaerobe
+- **Growth at 4°C** (cold enrichment) - key distinguishing feature!
+- Optimum: 30-37°C
+- **Blood agar**: Small, β-hemolytic colonies (narrow zone)
+- **Selective media**: PALCAM agar, Oxford agar
+
+## Key Identifying Features
+| Test | Result |
+|------|--------|
+| Gram stain | Gram-positive coccobacillus |
+| Catalase | Positive |
+| Motility | **Tumbling at 25°C** (not 37°C) |
+| **β-hemolysis** | Narrow zone |
+| **CAMP test** | Enhanced hemolysis with S. aureus (shovel/arrow) |
+| Esculin hydrolysis | Positive |
+| Cold enrichment | Growth at 4°C |
+
+## Pathogenesis
+
+### Intracellular Lifecycle
+1. **Entry**: Internalins (InlA, InlB) bind E-cadherin → induced phagocytosis
+2. **Escape from phagosome**: Listeriolysin O (LLO) + phospholipases → lyses phagosome
+3. **Intracellular multiplication**: In cytoplasm
+4. **Actin-based motility**: ActA protein polymerizes actin → "**actin rocket tail**"
+5. **Cell-to-cell spread**: Propelled into adjacent cell → avoids antibodies
+
+**Key virulence factors**:
+- **Listeriolysin O (LLO)**: Phagosome escape, cholesterol-dependent cytolysin
+- **ActA**: Actin polymerization, intracellular and cell-to-cell spread
+- **Internalins**: Invasion of non-phagocytic cells
+
+### Crossing Barriers
+Listeria can cross THREE important barriers:
+1. **Intestinal barrier** (E-cadherin)
+2. **Blood-brain barrier** (meningitis)
+3. **Placental barrier** (fetal infection)
+
+## Clinical Syndromes
+
+### 1. Gastroenteritis
+- Self-limiting febrile gastroenteritis in healthy individuals
+- Watery diarrhea, fever, myalgia
+- Usually not diagnosed (not routinely cultured from stool)
+
+### 2. Meningitis/Meningoencephalitis
+- Third most common cause of bacterial meningitis (after pneumococcus, meningococcus)
+- **Most common in neonates, elderly, immunocompromised**
+- CSF: Mononuclear predominance (may be polymorphonuclear initially)
+- Rhombencephalitis: Brainstem involvement, cranial nerve palsies
+
+### 3. Bacteremia/Sepsis
+- Often in immunocompromised, elderly
+
+### 4. Pregnancy-Associated Listeriosis
+- **Third trimester most dangerous**
+- Mother: Mild flu-like illness
+- Fetus: Abortion, stillbirth, preterm labor
+- **Granulomatosis infantiseptica**: Disseminated granulomas in fetus (very high mortality)
+- Early-onset neonatal disease: Sepsis, pneumonia
+- Late-onset: Meningitis (acquired during delivery)
+
+## Epidemiology
+- Foodborne transmission (contaminated food)
+- **High-risk foods**:
+  - Unpasteurized dairy (soft cheeses: Brie, Camembert)
+  - Cold deli meats, hot dogs (not reheated)
+  - Smoked seafood
+  - Ready-to-eat foods (coleslaw, salads)
+- **Cold storage does NOT prevent** (grows at 4°C!)
+
+## Laboratory Diagnosis
+| Method | Details |
+|--------|---------|
+| Gram stain | GP coccobacillus (may look like diphtheroid) |
+| Culture | β-hemolytic, CAMP positive, motile at 25°C |
+| **Cold enrichment** | 4°C incubation enhances isolation |
+| CSF | Mononuclear pleocytosis, ↑protein, ↓glucose |
+
+**Warning**: May be dismissed as "diphtheroid contaminant" - always correlate with clinical picture!
+
+## Treatment
+- **Drug of choice**: **Ampicillin** (± Gentamicin for synergy in severe cases)
+- **Alternative**: TMP-SMX (for penicillin allergy)
+- **Duration**: 3 weeks for meningitis (longer than other bacterial meningitis)
+
+**Note**: Listeria is **RESISTANT to cephalosporins** (important for empiric meningitis therapy)
+
+Empiric meningitis in neonates/elderly: Ampicillin + Ceftriaxone (to cover Listeria)
+
+## Prevention
+- **Pregnant women, elderly, immunocompromised** should avoid:
+  - Unpasteurized dairy products
+  - Soft cheeses (feta, Brie, Camembert)
+  - Cold deli meats (unless heated until steaming)
+  - Smoked seafood
+- Proper refrigeration (though L. monocytogenes grows at 4°C, lower numbers)
+- Adequate cooking/reheating
+
+---
+
+*"Listeria: The cold-loving, actin-surfing, barrier-crossing bacterium that threatens the vulnerable."*`,
+    
+    keyPoints: [
+      'Gram-positive coccobacillus with tumbling motility at 25°C',
+      'Grows at 4°C (cold enrichment) - unique among pathogens',
+      'Intracellular pathogen with actin-based motility (ActA → "actin rocket tail")',
+      'Listeriolysin O (LLO): Escapes phagosome, cholesterol-dependent',
+      'Crosses three barriers: Intestinal, blood-brain, placental',
+      'Most dangerous in pregnancy (3rd trimester), neonates, elderly, immunocompromised',
+      'CAMP test positive with S. aureus (shovel-shaped enhanced hemolysis)',
+      'High-risk foods: Unpasteurized dairy, soft cheeses, cold deli meats',
+      'Treatment: Ampicillin (± gentamicin) - RESISTANT to cephalosporins',
+      'Add ampicillin to empiric meningitis regimen in neonates and elderly'
+    ],
+    
+    examPrep: {
+      summary: `**Listeria monocytogenes - High Yield Summary**
+
+**Key Features**:
+- Gram-positive coccobacillus
+- Tumbling motility at 25°C
+- Grows at 4°C (refrigerator temps)
+- β-hemolytic, CAMP positive
+- Intracellular, actin-based motility
+
+**At-Risk Groups**: Pregnant women, neonates, elderly, immunocompromised
+
+**Treatment**: Ampicillin ± Gentamicin
+**Cephalosporins DON'T work!**`,
+      
+      mnemonics: [
+        'Listeria Loves the cold (4°C growth)',
+        'LAMP for Listeria: L = Loves cold, A = Ampicillin, M = Meningitis, P = Pregnancy',
+        'Tumbling at 25°C - "room temperature dance"',
+        'Actin "rocket" - Listeria surfs through cells',
+        'Soft cheese + Pregnancy = Listeria risk'
+      ],
+      
+      highYield: [
+        'Third most common cause of bacterial meningitis',
+        'Grows at 4°C - cold storage doesn\'t prevent contamination',
+        'Resistant to cephalosporins - add ampicillin for empiric meningitis in elderly/neonates',
+        'Tumbling motility at 25°C (not 37°C)',
+        'CAMP test positive (like GBS, but different pattern)',
+        'CSF may show mononuclear predominance (unlike typical bacterial)',
+        'Granulomatosis infantiseptica: Disseminated fetal infection, high mortality'
+      ],
+      
+      commonMCQs: [
+        'Organism growing at 4°C: Listeria monocytogenes',
+        'Tumbling motility: Listeria',
+        'Meningitis in pregnancy: Listeria monocytogenes',
+        'Soft cheese-associated meningitis: Listeria',
+        'Why add ampicillin to empiric meningitis therapy in elderly: Listeria coverage',
+        'Listeria resistance to: Cephalosporins',
+        'Actin-based motility: Listeria (ActA protein)'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 30', chapterTitle: 'Listeria', pages: '276-280' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'listeria-1',
+        question: 'What is the intracellular lifecycle of Listeria monocytogenes?',
+        answer: '1. **Entry**: Internalins bind E-cadherin → induced phagocytosis\n2. **Phagosome escape**: Listeriolysin O (LLO) + phospholipases lyse phagosome\n3. **Cytoplasmic multiplication**: Replicates free in cytoplasm\n4. **Actin-based motility**: ActA polymerizes actin → "rocket tail"\n5. **Cell-to-cell spread**: Propelled into adjacent cell via filopod\n\nThis allows spread while avoiding antibodies (intracellular)',
+        difficulty: 3,
+        tags: ['pathogenesis', 'intracellular']
+      },
+      {
+        id: 'listeria-2',
+        question: 'Why must ampicillin be added to empiric meningitis therapy in certain patients?',
+        answer: 'Listeria monocytogenes is RESISTANT to cephalosporins (the usual empiric therapy).\n\nAdd Ampicillin when treating meningitis in:\n- Neonates (<1 month)\n- Adults >50 years\n- Immunocompromised patients\n- Pregnant women\n\nTypical empiric regimen:\n- Ceftriaxone + Vancomycin + AMPICILLIN',
+        difficulty: 3,
+        tags: ['treatment', 'meningitis']
+      },
+      {
+        id: 'listeria-3',
+        question: 'What are the high-risk foods for Listeria and who should avoid them?',
+        answer: '**High-risk foods**:\n- Unpasteurized dairy products\n- Soft cheeses (Brie, Camembert, feta)\n- Cold deli meats, hot dogs (unless heated until steaming)\n- Smoked seafood\n- Pre-prepared salads\n\n**Who should avoid**:\n- Pregnant women (any trimester)\n- Neonates (via mother)\n- Elderly (>65 years)\n- Immunocompromised\n\nNote: Refrigeration doesn\'t prevent Listeria growth (4°C capable)!',
+        difficulty: 2,
+        tags: ['epidemiology', 'prevention']
+      },
+      {
+        id: 'listeria-4',
+        question: 'What is granulomatosis infantiseptica?',
+        answer: 'Severe form of neonatal listeriosis:\n\n- Results from transplacental transmission\n- Disseminated granulomas throughout fetal organs (liver, spleen, lungs, brain)\n- Presents at birth with:\n  - Sepsis, pneumonia\n  - Skin papules/granulomas\n  - Hepatosplenomegaly\n- Very high mortality (>50%)\n\nMother often has only mild flu-like illness',
+        difficulty: 3,
+        tags: ['neonatal', 'pregnancy']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'listeria-case-1',
+        title: 'Meningitis in Pregnancy',
+        presentation: 'A 32-year-old woman at 34 weeks gestation presents with fever, headache, and neck stiffness. She had eaten soft cheese at a party one week ago. CSF shows 200 WBCs with 60% lymphocytes, elevated protein, low glucose.',
+        question: 'What is the likely diagnosis and how would you manage?',
+        answer: 'Diagnosis: Listeria monocytogenes meningitis\n\nClues:\n- Pregnant (third trimester - highest risk)\n- Soft cheese exposure\n- CSF: Mononuclear (lymphocytic) predominance (unusual for bacterial)\n\nManagement:\n1. Start Ampicillin IV immediately (± Gentamicin)\n2. NOT cephalosporins alone (Listeria resistant)\n3. Duration: 3 weeks (longer than typical bacterial meningitis)\n4. Fetal monitoring\n5. CSF Gram stain may show Gram-positive coccobacilli\n6. Blood and CSF cultures\n\nWhy lymphocytic CSF? Listeria is intracellular pathogen.',
+        keyLearning: 'Listeria meningitis can present with lymphocytic CSF; always consider in pregnant women with soft cheese exposure',
+        difficulty: 3
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['streptococcus', 'meningitis'],
+  difficulty: 3,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 30,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// CORYNEBACTERIUM
+// =============================================================================
+
+const corynebacteriumTopic: LibraryTopic = {
+  id: 'corynebacterium',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Corynebacterium',
+  slug: 'corynebacterium',
+  description: 'C. diphtheriae, diphtheria, pseudomembrane, toxin, Elek test',
+  content: {
+    concept: `# Corynebacterium
+
+## Overview
+Corynebacterium species are Gram-positive, non-spore-forming, pleomorphic rods with club-shaped ends ("coryneform"). C. diphtheriae is the causative agent of diphtheria, a severe toxin-mediated disease.
+
+## Corynebacterium diphtheriae
+
+### Morphology
+- Gram-positive, slender, pleomorphic rods
+- **Club-shaped** (Greek: koryne = club)
+- Arranged in **"Chinese letter" or "cuneiform"** pattern (angular arrangements)
+- **Metachromatic granules** (volutin/Babes-Ernst granules) - polyphosphate storage
+  - Stain differently with polychrome dyes (Albert's, Neisser's, Ponder's stain)
+- Non-motile, non-sporing, non-capsulated
+
+### Cultural Characteristics
+- Aerobe/facultative anaerobe
+- Optimum: 37°C
+- **Selective media**:
+  - **Löffler's serum slope**: Rapid growth (6-8h), enhances granule production
+  - **Potassium tellurite agar** (Hoyle's): Black/grey colonies (tellurite reduction)
+  - **Tinsdale medium**: Black colonies with brown halo (cystinase activity)
+
+### Biotypes
+| Biotype | Colony (Tellurite) | Hemolysis | Severity |
+|---------|-------------------|-----------|----------|
+| **Gravis** | Large, grey, daisy-head | + | Most severe |
+| **Intermedius** | Small, grey | + | Intermediate |
+| **Mitis** | Small, black, convex | - | Mildest |
+
+### Diphtheria Toxin
+
+#### Production
+- Encoded by **tox gene** carried by **β-corynephage** (lysogenic bacteriophage)
+- **Only lysogenized strains are toxigenic**
+- Toxin production enhanced by **low iron** conditions
+
+#### Structure and Mechanism
+**A-B toxin** (58 kDa):
+- **Fragment B** (binding): Binds heparin-binding EGF-like receptor
+- **Fragment A** (active): **ADP-ribosylates EF-2** (elongation factor 2)
+
+**Mechanism**:
+1. Toxin binds to cell receptor (Fragment B)
+2. Internalized by receptor-mediated endocytosis
+3. Fragment A enters cytoplasm
+4. **ADP-ribosylation of EF-2** (diphthamide residue)
+5. **Inhibits protein synthesis** → cell death
+
+**Remember**: NAD⁺ + EF-2 → ADP-ribosyl-EF-2 + Nicotinamide + H⁺
+
+### Clinical Features
+
+#### Respiratory Diphtheria
+**Incubation**: 2-5 days
+
+**Sites**: Faucial (tonsillar), pharyngeal, nasal, laryngeal
+
+**Hallmark**: **Pseudomembrane**
+- Thick, grey-white, adherent membrane
+- Made of: Fibrin, necrotic epithelium, bacteria, inflammatory cells
+- **Bleeds on attempted removal** (firmly adherent)
+- "Bull neck" appearance (cervical lymphadenopathy + edema)
+
+**Local effects**:
+- Sore throat, dysphagia
+- Airway obstruction (especially laryngeal diphtheria)
+
+**Systemic effects** (toxin-mediated):
+| Target | Effect | Timing |
+|--------|--------|--------|
+| **Heart** | Myocarditis, arrhythmias | 1-2 weeks |
+| **Nerves** | Palatal palsy, cranial neuropathies, polyneuropathy | 3-7 weeks |
+| **Kidneys** | Tubular necrosis | Variable |
+
+**Schick Test**: Measure immunity (rarely used now)
+- Inject toxin intradermally
+- Positive (susceptible): Inflammation at site
+- Negative (immune): No reaction
+
+#### Cutaneous Diphtheria
+- Non-healing ulcer with grey membrane
+- Common in tropics
+- Can cause secondary respiratory infection in close contacts
+
+### Laboratory Diagnosis
+
+| Test | Purpose |
+|------|---------|
+| **Direct smear** | Albert's/Neisser's stain for metachromatic granules |
+| **Culture** | Löffler's slope, Tellurite agar, Tinsdale medium |
+| **Toxin detection** | Elek test (gold standard for toxigenicity) |
+| **PCR** | tox gene detection |
+
+#### Elek Test (Immunodiffusion)
+- Antitoxin-impregnated filter paper on agar
+- Streak test isolate perpendicular to paper
+- **Precipitin lines** form if toxigenic (toxin meets antitoxin)
+- Takes 24-48 hours
+
+### Treatment
+
+**Principle**: Antitoxin first, antibiotics second
+
+1. **Diphtheria Antitoxin (DAT)**
+   - Horse serum (equine)
+   - Must be given EARLY (neutralizes only free toxin)
+   - Sensitivity test first (serum sickness risk)
+   - 20,000-100,000 units depending on severity
+
+2. **Antibiotics**
+   - **Penicillin G** or **Erythromycin** × 14 days
+   - Eliminates organism, prevents transmission
+   - Does NOT neutralize toxin
+
+3. **Supportive care**
+   - Airway management (tracheostomy if needed)
+   - Cardiac monitoring
+   - Bed rest (myocarditis risk)
+
+4. **Isolation**: Droplet precautions until two negative cultures
+
+### Prevention
+
+**Active Immunization**:
+- **Diphtheria toxoid** (formalin-inactivated toxin)
+- Given as DPT/DTaP (children), Td/Tdap (adults)
+- Primary series: 3 doses
+- Boosters: Every 10 years
+
+**Contacts**:
+- Throat culture
+- Antibiotic prophylaxis (penicillin or erythromycin)
+- Toxoid booster if >5 years since last dose
+
+---
+
+## Other Corynebacteria (Diphtheroids)
+
+| Species | Disease |
+|---------|---------|
+| **C. jeikeium** | Line infections, endocarditis (immunocompromised) |
+| **C. urealyticum** | Alkaline-encrusted cystitis |
+| **C. minutissimum** | Erythrasma (coral-red fluorescence) |
+
+---
+
+*"Diphtheria: Where a phage turns a commensal into a killer, and minutes matter for antitoxin."*`,
+    
+    keyPoints: [
+      'Gram-positive pleomorphic rods in "Chinese letter" arrangement',
+      'Metachromatic granules (volutin) - Albert\'s/Neisser\'s stain',
+      'Diphtheria toxin encoded by β-corynephage (tox gene)',
+      'Toxin mechanism: ADP-ribosylates EF-2 → inhibits protein synthesis',
+      'Only lysogenized strains are toxigenic',
+      'Pseudomembrane: Grey-white, adherent, BLEEDS on removal',
+      'Complications: Myocarditis (1-2 weeks), neuropathy (3-7 weeks)',
+      'Elek test: Immunodiffusion to detect toxin production',
+      'Treatment: ANTITOXIN FIRST (neutralizes free toxin), then antibiotics',
+      'Prevention: DPT/DTaP vaccine (diphtheria toxoid)'
+    ],
+    
+    examPrep: {
+      summary: `**Corynebacterium diphtheriae - High Yield Summary**
+
+**Morphology**: Pleomorphic rods, Chinese letter, metachromatic granules
+
+**Toxin**: A-B toxin, ADP-ribosylates EF-2, inhibits protein synthesis
+**Requires**: Lysogenic β-corynephage (tox gene)
+
+**Pseudomembrane**: Grey-white, adherent, bleeds on removal
+
+**Complications**:
+- Myocarditis (1-2 weeks)
+- Neuropathy (3-7 weeks)
+
+**Treatment**: Antitoxin BEFORE antibiotics
+**Prevention**: Diphtheria toxoid (DPT)`,
+      
+      mnemonics: [
+        'Diphtheria toxin: "Dipth = 2" - ADP-ribosylates EF-2',
+        'ABCDE for diphtheria: ADP-ribosylation, Bull neck, Chinese letters, DAT first, Elek test',
+        'Pseudomembrane: "Please Don\'t Remove - Bleeds!"',
+        'Complications timing: MyoCarditis 1-2 weeks, Neuro 3-7 weeks ("MC before N")'
+      ],
+      
+      highYield: [
+        'Toxin only produced by lysogenized (phage-infected) strains',
+        'Toxin production enhanced by LOW IRON conditions',
+        'EF-2 inhibition = protein synthesis block = cell death',
+        'Antitoxin must be given EARLY - only neutralizes FREE toxin',
+        'Pseudomembrane bleeds on removal (vs other membranes)',
+        'Gravis biotype: Most severe disease',
+        'Bull neck: Cervical adenopathy + edema',
+        'Elek test confirms toxigenicity (precipitin lines)'
+      ],
+      
+      commonMCQs: [
+        'Metachromatic granules seen in: C. diphtheriae',
+        'Mechanism of diphtheria toxin: ADP-ribosylation of EF-2',
+        'Chinese letter arrangement: Corynebacterium',
+        'Elek test detects: Diphtheria toxin production',
+        'First treatment for diphtheria: Antitoxin (not antibiotics)',
+        'Toxin gene source in C. diphtheriae: β-corynephage',
+        'Culture medium for rapid growth: Löffler serum slope'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 31', chapterTitle: 'Corynebacterium', pages: '281-294' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'coryne-1',
+        question: 'What is the mechanism of diphtheria toxin?',
+        answer: 'Diphtheria toxin is an A-B toxin:\n\n1. **Fragment B**: Binds HB-EGF receptor on host cells\n2. **Fragment A**: Enzymatic - ADP-ribosylates EF-2 (elongation factor 2)\n\nMechanism:\nNAD⁺ + EF-2 → ADP-ribosyl-EF-2 + Nicotinamide\n\nResult: Inactivation of EF-2 → Inhibition of protein synthesis → Cell death\n\nNote: Toxin gene is on β-corynephage (lysogenic phage)',
+        difficulty: 3,
+        tags: ['toxin', 'mechanism']
+      },
+      {
+        id: 'coryne-2',
+        question: 'What is the Elek test and what does it detect?',
+        answer: 'Elek Test (Gel Immunodiffusion):\n\n**Purpose**: Detect toxin production by C. diphtheriae isolates\n\n**Method**:\n1. Filter paper impregnated with diphtheria antitoxin placed on agar\n2. Test organism streaked perpendicular to paper\n3. Incubate 24-48 hours\n\n**Interpretation**:\n- Toxigenic strain: Precipitin lines form where toxin meets antitoxin\n- Non-toxigenic: No lines\n\nGold standard for confirming toxigenicity',
+        difficulty: 2,
+        tags: ['diagnosis', 'Elek test']
+      },
+      {
+        id: 'coryne-3',
+        question: 'Why must antitoxin be given before antibiotics in diphtheria?',
+        answer: 'Antitoxin vs Antibiotics in Diphtheria:\n\n**Antitoxin (DAT)**:\n- Neutralizes FREE (circulating) toxin only\n- Cannot reverse toxin already bound to cells\n- Must be given EARLY for maximum benefit\n- Minutes matter!\n\n**Antibiotics**:\n- Kill the organism\n- Prevent further toxin production\n- Reduce transmission\n- Do NOT neutralize existing toxin\n\nSequence: Antitoxin FIRST, then antibiotics (penicillin or erythromycin × 14 days)',
+        difficulty: 3,
+        tags: ['treatment', 'antitoxin']
+      },
+      {
+        id: 'coryne-4',
+        question: 'What are the features of the diphtheria pseudomembrane?',
+        answer: 'Diphtheria Pseudomembrane:\n\n**Composition**:\n- Fibrin, necrotic epithelium, bacteria, inflammatory cells\n\n**Characteristics**:\n- Grey-white to dirty grey color\n- FIRMLY adherent to underlying tissue\n- **BLEEDS on attempted removal** (pathognomonic)\n- "Bull neck" if extensive cervical involvement\n\n**Sites**: Fauces, pharynx, larynx, nose\n\n**Danger**: Laryngeal extension → airway obstruction',
+        difficulty: 2,
+        tags: ['clinical', 'pseudomembrane']
+      },
+      {
+        id: 'coryne-5',
+        question: 'What are the complications of diphtheria and their timing?',
+        answer: 'Diphtheria Complications (Toxin-Mediated):\n\n**Myocarditis** (1-2 weeks):\n- Arrhythmias, heart block\n- Cardiac failure\n- Most common cause of death\n\n**Neuropathy** (3-7 weeks):\n- Palatal palsy (nasal voice, regurgitation) - earliest\n- Cranial nerve palsies\n- Peripheral polyneuropathy\n- Usually reversible\n\n**Renal** (Variable):\n- Tubular necrosis\n- Proteinuria\n\nMnemonic: "MC before N" - Myocarditis 1-2 weeks, Neuro 3-7 weeks',
+        difficulty: 3,
+        tags: ['complications', 'toxin']
+      }
+    ],
+    
+    cases: [
+      {
+        id: 'coryne-case-1',
+        title: 'Sore Throat with Membrane',
+        presentation: 'A 6-year-old unvaccinated child presents with sore throat, fever, and difficulty swallowing for 3 days. Examination reveals a thick grey membrane on both tonsils that bleeds when touched. The neck appears swollen.',
+        question: 'What is the diagnosis and immediate management?',
+        answer: 'Diagnosis: Faucial Diphtheria\n\nClues:\n- Unvaccinated child\n- Grey membrane that bleeds on manipulation (pathognomonic)\n- Bull neck (cervical swelling)\n\nImmediate Management:\n1. **Diphtheria Antitoxin (DAT) IMMEDIATELY**\n   - Do sensitivity test first (horse serum)\n   - Do NOT wait for culture confirmation\n   - 40,000-80,000 units for moderate disease\n\n2. **Antibiotics**: Penicillin G or Erythromycin × 14 days\n\n3. **Supportive**:\n   - Bed rest (prevent myocarditis exacerbation)\n   - Cardiac monitoring\n   - Airway observation\n\n4. **Isolate** (droplet precautions)\n\n5. **Contact tracing**: Culture, prophylaxis, vaccination',
+        keyLearning: 'Diphtheria antitoxin must be given immediately based on clinical diagnosis - do not wait for lab confirmation',
+        difficulty: 3
+      }
+    ]
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['streptococcus', 'vaccine-preventable'],
+  difficulty: 4,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 35,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: true, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// NOCARDIA & ACTINOMYCES
+// =============================================================================
+
+const nocardiaActinomycesTopic: LibraryTopic = {
+  id: 'nocardia-actinomyces',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'Nocardia & Actinomyces',
+  slug: 'nocardia-actinomyces',
+  description: 'Nocardiosis, actinomycosis, sulfur granules, brain abscess',
+  content: {
+    concept: `# Nocardia & Actinomyces
+
+## Overview
+These are filamentous, branching Gram-positive bacteria that can mimic fungal infections. Though morphologically similar, they differ significantly in pathogenesis and treatment.
+
+| Feature | Nocardia | Actinomyces |
+|---------|----------|-------------|
+| Gram stain | Positive, branching | Positive, branching |
+| Acid-fast | Weakly positive (modified) | Negative |
+| Oxygen | Strict aerobe | Strict anaerobe |
+| Habitat | Soil | Normal oral/GI flora |
+| Typical patient | Immunocompromised | Immunocompetent |
+| Key treatment | TMP-SMX | Penicillin |
+
+---
+
+## Nocardia
+
+### Species
+- **N. asteroides complex** (most common)
+- **N. brasiliensis** (cutaneous, mycetoma)
+- **N. farcinica** (more resistant)
+
+### Morphology
+- Gram-positive, filamentous, branching (1 μm width)
+- **Weakly acid-fast** (modified Kinyoun, 1% H₂SO₄)
+- "Partially acid-fast" - acid-fast for short decolorization
+- Beaded appearance
+
+### Clinical Syndromes
+
+#### Pulmonary Nocardiosis
+- Most common presentation
+- Risk factors: Immunocompromised (steroids, transplant, HIV)
+- Mimics TB or malignancy
+- Cavitary lesions, nodules
+
+#### CNS Nocardiosis
+- **Brain abscess** (often from pulmonary spread)
+- May be multiple
+- Immunocompromised patients
+
+#### Cutaneous Nocardiosis
+- **Mycetoma** (N. brasiliensis) - chronic granulomatous infection
+- Lymphocutaneous syndrome (sporotrichoid spread)
+- Traumatic inoculation
+
+### Diagnosis
+- **Modified acid-fast stain**: Weakly positive (1% H₂SO₄)
+- Culture: Slow-growing (2-4 weeks), aerobic
+- "Chalky" white colonies
+- CT: Ring-enhancing lesions (brain), nodules/cavities (lung)
+
+### Treatment
+- **TMP-SMX** (first-line)
+- Alternatives: Amikacin, imipenem, linezolid
+- Duration: 6-12 months (longer for CNS involvement)
+- Immunocompromised: May need lifelong suppression
+
+---
+
+## Actinomyces
+
+### Species
+- **A. israelii** (most common pathogen)
+- A. naeslundii, A. odontolyticus
+
+### Morphology
+- Gram-positive, branching filaments
+- **NOT acid-fast** (vs Nocardia)
+- Strict anaerobe
+- Part of normal oral, GI flora
+
+### Sulfur Granules
+- Yellow granules in pus/tissue
+- **Not sulfur** - actually clumps of organisms with calcium phosphate
+- Crushed granule shows branching filaments
+
+### Clinical Syndromes
+
+#### Cervicofacial Actinomycosis (50%)
+- "Lumpy jaw"
+- Following dental procedure, tooth extraction, trauma
+- Hard, non-tender swelling → draining sinuses
+- Crosses tissue planes (ignores anatomical barriers)
+
+#### Thoracic Actinomycosis (15%)
+- Extension from cervicofacial or aspiration
+- May involve chest wall, form sinus tracts
+- Mimics malignancy or TB
+
+#### Abdominal/Pelvic Actinomycosis (20%)
+- Associated with appendicitis, bowel perforation
+- **IUD-associated** (pelvic actinomycosis)
+- Abscess, sinus tracts
+
+### Diagnosis
+- **Sulfur granules** in pus or tissue
+- Culture: Strict anaerobic, slow (2+ weeks)
+- "Molar tooth" colonies
+- Biopsy often needed (mimics cancer)
+
+### Treatment
+- **Penicillin G** (high-dose IV) × 2-6 weeks, then oral × 6-12 months
+- Alternatives: Amoxicillin, doxycycline
+- **Surgery** may be needed for debulking, drainage
+
+---
+
+*"Nocardia loves the brain, Actinomyces loves to drain - through sinuses that cross every plane."*`,
+    
+    keyPoints: [
+      'Nocardia: Weakly acid-fast, strict aerobe, soil organism',
+      'Actinomyces: NOT acid-fast, strict anaerobe, normal oral flora',
+      'Nocardia affects immunocompromised; Actinomyces affects immunocompetent',
+      'Nocardia causes brain abscess; Actinomyces causes "lumpy jaw"',
+      'Sulfur granules: Yellow granules in actinomycosis (clumps of organisms)',
+      'Actinomyces crosses tissue planes - forms draining sinuses',
+      'Nocardia treatment: TMP-SMX × 6-12 months',
+      'Actinomyces treatment: Penicillin × 6-12 months',
+      'IUD-associated pelvic actinomycosis is well-described',
+      'Both may mimic malignancy or tuberculosis'
+    ],
+    
+    examPrep: {
+      summary: `**Nocardia vs Actinomyces - High Yield**
+
+| Feature | Nocardia | Actinomyces |
+|---------|----------|-------------|
+| Acid-fast | Weakly + | Negative |
+| Aerobic | Yes | No (strict anaerobe) |
+| Patient | Immunocompromised | Normal immunity |
+| Key finding | Brain abscess | Sulfur granules |
+| Treatment | TMP-SMX | Penicillin |`,
+      
+      mnemonics: [
+        'Nocardia = "NOT Normal immunity" (immunocompromised)',
+        'Actinomyces = "ACT on Normal" (immunocompetent)',
+        'Sulfur granules = "Sun-colored but not Sulfur"',
+        'Nocardia: "SNAP" - Soil, Not acid-fast completely (weak), Aerobic, Pulmonary + CNS'
+      ],
+      
+      highYield: [
+        'Nocardia: Weakly acid-fast (1% H₂SO₄ decolorization)',
+        'Actinomyces: NOT acid-fast',
+        'Brain abscess in immunocompromised: Think Nocardia',
+        'Sulfur granules (yellow): Pathognomonic for Actinomyces',
+        'IUD + pelvic mass: Consider Actinomyces',
+        'Both cross tissue planes and form sinus tracts',
+        'Long treatment duration for both (6-12 months)'
+      ],
+      
+      commonMCQs: [
+        'Weakly acid-fast branching organism: Nocardia',
+        'Sulfur granules seen in: Actinomycosis',
+        'Lumpy jaw: Actinomyces israelii',
+        'Brain abscess in transplant patient: Nocardia',
+        'Treatment of Nocardiosis: TMP-SMX',
+        'Treatment of Actinomycosis: Penicillin'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 41', chapterTitle: 'Actinomycetes', pages: '400-410' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'nocardia-1',
+        question: 'How do you differentiate Nocardia from Actinomyces?',
+        answer: '| Feature | Nocardia | Actinomyces |\n|---------|----------|-------------|\n| **Acid-fast** | Weakly + (1% H₂SO₄) | Negative |\n| **Oxygen** | Aerobe | Anaerobe |\n| **Habitat** | Soil | Oral flora |\n| **Patient** | Immunocompromised | Immunocompetent |\n| **Key site** | Lung → Brain | Cervicofacial |\n| **Treatment** | TMP-SMX | Penicillin |',
+        difficulty: 2,
+        tags: ['differentiation']
+      },
+      {
+        id: 'nocardia-2',
+        question: 'What are sulfur granules and what do they indicate?',
+        answer: 'Sulfur Granules:\n\n**Appearance**: Yellow granules in pus, discharge, or tissue\n\n**Composition**: Clumps of Actinomyces organisms + calcium phosphate (NOT sulfur!)\n\n**Microscopy**: Crushing reveals branching Gram-positive filaments\n\n**Diagnostic of**: ACTINOMYCOSIS\n\nCan be seen draining from sinus tracts in cervicofacial, thoracic, or abdominal infections.',
+        difficulty: 2,
+        tags: ['actinomycosis', 'diagnosis']
+      }
+    ],
+    
+    cases: []
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['mycobacteria', 'fungi'],
+  difficulty: 3,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 25,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// GP COCCI ALGORITHM
+// =============================================================================
+
+const gpCocciAlgorithmTopic: LibraryTopic = {
+  id: 'gp-cocci-algorithm',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'GP Cocci Algorithm',
+  slug: 'gp-cocci-algorithm',
+  description: 'Catalase test, coagulase, hemolysis patterns, identification',
+  content: {
+    concept: `# Gram-Positive Cocci - Identification Algorithm
+
+## Step 1: Catalase Test (First Division)
+
+**Catalase positive** → STAPHYLOCOCCUS
+**Catalase negative** → STREPTOCOCCUS / ENTEROCOCCUS
+
+---
+
+## Staphylococcus (Catalase Positive)
+
+### Step 2: Coagulase Test
+
+**Coagulase positive** → **S. aureus**
+- Slide test (bound coagulase): Clumping in 10 seconds
+- Tube test (free coagulase): Clot at 4 hours (gold standard)
+
+**Coagulase negative** → CoNS (proceed to step 3)
+
+### Step 3: Novobiocin Susceptibility (for CoNS)
+
+**Novobiocin resistant** → **S. saprophyticus** (UTI in young women)
+**Novobiocin sensitive** → **S. epidermidis** (catheter infections)
+
+---
+
+## Streptococcus/Enterococcus (Catalase Negative)
+
+### Step 2: Hemolysis Pattern
+
+**β-hemolytic** (complete, clear zone) → Group by Lancefield antigens
+**α-hemolytic** (partial, green zone) → Pneumococcus vs Viridans
+**γ-hemolytic** (no hemolysis) → Enterococcus or non-hemolytic strep
+
+---
+
+## β-Hemolytic Streptococci
+
+### Lancefield Grouping
+
+| Test | Group A (S. pyogenes) | Group B (S. agalactiae) |
+|------|----------------------|------------------------|
+| Bacitracin | **Sensitive** | Resistant |
+| PYR test | **Positive** | Negative |
+| CAMP test | Negative | **Positive** |
+| Hippurate | Negative | **Positive** |
+
+---
+
+## α-Hemolytic Organisms
+
+### Optochin Susceptibility
+
+**Optochin sensitive** (zone ≥14mm) → **S. pneumoniae**
+**Optochin resistant** → **Viridans streptococci**
+
+### Bile Solubility (confirmatory)
+
+**Bile soluble** → **S. pneumoniae** (dissolves in 10% bile/deoxycholate)
+**Bile insoluble** → **Viridans streptococci**
+
+---
+
+## Enterococcus (γ or α-hemolytic)
+
+### Key Tests
+
+| Test | Result |
+|------|--------|
+| Bile esculin | **Positive** (black) |
+| 6.5% NaCl | **Growth** |
+| PYR | **Positive** |
+
+Both Enterococcus and Group D Streptococci (S. bovis) are bile esculin positive, but:
+- **Enterococcus**: Grows in 6.5% NaCl
+- **S. bovis**: Does NOT grow in 6.5% NaCl
+
+---
+
+## Quick Reference Algorithm
+
+\`\`\`
+Gram-Positive Cocci
+    │
+    ├─ Catalase (+) → STAPHYLOCOCCUS
+    │       │
+    │       ├─ Coagulase (+) → S. aureus
+    │       └─ Coagulase (-) → CoNS
+    │               ├─ Novobiocin R → S. saprophyticus
+    │               └─ Novobiocin S → S. epidermidis
+    │
+    └─ Catalase (-) → STREPTOCOCCUS/ENTEROCOCCUS
+            │
+            ├─ β-hemolytic
+            │       ├─ Bacitracin S, PYR (+) → GAS (S. pyogenes)
+            │       └─ CAMP (+), Hippurate (+) → GBS (S. agalactiae)
+            │
+            ├─ α-hemolytic
+            │       ├─ Optochin S, Bile soluble → S. pneumoniae
+            │       └─ Optochin R, Bile insoluble → Viridans strep
+            │
+            └─ γ-hemolytic / Variable
+                    ├─ Bile esculin (+), 6.5% NaCl (+) → Enterococcus
+                    └─ Bile esculin (+), 6.5% NaCl (-) → S. bovis
+\`\`\`
+
+---
+
+*"Catalase splits, Coagulase clots, Hemolysis shows the pattern of the spots."*`,
+    
+    keyPoints: [
+      'First test: Catalase (Staph positive, Strep negative)',
+      'Coagulase positive = S. aureus',
+      'Novobiocin resistant CoNS = S. saprophyticus',
+      'β-hemolytic + Bacitracin S + PYR+ = S. pyogenes (GAS)',
+      'β-hemolytic + CAMP+ + Hippurate+ = S. agalactiae (GBS)',
+      'α-hemolytic + Optochin S + Bile soluble = S. pneumoniae',
+      'α-hemolytic + Optochin R = Viridans streptococci',
+      'Bile esculin+ and 6.5% NaCl+ = Enterococcus',
+      'Bile esculin+ but 6.5% NaCl- = S. bovis (Group D strep)'
+    ],
+    
+    examPrep: {
+      summary: `**GP Cocci Algorithm - Master Summary**
+
+**Catalase**: Staph (+) vs Strep (-)
+**Coagulase**: S. aureus (+) vs CoNS (-)
+**Novobiocin**: S. saprophyticus (R) vs S. epidermidis (S)
+
+**β-hemolytic**: Bacitracin/PYR for GAS, CAMP for GBS
+**α-hemolytic**: Optochin/Bile for Pneumococcus
+**γ-hemolytic**: Bile esculin + 6.5% NaCl for Enterococcus`,
+      
+      mnemonics: [
+        'CAT-alase = Clusters And Tetrads (Staph)',
+        'OVRPS: Optochin, Viridan Resistant, Pneumo Sensitive',
+        'B-CAMP: B agalactiae = CAMP positive'
+      ],
+      
+      highYield: [
+        'Catalase is the FIRST test for GP cocci',
+        'Tube coagulase is gold standard for S. aureus',
+        'S. saprophyticus: Novobiocin RESISTANT + causes UTI',
+        'PYR positive: S. pyogenes AND Enterococcus',
+        'S. bovis (bile esculin+) vs Enterococcus: 6.5% NaCl growth'
+      ],
+      
+      commonMCQs: [
+        'First test for GP cocci: Catalase',
+        'Coagulase positive: S. aureus',
+        'Optochin sensitive α-hemolytic: S. pneumoniae',
+        'CAMP positive: GBS (S. agalactiae)'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 25-27', chapterTitle: 'Staphylococcus, Streptococcus' }
+    ],
+    
+    retrievalCards: [
+      {
+        id: 'gp-algo-1',
+        question: 'Draw the complete GP cocci identification algorithm',
+        answer: 'GP Cocci → CATALASE\n- Positive → Staphylococcus → COAGULASE\n  - Positive → S. aureus\n  - Negative → CoNS → NOVOBIOCIN\n    - Resistant → S. saprophyticus\n    - Sensitive → S. epidermidis\n- Negative → Streptococcus → HEMOLYSIS\n  - β: Bacitracin/PYR (GAS), CAMP (GBS)\n  - α: Optochin/Bile (Pneumo vs Viridans)\n  - γ: Bile esculin + 6.5% NaCl (Enterococcus)',
+        difficulty: 3,
+        tags: ['algorithm', 'identification']
+      }
+    ],
+    
+    cases: []
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['staphylococcus', 'streptococcus', 'enterococcus'],
+  difficulty: 3,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 20,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: true, cases: false, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// GP RODS ALGORITHM
+// =============================================================================
+
+const gpRodsAlgorithmTopic: LibraryTopic = {
+  id: 'gp-rods-algorithm',
+  subjectId: 'microbiology',
+  subspecialtyId: 'microbiology-gram-positive',
+  name: 'GP Rods Algorithm',
+  slug: 'gp-rods-algorithm',
+  description: 'Spore-forming vs non-spore, aerobic vs anaerobic, identification',
+  content: {
+    concept: `# Gram-Positive Rods - Identification Algorithm
+
+## Step 1: Spore Formation
+
+**Spore-forming** → Bacillus or Clostridium
+**Non-spore-forming** → Listeria, Corynebacterium, Lactobacillus, etc.
+
+---
+
+## Spore-Forming GP Rods
+
+### Step 2: Oxygen Requirements
+
+**Aerobic/Facultative** → **BACILLUS**
+**Obligate Anaerobic** → **CLOSTRIDIUM**
+
+### Bacillus Species
+
+| Species | Motility | Hemolysis | Capsule | Disease |
+|---------|----------|-----------|---------|---------|
+| B. anthracis | **Non-motile** | γ (none) | + (polypeptide) | Anthrax |
+| B. cereus | Motile | β | - | Food poisoning |
+
+**Key**: B. anthracis is NON-motile, NON-hemolytic
+
+### Clostridium Species
+
+| Species | Spore Shape | Key Feature | Disease |
+|---------|-------------|-------------|---------|
+| C. tetani | Terminal (drumstick) | Tetanospasmin | Tetanus |
+| C. botulinum | Subterminal | Botulinum toxin | Botulism |
+| C. perfringens | Central/subterminal | Non-motile, lecithinase | Gas gangrene |
+| C. difficile | Subterminal oval | Toxin A&B | Pseudomembranous colitis |
+
+**Unique**: C. perfringens is the only NON-MOTILE Clostridium
+
+---
+
+## Non-Spore-Forming GP Rods
+
+### Key Organisms
+
+| Organism | Morphology | Key Tests | Disease |
+|----------|------------|-----------|---------|
+| **Listeria** | Small coccobacillus | Tumbling motility (25°C), cold growth, β-hemolytic | Meningitis, pregnancy |
+| **Corynebacterium** | Club-shaped, Chinese letters | Metachromatic granules, Elek test | Diphtheria |
+| **Lactobacillus** | Long rods | Part of normal flora | Non-pathogenic |
+| **Erysipelothrix** | Slender rods | H₂S production | Erysipeloid |
+
+---
+
+## Branching GP Rods
+
+| Organism | Acid-fast | Aerobe | Sulfur Granules | Disease |
+|----------|-----------|--------|-----------------|---------|
+| **Nocardia** | Weakly + | Yes | No | Lung, brain abscess |
+| **Actinomyces** | - | No (anaerobe) | Yes | Lumpy jaw |
+
+---
+
+## Quick Reference Algorithm
+
+\`\`\`
+Gram-Positive Rods
+    │
+    ├─ SPORE-FORMING
+    │       │
+    │       ├─ Aerobic → BACILLUS
+    │       │       ├─ Non-motile, Non-hemolytic → B. anthracis
+    │       │       └─ Motile, β-hemolytic → B. cereus
+    │       │
+    │       └─ Anaerobic → CLOSTRIDIUM
+    │               ├─ Drumstick spore → C. tetani
+    │               ├─ Non-motile, lecithinase + → C. perfringens
+    │               └─ Subterminal spore → C. botulinum, C. difficile
+    │
+    ├─ NON-SPORE-FORMING
+    │       │
+    │       ├─ Tumbling motility, cold growth → Listeria
+    │       ├─ Chinese letters, granules → Corynebacterium
+    │       └─ Normal flora, non-pathogenic → Lactobacillus
+    │
+    └─ BRANCHING
+            ├─ Weakly acid-fast, aerobic → Nocardia
+            └─ Anaerobic, sulfur granules → Actinomyces
+\`\`\``,
+    
+    keyPoints: [
+      'First division: Spore-forming vs Non-spore-forming',
+      'Bacillus: Aerobic spore-former; Clostridium: Anaerobic spore-former',
+      'B. anthracis is NON-motile (unlike B. cereus)',
+      'C. perfringens is NON-motile (unlike other Clostridia)',
+      'Listeria: Tumbling motility at 25°C, grows at 4°C',
+      'Corynebacterium: Chinese letter arrangement, metachromatic granules',
+      'Nocardia: Weakly acid-fast, aerobic',
+      'Actinomyces: NOT acid-fast, anaerobic, sulfur granules'
+    ],
+    
+    examPrep: {
+      summary: `**GP Rods Algorithm - Key Points**
+
+**Spore-forming**:
+- Aerobic → Bacillus
+- Anaerobic → Clostridium
+
+**Non-spore-forming**:
+- Tumbling + Cold = Listeria
+- Chinese letters = Corynebacterium
+
+**Branching**:
+- Weakly acid-fast = Nocardia
+- Sulfur granules = Actinomyces`,
+      
+      mnemonics: [
+        'BAD Clostridia: Botulinum, tetAni, Difficile, perfringens',
+        'Non-motile spore-formers: "A for Anthrax, P for Perfringens = AP"',
+        'Listeria: "Listens to the cold" (4°C growth)'
+      ],
+      
+      highYield: [
+        'Only non-motile Clostridium: C. perfringens',
+        'Only non-motile, non-hemolytic Bacillus: B. anthracis',
+        'Spore shapes help identify Clostridia',
+        'Cold enrichment: Listeria (grows at 4°C)',
+        'Nocardia vs Actinomyces: Acid-fast status is key'
+      ],
+      
+      commonMCQs: [
+        'Aerobic spore-forming GP rod: Bacillus',
+        'Anaerobic spore-forming GP rod: Clostridium',
+        'Non-motile Clostridium: C. perfringens',
+        'Cold growth (4°C): Listeria',
+        'Weakly acid-fast branching rod: Nocardia'
+      ]
+    },
+    
+    textbookRefs: [
+      { textbook: "Ananthanarayan and Paniker's Textbook of Microbiology", edition: '11th', chapter: 'Ch 28-31' }
+    ],
+    
+    retrievalCards: [],
+    cases: []
+  },
+  prerequisites: ['general-microbiology'],
+  relatedTopics: ['bacillus', 'clostridium', 'listeria', 'corynebacterium'],
+  difficulty: 3,
+  highYield: true,
+  examTags: ['NEET_PG', 'USMLE'],
+  estimatedMinutes: 20,
+  hasContent: { concept: true, examPrep: true, textbook: true, retrievalCards: false, cases: false, grindeMap: false },
+  createdAt: '2025-02-09',
+  updatedAt: '2025-02-09',
+};
+
+// =============================================================================
+// EXPORT ALL TOPICS
+// =============================================================================
+
+export const GRAM_POSITIVE_TOPICS: LibraryTopic[] = [
+  staphylococcusTopic,
+  streptococcusTopic,
+  enterococcusTopic,
+  bacillusTopic,
+  clostridiumTopic,
+  listeriaTopic,
+  corynebacteriumTopic,
+  nocardiaActinomycesTopic,
+  gpCocciAlgorithmTopic,
+  gpRodsAlgorithmTopic,
+];

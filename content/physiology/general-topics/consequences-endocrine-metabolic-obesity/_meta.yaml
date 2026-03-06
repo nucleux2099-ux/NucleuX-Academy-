@@ -1,0 +1,13 @@
+topic_id: consequences-endocrine-metabolic-obesity
+name: The metabolic and endocrine consequences of obesity &
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PY8.5
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PY8.6
+  domain: KH
+  core: true
+  phase: Phase 1

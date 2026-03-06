@@ -1,0 +1,9 @@
+topic_id: chronic-diarrhea-peds
+name: Chronic Diarrhea Peds
+description: Chronic Diarrhea Peds — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PE22.2
+  domain: SH
+  core: false
+  phase: Phase 2

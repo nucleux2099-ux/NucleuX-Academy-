@@ -1,0 +1,9 @@
+topic_id: alkylating-agents
+name: Alkylating Agents
+description: Alkylating Agents — NMC curriculum topic
+high_yield: false
+nmc_codes:
+- code: PH1.53
+  domain: KH
+  core: false
+  phase: Phase 1

@@ -1,0 +1,17 @@
+topic_id: dna-replication
+name: Dna Replication
+description: Dna Replication — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI7.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.2
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: BI7.4
+  domain: KH
+  core: true
+  phase: Phase 1

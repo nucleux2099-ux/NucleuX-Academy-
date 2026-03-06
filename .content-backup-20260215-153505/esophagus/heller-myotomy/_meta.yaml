@@ -1,0 +1,9 @@
+topic_id: heller-myotomy
+name: "Heller Myotomy"
+description: "Technique, indications, outcomes, role of fundoplication"
+high_yield: true
+difficulty: 4
+estimated_minutes: 20
+exam_tags: [NEET_PG, MRCS]
+prerequisites: [achalasia]
+related_topics: [poem-procedure, achalasia-lhm-vs-poem]

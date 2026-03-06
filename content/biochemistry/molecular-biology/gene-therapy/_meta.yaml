@@ -1,0 +1,9 @@
+topic_id: gene-therapy
+name: Gene Therapy
+description: Gene Therapy — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: BI7.3
+  domain: KH
+  core: true
+  phase: Phase 1

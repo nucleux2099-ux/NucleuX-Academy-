@@ -1,0 +1,9 @@
+topic_id: intracellular-accumulations
+name: Intracellular Accumulations
+description: Intracellular Accumulations — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA2.3
+  domain: KH
+  core: true
+  phase: Phase 1

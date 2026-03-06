@@ -1,0 +1,41 @@
+title: Dilated Cardiomyopathy
+slug: dilated-cardiomyopathy
+depth: UG
+highYield: true
+nmc_codes:
+  - IM3.1
+  - IM3.5
+  - IM3.7
+prerequisites:
+  - heart-failure
+related_topics:
+  - hypertrophic-cardiomyopathy
+  - heart-failure
+  - myocarditis
+enrichment:
+  nmcCodes:
+    - code: IM3.1
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dilated
+        cardiomyopathy
+      domain: KH
+    - code: IM3.5
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dilated
+        cardiomyopathy
+      domain: KH
+    - code: IM3.7
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of dilated
+        cardiomyopathy
+      domain: KH
+  prerequisite_details:
+    - slug: heart-failure
+      reason: Foundation knowledge for dilated cardiomyopathy
+  related_details:
+    - slug: hypertrophic-cardiomyopathy
+      reason: Clinically related to dilated cardiomyopathy
+      relationship: clinical
+    - slug: heart-failure
+      reason: Clinically related to dilated cardiomyopathy
+      relationship: clinical
+    - slug: myocarditis
+      reason: Clinically related to dilated cardiomyopathy
+      relationship: clinical

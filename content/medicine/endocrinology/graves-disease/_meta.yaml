@@ -1,0 +1,11 @@
+title: "Graves Disease"
+slug: graves-disease
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM10.7"
+prerequisites:
+  - "hyperthyroidism"
+related_topics:
+  - "thyroid-storm"
+  - "hypothyroidism"

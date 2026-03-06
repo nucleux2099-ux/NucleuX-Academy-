@@ -1,0 +1,25 @@
+topic_id: communicate-empathy-ethics-patient
+name: Communicate with the patient with empathy and ethics on all A/C
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PH5.1
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH5.3
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH5.4
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH5.6
+  domain: SH
+  core: true
+  phase: Phase 1
+- code: PH5.7
+  domain: KH
+  core: true
+  phase: Phase 1

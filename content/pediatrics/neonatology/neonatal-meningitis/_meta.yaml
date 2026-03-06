@@ -1,0 +1,9 @@
+topic_id: neonatal-meningitis
+name: Neonatal Meningitis
+description: Neonatal Meningitis — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PE30.2
+  domain: KH
+  core: true
+  phase: Phase 1

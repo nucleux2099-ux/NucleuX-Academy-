@@ -1,0 +1,9 @@
+topic_id: inguinal-hernia
+name: "Inguinal Hernia"
+description: "Anatomy, indirect vs direct, exam points, and surgical repair principles"
+high_yield: true
+difficulty: 4
+estimated_minutes: 25
+exam_tags: [NEET_PG, MRCS]
+prerequisites: []
+related_topics: [femoral-hernia, umbilical-hernia]

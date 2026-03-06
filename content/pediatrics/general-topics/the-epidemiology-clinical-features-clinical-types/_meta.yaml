@@ -1,0 +1,45 @@
+topic_id: the-epidemiology-clinical-features-clinical-types
+name: The epidemiology, clinical features, clinical types
+description: Auto-generated from NMC competency gaps
+high_yield: true
+nmc_codes:
+- code: PE34.1
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE34.10
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.11
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PE34.12
+  domain: KH
+  core: true
+  phase: Phase 2
+- code: PE34.4
+  domain: KH
+  core: true
+  phase: Phase 1
+- code: PE34.5
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE34.6
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PE34.7
+  domain: P
+  core: true
+  phase: Phase 1
+- code: PE34.8
+  domain: SH
+  core: true
+  phase: Phase 2
+- code: PE34.9
+  domain: SH
+  core: false
+  phase: Phase 1

@@ -1,0 +1,19 @@
+title: "Approach to Chest Pain"
+slug: chest-pain-approach
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM24.4"
+prerequisites: []
+related_topics:
+  - "acute-coronary-syndrome-em"
+enrichment:
+  nmcCodes:
+    - code: "IM24.4"
+      text: "Approach to Chest Pain — NMC competency"
+      domain: "KH"
+  prerequisite_details: []
+  related_details:
+    - slug: "acute-coronary-syndrome-em"
+      reason: "Clinically related"
+      relationship: "clinical"

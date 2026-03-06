@@ -1,0 +1,132 @@
+{
+  "title": "MBBS Degree Learning Pathways",
+  "description": "Comprehensive medical education pathways following CBME competencies and NMC curriculum",
+  "phases": {
+    "phase-1": {
+      "title": "Phase-1: Pre-Clinical (Foundation)",
+      "duration": "1 year",
+      "description": "Basic medical sciences foundation",
+      "subjects": {
+        "anatomy": {
+          "pathways": [
+            {
+              "id": "anatomy-general",
+              "title": "General Anatomy Fundamentals",
+              "difficulty": 1,
+              "xp": 148,
+              "estimatedTime": "4 hours",
+              "prerequisites": []
+            },
+            {
+              "id": "anatomy-upper-limb", 
+              "title": "Upper Limb Mastery",
+              "difficulty": 3,
+              "xp": 355,
+              "estimatedTime": "7 hours",
+              "prerequisites": ["anatomy-general"]
+            },
+            {
+              "id": "anatomy-lower-limb",
+              "title": "Lower Limb Comprehensive Study",
+              "difficulty": 3,
+              "xp": 446,
+              "estimatedTime": "8 hours", 
+              "prerequisites": ["anatomy-general"]
+            },
+            {
+              "id": "anatomy-thorax",
+              "title": "Thoracic Anatomy & Cardiopulmonary System",
+              "difficulty": 4,
+              "xp": 382,
+              "estimatedTime": "7 hours",
+              "prerequisites": ["anatomy-general"]
+            },
+            {
+              "id": "anatomy-head-neck",
+              "title": "Head & Neck Anatomy Mastery",
+              "difficulty": 5,
+              "xp": 490,
+              "estimatedTime": "9 hours",
+              "prerequisites": ["anatomy-general"]
+            }
+          ]
+        },
+        "physiology": {
+          "pathways": [
+            {
+              "id": "physiology-general",
+              "title": "General Physiology Foundations",
+              "difficulty": 2,
+              "xp": 235,
+              "estimatedTime": "5 hours",
+              "prerequisites": ["anatomy-general"]
+            },
+            {
+              "id": "physiology-cardiovascular",
+              "title": "Cardiovascular Physiology Mastery",
+              "difficulty": 4,
+              "xp": 402,
+              "estimatedTime": "7 hours",
+              "prerequisites": ["physiology-general", "anatomy-thorax"]
+            },
+            {
+              "id": "physiology-respiratory",
+              "title": "Respiratory Physiology Complete", 
+              "difficulty": 4,
+              "xp": 360,
+              "estimatedTime": "6 hours",
+              "prerequisites": ["physiology-general", "anatomy-thorax"]
+            }
+          ]
+        },
+        "biochemistry": {
+          "pathways": [
+            {
+              "id": "biochemistry-basics",
+              "title": "Basic Biochemistry & Biomolecules",
+              "difficulty": 2,
+              "xp": 227,
+              "estimatedTime": "5 hours",
+              "prerequisites": []
+            },
+            {
+              "id": "biochemistry-carbohydrate",
+              "title": "Carbohydrate Metabolism Mastery",
+              "difficulty": 4,
+              "xp": 320,
+              "estimatedTime": "6 hours",
+              "prerequisites": ["biochemistry-basics"]
+            }
+          ]
+        }
+      }
+    },
+    "phase-2": {
+      "title": "Phase-2: Para-Clinical",
+      "duration": "1 year",
+      "description": "Pathology, pharmacology, microbiology, forensic medicine, community medicine",
+      "subjects": {}
+    },
+    "phase-3a": {
+      "title": "Phase-3A: Clinical Rotations",
+      "duration": "1.5 years", 
+      "description": "Clinical subjects - medicine, surgery, pediatrics, OBG",
+      "subjects": {}
+    },
+    "phase-3b": {
+      "title": "Phase-3B: Clinical Specialties",
+      "duration": "1 year",
+      "description": "Specialty rotations - orthopedics, ENT, ophthalmology, dermatology, etc.",
+      "subjects": {}
+    }
+  },
+  "statistics": {
+    "totalPathways": 10,
+    "totalXP": 2965,
+    "totalEstimatedHours": 64,
+    "averageDifficulty": 3.2,
+    "completionRate": "N/A"
+  },
+  "lastUpdated": "2024-02-08",
+  "version": "1.0"
+}

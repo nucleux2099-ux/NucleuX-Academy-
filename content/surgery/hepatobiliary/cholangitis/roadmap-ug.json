@@ -1,0 +1,64 @@
+{
+  "level": "UG",
+  "foundations": [
+    {
+      "subject": "surgery",
+      "topic": "obstructive-jaundice",
+      "nmcCode": "",
+      "reason": "Cholangitis presents as infected obstructive jaundice; understanding biliary obstruction pathophysiology is essential for recognizing Charcot triad and Reynolds pentad",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "choledocholithiasis",
+      "nmcCode": "",
+      "reason": "CBD stones are the most common cause of acute cholangitis; stone impaction leads to biliary stasis and subsequent bacterial infection",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "liver-anatomy",
+      "nmcCode": "",
+      "reason": "Knowledge of biliary tree anatomy (hepatic ducts, CBD, ampulla) is critical for understanding obstruction sites and planning ERCP or surgical drainage",
+      "exists": true
+    }
+  ],
+  "clinical": [
+    {
+      "subject": "surgery",
+      "topic": "cholelithiasis",
+      "nmcCode": "",
+      "reason": "Gallstones migrate from gallbladder to CBD causing obstructive cholangitis; shared risk factors and management pathway",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "biliary-stricture",
+      "nmcCode": "",
+      "reason": "Benign and malignant strictures are the second most common cause of cholangitis after stones",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "bile-duct-injury",
+      "nmcCode": "",
+      "reason": "Post-cholecystectomy bile duct injury can lead to stricture formation and recurrent cholangitis",
+      "exists": true
+    },
+    {
+      "subject": "surgery",
+      "topic": "cholecystitis",
+      "nmcCode": "",
+      "reason": "Often coexists with cholangitis in gallstone disease; both require assessment of the biliary tree",
+      "exists": true
+    }
+  ],
+  "extensions": [],
+  "objectives": [
+    "SU28.12: Describe the applied anatomy of biliary system. Describe the clinical",
+    "IM5.6: Describe and discuss the pathophysiology, clinical evolution and"
+  ],
+  "nextTopics": [],
+  "prevTopics": [],
+  "integration": "This undergraduate-level roadmap connects Cholangitis across foundational sciences and clinical applications."
+}

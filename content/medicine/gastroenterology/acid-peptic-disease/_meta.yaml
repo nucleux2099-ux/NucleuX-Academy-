@@ -1,0 +1,22 @@
+title: "Acid Peptic Disease"
+slug: acid-peptic-disease
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM5.1"
+prerequisites:
+  - "gerd-medical"
+related_topics:
+  - "upper-gi-bleeding-medical"
+enrichment:
+  nmcCodes:
+    - code: "IM5.1"
+      text: "Acid Peptic Disease — NMC competency"
+      domain: "KH"
+  prerequisite_details:
+    - slug: "gerd-medical"
+      reason: "Foundation knowledge"
+  related_details:
+    - slug: "upper-gi-bleeding-medical"
+      reason: "Clinically related"
+      relationship: "clinical"

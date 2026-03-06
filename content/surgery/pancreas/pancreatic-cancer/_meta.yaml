@@ -1,0 +1,17 @@
+title: Pancreatic Cancer
+slug: pancreatic-cancer
+subject: surgery
+track: "MCh Surgical Gastroenterology"
+status: quality-upgraded-phase2
+source_mode: curriculum+textbook
+primary_curriculum_source: "MCh-SGE-NMC-Curriculum-2021.polished.md"
+quality_phase: "phase2-final5"
+competency_focus: "resectability/stage logic + escalation + MDT integration"
+nmc_codes: []
+prerequisites: []
+related_topics: []
+quality_gates:
+  - citation_ledger_populated
+  - escalation_triggers_explicit
+  - viva_blocks_complete
+last_updated: "2026-02-19"

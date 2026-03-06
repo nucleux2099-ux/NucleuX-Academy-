@@ -1,0 +1,36 @@
+title: "Biliary Dyskinesia"
+slug: biliary-dyskinesia
+depth: "PG"
+highYield: true
+nmc_codes:
+  - "SU28.12"
+prerequisites:
+  - "liver-anatomy"
+  - "cholelithiasis"
+  - "cholecystitis"
+related_topics:
+  - "choledocholithiasis"
+  - "cholangitis"
+  - "acute-cholecystitis"
+enrichment:
+  nmcCodes:
+    - code: "SU28.12"
+      text: "Describe the applied anatomy of biliary system. Describe the clinical features, investigations and principles of management of diseases of biliary system."
+      domain: "KH"
+  prerequisite_details:
+    - slug: "liver-anatomy"
+      reason: "Understanding cystic duct anatomy and gallbladder motor physiology is essential for diagnosing functional biliary disorders"
+    - slug: "cholelithiasis"
+      reason: "Must exclude gallstones before diagnosing functional gallbladder ejection fraction abnormalities"
+    - slug: "cholecystitis"
+      reason: "Acalculous cholecystitis shares overlapping presentation and must be differentiated from biliary dyskinesia"
+  related_details:
+    - slug: "choledocholithiasis"
+      reason: "Sphincter of Oddi dysfunction (Type II/III) may mimic or coexist with CBD stone symptoms"
+      relationship: "differential"
+    - slug: "cholangitis"
+      reason: "Biliary stasis from dyskinesia can predispose to ascending infection requiring differentiation"
+      relationship: "clinical"
+    - slug: "acute-cholecystitis"
+      reason: "CCK-HIDA scan used in dyskinesia workup also evaluates for acute cholecystitis"
+      relationship: "diagnostic"

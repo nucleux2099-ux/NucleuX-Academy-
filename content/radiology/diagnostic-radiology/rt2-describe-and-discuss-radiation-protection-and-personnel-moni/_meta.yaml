@@ -1,0 +1,9 @@
+topic_id: rt2-describe-and-discuss-radiation-protection-and-personnel-moni
+name: Describe and discuss radiation protection and personnel monitoring
+description: Describe and discuss radiation protection and personnel monitoring — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: RT2.1
+  domain: KH
+  core: true
+  phase: Phase 3

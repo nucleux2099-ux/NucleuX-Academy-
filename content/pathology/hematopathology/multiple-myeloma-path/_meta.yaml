@@ -1,0 +1,9 @@
+topic_id: multiple-myeloma-path
+name: Multiple Myeloma Path
+description: Multiple Myeloma Path — NMC curriculum topic
+high_yield: true
+nmc_codes:
+- code: PA20.1
+  domain: SH
+  core: true
+  phase: Phase 1

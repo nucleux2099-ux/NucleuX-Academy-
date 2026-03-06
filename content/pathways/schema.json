@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NucleuX Academy Learning Pathway",
+  "description": "Schema for validating learning pathway JSON files",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier using kebab-case"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100,
+      "description": "Human-readable pathway title"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["Phase-1", "Phase-2", "Phase-3A", "Phase-3B"],
+      "description": "MBBS phase classification"
+    },
+    "subject": {
+      "type": "string",
+      "enum": [
+        "Anatomy", "Physiology", "Biochemistry",
+        "Pathology", "Pharmacology", "Microbiology", "Forensic Medicine", "Community Medicine",
+        "Medicine", "Surgery", "OBG", "Pediatrics", "Orthopedics", "ENT", "Ophthalmology",
+        "Dermatology", "Psychiatry", "Anesthesia", "Radiology", "Emergency Medicine"
+      ],
+      "description": "Primary medical subject"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "Comprehensive description of learning outcomes"
+    },
+    "competencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2,3}[0-9]+\\.[0-9]+$",
+        "description": "CBME competency codes (e.g., AN2.1, PY4.3)"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "List of CBME competencies addressed"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "Prerequisite pathway IDs"
+      },
+      "uniqueItems": true,
+      "description": "Required pathways that must be completed first"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Step sequence number"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["reading", "quiz", "skill", "case", "integration"],
+            "description": "Type of learning activity"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 100,
+            "description": "Step title"
+          },
+          "libraryTopic": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "ID of library topic to reference"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 50
+            },
+            "description": "Specific sections within the library topic"
+          },
+          "duration": {
+            "type": "string",
+            "pattern": "^[0-9]+min$|^[0-9]+h$|^[0-9]+h [0-9]+min$",
+            "description": "Estimated completion time (e.g., '30min', '2h', '1h 30min')"
+          },
+          "xp": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 200,
+            "description": "Experience points awarded for completion"
+          },
+          "competency": {
+            "type": "string",
+            "pattern": "^[A-Z]{2,3}[0-9]+\\.[0-9]+$",
+            "description": "Specific competency addressed by this step"
+          },
+          "mcqCount": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 50,
+            "description": "Number of MCQs in quiz steps"
+          },
+          "passingScore": {
+            "type": "integer",
+            "minimum": 50,
+            "maximum": 95,
+            "description": "Minimum percentage required to pass quiz"
+          }
+        },
+        "required": ["order", "type", "title", "duration", "xp"],
+        "additionalProperties": false,
+        "if": {
+          "properties": {
+            "type": {
+              "const": "quiz"
+            }
+          }
+        },
+        "then": {
+          "required": ["mcqCount", "passingScore"]
+        },
+        "description": "Individual learning step"
+      },
+      "minItems": 2,
+      "description": "Ordered list of learning steps"
+    },
+    "totalXP": {
+      "type": "integer",
+      "minimum": 50,
+      "description": "Total experience points for pathway completion"
+    },
+    "estimatedTime": {
+      "type": "string",
+      "pattern": "^[0-9]+h$|^[0-9]+ hours?$|^[0-9]+ days?$",
+      "description": "Total estimated completion time"
+    },
+    "unlocks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "Pathway IDs that this pathway unlocks"
+      },
+      "uniqueItems": true,
+      "description": "Pathways unlocked upon completion"
+    },
+    "textbooks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 100,
+            "description": "Textbook title"
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "minItems": 1,
+            "description": "Relevant chapter names or numbers"
+          },
+          "pages": {
+            "type": "string",
+            "pattern": "^[0-9]+-[0-9]+$",
+            "description": "Page range (e.g., '123-145')"
+          },
+          "edition": {
+            "type": "string",
+            "pattern": "^[0-9]+th$|^[0-9]+st$|^[0-9]+nd$|^[0-9]+rd$",
+            "description": "Edition number (e.g., '5th', '21st')"
+          }
+        },
+        "required": ["title", "chapters"],
+        "additionalProperties": false,
+        "description": "Textbook reference"
+      },
+      "minItems": 1,
+      "description": "Required textbook references"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "high-yield", "neet-pg", "usmle", "clinical", "basic-science",
+          "procedures", "emergency", "research", "communication", "ethics"
+        ]
+      },
+      "uniqueItems": true,
+      "description": "Classification tags for filtering and search"
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Difficulty level (1=beginner, 5=advanced)"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date",
+      "description": "Last modification date (YYYY-MM-DD)"
+    }
+  },
+  "required": [
+    "id", "title", "phase", "subject", "description", "competencies",
+    "steps", "totalXP", "estimatedTime", "textbooks", "difficulty", "lastUpdated"
+  ],
+  "additionalProperties": false
+}

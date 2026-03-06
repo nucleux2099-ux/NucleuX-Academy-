@@ -1,0 +1,30 @@
+title: "Peripheral Neuropathy"
+slug: peripheral-neuropathy
+depth: "UG"
+highYield: true
+nmc_codes:
+  - "IM18.6"
+  - "IM10.21"
+prerequisites:
+  - "neuroanatomy-motor-pathways"
+  - "diabetes-mellitus"
+related_topics:
+  - "motor-neuron-disease"
+  - "diabetic-nephropathy"
+enrichment:
+  nmcCodes:
+    - code: "IM18.6"
+      text: "Describe and discuss the aetiology, clinical features and diagnosis of peripheral neuropathy"
+      domain: "KH"
+    - code: "IM10.21"
+      text: "Describe the management of diabetic neuropathy"
+      domain: "P"
+  prerequisite_details:
+    - slug: "neuroanatomy-motor-pathways"
+      reason: "Understanding nerve anatomy for localization"
+    - slug: "diabetes-mellitus"
+      reason: "Most common cause of peripheral neuropathy"
+  related_details:
+    - slug: "motor-neuron-disease"
+      reason: "Differential diagnosis for LMN weakness"
+      relationship: "clinical"

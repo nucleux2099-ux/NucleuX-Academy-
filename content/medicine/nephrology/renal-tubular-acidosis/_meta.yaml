@@ -1,0 +1,36 @@
+title: Renal Tubular Acidosis
+slug: renal-tubular-acidosis
+depth: UG
+highYield: true
+nmc_codes:
+  - IM10.16
+  - IM10.17
+  - IM10.19
+  - IM10.24
+  - IM10.3
+prerequisites: []
+related_topics: []
+enrichment:
+  nmcCodes:
+    - code: IM10.16
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal tubular
+        acidosis
+      domain: KH
+    - code: IM10.17
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal tubular
+        acidosis
+      domain: KH
+    - code: IM10.19
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal tubular
+        acidosis
+      domain: KH
+    - code: IM10.24
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal tubular
+        acidosis
+      domain: KH
+    - code: IM10.3
+      text: Describe the aetiology, pathophysiology, clinical features, investigations and management of renal tubular
+        acidosis
+      domain: KH
+  prerequisite_details: []
+  related_details: []
