@@ -40,3 +40,13 @@ Remaining warnings come from unavoidable runtime joins in generic filesystem loa
 
 ### Next refinement option
 Introduce subject/subspecialty-specific resolver modules (per-subject import graph) to fully eliminate remaining dynamic joins, at the cost of larger refactor complexity.
+
+## Orchestrator follow-up (2026-03-09, 05:0x IST)
+- ✅ Migrated `src/middleware.ts` → `src/proxy.ts` and renamed handler `middleware` → `proxy` per Next 16 convention.
+- ✅ Re-ran `npm run build`: deprecation warning removed; build remains green.
+- ✅ Re-ran `npm run lint`: 0 errors, 33 pre-existing warnings (unchanged baseline).
+- ✅ Re-ran `npm run test:atom:dedup`: 2/2 passing.
+- ⛔ `npm run test:smoke` blocked by missing env vars: `E2E_EMAIL`, `E2E_PASSWORD`.
+
+### Recommended next action
+Provide non-prod smoke credentials through CI/local env and re-run `npm run test:smoke` to restore end-to-end overnight verification.
