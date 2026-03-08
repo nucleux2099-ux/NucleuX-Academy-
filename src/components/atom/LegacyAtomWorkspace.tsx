@@ -482,57 +482,74 @@ export default function AtomWorkspacePage() {
     if (!taskPrompt.trim() || isSubmitting) return;
     setIsSubmitting(true);
     setErrorCard(null);
-    setAssistantText("");
-    setTimeline([]);
-    setArtifacts([]);
-    setStatus("queued");
+    setStatus("running");
+
+    const userText = taskPrompt.trim();
+    setTimeline((prev) => [
+      ...prev,
+      { id: crypto.randomUUID(), type: 'assistant.delta', ts: new Date().toISOString(), label: 'You', detail: userText },
+    ]);
+    setAssistantText('');
 
     try {
-      const response = await fetch("/api/atom/tasks", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const deskSources = selectedBookIds
+        .map((id) => sourceCatalog.find((book) => book.id === id)?.shortTitle)
+        .filter((v): v is string => Boolean(v));
+
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: taskPrompt.trim(),
-          mode: "task",
-          sourceSelection: {
-            preset: sharedContext.sourceSelection.preset,
-            bookIds: sharedContext.sourceSelection.bookIds,
-            books: selectedBookIds
-              .map((id) => sourceCatalog.find((book) => book.id === id))
-              .filter((book): book is AtomSourceCatalogItem => Boolean(book))
-              .map((book) => ({ id: book.id, title: book.title })),
-            level: levelFilter === "all" ? undefined : levelFilter,
-            domain: domainFilter === "all" ? undefined : domainFilter,
-            topic: sharedContext.topic,
-            goal: sharedContext.goal,
-            timeAvailable: sharedContext.timeAvailable,
-            taskId: sharedContext.taskId ?? undefined,
-            sessionId: sharedContext.sessionId ?? undefined,
-          },
-          room: sharedContext.roomId,
-          roomProfile: sharedContext.roomProfile,
-          orchestrationMetadata: {
-            roomPersona: sharedContext.roomProfile.personaName,
-            roomDepthDefault: sharedContext.roomProfile.depthDefault,
-          },
+          context: domainFilter === 'all' ? 'surgery' : domainFilter,
+          deskSources,
+          messages: [{ role: 'user', content: userText }],
         }),
       });
 
-      const data = (await response.json()) as { error?: string; taskId?: string; eventsUrl?: string; status?: AtomTaskStatus };
-      if (!response.ok || !data.taskId || !data.eventsUrl) {
-        throw new Error(data.error ?? "Unable to create task");
+      if (!response.ok || !response.body) {
+        const raw = await response.text();
+        throw new Error(raw || 'Chat request failed');
       }
 
-      setTaskId(data.taskId);
-      setStatus(data.status ?? "queued");
-      connectEvents(data.taskId, data.eventsUrl);
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+
+        const chunks = buffer.split('\n\n');
+        buffer = chunks.pop() ?? '';
+
+        for (const chunk of chunks) {
+          const line = chunk.split('\n').find((l) => l.startsWith('data: '));
+          if (!line) continue;
+          const payload = line.slice(6).trim();
+          if (payload === '[DONE]') continue;
+
+          try {
+            const parsed = JSON.parse(payload) as { text?: string; error?: string };
+            if (parsed.error) throw new Error(parsed.error);
+            if (parsed.text) {
+              setAssistantText((prev) => `${prev}${parsed.text}`);
+            }
+          } catch {
+            // ignore malformed chunk
+          }
+        }
+      }
+
+      setStatus('completed');
     } catch (error) {
-      setStatus("failed");
-      setErrorCard(error instanceof Error ? error.message : "Failed to start task");
+      setStatus('failed');
+      setErrorCard(error instanceof Error ? error.message : 'Failed to send chat');
     } finally {
       setIsSubmitting(false);
+      setTaskPrompt('');
     }
-  }, [connectEvents, domainFilter, isSubmitting, levelFilter, selectedBookIds, sourceCatalog, sharedContext, taskPrompt]);
+  }, [domainFilter, isSubmitting, selectedBookIds, sourceCatalog, taskPrompt]);
 
   const launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
     if (launchMode === "chat") {
@@ -950,113 +967,23 @@ export default function AtomWorkspacePage() {
           </div>
 
           <div className="shrink-0 w-full max-w-4xl mx-auto">
-            {ux2ComposerEnabled ? (
-              <div className="rounded-3xl border border-[#2B4560] bg-[#0d1c2e]/95 shadow-[0_16px_48px_rgba(0,0,0,0.35)] p-3">
-                <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <select
-                    value={selectedWorkflowPreset}
-                    onChange={(e) => applyWorkflowPreset(e.target.value)}
-                    className="h-8 rounded-full bg-[#14263A] border border-[#29435D] text-[11px] text-[#C7D8EA] px-3"
-                  >
-                    <option value="">Workflow preset</option>
-                    {WORKFLOW_PRESETS.map((preset) => (
-                      <option key={preset.label} value={preset.label}>{preset.label}</option>
-                    ))}
-                  </select>
-
-                  {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => {
-                    const disabled = !activeRoomProfile.enabledModes.includes(m) || (m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled);
-                    return (
-                      <button
-                        key={m}
-                        type="button"
-                        disabled={disabled}
-                        onClick={() => setMode(m)}
-                        className={`h-7 px-3 rounded-full text-[11px] border transition ${mode === m ? "border-[#63C2C2] bg-[#5BB3B3]/20 text-white" : "border-[#29435D] text-[#93A9BF] hover:text-white"} ${disabled ? "opacity-40 cursor-not-allowed" : ""}`}
-                      >
-                        {MODE_LABELS[m]}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {mode === "guided-deep-dive" ? (
-                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-2">
-                    <div className="space-y-2">
-                      <div className="flex gap-2">
-                        <Button onClick={startGuidedDeepDive} disabled={!gddEnabled || isSubmitting} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">{isSubmitting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <Play className="w-4 h-4 mr-1" />}Start GDD</Button>
-                        <input value={gddLoadId} onChange={(e) => setGddLoadId(e.target.value)} placeholder="Session ID" className="h-9 flex-1 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                        <Button variant="outline" onClick={loadGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddLoadId.trim()} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Load</Button>
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <input value={gddAccuracyPct} onChange={(e) => setGddAccuracyPct(e.target.value)} placeholder="accuracy %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                      <input value={gddHintCount} onChange={(e) => setGddHintCount(e.target.value)} placeholder="hints" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                      <input value={gddAvgResponseSec} onChange={(e) => setGddAvgResponseSec(e.target.value)} placeholder="avg response sec" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                      <input value={gddConfidenceSelf} onChange={(e) => setGddConfidenceSelf(e.target.value)} placeholder="confidence %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                      <input value={gddWeakConcepts} onChange={(e) => setGddWeakConcepts(e.target.value)} placeholder="weak concepts comma-separated" className="h-8 col-span-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                      <Button onClick={advanceGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddSessionId} className="col-span-2 bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Advance Step</Button>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <div className="rounded-2xl border border-[#29435D] bg-[#101f31] px-3 py-2 flex items-end gap-2">
-                      <Button
-                        type="button"
-                        size="icon"
-                        variant="ghost"
-                        className="h-9 w-9 rounded-xl border border-[#2E4A67] text-[#A9BFD6] hover:text-white"
-                        onClick={() => setComposerAttachment((prev) => (prev ? null : { name: "attachment-placeholder.csv" }))}
-                      >
-                        <Paperclip className="w-4 h-4" />
-                      </Button>
-                      <textarea
-                        value={taskPrompt}
-                        onChange={(e) => setTaskPrompt(e.target.value)}
-                        placeholder="Ask ATOM what you want to study or generate..."
-                        className="flex-1 min-h-[72px] max-h-40 bg-transparent text-sm leading-6 text-[#E5EEF8] placeholder:text-[#68829A] resize-none focus:outline-none"
-                      />
-                      <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="h-9 rounded-xl bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
-                        {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <SendHorizontal className="w-4 h-4" />}
-                      </Button>
-                    </div>
-
-                    {composerAttachment && (
-                      <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#2D4A66] bg-[#15263A] px-3 py-1 text-[11px] text-[#B7CCE0]">
-                        <Paperclip className="w-3.5 h-3.5" />
-                        <span>{composerAttachment.name}</span>
-                        <button type="button" className="text-[#7E97AF] hover:text-white" onClick={() => setComposerAttachment(null)}>×</button>
-                      </div>
-                    )}
-
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      <Button variant="outline" onClick={() => controlTask("stop")} disabled={!taskId || status !== "running"} className="h-8 border-[#1E3A5F] text-[#FCA5A5] bg-transparent"><CircleStop className="w-3.5 h-3.5 mr-1" />Stop</Button>
-                      <Button variant="outline" onClick={() => controlTask("retry")} disabled={!taskId} className="h-8 border-[#1E3A5F] text-[#BFDBFE] bg-transparent"><RotateCcw className="w-3.5 h-3.5 mr-1" />Retry</Button>
-                      <Button variant="outline" onClick={() => controlTask("continue")} disabled={!taskId || status !== "needs_input"} className="h-8 border-[#1E3A5F] text-[#A7F3D0] bg-transparent"><Play className="w-3.5 h-3.5 mr-1" />Continue</Button>
-                      <Button variant="outline" onClick={() => controlTask("branch")} disabled={!taskId} className="h-8 border-[#1E3A5F] text-[#E9D5FF] bg-transparent"><GitBranch className="w-3.5 h-3.5 mr-1" />Branch</Button>
-                    </div>
-                  </>
-                )}
+            <div className="rounded-3xl border border-[#2B4560] bg-[#0d1c2e]/95 shadow-[0_16px_48px_rgba(0,0,0,0.35)] p-3">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-[11px] text-[#93A9BF]">Simple Chat</p>
+                <p className="text-[11px] text-[#68829A]">{selectedBookIds.length} sources selected</p>
               </div>
-            ) : (
-              <div className="rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-3">
-                <select value={mode} onChange={(e) => setMode(e.target.value as AtomWorkspaceMode)} className="h-9 w-full mb-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2">
-                  {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => (
-                    <option key={m} value={m} disabled={!activeRoomProfile.enabledModes.includes(m) || (m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled)}>{MODE_LABELS[m]}</option>
-                  ))}
-                </select>
-                <textarea value={taskPrompt} onChange={(e) => setTaskPrompt(e.target.value)} placeholder="Ask ATOM what you want to study or generate..." className="w-full min-h-[120px] rounded-xl bg-[#162535] border border-[#1E3A5F] p-3 text-sm" />
-                <div className="mt-2 flex flex-wrap gap-2">
-                  <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
-                    {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
-                  </Button>
-                  <Button variant="outline" onClick={() => controlTask("stop")} disabled={!taskId || status !== "running"} className="border-[#1E3A5F] text-[#FCA5A5] bg-transparent"><CircleStop className="w-4 h-4 mr-1" />Stop</Button>
-                  <Button variant="outline" onClick={() => controlTask("retry")} disabled={!taskId} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent"><RotateCcw className="w-4 h-4 mr-1" />Retry</Button>
-                  <Button variant="outline" onClick={() => controlTask("continue")} disabled={!taskId || status !== "needs_input"} className="border-[#1E3A5F] text-[#A7F3D0] bg-transparent"><Play className="w-4 h-4 mr-1" />Continue</Button>
-                  <Button variant="outline" onClick={() => controlTask("branch")} disabled={!taskId} className="border-[#1E3A5F] text-[#E9D5FF] bg-transparent"><GitBranch className="w-4 h-4 mr-1" />Branch</Button>
-                </div>
+              <div className="rounded-2xl border border-[#29435D] bg-[#101f31] px-3 py-2 flex items-end gap-2">
+                <textarea
+                  value={taskPrompt}
+                  onChange={(e) => setTaskPrompt(e.target.value)}
+                  placeholder="Ask ATOM anything about your selected sources..."
+                  className="flex-1 min-h-[72px] max-h-40 bg-transparent text-sm leading-6 text-[#E5EEF8] placeholder:text-[#68829A] resize-none focus:outline-none"
+                />
+                <Button onClick={startTask} disabled={!taskPrompt.trim() || isSubmitting || selectedBookIds.length === 0} className="h-9 rounded-xl bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                  {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <SendHorizontal className="w-4 h-4" />}
+                </Button>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
