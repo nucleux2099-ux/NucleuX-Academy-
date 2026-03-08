@@ -50,7 +50,21 @@ export async function POST(
         .eq('id', taskId)
         .single();
 
-      const sourceSelection = (task?.source_snapshot as { sourceSelection?: Record<string, unknown> } | null)?.sourceSelection;
+      const snapshot = task?.source_snapshot as {
+        sourceSelection?: Record<string, unknown>;
+        roomProfile?: {
+          roomId: string;
+          personaName: string;
+          personaStyle: string;
+          defaultMode: string;
+          sourcePreset: string;
+          depthDefault: number;
+          safetyNotes: string;
+          enabledModes: string[];
+        };
+        orchestrationMetadata?: Record<string, unknown>;
+      } | null;
+      const sourceSelection = snapshot?.sourceSelection;
       const workflow = typeof sourceSelection?.workflow === 'string' ? sourceSelection.workflow : '';
 
       if (workflow === 'nucleux-original-deep-research' && isFeatureEnabled('trackADeepResearchScaffold')) {
@@ -61,6 +75,8 @@ export async function POST(
           goal: String(task?.input_message ?? 'Retry task'),
           includeReferences: Boolean(sourceSelection?.includeReferences),
           clinicalContext: typeof sourceSelection?.clinicalContext === 'string' ? sourceSelection.clinicalContext : undefined,
+          roomProfile: snapshot?.roomProfile,
+          orchestrationMetadata: snapshot?.orchestrationMetadata,
         });
       } else {
         void runAtomOrchestratorStub(supabase, taskId);

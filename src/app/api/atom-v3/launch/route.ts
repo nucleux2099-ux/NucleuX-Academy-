@@ -13,6 +13,11 @@ import { createLearningCycleHooksScaffold } from '@/lib/atom/learning-cycle/hook
 import { isAtomV3GddEnabled, isFeatureEnabled } from '@/lib/features/flags';
 import { createClient } from '@/lib/supabase/server';
 import { appendTaskEvent, runNucleuxOriginalDeepResearch } from '@/lib/atom/orchestrator';
+import { resolveAtomRoomProfile } from '@/lib/atom/room-profiles';
+
+type LaunchRequestContext = QuickStartFormInput & {
+  roomId?: string;
+};
 
 type LaunchResponse = {
   workflow: string;
@@ -43,7 +48,7 @@ function toQuery(payload: QuickStartFormInput): string {
   return params.toString();
 }
 
-const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Promise<LaunchResponse>> = {
+const MODE_HANDLERS: Record<QuickStartMode, (payload: LaunchRequestContext) => Promise<LaunchResponse>> = {
   ppt: async (payload) => ({
     workflow: 'ppt',
     launchPath: `/chat?${toQuery(payload)}`,
@@ -72,17 +77,24 @@ const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Pr
 
     const compiledMessage = [payload.goal, payload.topic, payload.advanced?.clinicalContext].filter(Boolean).join(' | ');
 
+    const roomProfile = resolveAtomRoomProfile(payload.roomId);
+
     const sourceSnapshot = {
       sourceSelection: {
         level: payload.level,
-        preset: 'clinical-deep-dive',
+        preset: roomProfile.sourcePreset,
         bookIds: [],
         workflow: 'nucleux-original-deep-research',
         includeReferences: payload.advanced?.includeReferences ?? true,
         topic: payload.topic,
         clinicalContext: payload.advanced?.clinicalContext,
       },
-      room: 'atom',
+      room: roomProfile.roomId,
+      roomProfile,
+      orchestrationMetadata: {
+        roomPersona: roomProfile.personaName,
+        roomDepthDefault: roomProfile.depthDefault,
+      },
     };
 
     const { data: task, error: insertError } = await supabase
@@ -115,6 +127,11 @@ const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Pr
       goal: payload.goal,
       includeReferences: payload.advanced?.includeReferences ?? true,
       clinicalContext: payload.advanced?.clinicalContext,
+      roomProfile,
+      orchestrationMetadata: {
+        roomPersona: roomProfile.personaName,
+        roomDepthDefault: roomProfile.depthDefault,
+      },
     });
 
     const deepResearchPipeline = createDeepResearchPipelineScaffold();
@@ -220,9 +237,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid quick start input', details: validated.errors }, { status: 400 });
     }
 
-    const response = await MODE_HANDLERS[validated.data.mode](validated.data);
+    const roomId = typeof body?.roomId === 'string' ? body.roomId : undefined;
+    const roomProfile = resolveAtomRoomProfile(roomId);
+    const launchInput: LaunchRequestContext = {
+      ...validated.data,
+      roomId: roomProfile.roomId,
+    };
+
+    const response = await MODE_HANDLERS[validated.data.mode](launchInput);
     return NextResponse.json({
-      payload: validated.data,
+      payload: launchInput,
+      roomProfile,
       ...response,
     });
   } catch (error) {

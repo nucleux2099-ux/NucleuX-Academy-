@@ -186,6 +186,8 @@ export async function runNucleuxOriginalDeepResearch(
   await appendTaskEvent(supabase, taskId, 'task.started', {
     message: 'Deep research execution started',
     workflow: config.workflow,
+    roomProfile: config.roomProfile,
+    orchestrationMetadata: config.orchestrationMetadata,
   });
 
   for (const phase of ATOM_TASK_PHASES) {
@@ -290,6 +292,8 @@ export async function runNucleuxOriginalDeepResearch(
   await appendTaskEvent(supabase, taskId, 'task.completed', {
     message: 'Task completed via deep research pipeline',
     workflow: config.workflow,
+    roomProfile: config.roomProfile,
+    orchestrationMetadata: config.orchestrationMetadata,
   });
 }
 

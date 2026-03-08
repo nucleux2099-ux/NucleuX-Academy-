@@ -37,6 +37,8 @@ export async function POST(request: NextRequest) {
     const sourceSnapshot = {
       sourceSelection: body.sourceSelection ?? {},
       room: body.room ?? null,
+      roomProfile: body.roomProfile ?? null,
+      orchestrationMetadata: body.orchestrationMetadata ?? null,
     };
 
     const { data: task, error: insertError } = await supabase
@@ -76,6 +78,8 @@ export async function POST(request: NextRequest) {
         includeReferences: Boolean(body.sourceSelection?.includeReferences),
         clinicalContext:
           typeof body.sourceSelection?.clinicalContext === 'string' ? body.sourceSelection.clinicalContext : undefined,
+        roomProfile: body.roomProfile,
+        orchestrationMetadata: body.orchestrationMetadata,
       });
     } else {
       void runAtomOrchestratorStub(supabase, task.id);

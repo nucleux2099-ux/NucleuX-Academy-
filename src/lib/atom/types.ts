@@ -50,6 +50,8 @@ export type AtomSourceSelection = {
   bookIds?: string[];
   books?: Array<{ id: string; title: string }>;
   preset?: string;
+  taskId?: string;
+  sessionId?: string;
   [key: string]: unknown;
 };
 
@@ -63,11 +65,24 @@ export type AtomTaskEventEnvelope = {
   payload: AtomEventPayload;
 };
 
+export type AtomRoomProfileSnapshot = {
+  roomId: string;
+  personaName: string;
+  personaStyle: string;
+  defaultMode: string;
+  sourcePreset: string;
+  depthDefault: number;
+  safetyNotes: string;
+  enabledModes: string[];
+};
+
 export type CreateAtomTaskRequest = {
   message: string;
   mode?: AtomTaskMode;
   sourceSelection?: AtomSourceSelection;
   room?: string;
+  roomProfile?: AtomRoomProfileSnapshot;
+  orchestrationMetadata?: Record<string, unknown>;
 };
 
 export type AtomTaskControlRequest = {
@@ -158,4 +173,6 @@ export type DeepResearchConfig = {
   includeReferences: boolean;
   clinicalContext?: string;
   coverageThreshold?: number;
+  roomProfile?: AtomRoomProfileSnapshot;
+  orchestrationMetadata?: Record<string, unknown>;
 };

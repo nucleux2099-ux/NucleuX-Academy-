@@ -17,6 +17,13 @@ import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
 import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
 import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
 import {
+  ATOM_ROOM_PROFILES,
+  applyRoomDefaults,
+  resolveAtomRoomProfile,
+  type AtomRoomId,
+  type AtomWorkspaceMode,
+} from "@/lib/atom/room-profiles";
+import {
   BookOpen,
   CircleStop,
   Play,
@@ -49,9 +56,8 @@ type ArtifactItem = {
 };
 
 type MobileTab = "sources" | "process" | "workspace";
-type WorkspaceMode = "chat" | "mcq" | "flashcards" | "ppt" | "nucleux-original" | "guided-deep-dive";
 
-const MODE_LABELS: Record<WorkspaceMode, string> = {
+const MODE_LABELS: Record<AtomWorkspaceMode, string> = {
   chat: "Chat",
   mcq: "MCQ",
   flashcards: "Flashcards",
@@ -90,12 +96,14 @@ function formatEvent(type: AtomEventType, payload: Record<string, unknown>): Pic
 
 export default function AtomWorkspacePage() {
   const [mobileTab, setMobileTab] = useState<MobileTab>("process");
-  const [mode, setMode] = useState<WorkspaceMode>("chat");
+  const [mode, setMode] = useState<AtomWorkspaceMode>("chat");
   const [taskPrompt, setTaskPrompt] = useState("");
   const [topic, setTopic] = useState("General Surgery high-yield revision");
   const [level, setLevel] = useState<QuickStartLevel>("resident");
   const [timeAvailable, setTimeAvailable] = useState("25");
   const [goal, setGoal] = useState("Build exam-ready recall with concise, practical output");
+  const [selectedRoomId, setSelectedRoomId] = useState<AtomRoomId>("atom");
+  const [manualOverrides, setManualOverrides] = useState<Partial<Record<"topic" | "level" | "timeAvailable" | "goal", boolean>>>({});
 
   const [taskId, setTaskId] = useState<string | null>(null);
   const [status, setStatus] = useState<AtomTaskStatus>("queued");
@@ -125,6 +133,41 @@ export default function AtomWorkspacePage() {
 
   const gddEnabled = isAtomV3GddEnabled();
   const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
+  const activeRoomProfile = useMemo(() => resolveAtomRoomProfile(selectedRoomId), [selectedRoomId]);
+
+  const sharedContext = useMemo(() => ({
+    roomId: selectedRoomId,
+    roomProfile: activeRoomProfile,
+    topic,
+    level,
+    timeAvailable,
+    goal,
+    sourceSelection: {
+      preset: selectedPreset,
+      bookIds: selectedBookIds,
+      levelFilter,
+      domainFilter,
+      showPendingSources,
+      taskId,
+      sessionId: gddSessionId,
+    },
+    taskId,
+    sessionId: gddSessionId,
+  }), [
+    activeRoomProfile,
+    domainFilter,
+    gddSessionId,
+    goal,
+    level,
+    levelFilter,
+    selectedBookIds,
+    selectedPreset,
+    selectedRoomId,
+    showPendingSources,
+    taskId,
+    timeAvailable,
+    topic,
+  ]);
 
   const domains = useMemo(() => ["all", ...Array.from(new Set(sourceCatalog.map((book) => book.domain)))], [sourceCatalog]);
 
@@ -365,6 +408,26 @@ export default function AtomWorkspacePage() {
     };
   }, [status]);
 
+  const handleRoomChange = useCallback((nextRoomId: AtomRoomId) => {
+    const room = resolveAtomRoomProfile(nextRoomId);
+    const nextContext = applyRoomDefaults(
+      { topic, level, timeAvailable, goal, mode },
+      room,
+      manualOverrides,
+    );
+
+    setSelectedRoomId(nextRoomId);
+    setTopic(nextContext.topic);
+    setLevel(nextContext.level);
+    setTimeAvailable(nextContext.timeAvailable);
+    setGoal(nextContext.goal);
+    setMode(nextContext.mode);
+
+    if (!manualOverrides.topic && !manualOverrides.goal && !manualOverrides.level && !manualOverrides.timeAvailable) {
+      setSelectedPreset(room.sourcePreset);
+    }
+  }, [goal, level, manualOverrides, mode, timeAvailable, topic]);
+
   const startTask = useCallback(async () => {
     if (!taskPrompt.trim() || isSubmitting) return;
     setIsSubmitting(true);
@@ -382,19 +445,26 @@ export default function AtomWorkspacePage() {
           message: taskPrompt.trim(),
           mode: "task",
           sourceSelection: {
-            preset: selectedPreset,
-            bookIds: selectedBookIds,
+            preset: sharedContext.sourceSelection.preset,
+            bookIds: sharedContext.sourceSelection.bookIds,
             books: selectedBookIds
               .map((id) => sourceCatalog.find((book) => book.id === id))
               .filter((book): book is AtomSourceCatalogItem => Boolean(book))
               .map((book) => ({ id: book.id, title: book.title })),
             level: levelFilter === "all" ? undefined : levelFilter,
             domain: domainFilter === "all" ? undefined : domainFilter,
-            topic,
-            goal,
-            timeAvailable,
+            topic: sharedContext.topic,
+            goal: sharedContext.goal,
+            timeAvailable: sharedContext.timeAvailable,
+            taskId: sharedContext.taskId ?? undefined,
+            sessionId: sharedContext.sessionId ?? undefined,
           },
-          room: "atom",
+          room: sharedContext.roomId,
+          roomProfile: sharedContext.roomProfile,
+          orchestrationMetadata: {
+            roomPersona: sharedContext.roomProfile.personaName,
+            roomDepthDefault: sharedContext.roomProfile.depthDefault,
+          },
         }),
       });
 
@@ -413,9 +483,9 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [connectEvents, domainFilter, goal, isSubmitting, levelFilter, selectedBookIds, selectedPreset, sourceCatalog, taskPrompt, timeAvailable, topic]);
+  }, [connectEvents, domainFilter, isSubmitting, levelFilter, selectedBookIds, sourceCatalog, sharedContext, taskPrompt]);
 
-  const launchMode = useCallback(async (launchMode: WorkspaceMode) => {
+  const launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
     if (launchMode === "chat") {
       await startTask();
       return;
@@ -437,10 +507,11 @@ export default function AtomWorkspacePage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           mode: launchMode,
-          topic,
-          level,
-          timeAvailable: Number(timeAvailable) || 25,
-          goal,
+          topic: sharedContext.topic,
+          level: sharedContext.level,
+          timeAvailable: Number(sharedContext.timeAvailable) || 25,
+          goal: sharedContext.goal,
+          roomId: sharedContext.roomId,
         }),
       });
 
@@ -477,7 +548,7 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [connectEvents, goal, level, pushArtifact, pushTimeline, startTask, timeAvailable, topic]);
+  }, [connectEvents, pushArtifact, pushTimeline, sharedContext, startTask]);
 
   const startGuidedDeepDive = useCallback(async () => {
     setIsSubmitting(true);
@@ -490,7 +561,7 @@ export default function AtomWorkspacePage() {
       const response = await fetch("/api/atom-v3/gdd/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic, level, goal }),
+        body: JSON.stringify({ topic: sharedContext.topic, level: sharedContext.level, goal: sharedContext.goal }),
       });
 
       const data = (await response.json()) as {
@@ -513,7 +584,7 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [goal, level, pushArtifact, pushTimeline, topic]);
+  }, [pushArtifact, pushTimeline, sharedContext.goal, sharedContext.level, sharedContext.topic]);
 
   const loadGuidedDeepDive = useCallback(async () => {
     if (!gddLoadId.trim()) return;
@@ -640,13 +711,13 @@ export default function AtomWorkspacePage() {
 
       <div className="px-4 pt-3">
         <div className="flex flex-wrap gap-1.5">
-          {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as WorkspaceMode[]).map((m) => (
+          {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => (
             <Button
               key={m}
               size="sm"
               variant="outline"
               onClick={() => setMode(m)}
-              disabled={(m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled)}
+              disabled={!activeRoomProfile.enabledModes.includes(m) || (m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled)}
               className={`h-8 text-[11px] border ${
                 mode === m ? "border-[#5BB3B3] bg-[#5BB3B3]/20 text-white" : "border-[#1E3A5F] text-[#94A3B8]"
               }`}
@@ -742,11 +813,14 @@ export default function AtomWorkspacePage() {
           <div className="p-4 border-b border-[#1E3A5F] bg-gradient-to-r from-[#0f2235] to-[#14293f]">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-white text-sm font-semibold">ATOM Workspace · {MODE_LABELS[mode]}</h1>
+              <Badge className="text-[10px] border border-[#5BB3B3]/40 bg-[#5BB3B3]/10 text-[#A5F3FC]">
+                Room: {activeRoomProfile.roomId} · {activeRoomProfile.personaName}
+              </Badge>
               <Badge className={`text-[10px] border ${STATUS_STYLES[status]}`}>{status}</Badge>
               {taskId && <span className="text-[10px] text-[#94A3B8]">Task: {taskId.slice(0, 8)}</span>}
               {gddSessionId && mode === "guided-deep-dive" && <span className="text-[10px] text-[#94A3B8]">GDD: {gddSessionId.slice(0, 8)}</span>}
             </div>
-            <p className="text-xs text-[#9FB0C2] mt-1">One shared context form across all ATOM modes.</p>
+            <p className="text-xs text-[#9FB0C2] mt-1">One shared context store across all ATOM modes · {activeRoomProfile.personaStyle}</p>
           </div>
 
           {errorCard && (
@@ -757,24 +831,32 @@ export default function AtomWorkspacePage() {
           )}
 
           <div className="p-4 border-b border-[#1E3A5F] space-y-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-2">
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Room</span>
+                <select value={selectedRoomId} onChange={(e) => handleRoomChange(e.target.value as AtomRoomId)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
+                  {(Object.keys(ATOM_ROOM_PROFILES) as AtomRoomId[]).map((roomId) => (
+                    <option key={roomId} value={roomId}>{roomId}</option>
+                  ))}
+                </select>
+              </label>
               <label className="space-y-1">
                 <span className="text-[11px] text-[#94A3B8]">Topic</span>
-                <input value={topic} onChange={(e) => setTopic(e.target.value)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                <input value={topic} onChange={(e) => { setTopic(e.target.value); setManualOverrides((prev) => ({ ...prev, topic: true })); }} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
               </label>
               <label className="space-y-1">
                 <span className="text-[11px] text-[#94A3B8]">Level</span>
-                <select value={level} onChange={(e) => setLevel(e.target.value as QuickStartLevel)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
+                <select value={level} onChange={(e) => { setLevel(e.target.value as QuickStartLevel); setManualOverrides((prev) => ({ ...prev, level: true })); }} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
                   {QUICK_START_LEVELS.map((levelOption) => <option key={levelOption} value={levelOption}>{levelOption}</option>)}
                 </select>
               </label>
               <label className="space-y-1">
                 <span className="text-[11px] text-[#94A3B8]">Time (min)</span>
-                <input value={timeAvailable} onChange={(e) => setTimeAvailable(e.target.value)} inputMode="numeric" className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                <input value={timeAvailable} onChange={(e) => { setTimeAvailable(e.target.value); setManualOverrides((prev) => ({ ...prev, timeAvailable: true })); }} inputMode="numeric" className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
               </label>
               <label className="space-y-1">
                 <span className="text-[11px] text-[#94A3B8]">Goal</span>
-                <input value={goal} onChange={(e) => setGoal(e.target.value)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                <input value={goal} onChange={(e) => { setGoal(e.target.value); setManualOverrides((prev) => ({ ...prev, goal: true })); }} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
               </label>
             </div>
 
@@ -812,7 +894,7 @@ export default function AtomWorkspacePage() {
 
             <div className="flex flex-wrap gap-2">
               {mode !== "guided-deep-dive" && (
-                <Button onClick={() => launchMode(mode)} disabled={(mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
                   {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
                 </Button>
               )}
@@ -884,7 +966,7 @@ export default function AtomWorkspacePage() {
                 <Button size="sm" variant="outline" onClick={() => setMode("ppt")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">PPT</Button>
                 <Button size="sm" variant="outline" onClick={() => setMode("nucleux-original")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">NucleuX Original</Button>
               </div>
-              <Button onClick={() => launchMode(mode)} disabled={mode === "guided-deep-dive" || isSubmitting || (mode === "chat" && !taskPrompt.trim())} className="w-full bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Run current mode</Button>
+              <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || mode === "guided-deep-dive" || isSubmitting || (mode === "chat" && !taskPrompt.trim())} className="w-full bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Run current mode</Button>
             </TabsContent>
 
             <TabsContent value="artifacts" className="mt-0 flex-1 overflow-y-auto p-3 space-y-2">
