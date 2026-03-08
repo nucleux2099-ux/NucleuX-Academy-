@@ -15,7 +15,7 @@ import type { AtomTaskStatus, AtomEventType } from "@/lib/atom/types";
 import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
 import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
 import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
-import LegacyAtomWorkspaceClassic from "@/components/atom/LegacyAtomWorkspaceClassic";
+
 import {
   ATOM_ROOM_PROFILES,
   applyRoomDefaults,
@@ -182,7 +182,6 @@ export default function AtomWorkspacePage() {
 
   const gddEnabled = isAtomV3GddEnabled();
   const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
-  const ux1Enabled = isFeatureEnabled("atomUx1CockpitShell");
   const ux2ComposerEnabled = isFeatureEnabled("atomUx2ComposerRevamp");
   const activeRoomProfile = useMemo(() => resolveAtomRoomProfile(selectedRoomId), [selectedRoomId]);
 
@@ -786,10 +785,6 @@ export default function AtomWorkspacePage() {
     });
     setActiveThreadId(nextId);
   }, [mode, status, taskId, taskPrompt, topic]);
-
-  if (!ux1Enabled) {
-    return <LegacyAtomWorkspaceClassic />;
-  }
 
   const activeThread = threadSessions.find((item) => item.id === activeThreadId) ?? threadSessions[0] ?? null;
 
