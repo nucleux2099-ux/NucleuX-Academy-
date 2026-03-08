@@ -16,6 +16,7 @@ const publicRoutes = [
   '/faq',
   '/contact',
   '/atom',
+  '/api/chat',
   '/rooms',
   // Misc public
   '/landing',
