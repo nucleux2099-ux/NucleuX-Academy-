@@ -11,6 +11,18 @@ import {
 
 const CONTENT_BASE = path.join(process.cwd(), 'content')
 
+function isSafeSegment(value: string): boolean {
+  return /^[a-zA-Z0-9._-]+$/.test(value)
+}
+
+function appendSafePath(base: string, segment: string): string | null {
+  if (!isSafeSegment(segment)) return null
+  const next = `${base.replace(/\/$/, '')}/${segment}`
+  const normalizedBase = path.resolve(base)
+  const normalizedNext = path.resolve(next)
+  return normalizedNext.startsWith(normalizedBase) ? normalizedNext : null
+}
+
 const modeFiles: Record<string, string> = {
   'explorer': 'explorer.md',
   'exam-prep': 'exam-prep.md',
@@ -151,7 +163,9 @@ async function tryDirectAccess(subjectSlug: string, subspecialtySlug: string, to
 
     let subspecialtyDir: string | null = null
     for (const candidate of candidates) {
-      const tryPath = path.join(subjectDir, candidate)
+      const tryPath = appendSafePath(subjectDir, candidate)
+      if (!tryPath) continue
+
       const normalizedTryPath = path.normalize(tryPath)
       if (!normalizedTryPath.startsWith(normalizedSubjectDir)) continue
 

@@ -34,6 +34,18 @@ function normalizeNmcCodes(raw: unknown): NmcCode[] | undefined {
 // Base content directory
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
+function isSafePathSegment(value: string): boolean {
+  return /^[a-zA-Z0-9._-]+$/.test(value);
+}
+
+function appendSafePath(base: string, segment: string): string | null {
+  if (!isSafePathSegment(segment)) return null;
+  const next = `${base.replace(/\/$/, '')}/${segment}`;
+  const normalizedBase = path.resolve(base);
+  const normalizedNext = path.resolve(next);
+  return normalizedNext.startsWith(normalizedBase) ? normalizedNext : null;
+}
+
 /**
  * Resolve the canonical content directory for a subspecialty using static maps.
  * Avoids broad directory scans that hurt Turbopack performance.
@@ -44,8 +56,11 @@ function resolveContentDir(subject: string, subspecialty: string): string | null
 
   if (!subjectFolder || !subspecialtyFolder) return null;
 
-  const resolved = path.join(CONTENT_DIR, subjectFolder, subspecialtyFolder);
-  if (!fs.existsSync(resolved) || !fs.statSync(resolved).isDirectory()) return null;
+  const subjectDir = appendSafePath(CONTENT_DIR, subjectFolder);
+  if (!subjectDir) return null;
+
+  const resolved = appendSafePath(subjectDir, subspecialtyFolder);
+  if (!resolved || !fs.existsSync(resolved) || !fs.statSync(resolved).isDirectory()) return null;
 
   return resolved;
 }
@@ -240,9 +255,8 @@ export function loadTopicFromMarkdownFile(
   if (!dirPath) {
     return null;
   }
-  const filePath = path.join(dirPath, filename);
-
-  if (!fs.existsSync(filePath)) {
+  const filePath = appendSafePath(dirPath, filename);
+  if (!filePath || !fs.existsSync(filePath)) {
     return null;
   }
 
@@ -300,8 +314,8 @@ export function loadTopicFromFolder(
   if (!dirPath) {
     return null;
   }
-  const topicDir = path.join(dirPath, topicSlug);
-  if (!fs.existsSync(topicDir) || !fs.statSync(topicDir).isDirectory()) {
+  const topicDir = appendSafePath(dirPath, topicSlug);
+  if (!topicDir || !fs.existsSync(topicDir) || !fs.statSync(topicDir).isDirectory()) {
     return null;
   }
 
@@ -508,8 +522,8 @@ export function loadTopicsForSubspecialty(
   for (const entry of entries) {
     if (entry.startsWith('.') || entry.startsWith('_')) continue;
 
-    const full = path.join(dirPath, entry);
-    if (!fs.statSync(full).isDirectory()) continue;
+    const full = appendSafePath(dirPath, entry);
+    if (!full || !fs.statSync(full).isDirectory()) continue;
 
     // Skip known non-topic directories (only if they lack _meta.yaml)
     if (['cases', 'retrieval-cards', 'grinde-maps'].includes(entry)) {
