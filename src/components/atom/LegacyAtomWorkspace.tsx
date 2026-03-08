@@ -182,6 +182,7 @@ export default function AtomWorkspacePage() {
   const [domainFilter, setDomainFilter] = useState<string>("all");
   const [showPendingSources, setShowPendingSources] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
+  const threadSessionMapRef = useRef<Record<string, string>>({});
 
   const gddEnabled = isAtomV3GddEnabled();
   const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
@@ -500,80 +501,51 @@ export default function AtomWorkspacePage() {
     setAssistantText('');
 
     try {
-      const deskSources = selectedBookIds
-        .map((id) => sourceCatalog.find((book) => book.id === id)?.shortTitle)
-        .filter((v): v is string => Boolean(v));
+      const threadKey = activeThreadId ?? 'default-thread';
+      let sessionId = threadSessionMapRef.current[threadKey];
 
-      const historyForApi = [
-        ...chatHistory.slice(-10),
-        { role: 'user' as const, content: userText },
-      ];
+      if (!sessionId) {
+        const startRes = await fetch('/api/atom/session/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            threadId: threadKey,
+            roomId: selectedRoomId,
+            selectedBookIds,
+          }),
+        });
+        const startJson = (await startRes.json()) as { sessionId?: string; error?: string };
+        if (!startRes.ok || !startJson.sessionId) {
+          throw new Error(startJson.error ?? 'Unable to start session');
+        }
+        sessionId = startJson.sessionId;
+        threadSessionMapRef.current[threadKey] = sessionId;
+      }
 
-      const response = await fetch('/api/chat', {
+      const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(userText);
+      const endpoint = continueLike
+        ? `/api/atom/session/${sessionId}/continue`
+        : `/api/atom/session/${sessionId}/message`;
+
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           context: domainFilter === 'all' ? 'surgery' : domainFilter,
-          deskSources,
-          selectedBookIds,
-          strictSourceGrounding: true,
-          messages: historyForApi,
+          message: userText,
         }),
       });
 
-      if (!response.ok || !response.body) {
-        const raw = await response.text();
-        throw new Error(raw || 'Chat request failed');
+      const json = (await response.json()) as { assistant?: string; error?: string };
+      if (!response.ok || !json.assistant) {
+        throw new Error(json.error ?? 'Chat request failed');
       }
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
-
-      let emittedText = false;
-      let streamedText = '';
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-
-        const chunks = buffer.split('\n\n');
-        buffer = chunks.pop() ?? '';
-
-        for (const chunk of chunks) {
-          const line = chunk.split('\n').find((l) => l.startsWith('data: '));
-          if (!line) continue;
-          const payload = line.slice(6).trim();
-          if (payload === '[DONE]') continue;
-
-          let parsed: { text?: string; error?: string } | null = null;
-          try {
-            parsed = JSON.parse(payload) as { text?: string; error?: string };
-          } catch {
-            continue;
-          }
-
-          if (parsed?.error) {
-            throw new Error(parsed.error);
-          }
-
-          if (parsed?.text) {
-            emittedText = true;
-            streamedText += parsed.text;
-            setAssistantText((prev) => `${prev}${parsed.text}`);
-          }
-        }
-      }
-
-      if (!emittedText) {
-        throw new Error('No response generated. Please retry.');
-      }
-
+      setAssistantText(json.assistant);
       setChatHistory((prev) => [
         ...prev,
         { role: 'user', content: userText },
-        { role: 'assistant', content: streamedText },
+        { role: 'assistant', content: json.assistant ?? '' },
       ]);
       setStatus('completed');
     } catch (error) {
@@ -582,7 +554,7 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [domainFilter, isSubmitting, selectedBookIds, sourceCatalog, taskPrompt]);
+  }, [activeThreadId, domainFilter, isSubmitting, selectedBookIds, selectedRoomId, taskPrompt]);
 
   const launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
     if (launchMode === "chat") {
