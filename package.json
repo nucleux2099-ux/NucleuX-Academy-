@@ -9,6 +9,7 @@
     "lint": "eslint",
     "lint:stabilization": "eslint \"src/app/(app)/desk/page.tsx\" \"src/app/(app)/analytics/page.tsx\" \"src/app/(app)/profile/page.tsx\" \"src/app/(app)/settings/page.tsx\" \"src/app/(app)/mcqs/page.tsx\" \"src/components/api-state-boundary.tsx\" \"src/lib/api/hooks.ts\" \"src/app/api/analytics/route.ts\"",
     "test:smoke": "node scripts/smoke-e2e.mjs",
+    "test:atom:dedup": "tsx --test src/components/atom/chatEventDedup.test.ts",
     "seed:admin": "tsx scripts/seed-admin.ts",
     "content:validate": "tsx scripts/validate-content.ts",
     "validate:cbme": "tsx scripts/validate-cbme-links.ts",
