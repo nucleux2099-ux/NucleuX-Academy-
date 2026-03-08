@@ -5,6 +5,44 @@ import path from 'path'
 
 const CONTENT_BASE = path.join(process.cwd(), 'content')
 
+export const runtime = 'nodejs'
+
+type ErrorWithMeta = {
+  status?: number
+  message?: string
+  error?: {
+    type?: string
+    message?: string
+  }
+}
+
+function parseErrorMeta(error: unknown): { code: string; message: string; status?: number } {
+  const fallback = { code: 'unknown_error', message: 'Unexpected upstream error' }
+
+  if (!error || typeof error !== 'object') return fallback
+
+  const err = error as ErrorWithMeta
+  const code = err.error?.type || (typeof (error as { name?: string }).name === 'string' ? (error as { name: string }).name : 'unknown_error')
+  const message = err.error?.message || err.message || fallback.message
+
+  return {
+    code,
+    message: message.slice(0, 240),
+    status: typeof err.status === 'number' ? err.status : undefined,
+  }
+}
+
+function logChatError(stage: string, error: unknown, extra: Record<string, unknown> = {}) {
+  const meta = parseErrorMeta(error)
+  console.error('[chat_api_error]', {
+    stage,
+    code: meta.code,
+    status: meta.status,
+    message: meta.message,
+    ...extra,
+  })
+}
+
 type IncomingMessage = {
   role: string
   content: unknown
@@ -244,13 +282,15 @@ export async function POST(request: NextRequest) {
     // Use API key from env
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
-      return new Response(JSON.stringify({ error: 'ANTHROPIC_API_KEY not configured' }), { 
+      logChatError('anthropic_api_key_missing', new Error('Missing ANTHROPIC_API_KEY'))
+      return new Response(JSON.stringify({ error: 'ANTHROPIC_API_KEY not configured', code: 'anthropic_api_key_missing' }), { 
         status: 500, 
         headers: { 'Content-Type': 'application/json' } 
       })
     }
 
     const client = new Anthropic({ apiKey })
+    const model = process.env.ANTHROPIC_MODEL || 'claude-3-5-sonnet-latest'
 
     // Format messages for Anthropic (supports text and vision)
     const formattedMessages: Anthropic.MessageParam[] = messages.map((m: IncomingMessage) => {
@@ -312,8 +352,8 @@ export async function POST(request: NextRequest) {
     })
 
     // Stream the response
-    const stream = await client.messages.stream({
-      model: 'claude-sonnet-4-20250514',
+    const stream = client.messages.stream({
+      model,
       max_tokens: 4096,
       system: systemPrompt,
       messages: formattedMessages,
@@ -335,8 +375,13 @@ export async function POST(request: NextRequest) {
           controller.enqueue(encoder.encode('data: [DONE]\n\n'))
           controller.close()
         } catch (error) {
-          console.error('Stream error:', error)
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: 'Stream error' })}\n\n`))
+          const meta = parseErrorMeta(error)
+          logChatError('anthropic_stream_iterate', error, { model })
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({
+            error: `Stream error: ${meta.message}`,
+            code: meta.code,
+            stage: 'anthropic_stream_iterate',
+          })}\n\n`))
           controller.close()
         }
       },
@@ -350,8 +395,14 @@ export async function POST(request: NextRequest) {
       },
     })
   } catch (error) {
-    console.error('Chat API error:', error)
-    return new Response(JSON.stringify({ error: 'Internal server error' }), { 
+    if (error instanceof Response) return error
+
+    logChatError('chat_route_unhandled', error)
+    const meta = parseErrorMeta(error)
+    return new Response(JSON.stringify({
+      error: 'Internal server error',
+      code: meta.code,
+    }), { 
       status: 500, 
       headers: { 'Content-Type': 'application/json' } 
     })
