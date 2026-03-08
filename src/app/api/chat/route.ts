@@ -57,9 +57,47 @@ function resolveAnthropicModel(raw?: string): string {
   return legacyMap[candidate] ?? candidate
 }
 
-type IncomingMessage = {
+export type IncomingMessage = {
   role: string
   content: unknown
+}
+
+function extractTextFromMessageContent(content: unknown): string {
+  if (typeof content === 'string') return content
+  if (!Array.isArray(content)) return ''
+
+  return content
+    .filter((part): part is { type: string; text?: string } => (
+      typeof part === 'object' &&
+      part !== null &&
+      'type' in part
+    ))
+    .filter((part) => part.type === 'text')
+    .map((part) => (typeof part.text === 'string' ? part.text : ''))
+    .join(' ')
+    .trim()
+}
+
+export function resolveQueryForRetrieval(messages: IncomingMessage[]): { query: string; continueLike: boolean } {
+  const lastUserMessage = [...messages].reverse().find((m) => m.role === 'user')
+  let query = extractTextFromMessageContent(lastUserMessage?.content)
+
+  const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(query.trim())
+  if (!continueLike) return { query, continueLike }
+
+  const previousUser = [...messages]
+    .slice(0, -1)
+    .reverse()
+    .find((m) => {
+      if (m.role !== 'user') return false
+      return extractTextFromMessageContent(m.content).trim().length > 0
+    })
+
+  if (previousUser) {
+    query = extractTextFromMessageContent(previousUser.content)
+  }
+
+  return { query, continueLike }
 }
 
 type SupportedImageMediaType = 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp'
@@ -283,6 +321,55 @@ const ATOM_SYSTEM_PROMPT = `You are ATOM — the AI thinking partner inside Nucl
 ## Context Provided
 You will receive relevant textbook content as context. Ground your answers in this content when available.`
 
+export function buildChatSystemPrompt({
+  systemOverride,
+  deskSources,
+  strictSourceGrounding,
+  sourceKeywords,
+  sourceBiased,
+  relevantContent,
+  continueLike,
+}: {
+  systemOverride?: string
+  deskSources?: string[]
+  strictSourceGrounding?: boolean
+  sourceKeywords?: string[]
+  sourceBiased?: boolean
+  relevantContent?: string
+  continueLike?: boolean
+}): string {
+  let systemPrompt = systemOverride || ATOM_SYSTEM_PROMPT
+
+  if (deskSources && deskSources.length > 0) {
+    systemPrompt += `\n\n## Active Desk Sources\nThe student has these sources on their desk: ${deskSources.join(', ')}.`
+    if (strictSourceGrounding) {
+      systemPrompt += ` Only use evidence from these selected desk sources. If evidence is missing, clearly say the selected sources do not contain enough support.`
+    } else {
+      systemPrompt += ` Prioritize referencing these when answering.`
+    }
+    if (sourceKeywords && sourceKeywords.length > 0) {
+      systemPrompt += `\nSource routing keywords: ${sourceKeywords.join(', ')}`
+    }
+    if (sourceBiased === false) {
+      systemPrompt += `\nWarning: Could not map file paths strongly to selected sources; answer cautiously and disclose low source certainty.`
+    }
+  }
+
+  if (relevantContent) {
+    systemPrompt += `\n\n## Library Content (use this to ground your answers)\n\n${relevantContent}`
+  } else if (strictSourceGrounding) {
+    systemPrompt += `\n\n[No relevant content found in the selected sources. Return an insufficiency response: clearly state that the selected books do not contain enough support for this query, avoid fabricating citations, and ask the learner to broaden source selection.]`
+  } else {
+    systemPrompt += `\n\n[No specific library content found for this query. Answer from your medical knowledge but note that you're answering without textbook grounding.]`
+  }
+
+  if (continueLike) {
+    systemPrompt += `\n\nThe latest user message is a continuation request. Continue the existing answer thread from where it stopped; do not switch to a new topic.`
+  }
+
+  return systemPrompt
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { messages, context = 'surgery', deskSources = [], selectedBookIds = [], strictSourceGrounding = false, systemOverride } = await request.json()
@@ -294,101 +381,21 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Get the latest user message for content retrieval
-    const lastUserMessage = [...messages].reverse().find((m: IncomingMessage) => m.role === 'user')
-    const rawContent = lastUserMessage?.content || ''
-    // Handle multimodal content (array of blocks) — extract text for search
-    let query = typeof rawContent === 'string'
-      ? rawContent
-      : Array.isArray(rawContent)
-        ? rawContent
-            .filter((b): b is { type: string; text?: string } => (
-              typeof b === 'object' &&
-              b !== null &&
-              'type' in b
-            ))
-            .filter((b) => b.type === 'text')
-            .map((b) => (typeof b.text === 'string' ? b.text : ''))
-            .join(' ')
-        : ''
-
-    const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(query.trim())
-    if (continueLike) {
-      const previousUser = [...messages]
-        .slice(0, -1)
-        .reverse()
-        .find((m: IncomingMessage) => {
-          if (m.role !== 'user') return false
-          if (typeof m.content === 'string') return m.content.trim().length > 0
-          if (Array.isArray(m.content)) {
-            return m.content.some(
-              (part) =>
-                typeof part === 'object' &&
-                part !== null &&
-                'type' in part &&
-                part.type === 'text' &&
-                'text' in part &&
-                typeof part.text === 'string' &&
-                part.text.trim().length > 0,
-            )
-          }
-          return false
-        })
-
-      if (previousUser) {
-        if (typeof previousUser.content === 'string') {
-          query = previousUser.content
-        } else if (Array.isArray(previousUser.content)) {
-          query = previousUser.content
-            .filter((part: unknown): part is { type: string; text?: string } => (
-              typeof part === 'object' &&
-              part !== null &&
-              'type' in part
-            ))
-            .filter((part: { type: string; text?: string }) => part.type === 'text')
-            .map((part: { type: string; text?: string }) => (typeof part.text === 'string' ? part.text : ''))
-            .join(' ')
-            .trim()
-        }
-      }
-    }
+    const { query, continueLike } = resolveQueryForRetrieval(messages)
 
     // Find relevant content from the library
     const sourceKeywords = buildSourceKeywords(selectedBookIds, deskSources)
     const { content: relevantContent, sourceBiased } = await findRelevantContent(query, context, 5, sourceKeywords)
 
-    // Build system prompt with context
-    let systemPrompt = systemOverride || ATOM_SYSTEM_PROMPT
-    
-    // Add desk sources context if provided
-    if (deskSources && deskSources.length > 0) {
-      systemPrompt += `\n\n## Active Desk Sources\nThe student has these sources on their desk: ${deskSources.join(', ')}.`
-      if (strictSourceGrounding) {
-        systemPrompt += ` Only use evidence from these selected desk sources. If evidence is missing, clearly say the selected sources do not contain enough support.`
-      } else {
-        systemPrompt += ` Prioritize referencing these when answering.`
-      }
-      if (sourceKeywords.length > 0) {
-        systemPrompt += `\nSource routing keywords: ${sourceKeywords.join(', ')}`
-      }
-      if (!sourceBiased) {
-        systemPrompt += `\nWarning: Could not map file paths strongly to selected sources; answer cautiously and disclose low source certainty.`
-      }
-    }
-    
-    if (relevantContent) {
-      systemPrompt += `\n\n## Library Content (use this to ground your answers)\n\n${relevantContent}`
-    } else {
-      if (strictSourceGrounding) {
-        systemPrompt += `\n\n[No relevant content found in the selected sources. Return an insufficiency response: clearly state that the selected books do not contain enough support for this query, avoid fabricating citations, and ask the learner to broaden source selection.]`
-      } else {
-        systemPrompt += `\n\n[No specific library content found for this query. Answer from your medical knowledge but note that you're answering without textbook grounding.]`
-      }
-    }
-
-    if (continueLike) {
-      systemPrompt += `\n\nThe latest user message is a continuation request. Continue the existing answer thread from where it stopped; do not switch to a new topic.`
-    }
+    const systemPrompt = buildChatSystemPrompt({
+      systemOverride,
+      deskSources,
+      strictSourceGrounding,
+      sourceKeywords,
+      sourceBiased,
+      relevantContent,
+      continueLike,
+    })
 
     // Use API key from env
     const apiKey = process.env.ANTHROPIC_API_KEY
