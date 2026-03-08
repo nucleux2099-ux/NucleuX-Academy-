@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   ATOM_SOURCE_CATALOG,
   ATOM_SOURCE_LEVELS,
@@ -15,7 +16,6 @@ import type { AtomTaskStatus, AtomEventType } from "@/lib/atom/types";
 import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
 import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
 import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
-import LegacyAtomWorkspaceClassic from "@/components/atom/LegacyAtomWorkspaceClassic";
 import {
   ATOM_ROOM_PROFILES,
   applyRoomDefaults,
@@ -30,18 +30,13 @@ import {
   GitBranch,
   RotateCcw,
   FlaskConical,
-  PanelLeft,
-  PanelLeftClose,
-  PanelRight,
+  FileCode2,
   FileText,
   CheckCircle2,
   AlertTriangle,
   Loader2,
   Activity,
   Lock,
-  Paperclip,
-  SendHorizontal,
-  Sparkles,
 } from "lucide-react";
 
 type TimelineItem = {
@@ -60,14 +55,7 @@ type ArtifactItem = {
   createdAt: string;
 };
 
-type ThreadSessionItem = {
-  id: string;
-  title: string;
-  mode: AtomWorkspaceMode;
-  status: AtomTaskStatus;
-  updatedAt: string;
-  taskId?: string;
-};
+type MobileTab = "sources" | "process" | "workspace";
 
 const MODE_LABELS: Record<AtomWorkspaceMode, string> = {
   chat: "Chat",
@@ -86,39 +74,6 @@ const STATUS_STYLES: Record<AtomTaskStatus, string> = {
   failed: "bg-rose-500/20 text-rose-100 border-rose-300/40",
   cancelled: "bg-zinc-500/20 text-zinc-200 border-zinc-300/40",
 };
-
-const WORKFLOW_PRESETS: Array<{ label: string; mode: AtomWorkspaceMode; prompt: string }> = [
-  {
-    label: "Generate MCQs",
-    mode: "mcq",
-    prompt: "Generate high-yield MCQs with explanations and common traps for this topic.",
-  },
-  {
-    label: "Build PPT",
-    mode: "ppt",
-    prompt: "Create a concise teaching deck outline with slide-wise key points and clinical pearls.",
-  },
-  {
-    label: "NucleuX Original Deep Research",
-    mode: "nucleux-original",
-    prompt: "Perform deep synthesis from selected sources and provide a structured expert brief.",
-  },
-  {
-    label: "Guided Deep Dive",
-    mode: "guided-deep-dive",
-    prompt: "Start a guided deep dive session for this topic using progressive questioning.",
-  },
-  {
-    label: "Analyze attached table/file",
-    mode: "chat",
-    prompt: "Analyze the attached file/table and extract clinically relevant insights, patterns, and next actions.",
-  },
-  {
-    label: "Convert to flashcards",
-    mode: "flashcards",
-    prompt: "Convert this topic into high-retention flashcards with crisp Q/A phrasing and memory cues.",
-  },
-];
 
 function safeString(val: unknown): string | undefined {
   return typeof val === "string" && val.trim() ? val : undefined;
@@ -140,14 +95,9 @@ function formatEvent(type: AtomEventType, payload: Record<string, unknown>): Pic
 }
 
 export default function AtomWorkspacePage() {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-  const [isOutputsOpen, setIsOutputsOpen] = useState(false);
-  const [threadSessions, setThreadSessions] = useState<ThreadSessionItem[]>([]);
-  const [activeThreadId, setActiveThreadId] = useState<string | null>(null);
+  const [mobileTab, setMobileTab] = useState<MobileTab>("process");
   const [mode, setMode] = useState<AtomWorkspaceMode>("chat");
   const [taskPrompt, setTaskPrompt] = useState("");
-  const [selectedWorkflowPreset, setSelectedWorkflowPreset] = useState("");
-  const [composerAttachment, setComposerAttachment] = useState<{ name: string } | null>(null);
   const [topic, setTopic] = useState("General Surgery high-yield revision");
   const [level, setLevel] = useState<QuickStartLevel>("resident");
   const [timeAvailable, setTimeAvailable] = useState("25");
@@ -183,8 +133,6 @@ export default function AtomWorkspacePage() {
 
   const gddEnabled = isAtomV3GddEnabled();
   const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
-  const ux1Enabled = isFeatureEnabled("atomUx1CockpitShell");
-  const ux2ComposerEnabled = isFeatureEnabled("atomUx2ComposerRevamp");
   const activeRoomProfile = useMemo(() => resolveAtomRoomProfile(selectedRoomId), [selectedRoomId]);
 
   const sharedContext = useMemo(() => ({
@@ -528,6 +476,7 @@ export default function AtomWorkspacePage() {
       setTaskId(data.taskId);
       setStatus(data.status ?? "queued");
       connectEvents(data.taskId, data.eventsUrl);
+      setMobileTab("process");
     } catch (error) {
       setStatus("failed");
       setErrorCard(error instanceof Error ? error.message : "Failed to start task");
@@ -592,6 +541,7 @@ export default function AtomWorkspacePage() {
       } else {
         setStatus("completed");
       }
+      setMobileTab("process");
     } catch (error) {
       setStatus("failed");
       setErrorCard(error instanceof Error ? error.message : "Mode launch failed");
@@ -737,224 +687,321 @@ export default function AtomWorkspacePage() {
     setSelectedBookIds((prev) => (prev.includes(bookId) ? prev.filter((id) => id !== bookId) : [...prev, bookId]));
   };
 
-  const applyWorkflowPreset = (presetLabel: string) => {
-    setSelectedWorkflowPreset(presetLabel);
-    const selected = WORKFLOW_PRESETS.find((preset) => preset.label === presetLabel);
-    if (!selected) return;
-    setMode(selected.mode);
-    setTaskPrompt(selected.prompt);
-  };
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const raw = window.localStorage.getItem("atom:ux1:threads");
-      if (!raw) return;
-      const parsed = JSON.parse(raw) as ThreadSessionItem[];
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        setThreadSessions(parsed.slice(0, 12));
-        setActiveThreadId(parsed[0]?.id ?? null);
-      }
-    } catch {
-      // ignore local state hydration errors
-    }
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (threadSessions.length === 0) return;
-    window.localStorage.setItem("atom:ux1:threads", JSON.stringify(threadSessions.slice(0, 12)));
-  }, [threadSessions]);
-
-  useEffect(() => {
-    if (!taskId) return;
-    const nextId = `${taskId}-${mode}`;
-    const title = taskPrompt.trim() || `${MODE_LABELS[mode]} · ${topic}`;
-    setThreadSessions((prev) => {
-      const existing = prev.find((item) => item.id === nextId);
-      const nextItem: ThreadSessionItem = {
-        id: nextId,
-        title: title.slice(0, 80),
-        mode,
-        status,
-        taskId,
-        updatedAt: new Date().toISOString(),
-      };
-      if (!existing) {
-        return [nextItem, ...prev].slice(0, 12);
-      }
-      return [nextItem, ...prev.filter((item) => item.id !== nextId)].slice(0, 12);
-    });
-    setActiveThreadId(nextId);
-  }, [mode, status, taskId, taskPrompt, topic]);
-
-  if (!ux1Enabled) {
-    return <LegacyAtomWorkspaceClassic />;
-  }
-
-  const activeThread = threadSessions.find((item) => item.id === activeThreadId) ?? threadSessions[0] ?? null;
-
   return (
-    <div className="h-full flex bg-[linear-gradient(140deg,#0F172A,#162535_35%,#0B1324)] text-white">
-      <Card className={`${isSidebarCollapsed ? 'w-[72px]' : 'w-[320px]'} transition-all duration-200 shrink-0 border-y-0 border-l-0 border-r border-[#1E3A5F] rounded-none bg-[#0f2133]/80 flex flex-col`}>
-        <div className="h-12 px-3 border-b border-[#1E3A5F] flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Button size="icon" variant="ghost" className="h-8 w-8 text-[#9FB0C2]" onClick={() => setIsSidebarCollapsed((v) => !v)}>
-              {isSidebarCollapsed ? <PanelLeft className="w-4 h-4" /> : <PanelLeftClose className="w-4 h-4" />}
-            </Button>
-            {!isSidebarCollapsed && <p className="text-xs font-semibold text-[#D7E3EF]">Cockpit</p>}
-          </div>
-          {!isSidebarCollapsed && <Badge className="text-[10px] bg-[#5BB3B3]/15 border-[#5BB3B3]/40 text-[#A5F3FC]">UX-1</Badge>}
-        </div>
-
-        <div className="flex-1 min-h-0 grid grid-rows-2">
-          <div className="border-b border-[#1E3A5F] min-h-0 p-3">
-            {!isSidebarCollapsed && <p className="text-[11px] uppercase tracking-wide text-[#7DD3FC] mb-2">Threads</p>}
-            <div className="h-full overflow-y-auto space-y-1.5">
-              {threadSessions.length === 0 && !isSidebarCollapsed ? (
-                <p className="text-xs text-[#64748B]">Run a task to seed thread history.</p>
-              ) : (
-                threadSessions.map((thread) => (
-                  <button key={thread.id} onClick={() => setActiveThreadId(thread.id)} className={`w-full text-left rounded-md border px-2 py-1.5 ${activeThreadId === thread.id ? 'border-[#5BB3B3]/50 bg-[#5BB3B3]/10' : 'border-[#1E3A5F] hover:bg-[#1E3A5F]/40'}`}>
-                    {isSidebarCollapsed ? (
-                      <span className="text-[10px] text-[#9FB0C2]">{thread.mode.slice(0, 1).toUpperCase()}</span>
-                    ) : (
-                      <>
-                        <p className="text-xs text-[#D7E3EF] truncate">{thread.title}</p>
-                        <p className="text-[10px] text-[#64748B]">{MODE_LABELS[thread.mode]} · {thread.status}</p>
-                      </>
-                    )}
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-
-          <div className="min-h-0 p-3">
-            {!isSidebarCollapsed && <p className="text-[11px] uppercase tracking-wide text-[#7DD3FC] mb-2">Resources</p>}
-            <div className="h-full overflow-y-auto space-y-2">
-              {!isSidebarCollapsed && (
-                <>
-                  <Badge className="text-[10px] bg-[#5BB3B3]/15 border-[#5BB3B3]/40 text-[#A5F3FC]">{selectedBookIds.length}/{sourceCatalog.length} selected</Badge>
-                  <div className="space-y-1">
-                    {selectedBookIds.slice(0, 5).map((id) => {
-                      const book = sourceCatalog.find((item) => item.id === id);
-                      if (!book) return null;
-                      return <p key={id} className="text-[11px] text-[#BFD0E0] truncate">• {book.shortTitle}</p>;
-                    })}
-                  </div>
-                  <Button size="sm" variant="outline" className="w-full border-[#1E3A5F] text-[#BFDBFE] bg-transparent" onClick={() => setShowPendingSources((prev) => !prev)}>
-                    Pending sources: {showPendingSources ? 'ON' : 'OFF'}
-                  </Button>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </Card>
-
-      <div className="flex-1 min-w-0 flex flex-col">
-        <div className="h-12 border-b border-[#1E3A5F] px-4 flex items-center justify-between bg-[#101C2B]/80">
-          <div className="flex items-center gap-2 min-w-0">
-            <h1 className="text-sm font-semibold truncate">{activeThread?.title ?? 'ATOM Workspace'}</h1>
-            <Badge className={`text-[10px] border ${STATUS_STYLES[status]}`}>{status}</Badge>
-            {mode === 'nucleux-original' && !trackAEnabled && <span className="text-[10px] text-amber-200">Track A disabled</span>}
-          </div>
-          <div className="flex items-center gap-2">
-            <Button size="sm" variant="outline" onClick={() => setIsOutputsOpen((v) => !v)} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">
-              <PanelRight className="w-4 h-4 mr-1" /> Outputs
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex-1 min-h-0 p-4 space-y-3 overflow-y-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
-            <select value={selectedRoomId} onChange={(e) => handleRoomChange(e.target.value as AtomRoomId)} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2">
-              {(Object.keys(ATOM_ROOM_PROFILES) as AtomRoomId[]).map((roomId) => (<option key={roomId} value={roomId}>{roomId}</option>))}
-            </select>
-            <select value={mode} onChange={(e) => setMode(e.target.value as AtomWorkspaceMode)} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2">
-              {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => (
-                <option key={m} value={m} disabled={!activeRoomProfile.enabledModes.includes(m) || (m === 'guided-deep-dive' && !gddEnabled) || (m === 'nucleux-original' && !trackAEnabled)}>{MODE_LABELS[m]}</option>
-              ))}
-            </select>
-            <input value={topic} onChange={(e) => { setTopic(e.target.value); setManualOverrides((prev) => ({ ...prev, topic: true })); }} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" placeholder="Topic" />
-            <input value={goal} onChange={(e) => { setGoal(e.target.value); setManualOverrides((prev) => ({ ...prev, goal: true })); }} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" placeholder="Goal" />
-          </div>
-
-          {mode !== 'guided-deep-dive' ? (
-            <>
-              <textarea value={taskPrompt} onChange={(e) => setTaskPrompt(e.target.value)} placeholder="Ask ATOM what you want to study or generate..." className="w-full min-h-[120px] rounded-xl bg-[#162535] border border-[#1E3A5F] p-3 text-sm" />
-              <div className="flex flex-wrap gap-2">
-                <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === 'chat' && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === 'nucleux-original' && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
-                  {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
-                </Button>
-                <Button variant="outline" onClick={() => controlTask('stop')} disabled={!taskId || status !== 'running'} className="border-[#1E3A5F] text-[#FCA5A5] bg-transparent"><CircleStop className="w-4 h-4 mr-1" />Stop</Button>
-                <Button variant="outline" onClick={() => controlTask('retry')} disabled={!taskId} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent"><RotateCcw className="w-4 h-4 mr-1" />Retry</Button>
-                <Button variant="outline" onClick={() => controlTask('continue')} disabled={!taskId || status !== 'needs_input'} className="border-[#1E3A5F] text-[#A7F3D0] bg-transparent"><Play className="w-4 h-4 mr-1" />Continue</Button>
-                <Button variant="outline" onClick={() => controlTask('branch')} disabled={!taskId} className="border-[#1E3A5F] text-[#E9D5FF] bg-transparent"><GitBranch className="w-4 h-4 mr-1" />Branch</Button>
-              </div>
-            </>
-          ) : (
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-2">
-              <div className="space-y-2">
-                <div className="flex gap-2">
-                  <Button onClick={startGuidedDeepDive} disabled={!gddEnabled || isSubmitting} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">{isSubmitting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <Play className="w-4 h-4 mr-1" />}Start GDD</Button>
-                  <input value={gddLoadId} onChange={(e) => setGddLoadId(e.target.value)} placeholder="Session ID" className="h-9 flex-1 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                  <Button variant="outline" onClick={loadGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddLoadId.trim()} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Load</Button>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <input value={gddAccuracyPct} onChange={(e) => setGddAccuracyPct(e.target.value)} placeholder="accuracy %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddHintCount} onChange={(e) => setGddHintCount(e.target.value)} placeholder="hints" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddAvgResponseSec} onChange={(e) => setGddAvgResponseSec(e.target.value)} placeholder="avg response sec" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddConfidenceSelf} onChange={(e) => setGddConfidenceSelf(e.target.value)} placeholder="confidence %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddWeakConcepts} onChange={(e) => setGddWeakConcepts(e.target.value)} placeholder="weak concepts comma-separated" className="h-8 col-span-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <Button onClick={advanceGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddSessionId} className="col-span-2 bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Advance Step</Button>
-              </div>
-            </div>
-          )}
-
-          {errorCard && <div className="rounded-lg border border-rose-400/40 bg-rose-500/10 p-3 text-xs text-rose-100">{errorCard}</div>}
-
-          <div className="rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-3 min-h-[220px]">
-            <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Assistant Output</h3>
-            {assistantText ? <pre className="whitespace-pre-wrap text-sm text-[#D7E3EF] font-sans">{assistantText}</pre> : <p className="text-xs text-[#64748B]">Assistant deltas and mode outputs appear here in real-time.</p>}
-          </div>
+    <div className="h-full flex flex-col bg-[radial-gradient(circle_at_top,_rgba(91,179,179,0.18),_transparent_35%),linear-gradient(140deg,#0F172A,#162535_35%,#0B1324)]">
+      <div className="border-b border-white/10 px-4 py-3 backdrop-blur-sm bg-white/[0.03] md:hidden">
+        <div className="grid grid-cols-3 gap-2">
+          {([
+            { key: "sources", label: "Sources", icon: BookOpen },
+            { key: "process", label: "Process", icon: Activity },
+            { key: "workspace", label: "Workspace", icon: FileCode2 },
+          ] as const).map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setMobileTab(tab.key)}
+              className={`rounded-lg px-2 py-2 text-xs font-medium border flex items-center justify-center gap-1.5 ${
+                mobileTab === tab.key ? "text-white bg-[#5BB3B3]/20 border-[#5BB3B3]/50" : "text-[#94A3B8] border-white/10"
+              }`}
+            >
+              <tab.icon className="w-3.5 h-3.5" /> {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      {isOutputsOpen && (
-        <Card className="w-[360px] shrink-0 border-y-0 border-r-0 border-l border-[#1E3A5F] rounded-none bg-[#0f2133]/80 flex flex-col">
-          <div className="h-12 px-3 border-b border-[#1E3A5F] flex items-center justify-between">
-            <h2 className="text-sm font-semibold">Outputs</h2>
-            <Button size="sm" variant="ghost" className="text-[#9FB0C2]" onClick={() => setIsOutputsOpen(false)}>Hide</Button>
+      <div className="px-4 pt-3">
+        <div className="flex flex-wrap gap-1.5">
+          {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => (
+            <Button
+              key={m}
+              size="sm"
+              variant="outline"
+              onClick={() => setMode(m)}
+              disabled={!activeRoomProfile.enabledModes.includes(m) || (m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled)}
+              className={`h-8 text-[11px] border ${
+                mode === m ? "border-[#5BB3B3] bg-[#5BB3B3]/20 text-white" : "border-[#1E3A5F] text-[#94A3B8]"
+              }`}
+            >
+              {MODE_LABELS[m]}
+            </Button>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex-1 flex overflow-hidden md:p-3 md:gap-3">
+        <Card className={`w-[320px] shrink-0 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-r-0 md:border-r overflow-hidden backdrop-blur-xl bg-white/[0.03] ${mobileTab !== "sources" ? "hidden md:flex" : "flex"} flex-col`}>
+          <div className="p-4 border-b border-[#1E3A5F]">
+            <h2 className="text-sm font-semibold text-white flex items-center gap-2">
+              <BookOpen className="w-4 h-4 text-[#5BB3B3]" /> Source Library
+            </h2>
+            <p className="text-xs text-[#94A3B8] mt-1">Shared sources/context for all ATOM modes.</p>
+            <Badge className="mt-2 bg-[#5BB3B3]/15 text-[#A5F3FC] border-[#5BB3B3]/30 text-[10px]">{selectedBookIds.length}/{sourceCatalog.length} selected</Badge>
           </div>
-          <div className="flex-1 min-h-0 grid grid-rows-2">
-            <div className="p-3 border-b border-[#1E3A5F] overflow-y-auto">
-              <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Timeline</h3>
-              <div className="space-y-2">
-                {timeline.length === 0 ? <p className="text-xs text-[#64748B]">No events yet.</p> : timeline.map((item) => (
-                  <div key={item.id} className="rounded-md border border-[#1E3A5F] bg-[#162535] p-2">
-                    <p className="text-xs text-white">{item.label}</p>
-                    {item.detail && <p className="text-[11px] text-[#9FB0C2] mt-1 whitespace-pre-wrap">{item.detail}</p>}
+
+          <div className="p-3 border-b border-[#1E3A5F] space-y-2">
+            <div className="flex flex-wrap gap-1.5">
+              {ATOM_SOURCE_LEVELS.map((levelTag) => (
+                <Button key={levelTag} size="sm" variant="outline" onClick={() => setLevelFilter((prev) => (prev === levelTag ? "all" : levelTag))} className={`h-7 text-[10px] border ${levelFilter === levelTag ? "border-[#5BB3B3] bg-[#5BB3B3]/20 text-white" : "border-[#1E3A5F] text-[#94A3B8]"}`}>
+                  {levelTag}
+                </Button>
+              ))}
+            </div>
+            <select value={domainFilter} onChange={(e) => setDomainFilter(e.target.value)} className="w-full h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
+              {domains.map((domain) => (
+                <option key={domain} value={domain}>{domain === "all" ? "All domains" : domain}</option>
+              ))}
+            </select>
+            <div className="flex items-center justify-between rounded-md border border-[#1E3A5F] px-2 py-1.5">
+              <span className="text-[11px] text-[#94A3B8]">Show pending sources</span>
+              <button
+                type="button"
+                onClick={() => setShowPendingSources((prev) => !prev)}
+                className={`text-[10px] px-2 py-1 rounded-full border ${showPendingSources ? "text-white border-[#5BB3B3] bg-[#5BB3B3]/20" : "text-[#94A3B8] border-[#1E3A5F]"}`}
+              >
+                {showPendingSources ? "ON" : "OFF"}
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {(Object.keys(ATOM_PRESET_LABELS) as AtomSourcePreset[]).map((preset) => (
+                <button key={preset} onClick={() => setSelectedPreset((prev) => (prev === preset ? null : preset))} className={`text-[10px] px-2 py-1 rounded-full border transition ${selectedPreset === preset ? "text-white border-[#5BB3B3] bg-[#5BB3B3]/20" : "text-[#94A3B8] border-[#1E3A5F] hover:border-[#5BB3B3]/50"}`}>
+                  {ATOM_PRESET_LABELS[preset]}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto p-3 space-y-3">
+            {sourcesLoading && (
+              <div className="text-xs text-[#94A3B8] flex items-center gap-2 px-1">
+                <Loader2 className="w-3.5 h-3.5 animate-spin" /> Loading source catalog…
+              </div>
+            )}
+            {sourcesError && <p className="text-[11px] text-amber-200 bg-amber-500/10 border border-amber-400/20 rounded-md px-2 py-1.5">{sourcesError}</p>}
+            {!sourcesLoading && groupedBooks.length === 0 && <p className="text-xs text-[#64748B]">No sources match this filter.</p>}
+            {groupedBooks.map((group) => (
+              <div key={group.level}>
+                <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-1.5">{group.level}</p>
+                <div className="space-y-1.5">
+                  {group.items.map((book) => {
+                    const selected = selectedBookIds.includes(book.id);
+                    const isSelectable = !book.availabilityStatus || book.availabilityStatus === "indexed_ready";
+                    return (
+                      <button
+                        key={book.id}
+                        onClick={() => isSelectable && toggleBook(book.id)}
+                        disabled={!isSelectable}
+                        className={`w-full text-left px-2.5 py-2 rounded-lg border ${selected ? "border-[#5BB3B3]/60 bg-[#5BB3B3]/10" : "border-[#1E3A5F] hover:bg-[#1E3A5F]/40"} ${!isSelectable ? "opacity-70 cursor-not-allowed" : ""}`}
+                      >
+                        <div className="flex justify-between gap-2">
+                          <p className={`text-xs ${selected ? "text-white" : "text-[#CBD5E1]"}`}>{book.title}</p>
+                          {selected ? <CheckCircle2 className="w-3.5 h-3.5 text-[#5EEAD4] shrink-0 mt-0.5" /> : !isSelectable ? <Lock className="w-3.5 h-3.5 text-amber-300 shrink-0 mt-0.5" /> : null}
+                        </div>
+                        <p className="text-[10px] text-[#64748B] mt-1">{book.domain}{typeof book.metadata?.edition === "string" ? ` · ${book.metadata.edition}` : ""}{typeof book.chapterCount === "number" ? ` · ${book.chapterCount} chapters` : ""}</p>
+                        {!isSelectable && book.availabilityDisabledReason && (
+                          <p className="text-[10px] text-amber-200 mt-1">{book.availabilityDisabledReason}</p>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+
+        <Card className={`flex-1 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-x-0 md:border-x overflow-hidden bg-[#101C2B]/90 ${mobileTab !== "process" ? "hidden md:flex" : "flex"} flex-col`}>
+          <div className="p-4 border-b border-[#1E3A5F] bg-gradient-to-r from-[#0f2235] to-[#14293f]">
+            <div className="flex flex-wrap items-center gap-2">
+              <h1 className="text-white text-sm font-semibold">ATOM Workspace · {MODE_LABELS[mode]}</h1>
+              <Badge className="text-[10px] border border-[#5BB3B3]/40 bg-[#5BB3B3]/10 text-[#A5F3FC]">
+                Room: {activeRoomProfile.roomId} · {activeRoomProfile.personaName}
+              </Badge>
+              <Badge className={`text-[10px] border ${STATUS_STYLES[status]}`}>{status}</Badge>
+              {taskId && <span className="text-[10px] text-[#94A3B8]">Task: {taskId.slice(0, 8)}</span>}
+              {gddSessionId && mode === "guided-deep-dive" && <span className="text-[10px] text-[#94A3B8]">GDD: {gddSessionId.slice(0, 8)}</span>}
+            </div>
+            <p className="text-xs text-[#9FB0C2] mt-1">One shared context store across all ATOM modes · {activeRoomProfile.personaStyle}</p>
+          </div>
+
+          {errorCard && (
+            <div className="mx-4 mt-3 rounded-lg border border-rose-400/40 bg-rose-500/10 p-3 text-xs text-rose-100 flex gap-2">
+              <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
+              <span>{errorCard}</span>
+            </div>
+          )}
+
+          <div className="p-4 border-b border-[#1E3A5F] space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-2">
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Room</span>
+                <select value={selectedRoomId} onChange={(e) => handleRoomChange(e.target.value as AtomRoomId)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
+                  {(Object.keys(ATOM_ROOM_PROFILES) as AtomRoomId[]).map((roomId) => (
+                    <option key={roomId} value={roomId}>{roomId}</option>
+                  ))}
+                </select>
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Topic</span>
+                <input value={topic} onChange={(e) => { setTopic(e.target.value); setManualOverrides((prev) => ({ ...prev, topic: true })); }} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Level</span>
+                <select value={level} onChange={(e) => { setLevel(e.target.value as QuickStartLevel); setManualOverrides((prev) => ({ ...prev, level: true })); }} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
+                  {QUICK_START_LEVELS.map((levelOption) => <option key={levelOption} value={levelOption}>{levelOption}</option>)}
+                </select>
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Time (min)</span>
+                <input value={timeAvailable} onChange={(e) => { setTimeAvailable(e.target.value); setManualOverrides((prev) => ({ ...prev, timeAvailable: true })); }} inputMode="numeric" className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Goal</span>
+                <input value={goal} onChange={(e) => { setGoal(e.target.value); setManualOverrides((prev) => ({ ...prev, goal: true })); }} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+              </label>
+            </div>
+
+            {mode !== "guided-deep-dive" && (
+              <textarea
+                value={taskPrompt}
+                onChange={(e) => setTaskPrompt(e.target.value)}
+                placeholder={mode === "chat" ? "Describe the clinical task ATOM should execute..." : `Optional extra instruction for ${MODE_LABELS[mode]} mode`}
+                className="w-full min-h-[72px] rounded-xl bg-[#162535] border border-[#1E3A5F] text-white text-sm p-3 focus:outline-none focus:border-[#5BB3B3]"
+              />
+            )}
+
+            {mode === "guided-deep-dive" && (
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-2">
+                <div className="space-y-2">
+                  <div className="flex gap-2">
+                    <Button onClick={startGuidedDeepDive} disabled={!gddEnabled || isSubmitting} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                      {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Start GDD
+                    </Button>
+                    <input value={gddLoadId} onChange={(e) => setGddLoadId(e.target.value)} placeholder="Session ID" className="h-9 flex-1 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                    <Button variant="outline" onClick={loadGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddLoadId.trim()} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Load</Button>
                   </div>
-                ))}
+                  {!gddEnabled && <p className="text-[11px] text-amber-200">Guided deep dive is disabled by feature flag.</p>}
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <input value={gddAccuracyPct} onChange={(e) => setGddAccuracyPct(e.target.value)} placeholder="accuracy %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddHintCount} onChange={(e) => setGddHintCount(e.target.value)} placeholder="hints" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddAvgResponseSec} onChange={(e) => setGddAvgResponseSec(e.target.value)} placeholder="avg response sec" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddConfidenceSelf} onChange={(e) => setGddConfidenceSelf(e.target.value)} placeholder="confidence %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddWeakConcepts} onChange={(e) => setGddWeakConcepts(e.target.value)} placeholder="weak concepts comma-separated" className="h-8 col-span-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <Button onClick={advanceGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddSessionId} className="col-span-2 bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Advance Step</Button>
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-2">
+              {mode !== "guided-deep-dive" && (
+                <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                  {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
+                </Button>
+              )}
+              <Button variant="outline" onClick={() => controlTask("stop")} disabled={!taskId || status !== "running"} className="border-[#1E3A5F] text-[#FCA5A5] bg-transparent">
+                <CircleStop className="w-4 h-4 mr-1.5" />Stop
+              </Button>
+              <Button variant="outline" onClick={() => controlTask("retry")} disabled={!taskId} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">
+                <RotateCcw className="w-4 h-4 mr-1.5" />Retry
+              </Button>
+              <Button variant="outline" onClick={() => controlTask("continue")} disabled={!taskId || status !== "needs_input"} className="border-[#1E3A5F] text-[#A7F3D0] bg-transparent">
+                <Play className="w-4 h-4 mr-1.5" />Continue
+              </Button>
+              <Button variant="outline" onClick={() => controlTask("branch")} disabled={!taskId} className="border-[#1E3A5F] text-[#E9D5FF] bg-transparent">
+                <GitBranch className="w-4 h-4 mr-1.5" />Branch (stub)
+              </Button>
+              {mode === "nucleux-original" && !trackAEnabled && <p className="text-[11px] text-amber-200 self-center">Track A deep research scaffold is disabled.</p>}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-0 xl:gap-3 flex-1 min-h-0">
+            <div className="border-b xl:border-b-0 xl:border-r border-[#1E3A5F] p-4 min-h-0 flex flex-col">
+              <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Timeline</h3>
+              <div className="flex-1 overflow-y-auto space-y-2 pr-1">
+                {timeline.length === 0 ? (
+                  <p className="text-xs text-[#64748B]">No events yet. Run a mode to see updates.</p>
+                ) : (
+                  timeline.map((item) => (
+                    <div key={item.id} className="rounded-lg border border-[#1E3A5F] bg-[#0f2133] p-2.5">
+                      <div className="flex justify-between gap-2">
+                        <p className="text-xs text-white">{item.label}</p>
+                        <span className="text-[10px] text-[#64748B]">{new Date(item.ts).toLocaleTimeString()}</span>
+                      </div>
+                      {item.detail && <p className="text-[11px] text-[#9FB0C2] mt-1 whitespace-pre-wrap">{item.detail}</p>}
+                    </div>
+                  ))
+                )}
               </div>
             </div>
-            <div className="p-3 overflow-y-auto">
-              <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Artifacts</h3>
-              <div className="space-y-2">
-                {mergedArtifacts.length === 0 ? <p className="text-xs text-[#64748B]">No artifacts yet.</p> : mergedArtifacts.map((artifact) => (
-                  <div key={artifact.id} className="rounded-md border border-[#1E3A5F] bg-[#162535] p-2">
-                    <p className="text-xs text-white">{artifact.title}</p>
-                    {artifact.content && <pre className="text-[11px] text-[#BFD0E0] whitespace-pre-wrap mt-1">{artifact.content}</pre>}
-                  </div>
-                ))}
+
+            <div className="p-4 min-h-0 flex flex-col">
+              <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Assistant Output</h3>
+              <div className="flex-1 overflow-y-auto rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-3">
+                {assistantText ? (
+                  <pre className="whitespace-pre-wrap text-sm text-[#D7E3EF] font-sans">{assistantText}</pre>
+                ) : (
+                  <p className="text-xs text-[#64748B]">Assistant deltas and mode outputs appear here in real-time.</p>
+                )}
               </div>
             </div>
           </div>
         </Card>
-      )}
+
+        <Card className={`w-[360px] shrink-0 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-l-0 md:border-l overflow-hidden backdrop-blur-xl bg-white/[0.03] ${mobileTab !== "workspace" ? "hidden lg:flex" : "flex"} flex-col`}>
+          <Tabs defaultValue="actions" className="flex flex-col h-full">
+            <div className="p-3 border-b border-[#1E3A5F]">
+              <h2 className="text-sm font-semibold text-white flex items-center gap-2"><FlaskConical className="w-4 h-4 text-[#5EEAD4]" /> Workspace</h2>
+              <TabsList className="grid w-full mt-2 grid-cols-3 bg-[#162535] border border-[#1E3A5F]">
+                <TabsTrigger value="actions" className="text-xs data-[state=active]:bg-[#5BB3B3]/20">Actions</TabsTrigger>
+                <TabsTrigger value="artifacts" className="text-xs data-[state=active]:bg-[#5BB3B3]/20">Artifacts</TabsTrigger>
+                <TabsTrigger value="canvas" className="text-xs data-[state=active]:bg-[#5BB3B3]/20">Canvas</TabsTrigger>
+              </TabsList>
+            </div>
+
+            <TabsContent value="actions" className="mt-0 flex-1 overflow-y-auto p-3 space-y-2">
+              <p className="text-xs text-[#94A3B8]">Mode actions write to the same timeline/artifacts panel.</p>
+              <div className="grid grid-cols-2 gap-2">
+                <Button size="sm" variant="outline" onClick={() => setMode("mcq")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">MCQ</Button>
+                <Button size="sm" variant="outline" onClick={() => setMode("flashcards")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Flashcards</Button>
+                <Button size="sm" variant="outline" onClick={() => setMode("ppt")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">PPT</Button>
+                <Button size="sm" variant="outline" onClick={() => setMode("nucleux-original")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">NucleuX Original</Button>
+              </div>
+              <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || mode === "guided-deep-dive" || isSubmitting || (mode === "chat" && !taskPrompt.trim())} className="w-full bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Run current mode</Button>
+            </TabsContent>
+
+            <TabsContent value="artifacts" className="mt-0 flex-1 overflow-y-auto p-3 space-y-2">
+              {mergedArtifacts.length === 0 ? (
+                <p className="text-xs text-[#64748B]">Artifacts from all mode outputs appear here.</p>
+              ) : (
+                mergedArtifacts.map((artifact) => (
+                  <div key={artifact.id} className="rounded-lg border border-[#1E3A5F] bg-[#162535] p-2.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-xs text-white flex items-center gap-1.5"><FileText className="w-3.5 h-3.5 text-[#5EEAD4]" />{artifact.title}</p>
+                      <Badge className="text-[9px] border border-[#1E3A5F] bg-[#0f2133] text-[#94A3B8]">{artifact.kind}</Badge>
+                    </div>
+                    {artifact.content && <pre className="mt-2 text-[11px] text-[#BFD0E0] whitespace-pre-wrap">{artifact.content}</pre>}
+                  </div>
+                ))
+              )}
+            </TabsContent>
+
+            <TabsContent value="canvas" className="mt-0 flex-1 overflow-y-auto p-3">
+              {parsedArtifactsFromAssistant.length === 0 ? (
+                <p className="text-xs text-[#64748B]">Code/output fenced blocks from assistant responses show here.</p>
+              ) : (
+                <div className="space-y-2">
+                  {parsedArtifactsFromAssistant.map((artifact) => (
+                    <div key={artifact.id} className="rounded-lg border border-[#1E3A5F] bg-[#101C2B] p-2.5">
+                      <p className="text-xs text-[#A5F3FC] mb-1">{artifact.title}</p>
+                      <pre className="text-[11px] text-[#D7E3EF] whitespace-pre-wrap">{artifact.content}</pre>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </TabsContent>
+          </Tabs>
+        </Card>
+      </div>
     </div>
   );
 }

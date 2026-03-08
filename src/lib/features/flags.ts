@@ -5,6 +5,8 @@ export const FEATURE_KEYS = {
   trackADeepResearchScaffold: 'FEATURE_TRACK_A_DEEP_RESEARCH_SCAFFOLD',
   trackBGuidedDeepDiveScaffold: 'FEATURE_TRACK_B_GUIDED_DEEP_DIVE_SCAFFOLD',
   learningCycleIntegrationHooks: 'FEATURE_LEARNING_CYCLE_INTEGRATION_HOOKS',
+  atomUx1CockpitShell: 'FEATURE_ATOM_UX1_COCKPIT_SHELL',
+  atomUx2ComposerRevamp: 'FEATURE_ATOM_UX2_COMPOSER_REVAMP',
 } as const;
 
 export const RUNTIME_FLAG_KEYS = {
@@ -36,6 +38,8 @@ export const featureFlags = {
   trackADeepResearchScaffold: getFeatureFlagValue('trackADeepResearchScaffold'),
   trackBGuidedDeepDiveScaffold: getFeatureFlagValue('trackBGuidedDeepDiveScaffold'),
   learningCycleIntegrationHooks: getFeatureFlagValue('learningCycleIntegrationHooks'),
+  atomUx1CockpitShell: getFeatureFlagValue('atomUx1CockpitShell'),
+  atomUx2ComposerRevamp: getFeatureFlagValue('atomUx2ComposerRevamp'),
 } as const;
 
 export function isFeatureEnabled(feature: FeatureKey): boolean {
