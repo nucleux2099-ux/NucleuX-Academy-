@@ -5,11 +5,20 @@ import {
   type QuickStartFormInput,
   type QuickStartMode,
 } from '@/lib/atom/quick-start-schema';
+import { createDeepResearchPipelineScaffold } from '@/lib/atom/deep-research/pipeline';
+import { createGuidedDeepDiveSessionState } from '@/lib/atom/guided-deep-dive/session-state';
+import { createLearningCycleHooksScaffold } from '@/lib/atom/learning-cycle/hooks';
+import { isFeatureEnabled } from '@/lib/features/flags';
 
 type LaunchResponse = {
   workflow: string;
   launchPath: string;
   message: string;
+  scaffolds?: {
+    deepResearch?: Awaited<ReturnType<ReturnType<typeof createDeepResearchPipelineScaffold>['createRun']>>;
+    guidedDeepDiveSession?: ReturnType<typeof createGuidedDeepDiveSessionState>;
+    learningCycle?: Awaited<ReturnType<ReturnType<typeof createLearningCycleHooksScaffold>['onPhaseCheckpoint']>>;
+  };
 };
 
 function toQuery(payload: QuickStartFormInput): string {
@@ -34,11 +43,30 @@ const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Pr
     launchPath: `/chat?${toQuery(payload)}`,
     message: 'PPT workflow prepared. Open chat to generate your deck outline.',
   }),
-  'nucleux-original': async (payload) => ({
-    workflow: 'nucleux-original',
-    launchPath: `/chat?${toQuery(payload)}`,
-    message: 'NucleuX Original workflow launched.',
-  }),
+  'nucleux-original': async (payload) => {
+    const response: LaunchResponse = {
+      workflow: 'nucleux-original',
+      launchPath: `/chat?${toQuery(payload)}`,
+      message: 'NucleuX Original workflow launched.',
+    };
+
+    if (isFeatureEnabled('trackADeepResearchScaffold')) {
+      const deepResearchPipeline = createDeepResearchPipelineScaffold();
+      const deepResearch = await deepResearchPipeline.createRun({
+        topic: payload.topic,
+        learnerLevel: payload.level,
+        goal: payload.goal,
+        context: payload.advanced?.clinicalContext,
+      });
+
+      response.scaffolds = {
+        ...response.scaffolds,
+        deepResearch,
+      };
+    }
+
+    return response;
+  },
   mcq: async (payload) => ({
     workflow: 'mcq',
     launchPath: `/mcqs?${toQuery(payload)}`,
@@ -54,11 +82,44 @@ const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Pr
     launchPath: `/chat?${toQuery(payload)}`,
     message: 'Excel analysis workflow launched.',
   }),
-  'guided-deep-dive': async (payload) => ({
-    workflow: 'guided-deep-dive',
-    launchPath: `/chat?${toQuery(payload)}`,
-    message: 'Guided deep dive workflow launched.',
-  }),
+  'guided-deep-dive': async (payload) => {
+    const response: LaunchResponse = {
+      workflow: 'guided-deep-dive',
+      launchPath: `/chat?${toQuery(payload)}`,
+      message: 'Guided deep dive workflow launched.',
+    };
+
+    if (isFeatureEnabled('trackBGuidedDeepDiveScaffold')) {
+      response.scaffolds = {
+        ...response.scaffolds,
+        guidedDeepDiveSession: createGuidedDeepDiveSessionState({
+          topic: payload.topic,
+          level: payload.level,
+          goal: payload.goal,
+        }),
+      };
+    }
+
+    if (isFeatureEnabled('learningCycleIntegrationHooks')) {
+      const learningCycleHooks = createLearningCycleHooksScaffold();
+      const learningCycle = await learningCycleHooks.onPhaseCheckpoint({
+        phase: 'plan',
+        topic: payload.topic,
+        source: 'atom-v3-launch-guided-deep-dive',
+        metadata: {
+          level: payload.level,
+          timeAvailable: payload.timeAvailable,
+        },
+      });
+
+      response.scaffolds = {
+        ...response.scaffolds,
+        learningCycle,
+      };
+    }
+
+    return response;
+  },
 };
 
 export async function POST(request: NextRequest) {

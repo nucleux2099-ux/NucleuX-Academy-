@@ -2,6 +2,9 @@ export const FEATURE_KEYS = {
   atomPhase2Scaffold: 'FEATURE_ATOM_PHASE2_SCAFFOLD',
   atomIntentCard: 'FEATURE_ATOM_INTENT_CARD',
   atomQuickStartSchema: 'FEATURE_ATOM_QUICK_START_SCHEMA',
+  trackADeepResearchScaffold: 'FEATURE_TRACK_A_DEEP_RESEARCH_SCAFFOLD',
+  trackBGuidedDeepDiveScaffold: 'FEATURE_TRACK_B_GUIDED_DEEP_DIVE_SCAFFOLD',
+  learningCycleIntegrationHooks: 'FEATURE_LEARNING_CYCLE_INTEGRATION_HOOKS',
 } as const;
 
 export const RUNTIME_FLAG_KEYS = {
@@ -29,6 +32,9 @@ export const featureFlags = {
   atomPhase2Scaffold: getFeatureFlagValue('atomPhase2Scaffold'),
   atomIntentCard: getFeatureFlagValue('atomIntentCard'),
   atomQuickStartSchema: getFeatureFlagValue('atomQuickStartSchema'),
+  trackADeepResearchScaffold: getFeatureFlagValue('trackADeepResearchScaffold'),
+  trackBGuidedDeepDiveScaffold: getFeatureFlagValue('trackBGuidedDeepDiveScaffold'),
+  learningCycleIntegrationHooks: getFeatureFlagValue('learningCycleIntegrationHooks'),
 } as const;
 
 export function isFeatureEnabled(feature: FeatureKey): boolean {
