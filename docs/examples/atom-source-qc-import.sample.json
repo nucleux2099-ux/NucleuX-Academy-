@@ -1,0 +1,43 @@
+{
+  "sourceId": "harrisons-principles-of-internal-medicine",
+  "title": "Harrison's Principles of Internal Medicine",
+  "domain": "Medicine",
+  "levelTags": ["PG"],
+  "lifecycleState": "qc_pending",
+  "status": "passed",
+  "summary": "QC import scaffold sample for V2",
+  "details": {
+    "reviewer": "qa-bot",
+    "score": 0.96,
+    "notes": ["headings normalized", "references retained"]
+  },
+  "pipelineVersion": "pipeline-v2.0.0",
+  "ocrModelVersion": "ocr-2026-03",
+  "promptVersion": "qc-prompt-v7",
+  "validatedAt": "2026-03-08T09:30:00.000Z",
+  "revalidateAfter": "2026-06-08T09:30:00.000Z",
+  "overrideReason": null,
+  "chapters": [
+    {
+      "chapterKey": "ch-01",
+      "chapterTitle": "Cardiovascular Medicine",
+      "status": "passed",
+      "score": 97.5,
+      "findings": {
+        "missingTables": 0,
+        "ocrNoise": "low"
+      },
+      "validatedAt": "2026-03-08T09:30:00.000Z",
+      "revalidateAfter": "2026-06-08T09:30:00.000Z"
+    },
+    {
+      "chapterKey": "ch-02",
+      "chapterTitle": "Respiratory Medicine",
+      "status": "warning",
+      "score": 88.0,
+      "findings": {
+        "warning": "2 figure captions need manual check"
+      }
+    }
+  ]
+}

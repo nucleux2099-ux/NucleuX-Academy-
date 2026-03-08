@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { ATOM_SOURCE_LEVELS } from '@/lib/atom/source-catalog';
+import { fetchSourceStatusProjection } from '@/lib/atom/source-platform-v2';
 import { getAvailabilityDisabledReason, type AtomSourceAvailabilityStatus } from '@/lib/atom/source-availability';
 
 export const runtime = 'nodejs';
@@ -29,6 +30,8 @@ function normalizeAvailability(row: SourceRow) {
     availability_status: status,
     availability_disabled_reason: disabledReason,
     selectable: status ? status === 'indexed_ready' : true,
+    availability: status === 'indexed_ready' ? 'available' : 'unavailable',
+    availability_reason: disabledReason,
   };
 }
 
@@ -50,9 +53,77 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search')?.trim().toLowerCase();
     const includePending = searchParams.get('include_pending') === 'true' || searchParams.get('includePending') === 'true';
 
+    // V2 path: status projection
+    try {
+      const projection = await fetchSourceStatusProjection(supabase, { domain, level });
+      if (projection) {
+        let items = projection
+          .map((row) => ({
+            id: row.source_id ?? row.source_book_id,
+            source_book_id: row.source_book_id,
+            title: row.title,
+            short_title: row.title,
+            domain: row.domain ?? 'General',
+            level_tags: row.level_tags ?? [],
+            priority: 100,
+            enabled: true,
+            sort_order: 100,
+            metadata: {
+              lifecycle_state: row.lifecycle_state,
+              pipeline_version: row.pipeline_version,
+              ocr_model_version: row.ocr_model_version,
+              prompt_version: row.prompt_version,
+              active_index_version: row.active_index_version,
+              candidate_index_version: row.candidate_index_version,
+              validated_at: row.validated_at,
+              revalidate_after: row.revalidate_after,
+              updated_at: row.updated_at,
+            },
+            chapter_count: null,
+            chunk_count: row.chunk_count,
+            last_synced_at: row.updated_at,
+            availability_status: row.selectable ? 'indexed_ready' : 'md_ready_not_ingested',
+            availability: row.selectable ? 'available' : 'unavailable',
+            availability_reason: row.availability_reason,
+            selectable: row.selectable,
+            lifecycle_state: row.lifecycle_state,
+            rollout_state: row.rollout_state,
+            qc_passed: row.qc_passed,
+            indexed_ready: row.indexed_ready,
+          }))
+          .sort((a, b) => a.title.localeCompare(b.title));
+
+        if (!includePending) {
+          const selectableOnly = items.filter((item) => item.selectable);
+          if (selectableOnly.length > 0) {
+            items = selectableOnly;
+          }
+        }
+
+        if (search) {
+          items = items.filter((item) => `${item.title} ${item.short_title} ${item.domain}`.toLowerCase().includes(search));
+        }
+
+        const grouped = ATOM_SOURCE_LEVELS.map((tag) => ({
+          level: tag,
+          items: items.filter((item) => item.level_tags?.includes(tag)),
+        })).filter((group) => group.items.length > 0);
+
+        return NextResponse.json({
+          sources: items,
+          grouped,
+          total: items.length,
+          includePending,
+          projection: 'source_book_status',
+        });
+      }
+    } catch (projectionError) {
+      console.warn('ATOM V2 projection fetch failed, falling back to atom_source_catalog', projectionError);
+    }
+
+    // Fallback (pre-V2): atom_source_catalog
     let data: SourceRow[] | null = null;
 
-    // Primary path: availability-aware query
     {
       let query = supabase
         .from('atom_source_catalog')
@@ -74,7 +145,6 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // Fallback for pre-migration environments
     if (!data) {
       let fallbackQuery = supabase
         .from('atom_source_catalog')
@@ -121,6 +191,7 @@ export async function GET(request: NextRequest) {
       grouped,
       total: filtered.length,
       includePending,
+      projection: 'atom_source_catalog',
     });
   } catch (error) {
     console.error('ATOM sources API error:', error);
