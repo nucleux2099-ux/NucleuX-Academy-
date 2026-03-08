@@ -502,6 +502,8 @@ export default function AtomWorkspacePage() {
         body: JSON.stringify({
           context: domainFilter === 'all' ? 'surgery' : domainFilter,
           deskSources,
+          selectedBookIds,
+          strictSourceGrounding: true,
           messages: [{ role: 'user', content: userText }],
         }),
       });

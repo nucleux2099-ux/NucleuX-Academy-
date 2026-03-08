@@ -129,8 +129,36 @@ function expandKeywords(keywords: string[]): string[] {
   return Array.from(expanded)
 }
 
-// Search files by path AND content for relevance
-async function findRelevantContent(query: string, contextId: string, maxChunks = 5): Promise<string> {
+function normalizeToken(input: string): string {
+  return input.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+}
+
+function buildSourceKeywords(selectedBookIds: string[] = [], deskSources: string[] = []): string[] {
+  const keywords = new Set<string>()
+  const stop = new Set(['textbook', 'principles', 'practice', 'of', 'and', 'for', 'review'])
+
+  for (const id of selectedBookIds) {
+    for (const token of normalizeToken(id).split(/\s+/)) {
+      if (token.length >= 4 && !stop.has(token)) keywords.add(token)
+    }
+  }
+
+  for (const title of deskSources) {
+    for (const token of normalizeToken(title).split(/\s+/)) {
+      if (token.length >= 4 && !stop.has(token)) keywords.add(token)
+    }
+  }
+
+  return Array.from(keywords)
+}
+
+// Search files by path AND content for relevance (optionally source-biased)
+async function findRelevantContent(
+  query: string,
+  contextId: string,
+  maxChunks = 5,
+  sourceKeywords: string[] = [],
+): Promise<{ content: string; sourceBiased: boolean }> {
   const folders = contextFolders[contextId] || contextFolders.full
   const rawKeywords = query.toLowerCase().split(/\s+/).filter(w => w.length > 3)
   const keywords = expandKeywords(rawKeywords)
@@ -142,18 +170,29 @@ async function findRelevantContent(query: string, contextId: string, maxChunks =
     allFiles.push(...files)
   }
 
-  // Score files by keyword matches in BOTH path and content (first 2000 chars)
+  const scopedFiles = sourceKeywords.length > 0
+    ? allFiles.filter((filePath) => {
+        const rel = filePath.replace(CONTENT_BASE, '').toLowerCase()
+        return sourceKeywords.some((kw) => rel.includes(kw))
+      })
+    : allFiles
+
+  const candidateFiles = scopedFiles.length > 0 ? scopedFiles : allFiles
+
+  // Score files by keyword matches in BOTH path and content (first 2KB)
   const scored: { path: string; score: number }[] = []
-  for (const filePath of allFiles) {
+  for (const filePath of candidateFiles) {
     const relativePath = filePath.replace(CONTENT_BASE, '').toLowerCase()
     let score = 0
-    
-    // Path matching (high weight — file name is very indicative)
+
     for (const kw of keywords) {
       if (relativePath.includes(kw)) score += 3
     }
+
+    for (const sk of sourceKeywords) {
+      if (relativePath.includes(sk)) score += 4
+    }
     
-    // Content matching (read first 2KB for speed)
     if (score === 0) {
       try {
         const content = await fs.readFile(filePath, 'utf-8')
@@ -168,19 +207,16 @@ async function findRelevantContent(query: string, contextId: string, maxChunks =
     if (score > 0) scored.push({ path: filePath, score })
   }
 
-  // Sort by score, take top N
   scored.sort((a, b) => b.score - a.score)
   const topFiles = scored.slice(0, maxChunks)
 
-  // If no matches, take first few files as general context
-  const filesToRead = topFiles.length > 0 
-    ? topFiles.map(f => f.path) 
-    : allFiles.slice(0, 3)
+  const filesToRead = topFiles.length > 0
+    ? topFiles.map(f => f.path)
+    : candidateFiles.slice(0, 3)
 
-  // Read and concatenate
   const chunks: string[] = []
   let totalChars = 0
-  const MAX_CHARS = 30000 // ~7500 tokens context window budget
+  const MAX_CHARS = 30000
 
   for (const filePath of filesToRead) {
     if (totalChars >= MAX_CHARS) break
@@ -195,7 +231,7 @@ async function findRelevantContent(query: string, contextId: string, maxChunks =
     }
   }
 
-  return chunks.join('\n\n')
+  return { content: chunks.join('\n\n'), sourceBiased: scopedFiles.length > 0 }
 }
 
 const ATOM_SYSTEM_PROMPT = `You are ATOM — the AI thinking partner inside NucleuX Academy, a medical education platform.
@@ -235,7 +271,7 @@ You will receive relevant textbook content as context. Ground your answers in th
 
 export async function POST(request: NextRequest) {
   try {
-    const { messages, context = 'surgery', deskSources = [], systemOverride } = await request.json()
+    const { messages, context = 'surgery', deskSources = [], selectedBookIds = [], strictSourceGrounding = false, systemOverride } = await request.json()
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return new Response(JSON.stringify({ error: 'Messages required' }), { 
@@ -263,14 +299,26 @@ export async function POST(request: NextRequest) {
         : ''
 
     // Find relevant content from the library
-    const relevantContent = await findRelevantContent(query, context)
+    const sourceKeywords = buildSourceKeywords(selectedBookIds, deskSources)
+    const { content: relevantContent, sourceBiased } = await findRelevantContent(query, context, 5, sourceKeywords)
 
     // Build system prompt with context
     let systemPrompt = systemOverride || ATOM_SYSTEM_PROMPT
     
     // Add desk sources context if provided
     if (deskSources && deskSources.length > 0) {
-      systemPrompt += `\n\n## Active Desk Sources\nThe student has these sources on their desk: ${deskSources.join(', ')}. Prioritize referencing these when answering.`
+      systemPrompt += `\n\n## Active Desk Sources\nThe student has these sources on their desk: ${deskSources.join(', ')}.`
+      if (strictSourceGrounding) {
+        systemPrompt += ` Only use evidence from these selected desk sources. If evidence is missing, clearly say the selected sources do not contain enough support.`
+      } else {
+        systemPrompt += ` Prioritize referencing these when answering.`
+      }
+      if (sourceKeywords.length > 0) {
+        systemPrompt += `\nSource routing keywords: ${sourceKeywords.join(', ')}`
+      }
+      if (!sourceBiased) {
+        systemPrompt += `\nWarning: Could not map file paths strongly to selected sources; answer cautiously and disclose low source certainty.`
+      }
     }
     
     if (relevantContent) {
