@@ -41,7 +41,6 @@ import {
   Lock,
   Paperclip,
   SendHorizontal,
-  Sparkles,
 } from "lucide-react";
 
 type TimelineItem = {
@@ -867,58 +866,159 @@ export default function AtomWorkspacePage() {
           </div>
         </div>
 
-        <div className="flex-1 min-h-0 p-4 space-y-3 overflow-y-auto">
+        <div className="flex-1 min-h-0 px-4 pt-4 pb-3 flex flex-col gap-3">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
             <select value={selectedRoomId} onChange={(e) => handleRoomChange(e.target.value as AtomRoomId)} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2">
               {(Object.keys(ATOM_ROOM_PROFILES) as AtomRoomId[]).map((roomId) => (<option key={roomId} value={roomId}>{roomId}</option>))}
             </select>
-            <select value={mode} onChange={(e) => setMode(e.target.value as AtomWorkspaceMode)} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2">
-              {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => (
-                <option key={m} value={m} disabled={!activeRoomProfile.enabledModes.includes(m) || (m === 'guided-deep-dive' && !gddEnabled) || (m === 'nucleux-original' && !trackAEnabled)}>{MODE_LABELS[m]}</option>
-              ))}
-            </select>
             <input value={topic} onChange={(e) => { setTopic(e.target.value); setManualOverrides((prev) => ({ ...prev, topic: true })); }} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" placeholder="Topic" />
             <input value={goal} onChange={(e) => { setGoal(e.target.value); setManualOverrides((prev) => ({ ...prev, goal: true })); }} className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" placeholder="Goal" />
-          </div>
-
-          {mode !== 'guided-deep-dive' ? (
-            <>
-              <textarea value={taskPrompt} onChange={(e) => setTaskPrompt(e.target.value)} placeholder="Ask ATOM what you want to study or generate..." className="w-full min-h-[120px] rounded-xl bg-[#162535] border border-[#1E3A5F] p-3 text-sm" />
-              <div className="flex flex-wrap gap-2">
-                <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === 'chat' && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === 'nucleux-original' && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
-                  {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
-                </Button>
-                <Button variant="outline" onClick={() => controlTask('stop')} disabled={!taskId || status !== 'running'} className="border-[#1E3A5F] text-[#FCA5A5] bg-transparent"><CircleStop className="w-4 h-4 mr-1" />Stop</Button>
-                <Button variant="outline" onClick={() => controlTask('retry')} disabled={!taskId} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent"><RotateCcw className="w-4 h-4 mr-1" />Retry</Button>
-                <Button variant="outline" onClick={() => controlTask('continue')} disabled={!taskId || status !== 'needs_input'} className="border-[#1E3A5F] text-[#A7F3D0] bg-transparent"><Play className="w-4 h-4 mr-1" />Continue</Button>
-                <Button variant="outline" onClick={() => controlTask('branch')} disabled={!taskId} className="border-[#1E3A5F] text-[#E9D5FF] bg-transparent"><GitBranch className="w-4 h-4 mr-1" />Branch</Button>
-              </div>
-            </>
-          ) : (
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-2">
-              <div className="space-y-2">
-                <div className="flex gap-2">
-                  <Button onClick={startGuidedDeepDive} disabled={!gddEnabled || isSubmitting} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">{isSubmitting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <Play className="w-4 h-4 mr-1" />}Start GDD</Button>
-                  <input value={gddLoadId} onChange={(e) => setGddLoadId(e.target.value)} placeholder="Session ID" className="h-9 flex-1 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                  <Button variant="outline" onClick={loadGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddLoadId.trim()} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Load</Button>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <input value={gddAccuracyPct} onChange={(e) => setGddAccuracyPct(e.target.value)} placeholder="accuracy %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddHintCount} onChange={(e) => setGddHintCount(e.target.value)} placeholder="hints" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddAvgResponseSec} onChange={(e) => setGddAvgResponseSec(e.target.value)} placeholder="avg response sec" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddConfidenceSelf} onChange={(e) => setGddConfidenceSelf(e.target.value)} placeholder="confidence %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <input value={gddWeakConcepts} onChange={(e) => setGddWeakConcepts(e.target.value)} placeholder="weak concepts comma-separated" className="h-8 col-span-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
-                <Button onClick={advanceGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddSessionId} className="col-span-2 bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Advance Step</Button>
-              </div>
+            <div className="h-9 rounded-md bg-[#162535] border border-[#1E3A5F] px-2 flex items-center justify-between text-xs text-[#9FB0C2]">
+              <span>{selectedBookIds.length} sources selected</span>
+              <span>{taskId ? `Task ${taskId.slice(0, 8)}` : "No task"}</span>
             </div>
-          )}
+          </div>
 
           {errorCard && <div className="rounded-lg border border-rose-400/40 bg-rose-500/10 p-3 text-xs text-rose-100">{errorCard}</div>}
 
-          <div className="rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-3 min-h-[220px]">
-            <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Assistant Output</h3>
-            {assistantText ? <pre className="whitespace-pre-wrap text-sm text-[#D7E3EF] font-sans">{assistantText}</pre> : <p className="text-xs text-[#64748B]">Assistant deltas and mode outputs appear here in real-time.</p>}
+          <div className="flex-1 min-h-0 grid grid-cols-1 xl:grid-cols-2 gap-3 overflow-hidden">
+            <div className="rounded-2xl border border-[#22354D] bg-[#0f2133]/80 p-3 min-h-0 flex flex-col">
+              <h3 className="text-[11px] uppercase tracking-[0.14em] text-[#8FB6D9] mb-2">Timeline</h3>
+              <div className="flex-1 overflow-y-auto space-y-2 pr-1">
+                {timeline.length === 0 ? <p className="text-xs text-[#64748B]">No events yet.</p> : timeline.map((item) => (
+                  <div key={item.id} className="rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2.5">
+                    <div className="flex items-start justify-between gap-2">
+                      <p className="text-[13px] text-[#E5EEF8] leading-5">{item.label}</p>
+                      <span className="text-[10px] text-[#607A95] shrink-0">{new Date(item.ts).toLocaleTimeString()}</span>
+                    </div>
+                    {item.detail && <p className="text-xs text-[#9FB0C2] mt-1.5 whitespace-pre-wrap leading-relaxed">{item.detail}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#22354D] bg-[#0f2133]/80 p-3 min-h-0 flex flex-col">
+              <h3 className="text-[11px] uppercase tracking-[0.14em] text-[#8FB6D9] mb-2">Assistant Output</h3>
+              <div className="flex-1 overflow-y-auto">
+                {assistantText ? (
+                  <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
+                    <pre className="whitespace-pre-wrap text-[13px] leading-6 text-[#DDE9F6] font-sans">{assistantText}</pre>
+                  </div>
+                ) : (
+                  <p className="text-xs text-[#64748B]">Assistant deltas and mode outputs appear here in real-time.</p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="shrink-0 w-full max-w-4xl mx-auto">
+            {ux2ComposerEnabled ? (
+              <div className="rounded-3xl border border-[#2B4560] bg-[#0d1c2e]/95 shadow-[0_16px_48px_rgba(0,0,0,0.35)] p-3">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <select
+                    value={selectedWorkflowPreset}
+                    onChange={(e) => applyWorkflowPreset(e.target.value)}
+                    className="h-8 rounded-full bg-[#14263A] border border-[#29435D] text-[11px] text-[#C7D8EA] px-3"
+                  >
+                    <option value="">Workflow preset</option>
+                    {WORKFLOW_PRESETS.map((preset) => (
+                      <option key={preset.label} value={preset.label}>{preset.label}</option>
+                    ))}
+                  </select>
+
+                  {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => {
+                    const disabled = !activeRoomProfile.enabledModes.includes(m) || (m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled);
+                    return (
+                      <button
+                        key={m}
+                        type="button"
+                        disabled={disabled}
+                        onClick={() => setMode(m)}
+                        className={`h-7 px-3 rounded-full text-[11px] border transition ${mode === m ? "border-[#63C2C2] bg-[#5BB3B3]/20 text-white" : "border-[#29435D] text-[#93A9BF] hover:text-white"} ${disabled ? "opacity-40 cursor-not-allowed" : ""}`}
+                      >
+                        {MODE_LABELS[m]}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {mode === "guided-deep-dive" ? (
+                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-2">
+                    <div className="space-y-2">
+                      <div className="flex gap-2">
+                        <Button onClick={startGuidedDeepDive} disabled={!gddEnabled || isSubmitting} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">{isSubmitting ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <Play className="w-4 h-4 mr-1" />}Start GDD</Button>
+                        <input value={gddLoadId} onChange={(e) => setGddLoadId(e.target.value)} placeholder="Session ID" className="h-9 flex-1 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
+                        <Button variant="outline" onClick={loadGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddLoadId.trim()} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Load</Button>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <input value={gddAccuracyPct} onChange={(e) => setGddAccuracyPct(e.target.value)} placeholder="accuracy %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
+                      <input value={gddHintCount} onChange={(e) => setGddHintCount(e.target.value)} placeholder="hints" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
+                      <input value={gddAvgResponseSec} onChange={(e) => setGddAvgResponseSec(e.target.value)} placeholder="avg response sec" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
+                      <input value={gddConfidenceSelf} onChange={(e) => setGddConfidenceSelf(e.target.value)} placeholder="confidence %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
+                      <input value={gddWeakConcepts} onChange={(e) => setGddWeakConcepts(e.target.value)} placeholder="weak concepts comma-separated" className="h-8 col-span-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2" />
+                      <Button onClick={advanceGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddSessionId} className="col-span-2 bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Advance Step</Button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="rounded-2xl border border-[#29435D] bg-[#101f31] px-3 py-2 flex items-end gap-2">
+                      <Button
+                        type="button"
+                        size="icon"
+                        variant="ghost"
+                        className="h-9 w-9 rounded-xl border border-[#2E4A67] text-[#A9BFD6] hover:text-white"
+                        onClick={() => setComposerAttachment((prev) => (prev ? null : { name: "attachment-placeholder.csv" }))}
+                      >
+                        <Paperclip className="w-4 h-4" />
+                      </Button>
+                      <textarea
+                        value={taskPrompt}
+                        onChange={(e) => setTaskPrompt(e.target.value)}
+                        placeholder="Ask ATOM what you want to study or generate..."
+                        className="flex-1 min-h-[72px] max-h-40 bg-transparent text-sm leading-6 text-[#E5EEF8] placeholder:text-[#68829A] resize-none focus:outline-none"
+                      />
+                      <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="h-9 rounded-xl bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                        {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <SendHorizontal className="w-4 h-4" />}
+                      </Button>
+                    </div>
+
+                    {composerAttachment && (
+                      <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#2D4A66] bg-[#15263A] px-3 py-1 text-[11px] text-[#B7CCE0]">
+                        <Paperclip className="w-3.5 h-3.5" />
+                        <span>{composerAttachment.name}</span>
+                        <button type="button" className="text-[#7E97AF] hover:text-white" onClick={() => setComposerAttachment(null)}>×</button>
+                      </div>
+                    )}
+
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      <Button variant="outline" onClick={() => controlTask("stop")} disabled={!taskId || status !== "running"} className="h-8 border-[#1E3A5F] text-[#FCA5A5] bg-transparent"><CircleStop className="w-3.5 h-3.5 mr-1" />Stop</Button>
+                      <Button variant="outline" onClick={() => controlTask("retry")} disabled={!taskId} className="h-8 border-[#1E3A5F] text-[#BFDBFE] bg-transparent"><RotateCcw className="w-3.5 h-3.5 mr-1" />Retry</Button>
+                      <Button variant="outline" onClick={() => controlTask("continue")} disabled={!taskId || status !== "needs_input"} className="h-8 border-[#1E3A5F] text-[#A7F3D0] bg-transparent"><Play className="w-3.5 h-3.5 mr-1" />Continue</Button>
+                      <Button variant="outline" onClick={() => controlTask("branch")} disabled={!taskId} className="h-8 border-[#1E3A5F] text-[#E9D5FF] bg-transparent"><GitBranch className="w-3.5 h-3.5 mr-1" />Branch</Button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <div className="rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-3">
+                <select value={mode} onChange={(e) => setMode(e.target.value as AtomWorkspaceMode)} className="h-9 w-full mb-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs px-2">
+                  {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as AtomWorkspaceMode[]).map((m) => (
+                    <option key={m} value={m} disabled={!activeRoomProfile.enabledModes.includes(m) || (m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled)}>{MODE_LABELS[m]}</option>
+                  ))}
+                </select>
+                <textarea value={taskPrompt} onChange={(e) => setTaskPrompt(e.target.value)} placeholder="Ask ATOM what you want to study or generate..." className="w-full min-h-[120px] rounded-xl bg-[#162535] border border-[#1E3A5F] p-3 text-sm" />
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <Button onClick={() => launchMode(mode)} disabled={!activeRoomProfile.enabledModes.includes(mode) || (mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                    {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
+                  </Button>
+                  <Button variant="outline" onClick={() => controlTask("stop")} disabled={!taskId || status !== "running"} className="border-[#1E3A5F] text-[#FCA5A5] bg-transparent"><CircleStop className="w-4 h-4 mr-1" />Stop</Button>
+                  <Button variant="outline" onClick={() => controlTask("retry")} disabled={!taskId} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent"><RotateCcw className="w-4 h-4 mr-1" />Retry</Button>
+                  <Button variant="outline" onClick={() => controlTask("continue")} disabled={!taskId || status !== "needs_input"} className="border-[#1E3A5F] text-[#A7F3D0] bg-transparent"><Play className="w-4 h-4 mr-1" />Continue</Button>
+                  <Button variant="outline" onClick={() => controlTask("branch")} disabled={!taskId} className="border-[#1E3A5F] text-[#E9D5FF] bg-transparent"><GitBranch className="w-4 h-4 mr-1" />Branch</Button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
