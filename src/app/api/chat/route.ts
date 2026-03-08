@@ -317,9 +317,39 @@ export async function POST(request: NextRequest) {
       const previousUser = [...messages]
         .slice(0, -1)
         .reverse()
-        .find((m: IncomingMessage) => m.role === 'user' && typeof m.content === 'string' && m.content.trim().length > 0)
-      if (previousUser && typeof previousUser.content === 'string') {
-        query = previousUser.content
+        .find((m: IncomingMessage) => {
+          if (m.role !== 'user') return false
+          if (typeof m.content === 'string') return m.content.trim().length > 0
+          if (Array.isArray(m.content)) {
+            return m.content.some(
+              (part) =>
+                typeof part === 'object' &&
+                part !== null &&
+                'type' in part &&
+                part.type === 'text' &&
+                'text' in part &&
+                typeof part.text === 'string' &&
+                part.text.trim().length > 0,
+            )
+          }
+          return false
+        })
+
+      if (previousUser) {
+        if (typeof previousUser.content === 'string') {
+          query = previousUser.content
+        } else if (Array.isArray(previousUser.content)) {
+          query = previousUser.content
+            .filter((part: unknown): part is { type: string; text?: string } => (
+              typeof part === 'object' &&
+              part !== null &&
+              'type' in part
+            ))
+            .filter((part: { type: string; text?: string }) => part.type === 'text')
+            .map((part: { type: string; text?: string }) => (typeof part.text === 'string' ? part.text : ''))
+            .join(' ')
+            .trim()
+        }
       }
     }
 
@@ -349,7 +379,11 @@ export async function POST(request: NextRequest) {
     if (relevantContent) {
       systemPrompt += `\n\n## Library Content (use this to ground your answers)\n\n${relevantContent}`
     } else {
-      systemPrompt += `\n\n[No specific library content found for this query. Answer from your medical knowledge but note that you're answering without textbook grounding.]`
+      if (strictSourceGrounding) {
+        systemPrompt += `\n\n[No relevant content found in the selected sources. Return an insufficiency response: clearly state that the selected books do not contain enough support for this query, avoid fabricating citations, and ask the learner to broaden source selection.]`
+      } else {
+        systemPrompt += `\n\n[No specific library content found for this query. Answer from your medical knowledge but note that you're answering without textbook grounding.]`
+      }
     }
 
     if (continueLike) {
