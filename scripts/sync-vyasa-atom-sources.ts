@@ -27,7 +27,10 @@ async function main() {
 
   const c = report.counts;
   console.log('[atom:sources:sync-vyasa] done');
-  console.log(`[atom:sources:sync-vyasa] root=${report.libraryRoot ?? 'unavailable'} discovered=${c.discovered} imported=${c.imported} published=${c.published} selectable=${c.selectable} skipped=${c.skippedUnmapped}`);
+  console.log(`[atom:sources:sync-vyasa] root=${report.libraryRoot ?? 'unavailable'} discovered=${c.discovered} imported=${c.imported} published=${c.published} selectable=${c.selectable} skipped=${c.skipped} skipped_unmapped=${c.skippedUnmapped}`);
+  if (Object.keys(report.skippedByReason).length > 0) {
+    console.log(`[atom:sources:sync-vyasa] skip_buckets=${JSON.stringify(report.skippedByReason)}`);
+  }
   if (!report.ok) {
     console.log('[atom:sources:sync-vyasa] fallback mode: Vyasa library not found; no rows imported.');
   }
