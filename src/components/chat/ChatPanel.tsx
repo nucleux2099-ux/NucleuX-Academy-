@@ -4,22 +4,9 @@ import { useRef, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { Send, X, Loader2, Atom, RotateCcw, Copy, Check } from "lucide-react";
 import { theme, type Message } from "./data";
-
-function formatMessage(content: string) {
-  return content.split("\n").map((line, i) => {
-    if (line.startsWith("### ")) return <h3 key={i} className="text-lg font-bold mt-3 mb-1 text-white">{line.replace("### ", "")}</h3>;
-    if (line.startsWith("## ")) return <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-white">{line.replace("## ", "")}</h2>;
-    if (line.includes("**")) {
-      const parts = line.split(/\*\*(.*?)\*\*/g);
-      return <p key={i} className="my-1">{parts.map((part, j) => (j % 2 === 1 ? <strong key={j} className="text-[#5EEAD4] font-semibold">{part}</strong> : part))}</p>;
-    }
-    if (line.startsWith("• ") || line.startsWith("- ")) return <li key={i} className="ml-4 my-0.5 list-disc">{line.replace(/^[•\-]\s/, "")}</li>;
-    if (!line.trim()) return <br key={i} />;
-    return <p key={i} className="my-1">{line}</p>;
-  });
-}
 
 interface ChatPanelProps {
   messages: Message[];
@@ -79,7 +66,14 @@ export function ChatPanel({
                 message.role === "user" ? "bg-[#5BB3B3] text-white rounded-br-md" : "bg-[#1B2838] border border-[#1E3A5F] rounded-bl-md"
               }`}>
                 <div className={message.role === "assistant" ? "text-[#E2E8F0] text-sm" : "text-sm"}>
-                  {message.role === "assistant" ? formatMessage(message.content) : message.content}
+                  {message.role === "assistant" ? (
+                    <MedicalMarkdown
+                      content={message.content}
+                      className="[&_.medical-markdown_p]:mb-2 [&_.medical-markdown_h1]:text-lg [&_.medical-markdown_h1]:mt-3 [&_.medical-markdown_h1]:mb-2 [&_.medical-markdown_h2]:text-base [&_.medical-markdown_h2]:mt-3 [&_.medical-markdown_h2]:mb-2 [&_.medical-markdown_h3]:text-sm [&_.medical-markdown_h3]:mt-2 [&_.medical-markdown_h3]:mb-1 [&_.medical-markdown_ul]:mb-2 [&_.medical-markdown_ol]:mb-2 [&_.medical-markdown_li]:text-sm [&_.medical-markdown_code]:text-xs"
+                    />
+                  ) : (
+                    message.content
+                  )}
                 </div>
                 {message.isStreaming && !message.content && (
                   <div className="flex items-center gap-2 mt-2"><Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" /><span className="text-xs text-[#94A3B8]">Searching sources...</span></div>
