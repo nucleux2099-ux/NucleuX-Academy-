@@ -834,17 +834,52 @@ export default function AtomWorkspacePage() {
             <div className="h-full overflow-y-auto space-y-2">
               {!isSidebarCollapsed && (
                 <>
-                  <Badge className="text-[10px] bg-[#5BB3B3]/15 border-[#5BB3B3]/40 text-[#A5F3FC]">{selectedBookIds.length}/{sourceCatalog.length} selected</Badge>
-                  <div className="space-y-1">
-                    {selectedBookIds.slice(0, 5).map((id) => {
-                      const book = sourceCatalog.find((item) => item.id === id);
-                      if (!book) return null;
-                      return <p key={id} className="text-[11px] text-[#BFD0E0] truncate">• {book.shortTitle}</p>;
-                    })}
+                  <div className="flex items-center justify-between">
+                    <Badge className="text-[10px] bg-[#5BB3B3]/15 border-[#5BB3B3]/40 text-[#A5F3FC]">{selectedBookIds.length}/{sourceCatalog.length} selected</Badge>
+                    <Button size="sm" variant="ghost" className="h-7 px-2 text-[10px] text-[#9FB0C2]" onClick={() => setShowPendingSources((prev) => !prev)}>
+                      Pending: {showPendingSources ? 'ON' : 'OFF'}
+                    </Button>
                   </div>
-                  <Button size="sm" variant="outline" className="w-full border-[#1E3A5F] text-[#BFDBFE] bg-transparent" onClick={() => setShowPendingSources((prev) => !prev)}>
-                    Pending sources: {showPendingSources ? 'ON' : 'OFF'}
-                  </Button>
+
+                  <div className="grid grid-cols-2 gap-1">
+                    <select value={levelFilter} onChange={(e) => setLevelFilter(e.target.value)} className="h-7 rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2 text-[#BFDBFE]">
+                      <option value="all">All levels</option>
+                      {ATOM_SOURCE_LEVELS.map((lv) => <option key={lv} value={lv}>{lv}</option>)}
+                    </select>
+                    <select value={domainFilter} onChange={(e) => setDomainFilter(e.target.value)} className="h-7 rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2 text-[#BFDBFE]">
+                      {domains.map((domain) => <option key={domain} value={domain}>{domain === 'all' ? 'All domains' : domain}</option>)}
+                    </select>
+                  </div>
+
+                  {sourcesLoading ? (
+                    <p className="text-[11px] text-[#64748B]">Loading sources…</p>
+                  ) : groupedBooks.length === 0 ? (
+                    <p className="text-[11px] text-[#64748B]">No sources match filters.</p>
+                  ) : (
+                    groupedBooks.map((group) => (
+                      <div key={group.level} className="space-y-1">
+                        <p className="text-[10px] uppercase tracking-wide text-[#7DD3FC]">{group.level}</p>
+                        {group.items.slice(0, 4).map((book) => {
+                          const selected = selectedBookIds.includes(book.id);
+                          const disabled = book.availabilityStatus && book.availabilityStatus !== 'indexed_ready';
+                          return (
+                            <button
+                              key={book.id}
+                              type="button"
+                              disabled={disabled}
+                              onClick={() => toggleBook(book.id)}
+                              className={`w-full rounded-md border px-2 py-1.5 text-left ${selected ? 'border-[#5BB3B3]/50 bg-[#5BB3B3]/10' : 'border-[#1E3A5F] hover:bg-[#1E3A5F]/40'} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            >
+                              <div className="flex items-center justify-between gap-2">
+                                <p className="text-[11px] text-[#D7E3EF] truncate">{book.shortTitle}</p>
+                                {disabled ? <Lock className="w-3 h-3 text-[#64748B]" /> : <CheckCircle2 className={`w-3 h-3 ${selected ? 'text-[#5BB3B3]' : 'text-transparent'}`} />}
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ))
+                  )}
                 </>
               )}
             </div>
@@ -881,31 +916,39 @@ export default function AtomWorkspacePage() {
 
           {errorCard && <div className="rounded-lg border border-rose-400/40 bg-rose-500/10 p-3 text-xs text-rose-100">{errorCard}</div>}
 
-          <div className="flex-1 min-h-0 grid grid-cols-1 xl:grid-cols-2 gap-3 overflow-hidden">
-            <div className="rounded-2xl border border-[#22354D] bg-[#0f2133]/80 p-3 min-h-0 flex flex-col">
-              <h3 className="text-[11px] uppercase tracking-[0.14em] text-[#8FB6D9] mb-2">Timeline</h3>
-              <div className="flex-1 overflow-y-auto space-y-2 pr-1">
-                {timeline.length === 0 ? <p className="text-xs text-[#64748B]">No events yet.</p> : timeline.map((item) => (
-                  <div key={item.id} className="rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2.5">
-                    <div className="flex items-start justify-between gap-2">
-                      <p className="text-[13px] text-[#E5EEF8] leading-5">{item.label}</p>
-                      <span className="text-[10px] text-[#607A95] shrink-0">{new Date(item.ts).toLocaleTimeString()}</span>
-                    </div>
-                    {item.detail && <p className="text-xs text-[#9FB0C2] mt-1.5 whitespace-pre-wrap leading-relaxed">{item.detail}</p>}
-                  </div>
-                ))}
+          <div className="flex-1 min-h-0 overflow-hidden">
+            <div className="h-full rounded-3xl border border-[#22354D] bg-[#0f2133]/85 p-4 flex flex-col">
+              <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-xs uppercase tracking-[0.14em] text-[#8FB6D9]">Conversation</h3>
+                <p className="text-[11px] text-[#68829A]">{timeline.length} events</p>
               </div>
-            </div>
 
-            <div className="rounded-2xl border border-[#22354D] bg-[#0f2133]/80 p-3 min-h-0 flex flex-col">
-              <h3 className="text-[11px] uppercase tracking-[0.14em] text-[#8FB6D9] mb-2">Assistant Output</h3>
-              <div className="flex-1 overflow-y-auto">
-                {assistantText ? (
-                  <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4">
-                    <pre className="whitespace-pre-wrap text-[13px] leading-6 text-[#DDE9F6] font-sans">{assistantText}</pre>
+              <div className="flex-1 overflow-y-auto space-y-3 pr-1">
+                {timeline.length === 0 && !assistantText ? (
+                  <div className="h-full flex items-center justify-center">
+                    <p className="text-sm text-[#64748B]">Start a chat to see responses here.</p>
                   </div>
                 ) : (
-                  <p className="text-xs text-[#64748B]">Assistant deltas and mode outputs appear here in real-time.</p>
+                  <>
+                    {timeline.slice(-8).map((item) => (
+                      <div key={item.id} className="mr-auto max-w-[78%] rounded-2xl border border-[#22354D] bg-[#12253A] px-3 py-2">
+                        <p className="text-[12px] text-[#C7D8EA]">{item.label}</p>
+                        {item.detail && <p className="text-[11px] text-[#93A9BF] mt-1 whitespace-pre-wrap">{item.detail}</p>}
+                      </div>
+                    ))}
+
+                    {taskPrompt.trim() && (
+                      <div className="ml-auto max-w-[78%] rounded-2xl bg-[#5BB3B3]/20 border border-[#5BB3B3]/40 px-3 py-2">
+                        <p className="text-[13px] text-[#E7F8F8] whitespace-pre-wrap">{taskPrompt}</p>
+                      </div>
+                    )}
+
+                    {assistantText && (
+                      <div className="mr-auto max-w-[82%] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                        <pre className="whitespace-pre-wrap text-[13px] leading-6 text-[#DDE9F6] font-sans">{assistantText}</pre>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </div>
