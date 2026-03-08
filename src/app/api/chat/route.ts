@@ -92,7 +92,7 @@ const contextFolders: Record<string, string[]> = {
 }
 
 // Recursively find all .md files in a directory
-async function findMarkdownFiles(dir: string, maxFiles = 20): Promise<string[]> {
+async function findMarkdownFiles(dir: string, maxFiles = 1000): Promise<string[]> {
   const files: string[] = []
   try {
     const entries = await fs.readdir(dir, { withFileTypes: true })
@@ -180,7 +180,7 @@ async function findRelevantContent(
   const allFiles: string[] = []
   for (const folder of folders) {
     const folderPath = path.join(CONTENT_BASE, folder)
-    const files = await findMarkdownFiles(folderPath, 100)
+    const files = await findMarkdownFiles(folderPath, 1000)
     allFiles.push(...files)
   }
 

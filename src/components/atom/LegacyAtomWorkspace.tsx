@@ -13,6 +13,7 @@ import {
 } from "@/lib/atom/source-catalog";
 import type { AtomTaskStatus, AtomEventType } from "@/lib/atom/types";
 import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
+import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
 import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
 
@@ -971,7 +972,10 @@ export default function AtomWorkspacePage() {
 
                     {assistantText && (
                       <div className="mr-auto max-w-[82%] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
-                        <pre className="whitespace-pre-wrap text-[13px] leading-6 text-[#DDE9F6] font-sans">{assistantText}</pre>
+                        <MedicalMarkdown
+                          content={assistantText}
+                          className="text-[13px] leading-6 [&_strong]:text-[#7DD3FC] [&_em]:text-[#A5F3FC] [&_h1]:text-[#E5EEF8] [&_h2]:text-[#D2E6FF] [&_h3]:text-[#BFDBFE]"
+                        />
                       </div>
                     )}
                   </>
