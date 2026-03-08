@@ -298,7 +298,7 @@ export async function POST(request: NextRequest) {
     const lastUserMessage = [...messages].reverse().find((m: IncomingMessage) => m.role === 'user')
     const rawContent = lastUserMessage?.content || ''
     // Handle multimodal content (array of blocks) — extract text for search
-    const query = typeof rawContent === 'string'
+    let query = typeof rawContent === 'string'
       ? rawContent
       : Array.isArray(rawContent)
         ? rawContent
@@ -311,6 +311,17 @@ export async function POST(request: NextRequest) {
             .map((b) => (typeof b.text === 'string' ? b.text : ''))
             .join(' ')
         : ''
+
+    const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(query.trim())
+    if (continueLike) {
+      const previousUser = [...messages]
+        .slice(0, -1)
+        .reverse()
+        .find((m: IncomingMessage) => m.role === 'user' && typeof m.content === 'string' && m.content.trim().length > 0)
+      if (previousUser && typeof previousUser.content === 'string') {
+        query = previousUser.content
+      }
+    }
 
     // Find relevant content from the library
     const sourceKeywords = buildSourceKeywords(selectedBookIds, deskSources)
@@ -339,6 +350,10 @@ export async function POST(request: NextRequest) {
       systemPrompt += `\n\n## Library Content (use this to ground your answers)\n\n${relevantContent}`
     } else {
       systemPrompt += `\n\n[No specific library content found for this query. Answer from your medical knowledge but note that you're answering without textbook grounding.]`
+    }
+
+    if (continueLike) {
+      systemPrompt += `\n\nThe latest user message is a continuation request. Continue the existing answer thread from where it stopped; do not switch to a new topic.`
     }
 
     // Use API key from env

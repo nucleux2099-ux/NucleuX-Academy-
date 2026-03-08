@@ -158,6 +158,7 @@ export default function AtomWorkspacePage() {
   const [taskId, setTaskId] = useState<string | null>(null);
   const [status, setStatus] = useState<AtomTaskStatus>("queued");
   const [assistantText, setAssistantText] = useState("");
+  const [chatHistory, setChatHistory] = useState<Array<{ role: 'user' | 'assistant'; content: string }>>([]);
   const [timeline, setTimeline] = useState<TimelineItem[]>([]);
   const [artifacts, setArtifacts] = useState<ArtifactItem[]>([]);
   const [errorCard, setErrorCard] = useState<string | null>(null);
@@ -497,6 +498,11 @@ export default function AtomWorkspacePage() {
         .map((id) => sourceCatalog.find((book) => book.id === id)?.shortTitle)
         .filter((v): v is string => Boolean(v));
 
+      const historyForApi = [
+        ...chatHistory.slice(-10),
+        { role: 'user' as const, content: userText },
+      ];
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -505,7 +511,7 @@ export default function AtomWorkspacePage() {
           deskSources,
           selectedBookIds,
           strictSourceGrounding: true,
-          messages: [{ role: 'user', content: userText }],
+          messages: historyForApi,
         }),
       });
 
@@ -519,6 +525,7 @@ export default function AtomWorkspacePage() {
       let buffer = '';
 
       let emittedText = false;
+      let streamedText = '';
 
       while (true) {
         const { done, value } = await reader.read();
@@ -547,7 +554,8 @@ export default function AtomWorkspacePage() {
 
           if (parsed?.text) {
             emittedText = true;
-            setAssistantText((prev) => `${prev}${parsed?.text}`);
+            streamedText += parsed.text;
+            setAssistantText((prev) => `${prev}${parsed.text}`);
           }
         }
       }
@@ -556,6 +564,11 @@ export default function AtomWorkspacePage() {
         throw new Error('No response generated. Please retry.');
       }
 
+      setChatHistory((prev) => [
+        ...prev,
+        { role: 'user', content: userText },
+        { role: 'assistant', content: streamedText },
+      ]);
       setStatus('completed');
     } catch (error) {
       setStatus('failed');
