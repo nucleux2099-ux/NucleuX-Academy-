@@ -14,12 +14,21 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   const session = await getAtomSession(supabase, user.id, sessionId);
   if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
 
+  const continuationTopic =
+    typeof session.last_user_query === 'string' && session.last_user_query.trim().length > 0
+      ? session.last_user_query.trim()
+      : typeof session.continuation_cursor?.lastTopic === 'string'
+        ? String(session.continuation_cursor.lastTopic)
+        : null;
+
   const response = await fetch(`${request.nextUrl.origin}/api/atom/session/${sessionId}/message`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', cookie: request.headers.get('cookie') ?? '' },
     body: JSON.stringify({
       context: session.room_id === 'atom' ? 'surgery' : session.room_id,
-      message: 'Continue exactly from where the last answer stopped. Stay on same topic and format.',
+      message: continuationTopic
+        ? `Continue exactly from where the last answer stopped about: ${continuationTopic}. Stay on same topic and format.`
+        : 'Continue exactly from where the last answer stopped. Stay on same topic and format.',
     }),
   });
 

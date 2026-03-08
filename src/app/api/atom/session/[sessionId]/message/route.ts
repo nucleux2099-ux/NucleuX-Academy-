@@ -66,6 +66,15 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   const userText = body.message?.trim();
   if (!userText) return NextResponse.json({ error: 'message required' }, { status: 400 });
 
+  const normalized = userText.toLowerCase();
+  const isContinueLike = /^(continue|go on|carry on|more|next|cont\.?|continue please)\b/.test(normalized);
+  const previousTopic =
+    typeof session.last_user_query === 'string' && session.last_user_query.trim().length > 0
+      ? session.last_user_query.trim()
+      : typeof session.continuation_cursor?.lastTopic === 'string'
+        ? String(session.continuation_cursor.lastTopic)
+        : null;
+
   await appendSessionMessage(supabase, sessionId, 'user', userText);
 
   const history = await getRecentSessionMessages(supabase, sessionId, 12);
@@ -81,12 +90,14 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   });
 
   await appendSessionMessage(supabase, sessionId, 'assistant', assistant);
+  const lastTopic = isContinueLike && previousTopic ? previousTopic : userText;
+
   await updateSessionCursor(supabase, sessionId, {
-    lastUserQuery: userText,
+    lastUserQuery: lastTopic,
     continuationCursor: {
       lastTurnAt: new Date().toISOString(),
       lastMode: 'chat',
-      lastTopic: userText,
+      lastTopic,
     },
   });
 
