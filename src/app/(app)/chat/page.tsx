@@ -42,44 +42,100 @@ export default function DeskPage() {
 
       const history = [...messages, userMessage].filter((m) => m.id !== "welcome").map((m) => ({ role: m.role, content: m.content }));
 
-      try {
+      const MAX_STREAM_CHARS = 12000;
+      const RETRYABLE_ERRORS = new Set(["Stream error", "Incomplete stream"]);
+
+      const streamWithAttempt = async () => {
         abortControllerRef.current = new AbortController();
         const response = await fetch("/api/chat", {
-          method: "POST", headers: { "Content-Type": "application/json" },
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ messages: history, context: "full", deskSources: enabledTitles }),
           signal: abortControllerRef.current.signal,
         });
-        if (!response.ok) { const error = await response.json(); throw new Error(error.error || "Failed to get response"); }
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error || "Failed to get response");
+        }
 
         const reader = response.body?.getReader();
         if (!reader) throw new Error("No response body");
 
         const decoder = new TextDecoder();
         let fullText = "";
+        let doneSeen = false;
+        let buffer = "";
+
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
-          const chunk = decoder.decode(value, { stream: true });
-          for (const line of chunk.split("\n")) {
-            if (line.startsWith("data: ")) {
-              const data = line.slice(6);
-              if (data === "[DONE]") break;
-              try {
-                const parsed = JSON.parse(data);
-                if (parsed.text) { fullText += parsed.text; setMessages((prev) => prev.map((m) => (m.id === assistantMessageId ? { ...m, content: fullText } : m))); }
-                if (parsed.error) throw new Error(parsed.error);
-              } catch { /* skip malformed */ }
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() || "";
+
+          for (const line of lines) {
+            if (!line.startsWith("data: ")) continue;
+
+            const data = line.slice(6);
+            if (data === "[DONE]") {
+              doneSeen = true;
+              continue;
+            }
+
+            let parsed: { text?: string; error?: string };
+            try {
+              parsed = JSON.parse(data);
+            } catch {
+              continue;
+            }
+
+            if (parsed.error) throw new Error(parsed.error);
+            if (parsed.text) {
+              fullText += parsed.text;
+              if (fullText.length >= MAX_STREAM_CHARS) {
+                fullText = `${fullText.slice(0, MAX_STREAM_CHARS)}\n\n*[Response truncated for stability. Ask “continue” to get the next part.]*`;
+                doneSeen = true;
+                await reader.cancel();
+                break;
+              }
+              setMessages((prev) => prev.map((m) => (m.id === assistantMessageId ? { ...m, content: fullText } : m)));
             }
           }
         }
+
+        if (!doneSeen && fullText.trim().length === 0) {
+          throw new Error("Incomplete stream");
+        }
+
         setMessages((prev) => prev.map((m) => (m.id === assistantMessageId ? { ...m, isStreaming: false } : m)));
+      };
+
+      try {
+        try {
+          await streamWithAttempt();
+        } catch (error) {
+          const msg = error instanceof Error ? error.message : "Unknown error";
+          const shouldRetry = RETRYABLE_ERRORS.has(msg) && !abortControllerRef.current?.signal.aborted;
+          if (!shouldRetry) throw error;
+          setMessages((prev) => prev.map((m) => (m.id === assistantMessageId ? { ...m, content: "⚠️ Connection was unstable. Retrying once…" } : m)));
+          await streamWithAttempt();
+        }
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") {
           setMessages((prev) => prev.map((m) => m.id === assistantMessageId ? { ...m, content: m.content + "\n\n*[Cancelled]*", isStreaming: false } : m));
         } else {
-          setMessages((prev) => prev.map((m) => m.id === assistantMessageId ? { ...m, content: `❌ Error: ${error instanceof Error ? error.message : "Something went wrong"}`, isStreaming: false } : m));
+          const message = error instanceof Error ? error.message : "Something went wrong";
+          setMessages((prev) => prev.map((m) => m.id === assistantMessageId ? {
+            ...m,
+            content: `❌ ${message}. Please retry. If this keeps happening, shorten the prompt or ask in parts.`,
+            isStreaming: false,
+          } : m));
         }
-      } finally { setIsStreaming(false); abortControllerRef.current = null; }
+      } finally {
+        setIsStreaming(false);
+        abortControllerRef.current = null;
+      }
     },
     [input, isStreaming, messages, enabledSources]
   );
