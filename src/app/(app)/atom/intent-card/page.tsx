@@ -9,11 +9,11 @@ import {
 } from '@/lib/atom/quick-start-schema';
 
 const FIELD_LABELS: Record<QuickStartRequiredField, string> = {
-  intent: 'Learning intent',
-  subject: 'Subject / topic',
-  proficiencyLevel: 'Proficiency level',
-  timeboxMinutes: 'Timebox (minutes)',
-  outputPreference: 'Output preference',
+  mode: 'Mode',
+  topic: 'Subject / topic',
+  level: 'Level',
+  timeAvailable: 'Time available (minutes)',
+  goal: 'Learning goal',
 };
 
 export default function AtomIntentCardPage() {

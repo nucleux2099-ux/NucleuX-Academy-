@@ -4,6 +4,11 @@ export const FEATURE_KEYS = {
   atomQuickStartSchema: 'FEATURE_ATOM_QUICK_START_SCHEMA',
 } as const;
 
+export const RUNTIME_FLAG_KEYS = {
+  atomV3Enabled: 'ATOM_V3_ENABLED',
+  atomV3AdvancedVisible: 'ATOM_V3_ADVANCED_VISIBLE',
+} as const;
+
 export type FeatureKey = keyof typeof FEATURE_KEYS;
 
 function parseBooleanFlag(value: string | undefined): boolean {
@@ -28,4 +33,19 @@ export const featureFlags = {
 
 export function isFeatureEnabled(feature: FeatureKey): boolean {
   return featureFlags[feature];
+}
+
+function getRuntimeFlagValue(flagKey: (typeof RUNTIME_FLAG_KEYS)[keyof typeof RUNTIME_FLAG_KEYS]): boolean {
+  const serverValue = process.env[flagKey];
+  const publicValue = process.env[`NEXT_PUBLIC_${flagKey}`];
+
+  return parseBooleanFlag(serverValue) || parseBooleanFlag(publicValue);
+}
+
+export function isAtomV3Enabled(): boolean {
+  return getRuntimeFlagValue(RUNTIME_FLAG_KEYS.atomV3Enabled);
+}
+
+export function isAtomV3AdvancedVisible(): boolean {
+  return getRuntimeFlagValue(RUNTIME_FLAG_KEYS.atomV3AdvancedVisible);
 }
