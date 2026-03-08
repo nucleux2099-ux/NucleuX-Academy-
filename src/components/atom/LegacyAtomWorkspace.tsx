@@ -517,6 +517,8 @@ export default function AtomWorkspacePage() {
       const decoder = new TextDecoder();
       let buffer = '';
 
+      let emittedText = false;
+
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
@@ -531,16 +533,26 @@ export default function AtomWorkspacePage() {
           const payload = line.slice(6).trim();
           if (payload === '[DONE]') continue;
 
+          let parsed: { text?: string; error?: string } | null = null;
           try {
-            const parsed = JSON.parse(payload) as { text?: string; error?: string };
-            if (parsed.error) throw new Error(parsed.error);
-            if (parsed.text) {
-              setAssistantText((prev) => `${prev}${parsed.text}`);
-            }
+            parsed = JSON.parse(payload) as { text?: string; error?: string };
           } catch {
-            // ignore malformed chunk
+            continue;
+          }
+
+          if (parsed?.error) {
+            throw new Error(parsed.error);
+          }
+
+          if (parsed?.text) {
+            emittedText = true;
+            setAssistantText((prev) => `${prev}${parsed?.text}`);
           }
         }
+      }
+
+      if (!emittedText) {
+        throw new Error('No response generated. Please retry.');
       }
 
       setStatus('completed');
