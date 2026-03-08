@@ -57,40 +57,60 @@ export async function GET(request: NextRequest) {
     try {
       const projection = await fetchSourceStatusProjection(supabase, { domain, level });
       if (projection) {
+        const sourceBookIds = projection.map((row) => row.source_book_id);
+        const metadataByBookId = new Map<string, Record<string, unknown>>();
+
+        if (sourceBookIds.length > 0) {
+          const booksResult = await supabase.from('source_books').select('id,metadata').in('id', sourceBookIds);
+          if (!booksResult.error) {
+            for (const book of booksResult.data ?? []) {
+              metadataByBookId.set(book.id as string, (book.metadata as Record<string, unknown> | null) ?? {});
+            }
+          }
+        }
+
         let items = projection
-          .map((row) => ({
-            id: row.source_id ?? row.source_book_id,
-            source_book_id: row.source_book_id,
-            title: row.title,
-            short_title: row.title,
-            domain: row.domain ?? 'General',
-            level_tags: row.level_tags ?? [],
-            priority: 100,
-            enabled: true,
-            sort_order: 100,
-            metadata: {
+          .map((row) => {
+            const sourceMetadata = metadataByBookId.get(row.source_book_id) ?? {};
+            const chapterCount = typeof sourceMetadata.chapter_count === 'number' ? sourceMetadata.chapter_count : null;
+            const imageCount = typeof sourceMetadata.image_count === 'number' ? sourceMetadata.image_count : null;
+
+            return {
+              id: row.source_id ?? row.source_book_id,
+              source_book_id: row.source_book_id,
+              title: row.title,
+              short_title: row.title,
+              domain: row.domain ?? 'General',
+              level_tags: row.level_tags ?? [],
+              priority: 100,
+              enabled: true,
+              sort_order: 100,
+              metadata: {
+                lifecycle_state: row.lifecycle_state,
+                pipeline_version: row.pipeline_version,
+                ocr_model_version: row.ocr_model_version,
+                prompt_version: row.prompt_version,
+                active_index_version: row.active_index_version,
+                candidate_index_version: row.candidate_index_version,
+                validated_at: row.validated_at,
+                revalidate_after: row.revalidate_after,
+                updated_at: row.updated_at,
+                image_count: imageCount,
+                ...sourceMetadata,
+              },
+              chapter_count: chapterCount,
+              chunk_count: row.chunk_count,
+              last_synced_at: row.updated_at,
+              availability_status: row.selectable ? 'indexed_ready' : 'md_ready_not_ingested',
+              availability: row.selectable ? 'available' : 'unavailable',
+              availability_reason: row.availability_reason,
+              selectable: row.selectable,
               lifecycle_state: row.lifecycle_state,
-              pipeline_version: row.pipeline_version,
-              ocr_model_version: row.ocr_model_version,
-              prompt_version: row.prompt_version,
-              active_index_version: row.active_index_version,
-              candidate_index_version: row.candidate_index_version,
-              validated_at: row.validated_at,
-              revalidate_after: row.revalidate_after,
-              updated_at: row.updated_at,
-            },
-            chapter_count: null,
-            chunk_count: row.chunk_count,
-            last_synced_at: row.updated_at,
-            availability_status: row.selectable ? 'indexed_ready' : 'md_ready_not_ingested',
-            availability: row.selectable ? 'available' : 'unavailable',
-            availability_reason: row.availability_reason,
-            selectable: row.selectable,
-            lifecycle_state: row.lifecycle_state,
-            rollout_state: row.rollout_state,
-            qc_passed: row.qc_passed,
-            indexed_ready: row.indexed_ready,
-          }))
+              rollout_state: row.rollout_state,
+              qc_passed: row.qc_passed,
+              indexed_ready: row.indexed_ready,
+            };
+          })
           .sort((a, b) => a.title.localeCompare(b.title));
 
         if (!includePending) {
