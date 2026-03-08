@@ -10,6 +10,7 @@ export const FEATURE_KEYS = {
 export const RUNTIME_FLAG_KEYS = {
   atomV3Enabled: 'ATOM_V3_ENABLED',
   atomV3AdvancedVisible: 'ATOM_V3_ADVANCED_VISIBLE',
+  atomV3GddEnabled: 'ATOM_V3_GDD_ENABLED',
 } as const;
 
 export type FeatureKey = keyof typeof FEATURE_KEYS;
@@ -54,4 +55,8 @@ export function isAtomV3Enabled(): boolean {
 
 export function isAtomV3AdvancedVisible(): boolean {
   return getRuntimeFlagValue(RUNTIME_FLAG_KEYS.atomV3AdvancedVisible);
+}
+
+export function isAtomV3GddEnabled(): boolean {
+  return getRuntimeFlagValue(RUNTIME_FLAG_KEYS.atomV3GddEnabled);
 }

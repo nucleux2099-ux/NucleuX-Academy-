@@ -7,8 +7,10 @@ import {
 } from '@/lib/atom/quick-start-schema';
 import { createDeepResearchPipelineScaffold } from '@/lib/atom/deep-research/pipeline';
 import { createGuidedDeepDiveSessionState } from '@/lib/atom/guided-deep-dive/session-state';
+import { putGuidedDeepDiveSession } from '@/lib/atom/guided-deep-dive/session-store';
+import { createGddTelemetryEvent } from '@/lib/atom/guided-deep-dive/telemetry';
 import { createLearningCycleHooksScaffold } from '@/lib/atom/learning-cycle/hooks';
-import { isFeatureEnabled } from '@/lib/features/flags';
+import { isAtomV3GddEnabled, isFeatureEnabled } from '@/lib/features/flags';
 import { createClient } from '@/lib/supabase/server';
 import { appendTaskEvent, runNucleuxOriginalDeepResearch } from '@/lib/atom/orchestrator';
 
@@ -156,14 +158,33 @@ const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Pr
       message: 'Guided deep dive workflow launched.',
     };
 
+    if (!isAtomV3GddEnabled()) {
+      response.message = 'Guided deep dive is disabled. Falling back to chat workflow.';
+      return response;
+    }
+
     if (isFeatureEnabled('trackBGuidedDeepDiveScaffold')) {
+      const session = createGuidedDeepDiveSessionState({
+        topic: payload.topic,
+        level: payload.level,
+        goal: payload.goal,
+      });
+
+      const startEvent = createGddTelemetryEvent({
+        event: 'gdd_session_started',
+        sessionId: session.sessionId,
+        topic: session.topic,
+        level: session.level,
+        currentStep: session.currentStep,
+        payload: { goal: session.goal, source: 'atom-v3-launch' },
+      });
+
+      putGuidedDeepDiveSession(session, [startEvent]);
+
+      response.launchPath = `/atom-v3/gdd?sessionId=${session.sessionId}`;
       response.scaffolds = {
         ...response.scaffolds,
-        guidedDeepDiveSession: createGuidedDeepDiveSessionState({
-          topic: payload.topic,
-          level: payload.level,
-          goal: payload.goal,
-        }),
+        guidedDeepDiveSession: session,
       };
     }
 
