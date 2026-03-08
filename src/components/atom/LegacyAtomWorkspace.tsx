@@ -16,6 +16,7 @@ import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
 import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
 import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
+import { appendDedupedUserEvent } from "@/components/atom/chatEventDedup";
 
 import {
   ATOM_ROOM_PROFILES,
@@ -487,10 +488,15 @@ export default function AtomWorkspacePage() {
     setStatus("running");
 
     const userText = taskPrompt.trim();
-    setTimeline((prev) => [
-      ...prev,
-      { id: crypto.randomUUID(), type: 'assistant.delta', ts: new Date().toISOString(), label: 'You', detail: userText },
-    ]);
+    const userEvent = {
+      id: crypto.randomUUID(),
+      type: 'assistant.delta' as const,
+      ts: new Date().toISOString(),
+      label: 'You',
+      detail: userText,
+    };
+    setTaskPrompt('');
+    setTimeline((prev) => appendDedupedUserEvent(prev, userEvent));
     setAssistantText('');
 
     try {
@@ -575,7 +581,6 @@ export default function AtomWorkspacePage() {
       setErrorCard(error instanceof Error ? error.message : 'Failed to send chat');
     } finally {
       setIsSubmitting(false);
-      setTaskPrompt('');
     }
   }, [domainFilter, isSubmitting, selectedBookIds, sourceCatalog, taskPrompt]);
 
