@@ -140,50 +140,32 @@ async function loadRichContentForSubject(subjectSlug: string, subspecialtySlug: 
 // Supports: folder-based (topic/textbook.md), flat (topic.md), and numbered dirs
 async function tryDirectAccess(subjectSlug: string, subspecialtySlug: string, topicSlug: string) {
   try {
+    const mappedSubspecialty = SUBSPECIALTY_CONTENT_MAP[subjectSlug]?.[subspecialtySlug]
+    const candidates = [subspecialtySlug, ...(mappedSubspecialty ? [mappedSubspecialty] : [])]
+
     const subjectDir = path.join(CONTENT_BASE, subjectSlug)
-    
-    // Find the actual subspecialty directory (handles numbered prefixes)
+    const normalizedSubjectDir = path.normalize(subjectDir)
+    if (!normalizedSubjectDir.startsWith(CONTENT_BASE)) {
+      return NextResponse.json({ error: 'Invalid path' }, { status: 400 })
+    }
+
     let subspecialtyDir: string | null = null
-    const mapped = SUBSPECIALTY_CONTENT_MAP[subjectSlug]?.[subspecialtySlug]
-    const candidates = [
-      subspecialtySlug,
-      ...(mapped ? [mapped] : []),
-    ]
-    
     for (const candidate of candidates) {
       const tryPath = path.join(subjectDir, candidate)
+      const normalizedTryPath = path.normalize(tryPath)
+      if (!normalizedTryPath.startsWith(normalizedSubjectDir)) continue
+
       try {
-        await fs.access(tryPath)
-        subspecialtyDir = tryPath
-        break
-      } catch {}
-    }
-    
-    // Also try numbered prefix scan
-    if (!subspecialtyDir) {
-      try {
-        const entries = await fs.readdir(subjectDir)
-        for (const entry of entries) {
-          if (entry.endsWith(`-${subspecialtySlug}`) || entry === subspecialtySlug) {
-            const tryPath = path.join(subjectDir, entry)
-            const stat = await fs.stat(tryPath)
-            if (stat.isDirectory()) {
-              subspecialtyDir = tryPath
-              break
-            }
-          }
+        const stat = await fs.stat(tryPath)
+        if (stat.isDirectory()) {
+          subspecialtyDir = tryPath
+          break
         }
       } catch {}
     }
 
     if (!subspecialtyDir) {
       return NextResponse.json({ error: 'Subspecialty not found', hasRichContent: false }, { status: 404 })
-    }
-
-    // Security check
-    const normalizedSubDir = path.normalize(subspecialtyDir)
-    if (!normalizedSubDir.startsWith(CONTENT_BASE)) {
-      return NextResponse.json({ error: 'Invalid path' }, { status: 400 })
     }
 
     // Try folder-based: {subspecialty}/{topic}/textbook.md

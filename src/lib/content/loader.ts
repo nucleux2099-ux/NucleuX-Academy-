@@ -13,7 +13,7 @@ import path from 'path';
 import yaml from 'js-yaml';
 import type { LibraryTopic, NmcCode, RetrievalCard } from '@/lib/types/library';
 import type { TopicRoadmap, RoadmapLink } from '@/lib/data/roadmap-types';
-import { SUBSPECIALTY_CONTENT_MAP } from '@/lib/data/content-mapping';
+import { SUBJECT_CONTENT_MAP, SUBSPECIALTY_CONTENT_MAP } from '@/lib/data/content-mapping';
 
 /**
  * Normalize NMC codes from _meta.yaml — handles both string and object formats.
@@ -35,35 +35,19 @@ function normalizeNmcCodes(raw: unknown): NmcCode[] | undefined {
 const CONTENT_DIR = path.join(process.cwd(), 'content');
 
 /**
- * Resolve the actual content directory for a subspecialty.
- * Checks: direct match, content-mapping, and numbered prefix (e.g., "06-hepatobiliary").
+ * Resolve the canonical content directory for a subspecialty using static maps.
+ * Avoids broad directory scans that hurt Turbopack performance.
  */
 function resolveContentDir(subject: string, subspecialty: string): string | null {
-  // 1. Direct match
-  const direct = path.join(CONTENT_DIR, subject, subspecialty);
-  if (fs.existsSync(direct) && fs.statSync(direct).isDirectory()) return direct;
+  const subjectFolder = SUBJECT_CONTENT_MAP[subject];
+  const subspecialtyFolder = SUBSPECIALTY_CONTENT_MAP[subject]?.[subspecialty];
 
-  // 2. Content mapping
-  const mapped = SUBSPECIALTY_CONTENT_MAP[subject]?.[subspecialty];
-  if (mapped) {
-    const mappedPath = path.join(CONTENT_DIR, subject, mapped);
-    if (fs.existsSync(mappedPath) && fs.statSync(mappedPath).isDirectory()) return mappedPath;
-  }
+  if (!subjectFolder || !subspecialtyFolder) return null;
 
-  // 3. Numbered prefix scan (e.g., "06-hepatobiliary" matches "hepatobiliary")
-  const subjectDir = path.join(CONTENT_DIR, subject);
-  if (fs.existsSync(subjectDir)) {
-    const entries = fs.readdirSync(subjectDir);
-    for (const entry of entries) {
-      // Match patterns like "06-hepatobiliary" for slug "hepatobiliary"
-      if (entry.endsWith(`-${subspecialty}`) || entry === subspecialty) {
-        const full = path.join(subjectDir, entry);
-        if (fs.statSync(full).isDirectory()) return full;
-      }
-    }
-  }
+  const resolved = path.join(CONTENT_DIR, subjectFolder, subspecialtyFolder);
+  if (!fs.existsSync(resolved) || !fs.statSync(resolved).isDirectory()) return null;
 
-  return null;
+  return resolved;
 }
 
 // =============================================================================
@@ -210,18 +194,14 @@ export function subspecialtyExists(subject: string, subspecialty: string): boole
  * Get all available subspecialties for a subject
  */
 export function getSubspecialtiesFromContent(subject: string): string[] {
-  const subjectDir = path.join(CONTENT_DIR, subject);
-  
-  if (!fs.existsSync(subjectDir)) {
-    return [];
-  }
-  
-  return fs.readdirSync(subjectDir)
-    .filter(item => {
-      const itemPath = path.join(subjectDir, item);
-      return fs.statSync(itemPath).isDirectory() && 
-             fs.existsSync(path.join(itemPath, '_index.yaml'));
-    });
+  const mapped = SUBSPECIALTY_CONTENT_MAP[subject];
+  if (!mapped) return [];
+
+  return Object.keys(mapped).filter((subspecialty) => {
+    const dirPath = resolveContentDir(subject, subspecialty);
+    if (!dirPath) return false;
+    return fs.existsSync(path.join(dirPath, '_index.yaml'));
+  });
 }
 
 /**
