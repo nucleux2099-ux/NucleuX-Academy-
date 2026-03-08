@@ -14,6 +14,8 @@ import {
 } from "@/lib/atom/source-catalog";
 import type { AtomTaskStatus, AtomEventType } from "@/lib/atom/types";
 import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
+import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
+import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
 import {
   BookOpen,
   CircleStop,
@@ -32,7 +34,7 @@ import {
 
 type TimelineItem = {
   id: string;
-  type: AtomEventType;
+  type: AtomEventType | "mode.launch" | "gdd.session" | "gdd.advance";
   ts: string;
   label: string;
   detail?: string;
@@ -47,6 +49,16 @@ type ArtifactItem = {
 };
 
 type MobileTab = "sources" | "process" | "workspace";
+type WorkspaceMode = "chat" | "mcq" | "flashcards" | "ppt" | "nucleux-original" | "guided-deep-dive";
+
+const MODE_LABELS: Record<WorkspaceMode, string> = {
+  chat: "Chat",
+  mcq: "MCQ",
+  flashcards: "Flashcards",
+  ppt: "PPT",
+  "nucleux-original": "NucleuX Original",
+  "guided-deep-dive": "Guided Deep Dive",
+};
 
 const STATUS_STYLES: Record<AtomTaskStatus, string> = {
   queued: "bg-slate-500/20 text-slate-200 border-slate-400/40",
@@ -78,7 +90,13 @@ function formatEvent(type: AtomEventType, payload: Record<string, unknown>): Pic
 
 export default function AtomWorkspacePage() {
   const [mobileTab, setMobileTab] = useState<MobileTab>("process");
+  const [mode, setMode] = useState<WorkspaceMode>("chat");
   const [taskPrompt, setTaskPrompt] = useState("");
+  const [topic, setTopic] = useState("General Surgery high-yield revision");
+  const [level, setLevel] = useState<QuickStartLevel>("resident");
+  const [timeAvailable, setTimeAvailable] = useState("25");
+  const [goal, setGoal] = useState("Build exam-ready recall with concise, practical output");
+
   const [taskId, setTaskId] = useState<string | null>(null);
   const [status, setStatus] = useState<AtomTaskStatus>("queued");
   const [assistantText, setAssistantText] = useState("");
@@ -86,6 +104,15 @@ export default function AtomWorkspacePage() {
   const [artifacts, setArtifacts] = useState<ArtifactItem[]>([]);
   const [errorCard, setErrorCard] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [gddSessionId, setGddSessionId] = useState<string | null>(null);
+  const [gddLoadId, setGddLoadId] = useState("");
+  const [gddAccuracyPct, setGddAccuracyPct] = useState("70");
+  const [gddHintCount, setGddHintCount] = useState("1");
+  const [gddAvgResponseSec, setGddAvgResponseSec] = useState("35");
+  const [gddConfidenceSelf, setGddConfidenceSelf] = useState("65");
+  const [gddWeakConcepts, setGddWeakConcepts] = useState("");
+
   const [sourceCatalog, setSourceCatalog] = useState<AtomSourceCatalogItem[]>(ATOM_SOURCE_CATALOG);
   const [sourcesLoading, setSourcesLoading] = useState(true);
   const [sourcesError, setSourcesError] = useState<string | null>(null);
@@ -95,6 +122,9 @@ export default function AtomWorkspacePage() {
   const [domainFilter, setDomainFilter] = useState<string>("all");
   const [showPendingSources, setShowPendingSources] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
+
+  const gddEnabled = isAtomV3GddEnabled();
+  const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
 
   const domains = useMemo(() => ["all", ...Array.from(new Set(sourceCatalog.map((book) => book.domain)))], [sourceCatalog]);
 
@@ -110,9 +140,9 @@ export default function AtomWorkspacePage() {
   );
 
   const groupedBooks = useMemo(() => {
-    return ATOM_SOURCE_LEVELS.map((level) => ({
-      level,
-      items: filteredBooks.filter((book) => book.levelTags.includes(level)),
+    return ATOM_SOURCE_LEVELS.map((levelTag) => ({
+      level: levelTag,
+      items: filteredBooks.filter((book) => book.levelTags.includes(levelTag)),
     })).filter((group) => group.items.length > 0);
   }, [filteredBooks]);
 
@@ -141,6 +171,32 @@ export default function AtomWorkspacePage() {
       eventSourceRef.current = null;
     }
   };
+
+  const pushTimeline = useCallback((type: TimelineItem["type"], label: string, detail?: string) => {
+    setTimeline((prev) => [
+      ...prev,
+      {
+        id: crypto.randomUUID(),
+        type,
+        ts: new Date().toISOString(),
+        label,
+        detail,
+      },
+    ]);
+  }, []);
+
+  const pushArtifact = useCallback((title: string, kind: string, content?: string) => {
+    setArtifacts((prev) => [
+      ...prev,
+      {
+        id: crypto.randomUUID(),
+        title,
+        kind,
+        content,
+        createdAt: new Date().toISOString(),
+      },
+    ]);
+  }, []);
 
   useEffect(() => () => closeEventStream(), []);
 
@@ -334,6 +390,9 @@ export default function AtomWorkspacePage() {
               .map((book) => ({ id: book.id, title: book.title })),
             level: levelFilter === "all" ? undefined : levelFilter,
             domain: domainFilter === "all" ? undefined : domainFilter,
+            topic,
+            goal,
+            timeAvailable,
           },
           room: "atom",
         }),
@@ -354,7 +413,174 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [connectEvents, domainFilter, isSubmitting, levelFilter, selectedBookIds, selectedPreset, sourceCatalog, taskPrompt]);
+  }, [connectEvents, domainFilter, goal, isSubmitting, levelFilter, selectedBookIds, selectedPreset, sourceCatalog, taskPrompt, timeAvailable, topic]);
+
+  const launchMode = useCallback(async (launchMode: WorkspaceMode) => {
+    if (launchMode === "chat") {
+      await startTask();
+      return;
+    }
+
+    if (launchMode === "guided-deep-dive") {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorCard(null);
+    setAssistantText("");
+    setTimeline([]);
+    setArtifacts([]);
+
+    try {
+      const response = await fetch("/api/atom-v3/launch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: launchMode,
+          topic,
+          level,
+          timeAvailable: Number(timeAvailable) || 25,
+          goal,
+        }),
+      });
+
+      const data = (await response.json()) as {
+        error?: string;
+        message?: string;
+        workflow?: string;
+        launchPath?: string;
+        taskId?: string;
+        eventsUrl?: string;
+      };
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "Failed to launch mode");
+      }
+
+      pushTimeline("mode.launch", `${MODE_LABELS[launchMode]} launched`, data.message ?? undefined);
+      pushArtifact(`${MODE_LABELS[launchMode]} output`, data.workflow ?? launchMode, [
+        data.message,
+        data.launchPath ? `Launch path: ${data.launchPath}` : undefined,
+      ].filter(Boolean).join("\n"));
+
+      if (data.taskId && data.eventsUrl) {
+        setTaskId(data.taskId);
+        setStatus("running");
+        connectEvents(data.taskId, data.eventsUrl);
+      } else {
+        setStatus("completed");
+      }
+      setMobileTab("process");
+    } catch (error) {
+      setStatus("failed");
+      setErrorCard(error instanceof Error ? error.message : "Mode launch failed");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [connectEvents, goal, level, pushArtifact, pushTimeline, startTask, timeAvailable, topic]);
+
+  const startGuidedDeepDive = useCallback(async () => {
+    setIsSubmitting(true);
+    setErrorCard(null);
+    setAssistantText("");
+    setTimeline([]);
+    setArtifacts([]);
+
+    try {
+      const response = await fetch("/api/atom-v3/gdd/start", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ topic, level, goal }),
+      });
+
+      const data = (await response.json()) as {
+        error?: string;
+        session?: { sessionId: string; status: string; currentStep: string; weakConcepts?: string[] };
+      };
+
+      if (!response.ok || !data.session) {
+        throw new Error(data.error ?? "Failed to start guided deep dive");
+      }
+
+      setGddSessionId(data.session.sessionId);
+      setGddLoadId(data.session.sessionId);
+      setStatus("running");
+      pushTimeline("gdd.session", "Guided Deep Dive session started", `Session ${data.session.sessionId.slice(0, 8)} · Step: ${data.session.currentStep}`);
+      pushArtifact("GDD Session", "guided-deep-dive", JSON.stringify(data.session, null, 2));
+    } catch (error) {
+      setStatus("failed");
+      setErrorCard(error instanceof Error ? error.message : "Failed to start GDD session");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [goal, level, pushArtifact, pushTimeline, topic]);
+
+  const loadGuidedDeepDive = useCallback(async () => {
+    if (!gddLoadId.trim()) return;
+
+    setIsSubmitting(true);
+    setErrorCard(null);
+    try {
+      const response = await fetch(`/api/atom-v3/gdd/${gddLoadId.trim()}`);
+      const data = (await response.json()) as {
+        error?: string;
+        session?: { sessionId: string; status: string; currentStep: string; weakConcepts?: string[] };
+      };
+
+      if (!response.ok || !data.session) {
+        throw new Error(data.error ?? "Failed to load session");
+      }
+
+      setGddSessionId(data.session.sessionId);
+      setStatus("running");
+      pushTimeline("gdd.session", "Guided Deep Dive session loaded", `Session ${data.session.sessionId.slice(0, 8)} · Step: ${data.session.currentStep}`);
+      pushArtifact("GDD Session Loaded", "guided-deep-dive", JSON.stringify(data.session, null, 2));
+    } catch (error) {
+      setErrorCard(error instanceof Error ? error.message : "Failed to load GDD session");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [gddLoadId, pushArtifact, pushTimeline]);
+
+  const advanceGuidedDeepDive = useCallback(async () => {
+    if (!gddSessionId) return;
+    setIsSubmitting(true);
+    setErrorCard(null);
+
+    try {
+      const response = await fetch(`/api/atom-v3/gdd/${gddSessionId}/advance`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          accuracyPct: Number(gddAccuracyPct) || 0,
+          hintCount: Number(gddHintCount) || 0,
+          avgResponseSec: Number(gddAvgResponseSec) || 0,
+          confidenceSelf: Number(gddConfidenceSelf) || 0,
+          weakConcepts: gddWeakConcepts
+            .split(",")
+            .map((s) => s.trim())
+            .filter(Boolean),
+        }),
+      });
+
+      const data = (await response.json()) as {
+        error?: string;
+        session?: { sessionId: string; status: string; currentStep: string; weakConcepts?: string[] };
+      };
+
+      if (!response.ok || !data.session) {
+        throw new Error(data.error ?? "Failed to advance session");
+      }
+
+      setStatus(data.session.status === "completed" ? "completed" : "running");
+      pushTimeline("gdd.advance", "Guided Deep Dive advanced", `Step: ${data.session.currentStep} · Status: ${data.session.status}`);
+      pushArtifact("GDD Step Update", "guided-deep-dive", JSON.stringify(data.session, null, 2));
+    } catch (error) {
+      setErrorCard(error instanceof Error ? error.message : "Failed to advance GDD");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [gddAccuracyPct, gddAvgResponseSec, gddConfidenceSelf, gddHintCount, gddSessionId, gddWeakConcepts, pushArtifact, pushTimeline]);
 
   const controlTask = useCallback(async (action: "stop" | "retry" | "continue" | "branch") => {
     if (!taskId) return;
@@ -412,21 +638,40 @@ export default function AtomWorkspacePage() {
         </div>
       </div>
 
+      <div className="px-4 pt-3">
+        <div className="flex flex-wrap gap-1.5">
+          {(["chat", "mcq", "flashcards", "ppt", "nucleux-original", "guided-deep-dive"] as WorkspaceMode[]).map((m) => (
+            <Button
+              key={m}
+              size="sm"
+              variant="outline"
+              onClick={() => setMode(m)}
+              disabled={(m === "guided-deep-dive" && !gddEnabled) || (m === "nucleux-original" && !trackAEnabled)}
+              className={`h-8 text-[11px] border ${
+                mode === m ? "border-[#5BB3B3] bg-[#5BB3B3]/20 text-white" : "border-[#1E3A5F] text-[#94A3B8]"
+              }`}
+            >
+              {MODE_LABELS[m]}
+            </Button>
+          ))}
+        </div>
+      </div>
+
       <div className="flex-1 flex overflow-hidden md:p-3 md:gap-3">
         <Card className={`w-[320px] shrink-0 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-r-0 md:border-r overflow-hidden backdrop-blur-xl bg-white/[0.03] ${mobileTab !== "sources" ? "hidden md:flex" : "flex"} flex-col`}>
           <div className="p-4 border-b border-[#1E3A5F]">
             <h2 className="text-sm font-semibold text-white flex items-center gap-2">
               <BookOpen className="w-4 h-4 text-[#5BB3B3]" /> Source Library
             </h2>
-            <p className="text-xs text-[#94A3B8] mt-1">Select what ATOM should use for this task.</p>
+            <p className="text-xs text-[#94A3B8] mt-1">Shared sources/context for all ATOM modes.</p>
             <Badge className="mt-2 bg-[#5BB3B3]/15 text-[#A5F3FC] border-[#5BB3B3]/30 text-[10px]">{selectedBookIds.length}/{sourceCatalog.length} selected</Badge>
           </div>
 
           <div className="p-3 border-b border-[#1E3A5F] space-y-2">
             <div className="flex flex-wrap gap-1.5">
-              {ATOM_SOURCE_LEVELS.map((level) => (
-                <Button key={level} size="sm" variant="outline" onClick={() => setLevelFilter((prev) => (prev === level ? "all" : level))} className={`h-7 text-[10px] border ${levelFilter === level ? "border-[#5BB3B3] bg-[#5BB3B3]/20 text-white" : "border-[#1E3A5F] text-[#94A3B8]"}`}>
-                  {level}
+              {ATOM_SOURCE_LEVELS.map((levelTag) => (
+                <Button key={levelTag} size="sm" variant="outline" onClick={() => setLevelFilter((prev) => (prev === levelTag ? "all" : levelTag))} className={`h-7 text-[10px] border ${levelFilter === levelTag ? "border-[#5BB3B3] bg-[#5BB3B3]/20 text-white" : "border-[#1E3A5F] text-[#94A3B8]"}`}>
+                  {levelTag}
                 </Button>
               ))}
             </div>
@@ -496,11 +741,12 @@ export default function AtomWorkspacePage() {
         <Card className={`flex-1 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-x-0 md:border-x overflow-hidden bg-[#101C2B]/90 ${mobileTab !== "process" ? "hidden md:flex" : "flex"} flex-col`}>
           <div className="p-4 border-b border-[#1E3A5F] bg-gradient-to-r from-[#0f2235] to-[#14293f]">
             <div className="flex flex-wrap items-center gap-2">
-              <h1 className="text-white text-sm font-semibold">ATOM Task Mode</h1>
+              <h1 className="text-white text-sm font-semibold">ATOM Workspace · {MODE_LABELS[mode]}</h1>
               <Badge className={`text-[10px] border ${STATUS_STYLES[status]}`}>{status}</Badge>
               {taskId && <span className="text-[10px] text-[#94A3B8]">Task: {taskId.slice(0, 8)}</span>}
+              {gddSessionId && mode === "guided-deep-dive" && <span className="text-[10px] text-[#94A3B8]">GDD: {gddSessionId.slice(0, 8)}</span>}
             </div>
-            <p className="text-xs text-[#9FB0C2] mt-1">Visible process flow for longer clinical workflows.</p>
+            <p className="text-xs text-[#9FB0C2] mt-1">One shared context form across all ATOM modes.</p>
           </div>
 
           {errorCard && (
@@ -510,17 +756,66 @@ export default function AtomWorkspacePage() {
             </div>
           )}
 
-          <div className="p-4 border-b border-[#1E3A5F]">
-            <textarea
-              value={taskPrompt}
-              onChange={(e) => setTaskPrompt(e.target.value)}
-              placeholder="Describe the clinical task ATOM should execute..."
-              className="w-full min-h-[84px] max-h-[180px] rounded-xl bg-[#162535] border border-[#1E3A5F] text-white text-sm p-3 focus:outline-none focus:border-[#5BB3B3]"
-            />
-            <div className="flex flex-wrap gap-2 mt-3">
-              <Button onClick={startTask} disabled={!taskPrompt.trim() || isSubmitting || selectedBookIds.length === 0} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
-                {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Start Task
-              </Button>
+          <div className="p-4 border-b border-[#1E3A5F] space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Topic</span>
+                <input value={topic} onChange={(e) => setTopic(e.target.value)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Level</span>
+                <select value={level} onChange={(e) => setLevel(e.target.value as QuickStartLevel)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2">
+                  {QUICK_START_LEVELS.map((levelOption) => <option key={levelOption} value={levelOption}>{levelOption}</option>)}
+                </select>
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Time (min)</span>
+                <input value={timeAvailable} onChange={(e) => setTimeAvailable(e.target.value)} inputMode="numeric" className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+              </label>
+              <label className="space-y-1">
+                <span className="text-[11px] text-[#94A3B8]">Goal</span>
+                <input value={goal} onChange={(e) => setGoal(e.target.value)} className="h-9 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+              </label>
+            </div>
+
+            {mode !== "guided-deep-dive" && (
+              <textarea
+                value={taskPrompt}
+                onChange={(e) => setTaskPrompt(e.target.value)}
+                placeholder={mode === "chat" ? "Describe the clinical task ATOM should execute..." : `Optional extra instruction for ${MODE_LABELS[mode]} mode`}
+                className="w-full min-h-[72px] rounded-xl bg-[#162535] border border-[#1E3A5F] text-white text-sm p-3 focus:outline-none focus:border-[#5BB3B3]"
+              />
+            )}
+
+            {mode === "guided-deep-dive" && (
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 rounded-xl border border-[#1E3A5F] bg-[#0f2133] p-2">
+                <div className="space-y-2">
+                  <div className="flex gap-2">
+                    <Button onClick={startGuidedDeepDive} disabled={!gddEnabled || isSubmitting} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                      {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Start GDD
+                    </Button>
+                    <input value={gddLoadId} onChange={(e) => setGddLoadId(e.target.value)} placeholder="Session ID" className="h-9 flex-1 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                    <Button variant="outline" onClick={loadGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddLoadId.trim()} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Load</Button>
+                  </div>
+                  {!gddEnabled && <p className="text-[11px] text-amber-200">Guided deep dive is disabled by feature flag.</p>}
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <input value={gddAccuracyPct} onChange={(e) => setGddAccuracyPct(e.target.value)} placeholder="accuracy %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddHintCount} onChange={(e) => setGddHintCount(e.target.value)} placeholder="hints" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddAvgResponseSec} onChange={(e) => setGddAvgResponseSec(e.target.value)} placeholder="avg response sec" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddConfidenceSelf} onChange={(e) => setGddConfidenceSelf(e.target.value)} placeholder="confidence %" className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <input value={gddWeakConcepts} onChange={(e) => setGddWeakConcepts(e.target.value)} placeholder="weak concepts comma-separated" className="h-8 col-span-2 rounded-md bg-[#162535] border border-[#1E3A5F] text-xs text-white px-2" />
+                  <Button onClick={advanceGuidedDeepDive} disabled={!gddEnabled || isSubmitting || !gddSessionId} className="col-span-2 bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Advance Step</Button>
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-2">
+              {mode !== "guided-deep-dive" && (
+                <Button onClick={() => launchMode(mode)} disabled={(mode === "chat" && !taskPrompt.trim()) || isSubmitting || selectedBookIds.length === 0 || (mode === "nucleux-original" && !trackAEnabled)} className="bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">
+                  {isSubmitting ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Play className="w-4 h-4 mr-1.5" />}Run {MODE_LABELS[mode]}
+                </Button>
+              )}
               <Button variant="outline" onClick={() => controlTask("stop")} disabled={!taskId || status !== "running"} className="border-[#1E3A5F] text-[#FCA5A5] bg-transparent">
                 <CircleStop className="w-4 h-4 mr-1.5" />Stop
               </Button>
@@ -533,6 +828,7 @@ export default function AtomWorkspacePage() {
               <Button variant="outline" onClick={() => controlTask("branch")} disabled={!taskId} className="border-[#1E3A5F] text-[#E9D5FF] bg-transparent">
                 <GitBranch className="w-4 h-4 mr-1.5" />Branch (stub)
               </Button>
+              {mode === "nucleux-original" && !trackAEnabled && <p className="text-[11px] text-amber-200 self-center">Track A deep research scaffold is disabled.</p>}
             </div>
           </div>
 
@@ -541,7 +837,7 @@ export default function AtomWorkspacePage() {
               <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Timeline</h3>
               <div className="flex-1 overflow-y-auto space-y-2 pr-1">
                 {timeline.length === 0 ? (
-                  <p className="text-xs text-[#64748B]">No events yet. Start a task to see phase-by-phase updates.</p>
+                  <p className="text-xs text-[#64748B]">No events yet. Run a mode to see updates.</p>
                 ) : (
                   timeline.map((item) => (
                     <div key={item.id} className="rounded-lg border border-[#1E3A5F] bg-[#0f2133] p-2.5">
@@ -562,7 +858,7 @@ export default function AtomWorkspacePage() {
                 {assistantText ? (
                   <pre className="whitespace-pre-wrap text-sm text-[#D7E3EF] font-sans">{assistantText}</pre>
                 ) : (
-                  <p className="text-xs text-[#64748B]">Assistant deltas will stream here in real-time.</p>
+                  <p className="text-xs text-[#64748B]">Assistant deltas and mode outputs appear here in real-time.</p>
                 )}
               </div>
             </div>
@@ -570,18 +866,30 @@ export default function AtomWorkspacePage() {
         </Card>
 
         <Card className={`w-[360px] shrink-0 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-l-0 md:border-l overflow-hidden backdrop-blur-xl bg-white/[0.03] ${mobileTab !== "workspace" ? "hidden lg:flex" : "flex"} flex-col`}>
-          <Tabs defaultValue="artifacts" className="flex flex-col h-full">
+          <Tabs defaultValue="actions" className="flex flex-col h-full">
             <div className="p-3 border-b border-[#1E3A5F]">
               <h2 className="text-sm font-semibold text-white flex items-center gap-2"><FlaskConical className="w-4 h-4 text-[#5EEAD4]" /> Workspace</h2>
-              <TabsList className="grid w-full mt-2 grid-cols-2 bg-[#162535] border border-[#1E3A5F]">
+              <TabsList className="grid w-full mt-2 grid-cols-3 bg-[#162535] border border-[#1E3A5F]">
+                <TabsTrigger value="actions" className="text-xs data-[state=active]:bg-[#5BB3B3]/20">Actions</TabsTrigger>
                 <TabsTrigger value="artifacts" className="text-xs data-[state=active]:bg-[#5BB3B3]/20">Artifacts</TabsTrigger>
                 <TabsTrigger value="canvas" className="text-xs data-[state=active]:bg-[#5BB3B3]/20">Canvas</TabsTrigger>
               </TabsList>
             </div>
 
+            <TabsContent value="actions" className="mt-0 flex-1 overflow-y-auto p-3 space-y-2">
+              <p className="text-xs text-[#94A3B8]">Mode actions write to the same timeline/artifacts panel.</p>
+              <div className="grid grid-cols-2 gap-2">
+                <Button size="sm" variant="outline" onClick={() => setMode("mcq")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">MCQ</Button>
+                <Button size="sm" variant="outline" onClick={() => setMode("flashcards")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">Flashcards</Button>
+                <Button size="sm" variant="outline" onClick={() => setMode("ppt")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">PPT</Button>
+                <Button size="sm" variant="outline" onClick={() => setMode("nucleux-original")} className="border-[#1E3A5F] text-[#BFDBFE] bg-transparent">NucleuX Original</Button>
+              </div>
+              <Button onClick={() => launchMode(mode)} disabled={mode === "guided-deep-dive" || isSubmitting || (mode === "chat" && !taskPrompt.trim())} className="w-full bg-[#5BB3B3] hover:bg-[#45a1a1] text-white">Run current mode</Button>
+            </TabsContent>
+
             <TabsContent value="artifacts" className="mt-0 flex-1 overflow-y-auto p-3 space-y-2">
               {mergedArtifacts.length === 0 ? (
-                <p className="text-xs text-[#64748B]">Artifacts from tool/output events will appear here.</p>
+                <p className="text-xs text-[#64748B]">Artifacts from all mode outputs appear here.</p>
               ) : (
                 mergedArtifacts.map((artifact) => (
                   <div key={artifact.id} className="rounded-lg border border-[#1E3A5F] bg-[#162535] p-2.5">
