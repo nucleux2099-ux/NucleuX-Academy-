@@ -4,6 +4,8 @@ export const ATOM_SOURCE_PRESETS = ['exam-focus', 'clinical-deep-dive', 'rapid-r
 export type AtomSourceLevel = (typeof ATOM_SOURCE_LEVELS)[number];
 export type AtomSourcePreset = (typeof ATOM_SOURCE_PRESETS)[number];
 
+import type { AtomSourceAvailabilityStatus } from './source-availability';
+
 export type AtomSourceCatalogItem = {
   id: string;
   title: string;
@@ -13,6 +15,11 @@ export type AtomSourceCatalogItem = {
   priority: number;
   enabled: boolean;
   sortOrder: number;
+  availabilityStatus?: AtomSourceAvailabilityStatus;
+  availabilityDisabledReason?: string | null;
+  chapterCount?: number | null;
+  chunkCount?: number | null;
+  lastSyncedAt?: string | null;
   metadata?: {
     edition?: string;
     [key: string]: unknown;

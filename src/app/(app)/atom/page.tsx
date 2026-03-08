@@ -27,6 +27,7 @@ import {
   AlertTriangle,
   Loader2,
   Activity,
+  Lock,
 } from "lucide-react";
 
 type TimelineItem = {
@@ -92,6 +93,7 @@ export default function AtomWorkspacePage() {
   const [selectedPreset, setSelectedPreset] = useState<AtomSourcePreset | null>("clinical-deep-dive");
   const [levelFilter, setLevelFilter] = useState<string>("all");
   const [domainFilter, setDomainFilter] = useState<string>("all");
+  const [showPendingSources, setShowPendingSources] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
 
   const domains = useMemo(() => ["all", ...Array.from(new Set(sourceCatalog.map((book) => book.domain)))], [sourceCatalog]);
@@ -101,9 +103,10 @@ export default function AtomWorkspacePage() {
       sourceCatalog.filter((book) => {
         if (levelFilter !== "all" && !book.levelTags.includes(levelFilter as (typeof ATOM_SOURCE_LEVELS)[number])) return false;
         if (domainFilter !== "all" && book.domain !== domainFilter) return false;
+        if (!showPendingSources && book.availabilityStatus && book.availabilityStatus !== "indexed_ready") return false;
         return true;
       }),
-    [domainFilter, levelFilter, sourceCatalog],
+    [domainFilter, levelFilter, showPendingSources, sourceCatalog],
   );
 
   const groupedBooks = useMemo(() => {
@@ -148,7 +151,7 @@ export default function AtomWorkspacePage() {
       setSourcesLoading(true);
       setSourcesError(null);
       try {
-        const response = await fetch('/api/atom/sources');
+        const response = await fetch(`/api/atom/sources?include_pending=${showPendingSources ? 'true' : 'false'}`);
         if (!response.ok) {
           throw new Error('Could not load source library');
         }
@@ -163,6 +166,11 @@ export default function AtomWorkspacePage() {
             priority: number;
             enabled: boolean;
             sort_order: number;
+            availability_status?: "indexed_ready" | "md_ready_not_ingested" | "pdf_only" | "missing" | null;
+            availability_disabled_reason?: string | null;
+            chapter_count?: number | null;
+            chunk_count?: number | null;
+            last_synced_at?: string | null;
             metadata?: Record<string, unknown>;
           }>;
         };
@@ -179,12 +187,21 @@ export default function AtomWorkspacePage() {
           priority: source.priority,
           enabled: source.enabled,
           sortOrder: source.sort_order,
+          availabilityStatus: source.availability_status ?? undefined,
+          availabilityDisabledReason: source.availability_disabled_reason ?? null,
+          chapterCount: source.chapter_count ?? null,
+          chunkCount: source.chunk_count ?? null,
+          lastSyncedAt: source.last_synced_at ?? null,
           metadata: source.metadata ?? {},
         }));
 
         if (normalized.length > 0) {
           setSourceCatalog(normalized);
-          setSelectedBookIds((prev) => (prev.length > 0 ? prev.filter((id) => normalized.some((s) => s.id === id)) : normalized.slice(0, 3).map((s) => s.id)));
+          const selectable = normalized.filter((s) => !s.availabilityStatus || s.availabilityStatus === "indexed_ready");
+          setSelectedBookIds((prev) => {
+            const nextFromPrev = prev.filter((id) => selectable.some((s) => s.id === id));
+            return nextFromPrev.length > 0 ? nextFromPrev : selectable.slice(0, 3).map((s) => s.id);
+          });
         }
       } catch {
         if (!active) return;
@@ -200,7 +217,7 @@ export default function AtomWorkspacePage() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [showPendingSources]);
 
   const connectEvents = useCallback((id: string, eventsUrl: string) => {
     closeEventStream();
@@ -418,6 +435,16 @@ export default function AtomWorkspacePage() {
                 <option key={domain} value={domain}>{domain === "all" ? "All domains" : domain}</option>
               ))}
             </select>
+            <div className="flex items-center justify-between rounded-md border border-[#1E3A5F] px-2 py-1.5">
+              <span className="text-[11px] text-[#94A3B8]">Show pending sources</span>
+              <button
+                type="button"
+                onClick={() => setShowPendingSources((prev) => !prev)}
+                className={`text-[10px] px-2 py-1 rounded-full border ${showPendingSources ? "text-white border-[#5BB3B3] bg-[#5BB3B3]/20" : "text-[#94A3B8] border-[#1E3A5F]"}`}
+              >
+                {showPendingSources ? "ON" : "OFF"}
+              </button>
+            </div>
             <div className="flex flex-wrap gap-1.5">
               {(Object.keys(ATOM_PRESET_LABELS) as AtomSourcePreset[]).map((preset) => (
                 <button key={preset} onClick={() => setSelectedPreset((prev) => (prev === preset ? null : preset))} className={`text-[10px] px-2 py-1 rounded-full border transition ${selectedPreset === preset ? "text-white border-[#5BB3B3] bg-[#5BB3B3]/20" : "text-[#94A3B8] border-[#1E3A5F] hover:border-[#5BB3B3]/50"}`}>
@@ -441,13 +468,22 @@ export default function AtomWorkspacePage() {
                 <div className="space-y-1.5">
                   {group.items.map((book) => {
                     const selected = selectedBookIds.includes(book.id);
+                    const isSelectable = !book.availabilityStatus || book.availabilityStatus === "indexed_ready";
                     return (
-                      <button key={book.id} onClick={() => toggleBook(book.id)} className={`w-full text-left px-2.5 py-2 rounded-lg border ${selected ? "border-[#5BB3B3]/60 bg-[#5BB3B3]/10" : "border-[#1E3A5F] hover:bg-[#1E3A5F]/40"}`}>
+                      <button
+                        key={book.id}
+                        onClick={() => isSelectable && toggleBook(book.id)}
+                        disabled={!isSelectable}
+                        className={`w-full text-left px-2.5 py-2 rounded-lg border ${selected ? "border-[#5BB3B3]/60 bg-[#5BB3B3]/10" : "border-[#1E3A5F] hover:bg-[#1E3A5F]/40"} ${!isSelectable ? "opacity-70 cursor-not-allowed" : ""}`}
+                      >
                         <div className="flex justify-between gap-2">
                           <p className={`text-xs ${selected ? "text-white" : "text-[#CBD5E1]"}`}>{book.title}</p>
-                          {selected && <CheckCircle2 className="w-3.5 h-3.5 text-[#5EEAD4] shrink-0 mt-0.5" />}
+                          {selected ? <CheckCircle2 className="w-3.5 h-3.5 text-[#5EEAD4] shrink-0 mt-0.5" /> : !isSelectable ? <Lock className="w-3.5 h-3.5 text-amber-300 shrink-0 mt-0.5" /> : null}
                         </div>
-                        <p className="text-[10px] text-[#64748B] mt-1">{book.domain}{typeof book.metadata?.edition === "string" ? ` · ${book.metadata.edition}` : ""}</p>
+                        <p className="text-[10px] text-[#64748B] mt-1">{book.domain}{typeof book.metadata?.edition === "string" ? ` · ${book.metadata.edition}` : ""}{typeof book.chapterCount === "number" ? ` · ${book.chapterCount} chapters` : ""}</p>
+                        {!isSelectable && book.availabilityDisabledReason && (
+                          <p className="text-[10px] text-amber-200 mt-1">{book.availabilityDisabledReason}</p>
+                        )}
                       </button>
                     );
                   })}

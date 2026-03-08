@@ -11,7 +11,8 @@
     "test:smoke": "node scripts/smoke-e2e.mjs",
     "seed:admin": "tsx scripts/seed-admin.ts",
     "content:validate": "tsx scripts/validate-content.ts",
-    "validate:cbme": "tsx scripts/validate-cbme-links.ts"
+    "validate:cbme": "tsx scripts/validate-cbme-links.ts",
+    "atom:sources:sync": "tsx scripts/sync-atom-source-availability.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

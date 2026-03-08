@@ -1,0 +1,344 @@
+{
+  "generated_at": "2026-03-08T09:17:34.541Z",
+  "manifests_checked": [
+    "/Users/adityachandrabhatla/ATOM-Learning-System/data/indexes/master-textbook-index.json",
+    "/Users/adityachandrabhatla/ATOM-Learning-System/data/indexes/search-manifest.json"
+  ],
+  "md_roots_checked": [
+    "/Volumes/Aditya's Ideaverse/03 Spaces/🎓 Learning/Active System/Source Library",
+    "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library"
+  ],
+  "pdf_roots_checked": [
+    "/Volumes/Aditya's Ideaverse/03 Spaces/🎓 Learning/Active System/Source Library",
+    "/Volumes/Aditya's Ideaverse/03 Spaces/Sarath's Learning System/Source Library"
+  ],
+  "counts": {
+    "indexed_ready": 2,
+    "md_ready_not_ingested": 0,
+    "pdf_only": 0,
+    "missing": 24
+  },
+  "selectable_now": [
+    {
+      "id": "grays-anatomy-for-students",
+      "title": "Gray's Anatomy for Students",
+      "chapter_count": 30
+    },
+    {
+      "id": "sleisenger-and-fordtran-gastrointestinal-disease",
+      "title": "Sleisenger and Fordtran Gastrointestinal Disease",
+      "chapter_count": 176
+    }
+  ],
+  "disabled_pending_ingestion": [],
+  "missing": [
+    {
+      "id": "ganong-review-of-medical-physiology",
+      "title": "Ganong Review of Medical Physiology"
+    },
+    {
+      "id": "lippincott-illustrated-reviews-biochemistry",
+      "title": "Lippincott Illustrated Reviews: Biochemistry"
+    },
+    {
+      "id": "robbins-cotran-pathologic-basis-of-disease",
+      "title": "Robbins & Cotran Pathologic Basis of Disease"
+    },
+    {
+      "id": "katzung-basic-clinical-pharmacology",
+      "title": "Katzung's Basic & Clinical Pharmacology"
+    },
+    {
+      "id": "jawetz-melnick-adelberg-medical-microbiology",
+      "title": "Jawetz, Melnick & Adelberg Medical Microbiology"
+    },
+    {
+      "id": "essentials-of-forensic-medicine-and-toxicology",
+      "title": "Essentials of Forensic Medicine & Toxicology"
+    },
+    {
+      "id": "parks-textbook-of-preventive-and-social-medicine",
+      "title": "Parks Textbook of Preventive & Social Medicine"
+    },
+    {
+      "id": "harrisons-principles-of-internal-medicine",
+      "title": "Harrison's Principles of Internal Medicine"
+    },
+    {
+      "id": "bailey-and-loves-short-practice-of-surgery",
+      "title": "Bailey & Love's Short Practice of Surgery"
+    },
+    {
+      "id": "williams-obstetrics",
+      "title": "Williams Obstetrics"
+    },
+    {
+      "id": "nelson-textbook-of-pediatrics",
+      "title": "Nelson Textbook of Pediatrics"
+    },
+    {
+      "id": "miller-anesthesia",
+      "title": "Miller Anesthesia"
+    },
+    {
+      "id": "grainger-and-allison-diagnostic-radiology",
+      "title": "Grainger & Allison Diagnostic Radiology"
+    },
+    {
+      "id": "kanskis-clinical-ophthalmology",
+      "title": "Kanski's Clinical Ophthalmology"
+    },
+    {
+      "id": "scott-browns-otorhinolaryngology",
+      "title": "Scott-Brown's Otorhinolaryngology"
+    },
+    {
+      "id": "sabiston-textbook-of-surgery",
+      "title": "SABISTON Textbook of Surgery"
+    },
+    {
+      "id": "tintinalli-emergency-medicine",
+      "title": "Tintinalli Emergency Medicine"
+    },
+    {
+      "id": "icu-protocols-for-residents",
+      "title": "ICU Protocols for Residents"
+    },
+    {
+      "id": "current-medical-diagnosis-and-treatment",
+      "title": "Current Medical Diagnosis & Treatment"
+    },
+    {
+      "id": "oxford-handbook-of-clinical-medicine",
+      "title": "Oxford Handbook of Clinical Medicine"
+    },
+    {
+      "id": "schwartzs-principles-of-surgery",
+      "title": "Schwartz's Principles of Surgery"
+    },
+    {
+      "id": "braunwald-heart-disease",
+      "title": "Braunwald Heart Disease"
+    },
+    {
+      "id": "devita-cancer-principles-and-practice-of-oncology",
+      "title": "DeVita Cancer: Principles & Practice of Oncology"
+    },
+    {
+      "id": "campbell-walsh-wein-urology",
+      "title": "Campbell-Walsh-Wein Urology"
+    }
+  ],
+  "rows": [
+    {
+      "id": "grays-anatomy-for-students",
+      "title": "Gray's Anatomy for Students",
+      "status": "indexed_ready",
+      "chapter_count": 30,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z",
+      "indexed_match": "Gray Surgical Anatomy 1st Ed"
+    },
+    {
+      "id": "ganong-review-of-medical-physiology",
+      "title": "Ganong Review of Medical Physiology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "lippincott-illustrated-reviews-biochemistry",
+      "title": "Lippincott Illustrated Reviews: Biochemistry",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "robbins-cotran-pathologic-basis-of-disease",
+      "title": "Robbins & Cotran Pathologic Basis of Disease",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "katzung-basic-clinical-pharmacology",
+      "title": "Katzung's Basic & Clinical Pharmacology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "jawetz-melnick-adelberg-medical-microbiology",
+      "title": "Jawetz, Melnick & Adelberg Medical Microbiology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "essentials-of-forensic-medicine-and-toxicology",
+      "title": "Essentials of Forensic Medicine & Toxicology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "parks-textbook-of-preventive-and-social-medicine",
+      "title": "Parks Textbook of Preventive & Social Medicine",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "harrisons-principles-of-internal-medicine",
+      "title": "Harrison's Principles of Internal Medicine",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "bailey-and-loves-short-practice-of-surgery",
+      "title": "Bailey & Love's Short Practice of Surgery",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "williams-obstetrics",
+      "title": "Williams Obstetrics",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "nelson-textbook-of-pediatrics",
+      "title": "Nelson Textbook of Pediatrics",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "miller-anesthesia",
+      "title": "Miller Anesthesia",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "grainger-and-allison-diagnostic-radiology",
+      "title": "Grainger & Allison Diagnostic Radiology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "kanskis-clinical-ophthalmology",
+      "title": "Kanski's Clinical Ophthalmology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "scott-browns-otorhinolaryngology",
+      "title": "Scott-Brown's Otorhinolaryngology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "sabiston-textbook-of-surgery",
+      "title": "SABISTON Textbook of Surgery",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "tintinalli-emergency-medicine",
+      "title": "Tintinalli Emergency Medicine",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "icu-protocols-for-residents",
+      "title": "ICU Protocols for Residents",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "current-medical-diagnosis-and-treatment",
+      "title": "Current Medical Diagnosis & Treatment",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "oxford-handbook-of-clinical-medicine",
+      "title": "Oxford Handbook of Clinical Medicine",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "schwartzs-principles-of-surgery",
+      "title": "Schwartz's Principles of Surgery",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "braunwald-heart-disease",
+      "title": "Braunwald Heart Disease",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "sleisenger-and-fordtran-gastrointestinal-disease",
+      "title": "Sleisenger and Fordtran Gastrointestinal Disease",
+      "status": "indexed_ready",
+      "chapter_count": 176,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z",
+      "indexed_match": "Sleisenger Fordtran GI 11th Ed"
+    },
+    {
+      "id": "devita-cancer-principles-and-practice-of-oncology",
+      "title": "DeVita Cancer: Principles & Practice of Oncology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    },
+    {
+      "id": "campbell-walsh-wein-urology",
+      "title": "Campbell-Walsh-Wein Urology",
+      "status": "missing",
+      "chapter_count": null,
+      "chunk_count": null,
+      "last_synced_at": "2026-03-08T09:17:34.541Z"
+    }
+  ]
+}
