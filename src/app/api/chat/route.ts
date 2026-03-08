@@ -43,6 +43,20 @@ function logChatError(stage: string, error: unknown, extra: Record<string, unkno
   })
 }
 
+function resolveAnthropicModel(raw?: string): string {
+  const candidate = (raw || '').trim()
+  if (!candidate) return 'claude-sonnet-4-5'
+
+  const legacyMap: Record<string, string> = {
+    'claude-3-5-sonnet-latest': 'claude-sonnet-4-5',
+    'claude-3-5-sonnet': 'claude-sonnet-4-5',
+    'claude-3.5-sonnet': 'claude-sonnet-4-5',
+    'claude-3.5-sonnet-latest': 'claude-sonnet-4-5',
+  }
+
+  return legacyMap[candidate] ?? candidate
+}
+
 type IncomingMessage = {
   role: string
   content: unknown
@@ -338,7 +352,7 @@ export async function POST(request: NextRequest) {
     }
 
     const client = new Anthropic({ apiKey })
-    const model = process.env.ANTHROPIC_MODEL || 'claude-3-5-sonnet-latest'
+    const model = resolveAnthropicModel(process.env.ANTHROPIC_MODEL)
 
     // Format messages for Anthropic (supports text and vision)
     const formattedMessages: Anthropic.MessageParam[] = messages.map((m: IncomingMessage) => {
