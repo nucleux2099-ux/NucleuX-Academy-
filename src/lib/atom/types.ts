@@ -46,7 +46,9 @@ export type AtomEventType = (typeof ATOM_EVENT_TYPES)[number];
 
 export type AtomSourceSelection = {
   level?: string;
+  domain?: string;
   bookIds?: string[];
+  books?: Array<{ id: string; title: string }>;
   preset?: string;
   [key: string]: unknown;
 };

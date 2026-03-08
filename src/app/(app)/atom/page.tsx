@@ -9,6 +9,7 @@ import {
   ATOM_SOURCE_CATALOG,
   ATOM_SOURCE_LEVELS,
   ATOM_PRESET_LABELS,
+  type AtomSourceCatalogItem,
   type AtomSourcePreset,
 } from "@/lib/atom/source-catalog";
 import type { AtomTaskStatus, AtomEventType } from "@/lib/atom/types";
@@ -84,28 +85,31 @@ export default function AtomWorkspacePage() {
   const [artifacts, setArtifacts] = useState<ArtifactItem[]>([]);
   const [errorCard, setErrorCard] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [sourceCatalog, setSourceCatalog] = useState<AtomSourceCatalogItem[]>(ATOM_SOURCE_CATALOG);
+  const [sourcesLoading, setSourcesLoading] = useState(true);
+  const [sourcesError, setSourcesError] = useState<string | null>(null);
   const [selectedBookIds, setSelectedBookIds] = useState<string[]>(ATOM_SOURCE_CATALOG.slice(0, 3).map((book) => book.id));
   const [selectedPreset, setSelectedPreset] = useState<AtomSourcePreset | null>("clinical-deep-dive");
   const [levelFilter, setLevelFilter] = useState<string>("all");
   const [domainFilter, setDomainFilter] = useState<string>("all");
   const eventSourceRef = useRef<EventSource | null>(null);
 
-  const domains = useMemo(() => ["all", ...Array.from(new Set(ATOM_SOURCE_CATALOG.map((book) => book.domain)))], []);
+  const domains = useMemo(() => ["all", ...Array.from(new Set(sourceCatalog.map((book) => book.domain)))], [sourceCatalog]);
 
   const filteredBooks = useMemo(
     () =>
-      ATOM_SOURCE_CATALOG.filter((book) => {
-        if (levelFilter !== "all" && book.level !== levelFilter) return false;
+      sourceCatalog.filter((book) => {
+        if (levelFilter !== "all" && !book.levelTags.includes(levelFilter as (typeof ATOM_SOURCE_LEVELS)[number])) return false;
         if (domainFilter !== "all" && book.domain !== domainFilter) return false;
         return true;
       }),
-    [levelFilter, domainFilter],
+    [domainFilter, levelFilter, sourceCatalog],
   );
 
   const groupedBooks = useMemo(() => {
     return ATOM_SOURCE_LEVELS.map((level) => ({
       level,
-      items: filteredBooks.filter((book) => book.level === level),
+      items: filteredBooks.filter((book) => book.levelTags.includes(level)),
     })).filter((group) => group.items.length > 0);
   }, [filteredBooks]);
 
@@ -136,6 +140,67 @@ export default function AtomWorkspacePage() {
   };
 
   useEffect(() => () => closeEventStream(), []);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadSources = async () => {
+      setSourcesLoading(true);
+      setSourcesError(null);
+      try {
+        const response = await fetch('/api/atom/sources');
+        if (!response.ok) {
+          throw new Error('Could not load source library');
+        }
+
+        const payload = (await response.json()) as {
+          sources?: Array<{
+            id: string;
+            title: string;
+            short_title: string;
+            domain: string;
+            level_tags: string[];
+            priority: number;
+            enabled: boolean;
+            sort_order: number;
+            metadata?: Record<string, unknown>;
+          }>;
+        };
+
+        if (!active) return;
+        const normalized = (payload.sources ?? []).map((source) => ({
+          id: source.id,
+          title: source.title,
+          shortTitle: source.short_title,
+          domain: source.domain,
+          levelTags: (source.level_tags ?? []).filter((tag): tag is (typeof ATOM_SOURCE_LEVELS)[number] =>
+            ATOM_SOURCE_LEVELS.includes(tag as (typeof ATOM_SOURCE_LEVELS)[number]),
+          ),
+          priority: source.priority,
+          enabled: source.enabled,
+          sortOrder: source.sort_order,
+          metadata: source.metadata ?? {},
+        }));
+
+        if (normalized.length > 0) {
+          setSourceCatalog(normalized);
+          setSelectedBookIds((prev) => (prev.length > 0 ? prev.filter((id) => normalized.some((s) => s.id === id)) : normalized.slice(0, 3).map((s) => s.id)));
+        }
+      } catch {
+        if (!active) return;
+        setSourceCatalog(ATOM_SOURCE_CATALOG);
+        setSourcesError('Using fallback source list (catalog API unavailable).');
+      } finally {
+        if (active) setSourcesLoading(false);
+      }
+    };
+
+    void loadSources();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const connectEvents = useCallback((id: string, eventsUrl: string) => {
     closeEventStream();
@@ -246,6 +311,10 @@ export default function AtomWorkspacePage() {
           sourceSelection: {
             preset: selectedPreset,
             bookIds: selectedBookIds,
+            books: selectedBookIds
+              .map((id) => sourceCatalog.find((book) => book.id === id))
+              .filter((book): book is AtomSourceCatalogItem => Boolean(book))
+              .map((book) => ({ id: book.id, title: book.title })),
             level: levelFilter === "all" ? undefined : levelFilter,
             domain: domainFilter === "all" ? undefined : domainFilter,
           },
@@ -268,7 +337,7 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [connectEvents, domainFilter, isSubmitting, levelFilter, selectedBookIds, selectedPreset, taskPrompt]);
+  }, [connectEvents, domainFilter, isSubmitting, levelFilter, selectedBookIds, selectedPreset, sourceCatalog, taskPrompt]);
 
   const controlTask = useCallback(async (action: "stop" | "retry" | "continue" | "branch") => {
     if (!taskId) return;
@@ -330,10 +399,10 @@ export default function AtomWorkspacePage() {
         <Card className={`w-[320px] shrink-0 border-[#1E3A5F] md:rounded-2xl rounded-none md:border border-r-0 md:border-r overflow-hidden backdrop-blur-xl bg-white/[0.03] ${mobileTab !== "sources" ? "hidden md:flex" : "flex"} flex-col`}>
           <div className="p-4 border-b border-[#1E3A5F]">
             <h2 className="text-sm font-semibold text-white flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-[#5BB3B3]" /> 26-Book Source Library
+              <BookOpen className="w-4 h-4 text-[#5BB3B3]" /> Source Library
             </h2>
             <p className="text-xs text-[#94A3B8] mt-1">Select what ATOM should use for this task.</p>
-            <Badge className="mt-2 bg-[#5BB3B3]/15 text-[#A5F3FC] border-[#5BB3B3]/30 text-[10px]">{selectedBookIds.length}/26 selected</Badge>
+            <Badge className="mt-2 bg-[#5BB3B3]/15 text-[#A5F3FC] border-[#5BB3B3]/30 text-[10px]">{selectedBookIds.length}/{sourceCatalog.length} selected</Badge>
           </div>
 
           <div className="p-3 border-b border-[#1E3A5F] space-y-2">
@@ -359,6 +428,13 @@ export default function AtomWorkspacePage() {
           </div>
 
           <div className="flex-1 overflow-y-auto p-3 space-y-3">
+            {sourcesLoading && (
+              <div className="text-xs text-[#94A3B8] flex items-center gap-2 px-1">
+                <Loader2 className="w-3.5 h-3.5 animate-spin" /> Loading source catalog…
+              </div>
+            )}
+            {sourcesError && <p className="text-[11px] text-amber-200 bg-amber-500/10 border border-amber-400/20 rounded-md px-2 py-1.5">{sourcesError}</p>}
+            {!sourcesLoading && groupedBooks.length === 0 && <p className="text-xs text-[#64748B]">No sources match this filter.</p>}
             {groupedBooks.map((group) => (
               <div key={group.level}>
                 <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-1.5">{group.level}</p>
@@ -371,7 +447,7 @@ export default function AtomWorkspacePage() {
                           <p className={`text-xs ${selected ? "text-white" : "text-[#CBD5E1]"}`}>{book.title}</p>
                           {selected && <CheckCircle2 className="w-3.5 h-3.5 text-[#5EEAD4] shrink-0 mt-0.5" />}
                         </div>
-                        <p className="text-[10px] text-[#64748B] mt-1">{book.domain}{book.edition ? ` · ${book.edition}` : ""}</p>
+                        <p className="text-[10px] text-[#64748B] mt-1">{book.domain}{typeof book.metadata?.edition === "string" ? ` · ${book.metadata.edition}` : ""}</p>
                       </button>
                     );
                   })}
