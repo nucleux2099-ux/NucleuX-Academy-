@@ -51,6 +51,7 @@ export default function AtomV3Experience({ advancedVisible }: { advancedVisible:
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [nextPath, setNextPath] = useState<string | null>(null);
+  const [taskMeta, setTaskMeta] = useState<{ taskId?: string; eventsUrl?: string } | null>(null);
 
   const selectedMode = useMemo(() => INTENT_MODES.find((m) => m.id === mode), [mode]);
 
@@ -67,6 +68,7 @@ export default function AtomV3Experience({ advancedVisible }: { advancedVisible:
     setError(null);
     setSuccess(null);
     setNextPath(null);
+    setTaskMeta(null);
 
     const payload = {
       mode,
@@ -98,17 +100,27 @@ export default function AtomV3Experience({ advancedVisible }: { advancedVisible:
         body: JSON.stringify(payload),
       });
 
-      const data = (await res.json()) as { error?: string; launchPath?: string; message?: string; workflow?: string };
+      const data = (await res.json()) as {
+        error?: string;
+        launchPath?: string;
+        message?: string;
+        workflow?: string;
+        taskId?: string;
+        eventsUrl?: string;
+      };
       if (!res.ok || !data.launchPath) {
         throw new Error(data.error ?? 'Unable to launch workflow right now');
       }
 
       setSuccess(data.message ?? 'Mode launched successfully.');
       setNextPath(data.launchPath);
+      setTaskMeta({ taskId: data.taskId, eventsUrl: data.eventsUrl });
       void trackEvent('mode_launched', {
         mode,
         workflow: data.workflow,
         launch_path: data.launchPath,
+        task_id: data.taskId,
+        events_url: data.eventsUrl,
         source: 'atom_v3_quickstart',
       });
     } catch (err) {
@@ -210,6 +222,9 @@ export default function AtomV3Experience({ advancedVisible }: { advancedVisible:
 
             {error && <p className="rounded-md border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-xs text-rose-200">{error}</p>}
             {success && <p className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-xs text-emerald-200">{success}</p>}
+            {taskMeta?.taskId && (
+              <p className="text-[11px] text-slate-400">Task: {taskMeta.taskId} {taskMeta.eventsUrl ? `· Events: ${taskMeta.eventsUrl}` : ''}</p>
+            )}
 
             <div className="flex flex-wrap items-center gap-2">
               <Button type="submit" disabled={isSubmitting} className="bg-cyan-600 text-white hover:bg-cyan-500">

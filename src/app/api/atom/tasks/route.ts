@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { runAtomOrchestratorStub, appendTaskEvent } from '@/lib/atom/orchestrator';
+import { runAtomOrchestratorStub, appendTaskEvent, runNucleuxOriginalDeepResearch } from '@/lib/atom/orchestrator';
 import { type CreateAtomTaskRequest, ATOM_TASK_MODES } from '@/lib/atom/types';
+import { isFeatureEnabled } from '@/lib/features/flags';
 
 export const runtime = 'nodejs';
 
@@ -62,7 +63,23 @@ export async function POST(request: NextRequest) {
       sourceSnapshot,
     });
 
-    void runAtomOrchestratorStub(supabase, task.id);
+    const workflow = typeof body.sourceSelection?.workflow === 'string' ? body.sourceSelection.workflow : '';
+    const isTrackADeepResearch =
+      workflow === 'nucleux-original-deep-research' && isFeatureEnabled('trackADeepResearchScaffold');
+
+    if (isTrackADeepResearch) {
+      void runNucleuxOriginalDeepResearch(supabase, task.id, {
+        workflow: 'nucleux-original-deep-research',
+        topic: String(body.sourceSelection?.topic ?? message.slice(0, 120)),
+        level: String(body.sourceSelection?.level ?? 'resident'),
+        goal: message,
+        includeReferences: Boolean(body.sourceSelection?.includeReferences),
+        clinicalContext:
+          typeof body.sourceSelection?.clinicalContext === 'string' ? body.sourceSelection.clinicalContext : undefined,
+      });
+    } else {
+      void runAtomOrchestratorStub(supabase, task.id);
+    }
 
     return NextResponse.json({
       taskId: task.id,

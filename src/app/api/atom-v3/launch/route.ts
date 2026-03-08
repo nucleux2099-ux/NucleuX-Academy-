@@ -9,11 +9,15 @@ import { createDeepResearchPipelineScaffold } from '@/lib/atom/deep-research/pip
 import { createGuidedDeepDiveSessionState } from '@/lib/atom/guided-deep-dive/session-state';
 import { createLearningCycleHooksScaffold } from '@/lib/atom/learning-cycle/hooks';
 import { isFeatureEnabled } from '@/lib/features/flags';
+import { createClient } from '@/lib/supabase/server';
+import { appendTaskEvent, runNucleuxOriginalDeepResearch } from '@/lib/atom/orchestrator';
 
 type LaunchResponse = {
   workflow: string;
   launchPath: string;
   message: string;
+  taskId?: string;
+  eventsUrl?: string;
   scaffolds?: {
     deepResearch?: Awaited<ReturnType<ReturnType<typeof createDeepResearchPipelineScaffold>['createRun']>>;
     guidedDeepDiveSession?: ReturnType<typeof createGuidedDeepDiveSessionState>;
@@ -50,20 +54,83 @@ const MODE_HANDLERS: Record<QuickStartMode, (payload: QuickStartFormInput) => Pr
       message: 'NucleuX Original workflow launched.',
     };
 
-    if (isFeatureEnabled('trackADeepResearchScaffold')) {
-      const deepResearchPipeline = createDeepResearchPipelineScaffold();
-      const deepResearch = await deepResearchPipeline.createRun({
-        topic: payload.topic,
-        learnerLevel: payload.level,
-        goal: payload.goal,
-        context: payload.advanced?.clinicalContext,
-      });
-
-      response.scaffolds = {
-        ...response.scaffolds,
-        deepResearch,
-      };
+    if (!isFeatureEnabled('trackADeepResearchScaffold')) {
+      return response;
     }
+
+    const supabase = await createClient();
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser();
+
+    if (authError || !user) {
+      throw new Error('Unauthorized');
+    }
+
+    const compiledMessage = [payload.goal, payload.topic, payload.advanced?.clinicalContext].filter(Boolean).join(' | ');
+
+    const sourceSnapshot = {
+      sourceSelection: {
+        level: payload.level,
+        preset: 'clinical-deep-dive',
+        bookIds: [],
+        workflow: 'nucleux-original-deep-research',
+        includeReferences: payload.advanced?.includeReferences ?? true,
+        topic: payload.topic,
+        clinicalContext: payload.advanced?.clinicalContext,
+      },
+      room: 'atom',
+    };
+
+    const { data: task, error: insertError } = await supabase
+      .from('atom_tasks')
+      .insert({
+        user_id: user.id,
+        status: 'queued',
+        mode: 'task',
+        title: compiledMessage.slice(0, 120),
+        input_message: compiledMessage,
+        source_snapshot: sourceSnapshot,
+      })
+      .select('id')
+      .single();
+
+    if (insertError || !task) {
+      throw new Error('Failed to create task');
+    }
+
+    await appendTaskEvent(supabase, task.id, 'task.created', {
+      mode: 'task',
+      message: compiledMessage,
+      sourceSnapshot,
+    });
+
+    void runNucleuxOriginalDeepResearch(supabase, task.id, {
+      workflow: 'nucleux-original-deep-research',
+      topic: payload.topic,
+      level: payload.level,
+      goal: payload.goal,
+      includeReferences: payload.advanced?.includeReferences ?? true,
+      clinicalContext: payload.advanced?.clinicalContext,
+    });
+
+    const deepResearchPipeline = createDeepResearchPipelineScaffold();
+    const deepResearch = await deepResearchPipeline.createRun({
+      topic: payload.topic,
+      learnerLevel: payload.level,
+      goal: payload.goal,
+      context: payload.advanced?.clinicalContext,
+    });
+
+    response.taskId = task.id;
+    response.eventsUrl = `/api/atom/tasks/${task.id}/events`;
+    response.launchPath = `/chat?mode=nucleux-original&taskId=${task.id}`;
+    response.message = 'NucleuX Original Deep Research launched.';
+    response.scaffolds = {
+      ...response.scaffolds,
+      deepResearch,
+    };
 
     return response;
   },

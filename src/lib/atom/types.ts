@@ -73,3 +73,89 @@ export type CreateAtomTaskRequest = {
 export type AtomTaskControlRequest = {
   action: AtomControlAction;
 };
+
+export type CitationSourceType = 'textbook' | 'guideline' | 'review' | 'trial' | 'other';
+
+export type DeepResearchCitation = {
+  id: string;
+  title: string;
+  sourceType: CitationSourceType;
+  editionOrYear?: string;
+  chapterOrSection?: string;
+  pageOrLocator?: string;
+  quote?: string;
+  evidenceLevelHint?: string;
+};
+
+export type DraftWithEvidence = {
+  answerMarkdown: string;
+  citations: DeepResearchCitation[];
+};
+
+export type ClaimStatus = 'PASS' | 'WARN' | 'FAIL';
+
+export type ClaimValidationResult = {
+  claimId: string;
+  claimText: string;
+  anchors: string[];
+  status: ClaimStatus;
+  issues: string[];
+  semanticSupport: number;
+  linkedCitationIds: string[];
+};
+
+export type ClaimValidationSummary = {
+  claims: ClaimValidationResult[];
+  claimCount: number;
+  passCount: number;
+  warnCount: number;
+  failCount: number;
+  coverage: number;
+  shouldBlockFinalize: boolean;
+};
+
+export type CitationScoreResult = {
+  citationId: string;
+  score: number;
+  breakdown: {
+    hierarchy: number;
+    recency: number;
+    locator: number;
+    quote: number;
+    consistency: number;
+    penalty: number;
+  };
+};
+
+export type ClaimEvidenceGrade = 'A' | 'B' | 'C' | 'D';
+
+export type ClaimEvidenceScore = {
+  claimId: string;
+  score: number;
+  grade: ClaimEvidenceGrade;
+  semanticSupport: number;
+  citationIds: string[];
+};
+
+export type EvidenceGradeSummary = {
+  evidenceScore: number;
+  evidenceGrade: ClaimEvidenceGrade;
+  coverage: number;
+  claimStats: {
+    pass: number;
+    warn: number;
+    fail: number;
+  };
+  citationScores: CitationScoreResult[];
+  claimScores: ClaimEvidenceScore[];
+};
+
+export type DeepResearchConfig = {
+  workflow: 'nucleux-original-deep-research';
+  topic: string;
+  level: string;
+  goal: string;
+  includeReferences: boolean;
+  clinicalContext?: string;
+  coverageThreshold?: number;
+};
