@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 import { deriveAtomThreadIdForScope, deriveAtomUserScopeKey } from '../src/lib/atom/user-scope';
+import { assessRemapConfidence } from '../src/lib/atom/scope-migration-audit';
 
 type AtomSessionRow = {
   id: string;
@@ -34,6 +35,7 @@ async function run() {
   const remapPlan = legacy.map((row) => {
     const scopeKey = deriveAtomUserScopeKey({ userId: row.user_id, channel: 'web', peerId: row.user_id });
     const canonicalThreadId = deriveAtomThreadIdForScope(scopeKey);
+    const confidence = assessRemapConfidence(row);
     return {
       sessionId: row.id,
       userId: row.user_id,
@@ -41,8 +43,12 @@ async function run() {
       legacyThreadId: row.thread_id,
       canonicalThreadId,
       updatedAt: row.updated_at,
+      confidence,
     };
   });
+
+  const safeAutoRemaps = remapPlan.filter((item) => item.confidence.bucket === 'safe-auto-remap');
+  const needsManualReview = remapPlan.filter((item) => item.confidence.bucket === 'needs-manual-review');
 
   const report = {
     generatedAt: new Date().toISOString(),
@@ -50,7 +56,14 @@ async function run() {
     legacyRows: legacy.length,
     plannedRemaps: remapPlan.length,
     applyMode: shouldApply,
-    remaps: remapPlan,
+    confidenceSummary: {
+      safeAutoRemaps: safeAutoRemaps.length,
+      needsManualReview: needsManualReview.length,
+    },
+    remaps: {
+      safeAutoRemap: safeAutoRemaps,
+      needsManualReview,
+    },
   };
 
   await fs.mkdir(path.join(process.cwd(), 'reports'), { recursive: true });
@@ -58,9 +71,32 @@ async function run() {
   const reportPath = path.join(process.cwd(), 'reports', `atom-scope-migration-audit-${stamp}.json`);
   await fs.writeFile(reportPath, JSON.stringify(report, null, 2), 'utf8');
 
+  const humanReportPath = path.join(process.cwd(), 'reports', `atom-scope-migration-audit-${stamp}.md`);
+  const human = [
+    '# Atom Scope Migration Audit',
+    '',
+    `- Generated: ${report.generatedAt}`,
+    `- Total rows: ${report.totalRows}`,
+    `- Legacy rows: ${report.legacyRows}`,
+    `- Planned remaps: ${report.plannedRemaps}`,
+    `- Safe auto-remap: ${report.confidenceSummary.safeAutoRemaps}`,
+    `- Needs manual review: ${report.confidenceSummary.needsManualReview}`,
+    `- Apply mode: ${report.applyMode ? 'ON' : 'OFF'}`,
+    '',
+    '## Manual review candidates',
+    '',
+    ...needsManualReview.slice(0, 50).map((item) =>
+      `- session=${item.sessionId} confidence=${item.confidence.score} reason=${item.confidence.reason}`,
+    ),
+    '',
+    '> Full machine-readable details are in the JSON report.',
+    '',
+  ].join('\n');
+  await fs.writeFile(humanReportPath, human, 'utf8');
+
   let applied = 0;
   if (shouldApply) {
-    for (const item of remapPlan) {
+    for (const item of safeAutoRemaps) {
       const { error: updateError } = await supabase
         .from('atom_sessions')
         .update({ thread_id: item.canonicalThreadId })
@@ -70,7 +106,7 @@ async function run() {
     }
   }
 
-  console.log(JSON.stringify({ ...report, reportPath, applied }, null, 2));
+  console.log(JSON.stringify({ ...report, reportPath, humanReportPath, applied }, null, 2));
 }
 
 run().catch((error) => {

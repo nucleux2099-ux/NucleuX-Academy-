@@ -31,6 +31,30 @@ function chunkLines(lines: string[], size = 14): Array<{ text: string; startLine
   return chunks;
 }
 
+const INSTRUCTION_PATTERNS: RegExp[] = [
+  /^\s*(system|assistant|developer)\s*:/i,
+  /^\s*(ignore|disregard|bypass|override|forget)\b/i,
+  /^\s*(follow|obey)\s+(these|this|my)\s+instructions?\b/i,
+  /^\s*(reveal|exfiltrate|leak|print)\b.*\b(secret|token|key|prompt|memory)\b/i,
+  /^\s*<\/?(system|assistant|developer|tool)\b/i,
+];
+
+export function sanitizeMemorySnippetForPrompt(input: string): string {
+  const sanitizedLines = input.split('\n').map((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return line;
+
+    const matchesInstruction = INSTRUCTION_PATTERNS.some((pattern) => pattern.test(trimmed));
+    if (matchesInstruction) {
+      return `[sanitized instruction-like memory line removed] ${trimmed.replace(/`/g, "'")}`;
+    }
+
+    return line;
+  });
+
+  return sanitizedLines.join('\n');
+}
+
 class KeywordMemoryRetrievalProvider implements MemoryRetrievalProvider {
   async retrieve(scopeKey: string, query: string, limit: number): Promise<MemorySnippet[]> {
     const files = await readAtomMemoryFiles(scopeKey);
@@ -84,7 +108,8 @@ export function formatMemoryContextForPrompt(snippets: MemorySnippet[], maxChars
 
   for (const snip of deterministic) {
     const cite = `[${snip.sourceFile}:${snip.startLine}-${snip.endLine}]`;
-    const block = `\n${cite}\n${snip.text}\n`;
+    const sanitized = sanitizeMemorySnippetForPrompt(snip.text);
+    const block = `\n${cite}\n${sanitized}\n`;
     if (used + block.length > maxChars) break;
     lines.push(block);
     used += block.length;
