@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { getAtomSession } from '@/lib/atom/session-store';
-import { deriveAtomUserScopeKey } from '@/lib/atom/user-scope';
+import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 
 export async function POST(request: NextRequest, context: { params: Promise<{ sessionId: string }> }) {
   const supabase = await createClient();
@@ -11,13 +11,28 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   } = await supabase.auth.getUser();
   if (authError || !user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
-  const body = (await request.json().catch(() => ({}))) as { accountId?: string; channel?: string; peer?: string };
-  const scopeKey = deriveAtomUserScopeKey({
-    userId: user.id,
-    accountId: body.accountId ?? request.headers.get('x-atom-account-id'),
-    channel: body.channel ?? request.headers.get('x-atom-channel') ?? 'web',
-    peerId: body.peer ?? request.headers.get('x-atom-peer') ?? user.id,
-  });
+  const body = (await request.json().catch(() => ({}))) as {
+    accountId?: string;
+    channel?: string;
+    peer?: string;
+    scope?: { accountId?: string; channel?: string; peer?: string };
+  };
+  let resolvedScope;
+  try {
+    resolvedScope = resolveAtomScopeKeyForRequest({
+      request,
+      userId: user.id,
+      envelope: body.scope,
+      fallback: {
+        accountId: body.accountId,
+        channel: body.channel,
+        peer: body.peer,
+      },
+    });
+  } catch (error) {
+    return NextResponse.json({ error: (error as Error).message }, { status: 400 });
+  }
+  const scopeKey = resolvedScope.scopeKey;
 
   const { sessionId } = await context.params;
   const session = await getAtomSession(supabase, user.id, sessionId, scopeKey);
@@ -41,6 +56,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     },
     body: JSON.stringify({
       context: session.room_id === 'atom' ? 'surgery' : session.room_id,
+      scope: resolvedScope.envelope,
       message: continuationTopic
         ? `Continue exactly from where the last answer stopped about: ${continuationTopic}. Stay on same topic and format.`
         : 'Continue exactly from where the last answer stopped. Stay on same topic and format.',

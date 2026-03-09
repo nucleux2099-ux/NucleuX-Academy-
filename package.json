@@ -16,7 +16,9 @@
     "validate:cbme": "tsx scripts/validate-cbme-links.ts",
     "atom:sources:sync": "tsx scripts/sync-atom-source-availability.ts",
     "atom:sources:sync-vyasa": "tsx scripts/sync-vyasa-atom-sources.ts",
-    "atom:sources:validate-sync-candidates": "tsx scripts/validate-vyasa-sync-candidates.ts"
+    "atom:sources:validate-sync-candidates": "tsx scripts/validate-vyasa-sync-candidates.ts",
+    "atom:scope:audit": "tsx scripts/atom-scope-migration-audit.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",

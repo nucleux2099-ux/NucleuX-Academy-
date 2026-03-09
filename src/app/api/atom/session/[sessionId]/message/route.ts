@@ -6,7 +6,9 @@ import {
   getRecentSessionMessages,
   updateSessionCursor,
 } from '@/lib/atom/session-store';
-import { deriveAtomUserScopeKey } from '@/lib/atom/user-scope';
+import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
+import { appendAtomMemory, ensureAtomMemoryStructure } from '@/lib/atom/memory-store';
+import { formatMemoryContextForPrompt, retrieveScopedMemoryContext } from '@/lib/atom/memory-retrieval';
 
 function extractArtifactsFromAssistant(text: string) {
   const artifacts: Array<{ title: string; kind: string; content: string }> = [];
@@ -87,14 +89,30 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   if (authError || !user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const { sessionId } = await context.params;
-  const body = (await request.json()) as { message?: string; context?: string; accountId?: string; channel?: string; peer?: string };
+  const body = (await request.json()) as {
+    message?: string;
+    context?: string;
+    accountId?: string;
+    channel?: string;
+    peer?: string;
+    scope?: { accountId?: string; channel?: string; peer?: string };
+  };
 
-  const scopeKey = deriveAtomUserScopeKey({
-    userId: user.id,
-    accountId: body.accountId ?? request.headers.get('x-atom-account-id'),
-    channel: body.channel ?? request.headers.get('x-atom-channel') ?? 'web',
-    peerId: body.peer ?? request.headers.get('x-atom-peer') ?? user.id,
-  });
+  let scopeKey: string;
+  try {
+    scopeKey = resolveAtomScopeKeyForRequest({
+      request,
+      userId: user.id,
+      envelope: body.scope,
+      fallback: {
+        accountId: body.accountId,
+        channel: body.channel,
+        peer: body.peer,
+      },
+    }).scopeKey;
+  } catch (error) {
+    return NextResponse.json({ error: (error as Error).message }, { status: 400 });
+  }
 
   const session = await getAtomSession(supabase, user.id, sessionId, scopeKey);
   if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
@@ -111,12 +129,25 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
         ? String(session.continuation_cursor.lastTopic)
         : null;
 
+  await ensureAtomMemoryStructure(scopeKey);
   await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'user', userText);
+  await appendAtomMemory({ scopeKey, section: 'User message', content: userText });
 
   const history = await getRecentSessionMessages(supabase, user.id, scopeKey, sessionId, 30);
-  const messages = history
+  const baseMessages = history
     .filter((m) => m.role === 'user' || m.role === 'assistant')
     .map((m) => ({ role: m.role, content: m.content_md }));
+
+  const retrievalSnippets = await retrieveScopedMemoryContext({
+    scopeKey,
+    query: previousTopic ?? userText,
+    limit: 6,
+  });
+  const memoryPrompt = formatMemoryContextForPrompt(retrievalSnippets, 5000);
+
+  const messages = memoryPrompt
+    ? ([{ role: 'user', content: `Use this scoped memory context (same user scope only):\n${memoryPrompt}` }, ...baseMessages])
+    : baseMessages;
 
   const assistant = await runChat(request, {
     context: body.context ?? 'surgery',
@@ -126,7 +157,16 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   });
 
   const artifacts = extractArtifactsFromAssistant(assistant);
-  await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'assistant', assistant, { artifacts });
+  await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'assistant', assistant, {
+    artifacts,
+    memoryContext: retrievalSnippets.map((snippet) => ({
+      sourceFile: snippet.sourceFile,
+      startLine: snippet.startLine,
+      endLine: snippet.endLine,
+      score: snippet.score,
+    })),
+  });
+  await appendAtomMemory({ scopeKey, section: 'Assistant response', content: assistant });
   const lastTopic = isContinueLike && previousTopic ? previousTopic : userText;
 
   await updateSessionCursor(supabase, user.id, scopeKey, sessionId, {

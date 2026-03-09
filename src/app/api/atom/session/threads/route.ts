@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { listUserAtomSessions } from '@/lib/atom/session-store';
-import { deriveAtomUserScopeKey, deriveAtomThreadIdForScope } from '@/lib/atom/user-scope';
+import { deriveAtomThreadIdForScope } from '@/lib/atom/user-scope';
+import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 
 export async function GET(request: Request) {
   const supabase = await createClient();
@@ -13,12 +14,20 @@ export async function GET(request: Request) {
   if (authError || !user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const url = new URL(request.url);
-  const scopeKey = deriveAtomUserScopeKey({
-    userId: user.id,
-    accountId: url.searchParams.get('accountId') ?? request.headers.get('x-atom-account-id'),
-    channel: url.searchParams.get('channel') ?? request.headers.get('x-atom-channel') ?? 'web',
-    peerId: url.searchParams.get('peer') ?? request.headers.get('x-atom-peer') ?? user.id,
-  });
+  let scopeKey: string;
+  try {
+    scopeKey = resolveAtomScopeKeyForRequest({
+      request,
+      userId: user.id,
+      envelope: {
+        accountId: url.searchParams.get('accountId') ?? undefined,
+        channel: url.searchParams.get('channel') ?? undefined,
+        peer: url.searchParams.get('peer') ?? undefined,
+      },
+    }).scopeKey;
+  } catch (error) {
+    return NextResponse.json({ error: (error as Error).message }, { status: 400 });
+  }
 
   const canonicalThreadId = deriveAtomThreadIdForScope(scopeKey);
   const sessions = await listUserAtomSessions(supabase, user.id, scopeKey, 24);
