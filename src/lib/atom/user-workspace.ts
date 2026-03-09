@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { sanitizeScopeKeyForPath } from '@/lib/atom/user-scope';
 
 type BootstrapKind = 'AGENTS' | 'SOUL' | 'TOOLS' | 'USER' | 'IDENTITY' | 'HEARTBEAT' | 'BOOTSTRAP';
 
@@ -27,17 +28,47 @@ export type AtomWorkspaceBootstrapResult = {
   files: Array<{ kind: BootstrapKind; path: string; created: boolean }>;
 };
 
+function resolveBaseRoot() {
+  return process.env.ATOM_USER_WORKSPACES_ROOT ?? path.join(process.cwd(), '.atom-userspaces');
+}
+
+function safeWorkspaceRoot(scopeKey: string) {
+  const baseRoot = resolveBaseRoot();
+  const scopedDir = sanitizeScopeKeyForPath(scopeKey);
+  const root = path.resolve(baseRoot, scopedDir);
+  const baseResolved = path.resolve(baseRoot);
+  if (!root.startsWith(`${baseResolved}${path.sep}`) && root !== baseResolved) {
+    throw new Error('Unsafe workspace scope path');
+  }
+  return root;
+}
+
 export function getAtomWorkspaceRoot(scopeKey: string) {
-  const baseRoot = process.env.ATOM_USER_WORKSPACES_ROOT ?? path.join(process.cwd(), '.atom-userspaces');
-  return path.join(baseRoot, scopeKey);
+  return safeWorkspaceRoot(scopeKey);
 }
 
 function defaultTemplate(kind: BootstrapKind, input: AtomWorkspaceBootstrapInput): string {
-  if (kind === 'HEARTBEAT') {
-    return `# HEARTBEAT.md\n\n- scope: ${input.scopeKey}\n- user: ${input.userId}\n- room: ${input.roomId ?? 'atom'}\n\nLast bootstrap: ${new Date().toISOString()}\n`;
-  }
+  const roomId = input.roomId ?? 'atom';
+  const nowIso = new Date().toISOString();
 
-  return `# ${kind}.md\n\nScope: ${input.scopeKey}\nUser: ${input.userId}\nRoom: ${input.roomId ?? 'atom'}\n\n> TODO: enrich this bootstrap file with personalized runtime context.\n`;
+  switch (kind) {
+    case 'AGENTS':
+      return `# AGENTS.md\n\n## Scope\n- scope_key: ${input.scopeKey}\n- user_id: ${input.userId}\n- room_id: ${roomId}\n\n## Working Rules\n- Keep this workspace user-isolated.\n- Do not read/write files outside this scope without explicit approval.\n- Store task notes and outputs under this directory.\n`;
+    case 'SOUL':
+      return `# SOUL.md\n\nI am ATOM for scope \`${input.scopeKey}\`.\n\n- Keep responses concise, factual, and supportive.\n- Use selected sources and cite uncertainty.\n`;
+    case 'TOOLS':
+      return `# TOOLS.md\n\nLocal notes for this scoped workspace.\n\n- Add source-specific shortcuts here.\n- Keep secrets out of committed files.\n`;
+    case 'USER':
+      return `# USER.md\n\n- user_id: ${input.userId}\n- scope_key: ${input.scopeKey}\n- room: ${roomId}\n`;
+    case 'IDENTITY':
+      return `# IDENTITY.md\n\n- assistant: ATOM\n- scope_key: ${input.scopeKey}\n- initialized_at: ${nowIso}\n`;
+    case 'HEARTBEAT':
+      return `# HEARTBEAT.md\n\n- scope_key: ${input.scopeKey}\n- user_id: ${input.userId}\n- room_id: ${roomId}\n- initialized_at: ${nowIso}\n\nStatus: ready\n`;
+    case 'BOOTSTRAP':
+      return `# BOOTSTRAP.md\n\nOptional bootstrap strategy file for scope \`${input.scopeKey}\`.\n\n- capture onboarding notes\n- capture source curation defaults\n`;
+    default:
+      return `# ${kind}.md\n`;
+  }
 }
 
 async function ensureFile(filePath: string, content: string): Promise<boolean> {
@@ -45,7 +76,7 @@ async function ensureFile(filePath: string, content: string): Promise<boolean> {
     await fs.access(filePath);
     return false;
   } catch {
-    await fs.writeFile(filePath, content, 'utf8');
+    await fs.writeFile(filePath, content, { encoding: 'utf8', flag: 'wx' });
     return true;
   }
 }

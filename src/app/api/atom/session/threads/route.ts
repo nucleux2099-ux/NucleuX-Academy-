@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { listUserAtomSessions } from '@/lib/atom/session-store';
-import { deriveAtomThreadIdForScope, deriveAtomUserScopeKey } from '@/lib/atom/user-scope';
+import { deriveAtomUserScopeKey, deriveAtomThreadIdForScope } from '@/lib/atom/user-scope';
 
 export async function GET(request: Request) {
   const supabase = await createClient();
@@ -17,22 +17,23 @@ export async function GET(request: Request) {
     userId: user.id,
     accountId: url.searchParams.get('accountId') ?? request.headers.get('x-atom-account-id'),
     channel: url.searchParams.get('channel') ?? request.headers.get('x-atom-channel') ?? 'web',
-    peer: url.searchParams.get('peer') ?? request.headers.get('x-atom-peer') ?? user.id,
+    peerId: url.searchParams.get('peer') ?? request.headers.get('x-atom-peer') ?? user.id,
   });
 
   const canonicalThreadId = deriveAtomThreadIdForScope(scopeKey);
-  const sessions = await listUserAtomSessions(supabase, user.id, 24);
-  const filtered = sessions.filter((session) => session.thread_id === canonicalThreadId);
+  const sessions = await listUserAtomSessions(supabase, user.id, scopeKey, 24);
 
   return NextResponse.json({
     scopeKey,
-    threads: filtered.map((session) => ({
-      id: session.thread_id,
-      sessionId: session.id,
-      roomId: session.room_id,
-      status: session.status,
-      updatedAt: session.updated_at ?? session.created_at ?? new Date().toISOString(),
-      title: (session.last_user_query?.trim() || `${session.room_id.toUpperCase()} thread`).slice(0, 80),
-    })),
+    threads: sessions
+      .filter((session) => session.thread_id === canonicalThreadId)
+      .map((session) => ({
+        id: session.thread_id,
+        sessionId: session.id,
+        roomId: session.room_id,
+        status: session.status,
+        updatedAt: session.updated_at ?? session.created_at ?? new Date().toISOString(),
+        title: (session.last_user_query?.trim() || `${session.room_id.toUpperCase()} thread`).slice(0, 80),
+      })),
   });
 }

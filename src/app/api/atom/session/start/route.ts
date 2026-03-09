@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     userId: user.id,
     accountId: body.accountId ?? request.headers.get('x-atom-account-id'),
     channel: body.channel ?? request.headers.get('x-atom-channel') ?? 'web',
-    peer: body.peer ?? request.headers.get('x-atom-peer') ?? user.id,
+    peerId: body.peer ?? request.headers.get('x-atom-peer') ?? user.id,
   });
 
   await ensureAtomUserWorkspaceBootstrap({

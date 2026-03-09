@@ -6,6 +6,7 @@ import {
   getRecentSessionMessages,
   updateSessionCursor,
 } from '@/lib/atom/session-store';
+import { deriveAtomUserScopeKey } from '@/lib/atom/user-scope';
 
 function extractArtifactsFromAssistant(text: string) {
   const artifacts: Array<{ title: string; kind: string; content: string }> = [];
@@ -86,10 +87,18 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   if (authError || !user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
   const { sessionId } = await context.params;
-  const session = await getAtomSession(supabase, user.id, sessionId);
+  const body = (await request.json()) as { message?: string; context?: string; accountId?: string; channel?: string; peer?: string };
+
+  const scopeKey = deriveAtomUserScopeKey({
+    userId: user.id,
+    accountId: body.accountId ?? request.headers.get('x-atom-account-id'),
+    channel: body.channel ?? request.headers.get('x-atom-channel') ?? 'web',
+    peerId: body.peer ?? request.headers.get('x-atom-peer') ?? user.id,
+  });
+
+  const session = await getAtomSession(supabase, user.id, sessionId, scopeKey);
   if (!session) return NextResponse.json({ error: 'Session not found' }, { status: 404 });
 
-  const body = (await request.json()) as { message?: string; context?: string };
   const userText = body.message?.trim();
   if (!userText) return NextResponse.json({ error: 'message required' }, { status: 400 });
 
@@ -102,9 +111,9 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
         ? String(session.continuation_cursor.lastTopic)
         : null;
 
-  await appendSessionMessage(supabase, sessionId, 'user', userText);
+  await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'user', userText);
 
-  const history = await getRecentSessionMessages(supabase, sessionId, 30);
+  const history = await getRecentSessionMessages(supabase, user.id, scopeKey, sessionId, 30);
   const messages = history
     .filter((m) => m.role === 'user' || m.role === 'assistant')
     .map((m) => ({ role: m.role, content: m.content_md }));
@@ -117,10 +126,10 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   });
 
   const artifacts = extractArtifactsFromAssistant(assistant);
-  await appendSessionMessage(supabase, sessionId, 'assistant', assistant, { artifacts });
+  await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'assistant', assistant, { artifacts });
   const lastTopic = isContinueLike && previousTopic ? previousTopic : userText;
 
-  await updateSessionCursor(supabase, sessionId, {
+  await updateSessionCursor(supabase, user.id, scopeKey, sessionId, {
     lastUserQuery: lastTopic,
     continuationCursor: {
       lastTurnAt: new Date().toISOString(),
@@ -129,5 +138,5 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     },
   });
 
-  return NextResponse.json({ sessionId, assistant, artifacts });
+  return NextResponse.json({ sessionId, assistant, artifacts, scopeKey });
 }
