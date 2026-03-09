@@ -1,0 +1,243 @@
+---
+title: "Atom Openclaw Distilled Index"
+summary: "Distilled OpenClaw reference index used by ATOM docs."
+audience: "engineer"
+status: "reference"
+source_path: "docs/reference/openclaw-atom-distilled/ATOM_OPENCLAW_DISTILLED_INDEX.md"
+last_verified_at: "2026-03-10T01:17:24+05:30"
+phase_tags: "A/B/C/D/E"
+llm_handover_relevance: "high"
+---
+
+# OpenClaw → ATOM Distilled Reference Index
+
+Generated: 2026-03-08
+
+Source snapshot: `/Users/adityachandrabhatla/nucleux-academy/docs/reference/openclaw-site-scrape-2026-03-08`
+
+Total unique selected pages: **101**
+
+## Session + Memory + Compaction (16)
+
+- https://docs.openclaw.ai/cli/sessions  
+  - Local: `pages/cli/sessions.html`
+- https://docs.openclaw.ai/concepts/compaction  
+  - Local: `pages/concepts/compaction.html`
+- https://docs.openclaw.ai/concepts/context  
+  - Local: `pages/concepts/context.html`
+- https://docs.openclaw.ai/concepts/memory  
+  - Local: `pages/concepts/memory.html`
+- https://docs.openclaw.ai/concepts/session  
+  - Local: `pages/concepts/session.html`
+- https://docs.openclaw.ai/concepts/session-pruning  
+  - Local: `pages/concepts/session-pruning.html`
+- https://docs.openclaw.ai/concepts/session-tool  
+  - Local: `pages/concepts/session-tool.html`
+- https://docs.openclaw.ai/reference/session-management-compaction  
+  - Local: `pages/reference/session-management-compaction.html`
+- https://docs.openclaw.ai/zh-CN/cli/sessions  
+  - Local: `pages/zh-CN/cli/sessions.html`
+- https://docs.openclaw.ai/zh-CN/concepts/compaction  
+  - Local: `pages/zh-CN/concepts/compaction.html`
+- https://docs.openclaw.ai/zh-CN/concepts/context  
+  - Local: `pages/zh-CN/concepts/context.html`
+- https://docs.openclaw.ai/zh-CN/concepts/memory  
+  - Local: `pages/zh-CN/concepts/memory.html`
+- https://docs.openclaw.ai/zh-CN/concepts/session  
+  - Local: `pages/zh-CN/concepts/session.html`
+- https://docs.openclaw.ai/zh-CN/concepts/session-pruning  
+  - Local: `pages/zh-CN/concepts/session-pruning.html`
+- https://docs.openclaw.ai/zh-CN/concepts/session-tool  
+  - Local: `pages/zh-CN/concepts/session-tool.html`
+- https://docs.openclaw.ai/zh-CN/reference/session-management-compaction  
+  - Local: `pages/zh-CN/reference/session-management-compaction.html`
+
+## Streaming + UX Delivery (4)
+
+- https://docs.openclaw.ai/concepts/streaming  
+  - Local: `pages/concepts/streaming.html`
+- https://docs.openclaw.ai/concepts/typing-indicators  
+  - Local: `pages/concepts/typing-indicators.html`
+- https://docs.openclaw.ai/zh-CN/concepts/streaming  
+  - Local: `pages/zh-CN/concepts/streaming.html`
+- https://docs.openclaw.ai/zh-CN/concepts/typing-indicators  
+  - Local: `pages/zh-CN/concepts/typing-indicators.html`
+
+## Models + Auth + Provider Routing (60)
+
+- https://docs.openclaw.ai/auth-credential-semantics  
+  - Local: `pages/auth-credential-semantics.html`
+- https://docs.openclaw.ai/automation/auth-monitoring  
+  - Local: `pages/automation/auth-monitoring.html`
+- https://docs.openclaw.ai/concepts/model-failover  
+  - Local: `pages/concepts/model-failover.html`
+- https://docs.openclaw.ai/concepts/model-providers  
+  - Local: `pages/concepts/model-providers.html`
+- https://docs.openclaw.ai/concepts/models  
+  - Local: `pages/concepts/models.html`
+- https://docs.openclaw.ai/gateway/authentication  
+  - Local: `pages/gateway/authentication.html`
+- https://docs.openclaw.ai/gateway/configuration-reference  
+  - Local: `pages/gateway/configuration-reference.html`
+- https://docs.openclaw.ai/providers/anthropic  
+  - Local: `pages/providers/anthropic.html`
+- https://docs.openclaw.ai/providers/bedrock  
+  - Local: `pages/providers/bedrock.html`
+- https://docs.openclaw.ai/providers/claude-max-api-proxy  
+  - Local: `pages/providers/claude-max-api-proxy.html`
+- https://docs.openclaw.ai/providers/cloudflare-ai-gateway  
+  - Local: `pages/providers/cloudflare-ai-gateway.html`
+- https://docs.openclaw.ai/providers/deepgram  
+  - Local: `pages/providers/deepgram.html`
+- https://docs.openclaw.ai/providers/github-copilot  
+  - Local: `pages/providers/github-copilot.html`
+- https://docs.openclaw.ai/providers/glm  
+  - Local: `pages/providers/glm.html`
+- https://docs.openclaw.ai/providers/huggingface  
+  - Local: `pages/providers/huggingface.html`
+- https://docs.openclaw.ai/providers/kilocode  
+  - Local: `pages/providers/kilocode.html`
+- https://docs.openclaw.ai/providers/litellm  
+  - Local: `pages/providers/litellm.html`
+- https://docs.openclaw.ai/providers/minimax  
+  - Local: `pages/providers/minimax.html`
+- https://docs.openclaw.ai/providers/mistral  
+  - Local: `pages/providers/mistral.html`
+- https://docs.openclaw.ai/providers/models  
+  - Local: `pages/providers/models.html`
+- https://docs.openclaw.ai/providers/moonshot  
+  - Local: `pages/providers/moonshot.html`
+- https://docs.openclaw.ai/providers/nvidia  
+  - Local: `pages/providers/nvidia.html`
+- https://docs.openclaw.ai/providers/ollama  
+  - Local: `pages/providers/ollama.html`
+- https://docs.openclaw.ai/providers/openai  
+  - Local: `pages/providers/openai.html`
+- https://docs.openclaw.ai/providers/opencode  
+  - Local: `pages/providers/opencode.html`
+- https://docs.openclaw.ai/providers/openrouter  
+  - Local: `pages/providers/openrouter.html`
+- https://docs.openclaw.ai/providers/qianfan  
+  - Local: `pages/providers/qianfan.html`
+- https://docs.openclaw.ai/providers/qwen  
+  - Local: `pages/providers/qwen.html`
+- https://docs.openclaw.ai/providers/synthetic  
+  - Local: `pages/providers/synthetic.html`
+- https://docs.openclaw.ai/providers/together  
+  - Local: `pages/providers/together.html`
+- https://docs.openclaw.ai/providers/venice  
+  - Local: `pages/providers/venice.html`
+- https://docs.openclaw.ai/providers/vercel-ai-gateway  
+  - Local: `pages/providers/vercel-ai-gateway.html`
+- https://docs.openclaw.ai/providers/vllm  
+  - Local: `pages/providers/vllm.html`
+- https://docs.openclaw.ai/providers/xiaomi  
+  - Local: `pages/providers/xiaomi.html`
+- https://docs.openclaw.ai/providers/zai  
+  - Local: `pages/providers/zai.html`
+- https://docs.openclaw.ai/zh-CN/automation/auth-monitoring  
+  - Local: `pages/zh-CN/automation/auth-monitoring.html`
+- https://docs.openclaw.ai/zh-CN/concepts/model-failover  
+  - Local: `pages/zh-CN/concepts/model-failover.html`
+- https://docs.openclaw.ai/zh-CN/concepts/model-providers  
+  - Local: `pages/zh-CN/concepts/model-providers.html`
+- https://docs.openclaw.ai/zh-CN/concepts/models  
+  - Local: `pages/zh-CN/concepts/models.html`
+- https://docs.openclaw.ai/zh-CN/gateway/authentication  
+  - Local: `pages/zh-CN/gateway/authentication.html`
+- https://docs.openclaw.ai/zh-CN/providers/anthropic  
+  - Local: `pages/zh-CN/providers/anthropic.html`
+- https://docs.openclaw.ai/zh-CN/providers/bedrock  
+  - Local: `pages/zh-CN/providers/bedrock.html`
+- https://docs.openclaw.ai/zh-CN/providers/claude-max-api-proxy  
+  - Local: `pages/zh-CN/providers/claude-max-api-proxy.html`
+- https://docs.openclaw.ai/zh-CN/providers/deepgram  
+  - Local: `pages/zh-CN/providers/deepgram.html`
+- https://docs.openclaw.ai/zh-CN/providers/github-copilot  
+  - Local: `pages/zh-CN/providers/github-copilot.html`
+- https://docs.openclaw.ai/zh-CN/providers/glm  
+  - Local: `pages/zh-CN/providers/glm.html`
+- https://docs.openclaw.ai/zh-CN/providers/minimax  
+  - Local: `pages/zh-CN/providers/minimax.html`
+- https://docs.openclaw.ai/zh-CN/providers/models  
+  - Local: `pages/zh-CN/providers/models.html`
+- https://docs.openclaw.ai/zh-CN/providers/moonshot  
+  - Local: `pages/zh-CN/providers/moonshot.html`
+- https://docs.openclaw.ai/zh-CN/providers/ollama  
+  - Local: `pages/zh-CN/providers/ollama.html`
+- https://docs.openclaw.ai/zh-CN/providers/openai  
+  - Local: `pages/zh-CN/providers/openai.html`
+- https://docs.openclaw.ai/zh-CN/providers/opencode  
+  - Local: `pages/zh-CN/providers/opencode.html`
+- https://docs.openclaw.ai/zh-CN/providers/openrouter  
+  - Local: `pages/zh-CN/providers/openrouter.html`
+- https://docs.openclaw.ai/zh-CN/providers/qianfan  
+  - Local: `pages/zh-CN/providers/qianfan.html`
+- https://docs.openclaw.ai/zh-CN/providers/qwen  
+  - Local: `pages/zh-CN/providers/qwen.html`
+- https://docs.openclaw.ai/zh-CN/providers/synthetic  
+  - Local: `pages/zh-CN/providers/synthetic.html`
+- https://docs.openclaw.ai/zh-CN/providers/venice  
+  - Local: `pages/zh-CN/providers/venice.html`
+- https://docs.openclaw.ai/zh-CN/providers/vercel-ai-gateway  
+  - Local: `pages/zh-CN/providers/vercel-ai-gateway.html`
+- https://docs.openclaw.ai/zh-CN/providers/xiaomi  
+  - Local: `pages/zh-CN/providers/xiaomi.html`
+- https://docs.openclaw.ai/zh-CN/providers/zai  
+  - Local: `pages/zh-CN/providers/zai.html`
+
+## Automation + Orchestration (23)
+
+- https://docs.openclaw.ai/automation/auth-monitoring  
+  - Local: `pages/automation/auth-monitoring.html`
+- https://docs.openclaw.ai/automation/cron-jobs  
+  - Local: `pages/automation/cron-jobs.html`
+- https://docs.openclaw.ai/automation/cron-vs-heartbeat  
+  - Local: `pages/automation/cron-vs-heartbeat.html`
+- https://docs.openclaw.ai/automation/gmail-pubsub  
+  - Local: `pages/automation/gmail-pubsub.html`
+- https://docs.openclaw.ai/automation/hooks  
+  - Local: `pages/automation/hooks.html`
+- https://docs.openclaw.ai/automation/poll  
+  - Local: `pages/automation/poll.html`
+- https://docs.openclaw.ai/automation/troubleshooting  
+  - Local: `pages/automation/troubleshooting.html`
+- https://docs.openclaw.ai/automation/webhook  
+  - Local: `pages/automation/webhook.html`
+- https://docs.openclaw.ai/cli/cron  
+  - Local: `pages/cli/cron.html`
+- https://docs.openclaw.ai/concepts/multi-agent  
+  - Local: `pages/concepts/multi-agent.html`
+- https://docs.openclaw.ai/tools/acp-agents  
+  - Local: `pages/tools/acp-agents.html`
+- https://docs.openclaw.ai/tools/subagents  
+  - Local: `pages/tools/subagents.html`
+- https://docs.openclaw.ai/zh-CN/automation/auth-monitoring  
+  - Local: `pages/zh-CN/automation/auth-monitoring.html`
+- https://docs.openclaw.ai/zh-CN/automation/cron-jobs  
+  - Local: `pages/zh-CN/automation/cron-jobs.html`
+- https://docs.openclaw.ai/zh-CN/automation/cron-vs-heartbeat  
+  - Local: `pages/zh-CN/automation/cron-vs-heartbeat.html`
+- https://docs.openclaw.ai/zh-CN/automation/gmail-pubsub  
+  - Local: `pages/zh-CN/automation/gmail-pubsub.html`
+- https://docs.openclaw.ai/zh-CN/automation/hooks  
+  - Local: `pages/zh-CN/automation/hooks.html`
+- https://docs.openclaw.ai/zh-CN/automation/poll  
+  - Local: `pages/zh-CN/automation/poll.html`
+- https://docs.openclaw.ai/zh-CN/automation/troubleshooting  
+  - Local: `pages/zh-CN/automation/troubleshooting.html`
+- https://docs.openclaw.ai/zh-CN/automation/webhook  
+  - Local: `pages/zh-CN/automation/webhook.html`
+- https://docs.openclaw.ai/zh-CN/cli/cron  
+  - Local: `pages/zh-CN/cli/cron.html`
+- https://docs.openclaw.ai/zh-CN/concepts/multi-agent  
+  - Local: `pages/zh-CN/concepts/multi-agent.html`
+- https://docs.openclaw.ai/zh-CN/tools/subagents  
+  - Local: `pages/zh-CN/tools/subagents.html`
+
+## Suggested ATOM Implementation Mapping
+
+- Session continuity layer: use Session + Memory + Compaction group as canonical reference.
+- Response delivery/partial updates: use Streaming group for chunking + preview semantics.
+- Model fallback/auth safety: use Models/Auth group for provider and key-resolution policies.
+- Overnight autopilot control-plane: use Automation/Orchestration group for cron/sub-agent patterns.

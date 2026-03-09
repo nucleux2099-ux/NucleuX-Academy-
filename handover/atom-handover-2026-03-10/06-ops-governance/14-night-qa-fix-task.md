@@ -1,0 +1,63 @@
+---
+title: "14 Night Qa Fix Task"
+summary: "Night QA tasking reference from vnext."
+audience: "ops"
+status: "reference"
+source_path: "docs/specs/atom-vnext/14-night-qa-fix-task.md"
+last_verified_at: "2026-03-10T01:17:24+05:30"
+phase_tags: "E"
+llm_handover_relevance: "medium"
+---
+
+# Night QA Fix Task — Build Warnings Cleanup (2026-03-09)
+
+## Context
+Night QA build is green, but Next 16 emitted 9 Turbopack warnings about overly broad file patterns under `content/**` in:
+- `src/app/api/library/content/route.ts`
+- `src/lib/content/loader.ts`
+
+These patterns match 10k–16k files and can degrade build/runtime performance.
+
+## Task ID
+VN2-QA-14
+
+## Objective
+Constrain file-system scanning in content resolution paths so Turbopack no longer reports broad dynamic patterns.
+
+## Scope
+1. Refactor loader/route path resolution to use deterministic subject/subspecialty maps (avoid recursive broad joins in hot paths).
+2. Add a tiny perf-safe helper that only probes known directories from index metadata.
+3. Re-run `npm run build` and confirm warning count drops from 9 to 0 (or document residual warnings with rationale).
+
+## Acceptance Criteria
+- Build passes.
+- Turbopack broad-pattern warnings removed or materially reduced with documented justification.
+- No regressions in library route resolution (`/library/[subject]/[subspecialty]/[topic]`).
+
+## Suggested owner
+Coder-NucleuX / Vishwakarma
+
+## Night run result (2026-03-09, 03:xx IST)
+- ✅ Build passes (`npm run build`)
+- ✅ Turbopack broad-pattern warnings reduced **9 → 5**
+- ✅ Removed numbered-prefix fallback scans in both:
+  - `src/app/api/library/content/route.ts`
+  - `src/lib/content/loader.ts`
+- ✅ `resolveContentDir` now resolves through static `SUBJECT_CONTENT_MAP` + `SUBSPECIALTY_CONTENT_MAP`
+- ✅ `getSubspecialtiesFromContent` now uses map keys instead of directory-wide scans
+
+### Residual warnings (5) — rationale
+Remaining warnings come from unavoidable runtime joins in generic filesystem loaders where inputs are route/data-driven (`subject`, `subspecialty`, topic/file names). They are now constrained by static mapping and guard checks, but Turbopack still flags them as dynamic patterns.
+
+### Next refinement option
+Introduce subject/subspecialty-specific resolver modules (per-subject import graph) to fully eliminate remaining dynamic joins, at the cost of larger refactor complexity.
+
+## Orchestrator follow-up (2026-03-09, 05:0x IST)
+- ✅ Migrated `src/middleware.ts` → `src/proxy.ts` and renamed handler `middleware` → `proxy` per Next 16 convention.
+- ✅ Re-ran `npm run build`: deprecation warning removed; build remains green.
+- ✅ Re-ran `npm run lint`: 0 errors, 33 pre-existing warnings (unchanged baseline).
+- ✅ Re-ran `npm run test:atom:dedup`: 2/2 passing.
+- ⛔ `npm run test:smoke` blocked by missing env vars: `E2E_EMAIL`, `E2E_PASSWORD`.
+
+### Recommended next action
+Provide non-prod smoke credentials through CI/local env and re-run `npm run test:smoke` to restore end-to-end overnight verification.
