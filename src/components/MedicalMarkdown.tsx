@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
 import { remarkBionic } from '@/lib/markdown/bionic';
 import { ZoomIn } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -69,7 +68,6 @@ export function MedicalMarkdown({ content, className, bionic }: MedicalMarkdownP
     <div className={cn("medical-markdown", bionic && 'bionic-reader', className)}>
       <ReactMarkdown
         remarkPlugins={bionic ? [remarkGfm, remarkBionic] : [remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
         components={{
           // Headings
           h1: ({ children }) => (

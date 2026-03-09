@@ -173,9 +173,6 @@ export function evaluateDiagram(
   }
 
   // Score calculation
-  const requiredCount = expected.filter(e => e.required !== false).length || expected.length;
-  const requiredFound = expected.filter(e => e.required !== false && found.includes(e.label)).length;
-
   const structureScore = expected.length > 0 ? Math.round((found.length / expected.length) * 100) : 0;
   const connectionScore = 100; // TODO: evaluate arrow connections
   const positionScore = 100;   // TODO: evaluate relative positions

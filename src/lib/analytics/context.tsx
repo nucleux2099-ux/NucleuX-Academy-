@@ -61,6 +61,40 @@ const AnalyticsContext = createContext<AnalyticsContextValue | null>(null);
 // Debounce sync to avoid excessive API calls
 const SYNC_DEBOUNCE_MS = 5000;
 
+type CloudDailyStat = {
+  date: string;
+  study_minutes?: number | null;
+  mcqs_attempted?: number | null;
+  mcqs_correct?: number | null;
+  atoms_completed?: number | null;
+  studyMinutes?: number | null;
+  questionsAttempted?: number | null;
+  questionsCorrect?: number | null;
+  topicsReviewed?: string[];
+  streak?: boolean;
+};
+
+function normalizeCloudDailyStat(stat: CloudDailyStat) {
+  const questionsAttempted = stat.questionsAttempted ?? stat.mcqs_attempted ?? 0;
+  const questionsCorrect = stat.questionsCorrect ?? stat.mcqs_correct ?? 0;
+  const studyMinutes = stat.studyMinutes ?? stat.study_minutes ?? 0;
+
+  return {
+    date: stat.date,
+    questionsAttempted,
+    questionsCorrect,
+    studyMinutes,
+    topicsReviewed: Array.isArray(stat.topicsReviewed) ? stat.topicsReviewed : [],
+    streak: typeof stat.streak === 'boolean'
+      ? stat.streak
+      : questionsAttempted > 0 || studyMinutes > 0,
+  };
+}
+
+function normalizeStoredDailyStats(stats: CloudDailyStat[] = []) {
+  return stats.map((stat) => normalizeCloudDailyStat(stat));
+}
+
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   const [analytics, setAnalytics] = useState<UserAnalytics | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -118,6 +152,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     const loadData = async () => {
       // Load from localStorage first (fast)
       const localData = loadAnalytics();
+      localData.dailyStats = normalizeStoredDailyStats(localData.dailyStats as CloudDailyStat[]);
       const updated = recalculateMemoryStrengths(localData);
       setAnalytics(updated);
       setIsLoaded(true);
@@ -138,9 +173,9 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
           
           // Merge daily stats (avoid duplicates)
           const existingDates = new Set(updated.dailyStats.map(d => d.date));
-          cloudData.dailyStats?.forEach((stat: { date: string } & typeof updated.dailyStats[number]) => {
+          cloudData.dailyStats?.forEach((stat: CloudDailyStat) => {
             if (!existingDates.has(stat.date)) {
-              updated.dailyStats.push(stat);
+              updated.dailyStats.push(normalizeCloudDailyStat(stat));
             }
           });
           

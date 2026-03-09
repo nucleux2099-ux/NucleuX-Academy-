@@ -628,7 +628,7 @@ export default function ExcalidrawCanvas() {
       setLoading(false);
       setCapturing(false);
     }
-  }, [excalidrawAPI, exportToBlob, capturing, mode, parseMindMapFromResponse, renderMindMap]);
+  }, [excalidrawAPI, exportToBlob, capturing, mode, diagramSteps, parseMindMapFromResponse, renderMindMap]);
 
   // ==========================================================================
   // MODE SELECTOR

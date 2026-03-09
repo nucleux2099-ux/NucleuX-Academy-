@@ -12,10 +12,14 @@ interface SyncedMcqAttempt {
 
 interface SyncedDailyStat {
   date: string;
-  studyMinutes: number;
-  questionsAttempted: number;
-  questionsCorrect: number;
+  studyMinutes?: number;
+  questionsAttempted?: number;
+  questionsCorrect?: number;
+  study_minutes?: number;
+  mcqs_attempted?: number;
+  mcqs_correct?: number;
   topicsReviewed?: string[];
+  streak?: boolean;
 }
 
 export async function POST(request: Request) {
@@ -74,12 +78,8 @@ export async function POST(request: Request) {
     // Sync daily stats
     if (dailyStats?.length > 0) {
       const statsData = (dailyStats as SyncedDailyStat[]).map((stat) => ({
+        ...normalizeDailyStat(stat),
         user_id: user.id,
-        date: stat.date,
-        study_minutes: stat.studyMinutes,
-        mcqs_attempted: stat.questionsAttempted,
-        mcqs_correct: stat.questionsCorrect,
-        atoms_completed: stat.topicsReviewed?.length || 0,
       }))
 
       const { error: statsError } = await supabase
@@ -127,4 +127,14 @@ function getConfidenceLevel(confidence: string): number {
     'very-sure': 4,
   }
   return levels[confidence] || 2
+}
+
+function normalizeDailyStat(stat: SyncedDailyStat) {
+  return {
+    date: stat.date,
+    study_minutes: stat.studyMinutes ?? stat.study_minutes ?? 0,
+    mcqs_attempted: stat.questionsAttempted ?? stat.mcqs_attempted ?? 0,
+    mcqs_correct: stat.questionsCorrect ?? stat.mcqs_correct ?? 0,
+    atoms_completed: stat.topicsReviewed?.length || 0,
+  }
 }

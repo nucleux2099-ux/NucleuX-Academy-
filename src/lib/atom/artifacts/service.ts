@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import type { SupabaseClient } from '@supabase/supabase-js';
@@ -96,6 +97,12 @@ function normalizeArtifact(input: AtomArtifactV1): AtomArtifactV1 {
   };
 }
 
+function sanitizePathSegment(value: string, fallback: string): string {
+  const trimmed = value.trim();
+  if (!trimmed) return fallback;
+  return trimmed.replace(/[^a-zA-Z0-9._-]+/g, '-').replace(/^-+|-+$/g, '') || fallback;
+}
+
 function fromDbRow(row: DbArtifactRow): AtomArtifactV1 {
   return {
     id: row.id,
@@ -131,13 +138,15 @@ export class SupabaseAtomArtifactService implements AtomArtifactService {
   }
 
   private get workspaceRoot() {
-    return this.options.workspaceRoot ?? path.join(process.cwd(), 'artifacts');
+    return this.options.workspaceRoot ?? path.join(os.homedir(), '.nucleux-atom-artifacts');
   }
 
   private resolveBlobPath(scopeKey: string, sessionId: string, artifactId: string, mime: string, kind: string): string {
     const safeScope = sanitizeScopeKeyForPath(scopeKey);
+    const safeSessionId = sanitizePathSegment(sessionId, 'session');
+    const safeArtifactId = sanitizePathSegment(artifactId, 'artifact');
     const ext = artifactFileExtension(mime, kind);
-    return path.join(safeScope, sessionId, `${artifactId}.${ext}`);
+    return path.join(safeScope, safeSessionId, `${safeArtifactId}.${ext}`);
   }
 
   async persistArtifact(input: PersistArtifactInput): Promise<AtomArtifactV1> {
@@ -149,10 +158,17 @@ export class SupabaseAtomArtifactService implements AtomArtifactService {
     let blobPath: string | null = null;
 
     if (!shouldInline || this.writeWorkspaceCopy) {
-      blobPath = this.resolveBlobPath(input.scopeKey, input.sessionId, artifact.id, artifact.mime, artifact.kind);
-      const absolute = path.join(this.workspaceRoot, blobPath);
+      const resolvedBlobPath = this.resolveBlobPath(
+        input.scopeKey,
+        input.sessionId,
+        artifact.id,
+        artifact.mime,
+        artifact.kind,
+      );
+      const absolute = path.join(this.workspaceRoot, resolvedBlobPath);
       await fs.mkdir(path.dirname(absolute), { recursive: true });
       await fs.writeFile(absolute, artifact.content, 'utf8');
+      blobPath = resolvedBlobPath;
     }
 
     const { error } = await this.supabase.from('atom_task_artifacts_v1').upsert(

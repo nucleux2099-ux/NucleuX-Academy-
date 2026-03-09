@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Fragment } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowUpRight, Link2, BookOpen, FileText, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -39,6 +40,29 @@ function getTypeColor(type: BacklinkItem["type"]) {
     default:
       return "text-purple-400 bg-purple-500/10";
   }
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function renderHighlightedContext(context: string, topicTitle: string) {
+  if (!topicTitle.trim()) return context;
+
+  const matcher = new RegExp(`(${escapeRegExp(topicTitle)})`, "gi");
+  const parts = context.split(matcher);
+
+  return parts.map((part, index) => {
+    if (part.toLowerCase() === topicTitle.toLowerCase()) {
+      return (
+        <mark key={`${part}-${index}`} className="bg-[#5BB3B3]/30 text-[#C4B5FD] px-1 rounded">
+          {part}
+        </mark>
+      );
+    }
+
+    return <Fragment key={`${part}-${index}`}>{part}</Fragment>;
+  });
 }
 
 export function Backlinks({ backlinks, currentTopicTitle, className }: BacklinksProps) {
@@ -89,15 +113,9 @@ export function Backlinks({ backlinks, currentTopicTitle, className }: Backlinks
                 {backlink.mentionContext && (
                   <p className="text-xs text-[#A0B0BC] mt-1 line-clamp-2">
                     &quot;...
-                    <span 
-                      className="text-[#A78BFA] font-medium"
-                      dangerouslySetInnerHTML={{
-                        __html: backlink.mentionContext.replace(
-                          new RegExp(currentTopicTitle, "gi"),
-                          `<mark class="bg-[#5BB3B3]/30 text-[#C4B5FD] px-1 rounded">${currentTopicTitle}</mark>`
-                        ),
-                      }}
-                    />
+                    <span className="text-[#A78BFA] font-medium">
+                      {renderHighlightedContext(backlink.mentionContext, currentTopicTitle)}
+                    </span>
                     ...&quot;
                   </p>
                 )}

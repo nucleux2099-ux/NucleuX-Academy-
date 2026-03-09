@@ -27,17 +27,9 @@ self.addEventListener("fetch", (event) => {
   // Skip non-GET
   if (request.method !== "GET") return;
 
-  // API routes & YAML content - network first
+  // Never cache authenticated or mutable API responses.
   if (url.pathname.startsWith("/api/")) {
-    event.respondWith(
-      fetch(request)
-        .then((res) => {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then((c) => c.put(request, clone));
-          return res;
-        })
-        .catch(() => caches.match(request))
-    );
+    event.respondWith(fetch(request));
     return;
   }
 

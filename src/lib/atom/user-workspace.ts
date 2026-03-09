@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
 import { sanitizeScopeKeyForPath } from '@/lib/atom/user-scope';
 
@@ -29,7 +30,7 @@ export type AtomWorkspaceBootstrapResult = {
 };
 
 function resolveBaseRoot() {
-  return process.env.ATOM_USER_WORKSPACES_ROOT ?? path.join(process.cwd(), '.atom-userspaces');
+  return process.env.ATOM_USER_WORKSPACES_ROOT ?? path.join(os.homedir(), '.nucleux-atom-userspaces');
 }
 
 function safeWorkspaceRoot(scopeKey: string) {
