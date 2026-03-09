@@ -20,6 +20,9 @@ export type CalibrationSummary = {
   proxyQualityScore: number;
   weightedScore: number;
   trend: 'up' | 'down' | 'flat';
+  confidenceLabel: 'low' | 'medium' | 'high';
+  confidenceBand: { lower: number; upper: number };
+  minSampleThresholdMet: boolean;
   dimensions: {
     continuity: number;
     grounding: number;
@@ -28,11 +31,30 @@ export type CalibrationSummary = {
   };
 };
 
+const MIN_SAMPLE_THRESHOLD = 20;
+const EWMA_ALPHA = 0.35;
+
 function clamp(value: number): number {
   if (!Number.isFinite(value)) return 0;
   if (value < 0) return 0;
   if (value > 1) return 1;
   return Number(value.toFixed(4));
+}
+
+function confidenceLabelFor(samples: number): 'low' | 'medium' | 'high' {
+  if (samples >= 80) return 'high';
+  if (samples >= MIN_SAMPLE_THRESHOLD) return 'medium';
+  return 'low';
+}
+
+function confidenceBand(score: number, samples: number): { lower: number; upper: number } {
+  if (samples <= 0) return { lower: clamp(score - 0.2), upper: clamp(score + 0.2) };
+  const margin = Math.min(0.2, 1.96 * Math.sqrt(Math.max(score * (1 - score), 0.0001) / samples));
+  return { lower: clamp(score - margin), upper: clamp(score + margin) };
+}
+
+function ewma(current: number, previous: number): number {
+  return clamp((EWMA_ALPHA * current) + ((1 - EWMA_ALPHA) * previous));
 }
 
 export function deriveFeedbackScore(feedback: FeedbackRow[]): number {
@@ -69,14 +91,18 @@ export function buildCalibrationSummary(input: {
 }): CalibrationSummary {
   const feedbackScore = deriveFeedbackScore(input.feedback);
   const proxyQualityScore = deriveProxyQualityScore(input.current);
-  const weightedScore = clamp(proxyQualityScore * 0.7 + feedbackScore * 0.3);
+  const weightedScoreRaw = clamp(proxyQualityScore * 0.7 + feedbackScore * 0.3);
 
-  const previousWeighted = input.previous
+  const previousWeightedRaw = input.previous
     ? clamp(deriveProxyQualityScore(input.previous) * 0.7 + feedbackScore * 0.3)
-    : weightedScore;
+    : weightedScoreRaw;
 
-  const delta = weightedScore - previousWeighted;
+  const smoothedCurrent = ewma(weightedScoreRaw, previousWeightedRaw);
+  const smoothedPrevious = ewma(previousWeightedRaw, previousWeightedRaw);
+
+  const delta = smoothedCurrent - smoothedPrevious;
   const trend: 'up' | 'down' | 'flat' = delta > 0.02 ? 'up' : delta < -0.02 ? 'down' : 'flat';
+  const samples = input.current.overall.events;
 
   return {
     scopeKey: input.scopeKey,
@@ -89,8 +115,11 @@ export function buildCalibrationSummary(input: {
     },
     feedbackScore,
     proxyQualityScore,
-    weightedScore,
+    weightedScore: smoothedCurrent,
     trend,
+    confidenceLabel: confidenceLabelFor(samples),
+    confidenceBand: confidenceBand(smoothedCurrent, samples),
+    minSampleThresholdMet: samples >= MIN_SAMPLE_THRESHOLD,
     dimensions: {
       continuity: input.current.quality.continuityScore,
       grounding: input.current.quality.groundingScore,

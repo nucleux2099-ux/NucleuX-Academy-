@@ -18,6 +18,10 @@
     "atom:sources:sync-vyasa": "tsx scripts/sync-vyasa-atom-sources.ts",
     "atom:sources:validate-sync-candidates": "tsx scripts/validate-vyasa-sync-candidates.ts",
     "atom:scope:audit": "tsx scripts/atom-scope-migration-audit.ts",
+    "atom:rollup:hourly": "tsx scripts/atom-telemetry-rollup-job.ts --granularity hour --window-hours 2",
+    "atom:rollup:daily": "tsx scripts/atom-telemetry-rollup-job.ts --granularity day --window-hours 26",
+    "atom:retention:dry-run": "tsx scripts/atom-telemetry-retention-job.ts",
+    "atom:retention:enforce": "tsx scripts/atom-telemetry-retention-job.ts --enforce",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

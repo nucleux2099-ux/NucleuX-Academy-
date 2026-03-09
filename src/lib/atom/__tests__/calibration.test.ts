@@ -33,4 +33,6 @@ test('calibration summary returns weighted score and trend', () => {
   assert.equal(out.window, '7d');
   assert.equal(typeof out.weightedScore, 'number');
   assert.equal(['up', 'down', 'flat'].includes(out.trend), true);
+  assert.equal(['low', 'medium', 'high'].includes(out.confidenceLabel), true);
+  assert.equal(out.confidenceBand.lower <= out.confidenceBand.upper, true);
 });

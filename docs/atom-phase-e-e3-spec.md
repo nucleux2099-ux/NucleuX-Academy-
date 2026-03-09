@@ -1,5 +1,7 @@
 # ATOM Phase E3 Spec — Feedback, Calibration, Alerts, Rollups, Backfill
 
+> Final status: Completed and hardened in Phase E4/E5. See `docs/atom-phase-e-e4-e5-spec.md` for production hardening details.
+
 ## Delivered
 
 ### E3.1 Feedback capture

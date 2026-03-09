@@ -90,6 +90,27 @@ export async function computeAndStoreRollups(params: {
   return upserts.length;
 }
 
+export async function materializeRollupsForScopes(params: {
+  supabase: SupabaseClient;
+  scopeKeys: string[];
+  from: string;
+  to: string;
+  granularity: RollupGranularity;
+}): Promise<{ scopeKey: string; inserted: number }[]> {
+  const out: { scopeKey: string; inserted: number }[] = [];
+  for (const scopeKey of params.scopeKeys) {
+    const inserted = await computeAndStoreRollups({
+      supabase: params.supabase,
+      scopeKey,
+      from: params.from,
+      to: params.to,
+      granularity: params.granularity,
+    });
+    out.push({ scopeKey, inserted });
+  }
+  return out;
+}
+
 export async function pruneRawTelemetry(params: {
   supabase: SupabaseClient;
   retentionDays?: number;
@@ -117,4 +138,24 @@ export async function pruneRawTelemetry(params: {
   }
 
   return { cutoff, deleted: toDelete, dryRun: Boolean(params.dryRun) };
+}
+
+export async function getRetentionStatus(params: {
+  supabase: SupabaseClient;
+  retentionDays?: number;
+  scopeKey?: string;
+}): Promise<{ cutoff: string; expiringCount: number; retentionDays: number }> {
+  const days = params.retentionDays ?? Number(process.env.ATOM_TELEMETRY_RETENTION_DAYS ?? 30);
+  const cutoff = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
+  let query = params.supabase
+    .from('atom_telemetry_events')
+    .select('id', { count: 'exact', head: true })
+    .lt('created_at', cutoff);
+
+  if (params.scopeKey) query = query.eq('scope_key', params.scopeKey);
+
+  const { count, error } = await query;
+  if (error) throw new Error(error.message);
+
+  return { cutoff, expiringCount: count ?? 0, retentionDays: days };
 }

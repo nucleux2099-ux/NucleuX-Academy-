@@ -1,11 +1,18 @@
 import type { TelemetrySummary } from '@/lib/atom/telemetry-metrics';
 
+export type AtomTelemetryAlertKind = 'failure_rate_spike' | 'fallback_rate_spike' | 'grounding_score_drop' | 'security_anomaly';
+
 export type AtomTelemetryAlert = {
-  kind: 'failure_rate_spike' | 'fallback_rate_spike' | 'grounding_score_drop' | 'security_anomaly';
+  kind: AtomTelemetryAlertKind;
   severity: 'warning' | 'critical';
   metricValue: number;
   thresholdValue: number;
   metadata?: Record<string, unknown>;
+};
+
+export type AlertCooldownRecord = {
+  kind: AtomTelemetryAlertKind;
+  ts: string;
 };
 
 const DEFAULT_THRESHOLDS = {
@@ -14,6 +21,29 @@ const DEFAULT_THRESHOLDS = {
   groundingScoreDrop: 0.6,
   securityAnomalyCount: 1,
 };
+
+const ALERT_COOLDOWN_MS: Record<AtomTelemetryAlertKind, number> = {
+  failure_rate_spike: 30 * 60 * 1000,
+  fallback_rate_spike: 30 * 60 * 1000,
+  grounding_score_drop: 45 * 60 * 1000,
+  security_anomaly: 15 * 60 * 1000,
+};
+
+export function alertTimeBucket(ts: Date): string {
+  const d = new Date(ts);
+  d.setUTCMinutes(0, 0, 0);
+  return d.toISOString();
+}
+
+export function buildAlertDedupeKey(scopeKey: string, kind: AtomTelemetryAlertKind, ts = new Date()): string {
+  return `${scopeKey}:${kind}:${alertTimeBucket(ts)}`;
+}
+
+export function shouldEmitAlert(alert: AtomTelemetryAlert, now: Date, recentAlerts: AlertCooldownRecord[]): boolean {
+  const cooldown = ALERT_COOLDOWN_MS[alert.kind];
+  const threshold = now.getTime() - cooldown;
+  return !recentAlerts.some((a) => a.kind === alert.kind && new Date(a.ts).getTime() >= threshold);
+}
 
 export function evaluateAlerts(params: {
   current: TelemetrySummary;

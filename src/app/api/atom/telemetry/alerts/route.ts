@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { deriveTelemetrySummary } from '@/lib/atom/telemetry-metrics';
-import { evaluateAlerts } from '@/lib/atom/alerting';
+import { alertTimeBucket, buildAlertDedupeKey, evaluateAlerts, shouldEmitAlert, type AlertCooldownRecord } from '@/lib/atom/alerting';
 import { parseWindow, resolveScopeAccess, windowStart } from '@/lib/atom/telemetry-access';
 import type { AtomTelemetryEvent } from '@/lib/atom/telemetry';
 
@@ -37,7 +37,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Forbidden scope access' }, { status: 403 });
   }
 
-  const to = new Date();
+  const now = new Date();
+  const to = now;
   const from = windowStart(window);
   const prevFrom = new Date(from.getTime() - (to.getTime() - from.getTime()));
 
@@ -57,20 +58,40 @@ export async function GET(request: NextRequest) {
   const alerts = evaluateAlerts({ current, previous, securityAnomalies });
 
   if (alerts.length > 0) {
-    await supabase.from('atom_telemetry_alerts').insert(alerts.map((a) => ({
-      scope_key: scopeKey,
-      kind: a.kind,
-      severity: a.severity,
-      metric_value: a.metricValue,
-      threshold_value: a.thresholdValue,
-      metadata: a.metadata ?? {},
-      ts: new Date().toISOString(),
-    })));
+    const recentThreshold = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
+    const { data: recentRows } = await supabase
+      .from('atom_telemetry_alerts')
+      .select('kind,ts')
+      .eq('scope_key', scopeKey)
+      .gte('ts', recentThreshold)
+      .order('ts', { ascending: false });
+
+    const recent = ((recentRows ?? []) as Array<Record<string, unknown>>)
+      .map((row) => ({ kind: String(row.kind), ts: String(row.ts) } as AlertCooldownRecord));
+
+    const bucket = alertTimeBucket(now);
+    const inserts = alerts
+      .filter((a) => shouldEmitAlert(a, now, recent))
+      .map((a) => ({
+        scope_key: scopeKey,
+        kind: a.kind,
+        severity: a.severity,
+        metric_value: a.metricValue,
+        threshold_value: a.thresholdValue,
+        metadata: a.metadata ?? {},
+        ts: now.toISOString(),
+        dedupe_key: buildAlertDedupeKey(scopeKey, a.kind, now),
+        time_bucket: bucket,
+      }));
+
+    if (inserts.length > 0) {
+      await supabase.from('atom_telemetry_alerts').upsert(inserts, { onConflict: 'dedupe_key,time_bucket', ignoreDuplicates: true });
+    }
   }
 
   const { data: persisted } = await supabase
     .from('atom_telemetry_alerts')
-    .select('event_id,scope_key,kind,severity,metric_value,threshold_value,metadata,ts')
+    .select('event_id,scope_key,kind,severity,metric_value,threshold_value,metadata,ts,dedupe_key,time_bucket')
     .eq('scope_key', scopeKey)
     .gte('ts', from.toISOString())
     .order('ts', { ascending: false });

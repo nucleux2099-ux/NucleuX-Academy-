@@ -1,5 +1,7 @@
 # ATOM Phase E (E1 + E2) — Telemetry + Quality Metrics
 
+> Final status: Completed and hardened in Phase E4/E5. See `docs/atom-phase-e-e4-e5-spec.md` for production hardening details.
+
 ## Scope delivered
 - Event schema with required fields (`eventId`, `ts`, `scopeKey`, `sessionId`, `route`, `mode`, `latencyMs`, `status`, `reasonCode`, `metadata`)
 - Pluggable logger service with DB-first sink and file fallback
