@@ -8,9 +8,12 @@ import {
 } from '@/lib/atom/session-store';
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 import { appendAtomMemory, ensureAtomMemoryStructure } from '@/lib/atom/memory-store';
-import { formatMemoryContextForPrompt, retrieveScopedMemoryContext } from '@/lib/atom/memory-retrieval';
+import { retrieveScopedMemoryContext } from '@/lib/atom/memory-retrieval';
 import { createAtomArtifactService } from '@/lib/atom/artifacts/service';
 import type { AtomArtifactV1 } from '@/lib/atom/artifacts/types';
+import { getAdaptiveProfile } from '@/lib/atom/adaptive-profile';
+import { applyPolicyGuardrails } from '@/lib/atom/policy-guardrails';
+import { assemblePromptV3 } from '@/lib/atom/prompt-assembly-v3';
 
 function extractArtifactsFromAssistant(text: string): AtomArtifactV1[] {
   const artifacts: AtomArtifactV1[] = [];
@@ -107,6 +110,9 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     accountId?: string;
     channel?: string;
     peer?: string;
+    strictGrounded?: boolean;
+    safetyMode?: boolean;
+    userInstructionOverride?: string;
     scope?: { accountId?: string; channel?: string; peer?: string };
   };
 
@@ -157,11 +163,29 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     query: previousTopic ?? userText,
     limit: 6,
   });
-  const memoryPrompt = formatMemoryContextForPrompt(retrievalSnippets, 5000);
 
-  const messages = memoryPrompt
-    ? ([{ role: 'user', content: `Use this scoped memory context (same user scope only):\n${memoryPrompt}` }, ...baseMessages])
-    : baseMessages;
+  const profile = await getAdaptiveProfile(supabase, scopeKey);
+  const policy = applyPolicyGuardrails({
+    profile,
+    explicitUserInstruction: body.userInstructionOverride,
+    strictGrounded: body.strictGrounded ?? true,
+    safetyMode: body.safetyMode ?? false,
+  });
+
+  const assembly = assemblePromptV3({
+    safetySystemText: 'Safety-first, in-scope only. Personalization is advisory. Do not use cross-user context.',
+    retrievedMemory: retrievalSnippets,
+    profile,
+    includeHeartbeat: false,
+    currentQuery: policy.instructionOverride
+      ? `${userText}\n\nExplicit user override to honor: ${policy.instructionOverride}`
+      : userText,
+  });
+
+  const messages = [
+    { role: 'user' as const, content: assembly },
+    ...baseMessages,
+  ];
 
   const assistant = await runChat(request, {
     context: body.context ?? 'surgery',
@@ -194,6 +218,11 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
       endLine: snippet.endLine,
       score: snippet.score,
     })),
+    policyDecision: {
+      personalizationAllowed: policy.personalizationAllowed,
+      reasonCodes: policy.reasonCodes,
+      profileVersion: profile.version,
+    },
   });
 
   for (const artifact of artifacts) {
