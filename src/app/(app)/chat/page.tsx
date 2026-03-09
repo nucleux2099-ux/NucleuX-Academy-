@@ -1,563 +1,929 @@
-"use client";
+'use client';
 
-import { useState, useRef, useEffect, useCallback } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Send,
-  BookOpen,
-  FileText,
-  StickyNote,
-  Copy,
-  Check,
-  X,
-  Loader2,
-  Atom,
-  RotateCcw,
-  Brain,
-  Presentation,
-  Headphones,
-  Plus,
-  Download,
-  BookMarked,
-  Upload,
-  Layers,
-} from "lucide-react";
+  BookOpen, ChevronDown, ChevronRight, Copy, Download, Filter,
+  Loader2, Lock, MessageSquare, PanelLeft, PanelLeftClose,
+  PanelRight, Paperclip, SendHorizontal, Settings, Sparkles,
+  ThumbsUp, Wrench, X, Zap, Activity, CheckCircle2,
+  Clock, FileText, Lightbulb, Target, GraduationCap,
+  FlaskConical, Stethoscope, Brain, BarChart3,
+} from 'lucide-react';
+import {
+  ATOM_SOURCE_CATALOG,
+  ATOM_SOURCE_LEVELS,
+  type AtomSourceCatalogItem,
+} from '@/lib/atom/source-catalog';
+import type { AtomTaskStatus, AtomEventType } from '@/lib/atom/types';
+import { MedicalMarkdown } from '@/components/MedicalMarkdown';
+import { isFeatureEnabled } from '@/lib/features/flags';
+import { appendDedupedUserEvent } from '@/components/atom/chatEventDedup';
+import {
+  ATOM_ROOM_PROFILES,
+  applyRoomDefaults,
+  resolveAtomRoomProfile,
+  type AtomRoomId,
+  type AtomWorkspaceMode,
+} from '@/lib/atom/room-profiles';
+import { QUICK_START_LEVELS, type QuickStartLevel } from '@/lib/atom/quick-start-schema';
 
-const theme = {
-  background: "#2D3E50",
-  cardBg: "#364A5E",
-  primary: "#5BB3B3",
-  accent: "#C9A86C",
-  text: "#E8E0D5",
-  textMuted: "#A0B0BC",
-  border: "rgba(232, 224, 213, 0.1)",
-  glow: "rgba(91, 179, 179, 0.24)",
-  inputBg: "#253545",
+/* ════════════════════════════════════════════════════════════
+   TYPES
+   ════════════════════════════════════════════════════════════ */
+
+type TimelineItem = {
+  id: string;
+  type: AtomEventType | 'mode.launch' | 'gdd.session' | 'gdd.advance';
+  ts: string;
+  label: string;
+  detail?: string;
 };
 
-// --- Types ---
-interface Source {
+type ArtifactItem = {
   id: string;
   title: string;
-  type: "textbook" | "notes" | "upload";
-  enabled: boolean;
-}
+  kind: string;
+  content?: string;
+  createdAt: string;
+};
 
-interface Message {
+type ChatMessage = {
   id: string;
-  role: "user" | "assistant";
+  role: 'user' | 'assistant' | 'system';
   content: string;
-  timestamp: Date;
-  isStreaming?: boolean;
-  sources?: string[];
-}
-
-interface OutputCard {
-  id: string;
-  title: string;
-  type: "summary" | "flashcards" | "ppt" | "audio";
-  preview: string;
-  createdAt: Date;
-}
-
-// --- Mock Data ---
-const initialSources: Source[] = [
-  { id: "1", title: "Shackelford Ch. 35 - Esophageal Replacement", type: "textbook", enabled: true },
-  { id: "2", title: "Harrison's Ch. 12 - Portal Hypertension", type: "textbook", enabled: true },
-  { id: "3", title: "My Surgery Notes - Upper GI", type: "notes", enabled: false },
-  { id: "4", title: "Robbins Ch. 17 - GI Pathology", type: "textbook", enabled: true },
-];
-
-const mockOutputs: OutputCard[] = [
-  { id: "o1", title: "Portal Hypertension Summary", type: "summary", preview: "Key points on portal HTN pathophysiology, classification, and management...", createdAt: new Date(Date.now() - 3600000) },
-  { id: "o2", title: "Esophageal Surgery Flashcards", type: "flashcards", preview: "15 flashcards covering Ivor Lewis, McKeown, transhiatal approaches...", createdAt: new Date(Date.now() - 7200000) },
-];
-
-const welcomeMessage: Message = {
-  id: "welcome",
-  role: "assistant",
-  content: `Welcome to your **Desk** ⚛️
-
-I'm ATOM, grounded in the sources you've selected on the left. Toggle sources on/off to control what I can reference.
-
-Ask me anything, or use the action buttons on the right to generate study materials!`,
-  timestamp: new Date(),
+  timestamp: string;
+  feedback?: 'helpful' | 'needs_fix' | null;
+  feedbackText?: string;
 };
 
-const sourceIcon = (type: Source["type"]) => {
-  switch (type) {
-    case "textbook": return <BookMarked className="w-4 h-4 text-[#5BB3B3]" />;
-    case "notes": return <StickyNote className="w-4 h-4 text-[#C9A86C]" />;
-    case "upload": return <Upload className="w-4 h-4 text-[#8FD5D5]" />;
-  }
-};
-
-const outputIcon = (type: OutputCard["type"]) => {
-  switch (type) {
-    case "summary": return <FileText className="w-4 h-4 text-[#5BB3B3]" />;
-    case "flashcards": return <Brain className="w-4 h-4 text-[#C9A86C]" />;
-    case "ppt": return <Presentation className="w-4 h-4 text-[#8FD5D5]" />;
-    case "audio": return <Headphones className="w-4 h-4 text-[#E879F9]" />;
-  }
-};
-
-// --- Panels ---
-type MobileTab = "sources" | "chat" | "actions";
-
-export default function DeskPage() {
-  const [sources, setSources] = useState<Source[]>(initialSources);
-  const [messages, setMessages] = useState<Message[]>([welcomeMessage]);
-  const [outputs] = useState<OutputCard[]>(mockOutputs);
-  const [input, setInput] = useState("");
-  const [isStreaming, setIsStreaming] = useState(false);
-  const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [mobileTab, setMobileTab] = useState<MobileTab>("chat");
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const abortControllerRef = useRef<AbortController | null>(null);
-
-  const enabledSources = sources.filter((s) => s.enabled);
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
-  const toggleSource = (id: string) => {
-    setSources((prev) => prev.map((s) => (s.id === id ? { ...s, enabled: !s.enabled } : s)));
+type FeedbackState = {
+  [messageId: string]: {
+    type: 'helpful' | 'needs_fix' | null;
+    text: string;
+    resolved: boolean;
+    showInput: boolean;
   };
+};
 
-  // --- Chat Logic (reused from /chat) ---
-  const handleSend = useCallback(
-    async (text?: string) => {
-      const messageText = text || input.trim();
-      if (!messageText || isStreaming) return;
+/* ════════════════════════════════════════════════════════════
+   CONSTANTS & HELPERS
+   ════════════════════════════════════════════════════════════ */
 
-      const enabledTitles = enabledSources.map((s) => s.title);
+const RESPONSE_STYLES = [
+  { value: 'concise', label: 'Concise', icon: Zap },
+  { value: 'detailed', label: 'Detailed', icon: BookOpen },
+  { value: 'narrative', label: 'Narrative', icon: MessageSquare },
+] as const;
 
-      const userMessage: Message = {
-        id: crypto.randomUUID(),
-        role: "user",
-        content: messageText,
-        timestamp: new Date(),
-      };
+const DIFFICULTY_LEVELS = [
+  { value: 'beginner', label: 'Beginner' },
+  { value: 'intermediate', label: 'Intermediate' },
+  { value: 'advanced', label: 'Advanced' },
+] as const;
 
-      const assistantMessageId = crypto.randomUUID();
-      const assistantMessage: Message = {
-        id: assistantMessageId,
-        role: "assistant",
-        content: "",
-        timestamp: new Date(),
-        isStreaming: true,
-        sources: enabledTitles,
-      };
+const FORMAT_OPTIONS = [
+  { value: 'bullets', label: 'Bullets' },
+  { value: 'prose', label: 'Prose' },
+  { value: 'table', label: 'Table' },
+  { value: 'mixed', label: 'Mixed' },
+] as const;
 
-      setMessages((prev) => [...prev, userMessage, assistantMessage]);
-      setInput("");
-      setIsStreaming(true);
+const COMPOSER_TEMPLATES = [
+  { icon: Stethoscope, label: 'Clinical Consult', prompt: 'Given the clinical scenario, provide a structured approach covering differential diagnosis, key investigations, and evidence-based management plan.' },
+  { icon: GraduationCap, label: 'Exam Revision', prompt: 'Create a high-yield revision summary for this topic with key facts, common MCQ traps, and clinical pearls for exam preparation.' },
+  { icon: Target, label: 'Teaching Prep', prompt: 'Generate a structured teaching explanation for this topic, suitable for presenting to medical students with clinical examples.' },
+  { icon: FlaskConical, label: 'Research Synthesis', prompt: 'Synthesize the current evidence on this topic from selected sources, highlighting key studies and clinical implications.' },
+  { icon: Wrench, label: 'Correction', prompt: 'I think the information about this concept might be incorrect. Please verify against the selected sources and provide the accurate explanation.' },
+];
 
-      const history = [...messages, userMessage]
-        .filter((m) => m.id !== "welcome")
-        .map((m) => ({ role: m.role, content: m.content }));
+const STATUS_CONFIG: Record<string, { color: string; bg: string; border: string; label: string }> = {
+  connected: { color: '#34D399', bg: '#34D399/15', border: '#34D399/40', label: 'Connected' },
+  connecting: { color: '#FBBF24', bg: '#FBBF24/15', border: '#FBBF24/40', label: 'Connecting...' },
+  thinking: { color: '#60A5FA', bg: '#60A5FA/15', border: '#60A5FA/40', label: 'Thinking...' },
+  error: { color: '#F87171', bg: '#F87171/15', border: '#F87171/40', label: 'Error' },
+  idle: { color: '#64748B', bg: '#64748B/15', border: '#64748B/40', label: 'Idle' },
+};
 
-      try {
-        abortControllerRef.current = new AbortController();
+function safeString(val: unknown): string | undefined {
+  return typeof val === 'string' && val.trim() ? val : undefined;
+}
 
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: history,
-            context: "full",
-            deskSources: enabledTitles,
-          }),
-          signal: abortControllerRef.current.signal,
-        });
+function formatTimestamp(ts: string): string {
+  try {
+    return new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  } catch {
+    return '';
+  }
+}
 
-        if (!response.ok) {
-          const error = await response.json();
-          throw new Error(error.error || "Failed to get response");
-        }
+/* ════════════════════════════════════════════════════════════
+   MAIN COMPONENT
+   ════════════════════════════════════════════════════════════ */
 
-        const reader = response.body?.getReader();
-        if (!reader) throw new Error("No response body");
+export default function AtomWorkspacePage() {
+  // ─── Layout state ───
+  const [leftPaneOpen, setLeftPaneOpen] = useState(true);
+  const [rightPaneOpen, setRightPaneOpen] = useState(false);
+  const [mobileTab, setMobileTab] = useState<'context' | 'consult' | 'outputs'>('consult');
 
-        const decoder = new TextDecoder();
-        let fullText = "";
+  // ─── Context cockpit state ───
+  const [sourceCatalog, setSourceCatalog] = useState<AtomSourceCatalogItem[]>(ATOM_SOURCE_CATALOG);
+  const [sourcesLoading, setSourcesLoading] = useState(true);
+  const [selectedBookIds, setSelectedBookIds] = useState<string[]>(ATOM_SOURCE_CATALOG.slice(0, 3).map((b) => b.id));
+  const [levelFilter, setLevelFilter] = useState('all');
+  const [domainFilter, setDomainFilter] = useState('all');
+  const [showPendingSources, setShowPendingSources] = useState(false);
+  const [topic, setTopic] = useState('');
+  const [goal, setGoal] = useState('');
+  const [responseStyle, setResponseStyle] = useState<string>('concise');
+  const [difficulty, setDifficulty] = useState<string>('intermediate');
+  const [format, setFormat] = useState<string>('mixed');
 
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
+  // ─── Center pane state ───
+  const [selectedRoomId, setSelectedRoomId] = useState<AtomRoomId>('atom');
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [composerText, setComposerText] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState<string>('idle');
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [feedbackState, setFeedbackState] = useState<FeedbackState>({});
+  const [showTemplates, setShowTemplates] = useState(false);
 
-          const chunk = decoder.decode(value, { stream: true });
-          const lines = chunk.split("\n");
+  // ─── Right pane state ───
+  const [timeline, setTimeline] = useState<TimelineItem[]>([]);
+  const [artifacts, setArtifacts] = useState<ArtifactItem[]>([]);
 
-          for (const line of lines) {
-            if (line.startsWith("data: ")) {
-              const data = line.slice(6);
-              if (data === "[DONE]") break;
+  // ─── Error state ───
+  const [errorCard, setErrorCard] = useState<string | null>(null);
 
-              try {
-                const parsed = JSON.parse(data);
-                if (parsed.text) {
-                  fullText += parsed.text;
-                  setMessages((prev) =>
-                    prev.map((m) => (m.id === assistantMessageId ? { ...m, content: fullText } : m))
-                  );
-                }
-                if (parsed.error) throw new Error(parsed.error);
-              } catch {
-                // skip malformed
-              }
-            }
-          }
-        }
+  // ─── Refs ───
+  const chatEndRef = useRef<HTMLDivElement>(null);
+  const composerRef = useRef<HTMLTextAreaElement>(null);
+  const threadSessionMapRef = useRef<Record<string, string>>({});
 
-        setMessages((prev) =>
-          prev.map((m) => (m.id === assistantMessageId ? { ...m, isStreaming: false } : m))
-        );
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") {
-          setMessages((prev) =>
-            prev.map((m) =>
-              m.id === assistantMessageId ? { ...m, content: m.content + "\n\n*[Cancelled]*", isStreaming: false } : m
-            )
-          );
-        } else {
-          setMessages((prev) =>
-            prev.map((m) =>
-              m.id === assistantMessageId
-                ? { ...m, content: `❌ Error: ${error instanceof Error ? error.message : "Something went wrong"}`, isStreaming: false }
-                : m
-            )
-          );
-        }
-      } finally {
-        setIsStreaming(false);
-        abortControllerRef.current = null;
-      }
-    },
-    [input, isStreaming, messages, enabledSources]
+  // ─── Derived state ───
+  const domains = useMemo(
+    () => ['all', ...Array.from(new Set(sourceCatalog.map((b) => b.domain)))],
+    [sourceCatalog],
   );
 
-  const handleStop = () => abortControllerRef.current?.abort();
+  const filteredBooks = useMemo(
+    () =>
+      sourceCatalog.filter((book) => {
+        if (levelFilter !== 'all' && !book.levelTags.includes(levelFilter as (typeof ATOM_SOURCE_LEVELS)[number])) return false;
+        if (domainFilter !== 'all' && book.domain !== domainFilter) return false;
+        if (!showPendingSources && book.availabilityStatus && book.availabilityStatus !== 'indexed_ready') return false;
+        return true;
+      }),
+    [domainFilter, levelFilter, showPendingSources, sourceCatalog],
+  );
 
-  const handleReset = () => {
-    setMessages([welcomeMessage]);
-    setIsStreaming(false);
-    abortControllerRef.current?.abort();
-  };
+  const groupedBooks = useMemo(() => {
+    return ATOM_SOURCE_LEVELS.map((lv) => ({
+      level: lv,
+      items: filteredBooks.filter((b) => b.levelTags.includes(lv)),
+    })).filter((g) => g.items.length > 0);
+  }, [filteredBooks]);
 
-  const handleCopy = (id: string, content: string) => {
-    navigator.clipboard.writeText(content);
-    setCopiedId(id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
+  const hasSourcesSelected = selectedBookIds.length > 0;
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSend();
-    }
-  };
-
-  const handleAction = (type: string) => {
-    const prompts: Record<string, string> = {
-      summary: "Generate a comprehensive summary from the enabled sources, with key points and clinical pearls.",
-      flashcards: "Create 10 high-yield flashcards (Q&A) from the enabled sources.",
-      ppt: "Create a presentation outline with key slides from the enabled sources.",
-      audio: "Create a concise audio-overview script summarizing the enabled sources for quick revision.",
+  // ─── Source loading ───
+  useEffect(() => {
+    let active = true;
+    const loadSources = async () => {
+      setSourcesLoading(true);
+      try {
+        const res = await fetch(`/api/atom/sources?include_pending=${showPendingSources ? 'true' : 'false'}`);
+        if (!res.ok) throw new Error('Source loading failed');
+        const payload = (await res.json()) as {
+          sources?: Array<{
+            id: string; title: string; short_title: string; domain: string;
+            level_tags: string[]; priority: number; enabled: boolean; sort_order: number;
+            availability_status?: 'indexed_ready' | 'md_ready_not_ingested' | 'pdf_only' | 'missing' | null;
+          }>;
+        };
+        if (!active) return;
+        const normalized = (payload.sources ?? []).map((s) => ({
+          id: s.id, title: s.title, shortTitle: s.short_title, domain: s.domain,
+          levelTags: (s.level_tags ?? []).filter((t): t is (typeof ATOM_SOURCE_LEVELS)[number] =>
+            ATOM_SOURCE_LEVELS.includes(t as (typeof ATOM_SOURCE_LEVELS)[number])),
+          priority: s.priority, enabled: s.enabled, sortOrder: s.sort_order,
+          availabilityStatus: s.availability_status ?? undefined,
+          availabilityDisabledReason: null, chapterCount: null, chunkCount: null,
+          lastSyncedAt: null, metadata: {},
+        }));
+        if (normalized.length > 0) {
+          setSourceCatalog(normalized);
+          const selectable = normalized.filter((s) => !s.availabilityStatus || s.availabilityStatus === 'indexed_ready');
+          setSelectedBookIds((prev) => {
+            const next = prev.filter((id) => selectable.some((s) => s.id === id));
+            return next.length > 0 ? next : selectable.slice(0, 3).map((s) => s.id);
+          });
+        }
+      } catch {
+        if (active) setSourceCatalog(ATOM_SOURCE_CATALOG);
+      } finally {
+        if (active) setSourcesLoading(false);
+      }
     };
-    handleSend(prompts[type]);
+    void loadSources();
+    return () => { active = false; };
+  }, [showPendingSources]);
+
+  // ─── Auto-scroll chat ───
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  // ─── Send message ───
+  const sendMessage = useCallback(async () => {
+    if (!composerText.trim() || isSubmitting || !hasSourcesSelected) return;
+    setIsSubmitting(true);
+    setErrorCard(null);
+    setConnectionStatus('connecting');
+
+    const userText = composerText.trim();
+    const userMsg: ChatMessage = {
+      id: crypto.randomUUID(), role: 'user', content: userText, timestamp: new Date().toISOString(),
+    };
+    setMessages((prev) => [...prev, userMsg]);
+    setComposerText('');
+
+    try {
+      const threadKey = 'default-thread';
+      let sid = threadSessionMapRef.current[threadKey];
+
+      if (!sid) {
+        const startRes = await fetch('/api/atom/session/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ threadId: threadKey, roomId: selectedRoomId, selectedBookIds }),
+        });
+        const startJson = (await startRes.json()) as { sessionId?: string; error?: string };
+        if (!startRes.ok || !startJson.sessionId) throw new Error(startJson.error ?? 'Unable to start session');
+        sid = startJson.sessionId;
+        threadSessionMapRef.current[threadKey] = sid;
+        setSessionId(sid);
+      }
+
+      setConnectionStatus('thinking');
+
+      const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(userText);
+      const endpoint = continueLike ? `/api/atom/session/${sid}/continue` : `/api/atom/session/${sid}/message`;
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          context: domainFilter === 'all' ? 'surgery' : domainFilter,
+          message: userText,
+        }),
+      });
+
+      const json = (await response.json()) as { assistant?: string; error?: string };
+      if (!response.ok || !json.assistant) throw new Error(json.error ?? 'Chat request failed');
+
+      const assistantMsg: ChatMessage = {
+        id: crypto.randomUUID(), role: 'assistant', content: json.assistant ?? '',
+        timestamp: new Date().toISOString(),
+      };
+      setMessages((prev) => [...prev, assistantMsg]);
+
+      // Add timeline event
+      setTimeline((prev) => [...prev, {
+        id: crypto.randomUUID(), type: 'task.completed' as AtomEventType,
+        ts: new Date().toISOString(), label: 'Response generated',
+        detail: userText.slice(0, 60) + (userText.length > 60 ? '...' : ''),
+      }]);
+
+      setConnectionStatus('connected');
+    } catch (error) {
+      setConnectionStatus('error');
+      setErrorCard(error instanceof Error ? error.message : 'Failed to send message');
+      setMessages((prev) => [...prev, {
+        id: crypto.randomUUID(), role: 'system',
+        content: error instanceof Error ? error.message : 'Something went wrong.',
+        timestamp: new Date().toISOString(),
+      }]);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [composerText, domainFilter, hasSourcesSelected, isSubmitting, selectedBookIds, selectedRoomId]);
+
+  // ─── Feedback handler ───
+  const handleFeedback = useCallback((messageId: string, type: 'helpful' | 'needs_fix') => {
+    setFeedbackState((prev) => ({
+      ...prev,
+      [messageId]: {
+        type: prev[messageId]?.type === type ? null : type,
+        text: prev[messageId]?.text ?? '',
+        resolved: prev[messageId]?.resolved ?? false,
+        showInput: type === 'needs_fix',
+      },
+    }));
+  }, []);
+
+  // ─── Toggle book ───
+  const toggleBook = (bookId: string) => {
+    setSelectedBookIds((prev) => prev.includes(bookId) ? prev.filter((id) => id !== bookId) : [...prev, bookId]);
   };
 
-  const formatMessage = (content: string) => {
-    return content.split("\n").map((line, i) => {
-      if (line.startsWith("### ")) return <h3 key={i} className="text-lg font-bold mt-3 mb-1 text-[#E8E0D5]">{line.replace("### ", "")}</h3>;
-      if (line.startsWith("## ")) return <h2 key={i} className="text-xl font-bold mt-4 mb-2 text-[#E8E0D5]">{line.replace("## ", "")}</h2>;
-      if (line.includes("**")) {
-        const parts = line.split(/\*\*(.*?)\*\*/g);
-        return (
-          <p key={i} className="my-1">
-            {parts.map((part, j) => (j % 2 === 1 ? <strong key={j} className="text-[#C9A86C] font-semibold">{part}</strong> : part))}
-          </p>
-        );
-      }
-      if (line.startsWith("• ") || line.startsWith("- ")) {
-        return <li key={i} className="ml-4 my-0.5 list-disc">{line.replace(/^[•\-]\s/, "")}</li>;
-      }
-      if (!line.trim()) return <br key={i} />;
-      return <p key={i} className="my-1">{line}</p>;
-    });
+  // ─── Apply template ───
+  const applyTemplate = (prompt: string) => {
+    setComposerText(prompt);
+    setShowTemplates(false);
+    composerRef.current?.focus();
   };
 
-  // ========== SOURCES PANEL ==========
-  const SourcesPanel = (
-    <div className="flex flex-col h-full">
-      <div className="p-4 border-b border-[#253545]">
-        <h2 className="text-sm font-semibold text-[#E8E0D5] flex items-center gap-2">
-          <BookOpen className="w-4 h-4 text-[#5BB3B3]" />
-          Sources
-          <Badge className="bg-[#5BB3B3]/20 text-[#C9A86C] border-[#5BB3B3]/30 text-[10px] ml-auto">
-            {enabledSources.length}/{sources.length}
-          </Badge>
-        </h2>
-      </div>
-      <div className="flex-1 overflow-y-auto p-3 space-y-1">
-        {sources.map((source) => (
+  // ─── Copy artifact ───
+  const copyArtifact = (content: string) => {
+    navigator.clipboard.writeText(content).catch(() => { });
+  };
+
+  /* ════════════════════════════════════════════════════════════
+     RENDER
+     ════════════════════════════════════════════════════════════ */
+
+  return (
+    <div className="h-full flex flex-col bg-[linear-gradient(140deg,#060C17,#0F1F30_35%,#080F1A)] text-white">
+      {/* ─── MOBILE TAB BAR ─── */}
+      <div className="md:hidden flex border-b border-[#1E3A5F]">
+        {(['context', 'consult', 'outputs'] as const).map((tab) => (
           <button
-            key={source.id}
-            onClick={() => toggleSource(source.id)}
-            className={`w-full flex items-start gap-3 px-3 py-2.5 rounded-lg text-left transition-all ${
-              source.enabled ? "bg-[#5BB3B3]/10 border border-[#5BB3B3]/30" : "border border-transparent hover:bg-[#253545]/50"
-            }`}
+            key={tab}
+            onClick={() => setMobileTab(tab)}
+            className={`flex-1 py-2.5 text-xs font-medium capitalize transition-colors ${mobileTab === tab
+              ? 'text-[#7DD3FC] border-b-2 border-[#5BB3B3] bg-[#5BB3B3]/5'
+              : 'text-[#64748B]'
+              }`}
           >
-            <div className={`mt-0.5 w-4 h-4 rounded border-2 flex items-center justify-center shrink-0 ${
-              source.enabled ? "border-[#5BB3B3] bg-[#5BB3B3]" : "border-[#475569]"
-            }`}>
-              {source.enabled && <Check className="w-3 h-3 text-[#E8E0D5]" />}
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-1.5">
-                {sourceIcon(source.type)}
-                <span className={`text-xs font-medium truncate ${source.enabled ? "text-[#E8E0D5]" : "text-[#A0B0BC]"}`}>
-                  {source.title}
-                </span>
-              </div>
-              <span className="text-[10px] text-[#64748B] capitalize">{source.type}</span>
-            </div>
+            {tab}
           </button>
         ))}
       </div>
-      <div className="p-3 border-t border-[#253545]">
-        <Button
-          variant="outline"
-          size="sm"
-          className="w-full border-dashed border-[#253545] bg-transparent text-[#A0B0BC] hover:text-[#5BB3B3] hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10"
+
+      <div className="flex-1 flex min-h-0">
+        {/* ═══════════════════════════════════════════════════════
+           LEFT PANE — CONTEXT COCKPIT
+           ═══════════════════════════════════════════════════════ */}
+        <aside
+          className={`
+            ${leftPaneOpen ? 'w-[300px]' : 'w-0'}
+            transition-all duration-200 shrink-0 overflow-hidden
+             border-r border-[#1E3A5F]/50 bg-[#0a1525]/80 backdrop-blur-xl
+             hidden md:flex flex-col
+            ${mobileTab === 'context' ? '!flex !w-full md:!w-[300px]' : ''}
+          `}
         >
-          <Plus className="w-3 h-3 mr-2" />
-          Add Source
-        </Button>
-      </div>
-    </div>
-  );
-
-  // ========== CHAT PANEL ==========
-  const ChatPanel = (
-    <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="flex items-center justify-between p-3 border-b border-[#253545]" style={{ background: `linear-gradient(135deg, ${theme.cardBg}, #2D3E50)` }}>
-        <div className="flex items-center gap-2">
-          <div className="relative">
-            <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#5BB3B3] to-[#C9A86C] flex items-center justify-center" style={{ boxShadow: `0 0 20px ${theme.glow}` }}>
-              <Atom className="w-5 h-5 text-[#E8E0D5]" />
-              {isStreaming && <div className="absolute inset-0 rounded-full animate-ping opacity-30 bg-[#5BB3B3]" />}
+          {/* Header */}
+          <div className="h-12 px-3 border-b border-[#1E3A5F] flex items-center justify-between shrink-0">
+            <div className="flex items-center gap-2">
+              <button onClick={() => setLeftPaneOpen((v) => !v)} className="p-1.5 rounded-md hover:bg-[#1E3A5F]/50 text-[#9FB0C2] hidden md:flex">
+                {leftPaneOpen ? <PanelLeftClose className="w-4 h-4" /> : <PanelLeft className="w-4 h-4" />}
+              </button>
+              <span className="text-xs font-semibold text-[#D7E3EF]">Context Cockpit</span>
             </div>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#5BB3B3]/10 border border-[#5BB3B3]/30 text-[#7DD3FC]">
+              {selectedBookIds.length} sources
+            </span>
           </div>
-          <div>
-            <h1 className="text-sm font-bold text-[#E8E0D5] flex items-center gap-2">
-              ATOM
-              <Badge className="bg-[#5BB3B3]/20 text-[#8FD5D5] border-[#5BB3B3]/30 text-[10px]">
-                {isStreaming ? "Thinking..." : "Online"}
-              </Badge>
-            </h1>
-            <p className="text-[10px] text-[#A0B0BC]">
-              {enabledSources.length} source{enabledSources.length !== 1 ? "s" : ""} active
-            </p>
-          </div>
-        </div>
-        <Button variant="ghost" size="icon" onClick={handleReset} className="text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[#253545] w-8 h-8">
-          <RotateCcw className="w-4 h-4" />
-        </Button>
-      </div>
 
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{ backgroundColor: theme.background }}>
-        {messages.map((message) => (
-          <div key={message.id} className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}>
-            <Avatar className="w-7 h-7 shrink-0" style={message.role === "assistant" ? { background: `linear-gradient(135deg, ${theme.primary}, ${theme.accent})` } : { backgroundColor: theme.primary }}>
-              <AvatarFallback className="bg-transparent text-[#E8E0D5] text-xs">
-                {message.role === "assistant" ? <Atom className="w-3.5 h-3.5" /> : "Y"}
-              </AvatarFallback>
-            </Avatar>
-            <div className={`max-w-[85%] ${message.role === "user" ? "items-end" : "items-start"}`}>
-              <div className={`rounded-2xl px-4 py-3 shadow-sm ${
-                message.role === "user" ? "bg-[#5BB3B3] text-[#E8E0D5] rounded-br-md" : "bg-[#2D3E50] border border-[#253545] rounded-bl-md"
-              }`}>
-                <div className={message.role === "assistant" ? "text-[#E2E8F0] text-sm" : "text-sm"}>
-                  {message.role === "assistant" ? formatMessage(message.content) : message.content}
-                </div>
-                {message.isStreaming && !message.content && (
-                  <div className="flex items-center gap-2 mt-2">
-                    <Loader2 className="w-4 h-4 text-[#5BB3B3] animate-spin" />
-                    <span className="text-xs text-[#A0B0BC]">Searching sources...</span>
-                  </div>
-                )}
-                {message.isStreaming && message.content && (
-                  <span className="inline-block w-2 h-4 bg-[#5BB3B3] animate-pulse ml-1" />
-                )}
+          <div className="flex-1 min-h-0 overflow-y-auto p-3 space-y-5">
+            {/* ── Source Catalog ── */}
+            <div>
+              <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-2 flex items-center gap-1.5">
+                <BookOpen className="w-3 h-3" /> Source Catalog
+              </p>
+              <div className="grid grid-cols-2 gap-1.5 mb-2">
+                <select
+                  value={levelFilter}
+                  onChange={(e) => setLevelFilter(e.target.value)}
+                  className="h-7 rounded-lg bg-[#162535] border border-[#1E3A5F] text-[11px] px-2 text-[#BFDBFE] focus:outline-none focus:border-[#5BB3B3]/50"
+                >
+                  <option value="all">All levels</option>
+                  {ATOM_SOURCE_LEVELS.map((lv) => <option key={lv} value={lv}>{lv}</option>)}
+                </select>
+                <select
+                  value={domainFilter}
+                  onChange={(e) => setDomainFilter(e.target.value)}
+                  className="h-7 rounded-lg bg-[#162535] border border-[#1E3A5F] text-[11px] px-2 text-[#BFDBFE] focus:outline-none focus:border-[#5BB3B3]/50"
+                >
+                  {domains.map((d) => <option key={d} value={d}>{d === 'all' ? 'All domains' : d}</option>)}
+                </select>
               </div>
-              {/* Source badges */}
-              {message.role === "assistant" && message.sources && !message.isStreaming && message.id !== "welcome" && (
-                <div className="flex flex-wrap gap-1 mt-1.5">
-                  {message.sources.slice(0, 3).map((s, i) => (
-                    <Badge key={i} className="bg-[#253545]/50 text-[#A0B0BC] border-[#253545] text-[9px] px-1.5 py-0">
-                      📚 {s.length > 25 ? s.slice(0, 25) + "…" : s}
-                    </Badge>
+
+              {sourcesLoading ? (
+                <div className="flex items-center gap-2 py-4 justify-center">
+                  <Loader2 className="w-4 h-4 animate-spin text-[#5BB3B3]" />
+                  <span className="text-xs text-[#64748B]">Loading sources...</span>
+                </div>
+              ) : groupedBooks.length === 0 ? (
+                <p className="text-xs text-[#64748B] text-center py-4">No sources match filters</p>
+              ) : (
+                <div className="space-y-3">
+                  {groupedBooks.map((group) => (
+                    <div key={group.level}>
+                      <p className="text-[10px] uppercase tracking-wider text-[#5BB3B3]/70 mb-1.5">{group.level}</p>
+                      <div className="space-y-1">
+                        {group.items.map((book) => {
+                          const selected = selectedBookIds.includes(book.id);
+                          const disabled = !!book.availabilityStatus && book.availabilityStatus !== 'indexed_ready';
+                          return (
+                            <button
+                              key={book.id}
+                              disabled={disabled}
+                              onClick={() => toggleBook(book.id)}
+                              className={`w-full flex items-center justify-between gap-2 px-2.5 py-2 rounded-lg text-left transition-all ${selected
+                                ? 'bg-[#5BB3B3]/10 border border-[#5BB3B3]/40'
+                                : 'border border-[#1E3A5F] hover:bg-[#1E3A5F]/40'
+                                } ${disabled ? 'opacity-40 cursor-not-allowed' : ''}`}
+                            >
+                              <span className="text-[11px] text-[#D7E3EF] truncate">{book.shortTitle}</span>
+                              {disabled ? (
+                                <Lock className="w-3 h-3 text-[#64748B] shrink-0" />
+                              ) : (
+                                <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 transition-colors ${selected ? 'text-[#5BB3B3]' : 'text-[#1E3A5F]'}`} />
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
                   ))}
                 </div>
               )}
-              {/* Actions */}
-              {message.role === "assistant" && !message.isStreaming && message.id !== "welcome" && (
-                <div className="flex items-center gap-1 mt-1">
-                  <Button variant="ghost" size="sm" onClick={() => handleCopy(message.id, message.content)} className="h-6 px-2 text-[10px] text-[#A0B0BC] hover:text-[#E8E0D5] hover:bg-[#253545]">
-                    {copiedId === message.id ? <Check className="w-3 h-3 mr-1" /> : <Copy className="w-3 h-3 mr-1" />}
-                    {copiedId === message.id ? "Copied" : "Copy"}
-                  </Button>
+            </div>
+
+            {/* ── Topic & Goal ── */}
+            <div>
+              <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-2 flex items-center gap-1.5">
+                <Target className="w-3 h-3" /> Topic & Goal
+              </p>
+              <input
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+                placeholder="Current topic..."
+                className="w-full h-8 rounded-lg bg-[#162535] border border-[#1E3A5F] text-xs px-3 text-[#BFDBFE] placeholder:text-[#4A6378] focus:outline-none focus:border-[#5BB3B3]/50 mb-1.5"
+              />
+              <input
+                value={goal}
+                onChange={(e) => setGoal(e.target.value)}
+                placeholder="Learning objective..."
+                className="w-full h-8 rounded-lg bg-[#162535] border border-[#1E3A5F] text-xs px-3 text-[#BFDBFE] placeholder:text-[#4A6378] focus:outline-none focus:border-[#5BB3B3]/50"
+              />
+            </div>
+
+            {/* ── Profile Preferences ── */}
+            <div>
+              <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-2 flex items-center gap-1.5">
+                <Settings className="w-3 h-3" /> Preferences
+              </p>
+
+              {/* Response Style */}
+              <p className="text-[10px] text-[#64748B] mb-1">Response Style</p>
+              <div className="flex gap-1 mb-2.5">
+                {RESPONSE_STYLES.map(({ value, label, icon: Icon }) => (
+                  <button
+                    key={value}
+                    onClick={() => setResponseStyle(value)}
+                    className={`flex-1 flex items-center justify-center gap-1 py-1.5 rounded-lg text-[10px] transition-all ${responseStyle === value
+                      ? 'bg-[#5BB3B3]/15 border border-[#5BB3B3]/40 text-[#7DD3FC]'
+                      : 'border border-[#1E3A5F] text-[#64748B] hover:bg-[#1E3A5F]/30'
+                      }`}
+                  >
+                    <Icon className="w-3 h-3" /> {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Difficulty */}
+              <p className="text-[10px] text-[#64748B] mb-1">Difficulty</p>
+              <div className="flex gap-1 mb-2.5">
+                {DIFFICULTY_LEVELS.map(({ value, label }) => (
+                  <button
+                    key={value}
+                    onClick={() => setDifficulty(value)}
+                    className={`flex-1 py-1.5 rounded-lg text-[10px] transition-all ${difficulty === value
+                      ? 'bg-[#A78BFA]/15 border border-[#A78BFA]/40 text-[#C4B5FD]'
+                      : 'border border-[#1E3A5F] text-[#64748B] hover:bg-[#1E3A5F]/30'
+                      }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Format */}
+              <p className="text-[10px] text-[#64748B] mb-1">Format</p>
+              <div className="grid grid-cols-4 gap-1">
+                {FORMAT_OPTIONS.map(({ value, label }) => (
+                  <button
+                    key={value}
+                    onClick={() => setFormat(value)}
+                    className={`py-1.5 rounded-lg text-[10px] transition-all ${format === value
+                      ? 'bg-[#60A5FA]/15 border border-[#60A5FA]/40 text-[#93C5FD]'
+                      : 'border border-[#1E3A5F] text-[#64748B] hover:bg-[#1E3A5F]/30'
+                      }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Quality Ops ── */}
+            <div>
+              <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-2 flex items-center gap-1.5">
+                <BarChart3 className="w-3 h-3" /> Quality Ops
+              </p>
+              <div className="space-y-1.5">
+                <div className="rounded-lg border border-[#1E3A5F] bg-[#162535]/50 p-2.5 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Activity className="w-3.5 h-3.5 text-[#34D399]" />
+                    <span className="text-[11px] text-[#BFDBFE]">Calibration</span>
+                  </div>
+                  <span className="text-[10px] text-[#34D399]">Good</span>
+                </div>
+                <div className="rounded-lg border border-[#1E3A5F] bg-[#162535]/50 p-2.5 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-3.5 h-3.5 text-[#FBBF24]" />
+                    <span className="text-[11px] text-[#BFDBFE]">Alerts</span>
+                  </div>
+                  <span className="text-[10px] text-[#64748B]">None</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        {/* ═══════════════════════════════════════════════════════
+           CENTER PANE — CLINICAL CONSULT
+           ═══════════════════════════════════════════════════════ */}
+        <main
+          className={`flex-1 min-w-0 flex flex-col ${mobileTab !== 'consult' ? 'hidden md:flex' : 'flex'
+            }`}
+        >
+          {/* Session Header */}
+          <div className="h-12 border-b border-[#1E3A5F]/50 px-4 flex items-center justify-between bg-[#0a1525]/80 backdrop-blur-xl shrink-0">
+            <div className="flex items-center gap-2 min-w-0">
+              <button
+                onClick={() => setLeftPaneOpen((v) => !v)}
+                className="p-1.5 rounded-md hover:bg-[#1E3A5F]/50 text-[#9FB0C2] hidden md:flex"
+              >
+                <PanelLeft className="w-4 h-4" />
+              </button>
+              <Brain className="w-4 h-4 text-[#5BB3B3] shrink-0" />
+              <h1 className="text-sm font-semibold truncate text-[#E5EEF8]">ATOM Studio</h1>
+
+              {/* Room badge */}
+              <select
+                value={selectedRoomId}
+                onChange={(e) => setSelectedRoomId(e.target.value as AtomRoomId)}
+                className="h-6 rounded-md bg-[#162535] border border-[#1E3A5F] text-[10px] px-1.5 text-[#7DD3FC] focus:outline-none"
+              >
+                {(Object.keys(ATOM_ROOM_PROFILES) as AtomRoomId[]).map((id) => (
+                  <option key={id} value={id}>{id}</option>
+                ))}
+              </select>
+
+              {/* Status badge */}
+              <span
+                className="text-[10px] px-2 py-0.5 rounded-full border"
+                style={{
+                  color: STATUS_CONFIG[connectionStatus]?.color ?? '#64748B',
+                  borderColor: `${STATUS_CONFIG[connectionStatus]?.color ?? '#64748B'}40`,
+                  background: `${STATUS_CONFIG[connectionStatus]?.color ?? '#64748B'}10`,
+                }}
+              >
+                {STATUS_CONFIG[connectionStatus]?.label ?? 'Idle'}
+              </span>
+
+              {sessionId && (
+                <span className="text-[10px] text-[#4A6378] hidden lg:inline">
+                  Session: {sessionId.slice(0, 8)}
+                </span>
+              )}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setRightPaneOpen((v) => !v)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#1E3A5F] text-xs text-[#BFDBFE] hover:bg-[#1E3A5F]/30 transition-colors"
+              >
+                <PanelRight className="w-3.5 h-3.5" /> Outputs
+                {artifacts.length > 0 && (
+                  <span className="w-4 h-4 flex items-center justify-center rounded-full bg-[#5BB3B3]/20 text-[9px] text-[#7DD3FC]">
+                    {artifacts.length}
+                  </span>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* Chat area */}
+          <div className="flex-1 min-h-0 overflow-y-auto px-4 py-4">
+            {messages.length === 0 ? (
+              <div className="h-full flex flex-col items-center justify-center gap-6">
+                {/* Animated nucleus icon */}
+                <div className="relative">
+                  <div className="absolute -inset-4 rounded-full bg-[#5BB3B3]/5 blur-2xl" />
+                  <div className="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-[#5BB3B3]/15 to-[#A78BFA]/5 border border-[#5BB3B3]/20 flex items-center justify-center shadow-[0_0_40px_rgba(91,179,179,0.1)]">
+                    <Brain className="w-10 h-10 text-[#5BB3B3]" />
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h2 className="text-xl font-bold text-[#E5EEF8] mb-2">ATOM Studio</h2>
+                  <p className="text-sm text-[#5A7A8F] max-w-sm leading-relaxed">
+                    {hasSourcesSelected
+                      ? 'Source-grounded clinical intelligence. Ask anything about your selected sources.'
+                      : 'Open the Context Cockpit to select sources and configure your session.'}
+                  </p>
+                </div>
+
+                {/* Template pills */}
+                <div className="flex flex-wrap gap-2 justify-center max-w-md">
+                  {COMPOSER_TEMPLATES.map(({ icon: Icon, label, prompt }) => (
+                    <button
+                      key={label}
+                      onClick={() => applyTemplate(prompt)}
+                      disabled={!hasSourcesSelected}
+                      className="group flex items-center gap-2 px-4 py-2 rounded-xl border border-[#1E3A5F]/60 bg-[#0B1726]/40 text-xs text-[#7A9BB5] hover:border-[#5BB3B3]/40 hover:bg-[#5BB3B3]/5 hover:text-[#7DD3FC] transition-all disabled:opacity-30 disabled:cursor-not-allowed backdrop-blur-sm"
+                    >
+                      <Icon className="w-3.5 h-3.5 text-[#5BB3B3]/60 group-hover:text-[#5BB3B3]" /> {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="max-w-3xl mx-auto space-y-4">
+                {messages.map((msg) => {
+                  const fb = feedbackState[msg.id];
+                  return (
+                    <div key={msg.id}>
+                      {/* Message bubble */}
+                      <div className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} gap-2`}>
+                        {/* ATOM Avatar for assistant */}
+                        {msg.role === 'assistant' && (
+                          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#5BB3B3]/20 to-[#A78BFA]/10 border border-[#5BB3B3]/25 flex items-center justify-center shrink-0 mt-1">
+                            <Brain className="w-3.5 h-3.5 text-[#5BB3B3]" />
+                          </div>
+                        )}
+                        <div
+                          className={`max-w-[82%] rounded-2xl px-4 py-3 ${msg.role === 'user'
+                            ? 'bg-gradient-to-br from-[#5BB3B3]/12 to-[#5BB3B3]/6 border border-[#5BB3B3]/25'
+                            : msg.role === 'system'
+                              ? 'bg-[#F87171]/8 border border-[#F87171]/25'
+                              : 'border border-[#1E3A5F]/40 bg-[#0F1F30]/60 backdrop-blur-sm'
+                            }`}
+                        >
+                          {msg.role === 'assistant' ? (
+                            <MedicalMarkdown
+                              content={msg.content}
+                              className="text-[13px] leading-6 [&_strong]:text-[#7DD3FC] [&_em]:text-[#A5F3FC] [&_h1]:text-[#E5EEF8] [&_h2]:text-[#D2E6FF] [&_h3]:text-[#BFDBFE]"
+                            />
+                          ) : (
+                            <p className={`text-[13px] ${msg.role === 'system' ? 'text-[#FCA5A5]' : 'text-[#E7F8F8]'} whitespace-pre-wrap`}>
+                              {msg.content}
+                            </p>
+                          )}
+                          <p className="text-[10px] text-[#4A6378] mt-1.5">{formatTimestamp(msg.timestamp)}</p>
+                        </div>
+                      </div>
+
+                      {/* Feedback controls (assistant messages only) */}
+                      {msg.role === 'assistant' && (
+                        <div className="flex items-center gap-2 mt-1.5 ml-1">
+                          <button
+                            onClick={() => handleFeedback(msg.id, 'helpful')}
+                            className={`flex items-center gap-1 px-2 py-1 rounded-md text-[10px] transition-all ${fb?.type === 'helpful'
+                              ? 'bg-[#34D399]/15 border border-[#34D399]/40 text-[#34D399]'
+                              : 'text-[#4A6378] hover:text-[#8FB6D9] hover:bg-[#1E3A5F]/30'
+                              }`}
+                          >
+                            <ThumbsUp className="w-3 h-3" /> Helpful
+                          </button>
+                          <button
+                            onClick={() => handleFeedback(msg.id, 'needs_fix')}
+                            className={`flex items-center gap-1 px-2 py-1 rounded-md text-[10px] transition-all ${fb?.type === 'needs_fix'
+                              ? 'bg-[#FB923C]/15 border border-[#FB923C]/40 text-[#FB923C]'
+                              : 'text-[#4A6378] hover:text-[#8FB6D9] hover:bg-[#1E3A5F]/30'
+                              }`}
+                          >
+                            <Wrench className="w-3 h-3" /> Needs Fix
+                          </button>
+
+                          {fb?.showInput && (
+                            <input
+                              value={fb.text}
+                              onChange={(e) =>
+                                setFeedbackState((prev) => ({
+                                  ...prev,
+                                  [msg.id]: { ...prev[msg.id], text: e.target.value },
+                                }))
+                              }
+                              placeholder="What needs fixing?"
+                              className="flex-1 h-6 rounded-md bg-[#162535] border border-[#1E3A5F] text-[10px] px-2 text-[#BFDBFE] placeholder:text-[#4A6378] focus:outline-none focus:border-[#FB923C]/50"
+                            />
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+                {isSubmitting && (
+                  <div className="flex justify-start gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#5BB3B3]/20 to-[#A78BFA]/10 border border-[#5BB3B3]/25 flex items-center justify-center shrink-0 mt-1">
+                      <Brain className="w-3.5 h-3.5 text-[#5BB3B3] animate-pulse" />
+                    </div>
+                    <div className="rounded-2xl border border-[#1E3A5F]/40 bg-[#0F1F30]/60 backdrop-blur-sm px-5 py-3.5 flex items-center gap-3">
+                      <div className="flex gap-1">
+                        <span className="w-2 h-2 rounded-full bg-[#5BB3B3] animate-bounce" style={{ animationDelay: '0ms' }} />
+                        <span className="w-2 h-2 rounded-full bg-[#5BB3B3] animate-bounce" style={{ animationDelay: '150ms' }} />
+                        <span className="w-2 h-2 rounded-full bg-[#5BB3B3] animate-bounce" style={{ animationDelay: '300ms' }} />
+                      </div>
+                      <span className="text-xs text-[#5A7A8F]">ATOM is thinking...</span>
+                    </div>
+                  </div>
+                )}
+                <div ref={chatEndRef} />
+              </div>
+            )}
+          </div>
+
+          {/* Error card */}
+          {errorCard && (
+            <div className="mx-4 mb-2 rounded-xl border border-[#F87171]/30 bg-[#F87171]/10 px-4 py-2.5 flex items-center justify-between">
+              <p className="text-xs text-[#FCA5A5]">{errorCard}</p>
+              <button onClick={() => setErrorCard(null)} className="text-[#F87171] hover:text-white">
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          )}
+
+          {/* Composer */}
+          <div className="shrink-0 px-4 pb-4 pt-2">
+            <div className="max-w-3xl mx-auto">
+              {/* Templates */}
+              {showTemplates && (
+                <div className="mb-2 flex flex-wrap gap-1.5">
+                  {COMPOSER_TEMPLATES.map(({ icon: Icon, label, prompt }) => (
+                    <button
+                      key={label}
+                      onClick={() => applyTemplate(prompt)}
+                      className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-[#1E3A5F] text-[10px] text-[#8FB6D9] hover:border-[#5BB3B3]/40 hover:bg-[#5BB3B3]/5 transition-all"
+                    >
+                      <Icon className="w-3 h-3" /> {label}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              <div className="rounded-2xl border border-[#1E3A5F]/50 bg-[#0a1525]/90 backdrop-blur-xl shadow-[0_16px_48px_rgba(0,0,0,0.4),0_0_0_1px_rgba(91,179,179,0.05)] p-3">
+                {/* No sources warning */}
+                {!hasSourcesSelected && (
+                  <div className="mb-2 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#FBBF24]/10 border border-[#FBBF24]/30">
+                    <Lock className="w-3 h-3 text-[#FBBF24]" />
+                    <span className="text-[10px] text-[#FBBF24]">Select at least one source to send a message</span>
+                  </div>
+                )}
+
+                <div className="flex items-end gap-2">
+                  <div className="flex items-center gap-1 shrink-0">
+                    <button
+                      onClick={() => setShowTemplates((v) => !v)}
+                      className="p-1.5 rounded-md hover:bg-[#1E3A5F]/50 text-[#64748B] hover:text-[#8FB6D9] transition-colors"
+                      title="Templates"
+                    >
+                      <Sparkles className="w-4 h-4" />
+                    </button>
+                    <button className="p-1.5 rounded-md hover:bg-[#1E3A5F]/50 text-[#64748B] hover:text-[#8FB6D9] transition-colors" title="Attach file">
+                      <Paperclip className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <textarea
+                    ref={composerRef}
+                    value={composerText}
+                    onChange={(e) => setComposerText(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                      }
+                    }}
+                    placeholder={hasSourcesSelected ? 'Ask ATOM anything...' : 'Select sources to start'}
+                    disabled={!hasSourcesSelected}
+                    className="flex-1 min-h-[48px] max-h-36 bg-transparent text-sm leading-6 text-[#E5EEF8] placeholder:text-[#4A6378] resize-none focus:outline-none disabled:opacity-40"
+                  />
+                  <button
+                    onClick={sendMessage}
+                    disabled={!composerText.trim() || isSubmitting || !hasSourcesSelected}
+                    className="h-9 w-9 rounded-xl bg-[#5BB3B3] hover:bg-[#45a1a1] text-white flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
+                  >
+                    {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <SendHorizontal className="w-4 h-4" />}
+                  </button>
+                </div>
+
+                <div className="flex items-center justify-between mt-2 px-1">
+                  <p className="text-[10px] text-[#4A6378]">
+                    {selectedBookIds.length} sources · {responseStyle} · {difficulty}
+                  </p>
+                  <p className="text-[10px] text-[#4A6378]">Shift+Enter for newline</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {/* ═══════════════════════════════════════════════════════
+           RIGHT PANE — OUTPUTS RAIL
+           ═══════════════════════════════════════════════════════ */}
+        <aside
+          className={`
+            ${rightPaneOpen ? 'w-[320px]' : 'w-0'}
+            transition-all duration-200 shrink-0 overflow-hidden
+            border-l border-[#1E3A5F] bg-[#0a1525]/90
+            hidden md:flex flex-col
+            ${mobileTab === 'outputs' ? '!flex !w-full md:!w-[320px]' : ''}
+          `}
+        >
+          {/* Header */}
+          <div className="h-12 px-3 border-b border-[#1E3A5F] flex items-center justify-between shrink-0">
+            <span className="text-xs font-semibold text-[#D7E3EF]">Outputs</span>
+            <button
+              onClick={() => setRightPaneOpen(false)}
+              className="text-xs text-[#64748B] hover:text-[#BFDBFE] hidden md:inline"
+            >
+              Hide
+            </button>
+          </div>
+
+          <div className="flex-1 min-h-0 flex flex-col">
+            {/* Timeline */}
+            <div className="border-b border-[#1E3A5F] p-3 overflow-y-auto max-h-[40%]">
+              <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-2 flex items-center gap-1.5">
+                <Clock className="w-3 h-3" /> Timeline
+              </p>
+              {timeline.length === 0 ? (
+                <p className="text-xs text-[#4A6378]">No events yet</p>
+              ) : (
+                <div className="space-y-1.5">
+                  {timeline.map((item) => (
+                    <div key={item.id} className="rounded-lg border border-[#1E3A5F] bg-[#162535]/50 p-2">
+                      <div className="flex items-center justify-between">
+                        <p className="text-[11px] text-[#BFDBFE]">{item.label}</p>
+                        <span className="text-[9px] text-[#4A6378]">{formatTimestamp(item.ts)}</span>
+                      </div>
+                      {item.detail && (
+                        <p className="text-[10px] text-[#64748B] mt-0.5 truncate">{item.detail}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Artifacts */}
+            <div className="flex-1 p-3 overflow-y-auto">
+              <p className="text-[10px] uppercase tracking-wider text-[#7DD3FC] mb-2 flex items-center gap-1.5">
+                <FileText className="w-3 h-3" /> Artifacts
+              </p>
+              {artifacts.length === 0 ? (
+                <p className="text-xs text-[#4A6378]">No artifacts yet</p>
+              ) : (
+                <div className="space-y-2">
+                  {artifacts.map((artifact) => (
+                    <div key={artifact.id} className="rounded-xl border border-[#1E3A5F] bg-[#162535]/50 p-3">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <p className="text-xs font-medium text-[#BFDBFE]">{artifact.title}</p>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-[#5BB3B3]/10 border border-[#5BB3B3]/30 text-[#7DD3FC]">
+                          {artifact.kind}
+                        </span>
+                      </div>
+                      {artifact.content && (
+                        <pre className="text-[10px] text-[#8FB6D9] whitespace-pre-wrap max-h-24 overflow-hidden mb-2">
+                          {artifact.content.slice(0, 200)}
+                          {artifact.content.length > 200 && '...'}
+                        </pre>
+                      )}
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => copyArtifact(artifact.content ?? '')}
+                          className="flex items-center gap-1 px-2 py-1 rounded-md border border-[#1E3A5F] text-[10px] text-[#64748B] hover:text-[#BFDBFE] hover:bg-[#1E3A5F]/30 transition-colors"
+                        >
+                          <Copy className="w-3 h-3" /> Copy
+                        </button>
+                        <button className="flex items-center gap-1 px-2 py-1 rounded-md border border-[#1E3A5F] text-[10px] text-[#64748B] hover:text-[#BFDBFE] hover:bg-[#1E3A5F]/30 transition-colors">
+                          <Download className="w-3 h-3" /> Download
+                        </button>
+                      </div>
+                      <p className="text-[9px] text-[#4A6378] mt-1.5">{formatTimestamp(artifact.createdAt)}</p>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
           </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Input */}
-      <div className="p-3 border-t border-[#253545]" style={{ backgroundColor: theme.cardBg }}>
-        <div className="flex items-end gap-2">
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Ask ATOM about your sources..."
-            rows={1}
-            disabled={isStreaming}
-            className="flex-1 px-4 py-2.5 bg-[#253545] border border-[#253545] rounded-xl resize-none focus:outline-none focus:border-[#5BB3B3] focus:ring-2 focus:ring-[#5BB3B3]/20 text-[#E8E0D5] placeholder-[#64748B] text-sm min-h-[44px] max-h-[100px] disabled:opacity-50"
-          />
-          {isStreaming ? (
-            <Button onClick={handleStop} className="h-11 w-11 bg-red-500 hover:bg-red-600 rounded-xl shrink-0">
-              <X className="w-5 h-5" />
-            </Button>
-          ) : (
-            <Button onClick={() => handleSend()} disabled={!input.trim()} className="h-11 w-11 bg-[#5BB3B3] hover:bg-[#4A9E9E] rounded-xl shrink-0 disabled:opacity-50" style={{ boxShadow: `0 4px 20px ${theme.glow}` }}>
-              <Send className="w-5 h-5" />
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
-  // ========== ACTIONS PANEL ==========
-  const ActionsPanel = (
-    <div className="flex flex-col h-full">
-      <div className="p-4 border-b border-[#253545]">
-        <h2 className="text-sm font-semibold text-[#E8E0D5] flex items-center gap-2">
-          <Layers className="w-4 h-4 text-[#5BB3B3]" />
-          Actions & Output
-        </h2>
-      </div>
-
-      {/* Action Buttons */}
-      <div className="p-3 grid grid-cols-2 gap-2">
-        {[
-          { key: "summary", icon: FileText, label: "Summary", color: "#5BB3B3" },
-          { key: "flashcards", icon: Brain, label: "Flashcards", color: "#C9A86C" },
-          { key: "ppt", icon: Presentation, label: "Create PPT", color: "#8FD5D5" },
-          { key: "audio", icon: Headphones, label: "Audio Overview", color: "#E879F9" },
-        ].map((action) => (
-          <Button
-            key={action.key}
-            variant="outline"
-            size="sm"
-            onClick={() => handleAction(action.key)}
-            disabled={isStreaming || enabledSources.length === 0}
-            className="border-[#253545] bg-transparent hover:border-[#5BB3B3] hover:bg-[#5BB3B3]/10 text-[#A0B0BC] hover:text-[#E8E0D5] justify-start h-10"
-          >
-            <action.icon className="w-3.5 h-3.5 mr-1.5" style={{ color: action.color }} />
-            <span className="text-xs">{action.label}</span>
-          </Button>
-        ))}
-      </div>
-
-      {/* Output Cards */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-2">
-        {outputs.length === 0 ? (
-          <div className="text-center py-8 text-[#64748B]">
-            <Layers className="w-8 h-8 mx-auto mb-2 opacity-50" />
-            <p className="text-xs">Generated outputs will appear here</p>
-          </div>
-        ) : (
-          outputs.map((output) => (
-            <Card key={output.id} className="border-[#253545] bg-[#253545]">
-              <CardContent className="p-3">
-                <div className="flex items-start gap-2">
-                  {outputIcon(output.type)}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-[#E8E0D5] truncate">{output.title}</p>
-                    <p className="text-[10px] text-[#A0B0BC] mt-0.5 line-clamp-2">{output.preview}</p>
-                    <div className="flex items-center gap-2 mt-2">
-                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px] text-[#A0B0BC] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10">
-                        <Copy className="w-3 h-3 mr-1" /> Copy
-                      </Button>
-                      <Button variant="ghost" size="sm" className="h-6 px-2 text-[10px] text-[#A0B0BC] hover:text-[#5BB3B3] hover:bg-[#5BB3B3]/10">
-                        <Download className="w-3 h-3 mr-1" /> Save
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))
-        )}
-      </div>
-    </div>
-  );
-
-  return (
-    <div className="ui-shell ui-page">
-      <div className="ui-panel h-[calc(100vh-9rem)] overflow-hidden p-0 sm:h-[calc(100vh-9.5rem)]">
-        <div className="flex h-full flex-col" style={{ backgroundColor: theme.background }}>
-          {/* Mobile Tab Bar */}
-          <div className="flex border-b md:hidden" style={{ backgroundColor: theme.cardBg, borderColor: theme.border }}>
-            {(["sources", "chat", "actions"] as MobileTab[]).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setMobileTab(tab)}
-                className={`flex-1 py-3 text-xs font-medium capitalize transition-colors ${
-                  mobileTab === tab ? "border-b-2 border-[#5BB3B3] text-[#5BB3B3]" : "text-[#A0B0BC]"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          {/* Desktop: 3-column layout */}
-          <div className="flex flex-1 overflow-hidden">
-            {/* Sources Panel */}
-            <Card
-              className={`w-[280px] shrink-0 rounded-none border-r overflow-hidden ${mobileTab !== "sources" ? "hidden md:flex" : "flex"} flex-col`}
-              style={{ backgroundColor: theme.cardBg, borderColor: theme.border }}
-            >
-              {SourcesPanel}
-            </Card>
-
-            {/* Chat Panel */}
-            <div className={`flex-1 flex-col overflow-hidden ${mobileTab !== "chat" ? "hidden md:flex" : "flex"}`}>
-              {ChatPanel}
-            </div>
-
-            {/* Actions Panel */}
-            <Card
-              className={`w-[320px] shrink-0 rounded-none border-l overflow-hidden ${mobileTab !== "actions" ? "hidden lg:flex" : "flex"} flex-col`}
-              style={{ backgroundColor: theme.cardBg, borderColor: theme.border }}
-            >
-              {ActionsPanel}
-            </Card>
-          </div>
-        </div>
+        </aside>
       </div>
     </div>
   );
