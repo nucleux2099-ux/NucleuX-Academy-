@@ -7,14 +7,13 @@ import { Card } from "@/components/ui/card";
 import {
   ATOM_SOURCE_CATALOG,
   ATOM_SOURCE_LEVELS,
-  ATOM_PRESET_LABELS,
   type AtomSourceCatalogItem,
   type AtomSourcePreset,
 } from "@/lib/atom/source-catalog";
 import type { AtomTaskStatus, AtomEventType } from "@/lib/atom/types";
 import { extractCodeBlocks } from "@/components/chat/CanvasPanel";
 import { MedicalMarkdown } from "@/components/MedicalMarkdown";
-import { QUICK_START_LEVELS, type QuickStartLevel } from "@/lib/atom/quick-start-schema";
+import type { QuickStartLevel } from "@/lib/atom/quick-start-schema";
 import { isAtomV3GddEnabled, isFeatureEnabled } from "@/lib/features/flags";
 import { appendDedupedUserEvent } from "@/components/atom/chatEventDedup";
 
@@ -26,23 +25,18 @@ import {
   type AtomWorkspaceMode,
 } from "@/lib/atom/room-profiles";
 import {
-  BookOpen,
-  CircleStop,
-  Play,
-  GitBranch,
-  RotateCcw,
-  FlaskConical,
   PanelLeft,
   PanelLeftClose,
   PanelRight,
-  FileText,
   CheckCircle2,
-  AlertTriangle,
   Loader2,
-  Activity,
   Lock,
-  Paperclip,
   SendHorizontal,
+  ThumbsDown,
+  ThumbsUp,
+  Settings2,
+  Activity,
+  TriangleAlert,
 } from "lucide-react";
 
 type TimelineItem = {
@@ -62,6 +56,20 @@ type ArtifactItem = {
   createdAt: string;
 };
 
+type FeedbackState = {
+  id: string;
+  feedbackType: 'thumbs_up' | 'thumbs_down';
+  comment?: string;
+  resolved?: boolean | null;
+};
+
+type ProfileState = {
+  response_style: 'concise' | 'balanced' | 'detailed' | 'socratic';
+  difficulty_preference: 'easy' | 'medium' | 'hard' | 'adaptive';
+  format_preference: 'bullet' | 'narrative' | 'qa' | 'mixed';
+  pace: 'slow' | 'normal' | 'fast';
+};
+
 const MODE_LABELS: Record<AtomWorkspaceMode, string> = {
   chat: "Chat",
   mcq: "MCQ",
@@ -78,6 +86,13 @@ const STATUS_STYLES: Record<AtomTaskStatus, string> = {
   completed: "bg-emerald-500/20 text-emerald-100 border-emerald-300/40",
   failed: "bg-rose-500/20 text-rose-100 border-rose-300/40",
   cancelled: "bg-zinc-500/20 text-zinc-200 border-zinc-300/40",
+};
+
+const DEFAULT_PROFILE: ProfileState = {
+  response_style: 'balanced',
+  difficulty_preference: 'adaptive',
+  format_preference: 'mixed',
+  pace: 'normal',
 };
 
 const WORKFLOW_PRESETS: Array<{ label: string; mode: AtomWorkspaceMode; prompt: string }> = [
@@ -137,8 +152,7 @@ export default function AtomWorkspacePage() {
   const [isOutputsOpen, setIsOutputsOpen] = useState(false);
   const [mode, setMode] = useState<AtomWorkspaceMode>("chat");
   const [taskPrompt, setTaskPrompt] = useState("");
-  const [selectedWorkflowPreset, setSelectedWorkflowPreset] = useState("");
-  const [composerAttachment, setComposerAttachment] = useState<{ name: string } | null>(null);
+  const [_selectedWorkflowPreset, setSelectedWorkflowPreset] = useState("");
   const [topic, setTopic] = useState("General Surgery high-yield revision");
   const [level, setLevel] = useState<QuickStartLevel>("resident");
   const [timeAvailable, setTimeAvailable] = useState("25");
@@ -148,7 +162,7 @@ export default function AtomWorkspacePage() {
 
   const [taskId, setTaskId] = useState<string | null>(null);
   const [status, setStatus] = useState<AtomTaskStatus>("queued");
-  const [assistantText, setAssistantText] = useState("");
+  const [_assistantText, setAssistantText] = useState("");
   const [chatHistory, setChatHistory] = useState<Array<{ role: 'user' | 'assistant'; content: string }>>([]);
   const [timeline, setTimeline] = useState<TimelineItem[]>([]);
   const [artifacts, setArtifacts] = useState<ArtifactItem[]>([]);
@@ -156,18 +170,30 @@ export default function AtomWorkspacePage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
   const [isHydratingSession, setIsHydratingSession] = useState(false);
+  const [feedbackByMessageKey, setFeedbackByMessageKey] = useState<Record<string, FeedbackState>>({});
+  const [feedbackReasonByMessageKey, setFeedbackReasonByMessageKey] = useState<Record<string, string>>({});
+  const [feedbackSavingKey, setFeedbackSavingKey] = useState<string | null>(null);
+
+  const [profile, setProfile] = useState<ProfileState>(DEFAULT_PROFILE);
+  const [isProfileLoading, setIsProfileLoading] = useState(true);
+  const [isProfileSaving, setIsProfileSaving] = useState(false);
+  const [profileError, setProfileError] = useState<string | null>(null);
+
+  const [calibration, setCalibration] = useState<Record<string, unknown> | null>(null);
+  const [alerts, setAlerts] = useState<Array<Record<string, unknown>>>([]);
+  const [rollups, setRollups] = useState<Array<Record<string, unknown>>>([]);
 
   const [gddSessionId, setGddSessionId] = useState<string | null>(null);
   const [gddLoadId, setGddLoadId] = useState("");
-  const [gddAccuracyPct, setGddAccuracyPct] = useState("70");
-  const [gddHintCount, setGddHintCount] = useState("1");
-  const [gddAvgResponseSec, setGddAvgResponseSec] = useState("35");
-  const [gddConfidenceSelf, setGddConfidenceSelf] = useState("65");
-  const [gddWeakConcepts, setGddWeakConcepts] = useState("");
+  const [gddAccuracyPct, _setGddAccuracyPct] = useState("70");
+  const [gddHintCount, _setGddHintCount] = useState("1");
+  const [gddAvgResponseSec, _setGddAvgResponseSec] = useState("35");
+  const [gddConfidenceSelf, _setGddConfidenceSelf] = useState("65");
+  const [gddWeakConcepts, _setGddWeakConcepts] = useState("");
 
   const [sourceCatalog, setSourceCatalog] = useState<AtomSourceCatalogItem[]>(ATOM_SOURCE_CATALOG);
   const [sourcesLoading, setSourcesLoading] = useState(true);
-  const [sourcesError, setSourcesError] = useState<string | null>(null);
+  const [_sourcesError, setSourcesError] = useState<string | null>(null);
   const [selectedBookIds, setSelectedBookIds] = useState<string[]>(ATOM_SOURCE_CATALOG.slice(0, 3).map((book) => book.id));
   const [selectedPreset, setSelectedPreset] = useState<AtomSourcePreset | null>("clinical-deep-dive");
   const [levelFilter, setLevelFilter] = useState<string>("all");
@@ -175,9 +201,9 @@ export default function AtomWorkspacePage() {
   const [showPendingSources, setShowPendingSources] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
 
-  const gddEnabled = isAtomV3GddEnabled();
+  const _gddEnabled = isAtomV3GddEnabled();
   const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
-  const ux2ComposerEnabled = isFeatureEnabled("atomUx2ComposerRevamp");
+  const _ux2ComposerEnabled = isFeatureEnabled("atomUx2ComposerRevamp");
   const activeRoomProfile = useMemo(() => resolveAtomRoomProfile(selectedRoomId), [selectedRoomId]);
 
   const sharedContext = useMemo(() => ({
@@ -558,7 +584,7 @@ export default function AtomWorkspacePage() {
     }
   }, [activeSessionId, chatHistory, domainFilter, isSubmitting, selectedBookIds, selectedRoomId, taskPrompt]);
 
-  const launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
+  const _launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
     if (launchMode === "chat") {
       await startTask();
       return;
@@ -622,7 +648,7 @@ export default function AtomWorkspacePage() {
     }
   }, [connectEvents, pushArtifact, pushTimeline, sharedContext, startTask]);
 
-  const startGuidedDeepDive = useCallback(async () => {
+  const _startGuidedDeepDive = useCallback(async () => {
     setIsSubmitting(true);
     setErrorCard(null);
     setAssistantText("");
@@ -658,7 +684,7 @@ export default function AtomWorkspacePage() {
     }
   }, [pushArtifact, pushTimeline, sharedContext.goal, sharedContext.level, sharedContext.topic]);
 
-  const loadGuidedDeepDive = useCallback(async () => {
+  const _loadGuidedDeepDive = useCallback(async () => {
     if (!gddLoadId.trim()) return;
 
     setIsSubmitting(true);
@@ -685,7 +711,7 @@ export default function AtomWorkspacePage() {
     }
   }, [gddLoadId, pushArtifact, pushTimeline]);
 
-  const advanceGuidedDeepDive = useCallback(async () => {
+  const _advanceGuidedDeepDive = useCallback(async () => {
     if (!gddSessionId) return;
     setIsSubmitting(true);
     setErrorCard(null);
@@ -725,7 +751,7 @@ export default function AtomWorkspacePage() {
     }
   }, [gddAccuracyPct, gddAvgResponseSec, gddConfidenceSelf, gddHintCount, gddSessionId, gddWeakConcepts, pushArtifact, pushTimeline]);
 
-  const controlTask = useCallback(async (action: "stop" | "retry" | "continue" | "branch") => {
+  const _controlTask = useCallback(async (action: "stop" | "retry" | "continue" | "branch") => {
     if (!taskId) return;
     setErrorCard(null);
     if (action === "retry" || action === "continue") {
@@ -759,7 +785,7 @@ export default function AtomWorkspacePage() {
     setSelectedBookIds((prev) => (prev.includes(bookId) ? prev.filter((id) => id !== bookId) : [...prev, bookId]));
   };
 
-  const applyWorkflowPreset = (presetLabel: string) => {
+  const _applyWorkflowPreset = (presetLabel: string) => {
     setSelectedWorkflowPreset(presetLabel);
     const selected = WORKFLOW_PRESETS.find((preset) => preset.label === presetLabel);
     if (!selected) return;
@@ -869,6 +895,153 @@ export default function AtomWorkspacePage() {
     };
   }, [activeSessionId]);
 
+  useEffect(() => {
+    let active = true;
+
+    const loadProfile = async () => {
+      setIsProfileLoading(true);
+      setProfileError(null);
+      try {
+        const response = await fetch('/api/atom/profile');
+        if (!response.ok) throw new Error('Profile API unavailable');
+        const payload = (await response.json()) as { profile?: Partial<ProfileState> };
+        if (!active) return;
+        setProfile((prev) => ({ ...prev, ...(payload.profile ?? {}) }));
+      } catch {
+        if (!active) return;
+        setProfile(DEFAULT_PROFILE);
+        setProfileError('Profile sync unavailable. Using local defaults.');
+      } finally {
+        if (active) setIsProfileLoading(false);
+      }
+    };
+
+    void loadProfile();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const saveProfile = useCallback(async (patch: Partial<ProfileState>) => {
+    const next = { ...profile, ...patch };
+    setProfile(next);
+    setIsProfileSaving(true);
+    setProfileError(null);
+
+    try {
+      const response = await fetch('/api/atom/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ patch }),
+      });
+      if (!response.ok) throw new Error('Unable to save preferences');
+      const payload = (await response.json()) as { profile?: Partial<ProfileState> };
+      setProfile((prev) => ({ ...prev, ...(payload.profile ?? {}) }));
+    } catch {
+      setProfileError('Could not sync preference to server. Changes kept locally.');
+    } finally {
+      setIsProfileSaving(false);
+    }
+  }, [profile]);
+
+  useEffect(() => {
+    let active = true;
+
+    const loadOps = async () => {
+      try {
+        const [calibrationRes, alertsRes, rollupsRes] = await Promise.all([
+          fetch('/api/atom/telemetry/calibration'),
+          fetch('/api/atom/telemetry/alerts'),
+          fetch('/api/atom/telemetry/rollups'),
+        ]);
+
+        if (!active) return;
+        if (calibrationRes.ok) {
+          const payload = (await calibrationRes.json()) as { summary?: Record<string, unknown> };
+          setCalibration(payload.summary ?? null);
+        }
+        if (alertsRes.ok) {
+          const payload = (await alertsRes.json()) as { alerts?: Array<Record<string, unknown>> };
+          setAlerts(payload.alerts ?? []);
+        }
+        if (rollupsRes.ok) {
+          const payload = (await rollupsRes.json()) as { rollups?: Array<Record<string, unknown>> };
+          setRollups(payload.rollups ?? []);
+        }
+      } catch {
+        // non-blocking panel
+      }
+    };
+
+    void loadOps();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const submitFeedback = useCallback(async (messageKey: string, feedbackType: 'thumbs_up' | 'thumbs_down') => {
+    setFeedbackSavingKey(messageKey);
+    const comment = feedbackReasonByMessageKey[messageKey]?.trim();
+    try {
+      const response = await fetch('/api/atom/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          feedbackType,
+          sentiment: feedbackType === 'thumbs_up' ? 'positive' : 'negative',
+          comment: comment || null,
+          sessionId: activeSessionId,
+          messageId: messageKey,
+          artifactId: mergedArtifacts[0]?.id,
+          metadata: { ui: 'atom-chat-feedback' },
+        }),
+      });
+      const payload = (await response.json()) as { feedback?: { id: string; resolved?: boolean | null } };
+      if (!response.ok || !payload.feedback?.id) throw new Error('Failed to submit feedback');
+      setFeedbackByMessageKey((prev) => ({
+        ...prev,
+        [messageKey]: {
+          id: payload.feedback!.id,
+          feedbackType,
+          comment,
+          resolved: payload.feedback?.resolved ?? null,
+        },
+      }));
+    } catch {
+      setErrorCard('Could not submit feedback right now.');
+    } finally {
+      setFeedbackSavingKey(null);
+    }
+  }, [activeSessionId, feedbackReasonByMessageKey, mergedArtifacts]);
+
+  const markFeedbackOutcome = useCallback(async (messageKey: string, resolved: boolean) => {
+    const item = feedbackByMessageKey[messageKey];
+    if (!item?.id) return;
+
+    setFeedbackSavingKey(messageKey);
+    try {
+      const response = await fetch(`/api/atom/feedback/${item.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ resolved }),
+      });
+      if (!response.ok) throw new Error('Failed to update outcome');
+      setFeedbackByMessageKey((prev) => ({
+        ...prev,
+        [messageKey]: {
+          ...prev[messageKey],
+          resolved,
+        },
+      }));
+    } catch {
+      setErrorCard('Could not update outcome state.');
+    } finally {
+      setFeedbackSavingKey(null);
+    }
+  }, [feedbackByMessageKey]);
+
   return (
     <div className="h-full flex bg-[linear-gradient(140deg,#0F172A,#162535_35%,#0B1324)] text-white">
       <Card className={`${isSidebarCollapsed ? 'w-[72px]' : 'w-[320px]'} transition-all duration-200 shrink-0 border-y-0 border-l-0 border-r border-[#1E3A5F] rounded-none bg-[#0f2133]/80 flex flex-col`}>
@@ -966,6 +1139,58 @@ export default function AtomWorkspacePage() {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-2">
+            <div className="rounded-xl border border-[#1E3A5F] bg-[#13253A]/70 p-3">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-xs text-[#C5D8EC] flex items-center gap-1"><Settings2 className="w-3.5 h-3.5" /> Response Preferences</p>
+                <span className="text-[10px] text-[#8BA2BA]">{isProfileLoading ? 'Loading…' : isProfileSaving ? 'Saving…' : 'Synced'}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                <select value={profile.response_style} onChange={(e) => void saveProfile({ response_style: e.target.value as ProfileState['response_style'] })} className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2" disabled={isProfileLoading}>
+                  <option value="concise">Concise</option><option value="balanced">Balanced</option><option value="detailed">Detailed</option><option value="socratic">Socratic</option>
+                </select>
+                <select value={profile.difficulty_preference} onChange={(e) => void saveProfile({ difficulty_preference: e.target.value as ProfileState['difficulty_preference'] })} className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2" disabled={isProfileLoading}>
+                  <option value="easy">Easy</option><option value="medium">Medium</option><option value="hard">Hard</option><option value="adaptive">Adaptive</option>
+                </select>
+                <select value={profile.format_preference} onChange={(e) => void saveProfile({ format_preference: e.target.value as ProfileState['format_preference'] })} className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2" disabled={isProfileLoading}>
+                  <option value="bullet">Bullet</option><option value="narrative">Narrative</option><option value="qa">Q/A</option><option value="mixed">Mixed</option>
+                </select>
+                <select value={profile.pace} onChange={(e) => void saveProfile({ pace: e.target.value as ProfileState['pace'] })} className="h-8 rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2" disabled={isProfileLoading}>
+                  <option value="slow">Slow</option><option value="normal">Normal</option><option value="fast">Fast</option>
+                </select>
+              </div>
+              {profileError && <p className="mt-2 text-[10px] text-amber-200">{profileError}</p>}
+            </div>
+
+            <div className="rounded-xl border border-[#1E3A5F] bg-[#13253A]/70 p-3">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-xs text-[#C5D8EC] flex items-center gap-1"><Activity className="w-3.5 h-3.5" /> Quality & Ops</p>
+                <span className="text-[10px] text-[#8BA2BA]">{rollups.length} rollups</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-[11px]">
+                <div className="rounded-md bg-[#0F1D2E] border border-[#1E3A5F] p-2">
+                  <p className="text-[#8BA2BA]">Score</p>
+                  <p className="text-[#E2EEF9] font-semibold">{Math.round((Number(calibration?.weightedScore ?? 0.5)) * 100)}%</p>
+                </div>
+                <div className="rounded-md bg-[#0F1D2E] border border-[#1E3A5F] p-2">
+                  <p className="text-[#8BA2BA]">Trend</p>
+                  <p className="text-[#E2EEF9] font-semibold uppercase">{String(calibration?.trend ?? 'flat')}</p>
+                </div>
+                <div className="rounded-md bg-[#0F1D2E] border border-[#1E3A5F] p-2">
+                  <p className="text-[#8BA2BA]">Alerts</p>
+                  <p className="text-[#E2EEF9] font-semibold">{alerts.length}</p>
+                </div>
+              </div>
+              <div className="mt-2 rounded-md border border-[#1E3A5F] bg-[#0F1D2E] p-2 text-[11px] text-[#AFC4D8]">
+                {alerts[0] ? (
+                  <p className="flex items-center gap-1"><TriangleAlert className="w-3.5 h-3.5 text-amber-300" /> Latest: {String(alerts[0].kind ?? 'alert')} ({String(alerts[0].severity ?? 'info')})</p>
+                ) : (
+                  <p>No active alerts in current window.</p>
+                )}
+              </div>
+            </div>
+          </div>
+
           {errorCard && <div className="rounded-lg border border-rose-400/40 bg-rose-500/10 p-3 text-xs text-rose-100">{errorCard}</div>}
 
           <div className="flex-1 min-h-0 overflow-hidden">
@@ -983,18 +1208,41 @@ export default function AtomWorkspacePage() {
                     <p className="text-sm text-[#64748B]">Start a chat to see responses here.</p>
                   </div>
                 ) : (
-                  chatHistory.map((message, idx) => (
-                    <div key={`${message.role}-${idx}`} className={message.role === 'user' ? 'ml-auto max-w-[78%] rounded-2xl bg-[#5BB3B3]/20 border border-[#5BB3B3]/40 px-3 py-2' : 'mr-auto max-w-[82%] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3'}>
-                      {message.role === 'assistant' ? (
-                        <MedicalMarkdown
-                          content={message.content}
-                          className="text-[13px] leading-6 [&_strong]:text-[#7DD3FC] [&_em]:text-[#A5F3FC] [&_h1]:text-[#E5EEF8] [&_h2]:text-[#D2E6FF] [&_h3]:text-[#BFDBFE]"
-                        />
-                      ) : (
-                        <p className="text-[13px] text-[#E7F8F8] whitespace-pre-wrap">{message.content}</p>
-                      )}
-                    </div>
-                  ))
+                  chatHistory.map((message, idx) => {
+                    const messageKey = `${message.role}-${idx}`;
+                    const feedback = feedbackByMessageKey[messageKey];
+                    return (
+                      <div key={messageKey} className={message.role === 'user' ? 'ml-auto max-w-[78%] rounded-2xl bg-[#5BB3B3]/20 border border-[#5BB3B3]/40 px-3 py-2' : 'mr-auto max-w-[82%] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3'}>
+                        {message.role === 'assistant' ? (
+                          <>
+                            <MedicalMarkdown
+                              content={message.content}
+                              className="text-[13px] leading-6 [&_strong]:text-[#7DD3FC] [&_em]:text-[#A5F3FC] [&_h1]:text-[#E5EEF8] [&_h2]:text-[#D2E6FF] [&_h3]:text-[#BFDBFE]"
+                            />
+                            <div className="mt-2 pt-2 border-t border-white/10 space-y-2">
+                              <div className="flex items-center gap-2">
+                                <Button size="sm" variant="ghost" className={`h-7 px-2 text-[11px] ${feedback?.feedbackType === 'thumbs_up' ? 'text-emerald-300' : 'text-[#9FB0C2]'}`} onClick={() => void submitFeedback(messageKey, 'thumbs_up')} disabled={feedbackSavingKey === messageKey}>
+                                  <ThumbsUp className="w-3.5 h-3.5 mr-1" /> Helpful
+                                </Button>
+                                <Button size="sm" variant="ghost" className={`h-7 px-2 text-[11px] ${feedback?.feedbackType === 'thumbs_down' ? 'text-rose-300' : 'text-[#9FB0C2]'}`} onClick={() => void submitFeedback(messageKey, 'thumbs_down')} disabled={feedbackSavingKey === messageKey}>
+                                  <ThumbsDown className="w-3.5 h-3.5 mr-1" /> Needs fix
+                                </Button>
+                                {feedback?.id && (
+                                  <>
+                                    <Button size="sm" variant="ghost" className={`h-7 px-2 text-[11px] ${feedback.resolved === true ? 'text-emerald-300' : 'text-[#9FB0C2]'}`} onClick={() => void markFeedbackOutcome(messageKey, true)} disabled={feedbackSavingKey === messageKey}>Resolved</Button>
+                                    <Button size="sm" variant="ghost" className={`h-7 px-2 text-[11px] ${feedback.resolved === false ? 'text-amber-300' : 'text-[#9FB0C2]'}`} onClick={() => void markFeedbackOutcome(messageKey, false)} disabled={feedbackSavingKey === messageKey}>Unresolved</Button>
+                                  </>
+                                )}
+                              </div>
+                              <input value={feedbackReasonByMessageKey[messageKey] ?? ''} onChange={(e) => setFeedbackReasonByMessageKey((prev) => ({ ...prev, [messageKey]: e.target.value }))} className="h-8 w-full rounded-md bg-[#162535] border border-[#1E3A5F] text-[11px] px-2 text-[#BFDBFE]" placeholder="Optional reason (quick note for quality loop)" />
+                            </div>
+                          </>
+                        ) : (
+                          <p className="text-[13px] text-[#E7F8F8] whitespace-pre-wrap">{message.content}</p>
+                        )}
+                      </div>
+                    );
+                  })
                 )}
               </div>
             </div>
