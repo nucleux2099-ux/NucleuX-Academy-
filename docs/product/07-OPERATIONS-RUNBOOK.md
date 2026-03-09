@@ -5,7 +5,8 @@
 ## 1) Go-live checklist
 
 ## Infra + schema
-- [ ] Apply migrations up to `014_atom_phase_e4_e5_hardening.sql` (and current head).
+- [ ] Apply ATOM phase migrations up to `014_atom_phase_e4_e5_hardening.sql`.
+- [ ] If deploying full LMS schema, also apply current head (`015_competency_progress.sql`), noting it is outside ATOM Phase A–E.
 - [ ] Verify required indexes for alerts/rollups.
 - [ ] Validate RLS behavior on telemetry/feedback tables.
 

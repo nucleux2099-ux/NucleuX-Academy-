@@ -31,6 +31,8 @@ If you are short on time, start with:
    ADR-style timeline of major product decisions.
 10. **[10-DOCTOR-QUICKSTART.md](./10-DOCTOR-QUICKSTART.md)**  
     Day-to-day guide for clinicians.
+11. **[11-CONFORMANCE-CHECK-A-E.md](./11-CONFORMANCE-CHECK-A-E.md)**  
+    Strict Phase A–E conformance audit against code/migrations/APIs, with deviations and fixes.
 
 ---
 
@@ -49,7 +51,8 @@ If you are short on time, start with:
 This pack reflects the currently implemented state in:
 - `src/components/atom/LegacyAtomWorkspace.tsx` (active ATOM UX shell)
 - `src/app/api/atom/**` and `src/lib/atom/**` (core ATOM runtime)
-- `supabase/migrations/005` through `015` (ATOM tasks/sessions/profiles/telemetry)
+- `supabase/migrations/009` through `014` (Phase A–E ATOM sessions/artifacts/profiles/telemetry/feedback)
+- `supabase/migrations/015_competency_progress.sql` (separate LMS competency schema; not part of ATOM Phase A–E)
 - Existing architecture docs under `/docs/atom-*.md`
 
 Known caveat: some Track A / Guided Deep Dive functionality exists as scaffold or feature-flagged paths; active `/atom` user flow is primarily single-chat UX.

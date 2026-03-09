@@ -91,7 +91,7 @@ Telemetry + Feedback + Rollups -> Quality/ops visibility
 - Frontend primary entry: `src/app/(app)/atom/page.tsx` → `LegacyAtomWorkspace`
 - Core APIs: `src/app/api/atom/session/*`, `profile`, `feedback`, `telemetry/*`, `heartbeat/run`
 - Runtime modules: `src/lib/atom/*` (scope, memory, telemetry, profile, artifacts)
-- DB migrations through hardening: `005` to `015`
+- DB migrations for ATOM Phase A–E baseline: `009` to `014` (with `015` present as separate competency-progress schema outside ATOM phases)
 
 ## Decisions
 - Keep ATOM as a doctor workflow engine, not a broad “AI everything” interface.
