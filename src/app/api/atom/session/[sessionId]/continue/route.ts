@@ -2,9 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { getAtomSession } from '@/lib/atom/session-store';
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
+import { createAtomTelemetryLogger, startTimer } from '@/lib/atom/telemetry';
 
 export async function POST(request: NextRequest, context: { params: Promise<{ sessionId: string }> }) {
+  const elapsed = startTimer();
   const supabase = await createClient();
+  const telemetry = createAtomTelemetryLogger(supabase);
   const {
     data: { user },
     error: authError,
@@ -64,5 +67,19 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
   });
 
   const json = await response.json();
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'request.lifecycle',
+    ts: new Date().toISOString(),
+    scopeKey,
+    actorUserId: user.id,
+    sessionId,
+    route: '/api/atom/session/[sessionId]/continue',
+    mode: 'continue',
+    latencyMs: elapsed(),
+    status: response.ok ? 'ok' : 'error',
+    reasonCode: response.ok ? undefined : `http_${response.status}`,
+    metadata: { delegatedTo: '/api/atom/session/[sessionId]/message' },
+  });
   return NextResponse.json({ ...json, scopeKey }, { status: response.status });
 }

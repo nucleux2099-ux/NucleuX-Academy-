@@ -8,9 +8,12 @@ import {
   type AdaptiveProfileEvent,
   type AdaptiveProfilePatch,
 } from '@/lib/atom/adaptive-profile';
+import { createAtomTelemetryLogger, startTimer } from '@/lib/atom/telemetry';
 
 export async function GET(request: NextRequest) {
+  const elapsed = startTimer();
   const supabase = await createClient();
+  const telemetry = createAtomTelemetryLogger(supabase);
   const {
     data: { user },
     error: authError,
@@ -20,11 +23,25 @@ export async function GET(request: NextRequest) {
 
   const scope = resolveAtomScopeKeyForRequest({ request, userId: user.id });
   const profile = await getAdaptiveProfile(supabase, scope.scopeKey);
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'profile.decision',
+    ts: new Date().toISOString(),
+    scopeKey: scope.scopeKey,
+    actorUserId: user.id,
+    route: '/api/atom/profile',
+    mode: 'read',
+    latencyMs: elapsed(),
+    status: 'ok',
+    metadata: { profileVersion: profile.version },
+  });
   return NextResponse.json({ scopeKey: scope.scopeKey, profile });
 }
 
 export async function POST(request: NextRequest) {
+  const elapsed = startTimer();
   const supabase = await createClient();
+  const telemetry = createAtomTelemetryLogger(supabase);
   const {
     data: { user },
     error: authError,
@@ -52,6 +69,21 @@ export async function POST(request: NextRequest) {
   const eventPatch = body.event ? patchFromEvent(body.event, current) : {};
   const mergedPatch: AdaptiveProfilePatch = { ...(body.patch ?? {}), ...eventPatch };
   const profile = await updateAdaptiveProfile(supabase, scope.scopeKey, mergedPatch);
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'profile.decision',
+    ts: new Date().toISOString(),
+    scopeKey: scope.scopeKey,
+    actorUserId: user.id,
+    route: '/api/atom/profile',
+    mode: 'write',
+    latencyMs: elapsed(),
+    status: 'ok',
+    metadata: {
+      profileVersion: profile.version,
+      patchKeys: Object.keys(mergedPatch),
+    },
+  });
 
   return NextResponse.json({ scopeKey: scope.scopeKey, profile, appliedPatch: mergedPatch });
 }

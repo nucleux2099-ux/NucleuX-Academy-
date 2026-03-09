@@ -2,9 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 import { runScopedHeartbeat } from '@/lib/atom/heartbeat-service';
+import { createAtomTelemetryLogger, startTimer } from '@/lib/atom/telemetry';
 
 export async function POST(request: NextRequest) {
+  const elapsed = startTimer();
   const supabase = await createClient();
+  const telemetry = createAtomTelemetryLogger(supabase);
   const {
     data: { user },
     error: authError,
@@ -34,6 +37,20 @@ export async function POST(request: NextRequest) {
       cadenceMinutes: Math.max(15, body.cadenceMinutes ?? 180),
       activeHours: body.activeHours,
     },
+  });
+
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'heartbeat.outcome',
+    ts: new Date().toISOString(),
+    scopeKey: scope.scopeKey,
+    actorUserId: user.id,
+    route: '/api/atom/heartbeat/run',
+    mode: 'heartbeat',
+    latencyMs: elapsed(),
+    status: result.status === 'ACTION' ? 'ok' : 'skipped',
+    reasonCode: result.reason,
+    metadata: { shouldEmit: result.shouldEmit, filesRead: result.readFiles.length },
   });
 
   return NextResponse.json({ scopeKey: scope.scopeKey, result });

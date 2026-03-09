@@ -3,12 +3,15 @@ import { createClient } from '@/lib/supabase/server';
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 import { getAtomSession } from '@/lib/atom/session-store';
 import { createAtomArtifactService } from '@/lib/atom/artifacts/service';
+import { createAtomTelemetryLogger, startTimer } from '@/lib/atom/telemetry';
 
 export async function GET(
   request: NextRequest,
   context: { params: Promise<{ sessionId: string; artifactId: string }> },
 ) {
+  const elapsed = startTimer();
   const supabase = await createClient();
+  const telemetry = createAtomTelemetryLogger(supabase);
   const {
     data: { user },
     error: authError,
@@ -46,6 +49,20 @@ export async function GET(
   });
 
   if (!download) return NextResponse.json({ error: 'Artifact not found' }, { status: 404 });
+
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'artifact.usage',
+    ts: new Date().toISOString(),
+    scopeKey,
+    actorUserId: user.id,
+    sessionId,
+    route: '/api/atom/session/[sessionId]/artifacts/[artifactId]/download',
+    mode: 'download',
+    latencyMs: elapsed(),
+    status: 'ok',
+    metadata: { artifactId, mime: download.mime },
+  });
 
   return new NextResponse(download.content, {
     status: 200,

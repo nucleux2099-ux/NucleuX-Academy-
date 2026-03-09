@@ -14,6 +14,7 @@ import type { AtomArtifactV1 } from '@/lib/atom/artifacts/types';
 import { getAdaptiveProfile } from '@/lib/atom/adaptive-profile';
 import { applyPolicyGuardrails } from '@/lib/atom/policy-guardrails';
 import { assemblePromptV3 } from '@/lib/atom/prompt-assembly-v3';
+import { createAtomTelemetryLogger, startTimer } from '@/lib/atom/telemetry';
 
 function extractArtifactsFromAssistant(text: string): AtomArtifactV1[] {
   const artifacts: AtomArtifactV1[] = [];
@@ -96,7 +97,9 @@ async function runChat(request: NextRequest, payload: Record<string, unknown>) {
 }
 
 export async function POST(request: NextRequest, context: { params: Promise<{ sessionId: string }> }) {
+  const elapsed = startTimer();
   const supabase = await createClient();
+  const telemetry = createAtomTelemetryLogger(supabase);
   const {
     data: { user },
     error: authError,
@@ -163,6 +166,23 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     query: previousTopic ?? userText,
     limit: 6,
   });
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'retrieval.outcome',
+    ts: new Date().toISOString(),
+    scopeKey,
+    actorUserId: user.id,
+    sessionId,
+    route: '/api/atom/session/[sessionId]/message',
+    mode: isContinueLike ? 'continue' : 'chat',
+    latencyMs: elapsed(),
+    status: 'ok',
+    metadata: {
+      snippetCount: retrievalSnippets.length,
+      topScore: retrievalSnippets[0]?.score ?? null,
+      queryLen: (previousTopic ?? userText).length,
+    },
+  });
 
   const profile = await getAdaptiveProfile(supabase, scopeKey);
   const policy = applyPolicyGuardrails({
@@ -170,6 +190,24 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     explicitUserInstruction: body.userInstructionOverride,
     strictGrounded: body.strictGrounded ?? true,
     safetyMode: body.safetyMode ?? false,
+  });
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'policy.decision',
+    ts: new Date().toISOString(),
+    scopeKey,
+    actorUserId: user.id,
+    sessionId,
+    route: '/api/atom/session/[sessionId]/message',
+    mode: isContinueLike ? 'continue' : 'chat',
+    latencyMs: elapsed(),
+    status: 'ok',
+    metadata: {
+      personalizationAllowed: policy.personalizationAllowed,
+      reasonCodes: policy.reasonCodes,
+      strictGrounded: body.strictGrounded ?? true,
+      safetyMode: body.safetyMode ?? false,
+    },
   });
 
   const assembly = assemblePromptV3({
@@ -242,6 +280,23 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
       lastTurnAt: new Date().toISOString(),
       lastMode: 'chat',
       lastTopic,
+    },
+  });
+
+  void telemetry.log({
+    eventId: crypto.randomUUID(),
+    eventName: 'request.lifecycle',
+    ts: new Date().toISOString(),
+    scopeKey,
+    actorUserId: user.id,
+    sessionId,
+    route: '/api/atom/session/[sessionId]/message',
+    mode: isContinueLike ? 'continue' : 'chat',
+    latencyMs: elapsed(),
+    status: 'ok',
+    metadata: {
+      artifactsCreated: artifacts.length,
+      fallbackHit: artifacts.length === 0,
     },
   });
 
