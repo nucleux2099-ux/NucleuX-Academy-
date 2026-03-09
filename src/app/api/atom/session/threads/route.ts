@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { listUserAtomSessions } from '@/lib/atom/session-store';
+import { deriveAtomThreadIdForScope, deriveAtomUserScopeKey } from '@/lib/atom/user-scope';
 
-export async function GET() {
+export async function GET(request: Request) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -11,10 +12,21 @@ export async function GET() {
 
   if (authError || !user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
+  const url = new URL(request.url);
+  const scopeKey = deriveAtomUserScopeKey({
+    userId: user.id,
+    accountId: url.searchParams.get('accountId') ?? request.headers.get('x-atom-account-id'),
+    channel: url.searchParams.get('channel') ?? request.headers.get('x-atom-channel') ?? 'web',
+    peer: url.searchParams.get('peer') ?? request.headers.get('x-atom-peer') ?? user.id,
+  });
+
+  const canonicalThreadId = deriveAtomThreadIdForScope(scopeKey);
   const sessions = await listUserAtomSessions(supabase, user.id, 24);
+  const filtered = sessions.filter((session) => session.thread_id === canonicalThreadId);
 
   return NextResponse.json({
-    threads: sessions.map((session) => ({
+    scopeKey,
+    threads: filtered.map((session) => ({
       id: session.thread_id,
       sessionId: session.id,
       roomId: session.room_id,

@@ -61,16 +61,6 @@ type ArtifactItem = {
   createdAt: string;
 };
 
-type ThreadSessionItem = {
-  id: string;
-  title: string;
-  mode: AtomWorkspaceMode;
-  status: AtomTaskStatus;
-  updatedAt: string;
-  taskId?: string;
-  sessionId?: string;
-};
-
 const MODE_LABELS: Record<AtomWorkspaceMode, string> = {
   chat: "Chat",
   mcq: "MCQ",
@@ -144,8 +134,6 @@ function formatEvent(type: AtomEventType, payload: Record<string, unknown>): Pic
 export default function AtomWorkspacePage() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isOutputsOpen, setIsOutputsOpen] = useState(false);
-  const [threadSessions, setThreadSessions] = useState<ThreadSessionItem[]>([]);
-  const [activeThreadId, setActiveThreadId] = useState<string | null>(null);
   const [mode, setMode] = useState<AtomWorkspaceMode>("chat");
   const [taskPrompt, setTaskPrompt] = useState("");
   const [selectedWorkflowPreset, setSelectedWorkflowPreset] = useState("");
@@ -166,7 +154,7 @@ export default function AtomWorkspacePage() {
   const [errorCard, setErrorCard] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
-  const [isHydratingThread, setIsHydratingThread] = useState(false);
+  const [isHydratingSession, setIsHydratingSession] = useState(false);
 
   const [gddSessionId, setGddSessionId] = useState<string | null>(null);
   const [gddLoadId, setGddLoadId] = useState("");
@@ -185,7 +173,6 @@ export default function AtomWorkspacePage() {
   const [domainFilter, setDomainFilter] = useState<string>("all");
   const [showPendingSources, setShowPendingSources] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
-  const threadSessionMapRef = useRef<Record<string, string>>({});
 
   const gddEnabled = isAtomV3GddEnabled();
   const trackAEnabled = isFeatureEnabled("trackADeepResearchScaffold");
@@ -508,17 +495,16 @@ export default function AtomWorkspacePage() {
     setChatHistory((prev) => [...prev, { role: 'user', content: userText }]);
 
     try {
-      const threadKey = activeThreadId ?? `thread-${Date.now()}`;
-      let sessionId = threadSessionMapRef.current[threadKey];
+      let sessionId = activeSessionId;
 
       if (!sessionId) {
         const startRes = await fetch('/api/atom/session/start', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            threadId: threadKey,
             roomId: selectedRoomId,
             selectedBookIds,
+            channel: 'web',
           }),
         });
         const startJson = (await startRes.json()) as { sessionId?: string; error?: string };
@@ -526,8 +512,6 @@ export default function AtomWorkspacePage() {
           throw new Error(startJson.error ?? 'Unable to start session');
         }
         sessionId = startJson.sessionId;
-        threadSessionMapRef.current[threadKey] = sessionId;
-        setActiveThreadId(threadKey);
       }
 
       setActiveSessionId(sessionId);
@@ -564,17 +548,6 @@ export default function AtomWorkspacePage() {
           return Array.from(map.values());
         });
       }
-      setThreadSessions((prev) => {
-        const next: ThreadSessionItem = {
-          id: threadKey,
-          sessionId,
-          title: userText.slice(0, 80),
-          mode: 'chat',
-          status: 'completed',
-          updatedAt: new Date().toISOString(),
-        };
-        return [next, ...prev.filter((item) => item.id !== threadKey)].slice(0, 12);
-      });
       setStatus('completed');
     } catch (error) {
       setStatus('failed');
@@ -582,7 +555,7 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [activeThreadId, chatHistory, domainFilter, isSubmitting, selectedBookIds, selectedRoomId, taskPrompt]);
+  }, [activeSessionId, chatHistory, domainFilter, isSubmitting, selectedBookIds, selectedRoomId, taskPrompt]);
 
   const launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
     if (launchMode === "chat") {
@@ -815,37 +788,22 @@ export default function AtomWorkspacePage() {
   useEffect(() => {
     let active = true;
 
-    const loadThreads = async () => {
+    const loadCanonicalSession = async () => {
       try {
         const response = await fetch('/api/atom/session/threads');
         if (!response.ok) return;
         const payload = (await response.json()) as {
-          threads?: Array<{ id: string; sessionId: string; roomId?: string; status?: string; updatedAt?: string; title?: string }>;
+          threads?: Array<{ sessionId: string }>;
         };
 
-        if (!active || !Array.isArray(payload.threads)) return;
-
-        const hydrated = payload.threads.map((thread) => ({
-          id: thread.id,
-          sessionId: thread.sessionId,
-          title: thread.title ?? 'ATOM Thread',
-          mode: 'chat' as AtomWorkspaceMode,
-          status: (thread.status as AtomTaskStatus) ?? 'completed',
-          updatedAt: thread.updatedAt ?? new Date().toISOString(),
-        }));
-
-        setThreadSessions(hydrated);
-        if (hydrated[0]) {
-          setActiveThreadId(hydrated[0].id);
-          setActiveSessionId(hydrated[0].sessionId);
-          threadSessionMapRef.current = Object.fromEntries(hydrated.map((thread) => [thread.id, thread.sessionId]));
-        }
+        if (!active || !Array.isArray(payload.threads) || !payload.threads[0]?.sessionId) return;
+        setActiveSessionId(payload.threads[0].sessionId);
       } catch {
-        // keep local empty state
+        // no existing session for this scope yet
       }
     };
 
-    void loadThreads();
+    void loadCanonicalSession();
 
     return () => {
       active = false;
@@ -853,18 +811,16 @@ export default function AtomWorkspacePage() {
   }, []);
 
   useEffect(() => {
-    if (!activeThreadId) return;
-    const sessionId = threadSessionMapRef.current[activeThreadId];
-    if (!sessionId) return;
+    if (!activeSessionId) return;
 
     let active = true;
-    const hydrateThread = async () => {
-      setIsHydratingThread(true);
+    const hydrateSession = async () => {
+      setIsHydratingSession(true);
       try {
-        const response = await fetch(`/api/atom/session/${sessionId}`);
+        const response = await fetch(`/api/atom/session/${activeSessionId}`);
         if (!response.ok) return;
         const payload = (await response.json()) as {
-          session?: { room_id?: string; status?: AtomTaskStatus };
+          session?: { status?: AtomTaskStatus };
           messages?: Array<{ role: 'user' | 'assistant'; content_md: string }>;
           artifacts?: ArtifactItem[];
         };
@@ -883,41 +839,16 @@ export default function AtomWorkspacePage() {
       } catch {
         // ignore hydration errors and keep current pane state
       } finally {
-        if (active) setIsHydratingThread(false);
+        if (active) setIsHydratingSession(false);
       }
     };
 
-    void hydrateThread();
+    void hydrateSession();
 
     return () => {
       active = false;
     };
-  }, [activeThreadId]);
-
-  useEffect(() => {
-    if (!taskId) return;
-    const nextId = `${taskId}-${mode}`;
-    const title = taskPrompt.trim() || `${MODE_LABELS[mode]} · ${topic}`;
-    setThreadSessions((prev) => {
-      const existing = prev.find((item) => item.id === nextId);
-      const nextItem: ThreadSessionItem = {
-        id: nextId,
-        title: title.slice(0, 80),
-        mode,
-        status,
-        taskId,
-        updatedAt: new Date().toISOString(),
-        sessionId: existing?.sessionId,
-      };
-      if (!existing) {
-        return [nextItem, ...prev].slice(0, 12);
-      }
-      return [nextItem, ...prev.filter((item) => item.id !== nextId)].slice(0, 12);
-    });
-    setActiveThreadId(nextId);
-  }, [mode, status, taskId, taskPrompt, topic]);
-
-  const activeThread = threadSessions.find((item) => item.id === activeThreadId) ?? threadSessions[0] ?? null;
+  }, [activeSessionId]);
 
   return (
     <div className="h-full flex bg-[linear-gradient(140deg,#0F172A,#162535_35%,#0B1324)] text-white">
@@ -932,37 +863,7 @@ export default function AtomWorkspacePage() {
           {!isSidebarCollapsed && <Badge className="text-[10px] bg-[#5BB3B3]/15 border-[#5BB3B3]/40 text-[#A5F3FC]">UX-1</Badge>}
         </div>
 
-        <div className="flex-1 min-h-0 grid grid-rows-2">
-          <div className="border-b border-[#1E3A5F] min-h-0 p-3">
-            {!isSidebarCollapsed && <p className="text-[11px] uppercase tracking-wide text-[#7DD3FC] mb-2">Threads</p>}
-            <div className="h-full overflow-y-auto space-y-1.5">
-              {threadSessions.length === 0 && !isSidebarCollapsed ? (
-                <p className="text-xs text-[#64748B]">Run a task to seed thread history.</p>
-              ) : (
-                threadSessions.map((thread) => (
-                  <button
-                    key={thread.id}
-                    onClick={() => {
-                      setActiveThreadId(thread.id);
-                      setActiveSessionId(thread.sessionId ?? threadSessionMapRef.current[thread.id] ?? null);
-                    }}
-                    className={`w-full text-left rounded-md border px-2 py-1.5 ${activeThreadId === thread.id ? 'border-[#5BB3B3]/50 bg-[#5BB3B3]/10' : 'border-[#1E3A5F] hover:bg-[#1E3A5F]/40'}`}
-                  >
-                    {isSidebarCollapsed ? (
-                      <span className="text-[10px] text-[#9FB0C2]">{thread.mode.slice(0, 1).toUpperCase()}</span>
-                    ) : (
-                      <>
-                        <p className="text-xs text-[#D7E3EF] truncate">{thread.title}</p>
-                        <p className="text-[10px] text-[#64748B]">{MODE_LABELS[thread.mode]} · {thread.status}</p>
-                      </>
-                    )}
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
-
-          <div className="min-h-0 p-3">
+        <div className="flex-1 min-h-0 p-3">
             {!isSidebarCollapsed && <p className="text-[11px] uppercase tracking-wide text-[#7DD3FC] mb-2">Resources</p>}
             <div className="h-full overflow-y-auto space-y-2">
               {!isSidebarCollapsed && (
@@ -1017,13 +918,12 @@ export default function AtomWorkspacePage() {
               )}
             </div>
           </div>
-        </div>
       </Card>
 
       <div className="flex-1 min-w-0 flex flex-col">
         <div className="h-12 border-b border-[#1E3A5F] px-4 flex items-center justify-between bg-[#101C2B]/80">
           <div className="flex items-center gap-2 min-w-0">
-            <h1 className="text-sm font-semibold truncate">{activeThread?.title ?? 'ATOM Workspace'}</h1>
+            <h1 className="text-sm font-semibold truncate">ATOM Workspace</h1>
             <Badge className={`text-[10px] border ${STATUS_STYLES[status]}`}>{status}</Badge>
             {mode === 'nucleux-original' && !trackAEnabled && <span className="text-[10px] text-amber-200">Track A disabled</span>}
           </div>
@@ -1057,8 +957,8 @@ export default function AtomWorkspacePage() {
               </div>
 
               <div className="flex-1 overflow-y-auto space-y-3 pr-1">
-                {isHydratingThread ? (
-                  <div className="h-full flex items-center justify-center text-sm text-[#64748B]">Loading thread…</div>
+                {isHydratingSession ? (
+                  <div className="h-full flex items-center justify-center text-sm text-[#64748B]">Loading session…</div>
                 ) : chatHistory.length === 0 ? (
                   <div className="h-full flex items-center justify-center">
                     <p className="text-sm text-[#64748B]">Start a chat to see responses here.</p>

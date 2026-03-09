@@ -1,4 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { deriveAtomThreadIdForScope } from '@/lib/atom/user-scope';
 
 export type AtomSession = {
   id: string;
@@ -15,11 +16,12 @@ export type AtomSession = {
 export async function startOrResumeAtomSession(
   supabase: SupabaseClient,
   userId: string,
-  input: { threadId: string; roomId?: string; selectedBookIds?: string[] },
+  input: { scopeKey?: string; threadId?: string; roomId?: string; selectedBookIds?: string[] },
 ): Promise<AtomSession> {
+  const resolvedThreadId = input.threadId ?? deriveAtomThreadIdForScope(input.scopeKey ?? userId);
   const payload = {
     user_id: userId,
-    thread_id: input.threadId,
+    thread_id: resolvedThreadId,
     room_id: input.roomId ?? 'atom',
     selected_book_ids: input.selectedBookIds ?? [],
     status: 'active',
@@ -32,7 +34,7 @@ export async function startOrResumeAtomSession(
     .from('atom_sessions')
     .select('id,thread_id,room_id,status,selected_book_ids,last_user_query,continuation_cursor,updated_at,created_at')
     .eq('user_id', userId)
-    .eq('thread_id', input.threadId)
+    .eq('thread_id', resolvedThreadId)
     .single();
   if (error) throw error;
   return data as AtomSession;
