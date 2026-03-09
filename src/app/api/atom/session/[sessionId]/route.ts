@@ -2,6 +2,31 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 import { getAtomSession, getRecentSessionMessages } from '@/lib/atom/session-store';
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
+import { createAtomArtifactService } from '@/lib/atom/artifacts/service';
+
+export function extractLegacyArtifactsFromMessages(
+  sessionId: string,
+  messages: Array<{ role: string; meta?: unknown; created_at?: string }>,
+) {
+  return messages.flatMap((message, index) => {
+    if (message.role !== 'assistant') return [];
+    const metaArtifacts =
+      message.meta && typeof message.meta === 'object' && Array.isArray((message.meta as { artifacts?: unknown[] }).artifacts)
+        ? ((message.meta as { artifacts: unknown[] }).artifacts as Array<{ id?: string; title?: string; kind?: string; mime?: string; content?: string; createdAt?: string }>)
+        : [];
+
+    return metaArtifacts
+      .filter((artifact) => typeof artifact?.content === 'string' && artifact.content.trim().length > 0)
+      .map((artifact) => ({
+        id: artifact.id ?? `${sessionId}-${index}-${artifact.kind ?? 'artifact'}`,
+        title: artifact.title ?? 'Artifact',
+        kind: artifact.kind ?? 'other',
+        mime: artifact.mime ?? 'text/plain',
+        content: artifact.content ?? '',
+        createdAt: artifact.createdAt ?? message.created_at,
+      }));
+  });
+}
 
 export async function GET(request: Request, context: { params: Promise<{ sessionId: string }> }) {
   const supabase = await createClient();
@@ -34,22 +59,12 @@ export async function GET(request: Request, context: { params: Promise<{ session
 
   const messages = await getRecentSessionMessages(supabase, user.id, scopeKey, sessionId, 60);
 
-  const artifacts = messages.flatMap((message, index) => {
-    if (message.role !== 'assistant') return [];
-    const metaArtifacts =
-      message.meta && typeof message.meta === 'object' && Array.isArray((message.meta as { artifacts?: unknown[] }).artifacts)
-        ? ((message.meta as { artifacts: unknown[] }).artifacts as Array<{ title?: string; kind?: string; content?: string }>)
-        : [];
+  const artifactService = createAtomArtifactService(supabase);
+  const structuredArtifacts = await artifactService.listSessionArtifacts({ sessionId, scopeKey });
 
-    return metaArtifacts
-      .filter((artifact) => typeof artifact?.content === 'string' && artifact.content.trim().length > 0)
-      .map((artifact) => ({
-        id: `${sessionId}-${index}-${artifact.kind ?? 'artifact'}`,
-        title: artifact.title ?? 'Artifact',
-        kind: artifact.kind ?? 'artifact',
-        content: artifact.content ?? '',
-      }));
-  });
+  const parserArtifacts = extractLegacyArtifactsFromMessages(sessionId, messages as Array<{ role: string; meta?: unknown; created_at?: string }>);
 
-  return NextResponse.json({ session, messages, artifacts, scopeKey });
+  const artifacts = structuredArtifacts.length > 0 ? structuredArtifacts : parserArtifacts;
+
+  return NextResponse.json({ session, messages, artifacts, scopeKey, artifactsSource: structuredArtifacts.length > 0 ? 'v1' : 'legacy' });
 }

@@ -129,8 +129,17 @@ Risk controls:
 4. Canary production (5% -> 25% -> 100%).
 5. Remove old parser path after stability window.
 
-## 7) Minimal scaffolding added in this pass
-- `src/lib/atom/artifacts/types.ts` (shared V1 artifact types)
-- `src/lib/atom/artifacts/service.ts` (service interface + noop impl)
-
-These are intentionally non-invasive and keep current runtime behavior intact.
+## 7) Implemented in this pass
+- Runtime adoption now uses `src/lib/atom/artifacts/types.ts` as canonical schema shape.
+- `src/lib/atom/artifacts/service.ts` now includes:
+  - `SupabaseAtomArtifactService` (DB persistence + optional workspace file copy)
+  - `NoopAtomArtifactService` fallback
+  - feature-flag factory: `createAtomArtifactService()`
+- Session message route now dual-writes:
+  - legacy parser artifacts in `atom_session_messages.meta`
+  - v1 rows in `atom_task_artifacts_v1` (flag gated)
+- Session GET route now reads v1 artifacts first, parser fallback second.
+- New scoped download route:
+  - `GET /api/atom/session/:sessionId/artifacts/:artifactId/download`
+  - scope + session + owner checks + safe headers.
+- UI outputs panel download button now prefers the new endpoint and falls back to legacy blob download.

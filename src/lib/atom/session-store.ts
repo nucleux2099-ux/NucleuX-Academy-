@@ -121,7 +121,7 @@ export async function appendSessionMessage(
   role: 'user' | 'assistant' | 'system' | 'tool',
   content: string,
   meta: Record<string, unknown> = {},
-) {
+): Promise<{ id: string }> {
   const session = await getAtomSession(supabase, userId, sessionId, scopeKey);
   if (!session) throw new Error('Scope guard violation: session not found for provided scope');
 
@@ -134,14 +134,19 @@ export async function appendSessionMessage(
 
   const nextTurn = ((latest?.[0]?.turn_index as number | undefined) ?? -1) + 1;
 
-  const { error } = await supabase.from('atom_session_messages').insert({
-    session_id: sessionId,
-    turn_index: nextTurn,
-    role,
-    content_md: content,
-    meta,
-  });
+  const { data, error } = await supabase
+    .from('atom_session_messages')
+    .insert({
+      session_id: sessionId,
+      turn_index: nextTurn,
+      role,
+      content_md: content,
+      meta,
+    })
+    .select('id')
+    .single();
   if (error) throw error;
+  return { id: data.id as string };
 }
 
 export async function getRecentSessionMessages(

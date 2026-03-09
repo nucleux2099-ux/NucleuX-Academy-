@@ -9,9 +9,11 @@ import {
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 import { appendAtomMemory, ensureAtomMemoryStructure } from '@/lib/atom/memory-store';
 import { formatMemoryContextForPrompt, retrieveScopedMemoryContext } from '@/lib/atom/memory-retrieval';
+import { createAtomArtifactService } from '@/lib/atom/artifacts/service';
+import type { AtomArtifactV1 } from '@/lib/atom/artifacts/types';
 
-function extractArtifactsFromAssistant(text: string) {
-  const artifacts: Array<{ title: string; kind: string; content: string }> = [];
+function extractArtifactsFromAssistant(text: string): AtomArtifactV1[] {
+  const artifacts: AtomArtifactV1[] = [];
   const fenceRegex = /```([a-zA-Z0-9_-]+)?\n([\s\S]*?)```/g;
   let match: RegExpExecArray | null;
 
@@ -20,17 +22,27 @@ function extractArtifactsFromAssistant(text: string) {
     const content = (match[2] ?? '').trim();
     if (!content) continue;
     artifacts.push({
+      id: crypto.randomUUID(),
       title: `${language.toUpperCase()} snippet`,
-      kind: language,
+      kind: language === 'json' ? 'json' : language === 'md' || language === 'markdown' ? 'markdown' : 'code',
+      mime: language === 'json' ? 'application/json' : language === 'md' || language === 'markdown' ? 'text/markdown' : 'text/plain',
       content,
+      metadata: { parserKind: language },
+      provenance: { createdBy: 'assistant' },
+      createdAt: new Date().toISOString(),
     });
   }
 
   if (artifacts.length === 0 && text.trim().startsWith('{')) {
     artifacts.push({
+      id: crypto.randomUUID(),
       title: 'JSON output',
       kind: 'json',
+      mime: 'application/json',
       content: text.trim(),
+      metadata: { parserKind: 'json' },
+      provenance: { createdBy: 'assistant' },
+      createdAt: new Date().toISOString(),
     });
   }
 
@@ -129,6 +141,8 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
         ? String(session.continuation_cursor.lastTopic)
         : null;
 
+  const artifactService = createAtomArtifactService(supabase);
+
   await ensureAtomMemoryStructure(scopeKey);
   await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'user', userText);
   await appendAtomMemory({ scopeKey, section: 'User message', content: userText });
@@ -156,9 +170,24 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     messages,
   });
 
-  const artifacts = extractArtifactsFromAssistant(assistant);
-  await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'assistant', assistant, {
-    artifacts,
+  const artifacts = extractArtifactsFromAssistant(assistant).map((artifact) => ({
+    ...artifact,
+    provenance: {
+      ...artifact.provenance,
+      sessionId,
+      createdBy: 'assistant' as const,
+    },
+  }));
+
+  const assistantMessage = await appendSessionMessage(supabase, user.id, scopeKey, sessionId, 'assistant', assistant, {
+    artifacts: artifacts.map((artifact) => ({
+      id: artifact.id,
+      title: artifact.title,
+      kind: artifact.kind,
+      mime: artifact.mime,
+      content: artifact.content,
+      createdAt: artifact.createdAt,
+    })),
     memoryContext: retrievalSnippets.map((snippet) => ({
       sourceFile: snippet.sourceFile,
       startLine: snippet.startLine,
@@ -166,6 +195,15 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
       score: snippet.score,
     })),
   });
+
+  for (const artifact of artifacts) {
+    await artifactService.persistArtifact({
+      scopeKey,
+      sessionId,
+      messageId: assistantMessage.id,
+      artifact,
+    });
+  }
   await appendAtomMemory({ scopeKey, section: 'Assistant response', content: assistant });
   const lastTopic = isContinueLike && previousTopic ? previousTopic : userText;
 

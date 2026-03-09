@@ -57,6 +57,7 @@ type ArtifactItem = {
   id: string;
   title: string;
   kind: string;
+  mime?: string;
   content?: string;
   createdAt: string;
 };
@@ -766,8 +767,26 @@ export default function AtomWorkspacePage() {
     setTaskPrompt(selected.prompt);
   };
 
-  const downloadArtifact = useCallback((artifact: ArtifactItem) => {
-    if (typeof window === 'undefined' || !artifact.content) return;
+  const downloadArtifact = useCallback(async (artifact: ArtifactItem) => {
+    if (typeof window === 'undefined') return;
+
+    if (activeSessionId) {
+      const response = await fetch(`/api/atom/session/${activeSessionId}/artifacts/${artifact.id}/download`);
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        const disposition = response.headers.get('content-disposition') ?? '';
+        const match = disposition.match(/filename="([^"]+)"/i);
+        anchor.href = url;
+        anchor.download = match?.[1] ?? `${artifact.title || 'artifact'}.txt`;
+        anchor.click();
+        URL.revokeObjectURL(url);
+        return;
+      }
+    }
+
+    if (!artifact.content) return;
     const lowerKind = artifact.kind.toLowerCase();
     const extension = lowerKind.includes('json')
       ? 'json'
@@ -775,7 +794,7 @@ export default function AtomWorkspacePage() {
         ? 'md'
         : 'txt';
 
-    const blob = new Blob([artifact.content], { type: extension === 'json' ? 'application/json' : 'text/plain;charset=utf-8' });
+    const blob = new Blob([artifact.content], { type: artifact.mime ?? (extension === 'json' ? 'application/json' : 'text/plain;charset=utf-8') });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
     const normalizedTitle = artifact.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'artifact';
@@ -783,7 +802,7 @@ export default function AtomWorkspacePage() {
     anchor.download = `${normalizedTitle}.${extension}`;
     anchor.click();
     URL.revokeObjectURL(url);
-  }, []);
+  }, [activeSessionId]);
 
   useEffect(() => {
     let active = true;
