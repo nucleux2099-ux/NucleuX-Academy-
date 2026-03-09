@@ -46,7 +46,7 @@ function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function renderHighlightedContext(context: string, topicTitle: string) {
+export function renderHighlightedContext(context: string, topicTitle: string) {
   if (!topicTitle.trim()) return context;
 
   const matcher = new RegExp(`(${escapeRegExp(topicTitle)})`, "gi");
