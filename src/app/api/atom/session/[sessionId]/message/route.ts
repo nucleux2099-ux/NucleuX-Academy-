@@ -7,6 +7,33 @@ import {
   updateSessionCursor,
 } from '@/lib/atom/session-store';
 
+function extractArtifactsFromAssistant(text: string) {
+  const artifacts: Array<{ title: string; kind: string; content: string }> = [];
+  const fenceRegex = /```([a-zA-Z0-9_-]+)?\n([\s\S]*?)```/g;
+  let match: RegExpExecArray | null;
+
+  while ((match = fenceRegex.exec(text)) !== null) {
+    const language = (match[1] ?? 'txt').toLowerCase();
+    const content = (match[2] ?? '').trim();
+    if (!content) continue;
+    artifacts.push({
+      title: `${language.toUpperCase()} snippet`,
+      kind: language,
+      content,
+    });
+  }
+
+  if (artifacts.length === 0 && text.trim().startsWith('{')) {
+    artifacts.push({
+      title: 'JSON output',
+      kind: 'json',
+      content: text.trim(),
+    });
+  }
+
+  return artifacts;
+}
+
 async function runChat(request: NextRequest, payload: Record<string, unknown>) {
   const response = await fetch(`${request.nextUrl.origin}/api/chat`, {
     method: 'POST',
@@ -77,7 +104,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
 
   await appendSessionMessage(supabase, sessionId, 'user', userText);
 
-  const history = await getRecentSessionMessages(supabase, sessionId, 12);
+  const history = await getRecentSessionMessages(supabase, sessionId, 30);
   const messages = history
     .filter((m) => m.role === 'user' || m.role === 'assistant')
     .map((m) => ({ role: m.role, content: m.content_md }));
@@ -89,7 +116,8 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     messages,
   });
 
-  await appendSessionMessage(supabase, sessionId, 'assistant', assistant);
+  const artifacts = extractArtifactsFromAssistant(assistant);
+  await appendSessionMessage(supabase, sessionId, 'assistant', assistant, { artifacts });
   const lastTopic = isContinueLike && previousTopic ? previousTopic : userText;
 
   await updateSessionCursor(supabase, sessionId, {
@@ -101,5 +129,5 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     },
   });
 
-  return NextResponse.json({ sessionId, assistant });
+  return NextResponse.json({ sessionId, assistant, artifacts });
 }

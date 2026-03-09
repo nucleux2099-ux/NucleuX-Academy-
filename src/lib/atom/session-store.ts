@@ -8,6 +8,8 @@ export type AtomSession = {
   selected_book_ids: string[];
   last_user_query: string | null;
   continuation_cursor: Record<string, unknown>;
+  updated_at?: string;
+  created_at?: string;
 };
 
 export async function startOrResumeAtomSession(
@@ -28,7 +30,7 @@ export async function startOrResumeAtomSession(
 
   const { data, error } = await supabase
     .from('atom_sessions')
-    .select('id,thread_id,room_id,status,selected_book_ids,last_user_query,continuation_cursor')
+    .select('id,thread_id,room_id,status,selected_book_ids,last_user_query,continuation_cursor,updated_at,created_at')
     .eq('user_id', userId)
     .eq('thread_id', input.threadId)
     .single();
@@ -39,7 +41,7 @@ export async function startOrResumeAtomSession(
 export async function getAtomSession(supabase: SupabaseClient, userId: string, sessionId: string) {
   const { data, error } = await supabase
     .from('atom_sessions')
-    .select('id,thread_id,room_id,status,selected_book_ids,last_user_query,continuation_cursor')
+    .select('id,thread_id,room_id,status,selected_book_ids,last_user_query,continuation_cursor,updated_at,created_at')
     .eq('id', sessionId)
     .eq('user_id', userId)
     .single();
@@ -76,12 +78,24 @@ export async function appendSessionMessage(
 export async function getRecentSessionMessages(supabase: SupabaseClient, sessionId: string, limit = 12) {
   const { data, error } = await supabase
     .from('atom_session_messages')
-    .select('turn_index,role,content_md')
+    .select('turn_index,role,content_md,meta,created_at')
     .eq('session_id', sessionId)
     .order('turn_index', { ascending: false })
     .limit(limit);
   if (error) return [];
   return (data ?? []).reverse();
+}
+
+export async function listUserAtomSessions(supabase: SupabaseClient, userId: string, limit = 20) {
+  const { data, error } = await supabase
+    .from('atom_sessions')
+    .select('id,thread_id,room_id,status,selected_book_ids,last_user_query,continuation_cursor,updated_at,created_at')
+    .eq('user_id', userId)
+    .order('updated_at', { ascending: false })
+    .limit(limit);
+
+  if (error) return [];
+  return (data ?? []) as AtomSession[];
 }
 
 export async function updateSessionCursor(

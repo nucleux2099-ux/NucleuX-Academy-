@@ -68,6 +68,7 @@ type ThreadSessionItem = {
   status: AtomTaskStatus;
   updatedAt: string;
   taskId?: string;
+  sessionId?: string;
 };
 
 const MODE_LABELS: Record<AtomWorkspaceMode, string> = {
@@ -164,6 +165,8 @@ export default function AtomWorkspacePage() {
   const [artifacts, setArtifacts] = useState<ArtifactItem[]>([]);
   const [errorCard, setErrorCard] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activeSessionId, setActiveSessionId] = useState<string | null>(null);
+  const [isHydratingThread, setIsHydratingThread] = useState(false);
 
   const [gddSessionId, setGddSessionId] = useState<string | null>(null);
   const [gddLoadId, setGddLoadId] = useState("");
@@ -244,15 +247,19 @@ export default function AtomWorkspacePage() {
   }, [filteredBooks]);
 
   const parsedArtifactsFromAssistant = useMemo(() => {
-    if (!assistantText.trim()) return [];
-    return extractCodeBlocks([{ id: "assistant-latest", role: "assistant", content: assistantText, timestamp: new Date() }]).map((block) => ({
+    const assistantMessages = chatHistory
+      .map((message, index) => ({ message, index }))
+      .filter(({ message }) => message.role === 'assistant' && message.content.trim().length > 0)
+      .map(({ message, index }) => ({ id: `assistant-${index}`, role: 'assistant' as const, content: message.content, timestamp: new Date() }));
+
+    return extractCodeBlocks(assistantMessages).map((block) => ({
       id: `code-${block.id}`,
       title: `${block.language.toUpperCase()} snippet`,
-      kind: "code",
+      kind: block.language,
       content: block.code,
       createdAt: new Date().toISOString(),
     } satisfies ArtifactItem));
-  }, [assistantText]);
+  }, [chatHistory]);
 
   const mergedArtifacts = useMemo(() => {
     const map = new Map<string, ArtifactItem>();
@@ -498,10 +505,10 @@ export default function AtomWorkspacePage() {
     };
     setTaskPrompt('');
     setTimeline((prev) => appendDedupedUserEvent(prev, userEvent));
-    setAssistantText('');
+    setChatHistory((prev) => [...prev, { role: 'user', content: userText }]);
 
     try {
-      const threadKey = activeThreadId ?? 'default-thread';
+      const threadKey = activeThreadId ?? `thread-${Date.now()}`;
       let sessionId = threadSessionMapRef.current[threadKey];
 
       if (!sessionId) {
@@ -520,10 +527,14 @@ export default function AtomWorkspacePage() {
         }
         sessionId = startJson.sessionId;
         threadSessionMapRef.current[threadKey] = sessionId;
+        setActiveThreadId(threadKey);
       }
 
+      setActiveSessionId(sessionId);
+
       const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(userText);
-      const endpoint = continueLike
+      const hasPriorAssistant = chatHistory.some((item) => item.role === 'assistant' && item.content.trim().length > 0);
+      const endpoint = continueLike && hasPriorAssistant
         ? `/api/atom/session/${sessionId}/continue`
         : `/api/atom/session/${sessionId}/message`;
 
@@ -536,17 +547,34 @@ export default function AtomWorkspacePage() {
         }),
       });
 
-      const json = (await response.json()) as { assistant?: string; error?: string };
+      const json = (await response.json()) as { assistant?: string; error?: string; artifacts?: ArtifactItem[] };
       if (!response.ok || !json.assistant) {
         throw new Error(json.error ?? 'Chat request failed');
       }
 
       setAssistantText(json.assistant);
-      setChatHistory((prev) => [
-        ...prev,
-        { role: 'user', content: userText },
-        { role: 'assistant', content: json.assistant ?? '' },
-      ]);
+      setChatHistory((prev) => [...prev, { role: 'assistant', content: json.assistant ?? '' }]);
+      const artifactsFromResponse = Array.isArray(json.artifacts) ? json.artifacts : [];
+      if (artifactsFromResponse.length > 0) {
+        setArtifacts((prev) => {
+          const map = new Map(prev.map((artifact) => [artifact.id, artifact]));
+          for (const artifact of artifactsFromResponse) {
+            map.set(artifact.id, { ...artifact, createdAt: artifact.createdAt ?? new Date().toISOString() });
+          }
+          return Array.from(map.values());
+        });
+      }
+      setThreadSessions((prev) => {
+        const next: ThreadSessionItem = {
+          id: threadKey,
+          sessionId,
+          title: userText.slice(0, 80),
+          mode: 'chat',
+          status: 'completed',
+          updatedAt: new Date().toISOString(),
+        };
+        return [next, ...prev.filter((item) => item.id !== threadKey)].slice(0, 12);
+      });
       setStatus('completed');
     } catch (error) {
       setStatus('failed');
@@ -554,7 +582,7 @@ export default function AtomWorkspacePage() {
     } finally {
       setIsSubmitting(false);
     }
-  }, [activeThreadId, domainFilter, isSubmitting, selectedBookIds, selectedRoomId, taskPrompt]);
+  }, [activeThreadId, chatHistory, domainFilter, isSubmitting, selectedBookIds, selectedRoomId, taskPrompt]);
 
   const launchMode = useCallback(async (launchMode: AtomWorkspaceMode) => {
     if (launchMode === "chat") {
@@ -765,26 +793,106 @@ export default function AtomWorkspacePage() {
     setTaskPrompt(selected.prompt);
   };
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const raw = window.localStorage.getItem("atom:ux1:threads");
-      if (!raw) return;
-      const parsed = JSON.parse(raw) as ThreadSessionItem[];
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        setThreadSessions(parsed.slice(0, 12));
-        setActiveThreadId(parsed[0]?.id ?? null);
-      }
-    } catch {
-      // ignore local state hydration errors
-    }
+  const downloadArtifact = useCallback((artifact: ArtifactItem) => {
+    if (typeof window === 'undefined' || !artifact.content) return;
+    const lowerKind = artifact.kind.toLowerCase();
+    const extension = lowerKind.includes('json')
+      ? 'json'
+      : lowerKind.includes('markdown') || lowerKind === 'md'
+        ? 'md'
+        : 'txt';
+
+    const blob = new Blob([artifact.content], { type: extension === 'json' ? 'application/json' : 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    const normalizedTitle = artifact.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'artifact';
+    anchor.href = url;
+    anchor.download = `${normalizedTitle}.${extension}`;
+    anchor.click();
+    URL.revokeObjectURL(url);
   }, []);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (threadSessions.length === 0) return;
-    window.localStorage.setItem("atom:ux1:threads", JSON.stringify(threadSessions.slice(0, 12)));
-  }, [threadSessions]);
+    let active = true;
+
+    const loadThreads = async () => {
+      try {
+        const response = await fetch('/api/atom/session/threads');
+        if (!response.ok) return;
+        const payload = (await response.json()) as {
+          threads?: Array<{ id: string; sessionId: string; roomId?: string; status?: string; updatedAt?: string; title?: string }>;
+        };
+
+        if (!active || !Array.isArray(payload.threads)) return;
+
+        const hydrated = payload.threads.map((thread) => ({
+          id: thread.id,
+          sessionId: thread.sessionId,
+          title: thread.title ?? 'ATOM Thread',
+          mode: 'chat' as AtomWorkspaceMode,
+          status: (thread.status as AtomTaskStatus) ?? 'completed',
+          updatedAt: thread.updatedAt ?? new Date().toISOString(),
+        }));
+
+        setThreadSessions(hydrated);
+        if (hydrated[0]) {
+          setActiveThreadId(hydrated[0].id);
+          setActiveSessionId(hydrated[0].sessionId);
+          threadSessionMapRef.current = Object.fromEntries(hydrated.map((thread) => [thread.id, thread.sessionId]));
+        }
+      } catch {
+        // keep local empty state
+      }
+    };
+
+    void loadThreads();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!activeThreadId) return;
+    const sessionId = threadSessionMapRef.current[activeThreadId];
+    if (!sessionId) return;
+
+    let active = true;
+    const hydrateThread = async () => {
+      setIsHydratingThread(true);
+      try {
+        const response = await fetch(`/api/atom/session/${sessionId}`);
+        if (!response.ok) return;
+        const payload = (await response.json()) as {
+          session?: { room_id?: string; status?: AtomTaskStatus };
+          messages?: Array<{ role: 'user' | 'assistant'; content_md: string }>;
+          artifacts?: ArtifactItem[];
+        };
+
+        if (!active) return;
+
+        const history = (payload.messages ?? [])
+          .filter((item) => item.role === 'user' || item.role === 'assistant')
+          .map((item) => ({ role: item.role, content: item.content_md }));
+
+        setChatHistory(history);
+        setAssistantText(history.filter((message) => message.role === 'assistant').slice(-1)[0]?.content ?? '');
+        setArtifacts(payload.artifacts ?? []);
+        setTimeline([]);
+        setStatus(payload.session?.status ?? 'completed');
+      } catch {
+        // ignore hydration errors and keep current pane state
+      } finally {
+        if (active) setIsHydratingThread(false);
+      }
+    };
+
+    void hydrateThread();
+
+    return () => {
+      active = false;
+    };
+  }, [activeThreadId]);
 
   useEffect(() => {
     if (!taskId) return;
@@ -799,6 +907,7 @@ export default function AtomWorkspacePage() {
         status,
         taskId,
         updatedAt: new Date().toISOString(),
+        sessionId: existing?.sessionId,
       };
       if (!existing) {
         return [nextItem, ...prev].slice(0, 12);
@@ -831,7 +940,14 @@ export default function AtomWorkspacePage() {
                 <p className="text-xs text-[#64748B]">Run a task to seed thread history.</p>
               ) : (
                 threadSessions.map((thread) => (
-                  <button key={thread.id} onClick={() => setActiveThreadId(thread.id)} className={`w-full text-left rounded-md border px-2 py-1.5 ${activeThreadId === thread.id ? 'border-[#5BB3B3]/50 bg-[#5BB3B3]/10' : 'border-[#1E3A5F] hover:bg-[#1E3A5F]/40'}`}>
+                  <button
+                    key={thread.id}
+                    onClick={() => {
+                      setActiveThreadId(thread.id);
+                      setActiveSessionId(thread.sessionId ?? threadSessionMapRef.current[thread.id] ?? null);
+                    }}
+                    className={`w-full text-left rounded-md border px-2 py-1.5 ${activeThreadId === thread.id ? 'border-[#5BB3B3]/50 bg-[#5BB3B3]/10' : 'border-[#1E3A5F] hover:bg-[#1E3A5F]/40'}`}
+                  >
                     {isSidebarCollapsed ? (
                       <span className="text-[10px] text-[#9FB0C2]">{thread.mode.slice(0, 1).toUpperCase()}</span>
                     ) : (
@@ -941,34 +1057,25 @@ export default function AtomWorkspacePage() {
               </div>
 
               <div className="flex-1 overflow-y-auto space-y-3 pr-1">
-                {timeline.length === 0 && !assistantText ? (
+                {isHydratingThread ? (
+                  <div className="h-full flex items-center justify-center text-sm text-[#64748B]">Loading thread…</div>
+                ) : chatHistory.length === 0 ? (
                   <div className="h-full flex items-center justify-center">
                     <p className="text-sm text-[#64748B]">Start a chat to see responses here.</p>
                   </div>
                 ) : (
-                  <>
-                    {timeline.slice(-8).map((item) => (
-                      <div key={item.id} className="mr-auto max-w-[78%] rounded-2xl border border-[#22354D] bg-[#12253A] px-3 py-2">
-                        <p className="text-[12px] text-[#C7D8EA]">{item.label}</p>
-                        {item.detail && <p className="text-[11px] text-[#93A9BF] mt-1 whitespace-pre-wrap">{item.detail}</p>}
-                      </div>
-                    ))}
-
-                    {taskPrompt.trim() && (
-                      <div className="ml-auto max-w-[78%] rounded-2xl bg-[#5BB3B3]/20 border border-[#5BB3B3]/40 px-3 py-2">
-                        <p className="text-[13px] text-[#E7F8F8] whitespace-pre-wrap">{taskPrompt}</p>
-                      </div>
-                    )}
-
-                    {assistantText && (
-                      <div className="mr-auto max-w-[82%] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                  chatHistory.map((message, idx) => (
+                    <div key={`${message.role}-${idx}`} className={message.role === 'user' ? 'ml-auto max-w-[78%] rounded-2xl bg-[#5BB3B3]/20 border border-[#5BB3B3]/40 px-3 py-2' : 'mr-auto max-w-[82%] rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3'}>
+                      {message.role === 'assistant' ? (
                         <MedicalMarkdown
-                          content={assistantText}
+                          content={message.content}
                           className="text-[13px] leading-6 [&_strong]:text-[#7DD3FC] [&_em]:text-[#A5F3FC] [&_h1]:text-[#E5EEF8] [&_h2]:text-[#D2E6FF] [&_h3]:text-[#BFDBFE]"
                         />
-                      </div>
-                    )}
-                  </>
+                      ) : (
+                        <p className="text-[13px] text-[#E7F8F8] whitespace-pre-wrap">{message.content}</p>
+                      )}
+                    </div>
+                  ))
                 )}
               </div>
             </div>
@@ -1003,26 +1110,41 @@ export default function AtomWorkspacePage() {
             <Button size="sm" variant="ghost" className="text-[#9FB0C2]" onClick={() => setIsOutputsOpen(false)}>Hide</Button>
           </div>
           <div className="flex-1 min-h-0 grid grid-rows-2">
-            <div className="p-3 border-b border-[#1E3A5F] overflow-y-auto">
-              <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Timeline</h3>
-              <div className="space-y-2">
-                {timeline.length === 0 ? <p className="text-xs text-[#64748B]">No events yet.</p> : timeline.map((item) => (
-                  <div key={item.id} className="rounded-md border border-[#1E3A5F] bg-[#162535] p-2">
-                    <p className="text-xs text-white">{item.label}</p>
-                    {item.detail && <p className="text-[11px] text-[#9FB0C2] mt-1 whitespace-pre-wrap">{item.detail}</p>}
-                  </div>
-                ))}
+            <div className="min-h-0 border-b border-[#1E3A5F] flex flex-col">
+              <div className="shrink-0 p-3 pb-2">
+                <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC]">Timeline</h3>
+              </div>
+              <div className="flex-1 min-h-0 px-3 pb-3 overflow-y-auto">
+                <div className="space-y-2">
+                  {timeline.length === 0 ? <p className="text-xs text-[#64748B]">No events yet.</p> : timeline.map((item) => (
+                    <div key={item.id} className="rounded-md border border-[#1E3A5F] bg-[#162535] p-2">
+                      <p className="text-xs text-white">{item.label}</p>
+                      {item.detail && <p className="text-[11px] text-[#9FB0C2] mt-1 whitespace-pre-wrap">{item.detail}</p>}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="p-3 overflow-y-auto">
-              <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC] mb-2">Artifacts</h3>
-              <div className="space-y-2">
-                {mergedArtifacts.length === 0 ? <p className="text-xs text-[#64748B]">No artifacts yet.</p> : mergedArtifacts.map((artifact) => (
-                  <div key={artifact.id} className="rounded-md border border-[#1E3A5F] bg-[#162535] p-2">
-                    <p className="text-xs text-white">{artifact.title}</p>
-                    {artifact.content && <pre className="text-[11px] text-[#BFD0E0] whitespace-pre-wrap mt-1">{artifact.content}</pre>}
-                  </div>
-                ))}
+            <div className="min-h-0 flex flex-col">
+              <div className="shrink-0 p-3 pb-2">
+                <h3 className="text-xs uppercase tracking-wide text-[#7DD3FC]">Artifacts</h3>
+              </div>
+              <div className="flex-1 min-h-0 px-3 pb-3 overflow-y-auto">
+                <div className="space-y-2">
+                  {mergedArtifacts.length === 0 ? <p className="text-xs text-[#64748B]">No artifacts yet.</p> : mergedArtifacts.map((artifact) => (
+                    <div key={artifact.id} className="rounded-md border border-[#1E3A5F] bg-[#162535] p-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-xs text-white truncate">{artifact.title}</p>
+                        {artifact.content && (
+                          <Button size="sm" variant="ghost" className="h-6 px-2 text-[10px] text-[#9FB0C2]" onClick={() => downloadArtifact(artifact)}>
+                            Download
+                          </Button>
+                        )}
+                      </div>
+                      {artifact.content && <pre className="text-[11px] text-[#BFD0E0] whitespace-pre-wrap mt-1">{artifact.content}</pre>}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
