@@ -9,7 +9,11 @@ export type AtomTelemetryEventName =
   | 'artifact.usage'
   | 'profile.decision'
   | 'policy.decision'
-  | 'heartbeat.outcome';
+  | 'heartbeat.outcome'
+  | 'feedback.submitted'
+  | 'feedback.classified'
+  | 'outcome.confirmed'
+  | 'correction.recorded';
 
 export type AtomTelemetryStatus = 'ok' | 'error' | 'skipped' | 'blocked';
 
