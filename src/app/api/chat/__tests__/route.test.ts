@@ -30,3 +30,19 @@ test('strict source grounding with no relevant content injects insufficiency gui
   assert.match(prompt, /selected books do not contain enough support/i)
   assert.match(prompt, /ask the learner to broaden source selection/i)
 })
+
+test('continue route style message still resolves retrieval query to previous user topic', () => {
+  const messages: IncomingMessage[] = [
+    { role: 'user', content: 'Differentiate Crohn disease vs ulcerative colitis on pathology' },
+    { role: 'assistant', content: 'Crohn has transmural inflammation...' },
+    {
+      role: 'user',
+      content: 'Continue exactly from where the last answer stopped about: Differentiate Crohn disease vs ulcerative colitis on pathology. Stay on same topic and format.',
+    },
+  ]
+
+  const { query, continueLike } = resolveQueryForRetrieval(messages)
+
+  assert.equal(continueLike, true)
+  assert.equal(query, 'Differentiate Crohn disease vs ulcerative colitis on pathology')
+})
