@@ -4,6 +4,13 @@ import { getAtomSession } from '@/lib/atom/session-store';
 import { resolveAtomScopeKeyForRequest } from '@/lib/atom/scope-envelope';
 import { createAtomTelemetryLogger, startTimer } from '@/lib/atom/telemetry';
 
+export function buildContinueMessage(continuationTopic: string | null): string {
+  if (continuationTopic && continuationTopic.trim().length > 0) {
+    return `Continue exactly from where the last answer stopped about: ${continuationTopic.trim()}. Stay on same topic and format.`;
+  }
+  return 'Continue exactly from where the last answer stopped. Stay on same topic and format.';
+}
+
 export async function POST(request: NextRequest, context: { params: Promise<{ sessionId: string }> }) {
   const elapsed = startTimer();
   const supabase = await createClient();
@@ -60,9 +67,7 @@ export async function POST(request: NextRequest, context: { params: Promise<{ se
     body: JSON.stringify({
       context: session.room_id === 'atom' ? 'surgery' : session.room_id,
       scope: resolvedScope.envelope,
-      message: continuationTopic
-        ? `Continue exactly from where the last answer stopped about: ${continuationTopic}. Stay on same topic and format.`
-        : 'Continue exactly from where the last answer stopped. Stay on same topic and format.',
+      message: buildContinueMessage(continuationTopic),
     }),
   });
 
