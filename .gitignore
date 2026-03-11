@@ -44,3 +44,6 @@ next-env.d.ts
 
 .playwright-cli/
 .tmp_demo_creds.sh
+
+# doc export artifacts
+/docs/*.zip
