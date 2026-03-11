@@ -11,7 +11,7 @@
     "test:smoke": "node scripts/smoke-e2e.mjs",
     "test:atom:dedup": "tsx --test src/components/atom/chatEventDedup.test.ts",
     "test:atom:route-smoke": "tsx --test src/app/__tests__/atom-route-smoke.test.ts",
-    "test:atom:nightly-gates": "npm run -s typecheck && npm run -s lint && npm run -s test:atom:route-smoke && npm run -s test:atom:dedup && npm run -s build",
+    "test:atom:nightly-gates": "npm run -s typecheck && npm run -s lint && npm run -s build && npm run -s test:atom:route-smoke && npm run -s test:atom:dedup",
     "seed:admin": "tsx scripts/seed-admin.ts",
     "content:validate": "tsx scripts/validate-content.ts",
     "validate:cbme": "tsx scripts/validate-cbme-links.ts",
