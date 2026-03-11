@@ -11,6 +11,21 @@ VN2-QA-15
 ## Objective
 Re-enable nightly smoke verification for ATOM critical routes (`/atom`, chat continue flow, source-grounding fallback path) with non-production credentials.
 
+## Minimal runbook (automation-friendly)
+
+### Required secret names
+- `E2E_EMAIL`
+- `E2E_PASSWORD`
+
+### One-command credentialed smoke run
+```bash
+E2E_EMAIL='<nonprod_email>' E2E_PASSWORD='<nonprod_password>' npm run -s test:atom:nightly-gates:smoke-guarded
+```
+
+### Expected behavior
+- If both secrets are set: guarded flow runs full local gates + `test:smoke`.
+- If either secret is missing: guarded flow skips `test:smoke` with explicit message.
+
 ## Concrete actions
 1. Provision a dedicated non-prod test user for smoke tests.
 2. Inject `E2E_EMAIL` and `E2E_PASSWORD` into CI/local secret store (not committed).
@@ -27,3 +42,36 @@ Coder-NucleuX (implementation) + Vishwakarma (orchestration)
 
 ## Orchestrator nudge
 "Please wire non-prod smoke creds now and run one full smoke pass before next cron window; report artifact link + exact failing step if red."
+
+## Execution log (latest)
+- Timestamp (IST): `2026-03-12T04:32:31+0530`
+- Command:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Artifact log path:
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-12T04:32:31+0530.log`
+- Result:
+  - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
+  - Credentialed smoke skipped with message:
+    - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
+
+## Pending follow-up (when creds are present)
+Re-run:
+```bash
+E2E_EMAIL='<nonprod_email>' E2E_PASSWORD='<nonprod_password>' npm run -s test:atom:nightly-gates:smoke-guarded
+```
+Then append artifact path + timestamp in this section.
+
+## Execution log (most recent)
+- Timestamp (IST): `2026-03-12T05:00:28+0530`
+- Command:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Artifact log path:
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-12T05:00:28+0530.log`
+- Result:
+  - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
+  - Credentialed smoke skipped with message:
+    - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
