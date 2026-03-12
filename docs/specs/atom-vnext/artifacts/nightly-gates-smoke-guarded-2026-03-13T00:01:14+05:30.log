@@ -1,0 +1,222 @@
+CBME validation summary
+- UG blocks: 81
+- PG curricula: 36
+- SS curricula: 46
+- Subjects: 21
+
+✅ CBME link validation passed
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 10.3s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/962) ...
+  Generating static pages using 15 workers (240/962) 
+  Generating static pages using 15 workers (480/962) 
+  Generating static pages using 15 workers (721/962) 
+✓ Generating static pages using 15 workers (962/962) in 3.5s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /achievements
+├ ○ /analytics
+├ ƒ /api/analytics
+├ ƒ /api/analytics/sync
+├ ƒ /api/atom-v3/gdd/[sessionId]
+├ ƒ /api/atom-v3/gdd/[sessionId]/advance
+├ ƒ /api/atom-v3/gdd/start
+├ ƒ /api/atom-v3/launch
+├ ƒ /api/atom/feedback
+├ ƒ /api/atom/feedback/[id]
+├ ƒ /api/atom/heartbeat/run
+├ ƒ /api/atom/profile
+├ ƒ /api/atom/session/[sessionId]
+├ ƒ /api/atom/session/[sessionId]/artifacts/[artifactId]/download
+├ ƒ /api/atom/session/[sessionId]/continue
+├ ƒ /api/atom/session/[sessionId]/message
+├ ƒ /api/atom/session/start
+├ ƒ /api/atom/session/threads
+├ ƒ /api/atom/sources
+├ ƒ /api/atom/sources/qc-import
+├ ƒ /api/atom/sources/status-summary
+├ ƒ /api/atom/sources/sync-vyasa
+├ ƒ /api/atom/tasks
+├ ƒ /api/atom/tasks/[id]
+├ ƒ /api/atom/tasks/[id]/control
+├ ƒ /api/atom/tasks/[id]/events
+├ ƒ /api/atom/telemetry/alerts
+├ ƒ /api/atom/telemetry/calibration
+├ ƒ /api/atom/telemetry/contracts/alert-burndown
+├ ƒ /api/atom/telemetry/contracts/calibration-trend
+├ ƒ /api/atom/telemetry/contracts/retention-status
+├ ƒ /api/atom/telemetry/metrics
+├ ƒ /api/atom/telemetry/rollups
+├ ƒ /api/backstage/report
+├ ƒ /api/backstage/summary
+├ ƒ /api/chat
+├ ƒ /api/library/content
+├ ƒ /api/profile
+├ ƒ /api/progress
+├ ƒ /api/speech/stt
+├ ƒ /api/speech/tts
+├ ƒ /api/streaks
+├ ƒ /api/study-plan
+├ ƒ /api/study-sessions
+├ ○ /arena
+├ ○ /atom
+├ ○ /atom-info
+├ ○ /atom-v3
+├ ○ /atom-v3/gdd
+├ ○ /atom/intent-card
+├ ƒ /auth/callback
+├ ○ /backstage
+├ ○ /backstage/calibration
+├ ○ /backstage/logbook
+├ ○ /backstage/quests
+├ ○ /backstage/report
+├ ○ /bookmarks
+├ ○ /campus
+├ ○ /cbme
+├ ● /cbme/[specialty]
+│ ├ /cbme/md-aerospace-medicine
+│ ├ /cbme/md-anatomy
+│ ├ /cbme/md-anesthesia
+│ └ [+81 more paths]
+├ ○ /cbme/anatomy
+├ ○ /cbme/anesthesia
+├ ○ /cbme/biochemistry
+├ ○ /cbme/community-medicine
+├ ○ /cbme/dermatology
+├ ○ /cbme/ent
+├ ○ /cbme/forensic
+├ ○ /cbme/medicine
+├ ○ /cbme/microbiology
+├ ○ /cbme/obgyn
+├ ○ /cbme/ophthalmology
+├ ○ /cbme/orthopedics
+├ ○ /cbme/pathology
+├ ○ /cbme/pediatrics
+├ ○ /cbme/pharmacology
+├ ○ /cbme/physiology
+├ ○ /cbme/psychiatry
+├ ○ /cbme/radiology
+├ ○ /cbme/surgery
+├ ○ /chat
+├ ○ /classroom
+├ ○ /classroom/canvas
+├ ○ /classroom/decks
+├ ƒ /classroom/decks/[deckId]
+├ ƒ /classroom/decks/[deckId]/edit
+├ ƒ /classroom/decks/[deckId]/present
+├ ○ /classroom/live-ai
+├ ○ /classroom/mindmap
+├ ○ /classroom/templates
+├ ○ /community
+├ ○ /competencies
+├ ○ /contact
+├ ○ /dashboard
+├ ○ /demo
+├ ○ /desk
+├ ○ /exam-centre
+├ ƒ /exam-centre/flow/[flowId]
+├ ○ /exam-centre/mcq
+├ ƒ /exam-centre/osce/[stationId]
+├ ○ /exam-centre/pyq
+├ ƒ /exam-centre/simulator/[caseId]
+├ ○ /faq
+├ ○ /forgot-password
+├ ○ /graph
+├ ○ /help
+├ ○ /history
+├ ○ /landing
+├ ○ /leaderboard
+├ ○ /library
+├ ƒ /library/[subject]
+├ ● /library/[subject]/[subspecialty]
+│ ├ /library/surgery/general-topics
+│ ├ /library/surgery/esophagus
+│ ├ /library/surgery/head-neck
+│ └ [+151 more paths]
+├ ● /library/[subject]/[subspecialty]/[topic]
+│ ├ /library/surgery/general-topics/asepsis-sterilization
+│ ├ /library/surgery/general-topics/blood-transfusion
+│ ├ /library/surgery/general-topics/burns
+│ └ [+607 more paths]
+├ ○ /login
+├ ○ /manifest.webmanifest
+├ ○ /mcqs
+├ ○ /mcqs/results
+├ ○ /notes
+├ ƒ /notes/[id]
+├ ○ /notifications
+├ ○ /offline
+├ ○ /onboarding
+├ ○ /pathways
+├ ƒ /practice/[id]
+├ ○ /pricing
+├ ○ /privacy
+├ ○ /profile
+├ ƒ /read/[id]
+├ ○ /reset-password
+├ ○ /rooms
+├ ○ /settings
+├ ○ /signup
+├ ○ /terms
+└ ƒ /watch/[id]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+TAP version 13
+# Subtest: build manifest includes /atom app route
+ok 1 - build manifest includes /atom app route
+  ---
+  duration_ms: 0.427292
+  type: 'test'
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 97.978458
+[atom-reliability] running continue continuity check...
+[atom-reliability] PASS continue continuity
+[atom-reliability] running selected-book insufficiency check...
+[atom-reliability] PASS strict source insufficiency language
+[atom-reliability] all checks passed
+TAP version 13
+# Subtest: dedups continue-like repeated user event inside time window
+ok 1 - dedups continue-like repeated user event inside time window
+  ---
+  duration_ms: 0.375167
+  type: 'test'
+  ...
+# Subtest: allows same text outside dedup window
+ok 2 - allows same text outside dedup window
+  ---
+  duration_ms: 0.063042
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 94.252292
+Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).

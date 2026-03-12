@@ -64,13 +64,13 @@ E2E_EMAIL='<nonprod_email>' E2E_PASSWORD='<nonprod_password>' npm run -s test:at
 Then append artifact path + timestamp in this section.
 
 ## Execution log (most recent)
-- Timestamp (IST): `2026-03-12T05:00:28+0530`
+- Timestamp (IST): `2026-03-13T00:01:14+05:30`
 - Command:
   ```bash
   npm run -s test:atom:nightly-gates:smoke-guarded
   ```
 - Artifact log path:
-  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-12T05:00:28+0530.log`
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-13T00:01:14+05:30.log`
 - Result:
   - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
   - Credentialed smoke skipped with message:
