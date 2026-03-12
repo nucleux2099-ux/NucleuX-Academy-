@@ -135,3 +135,40 @@ Then append artifact path + timestamp in this section.
     - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
 - Delta from 01:33 run:
   - No regressions detected; blocker remains only missing smoke credentials.
+
+## Execution log (latest)
+- Timestamp (IST): `2026-03-13T02:32:44+05:30`
+- Command:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Artifact log path:
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-13T02:32:44+0530.log`
+- Result:
+  - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
+  - `/atom` route present in build output
+  - Continue follow-up continuity check passed
+  - Strict selected-source insufficiency language check passed
+  - Credentialed smoke still skipped:
+    - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
+- Delta from 02:02 run:
+  - No regressions; credential blocker unchanged.
+
+## Execution log (latest)
+- Timestamp (IST): `2026-03-13T03:00:00+05:30`
+- Command:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Artifact log path:
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-13T03:00:00+0530.log`
+- Result:
+  - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
+  - `/atom` route present in build output
+  - Continue follow-up continuity check passed
+  - Strict selected-source insufficiency language check passed
+  - Credentialed smoke still skipped:
+    - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
+- Delta from 02:32 run:
+  - No regressions; lint also passed in this pulse window.
+
