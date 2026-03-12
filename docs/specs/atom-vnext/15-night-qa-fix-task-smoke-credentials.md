@@ -63,15 +63,31 @@ E2E_EMAIL='<nonprod_email>' E2E_PASSWORD='<nonprod_password>' npm run -s test:at
 ```
 Then append artifact path + timestamp in this section.
 
+## Immediate escalation (active)
+- Owner to action: runtime/deploy secrets owner for ATOM non-prod.
+- Required keys:
+  - `E2E_EMAIL`
+  - `E2E_PASSWORD`
+- Validation command after secret injection:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Success condition: log contains an actual `test:smoke` run (not the skip line).
+
 ## Execution log (most recent)
-- Timestamp (IST): `2026-03-13T00:01:14+05:30`
+- Timestamp (IST): `2026-03-13T01:01:14+05:30`
 - Command:
   ```bash
   npm run -s test:atom:nightly-gates:smoke-guarded
   ```
 - Artifact log path:
-  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-13T00:01:14+05:30.log`
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-13T01:01:14+05:30.log`
 - Result:
   - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
-  - Credentialed smoke skipped with message:
+  - `/atom` route present in build output
+  - Continue follow-up continuity check passed
+  - Strict selected-source insufficiency language check passed
+  - Credentialed smoke still skipped with message:
     - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
+- Delta from previous run:
+  - Stability unchanged; blocker remains exclusively missing smoke credentials in runtime secret store.
