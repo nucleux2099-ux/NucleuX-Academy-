@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -34,10 +35,28 @@ export default function LibraryPage() {
   const totalTopics = SUBJECTS.reduce((acc, s) => acc + s.topicCount, 0);
   const totalSubspecs = SUBJECTS.reduce((acc, s) => acc + getSubspecialtiesBySubject(s.id).length, 0);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
+  };
+
   return (
-    <div className="space-y-6">
+    <motion.div 
+      className="space-y-6 relative z-10"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+    >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-bold text-[#E8E0D5] flex items-center gap-3">
             <Library className="w-8 h-8 text-[#5BB3B3]" />
@@ -56,10 +75,10 @@ export default function LibraryPage() {
             CBME Curriculum
           </Link>
         </div>
-      </div>
+      </motion.div>
 
       {/* Stats Bar */}
-      <div className="grid grid-cols-3 gap-3">
+      <motion.div variants={itemVariants} className="grid grid-cols-3 gap-3">
         <div className="bg-[#3A4D5F] rounded-lg p-3 border border-[rgba(91,179,179,0.08)]">
           <div className="text-xl font-bold text-[#E8E0D5]">{SUBJECTS.length}</div>
           <div className="text-xs text-[#6B7280]">Subjects</div>
@@ -72,10 +91,10 @@ export default function LibraryPage() {
           <div className="text-xl font-bold text-[#E8E0D5]">{totalTopics}</div>
           <div className="text-xs text-[#6B7280]">Topics</div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Training Level Toggle */}
-      <div className="bg-[#3A4D5F] rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
+      <motion.div variants={itemVariants} className="glassmorphic-card rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
         <div className="flex items-center gap-2 mb-3">
           <Stethoscope className="w-4 h-4 text-[#5BB3B3]" />
           <span className="text-sm font-medium text-[#E8E0D5]">Training Level</span>
@@ -107,10 +126,10 @@ export default function LibraryPage() {
           {levelFilter === "PG" && "Advanced subjects for MD/MS residents — NMC domain SH (Shows How)"}
           {levelFilter === "SS" && "Super-specialty subjects for DM/MCh — NMC domain P (Performs)"}
         </p>
-      </div>
+      </motion.div>
 
       {/* Search */}
-      <div className="relative">
+      <motion.div variants={itemVariants} className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
         <Input
           placeholder="Search subjects..."
@@ -118,10 +137,10 @@ export default function LibraryPage() {
           onChange={(e) => setSearchQuery(e.target.value)}
           className="pl-10 bg-[#3A4D5F] border-[rgba(91,179,179,0.15)] focus:border-[#5BB3B3] text-[#E8E0D5] placeholder:text-[#A0B0BC]"
         />
-      </div>
+      </motion.div>
 
       {/* Subject Grid — each card links to /library/[subject] */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredSubjects.map((subject) => {
           const subspecs = getSubspecialtiesBySubject(subject.id);
 
@@ -141,7 +160,7 @@ export default function LibraryPage() {
               key={subject.id}
               href={`/library/${subject.slug}`}
             >
-              <Card className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer overflow-hidden h-full">
+              <Card className="group glassmorphic-card card-hover transition-all cursor-pointer overflow-hidden h-full">
                 <CardContent className="p-0">
                   {/* Color Banner */}
                   <div 
@@ -217,7 +236,7 @@ export default function LibraryPage() {
             </Link>
           );
         })}
-      </div>
+      </motion.div>
 
       {filteredSubjects.length === 0 && (
         <div className="text-center py-12">
@@ -229,6 +248,6 @@ export default function LibraryPage() {
 
       {/* ATOM Librarian */}
       <AtomLibrarian />
-    </div>
+    </motion.div>
   );
 }

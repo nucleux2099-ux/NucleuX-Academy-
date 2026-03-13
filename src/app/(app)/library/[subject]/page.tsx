@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Library, BookOpen } from "lucide-react";
@@ -34,30 +35,50 @@ export default function SubjectPage() {
   const subspecialties = getSubspecialtiesBySubject(subject.id);
   const mode = searchParams.get("mode");
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
+  };
+
   return (
-    <div className="space-y-6">
+    <motion.div 
+      className="space-y-6 relative z-10"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+    >
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm">
+      <motion.div variants={itemVariants} className="flex items-center gap-2 text-sm">
         <Link href="/library" className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors">
           Library
         </Link>
         <ChevronRight className="w-4 h-4 text-[#6B7280]" />
         <span className="text-[#E8E0D5]">{subject.name}</span>
-      </div>
+      </motion.div>
 
-      <div className="flex items-center gap-3">
+      <motion.div variants={itemVariants} className="flex items-center gap-3">
         <Library className="w-7 h-7 text-[#5BB3B3]" />
         <div>
           <h1 className="text-2xl font-bold text-[#E8E0D5]">{subject.name}</h1>
           <p className="text-[#A0B0BC]">Choose a subspecialty to continue.</p>
         </div>
-      </div>
+      </motion.div>
 
-      <Badge className="w-fit bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
-        {subspecialties.length} subspecialties
-      </Badge>
+      <motion.div variants={itemVariants}>
+        <Badge className="w-fit bg-[rgba(91,179,179,0.15)] text-[#5BB3B3] border-[rgba(91,179,179,0.3)]">
+          {subspecialties.length} subspecialties
+        </Badge>
+      </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {subspecialties.map((sub) => {
           const href = mode
             ? `/library/${subject.slug}/${sub.slug}?mode=${mode}`
@@ -65,7 +86,7 @@ export default function SubjectPage() {
 
           return (
             <Link key={sub.id} href={href}>
-              <Card className="group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer h-full">
+              <Card className="group glassmorphic-card card-hover transition-all cursor-pointer h-full">
                 <CardContent className="p-5">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
@@ -88,7 +109,7 @@ export default function SubjectPage() {
             </Link>
           );
         })}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

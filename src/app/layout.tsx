@@ -5,6 +5,7 @@ import { AuthProvider } from "@/lib/auth-context";
 import { UserProvider } from "@/lib/contexts/UserContext";
 import { InstallPrompt } from "@/components/pwa/InstallPrompt";
 import { ServiceWorkerRegistration } from "@/components/pwa/ServiceWorkerRegistration";
+import { PageTransition } from "@/components/PageTransition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +46,9 @@ export default function RootLayout({
       >
         <AuthProvider>
           <UserProvider>
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
             <InstallPrompt />
             <ServiceWorkerRegistration />
           </UserProvider>

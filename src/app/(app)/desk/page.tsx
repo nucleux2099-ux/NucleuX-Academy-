@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import {
   Flame, BookOpen, ChevronRight, Target,
@@ -263,6 +264,19 @@ export default function DeskPage() {
     router.push(primaryTaskPath || "/library");
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
+  };
+
   const handleTaskClick = (task: DeskTask) => {
     if (!task.actionPath) return;
     void trackEvent("task_started", { source: "desk_task_card", task_title: task.title, target_path: task.actionPath });
@@ -292,18 +306,24 @@ export default function DeskPage() {
 
   return (
     <ApiStateBoundary isLoading={isLoading} error={error} data={studyPlan || analytics || profile} loadingText="Loading your desk..." errorText="Unable to load your desk right now." className="bg-[#2D3E50]">
-    <div className="min-h-screen bg-[#2D3E50] p-4 md:p-6 lg:p-8 space-y-6 max-w-6xl mx-auto">
+    <div className="min-h-screen bg-[#2D3E50] p-4 md:p-6 lg:p-8 space-y-6 max-w-6xl mx-auto noise-overlay relative">
+      <motion.div 
+        className="space-y-6 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
       {/* 1. Greeting Header */}
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+      <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-[#E8E0D5]">{getGreeting()}, {displayName}! 👋</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-atom-cream">{getGreeting()}, {displayName}! 👋</h1>
           <p className="text-[#A0B0BC] text-sm mt-1">Ready to continue your learning pathway? · {formatDate()}</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <Badge className="bg-orange-500/20 text-orange-400 flex items-center gap-1"><Flame className="w-3 h-3" /> {stats.streak} Day Streak</Badge>
           <Badge className="bg-indigo-500/20 text-indigo-400">{targetExam}</Badge>
         </div>
-      </div>
+      </motion.div>
 
       {/* Tab Switcher */}
       <div className="flex gap-2">
@@ -317,13 +337,17 @@ export default function DeskPage() {
 
       {activeTab === "overview" ? (
       <>
-        <StudyCoach stats={stats} hasData={hasData} coachFocusLabel={coachFocusLabel} coachConfidence={coachConfidence} coachSessionMinutes={coachSessionMinutes} lastStudyText={lastStudyText} recommendedChips={recommendedChips} studyPlanToday={studyPlan?.today} onAskWhy={handleAskWhy} />
+        <motion.div variants={itemVariants}>
+          <StudyCoach stats={stats} hasData={hasData} coachFocusLabel={coachFocusLabel} coachConfidence={coachConfidence} coachSessionMinutes={coachSessionMinutes} lastStudyText={lastStudyText} recommendedChips={recommendedChips} studyPlanToday={studyPlan?.today} onAskWhy={handleAskWhy} />
+        </motion.div>
 
-        <TodaysPlan tasks={studyPlanTasks} streak={stats.streak} todayTotalMinutes={todayTotalMinutes} totalTaskCount={studyPlan?.tasks?.length || 0} onTaskClick={handleTaskClick} onStartPlan={handleStartTodayPlan} />
+        <motion.div variants={itemVariants}>
+          <TodaysPlan tasks={studyPlanTasks} streak={stats.streak} todayTotalMinutes={todayTotalMinutes} totalTaskCount={studyPlan?.tasks?.length || 0} onTaskClick={handleTaskClick} onStartPlan={handleStartTodayPlan} />
+        </motion.div>
 
         {/* Continue + Analytics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card className="glassmorphic-card rounded-2xl p-5 card-hover">
             <h3 className="text-[#E8E0D5] font-semibold mb-3">Continue Where You Left</h3>
             <div className="space-y-3">
               {continueItems.length === 0 && (
@@ -349,7 +373,7 @@ export default function DeskPage() {
             </div>
           </Card>
 
-          <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <Card className="glassmorphic-card rounded-2xl p-5 card-hover">
             <h3 className="text-[#E8E0D5] font-semibold mb-3">Your Learning This Week</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -377,10 +401,10 @@ export default function DeskPage() {
             </div>
             <button className="text-xs text-[#5BB3B3] mt-2 hover:underline">Why these metrics?</button>
           </Card>
-        </div>
+        </motion.div>
 
         {/* Stats Row */}
-        <div>
+        <motion.div variants={itemVariants}>
           <div className="flex items-center gap-2 mb-3">
             {(["week", "month"] as const).map((p) => (
               <button key={p} onClick={() => setStatsPeriod(p)} className={cn("px-3 py-1 rounded-full text-xs font-medium transition-colors", statsPeriod === p ? "bg-[#5BB3B3] text-white" : "bg-[#1B2838] text-[#A0B0BC]")}>
@@ -394,13 +418,15 @@ export default function DeskPage() {
             <StatCard label="Current Streak" value={`${stats.streak} days`} change={stats.streak > 0 ? "Keep going!" : "Start today!"} extra={stats.streak >= 7 ? "🔥" : undefined} />
             <StatCard label="MCQ Accuracy" value={`${stats.mcqAccuracy}%`} change={hasData ? "This week" : "No MCQs yet"} />
           </div>
-        </div>
+        </motion.div>
 
-        <WeeklyChart weeklyChart={weeklyChart} maxHours={maxHours} />
+        <motion.div variants={itemVariants}>
+          <WeeklyChart weeklyChart={weeklyChart} maxHours={maxHours} />
+        </motion.div>
 
         {/* Pathway + Focus Areas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Card className="glassmorphic-card rounded-2xl p-5 card-hover">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-[#E8E0D5] font-semibold">Current Pathway</h3>
               <Badge className={activePathway ? "bg-teal-500/20 text-teal-400" : "bg-[#253545] text-[#A0B0BC]"}>{pathwayStatus}</Badge>
@@ -429,7 +455,7 @@ export default function DeskPage() {
             <button onClick={handleContinueLearning} className="mt-4 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1">Continue Learning <ChevronRight className="w-4 h-4" /></button>
           </Card>
 
-          <Card className="bg-[#1B2838] border-[rgba(232,224,213,0.06)] rounded-2xl p-5">
+          <Card className="glassmorphic-card rounded-2xl p-5 card-hover">
             <h3 className="text-[#E8E0D5] font-semibold mb-1">Focus Areas</h3>
             <p className="text-xs text-[#6B7A88] mb-3">ATOM flagged these topics based on your MCQ performance:</p>
             <div className="space-y-3">
@@ -453,9 +479,11 @@ export default function DeskPage() {
             </div>
             <button onClick={handlePracticeWeakAreas} className="mt-3 text-[#5BB3B3] text-sm font-medium hover:underline flex items-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed" disabled={!hasFocusAreas}><AlertTriangle className="w-3.5 h-3.5" /> Practice Weak Areas</button>
           </Card>
-        </div>
+        </motion.div>
 
-        <RecentActivity recentActivity={recentActivity} />
+        <motion.div variants={itemVariants}>
+          <RecentActivity recentActivity={recentActivity} />
+        </motion.div>
       </>
       ) : (
         <KnowledgeGraph
@@ -473,6 +501,7 @@ export default function DeskPage() {
           onPracticeWeakAreas={handlePracticeWeakAreas}
         />
       )}
+      </motion.div>
     </div>
     </ApiStateBoundary>
   );

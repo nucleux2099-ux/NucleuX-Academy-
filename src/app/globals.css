@@ -189,12 +189,13 @@
   .glow-community { box-shadow: none; outline: 1px solid rgba(201, 168, 108, 0.35); outline-offset: 0px; }
   .glow-arena { box-shadow: none; outline: 1px solid rgba(212, 175, 55, 0.35); outline-offset: 0px; }
   
-  /* Text colors - ATOM palette */
+  /* Text colors - ATOM palette + Deeper accents */
   .text-atom-teal { color: #5BB3B3; }
   .text-atom-gold { color: #C9A86C; }
   .text-atom-sage { color: #7BA69E; }
   .text-atom-cream { color: #E8E0D5; }
   .text-atom-slate { color: #2D3E50; }
+  .text-deep-purple { color: #7C3AED; }
   
   /* Background colors - ATOM palette */
   .bg-atom-slate { background: #2D3E50; }
@@ -202,12 +203,30 @@
   .bg-atom-slate-dark { background: #253545; }
   .bg-atom-elevated { background: #3A4D5F; }
   
+  /* Glassmorphism & Premium Surfacing */
+  .glassmorphic-layer {
+    background: rgba(45, 62, 80, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(232, 224, 213, 0.08);
+  }
+  .glassmorphic-card {
+    background: linear-gradient(135deg, rgba(54, 74, 94, 0.8) 0%, rgba(45, 62, 80, 0.4) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  
   /* Gradient backgrounds */
   .bg-gradient-atom {
     background: linear-gradient(135deg, #2D3E50 0%, #364A5E 100%);
   }
   .bg-gradient-teal-gold {
     background: linear-gradient(135deg, #5BB3B3 0%, #C9A86C 100%);
+  }
+  .bg-gradient-deep-purple {
+    background: linear-gradient(135deg, #6D28D9 0%, #4C1D95 100%);
   }
   
   /* Border utilities */
@@ -252,16 +271,19 @@
                 box-shadow 0.3s ease;
   }
   
-  /* Gold highlight for premium elements */
+  /* Premium highlights */
   .gold-highlight {
     border: 1px solid rgba(201, 168, 108, 0.3);
     background: linear-gradient(135deg, rgba(201, 168, 108, 0.05) 0%, transparent 100%);
   }
-  
-  /* Teal highlight for primary actions */
   .teal-highlight {
     border: 1px solid rgba(91, 179, 179, 0.3);
     background: linear-gradient(135deg, rgba(91, 179, 179, 0.08) 0%, transparent 100%);
+  }
+  .purple-highlight {
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, transparent 100%);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
   }
 }
 

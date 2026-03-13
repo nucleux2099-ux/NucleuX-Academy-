@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -79,10 +80,28 @@ export default function SubspecialtyClient({
 
   const viewModes: ViewMode[] = ['explorer', 'examPrep', 'textbook', 'quiz', 'cases', 'roadmap'];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
+  };
+
   return (
-    <div className="space-y-6">
+    <motion.div 
+      className="space-y-6 relative z-10"
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+    >
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm">
+      <motion.div variants={itemVariants} className="flex items-center gap-2 text-sm">
         <Link href="/library" className="text-[#A0B0BC] hover:text-[#5BB3B3] transition-colors">
           Library
         </Link>
@@ -95,10 +114,10 @@ export default function SubspecialtyClient({
         </Link>
         <ChevronRight className="w-4 h-4 text-[#6B7280]" />
         <span className="text-[#E8E0D5]">{subspecialty.name}</span>
-      </div>
+      </motion.div>
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <motion.div variants={itemVariants} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-4">
           <Link 
             href={`/library/${subject.slug}`}
@@ -131,10 +150,10 @@ export default function SubspecialtyClient({
             {subject.icon} {subject.name}
           </Badge>
         </div>
-      </div>
+      </motion.div>
 
       {/* View Mode Selector */}
-      <div className="bg-[#3A4D5F] rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
+      <motion.div variants={itemVariants} className="glassmorphic-card rounded-xl p-4 border border-[rgba(91,179,179,0.1)]">
         <div className="flex items-center justify-between mb-3">
           <span className="text-sm font-medium text-[#E8E0D5]">View Mode</span>
           <span className="text-xs text-[#6B7280]">{VIEW_MODE_CONFIG[viewMode].description}</span>
@@ -165,10 +184,10 @@ export default function SubspecialtyClient({
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
       {/* Search & Filters */}
-      <div className="flex flex-col sm:flex-row gap-4">
+      <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A0B0BC]" />
           <Input
@@ -191,7 +210,7 @@ export default function SubspecialtyClient({
           <Target className="w-4 h-4" />
           High Yield Only
         </Button>
-      </div>
+      </motion.div>
 
       {/* Topics List */}
       <div className="space-y-3">
@@ -202,15 +221,15 @@ export default function SubspecialtyClient({
           const topicHasContent = topic.hasContent ?? { concept: true, examPrep: false, textbook: false, retrievalCards: false, cases: false, grindeMap: false };
           
           return (
-            <Link
-              key={topic.id}
-              href={`/library/${subject.slug}/${subspecialty.slug}/${topic.slug}?mode=${viewMode}`}
-            >
-              <Card className={cn(
-                "group bg-[#3A4D5F] border-[rgba(91,179,179,0.1)] hover:border-[rgba(91,179,179,0.3)] transition-all cursor-pointer",
-                !hasContent && "opacity-60"
-              )}>
-                <CardContent className="p-4">
+            <motion.div variants={itemVariants} key={topic.id}>
+              <Link
+                href={`/library/${subject.slug}/${subspecialty.slug}/${topic.slug}?mode=${viewMode}`}
+              >
+                <Card className={cn(
+                  "group glassmorphic-card card-hover transition-all cursor-pointer",
+                  !hasContent && "opacity-60"
+                )}>
+                  <CardContent className="p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
@@ -299,7 +318,8 @@ export default function SubspecialtyClient({
                   </div>
                 </CardContent>
               </Card>
-            </Link>
+              </Link>
+            </motion.div>
           );
         })}
 
@@ -318,6 +338,6 @@ export default function SubspecialtyClient({
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

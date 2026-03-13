@@ -14,6 +14,7 @@ import {
   Target,
   BookOpen,
   ArrowLeft,
+  ChevronLeft,
   CheckCircle2,
   XCircle,
   RotateCcw,
@@ -204,6 +205,10 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
   }, [viewMode, richContent, richContentLoading, subject.slug, subspecialty.slug, topic.slug]);
 
   const viewModes: ViewMode[] = ['explorer', 'examPrep', 'textbook', 'quiz', 'cases', 'roadmap'];
+
+  const currentIndex = allTopics.findIndex(t => t.slug === topic.slug);
+  const prevTopic = currentIndex > 0 ? allTopics[currentIndex - 1] : null;
+  const nextTopic = currentIndex < allTopics.length - 1 ? allTopics[currentIndex + 1] : null;
 
   const renderContent = () => {
     switch (viewMode) {
@@ -734,6 +739,43 @@ export default function TopicClient({ subject, subspecialty, topic, allTopics }:
         currentTopic={topic}
         allTopics={allTopics}
       />
+
+      {/* Topics Bottom Navigation Bar */}
+      <div className="sticky bottom-4 mt-8 z-40">
+        <div className="glassmorphic-layer rounded-2xl p-2 md:p-3 flex items-center justify-between shadow-lg border border-[rgba(6,182,212,0.15)] mx-auto max-w-2xl text-sm">
+          {prevTopic ? (
+            <Link 
+              href={`/library/${subject.slug}/${subspecialty.slug}/${prevTopic.slug}`}
+              className="flex-1 flex items-center gap-2 group p-2 hover:bg-[rgba(6,182,212,0.1)] rounded-xl transition-colors min-w-0"
+            >
+              <ChevronLeft className="w-4 h-4 text-[#06B6D4] shrink-0 transition-transform group-hover:-translate-x-1" />
+              <div className="min-w-0">
+                <p className="text-[10px] text-[#A0B0BC] uppercase tracking-wider mb-0.5 hidden sm:block">Previous Topic</p>
+                <p className="text-[#E5E7EB] font-medium truncate">{prevTopic.name}</p>
+              </div>
+            </Link>
+          ) : (
+            <div className="flex-1" />
+          )}
+
+          <div className="w-px h-8 bg-[rgba(6,182,212,0.15)] mx-2 shrink-0 hidden sm:block" />
+
+          {nextTopic ? (
+            <Link 
+              href={`/library/${subject.slug}/${subspecialty.slug}/${nextTopic.slug}`}
+              className="flex-1 flex items-center justify-end gap-2 group p-2 hover:bg-[rgba(6,182,212,0.1)] rounded-xl transition-colors text-right min-w-0"
+            >
+              <div className="min-w-0">
+                <p className="text-[10px] text-[#A0B0BC] uppercase tracking-wider mb-0.5 hidden sm:block">Next Topic</p>
+                <p className="text-[#E5E7EB] font-medium truncate">{nextTopic.name}</p>
+              </div>
+              <ChevronRight className="w-4 h-4 text-[#06B6D4] shrink-0 transition-transform group-hover:translate-x-1" />
+            </Link>
+          ) : (
+            <div className="flex-1" />
+          )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -94,6 +94,29 @@ export const CBME_MBBS_Y3_BLOCKS: CBMEBlock[] = [
   },
 
   // =====================
+  // FORENSIC MEDICINE & TOXICOLOGY
+  // =====================
+  {
+    id: "cbme-y3-fmt-01-legal",
+    year: 3,
+    subject: "forensic",
+    title: "Forensic Medicine — Medical Jurisprudence, Autopsy, Thanatology",
+    order: 51,
+    tags: ["theory", "practical"],
+    links: { libraryPath: "/library/forensic" },
+  },
+  {
+    id: "cbme-y3-fmt-02-tox",
+    year: 3,
+    subject: "forensic",
+    title: "Toxicology — General Toxicology, Corrosive & Asphyxiant Poisons",
+    order: 52,
+    tags: ["theory", "practical"],
+    links: { libraryPath: "/library/forensic" },
+  },
+
+
+  // =====================
   // ENT
   // =====================
   {

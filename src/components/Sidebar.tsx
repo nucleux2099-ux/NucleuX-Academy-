@@ -35,7 +35,7 @@ const navItems = [
   { href: "/library", icon: BookOpen, label: "Library", description: "Browse & Pathways" },
   { href: "/classroom", icon: GraduationCap, label: "Classroom", description: "Video Lectures" },
   { href: "/exam-centre", icon: ClipboardCheck, label: "Training Centre", description: "PYQs, MCQs, Cases" },
-  { href: "/cbme", icon: Target, label: "CBME", description: "Competencies" },
+  { href: "/cbme", icon: Target, label: "CBME", description: "Curriculum" },
   { href: "/community", icon: Users, label: "Common Room", description: "Discussions" },
   { href: "/arena", icon: Trophy, label: "Arena", description: "Compete" },
   { href: "/chat", icon: Atom, label: "ATOM", highlight: true, description: "AI Companion" },

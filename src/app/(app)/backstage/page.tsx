@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useMemo } from "react"
+import { motion } from "framer-motion"
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -39,13 +40,41 @@ import { useBackstageSummary, useTrackEvent } from "@/lib/api/hooks"
 function ProgressBar({ value, color, h = "h-2" }: { value: number; color: string; h?: string }) {
   return (
     <div className={cn("w-full rounded-full bg-[#1B2838]", h)}>
-      <div className={cn("rounded-full", h)} style={{ width: `${Math.min(value, 100)}%`, backgroundColor: color }} />
+      <motion.div 
+        className={cn("rounded-full", h)} 
+        initial={{ width: 0 }}
+        animate={{ width: `${Math.min(value, 100)}%` }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        style={{ backgroundColor: color }} 
+      />
     </div>
   )
 }
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } }
+}
+
 function Card({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <div className={cn("bg-[#253545] border border-[rgba(232,224,213,0.06)] rounded-2xl p-5 md:p-6", className)}>{children}</div>
+  return (
+    <motion.div 
+      variants={itemVariants} 
+      className={cn("glassmorphic-card rounded-2xl p-5 md:p-6", className)}
+    >
+      {children}
+    </motion.div>
+  )
 }
 
 function gapColor(gap: number) {
@@ -209,25 +238,30 @@ export default function BackstagePage() {
       errorText="Could not load live backstage metrics. Showing latest fallback view."
       className="bg-[#2D3E50]"
     >
-    <div className="min-h-screen w-full px-4 py-8 md:py-12">
-      <div className="mx-auto max-w-6xl space-y-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="min-h-screen w-full px-4 py-8 md:py-12 noise-overlay relative">
+      <motion.div 
+        className="mx-auto max-w-6xl space-y-6 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.div variants={itemVariants} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-[#E8E0D5]">
-              <Fingerprint className="h-7 w-7 text-[#5BB3B3]" />
+            <h1 className="flex items-center gap-2 text-2xl md:text-3xl font-bold text-atom-cream">
+              <Fingerprint className="h-7 w-7 text-atom-teal" />
               Your Backstage
             </h1>
             <p className="mt-1 text-[#A0B0BC] text-sm md:text-base">Your Cognitive OS — measure, diagnose, and improve daily</p>
           </div>
-          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">
+          <span className="inline-flex w-fit items-center gap-2 rounded-full border border-teal-500/20 bg-teal-500/10 px-3 py-1 text-xs text-teal-300 animate-pulse-teal">
             <ShieldCheck className="h-3.5 w-3.5" />
             Learning System Active{data?.lastUpdatedAt ? ` · ${new Date(data.lastUpdatedAt).toLocaleTimeString('en-IN', { hour: 'numeric', minute: '2-digit' })}` : ''}
           </span>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {priorityActionsLive.map((item) => (
-            <Link key={item.title} href={item.href} className={cn("rounded-2xl border p-4 transition-all hover:translate-y-[-1px]", item.tone)}>
+            <Link key={item.title} href={item.href} className={cn("rounded-2xl border p-4 transition-all card-hover glassmorphic-card", item.tone)}>
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <p className="font-semibold">{item.title}</p>
@@ -237,7 +271,7 @@ export default function BackstagePage() {
               </div>
             </Link>
           ))}
-        </div>
+        </motion.div>
 
         <Card className="border-[#E879F9]/20">
           <div className="flex items-center gap-2 mb-5">
@@ -252,9 +286,12 @@ export default function BackstagePage() {
             ].map((g) => (
               <div key={g.label} className="flex flex-col items-center">
                 <div className="relative w-32 h-16 overflow-hidden">
-                  <div className="absolute inset-0 rounded-t-full border-[6px] border-[#1B2838] border-b-0" />
-                  <div
+                  <div className="absolute inset-0 rounded-t-full border-[6px] border-[#1B2838] border-b-0 shadow-inner" />
+                  <motion.div
                     className="absolute inset-0 rounded-t-full border-b-0 overflow-hidden"
+                    initial={{ rotate: -180 }}
+                    animate={{ rotate: 0 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
                     style={{
                       background: `conic-gradient(${g.col} 0deg, ${g.col} ${g.val * 1.8}deg, transparent ${g.val * 1.8}deg, transparent 180deg, transparent 180deg, transparent 360deg)`,
                       maskImage: "radial-gradient(circle at 50% 100%, transparent 52px, black 53px)",
@@ -262,7 +299,7 @@ export default function BackstagePage() {
                     }}
                   />
                 </div>
-                <span className="text-2xl font-bold text-[#E8E0D5] -mt-2">{g.val}%</span>
+                <span className="text-2xl font-bold text-atom-cream -mt-2">{g.val}%</span>
                 <span className="text-xs text-[#A0B0BC]">{g.label}</span>
               </div>
             ))}
@@ -438,10 +475,10 @@ export default function BackstagePage() {
           </Card>
         </div>
 
-        <Card>
+        <Card className="col-span-1 lg:col-span-2">
           <div className="mb-4 flex items-center gap-2">
-            <BarChart3 className="h-5 w-5 text-[#5BB3B3]" />
-            <h2 className="text-base font-semibold text-[#E8E0D5]">7-Day Trend</h2>
+            <BarChart3 className="h-5 w-5 text-atom-teal" />
+            <h2 className="text-base font-semibold text-atom-cream">7-Day Trend</h2>
           </div>
           {trendData.length ? (
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
@@ -519,7 +556,7 @@ export default function BackstagePage() {
             ))}
           </div>
         </Card>
-      </div>
+      </motion.div>
     </div>
     </ApiStateBoundary>
   )
