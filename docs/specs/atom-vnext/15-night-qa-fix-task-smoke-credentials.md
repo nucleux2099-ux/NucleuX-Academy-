@@ -208,3 +208,37 @@ Then append artifact path + timestamp in this section.
 - Delta from 07:32 run:
   - No regressions in ATOM baseline reliability checks; blocker remains missing runtime smoke credentials.
 
+## Execution log (latest)
+- Timestamp (IST): `2026-03-14T03:36:00+05:30`
+- Command:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Result:
+  - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
+  - `/atom` route present in build output
+  - Continue follow-up continuity check passed
+  - Strict selected-source insufficiency language check passed
+  - Credentialed smoke still skipped:
+    - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
+- Delta from 01:11 run:
+  - Previous build-lock contention is not reproducing; only blocker is missing smoke credentials.
+
+
+## Execution log (latest)
+- Timestamp (IST): `2026-03-15T00:00:23+05:30`
+- Command:
+  ```bash
+  npm run -s test:atom:nightly-gates:smoke-guarded
+  ```
+- Artifact log path:
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-15T00:00:23+0530.log`
+- Result:
+  - Core gates passed (typecheck/build/route-smoke/reliability/dedup)
+  - `/atom` route present in build output
+  - Continue follow-up continuity check passed
+  - Strict selected-source insufficiency language check passed
+  - Credentialed smoke still skipped:
+    - `Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).`
+- Delta from 03:36 run:
+  - Nightly reliability remains green; only remaining blocker is missing runtime smoke credentials.
