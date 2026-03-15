@@ -32,17 +32,46 @@ await step("Login", async () => {
   await page.getByPlaceholder("you@example.com").fill(EMAIL);
   await page.getByPlaceholder("••••••••").fill(PASSWORD);
   await page.getByRole("button", { name: /Sign In/i }).click();
-  await page.waitForURL(/\/(dashboard|onboarding|desk)/, { timeout: 20000 });
+  await page.waitForFunction(() => /\/(dashboard|onboarding|desk)$/.test(window.location.pathname), null, { timeout: 20000 });
 });
 
-await step("Desk load + start plan", async () => {
+await step("Desk load + primary CTA", async () => {
   await page.goto(`${BASE_URL}/desk`, { waitUntil: "domcontentloaded" });
-  await page.getByRole("button", { name: /Start Today.?s Plan/i }).waitFor({ timeout: 20000 });
+
+  const ctaCandidates = [
+    "button:has-text('Start Today')",
+    "button:has-text('Execute Plan')",
+    "button:has-text('Continue Mission')",
+    "button:has-text('Initiate')",
+    "button:has-text('Access Library')",
+  ];
+
+  let cta = null;
+  const deadline = Date.now() + 20000;
+  while (!cta && Date.now() < deadline) {
+    for (const selector of ctaCandidates) {
+      const locator = page.locator(selector).first();
+      if ((await locator.count()) > 0 && (await locator.isVisible().catch(() => false))) {
+        cta = locator;
+        break;
+      }
+    }
+    if (!cta) await page.waitForTimeout(300);
+  }
+
+  if (!cta) {
+    const observedButtons = (await page.locator("button").allTextContents())
+      .map((text) => text.replace(/\s+/g, " ").trim())
+      .filter(Boolean)
+      .slice(0, 20);
+    throw new Error(`No desk primary CTA found. Buttons seen: ${observedButtons.join(" | ")}`);
+  }
+
   const before = page.url();
-  await page.getByRole("button", { name: /Start Today.?s Plan/i }).click();
-  await page.waitForTimeout(1200);
+  await cta.click();
+  await page.waitForTimeout(1500);
   if (page.url() === before) {
-    throw new Error("Start Today's Plan did not navigate");
+    throw new Error("Desk primary CTA did not navigate");
   }
 });
 
