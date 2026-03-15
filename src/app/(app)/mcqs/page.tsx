@@ -160,6 +160,8 @@ export default function MCQsPage() {
           {options.map((o) => (
             <button
               key={o.label}
+              id={`mcq-option-${o.label.toLowerCase()}`}
+              data-testid={`mcq-option-${o.label.toLowerCase()}`}
               onClick={() => setSelected(o.label)}
               className={`flex items-center gap-4 p-4 rounded-xl border text-left transition ${
                 selected === o.label
@@ -182,6 +184,8 @@ export default function MCQsPage() {
             ← Previous
           </button>
           <button
+            id="mcq-submit"
+            data-testid="mcq-submit"
             onClick={handleSubmitAnswer}
             disabled={!selected}
             className="px-6 py-2 rounded-xl bg-[#6366F1] text-white font-medium text-sm hover:bg-[#5558E6] transition disabled:opacity-50 disabled:cursor-not-allowed"
