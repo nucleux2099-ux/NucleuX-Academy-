@@ -47,3 +47,4 @@ next-env.d.ts
 
 # doc export artifacts
 /docs/*.zip
+/artifacts/smoke-e2e/
