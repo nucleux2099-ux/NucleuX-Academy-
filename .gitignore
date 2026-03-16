@@ -48,3 +48,6 @@ next-env.d.ts
 # doc export artifacts
 /docs/*.zip
 /artifacts/smoke-e2e/
+
+# local orchestrator scratch workspace
+/agents/
