@@ -10,6 +10,24 @@ function isMissingAnalyticsEventsTableError(error: { code?: string; message?: st
   );
 }
 
+function isAbortLikeError(error: unknown): boolean {
+  if (!error || typeof error !== 'object') return false;
+
+  const maybeError = error as { code?: string; message?: string; name?: string; cause?: { code?: string; message?: string } };
+  const message = maybeError.message || '';
+  const causeMessage = maybeError.cause?.message || '';
+
+  return (
+    maybeError.code === 'ECONNRESET' ||
+    maybeError.cause?.code === 'ECONNRESET' ||
+    maybeError.name === 'AbortError' ||
+    message.includes('aborted') ||
+    message.includes('ECONNRESET') ||
+    causeMessage.includes('aborted') ||
+    causeMessage.includes('ECONNRESET')
+  );
+}
+
 // GET /api/analytics - Get user's learning analytics
 export async function GET(request: NextRequest) {
   try {
@@ -202,6 +220,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, event, stored: true });
   } catch (error) {
+    if (isAbortLikeError(error)) {
+      return NextResponse.json({ success: false, ignored: true, reason: 'request_aborted' }, { status: 499 });
+    }
+
     console.error('Analytics POST error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
