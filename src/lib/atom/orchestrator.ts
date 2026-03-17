@@ -151,16 +151,29 @@ function buildSeedDraft(inputMessage: string): DraftWithEvidence {
   };
 }
 
+function isMissingAnalyticsEventsTableError(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return (
+    error.code === '42P01' ||
+    (error.message?.includes('analytics_events') && error.message?.includes('schema cache')) === true ||
+    (error.message?.includes('relation "analytics_events" does not exist')) === true
+  );
+}
+
 async function emitAnalyticsEvent(
   supabase: TaskScopedClient,
   userId: string,
   payload: Record<string, unknown>,
 ): Promise<void> {
-  await supabase.from('analytics_events').insert({
+  const { error } = await supabase.from('analytics_events').insert({
     user_id: userId,
     event_name: 'deep_research_completed',
     event_data: payload,
   });
+
+  if (error && !isMissingAnalyticsEventsTableError(error)) {
+    console.warn('Deep research analytics event insert failed:', error.message);
+  }
 }
 
 export async function runNucleuxOriginalDeepResearch(
