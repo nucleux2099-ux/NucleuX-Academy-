@@ -78,11 +78,29 @@ function extractTextFromMessageContent(content: unknown): string {
     .trim()
 }
 
+function isContinuationRequest(input: string): boolean {
+  const text = input.trim().toLowerCase()
+  if (!text) return false
+
+  const directContinuation = /^(continue|go on|carry on|next|more|proceed)\b/.test(text)
+  if (directContinuation) return true
+
+  const contextualContinuation = [
+    /\bcan you continue\b/,
+    /\bcontinue (from|with|on)\b/,
+    /\bpick up where (you|we) left off\b/,
+    /\bfrom where (you|we) (left off|stopped)\b/,
+    /\bstay on (the )?same topic\b/,
+  ]
+
+  return contextualContinuation.some((pattern) => pattern.test(text))
+}
+
 export function resolveQueryForRetrieval(messages: IncomingMessage[]): { query: string; continueLike: boolean } {
   const lastUserMessage = [...messages].reverse().find((m) => m.role === 'user')
   let query = extractTextFromMessageContent(lastUserMessage?.content)
 
-  const continueLike = /^(continue|go on|carry on|next|more|proceed)\b/i.test(query.trim())
+  const continueLike = isContinuationRequest(query)
   if (!continueLike) return { query, continueLike }
 
   const previousUser = [...messages]

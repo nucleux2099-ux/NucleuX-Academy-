@@ -46,3 +46,16 @@ test('continue route style message still resolves retrieval query to previous us
   assert.equal(continueLike, true)
   assert.equal(query, 'Differentiate Crohn disease vs ulcerative colitis on pathology')
 })
+
+test('continuation requests phrased as a question still reuse previous user topic', () => {
+  const messages: IncomingMessage[] = [
+    { role: 'user', content: 'Outline management of acute severe asthma in ER' },
+    { role: 'assistant', content: 'Initial stabilization includes oxygen and bronchodilators...' },
+    { role: 'user', content: 'Can you continue with the same topic and go deeper on escalation?' },
+  ]
+
+  const { query, continueLike } = resolveQueryForRetrieval(messages)
+
+  assert.equal(continueLike, true)
+  assert.equal(query, 'Outline management of acute severe asthma in ER')
+})
