@@ -9,12 +9,18 @@ import { setTimeout as delay } from "node:timers/promises";
 dotenv.config({ path: ".env.local" });
 
 const BASE_URL = process.env.E2E_BASE_URL || "http://127.0.0.1:3000";
-const EMAIL = process.env.E2E_EMAIL;
-const PASSWORD = process.env.E2E_PASSWORD;
+const RAW_EMAIL = process.env.E2E_EMAIL;
+const RAW_PASSWORD = process.env.E2E_PASSWORD;
+const EMAIL = RAW_EMAIL?.trim();
+const PASSWORD = RAW_PASSWORD?.trim();
 
 if (!EMAIL || !PASSWORD) {
   console.error("Missing E2E credentials. Set E2E_EMAIL and E2E_PASSWORD.");
   process.exit(1);
+}
+
+if (RAW_EMAIL !== EMAIL || RAW_PASSWORD !== PASSWORD) {
+  console.warn("[smoke] E2E credentials contained leading/trailing whitespace; using trimmed values.");
 }
 
 const browser = await chromium.launch({ headless: true });
