@@ -16,7 +16,7 @@
     "test:atom:chat-contracts": "tsx --test src/app/api/chat/__tests__/route.test.ts",
     "test:atom:reliability": "tsx scripts/atom-reliability-smoke.ts",
     "test:atom:nightly-gates": "npm run -s typecheck && npm run -s lint && npm run -s build && npm run -s test:atom:route-smoke && npm run -s test:atom:chat-contracts && npm run -s test:atom:reliability && npm run -s test:atom:dedup",
-    "test:atom:nightly-gates:smoke-guarded": "npm run -s test:atom:nightly-gates && if [ -n \"$E2E_EMAIL\" ] && [ -n \"$E2E_PASSWORD\" ]; then npm run -s test:smoke; else echo 'Skipping test:smoke (E2E_EMAIL/E2E_PASSWORD not set).'; fi",
+    "test:atom:nightly-gates:smoke-guarded": "node scripts/nightly-gates-smoke-guarded.mjs",
     "seed:admin": "tsx scripts/seed-admin.ts",
     "content:validate": "tsx scripts/validate-content.ts",
     "validate:cbme": "tsx scripts/validate-cbme-links.ts",
