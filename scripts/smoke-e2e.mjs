@@ -1,9 +1,12 @@
 #!/usr/bin/env node
+import dotenv from "dotenv";
 import { chromium } from "playwright";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { setTimeout as delay } from "node:timers/promises";
+
+dotenv.config({ path: ".env.local" });
 
 const BASE_URL = process.env.E2E_BASE_URL || "http://127.0.0.1:3000";
 const EMAIL = process.env.E2E_EMAIL;
