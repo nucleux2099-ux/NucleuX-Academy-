@@ -33,6 +33,8 @@ If you are short on time, start with:
     Day-to-day guide for clinicians.
 11. **[11-CONFORMANCE-CHECK-A-E.md](./11-CONFORMANCE-CHECK-A-E.md)**  
     Strict Phase A–E conformance audit against code/migrations/APIs, with deviations and fixes.
+12. **[12-PRODUCTION-RELEASE-WORKFLOW.md](./12-PRODUCTION-RELEASE-WORKFLOW.md)**  
+    Vercel + custom-domain release gate, preview/prod verification, rollback owners, and smoke/log checks.
 
 ---
 
