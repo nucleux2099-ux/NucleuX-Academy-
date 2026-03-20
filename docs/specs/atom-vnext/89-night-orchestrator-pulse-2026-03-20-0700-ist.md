@@ -20,8 +20,11 @@
 - Because no jobs run, cannot yet confirm CI-side `email_sha` / `password_sha` parity despite local auth+smoke path being green in previous pulse.
 
 ## Next action
-1. Add a minimal `workflow_dispatch` + simplify trigger stanza (`on.push` without `branches:["**"]`) to eliminate parser/preflight ambiguity.
-2. Push the CI workflow fix and verify a run with actual jobs emitted.
+1. Verify the latest CI workflow patch resolves pre-job failure:
+   - added `workflow_dispatch`
+   - simplified `on.push`
+   - moved E2E-secret gating from job-level `if` to step-level conditions
+2. Confirm a fresh run emits actual jobs (not `jobs: []`).
 3. Once jobs execute, re-check auth probe fingerprint parity and mark QA lane fully unblocked.
 
 ## Handoff status

@@ -28,29 +28,37 @@ jobs:
         run: npm run build
 
   smoke-e2e:
-    if: ${{ secrets.E2E_EMAIL != '' && secrets.E2E_PASSWORD != '' }}
     needs: lint-and-build
     runs-on: ubuntu-latest
+    env:
+      E2E_EMAIL: ${{ secrets.E2E_EMAIL }}
+      E2E_PASSWORD: ${{ secrets.E2E_PASSWORD }}
     steps:
       - name: Checkout
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         uses: actions/checkout@v4
 
       - name: Setup Node
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
       - name: Install
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         run: npm ci
 
       - name: Install Playwright Browser
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         run: npx playwright install chromium
 
       - name: Start app
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         run: npm run dev > dev.log 2>&1 &
 
       - name: Wait for app
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         run: |
           for i in {1..60}; do
             if curl -fsS http://127.0.0.1:3000 >/dev/null; then
@@ -63,8 +71,11 @@ jobs:
           exit 1
 
       - name: Smoke tests
+        if: ${{ env.E2E_EMAIL != '' && env.E2E_PASSWORD != '' }}
         env:
           E2E_BASE_URL: http://127.0.0.1:3000
-          E2E_EMAIL: ${{ secrets.E2E_EMAIL }}
-          E2E_PASSWORD: ${{ secrets.E2E_PASSWORD }}
         run: npm run test:smoke
+
+      - name: Smoke tests skipped (missing E2E secrets)
+        if: ${{ env.E2E_EMAIL == '' || env.E2E_PASSWORD == '' }}
+        run: echo "Skipping smoke-e2e because E2E_EMAIL/E2E_PASSWORD secrets are not configured."
