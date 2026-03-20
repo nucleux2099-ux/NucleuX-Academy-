@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -53,7 +53,12 @@ const exams = [
 
 export default function OnboardingPage() {
   const router = useRouter();
-  const supabase = useMemo(() => createClient(), []);
+  const getSupabase = () => {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !key) return null;
+    return createClient();
+  };
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -74,8 +79,14 @@ export default function OnboardingPage() {
   useEffect(() => {
     const loadUserData = async () => {
       setIsLoading(true);
+      const supabase = getSupabase();
+      if (!supabase) {
+        setIsLoading(false);
+        return;
+      }
+
       const { data: { user } } = await supabase.auth.getUser();
-      
+
       if (!user) {
         router.push("/login");
         return;
@@ -100,7 +111,7 @@ export default function OnboardingPage() {
     };
 
     loadUserData();
-  }, [router, supabase]);
+  }, [router]);
 
   const handleNext = async () => {
     if (step < totalSteps) {
@@ -115,6 +126,12 @@ export default function OnboardingPage() {
     setIsSaving(true);
     
     try {
+      const supabase = getSupabase();
+      if (!supabase) {
+        setIsSaving(false);
+        return;
+      }
+
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
         router.push("/login");
