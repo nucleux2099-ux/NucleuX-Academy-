@@ -228,6 +228,7 @@ async function findRelevantContent(
   contextId: string,
   maxChunks = 5,
   sourceKeywords: string[] = [],
+  allowSourceFallback = true,
 ): Promise<{ content: string; sourceBiased: boolean }> {
   const folders = contextFolders[contextId] || contextFolders.full
   const rawKeywords = query.toLowerCase().split(/\s+/).filter(w => w.length > 3)
@@ -247,7 +248,9 @@ async function findRelevantContent(
       })
     : allFiles
 
-  const candidateFiles = scopedFiles.length > 0 ? scopedFiles : allFiles
+  const candidateFiles = scopedFiles.length > 0
+    ? scopedFiles
+    : (allowSourceFallback ? allFiles : [])
 
   // Score files by keyword matches in BOTH path and content (first 2KB)
   const scored: { path: string; score: number }[] = []
@@ -403,7 +406,13 @@ export async function POST(request: NextRequest) {
 
     // Find relevant content from the library
     const sourceKeywords = buildSourceKeywords(selectedBookIds, deskSources)
-    const { content: relevantContent, sourceBiased } = await findRelevantContent(query, context, 5, sourceKeywords)
+    const { content: relevantContent, sourceBiased } = await findRelevantContent(
+      query,
+      context,
+      5,
+      sourceKeywords,
+      !strictSourceGrounding,
+    )
 
     const systemPrompt = buildChatSystemPrompt({
       systemOverride,
