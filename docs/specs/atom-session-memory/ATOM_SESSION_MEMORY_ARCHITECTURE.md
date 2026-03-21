@@ -387,16 +387,16 @@ QA nudge agent should:
 
 ## 15) Immediate engineering checklist
 
-- [ ] Add migration for `atom_sessions`
-- [ ] Add migration for `atom_session_messages`
-- [ ] Add migration for `atom_session_summaries`
-- [ ] Implement session repository layer
-- [ ] Implement `POST /api/atom/session/start`
-- [ ] Implement `POST /api/atom/session/:id/message` SSE
-- [ ] Implement `POST /api/atom/session/:id/continue`
-- [ ] Bind UI thread -> session lifecycle
-- [ ] Add grounding diagnostics in response metadata
-- [ ] Add canary tests for continuation + strict source mode
+- [x] Add migration for `atom_sessions`
+- [x] Add migration for `atom_session_messages`
+- [x] Add migration for `atom_session_summaries`
+- [x] Implement session repository layer
+- [x] Implement `POST /api/atom/session/start`
+- [x] Implement `POST /api/atom/session/:id/message` SSE
+- [x] Implement `POST /api/atom/session/:id/continue`
+- [x] Bind UI thread -> session lifecycle
+- [x] Add grounding diagnostics in response metadata
+- [x] Add canary tests for continuation + strict source mode
 
 ---
 

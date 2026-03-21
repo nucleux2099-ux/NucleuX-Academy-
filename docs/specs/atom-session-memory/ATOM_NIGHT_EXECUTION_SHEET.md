@@ -8,6 +8,18 @@
 
 ## 0) Objective for tonight
 
+### Status refresh (2026-03-22 01:02 IST)
+- Core session APIs and session tables are implemented (`009_atom_sessions_core.sql`, `/api/atom/session/*`).
+- Continue continuity + strict source insufficiency behavior are covered by automated checks:
+  - `test:atom:route-smoke` ✅
+  - `test:atom:chat-contracts` ✅
+  - `test:atom:reliability` ✅
+- Platform quality gates passed in this pulse:
+  - `npm run -s typecheck` ✅
+  - `npm run -s lint` ✅
+  - `npm run -s build` ✅
+
+
 Ship **session-stable, source-grounded, continuation-safe ATOM chat** on `/atom`.
 
 Success means:
