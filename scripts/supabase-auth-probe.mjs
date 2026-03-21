@@ -34,7 +34,24 @@ const settingsRes = await fetch(`${supabaseUrl}/auth/v1/settings`, {
 });
 const settingsLatencyMs = Date.now() - settingsStart;
 
+let settingsBody = null;
+try {
+  settingsBody = await settingsRes.json();
+} catch {
+  settingsBody = null;
+}
+
 console.log(`settings: status=${settingsRes.status} latencyMs=${settingsLatencyMs}`);
+if (settingsBody) {
+  const external = settingsBody?.external || {};
+  const disableSignup = settingsBody?.disable_signup;
+  const mailerAutoconfirm = settingsBody?.mailer_autoconfirm;
+  const smsAutoconfirm = settingsBody?.sms_autoconfirm;
+  const passwordEnabled = external?.email;
+  console.log(
+    `settings_flags: password_enabled=${String(passwordEnabled)} disable_signup=${String(disableSignup)} mailer_autoconfirm=${String(mailerAutoconfirm)} sms_autoconfirm=${String(smsAutoconfirm)}`,
+  );
+}
 
 if (!email || !password) {
   console.log('⚠️ Skipping token probe: E2E_EMAIL/E2E_PASSWORD not set.');
