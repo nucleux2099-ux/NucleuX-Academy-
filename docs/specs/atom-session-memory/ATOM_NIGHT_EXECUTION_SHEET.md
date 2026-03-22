@@ -19,6 +19,17 @@
   - `npm run -s lint` ✅
   - `npm run -s build` ✅
 
+### Status refresh (2026-03-22 06:10 IST)
+- Re-ran full continuity/reliability gates in this pulse:
+  - `npm run -s typecheck` ✅
+  - `npm run -s lint` ✅
+  - `npm run -s test:atom:route-smoke` ✅
+  - `npm run -s test:atom:chat-contracts` ✅
+  - `npm run -s test:atom:reliability` ✅
+  - `npm run -s build` ✅
+- Guarded smoke run executed with artifact captured:
+  - `docs/specs/atom-vnext/artifacts/nightly-gates-smoke-guarded-2026-03-22T06-01-46+0530.log`
+- Current blocker unchanged: credentialed auth probe fails with `invalid_credentials`; non-credentialed reliability/build lanes remain green.
 
 Ship **session-stable, source-grounded, continuation-safe ATOM chat** on `/atom`.
 
